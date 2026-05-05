@@ -1,0 +1,3521 @@
+{
+  "paper_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th",
+  "doi": "10.1002/jcsm.13839",
+  "extracted_at": "2026-05-05T22:35:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 42,
+    "percentage": 56,
+    "mean_sd": 51,
+    "p_value": 43
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-398",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 398,
+      "sentence": "This cross\u2010sectional study investigated sarcopenia and low muscle mass by comparing adults older than 65 years with previous MBS (BAR) to patients following nonsurgical obesity management (CON).",
+      "context_window": "rcopenia and low muscle mass by comparing adults older than 65 years with previous MBS (BAR) to patients following nonsurgical o",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1360",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1360,
+      "sentence": "We included 50 participants per group (male, BAR 40%, CON 35%).",
+      "context_window": "dict ALM. We included 50 participants per group (male, BAR 40%, CON 35%). BAR participants were older (68.3 \u00b1 3.2 years vs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1369",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1369,
+      "sentence": "We included 50 participants per group (male, BAR 40%, CON 35%).",
+      "context_window": "We included 50 participants per group (male, BAR 40%, CON 35%). BAR participants were older (68.3 \u00b1 3.2 years vs. 70.7 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1404",
+      "claim_type": "mean_sd",
+      "raw_text": "68.3 \u00b1 3.2",
+      "numeric_values": [
+        68.3,
+        3.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1404,
+      "sentence": "BAR participants were older (68.3 \u00b1 3.2 years vs.",
+      "context_window": "roup (male, BAR 40%, CON 35%). BAR participants were older (68.3 \u00b1 3.2 years vs. 70.7 \u00b1 3.9, p < 0.01), and more had diabetes (52%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-1411",
+      "claim_type": "unit_value",
+      "raw_text": "3.2 years",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1411,
+      "sentence": "BAR participants were older (68.3 \u00b1 3.2 years vs.",
+      "context_window": "ale, BAR 40%, CON 35%). BAR participants were older (68.3 \u00b1 3.2 years vs. 70.7 \u00b1 3.9, p < 0.01), and more had diabetes (52% vs. 2",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1425",
+      "claim_type": "mean_sd",
+      "raw_text": "70.7 \u00b1 3.9",
+      "numeric_values": [
+        70.7,
+        3.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1425,
+      "sentence": "70.7 \u00b1 3.9, p < 0.01), and more had diabetes (52% vs.",
+      "context_window": "CON 35%). BAR participants were older (68.3 \u00b1 3.2 years vs. 70.7 \u00b1 3.9, p < 0.01), and more had diabetes (52% vs. 28%). BAR lost m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-1437",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1437,
+      "sentence": "70.7 \u00b1 3.9, p < 0.01), and more had diabetes (52% vs.",
+      "context_window": "R participants were older (68.3 \u00b1 3.2 years vs. 70.7 \u00b1 3.9, p < 0.01), and more had diabetes (52% vs. 28%). BAR lost more bodywe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1471",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1471,
+      "sentence": "70.7 \u00b1 3.9, p < 0.01), and more had diabetes (52% vs.",
+      "context_window": "3.2 years vs. 70.7 \u00b1 3.9, p < 0.01), and more had diabetes (52% vs. 28%). BAR lost more bodyweight after MBS than CON follo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1479",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1479,
+      "sentence": "28%).",
+      "context_window": "s vs. 70.7 \u00b1 3.9, p < 0.01), and more had diabetes (52% vs. 28%). BAR lost more bodyweight after MBS than CON following non",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1566",
+      "claim_type": "mean_sd",
+      "raw_text": "31.6 \u00b1 9.5",
+      "numeric_values": [
+        31.6,
+        9.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1566,
+      "sentence": "BAR lost more bodyweight after MBS than CON following nonsurgical treatment (BAR 31.6 \u00b1 9.5% vs.",
+      "context_window": "ght after MBS than CON following nonsurgical treatment (BAR 31.6 \u00b1 9.5% vs. CON 12.1 \u00b1 8.42%, p < 0.001). Fat free mass (FFM) was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1573",
+      "claim_type": "percentage",
+      "raw_text": "9.5%",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1573,
+      "sentence": "BAR lost more bodyweight after MBS than CON following nonsurgical treatment (BAR 31.6 \u00b1 9.5% vs.",
+      "context_window": "er MBS than CON following nonsurgical treatment (BAR 31.6 \u00b1 9.5% vs. CON 12.1 \u00b1 8.42%, p < 0.001). Fat free mass (FFM) was l",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1586",
+      "claim_type": "mean_sd",
+      "raw_text": "12.1 \u00b1 8.42",
+      "numeric_values": [
+        12.1,
+        8.42
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1586,
+      "sentence": "CON 12.1 \u00b1 8.42%, p < 0.001).",
+      "context_window": "ON following nonsurgical treatment (BAR 31.6 \u00b1 9.5% vs. CON 12.1 \u00b1 8.42%, p < 0.001). Fat free mass (FFM) was lower for BAR than fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1593",
+      "claim_type": "percentage",
+      "raw_text": "8.42%",
+      "numeric_values": [
+        8.42
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1593,
+      "sentence": "CON 12.1 \u00b1 8.42%, p < 0.001).",
+      "context_window": "owing nonsurgical treatment (BAR 31.6 \u00b1 9.5% vs. CON 12.1 \u00b1 8.42%, p < 0.001). Fat free mass (FFM) was lower for BAR than for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-1600",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1600,
+      "sentence": "CON 12.1 \u00b1 8.42%, p < 0.001).",
+      "context_window": "onsurgical treatment (BAR 31.6 \u00b1 9.5% vs. CON 12.1 \u00b1 8.42%, p < 0.001). Fat free mass (FFM) was lower for BAR than for CON, but %",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1696",
+      "claim_type": "mean_sd",
+      "raw_text": "64.7 \u00b1 18.1",
+      "numeric_values": [
+        64.7,
+        18.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1696,
+      "sentence": "Fat free mass (FFM) was lower for BAR than for CON, but %ALM/BMI was not different (64.7 \u00b1 18.1% vs.",
+      "context_window": "lower for BAR than for CON, but %ALM/BMI was not different (64.7 \u00b1 18.1% vs. 62.6 \u00b1 15.8, p = 0.53). Twenty percent to 56% of parti",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1703",
+      "claim_type": "percentage",
+      "raw_text": "18.1%",
+      "numeric_values": [
+        18.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1703,
+      "sentence": "Fat free mass (FFM) was lower for BAR than for CON, but %ALM/BMI was not different (64.7 \u00b1 18.1% vs.",
+      "context_window": "or BAR than for CON, but %ALM/BMI was not different (64.7 \u00b1 18.1% vs. 62.6 \u00b1 15.8, p = 0.53). Twenty percent to 56% of partic",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1713",
+      "claim_type": "mean_sd",
+      "raw_text": "62.6 \u00b1 15.8",
+      "numeric_values": [
+        62.6,
+        15.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1713,
+      "sentence": "62.6 \u00b1 15.8, p = 0.53).",
+      "context_window": "n for CON, but %ALM/BMI was not different (64.7 \u00b1 18.1% vs. 62.6 \u00b1 15.8, p = 0.53). Twenty percent to 56% of participants had low m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-1726",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.53",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1726,
+      "sentence": "62.6 \u00b1 15.8, p = 0.53).",
+      "context_window": "t %ALM/BMI was not different (64.7 \u00b1 18.1% vs. 62.6 \u00b1 15.8, p = 0.53). Twenty percent to 56% of participants had low muscle mass",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1755",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1755,
+      "sentence": "Twenty percent to 56% of participants had low muscle mass, depending on sex and criterium, but only 3% met the criteria for sarcopenia and 9% for sarcopenic obesity.",
+      "context_window": "(64.7 \u00b1 18.1% vs. 62.6 \u00b1 15.8, p = 0.53). Twenty percent to 56% of participants had low muscle mass, depending on sex and c",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1837",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1837,
+      "sentence": "Twenty percent to 56% of participants had low muscle mass, depending on sex and criterium, but only 3% met the criteria for sarcopenia and 9% for sarcopenic obesity.",
+      "context_window": "d low muscle mass, depending on sex and criterium, but only 3% met the criteria for sarcopenia and 9% for sarcopenic obesi",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1876",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1876,
+      "sentence": "Twenty percent to 56% of participants had low muscle mass, depending on sex and criterium, but only 3% met the criteria for sarcopenia and 9% for sarcopenic obesity.",
+      "context_window": "criterium, but only 3% met the criteria for sarcopenia and 9% for sarcopenic obesity. Protein intake tended to be higher",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1958",
+      "claim_type": "mean_sd",
+      "raw_text": "1.36 \u00b1 0.36",
+      "numeric_values": [
+        1.36,
+        0.36
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1958,
+      "sentence": "Protein intake tended to be higher in BAR than in CON (1.36 \u00b1 0.36 g/kg FFM/day vs.",
+      "context_window": "ity. Protein intake tended to be higher in BAR than in CON (1.36 \u00b1 0.36 g/kg FFM/day vs. 1.25 \u00b1 0.27, p = 0.09). Most participants",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1987",
+      "claim_type": "mean_sd",
+      "raw_text": "1.25 \u00b1 0.27",
+      "numeric_values": [
+        1.25,
+        0.27
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1987,
+      "sentence": "1.25 \u00b1 0.27, p = 0.09).",
+      "context_window": "be higher in BAR than in CON (1.36 \u00b1 0.36 g/kg FFM/day vs. 1.25 \u00b1 0.27, p = 0.09). Most participants did not meet optimal protein",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-2000",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2000,
+      "sentence": "1.25 \u00b1 0.27, p = 0.09).",
+      "context_window": "BAR than in CON (1.36 \u00b1 0.36 g/kg FFM/day vs. 1.25 \u00b1 0.27, p = 0.09). Most participants did not meet optimal protein intake rec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-352",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 352,
+      "sentence": "Notwithstanding, overweight prevalence in Europe is the highest in adults aged 65 to 74 years [ 1 ].",
+      "context_window": "ht prevalence in Europe is the highest in adults aged 65 to 74 years [ 1 ]. Simultaneously, sarcopenia is becoming a greater con",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-958",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 958,
+      "sentence": "Metabolic and bariatric surgery (MBS) is a proven treatment for obesity and typically results in 30% weight loss within the first year [ 4 ].",
+      "context_window": "is a proven treatment for obesity and typically results in 30% weight loss within the first year [ 4 ]. This rapid weight",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-1074",
+      "claim_type": "unit_value",
+      "raw_text": "7 kg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 1074,
+      "sentence": "This rapid weight loss leads to an average fat free mass (FFM) loss of 7 kg [ 5 ].",
+      "context_window": "weight loss leads to an average fat free mass (FFM) loss of 7 kg [ 5 ]. Several studies have investigated the increased risk",
+      "claim_role": "background",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-2413",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2413,
+      "sentence": "The aim of this study was to investigate sarcopenia and low muscle mass in adults older than 65 years who previously underwent MBS, compared to patients following nonsurgical obesity treatment.",
+      "context_window": "stigate sarcopenia and low muscle mass in adults older than 65 years who previously underwent MBS, compared to patients followin",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-63",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 63,
+      "sentence": "This was a cross\u2010sectional study comparing patients older than 65 years with previous MBS (BAR group) to a group of patients older than 65 years who received nonsurgical obesity management (CON group).",
+      "context_window": "s was a cross\u2010sectional study comparing patients older than 65 years with previous MBS (BAR group) to a group of patients older",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-136",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 136,
+      "sentence": "This was a cross\u2010sectional study comparing patients older than 65 years with previous MBS (BAR group) to a group of patients older than 65 years who received nonsurgical obesity management (CON group).",
+      "context_window": "previous MBS (BAR group) to a group of patients older than 65 years who received nonsurgical obesity management (CON group). Th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-736",
+      "claim_type": "mean_sd",
+      "raw_text": "6.88 \u00b1 1.0",
+      "numeric_values": [
+        6.88,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 736,
+      "sentence": "The sample size was based on a study which investigated sarcopenia in 60 women after MBS in comparison to a matched nonsurgical group where ALM index (ALM/height 2 ) was 6.88 \u00b1 1.0 kg/m 2 and 7.58 \u00b1 1.1, respectively [ 6 ].",
+      "context_window": "tched nonsurgical group where ALM index (ALM/height 2 ) was 6.88 \u00b1 1.0 kg/m 2 and 7.58 \u00b1 1.1, respectively [ 6 ]. A priori sample",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-743",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 743,
+      "sentence": "The sample size was based on a study which investigated sarcopenia in 60 women after MBS in comparison to a matched nonsurgical group where ALM index (ALM/height 2 ) was 6.88 \u00b1 1.0 kg/m 2 and 7.58 \u00b1 1.1, respectively [ 6 ].",
+      "context_window": "onsurgical group where ALM index (ALM/height 2 ) was 6.88 \u00b1 1.0 kg/m 2 and 7.58 \u00b1 1.1, respectively [ 6 ]. A priori sample siz",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-758",
+      "claim_type": "mean_sd",
+      "raw_text": "7.58 \u00b1 1.1",
+      "numeric_values": [
+        7.58,
+        1.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 758,
+      "sentence": "The sample size was based on a study which investigated sarcopenia in 60 women after MBS in comparison to a matched nonsurgical group where ALM index (ALM/height 2 ) was 6.88 \u00b1 1.0 kg/m 2 and 7.58 \u00b1 1.1, respectively [ 6 ].",
+      "context_window": "p where ALM index (ALM/height 2 ) was 6.88 \u00b1 1.0 kg/m 2 and 7.58 \u00b1 1.1, respectively [ 6 ]. A priori sample size calculation in G*",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-1503",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 1503,
+      "sentence": "We included patients from 1 year after MBS but did not limit the maximum time lapsed, to include the time since surgery as an effect modifier.",
+      "context_window": "logy (STROBE) guidelines [ 12 ]. We included patients from 1 year after MBS but did not limit the maximum time lapsed, to inc",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-1650",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1650,
+      "sentence": "We included adults older than 65 years who consented to participate in the study.",
+      "context_window": "urgery as an effect modifier. We included adults older than 65 years who consented to participate in the study. For BAR, patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-2150",
+      "claim_type": "unit_value",
+      "raw_text": "130 kg",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2150,
+      "sentence": "Exclusion criteria included diseases known to cause disease\u2010associated sarcopenia such as advanced organ failure, recent or current cancer, debilitating neuromuscular conditions, inability to mobilize without a wheelchair and weight above 130 kg, which precludes dual\u2010energy X\u2010ray absorptiometry (DXA) assessment.",
+      "context_window": "inability to mobilize without a wheelchair and weight above 130 kg, which precludes dual\u2010energy X\u2010ray absorptiometry (DXA) ass",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-2260",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 2260,
+      "sentence": "All study assessments occurred on 1 day after an overnight fast.",
+      "context_window": "ometry (DXA) assessment. All study assessments occurred on 1 day after an overnight fast. Weight and height were measured wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-2887",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2887,
+      "sentence": "Weight loss was calculated as percentage total weight loss (TWL) and as percentage excess weight loss (EWL), where excess weight corresponds to additional weight above an ideal body weight (IBW) at a BMI of 25 kg/m 2 .",
+      "context_window": "itional weight above an ideal body weight (IBW) at a BMI of 25 kg/m 2 . Both TWL and EWL were calculated from baseline to tre",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-3580",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3580,
+      "sentence": "Obesity was defined by fat percentage above 43% for females and 31% for males, based on age ranges recommended by the European Society for Clinical Nutrition and Metabolism/European Association for the Study of Obesity (ESPEN/EASO) sarcopenic obesity consensus statement [ 2 ].",
+      "context_window": "or ease of use. Obesity was defined by fat percentage above 43% for females and 31% for males, based on age ranges recommen",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-3600",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3600,
+      "sentence": "Obesity was defined by fat percentage above 43% for females and 31% for males, based on age ranges recommended by the European Society for Clinical Nutrition and Metabolism/European Association for the Study of Obesity (ESPEN/EASO) sarcopenic obesity consensus statement [ 2 ].",
+      "context_window": "ity was defined by fat percentage above 43% for females and 31% for males, based on age ranges recommended by the European",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-4554",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4554,
+      "sentence": "For reporting CRP as a measure of chronic low\u2010grade inflammation, values above 10 mg/L were excluded as probable acute inflammation.",
+      "context_window": "s a measure of chronic low\u2010grade inflammation, values above 10 mg/L were excluded as probable acute inflammation. HOMA\u2010IR (Ho",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-7067",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7067,
+      "sentence": "The total daily energy intake (kcal) and macronutrient intake were calculated as the average of 2 days.",
+      "context_window": "and macronutrient intake were calculated as the average of 2 days. To assess adequacy of protein intake for older adults, we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-8739",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8739,
+      "sentence": "Performance of the models were compared using the likelihood ratio test, and a model was retained if was p < 0.05 compared to the previous model.",
+      "context_window": "the likelihood ratio test, and a model was retained if was p < 0.05 compared to the previous model. Significance was set as p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-8804",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8804,
+      "sentence": "Significance was set as p < 0.05.",
+      "context_window": ".05 compared to the previous model. Significance was set as p < 0.05. All analyses were performed, and graphs were constructed u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-164",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 164,
+      "sentence": "Groups did not differ in the proportion of males included (BAR 40%, CON 35%. p = 0.84).",
+      "context_window": "ups did not differ in the proportion of males included (BAR 40%, CON 35%. p = 0.84). BAR participants were 2.4 years younge",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-173",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 173,
+      "sentence": "Groups did not differ in the proportion of males included (BAR 40%, CON 35%. p = 0.84).",
+      "context_window": "ot differ in the proportion of males included (BAR 40%, CON 35%. p = 0.84). BAR participants were 2.4 years younger than CO",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-178",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 178,
+      "sentence": "Groups did not differ in the proportion of males included (BAR 40%, CON 35%. p = 0.84).",
+      "context_window": "ffer in the proportion of males included (BAR 40%, CON 35%. p = 0.84). BAR participants were 2.4 years younger than CON particip",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-211",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 years",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 211,
+      "sentence": "BAR participants were 2.4 years younger than CON participants (68.3 \u00b1 3.2 years vs.",
+      "context_window": "ncluded (BAR 40%, CON 35%. p = 0.84). BAR participants were 2.4 years younger than CON participants (68.3 \u00b1 3.2 years vs. 70.7 \u00b1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-252",
+      "claim_type": "mean_sd",
+      "raw_text": "68.3 \u00b1 3.2",
+      "numeric_values": [
+        68.3,
+        3.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 252,
+      "sentence": "BAR participants were 2.4 years younger than CON participants (68.3 \u00b1 3.2 years vs.",
+      "context_window": "participants were 2.4 years younger than CON participants (68.3 \u00b1 3.2 years vs. 70.7 \u00b1 3.9, p < 0.001). BAR consisted of 25 parti",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-259",
+      "claim_type": "unit_value",
+      "raw_text": "3.2 years",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 259,
+      "sentence": "BAR participants were 2.4 years younger than CON participants (68.3 \u00b1 3.2 years vs.",
+      "context_window": "ipants were 2.4 years younger than CON participants (68.3 \u00b1 3.2 years vs. 70.7 \u00b1 3.9, p < 0.001). BAR consisted of 25 participant",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-273",
+      "claim_type": "mean_sd",
+      "raw_text": "70.7 \u00b1 3.9",
+      "numeric_values": [
+        70.7,
+        3.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 273,
+      "sentence": "70.7 \u00b1 3.9, p < 0.001).",
+      "context_window": "4 years younger than CON participants (68.3 \u00b1 3.2 years vs. 70.7 \u00b1 3.9, p < 0.001). BAR consisted of 25 participants after primary",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-285",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 285,
+      "sentence": "70.7 \u00b1 3.9, p < 0.001).",
+      "context_window": "ger than CON participants (68.3 \u00b1 3.2 years vs. 70.7 \u00b1 3.9, p < 0.001). BAR consisted of 25 participants after primary RYGB, 11 a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-465",
+      "claim_type": "mean_sd",
+      "raw_text": "9.3 \u00b1 5.9",
+      "numeric_values": [
+        9.3,
+        5.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 465,
+      "sentence": "Time since surgery was 9.3 \u00b1 5.9 years.",
+      "context_window": "ical banded gastroplasty (Table 1 ). Time since surgery was 9.3 \u00b1 5.9 years. CON had a higher prevalence of diabetes (52% vs. 28%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-471",
+      "claim_type": "unit_value",
+      "raw_text": "5.9 years",
+      "numeric_values": [
+        5.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 471,
+      "sentence": "Time since surgery was 9.3 \u00b1 5.9 years.",
+      "context_window": "anded gastroplasty (Table 1 ). Time since surgery was 9.3 \u00b1 5.9 years. CON had a higher prevalence of diabetes (52% vs. 28%, p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-523",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 523,
+      "sentence": "CON had a higher prevalence of diabetes (52% vs.",
+      "context_window": "s 9.3 \u00b1 5.9 years. CON had a higher prevalence of diabetes (52% vs. 28%, p < 0.05) and scored worse on the NAFLD\u2010fibrosis s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-531",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 531,
+      "sentence": "28%, p < 0.05) and scored worse on the NAFLD\u2010fibrosis score than the BAR (-0.25 \u00b1 0.97 vs. -0.74 \u00b1 1.19, p < 0.05).",
+      "context_window": "5.9 years. CON had a higher prevalence of diabetes (52% vs. 28%, p < 0.05) and scored worse on the NAFLD\u2010fibrosis score tha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-536",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 536,
+      "sentence": "28%, p < 0.05) and scored worse on the NAFLD\u2010fibrosis score than the BAR (-0.25 \u00b1 0.97 vs. -0.74 \u00b1 1.19, p < 0.05).",
+      "context_window": "ears. CON had a higher prevalence of diabetes (52% vs. 28%, p < 0.05) and scored worse on the NAFLD\u2010fibrosis score than the BAR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-606",
+      "claim_type": "mean_sd",
+      "raw_text": "0.25 \u00b1 0.97",
+      "numeric_values": [
+        0.25,
+        0.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 606,
+      "sentence": "28%, p < 0.05) and scored worse on the NAFLD\u2010fibrosis score than the BAR (-0.25 \u00b1 0.97 vs. -0.74 \u00b1 1.19, p < 0.05).",
+      "context_window": "and scored worse on the NAFLD\u2010fibrosis score than the BAR (-0.25 \u00b1 0.97 vs. -0.74 \u00b1 1.19, p < 0.05). BAR had lower levels of inflam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-623",
+      "claim_type": "mean_sd",
+      "raw_text": "0.74 \u00b1 1.19",
+      "numeric_values": [
+        0.74,
+        1.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 623,
+      "sentence": "28%, p < 0.05) and scored worse on the NAFLD\u2010fibrosis score than the BAR (-0.25 \u00b1 0.97 vs. -0.74 \u00b1 1.19, p < 0.05).",
+      "context_window": "on the NAFLD\u2010fibrosis score than the BAR (-0.25 \u00b1 0.97 vs. -0.74 \u00b1 1.19, p < 0.05). BAR had lower levels of inflammation and insuli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-636",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 636,
+      "sentence": "28%, p < 0.05) and scored worse on the NAFLD\u2010fibrosis score than the BAR (-0.25 \u00b1 0.97 vs. -0.74 \u00b1 1.19, p < 0.05).",
+      "context_window": "fibrosis score than the BAR (-0.25 \u00b1 0.97 vs. -0.74 \u00b1 1.19, p < 0.05). BAR had lower levels of inflammation and insulin resistan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-729",
+      "claim_type": "mean_sd",
+      "raw_text": "0.87 \u00b1 1.21",
+      "numeric_values": [
+        0.87,
+        1.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 729,
+      "sentence": "BAR had lower levels of inflammation and insulin resistance compared to CON (CRP: 0.87 \u00b1 1.21 mg/L vs.",
+      "context_window": "f inflammation and insulin resistance compared to CON (CRP: 0.87 \u00b1 1.21 mg/L vs. CON 1.86 \u00b1 1.80, p < 0.01; HOMA\u2010IR: 2.8 \u00b1 2.3 vs.",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-736",
+      "claim_type": "unit_value",
+      "raw_text": "1.21 mg",
+      "numeric_values": [
+        1.21
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 736,
+      "sentence": "BAR had lower levels of inflammation and insulin resistance compared to CON (CRP: 0.87 \u00b1 1.21 mg/L vs.",
+      "context_window": "mmation and insulin resistance compared to CON (CRP: 0.87 \u00b1 1.21 mg/L vs. CON 1.86 \u00b1 1.80, p < 0.01; HOMA\u2010IR: 2.8 \u00b1 2.3 vs. 5.0",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-754",
+      "claim_type": "mean_sd",
+      "raw_text": "1.86 \u00b1 1.80",
+      "numeric_values": [
+        1.86,
+        1.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 754,
+      "sentence": "CON 1.86 \u00b1 1.80, p < 0.01; HOMA\u2010IR: 2.8 \u00b1 2.3 vs.",
+      "context_window": "n resistance compared to CON (CRP: 0.87 \u00b1 1.21 mg/L vs. CON 1.86 \u00b1 1.80, p < 0.01; HOMA\u2010IR: 2.8 \u00b1 2.3 vs. 5.0 \u00b1 3.9, p < 0.001). Bo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-767",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 767,
+      "sentence": "CON 1.86 \u00b1 1.80, p < 0.01; HOMA\u2010IR: 2.8 \u00b1 2.3 vs.",
+      "context_window": "compared to CON (CRP: 0.87 \u00b1 1.21 mg/L vs. CON 1.86 \u00b1 1.80, p < 0.01; HOMA\u2010IR: 2.8 \u00b1 2.3 vs. 5.0 \u00b1 3.9, p < 0.001). Both groups",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-786",
+      "claim_type": "mean_sd",
+      "raw_text": "2.8 \u00b1 2.3",
+      "numeric_values": [
+        2.8,
+        2.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 786,
+      "sentence": "CON 1.86 \u00b1 1.80, p < 0.01; HOMA\u2010IR: 2.8 \u00b1 2.3 vs.",
+      "context_window": "P: 0.87 \u00b1 1.21 mg/L vs. CON 1.86 \u00b1 1.80, p < 0.01; HOMA\u2010IR: 2.8 \u00b1 2.3 vs. 5.0 \u00b1 3.9, p < 0.001). Both groups reported few gastroi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-800",
+      "claim_type": "mean_sd",
+      "raw_text": "5.0 \u00b1 3.9",
+      "numeric_values": [
+        5.0,
+        3.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 800,
+      "sentence": "5.0 \u00b1 3.9, p < 0.001).",
+      "context_window": "mg/L vs. CON 1.86 \u00b1 1.80, p < 0.01; HOMA\u2010IR: 2.8 \u00b1 2.3 vs. 5.0 \u00b1 3.9, p < 0.001). Both groups reported few gastrointestinal symp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-811",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 811,
+      "sentence": "5.0 \u00b1 3.9, p < 0.001).",
+      "context_window": "ON 1.86 \u00b1 1.80, p < 0.01; HOMA\u2010IR: 2.8 \u00b1 2.3 vs. 5.0 \u00b1 3.9, p < 0.001). Both groups reported few gastrointestinal symptoms (GSRS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-888",
+      "claim_type": "mean_sd",
+      "raw_text": "1.73 \u00b1 0.77",
+      "numeric_values": [
+        1.73,
+        0.77
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 888,
+      "sentence": "Both groups reported few gastrointestinal symptoms (GSRS for BAR 1.73 \u00b1 0.77, CON 1.71 \u00b1 0.75, p = 0.89).",
+      "context_window": "groups reported few gastrointestinal symptoms (GSRS for BAR 1.73 \u00b1 0.77, CON 1.71 \u00b1 0.75, p = 0.89). Flow diagram of study recruit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-905",
+      "claim_type": "mean_sd",
+      "raw_text": "1.71 \u00b1 0.75",
+      "numeric_values": [
+        1.71,
+        0.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 905,
+      "sentence": "Both groups reported few gastrointestinal symptoms (GSRS for BAR 1.73 \u00b1 0.77, CON 1.71 \u00b1 0.75, p = 0.89).",
+      "context_window": "ew gastrointestinal symptoms (GSRS for BAR 1.73 \u00b1 0.77, CON 1.71 \u00b1 0.75, p = 0.89). Flow diagram of study recruitment. Patient ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-918",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.89",
+      "numeric_values": [
+        0.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 918,
+      "sentence": "Both groups reported few gastrointestinal symptoms (GSRS for BAR 1.73 \u00b1 0.77, CON 1.71 \u00b1 0.75, p = 0.89).",
+      "context_window": "stinal symptoms (GSRS for BAR 1.73 \u00b1 0.77, CON 1.71 \u00b1 0.75, p = 0.89). Flow diagram of study recruitment. Patient characterist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-1489",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1489,
+      "sentence": "Abbreviations: BAR, group after bariatric surgery; CON, nonsurgical group; eGFR, estimated glomerular filtration rate; EQ 5D5L, EuroQol 5\u2010dimensions 5\u2010levels questionnaire; GLP\u20101, glucagon\u2010like peptide\u20101; HbA1c, Haemoglobin A1C; IPAQ, International Physical Activity Questionnaire; METS, metabolic equivalents of task; NAFLD, nonalcoholic fatty liver disease.\n\np < 0.05.\n\np < 0.01.",
+      "context_window": "ivalents of task; NAFLD, nonalcoholic fatty liver disease. p < 0.05. p < 0.01. Weight, BMI, weight loss and weight regain are",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-1500",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1500,
+      "sentence": "Abbreviations: BAR, group after bariatric surgery; CON, nonsurgical group; eGFR, estimated glomerular filtration rate; EQ 5D5L, EuroQol 5\u2010dimensions 5\u2010levels questionnaire; GLP\u20101, glucagon\u2010like peptide\u20101; HbA1c, Haemoglobin A1C; IPAQ, International Physical Activity Questionnaire; METS, metabolic equivalents of task; NAFLD, nonalcoholic fatty liver disease.\n\np < 0.05.\n\np < 0.01.",
+      "context_window": "task; NAFLD, nonalcoholic fatty liver disease. p < 0.05. p < 0.01. Weight, BMI, weight loss and weight regain are presented",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1633",
+      "claim_type": "mean_sd",
+      "raw_text": "42.9 \u00b1 6.2",
+      "numeric_values": [
+        42.9,
+        6.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1633,
+      "sentence": "BAR patients had a higher BMI than CON at baseline (42.9 \u00b1 6.2 kg/m 2 vs.",
+      "context_window": "ble 2 . BAR patients had a higher BMI than CON at baseline (42.9 \u00b1 6.2 kg/m 2 vs. 38.2 \u00b1 3.6, p < 0.001). As expected, BAR patient",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-1640",
+      "claim_type": "unit_value",
+      "raw_text": "6.2 kg",
+      "numeric_values": [
+        6.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1640,
+      "sentence": "BAR patients had a higher BMI than CON at baseline (42.9 \u00b1 6.2 kg/m 2 vs.",
+      "context_window": "BAR patients had a higher BMI than CON at baseline (42.9 \u00b1 6.2 kg/m 2 vs. 38.2 \u00b1 3.6, p < 0.001). As expected, BAR patients l",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1655",
+      "claim_type": "mean_sd",
+      "raw_text": "38.2 \u00b1 3.6",
+      "numeric_values": [
+        38.2,
+        3.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1655,
+      "sentence": "38.2 \u00b1 3.6, p < 0.001).",
+      "context_window": "ad a higher BMI than CON at baseline (42.9 \u00b1 6.2 kg/m 2 vs. 38.2 \u00b1 3.6, p < 0.001). As expected, BAR patients lost more weight aft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-1667",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1667,
+      "sentence": "38.2 \u00b1 3.6, p < 0.001).",
+      "context_window": "BMI than CON at baseline (42.9 \u00b1 6.2 kg/m 2 vs. 38.2 \u00b1 3.6, p < 0.001). As expected, BAR patients lost more weight after MBS than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1798",
+      "claim_type": "mean_sd",
+      "raw_text": "31.6 \u00b1 9.5",
+      "numeric_values": [
+        31.6,
+        9.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1798,
+      "sentence": "As expected, BAR patients lost more weight after MBS than CON patients who lost weight with nonsurgical treatment (TWL 31.6 \u00b1 9.5% vs.",
+      "context_window": "ON patients who lost weight with nonsurgical treatment (TWL 31.6 \u00b1 9.5% vs. 12.1 \u00b1 8.42%, p < 0.001). CON regained a greater propo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1805",
+      "claim_type": "percentage",
+      "raw_text": "9.5%",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1805,
+      "sentence": "As expected, BAR patients lost more weight after MBS than CON patients who lost weight with nonsurgical treatment (TWL 31.6 \u00b1 9.5% vs.",
+      "context_window": "ents who lost weight with nonsurgical treatment (TWL 31.6 \u00b1 9.5% vs. 12.1 \u00b1 8.42%, p < 0.001). CON regained a greater propor",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1814",
+      "claim_type": "mean_sd",
+      "raw_text": "12.1 \u00b1 8.42",
+      "numeric_values": [
+        12.1,
+        8.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1814,
+      "sentence": "12.1 \u00b1 8.42%, p < 0.001).",
+      "context_window": "lost weight with nonsurgical treatment (TWL 31.6 \u00b1 9.5% vs. 12.1 \u00b1 8.42%, p < 0.001). CON regained a greater proportion of lost wei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1821",
+      "claim_type": "percentage",
+      "raw_text": "8.42%",
+      "numeric_values": [
+        8.42
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1821,
+      "sentence": "12.1 \u00b1 8.42%, p < 0.001).",
+      "context_window": "ight with nonsurgical treatment (TWL 31.6 \u00b1 9.5% vs. 12.1 \u00b1 8.42%, p < 0.001). CON regained a greater proportion of lost weig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-1828",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1828,
+      "sentence": "12.1 \u00b1 8.42%, p < 0.001).",
+      "context_window": "th nonsurgical treatment (TWL 31.6 \u00b1 9.5% vs. 12.1 \u00b1 8.42%, p < 0.001). CON regained a greater proportion of lost weight compared",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1906",
+      "claim_type": "mean_sd",
+      "raw_text": "41.3 \u00b1 48.7",
+      "numeric_values": [
+        41.3,
+        48.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1906,
+      "sentence": "CON regained a greater proportion of lost weight compared to BAR (41.3 \u00b1 48.7% vs.",
+      "context_window": "gained a greater proportion of lost weight compared to BAR (41.3 \u00b1 48.7% vs. 22.4 \u00b1 21.9, p < 0.05). Bodyweight and weight loss hi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1913",
+      "claim_type": "percentage",
+      "raw_text": "48.7%",
+      "numeric_values": [
+        48.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1913,
+      "sentence": "CON regained a greater proportion of lost weight compared to BAR (41.3 \u00b1 48.7% vs.",
+      "context_window": "a greater proportion of lost weight compared to BAR (41.3 \u00b1 48.7% vs. 22.4 \u00b1 21.9, p < 0.05). Bodyweight and weight loss his",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-1923",
+      "claim_type": "mean_sd",
+      "raw_text": "22.4 \u00b1 21.9",
+      "numeric_values": [
+        22.4,
+        21.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1923,
+      "sentence": "22.4 \u00b1 21.9, p < 0.05).",
+      "context_window": "proportion of lost weight compared to BAR (41.3 \u00b1 48.7% vs. 22.4 \u00b1 21.9, p < 0.05). Bodyweight and weight loss history by group.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-1936",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1936,
+      "sentence": "22.4 \u00b1 21.9, p < 0.05).",
+      "context_window": "lost weight compared to BAR (41.3 \u00b1 48.7% vs. 22.4 \u00b1 21.9, p < 0.05). Bodyweight and weight loss history by group. Note: Cont",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-2186",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2186,
+      "sentence": "Groups comparisons over time points with Kruskal-Wallis's test. * p < 0.001 for time effect; ** p < 0.001 for group effect.",
+      "context_window": "comparisons over time points with Kruskal-Wallis's test. * p < 0.001 for time effect; ** p < 0.001 for group effect. Abbreviati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-2216",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2216,
+      "sentence": "Groups comparisons over time points with Kruskal-Wallis's test. * p < 0.001 for time effect; ** p < 0.001 for group effect.",
+      "context_window": "with Kruskal-Wallis's test. * p < 0.001 for time effect; ** p < 0.001 for group effect. Abbreviations: BAR, group after bariatri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-2369",
+      "claim_type": "mean_sd",
+      "raw_text": "39.2 \u00b1 7.8",
+      "numeric_values": [
+        39.2,
+        7.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2369,
+      "sentence": "Fat percentage was similar between CON and BAR (39.2 \u00b1 7.8% vs.",
+      "context_window": "cal group. Fat percentage was similar between CON and BAR (39.2 \u00b1 7.8% vs. 41.6 \u00b1 6.4, p = 0.09), but FFM and ALMI were lower in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2376",
+      "claim_type": "percentage",
+      "raw_text": "7.8%",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2376,
+      "sentence": "Fat percentage was similar between CON and BAR (39.2 \u00b1 7.8% vs.",
+      "context_window": "up. Fat percentage was similar between CON and BAR (39.2 \u00b1 7.8% vs. 41.6 \u00b1 6.4, p = 0.09), but FFM and ALMI were lower in B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-2385",
+      "claim_type": "mean_sd",
+      "raw_text": "41.6 \u00b1 6.4",
+      "numeric_values": [
+        41.6,
+        6.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2385,
+      "sentence": "41.6 \u00b1 6.4, p = 0.09), but FFM and ALMI were lower in BAR compared to CON (FFM: 52.0 \u00b1 12.6 kg vs.",
+      "context_window": "percentage was similar between CON and BAR (39.2 \u00b1 7.8% vs. 41.6 \u00b1 6.4, p = 0.09), but FFM and ALMI were lower in BAR compared to",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-2397",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2397,
+      "sentence": "41.6 \u00b1 6.4, p = 0.09), but FFM and ALMI were lower in BAR compared to CON (FFM: 52.0 \u00b1 12.6 kg vs.",
+      "context_window": "as similar between CON and BAR (39.2 \u00b1 7.8% vs. 41.6 \u00b1 6.4, p = 0.09), but FFM and ALMI were lower in BAR compared to CON (FFM:",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-2465",
+      "claim_type": "mean_sd",
+      "raw_text": "52.0 \u00b1 12.6",
+      "numeric_values": [
+        52.0,
+        12.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2465,
+      "sentence": "41.6 \u00b1 6.4, p = 0.09), but FFM and ALMI were lower in BAR compared to CON (FFM: 52.0 \u00b1 12.6 kg vs.",
+      "context_window": "), but FFM and ALMI were lower in BAR compared to CON (FFM: 52.0 \u00b1 12.6 kg vs. 57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs. 7.",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-2472",
+      "claim_type": "unit_value",
+      "raw_text": "12.6 kg",
+      "numeric_values": [
+        12.6
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2472,
+      "sentence": "41.6 \u00b1 6.4, p = 0.09), but FFM and ALMI were lower in BAR compared to CON (FFM: 52.0 \u00b1 12.6 kg vs.",
+      "context_window": "FFM and ALMI were lower in BAR compared to CON (FFM: 52.0 \u00b1 12.6 kg vs. 57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs. 7.9 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-2484",
+      "claim_type": "mean_sd",
+      "raw_text": "57.5 \u00b1 11.5",
+      "numeric_values": [
+        57.5,
+        11.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2484,
+      "sentence": "57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs.",
+      "context_window": "were lower in BAR compared to CON (FFM: 52.0 \u00b1 12.6 kg vs. 57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs. 7.9 \u00b1 1.4, p < 0.05).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-2497",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2497,
+      "sentence": "57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs.",
+      "context_window": "n BAR compared to CON (FFM: 52.0 \u00b1 12.6 kg vs. 57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs. 7.9 \u00b1 1.4, p < 0.05). However,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-2513",
+      "claim_type": "mean_sd",
+      "raw_text": "7.2 \u00b1 1.3",
+      "numeric_values": [
+        7.2,
+        1.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2513,
+      "sentence": "57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs.",
+      "context_window": "o CON (FFM: 52.0 \u00b1 12.6 kg vs. 57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs. 7.9 \u00b1 1.4, p < 0.05). However, relative muscular",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-2519",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 kg",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2519,
+      "sentence": "57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs.",
+      "context_window": "(FFM: 52.0 \u00b1 12.6 kg vs. 57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs. 7.9 \u00b1 1.4, p < 0.05). However, relative muscularity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-2534",
+      "claim_type": "mean_sd",
+      "raw_text": "7.9 \u00b1 1.4",
+      "numeric_values": [
+        7.9,
+        1.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2534,
+      "sentence": "7.9 \u00b1 1.4, p < 0.05).",
+      "context_window": ".6 kg vs. 57.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs. 7.9 \u00b1 1.4, p < 0.05). However, relative muscularity using %ALM/BMI wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-2545",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2545,
+      "sentence": "7.9 \u00b1 1.4, p < 0.05).",
+      "context_window": "7.5 \u00b1 11.5, p < 0.05; ALMI: 7.2 \u00b1 1.3 kg/m 2 vs. 7.9 \u00b1 1.4, p < 0.05). However, relative muscularity using %ALM/BMI was not diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-2643",
+      "claim_type": "mean_sd",
+      "raw_text": "64.7 \u00b1 18.1",
+      "numeric_values": [
+        64.7,
+        18.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2643,
+      "sentence": "However, relative muscularity using %ALM/BMI was not different between the groups (BAR 64.7 \u00b1 18.1% vs.",
+      "context_window": "ty using %ALM/BMI was not different between the groups (BAR 64.7 \u00b1 18.1% vs. CON 62.6 \u00b1 15.8%, p = 0.53). The prevalence of low mus",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2650",
+      "claim_type": "percentage",
+      "raw_text": "18.1%",
+      "numeric_values": [
+        18.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2650,
+      "sentence": "However, relative muscularity using %ALM/BMI was not different between the groups (BAR 64.7 \u00b1 18.1% vs.",
+      "context_window": "g %ALM/BMI was not different between the groups (BAR 64.7 \u00b1 18.1% vs. CON 62.6 \u00b1 15.8%, p = 0.53). The prevalence of low musc",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-2664",
+      "claim_type": "mean_sd",
+      "raw_text": "62.6 \u00b1 15.8",
+      "numeric_values": [
+        62.6,
+        15.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2664,
+      "sentence": "CON 62.6 \u00b1 15.8%, p = 0.53).",
+      "context_window": "not different between the groups (BAR 64.7 \u00b1 18.1% vs. CON 62.6 \u00b1 15.8%, p = 0.53). The prevalence of low muscle mass based on the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2671",
+      "claim_type": "percentage",
+      "raw_text": "15.8%",
+      "numeric_values": [
+        15.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2671,
+      "sentence": "CON 62.6 \u00b1 15.8%, p = 0.53).",
+      "context_window": "fferent between the groups (BAR 64.7 \u00b1 18.1% vs. CON 62.6 \u00b1 15.8%, p = 0.53). The prevalence of low muscle mass based on the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-2678",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.53",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2678,
+      "sentence": "CON 62.6 \u00b1 15.8%, p = 0.53).",
+      "context_window": "between the groups (BAR 64.7 \u00b1 18.1% vs. CON 62.6 \u00b1 15.8%, p = 0.53). The prevalence of low muscle mass based on the EWGSOP1 an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2783",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2783,
+      "sentence": "The prevalence of low muscle mass based on the EWGSOP1 and ESPEN/EASO criteria varied between 20% and 47% based on sex and treatment group but was not statistically different for the whole group or when separated by sex (Table 3 ).",
+      "context_window": "based on the EWGSOP1 and ESPEN/EASO criteria varied between 20% and 47% based on sex and treatment group but was not statis",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2791",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2791,
+      "sentence": "The prevalence of low muscle mass based on the EWGSOP1 and ESPEN/EASO criteria varied between 20% and 47% based on sex and treatment group but was not statistically different for the whole group or when separated by sex (Table 3 ).",
+      "context_window": "the EWGSOP1 and ESPEN/EASO criteria varied between 20% and 47% based on sex and treatment group but was not statistically",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-3121",
+      "claim_type": "mean_sd",
+      "raw_text": "5.9 \u00b1 6.9",
+      "numeric_values": [
+        5.9,
+        6.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3121,
+      "sentence": "Physical activity levels were similar between groups (metabolic equivalent of task 5.9 \u00b1 6.9 h/day vs.5.8 \u00b1 8.6, p = 0.95).",
+      "context_window": "s were similar between groups (metabolic equivalent of task 5.9 \u00b1 6.9 h/day vs.5.8 \u00b1 8.6, p = 0.95). Body composition and sarcop",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-3140",
+      "claim_type": "mean_sd",
+      "raw_text": "5.8 \u00b1 8.6",
+      "numeric_values": [
+        5.8,
+        8.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3140,
+      "sentence": "Physical activity levels were similar between groups (metabolic equivalent of task 5.9 \u00b1 6.9 h/day vs.5.8 \u00b1 8.6, p = 0.95).",
+      "context_window": "een groups (metabolic equivalent of task 5.9 \u00b1 6.9 h/day vs.5.8 \u00b1 8.6, p = 0.95). Body composition and sarcopenia assessment by",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-3151",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.95",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3151,
+      "sentence": "Physical activity levels were similar between groups (metabolic equivalent of task 5.9 \u00b1 6.9 h/day vs.5.8 \u00b1 8.6, p = 0.95).",
+      "context_window": "(metabolic equivalent of task 5.9 \u00b1 6.9 h/day vs.5.8 \u00b1 8.6, p = 0.95). Body composition and sarcopenia assessment by group and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-3724",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3724,
+      "sentence": "Abbreviations: ALM, appendicular lean mass; ALMI, appendicular lean mass index; BAR, group after bariatric surgery; BMI, body mass index; CON, nonsurgical group; SPPB, short physical performance battery.\n\np < 0.05.\n\np < 0.001.",
+      "context_window": "nsurgical group; SPPB, short physical performance battery. p < 0.05. p < 0.001. The EWGSOP1 criteria for sarcopenia was only",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-3735",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3735,
+      "sentence": "Abbreviations: ALM, appendicular lean mass; ALMI, appendicular lean mass index; BAR, group after bariatric surgery; BMI, body mass index; CON, nonsurgical group; SPPB, short physical performance battery.\n\np < 0.05.\n\np < 0.001.",
+      "context_window": "roup; SPPB, short physical performance battery. p < 0.05. p < 0.001. The EWGSOP1 criteria for sarcopenia was only met in 3% of",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-3799",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3799,
+      "sentence": "The EWGSOP1 criteria for sarcopenia was only met in 3% of the total study population, and the ESPEN/EASO sarcopenic obesity prevalence was 9%.",
+      "context_window": "0.001. The EWGSOP1 criteria for sarcopenia was only met in 3% of the total study population, and the ESPEN/EASO sarcopeni",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-3886",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3886,
+      "sentence": "The EWGSOP1 criteria for sarcopenia was only met in 3% of the total study population, and the ESPEN/EASO sarcopenic obesity prevalence was 9%.",
+      "context_window": "ation, and the ESPEN/EASO sarcopenic obesity prevalence was 9%. Although sarcopenic obesity prevalence was 15% in CON and",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-3933",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3933,
+      "sentence": "Although sarcopenic obesity prevalence was 15% in CON and 4% in BAR, this was not significant ( p = 0.159).",
+      "context_window": "evalence was 9%. Although sarcopenic obesity prevalence was 15% in CON and 4% in BAR, this was not significant ( p = 0.159)",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-3948",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3948,
+      "sentence": "Although sarcopenic obesity prevalence was 15% in CON and 4% in BAR, this was not significant ( p = 0.159).",
+      "context_window": ". Although sarcopenic obesity prevalence was 15% in CON and 4% in BAR, this was not significant ( p = 0.159). Sarcopenia i",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-3986",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.159",
+      "numeric_values": [
+        0.159
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3986,
+      "sentence": "Although sarcopenic obesity prevalence was 15% in CON and 4% in BAR, this was not significant ( p = 0.159).",
+      "context_window": "ce was 15% in CON and 4% in BAR, this was not significant ( p = 0.159). Sarcopenia index was not different between the groups (81",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-4053",
+      "claim_type": "mean_sd",
+      "raw_text": "81.7 \u00b1 20.3",
+      "numeric_values": [
+        81.7,
+        20.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4053,
+      "sentence": "Sarcopenia index was not different between the groups (81.7 \u00b1 20.3 vs.",
+      "context_window": "59). Sarcopenia index was not different between the groups (81.7 \u00b1 20.3 vs. 82.0 \u00b1 15.3, p = 0.939). Energy, fat and carbohydrate",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-4069",
+      "claim_type": "mean_sd",
+      "raw_text": "82.0 \u00b1 15.3",
+      "numeric_values": [
+        82.0,
+        15.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4069,
+      "sentence": "82.0 \u00b1 15.3, p = 0.939).",
+      "context_window": "index was not different between the groups (81.7 \u00b1 20.3 vs. 82.0 \u00b1 15.3, p = 0.939). Energy, fat and carbohydrate intakes were sim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-4082",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.939",
+      "numeric_values": [
+        0.939
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4082,
+      "sentence": "82.0 \u00b1 15.3, p = 0.939).",
+      "context_window": "different between the groups (81.7 \u00b1 20.3 vs. 82.0 \u00b1 15.3, p = 0.939). Energy, fat and carbohydrate intakes were similar betwee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-4210",
+      "claim_type": "mean_sd",
+      "raw_text": "1875 \u00b1 480",
+      "numeric_values": [
+        1875.0,
+        480.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4210,
+      "sentence": "Dietary intake for males was 1875 \u00b1 480 kcal/day and for females was 1420 \u00b1 321 kcal/day.",
+      "context_window": "en the BAR and CON (Table 4 ). Dietary intake for males was 1875 \u00b1 480 kcal/day and for females was 1420 \u00b1 321 kcal/day. For compa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-4250",
+      "claim_type": "mean_sd",
+      "raw_text": "1420 \u00b1 321",
+      "numeric_values": [
+        1420.0,
+        321.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4250,
+      "sentence": "Dietary intake for males was 1875 \u00b1 480 kcal/day and for females was 1420 \u00b1 321 kcal/day.",
+      "context_window": "ntake for males was 1875 \u00b1 480 kcal/day and for females was 1420 \u00b1 321 kcal/day. For comparison, REE was 1761 \u00b1 198 kcal/day for m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-4295",
+      "claim_type": "mean_sd",
+      "raw_text": "1761 \u00b1 198",
+      "numeric_values": [
+        1761.0,
+        198.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4295,
+      "sentence": "For comparison, REE was 1761 \u00b1 198 kcal/day for males and 1357 \u00b1 189 kcal/day for females.",
+      "context_window": "or females was 1420 \u00b1 321 kcal/day. For comparison, REE was 1761 \u00b1 198 kcal/day for males and 1357 \u00b1 189 kcal/day for females. Pro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-4329",
+      "claim_type": "mean_sd",
+      "raw_text": "1357 \u00b1 189",
+      "numeric_values": [
+        1357.0,
+        189.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4329,
+      "sentence": "For comparison, REE was 1761 \u00b1 198 kcal/day for males and 1357 \u00b1 189 kcal/day for females.",
+      "context_window": ". For comparison, REE was 1761 \u00b1 198 kcal/day for males and 1357 \u00b1 189 kcal/day for females. Protein intake per kilogramme actual",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-4443",
+      "claim_type": "mean_sd",
+      "raw_text": "0.83 \u00b1 0.25",
+      "numeric_values": [
+        0.83,
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4443,
+      "sentence": "Protein intake per kilogramme actual bodyweight was higher for BAR than for CON (0.83 \u00b1 0.25 g/kg/day vs.",
+      "context_window": "logramme actual bodyweight was higher for BAR than for CON (0.83 \u00b1 0.25 g/kg/day vs. 0.73 \u00b1 18, p < 0.05). This difference remained",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-4468",
+      "claim_type": "mean_sd",
+      "raw_text": "0.73 \u00b1 18",
+      "numeric_values": [
+        0.73,
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4468,
+      "sentence": "0.73 \u00b1 18, p < 0.05).",
+      "context_window": "t was higher for BAR than for CON (0.83 \u00b1 0.25 g/kg/day vs. 0.73 \u00b1 18, p < 0.05). This difference remained as a tendency when exp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-4479",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4479,
+      "sentence": "0.73 \u00b1 18, p < 0.05).",
+      "context_window": "r for BAR than for CON (0.83 \u00b1 0.25 g/kg/day vs. 0.73 \u00b1 18, p < 0.05). This difference remained as a tendency when expressed rel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-4565",
+      "claim_type": "mean_sd",
+      "raw_text": "1.36 \u00b1 0.36",
+      "numeric_values": [
+        1.36,
+        0.36
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4565,
+      "sentence": "This difference remained as a tendency when expressed relative to FFM (BAR 1.36 \u00b1 0.36 g/kg/day FFM vs.",
+      "context_window": "remained as a tendency when expressed relative to FFM (BAR 1.36 \u00b1 0.36 g/kg/day FFM vs. CON 1.25 \u00b1 0.27, p = 0.09). Dietary intak",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-4598",
+      "claim_type": "mean_sd",
+      "raw_text": "1.25 \u00b1 0.27",
+      "numeric_values": [
+        1.25,
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4598,
+      "sentence": "CON 1.25 \u00b1 0.27, p = 0.09).",
+      "context_window": "essed relative to FFM (BAR 1.36 \u00b1 0.36 g/kg/day FFM vs. CON 1.25 \u00b1 0.27, p = 0.09). Dietary intake by group. Note: Continuous dat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-4611",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4611,
+      "sentence": "CON 1.25 \u00b1 0.27, p = 0.09).",
+      "context_window": "e to FFM (BAR 1.36 \u00b1 0.36 g/kg/day FFM vs. CON 1.25 \u00b1 0.27, p = 0.09). Dietary intake by group. Note: Continuous data are repo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-4913",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4913,
+      "sentence": "Abbreviations: BAR, group after bariatric surgery; BW, body weight; CON, nonsurgical group; FFM, fat free mass; IBW, ideal body weight.\n\np < 0.05.",
+      "context_window": "urgical group; FFM, fat free mass; IBW, ideal body weight. p < 0.05. For BAR, 32% of participants did not meet the minimum int",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-4933",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4933,
+      "sentence": "For BAR, 32% of participants did not meet the minimum intake level of 60 g of protein/day and only 4% met the 1.5 g/kg IBW recommended after MBS (Figure 2 ) [ 28 ].",
+      "context_window": "fat free mass; IBW, ideal body weight. p < 0.05. For BAR, 32% of participants did not meet the minimum intake level of 60",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-5023",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5023,
+      "sentence": "For BAR, 32% of participants did not meet the minimum intake level of 60 g of protein/day and only 4% met the 1.5 g/kg IBW recommended after MBS (Figure 2 ) [ 28 ].",
+      "context_window": "et the minimum intake level of 60 g of protein/day and only 4% met the 1.5 g/kg IBW recommended after MBS (Figure 2 ) [ 28",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-5175",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5175,
+      "sentence": "When comparing to recommendations of 1 g/kg/BW for older adults, this was achieved by 13% of the total population based on actual body weight [ 29 ].",
+      "context_window": "dations of 1 g/kg/BW for older adults, this was achieved by 13% of the total population based on actual body weight [ 29 ].",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-5255",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5255,
+      "sentence": "Similarly, only 19% of all patients achieved 1.6 g/kg FFM recommended for older adults [ 27 ].",
+      "context_window": "ulation based on actual body weight [ 29 ]. Similarly, only 19% of all patients achieved 1.6 g/kg FFM recommended for older",
+      "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-5912",
+      "claim_type": "mean_sd",
+      "raw_text": "0.84 \u00b1 0.14",
+      "numeric_values": [
+        0.84,
+        0.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5912,
+      "sentence": "HRQoL index score was higher for BAR than for CON (0.84 \u00b1 0.14 vs.",
+      "context_window": "method. HRQoL index score was higher for BAR than for CON (0.84 \u00b1 0.14 vs. 0.75 \u00b1 0.25, p < 0.05). Self\u2010rated health (BAR 75.62 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-5928",
+      "claim_type": "mean_sd",
+      "raw_text": "0.75 \u00b1 0.25",
+      "numeric_values": [
+        0.75,
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5928,
+      "sentence": "0.75 \u00b1 0.25, p < 0.05).",
+      "context_window": "ndex score was higher for BAR than for CON (0.84 \u00b1 0.14 vs. 0.75 \u00b1 0.25, p < 0.05). Self\u2010rated health (BAR 75.62 \u00b1 16.71 vs. CON 75",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-5941",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5941,
+      "sentence": "0.75 \u00b1 0.25, p < 0.05).",
+      "context_window": "s higher for BAR than for CON (0.84 \u00b1 0.14 vs. 0.75 \u00b1 0.25, p < 0.05). Self\u2010rated health (BAR 75.62 \u00b1 16.71 vs. CON 75.84 \u00b1 12.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-5975",
+      "claim_type": "mean_sd",
+      "raw_text": "75.62 \u00b1 16.71",
+      "numeric_values": [
+        75.62,
+        16.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5975,
+      "sentence": "Self\u2010rated health (BAR 75.62 \u00b1 16.71 vs.",
+      "context_window": "4 \u00b1 0.14 vs. 0.75 \u00b1 0.25, p < 0.05). Self\u2010rated health (BAR 75.62 \u00b1 16.71 vs. CON 75.84 \u00b1 12.94, p = 0.941) and the percentage of par",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-msd-5997",
+      "claim_type": "mean_sd",
+      "raw_text": "75.84 \u00b1 12.94",
+      "numeric_values": [
+        75.84,
+        12.94
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5997,
+      "sentence": "CON 75.84 \u00b1 12.94, p = 0.941) and the percentage of participants with optimal health (BAR 23% vs.",
+      "context_window": "25, p < 0.05). Self\u2010rated health (BAR 75.62 \u00b1 16.71 vs. CON 75.84 \u00b1 12.94, p = 0.941) and the percentage of participants with optimal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-6012",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.941",
+      "numeric_values": [
+        0.941
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6012,
+      "sentence": "CON 75.84 \u00b1 12.94, p = 0.941) and the percentage of participants with optimal health (BAR 23% vs.",
+      "context_window": "Self\u2010rated health (BAR 75.62 \u00b1 16.71 vs. CON 75.84 \u00b1 12.94, p = 0.941) and the percentage of participants with optimal health (BA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-6083",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6083,
+      "sentence": "CON 75.84 \u00b1 12.94, p = 0.941) and the percentage of participants with optimal health (BAR 23% vs.",
+      "context_window": "and the percentage of participants with optimal health (BAR 23% vs. CON 20%, p = 0.635) were not different between groups.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-6095",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6095,
+      "sentence": "CON 20%, p = 0.635) were not different between groups.",
+      "context_window": "entage of participants with optimal health (BAR 23% vs. CON 20%, p = 0.635) were not different between groups. In the line",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-6100",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.635",
+      "numeric_values": [
+        0.635
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6100,
+      "sentence": "CON 20%, p = 0.635) were not different between groups.",
+      "context_window": "e of participants with optimal health (BAR 23% vs. CON 20%, p = 0.635) were not different between groups. In the linear regressi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-6210",
+      "claim_type": "unit_value",
+      "raw_text": "4.39 kg",
+      "numeric_values": [
+        4.39
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6210,
+      "sentence": "In the linear regression model, male sex was associated with a 4.39 kg higher ALM compared to females ( p < 0.001).",
+      "context_window": "the linear regression model, male sex was associated with a 4.39 kg higher ALM compared to females ( p < 0.001). Each unit incr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-6251",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6251,
+      "sentence": "In the linear regression model, male sex was associated with a 4.39 kg higher ALM compared to females ( p < 0.001).",
+      "context_window": "associated with a 4.39 kg higher ALM compared to females ( p < 0.001). Each unit increase in BMI corresponded to a 1.48 kg incre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-6307",
+      "claim_type": "unit_value",
+      "raw_text": "1.48 kg",
+      "numeric_values": [
+        1.48
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6307,
+      "sentence": "Each unit increase in BMI corresponded to a 1.48 kg increase in ALM ( p < 0.001), while each additional year of age was linked to a 0.19 kg decline ( p = 0.007).",
+      "context_window": "s ( p < 0.001). Each unit increase in BMI corresponded to a 1.48 kg increase in ALM ( p < 0.001), while each additional year of",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-6333",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6333,
+      "sentence": "Each unit increase in BMI corresponded to a 1.48 kg increase in ALM ( p < 0.001), while each additional year of age was linked to a 0.19 kg decline ( p = 0.007).",
+      "context_window": "increase in BMI corresponded to a 1.48 kg increase in ALM ( p < 0.001), while each additional year of age was linked to a 0.19 kg",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-6395",
+      "claim_type": "unit_value",
+      "raw_text": "0.19 kg",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6395,
+      "sentence": "Each unit increase in BMI corresponded to a 1.48 kg increase in ALM ( p < 0.001), while each additional year of age was linked to a 0.19 kg decline ( p = 0.007).",
+      "context_window": "< 0.001), while each additional year of age was linked to a 0.19 kg decline ( p = 0.007). Fat percentage showed a positive but",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-6413",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6413,
+      "sentence": "Each unit increase in BMI corresponded to a 1.48 kg increase in ALM ( p < 0.001), while each additional year of age was linked to a 0.19 kg decline ( p = 0.007).",
+      "context_window": "ch additional year of age was linked to a 0.19 kg decline ( p = 0.007). Fat percentage showed a positive but nonsignificant assoc",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-6499",
+      "claim_type": "unit_value",
+      "raw_text": "0.37 kg",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6499,
+      "sentence": "Fat percentage showed a positive but nonsignificant association with ALM (0.37 kg, p = 0.061), but it significantly interacted with BMI, indicating that as BMI increases, the positive effect of fat percentage on ALM diminishes (-0.02 kg, p < 0.001).",
+      "context_window": "showed a positive but nonsignificant association with ALM (0.37 kg, p = 0.061), but it significantly interacted with BMI, indi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-6508",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.061",
+      "numeric_values": [
+        0.061
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6508,
+      "sentence": "Fat percentage showed a positive but nonsignificant association with ALM (0.37 kg, p = 0.061), but it significantly interacted with BMI, indicating that as BMI increases, the positive effect of fat percentage on ALM diminishes (-0.02 kg, p < 0.001).",
+      "context_window": "positive but nonsignificant association with ALM (0.37 kg, p = 0.061), but it significantly interacted with BMI, indicating that",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-6654",
+      "claim_type": "unit_value",
+      "raw_text": "0.02 kg",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6654,
+      "sentence": "Fat percentage showed a positive but nonsignificant association with ALM (0.37 kg, p = 0.061), but it significantly interacted with BMI, indicating that as BMI increases, the positive effect of fat percentage on ALM diminishes (-0.02 kg, p < 0.001).",
+      "context_window": ", the positive effect of fat percentage on ALM diminishes (-0.02 kg, p < 0.001). Each additional gramme of dietary protein per",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-6663",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6663,
+      "sentence": "Fat percentage showed a positive but nonsignificant association with ALM (0.37 kg, p = 0.061), but it significantly interacted with BMI, indicating that as BMI increases, the positive effect of fat percentage on ALM diminishes (-0.02 kg, p < 0.001).",
+      "context_window": "itive effect of fat percentage on ALM diminishes (-0.02 kg, p < 0.001). Each additional gramme of dietary protein per day predict",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-6737",
+      "claim_type": "unit_value",
+      "raw_text": "0.04 kg",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6737,
+      "sentence": "Each additional gramme of dietary protein per day predicted a 0.04 kg increase in ALM ( p = 0.008), while BAR compared to CON did not improve prediction.",
+      "context_window": "ch additional gramme of dietary protein per day predicted a 0.04 kg increase in ALM ( p = 0.008), while BAR compared to CON did",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-6763",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6763,
+      "sentence": "Each additional gramme of dietary protein per day predicted a 0.04 kg increase in ALM ( p = 0.008), while BAR compared to CON did not improve prediction.",
+      "context_window": "etary protein per day predicted a 0.04 kg increase in ALM ( p = 0.008), while BAR compared to CON did not improve prediction. The",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-6921",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6921,
+      "sentence": "The model explained a substantial proportion of the variance in ALM (Adjusted R 2 = 0.8035, p < 0.001; Table 5 and Figure 3 ).",
+      "context_window": "l proportion of the variance in ALM (Adjusted R 2 = 0.8035, p < 0.001; Table 5 and Figure 3 ). Multiple linear regression models",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-p-7068",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7068,
+      "sentence": "Note: Adjusted R \u2010squared = 0.8035, p < 0.001.",
+      "context_window": "icular lean mass (kg). Note: Adjusted R \u2010squared = 0.8035, p < 0.001. Abbreviations: %ALM/BMI, %appendicular lean mass/body mas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-7388",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7388,
+      "sentence": "Shaded grey areas are 95% confidence intervals.",
+      "context_window": "ded visually for comparison purposes. Shaded grey areas are 95% confidence intervals. Plot d depicts the effect of BMI on t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-180",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 180,
+      "sentence": "The prevalence of sarcopenia was low across groups at 3% overall.",
+      "context_window": "roup. The prevalence of sarcopenia was low across groups at 3% overall. Given this low prevalence, the comparison of sarco",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-947",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 947,
+      "sentence": "However, even using these cut\u2010offs, only 5% of our sample population had low handgrip.",
+      "context_window": "per BMI category. However, even using these cut\u2010offs, only 5% of our sample population had low handgrip. Ruthes et al. re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-1256",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1256,
+      "sentence": "Most sarcopenia research after MBS has been conducted in adults under 65 years, and sarcopenia guidelines were not developed for this purpose.",
+      "context_window": "penia research after MBS has been conducted in adults under 65 years, and sarcopenia guidelines were not developed for this purp",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1614",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1614,
+      "sentence": "Still, 90% of participants were young\u2010old (65 to 74 years), and none were oldest\u2010old (>85 yeas).",
+      "context_window": "nd sarcopenia exclusively in older adults after MBS. Still, 90% of participants were young\u2010old (65 to 74 years), and none w",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-1656",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1656,
+      "sentence": "Still, 90% of participants were young\u2010old (65 to 74 years), and none were oldest\u2010old (>85 yeas).",
+      "context_window": "after MBS. Still, 90% of participants were young\u2010old (65 to 74 years), and none were oldest\u2010old (>85 yeas). This may have contri",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-1968",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1968,
+      "sentence": "The ESPEN/EASO sarcopenic obesity prevalence was 9% even though prevalence of obesity was high (>60% by group and sex); therefore, the low prevalence of sarcopenic obesity is mainly due to the sarcopenia criterium not being met.",
+      "context_window": "e needed. The ESPEN/EASO sarcopenic obesity prevalence was 9% even though prevalence of obesity was high (>60% by group a",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2016",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2016,
+      "sentence": "The ESPEN/EASO sarcopenic obesity prevalence was 9% even though prevalence of obesity was high (>60% by group and sex); therefore, the low prevalence of sarcopenic obesity is mainly due to the sarcopenia criterium not being met.",
+      "context_window": "valence was 9% even though prevalence of obesity was high (>60% by group and sex); therefore, the low prevalence of sarcope",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-2241",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2241,
+      "sentence": "A recent study by Vieira et al. investigated sarcopenic obesity in 186 participants at least 2 years after MBS [ 7 ].",
+      "context_window": "nvestigated sarcopenic obesity in 186 participants at least 2 years after MBS [ 7 ]. They reported 8% ESPEN/EASO sarcopenic obe",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2280",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2280,
+      "sentence": "They reported 8% ESPEN/EASO sarcopenic obesity when using bioimpedance analysis (BIA) and 23% using DXA.",
+      "context_window": "articipants at least 2 years after MBS [ 7 ]. They reported 8% ESPEN/EASO sarcopenic obesity when using bioimpedance analy",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2356",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2356,
+      "sentence": "They reported 8% ESPEN/EASO sarcopenic obesity when using bioimpedance analysis (BIA) and 23% using DXA.",
+      "context_window": "rcopenic obesity when using bioimpedance analysis (BIA) and 23% using DXA. When using EWSGOP2 to define the sarcopenia comp",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2440",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2440,
+      "sentence": "When using EWSGOP2 to define the sarcopenia component, this was only 1% for DXA.",
+      "context_window": "g EWSGOP2 to define the sarcopenia component, this was only 1% for DXA. The participants in this study were much younger (",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-2507",
+      "claim_type": "unit_value",
+      "raw_text": "44 years",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2507,
+      "sentence": "The participants in this study were much younger (mean 44 years) compared to ours, and only 10% were male.",
+      "context_window": "DXA. The participants in this study were much younger (mean 44 years) compared to ours, and only 10% were male. Another recent s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2544",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2544,
+      "sentence": "The participants in this study were much younger (mean 44 years) compared to ours, and only 10% were male.",
+      "context_window": "ere much younger (mean 44 years) compared to ours, and only 10% were male. Another recent study reported 13%-23% ESPEN/EASO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2589",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2589,
+      "sentence": "Another recent study reported 13%-23% ESPEN/EASO sarcopenic obesity in 124 candidates before bariatric surgery, all adults younger than 60 years [ 8 ].",
+      "context_window": "ours, and only 10% were male. Another recent study reported 13%-23% ESPEN/EASO sarcopenic obesity in 124 candidates before",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2593",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2593,
+      "sentence": "Another recent study reported 13%-23% ESPEN/EASO sarcopenic obesity in 124 candidates before bariatric surgery, all adults younger than 60 years [ 8 ].",
+      "context_window": ", and only 10% were male. Another recent study reported 13%-23% ESPEN/EASO sarcopenic obesity in 124 candidates before bari",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-2695",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2695,
+      "sentence": "Another recent study reported 13%-23% ESPEN/EASO sarcopenic obesity in 124 candidates before bariatric surgery, all adults younger than 60 years [ 8 ].",
+      "context_window": "andidates before bariatric surgery, all adults younger than 60 years [ 8 ]. A third recent study reported ESPEN/EASO sarcopenic",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2785",
+      "claim_type": "percentage",
+      "raw_text": "89%",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2785,
+      "sentence": "A third recent study reported ESPEN/EASO sarcopenic obesity prevalence of 89% in nonolder women presurgery, dramatically decreasing to 3% at 12 months after surgery [ 9 ].",
+      "context_window": "study reported ESPEN/EASO sarcopenic obesity prevalence of 89% in nonolder women presurgery, dramatically decreasing to 3%",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-2846",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2846,
+      "sentence": "A third recent study reported ESPEN/EASO sarcopenic obesity prevalence of 89% in nonolder women presurgery, dramatically decreasing to 3% at 12 months after surgery [ 9 ].",
+      "context_window": "9% in nonolder women presurgery, dramatically decreasing to 3% at 12 months after surgery [ 9 ]. They did not include stre",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-2852",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2852,
+      "sentence": "A third recent study reported ESPEN/EASO sarcopenic obesity prevalence of 89% in nonolder women presurgery, dramatically decreasing to 3% at 12 months after surgery [ 9 ].",
+      "context_window": "nonolder women presurgery, dramatically decreasing to 3% at 12 months after surgery [ 9 ]. They did not include strength or physi",
+      "claim_role": "protocol",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-3307",
+      "claim_type": "unit_value",
+      "raw_text": "4 kg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3307,
+      "sentence": "However, this could provide a skewed picture as absolute ALM decreased by approximately 4 kg.",
+      "context_window": "a skewed picture as absolute ALM decreased by approximately 4 kg. A recent critical review stresses the importance of select",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-3643",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3643,
+      "sentence": "A recent study of 90 patients with at least class II obesity and older than 60 years reported an ESPEN/EASO sarcopenic obesity prevalence of 23%-40%, dependant on diagnostic cut\u2010offs used [ 35 ].",
+      "context_window": "f 90 patients with at least class II obesity and older than 60 years reported an ESPEN/EASO sarcopenic obesity prevalence of 23%",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-3708",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3708,
+      "sentence": "A recent study of 90 patients with at least class II obesity and older than 60 years reported an ESPEN/EASO sarcopenic obesity prevalence of 23%-40%, dependant on diagnostic cut\u2010offs used [ 35 ].",
+      "context_window": "ars reported an ESPEN/EASO sarcopenic obesity prevalence of 23%-40%, dependant on diagnostic cut\u2010offs used [ 35 ]. In a lar",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-3712",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3712,
+      "sentence": "A recent study of 90 patients with at least class II obesity and older than 60 years reported an ESPEN/EASO sarcopenic obesity prevalence of 23%-40%, dependant on diagnostic cut\u2010offs used [ 35 ].",
+      "context_window": "reported an ESPEN/EASO sarcopenic obesity prevalence of 23%-40%, dependant on diagnostic cut\u2010offs used [ 35 ]. In a larger",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-3825",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3825,
+      "sentence": "In a larger study with 1559 participants who were older (mean 75 years) and did not all have obesity, ESPEN/EASO sarcopenic obesity was 30%.",
+      "context_window": "a larger study with 1559 participants who were older (mean 75 years) and did not all have obesity, ESPEN/EASO sarcopenic obesit",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-3899",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3899,
+      "sentence": "In a larger study with 1559 participants who were older (mean 75 years) and did not all have obesity, ESPEN/EASO sarcopenic obesity was 30%.",
+      "context_window": "did not all have obesity, ESPEN/EASO sarcopenic obesity was 30%. In a third study, in patients with obesity and above 70 ye",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-3957",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3957,
+      "sentence": "In a third study, in patients with obesity and above 70 years, prevalence was 27%, based on BIA assessments [ 36 ].",
+      "context_window": "s 30%. In a third study, in patients with obesity and above 70 years, prevalence was 27%, based on BIA assessments [ 36 ]. As ou",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-3982",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3982,
+      "sentence": "In a third study, in patients with obesity and above 70 years, prevalence was 27%, based on BIA assessments [ 36 ].",
+      "context_window": "in patients with obesity and above 70 years, prevalence was 27%, based on BIA assessments [ 36 ]. As our study investigated",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-5290",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5290,
+      "sentence": "For example, the BAR group had a higher baseline BMI, more weight loss, lower diabetes prevalence, were 2 years younger, had less systemic inflammation and fewer had MAFLD.",
+      "context_window": "line BMI, more weight loss, lower diabetes prevalence, were 2 years younger, had less systemic inflammation and fewer had MAFLD",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-6667",
+      "claim_type": "unit_value",
+      "raw_text": "7.5 years",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6667,
+      "sentence": "In a study with a similar design to ours, Santini et al. matched 41 postmenopausal women who previously underwent RYGB surgery (mean 7.5 years prior) with 41 women with obesity.",
+      "context_window": "enopausal women who previously underwent RYGB surgery (mean 7.5 years prior) with 41 women with obesity. ALM adjusted for BMI, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-6967",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6967,
+      "sentence": "This contrasts with the study from Buzza et al., who compared postmenopausal women at least 2 years after RYGB with an age\u2010matched control group and reported lower ALMI in the RYGB group.",
+      "context_window": "om Buzza et al., who compared postmenopausal women at least 2 years after RYGB with an age\u2010matched control group and reported l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-u-7235",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7235,
+      "sentence": "Still, neither of these studies includes adults older than 65 years.",
+      "context_window": "Still, neither of these studies includes adults older than 65 years. A secondary aim of our study was to investigate the role",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-7588",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7588,
+      "sentence": "While 68% of the BAR group achieved 60 g/day, only 4% met the second target.",
+      "context_window": "dary protein target of up to 1.5 g/day/kg IBW [ 28 ]. While 68% of the BAR group achieved 60 g/day, only 4% met the second",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-7633",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7633,
+      "sentence": "While 68% of the BAR group achieved 60 g/day, only 4% met the second target.",
+      "context_window": "[ 28 ]. While 68% of the BAR group achieved 60 g/day, only 4% met the second target. Inadequate protein intake after MBS",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th-pct-8349",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8349,
+      "sentence": "Only 19% met this target, with no group differences.",
+      "context_window": "ator Amino Acid Oxidation method (IAAO) method [ 27 ]. Only 19% met this target, with no group differences. In our regressi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

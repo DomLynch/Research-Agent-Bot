@@ -1,0 +1,733 @@
+{
+  "paper_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_",
+  "doi": "10.3390/nu11122987",
+  "extracted_at": "2026-05-05T22:35:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "percentage": 29,
+    "unit_value": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-n-427",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 427,
+      "sentence": "Subjects ( n = 18) consumed three plant-based protein blends and WPI (control).",
+      "context_window": "max ) of blood leucine were secondary outcomes. Subjects ( n = 18) consumed three plant-based protein blends and WPI (control",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-665",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 665,
+      "sentence": "The total blood eAA iAUC ratios of the three blends were [90% CI]: #1: 0.66 [0.58-0.76]; #2: 0.71 [0.62-0.82]; #3: 0.60 [0.52-0.69], not completely within the pre-defined equivalence range [0.80-1.25], indicative of 30-40% lower iAUC versus WPI.",
+      "context_window": ". The total blood eAA iAUC ratios of the three blends were [90% CI]: #1: 0.66 [0.58-0.76]; #2: 0.71 [0.62-0.82]; #3: 0.60 [",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-826",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 826,
+      "sentence": "The total blood eAA iAUC ratios of the three blends were [90% CI]: #1: 0.66 [0.58-0.76]; #2: 0.71 [0.62-0.82]; #3: 0.60 [0.52-0.69], not completely within the pre-defined equivalence range [0.80-1.25], indicative of 30-40% lower iAUC versus WPI.",
+      "context_window": "pre-defined equivalence range [0.80-1.25], indicative of 30-40% lower iAUC versus WPI. Leucine C max of the three blends wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-999",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 999,
+      "sentence": "Leucine C max of the three blends was not equivalent to WPI, #1: 0.70 [0.67-0.73]; #2: 0.72 [0.68-0.75]; #3: 0.65 [0.62-0.68], indicative of a 28-35% lower response.",
+      "context_window": "0.72 [0.68-0.75]; #3: 0.65 [0.62-0.68], indicative of a 28-35% lower response. Leucine T max for two blends were similar t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-2128",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2128,
+      "sentence": "Plant-based protein sources typically have less leucine (~6-8%) compared to animal-based proteins (>10%) [ 1 ].",
+      "context_window": "Plant-based protein sources typically have less leucine (~6-8%) compared to animal-based proteins (>10%) [ 1 ]. Therefore,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-2168",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2168,
+      "sentence": "Plant-based protein sources typically have less leucine (~6-8%) compared to animal-based proteins (>10%) [ 1 ].",
+      "context_window": "ve less leucine (~6-8%) compared to animal-based proteins (>10%) [ 1 ]. Therefore, to match the leucine content of dairy pr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-u-491",
+      "claim_type": "unit_value",
+      "raw_text": "35 years",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 491,
+      "sentence": "Participants were healthy, adult men, 18-35 years of age, Body Mass Index (BMI) between 18.5 and 29.9 kg/m 2 .",
+      "context_window": "ington, DC, USA). Participants were healthy, adult men, 18-35 years of age, Body Mass Index (BMI) between 18.5 and 29.9 kg/m 2",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-u-547",
+      "claim_type": "unit_value",
+      "raw_text": "29.9 kg",
+      "numeric_values": [
+        29.9
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 547,
+      "sentence": "Participants were healthy, adult men, 18-35 years of age, Body Mass Index (BMI) between 18.5 and 29.9 kg/m 2 .",
+      "context_window": "18-35 years of age, Body Mass Index (BMI) between 18.5 and 29.9 kg/m 2 . Participants were required to have self-reported resi",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-u-2229",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2229,
+      "sentence": "Subjects crossed over to the other study product after a washout period consisting of a minimum of four days but no more than 14 days between interventions.",
+      "context_window": "eriod consisting of a minimum of four days but no more than 14 days between interventions. In the day preceding each study visi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-u-3219",
+      "claim_type": "unit_value",
+      "raw_text": "360 mL",
+      "numeric_values": [
+        360.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3219,
+      "sentence": "After the fasting sample was collected, the participant was given a study beverage mixed with 360 mL of water and instructed to consume this over 10 minutes.",
+      "context_window": "cted, the participant was given a study beverage mixed with 360 mL of water and instructed to consume this over 10 minutes. Ad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-u-3481",
+      "claim_type": "unit_value",
+      "raw_text": "4 mL",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3481,
+      "sentence": "Blood samples were collected into 4 mL K 2 EDTA tubes.",
+      "context_window": "on of the study beverage. Blood samples were collected into 4 mL K 2 EDTA tubes. After a wash-out period of four to 14 days,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-u-3537",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3537,
+      "sentence": "After a wash-out period of four to 14 days, the experiment was repeated with the participants consuming the other formulations.",
+      "context_window": "nto 4 mL K 2 EDTA tubes. After a wash-out period of four to 14 days, the experiment was repeated with the participants consumin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-4278",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4278,
+      "sentence": "Blend #3 represented a hydrolysis of Blend #1, in that the pea and pumpkin proteins were hydrolyzed (<15%) utilizing a commercially available, food-grade enzyme (Novozymes North America, Franklinton, NC, USA).",
+      "context_window": "#1, in that the pea and pumpkin proteins were hydrolyzed (<15%) utilizing a commercially available, food-grade enzyme (Nov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-u-5242",
+      "claim_type": "unit_value",
+      "raw_text": "25 \u00b5mol",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 5242,
+      "sentence": "An amount of 10 \u00b5L of 25 \u00b5mol/mL Norleucine was added as an internal standard.",
+      "context_window": "ng 190 \u00b5L of HPLC grade acetonitrile. An amount of 10 \u00b5L of 25 \u00b5mol/mL Norleucine was added as an internal standard. The soluti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-u-5504",
+      "claim_type": "unit_value",
+      "raw_text": "55 mm",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5504,
+      "sentence": "Then, 40 \u00b5L of the deproteinized blood (supernatant) was transferred into a 6 \u00d7 55 mm glass culture tube and dried under vacuum using a centrifugal evaporator.",
+      "context_window": "eproteinized blood (supernatant) was transferred into a 6 \u00d7 55 mm glass culture tube and dried under vacuum using a centrifug",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-u-6598",
+      "claim_type": "unit_value",
+      "raw_text": "100 mm",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 6598,
+      "sentence": "The Waters Acquity Ultra Performance Liquid Chromatography (UPLC) system employed consists of a Binary Solvent Manager, a Sample Manager, a TUV Detector and a Waters Acquity UPLC BEH C18 column (2.1 \u00d7 100 mm); the relative standard deviation for the peak area using this protocol is no more than 1.5%.",
+      "context_window": "UV Detector and a Waters Acquity UPLC BEH C18 column (2.1 \u00d7 100 mm); the relative standard deviation for the peak area using t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-6693",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6693,
+      "sentence": "The Waters Acquity Ultra Performance Liquid Chromatography (UPLC) system employed consists of a Binary Solvent Manager, a Sample Manager, a TUV Detector and a Waters Acquity UPLC BEH C18 column (2.1 \u00d7 100 mm); the relative standard deviation for the peak area using this protocol is no more than 1.5%.",
+      "context_window": "ation for the peak area using this protocol is no more than 1.5%. Data was collected, stored, and processed using Waters Emp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-7711",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7711,
+      "sentence": "As a consequence, the adequacy of the trial size was assessed using a range of plausible Coefficient of Variations (CV) from 15% to 35%, by steps of 5%.",
+      "context_window": "ng a range of plausible Coefficient of Variations (CV) from 15% to 35%, by steps of 5%. Using these values, the power of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-7718",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7718,
+      "sentence": "As a consequence, the adequacy of the trial size was assessed using a range of plausible Coefficient of Variations (CV) from 15% to 35%, by steps of 5%.",
+      "context_window": "nge of plausible Coefficient of Variations (CV) from 15% to 35%, by steps of 5%. Using these values, the power of the trial",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-7735",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7735,
+      "sentence": "As a consequence, the adequacy of the trial size was assessed using a range of plausible Coefficient of Variations (CV) from 15% to 35%, by steps of 5%.",
+      "context_window": "Coefficient of Variations (CV) from 15% to 35%, by steps of 5%. Using these values, the power of the trial to show equival",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-7990",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7990,
+      "sentence": "Using these values, the power of the trial to show equivalence for a pair of products in a 4 \u00d7 4 Williams crossover design given a sample size of 16, a desired type I error at alpha (\u03b1) level of 0.1, and two-sided with 5000 simulations keeping CVs of 15% to 20%, resulted in a power of 86-98%.",
+      "context_window": "of 0.1, and two-sided with 5000 simulations keeping CVs of 15% to 20%, resulted in a power of 86-98%. We anticipated a scr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-7997",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7997,
+      "sentence": "Using these values, the power of the trial to show equivalence for a pair of products in a 4 \u00d7 4 Williams crossover design given a sample size of 16, a desired type I error at alpha (\u03b1) level of 0.1, and two-sided with 5000 simulations keeping CVs of 15% to 20%, resulted in a power of 86-98%.",
+      "context_window": ", and two-sided with 5000 simulations keeping CVs of 15% to 20%, resulted in a power of 86-98%. We anticipated a screening",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-8028",
+      "claim_type": "percentage",
+      "raw_text": "98%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8028,
+      "sentence": "Using these values, the power of the trial to show equivalence for a pair of products in a 4 \u00d7 4 Williams crossover design given a sample size of 16, a desired type I error at alpha (\u03b1) level of 0.1, and two-sided with 5000 simulations keeping CVs of 15% to 20%, resulted in a power of 86-98%.",
+      "context_window": "ations keeping CVs of 15% to 20%, resulted in a power of 86-98%. We anticipated a screening failure rate of 50% and a drop-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-8076",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8076,
+      "sentence": "We anticipated a screening failure rate of 50% and a drop-out rate of 20%; therefore, approximately 40 subjects were planned to be screened.",
+      "context_window": "power of 86-98%. We anticipated a screening failure rate of 50% and a drop-out rate of 20%; therefore, approximately 40 sub",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-8103",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8103,
+      "sentence": "We anticipated a screening failure rate of 50% and a drop-out rate of 20%; therefore, approximately 40 subjects were planned to be screened.",
+      "context_window": "ated a screening failure rate of 50% and a drop-out rate of 20%; therefore, approximately 40 subjects were planned to be sc",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-9374",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9374,
+      "sentence": "For the difference between Test and Control products, LS-Means were extracted using the estimate statement in PROC MIXED, together with the associated 90% two-sided Confidence Interval (CI).",
+      "context_window": "imate statement in PROC MIXED, together with the associated 90% two-sided Confidence Interval (CI). These differences in LS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-9539",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9539,
+      "sentence": "These differences in LS-Means and CIs were back-transformed to present the ratio of Test to Control GLS-Means and associated 90% CI.",
+      "context_window": "esent the ratio of Test to Control GLS-Means and associated 90% CI. For bio-equivalence to be demonstrated, the entirety of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-9607",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9607,
+      "sentence": "For bio-equivalence to be demonstrated, the entirety of the 90% CI for the ratio of Test to Control GLS-Means must lie within the range of 0.80 to 1.25.",
+      "context_window": "For bio-equivalence to be demonstrated, the entirety of the 90% CI for the ratio of Test to Control GLS-Means must lie with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-9936",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9936,
+      "sentence": "For the Leucine T max , no logarithmic transformation was applied; the LS-Means were estimated using the ANOVA model described above and the 90% CI for the ratio of Test to Control was estimated with the Fieller\u2019s theorem [ 10 ].",
+      "context_window": "ere estimated using the ANOVA model described above and the 90% CI for the ratio of Test to Control was estimated with the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-n-656",
+      "claim_type": "sample_size",
+      "raw_text": "N = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 656,
+      "sentence": "Baseline and clinical characteristics overall and by sequence-PP population ( N = 18).\n\n#1 = Protein Blend #1 (Test)-Pea, Pumpkin; #2 = Protein Blend #2 (Test)-Pea, Pumpkin, Sunflower, Coconut; #3 = Protein Blend #3 (Test)-Pea, Pumpkin (hydrolysate); BMI = Body Mass Index; C = Control-Whey Protein Isolate (WPI); DBP = Diastolic Blood Pressure; SBP = Systolic Blood Pressure.",
+      "context_window": "cal characteristics overall and by sequence-PP population ( N = 18). #1 = Protein Blend #1 (Test)-Pea, Pumpkin; #2 = Protein",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-1049",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1049,
+      "sentence": "The total sum of blood eAA iAUC over 4 hours was lower (~30% to 40%) in plant-based products compared to WPI product.",
+      "context_window": ". The total sum of blood eAA iAUC over 4 hours was lower (~30% to 40%) in plant-based products compared to WPI product. Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-1056",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1056,
+      "sentence": "The total sum of blood eAA iAUC over 4 hours was lower (~30% to 40%) in plant-based products compared to WPI product.",
+      "context_window": "total sum of blood eAA iAUC over 4 hours was lower (~30% to 40%) in plant-based products compared to WPI product. Figure 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-1591",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1591,
+      "sentence": "In Figure 2 b, the total sum of iAUC of plasma eAA over the 4 hours periods after ingestion of each of the study products is shown; all three of the plant-based protein blends had significantly different total iAUC values compared to the WPI.\n\n( a ) Mean concentration of blood eAA over 4 hours following ingestion of each study product; ( b ) Mean and 95%CI total sum plasma eAA iAUC (nmol/mL) over 4 hours by study product.",
+      "context_window": "s following ingestion of each study product; ( b ) Mean and 95%CI total sum plasma eAA iAUC (nmol/mL) over 4 hours by study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-1902",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1902,
+      "sentence": "The differences in eAA between the plant-based protein blends and WPI were confirmed with the model estimates of the three ratios and 90% CI Blend #1 (pea + pumpkin): 0.66 [0.58-0.76]; Blend #2 (pea + pumpkin + sunflower + coconut): 0.71 [0.62-0.82]; Blend #3 (pea + pumpkin hydrolysate): 0.60 [0.52-0.69] when compared to WPI.",
+      "context_window": "confirmed with the model estimates of the three ratios and 90% CI Blend #1 (pea + pumpkin): 0.66 [0.58-0.76]; Blend #2 (pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-2200",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2200,
+      "sentence": "Equivalence could not be concluded between any plant-based product and WPI since, in each instance, the 90% confidence interval did not fall entirely within the range of [0.80-1.25].",
+      "context_window": "ny plant-based product and WPI since, in each instance, the 90% confidence interval did not fall entirely within the range",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-2579",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2579,
+      "sentence": "The study products were not found to be bio-equivalent with respective ratios and 90% CI Blend #1: 0.66 [0.59-0.73]; Blend #2: 0.67 [0.61-0.75]; Blend #3: 0.62 [0.56-0.69].",
+      "context_window": "e not found to be bio-equivalent with respective ratios and 90% CI Blend #1: 0.66 [0.59-0.73]; Blend #2: 0.67 [0.61-0.75];",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-3424",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3424,
+      "sentence": "The observed time to reach C max (T max ) was numerically similar between the Blend #1, Blend #3 and WPI with mean (SD) of 42.5 (16.5), 53.3 (28.3) and 45.0 (15.4) minutes, respectively, as compared to Blend #2 with a T max mean of 70.0 (29.1) minutes.\n\n( a ) Mean blood leucine over 4 hours per time point of each study product; ( b ) Mean and 95%CI total sum leucine iAUC (nmol/mL) by study product, obtained using the trapezoidal rule.",
+      "context_window": "hours per time point of each study product; ( b ) Mean and 95%CI total sum leucine iAUC (nmol/mL) by study product, obtain",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-766",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 766,
+      "sentence": "RPI showed a non-significant 6.8% lower total amino acid concentration in the blood based on AUC in comparison to WPI, indicating a similar appearance of amino acids in the blood between plant and animal-based protein.",
+      "context_window": "acid response over four hours. RPI showed a non-significant 6.8% lower total amino acid concentration in the blood based on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-1488",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1488,
+      "sentence": "However, the blood eAA response was not shown to be bio-equivalent to that of WPI as evidenced by a 30-40% lower in total sum eAA iAUC over 4 hours.",
+      "context_window": "wn to be bio-equivalent to that of WPI as evidenced by a 30-40% lower in total sum eAA iAUC over 4 hours. A unique aspect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6950667_differential_responses_of_blood_essential_amino_acid_levels_-pct-5396",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5396,
+      "sentence": "Similarly, the mild hydrolysis (<15%) that was achieved was not significant enough to achieve bio-equivalence to the WPI.",
+      "context_window": "plant-based protein blend. Similarly, the mild hydrolysis (<15%) that was achieved was not significant enough to achieve bi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

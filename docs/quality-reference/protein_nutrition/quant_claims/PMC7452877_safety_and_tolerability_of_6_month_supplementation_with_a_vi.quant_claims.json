@@ -1,0 +1,2228 @@
+{
+  "paper_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi",
+  "doi": "10.1007/s40520-020-01519-x",
+  "extracted_at": "2026-05-05T22:35:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 32,
+    "unit_value": 48,
+    "p_value": 30,
+    "percentage": 13
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-279",
+      "claim_type": "sample_size",
+      "raw_text": "n = 380",
+      "numeric_values": [
+        380.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 279,
+      "sentence": "A 13-week double-blinded, randomized, isocaloric placebo-controlled trial (PROVIDE study; n = 380) was extended with a voluntary 13-week open-label extension (OLE).",
+      "context_window": "omized, isocaloric placebo-controlled trial (PROVIDE study; n = 380) was extended with a voluntary 13-week open-label extension",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-473",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 473,
+      "sentence": "OLE participants were randomized to receive daily 1 or 2 servings of WP-MND (21 g protein, 3 g leucine, 10 \u00b5g vitD and 500 mg calcium per serving).",
+      "context_window": "rvings of WP-MND (21 g protein, 3 g leucine, 10 \u00b5g vitD and 500 mg calcium per serving). Gastro-intestinal tolerability, kidne",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-835",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 835,
+      "sentence": "In response to the high daily protein intake (median1.5; IQR: 1.3, 1.7 g/kg BW/day), the estimated glomerular filtration rate (eGFR) increased in the test group during the RCT ( p = 0.013).",
+      "context_window": "on rate (eGFR) increased in the test group during the RCT ( p = 0.013). The same trend was observed for those participants with m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-1196",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1196,
+      "sentence": "As expected, PTH significantly changed in the opposite direction, decreasing during RCT in the test group (T vs C: p < 0.001) and during OLE in former control groups.",
+      "context_window": "direction, decreasing during RCT in the test group (T vs C: p < 0.001) and during OLE in former control groups. During RCT, 20/36",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-1343",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1343,
+      "sentence": "During RCT, 20/366 participants with normal baseline calcidiol reached levels \u2265 100 nmol/L (T: n = 18; C: n = 2) and 6 developed albumin-corrected calcium levels > 2.55 mmol/L (T: n = 3; C: n = 3), without associated adverse events.",
+      "context_window": "h normal baseline calcidiol reached levels \u2265 100 nmol/L (T: n = 18; C: n = 2) and 6 developed albumin-corrected calcium levels",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-1354",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1354,
+      "sentence": "During RCT, 20/366 participants with normal baseline calcidiol reached levels \u2265 100 nmol/L (T: n = 18; C: n = 2) and 6 developed albumin-corrected calcium levels > 2.55 mmol/L (T: n = 3; C: n = 3), without associated adverse events.",
+      "context_window": "seline calcidiol reached levels \u2265 100 nmol/L (T: n = 18; C: n = 2) and 6 developed albumin-corrected calcium levels > 2.55 mm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-1412",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 1412,
+      "sentence": "During RCT, 20/366 participants with normal baseline calcidiol reached levels \u2265 100 nmol/L (T: n = 18; C: n = 2) and 6 developed albumin-corrected calcium levels > 2.55 mmol/L (T: n = 3; C: n = 3), without associated adverse events.",
+      "context_window": ": n = 2) and 6 developed albumin-corrected calcium levels > 2.55 mmol/L (T: n = 3; C: n = 3), without associated adverse events.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-1428",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1428,
+      "sentence": "During RCT, 20/366 participants with normal baseline calcidiol reached levels \u2265 100 nmol/L (T: n = 18; C: n = 2) and 6 developed albumin-corrected calcium levels > 2.55 mmol/L (T: n = 3; C: n = 3), without associated adverse events.",
+      "context_window": "eveloped albumin-corrected calcium levels > 2.55 mmol/L (T: n = 3; C: n = 3), without associated adverse events. A 6 months",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-1438",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1438,
+      "sentence": "During RCT, 20/366 participants with normal baseline calcidiol reached levels \u2265 100 nmol/L (T: n = 18; C: n = 2) and 6 developed albumin-corrected calcium levels > 2.55 mmol/L (T: n = 3; C: n = 3), without associated adverse events.",
+      "context_window": "lbumin-corrected calcium levels > 2.55 mmol/L (T: n = 3; C: n = 3), without associated adverse events. A 6 months interventi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-1484",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1484,
+      "sentence": "A 6 months intervention with up to 2 servings of WP-MND did neither result in kidney function deterioration nor symptoms of vitamin D or calcium toxicity.",
+      "context_window": "(T: n = 3; C: n = 3), without associated adverse events. A 6 months intervention with up to 2 servings of WP-MND did neither re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-900",
+      "claim_type": "unit_value",
+      "raw_text": "71 years",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 900,
+      "sentence": "The Institute of Medicine in the USA and ESCEO recommend a daily intake of 800 IU (= 20 \u00b5g) vitamin D 3 for people of 71 years and older to sustain 25-hydroxyvitamin D (calcidiol) levels above 50 nmol/L [ 5 , 7 , 13 - 15 ].",
+      "context_window": "daily intake of 800 IU (= 20 \u00b5g) vitamin D 3 for people of 71 years and older to sustain 25-hydroxyvitamin D (calcidiol) levels",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-1300",
+      "claim_type": "unit_value",
+      "raw_text": "71 years",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1300,
+      "sentence": "The recommended daily allowance (RDA) for calcium for people of 71 years and older is 1200 mg/day [ 5 ].",
+      "context_window": "recommended daily allowance (RDA) for calcium for people of 71 years and older is 1200 mg/day [ 5 ]. Despite the recommendations",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-1322",
+      "claim_type": "unit_value",
+      "raw_text": "1200 mg/day",
+      "numeric_values": [
+        1200.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 1322,
+      "sentence": "The recommended daily allowance (RDA) for calcium for people of 71 years and older is 1200 mg/day [ 5 ].",
+      "context_window": "wance (RDA) for calcium for people of 71 years and older is 1200 mg/day [ 5 ]. Despite the recommendations above, insufficient inta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-1536",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1536,
+      "sentence": "This may also partly explain the observed 45% prevalence of vitamin D deficiency, i.e. calcidiol < 50 nmol/L, in a large cohort of community-dwelling older (\u2265 65 years) individuals [ 18 ].",
+      "context_window": "ults [ 16 , 17 ]. This may also partly explain the observed 45% prevalence of vitamin D deficiency, i.e. calcidiol < 50 nmo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-1653",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1653,
+      "sentence": "This may also partly explain the observed 45% prevalence of vitamin D deficiency, i.e. calcidiol < 50 nmol/L, in a large cohort of community-dwelling older (\u2265 65 years) individuals [ 18 ].",
+      "context_window": "50 nmol/L, in a large cohort of community-dwelling older (\u2265 65 years) individuals [ 18 ]. Previously, an intervention with a vi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-2071",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 2071,
+      "sentence": "To obtain these beneficial effects, two servings of the medical nutrition drink and thereby high amounts of protein (42 g), leucine (6 g), vitamin D (40 \u00b5g) and calcium (1000 mg) per day were consumed on top of the regular diet.",
+      "context_window": "otein (42 g), leucine (6 g), vitamin D (40 \u00b5g) and calcium (1000 mg) per day were consumed on top of the regular diet. However,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-2837",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 2837,
+      "sentence": "The aim of this post-hoc evaluation was to determine the effect of 6 months supplementation with a vitamin D, calcium and leucine-enriched whey protein medical nutrition drink (WP-MND) on kidney function and on vitamin D, PTH and calcium levels in sarcopenic older adults.",
+      "context_window": "of this post-hoc evaluation was to determine the effect of 6 months supplementation with a vitamin D, calcium and leucine-enric",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-134",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 134,
+      "sentence": "Older adults (\u2265 65 years) were eligible when they suffered from sarcopenia, defined as low skeletal muscle mass index (SMI) combined with mild to moderate limitations in physical performance (for definitions applied see reference [ 19 ]).",
+      "context_window": "m 18 study centers in 6 European countries. Older adults (\u2265 65 years) were eligible when they suffered from sarcopenia, defined",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-539",
+      "claim_type": "unit_value",
+      "raw_text": "30 mL/min",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 539,
+      "sentence": "Known kidney failure was defined in the published protocol as estimated glomerular filtration rate (eGFR) below 30 mL/min/1.73 m 2 , what means that participants with moderate chronic kidney disease (eGFR between 30 and 60) were eligible for participation in the study.",
+      "context_window": "otocol as estimated glomerular filtration rate (eGFR) below 30 mL/min/1.73 m 2 , what means that participants with moderate chron",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-959",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 959,
+      "sentence": "Other exclusion criteria relevant were: (a) intake of a high protein diet 3 months before start of or during the study, (b) intake of a protein- or amino acid- containing nutritional supplement 3 months before start of or during the study, (c) consumption of more than 22 \u00b5g/day vitamin D from vitamin supplement use, (d) consumption of 11.25-22 \u00b5g vitamin D daily from vitamin supplement use in combination with a serum calcidiol concentration \u2265 50 nmol/L, (e) consumption of more than 500 mg calcium daily from mineral supplement use.",
+      "context_window": "n criteria relevant were: (a) intake of a high protein diet 3 months before start of or during the study, (b) intake of a protei",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-1079",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1079,
+      "sentence": "Other exclusion criteria relevant were: (a) intake of a high protein diet 3 months before start of or during the study, (b) intake of a protein- or amino acid- containing nutritional supplement 3 months before start of or during the study, (c) consumption of more than 22 \u00b5g/day vitamin D from vitamin supplement use, (d) consumption of 11.25-22 \u00b5g vitamin D daily from vitamin supplement use in combination with a serum calcidiol concentration \u2265 50 nmol/L, (e) consumption of more than 500 mg calcium daily from mineral supplement use.",
+      "context_window": "a protein- or amino acid- containing nutritional supplement 3 months before start of or during the study, (c) consumption of mor",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-1372",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1372,
+      "sentence": "Other exclusion criteria relevant were: (a) intake of a high protein diet 3 months before start of or during the study, (b) intake of a protein- or amino acid- containing nutritional supplement 3 months before start of or during the study, (c) consumption of more than 22 \u00b5g/day vitamin D from vitamin supplement use, (d) consumption of 11.25-22 \u00b5g vitamin D daily from vitamin supplement use in combination with a serum calcidiol concentration \u2265 50 nmol/L, (e) consumption of more than 500 mg calcium daily from mineral supplement use.",
+      "context_window": "iol concentration \u2265 50 nmol/L, (e) consumption of more than 500 mg calcium daily from mineral supplement use. The 13-week dou",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-2179",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2179,
+      "sentence": "One serving of WP-MND contained 21 g total protein, including 20 g whey protein and 3 g total leucine, 9 g carbohydrates, 3 g fat, 800 IU (20 \u00b5g) vitamin D 3 , 500 mg calcium, and a mixture of vitamins, minerals and fibers (for detailed composition see online supplementary material-Supplemental Table 1 of Bauer et al. [ 19 ]).",
+      "context_window": "e, 9 g carbohydrates, 3 g fat, 800 IU (20 \u00b5g) vitamin D 3 , 500 mg calcium, and a mixture of vitamins, minerals and fibers (fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-2792",
+      "claim_type": "unit_value",
+      "raw_text": "25.5 mL",
+      "numeric_values": [
+        25.5
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2792,
+      "sentence": "For determination of blood parameters, approximately 25.5 mL of venous blood was obtained at each visit.",
+      "context_window": "k 26). For determination of blood parameters, approximately 25.5 mL of venous blood was obtained at each visit. Blood samples i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-3756",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 mg/dL",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 3756,
+      "sentence": "Briefly, the CKD-EPI equation includes log [Creat] (modeled as a 2-slope linear spline with sex-specific 0.7 mg/dL in women and a 0.9 mg/dL in men), and gender, race, and age on a natural scale.",
+      "context_window": "reat] (modeled as a 2-slope linear spline with sex-specific 0.7 mg/dL in women and a 0.9 mg/dL in men), and gender, race, and age",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-3781",
+      "claim_type": "unit_value",
+      "raw_text": "0.9 mg/dL",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 3781,
+      "sentence": "Briefly, the CKD-EPI equation includes log [Creat] (modeled as a 2-slope linear spline with sex-specific 0.7 mg/dL in women and a 0.9 mg/dL in men), and gender, race, and age on a natural scale.",
+      "context_window": "pe linear spline with sex-specific 0.7 mg/dL in women and a 0.9 mg/dL in men), and gender, race, and age on a natural scale. Ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-4301",
+      "claim_type": "percentage",
+      "raw_text": "3.4%",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4301,
+      "sentence": "Paul, MN 55108], with an intra-assay CV of 3.4%.",
+      "context_window": "iences Inc., St. Paul, MN 55108], with an intra-assay CV of 3.4%. For albumin-corrected calcium, total serum calcium and alb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-4513",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4513,
+      "sentence": "The intra-assay CV for serum calcium and albumin was 1.7% and 1.8%, respectively.",
+      "context_window": ", UK]. The intra-assay CV for serum calcium and albumin was 1.7% and 1.8%, respectively. Serum calcium (Ca) normally ranges",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-4522",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4522,
+      "sentence": "The intra-assay CV for serum calcium and albumin was 1.7% and 1.8%, respectively.",
+      "context_window": "e intra-assay CV for serum calcium and albumin was 1.7% and 1.8%, respectively. Serum calcium (Ca) normally ranges between 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-4594",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 4594,
+      "sentence": "Serum calcium (Ca) normally ranges between 2.15 and 2.55 mmol/L [ 24 , 25 ]; therefore, hypercalcemia was defined as [Ca] > 2.55 mmol/L [ 25 ].",
+      "context_window": "tively. Serum calcium (Ca) normally ranges between 2.15 and 2.55 mmol/L [ 24 , 25 ]; therefore, hypercalcemia was defined as [Ca]",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-4666",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 4666,
+      "sentence": "Serum calcium (Ca) normally ranges between 2.15 and 2.55 mmol/L [ 24 , 25 ]; therefore, hypercalcemia was defined as [Ca] > 2.55 mmol/L [ 25 ].",
+      "context_window": "[ 24 , 25 ]; therefore, hypercalcemia was defined as [Ca] > 2.55 mmol/L [ 25 ]. Serum calcium was adjusted for albumin according",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-5605",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5605,
+      "sentence": "Gastrointestinal (GI) tolerability was assessed using a GI questionnaire at baseline, after 13 weeks and after 26 weeks of intervention.",
+      "context_window": "ty was assessed using a GI questionnaire at baseline, after 13 weeks and after 26 weeks of intervention. This questionnaire cove",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-5624",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5624,
+      "sentence": "Gastrointestinal (GI) tolerability was assessed using a GI questionnaire at baseline, after 13 weeks and after 26 weeks of intervention.",
+      "context_window": "ng a GI questionnaire at baseline, after 13 weeks and after 26 weeks of intervention. This questionnaire covered a range of GI s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-6087",
+      "claim_type": "sample_size",
+      "raw_text": "n = 379",
+      "numeric_values": [
+        379.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6087,
+      "sentence": "All the analysis of the main RCT paper [ 19 ] were done on the intention to treat (ITT) data set, while the safety and tolerability evaluation of the current paper was performed on the AST data set ( n = 379 subjects), which excludes one subject in the control group who was randomized but did not start the intervention.",
+      "context_window": "on of the current paper was performed on the AST data set ( n = 379 subjects), which excludes one subject in the control group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-597",
+      "claim_type": "sample_size",
+      "raw_text": "n = 103",
+      "numeric_values": [
+        103.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 597,
+      "sentence": "WP-MND, a vitamin D and leucine-enriched whey protein medical nutrition drink; T, test group during RCT; C, Control group during RCT; OLE, open-label extension; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE; CT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE\n\nAt the end of the 13-week RCT, 233 participants in the PROVIDE study agreed to participate in the OLE sequel of the study (test (T): n = 103; control (C): n = 130).",
+      "context_window": "ed to participate in the OLE sequel of the study (test (T): n = 103; control (C): n = 130). 133 subjects were randomized into t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-619",
+      "claim_type": "sample_size",
+      "raw_text": "n = 130",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 619,
+      "sentence": "WP-MND, a vitamin D and leucine-enriched whey protein medical nutrition drink; T, test group during RCT; C, Control group during RCT; OLE, open-label extension; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE; CT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE\n\nAt the end of the 13-week RCT, 233 participants in the PROVIDE study agreed to participate in the OLE sequel of the study (test (T): n = 103; control (C): n = 130).",
+      "context_window": "he OLE sequel of the study (test (T): n = 103; control (C): n = 130). 133 subjects were randomized into the 1-serving groups (C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-902",
+      "claim_type": "sample_size",
+      "raw_text": "n = 57",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 902,
+      "sentence": "At the end of the OLE study, 214 participants completed the study (former T group receiving 1 serving of WP-MND during OLE (TT1): n = 57, former T group receiving 2 serving of WP-MND during OLE (TT2): n = 39, former C group receiving 1 serving of WP-MND during OLE (CT1): n = 72, former C group receiving 2 serving of WP-MND during OLE (CT2): n = 46), and 19 participants exited the study before week 26.",
+      "context_window": "mer T group receiving 1 serving of WP-MND during OLE (TT1): n = 57, former T group receiving 2 serving of WP-MND during OLE (T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-973",
+      "claim_type": "sample_size",
+      "raw_text": "n = 39",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 973,
+      "sentence": "At the end of the OLE study, 214 participants completed the study (former T group receiving 1 serving of WP-MND during OLE (TT1): n = 57, former T group receiving 2 serving of WP-MND during OLE (TT2): n = 39, former C group receiving 1 serving of WP-MND during OLE (CT1): n = 72, former C group receiving 2 serving of WP-MND during OLE (CT2): n = 46), and 19 participants exited the study before week 26.",
+      "context_window": "mer T group receiving 2 serving of WP-MND during OLE (TT2): n = 39, former C group receiving 1 serving of WP-MND during OLE (C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-1044",
+      "claim_type": "sample_size",
+      "raw_text": "n = 72",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1044,
+      "sentence": "At the end of the OLE study, 214 participants completed the study (former T group receiving 1 serving of WP-MND during OLE (TT1): n = 57, former T group receiving 2 serving of WP-MND during OLE (TT2): n = 39, former C group receiving 1 serving of WP-MND during OLE (CT1): n = 72, former C group receiving 2 serving of WP-MND during OLE (CT2): n = 46), and 19 participants exited the study before week 26.",
+      "context_window": "mer C group receiving 1 serving of WP-MND during OLE (CT1): n = 72, former C group receiving 2 serving of WP-MND during OLE (C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-1115",
+      "claim_type": "sample_size",
+      "raw_text": "n = 46",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1115,
+      "sentence": "At the end of the OLE study, 214 participants completed the study (former T group receiving 1 serving of WP-MND during OLE (TT1): n = 57, former T group receiving 2 serving of WP-MND during OLE (TT2): n = 39, former C group receiving 1 serving of WP-MND during OLE (CT1): n = 72, former C group receiving 2 serving of WP-MND during OLE (CT2): n = 46), and 19 participants exited the study before week 26.",
+      "context_window": "mer C group receiving 2 serving of WP-MND during OLE (CT2): n = 46), and 19 participants exited the study before week 26. Bas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-1756",
+      "claim_type": "sample_size",
+      "raw_text": "n = 279",
+      "numeric_values": [
+        279.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1756,
+      "sentence": "Baseline (week 0) characteristics of RCT participants ( n = 279, AST data set) and baseline (week 13) characteristics of participants in open-label extension of the study (OLE) ( n = 233, AST data set)\n\nCT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE\n\nDuring the RCT, supplementation with WP-MND led to a significant increase in median total protein intake from 1.0 (IQR: 0.9, 1.2) g/kg BW/day to 1.5 (IQR: 1.3, 1.7) g/kg BW/day in the test group ( p < 0.001), with no change in the control group (T vs.",
+      "context_window": "n. Baseline (week 0) characteristics of RCT participants ( n = 279, AST data set) and baseline (week 13) characteristics of pa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-1879",
+      "claim_type": "sample_size",
+      "raw_text": "n = 233",
+      "numeric_values": [
+        233.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1879,
+      "sentence": "Baseline (week 0) characteristics of RCT participants ( n = 279, AST data set) and baseline (week 13) characteristics of participants in open-label extension of the study (OLE) ( n = 233, AST data set)\n\nCT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE\n\nDuring the RCT, supplementation with WP-MND led to a significant increase in median total protein intake from 1.0 (IQR: 0.9, 1.2) g/kg BW/day to 1.5 (IQR: 1.3, 1.7) g/kg BW/day in the test group ( p < 0.001), with no change in the control group (T vs.",
+      "context_window": "f participants in open-label extension of the study (OLE) ( n = 233, AST data set) CT1, former RCT Control group receiving 1 s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-2384",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2384,
+      "sentence": "Baseline (week 0) characteristics of RCT participants ( n = 279, AST data set) and baseline (week 13) characteristics of participants in open-label extension of the study (OLE) ( n = 233, AST data set)\n\nCT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE\n\nDuring the RCT, supplementation with WP-MND led to a significant increase in median total protein intake from 1.0 (IQR: 0.9, 1.2) g/kg BW/day to 1.5 (IQR: 1.3, 1.7) g/kg BW/day in the test group ( p < 0.001), with no change in the control group (T vs.",
+      "context_window": "/day to 1.5 (IQR: 1.3, 1.7) g/kg BW/day in the test group ( p < 0.001), with no change in the control group (T vs. C: p < 0.001).",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-2442",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2442,
+      "sentence": "C: p < 0.001).",
+      "context_window": "( p < 0.001), with no change in the control group (T vs. C: p < 0.001). Median protein intake (g/kg BW/day) increased in the form",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-2622",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2622,
+      "sentence": "Median protein intake (g/kg BW/day) increased in the former RCT control groups during the OLE study period from 0.9 (IQR: 0.8, 1.1) to 1.3 (IQR: 1.1, 1.5) in the CT1 ( p < 0.001) and to 1.4 (IQR: 1.3, 1.7) g/kg BW/day in the CT2 group ( p < 0.001).",
+      "context_window": "rom 0.9 (IQR: 0.8, 1.1) to 1.3 (IQR: 1.1, 1.5) in the CT1 ( p < 0.001) and to 1.4 (IQR: 1.3, 1.7) g/kg BW/day in the CT2 group (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-2691",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2691,
+      "sentence": "Median protein intake (g/kg BW/day) increased in the former RCT control groups during the OLE study period from 0.9 (IQR: 0.8, 1.1) to 1.3 (IQR: 1.1, 1.5) in the CT1 ( p < 0.001) and to 1.4 (IQR: 1.3, 1.7) g/kg BW/day in the CT2 group ( p < 0.001).",
+      "context_window": ") and to 1.4 (IQR: 1.3, 1.7) g/kg BW/day in the CT2 group ( p < 0.001). In the TT1 group that consumed one serving of WP-MND duri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-2926",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2926,
+      "sentence": "In the TT1 group that consumed one serving of WP-MND during the OLE study period after consumption of 2 servings during the RCT, median protein intake decreased from 1.5 (IQR: 1.3, 1.7) to 1.2 (IQR: 1.1, 1.4) g/kg BW/day ( p < 0.001) versus no change in the TT2 group (TT1 vs.",
+      "context_window": "om 1.5 (IQR: 1.3, 1.7) to 1.2 (IQR: 1.1, 1.4) g/kg BW/day ( p < 0.001) versus no change in the TT2 group (TT1 vs. TT2: p < 0.001)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-2985",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2985,
+      "sentence": "TT2: p < 0.001).",
+      "context_window": "p < 0.001) versus no change in the TT2 group (TT1 vs. TT2: p < 0.001). The study population had a median eGFR of 77 (IQR: 63, 8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-3278",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3278,
+      "sentence": "13-week supplementation with 2 servings of the WP-MND during the RCT led to a small increase in eGFR in the test group (median change 1.0 (IQR: - 2.8, 4.2) mL/min/1.73 m 2 ; p = 0.013) versus no significant change in the control group (median change - 1.1 (IQR: - 4.9, 2.8) mL/min/1.73 m 2 ; p = 0.067)(T vs.",
+      "context_window": "roup (median change 1.0 (IQR: - 2.8, 4.2) mL/min/1.73 m 2 ; p = 0.013) versus no significant change in the control group (median",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-3396",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.067",
+      "numeric_values": [
+        0.067
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3396,
+      "sentence": "13-week supplementation with 2 servings of the WP-MND during the RCT led to a small increase in eGFR in the test group (median change 1.0 (IQR: - 2.8, 4.2) mL/min/1.73 m 2 ; p = 0.013) versus no significant change in the control group (median change - 1.1 (IQR: - 4.9, 2.8) mL/min/1.73 m 2 ; p = 0.067)(T vs.",
+      "context_window": "up (median change - 1.1 (IQR: - 4.9, 2.8) mL/min/1.73 m 2 ; p = 0.067)(T vs. C: p = 0.002) (Fig. 2 a). No change in eGFR was obse",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-3416",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3416,
+      "sentence": "C: p = 0.002) (Fig.",
+      "context_window": "1.1 (IQR: - 4.9, 2.8) mL/min/1.73 m 2 ; p = 0.067)(T vs. C: p = 0.002) (Fig. 2 a). No change in eGFR was observed during the OLE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-3544",
+      "claim_type": "sample_size",
+      "raw_text": "n = 36",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3544,
+      "sentence": "Some of the participants (T: n = 36 and C: n = 39) had an eGFR between 30 and 60 mL/min/1.73 m 2 at baseline, before the start of the RCT, which is defined as moderate chronic kidney disease (CKD).",
+      "context_window": "part of the study (Fig. 2 b). Some of the participants (T: n = 36 and C: n = 39) had an eGFR between 30 and 60 mL/min/1.73 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-3558",
+      "claim_type": "sample_size",
+      "raw_text": "n = 39",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3558,
+      "sentence": "Some of the participants (T: n = 36 and C: n = 39) had an eGFR between 30 and 60 mL/min/1.73 m 2 at baseline, before the start of the RCT, which is defined as moderate chronic kidney disease (CKD).",
+      "context_window": "tudy (Fig. 2 b). Some of the participants (T: n = 36 and C: n = 39) had an eGFR between 30 and 60 mL/min/1.73 m 2 at baseline,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-3593",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL/min",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 3593,
+      "sentence": "Some of the participants (T: n = 36 and C: n = 39) had an eGFR between 30 and 60 mL/min/1.73 m 2 at baseline, before the start of the RCT, which is defined as moderate chronic kidney disease (CKD).",
+      "context_window": "ipants (T: n = 36 and C: n = 39) had an eGFR between 30 and 60 mL/min/1.73 m 2 at baseline, before the start of the RCT, which is",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-3966",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3966,
+      "sentence": "During the RCT, eGFR increased in participants with moderate CKD at baseline in the test group from median 52 (IQR: 48.1, 56.2) to 56.2 (IQR: 46.5, 63.8; p = 0.007) mL/min/1.73 m 2 vs. no change in the control group (T vs.",
+      "context_window": "from median 52 (IQR: 48.1, 56.2) to 56.2 (IQR: 46.5, 63.8; p = 0.007) mL/min/1.73 m 2 vs. no change in the control group (T vs.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-5148",
+      "claim_type": "percentage",
+      "raw_text": "7.8%",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5148,
+      "sentence": "CT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE. # Significant difference in change between Test and Control groups. * Significant change within group\n\nBased on the reported protein intake data and the estimation that dietary protein contains on average 7.8% leucine [ 27 ], the total daily leucine intake from the diet and the WP-MND was calculated.",
+      "context_window": "and the estimation that dietary protein contains on average 7.8% leucine [ 27 ], the total daily leucine intake from the die",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-5508",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5508,
+      "sentence": "At week 13, leucine intake from the diet was estimated to be around 0.070 g/kg BW/day (0.9 g protein/kg BW/day) in 50% (median) and 0.086 g/kg BW/day (1.1 g protein/kg BW/day) in 75% (upper IQR) of the test group.",
+      "context_window": "to be around 0.070 g/kg BW/day (0.9 g protein/kg BW/day) in 50% (median) and 0.086 g/kg BW/day (1.1 g protein/kg BW/day) in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-5572",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5572,
+      "sentence": "At week 13, leucine intake from the diet was estimated to be around 0.070 g/kg BW/day (0.9 g protein/kg BW/day) in 50% (median) and 0.086 g/kg BW/day (1.1 g protein/kg BW/day) in 75% (upper IQR) of the test group.",
+      "context_window": "(median) and 0.086 g/kg BW/day (1.1 g protein/kg BW/day) in 75% (upper IQR) of the test group. The WP-MND supplement contri",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-5742",
+      "claim_type": "unit_value",
+      "raw_text": "70 kg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5742,
+      "sentence": "The WP-MND supplement contributed to an additional 6 g leucine per day, representing 0.086 g/kg BW/day based on a median bodyweight of 70 kg.",
+      "context_window": "resenting 0.086 g/kg BW/day based on a median bodyweight of 70 kg. In total, leucine intake in the WP-MND group was 0.171 g/k",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-5819",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5819,
+      "sentence": "In total, leucine intake in the WP-MND group was 0.171 g/kg BW/day in 75% of subjects, which is well below the TUL for leucine of 0.5 g/kg BW/day [ 28 - 30 ].",
+      "context_window": "leucine intake in the WP-MND group was 0.171 g/kg BW/day in 75% of subjects, which is well below the TUL for leucine of 0.5",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-5915",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5915,
+      "sentence": "After 13 weeks of intervention with 2 servings of the WP-MND in the test group, a significant increase in median serum calcidiol ( p < 0.001) was observed versus a significant decrease ( p < 0.001) in the control population (T vs.",
+      "context_window": "the TUL for leucine of 0.5 g/kg BW/day [ 28 - 30 ]. After 13 weeks of intervention with 2 servings of the WP-MND in the test g",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-6040",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6040,
+      "sentence": "After 13 weeks of intervention with 2 servings of the WP-MND in the test group, a significant increase in median serum calcidiol ( p < 0.001) was observed versus a significant decrease ( p < 0.001) in the control population (T vs.",
+      "context_window": "t group, a significant increase in median serum calcidiol ( p < 0.001) was observed versus a significant decrease ( p < 0.001) in",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-6096",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6096,
+      "sentence": "After 13 weeks of intervention with 2 servings of the WP-MND in the test group, a significant increase in median serum calcidiol ( p < 0.001) was observed versus a significant decrease ( p < 0.001) in the control population (T vs.",
+      "context_window": "l ( p < 0.001) was observed versus a significant decrease ( p < 0.001) in the control population (T vs. C: p < 0.001) (Fig. 3 a).",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-6143",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6143,
+      "sentence": "C: p < 0.001) (Fig.",
+      "context_window": "t decrease ( p < 0.001) in the control population (T vs. C: p < 0.001) (Fig. 3 a). No further increase was observed in either of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-6285",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6285,
+      "sentence": "26 weeks) (Fig.",
+      "context_window": "st groups (TT1 and TT2) during the OLE study period (13 vs. 26 weeks) (Fig. 3 b). On the other hand, a significant increase in c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-6515",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6515,
+      "sentence": "On the other hand, a significant increase in calcidiol levels was observed in the participants who switched from the control product during the RCT to the test product in the OLE study period (both CT1, CT2: p < 0.001) and most in the group that received 2 servings of the WP-MND (CT1 vs.",
+      "context_window": "to the test product in the OLE study period (both CT1, CT2: p < 0.001) and most in the group that received 2 servings of the WP-M",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-6601",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6601,
+      "sentence": "CT2: p < 0.001).",
+      "context_window": "group that received 2 servings of the WP-MND (CT1 vs. CT2: p < 0.001). Serum levels of 25-hydroxy-vitamin D (calcidiol) in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-7643",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7643,
+      "sentence": "CT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE. # Significant difference in change between Test and Control groups. * Significant change within group\n\nFourteen participants had a serum calcidiol concentration \u2265 100 nmol/L at baseline, prior to the RCT (T: n = 6; C: n = 8).",
+      "context_window": "oncentration \u2265 100 nmol/L at baseline, prior to the RCT (T: n = 6; C: n = 8). In 20 participants with normal calcidiol levels",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-7653",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7653,
+      "sentence": "CT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE. # Significant difference in change between Test and Control groups. * Significant change within group\n\nFourteen participants had a serum calcidiol concentration \u2265 100 nmol/L at baseline, prior to the RCT (T: n = 6; C: n = 8).",
+      "context_window": "on \u2265 100 nmol/L at baseline, prior to the RCT (T: n = 6; C: n = 8). In 20 participants with normal calcidiol levels at baseli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-7778",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7778,
+      "sentence": "In 20 participants with normal calcidiol levels at baseline, calcidiol increased above 100 nmol/L during the RCT (T: n = 18, C: n = 2).",
+      "context_window": "ne, calcidiol increased above 100 nmol/L during the RCT (T: n = 18, C: n = 2). During the OLE study period, the number of part",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-7789",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7789,
+      "sentence": "In 20 participants with normal calcidiol levels at baseline, calcidiol increased above 100 nmol/L during the RCT (T: n = 18, C: n = 2).",
+      "context_window": "ol increased above 100 nmol/L during the RCT (T: n = 18, C: n = 2). During the OLE study period, the number of participants w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-7934",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7934,
+      "sentence": "During the OLE study period, the number of participants with serum calcidiol levels \u2265 100 nmol/L decreased in the former test groups (T: n = 20 \u2192 16) and increased in the former control groups (C: n = 6 \u2192 9).",
+      "context_window": "levels \u2265 100 nmol/L decreased in the former test groups (T: n = 20 \u2192 16) and increased in the former control groups (C: n = 6",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-7994",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7994,
+      "sentence": "During the OLE study period, the number of participants with serum calcidiol levels \u2265 100 nmol/L decreased in the former test groups (T: n = 20 \u2192 16) and increased in the former control groups (C: n = 6 \u2192 9).",
+      "context_window": "n = 20 \u2192 16) and increased in the former control groups (C: n = 6 \u2192 9). In 13 OLE participants (T: n = 10; C: n = 3) with cal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-8033",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8033,
+      "sentence": "In 13 OLE participants (T: n = 10; C: n = 3) with calcidiol levels \u2265 100 at week 13, serum calcidiol increased further at week 26 (range of increase: 2-38 nmol/L), independent of the number of servings.",
+      "context_window": "r control groups (C: n = 6 \u2192 9). In 13 OLE participants (T: n = 10; C: n = 3) with calcidiol levels \u2265 100 at week 13, serum ca",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-8044",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8044,
+      "sentence": "In 13 OLE participants (T: n = 10; C: n = 3) with calcidiol levels \u2265 100 at week 13, serum calcidiol increased further at week 26 (range of increase: 2-38 nmol/L), independent of the number of servings.",
+      "context_window": "roups (C: n = 6 \u2192 9). In 13 OLE participants (T: n = 10; C: n = 3) with calcidiol levels \u2265 100 at week 13, serum calcidiol in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-8276",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8276,
+      "sentence": "During the RCT, serum levels of PTH decreased in the test group ( p < 0.001) and increased in the control group ( p = 0.006) (Fig.",
+      "context_window": "the RCT, serum levels of PTH decreased in the test group ( p < 0.001) and increased in the control group ( p = 0.006) (Fig. 4 a)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-8324",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8324,
+      "sentence": "During the RCT, serum levels of PTH decreased in the test group ( p < 0.001) and increased in the control group ( p = 0.006) (Fig.",
+      "context_window": "est group ( p < 0.001) and increased in the control group ( p = 0.006) (Fig. 4 a). Serum levels of PTH did not change with contin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-8541",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8541,
+      "sentence": "Serum levels of PTH did not change with continued supplementation of a WP-MND but decreased significantly in participants who switched from control to test product during the OLE study period ( p < 0.001) (Fig.",
+      "context_window": "from control to test product during the OLE study period ( p < 0.001) (Fig. 4 b). Serum levels of parathyroid hormone (PTH) in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-9582",
+      "claim_type": "unit_value",
+      "raw_text": "2.33 mmol",
+      "numeric_values": [
+        2.33
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 9582,
+      "sentence": "CT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE. # Significant difference in change between Test and Control groups. * Significant change within group\n\nDuring the RCT, the albumin-adjusted serum calcium concentration increased in the test group from 2.29 to 2.33 mmol/L ( p < 0.001) versus no change in the control group (mean: 2.31 mmol/L; T vs.",
+      "context_window": "cium concentration increased in the test group from 2.29 to 2.33 mmol/L ( p < 0.001) versus no change in the control group (mean:",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-9596",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9596,
+      "sentence": "CT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE. # Significant difference in change between Test and Control groups. * Significant change within group\n\nDuring the RCT, the albumin-adjusted serum calcium concentration increased in the test group from 2.29 to 2.33 mmol/L ( p < 0.001) versus no change in the control group (mean: 2.31 mmol/L; T vs.",
+      "context_window": "tion increased in the test group from 2.29 to 2.33 mmol/L ( p < 0.001) versus no change in the control group (mean: 2.31 mmol/L;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-9652",
+      "claim_type": "unit_value",
+      "raw_text": "2.31 mmol",
+      "numeric_values": [
+        2.31
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 9652,
+      "sentence": "CT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE. # Significant difference in change between Test and Control groups. * Significant change within group\n\nDuring the RCT, the albumin-adjusted serum calcium concentration increased in the test group from 2.29 to 2.33 mmol/L ( p < 0.001) versus no change in the control group (mean: 2.31 mmol/L; T vs.",
+      "context_window": "L ( p < 0.001) versus no change in the control group (mean: 2.31 mmol/L; T vs. C: p < 0.001) (Fig. 5 a). During the OLE study per",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-9674",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9674,
+      "sentence": "C: p < 0.001) (Fig.",
+      "context_window": "no change in the control group (mean: 2.31 mmol/L; T vs. C: p < 0.001) (Fig. 5 a). During the OLE study period, calcium levels in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-9790",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9790,
+      "sentence": "During the OLE study period, calcium levels increased in the former control population (CT1: p = 0.017; CT2: p = 0.003) whereas no further increase was observed in the former test population (Fig.",
+      "context_window": "ium levels increased in the former control population (CT1: p = 0.017; CT2: p = 0.003) whereas no further increase was observed i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-9806",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9806,
+      "sentence": "During the OLE study period, calcium levels increased in the former control population (CT1: p = 0.017; CT2: p = 0.003) whereas no further increase was observed in the former test population (Fig.",
+      "context_window": "ased in the former control population (CT1: p = 0.017; CT2: p = 0.003) whereas no further increase was observed in the former tes",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-9944",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 9944,
+      "sentence": "Although albumin-corrected calcium levels > 2.55 mmol/L were observed, the proportion of participants with hypercalcaemia was not different between groups (Table 2 ).",
+      "context_window": "ion (Fig. 5 b). Although albumin-corrected calcium levels > 2.55 mmol/L were observed, the proportion of participants with hyperc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-10150",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 10150,
+      "sentence": "At baseline, 12 subjects already manifested albumin-corrected calcium levels above 2.55 mmol/L (T: n = 3; C: n = 9).",
+      "context_window": "s already manifested albumin-corrected calcium levels above 2.55 mmol/L (T: n = 3; C: n = 9). During the RCT, a similar number of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-10166",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10166,
+      "sentence": "At baseline, 12 subjects already manifested albumin-corrected calcium levels above 2.55 mmol/L (T: n = 3; C: n = 9).",
+      "context_window": "sted albumin-corrected calcium levels above 2.55 mmol/L (T: n = 3; C: n = 9). During the RCT, a similar number of subjects in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-10176",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10176,
+      "sentence": "At baseline, 12 subjects already manifested albumin-corrected calcium levels above 2.55 mmol/L (T: n = 3; C: n = 9).",
+      "context_window": "in-corrected calcium levels above 2.55 mmol/L (T: n = 3; C: n = 9). During the RCT, a similar number of subjects in the test",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-10288",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10288,
+      "sentence": "During the RCT, a similar number of subjects in the test and control group developed hypercalcaemia (T: n = 3; C: n = 3), while 8 (T: n = 2; C: n = 6) of the 14 subjects with hypercalcemia at week 13 already had elevated levels at baseline.",
+      "context_window": "in the test and control group developed hypercalcaemia (T: n = 3; C: n = 3), while 8 (T: n = 2; C: n = 6) of the 14 subjects",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-10298",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10298,
+      "sentence": "During the RCT, a similar number of subjects in the test and control group developed hypercalcaemia (T: n = 3; C: n = 3), while 8 (T: n = 2; C: n = 6) of the 14 subjects with hypercalcemia at week 13 already had elevated levels at baseline.",
+      "context_window": "st and control group developed hypercalcaemia (T: n = 3; C: n = 3), while 8 (T: n = 2; C: n = 6) of the 14 subjects with hype",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-10318",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10318,
+      "sentence": "During the RCT, a similar number of subjects in the test and control group developed hypercalcaemia (T: n = 3; C: n = 3), while 8 (T: n = 2; C: n = 6) of the 14 subjects with hypercalcemia at week 13 already had elevated levels at baseline.",
+      "context_window": "developed hypercalcaemia (T: n = 3; C: n = 3), while 8 (T: n = 2; C: n = 6) of the 14 subjects with hypercalcemia at week 13",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-10328",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10328,
+      "sentence": "During the RCT, a similar number of subjects in the test and control group developed hypercalcaemia (T: n = 3; C: n = 3), while 8 (T: n = 2; C: n = 6) of the 14 subjects with hypercalcemia at week 13 already had elevated levels at baseline.",
+      "context_window": "hypercalcaemia (T: n = 3; C: n = 3), while 8 (T: n = 2; C: n = 6) of the 14 subjects with hypercalcemia at week 13 already h",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-10790",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 10790,
+      "sentence": "In OLE extension with 2 servings per day (CT2), 2 subjects maintained the elevated calcium levels and 3 new subjects were found with calcium levels above 2.55 mmol/L.",
+      "context_window": "els and 3 new subjects were found with calcium levels above 2.55 mmol/L. In the OLE group taking 1 serving a day (CT1), 3 subject",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-10948",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 10948,
+      "sentence": "In the OLE group taking 1 serving a day (CT1), 3 subjects maintained higher calcium levels, while 2 subjects with the elevation of calcium above 2.55 mmol/L were found.",
+      "context_window": "evels, while 2 subjects with the elevation of calcium above 2.55 mmol/L were found. The presence of hypercalcemia at baseline or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-12166",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 12166,
+      "sentence": "CT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE. # Significant difference in change between Test and Control groups. * Significant change within group\n\nPrevalence ( n , %) of hypercalcaemia (albumin corrected calcium > 2.55 mmol/L) during RCT and open-label extension of the study (OLE)\n\nCT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE\n\nAt the start of RCT, none of the 14 participants with calcidiol levels above 100 nmol/L had albumin-corrected calcium levels above 2.55 mmol/L.",
+      "context_window": "nce ( n , %) of hypercalcaemia (albumin corrected calcium > 2.55 mmol/L) during RCT and open-label extension of the study (OLE)",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-12650",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 12650,
+      "sentence": "CT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE. # Significant difference in change between Test and Control groups. * Significant change within group\n\nPrevalence ( n , %) of hypercalcaemia (albumin corrected calcium > 2.55 mmol/L) during RCT and open-label extension of the study (OLE)\n\nCT1, former RCT Control group receiving 1 serving of WP-MND during OLE; CT2, former RCT Control group receiving 2 servings of WP-MND during OLE; TT1, former RCT Test group receiving 1 serving of WP-MND during OLE; TT2, former RCT Test group receiving 2 servings of WP-MND during OLE\n\nAt the start of RCT, none of the 14 participants with calcidiol levels above 100 nmol/L had albumin-corrected calcium levels above 2.55 mmol/L.",
+      "context_window": "above 100 nmol/L had albumin-corrected calcium levels above 2.55 mmol/L. At week 13 (end RCT and start OLE), 3 out of 26 particip",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-12828",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 12828,
+      "sentence": "At week 13 (end RCT and start OLE), 3 out of 26 participants with calcidiol above 100 nmol/L (from the former test group) had albumin-corrected calcium levels above 2.55 mmol/L.",
+      "context_window": "rmer test group) had albumin-corrected calcium levels above 2.55 mmol/L. At week 26 (end OLE), 3 out of 25 participants had both",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-13307",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13307,
+      "sentence": "At baseline, heart rate was significantly higher in the test group compared to the control group ( p = 0.011), but no significant changes in heart rate, systolic and diastolic blood pressure were observed between the two groups after 13 weeks of intervention (Table 3 in Appendix ).",
+      "context_window": "ly higher in the test group compared to the control group ( p = 0.011), but no significant changes in heart rate, systolic and di",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-13442",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 13442,
+      "sentence": "At baseline, heart rate was significantly higher in the test group compared to the control group ( p = 0.011), but no significant changes in heart rate, systolic and diastolic blood pressure were observed between the two groups after 13 weeks of intervention (Table 3 in Appendix ).",
+      "context_window": "c blood pressure were observed between the two groups after 13 weeks of intervention (Table 3 in Appendix ). At OLE baseline (we",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-13588",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13588,
+      "sentence": "At OLE baseline (week 13), heart rate in TT1 was significantly lower compared to the TT2 group ( p = 0.018), but no other significant differences were found between the groups at week 26.",
+      "context_window": "in TT1 was significantly lower compared to the TT2 group ( p = 0.018), but no other significant differences were found between t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-15073",
+      "claim_type": "percentage",
+      "raw_text": "25.0%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 15073,
+      "sentence": "From those, 193 were assessed as being related to the study products, without a significant difference between the test group (46 subjects; 25.0%) and the control group (54 subjects; 27.7%) ( p = 0.562).",
+      "context_window": "significant difference between the test group (46 subjects; 25.0%) and the control group (54 subjects; 27.7%) ( p = 0.562). I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-15116",
+      "claim_type": "percentage",
+      "raw_text": "27.7%",
+      "numeric_values": [
+        27.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 15116,
+      "sentence": "From those, 193 were assessed as being related to the study products, without a significant difference between the test group (46 subjects; 25.0%) and the control group (54 subjects; 27.7%) ( p = 0.562).",
+      "context_window": "up (46 subjects; 25.0%) and the control group (54 subjects; 27.7%) ( p = 0.562). In the OLE study period, a total of 216 adve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-15125",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.562",
+      "numeric_values": [
+        0.562
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15125,
+      "sentence": "From those, 193 were assessed as being related to the study products, without a significant difference between the test group (46 subjects; 25.0%) and the control group (54 subjects; 27.7%) ( p = 0.562).",
+      "context_window": "bjects; 25.0%) and the control group (54 subjects; 27.7%) ( p = 0.562). In the OLE study period, a total of 216 adverse events we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-15417",
+      "claim_type": "percentage",
+      "raw_text": "20.9%",
+      "numeric_values": [
+        20.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 15417,
+      "sentence": "The number of subjects reporting one or more related adverse events was significantly higher in the TT2 group (9 subjects; 20.9%) compared to the TT1 group (only 3 subjects; 5%) ( p = 0.026).",
+      "context_window": "ents was significantly higher in the TT2 group (9 subjects; 20.9%) compared to the TT1 group (only 3 subjects; 5%) ( p = 0.02",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-15468",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 15468,
+      "sentence": "The number of subjects reporting one or more related adverse events was significantly higher in the TT2 group (9 subjects; 20.9%) compared to the TT1 group (only 3 subjects; 5%) ( p = 0.026).",
+      "context_window": "ubjects; 20.9%) compared to the TT1 group (only 3 subjects; 5%) ( p = 0.026). Since other between-groups comparisons did n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-15474",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15474,
+      "sentence": "The number of subjects reporting one or more related adverse events was significantly higher in the TT2 group (9 subjects; 20.9%) compared to the TT1 group (only 3 subjects; 5%) ( p = 0.026).",
+      "context_window": "s; 20.9%) compared to the TT1 group (only 3 subjects; 5%) ( p = 0.026). Since other between-groups comparisons did not show a sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-16160",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 16160,
+      "sentence": "Moreover, no related adverse (serious or non-serious) events, including nephrolithiasis (kidney stones), were observed in participants with serum calcidiol levels \u2265 100 nmol/L or with albumin-adjusted calcium levels > 2.55 mmol/L, at any of the time points.",
+      "context_window": "vels \u2265 100 nmol/L or with albumin-adjusted calcium levels > 2.55 mmol/L, at any of the time points. The incidence and the severi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-16884",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16884,
+      "sentence": "TT2), except for diarrhoea which was significantly lower in CT2 compared to CT1 ( p = 0.01) (Table 6 in Appendix ).",
+      "context_window": "hoea which was significantly lower in CT2 compared to CT1 ( p = 0.01) (Table 6 in Appendix ). Incidence of the gastrointestinal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-p-807",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 807,
+      "sentence": "During the RCT, eGFR increased in the test vs. no change in the control group ( p = 0.002).",
+      "context_window": "increased in the test vs. no change in the control group ( p = 0.002). The same trend was observed in the subgroup of participan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-1243",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1243,
+      "sentence": "The observed plateau in eGFR after 13 weeks of treatment with 2 servings of WP-MND during the OLE period, supports this notion of adaptation.",
+      "context_window": "per se [ 31 , 33 , 34 ]. The observed plateau in eGFR after 13 weeks of treatment with 2 servings of WP-MND during the OLE perio",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-1419",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1419,
+      "sentence": "Moreover, the observed increase and subsequent plateau of eGFR after 13 weeks of treatment in older people with moderate CKD suggest that even those individuals still tolerate a high protein diet.",
+      "context_window": "the observed increase and subsequent plateau of eGFR after 13 weeks of treatment in older people with moderate CKD suggest that",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-2068",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2068,
+      "sentence": "Calcidiol levels increased with the intake of 2 servings of WP-MND, providing 40 \u00b5g vitamin D, and reached a plateau at ~ 80 nmol/L after 3 months of supplementation.",
+      "context_window": "40 \u00b5g vitamin D, and reached a plateau at ~ 80 nmol/L after 3 months of supplementation. Moreover, 1 serving of WP-MND providing",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-2191",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2191,
+      "sentence": "Moreover, 1 serving of WP-MND providing 20 \u00b5g vitamin D also increased calcidiol levels after 3 months, although to a lesser extent (~ 70 nmol/L), hence suggesting a dose-response effect.",
+      "context_window": "iding 20 \u00b5g vitamin D also increased calcidiol levels after 3 months, although to a lesser extent (~ 70 nmol/L), hence suggestin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-2929",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 2929,
+      "sentence": "In our study, some participants had calcidiol levels \u2265 100 nmol/L with or without hypercalcemia (albumin-corrected calcium levels > 2.55 mmol/L) at baseline or during the study.",
+      "context_window": "r without hypercalcemia (albumin-corrected calcium levels > 2.55 mmol/L) at baseline or during the study. However, no causal rela",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-3588",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3588,
+      "sentence": "This increase was observed to plateau after 3 months of supplementation with 2 servings of WP-MND.",
+      "context_window": "oup during OLE. This increase was observed to plateau after 3 months of supplementation with 2 servings of WP-MND. The total gro",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-3703",
+      "claim_type": "unit_value",
+      "raw_text": "2.30 mmol",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 3703,
+      "sentence": "The total group average serum calcium level at baseline was 2.30 mmol/L (not different between groups), which is within the reference range of 2.15-2.6 mmol/L [ 24 ].",
+      "context_window": "The total group average serum calcium level at baseline was 2.30 mmol/L (not different between groups), which is within the refer",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-3791",
+      "claim_type": "unit_value",
+      "raw_text": "2.6 mmol",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 3791,
+      "sentence": "The total group average serum calcium level at baseline was 2.30 mmol/L (not different between groups), which is within the reference range of 2.15-2.6 mmol/L [ 24 ].",
+      "context_window": "etween groups), which is within the reference range of 2.15-2.6 mmol/L [ 24 ]. Twelve participants had hypercalcemia at baseline",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-pct-3993",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3993,
+      "sentence": "Twelve participants had hypercalcemia at baseline of the RCT, which is a surprisingly higher prevalence than reported in other populations, such as in the community and hospital (0.2-4% [ 42 , 43 ]).",
+      "context_window": "her populations, such as in the community and hospital (0.2-4% [ 42 , 43 ]). This warrants confirmation of potentially unk",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-4732",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4732,
+      "sentence": "Another cause for hypercalcemia could be due to the calcium provided (1000 mg in 2 servings of WP-MND on top of the diet providing on average about 1000 g/day of calcium), leaving a margin of 500 mg before exceeding the TUL as established by EFSA [ 44 ].",
+      "context_window": "use for hypercalcemia could be due to the calcium provided (1000 mg in 2 servings of WP-MND on top of the diet providing on ave",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-4854",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4854,
+      "sentence": "Another cause for hypercalcemia could be due to the calcium provided (1000 mg in 2 servings of WP-MND on top of the diet providing on average about 1000 g/day of calcium), leaving a margin of 500 mg before exceeding the TUL as established by EFSA [ 44 ].",
+      "context_window": "n average about 1000 g/day of calcium), leaving a margin of 500 mg before exceeding the TUL as established by EFSA [ 44 ]. How",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-u-5606",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 mmol",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 5606,
+      "sentence": "Moreover, no adverse (serious or non-serious) events were observed in participants with serum calcidiol levels \u2265 100 nmol/L or with albumin-adjusted calcium levels > 2.55 mmol/L, at any of the time points.",
+      "context_window": "vels \u2265 100 nmol/L or with albumin-adjusted calcium levels > 2.55 mmol/L, at any of the time points. Finally, vital signs did not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-6006",
+      "claim_type": "sample_size",
+      "raw_text": "n = 380",
+      "numeric_values": [
+        380.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6006,
+      "sentence": "The main strength of this investigation is the evaluation of the safety of an effective medical nutrition drink in a study group of sarcopenic older adults ( n = 380) [ 19 ].",
+      "context_window": "trition drink in a study group of sarcopenic older adults ( n = 380) [ 19 ]. Detailed information was collected about the impac",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7452877_safety_and_tolerability_of_6_month_supplementation_with_a_vi-n-158",
+      "claim_type": "sample_size",
+      "raw_text": "n = 380",
+      "numeric_values": [
+        380.0
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 158,
+      "sentence": "The main strength of this investigation is the evaluation of the safety of an effective medical nutrition drink in a study group of sarcopenic older adults ( n = 380) [ 19 ].",
+      "context_window": "trition drink in a study group of sarcopenic older adults ( n = 380) [ 19 ]. Detailed information was collected about the impac",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

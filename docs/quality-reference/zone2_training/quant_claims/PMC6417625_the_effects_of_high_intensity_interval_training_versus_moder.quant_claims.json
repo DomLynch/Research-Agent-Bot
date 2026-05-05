@@ -1,0 +1,283 @@
+{
+  "paper_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder",
+  "doi": "10.1097/MD.0000000000014751",
+  "extracted_at": "2026-05-05T22:43:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 10,
+    "unit_value": 3,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-pct-1963",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1963,
+      "sentence": "In pediatric population, the traditional methods to increase physical activity have principally used continuous training, which trend to rely on longer-duration sessions involving moderate-intensity continuous training (MICT). [ 6 , 7 ] Although previous studies have examined that MICT is associated with significant reduction in body fat and cardiovascular risk factor in obese children and adolescents, studies have shown that the majority of children failed to meet the recommended physical activity guidelines, such as only 30% of school-aged children met MVPA recommendations in China. [ 8 ] Lacking of time has been considered as main barriers.",
+      "context_window": "the recommended physical activity guidelines, such as only 30% of school-aged children met MVPA recommendations in China.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-pct-3019",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3019,
+      "sentence": "The emerging evidence has revealed that HIIT could lead to greater or comparable abdominal and visceral fat mass loss and cardiorespiratory fitness improvement than MICT among overweight and obese adults, [ 9 , 10 ] and could more effectively reduce metabolic risk factors in type 2 diabetes, indicating that HIIT may be a superior modality to keep cardiometabolic health. [ 11 , 12 ] Furthermore, a meta-analysis conducted by Wewege et al. [ 13 ] showed that short-term HIIT could elicit modest improvement in body fat and waist circumference in overweight and obese adults, which can reduce 40% times commitment each week compared with MICT.",
+      "context_window": "cumference in overweight and obese adults, which can reduce 40% times commitment each week compared with MICT. However, HII",
+      "claim_role": "background",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-u-1088",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1088,
+      "sentence": "The studies included children who were defined as obese, aged 6 to 18 years, and the definitions of childhood obesity was based on the age and sex-specific body mass index (BMI) cut-off points as indicated by WHO, the Centers for Disease Control and Prevention, or the International Obesity Task Force.",
+      "context_window": "dies included children who were defined as obese, aged 6 to 18 years, and the definitions of childhood obesity was based on the",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-u-1427",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1427,
+      "sentence": "The study participants who are normal-weight children, overweight children, and participants aged 6 to 18 years will be excluded.",
+      "context_window": "t children, overweight children, and participants aged 6 to 18 years will be excluded. The included studies must involve HIIT a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-u-1578",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1578,
+      "sentence": "The included studies must involve HIIT and MICT groups, the training frequency of which is more than twice a week for over 4 weeks.",
+      "context_window": "ining frequency of which is more than twice a week for over 4 weeks. HIIT programs involved training at 80% to 100% peak heart",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-pct-1622",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1622,
+      "sentence": "HIIT programs involved training at 80% to 100% peak heart rate (HR peak ) or VO 2peak [ 15 ] for 30 seconds to 4 minutes, interspersed for up to 4 minutes of passive recovery or low-intensity aerobic exercise.",
+      "context_window": "a week for over 4 weeks. HIIT programs involved training at 80% to 100% peak heart rate (HR peak ) or VO 2peak [ 15 ] for 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-pct-1629",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1629,
+      "sentence": "HIIT programs involved training at 80% to 100% peak heart rate (HR peak ) or VO 2peak [ 15 ] for 30 seconds to 4 minutes, interspersed for up to 4 minutes of passive recovery or low-intensity aerobic exercise.",
+      "context_window": "for over 4 weeks. HIIT programs involved training at 80% to 100% peak heart rate (HR peak ) or VO 2peak [ 15 ] for 30 second",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-pct-1832",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1832,
+      "sentence": "MICT programs involved training at 55% to 69% HR 2peak or 40% to 59% VO 2peak for 20 to 60 minutes. [ 16 ] The studies also could be included if HIIT combine with nutritional intervention or lifestyle intervention, but combine with other forms of training, such resistance training, swimming and other ball games will be excluded.",
+      "context_window": "ensity aerobic exercise. MICT programs involved training at 55% to 69% HR 2peak or 40% to 59% VO 2peak for 20 to 60 minutes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-pct-1839",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1839,
+      "sentence": "MICT programs involved training at 55% to 69% HR 2peak or 40% to 59% VO 2peak for 20 to 60 minutes. [ 16 ] The studies also could be included if HIIT combine with nutritional intervention or lifestyle intervention, but combine with other forms of training, such resistance training, swimming and other ball games will be excluded.",
+      "context_window": "aerobic exercise. MICT programs involved training at 55% to 69% HR 2peak or 40% to 59% VO 2peak for 20 to 60 minutes. [ 16",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-pct-1855",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1855,
+      "sentence": "MICT programs involved training at 55% to 69% HR 2peak or 40% to 59% VO 2peak for 20 to 60 minutes. [ 16 ] The studies also could be included if HIIT combine with nutritional intervention or lifestyle intervention, but combine with other forms of training, such resistance training, swimming and other ball games will be excluded.",
+      "context_window": ". MICT programs involved training at 55% to 69% HR 2peak or 40% to 59% VO 2peak for 20 to 60 minutes. [ 16 ] The studies al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-pct-1862",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1862,
+      "sentence": "MICT programs involved training at 55% to 69% HR 2peak or 40% to 59% VO 2peak for 20 to 60 minutes. [ 16 ] The studies also could be included if HIIT combine with nutritional intervention or lifestyle intervention, but combine with other forms of training, such resistance training, swimming and other ball games will be excluded.",
+      "context_window": "programs involved training at 55% to 69% HR 2peak or 40% to 59% VO 2peak for 20 to 60 minutes. [ 16 ] The studies also coul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-p-4847",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4847,
+      "sentence": "If P > 0.01, I 2 < 50%, it is considered that heterogeneity is low enough to conduct a meta-analysis by a fixed-effect model.",
+      "context_window": "be determined by the Q statistic and the I 2 statistic. If P > 0.01, I 2 < 50%, it is considered that heterogeneity is low enou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-pct-4863",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4863,
+      "sentence": "If P > 0.01, I 2 < 50%, it is considered that heterogeneity is low enough to conduct a meta-analysis by a fixed-effect model.",
+      "context_window": "y the Q statistic and the I 2 statistic. If P > 0.01, I 2 < 50%, it is considered that heterogeneity is low enough to condu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-p-4973",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4973,
+      "sentence": "If P < 0.10, I 2 > 50%, it is considered that there is a large heterogeneity, and a random-effect model will be used.",
+      "context_window": "ough to conduct a meta-analysis by a fixed-effect model. If P < 0.10, I 2 > 50%, it is considered that there is a large heteroge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder-pct-4989",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4989,
+      "sentence": "If P < 0.10, I 2 > 50%, it is considered that there is a large heterogeneity, and a random-effect model will be used.",
+      "context_window": "a meta-analysis by a fixed-effect model. If P < 0.10, I 2 > 50%, it is considered that there is a large heterogeneity, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

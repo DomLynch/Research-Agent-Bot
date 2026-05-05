@@ -1,0 +1,2735 @@
+{
+  "topic": "zone2_training",
+  "retrieval_mode": "calibrated",
+  "n_queries": 5,
+  "n_unique_candidates": 335,
+  "n_selected_for_fetch": 335,
+  "n_pmcid_resolved": 115,
+  "n_extracted": 104,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10048683",
+    "PMC10184247",
+    "PMC10445364",
+    "PMC10457360",
+    "PMC10465302",
+    "PMC10550571",
+    "PMC10658315",
+    "PMC10747241",
+    "PMC10749735",
+    "PMC10933151",
+    "PMC11062412",
+    "PMC11255215",
+    "PMC11262642",
+    "PMC11263861",
+    "PMC11329428",
+    "PMC11341307",
+    "PMC11359207",
+    "PMC11366854",
+    "PMC11413624",
+    "PMC11502486",
+    "PMC11629943",
+    "PMC11765090",
+    "PMC11821953",
+    "PMC11841918",
+    "PMC11861271",
+    "PMC11877300",
+    "PMC12084029",
+    "PMC12202225",
+    "PMC12339354",
+    "PMC12341516",
+    "PMC12343602",
+    "PMC12418185",
+    "PMC12423243",
+    "PMC12521180",
+    "PMC12567725",
+    "PMC12571624",
+    "PMC12593510",
+    "PMC12653759",
+    "PMC12795074",
+    "PMC12810095",
+    "PMC12816250",
+    "PMC12851979",
+    "PMC12869853",
+    "PMC12911145",
+    "PMC12937137",
+    "PMC12946864",
+    "PMC12948083",
+    "PMC13033501",
+    "PMC1332375",
+    "PMC1724499",
+    "PMC3195859",
+    "PMC3492021",
+    "PMC3588651",
+    "PMC3754931",
+    "PMC3846819",
+    "PMC3922955",
+    "PMC4037310",
+    "PMC4327385",
+    "PMC4368602",
+    "PMC4396724",
+    "PMC4468587",
+    "PMC4556835",
+    "PMC4841588",
+    "PMC4846072",
+    "PMC4928447",
+    "PMC5046191",
+    "PMC5093324",
+    "PMC5585392",
+    "PMC5790162",
+    "PMC6069078",
+    "PMC6090054",
+    "PMC6266893",
+    "PMC6349321",
+    "PMC6352351",
+    "PMC6388288",
+    "PMC6417625",
+    "PMC6499209",
+    "PMC6539300",
+    "PMC6562501",
+    "PMC6862460",
+    "PMC6862704",
+    "PMC6937112",
+    "PMC7045584",
+    "PMC7084372",
+    "PMC7084630",
+    "PMC7145974",
+    "PMC7297415",
+    "PMC7300209",
+    "PMC7357372",
+    "PMC7363749",
+    "PMC8430701",
+    "PMC8623248",
+    "PMC8656668",
+    "PMC8701016",
+    "PMC8776485",
+    "PMC8820153",
+    "PMC8904881",
+    "PMC8910006",
+    "PMC9012527",
+    "PMC9123685",
+    "PMC9247394",
+    "PMC9315493",
+    "PMC9375909",
+    "PMC9388827",
+    "PMC9465764",
+    "PMC9499162",
+    "PMC9517925",
+    "PMC9518107",
+    "PMC9604034",
+    "PMC9690254",
+    "PMC9771301",
+    "PMC9876872",
+    "PMC9956571",
+    "PMC9977827",
+    "PMC9982541"
+  ],
+  "active_paper_ids": [
+    "PMC10048683_effect_of_high_intensity_interval_training_vs_moderate_inten",
+    "PMC10184247_high_intensity_interval_training_versus_moderate_intensity_c",
+    "PMC10445364_comparison_of_high_intensity_interval_training_versus_modera",
+    "PMC10457360_high_intensity_interval_training_versus_moderate_intensity_c",
+    "PMC10465302_effects_of_high_intensity_interval_training_moderate_intensi",
+    "PMC10550571_effect_of_high_intensity_interval_training_compared_to_moder",
+    "PMC10658315_comparison_of_the_effects_of_high_intensity_interval_and_mod",
+    "PMC10747241_the_effect_of_contrast_water_therapy_on_dehydration_during_e",
+    "PMC10749735_improving_health_outcomes_in_coronary_artery_disease_patient",
+    "PMC10933151_concurrent_strength_and_endurance_training_a_systematic_revi",
+    "PMC11255215_comparative_effects_of_high_intensity_interval_training_and_",
+    "PMC11262642_endurance_training_volume_cannot_entirely_substitute_for_the",
+    "PMC11263861_effects_of_high_intensity_interval_training_vs_moderate_inte",
+    "PMC11329428_comparison_of_polarized_versus_other_types_of_endurance_trai",
+    "PMC11341307_effect_of_eight_week_high_intensity_interval_training_versus",
+    "PMC11359207_effect_of_strength_and_endurance_training_sequence_on_endura",
+    "PMC11413624_effect_of_high_intensity_interval_training_and_moderate_inte",
+    "PMC11502486_effects_of_high_intensity_interval_training_versus_moderate_",
+    "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_",
+    "PMC11765090_the_effects_of_endurance_training_and_high_intensity_resista",
+    "PMC11821953_distinct_lipidomic_profiles_but_similar_improvements_in_aero",
+    "PMC11841918_effects_of_high_intensity_interval_training_versus_moderate_",
+    "PMC11861271_acute_effects_of_high_intensity_interval_training_and_modera",
+    "PMC12084029_effects_of_high_intensity_interval_training_vs_moderate_inte",
+    "PMC12202225_effects_of_high_intensity_interval_training_hiit_versus_mode",
+    "PMC12339354_effective_of_high_intensity_interval_training_and_moderate_i",
+    "PMC12341516_compared_to_moderate_intensity_continuous_training_short_ter",
+    "PMC12343602_effects_and_moderator_of_high_intensity_interval_training_an",
+    "PMC12423243_why_low_intensity_endurance_training_for_athletes",
+    "PMC12521180_comparative_effects_of_high_intensity_interval_training_vers",
+    "PMC12567725_isocaloric_high_intensity_interval_and_circuit_training_incr",
+    "PMC12571624_high_intensity_interval_training_versus_moderate_intensity_c",
+    "PMC12593510_optimising_adolescent_health_a_comparative_study_of_high_int",
+    "PMC12653759_influence_of_endurance_training_high_intensity_interval_trai",
+    "PMC12795074_the_effect_of_high_intensity_interval_training_and_moderate_",
+    "PMC12810095_effects_of_low_intensity_endurance_training_on_aerobic_fitne",
+    "PMC12816250_a_time_efficient_public_health_strategy_a_systematic_review_",
+    "PMC12851979_periodized_carbohydrate_intake_influences_metabolic_flexibil",
+    "PMC12869853_high_intensity_interval_training_enhances_cardiovascular_and",
+    "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car",
+    "PMC12937137_effects_of_high_intensity_interval_training_versus_moderate_",
+    "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont",
+    "PMC12948083_effects_of_slide_board_based_high_intensity_interval_versus_",
+    "PMC13033501_divergent_effects_of_high_intensity_functional_training_and_",
+    "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re",
+    "PMC3492021_aerobic_endurance_training_versus_relaxation_training_in_pat",
+    "PMC3588651_supplementary_low_intensity_aerobic_training_improves_aerobi",
+    "PMC3754931_heart_rate_dynamics_after_combined_strength_and_endurance_tr",
+    "PMC3846819_effects_of_high_intensity_circuit_training_low_intensity_cir",
+    "PMC3922955_lifelong_endurance_training_attenuates_age_related_genotoxic",
+    "PMC4327385_the_effects_of_sprint_interval_vs_continuous_endurance_train",
+    "PMC4368602_endurance_training_induced_increase_in_circulating_irisin_le",
+    "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati",
+    "PMC4468587_association_between_kcnj11_gene_e23k_polymorphism_and_body_c",
+    "PMC4841588_mechanisms_of_attenuation_of_pulmonary_v_o_2_slow_component_",
+    "PMC4846072_twelve_weeks_of_sprint_interval_training_improves_indices_of",
+    "PMC4928447_impact_of_long_term_endurance_training_vs_guideline_based_ph",
+    "PMC5093324_endurance_training_intensity_does_not_mediate_interference_t",
+    "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_",
+    "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c",
+    "PMC6069078_the_effects_of_high_intensity_interval_training_vs_moderate_",
+    "PMC6090054_the_effects_of_concurrent_strength_and_endurance_training_on",
+    "PMC6266893_effects_of_royal_jelly_administration_on_endurance_training_",
+    "PMC6349321_effects_of_hiit_and_mict_on_cardiovascular_risk_factors_in_a",
+    "PMC6352351_high_intensity_interval_training_and_moderate_intensity_cont",
+    "PMC6388288_reduced_exertion_high_intensity_interval_training_is_more_ef",
+    "PMC6417625_the_effects_of_high_intensity_interval_training_versus_moder",
+    "PMC6499209_superior_effects_of_high_intensity_interval_vs_moderate_inte",
+    "PMC6539300_effect_of_high_intensity_interval_training_versus_moderate_i",
+    "PMC6562501_a_new_method_to_improve_running_economy_and_maximal_aerobic_",
+    "PMC6862460_high_intensity_interval_training_versus_moderate_intensity_c",
+    "PMC6862704_high_intensity_interval_circuit_training_versus_moderate_int",
+    "PMC6937112_hiit_is_not_superior_to_mict_in_altering_blood_lipids_a_syst",
+    "PMC7045584_cardiorespiratory_fitness_and_accelerometer_determined_physi",
+    "PMC7084372_high_intensity_interval_circuit_training_versus_moderate_int",
+    "PMC7084630_differences_in_training_adaptations_of_endurance_performance",
+    "PMC7145974_comparative_effectiveness_of_high_intensity_interval_trainin",
+    "PMC7297415_the_impact_of_high_intensity_interval_training_versus_modera",
+    "PMC7300209_the_effects_of_concurrent_training_combining_both_resistance",
+    "PMC7357372_effects_of_high_intensity_interval_training_compared_to_mode",
+    "PMC7363749_should_heartbeats_training_session_be_considered_when_compar",
+    "PMC8430701_the_effects_of_high_intensity_interval_training_vs_moderate_",
+    "PMC8623248_effects_of_high_intensity_interval_training_and_moderate_int",
+    "PMC8656668_effects_of_endurance_training_intensity_on_pulmonary_diffusi",
+    "PMC8701016_effect_of_cycle_based_high_intensity_interval_training_and_m",
+    "PMC8776485_a_comparative_study_of_health_efficacy_indicators_in_subject",
+    "PMC8904881_effects_of_high_intensity_interval_vs_moderate_intensity_con",
+    "PMC8910006_the_effect_of_low_intensity_aerobic_training_combined_with_b",
+    "PMC9012527_physiological_perceptual_and_performance_responses_to_the_2_",
+    "PMC9123685_feasibility_and_acceptability_of_high_intensity_interval_tra",
+    "PMC9247394_short_and_long_term_effects_of_high_intensity_interval_train",
+    "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo",
+    "PMC9375909_patterns_and_determinants_of_adherence_to_resistance_and_end",
+    "PMC9388827_changes_in_the_fitness_fatness_index_following_reduced_exert",
+    "PMC9465764_performance_and_submaximal_adaptations_to_additional_speed_e",
+    "PMC9499162_effect_of_low_intensity_aerobic_training_combined_with_blood",
+    "PMC9517925_acute_effects_of_high_intensity_functional_training_and_mode",
+    "PMC9518107_effects_of_running_specific_strength_training_endurance_trai",
+    "PMC9604034_the_comparison_of_high_intensity_interval_training_versus_mo",
+    "PMC9690254_acute_effects_of_sprint_interval_training_and_chronic_effect",
+    "PMC9771301_effects_of_high_intensity_interval_training_versus_moderate_",
+    "PMC9876872_effects_of_concurrent_strength_and_endurance_training_on_mea",
+    "PMC9956571_a_comparative_study_of_inhibition_function_between_high_inte",
+    "PMC9977827_durability_is_improved_by_both_low_and_high_intensity_endura"
+  ],
+  "failures": [
+    {
+      "title": "Comparison of High-Intensity Training Versus Moderate-Intensity Continuous Train",
+      "doi": "10.1123/jpah.2020-0335",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of High-Intensity Interval Training to Moderate-Intensity Continuous ",
+      "doi": "10.1123/japa.2019-0111",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of High-Intensity Interval Training, Moderate-Intensity Continuous Traini",
+      "doi": "10.1249/mss.0000000000002226",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-Intensity Interval Training and Isocaloric Moderate-Intensity Continuous Tr",
+      "doi": "10.1123/ijsnem.2015-0078",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Time course and mechanisms of adaptations in cardiorespiratory fitness with endu",
+      "doi": "10.1152/japplphysiol.01152.2009",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of High-Intensity Endurance Training on Maximal Oxygen Consumption in He",
+      "doi": "10.1177/0733464804273185",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Resistance Training and Endurance Training on Insulin Sensitivity in ",
+      "doi": "10.1210/jcem.85.7.6692",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low to Moderate Intensity Endurance Training in Healthy Older Adults: Physiologi",
+      "doi": "10.1111/j.1532-5415.1992.tb01820.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "HIIT vs MICT During Pregnancy and Health and Birth Outcomes in Mothers and Child",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of HIIT and MICT Training on Cardiorespiratory Fitness, Testosterone/Cor",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Trial in Hypertensive Patients Comparing Two Cardiorespiratory Exercise",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of High-Intensity Interval Training and Moderate-Intensity Continuous",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Isocapnic Respiratory Muscle Endurance Training in Healthy Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "SUPERIOR EFFECTS OF HIGH-INTENSITY INTERVAL TRAINING COMPARED WITH MODERATE-INTE",
+      "doi": "10.63299/ijopt.0701127",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "<b>High-Intensity Interval Training Versus Moderate-Intensity Continuous Trainin",
+      "doi": "10.62464/p770w219",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A116: Resistance Training vs. Moderate-Intensity Continuous Training on Cognitiv",
+      "doi": "10.18122/ijpah.5.1.116.boisestate",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract MPTH64: High-Intensity Interval Training Provides Greater Gains In Qual",
+      "doi": "10.1161/cir.153.suppl_1.mpth64",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "HIIT vs. MICT Training Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparing HICT and MICT for Health Improvements in Overweight Young Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Endurance Training on Lipedema",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acute Neurochemical and Cognitive Changes After HIIT vs MICT/LICT",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Effects of Moderate Intensity Circuit Training and Moderate-Intensit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Treinamento intervalado de alta intensidade (HIIT) vs. Treinamento Cont\u00ednuo de I",
+      "doi": "10.51473/rcmos.v1i2.2025.1690",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Central versus peripheral adaptation to explain improvement in aerobic exercise ",
+      "doi": "10.1093/eurjpc/zwaf236.476",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Differences in Effect of High-Intensity Interval Training and Moderate-Intensity",
+      "doi": "10.55299/ijphe.v5i1.1515",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Moderate Intensity Continuous Training (MICT) on Cardiovascular Parame",
+      "doi": "10.64252/agx7se91",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "<b>Compare the Effects of Pilates Training and Moderate-Intensity Continuous Tra",
+      "doi": "10.61919/z1e92245",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-Intensity Interval and Moderate-Intensity Continuous Training: Effect on At",
+      "doi": "10.70838/pemj.490504",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of High-Intensity Interval Training and Moderate-Intensity Continuou",
+      "doi": "10.1152/physiol.2025.40.s1.0878",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-intensity interval vs moderate-intensity continuous training in endurance r",
+      "doi": "10.1177/17479541251375315",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "HIIT vs TRAD: A Comparative Analysis of High-Intensity Interval Training and Tra",
+      "doi": "10.55041/ijsrem51512",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 4367183: Comparative Efficacy of High-Intensity Interval Training and M",
+      "doi": "10.1161/circ.152.suppl_3.4367183",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of high-intensity interval-training compared to moderate-intensity cont",
+      "doi": "10.15381/rivep.v36i4.27364",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physiological Determinants of V\u0307O2max Increase with Endurance Training in a Grou",
+      "doi": "10.1249/mss.0000000000003707",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Aerobic and Muscular Endurance Training On Physical Fitness, Physiolog",
+      "doi": "10.32628/ijsrhss252230",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Using Small-Sided Games or Their Combination with Speed Endurance Training: Whic",
+      "doi": "10.17309/tmfv.2025.3.02",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mixing 1:1 HIIT and MICT in Early to Very Early Phase HTx Recipients : a Retrosp",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Interference of Endurance Training on Strength Development and Neuromuscular Ada",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Low-volume HIIT Versus MICT on Physical Performance in Older Adults W",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Lower Limb Resistance Versus Endurance Training in Smokers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise Frequency During Endurance Training: Cardiorespiratory, Hematological, ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of High-Intensity Interval Training (HIIT) vs. Moderate-Intensity Conti",
+      "doi": "10.61919/jhrr.v4i3.1481",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Low-Volume High-Intensity Interval Training and Moderate-Intensity Con",
+      "doi": "10.59564/amrj/02.01/009",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of high-intensity interval training and moderate-intensity continu",
+      "doi": "10.18772/26180197.2024.v6n1a4",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "EFFECT OF MODERATE INTENSITY CONTINUOUS TRAINING (MICT) ON OVERWEIGHT AND OBESIT",
+      "doi": "10.36713/epra17301",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The impact of two training programs (high-intensity interval training and modera",
+      "doi": "10.33899/rjss.2024.185236",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of High-Intensity Interval Training and Moderate-Intensity Continuou",
+      "doi": "10.32629/ajn.v5i1.1768",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study on the Difference of Endurance Performance between Polarization Intensity ",
+      "doi": "10.22158/sssr.v5n4p67",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of high-intensity interval training vs. moderate-intensity continuous tra",
+      "doi": "10.1515/jbcpp-2024-0112",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Article RETRACTED due to manipulation by the authors Effectiveness of high-inten",
+      "doi": "10.47197/retos.v59.107824",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Moderate-intensity endurance training has higher effects suppression of oxidativ",
+      "doi": "10.47197/retos.v57.105307",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise snacks are a time-efficient alternative to moderate-intensity continuou",
+      "doi": "10.1139/apnm-2023-0593",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of endurance training combined with blood flow restriction on functional",
+      "doi": "10.53886/gga.e0000075_en",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Role of Intermittent Exogenous Ketosis in the Physiological and Muscular Adaptiv",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Recovery Following Acute Endurance Training",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sport-specific Endurance Training on Cardiorespiratory Fitness",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Moderate-Intensity Continuous Training Versus Moderate-Intensity Interval Traini",
+      "doi": "10.1097/jcn.0000000000000994",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of the Effects of Two Exercise Programs of High-intensity Interval Tr",
+      "doi": "10.32592/jsmj.22.5.631",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effectiveness of high-intensity interval training compared to moderate-inten",
+      "doi": "10.1093/eurheartj/ehad655.2897",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Comparison of High-Intensity Interval Training and Moderate-intensity Contin",
+      "doi": "10.4103/rcm.rcm_59_23",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiac rehabilitation in coronary artery bypass grafting patients: Effect of ei",
+      "doi": "10.3233/ch-221605",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Exercise on Physical Function and Quality of Life in Prostate Cancer ",
+      "doi": "10.1159/000527839",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Maternal and Fetal Cardiovascular Responses to Acute High-Intensity Interval and",
+      "doi": "10.1097/ogx.0000000000001218",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of High-Intensity Interval Training to Moderate-Intensity Continuous ",
+      "doi": "10.1093/ptj/pzad028",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison Between HIIT and MICT on the Phase III of Cardiac Rehabilitation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-intensity Aerobic Training Associated With Global Muscle Strengthening in Po",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of High-intensity Interval Training (HIIT) Versus Moderate-intensi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Early Mobilization and Endurance Training for Patients With Prolo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of virtual reality-based aerobic endurance training on the functional fi",
+      "doi": "10.1101/2022.05.24.22275497",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of endurance training rehabilitation after hospitalisation in inte",
+      "doi": "10.1101/2022.08.29.22279327",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Increased Load of Low- Versus High-Intensity Endurance Training on Pe",
+      "doi": "10.1123/ijspp.2021-0190",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-intensity interval training versus moderate-intensity continuous training o",
+      "doi": "10.33233/rbfex.v20i6.4859",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of High-Intensity Functional Training Compared with Traditional Stre",
+      "doi": "10.1519/jsc.0000000000004221",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of adding high- vs low-intensity resistance training to endurance traini",
+      "doi": "10.1093/eurheartj/ehac544.2473",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of the addition of high- vs. low-intensity resistance training on top of",
+      "doi": "10.1093/eurjpc/zwac056.235",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Interval training versus moderate-intensity continuous training for cardiorespir",
+      "doi": "10.1080/02640414.2021.1912453",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Endurance Training on Motor and Cognitive Functions and Concentrat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of 8 weeks moderate-intensity continuous training on central hemodyna",
+      "doi": "10.15561/20755279.2021.0305",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of two endurance training protocols (High \u00adIntensity Interval Training =",
+      "doi": "10.34045/sems/2021/1",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acute and Chronic Effects of Low-Volume High-Intensity Interval Training Compare",
+      "doi": "10.3390/obesities1020007",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Aerobic Endurance Training vs HIIT on Energy Intake, Macronutrient In",
+      "doi": "10.53905/inspiree.v2i3.48",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acute effects of high-intensity interval training and moderate-intensity continu",
+      "doi": "10.33448/rsd-v10i7.12106",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of High-intensity Interval Training vs Moderate-intensity Continuous ",
+      "doi": "10.1210/clinem/dgab795",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-Intensity Interval vs. Continuous Endurance Training: Preventive Effects on",
+      "doi": "10.1519/jsc.0000000000002709",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Time-course of V\u0307<scp>o</scp>2 kinetics responses during moderate-intensity exer",
+      "doi": "10.1152/japplphysiol.00952.2020",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of sprint interval and continuous endurance training on oxidative str",
+      "doi": "10.29359/bjhpa.13.2.03",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of high\u2010intensity interval training and continuous endurance training on ",
+      "doi": "10.1111/ijcp.13490",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of HIIE versus MICT in Improving Cardiometabolic Risk Factors in H",
+      "doi": "10.1249/mss.0000000000002506",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of High-Intensity Interval Training Versus Moderate-Intensity Continuous",
+      "doi": "10.1089/met.2018.0128",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Effects of High-Intensity Interval Training vs Moderate-Intensity Co",
+      "doi": "10.3390/su12104134",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Predicting Changes in Maximal Oxygen Uptake in Response to Polarized Training (S",
+      "doi": "10.1519/jsc.0000000000003619",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-Intensity Interval Versus Moderate-Intensity Continuous Training in Cardiac",
+      "doi": "10.31189/2165-6193-9.1.10",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Respiratory Muscle Endurance Training in Healthy Elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-Volume High-Intensity Interval Training Versus Moderate-Intensity Continuous",
+      "doi": "10.1123/japa.2018-0309",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Moderate-Intensity Continuous Training or High-Intensity Interval Training with ",
+      "doi": "10.1249/mss.0000000000002162",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Is interval training the magic bullet for fat loss? A systematic review and meta",
+      "doi": "10.1136/bjsports-2018-099928",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Energetic and metabolic responses after acute sessions of continuous endurance t",
+      "doi": "10.20396/revpibic2620181249",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "290-OR: High-Intensity Interval Training and Moderate-Intensity Continuous Train",
+      "doi": "10.2337/db19-290-or",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of 12-Week Concurrent High-Intensity Interval Strength and Endurance Tra",
+      "doi": "10.1519/jsc.0000000000001895",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Strength Endurance Training but Not Intensive Strength Training Reduces Senescen",
+      "doi": "10.1093/gerona/gly229",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Representing anthropogenic gross land use change, wood harvest, and forest age d",
+      "doi": "10.5194/gmd-11-409-2018",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "HIIT Versus MICT on Abdominal Fat Mass and Lipid Oxidation in Postmenopausal Wom",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Whole-Body High-Intensity Interval Training Induce Similar Cardiorespiratory Ada",
+      "doi": "10.1519/jsc.0000000000002594",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The influence of high-intensity interval training and moderate-intensity continu",
+      "doi": "10.1139/apnm-2017-0453",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Short-Term High-Intensity Interval Training Is Superior to Moderate-Intensity Co",
+      "doi": "10.1159/000492457",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low-Volume High-Intensity Interval Versus Continuous Endurance Training: Effects",
+      "doi": "10.1519/jsc.0000000000002112",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect on glycaemic control of low\u2010volume high\u2010intensity interval training v",
+      "doi": "10.1111/dom.13198",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Time Course of Oxygen Uptake, Aerobic Capacity and Emg during Two Months of ",
+      "doi": "10.33607/bjshs.v4i91.176",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Eight Weeks\\' Endurance Training along with Fenugreek Ingestion on Lip",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-intensity interval training versus moderate-intensity continuous training w",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does High Intensity Interval Training Improve Aerobic Power Development More Tha",
+      "doi": "10.32396/usurj.v3i1.211",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance capacity and neuromuscular fatigue following high\u2010 vs moderate\u2010intensi",
+      "doi": "10.1111/sms.12854",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Training-Load-Guided vs Standardized Endurance Training in Recreational Runners",
+      "doi": "10.1123/ijspp.2016-0093",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dose\u2013response relationship of cardiorespiratory fitness adaptation to controlled",
+      "doi": "10.1177/2047487315582322",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of endurance training only versus same-session combined endurance and st",
+      "doi": "10.1139/apnm-2014-0262",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 18329: Aortic Pulse Wave Velocity Improves Following Moderate-intensity",
+      "doi": "10.1161/circ.132.suppl_3.18329",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effects of short-term high-intensity interval training vs. moderate-intensit",
+      "doi": "10.1515/hmbci-2014-0038",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Predictors of individual adaptation to high\u2010volume or high\u2010intensity endurance t",
+      "doi": "10.1111/sms.12530",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Age and Long-Term Endurance Training on V\u00b7O2 Kinetics",
+      "doi": "10.1249/mss.0000000000000398",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance training improves insulin sensitivity and body composition in prostate",
+      "doi": "10.1530/erc-12-0393",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Aerobic Endurance Training in Patients With Drug Addiction",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance Training Per Se Increases Metabolic Health in Young, Moderately Overwe",
+      "doi": "10.1038/oby.2012.70",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Combined Strength and Endurance Training Improves Health-Related Quality of Life",
+      "doi": "10.1055/s-0032-1311589",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Endurance Training in Patients With Prostate Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Study of High Intensity Interval Training and Endurance Training in ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Endurance Training on Body Composition and Insulin Sensitivity in ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Resistance and Endurance Training on Synthesis of Individual Muscle P",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Combined effects of endurance training and dietary unsaturated fatty acids on ph",
+      "doi": "10.1017/s000711450999287x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Changes in level of V\u02d9O2max, blood lipids, and waist circumference in the respon",
+      "doi": "10.1097/gme.0b013e31819c0924",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Strength and Endurance Training on Insulin Sensitivity and Fat Dis",
+      "doi": "10.1210/jc.2007-2733",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The influence of sex, menstrual cycle phase, estrogen, obesity, and endurance tr",
+      "doi": "10.1139/h08-049",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Systemic \u03b1-adrenergic and nitric oxide inhibition on basal limb blood flow: effe",
+      "doi": "10.1152/ajpheart.00273.2007",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "RETRACTED: Effects of strength and endurance training on antioxidant enzyme gene",
+      "doi": "10.1111/j.1600-0838.2006.00620.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Increased Oxygenation in the Air During Endurance Training in Stable A",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of endurance training on muscle microvascular filtration capacity and vas",
+      "doi": "10.1111/j.1748-1716.2006.01585.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effective High Aerobic Intensity Endurance Training Regimes in Chronic Obstructi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resting Heart Rate Changes after Endurance Training in Older Adults: A Meta-Anal",
+      "doi": "10.1249/01.mss.0000174899.35392.0c",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance Training Delays Age of Decline in Leg Strength and Muscle Morphology",
+      "doi": "10.1249/01.mss.0000106179.73735.a6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long\u2010term endurance training does not prevent the age\u2010related decrease in left v",
+      "doi": "10.1111/j.1365-201x.2004.01284.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Age and Gender on Heart Rate Variability after Endurance Training",
+      "doi": "10.1249/01.mss.0000079046.01763.8f",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Endurance Training and Resistance Training on Plasma Lipoprotein Prof",
+      "doi": "10.1093/gerona/57.2.b54",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improving cardiovascular fitness by strength or endurance training in women aged",
+      "doi": "10.1093/ageing/31.4.247",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Large energetic adaptations of elderly muscle to resistance and endurance traini",
+      "doi": "10.1152/jappl.2001.90.5.1663",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance training and GH administration in elderly women: effects on abdominal ",
+      "doi": "10.1152/ajpendo.2001.280.6.e886",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Endurance Training on Selected Parameters of Immune Function in Elder",
+      "doi": "10.1159/000022142",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Growth hormone enhances effects of endurance training on oxidative muscle metabo",
+      "doi": "10.1152/ajpendo.2000.279.5.e989",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of heart rate controlled low resistance circuit weight training and e",
+      "doi": "10.1034/j.1600-0838.2000.010004211.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Blunted Growth Hormone Response to Maximal Exercise in Middle-AgedVersusYoung Su",
+      "doi": "10.1210/jcem.84.7.5853",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of 14 weeks of progressive endurance training on energy expenditure in e",
+      "doi": "10.1017/s0007114598001603",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance Training and its Effect upon the Activity of the GH-IGFs System in the",
+      "doi": "10.1055/s-2007-971913",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Strength and Endurance Training on Gait, Balance, Fall Risk, and H",
+      "doi": "10.1093/gerona/52a.4.m218",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of endurance training on postexercise parathyroid hormone levels in elder",
+      "doi": "10.1097/00005768-199709000-00004",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of endurance training on the cardiovascular system and water compartment",
+      "doi": "10.1152/jappl.1997.83.4.1300",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of strength and endurance training on isometric muscle strength and walk",
+      "doi": "10.1046/j.1365-201x.1996.461177000.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Skeletal Muscle Adaptation to Endurance Training in Patients With Chronic Obstru",
+      "doi": "10.1164/ajrccm.154.2.8756820",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of endurance training on lipoprotein(a) [Lp(a)] levels in middle-aged",
+      "doi": "10.1097/00005768-199606000-00015",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of strength and endurance training on thigh and leg muscle mass and comp",
+      "doi": "10.1152/jappl.1995.78.1.334",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effects of endurance training on functional capacity in the elderly",
+      "doi": "10.1249/00005768-199506000-00019",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of endurance training on total fat oxidation in elderly persons",
+      "doi": "10.1152/jappl.1994.76.6.2281",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance training does not enhance total energy expenditure in healthy elderly ",
+      "doi": "10.1152/ajpendo.1992.263.5.e950",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance training amplifies the pulsatile release of growth hormone: effects of",
+      "doi": "10.1152/jappl.1992.72.6.2188",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mitochondrial DNA sequence polymorphism, VO2max, and response to endurance train",
+      "doi": "10.1249/00005768-199102000-00006",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of age and endurance training on metabolic rate and hormones in health",
+      "doi": "10.1152/ajpendo.1990.259.1.e66",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance training in the elderly nursing home patient.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance Training For Elderly Women: Moderate vs Low Intensity",
+      "doi": "10.1093/geronj/44.6.m184",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Potential for strength and endurance training to amplify endurance performance",
+      "doi": "10.1152/jappl.1988.65.5.2285",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of endurance training on capillary supply of human skeletal muscle on tw",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance training in humans: aerobic capacity and structure of skeletal muscle",
+      "doi": "10.1152/jappl.1985.59.2.320",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance training in older men and women. I. Cardiovascular responses to exerci",
+      "doi": "10.1152/jappl.1984.57.4.1024",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anaerobic threshold alterations caused by endurance training in middle-aged men",
+      "doi": "10.1152/jappl.1979.46.6.1039",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Endurance Training on Blood Lactate Concentration and Anaerobic Th",
+      "doi": "10.17309/tmfv.2025.1.12",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Adding strength to endurance training does not enhance aerobic capacity in cycli",
+      "doi": "10.1111/sms.12338",
+      "pmid": "25438613",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of creatine supplementation on aerobic performance and anaerobic capacity",
+      "doi": "10.1123/ijsnem.13.2.173",
+      "pmid": "12945828",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of Sprint Interval and Endurance Training in Team Sport Athletes.",
+      "doi": "10.1519/jsc.0000000000002374",
+      "pmid": "29373432",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Moderate-intensity endurance training improves endothelial glycocalyx layer inte",
+      "doi": "10.1113/ep085887",
+      "pmid": "27748983",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "No effect of dietary nitrate supplementation on endurance training in hypoxia.",
+      "doi": "10.1111/sms.12199",
+      "pmid": "24646076",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance training decreases the non-linearity in the oxygen uptake-power output",
+      "doi": "10.1113/expphysiol.2011.062992",
+      "pmid": "22198015",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Endurance Training on the &OV0312;O2???Work Rate Relationship in Normo",
+      "doi": "10.1249/01.mss.0000159140.11938.97",
+      "pmid": "15809567",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance Training Reduces End-Exercise &OV0312;O2 and Muscle Use during Submaxi",
+      "doi": "10.1249/01.mss.0000048726.30184.90",
+      "pmid": "12569214",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of endurance training on oxygen uptake kinetics during treadmill running.",
+      "doi": "10.1152/jappl.2000.89.5.1744",
+      "pmid": "11053321",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of NR Supplementation on Metabolic Flexibility in Zone 2 Training",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Speed Endurance Training on Increasing Aerobic Endurance of Futsal",
+      "doi": "10.26740/jses.v8n2.p135-142",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Integrative effects of resistance training and endurance training on mitochondri",
+      "doi": "10.1007/s00421-024-05549-5",
+      "pmid": "38981937",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long-term Endurance Training in Sickle Cell Disease Patients: Impact on Clinical",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance training for judo athletes: Improving anaerobic and aerobic capacity i",
+      "doi": "10.25299/sportarea.2024.vol9(2).15982",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resistance Training Diminishes Mitochondrial Adaptations to Subsequent Endurance",
+      "doi": "10.1101/2023.04.06.535919",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The influence of 8 weeks of endurance training on blood lactate threshold for ma",
+      "doi": "10.14198/jhse.2023.183.02",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acute Responses in Blood Flow Restriction Low-intensity Aerobic Training: A Meta",
+      "doi": "10.1055/a-2038-3635",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison between Strength Training and Endurance Training in Neck patients: A ",
+      "doi": "10.54393/pbmj.v5i7.628",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized Control Trial to Compare the Effects of Endurance Training Versus S",
+      "doi": "10.54393/pbmj.v5i8.761",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "EFFECT OF AEROBIC ENDURANCE TRAINING NORDIC WALKING ON PSYCHOPHYSICAL WELL-BEING",
+      "doi": "10.51371/issn.1840-2976.2022.16.1.5",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Sensitivity Of Lactate Threshold Methods To Changes In Fitness In Work-match",
+      "doi": "10.1249/01.mss.0000759164.47209.63",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of Different Genotypes of VEGF Gene with Changes in Aerobic Capacity",
+      "doi": "10.18502/ijdo.v13i4.7998",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Work-matched High-intensity Interval And Moderate-intensity Continuous Training ",
+      "doi": "10.1249/01.mss.0000675556.71502.71",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of low-intensity aerobic training on cognitive functions of severely ",
+      "doi": "10.1097/mrr.0000000000000346",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of a concurrent strength and endurance training intervention on runnin",
+      "doi": "10.14198/jhse.2018.134.12",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Sprint Interval Training With Active Recovery vs. Endurance Training ",
+      "doi": "10.1519/jsc.0000000000002215",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Exercise Supplemented With Muscular Endurance Training Improves Onset of",
+      "doi": "10.1519/jsc.0000000000001981",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High but not moderate-intensity endurance training increases pain tolerance: a r",
+      "doi": "10.1007/s00421-017-3708-8",
+      "pmid": "28879617",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does concurrent strength and endurance training improve endurance running? A sys",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Different Endurance Training Protocols in Cardiac Rehabilitation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relationship between aerobic endurance training and dynamic cerebral blood flow ",
+      "doi": "10.1111/sms.12082",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of high intensity training and continuous endurance training on aerobic ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Differences in adaptations to 1 year of aerobic endurance training: individual p",
+      "doi": "10.1111/j.1600-0838.2010.01139.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Similar qualitative and quantitative changes of mitochondrial respiration follow",
+      "doi": "10.1152/ajpregu.00285.2011",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Street-dance: Physiological demands and effect of endurance training",
+      "doi": "10.5897/jpesm.9000019",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Serum hormone concentrations and physical performance during concurrent strength",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a Concurrent Strength and Endurance Training on Running Performance a",
+      "doi": "10.1519/jsc.0b013e3181d64e9c",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Endurance Training and Short-term High Intensity Sprint Training ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "P03-155 - Effects of Aerobic Endurance Training on Neurocognitive Functions in S",
+      "doi": "10.1016/s0924-9338(10)71125-1",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intervals, Thresholds, and Long Slow Distance: the Role of Intensity and Duratio",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ENDURANCE TRAINING DOES NOT ALTER DELTA EFFICIENCY OF MODERATE INTENSITY CYCLING",
+      "doi": "10.1097/00005768-200205001-00862",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic endurance training improves soccer performance.",
+      "doi": "10.1097/00005768-200111000-00019",
+      "pmid": "11689745",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of endurance training on oxidative and antioxidative function in human pe",
+      "doi": "10.1007/s004240100538",
+      "pmid": "11484774",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of 6 weeks of endurance training on the lactate minimum speed",
+      "doi": "10.1080/026404199365353",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "EFFECT OF SIX WEEKS OF ENDURANCE TRAINING ON PARAMETERS OF AEROBIC FITNESS",
+      "doi": "10.1097/00005768-199905001-01375",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "IMPACT OF CONCURRENT RESISTANCE AND ENDURANCE TRAINING UPON DISTANCE RUNNING PER",
+      "doi": "10.1097/00005768-199905001-01555",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of endurance training and catecholamines on exercise &OV0312;O2 respon",
+      "doi": "10.1249/00005768-199411000-00008",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of endurance training on the relationships between sex hormone bindin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Durability of the reproductive axis in eumenorrheic women during 1 yr of enduran",
+      "doi": "10.1152/jappl.1992.72.4.1571",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    }
+  ],
+  "papers_resolved": {
+    "PMC11255215": {
+      "title": "Comparative effects of high-intensity interval training and moderate-intensity continuous training on weight and metabolic health in college students with obesity",
+      "doi": "10.1038/s41598-024-67331-z",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref",
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC7045584": {
+      "title": "Cardiorespiratory fitness and accelerometer-determined physical activity following one year of free-living high-intensity interval training and moderate-intensity continuous training: a randomized trial",
+      "doi": "10.1186/s12966-020-00933-8",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "crossref",
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC12937137": {
+      "title": "Effects of high-intensity interval training versus moderate-intensity continuous training on cardiorespiratory function in patients after stroke: a systematic review and meta-analysis of randomized trials",
+      "doi": "10.3389/fneur.2026.1727980",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Frontiers in Neurology",
+      "sources": [
+        "crossref",
+        "doaj"
+      ]
+    },
+    "PMC13033501": {
+      "title": "Divergent effects of high-intensity functional training and moderate-intensity continuous training in adolescents with overweight/obesity: a randomized controlled trial on body composition, physical fitness, and psychological health",
+      "doi": "10.3389/fphys.2026.1756285",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref",
+        "doaj"
+      ]
+    },
+    "PMC12948083": {
+      "title": "Effects of slide-board-based high-intensity interval versus moderate-intensity continuous training on aerobic and anaerobic capacity in young speed skaters.",
+      "doi": "10.1371/journal.pone.0343570",
+      "pmid": null,
+      "year": 2026,
+      "venue": "PLOS One",
+      "sources": [
+        "crossref",
+        "doaj"
+      ]
+    },
+    "PMC11861271": {
+      "title": "Acute effects of high-intensity interval training and moderate-intensity continuous training on executive functions in healthy older adults",
+      "doi": "10.1038/s41598-025-91833-z",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref",
+        "doaj"
+      ]
+    },
+    "PMC10048683": {
+      "title": "Effect of High-Intensity Interval Training vs. Moderate-Intensity Continuous Training on Fat Loss and Cardiorespiratory Fitness in the Young and Middle-Aged a Systematic Review and Meta-Analysis",
+      "doi": "10.3390/ijerph20064741",
+      "pmid": null,
+      "year": 2023,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC10184247": {
+      "title": "High-Intensity Interval Training Versus Moderate-Intensity Continuous Training for Improving Physical Health in Elderly Women",
+      "doi": "10.1177/00469580231172870",
+      "pmid": null,
+      "year": 2023,
+      "venue": "INQUIRY The Journal of Health Care Organization Provision and Financing",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC9876872": {
+      "title": "Effects of Concurrent Strength and Endurance Training on Measures of Physical Fitness in Healthy Middle-Aged and Older Adults: A Systematic Review with Meta-Analysis",
+      "doi": "10.1007/s40279-022-01764-2",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Sports Medicine",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC9315493": {
+      "title": "Clinical and Biological Adaptations in Obese Older Adults Following 12-Weeks of High-Intensity Interval Training or Moderate-Intensity Continuous Training",
+      "doi": "10.3390/healthcare10071346",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Healthcare",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC8904881": {
+      "title": "Effects of High-Intensity Interval vs. Moderate-Intensity Continuous Training on Cardiac Rehabilitation in Patients With Cardiovascular Disease: A Systematic Review and Meta-Analysis",
+      "doi": "10.3389/fcvm.2022.845225",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Cardiovascular Medicine",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC8776485": {
+      "title": "A Comparative Study of Health Efficacy Indicators in Subjects with T2DM Applying Power Cycling to 12 Weeks of Low-Volume High-Intensity Interval Training and Moderate-Intensity Continuous Training",
+      "doi": "10.1155/2022/9273830",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Journal of Diabetes Research",
+      "sources": [
+        "crossref",
+        "doaj"
+      ]
+    },
+    "PMC7084372": {
+      "title": "High-Intensity Interval Circuit Training Versus Moderate-Intensity Continuous Training on Cardiorespiratory Fitness in Middle-Aged and Older Women: A Randomized Controlled Trial",
+      "doi": "10.3390/ijerph17051805",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC6539300": {
+      "title": "Effect of High-Intensity Interval Training versus Moderate-Intensity Continuous Training on Cardiorespiratory Fitness in Children and Adolescents: A Meta-Analysis",
+      "doi": "10.3390/ijerph16091533",
+      "pmid": null,
+      "year": 2019,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC6862460": {
+      "title": "High-Intensity Interval Training Versus Moderate-Intensity Continuous Training in Middle-Aged and Older Patients with Type 2 Diabetes: A Randomized Controlled Crossover Trial of the Acute Effects of Treadmill Walking on Glycemic Control",
+      "doi": "10.3390/ijerph16214163",
+      "pmid": null,
+      "year": 2019,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC6862704": {
+      "title": "High-Intensity Interval Circuit Training Versus Moderate-Intensity Continuous Training on Functional Ability and Body Mass Index in Middle-Aged and Older Women: A Randomized Controlled Trial",
+      "doi": "10.3390/ijerph16214205",
+      "pmid": null,
+      "year": 2019,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC6388288": {
+      "title": "Reduced Exertion High-Intensity Interval Training is More Effective at Improving Cardiorespiratory Fitness and Cardiometabolic Health than Traditional Moderate-Intensity Continuous Training",
+      "doi": "10.3390/ijerph16030483",
+      "pmid": null,
+      "year": 2019,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC7357372": {
+      "title": "Effects of high-intensity interval training compared to moderate-intensity continuous training on maximal oxygen consumption and blood pressure in healthy men: A randomized controlled trial",
+      "doi": "10.7705/biomedica.4451",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Biom\u00e9dica",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC6352351": {
+      "title": "High-intensity interval training and moderate-intensity continuous training in adults with Crohn\u2019s disease: a pilot randomised controlled trial",
+      "doi": "10.1186/s12876-019-0936-x",
+      "pmid": null,
+      "year": 2019,
+      "venue": "BMC Gastroenterology",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC4846072": {
+      "title": "Twelve Weeks of Sprint Interval Training Improves Indices of Cardiometabolic Health Similar to Traditional Endurance Training despite a Five-Fold Lower Exercise Volume and Time Commitment.",
+      "doi": "10.1371/journal.pone.0154075",
+      "pmid": null,
+      "year": 2016,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC4396724": {
+      "title": "High-Intensity Interval Training as an Efficacious Alternative to Moderate-Intensity Continuous Training for Adults with Prediabetes",
+      "doi": "10.1155/2015/191595",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Journal of Diabetes Research",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC12810095": {
+      "title": "Effects of Low\u2010Intensity Endurance Training on Aerobic Fitness and Risk Factors of Cardiometabolic Health in Working\u2010Age Adults: A Systematic Review and Meta\u2010Analysis",
+      "doi": "10.1111/sms.70208",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Scandinavian Journal of Medicine & Science in Sports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12795074": {
+      "title": "The effect of high-intensity interval training and moderate-intensity continuous training on cardiorespiratory function in healthy elderly individuals: Systematic review and meta-analysis",
+      "doi": "10.1097/md.0000000000047101",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12816250": {
+      "title": "A time-efficient public health strategy: a systematic review and meta-regression on the comparable and dose-independent effects of sprint interval training vs. moderate-intensity continuous training for metabolic health",
+      "doi": "10.3389/fpubh.2025.1708893",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Frontiers in Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12911145": {
+      "title": "The effects of HIIT and MICT on body fat composition and cardiopulmonary fitness in adults: a meta-analysis of randomized controlled trials",
+      "doi": "10.1186/s13102-025-01519-2",
+      "pmid": null,
+      "year": 2026,
+      "venue": "BMC Sports Science, Medicine and Rehabilitation",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12593510": {
+      "title": "Optimising adolescent health: a comparative study of high-intensity interval training and moderate-intensity continuous training on body composition and cardiovascular fitness in sedentary male youth",
+      "doi": "10.3389/fspor.2025.1655906",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Sports and Active Living",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12202225": {
+      "title": "Effects of high-intensity interval training (HIIT) versus moderate-intensity continuous training (MICT) on cardiopulmonary function, body composition, and physical function in cancer survivors: a meta-analysis of randomized controlled trials",
+      "doi": "10.3389/fphys.2025.1594574",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12946864": {
+      "title": "High-Intensity Interval Training and Moderate-Intensity Continuous Training Affect Running Economy in Endurance Runners: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+      "doi": "10.5114/jhk/205427",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of Human Kinetics",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12869853": {
+      "title": "High-Intensity Interval Training Enhances Cardiovascular and Functional Outcomes Compared With Moderate-Intensity Continuous Training in Higher-Functioning Chronic Stroke",
+      "doi": "10.5535/arm.250098",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Annals of Rehabilitation Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11841918": {
+      "title": "Effects of high-intensity interval training versus moderate-intensity continuous training on cardiorespiratory and exercise capacity in patients with coronary artery disease: A systematic review and meta-analysis",
+      "doi": "10.1371/journal.pone.0314134",
+      "pmid": null,
+      "year": 2025,
+      "venue": "PLOS ONE",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12418185": {
+      "title": "Aquatic High-Intensity Interval Training Improves Vascular Function, Whereas Aquatic Moderate-Intensity Continuous Training Lowers Resting Heart Rate in Overweight and Obese Young Adults: A Randomized Controlled Trial",
+      "doi": "10.52082/jssm.2025.666",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of Sports Science and Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12084029": {
+      "title": "Effects of High-Intensity Interval Training vs. Moderate-Intensity Continuous Training on Quality of Life and Mental Health in Post-Myocardial Infarction Patients: A Randomized Controlled Trial",
+      "doi": "10.1159/000545049",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Portuguese Journal of Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12571624": {
+      "title": "High-intensity interval training versus moderate-intensity continuous training for polycystic ovary syndrome: a meta-analysis of randomized controlled trials",
+      "doi": "10.3389/fendo.2025.1672257",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Endocrinology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12567725": {
+      "title": "Isocaloric High-Intensity Interval and Circuit Training Increases Excess Post-Exercise Oxygen Consumption and Lipid Oxidation Compared to Moderate-Intensity Continuous Training",
+      "doi": "10.3390/sports13100355",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Sports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12521180": {
+      "title": "Comparative effects of high-intensity interval training versus moderate-intensity continuous training on body composition and blood pressure in overweight adolescents: a systematic review and meta-analysis of randomized controlled trials",
+      "doi": "10.3389/fphys.2025.1636792",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12339354": {
+      "title": "Effective of high-intensity interval training and moderate-intensity continuous training on body composition, glycolipid metabolism, and cardiopulmonary function in patients with pre-diabetes: a randomized controlled trial",
+      "doi": "10.3389/fendo.2025.1614149",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Endocrinology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12343602": {
+      "title": "Effects and moderator of high-intensity interval training and moderate-intensity continuous training among children and adolescents with overweight or obese: a systematic review and meta-analysis",
+      "doi": "10.3389/fphys.2025.1625516",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11821953": {
+      "title": "Distinct lipidomic profiles but similar improvements in aerobic capacity following sprint interval training versus moderate-intensity continuous training in male adolescents",
+      "doi": "10.3389/fphys.2025.1475391",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11765090": {
+      "title": "The Effects of Endurance Training and High-Intensity Resistance Training on Pulse Wave Velocity and QT Dispersion",
+      "doi": "10.3390/healthcare13020161",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Healthcare",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12423243": {
+      "title": "Why low-intensity endurance training for athletes?",
+      "doi": "10.1007/s00421-025-05843-w",
+      "pmid": null,
+      "year": 2025,
+      "venue": "European Journal of Applied Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12653759": {
+      "title": "Influence of Endurance Training, High-Intensity Interval Training, and Acute Exercise on Left Ventricular Mechanics: A Systematic Review",
+      "doi": "10.3390/jcm14228210",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of Clinical Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11877300": {
+      "title": "Comparing The Effects of Maximal Strength Training, Plyometric Training, and Muscular Endurance Training on Swimming-Specific Performance Measures: A Randomized Parallel Controlled Study in Young Swimmers",
+      "doi": "10.52082/jssm.2025.128",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of Sports Science and Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12341516": {
+      "title": "Compared to moderate-intensity continuous training, short-term high-intensity interval training demonstrates enhanced effects on metabolic flexibility in adult males with obesity",
+      "doi": "10.1016/j.jesf.2025.07.005",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of Exercise Science & Fitness",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11413624": {
+      "title": "Effect of high-intensity interval training and moderate-intensity continuous training on blood lactate clearance after high-intensity test in adult men",
+      "doi": "10.3389/fphys.2024.1451464",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11341307": {
+      "title": "Effect of eight-week high-intensity interval training versus moderate-intensity continuous training programme on body composition, cardiometabolic risk factors in sedentary adolescents",
+      "doi": "10.3389/fphys.2024.1450341",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11366854": {
+      "title": "The Release of Lipolytic Hormones during Various High-Intensity Interval and Moderate-Intensity Continuous Training Regimens and Their Effects on Fat Loss",
+      "doi": "10.52082/jssm.2024.559",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Journal of Sports Science and Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11329428": {
+      "title": "Comparison of Polarized Versus Other Types of Endurance Training Intensity Distribution on Athletes\u2019 Endurance Performance: A Systematic Review with Meta-analysis",
+      "doi": "10.1007/s40279-024-02034-z",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Sports Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11502486": {
+      "title": "Effects of high-intensity interval training versus moderate-intensity continuous training on vascular function among individuals with overweight and obesity\u2014a systematic review",
+      "doi": "10.1038/s41366-024-01586-4",
+      "pmid": null,
+      "year": 2024,
+      "venue": "International Journal of Obesity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11629943": {
+      "title": "Cardiorespiratory fitness response to endurance training in athletes post-COVID-19 compared to unaffected athletes",
+      "doi": "10.17159/2078-516x/2024/v36i1a18872",
+      "pmid": null,
+      "year": 2024,
+      "venue": "South African Journal of Sports Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11359207": {
+      "title": "Effect of Strength and Endurance Training Sequence on Endurance Performance",
+      "doi": "10.3390/sports12080226",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Sports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11263861": {
+      "title": "Effects of High-Intensity Interval Training vs Moderate-Intensity Continuous Training on Body Composition and Blood Biomarkers in Coronary Artery Disease Patients: A Randomized Controlled Trial",
+      "doi": "10.31083/j.rcm2503102",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Reviews in Cardiovascular Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11262642": {
+      "title": "Endurance training volume cannot entirely substitute for the lack of intensity",
+      "doi": "10.1371/journal.pone.0307275",
+      "pmid": null,
+      "year": 2024,
+      "venue": "PLOS ONE",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10658315": {
+      "title": "Comparison of the effects of high-intensity interval and moderate-intensity continuous training on inflammatory markers, cardiorespiratory fitness, and quality of life in breast cancer patients",
+      "doi": "10.1016/j.jshs.2023.07.001",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Journal of sport and health science/Journal of Sport and Health Science",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10550571": {
+      "title": "Effect of high-intensity interval training compared to moderate-intensity continuous training on body composition and insulin sensitivity in overweight and obese adults: A systematic review and meta-analysis",
+      "doi": "10.1016/j.heliyon.2023.e20402",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Heliyon",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9982541": {
+      "title": "Does Exercise Modality Matter Affectively? Contrasting Type and Sequence of Moderate-Intensity Continuous Training Versus High-Intensity Interval Training in a Randomized Within-Subject Study",
+      "doi": "10.52082/jssm.2023.84",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Journal of Sports Science and Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10465302": {
+      "title": "Effects of high-intensity interval training, moderate-intensity continuous training, and guideline-based physical activity on cardiovascular metabolic markers, cognitive and motor function in elderly sedentary patients with type 2 diabetes (HIIT-DM): a protocol for a randomized controlled trial",
+      "doi": "10.3389/fnagi.2023.1211990",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10747241": {
+      "title": "The Effect of Contrast Water Therapy on Dehydration during Endurance Training Camps in Moderate-Altitude Environments",
+      "doi": "10.3390/sports11120232",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Sports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10445364": {
+      "title": "Comparison of high-intensity interval training versus moderate-intensity continuous training in pulmonary rehabilitation for interstitial lung disease: a randomised controlled pilot feasibility trial",
+      "doi": "10.1136/bmjopen-2022-066609",
+      "pmid": null,
+      "year": 2023,
+      "venue": "BMJ Open",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9956571": {
+      "title": "A Comparative Study of Inhibition Function between High-Intensity Interval Training and Moderate-Intensity Continuous Training in Healthy People: A Systematic Review with Meta-Analysis",
+      "doi": "10.3390/ijerph20042859",
+      "pmid": null,
+      "year": 2023,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10457360": {
+      "title": "High-intensity interval training versus moderate-intensity continuous training on patient quality of life in cardiovascular disease: a systematic review and meta-analysis",
+      "doi": "10.1038/s41598-023-40589-5",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10749735": {
+      "title": "Improving Health Outcomes in Coronary Artery Disease Patients with Short-Term Protocols of High-Intensity Interval Training and Moderate-Intensity Continuous Training: A Community-Based Randomized Controlled Trial",
+      "doi": "10.1155/2023/6297302",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Cardiovascular Therapeutics",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9977827": {
+      "title": "Durability is improved by both low and high intensity endurance training",
+      "doi": "10.3389/fphys.2023.1128111",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9465764": {
+      "title": "Performance and Submaximal Adaptations to Additional Speed-Endurance Training vs. Continuous Moderate-Intensity Aerobic Training in Male Endurance Athletes",
+      "doi": "10.2478/hukin-2022-0060",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Journal of Human Kinetics",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9388827": {
+      "title": "Changes in the Fitness Fatness Index following reduced exertion high-intensity interval training versus moderate-intensity continuous training in physically inactive adults",
+      "doi": "10.3389/fspor.2022.961957",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Sports and Active Living",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9604034": {
+      "title": "The Comparison of High-Intensity Interval Training Versus Moderate-Intensity Continuous Training after Coronary Artery Bypass Graft: A Systematic Review of Recent Studies",
+      "doi": "10.3390/jcdd9100328",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Journal of Cardiovascular Development and Disease",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9771301": {
+      "title": "Effects of high-intensity interval training versus moderate-intensity continuous training on blood pressure in patients with hypertension: A meta-analysis",
+      "doi": "10.1097/md.0000000000032246",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9517925": {
+      "title": "Acute Effects of High-Intensity Functional Training and Moderate-Intensity Continuous Training on Cognitive Functions in Young Adults",
+      "doi": "10.3390/ijerph191710608",
+      "pmid": null,
+      "year": 2022,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9690254": {
+      "title": "Acute Effects of Sprint Interval Training and Chronic Effects of Polarized Training (Sprint Interval Training, High Intensity Interval Training, and Endurance Training) on Choice Reaction Time in Mountain Bike Cyclists",
+      "doi": "10.3390/ijerph192214954",
+      "pmid": null,
+      "year": 2022,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9012527": {
+      "title": "Physiological, Perceptual, and Performance Responses to the 2-Week Block of High- versus Low-Intensity Endurance Training",
+      "doi": "10.1249/mss.0000000000002861",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Medicine & Science in Sports & Exercise",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9499162": {
+      "title": "Effect of Low-Intensity Aerobic Training Combined with Blood Flow Restriction on Body Composition, Physical Fitness, and Vascular Responses in Recreational Runners",
+      "doi": "10.3390/healthcare10091789",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Healthcare",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9123685": {
+      "title": "Feasibility and acceptability of high-intensity interval training and moderate-intensity continuous training in kidney transplant recipients: the PACE-KD study",
+      "doi": "10.1186/s40814-022-01067-3",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Pilot and Feasibility Studies",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9518107": {
+      "title": "Effects of Running-Specific Strength Training, Endurance Training, and Concurrent Training on Recreational Endurance Athletes\u2019 Performance and Selected Anthropometric Parameters",
+      "doi": "10.3390/ijerph191710773",
+      "pmid": null,
+      "year": 2022,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9247394": {
+      "title": "Short- and Long-Term Effects of High-Intensity Interval Training vs. Moderate-Intensity Continuous Training on Left Ventricular Remodeling in Patients Early After ST-Segment Elevation Myocardial Infarction\u2014The HIIT-EARLY Randomized Controlled Trial",
+      "doi": "10.3389/fcvm.2022.869501",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Cardiovascular Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9375909": {
+      "title": "Patterns and determinants of adherence to resistance and endurance training during cancer treatment in the Phys-Can RCT",
+      "doi": "10.1186/s13102-022-00548-5",
+      "pmid": null,
+      "year": 2022,
+      "venue": "BMC Sports Science, Medicine and Rehabilitation",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8701016": {
+      "title": "Effect of Cycle-Based High-Intensity Interval Training and Moderate to Moderate-Intensity Continuous Training in Adolescent Soccer Players",
+      "doi": "10.3390/healthcare9121628",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Healthcare",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8430701": {
+      "title": "The Effects of High-Intensity Interval Training vs. Moderate-Intensity Continuous Training on Inflammatory Markers, Body Composition, and Physical Fitness in Overweight/Obese Survivors of Breast Cancer: A Randomized Controlled Clinical Trial",
+      "doi": "10.3390/cancers13174386",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Cancers",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8820153": {
+      "title": "Bone Response to High-Intensity Interval Training versus Moderate-Intensity Continuous Training in Adolescents with Obesity",
+      "doi": "10.1159/000519271",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Obesity Facts",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8623248": {
+      "title": "Effects of High-Intensity Interval Training and Moderate-Intensity Continuous Training on Cardiometabolic Risk Factors in Overweight and Obesity Children and Adolescents: A Meta-Analysis of Randomized Controlled Trials",
+      "doi": "10.3390/ijerph182211905",
+      "pmid": null,
+      "year": 2021,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7145974": {
+      "title": "Comparative Effectiveness of High-Intensity Interval Training and Moderate-Intensity Continuous Training for Cardiometabolic Risk Factors and Cardiorespiratory Fitness in Childhood Obesity: A Meta-Analysis of Randomized Controlled Trials",
+      "doi": "10.3389/fphys.2020.00214",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7363749": {
+      "title": "Should Heartbeats/Training Session Be Considered When Comparing the Cardiovascular Benefits of High-Intensity Interval Aerobic and Moderate-Intensity Continuous Training? A Critical Appraisal",
+      "doi": "10.1186/s40798-020-00257-8",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Sports Medicine - Open",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7297415": {
+      "title": "The Impact of High-Intensity Interval Training Versus Moderate-Intensity Continuous Training on Carotid Intima-Media Thickness and Ankle-Brachial Index in Middle-Aged Women",
+      "doi": "10.4103/ijpvm.ijpvm_524_18",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Preventive Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7084630": {
+      "title": "Differences in Training Adaptations of Endurance Performance during Combined Strength and Endurance Training in a 6-Month Crisis Management Operation",
+      "doi": "10.3390/ijerph17051688",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7300209": {
+      "title": "The Effects of Concurrent Training Combining Both Resistance Exercise and High-Intensity Interval Training or Moderate-Intensity Continuous Training on Metabolic Syndrome",
+      "doi": "10.3389/fphys.2020.00572",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6349321": {
+      "title": "Effects of HIIT and MICT on cardiovascular risk factors in adults with overweight and/or obesity: A meta-analysis",
+      "doi": "10.1371/journal.pone.0210644",
+      "pmid": null,
+      "year": 2019,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6499209": {
+      "title": "Superior Effects of High-Intensity Interval vs. Moderate-Intensity Continuous Training on Endothelial Function and Cardiorespiratory Fitness in Patients With Type 1 Diabetes: A Randomized Controlled Trial",
+      "doi": "10.3389/fphys.2019.00450",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6417625": {
+      "title": "The effects of high-intensity interval training versus moderate-intensity continuous training on fat loss and cardiometabolic health in pediatric obesity",
+      "doi": "10.1097/md.0000000000014751",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6562501": {
+      "title": "A New Method to Improve Running Economy and Maximal Aerobic Power in Athletes: Endurance Training With Periodic Carbon Monoxide Inhalation",
+      "doi": "10.3389/fphys.2019.00701",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5790162": {
+      "title": "High-intensity interval training versus moderate-intensity continuous training within cardiac rehabilitation: a systematic review and meta-analysis",
+      "doi": "10.2147/oajsm.s150596",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Open Access Journal of Sports Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6069078": {
+      "title": "The Effects of High-Intensity Interval Training vs. Moderate-Intensity Continuous Training on Heart Rate Variability in Physically Inactive Adults",
+      "doi": "10.3390/ijerph15071508",
+      "pmid": null,
+      "year": 2018,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6090054": {
+      "title": "The Effects of Concurrent Strength and Endurance Training on Physical Fitness and Athletic Performance in Youth: A Systematic Review and Meta-Analysis",
+      "doi": "10.3389/fphys.2018.01057",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5585392": {
+      "title": "Sprint interval training decreases left-ventricular glucose uptake compared to moderate-intensity continuous training in subjects with type 2 diabetes or prediabetes",
+      "doi": "10.1038/s41598-017-10931-9",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4928447": {
+      "title": "Impact of Long-Term Endurance Training vs. Guideline-Based Physical Activity on Brain Structure in Healthy Aging",
+      "doi": "10.3389/fnagi.2016.00155",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5046191": {
+      "title": "High-Intensity Interval Training and Moderate-Intensity Continuous Training in Ambulatory Chronic Stroke: Feasibility Study",
+      "doi": "10.2522/ptj.20150277",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Physical Therapy",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4368602": {
+      "title": "Endurance Training-Induced Increase in Circulating Irisin Levels Is Associated with Reduction of Abdominal Visceral Fat in Middle-Aged and Older Adults",
+      "doi": "10.1371/journal.pone.0120354",
+      "pmid": null,
+      "year": 2015,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4556835": {
+      "title": "Short-term high-intensity interval and moderate-intensity continuous training reduce leukocyte TLR4 in inactive adults at elevated risk of type 2 diabetes",
+      "doi": "10.1152/japplphysiol.00334.2015",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Journal of Applied Physiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4037310": {
+      "title": "Strength and Endurance Training Prescription in Healthy and Frail Elderly",
+      "doi": "10.14336/ad.2014.0500183",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Aging and Disease",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4327385": {
+      "title": "The Effects of Sprint Interval vs. Continuous Endurance Training on Physiological and Metabolic Adaptations in Young Healthy Adults",
+      "doi": "10.2478/hukin-2014-0115",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Journal of Human Kinetics",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3846819": {
+      "title": "Effects of high-intensity circuit training, low-intensity circuit training and endurance training on blood pressure and lipoproteins in middle-aged overweight men",
+      "doi": "10.1186/1476-511x-12-131",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Lipids in Health and Disease",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3754931": {
+      "title": "Heart Rate Dynamics after Combined Strength and Endurance Training in Middle-Aged Women: Heterogeneity of Responses",
+      "doi": "10.1371/journal.pone.0072664",
+      "pmid": null,
+      "year": 2013,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3922955": {
+      "title": "Lifelong endurance training attenuates age-related genotoxic stress in human skeletal muscle",
+      "doi": "10.1186/2046-2395-2-11",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Longevity & Healthspan",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3588651": {
+      "title": "Supplementary Low-Intensity Aerobic Training Improves Aerobic Capacity and Does Not Affect Psychomotor Performance in Professional Female Ballet Dancers",
+      "doi": "10.2478/v10078-012-0008-6",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Journal of Human Kinetics",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3195859": {
+      "title": "Tai Chi Enhances the Effects of Endurance Training in the Rehabilitation of Elderly Patients with Chronic Heart Failure",
+      "doi": "10.1155/2011/761958",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Rehabilitation Research and Practice",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1332375": {
+      "title": "Effects of submaximal cycling and long-term endurance training on neutrophil phagocytic activity in middle aged men.",
+      "doi": "10.1136/bjsm.30.2.125",
+      "pmid": null,
+      "year": 1996,
+      "venue": "British Journal of Sports Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4841588": {
+      "title": "Mechanisms of Attenuation of Pulmonary V'O2 Slow Component in Humans after Prolonged Endurance Training.",
+      "doi": "10.1371/journal.pone.0154135",
+      "pmid": "27104346",
+      "year": 2016,
+      "venue": "PLoS One",
+      "sources": [
+        "doaj",
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12851979": {
+      "title": "Periodized carbohydrate intake influences metabolic flexibility and indices of running economy during endurance training in recreationally active males",
+      "doi": "10.3389/fnut.2025.1750042",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11062412": {
+      "title": "Resistance training diminishes mitochondrial adaptations to subsequent endurance training in healthy untrained men",
+      "doi": "10.1113/jp284822",
+      "pmid": null,
+      "year": 2023,
+      "venue": "The Journal of Physiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10933151": {
+      "title": "Concurrent Strength and Endurance Training: A Systematic Review and Meta-Analysis on the Impact of Sex and Training Status",
+      "doi": "10.1007/s40279-023-01943-9",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Sports Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8910006": {
+      "title": "The Effect of Low-intensity Aerobic Training Combined with Blood Flow Restriction on Maximal Strength, Muscle Mass, and Cycling Performance in a Cyclist with Knee Displacement",
+      "doi": "10.3390/ijerph19052993",
+      "pmid": null,
+      "year": 2022,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8656668": {
+      "title": "Effects of Endurance Training Intensity on Pulmonary Diffusing Capacity at Rest and after Maximal Aerobic Exercise in Young Athletes",
+      "doi": "10.3390/ijerph182312359",
+      "pmid": null,
+      "year": 2021,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6937112": {
+      "title": "HIIT is not superior to MICT in altering blood lipids: a systematic review and meta-analysis",
+      "doi": "10.1136/bmjsem-2019-000647",
+      "pmid": null,
+      "year": 2019,
+      "venue": "BMJ Open Sport & Exercise Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6266893": {
+      "title": "Effects of Royal Jelly Administration on Endurance Training-Induced Mitochondrial Adaptations in Skeletal Muscle",
+      "doi": "10.3390/nu10111735",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5093324": {
+      "title": "Endurance Training Intensity Does Not Mediate Interference to Maximal Lower-Body Strength Gain during Short-Term Concurrent Training",
+      "doi": "10.3389/fphys.2016.00487",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4468587": {
+      "title": "Association Between KCNJ11 Gene E23K Polymorphism and Body Composition Together with Its Response to Endurance Training",
+      "doi": "10.2174/1874120701509010121",
+      "pmid": null,
+      "year": 2015,
+      "venue": "The Open Biomedical Engineering Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3492021": {
+      "title": "Aerobic endurance training versus relaxation training in patients with migraine (ARMIG): study protocol for a randomized controlled trial",
+      "doi": "10.1186/1745-6215-13-46",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Trials",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC1724499": {
+      "title": "Soccer specific aerobic endurance training",
+      "doi": "10.1136/bjsm.36.3.218",
+      "pmid": null,
+      "year": 2002,
+      "venue": "British Journal of Sports Medicine",
+      "sources": [
+        "crossref"
+      ]
+    }
+  }
+}

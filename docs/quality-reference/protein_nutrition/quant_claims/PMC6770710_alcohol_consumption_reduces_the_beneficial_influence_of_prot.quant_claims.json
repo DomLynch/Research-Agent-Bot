@@ -1,0 +1,1795 @@
+{
+  "paper_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot",
+  "doi": "10.3390/nu11092143",
+  "extracted_at": "2026-05-05T22:35:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 22,
+    "percentage": 22,
+    "hazard_ratio": 13,
+    "confidence_interval": 13,
+    "p_value": 26,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-603",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 603,
+      "sentence": "The skeletal muscle mass index (SMI), defined as the weight-adjusted skeletal muscle mass, was measured using multi-frequency bioelectrical impedance analyses every 2 years until the study endpoint.",
+      "context_window": "sing multi-frequency bioelectrical impedance analyses every 2 years until the study endpoint. Low muscle mass was defined as a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-994",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 994,
+      "sentence": "After multivariate adjustments, high protein intake (\u22651.2 g/kg body weight (BW)) was shown to reduce the risk of low SMI development in both men (hazard ratio (HR): 0.24; 95% confidence interval (CI): 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001), compared with low protein intake (<0.8 g/kg BW).",
+      "context_window": "f low SMI development in both men (hazard ratio (HR): 0.24; 95% confidence interval (CI): 0.12, 0.51; p for trend < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-1068",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.29",
+      "numeric_values": [
+        0.29
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1068,
+      "sentence": "After multivariate adjustments, high protein intake (\u22651.2 g/kg body weight (BW)) was shown to reduce the risk of low SMI development in both men (hazard ratio (HR): 0.24; 95% confidence interval (CI): 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001), compared with low protein intake (<0.8 g/kg BW).",
+      "context_window": "interval (CI): 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001), compared with lo",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-1078",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.16, 0.53",
+      "numeric_values": [
+        0.16,
+        0.53
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1078,
+      "sentence": "After multivariate adjustments, high protein intake (\u22651.2 g/kg body weight (BW)) was shown to reduce the risk of low SMI development in both men (hazard ratio (HR): 0.24; 95% confidence interval (CI): 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001), compared with low protein intake (<0.8 g/kg BW).",
+      "context_window": "(CI): 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001), compared with low protein intake (<0",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-1281",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1281,
+      "sentence": "Alcohol consumption attenuated the protective influence of protein intake against low SMI development in women (HR: 0.64; 95% CI: 0.18, 2.25; p for trend = 0.478).",
+      "context_window": "nce of protein intake against low SMI development in women (HR: 0.64; 95% CI: 0.18, 2.25; p for trend = 0.478). Among the total",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-1291",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.18, 2.25",
+      "numeric_values": [
+        0.18,
+        2.25
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1291,
+      "sentence": "Alcohol consumption attenuated the protective influence of protein intake against low SMI development in women (HR: 0.64; 95% CI: 0.18, 2.25; p for trend = 0.478).",
+      "context_window": "tein intake against low SMI development in women (HR: 0.64; 95% CI: 0.18, 2.25; p for trend = 0.478). Among the total subjects, heavy drin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-1468",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.20",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1468,
+      "sentence": "Among the total subjects, heavy drinkers with high protein intake were not significantly associated with the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117).",
+      "context_window": "significantly associated with the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117). Additional research should",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-1478",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.03, 1.50",
+      "numeric_values": [
+        0.03,
+        1.5
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1478,
+      "sentence": "Among the total subjects, heavy drinkers with high protein intake were not significantly associated with the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117).",
+      "context_window": "tly associated with the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117). Additional research should clarify the dose-re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-1498",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.117",
+      "numeric_values": [
+        0.117
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1498,
+      "sentence": "Among the total subjects, heavy drinkers with high protein intake were not significantly associated with the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117).",
+      "context_window": "the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117). Additional research should clarify the dose-response effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-483",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 483,
+      "sentence": "According to the World Health Organization, the number of individuals older than 60 years of age is expected to increase from 900 million to 2 billion between 2015 and 2050 [ 3 ].",
+      "context_window": "d Health Organization, the number of individuals older than 60 years of age is expected to increase from 900 million to 2 billio",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-844",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 844,
+      "sentence": "According to recent estimates, the prevalence of sarcopenia ranges from 5% to 13% among individuals aged 60-70 years and from 11% to 50% among those aged \u226580 years [ 4 ].",
+      "context_window": "recent estimates, the prevalence of sarcopenia ranges from 5% to 13% among individuals aged 60-70 years and from 11% to 5",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-850",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 850,
+      "sentence": "According to recent estimates, the prevalence of sarcopenia ranges from 5% to 13% among individuals aged 60-70 years and from 11% to 50% among those aged \u226580 years [ 4 ].",
+      "context_window": "t estimates, the prevalence of sarcopenia ranges from 5% to 13% among individuals aged 60-70 years and from 11% to 50% amon",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-880",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 880,
+      "sentence": "According to recent estimates, the prevalence of sarcopenia ranges from 5% to 13% among individuals aged 60-70 years and from 11% to 50% among those aged \u226580 years [ 4 ].",
+      "context_window": "sarcopenia ranges from 5% to 13% among individuals aged 60-70 years and from 11% to 50% among those aged \u226580 years [ 4 ]. Age-r",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-898",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 898,
+      "sentence": "According to recent estimates, the prevalence of sarcopenia ranges from 5% to 13% among individuals aged 60-70 years and from 11% to 50% among those aged \u226580 years [ 4 ].",
+      "context_window": "from 5% to 13% among individuals aged 60-70 years and from 11% to 50% among those aged \u226580 years [ 4 ]. Age-related sarcop",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-905",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 905,
+      "sentence": "According to recent estimates, the prevalence of sarcopenia ranges from 5% to 13% among individuals aged 60-70 years and from 11% to 50% among those aged \u226580 years [ 4 ].",
+      "context_window": "% to 13% among individuals aged 60-70 years and from 11% to 50% among those aged \u226580 years [ 4 ]. Age-related sarcopenia is",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-927",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 927,
+      "sentence": "According to recent estimates, the prevalence of sarcopenia ranges from 5% to 13% among individuals aged 60-70 years and from 11% to 50% among those aged \u226580 years [ 4 ].",
+      "context_window": "uals aged 60-70 years and from 11% to 50% among those aged \u226580 years [ 4 ]. Age-related sarcopenia is a common condition associa",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-1136",
+      "claim_type": "percentage",
+      "raw_text": "58.5%",
+      "numeric_values": [
+        58.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1136,
+      "sentence": "One prospective study estimated that sarcopenia would increase hospitalization costs by 58.5% and 34% for patients <65 and \u226565 years of age, respectively [ 5 ].",
+      "context_window": "ted that sarcopenia would increase hospitalization costs by 58.5% and 34% for patients <65 and \u226565 years of age, respectively",
+      "claim_role": "duration",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-1146",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1146,
+      "sentence": "One prospective study estimated that sarcopenia would increase hospitalization costs by 58.5% and 34% for patients <65 and \u226565 years of age, respectively [ 5 ].",
+      "context_window": "arcopenia would increase hospitalization costs by 58.5% and 34% for patients <65 and \u226565 years of age, respectively [ 5 ].",
+      "claim_role": "duration",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-1172",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1172,
+      "sentence": "One prospective study estimated that sarcopenia would increase hospitalization costs by 58.5% and 34% for patients <65 and \u226565 years of age, respectively [ 5 ].",
+      "context_window": "ospitalization costs by 58.5% and 34% for patients <65 and \u226565 years of age, respectively [ 5 ]. The etiology of sarcopenia is",
+      "claim_role": "protocol",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-218",
+      "claim_type": "unit_value",
+      "raw_text": "69 years",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 218,
+      "sentence": "For KoGES, the participant eligibility criteria included an age of 40-69 years and residence in Ansan (urban) or Ansung (rural), Korea, for at least 6 months before enrolment.",
+      "context_window": "the participant eligibility criteria included an age of 40-69 years and residence in Ansan (urban) or Ansung (rural), Korea, fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-297",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 297,
+      "sentence": "For KoGES, the participant eligibility criteria included an age of 40-69 years and residence in Ansan (urban) or Ansung (rural), Korea, for at least 6 months before enrolment.",
+      "context_window": "nce in Ansan (urban) or Ansung (rural), Korea, for at least 6 months before enrolment. Baseline examinations were performed in 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-426",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 426,
+      "sentence": "Baseline examinations were performed in 2001 and 2002, and follow-up examinations were repeated every 2 years through 2014.",
+      "context_window": "01 and 2002, and follow-up examinations were repeated every 2 years through 2014. Of the original 10,030 participants, 4412 rem",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-2962",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2962,
+      "sentence": "Binge drinking was defined as the consumption of \u22655 alcoholic drinks for men or \u22654 alcoholic drinks for women on at least one occasion during the previous 30 days, and participants were subcategorized into two groups based on this variable: social drinkers (<1 time/month) and binge drinkers (\u22651 time/month) [ 18 ].",
+      "context_window": "inks for women on at least one occasion during the previous 30 days, and participants were subcategorized into two groups based",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-3711",
+      "claim_type": "percentage",
+      "raw_text": "35.71%",
+      "numeric_values": [
+        35.71
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3711,
+      "sentence": "We used SMI cutoff points of 35.71% for men and 30.70% for women to define low muscle mass, based on a threshold of <2 standard deviations below the sex-specific normal means for a young reference group as defined in previous Korean studies [ 24 ].",
+      "context_window": "ibed by Janssen et al. [ 23 ]. We used SMI cutoff points of 35.71% for men and 30.70% for women to define low muscle mass, bas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-3730",
+      "claim_type": "percentage",
+      "raw_text": "30.70%",
+      "numeric_values": [
+        30.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3730,
+      "sentence": "We used SMI cutoff points of 35.71% for men and 30.70% for women to define low muscle mass, based on a threshold of <2 standard deviations below the sex-specific normal means for a young reference group as defined in previous Korean studies [ 24 ].",
+      "context_window": "al. [ 23 ]. We used SMI cutoff points of 35.71% for men and 30.70% for women to define low muscle mass, based on a threshold o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-4008",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4008,
+      "sentence": "The same method was used to determine the incidence of low muscle mass every 2 years until the study endpoint.",
+      "context_window": "as used to determine the incidence of low muscle mass every 2 years until the study endpoint. The permitted range for each foll",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-msd-4097",
+      "claim_type": "mean_sd",
+      "raw_text": "24 \u00b1 12",
+      "numeric_values": [
+        24.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4097,
+      "sentence": "The permitted range for each follow-up measurement was 24 \u00b1 12 months, while the actual average range was 23.4 \u00b1 0.8 months.",
+      "context_window": "int. The permitted range for each follow-up measurement was 24 \u00b1 12 months, while the actual average range was 23.4 \u00b1 0.8 month",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-4102",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4102,
+      "sentence": "The permitted range for each follow-up measurement was 24 \u00b1 12 months, while the actual average range was 23.4 \u00b1 0.8 months.",
+      "context_window": "The permitted range for each follow-up measurement was 24 \u00b1 12 months, while the actual average range was 23.4 \u00b1 0.8 months. The",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-msd-4148",
+      "claim_type": "mean_sd",
+      "raw_text": "23.4 \u00b1 0.8",
+      "numeric_values": [
+        23.4,
+        0.8
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4148,
+      "sentence": "The permitted range for each follow-up measurement was 24 \u00b1 12 months, while the actual average range was 23.4 \u00b1 0.8 months.",
+      "context_window": "ment was 24 \u00b1 12 months, while the actual average range was 23.4 \u00b1 0.8 months. The participants\u2019 demographic characteristics and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-4155",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 months",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4155,
+      "sentence": "The permitted range for each follow-up measurement was 24 \u00b1 12 months, while the actual average range was 23.4 \u00b1 0.8 months.",
+      "context_window": "s 24 \u00b1 12 months, while the actual average range was 23.4 \u00b1 0.8 months. The participants\u2019 demographic characteristics and medical",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-4661",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4661,
+      "sentence": "To evaluate the influence of protein intake on age-related muscle loss in younger versus older adults, age was dichotomized as younger or older than 60 years.",
+      "context_window": "older adults, age was dichotomized as younger or older than 60 years. Marital status was categorized as married and unmarried (i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-6517",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6517,
+      "sentence": "A Cox proportional hazards regression model was used to calculate the hazard ratios (HRs) and 95% confidence intervals (CIs) of total protein intake associated with the development of a low SMI during follow-up according to alcohol consumption.",
+      "context_window": "ion model was used to calculate the hazard ratios (HRs) and 95% confidence intervals (CIs) of total protein intake associat",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-29",
+      "claim_type": "unit_value",
+      "raw_text": "141 months",
+      "numeric_values": [
+        141.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 29,
+      "sentence": "During a median follow-up of 141 months (range: 19-152 months), we observed an incidence of newly developed low lean mass of 9.5% (395 cases).",
+      "context_window": "During a median follow-up of 141 months (range: 19-152 months), we observed an incidence of newly d",
+      "claim_role": "background",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-51",
+      "claim_type": "unit_value",
+      "raw_text": "152 months",
+      "numeric_values": [
+        152.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 51,
+      "sentence": "During a median follow-up of 141 months (range: 19-152 months), we observed an incidence of newly developed low lean mass of 9.5% (395 cases).",
+      "context_window": "During a median follow-up of 141 months (range: 19-152 months), we observed an incidence of newly developed low lean mass",
+      "claim_role": "background",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-125",
+      "claim_type": "percentage",
+      "raw_text": "9.5%",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 125,
+      "sentence": "During a median follow-up of 141 months (range: 19-152 months), we observed an incidence of newly developed low lean mass of 9.5% (395 cases).",
+      "context_window": "e observed an incidence of newly developed low lean mass of 9.5% (395 cases). Table 1 presents the baseline characteristics",
+      "claim_role": "background",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-275",
+      "claim_type": "percentage",
+      "raw_text": "26.8%",
+      "numeric_values": [
+        26.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 275,
+      "sentence": "Overall, 26.8% of the participants had low protein intake (\u22640.8 g/kg BW), 44.2% had a moderate intake (0.81-1.19 g/kg BW), and 28.9% had high protein intake (\u22651.2 g/kg BW).",
+      "context_window": "according to the total protein intake at baseline. Overall, 26.8% of the participants had low protein intake (\u22640.8 g/kg BW),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-340",
+      "claim_type": "percentage",
+      "raw_text": "44.2%",
+      "numeric_values": [
+        44.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 340,
+      "sentence": "Overall, 26.8% of the participants had low protein intake (\u22640.8 g/kg BW), 44.2% had a moderate intake (0.81-1.19 g/kg BW), and 28.9% had high protein intake (\u22651.2 g/kg BW).",
+      "context_window": "of the participants had low protein intake (\u22640.8 g/kg BW), 44.2% had a moderate intake (0.81-1.19 g/kg BW), and 28.9% had hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-393",
+      "claim_type": "percentage",
+      "raw_text": "28.9%",
+      "numeric_values": [
+        28.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 393,
+      "sentence": "Overall, 26.8% of the participants had low protein intake (\u22640.8 g/kg BW), 44.2% had a moderate intake (0.81-1.19 g/kg BW), and 28.9% had high protein intake (\u22651.2 g/kg BW).",
+      "context_window": "g BW), 44.2% had a moderate intake (0.81-1.19 g/kg BW), and 28.9% had high protein intake (\u22651.2 g/kg BW). Both men and women",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-524",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 524,
+      "sentence": "Both men and women in the high protein intake group had a higher educational level ( p = 0.005 and <0.001, respectively), earned a higher income ( p = 0.024 and <0.001, respectively), and were physically active ( p < 0.001 and 0.004, respectively).",
+      "context_window": "high protein intake group had a higher educational level ( p = 0.005 and <0.001, respectively), earned a higher income ( p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-586",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 586,
+      "sentence": "Both men and women in the high protein intake group had a higher educational level ( p = 0.005 and <0.001, respectively), earned a higher income ( p = 0.024 and <0.001, respectively), and were physically active ( p < 0.001 and 0.004, respectively).",
+      "context_window": "= 0.005 and <0.001, respectively), earned a higher income ( p = 0.024 and <0.001, respectively), and were physically active ( p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-652",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 652,
+      "sentence": "Both men and women in the high protein intake group had a higher educational level ( p = 0.005 and <0.001, respectively), earned a higher income ( p = 0.024 and <0.001, respectively), and were physically active ( p < 0.001 and 0.004, respectively).",
+      "context_window": "024 and <0.001, respectively), and were physically active ( p < 0.001 and 0.004, respectively). Men with high protein intakes wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-760",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.074",
+      "numeric_values": [
+        0.074
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 760,
+      "sentence": "Men with high protein intakes were more likely to be current drinkers ( p = 0.074), heavy drinkers ( p = 0.019), and binge drinkers ( p = 0.033) and to consume alcohol more frequently ( p = 0.001).",
+      "context_window": "h protein intakes were more likely to be current drinkers ( p = 0.074), heavy drinkers ( p = 0.019), and binge drinkers ( p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-789",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 789,
+      "sentence": "Men with high protein intakes were more likely to be current drinkers ( p = 0.074), heavy drinkers ( p = 0.019), and binge drinkers ( p = 0.033) and to consume alcohol more frequently ( p = 0.001).",
+      "context_window": "ikely to be current drinkers ( p = 0.074), heavy drinkers ( p = 0.019), and binge drinkers ( p = 0.033) and to consume alcohol mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-822",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 822,
+      "sentence": "Men with high protein intakes were more likely to be current drinkers ( p = 0.074), heavy drinkers ( p = 0.019), and binge drinkers ( p = 0.033) and to consume alcohol more frequently ( p = 0.001).",
+      "context_window": "= 0.074), heavy drinkers ( p = 0.019), and binge drinkers ( p = 0.033) and to consume alcohol more frequently ( p = 0.001). Women",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-874",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 874,
+      "sentence": "Men with high protein intakes were more likely to be current drinkers ( p = 0.074), heavy drinkers ( p = 0.019), and binge drinkers ( p = 0.033) and to consume alcohol more frequently ( p = 0.001).",
+      "context_window": "nkers ( p = 0.033) and to consume alcohol more frequently ( p = 0.001). Women with high protein intakes were significantly younge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-947",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 947,
+      "sentence": "Women with high protein intakes were significantly younger ( p < 0.001).",
+      "context_window": "omen with high protein intakes were significantly younger ( p < 0.001). The smoking status was not significantly associated with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-1107",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1107,
+      "sentence": "Men and women with high protein intake reported higher intakes of energy ( p < 0.001) and energy from fat ( p < 0.001) and a lower intake of energy from carbohydrates ( p < 0.001), compared to those with a low protein intake.",
+      "context_window": "ith high protein intake reported higher intakes of energy ( p < 0.001) and energy from fat ( p < 0.001) and a lower intake of ene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-1140",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1140,
+      "sentence": "Men and women with high protein intake reported higher intakes of energy ( p < 0.001) and energy from fat ( p < 0.001) and a lower intake of energy from carbohydrates ( p < 0.001), compared to those with a low protein intake.",
+      "context_window": "higher intakes of energy ( p < 0.001) and energy from fat ( p < 0.001) and a lower intake of energy from carbohydrates ( p < 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-1201",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1201,
+      "sentence": "Men and women with high protein intake reported higher intakes of energy ( p < 0.001) and energy from fat ( p < 0.001) and a lower intake of energy from carbohydrates ( p < 0.001), compared to those with a low protein intake.",
+      "context_window": "< 0.001) and a lower intake of energy from carbohydrates ( p < 0.001), compared to those with a low protein intake. Regarding bo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-1351",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1351,
+      "sentence": "Regarding body composition, both men and women with high protein intake had a lower weight ( p < 0.001), body mass index (BMI) ( p < 0.001), fat mass ( p < 0.001), and lean mass ( p < 0.001) at baseline than those with a low protein intake.",
+      "context_window": "men and women with high protein intake had a lower weight ( p < 0.001), body mass index (BMI) ( p < 0.001), fat mass ( p < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-1387",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1387,
+      "sentence": "Regarding body composition, both men and women with high protein intake had a lower weight ( p < 0.001), body mass index (BMI) ( p < 0.001), fat mass ( p < 0.001), and lean mass ( p < 0.001) at baseline than those with a low protein intake.",
+      "context_window": "ke had a lower weight ( p < 0.001), body mass index (BMI) ( p < 0.001), fat mass ( p < 0.001), and lean mass ( p < 0.001) at base",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-1410",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1410,
+      "sentence": "Regarding body composition, both men and women with high protein intake had a lower weight ( p < 0.001), body mass index (BMI) ( p < 0.001), fat mass ( p < 0.001), and lean mass ( p < 0.001) at baseline than those with a low protein intake.",
+      "context_window": "p < 0.001), body mass index (BMI) ( p < 0.001), fat mass ( p < 0.001), and lean mass ( p < 0.001) at baseline than those with a",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-1438",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1438,
+      "sentence": "Regarding body composition, both men and women with high protein intake had a lower weight ( p < 0.001), body mass index (BMI) ( p < 0.001), fat mass ( p < 0.001), and lean mass ( p < 0.001) at baseline than those with a low protein intake.",
+      "context_window": "(BMI) ( p < 0.001), fat mass ( p < 0.001), and lean mass ( p < 0.001) at baseline than those with a low protein intake. However,",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-1561",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1561,
+      "sentence": "However, high protein intake was associated with a high SMI ( p < 0.001) in men but a low SMI in women ( p < 0.001).",
+      "context_window": "wever, high protein intake was associated with a high SMI ( p < 0.001) in men but a low SMI in women ( p < 0.001). General chara",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-1604",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1604,
+      "sentence": "However, high protein intake was associated with a high SMI ( p < 0.001) in men but a low SMI in women ( p < 0.001).",
+      "context_window": "ith a high SMI ( p < 0.001) in men but a low SMI in women ( p < 0.001). General characteristics of study participants by the lev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-2413",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2413,
+      "sentence": "Both men and women with higher protein intake exhibited lower reductions in weight (p = 0.003 and < 0.001, respectively) and lean mass (p = 0.001 and < 0.001, respectively) during follow-up.",
+      "context_window": "higher protein intake exhibited lower reductions in weight (p = 0.003 and < 0.001, respectively) and lean mass (p = 0.001 and < 0",
+      "claim_role": "duration",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-2465",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2465,
+      "sentence": "Both men and women with higher protein intake exhibited lower reductions in weight (p = 0.003 and < 0.001, respectively) and lean mass (p = 0.001 and < 0.001, respectively) during follow-up.",
+      "context_window": "weight (p = 0.003 and < 0.001, respectively) and lean mass (p = 0.001 and < 0.001, respectively) during follow-up. By contrast, t",
+      "claim_role": "duration",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-2563",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.079",
+      "numeric_values": [
+        0.079
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2563,
+      "sentence": "By contrast, the mean changes in fat mass (p = 0.079 for men, 0.009 for women) and BMI (p = 0.002 for men, < 0.001 for women) increased significantly in men and women with a high protein intake.",
+      "context_window": "uring follow-up. By contrast, the mean changes in fat mass (p = 0.079 for men, 0.009 for women) and BMI (p = 0.002 for men, < 0.0",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-2608",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2608,
+      "sentence": "By contrast, the mean changes in fat mass (p = 0.079 for men, 0.009 for women) and BMI (p = 0.002 for men, < 0.001 for women) increased significantly in men and women with a high protein intake.",
+      "context_window": "s in fat mass (p = 0.079 for men, 0.009 for women) and BMI (p = 0.002 for men, < 0.001 for women) increased significantly in men",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-2748",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2748,
+      "sentence": "Change in body composition over 12 years by the levels of dietary protein intake at baselines. ( A ) men and ( B ) women. % Change = ((12-year follow-up value-baseline value)/baseline value \u00d7 100).",
+      "context_window": "ith a high protein intake. Change in body composition over 12 years by the levels of dietary protein intake at baselines. ( A )",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-3126",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3126,
+      "sentence": "Table 2 presents the hazard ratios (HRs) and 95% confidence intervals (95% CIs) of the risk of developing a low SMI for each baseline dietary protein intake level, according to alcohol consumption.",
+      "context_window": "trend < 0.05. Table 2 presents the hazard ratios (HRs) and 95% confidence intervals (95% CIs) of the risk of developing a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-3152",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3152,
+      "sentence": "Table 2 presents the hazard ratios (HRs) and 95% confidence intervals (95% CIs) of the risk of developing a low SMI for each baseline dietary protein intake level, according to alcohol consumption.",
+      "context_window": "sents the hazard ratios (HRs) and 95% confidence intervals (95% CIs) of the risk of developing a low SMI for each baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-3410",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.24",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3410,
+      "sentence": "After adjusting for covariates, a high total protein intake (\u22651.2 g/kg BW) decreased the risk of developing a low SMI in both men (HR: 0.24; 95% CI: 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001) relative to a low protein intake.",
+      "context_window": "BW) decreased the risk of developing a low SMI in both men (HR: 0.24; 95% CI: 0.12, 0.51; p for trend < 0.001) and women (HR: 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-3420",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.12, 0.51",
+      "numeric_values": [
+        0.12,
+        0.51
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3420,
+      "sentence": "After adjusting for covariates, a high total protein intake (\u22651.2 g/kg BW) decreased the risk of developing a low SMI in both men (HR: 0.24; 95% CI: 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001) relative to a low protein intake.",
+      "context_window": "sed the risk of developing a low SMI in both men (HR: 0.24; 95% CI: 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-3472",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.29",
+      "numeric_values": [
+        0.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3472,
+      "sentence": "After adjusting for covariates, a high total protein intake (\u22651.2 g/kg BW) decreased the risk of developing a low SMI in both men (HR: 0.24; 95% CI: 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001) relative to a low protein intake.",
+      "context_window": ": 0.24; 95% CI: 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001) relative to a low",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-3482",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.16, 0.53",
+      "numeric_values": [
+        0.16,
+        0.53
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3482,
+      "sentence": "After adjusting for covariates, a high total protein intake (\u22651.2 g/kg BW) decreased the risk of developing a low SMI in both men (HR: 0.24; 95% CI: 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001) relative to a low protein intake.",
+      "context_window": "% CI: 0.12, 0.51; p for trend < 0.001) and women (HR: 0.29; 95% CI: 0.16, 0.53; p for trend < 0.001) relative to a low protein intake. Wom",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-3739",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3739,
+      "sentence": "Women with a moderate total protein intake (0.81-1.19 g/kg BW) had a decreased risk of developing a low SMI relative to those with low protein intake after adjusting for covariates (HR: 0.54; 95% CI: 0.38, 0.76; p for trend < 0.001).",
+      "context_window": "ose with low protein intake after adjusting for covariates (HR: 0.54; 95% CI: 0.38, 0.76; p for trend < 0.001). In covariate-adj",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-3749",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.38, 0.76",
+      "numeric_values": [
+        0.38,
+        0.76
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3749,
+      "sentence": "Women with a moderate total protein intake (0.81-1.19 g/kg BW) had a decreased risk of developing a low SMI relative to those with low protein intake after adjusting for covariates (HR: 0.54; 95% CI: 0.38, 0.76; p for trend < 0.001).",
+      "context_window": "ow protein intake after adjusting for covariates (HR: 0.54; 95% CI: 0.38, 0.76; p for trend < 0.001). In covariate-adjusted subgroup analy",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-3953",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3953,
+      "sentence": "In covariate-adjusted subgroup analyses, high protein intake was associated with a lower risk of developing a low SMI relative to low protein intake in both men (HR: 0.28; 95% CI: 0.07, 1.09; p for trend = 0.064) and women (HR: 0.23; 95% CI: 0.11, 0.45; p for trend < 0.001) who did not consume alcohol.",
+      "context_window": "oping a low SMI relative to low protein intake in both men (HR: 0.28; 95% CI: 0.07, 1.09; p for trend = 0.064) and women (HR: 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-3963",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.07, 1.09",
+      "numeric_values": [
+        0.07,
+        1.09
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3963,
+      "sentence": "In covariate-adjusted subgroup analyses, high protein intake was associated with a lower risk of developing a low SMI relative to low protein intake in both men (HR: 0.28; 95% CI: 0.07, 1.09; p for trend = 0.064) and women (HR: 0.23; 95% CI: 0.11, 0.45; p for trend < 0.001) who did not consume alcohol.",
+      "context_window": "w SMI relative to low protein intake in both men (HR: 0.28; 95% CI: 0.07, 1.09; p for trend = 0.064) and women (HR: 0.23; 95% CI: 0.11, 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-4015",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.23",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4015,
+      "sentence": "In covariate-adjusted subgroup analyses, high protein intake was associated with a lower risk of developing a low SMI relative to low protein intake in both men (HR: 0.28; 95% CI: 0.07, 1.09; p for trend = 0.064) and women (HR: 0.23; 95% CI: 0.11, 0.45; p for trend < 0.001) who did not consume alcohol.",
+      "context_window": ": 0.28; 95% CI: 0.07, 1.09; p for trend = 0.064) and women (HR: 0.23; 95% CI: 0.11, 0.45; p for trend < 0.001) who did not consu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-4025",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.11, 0.45",
+      "numeric_values": [
+        0.11,
+        0.45
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4025,
+      "sentence": "In covariate-adjusted subgroup analyses, high protein intake was associated with a lower risk of developing a low SMI relative to low protein intake in both men (HR: 0.28; 95% CI: 0.07, 1.09; p for trend = 0.064) and women (HR: 0.23; 95% CI: 0.11, 0.45; p for trend < 0.001) who did not consume alcohol.",
+      "context_window": "% CI: 0.07, 1.09; p for trend = 0.064) and women (HR: 0.23; 95% CI: 0.11, 0.45; p for trend < 0.001) who did not consume alcohol. However,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-4182",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4182,
+      "sentence": "However, these associations disappeared in the subgroup of women who consumed alcohol (HR: 0.64; 95% CI: 0.18, 2.25; p for trend = 0.478) after adjusting for covariates.",
+      "context_window": "disappeared in the subgroup of women who consumed alcohol (HR: 0.64; 95% CI: 0.18, 2.25; p for trend = 0.478) after adjusting f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-4192",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.18, 2.25",
+      "numeric_values": [
+        0.18,
+        2.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4192,
+      "sentence": "However, these associations disappeared in the subgroup of women who consumed alcohol (HR: 0.64; 95% CI: 0.18, 2.25; p for trend = 0.478) after adjusting for covariates.",
+      "context_window": "ed in the subgroup of women who consumed alcohol (HR: 0.64; 95% CI: 0.18, 2.25; p for trend = 0.478) after adjusting for covariates. Among",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-4422",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4422,
+      "sentence": "Among the total subjects, the associations between protein intake and the development of low muscle mass were significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001).",
+      "context_window": "le mass were significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-4432",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.39, 0.77",
+      "numeric_values": [
+        0.39,
+        0.77
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4432,
+      "sentence": "Among the total subjects, the associations between protein intake and the development of low muscle mass were significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001).",
+      "context_window": "re significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-4452",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4452,
+      "sentence": "Among the total subjects, the associations between protein intake and the development of low muscle mass were significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001).",
+      "context_window": ".81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-4505",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.60",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4505,
+      "sentence": "Among the total subjects, the associations between protein intake and the development of low muscle mass were significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001).",
+      "context_window": "0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-4515",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.44, 0.81",
+      "numeric_values": [
+        0.44,
+        0.81
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4515,
+      "sentence": "Among the total subjects, the associations between protein intake and the development of low muscle mass were significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001).",
+      "context_window": "0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-4535",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4535,
+      "sentence": "Among the total subjects, the associations between protein intake and the development of low muscle mass were significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001).",
+      "context_window": "onsumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-4568",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4568,
+      "sentence": "Among the total subjects, the associations between protein intake and the development of low muscle mass were significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001).",
+      "context_window": "0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001). However, among the total s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-4578",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.44, 0.78",
+      "numeric_values": [
+        0.44,
+        0.78
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4578,
+      "sentence": "Among the total subjects, the associations between protein intake and the development of low muscle mass were significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001).",
+      "context_window": "CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001). However, among the total subjects, heavy drink",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-4598",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4598,
+      "sentence": "Among the total subjects, the associations between protein intake and the development of low muscle mass were significant at \u22650.81 g/kg BW for non-drinkers (HR: 0.55; 95% CI: 0.39, 0.77; p = 0.001), those who consumed alcohol <1 time/week (HR: 0.60; 95% CI: 0.44, 0.81; p = 0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001).",
+      "context_window": "0.001), and social drinkers (HR: 0.59; 95% CI: 0.44, 0.78; p < 0.001). However, among the total subjects, heavy drinkers with hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-hr-a-4754",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.20",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4754,
+      "sentence": "However, among the total subjects, heavy drinkers with high protein intake were not significantly associated with the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117).",
+      "context_window": "significantly associated with the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117). Hazard ratios (HRs) and 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-ci-4764",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.03, 1.50",
+      "numeric_values": [
+        0.03,
+        1.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4764,
+      "sentence": "However, among the total subjects, heavy drinkers with high protein intake were not significantly associated with the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117).",
+      "context_window": "tly associated with the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117). Hazard ratios (HRs) and 95% confidence interv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-p-4784",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.117",
+      "numeric_values": [
+        0.117
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4784,
+      "sentence": "However, among the total subjects, heavy drinkers with high protein intake were not significantly associated with the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117).",
+      "context_window": "the development of a low SMI (HR: 0.20; 95% CI: 0.03, 1.50; p = 0.117). Hazard ratios (HRs) and 95% confidence intervals (95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-4821",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4821,
+      "sentence": "Hazard ratios (HRs) and 95% confidence intervals (95% CIs) for the risk of developing low SMI by the levels of dietary protein intake at baseline according to alcohol consumption 1 .",
+      "context_window": "0; 95% CI: 0.03, 1.50; p = 0.117). Hazard ratios (HRs) and 95% confidence intervals (95% CIs) for the risk of developing l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-4847",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4847,
+      "sentence": "Hazard ratios (HRs) and 95% confidence intervals (95% CIs) for the risk of developing low SMI by the levels of dietary protein intake at baseline according to alcohol consumption 1 .",
+      "context_window": "0.117). Hazard ratios (HRs) and 95% confidence intervals (95% CIs) for the risk of developing low SMI by the levels of di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-5145",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5145,
+      "sentence": "1 Adjusted for age (<60/\u226560 years), skeletal muscle mass at baseline, energy intake, marital status (married/others), education (\u2265college/others), income (\u22653,000,000 KRW per month/other), smoking (yes/no), regular physical activity (yes/no), self-perceived dental health status (poor/others), chronic disease (yes/no), residential area (urban/rural).",
+      "context_window": "ortional hazards regression model. 1 Adjusted for age (<60/\u226560 years), skeletal muscle mass at baseline, energy intake, marital",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-2648",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2648,
+      "sentence": "For example, Houston et al. reported that among community-dwelling older adults in the highest protein intake quintile (1.1 g/kg BW), the total losses in lean body mass and appendicular lean mass over 3 years were approximately 40% lower than those of adults in the lowest quintile (0.7 g/kg BW) [ 29 ].",
+      "context_window": "al losses in lean body mass and appendicular lean mass over 3 years were approximately 40% lower than those of adults in the lo",
+      "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-2675",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2675,
+      "sentence": "For example, Houston et al. reported that among community-dwelling older adults in the highest protein intake quintile (1.1 g/kg BW), the total losses in lean body mass and appendicular lean mass over 3 years were approximately 40% lower than those of adults in the lowest quintile (0.7 g/kg BW) [ 29 ].",
+      "context_window": "and appendicular lean mass over 3 years were approximately 40% lower than those of adults in the lowest quintile (0.7 g/kg",
+      "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-2906",
+      "claim_type": "percentage",
+      "raw_text": "6.0%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2906,
+      "sentence": "Another 5-year cohort study found that participants in the highest protein intake tertile (>87 g/day) had whole-body and appendicular lean mass values 5.4-6.0% higher than those of participants in the lowest tertile [ 30 ].",
+      "context_window": "g/day) had whole-body and appendicular lean mass values 5.4-6.0% higher than those of participants in the lowest tertile [ 3",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-3047",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3047,
+      "sentence": "Moreover, in a meta-analysis of adult men and women with a mean age of \u226550 years, older adults who consumed a higher protein diet (\u22651.0 g/kg/day) preserved more lean mass during intentional weight loss, compared to those who consumed a lower protein diet (<1.0 g/kg/day) [ 33 ].",
+      "context_window": "a meta-analysis of adult men and women with a mean age of \u226550 years, older adults who consumed a higher protein diet (\u22651.0 g/kg",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-4082",
+      "claim_type": "percentage",
+      "raw_text": "18.8%",
+      "numeric_values": [
+        18.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4082,
+      "sentence": "Moreover, according to data from the 2008-2012 Korean National Health and Nutrition Examination Survey (KNHANES), 18.8% of adults aged \u226560 years and 34.9% of adults aged \u226570 years consumed less than the estimated average requirements (40 g/day for men and 35 g/d for women); in other words, many older Korean adults consume insufficient amounts of protein [ 35 ].",
+      "context_window": "National Health and Nutrition Examination Survey (KNHANES), 18.8% of adults aged \u226560 years and 34.9% of adults aged \u226570 years",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-4104",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4104,
+      "sentence": "Moreover, according to data from the 2008-2012 Korean National Health and Nutrition Examination Survey (KNHANES), 18.8% of adults aged \u226560 years and 34.9% of adults aged \u226570 years consumed less than the estimated average requirements (40 g/day for men and 35 g/d for women); in other words, many older Korean adults consume insufficient amounts of protein [ 35 ].",
+      "context_window": "trition Examination Survey (KNHANES), 18.8% of adults aged \u226560 years and 34.9% of adults aged \u226570 years consumed less than the e",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-pct-4117",
+      "claim_type": "percentage",
+      "raw_text": "34.9%",
+      "numeric_values": [
+        34.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4117,
+      "sentence": "Moreover, according to data from the 2008-2012 Korean National Health and Nutrition Examination Survey (KNHANES), 18.8% of adults aged \u226560 years and 34.9% of adults aged \u226570 years consumed less than the estimated average requirements (40 g/day for men and 35 g/d for women); in other words, many older Korean adults consume insufficient amounts of protein [ 35 ].",
+      "context_window": "nation Survey (KNHANES), 18.8% of adults aged \u226560 years and 34.9% of adults aged \u226570 years consumed less than the estimated a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-4139",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4139,
+      "sentence": "Moreover, according to data from the 2008-2012 Korean National Health and Nutrition Examination Survey (KNHANES), 18.8% of adults aged \u226560 years and 34.9% of adults aged \u226570 years consumed less than the estimated average requirements (40 g/day for men and 35 g/d for women); in other words, many older Korean adults consume insufficient amounts of protein [ 35 ].",
+      "context_window": "), 18.8% of adults aged \u226560 years and 34.9% of adults aged \u226570 years consumed less than the estimated average requirements (40 g",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6770710_alcohol_consumption_reduces_the_beneficial_influence_of_prot-u-6513",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6513,
+      "sentence": "However, another Korean study of men aged 60 years did not observe a difference in the proportion of participants who consumed alcohol between the groups with and without sarcopenia [ 40 ].",
+      "context_window": "arcopenia [ 17 ]. However, another Korean study of men aged 60 years did not observe a difference in the proportion of participa",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,790 @@
+{
+  "paper_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m",
+  "doi": "10.1007/s00380-018-1202-9",
+  "extracted_at": "2026-05-05T22:38:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 24,
+    "unit_value": 7,
+    "sample_size": 3,
+    "p_value": 8,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-411",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 411,
+      "sentence": "The study included 102 non-naive sauna users (54% male) with mean age of 51.9 years, who had at least one cardiovascular risk factor.",
+      "context_window": "r biomarkers. The study included 102 non-naive sauna users (54% male) with mean age of 51.9 years, who had at least one car",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-u-438",
+      "claim_type": "unit_value",
+      "raw_text": "51.9 years",
+      "numeric_values": [
+        51.9
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 438,
+      "sentence": "The study included 102 non-naive sauna users (54% male) with mean age of 51.9 years, who had at least one cardiovascular risk factor.",
+      "context_window": "luded 102 non-naive sauna users (54% male) with mean age of 51.9 years, who had at least one cardiovascular risk factor. Participa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-n-747",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 747,
+      "sentence": "Overall median N-terminal pro-B-type natriuretic peptide (NT-proBNP) level ( n = 20 participants) was 46.0 ng/L before sauna exposure, which increased to 50.5 ng/l immediately after sauna (median change, + 12.00%; p < 0.001) and remained persistent at 30-min post-sauna (median change from pre-sauna to post-30-min sauna, + 13.93%; p < 0.001).",
+      "context_window": "terminal pro-B-type natriuretic peptide (NT-proBNP) level ( n = 20 participants) was 46.0 ng/L before sauna exposure, which in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-876",
+      "claim_type": "percentage",
+      "raw_text": "12.00%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 876,
+      "sentence": "Overall median N-terminal pro-B-type natriuretic peptide (NT-proBNP) level ( n = 20 participants) was 46.0 ng/L before sauna exposure, which increased to 50.5 ng/l immediately after sauna (median change, + 12.00%; p < 0.001) and remained persistent at 30-min post-sauna (median change from pre-sauna to post-30-min sauna, + 13.93%; p < 0.001).",
+      "context_window": "ased to 50.5 ng/l immediately after sauna (median change, + 12.00%; p < 0.001) and remained persistent at 30-min post-sauna (m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-p-884",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 884,
+      "sentence": "Overall median N-terminal pro-B-type natriuretic peptide (NT-proBNP) level ( n = 20 participants) was 46.0 ng/L before sauna exposure, which increased to 50.5 ng/l immediately after sauna (median change, + 12.00%; p < 0.001) and remained persistent at 30-min post-sauna (median change from pre-sauna to post-30-min sauna, + 13.93%; p < 0.001).",
+      "context_window": "50.5 ng/l immediately after sauna (median change, + 12.00%; p < 0.001) and remained persistent at 30-min post-sauna (median chang",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-994",
+      "claim_type": "percentage",
+      "raw_text": "13.93%",
+      "numeric_values": [
+        13.93
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 994,
+      "sentence": "Overall median N-terminal pro-B-type natriuretic peptide (NT-proBNP) level ( n = 20 participants) was 46.0 ng/L before sauna exposure, which increased to 50.5 ng/l immediately after sauna (median change, + 12.00%; p < 0.001) and remained persistent at 30-min post-sauna (median change from pre-sauna to post-30-min sauna, + 13.93%; p < 0.001).",
+      "context_window": "sauna (median change from pre-sauna to post-30-min sauna, + 13.93%; p < 0.001). The changes were more evident in males compare",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-p-1002",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1002,
+      "sentence": "Overall median N-terminal pro-B-type natriuretic peptide (NT-proBNP) level ( n = 20 participants) was 46.0 ng/L before sauna exposure, which increased to 50.5 ng/l immediately after sauna (median change, + 12.00%; p < 0.001) and remained persistent at 30-min post-sauna (median change from pre-sauna to post-30-min sauna, + 13.93%; p < 0.001).",
+      "context_window": "edian change from pre-sauna to post-30-min sauna, + 13.93%; p < 0.001). The changes were more evident in males compared with fema",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1335",
+      "claim_type": "percentage",
+      "raw_text": "2.99%",
+      "numeric_values": [
+        2.99
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1335,
+      "sentence": "However, levels of creatine kinase increased in males (median change immediately after sauna, + 2.99%; p = 0.024).",
+      "context_window": "ncreased in males (median change immediately after sauna, + 2.99%; p = 0.024). Levels of NT-proBNP increased after sauna expo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-p-1342",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1342,
+      "sentence": "However, levels of creatine kinase increased in males (median change immediately after sauna, + 2.99%; p = 0.024).",
+      "context_window": "d in males (median change immediately after sauna, + 2.99%; p = 0.024). Levels of NT-proBNP increased after sauna exposure. The i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-n-398",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 398,
+      "sentence": "Participants ( n = 8) with any form of acute or pre-existing CVD were excluded from the study.",
+      "context_window": "ily history of coronary heart disease (CHD). Participants ( n = 8) with any form of acute or pre-existing CVD were excluded f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-u-1653",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 1653,
+      "sentence": "Physical activity and sauna bathing habits over the past 1 year were assessed.",
+      "context_window": "g. Physical activity and sauna bathing habits over the past 1 year were assessed. The duration and frequency of physical activ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-msd-3278",
+      "claim_type": "mean_sd",
+      "raw_text": "73 \u00b1 2",
+      "numeric_values": [
+        73.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3278,
+      "sentence": "Based on overall data collected, the mean \u00b1 standard deviation (SD) temperature was 73 \u00b1 2 \u00b0C with a relative humidity of 10-20%.",
+      "context_window": "llected, the mean \u00b1 standard deviation (SD) temperature was 73 \u00b1 2 \u00b0C with a relative humidity of 10-20%. Study participants w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-3319",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3319,
+      "sentence": "Based on overall data collected, the mean \u00b1 standard deviation (SD) temperature was 73 \u00b1 2 \u00b0C with a relative humidity of 10-20%.",
+      "context_window": "D) temperature was 73 \u00b1 2 \u00b0C with a relative humidity of 10-20%. Study participants were monitored and supervised by a phys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-u-3566",
+      "claim_type": "unit_value",
+      "raw_text": "500 mL",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3566,
+      "sentence": "Participants were given 500 mL of still water at room temperature to drink during the entire sauna session, and including the recovery period post-sauna.",
+      "context_window": "auna protocol without any problems. Participants were given 500 mL of still water at room temperature to drink during the enti",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-p-6274",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6274,
+      "sentence": "A two-sided significance level was set at p \u2264 0.05.",
+      "context_window": "outliers [ 31 ]. A two-sided significance level was set at p \u2264 0.05. All statistical analyses were carried out with Stata versi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-n-119",
+      "claim_type": "sample_size",
+      "raw_text": "n = 56",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 119,
+      "sentence": "The majority of participants were male ( n = 56).",
+      "context_window": "shown in Table 1 . The majority of participants were male ( n = 56). The mean (SD) of age, BMI, and SBP were 51.9 (SD 9.2) yea",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-266",
+      "claim_type": "percentage",
+      "raw_text": "14.4%",
+      "numeric_values": [
+        14.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 266,
+      "sentence": "Current smokers made up 14.4% of the study population.",
+      "context_window": ", and 136 (16) mmHg, respectively. Current smokers made up 14.4% of the study population. Lipid parameters were generally si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-730",
+      "claim_type": "percentage",
+      "raw_text": "63.0%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 730,
+      "sentence": "Dyslipidaemia (63.0%) and family history of CHD (34.0%) were the most common cardiovascular risk factors in the study population, followed by hypertension at 14.3%.",
+      "context_window": "nine level was 114.5 U/L in this population. Dyslipidaemia (63.0%) and family history of CHD (34.0%) were the most common car",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-764",
+      "claim_type": "percentage",
+      "raw_text": "34.0%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 764,
+      "sentence": "Dyslipidaemia (63.0%) and family history of CHD (34.0%) were the most common cardiovascular risk factors in the study population, followed by hypertension at 14.3%.",
+      "context_window": "opulation. Dyslipidaemia (63.0%) and family history of CHD (34.0%) were the most common cardiovascular risk factors in the st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-873",
+      "claim_type": "percentage",
+      "raw_text": "14.3%",
+      "numeric_values": [
+        14.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 873,
+      "sentence": "Dyslipidaemia (63.0%) and family history of CHD (34.0%) were the most common cardiovascular risk factors in the study population, followed by hypertension at 14.3%.",
+      "context_window": "actors in the study population, followed by hypertension at 14.3%. Forty-four percent of subjects had both dyslipidaemia and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1042",
+      "claim_type": "percentage",
+      "raw_text": "2.0%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1042,
+      "sentence": "A few participants had underlying clinical conditions such as type 1 diabetes (2.0%), type 2 diabetes (1.0%), respiratory diseases (5.1%), thyroid disease (3.1%), skin disease (4.0%), and rheumatoid arthritis (1.0%).",
+      "context_window": "had underlying clinical conditions such as type 1 diabetes (2.0%), type 2 diabetes (1.0%), respiratory diseases (5.1%), thyr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1066",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1066,
+      "sentence": "A few participants had underlying clinical conditions such as type 1 diabetes (2.0%), type 2 diabetes (1.0%), respiratory diseases (5.1%), thyroid disease (3.1%), skin disease (4.0%), and rheumatoid arthritis (1.0%).",
+      "context_window": "conditions such as type 1 diabetes (2.0%), type 2 diabetes (1.0%), respiratory diseases (5.1%), thyroid disease (3.1%), skin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1095",
+      "claim_type": "percentage",
+      "raw_text": "5.1%",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1095,
+      "sentence": "A few participants had underlying clinical conditions such as type 1 diabetes (2.0%), type 2 diabetes (1.0%), respiratory diseases (5.1%), thyroid disease (3.1%), skin disease (4.0%), and rheumatoid arthritis (1.0%).",
+      "context_window": "betes (2.0%), type 2 diabetes (1.0%), respiratory diseases (5.1%), thyroid disease (3.1%), skin disease (4.0%), and rheumato",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1119",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1119,
+      "sentence": "A few participants had underlying clinical conditions such as type 1 diabetes (2.0%), type 2 diabetes (1.0%), respiratory diseases (5.1%), thyroid disease (3.1%), skin disease (4.0%), and rheumatoid arthritis (1.0%).",
+      "context_window": "betes (1.0%), respiratory diseases (5.1%), thyroid disease (3.1%), skin disease (4.0%), and rheumatoid arthritis (1.0%). Bas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1140",
+      "claim_type": "percentage",
+      "raw_text": "4.0%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1140,
+      "sentence": "A few participants had underlying clinical conditions such as type 1 diabetes (2.0%), type 2 diabetes (1.0%), respiratory diseases (5.1%), thyroid disease (3.1%), skin disease (4.0%), and rheumatoid arthritis (1.0%).",
+      "context_window": "tory diseases (5.1%), thyroid disease (3.1%), skin disease (4.0%), and rheumatoid arthritis (1.0%). Baseline assessment of s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1173",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1173,
+      "sentence": "A few participants had underlying clinical conditions such as type 1 diabetes (2.0%), type 2 diabetes (1.0%), respiratory diseases (5.1%), thyroid disease (3.1%), skin disease (4.0%), and rheumatoid arthritis (1.0%).",
+      "context_window": "ease (3.1%), skin disease (4.0%), and rheumatoid arthritis (1.0%). Baseline assessment of sauna bathing showed that the majo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1293",
+      "claim_type": "percentage",
+      "raw_text": "43.9%",
+      "numeric_values": [
+        43.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1293,
+      "sentence": "Baseline assessment of sauna bathing showed that the majority of participants used sauna baths 3 times per week (43.9%).",
+      "context_window": "majority of participants used sauna baths 3 times per week (43.9%). Commonly, a sauna session lasted between 20 and 40 min fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1379",
+      "claim_type": "percentage",
+      "raw_text": "56.7%",
+      "numeric_values": [
+        56.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1379,
+      "sentence": "Commonly, a sauna session lasted between 20 and 40 min for most participants (56.7%) and the average self-reported temperature was 72 \u00b0C.",
+      "context_window": "session lasted between 20 and 40 min for most participants (56.7%) and the average self-reported temperature was 72 \u00b0C. Most",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1512",
+      "claim_type": "percentage",
+      "raw_text": "32.3%",
+      "numeric_values": [
+        32.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1512,
+      "sentence": "Most participants reported > 1-3 sessions of physical activity per week (32.3%) followed by > 3-5 sessions per week (30.6%).",
+      "context_window": "ants reported > 1-3 sessions of physical activity per week (32.3%) followed by > 3-5 sessions per week (30.6%). The majority",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1556",
+      "claim_type": "percentage",
+      "raw_text": "30.6%",
+      "numeric_values": [
+        30.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1556,
+      "sentence": "Most participants reported > 1-3 sessions of physical activity per week (32.3%) followed by > 3-5 sessions per week (30.6%).",
+      "context_window": "ivity per week (32.3%) followed by > 3-5 sessions per week (30.6%). The majority of participants (37.1%) spent > 60 min durin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-1594",
+      "claim_type": "percentage",
+      "raw_text": "37.1%",
+      "numeric_values": [
+        37.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1594,
+      "sentence": "The majority of participants (37.1%) spent > 60 min during a typical physical activity session.",
+      "context_window": "-5 sessions per week (30.6%). The majority of participants (37.1%) spent > 60 min during a typical physical activity session.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-u-1854",
+      "claim_type": "unit_value",
+      "raw_text": "5.17 mmol",
+      "numeric_values": [
+        5.17
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 1854,
+      "sentence": "Baseline characteristics\n\nValues are reported as mean \u00b1 SD or median (interquartile range) for continuous variables and n (%) for categorical variables\n\nM male, F female\n\na Total Cholesterol > 5.17 mmol/L\n\nTable 2 and Fig.",
+      "context_window": "egorical variables M male, F female a Total Cholesterol > 5.17 mmol/L Table 2 and Fig. 1 show levels of evaluated cardiovascul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-2143",
+      "claim_type": "percentage",
+      "raw_text": "12.00%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2143,
+      "sentence": "Overall NT-proBNP levels were 46.0 ng/L before sauna exposure, which increased to 50.5 ng/L immediately after sauna (median percentage change, 12.00%; p < 0.001).",
+      "context_window": "0.5 ng/L immediately after sauna (median percentage change, 12.00%; p < 0.001). Increased levels of NT-proBNP remained persist",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-p-2151",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2151,
+      "sentence": "Overall NT-proBNP levels were 46.0 ng/L before sauna exposure, which increased to 50.5 ng/L immediately after sauna (median percentage change, 12.00%; p < 0.001).",
+      "context_window": "immediately after sauna (median percentage change, 12.00%; p < 0.001). Increased levels of NT-proBNP remained persistent at 30-m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-2308",
+      "claim_type": "percentage",
+      "raw_text": "13.93%",
+      "numeric_values": [
+        13.93
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2308,
+      "sentence": "Increased levels of NT-proBNP remained persistent at 30-min post-sauna, 51.5 ng/L (median percentage change from pre-sauna to post-30-min sauna, 13.93%; p < 0.001) (Table 3 ).",
+      "context_window": "dian percentage change from pre-sauna to post-30-min sauna, 13.93%; p < 0.001) (Table 3 ). These changes were more evident in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-p-2316",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2316,
+      "sentence": "Increased levels of NT-proBNP remained persistent at 30-min post-sauna, 51.5 ng/L (median percentage change from pre-sauna to post-30-min sauna, 13.93%; p < 0.001) (Table 3 ).",
+      "context_window": "centage change from pre-sauna to post-30-min sauna, 13.93%; p < 0.001) (Table 3 ). These changes were more evident in males compa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-2712",
+      "claim_type": "percentage",
+      "raw_text": "2.99%",
+      "numeric_values": [
+        2.99
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2712,
+      "sentence": "However, levels of creatine kinase increased immediately after sauna in males; from 132.5 to 149.5 U/L (median relative change, 2.99%; p = 0.024).",
+      "context_window": "in males; from 132.5 to 149.5 U/L (median relative change, 2.99%; p = 0.024). Levels of hs-troponin I seemed to increase imm",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-p-2719",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2719,
+      "sentence": "However, levels of creatine kinase increased immediately after sauna in males; from 132.5 to 149.5 U/L (median relative change, 2.99%; p = 0.024).",
+      "context_window": "es; from 132.5 to 149.5 U/L (median relative change, 2.99%; p = 0.024). Levels of hs-troponin I seemed to increase immediately af",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-u-2873",
+      "claim_type": "unit_value",
+      "raw_text": "0.005 ng/mL",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 2873,
+      "sentence": "Levels of hs-troponin I seemed to increase immediately after sauna in males, but this change was very small and marginally significant (0.002-0.005 ng/mL; p = 0.058) (Table 3 ).",
+      "context_window": "his change was very small and marginally significant (0.002-0.005 ng/mL; p = 0.058) (Table 3 ). Levels of cardiovascular biomarker",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-p-2886",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.058",
+      "numeric_values": [
+        0.058
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2886,
+      "sentence": "Levels of hs-troponin I seemed to increase immediately after sauna in males, but this change was very small and marginally significant (0.002-0.005 ng/mL; p = 0.058) (Table 3 ).",
+      "context_window": "s very small and marginally significant (0.002-0.005 ng/mL; p = 0.058) (Table 3 ). Levels of cardiovascular biomarkers before an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-pct-3364",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3364,
+      "sentence": "Data are reported as medians (interquartile ranges)\n\nMedian percentage changes in cardiovascular biomarkers\n\nValues are reported as median (95% confidence intervals); p values are from paired T tests based on the log transformed variables\n\nCRP C-reactive protein, NT-proBNP N-terminal pro-B-type natriuretic peptide",
+      "context_window": "n cardiovascular biomarkers Values are reported as median (95% confidence intervals); p values are from paired T tests bas",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-u-1995",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1995,
+      "sentence": "Indeed, in two studies that evaluated the effect of Finnish sauna bathing on lipid profile, there were significant decreases in total cholesterol and LDL cholesterol after 2-3 weeks of sauna exposure [ 37 , 38 ].",
+      "context_window": "decreases in total cholesterol and LDL cholesterol after 2-3 weeks of sauna exposure [ 37 , 38 ]. One study suggested that the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6267405_short_term_effects_of_finnish_sauna_bathing_on_blood_based_m-u-3860",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3860,
+      "sentence": "Ohori et al. demonstrated that 3 weeks of repeated thermal treatment (Waon therapy) in patients with chronic heart failure was associated with improvement in levels of BNPs and plasma norepinephrine [ 43 ].",
+      "context_window": "tive stress [ 3 , 22 - 25 ]. Ohori et al. demonstrated that 3 weeks of repeated thermal treatment (Waon therapy) in patients wi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

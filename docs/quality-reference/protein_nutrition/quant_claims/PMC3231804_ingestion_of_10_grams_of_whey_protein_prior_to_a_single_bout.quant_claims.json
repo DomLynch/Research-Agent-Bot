@@ -1,0 +1,1069 @@
+{
+  "paper_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout",
+  "doi": "10.1186/1550-2783-8-18",
+  "extracted_at": "2026-05-05T22:35:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 15,
+    "percentage": 10,
+    "p_value": 22,
+    "mean_sd": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-498",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 498,
+      "sentence": "In a randomized, double-blind, cross-over design, 10 males ingested 1 week apart, either 10 g of whey protein (5.25 g EAAs) or carbohydrate (maltodextrose), 30 min prior to a lower-body resistance exercise bout.",
+      "context_window": "domized, double-blind, cross-over design, 10 males ingested 1 week apart, either 10 g of whey protein (5.25 g EAAs) or carbohy",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-pct-707",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 707,
+      "sentence": "The resistance exercise bout consisted of 4 sets of 8-10 reps at 80% of the one repetition maximum (RM) on the angled leg press and knee extension exercises.",
+      "context_window": "esistance exercise bout consisted of 4 sets of 8-10 reps at 80% of the one repetition maximum (RM) on the angled leg press",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1039",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1039,
+      "sentence": "No significant differences were observed for IGF-1 (p > 0.05).",
+      "context_window": "ANOVA. No significant differences were observed for IGF-1 (p > 0.05). A significant main effect for Test was observed for serum",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1117",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1117,
+      "sentence": "A significant main effect for Test was observed for serum insulin (p < 0.01) at 30 min post-ingestion and 15 and 120 min post-exercise, with no Supplement \u00d7 Test interaction (p > 0.05).",
+      "context_window": "ficant main effect for Test was observed for serum insulin (p < 0.01) at 30 min post-ingestion and 15 and 120 min post-exercise,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1225",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1225,
+      "sentence": "A significant main effect for Test was observed for serum insulin (p < 0.01) at 30 min post-ingestion and 15 and 120 min post-exercise, with no Supplement \u00d7 Test interaction (p > 0.05).",
+      "context_window": "0 min post-exercise, with no Supplement \u00d7 Test interaction (p > 0.05). For the Akt/MTOR signaling intermediates, no significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1339",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1339,
+      "sentence": "For the Akt/MTOR signaling intermediates, no significant Supplement \u00d7 Test interactions were observed (p > 0.05).",
+      "context_window": "o significant Supplement \u00d7 Test interactions were observed (p > 0.05). However, significant main effects for Test were observed",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1513",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1513,
+      "sentence": "However, significant main effects for Test were observed for phosphorylated concentrations of IRS, mTOR, and p70S6K, as all were elevated at 15 min post-exercise (p < 0.05).",
+      "context_window": ", and p70S6K, as all were elevated at 15 min post-exercise (p < 0.05). Additionally, a significant main effect for Test was note",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1595",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1595,
+      "sentence": "Additionally, a significant main effect for Test was noted for 4E-BP1 (p < 0.05), as it was decreased at 15 min post-exercise.",
+      "context_window": "y, a significant main effect for Test was noted for 4E-BP1 (p < 0.05), as it was decreased at 15 min post-exercise. Ingestion o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-178",
+      "claim_type": "mean_sd",
+      "raw_text": "20.1 \u00b1 1.4",
+      "numeric_values": [
+        20.1,
+        1.4
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 178,
+      "sentence": "Ten apparently healthy, recreationally-active (exercise 2-3 times per week), but not resistance-trained (no regular resistance training for at least one year) male participants (20.1 \u00b1 1.4 yrs, 174 \u00b1 8.7 cm, 78.5 \u00b1 12 kg,) participated in this study.",
+      "context_window": "sistance training for at least one year) male participants (20.1 \u00b1 1.4 yrs, 174 \u00b1 8.7 cm, 78.5 \u00b1 12 kg,) participated in this stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-194",
+      "claim_type": "mean_sd",
+      "raw_text": "174 \u00b1 8.7",
+      "numeric_values": [
+        174.0,
+        8.7
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 194,
+      "sentence": "Ten apparently healthy, recreationally-active (exercise 2-3 times per week), but not resistance-trained (no regular resistance training for at least one year) male participants (20.1 \u00b1 1.4 yrs, 174 \u00b1 8.7 cm, 78.5 \u00b1 12 kg,) participated in this study.",
+      "context_window": "g for at least one year) male participants (20.1 \u00b1 1.4 yrs, 174 \u00b1 8.7 cm, 78.5 \u00b1 12 kg,) participated in this study. All subjects",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-200",
+      "claim_type": "unit_value",
+      "raw_text": "8.7 cm",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 200,
+      "sentence": "Ten apparently healthy, recreationally-active (exercise 2-3 times per week), but not resistance-trained (no regular resistance training for at least one year) male participants (20.1 \u00b1 1.4 yrs, 174 \u00b1 8.7 cm, 78.5 \u00b1 12 kg,) participated in this study.",
+      "context_window": "at least one year) male participants (20.1 \u00b1 1.4 yrs, 174 \u00b1 8.7 cm, 78.5 \u00b1 12 kg,) participated in this study. All subjects si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-208",
+      "claim_type": "mean_sd",
+      "raw_text": "78.5 \u00b1 12",
+      "numeric_values": [
+        78.5,
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 208,
+      "sentence": "Ten apparently healthy, recreationally-active (exercise 2-3 times per week), but not resistance-trained (no regular resistance training for at least one year) male participants (20.1 \u00b1 1.4 yrs, 174 \u00b1 8.7 cm, 78.5 \u00b1 12 kg,) participated in this study.",
+      "context_window": "one year) male participants (20.1 \u00b1 1.4 yrs, 174 \u00b1 8.7 cm, 78.5 \u00b1 12 kg,) participated in this study. All subjects signed inform",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-215",
+      "claim_type": "unit_value",
+      "raw_text": "12 kg",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 215,
+      "sentence": "Ten apparently healthy, recreationally-active (exercise 2-3 times per week), but not resistance-trained (no regular resistance training for at least one year) male participants (20.1 \u00b1 1.4 yrs, 174 \u00b1 8.7 cm, 78.5 \u00b1 12 kg,) participated in this study.",
+      "context_window": "ar) male participants (20.1 \u00b1 1.4 yrs, 174 \u00b1 8.7 cm, 78.5 \u00b1 12 kg,) participated in this study. All subjects signed informed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-909",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 909,
+      "sentence": "Subjects were not allowed to participate in this study if they reported any of the following: 1) current or past history of anabolic steroid use; 2) any metabolic disorders or taking any thyroid, hyperlipidmeic, hypoglycemic, anti-hypertensive, or androgenic medications; 3) ingested any ergogenic levels of creatine, HMB, thermogenics, ribose, pro-hormones (i.e., DHEA, androstendione, etc.) or other purported anabolic or ergogenic nutritional supplements within 2 months prior to beginning the study; 4) not taking any additional nutritional supplement or contraindicated prescription medication during the protocol.",
+      "context_window": "ported anabolic or ergogenic nutritional supplements within 2 months prior to beginning the study; 4) not taking any additional",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-pct-2068",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2068,
+      "sentence": "Participants were familiarized with the angled leg press and leg extension machines, the correct technique in performing each of the exercises, and then performed two low-resistance (30% of body mass) practice/warm-up sets of 10 repetitions on each exercise to familiarize them with the protocol and to also insure that they were able to complete the protocol before being formally admitted to the study.",
+      "context_window": "ch of the exercises, and then performed two low-resistance (30% of body mass) practice/warm-up sets of 10 repetitions on ea",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-3272",
+      "claim_type": "unit_value",
+      "raw_text": "0.02 kg",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3272,
+      "sentence": "At the beginning of each testing session, participants had their body mass measured according to standard procedures using a self-calibrating digital scale (Health-O-Meter, Bridgeview, IL, USA) with an accuracy of \u00b1 0.02 kg.",
+      "context_window": "(Health-O-Meter, Bridgeview, IL, USA) with an accuracy of \u00b1 0.02 kg. Participants performed two separate bouts of resistance ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-pct-3569",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3569,
+      "sentence": "Using only one leg, participants performed 4 sets of 8-10 repetitions at 75%-80% 1-RM on the angled leg press (Nebula Fitness, Inc., Versailles, OH) and knee extension (Body Masters, Inc., Rayne, LA) exercises.",
+      "context_window": "e leg, participants performed 4 sets of 8-10 repetitions at 75%-80% 1-RM on the angled leg press (Nebula Fitness, Inc., Ver",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-pct-3573",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3573,
+      "sentence": "Using only one leg, participants performed 4 sets of 8-10 repetitions at 75%-80% 1-RM on the angled leg press (Nebula Fitness, Inc., Versailles, OH) and knee extension (Body Masters, Inc., Rayne, LA) exercises.",
+      "context_window": "g, participants performed 4 sets of 8-10 repetitions at 75%-80% 1-RM on the angled leg press (Nebula Fitness, Inc., Versail",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-5536",
+      "claim_type": "unit_value",
+      "raw_text": "75 mg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5536,
+      "sentence": "Approximately 50-75 mg of muscle was obtained from the lateral portion of the vastus lateralis midway between the patella and iliac crest of the leg using a 5-mm Bergstrom style biopsy needle.",
+      "context_window": "lypropylene cryovials for later analysis. Approximately 50-75 mg of muscle was obtained from the lateral portion of the vast",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-pct-6705",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6705,
+      "sentence": "The overall intra-assay percent coefficient of variation was 4.6% and 2.9% for insulin and IGF-1, respectively.",
+      "context_window": "he overall intra-assay percent coefficient of variation was 4.6% and 2.9% for insulin and IGF-1, respectively. Approximatel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-pct-6714",
+      "claim_type": "percentage",
+      "raw_text": "2.9%",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6714,
+      "sentence": "The overall intra-assay percent coefficient of variation was 4.6% and 2.9% for insulin and IGF-1, respectively.",
+      "context_window": "l intra-assay percent coefficient of variation was 4.6% and 2.9% for insulin and IGF-1, respectively. Approximately 20 mg o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-6771",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6771,
+      "sentence": "Approximately 20 mg of each muscle sample was homogenized using a commercial cell extraction buffer (Biosource, Camarillo, CA, USA) and a tissue homogenizer.",
+      "context_window": "nd 2.9% for insulin and IGF-1, respectively. Approximately 20 mg of each muscle sample was homogenized using a commercial ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-pct-8238",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8238,
+      "sentence": "The overall intra-assay percent coefficient of variation for all assays was less than 7%\n\nPhosphorylated mTOR was assessed through the use of ELISA used by methods previously described [ 29 ].",
+      "context_window": "rcent coefficient of variation for all assays was less than 7% Phosphorylated mTOR was assessed through the use of ELISA",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-pct-9622",
+      "claim_type": "percentage",
+      "raw_text": "7.12%",
+      "numeric_values": [
+        7.12
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9622,
+      "sentence": "The overall intra-assay percent coefficient of variation was 7.12%.",
+      "context_window": "he overall intra-assay percent coefficient of variation was 7.12%. Data are presented in all tables and throughout the text",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-10550",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10550,
+      "sentence": "All statistical procedures were performed using SPSS 16.0 software and a probability level of p < 0.05 was adopted throughout.",
+      "context_window": "rformed using SPSS 16.0 software and a probability level of p < 0.05 was adopted throughout.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-429",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 429,
+      "sentence": "Analysis of dietary intake (excluding supplementation) for two days immediately prior to each testing session revealed no differences (p > 0.05) in total caloric, protein, fat, or carbohydrate intake between testing session during the course of the study (Table 2 ).",
+      "context_window": "tely prior to each testing session revealed no differences (p > 0.05) in total caloric, protein, fat, or carbohydrate intake bet",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-882",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 882,
+      "sentence": "There were no significant differences in the 1-RM values between legs at each testing session for the angled leg press (p = 0.35) and leg extension (p = 0.42) exercises.",
+      "context_window": "ween legs at each testing session for the angled leg press (p = 0.35) and leg extension (p = 0.42) exercises. The 1-RM for the l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-911",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.42",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 911,
+      "sentence": "There were no significant differences in the 1-RM values between legs at each testing session for the angled leg press (p = 0.35) and leg extension (p = 0.42) exercises.",
+      "context_window": "sion for the angled leg press (p = 0.35) and leg extension (p = 0.42) exercises. The 1-RM for the leg press was 156.05 \u00b1 18.86 k",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-963",
+      "claim_type": "mean_sd",
+      "raw_text": "156.05 \u00b1 18.86",
+      "numeric_values": [
+        156.05,
+        18.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 963,
+      "sentence": "The 1-RM for the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, and the 1-RM for the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg.",
+      "context_window": "ension (p = 0.42) exercises. The 1-RM for the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-972",
+      "claim_type": "unit_value",
+      "raw_text": "18.86 kg",
+      "numeric_values": [
+        18.86
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 972,
+      "sentence": "The 1-RM for the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, and the 1-RM for the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg.",
+      "context_window": "= 0.42) exercises. The 1-RM for the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-1003",
+      "claim_type": "mean_sd",
+      "raw_text": "154.29 \u00b1 25.52",
+      "numeric_values": [
+        154.29,
+        25.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1003,
+      "sentence": "The 1-RM for the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, and the 1-RM for the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg.",
+      "context_window": "r the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, and the 1-RM for the leg extension was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-1012",
+      "claim_type": "unit_value",
+      "raw_text": "25.52 kg",
+      "numeric_values": [
+        25.52
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1012,
+      "sentence": "The 1-RM for the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, and the 1-RM for the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg.",
+      "context_window": "press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, and the 1-RM for the leg extension was 44",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-1078",
+      "claim_type": "mean_sd",
+      "raw_text": "44.94 \u00b1 3.91",
+      "numeric_values": [
+        44.94,
+        3.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1078,
+      "sentence": "The 1-RM for the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, and the 1-RM for the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg.",
+      "context_window": "kg for the left leg, and the 1-RM for the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-1086",
+      "claim_type": "unit_value",
+      "raw_text": "3.91 kg",
+      "numeric_values": [
+        3.91
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1086,
+      "sentence": "The 1-RM for the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, and the 1-RM for the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg.",
+      "context_window": "he left leg, and the 1-RM for the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg. Add",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-1116",
+      "claim_type": "mean_sd",
+      "raw_text": "44.69 \u00b1 5.11",
+      "numeric_values": [
+        44.69,
+        5.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1116,
+      "sentence": "The 1-RM for the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, and the 1-RM for the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg.",
+      "context_window": "the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg. Additionally, there were no significan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-1124",
+      "claim_type": "unit_value",
+      "raw_text": "5.11 kg",
+      "numeric_values": [
+        5.11
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1124,
+      "sentence": "The 1-RM for the leg press was 156.05 \u00b1 18.86 kg for the right leg and 154.29 \u00b1 25.52 kg for the left leg, and the 1-RM for the leg extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg.",
+      "context_window": "extension was 44.94 \u00b1 3.91 kg for the right leg and 44.69 \u00b1 5.11 kg for the left leg. Additionally, there were no significant d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-1299",
+      "claim_type": "mean_sd",
+      "raw_text": "4744.5 \u00b1 960.4",
+      "numeric_values": [
+        4744.5,
+        960.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1299,
+      "sentence": "The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35).",
+      "context_window": "ween the two testing sessions. The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-1308",
+      "claim_type": "unit_value",
+      "raw_text": "960.4 kg",
+      "numeric_values": [
+        960.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1308,
+      "sentence": "The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35).",
+      "context_window": "two testing sessions. The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-1328",
+      "claim_type": "mean_sd",
+      "raw_text": "4841.6 \u00b1 1212.9",
+      "numeric_values": [
+        4841.6,
+        1212.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1328,
+      "sentence": "The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35).",
+      "context_window": ". The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-1337",
+      "claim_type": "unit_value",
+      "raw_text": "1212.9 kg",
+      "numeric_values": [
+        1212.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1337,
+      "sentence": "The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35).",
+      "context_window": "ume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 11",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1356",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.89",
+      "numeric_values": [
+        0.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1356,
+      "sentence": "The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35).",
+      "context_window": "as 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-1404",
+      "claim_type": "mean_sd",
+      "raw_text": "1187.5 \u00b1 267.6",
+      "numeric_values": [
+        1187.5,
+        267.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1404,
+      "sentence": "The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35).",
+      "context_window": "kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35). For IG",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-1413",
+      "claim_type": "unit_value",
+      "raw_text": "267.6 kg",
+      "numeric_values": [
+        267.6
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1413,
+      "sentence": "The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35).",
+      "context_window": "O (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35). For IGF-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-msd-1433",
+      "claim_type": "mean_sd",
+      "raw_text": "1285.2 \u00b1 180.1",
+      "numeric_values": [
+        1285.2,
+        180.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1433,
+      "sentence": "The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35).",
+      "context_window": "e volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35). For IGF-1, no significant main effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-u-1442",
+      "claim_type": "unit_value",
+      "raw_text": "180.1 kg",
+      "numeric_values": [
+        180.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1442,
+      "sentence": "The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35).",
+      "context_window": "for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35). For IGF-1, no significant main effects",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1460",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1460,
+      "sentence": "The volume for leg press was 4744.5 \u00b1 960.4 kg for WP and 4841.6 \u00b1 1212.9 kg for CHO (p = 0.89), and the volume for leg extension was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35).",
+      "context_window": "was 1187.5 \u00b1 267.6 kg for WP and 1285.2 \u00b1 180.1 kg for CHO (p = 0.35). For IGF-1, no significant main effects for Supplement an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1587",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1587,
+      "sentence": "For IGF-1, no significant main effects for Supplement and Test or the Supplement \u00d7 Test interaction were observed (p > 0.05) (Table 3 ).",
+      "context_window": "nd Test or the Supplement \u00d7 Test interaction were observed (p > 0.05) (Table 3 ). For insulin, no significant main effect for Su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1715",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1715,
+      "sentence": "For insulin, no significant main effect for Supplement or the Supplement \u00d7 Test interaction was observed (p > 0.05); although, a significant main effect for Test (p < 0.001) was observed.",
+      "context_window": "pplement or the Supplement \u00d7 Test interaction was observed (p > 0.05); although, a significant main effect for Test (p < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-1772",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1772,
+      "sentence": "For insulin, no significant main effect for Supplement or the Supplement \u00d7 Test interaction was observed (p > 0.05); although, a significant main effect for Test (p < 0.001) was observed.",
+      "context_window": "d (p > 0.05); although, a significant main effect for Test (p < 0.001) was observed. Post-hoc analysis showed significant differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-2402",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2402,
+      "sentence": "While no significant main effects for Supplement or the Supplement \u00d7 Test interaction were observed for any of the variables (p > 0.05), a significant main effect for Test (p < 0.05) was observed for IRS-1 (p = 0.040), mTOR (p = 0.002), p70S6K (p = 0.046), and 4E-BP1 (p = 0.001).",
+      "context_window": "\u00d7 Test interaction were observed for any of the variables (p > 0.05), a significant main effect for Test (p < 0.05) was observe",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-2449",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2449,
+      "sentence": "While no significant main effects for Supplement or the Supplement \u00d7 Test interaction were observed for any of the variables (p > 0.05), a significant main effect for Test (p < 0.05) was observed for IRS-1 (p = 0.040), mTOR (p = 0.002), p70S6K (p = 0.046), and 4E-BP1 (p = 0.001).",
+      "context_window": "e variables (p > 0.05), a significant main effect for Test (p < 0.05) was observed for IRS-1 (p = 0.040), mTOR (p = 0.002), p70S",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-2483",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.040",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2483,
+      "sentence": "While no significant main effects for Supplement or the Supplement \u00d7 Test interaction were observed for any of the variables (p > 0.05), a significant main effect for Test (p < 0.05) was observed for IRS-1 (p = 0.040), mTOR (p = 0.002), p70S6K (p = 0.046), and 4E-BP1 (p = 0.001).",
+      "context_window": "ant main effect for Test (p < 0.05) was observed for IRS-1 (p = 0.040), mTOR (p = 0.002), p70S6K (p = 0.046), and 4E-BP1 (p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-2501",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2501,
+      "sentence": "While no significant main effects for Supplement or the Supplement \u00d7 Test interaction were observed for any of the variables (p > 0.05), a significant main effect for Test (p < 0.05) was observed for IRS-1 (p = 0.040), mTOR (p = 0.002), p70S6K (p = 0.046), and 4E-BP1 (p = 0.001).",
+      "context_window": "r Test (p < 0.05) was observed for IRS-1 (p = 0.040), mTOR (p = 0.002), p70S6K (p = 0.046), and 4E-BP1 (p = 0.001). No significan",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-2521",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2521,
+      "sentence": "While no significant main effects for Supplement or the Supplement \u00d7 Test interaction were observed for any of the variables (p > 0.05), a significant main effect for Test (p < 0.05) was observed for IRS-1 (p = 0.040), mTOR (p = 0.002), p70S6K (p = 0.046), and 4E-BP1 (p = 0.001).",
+      "context_window": "s observed for IRS-1 (p = 0.040), mTOR (p = 0.002), p70S6K (p = 0.046), and 4E-BP1 (p = 0.001). No significant main effects for T",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-2545",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2545,
+      "sentence": "While no significant main effects for Supplement or the Supplement \u00d7 Test interaction were observed for any of the variables (p > 0.05), a significant main effect for Test (p < 0.05) was observed for IRS-1 (p = 0.040), mTOR (p = 0.002), p70S6K (p = 0.046), and 4E-BP1 (p = 0.001).",
+      "context_window": "= 0.040), mTOR (p = 0.002), p70S6K (p = 0.046), and 4E-BP1 (p = 0.001). No significant main effects for Test was observed for Akt",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-p-2616",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.359",
+      "numeric_values": [
+        0.359
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2616,
+      "sentence": "No significant main effects for Test was observed for Akt (p = 0.359).",
+      "context_window": "No significant main effects for Test was observed for Akt (p = 0.359). Subsequent analyses revealed a significant increase from",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-pct-7153",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7153,
+      "sentence": "However, it has recently been shown that approximately 5 g (2.2 g EAAs) and 10 g (4.2 g EAAs) of whey protein without carbohydrate significantly increased MPS 37% and 56%, respectively, over baseline.",
+      "context_window": "ey protein without carbohydrate significantly increased MPS 37% and 56%, respectively, over baseline. In this study, it was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3231804_ingestion_of_10_grams_of_whey_protein_prior_to_a_single_bout-pct-7161",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7161,
+      "sentence": "However, it has recently been shown that approximately 5 g (2.2 g EAAs) and 10 g (4.2 g EAAs) of whey protein without carbohydrate significantly increased MPS 37% and 56%, respectively, over baseline.",
+      "context_window": "in without carbohydrate significantly increased MPS 37% and 56%, respectively, over baseline. In this study, it was also sh",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

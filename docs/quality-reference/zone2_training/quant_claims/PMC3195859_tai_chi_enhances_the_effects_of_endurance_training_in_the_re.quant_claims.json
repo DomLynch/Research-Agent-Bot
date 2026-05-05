@@ -1,0 +1,1524 @@
+{
+  "paper_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re",
+  "doi": "10.1155/2011/761958",
+  "extracted_at": "2026-05-05T22:43:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 16,
+    "unit_value": 15,
+    "p_value": 17,
+    "percentage": 35
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-241",
+      "claim_type": "mean_sd",
+      "raw_text": "73.8 \u00b1 6",
+      "numeric_values": [
+        73.8,
+        6.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 241,
+      "sentence": "Sixty CHF patients, age 73.8 \u00b1 6 years, M/F 51/9, were enlisted.",
+      "context_window": "ronic heart failure (CHF). Design . Sixty CHF patients, age 73.8 \u00b1 6 years, M/F 51/9, were enlisted. Thirty pts were randomized",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-248",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 248,
+      "sentence": "Sixty CHF patients, age 73.8 \u00b1 6 years, M/F 51/9, were enlisted.",
+      "context_window": "eart failure (CHF). Design . Sixty CHF patients, age 73.8 \u00b1 6 years, M/F 51/9, were enlisted. Thirty pts were randomized to com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-423",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 423,
+      "sentence": "At baseline and after 12 weeks all patients underwent 6-minute walking test (6MWT), assessment of amino terminal probrain natriuretic peptide (NT-pro BNP), quadriceps maximal voluntary contraction (MVC) and peak torque (PT), QOL questionnaire (MacNewQLMI), blood pressure (BP), and heart rate (HR).",
+      "context_window": "0 patients to ET (ET only). Methods . At baseline and after 12 weeks all patients underwent 6-minute walking test (6MWT), assess",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-849",
+      "claim_type": "p_value",
+      "raw_text": "P = .031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 849,
+      "sentence": "Distance at 6mwt improved in both groups with significant between-groups differences ( P = .031).",
+      "context_window": "n both groups with significant between-groups differences ( P = .031). Systolic BP and NT-proBNP decreased significant in the CT",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-941",
+      "claim_type": "p_value",
+      "raw_text": "P = .025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 941,
+      "sentence": "Systolic BP and NT-proBNP decreased significant in the CT group compared to ET ( P = .025) and P = .015), resp.).",
+      "context_window": "oBNP decreased significant in the CT group compared to ET ( P = .025) and P = .015), resp.). CT group had a greater significant",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-955",
+      "claim_type": "p_value",
+      "raw_text": "P = .015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 955,
+      "sentence": "Systolic BP and NT-proBNP decreased significant in the CT group compared to ET ( P = .025) and P = .015), resp.).",
+      "context_window": "significant in the CT group compared to ET ( P = .025) and P = .015), resp.). CT group had a greater significant improvement in",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-1046",
+      "claim_type": "p_value",
+      "raw_text": "P = .026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1046,
+      "sentence": "CT group had a greater significant improvement in physical perception ( P = .026) and a significant increase of PT compared to ET group.",
+      "context_window": "a greater significant improvement in physical perception ( P = .026) and a significant increase of PT compared to ET group. Con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-98",
+      "claim_type": "mean_sd",
+      "raw_text": "73 \u00b1 6",
+      "numeric_values": [
+        73.0,
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 98,
+      "sentence": "We enlisted 60 patients with diagnosed CHF due to left ventricular systolic dysfunction, mean age 73 \u00b1 6 years, ejection fraction 33 \u00b1 9%, and M/F 51/9.",
+      "context_window": "CHF due to left ventricular systolic dysfunction, mean age 73 \u00b1 6 years, ejection fraction 33 \u00b1 9%, and M/F 51/9. All patient",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-103",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 103,
+      "sentence": "We enlisted 60 patients with diagnosed CHF due to left ventricular systolic dysfunction, mean age 73 \u00b1 6 years, ejection fraction 33 \u00b1 9%, and M/F 51/9.",
+      "context_window": "due to left ventricular systolic dysfunction, mean age 73 \u00b1 6 years, ejection fraction 33 \u00b1 9%, and M/F 51/9. All patients were",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-130",
+      "claim_type": "mean_sd",
+      "raw_text": "33 \u00b1 9",
+      "numeric_values": [
+        33.0,
+        9.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 130,
+      "sentence": "We enlisted 60 patients with diagnosed CHF due to left ventricular systolic dysfunction, mean age 73 \u00b1 6 years, ejection fraction 33 \u00b1 9%, and M/F 51/9.",
+      "context_window": "tolic dysfunction, mean age 73 \u00b1 6 years, ejection fraction 33 \u00b1 9%, and M/F 51/9. All patients were in New York Heart Associa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-135",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 135,
+      "sentence": "We enlisted 60 patients with diagnosed CHF due to left ventricular systolic dysfunction, mean age 73 \u00b1 6 years, ejection fraction 33 \u00b1 9%, and M/F 51/9.",
+      "context_window": "dysfunction, mean age 73 \u00b1 6 years, ejection fraction 33 \u00b1 9%, and M/F 51/9. All patients were in New York Heart Associat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-557",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 557,
+      "sentence": "Inclusion criteria were age >65 years, CHF of more than one year duration due to ischemic or nonischemic dilated cardiomyopathy, left ventricular ejection fraction (LVEF) \u226445%, NYHA functional class II, stable clinical conditions and optimal HF treatment without changes for at least 3 months.",
+      "context_window": "S. Raffaele Istitute of Rome. Inclusion criteria were age >65 years, CHF of more than one year duration due to ischemic or noni",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-700",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 700,
+      "sentence": "Inclusion criteria were age >65 years, CHF of more than one year duration due to ischemic or nonischemic dilated cardiomyopathy, left ventricular ejection fraction (LVEF) \u226445%, NYHA functional class II, stable clinical conditions and optimal HF treatment without changes for at least 3 months.",
+      "context_window": "cardiomyopathy, left ventricular ejection fraction (LVEF) \u226445%, NYHA functional class II, stable clinical conditions and o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-812",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 812,
+      "sentence": "Inclusion criteria were age >65 years, CHF of more than one year duration due to ischemic or nonischemic dilated cardiomyopathy, left ventricular ejection fraction (LVEF) \u226445%, NYHA functional class II, stable clinical conditions and optimal HF treatment without changes for at least 3 months.",
+      "context_window": "tions and optimal HF treatment without changes for at least 3 months. Exclusion criteria were history of myocardial infarction o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-1868",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1868,
+      "sentence": "Every exercise session included 10 minutes of warm-up, 10 minutes of cool-down and flexibility exercises, and 30 minutes of aerobic exercise with cycling or walking at 60%-70% of estimated VO2 max.",
+      "context_window": "d 30 minutes of aerobic exercise with cycling or walking at 60%-70% of estimated VO2 max. In general, Tai Chi is a low-imp",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-1872",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1872,
+      "sentence": "Every exercise session included 10 minutes of warm-up, 10 minutes of cool-down and flexibility exercises, and 30 minutes of aerobic exercise with cycling or walking at 60%-70% of estimated VO2 max.",
+      "context_window": "minutes of aerobic exercise with cycling or walking at 60%-70% of estimated VO2 max. In general, Tai Chi is a low-impact,",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-2524",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2524,
+      "sentence": "One-to-two movements were taught each week for 8 weeks.",
+      "context_window": "Wolf [ 12 ]. One-to-two movements were taught each week for 8 weeks. The complete form was practised for the last 4 weeks of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-2578",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2578,
+      "sentence": "The complete form was practised for the last 4 weeks of the study.",
+      "context_window": "k for 8 weeks. The complete form was practised for the last 4 weeks of the study. Emphasis was placed on performing the movemen",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-5047",
+      "claim_type": "unit_value",
+      "raw_text": "10 cm",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5047,
+      "sentence": "The visual analog scale was a 10 cm line with a mark at each centimetre.",
+      "context_window": "o test their quality of life. The visual analog scale was a 10 cm line with a mark at each centimetre. Physical and social QO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-6459",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 6459,
+      "sentence": "At baseline and at 12 weeks Venous blood samples were withdrawn from an antecubital vein into chilled ethylene-diamine-tetraacetic acid Vacutainer test tubes after 20 minutes of rest with patients in a supine position.",
+      "context_window": "egarded as the peak torque (PTmax; Nm). At baseline and at 12 weeks Venous blood samples were withdrawn from an antecubital vei",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-7461",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 7461,
+      "sentence": "The primary and secondary outcomes were evaluated comparing the delta (baseline-12 weeks) of CT versus ET using the Mann-Whitney test.",
+      "context_window": "ndary outcomes were evaluated comparing the delta (baseline-12 weeks) of CT versus ET using the Mann-Whitney test. Results are e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-256",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 256,
+      "sentence": "Most of the patients were receiving beta-blockers (88%), angiotensin-converting enzyme inhibitors or angiotensin receptor antagonists (96%), or aldosterone receptor blockers (63%); 58% were taking diuretics, and 36% were receiving digitalis.",
+      "context_window": "e noted. Most of the patients were receiving beta-blockers (88%), angiotensin-converting enzyme inhibitors or angiotensin r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-340",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 340,
+      "sentence": "Most of the patients were receiving beta-blockers (88%), angiotensin-converting enzyme inhibitors or angiotensin receptor antagonists (96%), or aldosterone receptor blockers (63%); 58% were taking diuretics, and 36% were receiving digitalis.",
+      "context_window": "ting enzyme inhibitors or angiotensin receptor antagonists (96%), or aldosterone receptor blockers (63%); 58% were taking d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-380",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 380,
+      "sentence": "Most of the patients were receiving beta-blockers (88%), angiotensin-converting enzyme inhibitors or angiotensin receptor antagonists (96%), or aldosterone receptor blockers (63%); 58% were taking diuretics, and 36% were receiving digitalis.",
+      "context_window": "ceptor antagonists (96%), or aldosterone receptor blockers (63%); 58% were taking diuretics, and 36% were receiving digital",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-386",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 386,
+      "sentence": "Most of the patients were receiving beta-blockers (88%), angiotensin-converting enzyme inhibitors or angiotensin receptor antagonists (96%), or aldosterone receptor blockers (63%); 58% were taking diuretics, and 36% were receiving digitalis.",
+      "context_window": "antagonists (96%), or aldosterone receptor blockers (63%); 58% were taking diuretics, and 36% were receiving digitalis. Me",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-417",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 417,
+      "sentence": "Most of the patients were receiving beta-blockers (88%), angiotensin-converting enzyme inhibitors or angiotensin receptor antagonists (96%), or aldosterone receptor blockers (63%); 58% were taking diuretics, and 36% were receiving digitalis.",
+      "context_window": "one receptor blockers (63%); 58% were taking diuretics, and 36% were receiving digitalis. Medications were not altered thro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-583",
+      "claim_type": "mean_sd",
+      "raw_text": "66 \u00b1 5",
+      "numeric_values": [
+        66.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 583,
+      "sentence": "Patients of CT group trained at a variable intensity (during endurance training: at 66 \u00b1 5% VO2; during Tai Chi practice at 52 \u00b1 3% VO2).",
+      "context_window": "ined at a variable intensity (during endurance training: at 66 \u00b1 5% VO2; during Tai Chi practice at 52 \u00b1 3% VO2). Conversely p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-588",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 588,
+      "sentence": "Patients of CT group trained at a variable intensity (during endurance training: at 66 \u00b1 5% VO2; during Tai Chi practice at 52 \u00b1 3% VO2).",
+      "context_window": "at a variable intensity (during endurance training: at 66 \u00b1 5% VO2; during Tai Chi practice at 52 \u00b1 3% VO2). Conversely pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-623",
+      "claim_type": "mean_sd",
+      "raw_text": "52 \u00b1 3",
+      "numeric_values": [
+        52.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 623,
+      "sentence": "Patients of CT group trained at a variable intensity (during endurance training: at 66 \u00b1 5% VO2; during Tai Chi practice at 52 \u00b1 3% VO2).",
+      "context_window": "urance training: at 66 \u00b1 5% VO2; during Tai Chi practice at 52 \u00b1 3% VO2). Conversely patients of ET group had a constant inten",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-628",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 628,
+      "sentence": "Patients of CT group trained at a variable intensity (during endurance training: at 66 \u00b1 5% VO2; during Tai Chi practice at 52 \u00b1 3% VO2).",
+      "context_window": "e training: at 66 \u00b1 5% VO2; during Tai Chi practice at 52 \u00b1 3% VO2). Conversely patients of ET group had a constant intens",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-710",
+      "claim_type": "mean_sd",
+      "raw_text": "67 \u00b1 4",
+      "numeric_values": [
+        67.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 710,
+      "sentence": "Conversely patients of ET group had a constant intensity of training (at 67 \u00b1 4% VO2).",
+      "context_window": "tients of ET group had a constant intensity of training (at 67 \u00b1 4% VO2). After 12-weeks of treatment, NYHA functional class",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-715",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 715,
+      "sentence": "Conversely patients of ET group had a constant intensity of training (at 67 \u00b1 4% VO2).",
+      "context_window": "s of ET group had a constant intensity of training (at 67 \u00b1 4% VO2). After 12-weeks of treatment, NYHA functional class i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-788",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 788,
+      "sentence": "After 12-weeks of treatment, NYHA functional class improved in 36% of CT and 32% of ET without between-groups differences.",
+      "context_window": "er 12-weeks of treatment, NYHA functional class improved in 36% of CT and 32% of ET without between-groups differences. Dis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-802",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 802,
+      "sentence": "After 12-weeks of treatment, NYHA functional class improved in 36% of CT and 32% of ET without between-groups differences.",
+      "context_window": "treatment, NYHA functional class improved in 36% of CT and 32% of ET without between-groups differences. Distance walked a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-889",
+      "claim_type": "mean_sd",
+      "raw_text": "214 \u00b1 32",
+      "numeric_values": [
+        214.0,
+        32.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 889,
+      "sentence": "Distance walked at 6 MWT increased (from 214 \u00b1 32 m to 291 \u00b1 46 m; P = .0001) in the CT group and in the ET group (from 219 \u00b1 23 m to 272 \u00b1 33 m; P = .0001) with significant between-groups difference ( P = .031) ( Table 2 ).",
+      "context_window": "roups differences. Distance walked at 6 MWT increased (from 214 \u00b1 32 m to 291 \u00b1 46 m; P = .0001) in the CT group and in the ET g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-903",
+      "claim_type": "mean_sd",
+      "raw_text": "291 \u00b1 46",
+      "numeric_values": [
+        291.0,
+        46.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 903,
+      "sentence": "Distance walked at 6 MWT increased (from 214 \u00b1 32 m to 291 \u00b1 46 m; P = .0001) in the CT group and in the ET group (from 219 \u00b1 23 m to 272 \u00b1 33 m; P = .0001) with significant between-groups difference ( P = .031) ( Table 2 ).",
+      "context_window": "ces. Distance walked at 6 MWT increased (from 214 \u00b1 32 m to 291 \u00b1 46 m; P = .0001) in the CT group and in the ET group (from 219",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-915",
+      "claim_type": "p_value",
+      "raw_text": "P = .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 915,
+      "sentence": "Distance walked at 6 MWT increased (from 214 \u00b1 32 m to 291 \u00b1 46 m; P = .0001) in the CT group and in the ET group (from 219 \u00b1 23 m to 272 \u00b1 33 m; P = .0001) with significant between-groups difference ( P = .031) ( Table 2 ).",
+      "context_window": "e walked at 6 MWT increased (from 214 \u00b1 32 m to 291 \u00b1 46 m; P = .0001) in the CT group and in the ET group (from 219 \u00b1 23 m to 27",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-968",
+      "claim_type": "mean_sd",
+      "raw_text": "219 \u00b1 23",
+      "numeric_values": [
+        219.0,
+        23.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 968,
+      "sentence": "Distance walked at 6 MWT increased (from 214 \u00b1 32 m to 291 \u00b1 46 m; P = .0001) in the CT group and in the ET group (from 219 \u00b1 23 m to 272 \u00b1 33 m; P = .0001) with significant between-groups difference ( P = .031) ( Table 2 ).",
+      "context_window": "46 m; P = .0001) in the CT group and in the ET group (from 219 \u00b1 23 m to 272 \u00b1 33 m; P = .0001) with significant between-groups",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-982",
+      "claim_type": "mean_sd",
+      "raw_text": "272 \u00b1 33",
+      "numeric_values": [
+        272.0,
+        33.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 982,
+      "sentence": "Distance walked at 6 MWT increased (from 214 \u00b1 32 m to 291 \u00b1 46 m; P = .0001) in the CT group and in the ET group (from 219 \u00b1 23 m to 272 \u00b1 33 m; P = .0001) with significant between-groups difference ( P = .031) ( Table 2 ).",
+      "context_window": "01) in the CT group and in the ET group (from 219 \u00b1 23 m to 272 \u00b1 33 m; P = .0001) with significant between-groups difference (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-994",
+      "claim_type": "p_value",
+      "raw_text": "P = .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 994,
+      "sentence": "Distance walked at 6 MWT increased (from 214 \u00b1 32 m to 291 \u00b1 46 m; P = .0001) in the CT group and in the ET group (from 219 \u00b1 23 m to 272 \u00b1 33 m; P = .0001) with significant between-groups difference ( P = .031) ( Table 2 ).",
+      "context_window": "T group and in the ET group (from 219 \u00b1 23 m to 272 \u00b1 33 m; P = .0001) with significant between-groups difference ( P = .031) ( T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-1050",
+      "claim_type": "p_value",
+      "raw_text": "P = .031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1050,
+      "sentence": "Distance walked at 6 MWT increased (from 214 \u00b1 32 m to 291 \u00b1 46 m; P = .0001) in the CT group and in the ET group (from 219 \u00b1 23 m to 272 \u00b1 33 m; P = .0001) with significant between-groups difference ( P = .031) ( Table 2 ).",
+      "context_window": "m; P = .0001) with significant between-groups difference ( P = .031) ( Table 2 ). The Borg scale decreased in both group (CT -2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-1117",
+      "claim_type": "mean_sd",
+      "raw_text": "2.1 \u00b1 0.3",
+      "numeric_values": [
+        2.1,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1117,
+      "sentence": "The Borg scale decreased in both group (CT -2.1 \u00b1 0.3; ET 1.9 \u00b1 0.4; resp.) without significant between-groups differences ( P = .24).",
+      "context_window": "1) ( Table 2 ). The Borg scale decreased in both group (CT -2.1 \u00b1 0.3; ET 1.9 \u00b1 0.4; resp.) without significant between-groups di",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-1131",
+      "claim_type": "mean_sd",
+      "raw_text": "1.9 \u00b1 0.4",
+      "numeric_values": [
+        1.9,
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1131,
+      "sentence": "The Borg scale decreased in both group (CT -2.1 \u00b1 0.3; ET 1.9 \u00b1 0.4; resp.) without significant between-groups differences ( P = .24).",
+      "context_window": ". The Borg scale decreased in both group (CT -2.1 \u00b1 0.3; ET 1.9 \u00b1 0.4; resp.) without significant between-groups differences ( P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-1198",
+      "claim_type": "p_value",
+      "raw_text": "P = .24",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1198,
+      "sentence": "The Borg scale decreased in both group (CT -2.1 \u00b1 0.3; ET 1.9 \u00b1 0.4; resp.) without significant between-groups differences ( P = .24).",
+      "context_window": ".4; resp.) without significant between-groups differences ( P = .24). Rest HR decreased by 11.2% beats/min in the CT group and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-1230",
+      "claim_type": "percentage",
+      "raw_text": "11.2%",
+      "numeric_values": [
+        11.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1230,
+      "sentence": "Rest HR decreased by 11.2% beats/min in the CT group and by 6.8% beats/min in the ET group (between groups P = .074).",
+      "context_window": "etween-groups differences ( P = .24). Rest HR decreased by 11.2% beats/min in the CT group and by 6.8% beats/min in the ET g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-1269",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1269,
+      "sentence": "Rest HR decreased by 11.2% beats/min in the CT group and by 6.8% beats/min in the ET group (between groups P = .074).",
+      "context_window": "Rest HR decreased by 11.2% beats/min in the CT group and by 6.8% beats/min in the ET group (between groups P = .074). Systol",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-1316",
+      "claim_type": "p_value",
+      "raw_text": "P = .074",
+      "numeric_values": [
+        0.074
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1316,
+      "sentence": "Rest HR decreased by 11.2% beats/min in the CT group and by 6.8% beats/min in the ET group (between groups P = .074).",
+      "context_window": "group and by 6.8% beats/min in the ET group (between groups P = .074). Systolic BP decreased by 12.3% in the CT group and by 6.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-1352",
+      "claim_type": "percentage",
+      "raw_text": "12.3%",
+      "numeric_values": [
+        12.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1352,
+      "sentence": "Systolic BP decreased by 12.3% in the CT group and by 6.0% in the ET group with significant between-groups differences ( P = .025).",
+      "context_window": "T group (between groups P = .074). Systolic BP decreased by 12.3% in the CT group and by 6.0% in the ET group with significan",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-1381",
+      "claim_type": "percentage",
+      "raw_text": "6.0%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1381,
+      "sentence": "Systolic BP decreased by 12.3% in the CT group and by 6.0% in the ET group with significant between-groups differences ( P = .025).",
+      "context_window": "074). Systolic BP decreased by 12.3% in the CT group and by 6.0% in the ET group with significant between-groups differences",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-1448",
+      "claim_type": "p_value",
+      "raw_text": "P = .025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1448,
+      "sentence": "Systolic BP decreased by 12.3% in the CT group and by 6.0% in the ET group with significant between-groups differences ( P = .025).",
+      "context_window": "the ET group with significant between-groups differences ( P = .025). Diastolic BP decreased in both groups at a similar degree",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-1567",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1567,
+      "sentence": "NT-proBNP levels decreased in both groups (CT = -28%; ET = -18%) with significant between-groups differences ( P = .015).",
+      "context_window": "ar degree. NT-proBNP levels decreased in both groups (CT = -28%; ET = -18%) with significant between-groups differences ( P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-1578",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1578,
+      "sentence": "NT-proBNP levels decreased in both groups (CT = -28%; ET = -18%) with significant between-groups differences ( P = .015).",
+      "context_window": "NT-proBNP levels decreased in both groups (CT = -28%; ET = -18%) with significant between-groups differences ( P = .015).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-1629",
+      "claim_type": "p_value",
+      "raw_text": "P = .015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1629,
+      "sentence": "NT-proBNP levels decreased in both groups (CT = -28%; ET = -18%) with significant between-groups differences ( P = .015).",
+      "context_window": "%; ET = -18%) with significant between-groups differences ( P = .015). PT of the quadriceps had a higher significant increase i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-1729",
+      "claim_type": "p_value",
+      "raw_text": "P = .037",
+      "numeric_values": [
+        0.037
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1729,
+      "sentence": "PT of the quadriceps had a higher significant increase in the CT group compared to ET ( P = .037) ( Table 2 ).",
+      "context_window": "igher significant increase in the CT group compared to ET ( P = .037) ( Table 2 ). There was a trend toward a greater increase o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-1837",
+      "claim_type": "p_value",
+      "raw_text": "P = .069",
+      "numeric_values": [
+        0.069
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1837,
+      "sentence": "There was a trend toward a greater increase of MVC in the CT groups compared to ET ( P = .069).",
+      "context_window": "a greater increase of MVC in the CT groups compared to ET ( P = .069). After 12-weeks, the overall assessment of QOL by a visua",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-2002",
+      "claim_type": "mean_sd",
+      "raw_text": "4.1 \u00b1 0.6",
+      "numeric_values": [
+        4.1,
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2002,
+      "sentence": "After 12-weeks, the overall assessment of QOL by a visual analog scale showed a similar improvement in patients of groups compared to baseline (CT: from 4.1 \u00b1 0.6 to 6.4 \u00b1 0.8); (ET: from 4.3 \u00b1 0.7 to 6.2 \u00b1 0.9) without significant between-groups differences ( P = .137).",
+      "context_window": "vement in patients of groups compared to baseline (CT: from 4.1 \u00b1 0.6 to 6.4 \u00b1 0.8); (ET: from 4.3 \u00b1 0.7 to 6.2 \u00b1 0.9) without si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-2015",
+      "claim_type": "mean_sd",
+      "raw_text": "6.4 \u00b1 0.8",
+      "numeric_values": [
+        6.4,
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2015,
+      "sentence": "After 12-weeks, the overall assessment of QOL by a visual analog scale showed a similar improvement in patients of groups compared to baseline (CT: from 4.1 \u00b1 0.6 to 6.4 \u00b1 0.8); (ET: from 4.3 \u00b1 0.7 to 6.2 \u00b1 0.9) without significant between-groups differences ( P = .137).",
+      "context_window": "ients of groups compared to baseline (CT: from 4.1 \u00b1 0.6 to 6.4 \u00b1 0.8); (ET: from 4.3 \u00b1 0.7 to 6.2 \u00b1 0.9) without significant bet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-2037",
+      "claim_type": "mean_sd",
+      "raw_text": "4.3 \u00b1 0.7",
+      "numeric_values": [
+        4.3,
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2037,
+      "sentence": "After 12-weeks, the overall assessment of QOL by a visual analog scale showed a similar improvement in patients of groups compared to baseline (CT: from 4.1 \u00b1 0.6 to 6.4 \u00b1 0.8); (ET: from 4.3 \u00b1 0.7 to 6.2 \u00b1 0.9) without significant between-groups differences ( P = .137).",
+      "context_window": "ed to baseline (CT: from 4.1 \u00b1 0.6 to 6.4 \u00b1 0.8); (ET: from 4.3 \u00b1 0.7 to 6.2 \u00b1 0.9) without significant between-groups difference",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-msd-2050",
+      "claim_type": "mean_sd",
+      "raw_text": "6.2 \u00b1 0.9",
+      "numeric_values": [
+        6.2,
+        0.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2050,
+      "sentence": "After 12-weeks, the overall assessment of QOL by a visual analog scale showed a similar improvement in patients of groups compared to baseline (CT: from 4.1 \u00b1 0.6 to 6.4 \u00b1 0.8); (ET: from 4.3 \u00b1 0.7 to 6.2 \u00b1 0.9) without significant between-groups differences ( P = .137).",
+      "context_window": "e (CT: from 4.1 \u00b1 0.6 to 6.4 \u00b1 0.8); (ET: from 4.3 \u00b1 0.7 to 6.2 \u00b1 0.9) without significant between-groups differences ( P = .137)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-2110",
+      "claim_type": "p_value",
+      "raw_text": "P = .137",
+      "numeric_values": [
+        0.137
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2110,
+      "sentence": "After 12-weeks, the overall assessment of QOL by a visual analog scale showed a similar improvement in patients of groups compared to baseline (CT: from 4.1 \u00b1 0.6 to 6.4 \u00b1 0.8); (ET: from 4.3 \u00b1 0.7 to 6.2 \u00b1 0.9) without significant between-groups differences ( P = .137).",
+      "context_window": "6.2 \u00b1 0.9) without significant between-groups differences ( P = .137). Physical QOL evaluated by MacNewQLMI improved in patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-2231",
+      "claim_type": "percentage",
+      "raw_text": "32.3%",
+      "numeric_values": [
+        32.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2231,
+      "sentence": "Physical QOL evaluated by MacNewQLMI improved in patients in the CT group to a greater extent than ET group (+32.3% versus +23%, between groups P = .026).",
+      "context_window": "atients in the CT group to a greater extent than ET group (+32.3% versus +23%, between groups P = .026). Patients of the CT g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-2245",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2245,
+      "sentence": "Physical QOL evaluated by MacNewQLMI improved in patients in the CT group to a greater extent than ET group (+32.3% versus +23%, between groups P = .026).",
+      "context_window": "CT group to a greater extent than ET group (+32.3% versus +23%, between groups P = .026). Patients of the CT group had a t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-2265",
+      "claim_type": "p_value",
+      "raw_text": "P = .026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2265,
+      "sentence": "Physical QOL evaluated by MacNewQLMI improved in patients in the CT group to a greater extent than ET group (+32.3% versus +23%, between groups P = .026).",
+      "context_window": "er extent than ET group (+32.3% versus +23%, between groups P = .026). Patients of the CT group had a trend to a greater improve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-2350",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2350,
+      "sentence": "Patients of the CT group had a trend to a greater improvement on social (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL than ET group.",
+      "context_window": "e CT group had a trend to a greater improvement on social (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-2362",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2362,
+      "sentence": "Patients of the CT group had a trend to a greater improvement on social (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL than ET group.",
+      "context_window": "ad a trend to a greater improvement on social (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL tha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-2366",
+      "claim_type": "p_value",
+      "raw_text": "P = .058",
+      "numeric_values": [
+        0.058
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2366,
+      "sentence": "Patients of the CT group had a trend to a greater improvement on social (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL than ET group.",
+      "context_window": "trend to a greater improvement on social (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL than ET group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-2392",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2392,
+      "sentence": "Patients of the CT group had a trend to a greater improvement on social (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL than ET group.",
+      "context_window": "ement on social (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL than ET group. Tai Chi and ET we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-2403",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2403,
+      "sentence": "Patients of the CT group had a trend to a greater improvement on social (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL than ET group.",
+      "context_window": "cial (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL than ET group. Tai Chi and ET were both wel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-p-2407",
+      "claim_type": "p_value",
+      "raw_text": "P = .083",
+      "numeric_values": [
+        0.083
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2407,
+      "sentence": "Patients of the CT group had a trend to a greater improvement on social (+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL than ET group.",
+      "context_window": "(+12% versus +5%; P = .058) and emotional (+9% versus +6%; P = .083) QOL than ET group. Tai Chi and ET were both well tolerate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-2771",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2771,
+      "sentence": "Three patients (10%) of the ET group withdraw from the study.",
+      "context_window": "ired hospital stay during the study period. Three patients (10%) of the ET group withdraw from the study.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-335",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 335,
+      "sentence": "We observed a 36% increase of distance walked at 6MWT in the CT group.",
+      "context_window": "er hemodynamic profile compared to ET alone. We observed a 36% increase of distance walked at 6MWT in the CT group. This i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-502",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 502,
+      "sentence": "This improvement of exercise capacity resulted significantly higher compared to the group performing only ET (24% increase) and appears considerably better than those reported by other studies where the increase of functional capacity after Tai Chi was ranging from 7% to 26% [ 8 - 10 ].",
+      "context_window": "nificantly higher compared to the group performing only ET (24% increase) and appears considerably better than those report",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-658",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 658,
+      "sentence": "This improvement of exercise capacity resulted significantly higher compared to the group performing only ET (24% increase) and appears considerably better than those reported by other studies where the increase of functional capacity after Tai Chi was ranging from 7% to 26% [ 8 - 10 ].",
+      "context_window": "rease of functional capacity after Tai Chi was ranging from 7% to 26% [ 8 - 10 ]. However, some significant differences be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-664",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 664,
+      "sentence": "This improvement of exercise capacity resulted significantly higher compared to the group performing only ET (24% increase) and appears considerably better than those reported by other studies where the increase of functional capacity after Tai Chi was ranging from 7% to 26% [ 8 - 10 ].",
+      "context_window": "of functional capacity after Tai Chi was ranging from 7% to 26% [ 8 - 10 ]. However, some significant differences between o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-1848",
+      "claim_type": "percentage",
+      "raw_text": "12.3%",
+      "numeric_values": [
+        12.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1848,
+      "sentence": "In our study a 12-weeks CT lead to a significant 12.3% reduction of systolic BP compared to 6.4% of ET alone.",
+      "context_window": "ariables. In our study a 12-weeks CT lead to a significant 12.3% reduction of systolic BP compared to 6.4% of ET alone. Our",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-1891",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1891,
+      "sentence": "In our study a 12-weeks CT lead to a significant 12.3% reduction of systolic BP compared to 6.4% of ET alone.",
+      "context_window": "to a significant 12.3% reduction of systolic BP compared to 6.4% of ET alone. Our data confirm previous observations: a redu",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-2159",
+      "claim_type": "unit_value",
+      "raw_text": "32 mm",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "mm",
+      "source_section": "discussion",
+      "source_offset": 2159,
+      "sentence": "A recent review of twenty-six studies showed that twenty-two of them reported reductions in BP with tai chi (3-32 mm Hg systolic and 2-18 mm Hg diastolic BP reductions [ 21 ]).",
+      "context_window": "wenty-two of them reported reductions in BP with tai chi (3-32 mm Hg systolic and 2-18 mm Hg diastolic BP reductions [ 21 ]).",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-2183",
+      "claim_type": "unit_value",
+      "raw_text": "18 mm",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "mm",
+      "source_section": "discussion",
+      "source_offset": 2183,
+      "sentence": "A recent review of twenty-six studies showed that twenty-two of them reported reductions in BP with tai chi (3-32 mm Hg systolic and 2-18 mm Hg diastolic BP reductions [ 21 ]).",
+      "context_window": "ed reductions in BP with tai chi (3-32 mm Hg systolic and 2-18 mm Hg diastolic BP reductions [ 21 ]). Tai Chi seem to have si",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-2337",
+      "claim_type": "unit_value",
+      "raw_text": "12 week",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "week",
+      "source_section": "discussion",
+      "source_offset": 2337,
+      "sentence": "Young et al. [ 22 ] found changes in systolic BP, after 12 week of -8.4 mm Hg and -7.0 mm Hg in the aerobic exercise and Tai Chi groups, respectively.",
+      "context_window": "BP. Young et al. [ 22 ] found changes in systolic BP, after 12 week of -8.4 mm Hg and -7.0 mm Hg in the aerobic exercise and Ta",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-2349",
+      "claim_type": "unit_value",
+      "raw_text": "8.4 mm",
+      "numeric_values": [
+        8.4
+      ],
+      "units": "mm",
+      "source_section": "discussion",
+      "source_offset": 2349,
+      "sentence": "Young et al. [ 22 ] found changes in systolic BP, after 12 week of -8.4 mm Hg and -7.0 mm Hg in the aerobic exercise and Tai Chi groups, respectively.",
+      "context_window": "al. [ 22 ] found changes in systolic BP, after 12 week of -8.4 mm Hg and -7.0 mm Hg in the aerobic exercise and Tai Chi group",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-u-2364",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mm",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mm",
+      "source_section": "discussion",
+      "source_offset": 2364,
+      "sentence": "Young et al. [ 22 ] found changes in systolic BP, after 12 week of -8.4 mm Hg and -7.0 mm Hg in the aerobic exercise and Tai Chi groups, respectively.",
+      "context_window": "nd changes in systolic BP, after 12 week of -8.4 mm Hg and -7.0 mm Hg in the aerobic exercise and Tai Chi groups, respectively",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-4918",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4918,
+      "sentence": "Our study included only 9 (15%) female patients and we can not generalize our results to female gender.",
+      "context_window": "n scale compared to usual care. Our study included only 9 (15%) female patients and we can not generalize our results to f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3195859_tai_chi_enhances_the_effects_of_endurance_training_in_the_re-pct-27",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 27,
+      "sentence": "Our study included only 9 (15%) female patients and we can not generalize our results to female gender.",
+      "context_window": "Our study included only 9 (15%) female patients and we can not generalize our results to f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

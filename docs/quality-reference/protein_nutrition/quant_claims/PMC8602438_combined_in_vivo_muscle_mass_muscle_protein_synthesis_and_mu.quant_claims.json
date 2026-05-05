@@ -1,0 +1,1625 @@
+{
+  "paper_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu",
+  "doi": "10.1007/s11357-021-00386-2",
+  "extracted_at": "2026-05-05T22:35:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 7,
+    "unit_value": 37,
+    "p_value": 3,
+    "percentage": 37,
+    "correlation": 1,
+    "sample_size": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-msd-846",
+      "claim_type": "mean_sd",
+      "raw_text": "71 \u00b1 4",
+      "numeric_values": [
+        71.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 846,
+      "sentence": "We recruited 10 older males (71 \u00b1 4 y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD) into a 4-day study, with DXA and consumption of D 2 O and D 3 -Cr tracers on day 1.",
+      "context_window": "ss, MPS and MPB, respectively. We recruited 10 older males (71 \u00b1 4 y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD) into a 4-day study, wi",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-msd-861",
+      "claim_type": "mean_sd",
+      "raw_text": "25 \u00b1 4",
+      "numeric_values": [
+        25.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 861,
+      "sentence": "We recruited 10 older males (71 \u00b1 4 y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD) into a 4-day study, with DXA and consumption of D 2 O and D 3 -Cr tracers on day 1.",
+      "context_window": ", respectively. We recruited 10 older males (71 \u00b1 4 y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD) into a 4-day study, with DXA and cons",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-866",
+      "claim_type": "unit_value",
+      "raw_text": "4 kg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 866,
+      "sentence": "We recruited 10 older males (71 \u00b1 4 y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD) into a 4-day study, with DXA and consumption of D 2 O and D 3 -Cr tracers on day 1.",
+      "context_window": "pectively. We recruited 10 older males (71 \u00b1 4 y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD) into a 4-day study, with DXA and consump",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-p-1286",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1286,
+      "sentence": "D 3 -Cr derived muscle mass was positively correlated to appendicular fat-free mass (AFFM) estimated by DXA (r = 0.69, P = 0.027).",
+      "context_window": "pendicular fat-free mass (AFFM) estimated by DXA (r = 0.69, P = 0.027). Rates of cumulative myofibrillar MPS over 3 days were 0.0",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-1340",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1340,
+      "sentence": "Rates of cumulative myofibrillar MPS over 3 days were 0.072%/h (95% CI, 0.064 to 0.081%/h).",
+      "context_window": "0.69, P = 0.027). Rates of cumulative myofibrillar MPS over 3 days were 0.072%/h (95% CI, 0.064 to 0.081%/h). Whole-body MPB o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-1352",
+      "claim_type": "percentage",
+      "raw_text": "0.072%",
+      "numeric_values": [
+        0.072
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1352,
+      "sentence": "Rates of cumulative myofibrillar MPS over 3 days were 0.072%/h (95% CI, 0.064 to 0.081%/h).",
+      "context_window": "027). Rates of cumulative myofibrillar MPS over 3 days were 0.072%/h (95% CI, 0.064 to 0.081%/h). Whole-body MPB over 6 h was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-1362",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1362,
+      "sentence": "Rates of cumulative myofibrillar MPS over 3 days were 0.072%/h (95% CI, 0.064 to 0.081%/h).",
+      "context_window": "s of cumulative myofibrillar MPS over 3 days were 0.072%/h (95% CI, 0.064 to 0.081%/h). Whole-body MPB over 6 h was 0.052 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-1379",
+      "claim_type": "percentage",
+      "raw_text": "0.081%",
+      "numeric_values": [
+        0.081
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1379,
+      "sentence": "Rates of cumulative myofibrillar MPS over 3 days were 0.072%/h (95% CI, 0.064 to 0.081%/h).",
+      "context_window": "yofibrillar MPS over 3 days were 0.072%/h (95% CI, 0.064 to 0.081%/h). Whole-body MPB over 6 h was 0.052 (95% CI, 0.038 to 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-1425",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1425,
+      "sentence": "Whole-body MPB over 6 h was 0.052 (95% CI, 0.038 to 0.067).",
+      "context_window": "CI, 0.064 to 0.081%/h). Whole-body MPB over 6 h was 0.052 (95% CI, 0.038 to 0.067). These rates were similar to previous l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-76",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 76,
+      "sentence": "Skeletal muscle is the largest organ of the body by mass, accounting for 30-50% of whole-body total protein turnover [ 1 - 3 ].",
+      "context_window": "is the largest organ of the body by mass, accounting for 30-50% of whole-body total protein turnover [ 1 - 3 ]. It contribu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-160",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 160,
+      "sentence": "It contributes to approximately 60% of basal metabolic rate [ 4 ].",
+      "context_window": "protein turnover [ 1 - 3 ]. It contributes to approximately 60% of basal metabolic rate [ 4 ]. Loss of muscle mass and func",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-corr-2241",
+      "claim_type": "correlation",
+      "raw_text": "(r = 0.868)",
+      "numeric_values": [
+        0.868
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2241,
+      "sentence": "Using this approach, Clark et al. (2014) established a strong correlation (r = 0.868) with whole-body muscle mass assessement using MRI.",
+      "context_window": "roach, Clark et al. (2014) established a strong correlation (r = 0.868) with whole-body muscle mass assessement using MRI. MPS in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-4788",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 4788,
+      "sentence": "Nevertheless, an adaptation of this approach using tracer dilution was reported recently in which 10 mg of stable isotopically labelled 3-methylhistidine (either D 3 or 13 C) was administerd orally, and the rate of dilution of this tracer by endogenously released 3-MH was determined in plasma or urine over 6 h to assess the rate of whole-body myofibrillar protein breakdown [ 26 ].",
+      "context_window": "proach using tracer dilution was reported recently in which 10 mg of stable isotopically labelled 3-methylhistidine (either D",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-msd-200",
+      "claim_type": "mean_sd",
+      "raw_text": "71 \u00b1 4",
+      "numeric_values": [
+        71.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 200,
+      "sentence": "Ten healthy older males were recruited (71 \u00b1 4y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD).",
+      "context_window": "f Helsinki (2013). Ten healthy older males were recruited (71 \u00b1 4y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD). Before being enrolled",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-msd-214",
+      "claim_type": "mean_sd",
+      "raw_text": "25 \u00b1 4",
+      "numeric_values": [
+        25.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 214,
+      "sentence": "Ten healthy older males were recruited (71 \u00b1 4y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD).",
+      "context_window": "13). Ten healthy older males were recruited (71 \u00b1 4y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD). Before being enrolled into the study",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-219",
+      "claim_type": "unit_value",
+      "raw_text": "4 kg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 219,
+      "sentence": "Ten healthy older males were recruited (71 \u00b1 4y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD).",
+      "context_window": "Ten healthy older males were recruited (71 \u00b1 4y, BMI: 25 \u00b1 4 kg . m 2 , mean \u00b1 SD). Before being enrolled into the study, a",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-633",
+      "claim_type": "unit_value",
+      "raw_text": "35 kg",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 633,
+      "sentence": "Participants were excluded if they had a BMI > 35 kg.m 2 , active cardiovascular disease, cerebrovascular disease, respiratory disease, metabolic disease, inflammatory bowel or renal disease, active malignancy, any musculoskeletal or neurological disorders, any signs of clotting dysfunction, any recent steroid treatment (within 6 months), or if on hormone replacement therapy.",
+      "context_window": "n the study. Participants were excluded if they had a BMI > 35 kg.m 2 , active cardiovascular disease, cerebrovascular diseas",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-916",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 916,
+      "sentence": "Participants were excluded if they had a BMI > 35 kg.m 2 , active cardiovascular disease, cerebrovascular disease, respiratory disease, metabolic disease, inflammatory bowel or renal disease, active malignancy, any musculoskeletal or neurological disorders, any signs of clotting dysfunction, any recent steroid treatment (within 6 months), or if on hormone replacement therapy.",
+      "context_window": "clotting dysfunction, any recent steroid treatment (within 6 months), or if on hormone replacement therapy. All participants we",
+      "claim_role": "population",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-2100",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2100,
+      "sentence": "30 mg D 3 -Cr was included in the final 50 ml aliquot of D 2 O.",
+      "context_window": "nce of specific gravity within the vestibular fluid [ 29 ]. 30 mg D 3 -Cr was included in the final 50 ml aliquot of D 2 O.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-2757",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2757,
+      "sentence": "Participants were also given 10 mg of D 3 -3MH dissolved in 50 mL of water to take home and store refrigerated.",
+      "context_window": "e creatine pool, respectively. Participants were also given 10 mg of D 3 -3MH dissolved in 50 mL of water to take home and st",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-2788",
+      "claim_type": "unit_value",
+      "raw_text": "50 mL",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2788,
+      "sentence": "Participants were also given 10 mg of D 3 -3MH dissolved in 50 mL of water to take home and store refrigerated.",
+      "context_window": "Participants were also given 10 mg of D 3 -3MH dissolved in 50 mL of water to take home and store refrigerated. Participants",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-3931",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3931,
+      "sentence": "A muscle biopsy from the m. vastus lateralis (VL) was also taken at this visit (at 72 h) under local anaesthetic (1% lidocaine).",
+      "context_window": "also taken at this visit (at 72 h) under local anaesthetic (1% lidocaine). The Bard micro-needle biopsy technique (50% len",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-3986",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3986,
+      "sentence": "The Bard micro-needle biopsy technique (50% length of VL, mid-belly) was used for the first 5 participants, with the conchotome approach [ 30 ] used subsequently to achieve a larger tissue yield for further analyses.",
+      "context_window": "tic (1% lidocaine). The Bard micro-needle biopsy technique (50% length of VL, mid-belly) was used for the first 5 participa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-5393",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5393,
+      "sentence": "Between 30 and 50 mg of muscle was used for the analysis of deuterium labelling of alanine in the myofibrillar protein bound fraction, although 10 mg is sufficient, thereby permitting the needle biopsy approach.",
+      "context_window": "of muscle fractional synthetic rate (FSR). Between 30 and 50 mg of muscle was used for the analysis of deuterium labelling",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-5522",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5522,
+      "sentence": "Between 30 and 50 mg of muscle was used for the analysis of deuterium labelling of alanine in the myofibrillar protein bound fraction, although 10 mg is sufficient, thereby permitting the needle biopsy approach.",
+      "context_window": "lanine in the myofibrillar protein bound fraction, although 10 mg is sufficient, thereby permitting the needle biopsy approac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-5712",
+      "claim_type": "unit_value",
+      "raw_text": "50 mmol",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5712,
+      "sentence": "The muscle tissue was homogenised with scissors in an Eppendorf tube using 10 \u03bcL/mg -1 of ice-cold homogenisation buffer (50 mmol Tris-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF, 0.5 mmol of activated sodium orthovanadate, pH 7.4 (all from Sigma Aldrich, Poole, UK) containing a complete protease inhibitor cocktail tablet (Roche, West Sussex, UK).",
+      "context_window": "f tube using 10 \u03bcL/mg -1 of ice-cold homogenisation buffer (50 mmol Tris-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosph",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-5730",
+      "claim_type": "unit_value",
+      "raw_text": "1 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5730,
+      "sentence": "The muscle tissue was homogenised with scissors in an Eppendorf tube using 10 \u03bcL/mg -1 of ice-cold homogenisation buffer (50 mmol Tris-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF, 0.5 mmol of activated sodium orthovanadate, pH 7.4 (all from Sigma Aldrich, Poole, UK) containing a complete protease inhibitor cocktail tablet (Roche, West Sussex, UK).",
+      "context_window": "/mg -1 of ice-cold homogenisation buffer (50 mmol Tris-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-5743",
+      "claim_type": "unit_value",
+      "raw_text": "1 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5743,
+      "sentence": "The muscle tissue was homogenised with scissors in an Eppendorf tube using 10 \u03bcL/mg -1 of ice-cold homogenisation buffer (50 mmol Tris-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF, 0.5 mmol of activated sodium orthovanadate, pH 7.4 (all from Sigma Aldrich, Poole, UK) containing a complete protease inhibitor cocktail tablet (Roche, West Sussex, UK).",
+      "context_window": "-cold homogenisation buffer (50 mmol Tris-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF, 0.5 mmol of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-5756",
+      "claim_type": "unit_value",
+      "raw_text": "10 mmol",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5756,
+      "sentence": "The muscle tissue was homogenised with scissors in an Eppendorf tube using 10 \u03bcL/mg -1 of ice-cold homogenisation buffer (50 mmol Tris-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF, 0.5 mmol of activated sodium orthovanadate, pH 7.4 (all from Sigma Aldrich, Poole, UK) containing a complete protease inhibitor cocktail tablet (Roche, West Sussex, UK).",
+      "context_window": "isation buffer (50 mmol Tris-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF, 0.5 mmol of activated sodi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-5784",
+      "claim_type": "unit_value",
+      "raw_text": "50 mmol",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5784,
+      "sentence": "The muscle tissue was homogenised with scissors in an Eppendorf tube using 10 \u03bcL/mg -1 of ice-cold homogenisation buffer (50 mmol Tris-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF, 0.5 mmol of activated sodium orthovanadate, pH 7.4 (all from Sigma Aldrich, Poole, UK) containing a complete protease inhibitor cocktail tablet (Roche, West Sussex, UK).",
+      "context_window": "-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF, 0.5 mmol of activated sodium orthovanadate, pH 7.4 (al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-5797",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mmol",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5797,
+      "sentence": "The muscle tissue was homogenised with scissors in an Eppendorf tube using 10 \u03bcL/mg -1 of ice-cold homogenisation buffer (50 mmol Tris-HCl, 1 mmol EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF, 0.5 mmol of activated sodium orthovanadate, pH 7.4 (all from Sigma Aldrich, Poole, UK) containing a complete protease inhibitor cocktail tablet (Roche, West Sussex, UK).",
+      "context_window": "EDTA, 1 mmol EGTA, 10 mmol \u03b2-Glycerophosphate, 50 mmol NaF, 0.5 mmol of activated sodium orthovanadate, pH 7.4 (all from Sigma A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-6326",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 6326,
+      "sentence": "The myofibrillar pellet was solubilised using 1 mL 0.3 molL -1 NaOH and incubated for 30 min at 37 \u00b0C, then centrifuged for 10 min, at 4 \u00b0C and 10,000 rpm.",
+      "context_window": "g for 5 min. The myofibrillar pellet was solubilised using 1 mL 0.3 molL -1 NaOH and incubated for 30 min at 37 \u00b0C, then ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-6562",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 6562,
+      "sentence": "The myofibrillar fraction (supernatant) was separated from the insoluble collagen pellet, and precipitated by the addition of 1 mL 1 molL -1 perchloric acid, following incubation at 4 \u00b0C for 20 min.",
+      "context_window": "oluble collagen pellet, and precipitated by the addition of 1 mL 1 molL -1 perchloric acid, following incubation at 4 \u00b0C for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-6784",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6784,
+      "sentence": "The myofibrillar protein was pelleted at 4000 rpm for 20 min, separated from the supernatant containing the free amino acids, then washed twice with 70% ethanol.",
+      "context_window": "ant containing the free amino acids, then washed twice with 70% ethanol. After the addition of 1 mL 0.1 molL -1 HCl and 1 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-6819",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 6819,
+      "sentence": "After the addition of 1 mL 0.1 molL -1 HCl and 1 mL of a Dowex H + resin slurry, the samples were incubated overnight at 110 \u00b0C in order to release the protein-bound amino acids [ 20 , 31 , 32 ].",
+      "context_window": ", then washed twice with 70% ethanol. After the addition of 1 mL 0.1 molL -1 HCl and 1 mL of a Dowex H + resin slurry, the s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-6844",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 6844,
+      "sentence": "After the addition of 1 mL 0.1 molL -1 HCl and 1 mL of a Dowex H + resin slurry, the samples were incubated overnight at 110 \u00b0C in order to release the protein-bound amino acids [ 20 , 31 , 32 ].",
+      "context_window": "70% ethanol. After the addition of 1 mL 0.1 molL -1 HCl and 1 mL of a Dowex H + resin slurry, the samples were incubated ove",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-7046",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7046,
+      "sentence": "The plasma was deproteinised using ice-cold ethanol (100%) and centrifuged at 17,000 g for 10 min.",
+      "context_window": "32 ]. The plasma was deproteinised using ice-cold ethanol (100%) and centrifuged at 17,000 g for 10 min. The pellet was tra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-9175",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9175,
+      "sentence": "A 0-10% D 3 -3-methyl-histidine enrichment curve was prepared as a serial dilution.",
+      "context_window": "re defrosted and centrifuged at ~ 10,000 rpm for 3 min. A 0-10% D 3 -3-methyl-histidine enrichment curve was prepared as a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-9297",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 9297,
+      "sentence": "100 \u00b5L of plasma was de-proteinised using 1 mL of MeCN: MeOH (1:1).",
+      "context_window": "serial dilution. 100 \u00b5L of plasma was de-proteinised using 1 mL of MeCN: MeOH (1:1). Samples were vortex mixed and incubate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-9789",
+      "claim_type": "unit_value",
+      "raw_text": "150 mm",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 9789,
+      "sentence": "Samples were re-suspended using 100 \u00b5L MeCN: ddH 2 O (65:35) and ready to be analysed using High-Performance Liquid Chromatography (HPLC; Dionex Ultimate 3000, Thermo Scientific) mass spectrometry (MS; Q-Exactive, Thermo Scientific) with a Sequant ZIC-HILIC column (150 mm \u00d7 2.1 \u00d7 5um; Merck Millipore).",
+      "context_window": "active, Thermo Scientific) with a Sequant ZIC-HILIC column (150 mm \u00d7 2.1 \u00d7 5um; Merck Millipore). The flow was set to 0.4 mL/m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-9847",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 mL/min",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 9847,
+      "sentence": "The flow was set to 0.4 mL/min with an initial buffer gradient of 95:5 (Buffer A:B); where Buffer A was 10 mM ammonium formate (90:10 Acetonitrile: ddH 2 O) with 0.1% Formic Acid and Buffer B was 10 mM ammonium formate (50:50 Acetonitrile: ddH 2 O) with 0.1% Formic acid.",
+      "context_window": "(150 mm \u00d7 2.1 \u00d7 5um; Merck Millipore). The flow was set to 0.4 mL/min with an initial buffer gradient of 95:5 (Buffer A:B); where",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-9989",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9989,
+      "sentence": "The flow was set to 0.4 mL/min with an initial buffer gradient of 95:5 (Buffer A:B); where Buffer A was 10 mM ammonium formate (90:10 Acetonitrile: ddH 2 O) with 0.1% Formic Acid and Buffer B was 10 mM ammonium formate (50:50 Acetonitrile: ddH 2 O) with 0.1% Formic acid.",
+      "context_window": "s 10 mM ammonium formate (90:10 Acetonitrile: ddH 2 O) with 0.1% Formic Acid and Buffer B was 10 mM ammonium formate (50:50",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-10081",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10081,
+      "sentence": "The flow was set to 0.4 mL/min with an initial buffer gradient of 95:5 (Buffer A:B); where Buffer A was 10 mM ammonium formate (90:10 Acetonitrile: ddH 2 O) with 0.1% Formic Acid and Buffer B was 10 mM ammonium formate (50:50 Acetonitrile: ddH 2 O) with 0.1% Formic acid.",
+      "context_window": "s 10 mM ammonium formate (50:50 Acetonitrile: ddH 2 O) with 0.1% Formic acid. After a 2.5-min hold at 95:5 (A:B), the buffer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-10169",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10169,
+      "sentence": "After a 2.5-min hold at 95:5 (A:B), the buffer gradient was ramped to 100% Buffer B over 15 min and held for 2.5 min before returning back to 95:5 (A:B) and re-equilibrated for 10 min.",
+      "context_window": "5-min hold at 95:5 (A:B), the buffer gradient was ramped to 100% Buffer B over 15 min and held for 2.5 min before returning",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-11193",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mL/min",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 11193,
+      "sentence": "The flow was set to 0.2 mL/min, 60:40 (Buffer A:B) isocratic flow; where Buffer A was 100% Acetonitrile and Buffer B Ammonium Acetate pH 5.8.",
+      "context_window": "rumentation and column as above [ 35 ]. The flow was set to 0.2 mL/min, 60:40 (Buffer A:B) isocratic flow; where Buffer A was 100%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-11259",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11259,
+      "sentence": "The flow was set to 0.2 mL/min, 60:40 (Buffer A:B) isocratic flow; where Buffer A was 100% Acetonitrile and Buffer B Ammonium Acetate pH 5.8.",
+      "context_window": "/min, 60:40 (Buffer A:B) isocratic flow; where Buffer A was 100% Acetonitrile and Buffer B Ammonium Acetate pH 5.8. A standa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-11557",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11557,
+      "sentence": "A standard curve using 12 C, 13 C and D 3 -Creatine was prepared for the determination of creatine concentration and enrichment (monitoring M + H: 132.07666, 133.08006 and 135.09549 respectively), with a D 3 -creatinine enrichment curve of 0-0.1% for determination of D 3 - creatinine enrichment (monitoring M + H: 114.06638 and 117.08515).",
+      "context_window": "respectively), with a D 3 -creatinine enrichment curve of 0-0.1% for determination of D 3 - creatinine enrichment (monitorin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-14219",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14219,
+      "sentence": "Linear regression and two-tailed Pearson r correlation analysis were used to identify any relationship between muscle mass estimates by D 3 -creatine and DXA, with confidence interval set at 95%.",
+      "context_window": "s by D 3 -creatine and DXA, with confidence interval set at 95%. All statistical analysis was performed using Graphpad Pris",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-65",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 65,
+      "sentence": "The mean body water enrichment of D 2 O peaked at 2 h (0.24 APE; 95% CI, 0.23 to 0.26 APE) and then declined slowly over 72 h to 0.18 APE (95% CI, 0.16 to 0.20 APE; Fig.",
+      "context_window": "ean body water enrichment of D 2 O peaked at 2 h (0.24 APE; 95% CI, 0.23 to 0.26 APE) and then declined slowly over 72 h to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-139",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 139,
+      "sentence": "The mean body water enrichment of D 2 O peaked at 2 h (0.24 APE; 95% CI, 0.23 to 0.26 APE) and then declined slowly over 72 h to 0.18 APE (95% CI, 0.16 to 0.20 APE; Fig.",
+      "context_window": "o 0.26 APE) and then declined slowly over 72 h to 0.18 APE (95% CI, 0.16 to 0.20 APE; Fig. 3A ). The mean myofibrillar FSR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-218",
+      "claim_type": "percentage",
+      "raw_text": "0.072%",
+      "numeric_values": [
+        0.072
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 218,
+      "sentence": "The mean myofibrillar FSR over 0-72 h was 0.072%/h (95% CI, 0.064 to 0.081%/h; Fig.",
+      "context_window": "0 APE; Fig. 3A ). The mean myofibrillar FSR over 0-72 h was 0.072%/h (95% CI, 0.064 to 0.081%/h; Fig. 3B ). Fig. 3 A Deuterium",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-228",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 228,
+      "sentence": "The mean myofibrillar FSR over 0-72 h was 0.072%/h (95% CI, 0.064 to 0.081%/h; Fig.",
+      "context_window": ". 3A ). The mean myofibrillar FSR over 0-72 h was 0.072%/h (95% CI, 0.064 to 0.081%/h; Fig. 3B ). Fig. 3 A Deuterium enrich",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-245",
+      "claim_type": "percentage",
+      "raw_text": "0.081%",
+      "numeric_values": [
+        0.081
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 245,
+      "sentence": "The mean myofibrillar FSR over 0-72 h was 0.072%/h (95% CI, 0.064 to 0.081%/h; Fig.",
+      "context_window": "myofibrillar FSR over 0-72 h was 0.072%/h (95% CI, 0.064 to 0.081%/h; Fig. 3B ). Fig. 3 A Deuterium enrichment of the body wat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-n-466",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 466,
+      "sentence": "3 A Deuterium enrichment of the body water, measured in APE from saliva samples at baseline, 2, 12, 24, 48 and 72 h post-deuterium oxide ingestion; ( B ) Myofibrillar fractional synthetic rates. n = 10 older males.",
+      "context_window": "e ingestion; ( B ) Myofibrillar fractional synthetic rates. n = 10 older males. Mean and 95% CI presented A Deuterium enrichm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-495",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 495,
+      "sentence": "Mean and 95% CI presented\n\nA Deuterium enrichment of the body water, measured in APE from saliva samples at baseline, 2, 12, 24, 48 and 72 h post-deuterium oxide ingestion; ( B ) Myofibrillar fractional synthetic rates. n = 10 older males.",
+      "context_window": "ar fractional synthetic rates. n = 10 older males. Mean and 95% CI presented A Deuterium enrichment of the body water, mea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-n-706",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 706,
+      "sentence": "Mean and 95% CI presented\n\nA Deuterium enrichment of the body water, measured in APE from saliva samples at baseline, 2, 12, 24, 48 and 72 h post-deuterium oxide ingestion; ( B ) Myofibrillar fractional synthetic rates. n = 10 older males.",
+      "context_window": "e ingestion; ( B ) Myofibrillar fractional synthetic rates. n = 10 older males. Mean and 95% CI presented The D 3 -3MH enrich",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-735",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 735,
+      "sentence": "Mean and 95% CI presented\n\nThe D 3 -3MH enrichment curve of 0-10 APE (Fig.",
+      "context_window": "ar fractional synthetic rates. n = 10 older males. Mean and 95% CI presented The D 3 -3MH enrichment curve of 0-10 APE (Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-msd-984",
+      "claim_type": "mean_sd",
+      "raw_text": "4.86 \u00b1 2.25",
+      "numeric_values": [
+        4.86,
+        2.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 984,
+      "sentence": "Mean plasma D 3 -3-MH enrichment gradually declined from 4.86 \u00b1 2.25 APE at 24 h post-tracer ingestion to 3.65 \u00b1 1.82 APE at 30 h (Fig.",
+      "context_window": "). Mean plasma D 3 -3-MH enrichment gradually declined from 4.86 \u00b1 2.25 APE at 24 h post-tracer ingestion to 3.65 \u00b1 1.82 APE at 30",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-msd-1033",
+      "claim_type": "mean_sd",
+      "raw_text": "3.65 \u00b1 1.82",
+      "numeric_values": [
+        3.65,
+        1.82
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1033,
+      "sentence": "Mean plasma D 3 -3-MH enrichment gradually declined from 4.86 \u00b1 2.25 APE at 24 h post-tracer ingestion to 3.65 \u00b1 1.82 APE at 30 h (Fig.",
+      "context_window": "lined from 4.86 \u00b1 2.25 APE at 24 h post-tracer ingestion to 3.65 \u00b1 1.82 APE at 30 h (Fig. 4B ). The ratio of labelled to unlabelled",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-1286",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1286,
+      "sentence": "The mean rate of whole-body MPB was 0.052 (95% CI, 0.038 to 0.067; Fig.",
+      "context_window": "(rate constant). The mean rate of whole-body MPB was 0.052 (95% CI, 0.038 to 0.067; Fig. 4C ). Fig. 4 A Enrichment curve of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-n-1572",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1572,
+      "sentence": "4 A Enrichment curve of D 3 -3-methylhistidine from 0-10 APE; ( B ) Decay curves of D 3 -3-methylhistidine in the plasma by endogenous 3-methylhistidine release; ( C ) Rate of whole-body muscle protein breakdown (k) using D 3 -3-methylhistidine. n = 10 older males.",
+      "context_window": "muscle protein breakdown (k) using D 3 -3-methylhistidine. n = 10 older males. Mean and 95% CI presented A Enrichment curve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-1601",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1601,
+      "sentence": "Mean and 95% CI presented\n\nA Enrichment curve of D 3 -3-methylhistidine from 0-10 APE; ( B ) Decay curves of D 3 -3-methylhistidine in the plasma by endogenous 3-methylhistidine release; ( C ) Rate of whole-body muscle protein breakdown (k) using D 3 -3-methylhistidine. n = 10 older males.",
+      "context_window": "using D 3 -3-methylhistidine. n = 10 older males. Mean and 95% CI presented A Enrichment curve of D 3 -3-methylhistidine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-n-1863",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1863,
+      "sentence": "Mean and 95% CI presented\n\nA Enrichment curve of D 3 -3-methylhistidine from 0-10 APE; ( B ) Decay curves of D 3 -3-methylhistidine in the plasma by endogenous 3-methylhistidine release; ( C ) Rate of whole-body muscle protein breakdown (k) using D 3 -3-methylhistidine. n = 10 older males.",
+      "context_window": "muscle protein breakdown (k) using D 3 -3-methylhistidine. n = 10 older males. Mean and 95% CI presented This analytical app",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-1892",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1892,
+      "sentence": "Mean and 95% CI presented\n\nThis analytical approach was extremely sensitive, accurate and robust, and both standard curves showed good linearity across both the range of concentrations of creatine expected (i.e.",
+      "context_window": "using D 3 -3-methylhistidine. n = 10 older males. Mean and 95% CI presented This analytical approach was extremely sensit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-2279",
+      "claim_type": "percentage",
+      "raw_text": "0.38%",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2279,
+      "sentence": "In our hands, only very small amounts of D 3 -Cr were excreted during the 0-24 h collection period (0.38% of the initial dose; Fig.",
+      "context_window": "D 3 -Cr were excreted during the 0-24 h collection period (0.38% of the initial dose; Fig. 6B ). D 3 -Cr enrichment in the u",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-p-2700",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.098",
+      "numeric_values": [
+        0.098
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2700,
+      "sentence": "There was no significant correlation between DXA-derived FFM and muscle mass measured by D 3 -Cr (r = 0.55, p = 0.098).",
+      "context_window": "-derived FFM and muscle mass measured by D 3 -Cr (r = 0.55, p = 0.098). However, DXA-derived AFFM was significantly positively co",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-p-2826",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2826,
+      "sentence": "However, DXA-derived AFFM was significantly positively correlated with muscle mass measured by D 3 -Cr (r = 0.69, p = 0.027; Fig.",
+      "context_window": "correlated with muscle mass measured by D 3 -Cr (r = 0.69, p = 0.027; Fig. 6D ). Fig. 5 A Creatine concentration curve ranging f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-3505",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3505,
+      "sentence": "Values displayed are mean \u00b1 95% CI; ( D ) Correlation between muscle mass measured by D 3 -Creatine method with fat free mass (FFM) and appendicular fat free mass (AFFM i.e. total arms and legs) measured by DXA.",
+      "context_window": "24, 48 and 72 h urine samples. Values displayed are mean \u00b1 95% CI; ( D ) Correlation between muscle mass measured by D 3 -",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-3717",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3717,
+      "sentence": "Values displayed are mean \u00b1 95% CI\n\nA Creatine concentration curve ranging from 0.25-5 \u00b5g of creatine where M0 is creatine and M1 is 13 C-creatine; ( B ) D 3 -creatinine enrichment curve ranging from 0 to 0.1 APE for measured vs. expected APE\n\nA Corrected ratio of D 3 -Creatine/Creatine excreted in the urine for samples collected at Baseline (0 h), 24 h (pool), 48 and 72 h (spot); ( B ) Percentage dose not absorbed by the body in 0-24 h urine collection sample.",
+      "context_window": "arms and legs) measured by DXA. Values displayed are mean \u00b1 95% CI A Creatine concentration curve ranging from 0.25-5 \u00b5g o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-4369",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4369,
+      "sentence": "Values displayed are mean \u00b1 95% CI; ( D ) Correlation between muscle mass measured by D 3 -Creatine method with fat free mass (FFM) and appendicular fat free mass (AFFM i.e. total arms and legs) measured by DXA.",
+      "context_window": "24, 48 and 72 h urine samples. Values displayed are mean \u00b1 95% CI; ( D ) Correlation between muscle mass measured by D 3 -",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-4581",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4581,
+      "sentence": "Values displayed are mean \u00b1 95% CI",
+      "context_window": "arms and legs) measured by DXA. Values displayed are mean \u00b1 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-653",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 653,
+      "sentence": "The use of 30 mg D 3 -Cr tracer was based upon the dosing validation by Clark and colleagues in 2014 where 30 mg was identified as adequate for quantification of muscle mass, a finding that we support.",
+      "context_window": "creatine tracer method to quantify muscle mass. The use of 30 mg D 3 -Cr tracer was based upon the dosing validation by Clar",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-749",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 749,
+      "sentence": "The use of 30 mg D 3 -Cr tracer was based upon the dosing validation by Clark and colleagues in 2014 where 30 mg was identified as adequate for quantification of muscle mass, a finding that we support.",
+      "context_window": "the dosing validation by Clark and colleagues in 2014 where 30 mg was identified as adequate for quantification of muscle mas",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-1482",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1482,
+      "sentence": "In addition, FFM as measured by DXA is considerably higher (~ 60%) than the muscle mass determined using D 3 -creatine.",
+      "context_window": "addition, FFM as measured by DXA is considerably higher (~ 60%) than the muscle mass determined using D 3 -creatine. There",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-2732",
+      "claim_type": "unit_value",
+      "raw_text": "70 kg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 2732,
+      "sentence": "In an average 70 kg young male the creatine pool size is approximately 120-140 g [ 43 ] with creatine excretion approximately 1.7%/day [ 44 ] as such average meat ingestion should not affect this measure; indeed significant changes in creatine pool size (~ 20%) have only been observed when supplementating creatine of 20 g/day over 6 days [ 45 ].",
+      "context_window": "on is ~ 1 g/day [ 43 ] in an omnivorous diet. In an average 70 kg young male the creatine pool size is approximately 120-140",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-2844",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2844,
+      "sentence": "In an average 70 kg young male the creatine pool size is approximately 120-140 g [ 43 ] with creatine excretion approximately 1.7%/day [ 44 ] as such average meat ingestion should not affect this measure; indeed significant changes in creatine pool size (~ 20%) have only been observed when supplementating creatine of 20 g/day over 6 days [ 45 ].",
+      "context_window": "tely 120-140 g [ 43 ] with creatine excretion approximately 1.7%/day [ 44 ] as such average meat ingestion should not affect",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-2975",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2975,
+      "sentence": "In an average 70 kg young male the creatine pool size is approximately 120-140 g [ 43 ] with creatine excretion approximately 1.7%/day [ 44 ] as such average meat ingestion should not affect this measure; indeed significant changes in creatine pool size (~ 20%) have only been observed when supplementating creatine of 20 g/day over 6 days [ 45 ].",
+      "context_window": "easure; indeed significant changes in creatine pool size (~ 20%) have only been observed when supplementating creatine of 2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-3051",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 3051,
+      "sentence": "In an average 70 kg young male the creatine pool size is approximately 120-140 g [ 43 ] with creatine excretion approximately 1.7%/day [ 44 ] as such average meat ingestion should not affect this measure; indeed significant changes in creatine pool size (~ 20%) have only been observed when supplementating creatine of 20 g/day over 6 days [ 45 ].",
+      "context_window": "een observed when supplementating creatine of 20 g/day over 6 days [ 45 ]. Given the precision of the D 3 -Cr measurement in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-3199",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3199,
+      "sentence": "Given the precision of the D 3 -Cr measurement in our hands, we calculate it would be possible to detect a change in muscle mass of 1 kg, equal to ~ 0.03 APE, and therefore has the sensitivity to identify clinically meaningful changes [ 46 ].",
+      "context_window": "e it would be possible to detect a change in muscle mass of 1 kg, equal to ~ 0.03 APE, and therefore has the sensitivity to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-3456",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3456,
+      "sentence": "Future applications of this approach could also look to minimise the urine sampling to a single spot urine, given that the spillover is less than 0.4% in our participants, perhaps due to the lower dose given, and this would lead to < 0.4% error in muscle mass calculation.",
+      "context_window": "a single spot urine, given that the spillover is less than 0.4% in our participants, perhaps due to the lower dose given, a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-3544",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3544,
+      "sentence": "Future applications of this approach could also look to minimise the urine sampling to a single spot urine, given that the spillover is less than 0.4% in our participants, perhaps due to the lower dose given, and this would lead to < 0.4% error in muscle mass calculation.",
+      "context_window": "rhaps due to the lower dose given, and this would lead to < 0.4% error in muscle mass calculation. We speculate that the per",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-4566",
+      "claim_type": "unit_value",
+      "raw_text": "8 days",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4566,
+      "sentence": "Using D 2 O to study skeletal muscle protein metabolism is now a well-established stable-isotope tracer technique that has been validated for both longer (over weeks or months; [ 19 ]) and also relatively short study durations i.e. over 2-8 days [ 22 ], and even over as little as 3 h with appropriate increases in the pre-loading dose [ 20 ].",
+      "context_window": "19 ]) and also relatively short study durations i.e. over 2-8 days [ 22 ], and even over as little as 3 h with appropriate inc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-4698",
+      "claim_type": "unit_value",
+      "raw_text": "150 mL",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 4698,
+      "sentence": "For instance, as little as 150 mL (70 AP) D 2 O) was adequate to measure MPS over 2-8 days [ 22 ]; therefore, we used this dose to measure MPS in this 4-day protocol.",
+      "context_window": "in the pre-loading dose [ 20 ]. For instance, as little as 150 mL (70 AP) D 2 O) was adequate to measure MPS over 2-8 days [",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-4755",
+      "claim_type": "unit_value",
+      "raw_text": "8 days",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4755,
+      "sentence": "For instance, as little as 150 mL (70 AP) D 2 O) was adequate to measure MPS over 2-8 days [ 22 ]; therefore, we used this dose to measure MPS in this 4-day protocol.",
+      "context_window": "as 150 mL (70 AP) D 2 O) was adequate to measure MPS over 2-8 days [ 22 ]; therefore, we used this dose to measure MPS in this",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-5815",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5815,
+      "sentence": "For measurement of whole-body MPB, 10 mg of D 3 -3MH was utilised, as previously described by Sheffield-Moore and colleagues, with the rates of MPB in our older men similar to those previously observed (i.e. the rate constant (k) of approximately 0.08, [ 26 ]).",
+      "context_window": "of these pools [ 22 ]. For measurement of whole-body MPB, 10 mg of D 3 -3MH was utilised, as previously described by Sheffi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-6856",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 6856,
+      "sentence": "One subject had a much lower D 3 -3MH enrichment than the other subjects, which is probably indicative that they did not ingest the full 10 mg or perhaps took the dose much earlier than reported i.e. not the morning before; however, the decay rate determined was similar to that of our other participants, due to the high sensitivity and reproducibility of the LC-MS approach employed.",
+      "context_window": "ch is probably indicative that they did not ingest the full 10 mg or perhaps took the dose much earlier than reported i.e. no",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-msd-7713",
+      "claim_type": "mean_sd",
+      "raw_text": "30.7 \u00b1 11.2",
+      "numeric_values": [
+        30.7,
+        11.2
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7713,
+      "sentence": "With regard to selecting which timepoint to take the spot samples, Clark et al. (2014) reported that a steady-state of D 3 -creatinine enrichment was achieved by 30.7 \u00b1 11.2 h post-tracer ingestion and remained steady for a further 5 days [ 12 ].",
+      "context_window": "steady-state of D 3 -creatinine enrichment was achieved by 30.7 \u00b1 11.2 h post-tracer ingestion and remained steady for a further 5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-7783",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 7783,
+      "sentence": "With regard to selecting which timepoint to take the spot samples, Clark et al. (2014) reported that a steady-state of D 3 -creatinine enrichment was achieved by 30.7 \u00b1 11.2 h post-tracer ingestion and remained steady for a further 5 days [ 12 ].",
+      "context_window": "2 h post-tracer ingestion and remained steady for a further 5 days [ 12 ]. As such, a single spot urine sample taken at any ti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-7892",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 7892,
+      "sentence": "As such, a single spot urine sample taken at any timepoint during this steady-state period (2-4 days post-ingestion of tracer) would be sufficient.",
+      "context_window": "e taken at any timepoint during this steady-state period (2-4 days post-ingestion of tracer) would be sufficient. For more acu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

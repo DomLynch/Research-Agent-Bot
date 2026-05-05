@@ -1,0 +1,2180 @@
+{
+  "paper_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta",
+  "doi": "10.3390/metabo10090354",
+  "extracted_at": "2026-05-05T22:35:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 29,
+    "mean_sd": 23,
+    "unit_value": 18,
+    "p_value": 34,
+    "percentage": 15
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-337",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 337,
+      "sentence": "Thirty-five obese sedentary men ( n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month program of 3\u00d7/week aerobic exercise and 1\u00d7/week dietary instruction to induce weight loss (AEX + WL).",
+      "context_window": "ip with metabolic health. Thirty-five obese sedentary men ( n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-372",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 372,
+      "sentence": "Thirty-five obese sedentary men ( n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month program of 3\u00d7/week aerobic exercise and 1\u00d7/week dietary instruction to induce weight loss (AEX + WL).",
+      "context_window": "ve obese sedentary men ( n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-396",
+      "claim_type": "mean_sd",
+      "raw_text": "61 \u00b1 1",
+      "numeric_values": [
+        61.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 396,
+      "sentence": "Thirty-five obese sedentary men ( n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month program of 3\u00d7/week aerobic exercise and 1\u00d7/week dietary instruction to induce weight loss (AEX + WL).",
+      "context_window": "n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/m",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-401",
+      "claim_type": "unit_value",
+      "raw_text": "1 years",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 401,
+      "sentence": "Thirty-five obese sedentary men ( n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month program of 3\u00d7/week aerobic exercise and 1\u00d7/week dietary instruction to induce weight loss (AEX + WL).",
+      "context_window": "18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) co",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-415",
+      "claim_type": "mean_sd",
+      "raw_text": "31.3 \u00b1 0.7",
+      "numeric_values": [
+        31.3,
+        0.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 415,
+      "sentence": "Thirty-five obese sedentary men ( n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month program of 3\u00d7/week aerobic exercise and 1\u00d7/week dietary instruction to induce weight loss (AEX + WL).",
+      "context_window": "nopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-422",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 kg",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 422,
+      "sentence": "Thirty-five obese sedentary men ( n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month program of 3\u00d7/week aerobic exercise and 1\u00d7/week dietary instruction to induce weight loss (AEX + WL).",
+      "context_window": "l women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month pr",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-445",
+      "claim_type": "mean_sd",
+      "raw_text": "21.7 \u00b1 0.9",
+      "numeric_values": [
+        21.7,
+        0.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 445,
+      "sentence": "Thirty-five obese sedentary men ( n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month program of 3\u00d7/week aerobic exercise and 1\u00d7/week dietary instruction to induce weight loss (AEX + WL).",
+      "context_window": "SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month program of 3\u00d7/week aerobic ex",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-478",
+      "claim_type": "unit_value",
+      "raw_text": "6 month",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 478,
+      "sentence": "Thirty-five obese sedentary men ( n = 18) and postmenopausal women ( n = 17), (X \u00b1 SEM, age: 61 \u00b1 1 years, BMI: 31.3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month program of 3\u00d7/week aerobic exercise and 1\u00d7/week dietary instruction to induce weight loss (AEX + WL).",
+      "context_window": "3 \u00b1 0.7 kg/m 2 , VO 2 max: 21.7 \u00b1 0.9 L/kg/min) completed a 6 month program of 3\u00d7/week aerobic exercise and 1\u00d7/week dietary ins",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-806",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 806,
+      "sentence": "Basal skeletal muscle ANGPTL4 mRNA was lower in men than women ( p < 0.01).",
+      "context_window": "skeletal muscle ANGPTL4 mRNA was lower in men than women ( p < 0.01). Peroxisome proliferator-activated receptor (PPAR) alpha (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-928",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 928,
+      "sentence": "Peroxisome proliferator-activated receptor (PPAR) alpha (PPAR\u03b1) mRNA expression was higher in men than women ( p < 0.05).",
+      "context_window": "lpha (PPAR\u03b1) mRNA expression was higher in men than women ( p < 0.05). There were no significance changes in serum or skeletal m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-1153",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1153,
+      "sentence": "Muscle mRNA ANGPTL4 is correlated with serum ANGPTL4 ( r = 0.41, p < 0.05), body fat ( r = 0.64, p < 0.0001), and glucose utilization ( r = 0.38, p < 0.05).",
+      "context_window": "e mRNA ANGPTL4 is correlated with serum ANGPTL4 ( r = 0.41, p < 0.05), body fat ( r = 0.64, p < 0.0001), and glucose utilization",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-1185",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1185,
+      "sentence": "Muscle mRNA ANGPTL4 is correlated with serum ANGPTL4 ( r = 0.41, p < 0.05), body fat ( r = 0.64, p < 0.0001), and glucose utilization ( r = 0.38, p < 0.05).",
+      "context_window": "h serum ANGPTL4 ( r = 0.41, p < 0.05), body fat ( r = 0.64, p < 0.0001), and glucose utilization ( r = 0.38, p < 0.05). AEX + WL d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-1234",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1234,
+      "sentence": "Muscle mRNA ANGPTL4 is correlated with serum ANGPTL4 ( r = 0.41, p < 0.05), body fat ( r = 0.64, p < 0.0001), and glucose utilization ( r = 0.38, p < 0.05).",
+      "context_window": "r = 0.64, p < 0.0001), and glucose utilization ( r = 0.38, p < 0.05). AEX + WL does not change basal or insulin-stimulated skel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-59",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 59,
+      "sentence": "Study entry criteria were men and post-menopausal women 50-80 years of age who were nonsmokers and had no previous diagnoses of diabetes or cardiovascular disease.",
+      "context_window": "Study entry criteria were men and post-menopausal women 50-80 years of age who were nonsmokers and had no previous diagnoses of",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-212",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 kg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 212,
+      "sentence": "The participants also had to be weight stable (<2.0 kg weight change in the past year), overweight and obese (body mass index, BMI >25 kg/m 2 ; range of 25-46 kg/m 2 ) and sedentary (<20 min of aerobic exercise 2\u00d7/week).",
+      "context_window": "ar disease. The participants also had to be weight stable (<2.0 kg weight change in the past year), overweight and obese (body",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-296",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 296,
+      "sentence": "The participants also had to be weight stable (<2.0 kg weight change in the past year), overweight and obese (body mass index, BMI >25 kg/m 2 ; range of 25-46 kg/m 2 ) and sedentary (<20 min of aerobic exercise 2\u00d7/week).",
+      "context_window": "the past year), overweight and obese (body mass index, BMI >25 kg/m 2 ; range of 25-46 kg/m 2 ) and sedentary (<20 min of aer",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-320",
+      "claim_type": "unit_value",
+      "raw_text": "46 kg",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 320,
+      "sentence": "The participants also had to be weight stable (<2.0 kg weight change in the past year), overweight and obese (body mass index, BMI >25 kg/m 2 ; range of 25-46 kg/m 2 ) and sedentary (<20 min of aerobic exercise 2\u00d7/week).",
+      "context_window": "ht and obese (body mass index, BMI >25 kg/m 2 ; range of 25-46 kg/m 2 ) and sedentary (<20 min of aerobic exercise 2\u00d7/week).",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-418",
+      "claim_type": "unit_value",
+      "raw_text": "77 years",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 418,
+      "sentence": "They were between the ages of 54-77 years, of whom 27 were Caucasian and 8 were African-American.",
+      "context_window": "aerobic exercise 2\u00d7/week). They were between the ages of 54-77 years, of whom 27 were Caucasian and 8 were African-American. All",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-810",
+      "claim_type": "unit_value",
+      "raw_text": "90 mm",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 810,
+      "sentence": "Individuals with untreated hypertension (blood pressure higher than 160/90 mm Hg) or hyperlipidemia (triglycerides > 4.5 mM, cholesterol > 6.2 mM, LDL cholesterol > 4.3 mM) were referred to their doctor for therapy.",
+      "context_window": "with untreated hypertension (blood pressure higher than 160/90 mm Hg) or hyperlipidemia (triglycerides > 4.5 mM, cholesterol",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-1035",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 1035,
+      "sentence": "The women in the study were post-menopausal and had not menstruated for at least 1 year.",
+      "context_window": "y were post-menopausal and had not menstruated for at least 1 year. Participants ( n = 35) met all the study criteria (18 men",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-1058",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1058,
+      "sentence": "Participants ( n = 35) met all the study criteria (18 men and 17 women).",
+      "context_window": "and had not menstruated for at least 1 year. Participants ( n = 35) met all the study criteria (18 men and 17 women). Samples",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-1846",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1846,
+      "sentence": "Adults were enrolled in a dietary induced weight loss plus moderate-to-high intensity aerobic exercise intervention (AEX + WL) for 6 months.",
+      "context_window": "high intensity aerobic exercise intervention (AEX + WL) for 6 months. Before beginning the weight-loss intervention, all subject",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-2128",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2128,
+      "sentence": "Before beginning the weight-loss intervention, all subjects completed an initial 7-day food record and then received instructions for maintaining stable weight, through a Therapeutic Lifestyle Changes (TLC) diet [ 29 ], from a registered dietitian (RD) one day/week for 6-8 weeks.",
+      "context_window": "[ 29 ], from a registered dietitian (RD) one day/week for 6-8 weeks. All participants attended weekly weight loss classes led b",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-2596",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2596,
+      "sentence": "All participants completed three aerobic exercise sessions a week, initially exercising on a treadmill at ~50-60% VO 2 max for 20-30 continuous minutes, as tolerated.",
+      "context_window": "sessions a week, initially exercising on a treadmill at ~50-60% VO 2 max for 20-30 continuous minutes, as tolerated. After",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-2661",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2661,
+      "sentence": "After 3-4 weeks, time was progressed to 50 min and then the duration remained at 50 min for the remainder of the intervention.",
+      "context_window": "O 2 max for 20-30 continuous minutes, as tolerated. After 3-4 weeks, time was progressed to 50 min and then the duration remain",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-2809",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2809,
+      "sentence": "The intensity progressed to >60% VO 2 max and up to 80% VO 2 max.",
+      "context_window": "remainder of the intervention. The intensity progressed to >60% VO 2 max and up to 80% VO 2 max. This progression of intens",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-2832",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2832,
+      "sentence": "The intensity progressed to >60% VO 2 max and up to 80% VO 2 max.",
+      "context_window": "ention. The intensity progressed to >60% VO 2 max and up to 80% VO 2 max. This progression of intensity typically took 4-6",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-2893",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2893,
+      "sentence": "This progression of intensity typically took 4-6 weeks based on each subject\u2019s exercise tolerance.",
+      "context_window": "0% VO 2 max. This progression of intensity typically took 4-6 weeks based on each subject\u2019s exercise tolerance. Exercise intens",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-3351",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3351,
+      "sentence": "The average compliance, defined as attending each of the exercise sessions and weight loss classes was greater than 75%.",
+      "context_window": "exercise sessions and weight loss classes was greater than 75%. VO 2 max was measured using a continuous treadmill test p",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-4396",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4396,
+      "sentence": "All participants were weight stabilized ( \u00b1 2%) for at least two weeks prior to testing before and after the AEX + WL and were provided with a eucaloric diet for two days before the clamp by an RD to control nutrient intake [ 30 ].",
+      "context_window": "ht leg [ 30 ]. All participants were weight stabilized ( \u00b1 2%) for at least two weeks prior to testing before and after t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-4781",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4781,
+      "sentence": "At the end of the 6-month program, subjects were asked to continue the aerobic training 3 days/week during the final testing period and the glucose clamps were performed 36-48 h after the last bout of exercise.",
+      "context_window": "ogram, subjects were asked to continue the aerobic training 3 days/week during the final testing period and the glucose clamps",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-6231",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 6231,
+      "sentence": "Vastus lateralis percutaneous needle muscle biopsies were taken from each participant under local anesthesia using a 5 mm Bergstrom needle (Stille, Solna, Sweden).",
+      "context_window": "taken from each participant under local anesthesia using a 5 mm Bergstrom needle (Stille, Solna, Sweden). Muscle was immedi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-6354",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6354,
+      "sentence": "Approximately 50-80 mg of muscle was used for RNA isolation and ANGLT and PPAR\u03b1 gene expression.",
+      "context_window": "iately freeze-clamped and stored at -80\u00b0C. Approximately 50-80 mg of muscle was used for RNA isolation and ANGLT and PPAR\u03b1 ge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-7339",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7339,
+      "sentence": "Statistical significance was set at p < 0.05.",
+      "context_window": "and outcome variables. Statistical significance was set at p < 0.05. Data were analyzed by SPSS statistical software (Version 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-91",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 91,
+      "sentence": "The baseline physical and metabolic characteristics and gene expressions of the subjects ( n = 35) before and after the intervention are presented in Table 1 .",
+      "context_window": "olic characteristics and gene expressions of the subjects ( n = 35) before and after the intervention are presented in Table 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-182",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 182,
+      "sentence": "Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001).",
+      "context_window": "tervention are presented in Table 1 . Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-187",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 187,
+      "sentence": "Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001).",
+      "context_window": "ntion are presented in Table 1 . Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p <",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-247",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 247,
+      "sentence": "Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001).",
+      "context_window": "p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001)",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-253",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 253,
+      "sentence": "Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001).",
+      "context_window": "001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decr",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-267",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 267,
+      "sentence": "Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001).",
+      "context_window": "crease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-300",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 300,
+      "sentence": "Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001).",
+      "context_window": "fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% de",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-314",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 314,
+      "sentence": "Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001).",
+      "context_window": "< 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease i",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-363",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 363,
+      "sentence": "Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001).",
+      "context_window": "0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease i",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-412",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 412,
+      "sentence": "Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001).",
+      "context_window": "e (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001). There",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-457",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 457,
+      "sentence": "Body weight decreased 8% ( p < 0.001) with a decrease in the percentage of body fat of 11% ( p < 0.001), a 17% decrease in total fat mass ( p < 0.001), a 20% decrease in visceral adipose tissue (VAT), a 16% decrease in subcutaneous abdominal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001).",
+      "context_window": "inal fat and a 12% decrease in mid-thigh subcutaneous fat ( p < 0.001). There was no change in fat-free mass (FFM) or mid-thigh m",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-581",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 581,
+      "sentence": "Muscle attenuation increased ( p < 0.05).",
+      "context_window": "igh muscle area ( Table 1 ). Muscle attenuation increased ( p < 0.05). VO 2 max (mL/kg//min) increased 21% after aerobic exercis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-624",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 624,
+      "sentence": "VO 2 max (mL/kg//min) increased 21% after aerobic exercise + weight loss (AEX + WL) ( p < 0.001).",
+      "context_window": "tion increased ( p < 0.05). VO 2 max (mL/kg//min) increased 21% after aerobic exercise + weight loss (AEX + WL) ( p < 0.001",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-678",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 678,
+      "sentence": "VO 2 max (mL/kg//min) increased 21% after aerobic exercise + weight loss (AEX + WL) ( p < 0.001).",
+      "context_window": "eased 21% after aerobic exercise + weight loss (AEX + WL) ( p < 0.001). Physical and metabolic characteristics and gene expressi",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-768",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 768,
+      "sentence": "Physical and metabolic characteristics and gene expression of all subjects ( n = 35) before and after aerobic exercise + weight loss (AEX + WL) intervention.",
+      "context_window": "bolic characteristics and gene expression of all subjects ( n = 35) before and after aerobic exercise + weight loss (AEX + WL)",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-1040",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1040,
+      "sentence": "Significant different pre and post intervention: * p \u02c2 0.05; \u2020 p \u02c2 0.01; \u2021 p \u2264 0.001.",
+      "context_window": "ferent pre and post intervention: * p \u02c2 0.05; \u2020 p \u02c2 0.01; \u2021 p \u2264 0.001. At baseline, 20 subjects had normal glucose tolerance, 13",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-1291",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1291,
+      "sentence": "Fasting plasma glucose concentrations did not change after AEX + WL but fasting insulin levels were reduced ( p < 0.001, Table 1 ).",
+      "context_window": "ge after AEX + WL but fasting insulin levels were reduced ( p < 0.001, Table 1 ). Glucose AUC120 and glucose AUC180 during the or",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-1409",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1409,
+      "sentence": "Glucose AUC120 and glucose AUC180 during the oral glucose tolerance test (OGTT) decreased 6 and 5%, respectively ( p < 0.05) and insulin AUC120 and insulin AUC180 during the OGTT both decreased 17% ( p < 0.01).",
+      "context_window": "ring the oral glucose tolerance test (OGTT) decreased 6 and 5%, respectively ( p < 0.05) and insulin AUC120 and insulin AU",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-1428",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1428,
+      "sentence": "Glucose AUC120 and glucose AUC180 during the oral glucose tolerance test (OGTT) decreased 6 and 5%, respectively ( p < 0.05) and insulin AUC120 and insulin AUC180 during the OGTT both decreased 17% ( p < 0.01).",
+      "context_window": "se tolerance test (OGTT) decreased 6 and 5%, respectively ( p < 0.05) and insulin AUC120 and insulin AUC180 during the OGTT both",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-1507",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1507,
+      "sentence": "Glucose AUC120 and glucose AUC180 during the oral glucose tolerance test (OGTT) decreased 6 and 5%, respectively ( p < 0.05) and insulin AUC120 and insulin AUC180 during the OGTT both decreased 17% ( p < 0.01).",
+      "context_window": "in AUC120 and insulin AUC180 during the OGTT both decreased 17% ( p < 0.01). Glucose utilization and insulin sensitivity in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-1513",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1513,
+      "sentence": "Glucose AUC120 and glucose AUC180 during the oral glucose tolerance test (OGTT) decreased 6 and 5%, respectively ( p < 0.05) and insulin AUC120 and insulin AUC180 during the OGTT both decreased 17% ( p < 0.01).",
+      "context_window": "120 and insulin AUC180 during the OGTT both decreased 17% ( p < 0.01). Glucose utilization and insulin sensitivity increased bet",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-pct-1593",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1593,
+      "sentence": "Glucose utilization and insulin sensitivity increased between 18 and 40% (all p < 0.0001).",
+      "context_window": "tilization and insulin sensitivity increased between 18 and 40% (all p < 0.0001). There were no significant changes in skel",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-1602",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1602,
+      "sentence": "Glucose utilization and insulin sensitivity increased between 18 and 40% (all p < 0.0001).",
+      "context_window": "n and insulin sensitivity increased between 18 and 40% (all p < 0.0001). There were no significant changes in skeletal muscle ANGP",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-1845",
+      "claim_type": "mean_sd",
+      "raw_text": "0.759 \u00b1 0.17",
+      "numeric_values": [
+        0.759,
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1845,
+      "sentence": "There was no significant change in basal vs. insulin-stimulated ANGPTL4 mRNA either before (0.759 \u00b1 0.17 vs.",
+      "context_window": "in basal vs. insulin-stimulated ANGPTL4 mRNA either before (0.759 \u00b1 0.17 vs. 0.724 \u00b1 0.150 AU) or after (0.817 \u00b1 0.139 vs. 0.858 \u00b1 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-1862",
+      "claim_type": "mean_sd",
+      "raw_text": "0.724 \u00b1 0.150",
+      "numeric_values": [
+        0.724,
+        0.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1862,
+      "sentence": "0.724 \u00b1 0.150 AU) or after (0.817 \u00b1 0.139 vs.",
+      "context_window": "lin-stimulated ANGPTL4 mRNA either before (0.759 \u00b1 0.17 vs. 0.724 \u00b1 0.150 AU) or after (0.817 \u00b1 0.139 vs. 0.858 \u00b1 0.218 AU) AEX + WL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-1890",
+      "claim_type": "mean_sd",
+      "raw_text": "0.817 \u00b1 0.139",
+      "numeric_values": [
+        0.817,
+        0.139
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1890,
+      "sentence": "0.724 \u00b1 0.150 AU) or after (0.817 \u00b1 0.139 vs.",
+      "context_window": "either before (0.759 \u00b1 0.17 vs. 0.724 \u00b1 0.150 AU) or after (0.817 \u00b1 0.139 vs. 0.858 \u00b1 0.218 AU) AEX + WL ( Figure 1 ). There were no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-1908",
+      "claim_type": "mean_sd",
+      "raw_text": "0.858 \u00b1 0.218",
+      "numeric_values": [
+        0.858,
+        0.218
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1908,
+      "sentence": "0.858 \u00b1 0.218 AU) AEX + WL ( Figure 1 ).",
+      "context_window": "59 \u00b1 0.17 vs. 0.724 \u00b1 0.150 AU) or after (0.817 \u00b1 0.139 vs. 0.858 \u00b1 0.218 AU) AEX + WL ( Figure 1 ). There were no significant change",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-2061",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2061,
+      "sentence": "There were no significant changes in muscle ANGPTL4 mRNA levels with AEX + WL by glucose tolerance status (NGT, n = 20: 0.74 \u00b1 0.16 vs.",
+      "context_window": "mRNA levels with AEX + WL by glucose tolerance status (NGT, n = 20: 0.74 \u00b1 0.16 vs. 0.73 \u00b1 0.17 AU or IGT, n = 15: 0.95 \u00b1 0.17",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-2069",
+      "claim_type": "mean_sd",
+      "raw_text": "0.74 \u00b1 0.16",
+      "numeric_values": [
+        0.74,
+        0.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2069,
+      "sentence": "There were no significant changes in muscle ANGPTL4 mRNA levels with AEX + WL by glucose tolerance status (NGT, n = 20: 0.74 \u00b1 0.16 vs.",
+      "context_window": "els with AEX + WL by glucose tolerance status (NGT, n = 20: 0.74 \u00b1 0.16 vs. 0.73 \u00b1 0.17 AU or IGT, n = 15: 0.95 \u00b1 0.17 vs. 0.72 \u00b1 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-2085",
+      "claim_type": "mean_sd",
+      "raw_text": "0.73 \u00b1 0.17",
+      "numeric_values": [
+        0.73,
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2085,
+      "sentence": "0.73 \u00b1 0.17 AU or IGT, n = 15: 0.95 \u00b1 0.17 vs.",
+      "context_window": "L by glucose tolerance status (NGT, n = 20: 0.74 \u00b1 0.16 vs. 0.73 \u00b1 0.17 AU or IGT, n = 15: 0.95 \u00b1 0.17 vs. 0.72 \u00b1 025 AU). Skeleta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-2108",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2108,
+      "sentence": "0.73 \u00b1 0.17 AU or IGT, n = 15: 0.95 \u00b1 0.17 vs.",
+      "context_window": "status (NGT, n = 20: 0.74 \u00b1 0.16 vs. 0.73 \u00b1 0.17 AU or IGT, n = 15: 0.95 \u00b1 0.17 vs. 0.72 \u00b1 025 AU). Skeletal muscle angiopoie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-2116",
+      "claim_type": "mean_sd",
+      "raw_text": "0.95 \u00b1 0.17",
+      "numeric_values": [
+        0.95,
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2116,
+      "sentence": "0.73 \u00b1 0.17 AU or IGT, n = 15: 0.95 \u00b1 0.17 vs.",
+      "context_window": "NGT, n = 20: 0.74 \u00b1 0.16 vs. 0.73 \u00b1 0.17 AU or IGT, n = 15: 0.95 \u00b1 0.17 vs. 0.72 \u00b1 025 AU). Skeletal muscle angiopoietin-like prot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-2132",
+      "claim_type": "mean_sd",
+      "raw_text": "0.72 \u00b1 025",
+      "numeric_values": [
+        0.72,
+        25.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2132,
+      "sentence": "0.72 \u00b1 025 AU).",
+      "context_window": "4 \u00b1 0.16 vs. 0.73 \u00b1 0.17 AU or IGT, n = 15: 0.95 \u00b1 0.17 vs. 0.72 \u00b1 025 AU). Skeletal muscle angiopoietin-like protein 4 (ANGPTL4)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-2341",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2341,
+      "sentence": "Skeletal muscle angiopoietin-like protein 4 (ANGPTL4) levels during basal (solid) and insulin-stimulated (striped) conditions pre aerobic exercise + weight loss (AEX + WL) and post AEX + WL ( n = 35).",
+      "context_window": "robic exercise + weight loss (AEX + WL) and post AEX + WL ( n = 35). Baseline physical and metabolic characteristics, and the",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-2434",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2434,
+      "sentence": "Baseline physical and metabolic characteristics, and the gene expressions of men ( n = 18) and women ( n = 17), are presented in Table 2 .",
+      "context_window": "etabolic characteristics, and the gene expressions of men ( n = 18) and women ( n = 17), are presented in Table 2 . The men an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-2454",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2454,
+      "sentence": "Baseline physical and metabolic characteristics, and the gene expressions of men ( n = 18) and women ( n = 17), are presented in Table 2 .",
+      "context_window": "tics, and the gene expressions of men ( n = 18) and women ( n = 17), are presented in Table 2 . The men and women had comparab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-2605",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2605,
+      "sentence": "Men had higher body weight, FFM and VO 2 max than women (all p < 0.05).",
+      "context_window": "en had higher body weight, FFM and VO 2 max than women (all p < 0.05). The men had a significantly lower percent of body fat tha",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-2769",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2769,
+      "sentence": "Women had higher total cholesterol, HDL-cholesterol and LDL-cholesterol than the men ( p < 0.05).",
+      "context_window": "esterol, HDL-cholesterol and LDL-cholesterol than the men ( p < 0.05). Fasting glucose, insulin and serum ANGPTL4 were not signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-3062",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3062,
+      "sentence": "There are significant differences between men and women regardless of glucose tolerance status (NGT men ( n = 10) vs.",
+      "context_window": "and women regardless of glucose tolerance status (NGT men ( n = 10) vs. NGT women ( n = 10): 0.14 \u00b1 0.19 vs. 1.07 \u00b1 0.22, p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-3086",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3086,
+      "sentence": "NGT women ( n = 10): 0.14 \u00b1 0.19 vs.",
+      "context_window": "glucose tolerance status (NGT men ( n = 10) vs. NGT women ( n = 10): 0.14 \u00b1 0.19 vs. 1.07 \u00b1 0.22, p < 0.05) and (IGT men ( n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3095",
+      "claim_type": "mean_sd",
+      "raw_text": "0.14 \u00b1 0.19",
+      "numeric_values": [
+        0.14,
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3095,
+      "sentence": "NGT women ( n = 10): 0.14 \u00b1 0.19 vs.",
+      "context_window": "olerance status (NGT men ( n = 10) vs. NGT women ( n = 10): 0.14 \u00b1 0.19 vs. 1.07 \u00b1 0.22, p < 0.05) and (IGT men ( n = 8) vs. IGT wo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3111",
+      "claim_type": "mean_sd",
+      "raw_text": "1.07 \u00b1 0.22",
+      "numeric_values": [
+        1.07,
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3111,
+      "sentence": "1.07 \u00b1 0.22, p < 0.05) and (IGT men ( n = 8) vs.",
+      "context_window": "(NGT men ( n = 10) vs. NGT women ( n = 10): 0.14 \u00b1 0.19 vs. 1.07 \u00b1 0.22, p < 0.05) and (IGT men ( n = 8) vs. IGT women ( n = 7): 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-3124",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3124,
+      "sentence": "1.07 \u00b1 0.22, p < 0.05) and (IGT men ( n = 8) vs.",
+      "context_window": "= 10) vs. NGT women ( n = 10): 0.14 \u00b1 0.19 vs. 1.07 \u00b1 0.22, p < 0.05) and (IGT men ( n = 8) vs. IGT women ( n = 7): 0.63 \u00b1 0.13",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-3149",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3149,
+      "sentence": "1.07 \u00b1 0.22, p < 0.05) and (IGT men ( n = 8) vs.",
+      "context_window": "10): 0.14 \u00b1 0.19 vs. 1.07 \u00b1 0.22, p < 0.05) and (IGT men ( n = 8) vs. IGT women ( n = 7): 0.63 \u00b1 0.13 vs. 1.33 \u00b1 0.26, p < 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-3172",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3172,
+      "sentence": "IGT women ( n = 7): 0.63 \u00b1 0.13 vs.",
+      "context_window": ".07 \u00b1 0.22, p < 0.05) and (IGT men ( n = 8) vs. IGT women ( n = 7): 0.63 \u00b1 0.13 vs. 1.33 \u00b1 0.26, p < 0.05). PPAR\u03b1 mRNA was hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3180",
+      "claim_type": "mean_sd",
+      "raw_text": "0.63 \u00b1 0.13",
+      "numeric_values": [
+        0.63,
+        0.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3180,
+      "sentence": "IGT women ( n = 7): 0.63 \u00b1 0.13 vs.",
+      "context_window": "22, p < 0.05) and (IGT men ( n = 8) vs. IGT women ( n = 7): 0.63 \u00b1 0.13 vs. 1.33 \u00b1 0.26, p < 0.05). PPAR\u03b1 mRNA was higher in men th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3196",
+      "claim_type": "mean_sd",
+      "raw_text": "1.33 \u00b1 0.26",
+      "numeric_values": [
+        1.33,
+        0.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3196,
+      "sentence": "1.33 \u00b1 0.26, p < 0.05).",
+      "context_window": "d (IGT men ( n = 8) vs. IGT women ( n = 7): 0.63 \u00b1 0.13 vs. 1.33 \u00b1 0.26, p < 0.05). PPAR\u03b1 mRNA was higher in men than in women ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-3209",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3209,
+      "sentence": "1.33 \u00b1 0.26, p < 0.05).",
+      "context_window": "n = 8) vs. IGT women ( n = 7): 0.63 \u00b1 0.13 vs. 1.33 \u00b1 0.26, p < 0.05). PPAR\u03b1 mRNA was higher in men than in women ( p \u02c2 0.01) (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3372",
+      "claim_type": "mean_sd",
+      "raw_text": "0.507 \u00b1 0.119",
+      "numeric_values": [
+        0.507,
+        0.119
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3372,
+      "sentence": "There was no significant change in skeletal muscle ANGPTL4 after AEX + WL in men (0.507 \u00b1 0.119 vs.",
+      "context_window": "nt change in skeletal muscle ANGPTL4 after AEX + WL in men (0.507 \u00b1 0.119 vs. 0.493 \u00b1 0.095 AU) or women (1.174 \u00b1 0.167 vs. 1.307 \u00b1 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3390",
+      "claim_type": "mean_sd",
+      "raw_text": "0.493 \u00b1 0.095",
+      "numeric_values": [
+        0.493,
+        0.095
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3390,
+      "sentence": "0.493 \u00b1 0.095 AU) or women (1.174 \u00b1 0.167 vs.",
+      "context_window": "tal muscle ANGPTL4 after AEX + WL in men (0.507 \u00b1 0.119 vs. 0.493 \u00b1 0.095 AU) or women (1.174 \u00b1 0.167 vs. 1.307 \u00b1 0.244 AU). In addit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3418",
+      "claim_type": "mean_sd",
+      "raw_text": "1.174 \u00b1 0.167",
+      "numeric_values": [
+        1.174,
+        0.167
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3418,
+      "sentence": "0.493 \u00b1 0.095 AU) or women (1.174 \u00b1 0.167 vs.",
+      "context_window": "+ WL in men (0.507 \u00b1 0.119 vs. 0.493 \u00b1 0.095 AU) or women (1.174 \u00b1 0.167 vs. 1.307 \u00b1 0.244 AU). In addition, there were no significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3436",
+      "claim_type": "mean_sd",
+      "raw_text": "1.307 \u00b1 0.244",
+      "numeric_values": [
+        1.307,
+        0.244
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3436,
+      "sentence": "1.307 \u00b1 0.244 AU).",
+      "context_window": "7 \u00b1 0.119 vs. 0.493 \u00b1 0.095 AU) or women (1.174 \u00b1 0.167 vs. 1.307 \u00b1 0.244 AU). In addition, there were no significant changes in seru",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3527",
+      "claim_type": "mean_sd",
+      "raw_text": "343.8 \u00b1 48.0",
+      "numeric_values": [
+        343.8,
+        48.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3527,
+      "sentence": "In addition, there were no significant changes in serum ANGPTL4 in men (343.8 \u00b1 48.0 vs.",
+      "context_window": "there were no significant changes in serum ANGPTL4 in men (343.8 \u00b1 48.0 vs. 372.3 \u00b1 70.4 pg/mL) or women (374.3 \u00b1 71.4 vs. 450.5 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3544",
+      "claim_type": "mean_sd",
+      "raw_text": "372.3 \u00b1 70.4",
+      "numeric_values": [
+        372.3,
+        70.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3544,
+      "sentence": "372.3 \u00b1 70.4 pg/mL) or women (374.3 \u00b1 71.4 vs.",
+      "context_window": "gnificant changes in serum ANGPTL4 in men (343.8 \u00b1 48.0 vs. 372.3 \u00b1 70.4 pg/mL) or women (374.3 \u00b1 71.4 vs. 450.5 \u00b1 94.4 pg/mL). Com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3574",
+      "claim_type": "mean_sd",
+      "raw_text": "374.3 \u00b1 71.4",
+      "numeric_values": [
+        374.3,
+        71.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3574,
+      "sentence": "372.3 \u00b1 70.4 pg/mL) or women (374.3 \u00b1 71.4 vs.",
+      "context_window": "PTL4 in men (343.8 \u00b1 48.0 vs. 372.3 \u00b1 70.4 pg/mL) or women (374.3 \u00b1 71.4 vs. 450.5 \u00b1 94.4 pg/mL). Comparison of physical and metabo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-msd-3591",
+      "claim_type": "mean_sd",
+      "raw_text": "450.5 \u00b1 94.4",
+      "numeric_values": [
+        450.5,
+        94.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3591,
+      "sentence": "450.5 \u00b1 94.4 pg/mL).",
+      "context_window": "8 \u00b1 48.0 vs. 372.3 \u00b1 70.4 pg/mL) or women (374.3 \u00b1 71.4 vs. 450.5 \u00b1 94.4 pg/mL). Comparison of physical and metabolic characteristi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-3700",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3700,
+      "sentence": "Comparison of physical and metabolic characteristics and gene expression between men ( n = 18) and women ( n = 17) before the intervention.",
+      "context_window": "metabolic characteristics and gene expression between men ( n = 18) and women ( n = 17) before the intervention. Values are m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-3720",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3720,
+      "sentence": "Comparison of physical and metabolic characteristics and gene expression between men ( n = 18) and women ( n = 17) before the intervention.",
+      "context_window": "stics and gene expression between men ( n = 18) and women ( n = 17) before the intervention. Values are mean \u00b1 SEM. ( A ) Re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-3871",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3871,
+      "sentence": "Values are mean \u00b1 SEM.\n\n( A ) Relative skeletal muscle ANGPLT4 mRNA expression at baseline (pre AEX + WL) in women ( n = 17) and men ( n = 18) ( p \u02c2 0.01, between groups) and ( B ) relative skeletal muscle PPAR\u03b1 mRNA expression at in women ( n = 8) and men ( n = 9), (* p < 0.05, between groups).",
+      "context_window": "GPLT4 mRNA expression at baseline (pre AEX + WL) in women ( n = 17) and men ( n = 18) ( p \u02c2 0.01, between groups) and ( B ) re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-3889",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3889,
+      "sentence": "Values are mean \u00b1 SEM.\n\n( A ) Relative skeletal muscle ANGPLT4 mRNA expression at baseline (pre AEX + WL) in women ( n = 17) and men ( n = 18) ( p \u02c2 0.01, between groups) and ( B ) relative skeletal muscle PPAR\u03b1 mRNA expression at in women ( n = 8) and men ( n = 9), (* p < 0.05, between groups).",
+      "context_window": "ion at baseline (pre AEX + WL) in women ( n = 17) and men ( n = 18) ( p \u02c2 0.01, between groups) and ( B ) relative skeletal mu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-3996",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3996,
+      "sentence": "Values are mean \u00b1 SEM.\n\n( A ) Relative skeletal muscle ANGPLT4 mRNA expression at baseline (pre AEX + WL) in women ( n = 17) and men ( n = 18) ( p \u02c2 0.01, between groups) and ( B ) relative skeletal muscle PPAR\u03b1 mRNA expression at in women ( n = 8) and men ( n = 9), (* p < 0.05, between groups).",
+      "context_window": "elative skeletal muscle PPAR\u03b1 mRNA expression at in women ( n = 8) and men ( n = 9), (* p < 0.05, between groups). Skeletal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-4013",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4013,
+      "sentence": "Values are mean \u00b1 SEM.\n\n( A ) Relative skeletal muscle ANGPLT4 mRNA expression at baseline (pre AEX + WL) in women ( n = 17) and men ( n = 18) ( p \u02c2 0.01, between groups) and ( B ) relative skeletal muscle PPAR\u03b1 mRNA expression at in women ( n = 8) and men ( n = 9), (* p < 0.05, between groups).",
+      "context_window": "muscle PPAR\u03b1 mRNA expression at in women ( n = 8) and men ( n = 9), (* p < 0.05, between groups). Skeletal muscle ANGPTL4 mR",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-4024",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4024,
+      "sentence": "Values are mean \u00b1 SEM.\n\n( A ) Relative skeletal muscle ANGPLT4 mRNA expression at baseline (pre AEX + WL) in women ( n = 17) and men ( n = 18) ( p \u02c2 0.01, between groups) and ( B ) relative skeletal muscle PPAR\u03b1 mRNA expression at in women ( n = 8) and men ( n = 9), (* p < 0.05, between groups).",
+      "context_window": "\u03b1 mRNA expression at in women ( n = 8) and men ( n = 9), (* p < 0.05, between groups). Skeletal muscle ANGPTL4 mRNA was associa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-4145",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4145,
+      "sentence": "Skeletal muscle ANGPTL4 mRNA was associated with serum ANGPTL4 in the total group (r = 0.41, p < 0.05, Figure 3 ).",
+      "context_window": "associated with serum ANGPTL4 in the total group (r = 0.41, p < 0.05, Figure 3 ). Muscle ANGPTL4 was inversely correlated with V",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-4233",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4233,
+      "sentence": "Muscle ANGPTL4 was inversely correlated with VO 2 max (r = -0.50, p < 0.005; Figure 4 ).",
+      "context_window": "ANGPTL4 was inversely correlated with VO 2 max (r = -0.50, p < 0.005; Figure 4 ). Basal ANGPTL4 mRNA levels were positively asso",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-4565",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4565,
+      "sentence": "Basal PPAR\u03b1 mRNA level was negatively associated HDL (r = -0.55, p = 0.027).",
+      "context_window": "PPAR\u03b1 mRNA level was negatively associated HDL (r = -0.55, p = 0.027). Muscle ANGPTL4 was associated with M, only when expressed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-4694",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4694,
+      "sentence": "Muscle ANGPTL4 was associated with M, only when expressed per FFM ( Figure 5 ), prior to the intervention (r = 0.38, p < 0.05, Table 3 ), but was not associated with insulin sensitivity (M/I).",
+      "context_window": "per FFM ( Figure 5 ), prior to the intervention (r = 0.38, p < 0.05, Table 3 ), but was not associated with insulin sensitivity",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-4979",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4979,
+      "sentence": "Skeletal muscle ANGPTL4 tended to be associated with muscle PPAR\u03b1 mRNA in men (r = 0.62, p = 0.08) and women (r = 0.68, p = 0.096).",
+      "context_window": "d to be associated with muscle PPAR\u03b1 mRNA in men (r = 0.62, p = 0.08) and women (r = 0.68, p = 0.096). Serum ANGPTL4 was associa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-5010",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.096",
+      "numeric_values": [
+        0.096
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5010,
+      "sentence": "Skeletal muscle ANGPTL4 tended to be associated with muscle PPAR\u03b1 mRNA in men (r = 0.62, p = 0.08) and women (r = 0.68, p = 0.096).",
+      "context_window": "PPAR\u03b1 mRNA in men (r = 0.62, p = 0.08) and women (r = 0.68, p = 0.096). Serum ANGPTL4 was associated with BMI (r = 0.46, p < 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-5071",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5071,
+      "sentence": "Serum ANGPTL4 was associated with BMI (r = 0.46, p < 0.05), percent body fat (r = 0.38, p < 0.05) and fat mass (r = 0.46, p < 0.05).",
+      "context_window": "= 0.096). Serum ANGPTL4 was associated with BMI (r = 0.46, p < 0.05), percent body fat (r = 0.38, p < 0.05) and fat mass (r = 0",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-5110",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5110,
+      "sentence": "Serum ANGPTL4 was associated with BMI (r = 0.46, p < 0.05), percent body fat (r = 0.38, p < 0.05) and fat mass (r = 0.46, p < 0.05).",
+      "context_window": "with BMI (r = 0.46, p < 0.05), percent body fat (r = 0.38, p < 0.05) and fat mass (r = 0.46, p < 0.05). Relationship between m",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-5144",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5144,
+      "sentence": "Serum ANGPTL4 was associated with BMI (r = 0.46, p < 0.05), percent body fat (r = 0.38, p < 0.05) and fat mass (r = 0.46, p < 0.05).",
+      "context_window": "rcent body fat (r = 0.38, p < 0.05) and fat mass (r = 0.46, p < 0.05). Relationship between muscle ANGPTL4 mRNA level and serum",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-5235",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5235,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and serum ANGPTL4 level (Total: n = 30, Women \u25cb: n = 15, Men \u25cf: n = 15; r = 0.41, p < 0.05) before the intervention.",
+      "context_window": "n muscle ANGPTL4 mRNA level and serum ANGPTL4 level (Total: n = 30, Women \u25cb: n = 15, Men \u25cf: n = 15; r = 0.41, p < 0.05) before",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-5252",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5252,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and serum ANGPTL4 level (Total: n = 30, Women \u25cb: n = 15, Men \u25cf: n = 15; r = 0.41, p < 0.05) before the intervention.",
+      "context_window": "mRNA level and serum ANGPTL4 level (Total: n = 30, Women \u25cb: n = 15, Men \u25cf: n = 15; r = 0.41, p < 0.05) before the intervention",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-5267",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5267,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and serum ANGPTL4 level (Total: n = 30, Women \u25cb: n = 15, Men \u25cf: n = 15; r = 0.41, p < 0.05) before the intervention.",
+      "context_window": "serum ANGPTL4 level (Total: n = 30, Women \u25cb: n = 15, Men \u25cf: n = 15; r = 0.41, p < 0.05) before the intervention. Relationship",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-5285",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5285,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and serum ANGPTL4 level (Total: n = 30, Women \u25cb: n = 15, Men \u25cf: n = 15; r = 0.41, p < 0.05) before the intervention.",
+      "context_window": "l (Total: n = 30, Women \u25cb: n = 15, Men \u25cf: n = 15; r = 0.41, p < 0.05) before the intervention. Relationship between muscle ANGP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-5389",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5389,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and VO 2 max (Total: n = 35, Women \u25cb: n = 17, Men \u25cf: n = 18; r = 0.57, p < 0.001) at baseline.",
+      "context_window": "ship between muscle ANGPTL4 mRNA level and VO 2 max (Total: n = 35, Women \u25cb: n = 17, Men \u25cf: n = 18; r = 0.57, p < 0.001) at ba",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-5406",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5406,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and VO 2 max (Total: n = 35, Women \u25cb: n = 17, Men \u25cf: n = 18; r = 0.57, p < 0.001) at baseline.",
+      "context_window": "le ANGPTL4 mRNA level and VO 2 max (Total: n = 35, Women \u25cb: n = 17, Men \u25cf: n = 18; r = 0.57, p < 0.001) at baseline. Relation",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-5421",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5421,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and VO 2 max (Total: n = 35, Women \u25cb: n = 17, Men \u25cf: n = 18; r = 0.57, p < 0.001) at baseline.",
+      "context_window": "level and VO 2 max (Total: n = 35, Women \u25cb: n = 17, Men \u25cf: n = 18; r = 0.57, p < 0.001) at baseline. Relationship between sk",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-5439",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5439,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and VO 2 max (Total: n = 35, Women \u25cb: n = 17, Men \u25cf: n = 18; r = 0.57, p < 0.001) at baseline.",
+      "context_window": "x (Total: n = 35, Women \u25cb: n = 17, Men \u25cf: n = 18; r = 0.57, p < 0.001) at baseline. Relationship between skeletal muscle ANGPTL4",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-5623",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5623,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and glucose utilization (M) (Total: n = 32, Women \u25cb: n = 17, Men \u25cf: n = 15; r = 0.38, p < 0.05) at baseline.",
+      "context_window": "scle ANGPTL4 mRNA level and glucose utilization (M) (Total: n = 32, Women \u25cb: n = 17, Men \u25cf: n = 15; r = 0.38, p < 0.05) at bas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-5640",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5640,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and glucose utilization (M) (Total: n = 32, Women \u25cb: n = 17, Men \u25cf: n = 15; r = 0.38, p < 0.05) at baseline.",
+      "context_window": "level and glucose utilization (M) (Total: n = 32, Women \u25cb: n = 17, Men \u25cf: n = 15; r = 0.38, p < 0.05) at baseline.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-n-5655",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5655,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and glucose utilization (M) (Total: n = 32, Women \u25cb: n = 17, Men \u25cf: n = 15; r = 0.38, p < 0.05) at baseline.",
+      "context_window": "ose utilization (M) (Total: n = 32, Women \u25cb: n = 17, Men \u25cf: n = 15; r = 0.38, p < 0.05) at baseline.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-p-5673",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5673,
+      "sentence": "Relationship between muscle ANGPTL4 mRNA level and glucose utilization (M) (Total: n = 32, Women \u25cb: n = 17, Men \u25cf: n = 15; r = 0.38, p < 0.05) at baseline.",
+      "context_window": ") (Total: n = 32, Women \u25cb: n = 17, Men \u25cf: n = 15; r = 0.38, p < 0.05) at baseline.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7570075_skeletal_muscle_angiopoietin_like_protein_4_and_glucose_meta-u-1684",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1684,
+      "sentence": "One study, conducted in young obese adults, demonstrated an increase in serum ANGPTL4 after both 12 weeks of exercise alone or diet alone, but did not show any change in serum ANGPTL4 after the combined diet and exercise program [ 23 ].",
+      "context_window": "dults, demonstrated an increase in serum ANGPTL4 after both 12 weeks of exercise alone or diet alone, but did not show any chang",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

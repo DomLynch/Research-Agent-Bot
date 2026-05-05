@@ -1,0 +1,1505 @@
+{
+  "paper_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro",
+  "doi": "10.3390/ijerph20032082",
+  "extracted_at": "2026-05-05T22:38:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 4,
+    "mean_sd": 14,
+    "p_value": 46,
+    "percentage": 11,
+    "unit_value": 7
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-n-369",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 369,
+      "sentence": "Twenty-nine healthy male volunteers were divided into a control group (CG; n = 14) and an experimental group (EG; n = 15).",
+      "context_window": "lthy male volunteers were divided into a control group (CG; n = 14) and an experimental group (EG; n = 15). EG experienced nin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-n-408",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 408,
+      "sentence": "Twenty-nine healthy male volunteers were divided into a control group (CG; n = 14) and an experimental group (EG; n = 15).",
+      "context_window": "a control group (CG; n = 14) and an experimental group (EG; n = 15). EG experienced nine sessions (S) of intervallic exposure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-496",
+      "claim_type": "mean_sd",
+      "raw_text": "100 \u00b1 2",
+      "numeric_values": [
+        100.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 496,
+      "sentence": "EG experienced nine sessions (S) of intervallic exposure to high temperatures (100 \u00b1 2 \u00b0C), whereas CG was exposed to ambient temperatures (22 \u00b1 2 \u00b0C).",
+      "context_window": "sessions (S) of intervallic exposure to high temperatures (100 \u00b1 2 \u00b0C), whereas CG was exposed to ambient temperatures (22 \u00b1 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-557",
+      "claim_type": "mean_sd",
+      "raw_text": "22 \u00b1 2",
+      "numeric_values": [
+        22.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 557,
+      "sentence": "EG experienced nine sessions (S) of intervallic exposure to high temperatures (100 \u00b1 2 \u00b0C), whereas CG was exposed to ambient temperatures (22 \u00b1 2 \u00b0C).",
+      "context_window": "00 \u00b1 2 \u00b0C), whereas CG was exposed to ambient temperatures (22 \u00b1 2 \u00b0C). HR, Tskin, and Tcore were monitored in S1, 4, 5, 8, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-698",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 698,
+      "sentence": "An important increase in HR occurred in the S4 compared to the rest ( p < 0.05) in EG.",
+      "context_window": "nt increase in HR occurred in the S4 compared to the rest ( p < 0.05) in EG. A lower HR was discovered in S8 and S9 compared to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-799",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 799,
+      "sentence": "A lower HR was discovered in S8 and S9 compared to S4 and in S9 in relation to S1 ( p < 0.05) in EG.",
+      "context_window": "d in S8 and S9 compared to S4 and in S9 in relation to S1 ( p < 0.05) in EG. EG experiences a gradual decrease in Tcore and Tski",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-969",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 969,
+      "sentence": "EG experiences a gradual decrease in Tcore and Tskin, which was detected throughout the assessments, although it was only significant in the S8 and S9 ( p < 0.05).",
+      "context_window": "sments, although it was only significant in the S8 and S9 ( p < 0.05). Interval exposure to heat at 100 \u00b1 2 \u00b0C elicits stress on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-1009",
+      "claim_type": "mean_sd",
+      "raw_text": "100 \u00b1 2",
+      "numeric_values": [
+        100.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1009,
+      "sentence": "Interval exposure to heat at 100 \u00b1 2 \u00b0C elicits stress on the human organism, fundamentally increasing Tcore, Tskin, and FC.",
+      "context_window": "in the S8 and S9 ( p < 0.05). Interval exposure to heat at 100 \u00b1 2 \u00b0C elicits stress on the human organism, fundamentally incr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-1210",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1210,
+      "sentence": "They usually consist either of a combination of exercise in heat at 25-35 \u00b0C and at an intensity of 50-60% of VO 2max or a heat exposure between 40 and 50 \u00b0C after exercise [ 9 ].",
+      "context_window": "n of exercise in heat at 25-35 \u00b0C and at an intensity of 50-60% of VO 2max or a heat exposure between 40 and 50 \u00b0C after ex",
+      "claim_role": "background",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-1534",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1534,
+      "sentence": "These protocols are based on a passive heat exposure in a Finnish sauna or heat chamber at 50-90 \u00b0C and 20-30% relative humidity (RH) [ 10 ].",
+      "context_window": "osure in a Finnish sauna or heat chamber at 50-90 \u00b0C and 20-30% relative humidity (RH) [ 10 ]. Heat stress in the absence o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-2314",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2314,
+      "sentence": "Previous research has reported that passive HA at high temperatures (<70 \u00b0C; 20-30% RH) induces similar adaptations to active HA [ 16 , 17 ].",
+      "context_window": "s reported that passive HA at high temperatures (<70 \u00b0C; 20-30% RH) induces similar adaptations to active HA [ 16 , 17 ]. H",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-2916",
+      "claim_type": "mean_sd",
+      "raw_text": "100 \u00b1 2",
+      "numeric_values": [
+        100.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2916,
+      "sentence": "Therefore, the objective is to assess the evolution of core temperature (Tcore), skin temperature (Tskin), and HR during interval exposure to sweltering conditions in a sauna at 100 \u00b1 2 \u00b0C.",
+      "context_window": "ng interval exposure to sweltering conditions in a sauna at 100 \u00b1 2 \u00b0C.",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-n-216",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 216,
+      "sentence": "The participants were randomly divided into the Control Group (CG; n = 14) and the Experimental Group (EG; n = 15).",
+      "context_window": "ticipants were randomly divided into the Control Group (CG; n = 14) and the Experimental Group (EG; n = 15). This investigatio",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-n-256",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 256,
+      "sentence": "The participants were randomly divided into the Control Group (CG; n = 14) and the Experimental Group (EG; n = 15).",
+      "context_window": "Control Group (CG; n = 14) and the Experimental Group (EG; n = 15). This investigation was approved by the bioethics committe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-922",
+      "claim_type": "mean_sd",
+      "raw_text": "100 \u00b1 2",
+      "numeric_values": [
+        100.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 922,
+      "sentence": "EG underwent 9 sessions (S) (3 Weeks) of heat exposure in sauna at 100 \u00b1 2 \u00b0C and 20-30% RH, whereas CG performed the same protocol but in a laboratory at 22 \u00b0C (40-50% RH).",
+      "context_window": "rwent 9 sessions (S) (3 Weeks) of heat exposure in sauna at 100 \u00b1 2 \u00b0C and 20-30% RH, whereas CG performed the same protocol bu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-940",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 940,
+      "sentence": "EG underwent 9 sessions (S) (3 Weeks) of heat exposure in sauna at 100 \u00b1 2 \u00b0C and 20-30% RH, whereas CG performed the same protocol but in a laboratory at 22 \u00b0C (40-50% RH).",
+      "context_window": "S) (3 Weeks) of heat exposure in sauna at 100 \u00b1 2 \u00b0C and 20-30% RH, whereas CG performed the same protocol but in a laborat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-1020",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1020,
+      "sentence": "EG underwent 9 sessions (S) (3 Weeks) of heat exposure in sauna at 100 \u00b1 2 \u00b0C and 20-30% RH, whereas CG performed the same protocol but in a laboratory at 22 \u00b0C (40-50% RH).",
+      "context_window": "erformed the same protocol but in a laboratory at 22 \u00b0C (40-50% RH). These sessions were conducted from 9 A.M. to 14 P.M. a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-1554",
+      "claim_type": "mean_sd",
+      "raw_text": "100 \u00b1 2",
+      "numeric_values": [
+        100.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1554,
+      "sentence": "These sessions comprise a passive interval exposure of 3 sets of 10 min at 100 \u00b1 2 \u00b0C (20-30% RH) with an intra-set recovery of 5 min at laboratory temperature (22 \u00b0C, 40-50% RH).",
+      "context_window": "comprise a passive interval exposure of 3 sets of 10 min at 100 \u00b1 2 \u00b0C (20-30% RH) with an intra-set recovery of 5 min at labor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-1569",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1569,
+      "sentence": "These sessions comprise a passive interval exposure of 3 sets of 10 min at 100 \u00b1 2 \u00b0C (20-30% RH) with an intra-set recovery of 5 min at laboratory temperature (22 \u00b0C, 40-50% RH).",
+      "context_window": "ive interval exposure of 3 sets of 10 min at 100 \u00b1 2 \u00b0C (20-30% RH) with an intra-set recovery of 5 min at laboratory tempe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-1650",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1650,
+      "sentence": "These sessions comprise a passive interval exposure of 3 sets of 10 min at 100 \u00b1 2 \u00b0C (20-30% RH) with an intra-set recovery of 5 min at laboratory temperature (22 \u00b0C, 40-50% RH).",
+      "context_window": "-set recovery of 5 min at laboratory temperature (22 \u00b0C, 40-50% RH). This protocol was similar to the previous one conducte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-1802",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1802,
+      "sentence": "CG experienced laboratory temperature (22 \u00b0C, 40-50% RH) simultaneously with the EG.",
+      "context_window": "9) [ 18 ]. CG experienced laboratory temperature (22 \u00b0C, 40-50% RH) simultaneously with the EG. Every volunteer remained in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-4744",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4744,
+      "sentence": "A p \u2264 0.05 was considered statistically significant.",
+      "context_window": "with the Wilcoxon test for paired samples in both groups. A p \u2264 0.05 was considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-178",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 178,
+      "sentence": "Tcore and Tskin during S1, S4, S5, S8, and S9 of this study.\n\n* Changes from the same parameter of sets 1 ( p < 0.05); ** Differences in regard to the same parameter of set 1. \u2020 Variations in connection with the same parameter of set 2 ( p < 0.05). \u2020\u2020 Alterations in relation to the same parameter of set 2 ( p < 0.01); \u00a5 Differences with reference to the same parameter of the S1 ( p < 0.05); \u00a5\u00a5 Contrasts with respect to the same parameter of the S1 ( p < 0.01); # Changes with the same parameter of the S4 ( p < 0.05); \u0192 Differences with the same parameter of the S5 ( p < 0.05); \u00a7 Divergences with the equivalent parameter of the S8 ( p < 0.05).",
+      "context_window": "this study. * Changes from the same parameter of sets 1 ( p < 0.05); ** Differences in regard to the same parameter of set 1.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-308",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 308,
+      "sentence": "Tcore and Tskin during S1, S4, S5, S8, and S9 of this study.\n\n* Changes from the same parameter of sets 1 ( p < 0.05); ** Differences in regard to the same parameter of set 1. \u2020 Variations in connection with the same parameter of set 2 ( p < 0.05). \u2020\u2020 Alterations in relation to the same parameter of set 2 ( p < 0.01); \u00a5 Differences with reference to the same parameter of the S1 ( p < 0.05); \u00a5\u00a5 Contrasts with respect to the same parameter of the S1 ( p < 0.01); # Changes with the same parameter of the S4 ( p < 0.05); \u0192 Differences with the same parameter of the S5 ( p < 0.05); \u00a7 Divergences with the equivalent parameter of the S8 ( p < 0.05).",
+      "context_window": "Variations in connection with the same parameter of set 2 ( p < 0.05). \u2020\u2020 Alterations in relation to the same parameter of set 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-379",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 379,
+      "sentence": "Tcore and Tskin during S1, S4, S5, S8, and S9 of this study.\n\n* Changes from the same parameter of sets 1 ( p < 0.05); ** Differences in regard to the same parameter of set 1. \u2020 Variations in connection with the same parameter of set 2 ( p < 0.05). \u2020\u2020 Alterations in relation to the same parameter of set 2 ( p < 0.01); \u00a5 Differences with reference to the same parameter of the S1 ( p < 0.05); \u00a5\u00a5 Contrasts with respect to the same parameter of the S1 ( p < 0.01); # Changes with the same parameter of the S4 ( p < 0.05); \u0192 Differences with the same parameter of the S5 ( p < 0.05); \u00a7 Divergences with the equivalent parameter of the S8 ( p < 0.05).",
+      "context_window": "\u2020\u2020 Alterations in relation to the same parameter of set 2 ( p < 0.01); \u00a5 Differences with reference to the same parameter of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-453",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 453,
+      "sentence": "Tcore and Tskin during S1, S4, S5, S8, and S9 of this study.\n\n* Changes from the same parameter of sets 1 ( p < 0.05); ** Differences in regard to the same parameter of set 1. \u2020 Variations in connection with the same parameter of set 2 ( p < 0.05). \u2020\u2020 Alterations in relation to the same parameter of set 2 ( p < 0.01); \u00a5 Differences with reference to the same parameter of the S1 ( p < 0.05); \u00a5\u00a5 Contrasts with respect to the same parameter of the S1 ( p < 0.01); # Changes with the same parameter of the S4 ( p < 0.05); \u0192 Differences with the same parameter of the S5 ( p < 0.05); \u00a7 Divergences with the equivalent parameter of the S8 ( p < 0.05).",
+      "context_window": "ifferences with reference to the same parameter of the S1 ( p < 0.05); \u00a5\u00a5 Contrasts with respect to the same parameter of the S1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-524",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 524,
+      "sentence": "Tcore and Tskin during S1, S4, S5, S8, and S9 of this study.\n\n* Changes from the same parameter of sets 1 ( p < 0.05); ** Differences in regard to the same parameter of set 1. \u2020 Variations in connection with the same parameter of set 2 ( p < 0.05). \u2020\u2020 Alterations in relation to the same parameter of set 2 ( p < 0.01); \u00a5 Differences with reference to the same parameter of the S1 ( p < 0.05); \u00a5\u00a5 Contrasts with respect to the same parameter of the S1 ( p < 0.01); # Changes with the same parameter of the S4 ( p < 0.05); \u0192 Differences with the same parameter of the S5 ( p < 0.05); \u00a7 Divergences with the equivalent parameter of the S8 ( p < 0.05).",
+      "context_window": "\u00a5\u00a5 Contrasts with respect to the same parameter of the S1 ( p < 0.01); # Changes with the same parameter of the S4 ( p < 0.05);",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-581",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 581,
+      "sentence": "Tcore and Tskin during S1, S4, S5, S8, and S9 of this study.\n\n* Changes from the same parameter of sets 1 ( p < 0.05); ** Differences in regard to the same parameter of set 1. \u2020 Variations in connection with the same parameter of set 2 ( p < 0.05). \u2020\u2020 Alterations in relation to the same parameter of set 2 ( p < 0.01); \u00a5 Differences with reference to the same parameter of the S1 ( p < 0.05); \u00a5\u00a5 Contrasts with respect to the same parameter of the S1 ( p < 0.01); # Changes with the same parameter of the S4 ( p < 0.05); \u0192 Differences with the same parameter of the S5 ( p < 0.05); \u00a7 Divergences with the equivalent parameter of the S8 ( p < 0.05).",
+      "context_window": "( p < 0.01); # Changes with the same parameter of the S4 ( p < 0.05); \u0192 Differences with the same parameter of the S5 ( p < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-642",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 642,
+      "sentence": "Tcore and Tskin during S1, S4, S5, S8, and S9 of this study.\n\n* Changes from the same parameter of sets 1 ( p < 0.05); ** Differences in regard to the same parameter of set 1. \u2020 Variations in connection with the same parameter of set 2 ( p < 0.05). \u2020\u2020 Alterations in relation to the same parameter of set 2 ( p < 0.01); \u00a5 Differences with reference to the same parameter of the S1 ( p < 0.05); \u00a5\u00a5 Contrasts with respect to the same parameter of the S1 ( p < 0.01); # Changes with the same parameter of the S4 ( p < 0.05); \u0192 Differences with the same parameter of the S5 ( p < 0.05); \u00a7 Divergences with the equivalent parameter of the S8 ( p < 0.05).",
+      "context_window": "< 0.05); \u0192 Differences with the same parameter of the S5 ( p < 0.05); \u00a7 Divergences with the equivalent parameter of the S8 ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-709",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 709,
+      "sentence": "Tcore and Tskin during S1, S4, S5, S8, and S9 of this study.\n\n* Changes from the same parameter of sets 1 ( p < 0.05); ** Differences in regard to the same parameter of set 1. \u2020 Variations in connection with the same parameter of set 2 ( p < 0.05). \u2020\u2020 Alterations in relation to the same parameter of set 2 ( p < 0.01); \u00a5 Differences with reference to the same parameter of the S1 ( p < 0.05); \u00a5\u00a5 Contrasts with respect to the same parameter of the S1 ( p < 0.01); # Changes with the same parameter of the S4 ( p < 0.05); \u0192 Differences with the same parameter of the S5 ( p < 0.05); \u00a7 Divergences with the equivalent parameter of the S8 ( p < 0.05).",
+      "context_window": "5); \u00a7 Divergences with the equivalent parameter of the S8 ( p < 0.05). S1 = Session 1; S4 = Session 4; S5 = Session 5; S8 = Sess",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-864",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 864,
+      "sentence": "Tcore is higher at the beginning of S1 and S9 compared to S8 ( p < 0.05).",
+      "context_window": "re is higher at the beginning of S1 and S9 compared to S8 ( p < 0.05). The subsequent Tcore to set 2 in S9 is lower than in S4 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-933",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 933,
+      "sentence": "The subsequent Tcore to set 2 in S9 is lower than in S4 ( p < 0.05), whereas the prior one to set 3 in S3 is inferior to that in S1 ( p < 0.05).",
+      "context_window": ". The subsequent Tcore to set 2 in S9 is lower than in S4 ( p < 0.05), whereas the prior one to set 3 in S3 is inferior to that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1009",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1009,
+      "sentence": "The subsequent Tcore to set 2 in S9 is lower than in S4 ( p < 0.05), whereas the prior one to set 3 in S3 is inferior to that in S1 ( p < 0.05).",
+      "context_window": "as the prior one to set 3 in S3 is inferior to that in S1 ( p < 0.05). A higher Tskin was discovered at the beginning of S1 with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1094",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1094,
+      "sentence": "A higher Tskin was discovered at the beginning of S1 with respect to S5 ( p < 0.05), S8 ( p < 0.01), and S9 ( p < 0.05).",
+      "context_window": "was discovered at the beginning of S1 with respect to S5 ( p < 0.05), S8 ( p < 0.01), and S9 ( p < 0.05). Likewise, previously",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1110",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1110,
+      "sentence": "A higher Tskin was discovered at the beginning of S1 with respect to S5 ( p < 0.05), S8 ( p < 0.01), and S9 ( p < 0.05).",
+      "context_window": "at the beginning of S1 with respect to S5 ( p < 0.05), S8 ( p < 0.01), and S9 ( p < 0.05). Likewise, previously to set 2 in S9,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1130",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1130,
+      "sentence": "A higher Tskin was discovered at the beginning of S1 with respect to S5 ( p < 0.05), S8 ( p < 0.01), and S9 ( p < 0.05).",
+      "context_window": "S1 with respect to S5 ( p < 0.05), S8 ( p < 0.01), and S9 ( p < 0.05). Likewise, previously to set 2 in S9, Tskin was massively",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1217",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1217,
+      "sentence": "Likewise, previously to set 2 in S9, Tskin was massively minor than in S1 ( p < 0.05).",
+      "context_window": "usly to set 2 in S9, Tskin was massively minor than in S1 ( p < 0.05). There were noteworthy differences between Tskin before an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1312",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1312,
+      "sentence": "There were noteworthy differences between Tskin before and after comparison to S4 ( p < 0.05).",
+      "context_window": "fferences between Tskin before and after comparison to S4 ( p < 0.05). Concerning intra-sets comparisons, Tcore raises in sets",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1460",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1460,
+      "sentence": "In S9, Tcore before set 2 ( p < 0.05) and pre-and-post set 3 were warmer than set 1 ( p < 0.01; p < 0.05).",
+      "context_window": "to set 1 in S1, S4, S5, and S8. In S9, Tcore before set 2 ( p < 0.05) and pre-and-post set 3 were warmer than set 1 ( p < 0.01;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1518",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1518,
+      "sentence": "In S9, Tcore before set 2 ( p < 0.05) and pre-and-post set 3 were warmer than set 1 ( p < 0.01; p < 0.05).",
+      "context_window": "( p < 0.05) and pre-and-post set 3 were warmer than set 1 ( p < 0.01; p < 0.05). There were pre-post variations in Tskin ( p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1528",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1528,
+      "sentence": "In S9, Tcore before set 2 ( p < 0.05) and pre-and-post set 3 were warmer than set 1 ( p < 0.01; p < 0.05).",
+      "context_window": ") and pre-and-post set 3 were warmer than set 1 ( p < 0.01; p < 0.05). There were pre-post variations in Tskin ( p < 0.05) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1582",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1582,
+      "sentence": "There were pre-post variations in Tskin ( p < 0.05) and Tcore ( p < 0.05) in every set of each session except for the pre-post set 3 Tcore of S1.",
+      "context_window": "0.01; p < 0.05). There were pre-post variations in Tskin ( p < 0.05) and Tcore ( p < 0.05) in every set of each session except",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-1604",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1604,
+      "sentence": "There were pre-post variations in Tskin ( p < 0.05) and Tcore ( p < 0.05) in every set of each session except for the pre-post set 3 Tcore of S1.",
+      "context_window": "e were pre-post variations in Tskin ( p < 0.05) and Tcore ( p < 0.05) in every set of each session except for the pre-post set 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-2158",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2158,
+      "sentence": "HR of EG and CG in S1, S4, S5, S8, and S9.\n\n* Differences with respect to the same parameter of S1 ( p < 0.05). \u2020 Differences in comparison to S4 ( p < 0.05). \u0192 Intra-session changes with respect to the same parameter of set 1 ( p < 0.05). \u00a5 Intra-session differences in comparison with the same value of set 2 ( p < 0.05).",
+      "context_window": ". * Differences with respect to the same parameter of S1 ( p < 0.05). \u2020 Differences in comparison to S4 ( p < 0.05). \u0192 Intra-se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-2205",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2205,
+      "sentence": "HR of EG and CG in S1, S4, S5, S8, and S9.\n\n* Differences with respect to the same parameter of S1 ( p < 0.05). \u2020 Differences in comparison to S4 ( p < 0.05). \u0192 Intra-session changes with respect to the same parameter of set 1 ( p < 0.05). \u00a5 Intra-session differences in comparison with the same value of set 2 ( p < 0.05).",
+      "context_window": "eter of S1 ( p < 0.05). \u2020 Differences in comparison to S4 ( p < 0.05). \u0192 Intra-session changes with respect to the same paramete",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-2286",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2286,
+      "sentence": "HR of EG and CG in S1, S4, S5, S8, and S9.\n\n* Differences with respect to the same parameter of S1 ( p < 0.05). \u2020 Differences in comparison to S4 ( p < 0.05). \u0192 Intra-session changes with respect to the same parameter of set 1 ( p < 0.05). \u00a5 Intra-session differences in comparison with the same value of set 2 ( p < 0.05).",
+      "context_window": "ssion changes with respect to the same parameter of set 1 ( p < 0.05). \u00a5 Intra-session differences in comparison with the same v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-2370",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2370,
+      "sentence": "HR of EG and CG in S1, S4, S5, S8, and S9.\n\n* Differences with respect to the same parameter of S1 ( p < 0.05). \u2020 Differences in comparison to S4 ( p < 0.05). \u0192 Intra-session changes with respect to the same parameter of set 1 ( p < 0.05). \u00a5 Intra-session differences in comparison with the same value of set 2 ( p < 0.05).",
+      "context_window": "on differences in comparison with the same value of set 2 ( p < 0.05). S1 = Session 1; S4 = Session 4; S5 = Session 5; S8 = Sess",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-2663",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2663,
+      "sentence": "HR R2 and HR 3 beat more rapidly than HR R1 in S1 ( p < 0.05).",
+      "context_window": "ery 3. HR R2 and HR 3 beat more rapidly than HR R1 in S1 ( p < 0.05). HR 1 from set 2 increased with respect to set 1 ( p < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-2724",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2724,
+      "sentence": "HR 1 from set 2 increased with respect to set 1 ( p < 0.05).",
+      "context_window": "< 0.05). HR 1 from set 2 increased with respect to set 1 ( p < 0.05). HR R1 of sets 2 and 3 accelerates in comparison with set",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-2802",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2802,
+      "sentence": "HR R1 of sets 2 and 3 accelerates in comparison with set 1 in S5 ( p < 0.05).",
+      "context_window": "f sets 2 and 3 accelerates in comparison with set 1 in S5 ( p < 0.05). A rise in HR 10 for set 3 is noticeable with respect to s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-2883",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2883,
+      "sentence": "A rise in HR 10 for set 3 is noticeable with respect to set 1 in S5 ( p < 0.05).",
+      "context_window": "HR 10 for set 3 is noticeable with respect to set 1 in S5 ( p < 0.05). Besides, HR 1 of set 3 suffered an increment in relation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-2962",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2962,
+      "sentence": "Besides, HR 1 of set 3 suffered an increment in relation to set 1 ( p < 0.05).",
+      "context_window": "HR 1 of set 3 suffered an increment in relation to set 1 ( p < 0.05). In S8, HR 5 of set 2 was quicker than in set 1 ( p < 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3022",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3022,
+      "sentence": "In S8, HR 5 of set 2 was quicker than in set 1 ( p < 0.05), and HR 1 , HR 5 , and HR 10 intensified in set 3 with respect to set 1 ( p < 0.05).",
+      "context_window": "p < 0.05). In S8, HR 5 of set 2 was quicker than in set 1 ( p < 0.05), and HR 1 , HR 5 , and HR 10 intensified in set 3 with res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3106",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3106,
+      "sentence": "In S8, HR 5 of set 2 was quicker than in set 1 ( p < 0.05), and HR 1 , HR 5 , and HR 10 intensified in set 3 with respect to set 1 ( p < 0.05).",
+      "context_window": "5 , and HR 10 intensified in set 3 with respect to set 1 ( p < 0.05). HR 10 of sets 2 and 3 were higher in comparison with set",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3184",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3184,
+      "sentence": "HR 10 of sets 2 and 3 were higher in comparison with set 1 in S9 ( p < 0.05).",
+      "context_window": "f sets 2 and 3 were higher in comparison with set 1 in S9 ( p < 0.05). HR 1 and HR 10 of set 1 in S4 were the most accelerated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3272",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3272,
+      "sentence": "HR 1 and HR 10 of set 1 in S4 were the most accelerated in the experiment ( p < 0.05).",
+      "context_window": "f set 1 in S4 were the most accelerated in the experiment ( p < 0.05). HR 5 of set 1 in S4 was swifter than in S1 and S9. Elsew",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3395",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3395,
+      "sentence": "Elsewhere, HR R1 of S4 was prompter than in S1, S5 and S9 ( p < 0.05).",
+      "context_window": "Elsewhere, HR R1 of S4 was prompter than in S1, S5 and S9 ( p < 0.05). Concerning set 2, HR 1 and HR 5 of S4 were the most rema",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3472",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3472,
+      "sentence": "Concerning set 2, HR 1 and HR 5 of S4 were the most remarkable ( p < 0.05).",
+      "context_window": "rning set 2, HR 1 and HR 5 of S4 were the most remarkable ( p < 0.05). Similarly, HR 5 of S4 surpasses S8 and S9 ( p < 0.05). HR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3527",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3527,
+      "sentence": "Similarly, HR 5 of S4 surpasses S8 and S9 ( p < 0.05).",
+      "context_window": "le ( p < 0.05). Similarly, HR 5 of S4 surpasses S8 and S9 ( p < 0.05). HR 10 of set 2 in S5 and S9 was significantly lower than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3600",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3600,
+      "sentence": "HR 10 of set 2 in S5 and S9 was significantly lower than S4 ( p < 0.05).",
+      "context_window": "10 of set 2 in S5 and S9 was significantly lower than S4 ( p < 0.05). No differences were reported in HR R2 between sessions.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3735",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3735,
+      "sentence": "Regarding set 3, a higher HR 1 in S4 appears with respect to S8 ( p < 0.05).",
+      "context_window": "ing set 3, a higher HR 1 in S4 appears with respect to S8 ( p < 0.05). There were differences in S4 in comparison to the other o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3826",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3826,
+      "sentence": "There were differences in S4 in comparison to the other ones in HR 5 of set 3 ( p < 0.05).",
+      "context_window": "es in S4 in comparison to the other ones in HR 5 of set 3 ( p < 0.05). Likewise, HR 10 of set 3 was lower in S1, S8, and S9 with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3911",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3911,
+      "sentence": "Likewise, HR 10 of set 3 was lower in S1, S8, and S9 with respect to S4 ( p < 0.05).",
+      "context_window": "0 of set 3 was lower in S1, S8, and S9 with respect to S4 ( p < 0.05). HR R3 in S4 exceeds S1, S8, and S9 ( p < 0.05). No cons",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-p-3960",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3960,
+      "sentence": "HR R3 in S4 exceeds S1, S8, and S9 ( p < 0.05).",
+      "context_window": "ct to S4 ( p < 0.05). HR R3 in S4 exceeds S1, S8, and S9 ( p < 0.05). No considerable statistical differences were detected in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-225",
+      "claim_type": "mean_sd",
+      "raw_text": "100 \u00b1 2",
+      "numeric_values": [
+        100.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 225,
+      "sentence": "Apparently, no evidence of a protocol where participants are exposed to 100 \u00b1 2 \u00b0C has been documented yet, so the novelty of this research lies here.",
+      "context_window": "no evidence of a protocol where participants are exposed to 100 \u00b1 2 \u00b0C has been documented yet, so the novelty of this research",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-857",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 857,
+      "sentence": "The rise in temperature is linearly related to the acceleration in HR, increasing by 40% due to a hotter heart temperature, whereas 60% results from the activity of the autonomic nervous system [ 21 ].",
+      "context_window": "s linearly related to the acceleration in HR, increasing by 40% due to a hotter heart temperature, whereas 60% results from",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-904",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 904,
+      "sentence": "The rise in temperature is linearly related to the acceleration in HR, increasing by 40% due to a hotter heart temperature, whereas 60% results from the activity of the autonomic nervous system [ 21 ].",
+      "context_window": "ncreasing by 40% due to a hotter heart temperature, whereas 60% results from the activity of the autonomic nervous system [",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-u-1846",
+      "claim_type": "unit_value",
+      "raw_text": "10 bpm",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "bpm",
+      "source_section": "discussion",
+      "source_offset": 1846,
+      "sentence": "In this investigation, when Tcore grows ~1 \u00b0C, HR averagely increased ~10 bpm at 5 min and ~20 bpm at 10 min of exposure in S1 and S4 in the first set, being aggravated in sets 2 and 3.",
+      "context_window": "estigation, when Tcore grows ~1 \u00b0C, HR averagely increased ~10 bpm at 5 min and ~20 bpm at 10 min of exposure in S1 and S4 in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-u-1867",
+      "claim_type": "unit_value",
+      "raw_text": "20 bpm",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "bpm",
+      "source_section": "discussion",
+      "source_offset": 1867,
+      "sentence": "In this investigation, when Tcore grows ~1 \u00b0C, HR averagely increased ~10 bpm at 5 min and ~20 bpm at 10 min of exposure in S1 and S4 in the first set, being aggravated in sets 2 and 3.",
+      "context_window": "e grows ~1 \u00b0C, HR averagely increased ~10 bpm at 5 min and ~20 bpm at 10 min of exposure in S1 and S4 in the first set, being",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-u-2349",
+      "claim_type": "unit_value",
+      "raw_text": "30 bpm",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "bpm",
+      "source_section": "discussion",
+      "source_offset": 2349,
+      "sentence": "Leppaluoto et al. (1986) noted an acceleration in HR of around 20-30 bpm after 30 min of passive heat exposure at 80 \u00b0C in a sauna, with an augmentation in rectal temperature of 0.8-1 \u00b0C [ 24 ].",
+      "context_window": "uoto et al. (1986) noted an acceleration in HR of around 20-30 bpm after 30 min of passive heat exposure at 80 \u00b0C in a sauna,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-2540",
+      "claim_type": "mean_sd",
+      "raw_text": "140 \u00b1 11",
+      "numeric_values": [
+        140.0,
+        11.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2540,
+      "sentence": "Similarly, another study observed an HR intensification until 140 \u00b1 11 bpm after leaving subjects in a sauna at 89.9 \u00b1 2.0 \u00b0C for 31 \u00b1 5 min [ 25 ].",
+      "context_window": "milarly, another study observed an HR intensification until 140 \u00b1 11 bpm after leaving subjects in a sauna at 89.9 \u00b1 2.0 \u00b0C for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-u-2546",
+      "claim_type": "unit_value",
+      "raw_text": "11 bpm",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "bpm",
+      "source_section": "discussion",
+      "source_offset": 2546,
+      "sentence": "Similarly, another study observed an HR intensification until 140 \u00b1 11 bpm after leaving subjects in a sauna at 89.9 \u00b1 2.0 \u00b0C for 31 \u00b1 5 min [ 25 ].",
+      "context_window": "y, another study observed an HR intensification until 140 \u00b1 11 bpm after leaving subjects in a sauna at 89.9 \u00b1 2.0 \u00b0C for 31 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-2590",
+      "claim_type": "mean_sd",
+      "raw_text": "89.9 \u00b1 2.0",
+      "numeric_values": [
+        89.9,
+        2.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2590,
+      "sentence": "Similarly, another study observed an HR intensification until 140 \u00b1 11 bpm after leaving subjects in a sauna at 89.9 \u00b1 2.0 \u00b0C for 31 \u00b1 5 min [ 25 ].",
+      "context_window": "ion until 140 \u00b1 11 bpm after leaving subjects in a sauna at 89.9 \u00b1 2.0 \u00b0C for 31 \u00b1 5 min [ 25 ]. However, it was performed after t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-2608",
+      "claim_type": "mean_sd",
+      "raw_text": "31 \u00b1 5",
+      "numeric_values": [
+        31.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2608,
+      "sentence": "Similarly, another study observed an HR intensification until 140 \u00b1 11 bpm after leaving subjects in a sauna at 89.9 \u00b1 2.0 \u00b0C for 31 \u00b1 5 min [ 25 ].",
+      "context_window": "bpm after leaving subjects in a sauna at 89.9 \u00b1 2.0 \u00b0C for 31 \u00b1 5 min [ 25 ]. However, it was performed after training, so pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-2782",
+      "claim_type": "mean_sd",
+      "raw_text": "73 \u00b1 2",
+      "numeric_values": [
+        73.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2782,
+      "sentence": "Recent research suggests a 15-bpm increment after a 30 min exposure to 73 \u00b1 2 \u00b0C in a sauna with an elevation of tympanic temperature from 36.4 \u00b1 0.5 to 38.4 \u00b1 0.7 \u00b0C [ 26 ].",
+      "context_window": "arch suggests a 15-bpm increment after a 30 min exposure to 73 \u00b1 2 \u00b0C in a sauna with an elevation of tympanic temperature fro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-2850",
+      "claim_type": "mean_sd",
+      "raw_text": "36.4 \u00b1 0.5",
+      "numeric_values": [
+        36.4,
+        0.5
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2850,
+      "sentence": "Recent research suggests a 15-bpm increment after a 30 min exposure to 73 \u00b1 2 \u00b0C in a sauna with an elevation of tympanic temperature from 36.4 \u00b1 0.5 to 38.4 \u00b1 0.7 \u00b0C [ 26 ].",
+      "context_window": "C in a sauna with an elevation of tympanic temperature from 36.4 \u00b1 0.5 to 38.4 \u00b1 0.7 \u00b0C [ 26 ]. In this research, the HR recorded",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-2864",
+      "claim_type": "mean_sd",
+      "raw_text": "38.4 \u00b1 0.7",
+      "numeric_values": [
+        38.4,
+        0.7
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2864,
+      "sentence": "Recent research suggests a 15-bpm increment after a 30 min exposure to 73 \u00b1 2 \u00b0C in a sauna with an elevation of tympanic temperature from 36.4 \u00b1 0.5 to 38.4 \u00b1 0.7 \u00b0C [ 26 ].",
+      "context_window": "ith an elevation of tympanic temperature from 36.4 \u00b1 0.5 to 38.4 \u00b1 0.7 \u00b0C [ 26 ]. In this research, the HR recorded at the end of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-msd-2958",
+      "claim_type": "mean_sd",
+      "raw_text": "133.54 \u00b1 21.34",
+      "numeric_values": [
+        133.54,
+        21.34
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2958,
+      "sentence": "In this research, the HR recorded at the end of the third set in S4 was 133.54 \u00b1 21.34 bpm, showing exhaustion due to heat interval exposure and growth in Tcore around 1 \u00b0C and Tskin of 2 \u00b0C.",
+      "context_window": "arch, the HR recorded at the end of the third set in S4 was 133.54 \u00b1 21.34 bpm, showing exhaustion due to heat interval exposure and g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-u-2967",
+      "claim_type": "unit_value",
+      "raw_text": "21.34 bpm",
+      "numeric_values": [
+        21.34
+      ],
+      "units": "bpm",
+      "source_section": "discussion",
+      "source_offset": 2967,
+      "sentence": "In this research, the HR recorded at the end of the third set in S4 was 133.54 \u00b1 21.34 bpm, showing exhaustion due to heat interval exposure and growth in Tcore around 1 \u00b0C and Tskin of 2 \u00b0C.",
+      "context_window": "HR recorded at the end of the third set in S4 was 133.54 \u00b1 21.34 bpm, showing exhaustion due to heat interval exposure and growt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-pct-6143",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6143,
+      "sentence": "A recent review reported that 75-80% of HA adaptions develop between the fourth and seventh days of heat exposure [ 28 ].",
+      "context_window": "e of heat exposure [ 24 ]. A recent review reported that 75-80% of HA adaptions develop between the fourth and seventh days",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-u-8504",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 8504,
+      "sentence": "The increase in sweating rate occurs after 3-4 days [ 28 ].",
+      "context_window": "y evaporation. The increase in sweating rate occurs after 3-4 days [ 28 ]. This phenomenon is stimulated by the fact that HA p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9916041_heart_rate_and_body_temperature_evolution_in_an_interval_pro-u-9402",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 9402,
+      "sentence": "A study observed increases at rest after 15 days of HA [ 33 ].",
+      "context_window": "heat acclimation. A study observed increases at rest after 15 days of HA [ 33 ]. Otherwise, it has been suggested that alterat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,913 @@
+{
+  "paper_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator",
+  "doi": "10.3892/etm.2019.7295",
+  "extracted_at": "2026-05-05T22:22:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 31,
+    "p_value": 17
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-n-304",
+      "claim_type": "sample_size",
+      "raw_text": "n=40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 304,
+      "sentence": "Eighty patients with metabolic syndrome treated in Linyi Central Hospital from January 2017 to December 2017 were selected and divided into control group (n=40) and observation group (n=40).",
+      "context_window": "December 2017 were selected and divided into control group (n=40) and observation group (n=40). Patients in control group we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-n-333",
+      "claim_type": "sample_size",
+      "raw_text": "n=40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 333,
+      "sentence": "Eighty patients with metabolic syndrome treated in Linyi Central Hospital from January 2017 to December 2017 were selected and divided into control group (n=40) and observation group (n=40).",
+      "context_window": "nd divided into control group (n=40) and observation group (n=40). Patients in control group were treated with regular thera",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-811",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 811,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose, insulin resistance index and blood lipid indexes in both groups were lower than those at 1 week after treatment (P<0.05).",
+      "context_window": "stance, triglyceride and total cholesterol was analyzed. At 1 month after treatment, levels of fasting blood glucose, 2 h postp",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-990",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 990,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose, insulin resistance index and blood lipid indexes in both groups were lower than those at 1 week after treatment (P<0.05).",
+      "context_window": "blood lipid indexes in both groups were lower than those at 1 week after treatment (P<0.05). At 1 month after treatment, level",
+      "claim_role": "protocol",
+      "endpoint": "insulin sensitivity",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-1014",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1014,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose, insulin resistance index and blood lipid indexes in both groups were lower than those at 1 week after treatment (P<0.05).",
+      "context_window": "oth groups were lower than those at 1 week after treatment (P<0.05). At 1 month after treatment, levels of fasting blood gluco",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-1026",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 1026,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose, insulin resistance index and blood lipid indexes in observation group were significantly lower than those in control group during the same period (P<0.05).",
+      "context_window": "ere lower than those at 1 week after treatment (P<0.05). At 1 month after treatment, levels of fasting blood glucose, 2 h postp",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-1263",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1263,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose, insulin resistance index and blood lipid indexes in observation group were significantly lower than those in control group during the same period (P<0.05).",
+      "context_window": "y lower than those in control group during the same period (P<0.05). Moreover, levels of high-sensitivity C-reactive protein (",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-1413",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 1413,
+      "sentence": "Moreover, levels of high-sensitivity C-reactive protein (hs-CRP), interleukin-6 (IL-6) and tumor necrosis factor-\u03b1 (TNF-\u03b1) in both groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same period (P<0.05).",
+      "context_window": "IL-6) and tumor necrosis factor-\u03b1 (TNF-\u03b1) in both groups at 1 month after treatment were lower than those at 1 week after treat",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-1462",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 1462,
+      "sentence": "Moreover, levels of high-sensitivity C-reactive protein (hs-CRP), interleukin-6 (IL-6) and tumor necrosis factor-\u03b1 (TNF-\u03b1) in both groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same period (P<0.05).",
+      "context_window": "groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observatio",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-1486",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1486,
+      "sentence": "Moreover, levels of high-sensitivity C-reactive protein (hs-CRP), interleukin-6 (IL-6) and tumor necrosis factor-\u03b1 (TNF-\u03b1) in both groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same period (P<0.05).",
+      "context_window": "treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-1539",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 1539,
+      "sentence": "Moreover, levels of high-sensitivity C-reactive protein (hs-CRP), interleukin-6 (IL-6) and tumor necrosis factor-\u03b1 (TNF-\u03b1) in both groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same period (P<0.05).",
+      "context_window": "tment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-1615",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1615,
+      "sentence": "Moreover, levels of high-sensitivity C-reactive protein (hs-CRP), interleukin-6 (IL-6) and tumor necrosis factor-\u03b1 (TNF-\u03b1) in both groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same period (P<0.05).",
+      "context_window": "eatment than those in control group during the same period (P<0.05). Finally, hs-CRP was positively correlated with fasting bl",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-457",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 457,
+      "sentence": "Patients enrolled were aged 60-80 years, and they were physically healthy in the past.",
+      "context_window": "e of Linyi Central Hospital. Patients enrolled were aged 60-80 years, and they were physically healthy in the past. Exclusion cr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-994",
+      "claim_type": "p_value",
+      "raw_text": "P>0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 994,
+      "sentence": "There were no statistically significant differences in comparisons of general data and related indexes between the two groups (P>0.05) ( Table I ).",
+      "context_window": "of general data and related indexes between the two groups (P>0.05) ( Table I ). Patients in control group were treated with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-1952",
+      "claim_type": "unit_value",
+      "raw_text": "80 mmHg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 1952,
+      "sentence": "Finally, the patient's blood pressure was adjusted and controlled within 130/80 mmHg.",
+      "context_window": "ent's blood pressure was adjusted and controlled within 130/80 mmHg. In terms of antihypertensive drugs, angiotensin-converting",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-2345",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 2345,
+      "sentence": "All patients were followed up for 1 month.",
+      "context_window": "a day (4 tablets/time). All patients were followed up for 1 month. Changes in relevant indexes to blood glucose and lipid met",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-2486",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 2486,
+      "sentence": "Changes in relevant indexes to blood glucose and lipid metabolisms and inflammatory factors were compared between the two groups at 1 week and 1 month after treatment.",
+      "context_window": "nflammatory factors were compared between the two groups at 1 week and 1 month after treatment. The correlations of inflammato",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-2497",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 2497,
+      "sentence": "Changes in relevant indexes to blood glucose and lipid metabolisms and inflammatory factors were compared between the two groups at 1 week and 1 month after treatment.",
+      "context_window": "factors were compared between the two groups at 1 week and 1 month after treatment. The correlations of inflammatory factor hs",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-2747",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 mmol",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 2747,
+      "sentence": "Related detection indexes to blood glucose included fasting blood glucose (3.9-6.1 mmol/l), 2 h postprandial blood glucose (\u22647.8 mmol/l) and homeostasis model assessment - insulin resistance (HOMA-IR) [reference value: 1, calculation formula: fasting blood glucose (mmol/l) \u00d7 fasting insulin (mU/l)].",
+      "context_window": "ndexes to blood glucose included fasting blood glucose (3.9-6.1 mmol/l), 2 h postprandial blood glucose (\u22647.8 mmol/l) and homeos",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-2793",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 mmol",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 2793,
+      "sentence": "Related detection indexes to blood glucose included fasting blood glucose (3.9-6.1 mmol/l), 2 h postprandial blood glucose (\u22647.8 mmol/l) and homeostasis model assessment - insulin resistance (HOMA-IR) [reference value: 1, calculation formula: fasting blood glucose (mmol/l) \u00d7 fasting insulin (mU/l)].",
+      "context_window": "glucose (3.9-6.1 mmol/l), 2 h postprandial blood glucose (\u22647.8 mmol/l) and homeostasis model assessment - insulin resistance (H",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-3028",
+      "claim_type": "unit_value",
+      "raw_text": "1.71 mmol",
+      "numeric_values": [
+        1.71
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3028,
+      "sentence": "Related indexes to blood lipid included triglyceride (0.56-1.71 mmol/l) and total cholesterol (2.83-5.17 mmol/l).",
+      "context_window": "Related indexes to blood lipid included triglyceride (0.56-1.71 mmol/l) and total cholesterol (2.83-5.17 mmol/l). Inflammation-r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-3069",
+      "claim_type": "unit_value",
+      "raw_text": "5.17 mmol",
+      "numeric_values": [
+        5.17
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3069,
+      "sentence": "Related indexes to blood lipid included triglyceride (0.56-1.71 mmol/l) and total cholesterol (2.83-5.17 mmol/l).",
+      "context_window": "triglyceride (0.56-1.71 mmol/l) and total cholesterol (2.83-5.17 mmol/l). Inflammation-related factors included hs-CRP (<10 ml/l)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-3814",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3814,
+      "sentence": "P<0.05 was considered to indicate a statistically significant difference.",
+      "context_window": "ion coefficient method. The procedure was repeated 3 times. P<0.05 was considered to indicate a statistically significant diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-3",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 3,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in both groups were lower than those at 1 week after treatment (P<0.05), and levels of blood lipid indexes (triglyceride and total cholesterol) were also lower than those at 1 week after treatment (P<0.05).",
+      "context_window": "At 1 month after treatment, levels of fasting blood glucose, 2 h postp",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-161",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 161,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in both groups were lower than those at 1 week after treatment (P<0.05), and levels of blood lipid indexes (triglyceride and total cholesterol) were also lower than those at 1 week after treatment (P<0.05).",
+      "context_window": "in resistance index in both groups were lower than those at 1 week after treatment (P<0.05), and levels of blood lipid indexes",
+      "claim_role": "protocol",
+      "endpoint": "insulin sensitivity",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-185",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 185,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in both groups were lower than those at 1 week after treatment (P<0.05), and levels of blood lipid indexes (triglyceride and total cholesterol) were also lower than those at 1 week after treatment (P<0.05).",
+      "context_window": "oth groups were lower than those at 1 week after treatment (P<0.05), and levels of blood lipid indexes (triglyceride and total",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-295",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 295,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in both groups were lower than those at 1 week after treatment (P<0.05), and levels of blood lipid indexes (triglyceride and total cholesterol) were also lower than those at 1 week after treatment (P<0.05).",
+      "context_window": "ceride and total cholesterol) were also lower than those at 1 week after treatment (P<0.05). At 1 month after treatment, level",
+      "claim_role": "protocol",
+      "endpoint": "insulin sensitivity",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-319",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 319,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in both groups were lower than those at 1 week after treatment (P<0.05), and levels of blood lipid indexes (triglyceride and total cholesterol) were also lower than those at 1 week after treatment (P<0.05).",
+      "context_window": "erol) were also lower than those at 1 week after treatment (P<0.05). At 1 month after treatment, levels of fasting blood gluco",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-331",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 331,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in observation group were significantly decreased compared with those in control group during the same period (P<0.05), and levels of blood lipid indexes (triglyceride and total cholesterol) were also lowered compared with those in control group during the same period (P<0.05) ( Table II ).",
+      "context_window": "lso lower than those at 1 week after treatment (P<0.05). At 1 month after treatment, levels of fasting blood glucose, 2 h postp",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-560",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 560,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in observation group were significantly decreased compared with those in control group during the same period (P<0.05), and levels of blood lipid indexes (triglyceride and total cholesterol) were also lowered compared with those in control group during the same period (P<0.05) ( Table II ).",
+      "context_window": "ompared with those in control group during the same period (P<0.05), and levels of blood lipid indexes (triglyceride and total",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-719",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 719,
+      "sentence": "At 1 month after treatment, levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in observation group were significantly decreased compared with those in control group during the same period (P<0.05), and levels of blood lipid indexes (triglyceride and total cholesterol) were also lowered compared with those in control group during the same period (P<0.05) ( Table II ).",
+      "context_window": "ompared with those in control group during the same period (P<0.05) ( Table II ). Levels of hs-CRP, IL-6 and TNF-\u03b1 in both gr",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-793",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 793,
+      "sentence": "Levels of hs-CRP, IL-6 and TNF-\u03b1 in both groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same period (P<0.05) ( Table III ).",
+      "context_window": "e II ). Levels of hs-CRP, IL-6 and TNF-\u03b1 in both groups at 1 month after treatment were lower than those at 1 week after treat",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-842",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 842,
+      "sentence": "Levels of hs-CRP, IL-6 and TNF-\u03b1 in both groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same period (P<0.05) ( Table III ).",
+      "context_window": "groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observatio",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-866",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 866,
+      "sentence": "Levels of hs-CRP, IL-6 and TNF-\u03b1 in both groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same period (P<0.05) ( Table III ).",
+      "context_window": "treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-919",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 919,
+      "sentence": "Levels of hs-CRP, IL-6 and TNF-\u03b1 in both groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same period (P<0.05) ( Table III ).",
+      "context_window": "tment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-995",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 995,
+      "sentence": "Levels of hs-CRP, IL-6 and TNF-\u03b1 in both groups at 1 month after treatment were lower than those at 1 week after treatment (P<0.05), and they were lower in observation group at 1 month after treatment than those in control group during the same period (P<0.05) ( Table III ).",
+      "context_window": "eatment than those in control group during the same period (P<0.05) ( Table III ). There was a positive correlation between i",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-1124",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1124,
+      "sentence": "There was a positive correlation between inflammatory factor hs-CRP and fasting blood glucose (r=0.9242, P<0.05) ( Fig.",
+      "context_window": "ammatory factor hs-CRP and fasting blood glucose (r=0.9242, P<0.05) ( Fig. 1 ). There was a positive correlation between infl",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-1247",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1247,
+      "sentence": "There was a positive correlation between inflammatory factor hs-CRP and insulin resistance (r=0.9929, P<0.05) ( Fig.",
+      "context_window": "nflammatory factor hs-CRP and insulin resistance (r=0.9929, P<0.05) ( Fig. 2 ). There was a positive correlation between infl",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-1364",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1364,
+      "sentence": "There was a positive correlation between inflammatory factor hs-CRP and triglyceride (r=0.9235, P<0.05) ( Fig.",
+      "context_window": "ween inflammatory factor hs-CRP and triglyceride (r=0.9235, P<0.05) ( Fig. 3 ). There was a positive correlation between infl",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-1486",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1486,
+      "sentence": "There was a positive correlation between inflammatory factor hs-CRP and total cholesterol (r=0.9665, P<0.05) ( Fig.",
+      "context_window": "inflammatory factor hs-CRP and total cholesterol (r=0.9665, P<0.05) ( Fig. 4 ). There was no statistically significant differ",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-p-1713",
+      "claim_type": "p_value",
+      "raw_text": "P>0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1713,
+      "sentence": "There was no statistically significant difference in the overall incidence rate of adverse reactions, such as ketoacidosis, hyperglycemic coma, hypoglycemia and nausea and vomiting, between the two groups (P>0.05) ( Table IV ).",
+      "context_window": "poglycemia and nausea and vomiting, between the two groups (P>0.05) ( Table IV ).",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-1404",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "discussion",
+      "source_offset": 1404,
+      "sentence": "By analyzing changes of related indexes to blood glucose and lipid metabolisms in the groups at 1 week and 1 month after treatment, it was found that related indexes to blood glucose and lipid in both groups were improved at 1 month after treatment, but levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in observation group were significantly lower than those in control group at 1 month after treatment, and levels of blood lipid indexes (triglyceride and total cholesterol) in observation group were lower than those in control group at 1 month after treatment, indicating that combined use of berberine can regulate blood glucose and blood lipid levels more effectively and lighten insulin resistance.",
+      "context_window": "xes to blood glucose and lipid metabolisms in the groups at 1 week and 1 month after treatment, it was found that related inde",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-1415",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "discussion",
+      "source_offset": 1415,
+      "sentence": "By analyzing changes of related indexes to blood glucose and lipid metabolisms in the groups at 1 week and 1 month after treatment, it was found that related indexes to blood glucose and lipid in both groups were improved at 1 month after treatment, but levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in observation group were significantly lower than those in control group at 1 month after treatment, and levels of blood lipid indexes (triglyceride and total cholesterol) in observation group were lower than those in control group at 1 month after treatment, indicating that combined use of berberine can regulate blood glucose and blood lipid levels more effectively and lighten insulin resistance.",
+      "context_window": "d glucose and lipid metabolisms in the groups at 1 week and 1 month after treatment, it was found that related indexes to blood",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-1533",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "discussion",
+      "source_offset": 1533,
+      "sentence": "By analyzing changes of related indexes to blood glucose and lipid metabolisms in the groups at 1 week and 1 month after treatment, it was found that related indexes to blood glucose and lipid in both groups were improved at 1 month after treatment, but levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in observation group were significantly lower than those in control group at 1 month after treatment, and levels of blood lipid indexes (triglyceride and total cholesterol) in observation group were lower than those in control group at 1 month after treatment, indicating that combined use of berberine can regulate blood glucose and blood lipid levels more effectively and lighten insulin resistance.",
+      "context_window": "to blood glucose and lipid in both groups were improved at 1 month after treatment, but levels of fasting blood glucose, 2 h p",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-1732",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "discussion",
+      "source_offset": 1732,
+      "sentence": "By analyzing changes of related indexes to blood glucose and lipid metabolisms in the groups at 1 week and 1 month after treatment, it was found that related indexes to blood glucose and lipid in both groups were improved at 1 month after treatment, but levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in observation group were significantly lower than those in control group at 1 month after treatment, and levels of blood lipid indexes (triglyceride and total cholesterol) in observation group were lower than those in control group at 1 month after treatment, indicating that combined use of berberine can regulate blood glucose and blood lipid levels more effectively and lighten insulin resistance.",
+      "context_window": "oup were significantly lower than those in control group at 1 month after treatment, and levels of blood lipid indexes (triglyc",
+      "claim_role": "protocol",
+      "endpoint": "insulin sensitivity",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-1891",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "discussion",
+      "source_offset": 1891,
+      "sentence": "By analyzing changes of related indexes to blood glucose and lipid metabolisms in the groups at 1 week and 1 month after treatment, it was found that related indexes to blood glucose and lipid in both groups were improved at 1 month after treatment, but levels of fasting blood glucose, 2 h postprandial blood glucose and insulin resistance index in observation group were significantly lower than those in control group at 1 month after treatment, and levels of blood lipid indexes (triglyceride and total cholesterol) in observation group were lower than those in control group at 1 month after treatment, indicating that combined use of berberine can regulate blood glucose and blood lipid levels more effectively and lighten insulin resistance.",
+      "context_window": "observation group were lower than those in control group at 1 month after treatment, indicating that combined use of berberine",
+      "claim_role": "protocol",
+      "endpoint": "blood glucose",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-2140",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "discussion",
+      "source_offset": 2140,
+      "sentence": "By exploring changes in relevant indexes of inflammatory factors in both groups at 1 week and 1 month after treatment, it was found that hs-CRP, IL-6 and TNF-\u03b1 levels in both groups were also lower than those at 1 week after treatment, but hs-CRP, IL-6 and TNF-\u03b1 levels in observation group were all lower than those in control group at 1 month after treatment, indicating that combined use of berberine tablets is of important significance for reducing inflammatory reaction in patients with metabolic syndrome.",
+      "context_window": "relevant indexes of inflammatory factors in both groups at 1 week and 1 month after treatment, it was found that hs-CRP, IL-6",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-2151",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "discussion",
+      "source_offset": 2151,
+      "sentence": "By exploring changes in relevant indexes of inflammatory factors in both groups at 1 week and 1 month after treatment, it was found that hs-CRP, IL-6 and TNF-\u03b1 levels in both groups were also lower than those at 1 week after treatment, but hs-CRP, IL-6 and TNF-\u03b1 levels in observation group were all lower than those in control group at 1 month after treatment, indicating that combined use of berberine tablets is of important significance for reducing inflammatory reaction in patients with metabolic syndrome.",
+      "context_window": "ndexes of inflammatory factors in both groups at 1 week and 1 month after treatment, it was found that hs-CRP, IL-6 and TNF-\u03b1 l",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-2269",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "discussion",
+      "source_offset": 2269,
+      "sentence": "By exploring changes in relevant indexes of inflammatory factors in both groups at 1 week and 1 month after treatment, it was found that hs-CRP, IL-6 and TNF-\u03b1 levels in both groups were also lower than those at 1 week after treatment, but hs-CRP, IL-6 and TNF-\u03b1 levels in observation group were all lower than those in control group at 1 month after treatment, indicating that combined use of berberine tablets is of important significance for reducing inflammatory reaction in patients with metabolic syndrome.",
+      "context_window": "d TNF-\u03b1 levels in both groups were also lower than those at 1 week after treatment, but hs-CRP, IL-6 and TNF-\u03b1 levels in obser",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6434235_effects_of_berberine_on_glucose_lipid_metabolism_inflammator-u-2394",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "discussion",
+      "source_offset": 2394,
+      "sentence": "By exploring changes in relevant indexes of inflammatory factors in both groups at 1 week and 1 month after treatment, it was found that hs-CRP, IL-6 and TNF-\u03b1 levels in both groups were also lower than those at 1 week after treatment, but hs-CRP, IL-6 and TNF-\u03b1 levels in observation group were all lower than those in control group at 1 month after treatment, indicating that combined use of berberine tablets is of important significance for reducing inflammatory reaction in patients with metabolic syndrome.",
+      "context_window": "rvation group were all lower than those in control group at 1 month after treatment, indicating that combined use of berberine",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

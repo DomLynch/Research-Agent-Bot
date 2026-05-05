@@ -1,0 +1,104 @@
+{
+  "paper_id": "PMC12760991_protein_intake_mediates_the_relationship_of_sleep_quality_wi",
+  "doi": "10.1093/geroni/igaf122.2437",
+  "extracted_at": "2026-05-05T22:35:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2,
+    "p_value": 1,
+    "correlation": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12760991_protein_intake_mediates_the_relationship_of_sleep_quality_wi-u-331",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 331,
+      "sentence": "The study objective was to determine if protein intake/body weight (gm/kg) and engagement in physical activity mediated the relationship between sleep with handgrip strength in persons \u2265 60 years examined in the HANDLS study, 2013-2017.",
+      "context_window": "ationship between sleep with handgrip strength in persons \u2265 60 years examined in the HANDLS study, 2013-2017. Sleep quality was",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12760991_protein_intake_mediates_the_relationship_of_sleep_quality_wi-pct-1209",
+      "claim_type": "percentage",
+      "raw_text": "125%",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1209,
+      "sentence": "Covariates that were adjusted for in models included: age (years), sex at birth (male, female), self-reported race (African American, White), poverty status (< 125% or > 125% U.S.",
+      "context_window": "-reported race (African American, White), poverty status (< 125% or > 125% U.S. HHS Poverty Guidelines), current cigarette s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12760991_protein_intake_mediates_the_relationship_of_sleep_quality_wi-pct-1219",
+      "claim_type": "percentage",
+      "raw_text": "125%",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1219,
+      "sentence": "Covariates that were adjusted for in models included: age (years), sex at birth (male, female), self-reported race (African American, White), poverty status (< 125% or > 125% U.S.",
+      "context_window": "race (African American, White), poverty status (< 125% or > 125% U.S. HHS Poverty Guidelines), current cigarette smoker (yes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12760991_protein_intake_mediates_the_relationship_of_sleep_quality_wi-p-1532",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1532,
+      "sentence": "Protein intake, but not physical activity, significantly influenced handgrip strength (p = 0.002) and mediated the relationship of sleep quality with handgrip (R2 = 0.47).",
+      "context_window": "sical activity, significantly influenced handgrip strength (p = 0.002) and mediated the relationship of sleep quality with handgr",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12760991_protein_intake_mediates_the_relationship_of_sleep_quality_wi-corr-1605",
+      "claim_type": "correlation",
+      "raw_text": "R2 = 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1605,
+      "sentence": "Protein intake, but not physical activity, significantly influenced handgrip strength (p = 0.002) and mediated the relationship of sleep quality with handgrip (R2 = 0.47).",
+      "context_window": "d mediated the relationship of sleep quality with handgrip (R2 = 0.47). Results suggest that protein is critical to preserving mu",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

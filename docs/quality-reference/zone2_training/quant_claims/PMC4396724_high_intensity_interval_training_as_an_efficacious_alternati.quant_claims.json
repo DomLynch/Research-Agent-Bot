@@ -1,0 +1,907 @@
+{
+  "paper_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati",
+  "doi": "10.1155/2015/191595",
+  "extracted_at": "2026-05-05T22:43:13+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "mean_sd": 10,
+    "percentage": 21,
+    "p_value": 11,
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-n-375",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 375,
+      "sentence": "We compared self-report and objective measures of physical activity after one month of independent exercise in individuals with prediabetes who were randomized to HIIT ( n = 15) or traditional moderate-intensity continuous training (MICT, n = 17).",
+      "context_window": "individuals with prediabetes who were randomized to HIIT ( n = 15) or traditional moderate-intensity continuous training (MIC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-n-444",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 444,
+      "sentence": "We compared self-report and objective measures of physical activity after one month of independent exercise in individuals with prediabetes who were randomized to HIIT ( n = 15) or traditional moderate-intensity continuous training (MICT, n = 17).",
+      "context_window": "r traditional moderate-intensity continuous training (MICT, n = 17). Method . After completing 10 sessions of supervised train",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-msd-630",
+      "claim_type": "mean_sd",
+      "raw_text": "89 \u00b1 11",
+      "numeric_values": [
+        89.0,
+        11.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 630,
+      "sentence": "Individuals in HIIT (89 \u00b1 11%) adhered to their prescribed protocol to a greater extent than individuals in MICT (71 \u00b1 31%) as determined by training logs completed over one-month follow-up ( P = 0.05, Cohen's d = 0.75).",
+      "context_window": "mes per week for four weeks. Results . Individuals in HIIT (89 \u00b1 11%) adhered to their prescribed protocol to a greater extent",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-635",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 635,
+      "sentence": "Individuals in HIIT (89 \u00b1 11%) adhered to their prescribed protocol to a greater extent than individuals in MICT (71 \u00b1 31%) as determined by training logs completed over one-month follow-up ( P = 0.05, Cohen's d = 0.75).",
+      "context_window": "er week for four weeks. Results . Individuals in HIIT (89 \u00b1 11%) adhered to their prescribed protocol to a greater extent t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-msd-723",
+      "claim_type": "mean_sd",
+      "raw_text": "71 \u00b1 31",
+      "numeric_values": [
+        71.0,
+        31.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 723,
+      "sentence": "Individuals in HIIT (89 \u00b1 11%) adhered to their prescribed protocol to a greater extent than individuals in MICT (71 \u00b1 31%) as determined by training logs completed over one-month follow-up ( P = 0.05, Cohen's d = 0.75).",
+      "context_window": "ibed protocol to a greater extent than individuals in MICT (71 \u00b1 31%) as determined by training logs completed over one-month f",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-728",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 728,
+      "sentence": "Individuals in HIIT (89 \u00b1 11%) adhered to their prescribed protocol to a greater extent than individuals in MICT (71 \u00b1 31%) as determined by training logs completed over one-month follow-up ( P = 0.05, Cohen's d = 0.75).",
+      "context_window": "protocol to a greater extent than individuals in MICT (71 \u00b1 31%) as determined by training logs completed over one-month fo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-801",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 801,
+      "sentence": "Individuals in HIIT (89 \u00b1 11%) adhered to their prescribed protocol to a greater extent than individuals in MICT (71 \u00b1 31%) as determined by training logs completed over one-month follow-up ( P = 0.05, Cohen's d = 0.75).",
+      "context_window": "mined by training logs completed over one-month follow-up ( P = 0.05, Cohen's d = 0.75). Minutes spent in vigorous physical acti",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-msd-930",
+      "claim_type": "mean_sd",
+      "raw_text": "24 \u00b1 18",
+      "numeric_values": [
+        24.0,
+        18.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 930,
+      "sentence": "Minutes spent in vigorous physical activity per week measured by accelerometer were higher in HIIT (24 \u00b1 18) as compared to MICT (11 \u00b1 10) at one-month follow-up ( P = 0.049, Cohen's d = 0.92).",
+      "context_window": "ity per week measured by accelerometer were higher in HIIT (24 \u00b1 18) as compared to MICT (11 \u00b1 10) at one-month follow-up ( P =",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-msd-960",
+      "claim_type": "mean_sd",
+      "raw_text": "11 \u00b1 10",
+      "numeric_values": [
+        11.0,
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 960,
+      "sentence": "Minutes spent in vigorous physical activity per week measured by accelerometer were higher in HIIT (24 \u00b1 18) as compared to MICT (11 \u00b1 10) at one-month follow-up ( P = 0.049, Cohen's d = 0.92).",
+      "context_window": "erometer were higher in HIIT (24 \u00b1 18) as compared to MICT (11 \u00b1 10) at one-month follow-up ( P = 0.049, Cohen's d = 0.92). Car",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-994",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.049",
+      "numeric_values": [
+        0.049
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 994,
+      "sentence": "Minutes spent in vigorous physical activity per week measured by accelerometer were higher in HIIT (24 \u00b1 18) as compared to MICT (11 \u00b1 10) at one-month follow-up ( P = 0.049, Cohen's d = 0.92).",
+      "context_window": "18) as compared to MICT (11 \u00b1 10) at one-month follow-up ( P = 0.049, Cohen's d = 0.92). Cardiorespiratory fitness and systolic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-22",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 22,
+      "sentence": "It is estimated that ~35% of all US adults have prediabetes and are therefore at high risk for future development of type 2 diabetes (T2D) and cardiovascular disease (CVD, [ 1 ]).",
+      "context_window": "It is estimated that ~35% of all US adults have prediabetes and are therefore at high",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-487",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 487,
+      "sentence": "Landmark trials, including the Diabetes Prevention Program, have shown that a lifestyle intervention including 150 minutes of moderate-intensity physical activity (primarily walking) per week can reduce the incidence of T2D by ~58% [ 3 ].",
+      "context_window": "arily walking) per week can reduce the incidence of T2D by ~58% [ 3 ]. These findings have contributed to the development o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-966",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 966,
+      "sentence": "Specifically, large population-based studies in the US [ 7 ], UK [ 8 ], and Canada [ 9 ] that objectively measure physical activity by accelerometer suggest that only 15-20% of adults accumulate 150 minutes of moderate-intensity physical activity per week.",
+      "context_window": "ure physical activity by accelerometer suggest that only 15-20% of adults accumulate 150 minutes of moderate-intensity phys",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-n-3622",
+      "claim_type": "sample_size",
+      "raw_text": "n = 44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3622,
+      "sentence": "In fact, we have recently shown that a majority of inactive adults ( n = 44) prefer HIIT (62%) to MICT (20%) and high-intensity continuous training (3%) after experiencing a single bout of each type of exercise [ 23 ].",
+      "context_window": "we have recently shown that a majority of inactive adults ( n = 44) prefer HIIT (62%) to MICT (20%) and high-intensity continu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-3643",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3643,
+      "sentence": "In fact, we have recently shown that a majority of inactive adults ( n = 44) prefer HIIT (62%) to MICT (20%) and high-intensity continuous training (3%) after experiencing a single bout of each type of exercise [ 23 ].",
+      "context_window": "n that a majority of inactive adults ( n = 44) prefer HIIT (62%) to MICT (20%) and high-intensity continuous training (3%)",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-3657",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3657,
+      "sentence": "In fact, we have recently shown that a majority of inactive adults ( n = 44) prefer HIIT (62%) to MICT (20%) and high-intensity continuous training (3%) after experiencing a single bout of each type of exercise [ 23 ].",
+      "context_window": "ity of inactive adults ( n = 44) prefer HIIT (62%) to MICT (20%) and high-intensity continuous training (3%) after experien",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-3702",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3702,
+      "sentence": "In fact, we have recently shown that a majority of inactive adults ( n = 44) prefer HIIT (62%) to MICT (20%) and high-intensity continuous training (3%) after experiencing a single bout of each type of exercise [ 23 ].",
+      "context_window": "(62%) to MICT (20%) and high-intensity continuous training (3%) after experiencing a single bout of each type of exercise",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-u-57",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 57,
+      "sentence": "Participants with prediabetes between the ages of 30 and 60 years were recruited from posters, online message boards, and word of mouth.",
+      "context_window": "Participants with prediabetes between the ages of 30 and 60 years were recruited from posters, online message boards, and wor",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-378",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 378,
+      "sentence": "Participants were considered to have prediabetes based on one of the following criteria: (1) physician-diagnosed, (2) HbA1c values between 5.7 and 6.4% (American Diabetes Association [ 24 ]) assessed using a clinically validated point-of-care monitor (HbA1c Now, Bayer Inc., Ontario, Canada), (3) fasting blood glucose of 5.6-6.9 mmol/L [ 24 ], and/or (4) a CANRISK questionnaire score of moderate/high (>21 [ 25 ]).",
+      "context_window": ": (1) physician-diagnosed, (2) HbA1c values between 5.7 and 6.4% (American Diabetes Association [ 24 ]) assessed using a cli",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-u-557",
+      "claim_type": "unit_value",
+      "raw_text": "6.9 mmol",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 557,
+      "sentence": "Participants were considered to have prediabetes based on one of the following criteria: (1) physician-diagnosed, (2) HbA1c values between 5.7 and 6.4% (American Diabetes Association [ 24 ]) assessed using a clinically validated point-of-care monitor (HbA1c Now, Bayer Inc., Ontario, Canada), (3) fasting blood glucose of 5.6-6.9 mmol/L [ 24 ], and/or (4) a CANRISK questionnaire score of moderate/high (>21 [ 25 ]).",
+      "context_window": "er Inc., Ontario, Canada), (3) fasting blood glucose of 5.6-6.9 mmol/L [ 24 ], and/or (4) a CANRISK questionnaire score of moder",
+      "claim_role": "population",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-2137",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2137,
+      "sentence": "Specifically, individuals randomized to HIIT began with four intervals lasting 1 minute each at an intensity that elicited ~90% peak heart rate (HRpeak) separated by 1-minute of low intensity recovery and increased to 10 \u00d7 1 min intervals by day 10, which was based on previously published studies in individuals with, and at risk for, T2D [ 12 , 13 , 15 ].",
+      "context_window": "ervals lasting 1 minute each at an intensity that elicited ~90% peak heart rate (HRpeak) separated by 1-minute of low inten",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-2534",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2534,
+      "sentence": "Individuals randomized to MICT began with 20 minutes of continuous activity at ~65% HRpeak and gradually increased duration to 50 minutes by day 10.",
+      "context_window": "ed to MICT began with 20 minutes of continuous activity at ~65% HRpeak and gradually increased duration to 50 minutes by da",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-msd-4243",
+      "claim_type": "mean_sd",
+      "raw_text": "82 \u00b1 3",
+      "numeric_values": [
+        82.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4243,
+      "sentence": "During the supervised training phase, average HRpeak during HIIT (including rest intervals, warm-up, and cool-down) was 82 \u00b1 3% HRpeak, confirming that HIIT sessions were in the vigorous domain.",
+      "context_window": "HIIT (including rest intervals, warm-up, and cool-down) was 82 \u00b1 3% HRpeak, confirming that HIIT sessions were in the vigorous",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-4248",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4248,
+      "sentence": "During the supervised training phase, average HRpeak during HIIT (including rest intervals, warm-up, and cool-down) was 82 \u00b1 3% HRpeak, confirming that HIIT sessions were in the vigorous domain.",
+      "context_window": "(including rest intervals, warm-up, and cool-down) was 82 \u00b1 3% HRpeak, confirming that HIIT sessions were in the vigorous",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-msd-4349",
+      "claim_type": "mean_sd",
+      "raw_text": "67 \u00b1 5",
+      "numeric_values": [
+        67.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4349,
+      "sentence": "Average HRpeak during MICT was 67 \u00b1 5%, confirming that MICT sessions were in the moderate domain.",
+      "context_window": "were in the vigorous domain. Average HRpeak during MICT was 67 \u00b1 5%, confirming that MICT sessions were in the moderate domain",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-4354",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4354,
+      "sentence": "Average HRpeak during MICT was 67 \u00b1 5%, confirming that MICT sessions were in the moderate domain.",
+      "context_window": "in the vigorous domain. Average HRpeak during MICT was 67 \u00b1 5%, confirming that MICT sessions were in the moderate domain.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-4704",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4704,
+      "sentence": "Specifically, individuals randomized to HIIT were prescribed three exercise sessions per week involving 10 \u00d7 1-minute intervals at an interval intensity of ~90% HRpeak separated by 1 minute of easy recovery with a 3-minute warm-up and 2-minute cool down (for a total of 25 minutes of vigorous exercise), while participants randomized to MICT were prescribed three sessions per week of 50-minute continuous exercise at an intensity of ~65% HRpeak.",
+      "context_window": "olving 10 \u00d7 1-minute intervals at an interval intensity of ~90% HRpeak separated by 1 minute of easy recovery with a 3-minu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-4982",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4982,
+      "sentence": "Specifically, individuals randomized to HIIT were prescribed three exercise sessions per week involving 10 \u00d7 1-minute intervals at an interval intensity of ~90% HRpeak separated by 1 minute of easy recovery with a 3-minute warm-up and 2-minute cool down (for a total of 25 minutes of vigorous exercise), while participants randomized to MICT were prescribed three sessions per week of 50-minute continuous exercise at an intensity of ~65% HRpeak.",
+      "context_window": "r week of 50-minute continuous exercise at an intensity of ~65% HRpeak. Therefore, the HIIT group was prescribed vigorous e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-6411",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6411,
+      "sentence": "Training logbooks were returned at the four-week follow-up and were analyzed by calculating the percentage adherence (i.e., number of exercise sessions divided by the number of prescribed sessions times 100% [ 29 ]) and average RPE.",
+      "context_window": "sessions divided by the number of prescribed sessions times 100% [ 29 ]) and average RPE. The Actigraph GT1M accelerometer",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-u-7045",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 7045,
+      "sentence": "The monitor was worn on, or just above, their right hip for seven consecutive days prior to the intervention (baseline) and after 4 weeks of independent exercise.",
+      "context_window": "ecutive days prior to the intervention (baseline) and after 4 weeks of independent exercise. Accelerometer data were also colle",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-11255",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11255,
+      "sentence": "Significance was set at P \u2264 0.05.",
+      "context_window": "or fitness data between conditions. Significance was set at P \u2264 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-1387",
+      "claim_type": "percentage",
+      "raw_text": "98%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1387,
+      "sentence": "Eighty-six percent and 98% of participants provided at least 5 valid wear days at baseline and one-month follow-up, respectively.",
+      "context_window": "and 846 (\u00b163) minutes at follow-up. Eighty-six percent and 98% of participants provided at least 5 valid wear days at base",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-2239",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2239,
+      "sentence": "Results revealed a significant difference in adherence rates between HIIT and MICT, t (18.96) = 2.08, P = 0.05, Cohen's d = 0.75.",
+      "context_window": "in adherence rates between HIIT and MICT, t (18.96) = 2.08, P = 0.05, Cohen's d = 0.75. Specifically, individuals in the HIIT co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-msd-2316",
+      "claim_type": "mean_sd",
+      "raw_text": "89 \u00b1 11",
+      "numeric_values": [
+        89.0,
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2316,
+      "sentence": "Specifically, individuals in the HIIT condition (89 \u00b1 11%) adhered to their prescribed protocol, to a greater extent than individuals in the MICT condition (71 \u00b1 31%).",
+      "context_window": "d = 0.75. Specifically, individuals in the HIIT condition (89 \u00b1 11%) adhered to their prescribed protocol, to a greater extent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-2321",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2321,
+      "sentence": "Specifically, individuals in the HIIT condition (89 \u00b1 11%) adhered to their prescribed protocol, to a greater extent than individuals in the MICT condition (71 \u00b1 31%).",
+      "context_window": "0.75. Specifically, individuals in the HIIT condition (89 \u00b1 11%) adhered to their prescribed protocol, to a greater extent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-msd-2424",
+      "claim_type": "mean_sd",
+      "raw_text": "71 \u00b1 31",
+      "numeric_values": [
+        71.0,
+        31.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2424,
+      "sentence": "Specifically, individuals in the HIIT condition (89 \u00b1 11%) adhered to their prescribed protocol, to a greater extent than individuals in the MICT condition (71 \u00b1 31%).",
+      "context_window": "to a greater extent than individuals in the MICT condition (71 \u00b1 31%). The same analysis revealed a significant difference in a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-2429",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2429,
+      "sentence": "Specifically, individuals in the HIIT condition (89 \u00b1 11%) adhered to their prescribed protocol, to a greater extent than individuals in the MICT condition (71 \u00b1 31%).",
+      "context_window": "greater extent than individuals in the MICT condition (71 \u00b1 31%). The same analysis revealed a significant difference in av",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-2571",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2571,
+      "sentence": "The same analysis revealed a significant difference in average ratings of perceived exertion between the two conditions, t (23) = 2.80, P = 0.01, Cohen's d = 1.19.",
+      "context_window": "rceived exertion between the two conditions, t (23) = 2.80, P = 0.01, Cohen's d = 1.19. As expected, HIIT was perceived to be of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-msd-2676",
+      "claim_type": "mean_sd",
+      "raw_text": "7.4 \u00b1 1.7",
+      "numeric_values": [
+        7.4,
+        1.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2676,
+      "sentence": "As expected, HIIT was perceived to be of greater intensity than MICT (HIIT = 7.4 \u00b1 1.7, MICT = 5.4 \u00b1 1.8).",
+      "context_window": "was perceived to be of greater intensity than MICT (HIIT = 7.4 \u00b1 1.7, MICT = 5.4 \u00b1 1.8). A series of ANCOVA revealed no signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-msd-2694",
+      "claim_type": "mean_sd",
+      "raw_text": "5.4 \u00b1 1.8",
+      "numeric_values": [
+        5.4,
+        1.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2694,
+      "sentence": "As expected, HIIT was perceived to be of greater intensity than MICT (HIIT = 7.4 \u00b1 1.7, MICT = 5.4 \u00b1 1.8).",
+      "context_window": "be of greater intensity than MICT (HIIT = 7.4 \u00b1 1.7, MICT = 5.4 \u00b1 1.8). A series of ANCOVA revealed no significant differences b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-3224",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.049",
+      "numeric_values": [
+        0.049
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3224,
+      "sentence": "There was, however, a significant difference between the average number of minutes spent in vigorous physical activity per week between the two conditions, F (1, 20) = 4.41, P = 0.049, Cohen's d = 0.92, with HIIT being greater than MICT.",
+      "context_window": "vity per week between the two conditions, F (1, 20) = 4.41, P = 0.049, Cohen's d = 0.92, with HIIT being greater than MICT. Chan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-3524",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3524,
+      "sentence": "Repeated measures ANOVA revealed a significant main effect of time for absolute VO 2peak , F (1, 24) = 20.96, P < 0.001, Cohen's d = 1.92; relative VO 2peak , F (1, 24) = 14.82, P < 0.001, Cohen's d = 1.62; and peak power output, F (1, 24) = 14.08, P < 0.001, Cohen's d = 1.57, indicating an increase in cardiorespiratory fitness assessed at one-month follow-up.",
+      "context_window": "n effect of time for absolute VO 2peak , F (1, 24) = 20.96, P < 0.001, Cohen's d = 1.92; relative VO 2peak , F (1, 24) = 14.82, P",
+      "claim_role": "duration",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-3592",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3592,
+      "sentence": "Repeated measures ANOVA revealed a significant main effect of time for absolute VO 2peak , F (1, 24) = 20.96, P < 0.001, Cohen's d = 1.92; relative VO 2peak , F (1, 24) = 14.82, P < 0.001, Cohen's d = 1.62; and peak power output, F (1, 24) = 14.08, P < 0.001, Cohen's d = 1.57, indicating an increase in cardiorespiratory fitness assessed at one-month follow-up.",
+      "context_window": "1, Cohen's d = 1.92; relative VO 2peak , F (1, 24) = 14.82, P < 0.001, Cohen's d = 1.62; and peak power output, F (1, 24) = 14.08",
+      "claim_role": "duration",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-3663",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3663,
+      "sentence": "Repeated measures ANOVA revealed a significant main effect of time for absolute VO 2peak , F (1, 24) = 20.96, P < 0.001, Cohen's d = 1.92; relative VO 2peak , F (1, 24) = 14.82, P < 0.001, Cohen's d = 1.62; and peak power output, F (1, 24) = 14.08, P < 0.001, Cohen's d = 1.57, indicating an increase in cardiorespiratory fitness assessed at one-month follow-up.",
+      "context_window": "Cohen's d = 1.62; and peak power output, F (1, 24) = 14.08, P < 0.001, Cohen's d = 1.57, indicating an increase in cardiorespirat",
+      "claim_role": "duration",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-4295",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4295,
+      "sentence": "There was a significant main effect of time for systolic blood pressure, F (1, 24) = 17.36, P < 0.001, Cohen's d = 1.75, such that it decreased at one-month follow-up for both conditions.",
+      "context_window": "ect of time for systolic blood pressure, F (1, 24) = 17.36, P < 0.001, Cohen's d = 1.75, such that it decreased at one-month foll",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-p-4535",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4535,
+      "sentence": "Diastolic blood pressure tended to be lower at one-month follow-up; however, this main effect for time did not reach statistical significance ( P = 0.11, Cohen's d = 0.13).",
+      "context_window": "in effect for time did not reach statistical significance ( P = 0.11, Cohen's d = 0.13).",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-3152",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3152,
+      "sentence": "This suggests that objectively measured moderate and total physical activity increased to a similar extent in both groups despite those in the HIIT group being prescribed only ~50% the amount of time to exercise as those in MICT.",
+      "context_window": "oups despite those in the HIIT group being prescribed only ~50% the amount of time to exercise as those in MICT. Taken toge",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-pct-3905",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3905,
+      "sentence": "This was further confirmed with the training logbook data collected in our sample, with >70% adherence measured in both groups.",
+      "context_window": "th the training logbook data collected in our sample, with >70% adherence measured in both groups. Both HIIT and MICT incre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4396724_high_intensity_interval_training_as_an_efficacious_alternati-u-4229",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4229,
+      "sentence": "A recent meta-analyses reported that the increase in VO 2peak following 12-16 weeks of supervised HIIT is approximately double the increase seen following MICT [ 17 ].",
+      "context_window": "nalyses reported that the increase in VO 2peak following 12-16 weeks of supervised HIIT is approximately double the increase see",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

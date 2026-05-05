@@ -1,0 +1,83 @@
+{
+  "paper_id": "PMC6627761_dietary_protein_and_amino_acid_intake_links_to_the_maintenan",
+  "doi": "10.3390/nu11061315",
+  "extracted_at": "2026-05-05T22:35:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6627761_dietary_protein_and_amino_acid_intake_links_to_the_maintenan-pct-651",
+      "claim_type": "percentage",
+      "raw_text": "400%",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 651,
+      "sentence": "In the United States alone, ADRD costs are projected to grow from $186 billion in 2018 to $750 billion in 2050 (400% increase), while dementia diagnoses are projected to increase by ~150%, from 5.5 million to 13.8 million in that same timespan [ 2 ].",
+      "context_window": "to grow from $186 billion in 2018 to $750 billion in 2050 (400% increase), while dementia diagnoses are projected to increa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6627761_dietary_protein_and_amino_acid_intake_links_to_the_maintenan-pct-722",
+      "claim_type": "percentage",
+      "raw_text": "150%",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 722,
+      "sentence": "In the United States alone, ADRD costs are projected to grow from $186 billion in 2018 to $750 billion in 2050 (400% increase), while dementia diagnoses are projected to increase by ~150%, from 5.5 million to 13.8 million in that same timespan [ 2 ].",
+      "context_window": "se), while dementia diagnoses are projected to increase by ~150%, from 5.5 million to 13.8 million in that same timespan [ 2",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6627761_dietary_protein_and_amino_acid_intake_links_to_the_maintenan-pct-4429",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4429,
+      "sentence": "Approximately 10-25% of older adults consume less protein than the Recommended Dietary Allowance (RDA) and 5-9% of older adults consume less than the Estimated Average Requirement (EAR) of 0.66g/kg.day [ 26 ].",
+      "context_window": "ecreased rates on consumption [ 24 , 25 ]. Approximately 10-25% of older adults consume less protein than the Recommended D",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6627761_dietary_protein_and_amino_acid_intake_links_to_the_maintenan-pct-4521",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4521,
+      "sentence": "Approximately 10-25% of older adults consume less protein than the Recommended Dietary Allowance (RDA) and 5-9% of older adults consume less than the Estimated Average Requirement (EAR) of 0.66g/kg.day [ 26 ].",
+      "context_window": "protein than the Recommended Dietary Allowance (RDA) and 5-9% of older adults consume less than the Estimated Average Req",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

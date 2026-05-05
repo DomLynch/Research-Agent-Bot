@@ -1,0 +1,2892 @@
+{
+  "paper_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia",
+  "doi": "10.1155/2022/2345400",
+  "extracted_at": "2026-05-05T22:35:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 32,
+    "confidence_interval": 25,
+    "percentage": 83,
+    "p_value": 9,
+    "mean_sd": 7
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-n-181",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 181,
+      "sentence": "Participants . n = 32,457 participants aged from 1 to 64 years.",
+      "context_window": "representative surveys. Setting . Colombia. Participants . n = 32,457 participants aged from 1 to 64 years. The sample analyz",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-220",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 220,
+      "sentence": "Participants . n = 32,457 participants aged from 1 to 64 years.",
+      "context_window": "mbia. Participants . n = 32,457 participants aged from 1 to 64 years. The sample analyzed included 21,036 boys and nonpregnant g",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-358",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 358,
+      "sentence": "The sample analyzed included 21,036 boys and nonpregnant girls, 10,099 adults, and 1,322 pregnant women, 118 of whom were below 18 years of age.",
+      "context_window": "99 adults, and 1,322 pregnant women, 118 of whom were below 18 years of age. Protein intake was 32.9 g/d (95% CI: 32.4, 33.4) p",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-405",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 32.4, 33.4",
+      "numeric_values": [
+        32.4,
+        33.4
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 405,
+      "sentence": "Protein intake was 32.9 g/d (95% CI: 32.4, 33.4) per 1,000 kilocalories.",
+      "context_window": "m were below 18 years of age. Protein intake was 32.9 g/d (95% CI: 32.4, 33.4) per 1,000 kilocalories. The relative contribution (%) of t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-571",
+      "claim_type": "percentage",
+      "raw_text": "13.2%",
+      "numeric_values": [
+        13.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 571,
+      "sentence": "The relative contribution (%) of total protein to the total energy intake/day (acceptable macronutrient distribution) was 13.2% (95% CI: 13.0, 13.3).",
+      "context_window": "ergy intake/day (acceptable macronutrient distribution) was 13.2% (95% CI: 13.0, 13.3). The acceptable macronutrient distribu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-578",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 13.0, 13.3",
+      "numeric_values": [
+        13.0,
+        13.3
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 578,
+      "sentence": "The relative contribution (%) of total protein to the total energy intake/day (acceptable macronutrient distribution) was 13.2% (95% CI: 13.0, 13.3).",
+      "context_window": "take/day (acceptable macronutrient distribution) was 13.2% (95% CI: 13.0, 13.3). The acceptable macronutrient distribution (AMDR) for anim",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-687",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 687,
+      "sentence": "The acceptable macronutrient distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018).",
+      "context_window": "distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-700",
+      "claim_type": "percentage",
+      "raw_text": "7.8%",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 700,
+      "sentence": "The acceptable macronutrient distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018).",
+      "context_window": "(AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-706",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 7.6, 8.0",
+      "numeric_values": [
+        7.6,
+        8.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 706,
+      "sentence": "The acceptable macronutrient distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018).",
+      "context_window": ") for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-743",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 743,
+      "sentence": "The acceptable macronutrient distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018).",
+      "context_window": "to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-749",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 6.7, 7.5",
+      "numeric_values": [
+        6.7,
+        7.5
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 749,
+      "sentence": "The acceptable macronutrient distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018).",
+      "context_window": "years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a ma",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-807",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 807,
+      "sentence": "The acceptable macronutrient distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018).",
+      "context_window": "(95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children age",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-834",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 834,
+      "sentence": "The acceptable macronutrient distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018).",
+      "context_window": "was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-840",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 8.1, 8.5",
+      "numeric_values": [
+        8.1,
+        8.5
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 840,
+      "sentence": "The acceptable macronutrient distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018).",
+      "context_window": "r children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018). For all",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-887",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 887,
+      "sentence": "The acceptable macronutrient distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018).",
+      "context_window": "mum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018). For all groups, animal protein made up the maj",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-p-897",
+      "claim_type": "p_value",
+      "raw_text": "P =0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 897,
+      "sentence": "The acceptable macronutrient distribution (AMDR) for animal protein for those aged 1 to 64 years was 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5), which was for children aged from 13 to 17 years, and a maximum of 8.3% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018).",
+      "context_window": "% (95% CI: 8.1, 8.5), for children aged from 1 to 4 years ( P =0.018). For all groups, animal protein made up the majority of to",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-984",
+      "claim_type": "percentage",
+      "raw_text": "62.6%",
+      "numeric_values": [
+        62.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 984,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-991",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 61.7, 63.6",
+      "numeric_values": [
+        61.7,
+        63.6
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 991,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-ag",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1029",
+      "claim_type": "percentage",
+      "raw_text": "55.8%",
+      "numeric_values": [
+        55.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1029,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% C",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-1036",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 53.2, 58.4",
+      "numeric_values": [
+        53.2,
+        58.4
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1036,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "s, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1082",
+      "claim_type": "percentage",
+      "raw_text": "54.6%",
+      "numeric_values": [
+        54.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1082,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "olers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-1089",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 53.0, 56.1",
+      "numeric_values": [
+        53.0,
+        56.1
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1089,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, an",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1126",
+      "claim_type": "percentage",
+      "raw_text": "58.1%",
+      "numeric_values": [
+        58.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1126,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 5",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-1133",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 57.5, 58.7",
+      "numeric_values": [
+        57.5,
+        58.7
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1133,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "hildren, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant wo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1169",
+      "claim_type": "percentage",
+      "raw_text": "57.5%",
+      "numeric_values": [
+        57.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1169,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027). The th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-1176",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 55.2, 59.7",
+      "numeric_values": [
+        55.2,
+        59.7
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1176,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "lescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027). The three main dietary sou",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-p-1217",
+      "claim_type": "p_value",
+      "raw_text": "P =0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1217,
+      "sentence": "For all groups, animal protein made up the majority of total proteins, with 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027).",
+      "context_window": "adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women ( P =0.027). The three main dietary sources of animal protein were red",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1292",
+      "claim_type": "percentage",
+      "raw_text": "17.8%",
+      "numeric_values": [
+        17.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1292,
+      "sentence": "The three main dietary sources of animal protein were red meat (17.8%), chicken (16.3%), and eggs (10.5%).",
+      "context_window": "three main dietary sources of animal protein were red meat (17.8%), chicken (16.3%), and eggs (10.5%). The sources of vegetal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1309",
+      "claim_type": "percentage",
+      "raw_text": "16.3%",
+      "numeric_values": [
+        16.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1309,
+      "sentence": "The three main dietary sources of animal protein were red meat (17.8%), chicken (16.3%), and eggs (10.5%).",
+      "context_window": "y sources of animal protein were red meat (17.8%), chicken (16.3%), and eggs (10.5%). The sources of vegetal protein were bre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1327",
+      "claim_type": "percentage",
+      "raw_text": "10.5%",
+      "numeric_values": [
+        10.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1327,
+      "sentence": "The three main dietary sources of animal protein were red meat (17.8%), chicken (16.3%), and eggs (10.5%).",
+      "context_window": "l protein were red meat (17.8%), chicken (16.3%), and eggs (10.5%). The sources of vegetal protein were bread-arepa-pasta (20",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1390",
+      "claim_type": "percentage",
+      "raw_text": "20.0%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1390,
+      "sentence": "The sources of vegetal protein were bread-arepa-pasta (20.0%), cereals (19.8%), and legumes (8.2%).",
+      "context_window": "5%). The sources of vegetal protein were bread-arepa-pasta (20.0%), cereals (19.8%), and legumes (8.2%). Protein intake is e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1407",
+      "claim_type": "percentage",
+      "raw_text": "19.8%",
+      "numeric_values": [
+        19.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1407,
+      "sentence": "The sources of vegetal protein were bread-arepa-pasta (20.0%), cereals (19.8%), and legumes (8.2%).",
+      "context_window": "of vegetal protein were bread-arepa-pasta (20.0%), cereals (19.8%), and legumes (8.2%). Protein intake is excessive accordin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1428",
+      "claim_type": "percentage",
+      "raw_text": "8.2%",
+      "numeric_values": [
+        8.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1428,
+      "sentence": "The sources of vegetal protein were bread-arepa-pasta (20.0%), cereals (19.8%), and legumes (8.2%).",
+      "context_window": "re bread-arepa-pasta (20.0%), cereals (19.8%), and legumes (8.2%). Protein intake is excessive according to the Recommended",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-340",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 340,
+      "sentence": "Institute of Medicine's recommended daily allowance for protein is 1.05 gram per kilogram per day (g/kg/day) for children aged from 1 to 3 years, 0.95 g/kg/d for children aged from 4 to13 years (19 g/d for girls and 34 g/d for boys), 0.85 g/kg/d for adolescents aged from 14 to 18 years (52 g/d for males and 46 g/d for females), and 0.8 g/kg/d for adults.",
+      "context_window": "per kilogram per day (g/kg/day) for children aged from 1 to 3 years, 0.95 g/kg/d for children aged from 4 to13 years (19 g/d fo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-388",
+      "claim_type": "unit_value",
+      "raw_text": "13 years",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 388,
+      "sentence": "Institute of Medicine's recommended daily allowance for protein is 1.05 gram per kilogram per day (g/kg/day) for children aged from 1 to 3 years, 0.95 g/kg/d for children aged from 4 to13 years (19 g/d for girls and 34 g/d for boys), 0.85 g/kg/d for adolescents aged from 14 to 18 years (52 g/d for males and 46 g/d for females), and 0.8 g/kg/d for adults.",
+      "context_window": "d from 1 to 3 years, 0.95 g/kg/d for children aged from 4 to13 years (19 g/d for girls and 34 g/d for boys), 0.85 g/kg/d for ado",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-481",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 481,
+      "sentence": "Institute of Medicine's recommended daily allowance for protein is 1.05 gram per kilogram per day (g/kg/day) for children aged from 1 to 3 years, 0.95 g/kg/d for children aged from 4 to13 years (19 g/d for girls and 34 g/d for boys), 0.85 g/kg/d for adolescents aged from 14 to 18 years (52 g/d for males and 46 g/d for females), and 0.8 g/kg/d for adults.",
+      "context_window": "g/d for boys), 0.85 g/kg/d for adolescents aged from 14 to 18 years (52 g/d for males and 46 g/d for females), and 0.8 g/kg/d f",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-819",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 819,
+      "sentence": "Nevertheless, if instead of the RDA the acceptable macronutrient distribution range (AMDR) is used, in which protein accounts for 10 to 35% of the total energy/day, then the RDA would range from 1.05 to 3.67 g/kg/d [ 5 ].",
+      "context_window": "n range (AMDR) is used, in which protein accounts for 10 to 35% of the total energy/day, then the RDA would range from 1.05",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2019",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2019,
+      "sentence": "In the United States, according to the 2007-2010 National Health and Nutrition Examination Survey (NHANES), 62% of total protein was from animal sources (16% from milk and milk by-products and 46% from meat, chicken, eggs, and fish) and 30% from vegetable sources.",
+      "context_window": "National Health and Nutrition Examination Survey (NHANES), 62% of total protein was from animal sources (16% from milk and",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2065",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2065,
+      "sentence": "In the United States, according to the 2007-2010 National Health and Nutrition Examination Survey (NHANES), 62% of total protein was from animal sources (16% from milk and milk by-products and 46% from meat, chicken, eggs, and fish) and 30% from vegetable sources.",
+      "context_window": "vey (NHANES), 62% of total protein was from animal sources (16% from milk and milk by-products and 46% from meat, chicken,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2104",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2104,
+      "sentence": "In the United States, according to the 2007-2010 National Health and Nutrition Examination Survey (NHANES), 62% of total protein was from animal sources (16% from milk and milk by-products and 46% from meat, chicken, eggs, and fish) and 30% from vegetable sources.",
+      "context_window": "from animal sources (16% from milk and milk by-products and 46% from meat, chicken, eggs, and fish) and 30% from vegetable",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2148",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2148,
+      "sentence": "In the United States, according to the 2007-2010 National Health and Nutrition Examination Survey (NHANES), 62% of total protein was from animal sources (16% from milk and milk by-products and 46% from meat, chicken, eggs, and fish) and 30% from vegetable sources.",
+      "context_window": "by-products and 46% from meat, chicken, eggs, and fish) and 30% from vegetable sources. In adults aged 19 years or older, m",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-2191",
+      "claim_type": "unit_value",
+      "raw_text": "19 years",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2191,
+      "sentence": "In adults aged 19 years or older, mean animal protein intake ranged from 0.33 to 0.97 (g/kg/d) [ 3 ].",
+      "context_window": "s, and fish) and 30% from vegetable sources. In adults aged 19 years or older, mean animal protein intake ranged from 0.33 to 0.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-2359",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2359,
+      "sentence": "Based on the analysis of nine NHANES cycles (1999-2016), in the population above 20 years of age, protein intake and the relative contribution of protein to total energy increased from 15.5% to 16.4%, and said increase was due to both the consumption of protein of animal origin (0.44%) and vegetable (0.33%) sources ( P < 0.001 for trends) [ 2 ].",
+      "context_window": "of nine NHANES cycles (1999-2016), in the population above 20 years of age, protein intake and the relative contribution of pro",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2463",
+      "claim_type": "percentage",
+      "raw_text": "15.5%",
+      "numeric_values": [
+        15.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2463,
+      "sentence": "Based on the analysis of nine NHANES cycles (1999-2016), in the population above 20 years of age, protein intake and the relative contribution of protein to total energy increased from 15.5% to 16.4%, and said increase was due to both the consumption of protein of animal origin (0.44%) and vegetable (0.33%) sources ( P < 0.001 for trends) [ 2 ].",
+      "context_window": "tive contribution of protein to total energy increased from 15.5% to 16.4%, and said increase was due to both the consumption",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2472",
+      "claim_type": "percentage",
+      "raw_text": "16.4%",
+      "numeric_values": [
+        16.4
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2472,
+      "sentence": "Based on the analysis of nine NHANES cycles (1999-2016), in the population above 20 years of age, protein intake and the relative contribution of protein to total energy increased from 15.5% to 16.4%, and said increase was due to both the consumption of protein of animal origin (0.44%) and vegetable (0.33%) sources ( P < 0.001 for trends) [ 2 ].",
+      "context_window": "ribution of protein to total energy increased from 15.5% to 16.4%, and said increase was due to both the consumption of prote",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2558",
+      "claim_type": "percentage",
+      "raw_text": "0.44%",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2558,
+      "sentence": "Based on the analysis of nine NHANES cycles (1999-2016), in the population above 20 years of age, protein intake and the relative contribution of protein to total energy increased from 15.5% to 16.4%, and said increase was due to both the consumption of protein of animal origin (0.44%) and vegetable (0.33%) sources ( P < 0.001 for trends) [ 2 ].",
+      "context_window": "as due to both the consumption of protein of animal origin (0.44%) and vegetable (0.33%) sources ( P < 0.001 for trends) [ 2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2580",
+      "claim_type": "percentage",
+      "raw_text": "0.33%",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2580,
+      "sentence": "Based on the analysis of nine NHANES cycles (1999-2016), in the population above 20 years of age, protein intake and the relative contribution of protein to total energy increased from 15.5% to 16.4%, and said increase was due to both the consumption of protein of animal origin (0.44%) and vegetable (0.33%) sources ( P < 0.001 for trends) [ 2 ].",
+      "context_window": "sumption of protein of animal origin (0.44%) and vegetable (0.33%) sources ( P < 0.001 for trends) [ 2 ]. Knowledge about whe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-p-2597",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2597,
+      "sentence": "Based on the analysis of nine NHANES cycles (1999-2016), in the population above 20 years of age, protein intake and the relative contribution of protein to total energy increased from 15.5% to 16.4%, and said increase was due to both the consumption of protein of animal origin (0.44%) and vegetable (0.33%) sources ( P < 0.001 for trends) [ 2 ].",
+      "context_window": "in of animal origin (0.44%) and vegetable (0.33%) sources ( P < 0.001 for trends) [ 2 ]. Knowledge about whether protein intake f",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-3074",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3074,
+      "sentence": "Its objectives included the following: ( a ) estimating total protein intake and animal and vegetable protein intake in the Colombian population aged from 1 to 64 years and for pregnant women, ( b ) relating this consumption to biological and sociodemographic variables, ( c ) describing the intake of total protein and animal and vegetable protein as AMDR, and, lastly, ( d ) determining the nutritional sources and their relative contribution (%) to total protein intake and to animal and vegetable intake.",
+      "context_window": "e protein intake in the Colombian population aged from 1 to 64 years and for pregnant women, ( b ) relating this consumption to",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-189",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 189,
+      "sentence": "In Colombia, South America, the Colombian Institute for Family Wellbeing (ICBF in Spanish) along with the Ministry of Health (MinSalud) conducted the ENSIN-2015, which is representative of 99% of the Colombian population [ 12 ].",
+      "context_window": "Salud) conducted the ENSIN-2015, which is representative of 99% of the Colombian population [ 12 ]. The ENSIN-2015 estimate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-587",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 587,
+      "sentence": "The target population for this analysis was children aged from 1 to 17 years, adults aged between 18 and 64 years, and pregnant girls and women.",
+      "context_window": "et population for this analysis was children aged from 1 to 17 years, adults aged between 18 and 64 years, and pregnant girls an",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-624",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 624,
+      "sentence": "The target population for this analysis was children aged from 1 to 17 years, adults aged between 18 and 64 years, and pregnant girls and women.",
+      "context_window": "hildren aged from 1 to 17 years, adults aged between 18 and 64 years, and pregnant girls and women. The ENSIN-2015 included 151,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-n-766",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 766,
+      "sentence": "Protein intake was estimated in a weighted random subsample ( n = 32,457).",
+      "context_window": "otein intake was estimated in a weighted random subsample ( n = 32,457). The sample analyzed included 21,036 boys and nonpregn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-907",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 907,
+      "sentence": "The sample analyzed included 21,036 boys and nonpregnant girls, 10,099 adults, and 1,322 pregnant women, 118 of whom were below 18 years of age.",
+      "context_window": "99 adults, and 1,322 pregnant women, 118 of whom were below 18 years of age. Of the total, 749 answered the second 24 HR. The m",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1662",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1662,
+      "sentence": "The 24 HR had a response rate of 92%.",
+      "context_window": "s Method [ 14 , 17 , 18 ]. The 24 HR had a response rate of 92%. After rigorous data cleaning of the database, which was ob",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-3225",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3225,
+      "sentence": "The ENSIN-2015 calculated \u201cadequate weight\u201d for each individual who was underweight or overweight based on two predictive equations, one for subjects aged from 1 to 17 years and another for subjects aged from 18 to 64 years.",
+      "context_window": "n two predictive equations, one for subjects aged from 1 to 17 years and another for subjects aged from 18 to 64 years. The equa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-3275",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3275,
+      "sentence": "The ENSIN-2015 calculated \u201cadequate weight\u201d for each individual who was underweight or overweight based on two predictive equations, one for subjects aged from 1 to 17 years and another for subjects aged from 18 to 64 years.",
+      "context_window": "from 1 to 17 years and another for subjects aged from 18 to 64 years. The equations incorporated data on sex, weight, size, and",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-5877",
+      "claim_type": "unit_value",
+      "raw_text": "1 mm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5877,
+      "sentence": "The ENSIN-2015 used stadiometers to measure height (ShorrBoard) with a sensitivity of 1 mm and digital scales (SECA 874) to measure weight with a precision of 100 g.",
+      "context_window": "meters to measure height (ShorrBoard) with a sensitivity of 1 mm and digital scales (SECA 874) to measure weight with a prec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-7520",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7520,
+      "sentence": "The description was performed with averages or proportions \u00b1 the standard error (SE) and 95% confidence intervals (95% CI).",
+      "context_window": "with averages or proportions \u00b1 the standard error (SE) and 95% confidence intervals (95% CI). This study was conducted in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-7546",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7546,
+      "sentence": "The description was performed with averages or proportions \u00b1 the standard error (SE) and 95% confidence intervals (95% CI).",
+      "context_window": "ons \u00b1 the standard error (SE) and 95% confidence intervals (95% CI). This study was conducted in accordance with the guide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-63",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 63,
+      "sentence": "Mean protein intake by the Colombian population aged from 1 to 64 years is 32.9 g/1000/d (95% CI: 32.4, 33.4), animal protein intake is 19.4 g/1000/d (95% CI: 18.9, 19.8), and vegetable protein is 13.9 g/1000/d (95% CI: 13.5, 14.2) ( Table 1 ).",
+      "context_window": "n protein intake by the Colombian population aged from 1 to 64 years is 32.9 g/1000/d (95% CI: 32.4, 33.4), animal protein intak",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-90",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 32.4, 33.4",
+      "numeric_values": [
+        32.4,
+        33.4
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 90,
+      "sentence": "Mean protein intake by the Colombian population aged from 1 to 64 years is 32.9 g/1000/d (95% CI: 32.4, 33.4), animal protein intake is 19.4 g/1000/d (95% CI: 18.9, 19.8), and vegetable protein is 13.9 g/1000/d (95% CI: 13.5, 14.2) ( Table 1 ).",
+      "context_window": "ombian population aged from 1 to 64 years is 32.9 g/1000/d (95% CI: 32.4, 33.4), animal protein intake is 19.4 g/1000/d (95% CI: 18.9, 19.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-151",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 18.9, 19.8",
+      "numeric_values": [
+        18.9,
+        19.8
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 151,
+      "sentence": "Mean protein intake by the Colombian population aged from 1 to 64 years is 32.9 g/1000/d (95% CI: 32.4, 33.4), animal protein intake is 19.4 g/1000/d (95% CI: 18.9, 19.8), and vegetable protein is 13.9 g/1000/d (95% CI: 13.5, 14.2) ( Table 1 ).",
+      "context_window": "5% CI: 32.4, 33.4), animal protein intake is 19.4 g/1000/d (95% CI: 18.9, 19.8), and vegetable protein is 13.9 g/1000/d (95% CI: 13.5, 14.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-212",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 13.5, 14.2",
+      "numeric_values": [
+        13.5,
+        14.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 212,
+      "sentence": "Mean protein intake by the Colombian population aged from 1 to 64 years is 32.9 g/1000/d (95% CI: 32.4, 33.4), animal protein intake is 19.4 g/1000/d (95% CI: 18.9, 19.8), and vegetable protein is 13.9 g/1000/d (95% CI: 13.5, 14.2) ( Table 1 ).",
+      "context_window": "5% CI: 18.9, 19.8), and vegetable protein is 13.9 g/1000/d (95% CI: 13.5, 14.2) ( Table 1 ). The relative contribution of animal protein t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-344",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 344,
+      "sentence": "The relative contribution of animal protein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ).",
+      "context_window": "tein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-357",
+      "claim_type": "percentage",
+      "raw_text": "7.8%",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 357,
+      "sentence": "The relative contribution of animal protein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ).",
+      "context_window": "energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-363",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 7.6, 8.0",
+      "numeric_values": [
+        7.6,
+        8.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 363,
+      "sentence": "The relative contribution of animal protein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ).",
+      "context_window": "y in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-400",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 400,
+      "sentence": "The relative contribution of animal protein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ).",
+      "context_window": "to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-406",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 6.7, 7.5",
+      "numeric_values": [
+        6.7,
+        7.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 406,
+      "sentence": "The relative contribution of animal protein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ).",
+      "context_window": "years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-450",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 450,
+      "sentence": "The relative contribution of animal protein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ).",
+      "context_window": "inimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-476",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 476,
+      "sentence": "The relative contribution of animal protein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ).",
+      "context_window": "7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-482",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 8.1, 8.5",
+      "numeric_values": [
+        8.1,
+        8.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 482,
+      "sentence": "The relative contribution of animal protein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ).",
+      "context_window": ") for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S -",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-528",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 528,
+      "sentence": "The relative contribution of animal protein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ).",
+      "context_window": "imum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ). Table 1 presents the consumpti",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-p-537",
+      "claim_type": "p_value",
+      "raw_text": "P =0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 537,
+      "sentence": "The relative contribution of animal protein to total energy in the study population (age from 1 to 64 years) is 7.8% (95% CI: 7.6, 8.0), with a minimum of 7.1% (95% CI: 6.7, 7.5) for those aged from 13 to 17 years and a maximum of 8.3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ).",
+      "context_window": ".3% (95% CI: 8.1, 8.5) for children aged from 1 to 4 years, P =0.018 (Tables 1S - 5S ). Table 1 presents the consumption details",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-p-879",
+      "claim_type": "p_value",
+      "raw_text": "P =0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 879,
+      "sentence": "Intake is 2.5 g/1000/d greater in Bogot\u00e1, the capital of the country, than in the central region, and it is lowest in the Pacific, which is the poorest region, P =0.002 ( Table 2 ).",
+      "context_window": "d it is lowest in the Pacific, which is the poorest region, P =0.002 ( Table 2 ). More vegetable protein is consumed in the five",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-p-992",
+      "claim_type": "p_value",
+      "raw_text": "P =0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 992,
+      "sentence": "More vegetable protein is consumed in the five main cities than in the rest of the cities, P =0.026 ( Table 3 ).",
+      "context_window": "med in the five main cities than in the rest of the cities, P =0.026 ( Table 3 ). No differences were found in animal or vegetab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-p-1080",
+      "claim_type": "p_value",
+      "raw_text": "P \u2265 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1080,
+      "sentence": "No differences were found in animal or vegetable protein intake ( P \u2265 0.05) among any of the categories related to age group, nutritional status, food security, or education of head of household.",
+      "context_window": "ferences were found in animal or vegetable protein intake ( P \u2265 0.05) among any of the categories related to age group, nutritio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-1238",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1238,
+      "sentence": "For children aged from 5 to 12 years, females consume more animal protein than males, P =0.031 ( Table 2 ).",
+      "context_window": "education of head of household. For children aged from 5 to 12 years, females consume more animal protein than males, P =0.031 (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-p-1296",
+      "claim_type": "p_value",
+      "raw_text": "P =0.031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1296,
+      "sentence": "For children aged from 5 to 12 years, females consume more animal protein than males, P =0.031 ( Table 2 ).",
+      "context_window": "o 12 years, females consume more animal protein than males, P =0.031 ( Table 2 ). In the overall population aged from 1 to 64 y",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-1360",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1360,
+      "sentence": "In the overall population aged from 1 to 64 years, the three main sources of total animal protein intake are, in order, meat (17.8%), chicken (16.3%), and eggs (10.5%).",
+      "context_window": ".031 ( Table 2 ). In the overall population aged from 1 to 64 years, the three main sources of total animal protein intake are,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1445",
+      "claim_type": "percentage",
+      "raw_text": "17.8%",
+      "numeric_values": [
+        17.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1445,
+      "sentence": "In the overall population aged from 1 to 64 years, the three main sources of total animal protein intake are, in order, meat (17.8%), chicken (16.3%), and eggs (10.5%).",
+      "context_window": "sources of total animal protein intake are, in order, meat (17.8%), chicken (16.3%), and eggs (10.5%). The three main sources",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1462",
+      "claim_type": "percentage",
+      "raw_text": "16.3%",
+      "numeric_values": [
+        16.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1462,
+      "sentence": "In the overall population aged from 1 to 64 years, the three main sources of total animal protein intake are, in order, meat (17.8%), chicken (16.3%), and eggs (10.5%).",
+      "context_window": "animal protein intake are, in order, meat (17.8%), chicken (16.3%), and eggs (10.5%). The three main sources of total vegetab",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1480",
+      "claim_type": "percentage",
+      "raw_text": "10.5%",
+      "numeric_values": [
+        10.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1480,
+      "sentence": "In the overall population aged from 1 to 64 years, the three main sources of total animal protein intake are, in order, meat (17.8%), chicken (16.3%), and eggs (10.5%).",
+      "context_window": "ake are, in order, meat (17.8%), chicken (16.3%), and eggs (10.5%). The three main sources of total vegetable protein intake",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1568",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1568,
+      "sentence": "The three main sources of total vegetable protein intake are bread-arepa-pasta (20%, primarily wheat and corn), cereals (19.8%, mainly rice), and legumes (8.2%) ( Table 4 ).",
+      "context_window": "es of total vegetable protein intake are bread-arepa-pasta (20%, primarily wheat and corn), cereals (19.8%, mainly rice), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1609",
+      "claim_type": "percentage",
+      "raw_text": "19.8%",
+      "numeric_values": [
+        19.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1609,
+      "sentence": "The three main sources of total vegetable protein intake are bread-arepa-pasta (20%, primarily wheat and corn), cereals (19.8%, mainly rice), and legumes (8.2%) ( Table 4 ).",
+      "context_window": "bread-arepa-pasta (20%, primarily wheat and corn), cereals (19.8%, mainly rice), and legumes (8.2%) ( Table 4 ). Table 6S sho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1643",
+      "claim_type": "percentage",
+      "raw_text": "8.2%",
+      "numeric_values": [
+        8.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1643,
+      "sentence": "The three main sources of total vegetable protein intake are bread-arepa-pasta (20%, primarily wheat and corn), cereals (19.8%, mainly rice), and legumes (8.2%) ( Table 4 ).",
+      "context_window": "wheat and corn), cereals (19.8%, mainly rice), and legumes (8.2%) ( Table 4 ). Table 6S shows the contribution (%) of dietar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1813",
+      "claim_type": "percentage",
+      "raw_text": "56.6%",
+      "numeric_values": [
+        56.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1813,
+      "sentence": "The relative contribution of animal protein to total protein is 56.6% (95% CI: 55.1, 58.0).",
+      "context_window": "relative contribution of animal protein to total protein is 56.6% (95% CI: 55.1, 58.0). Animal protein makes up the majority",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-1820",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 55.1, 58.0",
+      "numeric_values": [
+        55.1,
+        58.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1820,
+      "sentence": "The relative contribution of animal protein to total protein is 56.6% (95% CI: 55.1, 58.0).",
+      "context_window": "e contribution of animal protein to total protein is 56.6% (95% CI: 55.1, 58.0). Animal protein makes up the majority of the protein intak",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1920",
+      "claim_type": "percentage",
+      "raw_text": "62.6%",
+      "numeric_values": [
+        62.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1920,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "s up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-1927",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 61.7, 63.6",
+      "numeric_values": [
+        61.7,
+        63.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1927,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "e majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-ag",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1965",
+      "claim_type": "percentage",
+      "raw_text": "55.8%",
+      "numeric_values": [
+        55.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1965,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "ll age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% C",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-1972",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 53.2, 58.4",
+      "numeric_values": [
+        53.2,
+        58.4
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1972,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2018",
+      "claim_type": "percentage",
+      "raw_text": "54.6%",
+      "numeric_values": [
+        54.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2018,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "olers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-2025",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 53.0, 56.1",
+      "numeric_values": [
+        53.0,
+        56.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2025,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, an",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2062",
+      "claim_type": "percentage",
+      "raw_text": "58.1%",
+      "numeric_values": [
+        58.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2062,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 5",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-2069",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 57.5, 58.7",
+      "numeric_values": [
+        57.5,
+        58.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2069,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "hildren, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant wo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2105",
+      "claim_type": "percentage",
+      "raw_text": "57.5%",
+      "numeric_values": [
+        57.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2105,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-2112",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 55.2, 59.7",
+      "numeric_values": [
+        55.2,
+        59.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2112,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "lescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-p-2152",
+      "claim_type": "p_value",
+      "raw_text": "P =0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2152,
+      "sentence": "Animal protein makes up the majority of the protein intake for all age groups: 62.6% (95% CI: 61.7, 63.6) for preschoolers, 55.8% (95% CI: 53.2, 58.4) for school-aged children, 54.6% (95% CI: 53.0, 56.1) for adolescents, 58.1% (95% CI: 57.5, 58.7) for adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ).",
+      "context_window": "adults, and 57.5% (95% CI: 55.2, 59.7) for pregnant women, P =0.027 (Tables 1S - 5S and Figure 1 ). For the overall population",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2297",
+      "claim_type": "percentage",
+      "raw_text": "13.2%",
+      "numeric_values": [
+        13.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2297,
+      "sentence": "For the overall population, the relative contribution (%) of total proteins to the total energy/day is 13.2% (95% CI: 13.0, 13.3), with a minimum of 12.7% (95% CI: 12.2, 13.2) for adolescents and a maximum of 13.3% (95% CI: 13.1, 13.6) for adults (Tables 1S - 5S ).",
+      "context_window": "ntribution (%) of total proteins to the total energy/day is 13.2% (95% CI: 13.0, 13.3), with a minimum of 12.7% (95% CI: 12.2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-2304",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 13.0, 13.3",
+      "numeric_values": [
+        13.0,
+        13.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2304,
+      "sentence": "For the overall population, the relative contribution (%) of total proteins to the total energy/day is 13.2% (95% CI: 13.0, 13.3), with a minimum of 12.7% (95% CI: 12.2, 13.2) for adolescents and a maximum of 13.3% (95% CI: 13.1, 13.6) for adults (Tables 1S - 5S ).",
+      "context_window": "ion (%) of total proteins to the total energy/day is 13.2% (95% CI: 13.0, 13.3), with a minimum of 12.7% (95% CI: 12.2, 13.2) for adolesce",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2343",
+      "claim_type": "percentage",
+      "raw_text": "12.7%",
+      "numeric_values": [
+        12.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2343,
+      "sentence": "For the overall population, the relative contribution (%) of total proteins to the total energy/day is 13.2% (95% CI: 13.0, 13.3), with a minimum of 12.7% (95% CI: 12.2, 13.2) for adolescents and a maximum of 13.3% (95% CI: 13.1, 13.6) for adults (Tables 1S - 5S ).",
+      "context_window": "energy/day is 13.2% (95% CI: 13.0, 13.3), with a minimum of 12.7% (95% CI: 12.2, 13.2) for adolescents and a maximum of 13.3%",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-2350",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 12.2, 13.2",
+      "numeric_values": [
+        12.2,
+        13.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2350,
+      "sentence": "For the overall population, the relative contribution (%) of total proteins to the total energy/day is 13.2% (95% CI: 13.0, 13.3), with a minimum of 12.7% (95% CI: 12.2, 13.2) for adolescents and a maximum of 13.3% (95% CI: 13.1, 13.6) for adults (Tables 1S - 5S ).",
+      "context_window": "day is 13.2% (95% CI: 13.0, 13.3), with a minimum of 12.7% (95% CI: 12.2, 13.2) for adolescents and a maximum of 13.3% (95% CI: 13.1, 13.6",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2403",
+      "claim_type": "percentage",
+      "raw_text": "13.3%",
+      "numeric_values": [
+        13.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2403,
+      "sentence": "For the overall population, the relative contribution (%) of total proteins to the total energy/day is 13.2% (95% CI: 13.0, 13.3), with a minimum of 12.7% (95% CI: 12.2, 13.2) for adolescents and a maximum of 13.3% (95% CI: 13.1, 13.6) for adults (Tables 1S - 5S ).",
+      "context_window": "12.7% (95% CI: 12.2, 13.2) for adolescents and a maximum of 13.3% (95% CI: 13.1, 13.6) for adults (Tables 1S - 5S ). These ta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-ci-2410",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 13.1, 13.6",
+      "numeric_values": [
+        13.1,
+        13.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2410,
+      "sentence": "For the overall population, the relative contribution (%) of total proteins to the total energy/day is 13.2% (95% CI: 13.0, 13.3), with a minimum of 12.7% (95% CI: 12.2, 13.2) for adolescents and a maximum of 13.3% (95% CI: 13.1, 13.6) for adults (Tables 1S - 5S ).",
+      "context_window": "95% CI: 12.2, 13.2) for adolescents and a maximum of 13.3% (95% CI: 13.1, 13.6) for adults (Tables 1S - 5S ). These tables also show the m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-2693",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2693,
+      "sentence": "Milk is the main source of protein for children aged from 1 to 4 years (10.1%), and chicken (11.3%) and meat (11.2%) are the main sources for adolescents.",
+      "context_window": "k is the main source of protein for children aged from 1 to 4 years (10.1%), and chicken (11.3%) and meat (11.2%) are the main",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2702",
+      "claim_type": "percentage",
+      "raw_text": "10.1%",
+      "numeric_values": [
+        10.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2702,
+      "sentence": "Milk is the main source of protein for children aged from 1 to 4 years (10.1%), and chicken (11.3%) and meat (11.2%) are the main sources for adolescents.",
+      "context_window": "main source of protein for children aged from 1 to 4 years (10.1%), and chicken (11.3%) and meat (11.2%) are the main sources",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2723",
+      "claim_type": "percentage",
+      "raw_text": "11.3%",
+      "numeric_values": [
+        11.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2723,
+      "sentence": "Milk is the main source of protein for children aged from 1 to 4 years (10.1%), and chicken (11.3%) and meat (11.2%) are the main sources for adolescents.",
+      "context_window": "n for children aged from 1 to 4 years (10.1%), and chicken (11.3%) and meat (11.2%) are the main sources for adolescents. For",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2740",
+      "claim_type": "percentage",
+      "raw_text": "11.2%",
+      "numeric_values": [
+        11.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2740,
+      "sentence": "Milk is the main source of protein for children aged from 1 to 4 years (10.1%), and chicken (11.3%) and meat (11.2%) are the main sources for adolescents.",
+      "context_window": "ed from 1 to 4 years (10.1%), and chicken (11.3%) and meat (11.2%) are the main sources for adolescents. For pregnant women,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-msd-2850",
+      "claim_type": "mean_sd",
+      "raw_text": "20.9 \u00b1 1.5",
+      "numeric_values": [
+        20.9,
+        1.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2850,
+      "sentence": "For pregnant women, mean animal protein intake (average \u00b1 SD) is 20.9 \u00b1 1.5 g/1000/d and mean vegetable protein intake is 14.3 \u00b1 0.8 g/1000/d.",
+      "context_window": "regnant women, mean animal protein intake (average \u00b1 SD) is 20.9 \u00b1 1.5 g/1000/d and mean vegetable protein intake is 14.3 \u00b1 0.8 g/",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-msd-2907",
+      "claim_type": "mean_sd",
+      "raw_text": "14.3 \u00b1 0.8",
+      "numeric_values": [
+        14.3,
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2907,
+      "sentence": "For pregnant women, mean animal protein intake (average \u00b1 SD) is 20.9 \u00b1 1.5 g/1000/d and mean vegetable protein intake is 14.3 \u00b1 0.8 g/1000/d.",
+      "context_window": "is 20.9 \u00b1 1.5 g/1000/d and mean vegetable protein intake is 14.3 \u00b1 0.8 g/1000/d. Tables 7S - 18S present the protein intake's deta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-43",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 43,
+      "sentence": "In the Colombian population aged from 1 to 64 years, absolute protein intake ranges from 54.5 to 71.4 (g/d), and it ranges from 31.8 to 33.4 g/1000/d when adjusted for energy density.",
+      "context_window": "In the Colombian population aged from 1 to 64 years, absolute protein intake ranges from 54.5 to 71.4 (g/d), an",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-322",
+      "claim_type": "percentage",
+      "raw_text": "54.6%",
+      "numeric_values": [
+        54.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 322,
+      "sentence": "The relative contribution (%) of animal protein to total protein/day is 54.6% to 62.6%.",
+      "context_window": "contribution (%) of animal protein to total protein/day is 54.6% to 62.6%. The children aged from 1 to 4 years present the g",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-331",
+      "claim_type": "percentage",
+      "raw_text": "62.6%",
+      "numeric_values": [
+        62.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 331,
+      "sentence": "The relative contribution (%) of animal protein to total protein/day is 54.6% to 62.6%.",
+      "context_window": "tion (%) of animal protein to total protein/day is 54.6% to 62.6%. The children aged from 1 to 4 years present the greatest i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-366",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 366,
+      "sentence": "The children aged from 1 to 4 years present the greatest intake per kilogram of body weight, with 4.0 g/kg/d, as well as the greatest relative contribution (%) of animal protein to total protein/day, with 62.6%.",
+      "context_window": "protein/day is 54.6% to 62.6%. The children aged from 1 to 4 years present the greatest intake per kilogram of body weight, wi",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-543",
+      "claim_type": "percentage",
+      "raw_text": "62.6%",
+      "numeric_values": [
+        62.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 543,
+      "sentence": "The children aged from 1 to 4 years present the greatest intake per kilogram of body weight, with 4.0 g/kg/d, as well as the greatest relative contribution (%) of animal protein to total protein/day, with 62.6%.",
+      "context_window": "ntribution (%) of animal protein to total protein/day, with 62.6%. For all age groups and pregnant women, the relative contri",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-656",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 656,
+      "sentence": "For all age groups and pregnant women, the relative contribution (%) of total protein to energy intake is 13% to 14%.",
+      "context_window": "ative contribution (%) of total protein to energy intake is 13% to 14%. Protein intake was found to be positively associate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-663",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 663,
+      "sentence": "For all age groups and pregnant women, the relative contribution (%) of total protein to energy intake is 13% to 14%.",
+      "context_window": "ontribution (%) of total protein to energy intake is 13% to 14%. Protein intake was found to be positively associated with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1110",
+      "claim_type": "percentage",
+      "raw_text": "51.7%",
+      "numeric_values": [
+        51.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1110,
+      "sentence": "Meat, chicken, eggs, and milk make up 51.7% of the animal protein.",
+      "context_window": "dispersed population. Meat, chicken, eggs, and milk make up 51.7% of the animal protein. Bread-arepa-pasta (mainly from wheat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1239",
+      "claim_type": "percentage",
+      "raw_text": "54.7%",
+      "numeric_values": [
+        54.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1239,
+      "sentence": "Bread-arepa-pasta (mainly from wheat and corn), cereal (mainly rice), legumes, and potatoes make up 54.7% of the vegetable protein.",
+      "context_window": "corn), cereal (mainly rice), legumes, and potatoes make up 54.7% of the vegetable protein. These same food items make up 55%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1301",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1301,
+      "sentence": "These same food items make up 55% of the total protein in the diet.",
+      "context_window": ".7% of the vegetable protein. These same food items make up 55% of the total protein in the diet. In Colombia, the 2005 an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-1467",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1467,
+      "sentence": "In Colombia, the 2005 and ENSIN-2015 surveys [ 29 , 30 ] have estimated dietary intake as well as total proteins over the past 20 years.",
+      "context_window": "ated dietary intake as well as total proteins over the past 20 years. Since the 2005 ENSIN did not estimate protein intake accor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-1642",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1642,
+      "sentence": "Nevertheless, that survey reported that at least 36% of the Colombian population had a protein intake deficit associated with poverty [ 30 ].",
+      "context_window": "compared. Nevertheless, that survey reported that at least 36% of the Colombian population had a protein intake deficit as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-1812",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1812,
+      "sentence": "A multicentric study performed from 2009 to 2011 with children between 1 and 17 years of age found total protein intake to be positively associated with wealth level and excessive protein intake to be associated with a body mass index >25 [ 31 ].",
+      "context_window": "udy performed from 2009 to 2011 with children between 1 and 17 years of age found total protein intake to be positively associat",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2073",
+      "claim_type": "percentage",
+      "raw_text": "12.0%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2073,
+      "sentence": "In that same study, the relative contribution (%) of total protein to total energy/day was 12.0% \u00b1 0.11 [ 30 ].",
+      "context_window": "e contribution (%) of total protein to total energy/day was 12.0% \u00b1 0.11 [ 30 ]. The ENSIN-2015 also reported this finding [",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2486",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2486,
+      "sentence": "In the United States, the relative contribution of animal protein to total protein is 62% for adults aged 19 years or older according to the 2007-2010 NHANES [ 3 ] and 64.6% according to the 1999-2016 NHANES [ 2 ], compared to 58.1% in the present study for the same age group.",
+      "context_window": "relative contribution of animal protein to total protein is 62% for adults aged 19 years or older according to the 2007-201",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-2506",
+      "claim_type": "unit_value",
+      "raw_text": "19 years",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2506,
+      "sentence": "In the United States, the relative contribution of animal protein to total protein is 62% for adults aged 19 years or older according to the 2007-2010 NHANES [ 3 ] and 64.6% according to the 1999-2016 NHANES [ 2 ], compared to 58.1% in the present study for the same age group.",
+      "context_window": "n of animal protein to total protein is 62% for adults aged 19 years or older according to the 2007-2010 NHANES [ 3 ] and 64.6%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2568",
+      "claim_type": "percentage",
+      "raw_text": "64.6%",
+      "numeric_values": [
+        64.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2568,
+      "sentence": "In the United States, the relative contribution of animal protein to total protein is 62% for adults aged 19 years or older according to the 2007-2010 NHANES [ 3 ] and 64.6% according to the 1999-2016 NHANES [ 2 ], compared to 58.1% in the present study for the same age group.",
+      "context_window": "years or older according to the 2007-2010 NHANES [ 3 ] and 64.6% according to the 1999-2016 NHANES [ 2 ], compared to 58.1%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2627",
+      "claim_type": "percentage",
+      "raw_text": "58.1%",
+      "numeric_values": [
+        58.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2627,
+      "sentence": "In the United States, the relative contribution of animal protein to total protein is 62% for adults aged 19 years or older according to the 2007-2010 NHANES [ 3 ] and 64.6% according to the 1999-2016 NHANES [ 2 ], compared to 58.1% in the present study for the same age group.",
+      "context_window": "64.6% according to the 1999-2016 NHANES [ 2 ], compared to 58.1% in the present study for the same age group. The relative c",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2745",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2745,
+      "sentence": "The relative contribution of vegetable protein to total protein is 30% in the 2007-2010 NHANES [ 3 ], 35.1% in the 1999-2016 NHANES [ 2 ], and 43% in the present study ( Table 5S ).",
+      "context_window": "ative contribution of vegetable protein to total protein is 30% in the 2007-2010 NHANES [ 3 ], 35.1% in the 1999-2016 NHANE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2780",
+      "claim_type": "percentage",
+      "raw_text": "35.1%",
+      "numeric_values": [
+        35.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2780,
+      "sentence": "The relative contribution of vegetable protein to total protein is 30% in the 2007-2010 NHANES [ 3 ], 35.1% in the 1999-2016 NHANES [ 2 ], and 43% in the present study ( Table 5S ).",
+      "context_window": "tein to total protein is 30% in the 2007-2010 NHANES [ 3 ], 35.1% in the 1999-2016 NHANES [ 2 ], and 43% in the present study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-2821",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2821,
+      "sentence": "The relative contribution of vegetable protein to total protein is 30% in the 2007-2010 NHANES [ 3 ], 35.1% in the 1999-2016 NHANES [ 2 ], and 43% in the present study ( Table 5S ).",
+      "context_window": "2010 NHANES [ 3 ], 35.1% in the 1999-2016 NHANES [ 2 ], and 43% in the present study ( Table 5S ). In absolute terms, women",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-3336",
+      "claim_type": "unit_value",
+      "raw_text": "19 years",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3336,
+      "sentence": "Although absolute intake is not a good indicator, in the 2007-2010 NHANES [ 3 ], adults aged 19 years or older consumed more total protein per day on average (82.3 \u00b1 0.8 (g/d)) than those in the ENSIN-2015 (67.3 \u00b1 1.0 (g/d)).",
+      "context_window": "good indicator, in the 2007-2010 NHANES [ 3 ], adults aged 19 years or older consumed more total protein per day on average (82",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-msd-3402",
+      "claim_type": "mean_sd",
+      "raw_text": "82.3 \u00b1 0.8",
+      "numeric_values": [
+        82.3,
+        0.8
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3402,
+      "sentence": "Although absolute intake is not a good indicator, in the 2007-2010 NHANES [ 3 ], adults aged 19 years or older consumed more total protein per day on average (82.3 \u00b1 0.8 (g/d)) than those in the ENSIN-2015 (67.3 \u00b1 1.0 (g/d)).",
+      "context_window": "rs or older consumed more total protein per day on average (82.3 \u00b1 0.8 (g/d)) than those in the ENSIN-2015 (67.3 \u00b1 1.0 (g/d)). Acc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-msd-3450",
+      "claim_type": "mean_sd",
+      "raw_text": "67.3 \u00b1 1.0",
+      "numeric_values": [
+        67.3,
+        1.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3450,
+      "sentence": "Although absolute intake is not a good indicator, in the 2007-2010 NHANES [ 3 ], adults aged 19 years or older consumed more total protein per day on average (82.3 \u00b1 0.8 (g/d)) than those in the ENSIN-2015 (67.3 \u00b1 1.0 (g/d)).",
+      "context_window": "on average (82.3 \u00b1 0.8 (g/d)) than those in the ENSIN-2015 (67.3 \u00b1 1.0 (g/d)). According to the French National Cross-Sectional Fo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-3632",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3632,
+      "sentence": "According to the French National Cross-Sectional Food Consumption Survey (INCA2; 2006-2007), [ 33 ] the average total protein intake for the adult population aged 18 years or older in France is 86.0 g/d \u00b1 16, relative contribution to total energy/day is 16.8% \u00b1 3.0, animal protein intake is 60.5 g/d, and vegetable protein intake is 25.5 g/d, while the relative contribution of animal protein to total protein intake is 69.5% \u00b1 10.5 and the relative contribution of vegetable protein is 30.5% \u00b1 10.5.",
+      "context_window": "average total protein intake for the adult population aged 18 years or older in France is 86.0 g/d \u00b1 16, relative contribution",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-3723",
+      "claim_type": "percentage",
+      "raw_text": "16.8%",
+      "numeric_values": [
+        16.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3723,
+      "sentence": "According to the French National Cross-Sectional Food Consumption Survey (INCA2; 2006-2007), [ 33 ] the average total protein intake for the adult population aged 18 years or older in France is 86.0 g/d \u00b1 16, relative contribution to total energy/day is 16.8% \u00b1 3.0, animal protein intake is 60.5 g/d, and vegetable protein intake is 25.5 g/d, while the relative contribution of animal protein to total protein intake is 69.5% \u00b1 10.5 and the relative contribution of vegetable protein is 30.5% \u00b1 10.5.",
+      "context_window": "86.0 g/d \u00b1 16, relative contribution to total energy/day is 16.8% \u00b1 3.0, animal protein intake is 60.5 g/d, and vegetable pro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-3890",
+      "claim_type": "percentage",
+      "raw_text": "69.5%",
+      "numeric_values": [
+        69.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3890,
+      "sentence": "According to the French National Cross-Sectional Food Consumption Survey (INCA2; 2006-2007), [ 33 ] the average total protein intake for the adult population aged 18 years or older in France is 86.0 g/d \u00b1 16, relative contribution to total energy/day is 16.8% \u00b1 3.0, animal protein intake is 60.5 g/d, and vegetable protein intake is 25.5 g/d, while the relative contribution of animal protein to total protein intake is 69.5% \u00b1 10.5 and the relative contribution of vegetable protein is 30.5% \u00b1 10.5.",
+      "context_window": "e contribution of animal protein to total protein intake is 69.5% \u00b1 10.5 and the relative contribution of vegetable protein i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-3957",
+      "claim_type": "percentage",
+      "raw_text": "30.5%",
+      "numeric_values": [
+        30.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3957,
+      "sentence": "According to the French National Cross-Sectional Food Consumption Survey (INCA2; 2006-2007), [ 33 ] the average total protein intake for the adult population aged 18 years or older in France is 86.0 g/d \u00b1 16, relative contribution to total energy/day is 16.8% \u00b1 3.0, animal protein intake is 60.5 g/d, and vegetable protein intake is 25.5 g/d, while the relative contribution of animal protein to total protein intake is 69.5% \u00b1 10.5 and the relative contribution of vegetable protein is 30.5% \u00b1 10.5.",
+      "context_window": "10.5 and the relative contribution of vegetable protein is 30.5% \u00b1 10.5. The relative contribution of animal protein to tot",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-4039",
+      "claim_type": "percentage",
+      "raw_text": "7.9%",
+      "numeric_values": [
+        7.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4039,
+      "sentence": "The relative contribution of animal protein to total energy/day is 7.9% \u00b1 0.1 in the ENSIN-2015 and 11.9 \u00b1 3.6 in the 2006-2007 INCA2, [ 33 ] while vegetable protein is 5.5 \u00b1 0.0 in the ENSIN-2015 and 5.7 \u00b1 0.1 in the 2006-2007 INCA2.",
+      "context_window": "ative contribution of animal protein to total energy/day is 7.9% \u00b1 0.1 in the ENSIN-2015 and 11.9 \u00b1 3.6 in the 2006-2007 INC",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-msd-4072",
+      "claim_type": "mean_sd",
+      "raw_text": "11.9 \u00b1 3.6",
+      "numeric_values": [
+        11.9,
+        3.6
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4072,
+      "sentence": "The relative contribution of animal protein to total energy/day is 7.9% \u00b1 0.1 in the ENSIN-2015 and 11.9 \u00b1 3.6 in the 2006-2007 INCA2, [ 33 ] while vegetable protein is 5.5 \u00b1 0.0 in the ENSIN-2015 and 5.7 \u00b1 0.1 in the 2006-2007 INCA2.",
+      "context_window": "ein to total energy/day is 7.9% \u00b1 0.1 in the ENSIN-2015 and 11.9 \u00b1 3.6 in the 2006-2007 INCA2, [ 33 ] while vegetable protein is 5",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-msd-4141",
+      "claim_type": "mean_sd",
+      "raw_text": "5.5 \u00b1 0.0",
+      "numeric_values": [
+        5.5,
+        0.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4141,
+      "sentence": "The relative contribution of animal protein to total energy/day is 7.9% \u00b1 0.1 in the ENSIN-2015 and 11.9 \u00b1 3.6 in the 2006-2007 INCA2, [ 33 ] while vegetable protein is 5.5 \u00b1 0.0 in the ENSIN-2015 and 5.7 \u00b1 0.1 in the 2006-2007 INCA2.",
+      "context_window": "6 in the 2006-2007 INCA2, [ 33 ] while vegetable protein is 5.5 \u00b1 0.0 in the ENSIN-2015 and 5.7 \u00b1 0.1 in the 2006-2007 INCA2. Acc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-msd-4173",
+      "claim_type": "mean_sd",
+      "raw_text": "5.7 \u00b1 0.1",
+      "numeric_values": [
+        5.7,
+        0.1
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4173,
+      "sentence": "The relative contribution of animal protein to total energy/day is 7.9% \u00b1 0.1 in the ENSIN-2015 and 11.9 \u00b1 3.6 in the 2006-2007 INCA2, [ 33 ] while vegetable protein is 5.5 \u00b1 0.0 in the ENSIN-2015 and 5.7 \u00b1 0.1 in the 2006-2007 INCA2.",
+      "context_window": "while vegetable protein is 5.5 \u00b1 0.0 in the ENSIN-2015 and 5.7 \u00b1 0.1 in the 2006-2007 INCA2. According to estimates by FAOSTAT f",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-4601",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4601,
+      "sentence": "Furthermore, for those same countries and period, animal protein intake (% of total protein) was 72 g/d (64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, and 36 g/d (52%) in Colombia [ 34 ].",
+      "context_window": "iod, animal protein intake (% of total protein) was 72 g/d (64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-4636",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4636,
+      "sentence": "Furthermore, for those same countries and period, animal protein intake (% of total protein) was 72 g/d (64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, and 36 g/d (52%) in Colombia [ 34 ].",
+      "context_window": "tal protein) was 72 g/d (64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Can",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-4661",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4661,
+      "sentence": "Furthermore, for those same countries and period, animal protein intake (% of total protein) was 72 g/d (64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, and 36 g/d (52%) in Colombia [ 34 ].",
+      "context_window": "64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egyp",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-4688",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4688,
+      "sentence": "Furthermore, for those same countries and period, animal protein intake (% of total protein) was 72 g/d (64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, and 36 g/d (52%) in Colombia [ 34 ].",
+      "context_window": "62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-4712",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4712,
+      "sentence": "Furthermore, for those same countries and period, animal protein intake (% of total protein) was 72 g/d (64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, and 36 g/d (52%) in Colombia [ 34 ].",
+      "context_window": "66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-4735",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4735,
+      "sentence": "Furthermore, for those same countries and period, animal protein intake (% of total protein) was 72 g/d (64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, and 36 g/d (52%) in Colombia [ 34 ].",
+      "context_window": "ina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-4759",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4759,
+      "sentence": "Furthermore, for those same countries and period, animal protein intake (% of total protein) was 72 g/d (64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, and 36 g/d (52%) in Colombia [ 34 ].",
+      "context_window": "ada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, and 36 g/d (52%) in Colom",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-4809",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4809,
+      "sentence": "Furthermore, for those same countries and period, animal protein intake (% of total protein) was 72 g/d (64%) in the United States, 62 g/d (60%) in Germany, 66 g/d (65%) in Argentina, 53 g/d (53%) in Canada, 24 g/d (24%) in Egypt, 43 g/d (47%) in Mexico, 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, and 36 g/d (52%) in Colombia [ 34 ].",
+      "context_window": ", 28 g/d (51%) in Chile, 28 g/d (36.7) in Peru, and 36 g/d (52%) in Colombia [ 34 ]. In the 2007-2010 NHANES, the main sou",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-5041",
+      "claim_type": "percentage",
+      "raw_text": "75.1%",
+      "numeric_values": [
+        75.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5041,
+      "sentence": "In the 2007-2010 NHANES, the main sources of animal protein were, in order, cheese, chicken, low-fat milk, and cured and processed meat, as well as preparations with meat and eggs, which make up an average 75.1% of the total protein.",
+      "context_window": "s preparations with meat and eggs, which make up an average 75.1% of the total protein. The main sources of vegetable protein",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-5223",
+      "claim_type": "percentage",
+      "raw_text": "25.3%",
+      "numeric_values": [
+        25.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5223,
+      "sentence": "The main sources of vegetable protein are wheat bread with yeast, rolls, nuts, and seeds, as well as preparations with pasta, which contribute an average 25.3% of total protein [ 3 ].",
+      "context_window": "ell as preparations with pasta, which contribute an average 25.3% of total protein [ 3 ]. The increase in animal protein inta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-5651",
+      "claim_type": "percentage",
+      "raw_text": "58.5%",
+      "numeric_values": [
+        58.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5651,
+      "sentence": "In the 2006-2007 INCA2, the main sources of animal protein are, in order, red meat, poultry and game, viscera, and processed meat, milk, and milk by-products, which make up 58.5% of total protein.",
+      "context_window": "d processed meat, milk, and milk by-products, which make up 58.5% of total protein. The main sources of vegetable protein are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-5740",
+      "claim_type": "percentage",
+      "raw_text": "19.6%",
+      "numeric_values": [
+        19.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5740,
+      "sentence": "The main sources of vegetable protein are cereals, which make up 19.6% of total protein [ 33 ].",
+      "context_window": "ain sources of vegetable protein are cereals, which make up 19.6% of total protein [ 33 ]. Colombia is simultaneously underg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-u-6078",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6078,
+      "sentence": "According to the RDA, protein intake is excessive, especially for children aged from 1 to 4 years, a time at which excess weight begins to be seen in Colombian children [ 39 ].",
+      "context_window": "intake is excessive, especially for children aged from 1 to 4 years, a time at which excess weight begins to be seen in Colombi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-6448",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6448,
+      "sentence": "For all age groups, the relative contribution of protein to total energy falls within a conservative range of 13% to 14% [ 5 , 39 ].",
+      "context_window": "rotein to total energy falls within a conservative range of 13% to 14% [ 5 , 39 ]. In France, vegetable protein intake was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8776471_intake_of_animal_protein_and_dietary_sources_in_the_colombia-pct-6455",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6455,
+      "sentence": "For all age groups, the relative contribution of protein to total energy falls within a conservative range of 13% to 14% [ 5 , 39 ].",
+      "context_window": "to total energy falls within a conservative range of 13% to 14% [ 5 , 39 ]. In France, vegetable protein intake was found t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

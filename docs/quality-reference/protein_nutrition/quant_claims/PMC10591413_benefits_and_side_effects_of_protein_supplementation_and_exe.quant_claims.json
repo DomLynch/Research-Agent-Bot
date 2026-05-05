@@ -1,0 +1,282 @@
+{
+  "paper_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe",
+  "doi": "10.1186/s12937-023-00880-7",
+  "extracted_at": "2026-05-05T22:35:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-u-178",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 178,
+      "sentence": "According to the United Nations, the global population aged 60 years or over numbered 962 million in 2017, which is approximately 13% of the global population [ 1 ].",
+      "context_window": "According to the United Nations, the global population aged 60 years or over numbered 962 million in 2017, which is approximatel",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-pct-248",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 248,
+      "sentence": "According to the United Nations, the global population aged 60 years or over numbered 962 million in 2017, which is approximately 13% of the global population [ 1 ].",
+      "context_window": "r over numbered 962 million in 2017, which is approximately 13% of the global population [ 1 ]. The World Health Organizati",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-u-655",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 655,
+      "sentence": "In low- and middle-income countries, the number of people aged 60 years and over is growing faster than in high-income countries [ 3 ].",
+      "context_window": "low- and middle-income countries, the number of people aged 60 years and over is growing faster than in high-income countries [",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-pct-824",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 824,
+      "sentence": "The pace of population ageing is much faster than in the past, as a result it is estimated that 80% of older people will be living in low- and middle-income countries [ 2 ].",
+      "context_window": "h faster than in the past, as a result it is estimated that 80% of older people will be living in low- and middle-income co",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-pct-1193",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1193,
+      "sentence": "Sarcopenia is a condition that affects older people more frequently than younger people, with prevalence rates ranging from 5 to 50% [ 5 ] depending on diagnostic criteria and geographic location.",
+      "context_window": "han younger people, with prevalence rates ranging from 5 to 50% [ 5 ] depending on diagnostic criteria and geographic locat",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-pct-1372",
+      "claim_type": "percentage",
+      "raw_text": "22.2%",
+      "numeric_values": [
+        22.2
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1372,
+      "sentence": "For instance, among Asian countries, Thailand, Malaysia and Singapore showed prevalence rates of sarcopenia of 22.2%, 59.8% and 32.2%, respectively [ 7 , 10 , 11 ].",
+      "context_window": "ysia and Singapore showed prevalence rates of sarcopenia of 22.2%, 59.8% and 32.2%, respectively [ 7 , 10 , 11 ]. As a high-r",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-pct-1379",
+      "claim_type": "percentage",
+      "raw_text": "59.8%",
+      "numeric_values": [
+        59.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1379,
+      "sentence": "For instance, among Asian countries, Thailand, Malaysia and Singapore showed prevalence rates of sarcopenia of 22.2%, 59.8% and 32.2%, respectively [ 7 , 10 , 11 ].",
+      "context_window": "d Singapore showed prevalence rates of sarcopenia of 22.2%, 59.8% and 32.2%, respectively [ 7 , 10 , 11 ]. As a high-risk ger",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-pct-1389",
+      "claim_type": "percentage",
+      "raw_text": "32.2%",
+      "numeric_values": [
+        32.2
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1389,
+      "sentence": "For instance, among Asian countries, Thailand, Malaysia and Singapore showed prevalence rates of sarcopenia of 22.2%, 59.8% and 32.2%, respectively [ 7 , 10 , 11 ].",
+      "context_window": "e showed prevalence rates of sarcopenia of 22.2%, 59.8% and 32.2%, respectively [ 7 , 10 , 11 ]. As a high-risk geriatric syn",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-pct-1583",
+      "claim_type": "percentage",
+      "raw_text": "85.3%",
+      "numeric_values": [
+        85.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1583,
+      "sentence": "As a high-risk geriatric syndrome, by using different definitions, a study conducted in Canada reported prevalence of sarcopenic obesity ranging from 0.1 to 85.3% in males, and from 0 to 80.4% in females [ 9 ].",
+      "context_window": "ported prevalence of sarcopenic obesity ranging from 0.1 to 85.3% in males, and from 0 to 80.4% in females [ 9 ]. It is noted",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-pct-1613",
+      "claim_type": "percentage",
+      "raw_text": "80.4%",
+      "numeric_values": [
+        80.4
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1613,
+      "sentence": "As a high-risk geriatric syndrome, by using different definitions, a study conducted in Canada reported prevalence of sarcopenic obesity ranging from 0.1 to 85.3% in males, and from 0 to 80.4% in females [ 9 ].",
+      "context_window": "c obesity ranging from 0.1 to 85.3% in males, and from 0 to 80.4% in females [ 9 ]. It is noted that the prevalence of sarcop",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-u-1720",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1720,
+      "sentence": "It is noted that the prevalence of sarcopenic obesity is increasing in adults aged 65 years and older [ 8 ] and it appears to be particularly common among older women [ 12 ].",
+      "context_window": "evalence of sarcopenic obesity is increasing in adults aged 65 years and older [ 8 ] and it appears to be particularly common am",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-u-266",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 months",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 266,
+      "sentence": "The results showed that protein supplementation alone (1.5 months to 4 months) improved the body weight, waist circumference, muscle strength and muscle mass [ 36 - 42 ].",
+      "context_window": "lts. The results showed that protein supplementation alone (1.5 months to 4 months) improved the body weight, waist circumference,",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-u-280",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 280,
+      "sentence": "The results showed that protein supplementation alone (1.5 months to 4 months) improved the body weight, waist circumference, muscle strength and muscle mass [ 36 - 42 ].",
+      "context_window": "ts showed that protein supplementation alone (1.5 months to 4 months) improved the body weight, waist circumference, muscle stre",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-u-2125",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2125,
+      "sentence": "The results of this scoping review are consistent with recent systematic reviews in older adults (50-70 years old) with sarcopenic obesity which have found that combining exercise with nutritional interventions provide advantages in reducing fat mass [ 33 ].",
+      "context_window": "nsistent with recent systematic reviews in older adults (50-70 years old) with sarcopenic obesity which have found that combinin",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10591413_benefits_and_side_effects_of_protein_supplementation_and_exe-pct-5373",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5373,
+      "sentence": "For obesity, different ranges of body fat percentage (27-38%) were used [ 37 - 42 ] except for one study [ 36 ] which used BMI as diagnostic criteria.",
+      "context_window": ". For obesity, different ranges of body fat percentage (27-38%) were used [ 37 - 42 ] except for one study [ 36 ] which us",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

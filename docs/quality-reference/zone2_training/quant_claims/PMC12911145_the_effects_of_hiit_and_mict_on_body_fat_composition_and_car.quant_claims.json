@@ -1,0 +1,2375 @@
+{
+  "paper_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car",
+  "doi": "10.1186/s13102-025-01519-2",
+  "extracted_at": "2026-05-05T22:43:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 23,
+    "confidence_interval": 20,
+    "p_value": 31,
+    "percentage": 54,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-830",
+      "claim_type": "unit_value",
+      "raw_text": "0.59 kg",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 830,
+      "sentence": "Compared to MICT, HIIT significantly reduced BMI in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), but slightly increased BMI in disease populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042).",
+      "context_window": "HIIT significantly reduced BMI in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), but slightly incr",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-844",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.84 to -0.34",
+      "numeric_values": [
+        -0.84,
+        -0.34
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 844,
+      "sentence": "Compared to MICT, HIIT significantly reduced BMI in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), but slightly increased BMI in disease populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042).",
+      "context_window": "ntly reduced BMI in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), but slightly increased BMI in disease populati",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-868",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 868,
+      "sentence": "Compared to MICT, HIIT significantly reduced BMI in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), but slightly increased BMI in disease populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042).",
+      "context_window": "e populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), but slightly increased BMI in disease populations (SMD =",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-937",
+      "claim_type": "unit_value",
+      "raw_text": "0.40 kg",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 937,
+      "sentence": "Compared to MICT, HIIT significantly reduced BMI in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), but slightly increased BMI in disease populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042).",
+      "context_window": "), but slightly increased BMI in disease populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042). For cardiorespirato",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-951",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.03 to 0.77",
+      "numeric_values": [
+        0.03,
+        0.77
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 951,
+      "sentence": "Compared to MICT, HIIT significantly reduced BMI in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), but slightly increased BMI in disease populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042).",
+      "context_window": "y increased BMI in disease populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042). For cardiorespiratory fitness, HIIT outperform",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-973",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 973,
+      "sentence": "Compared to MICT, HIIT significantly reduced BMI in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), but slightly increased BMI in disease populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042).",
+      "context_window": "ease populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042). For cardiorespiratory fitness, HIIT outperformed MICT in",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-1112",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.01 to 0.45",
+      "numeric_values": [
+        0.01,
+        0.45
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1112,
+      "sentence": "For cardiorespiratory fitness, HIIT outperformed MICT in improving VO\u2082peak in obese populations (SMD = 0.23 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001).",
+      "context_window": "VO\u2082peak in obese populations (SMD = 0.23 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 ml.kg\u207b 1",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-1134",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1134,
+      "sentence": "For cardiorespiratory fitness, HIIT outperformed MICT in improving VO\u2082peak in obese populations (SMD = 0.23 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001).",
+      "context_window": "ations (SMD = 0.23 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 ml.kg\u207b 1 .min\u207b 1 , 9",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-1202",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 4.68 to 7.74",
+      "numeric_values": [
+        4.68,
+        7.74
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1202,
+      "sentence": "For cardiorespiratory fitness, HIIT outperformed MICT in improving VO\u2082peak in obese populations (SMD = 0.23 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001).",
+      "context_window": "1) and sedentary populations (SMD = 6.21 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001). HIIT cycling demonstrates comparable efficacy",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-1224",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1224,
+      "sentence": "For cardiorespiratory fitness, HIIT outperformed MICT in improving VO\u2082peak in obese populations (SMD = 0.23 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001).",
+      "context_window": "ations (SMD = 6.21 ml.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001). HIIT cycling demonstrates comparable efficacy to MICT fo",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-395",
+      "claim_type": "percentage",
+      "raw_text": "115%",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 395,
+      "sentence": "According to the World Obesity Report 2024, the global population of obese adults is projected to rise from 524 million in 2010 to 1.13 billion by 2030, representing a 115% increase.",
+      "context_window": "524 million in 2010 to 1.13 billion by 2030, representing a 115% increase. Concurrently, non-communicable diseases associate",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-543",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 543,
+      "sentence": "Concurrently, non-communicable diseases associated with high BMI, including type 2 diabetes and cardiovascular diseases, account for 15% of deaths among individuals under 70 years of age globally, contributing to 17 million such fatalities annually [ 3 , 4 ].",
+      "context_window": "ng type 2 diabetes and cardiovascular diseases, account for 15% of deaths among individuals under 70 years of age globally,",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-581",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 581,
+      "sentence": "Concurrently, non-communicable diseases associated with high BMI, including type 2 diabetes and cardiovascular diseases, account for 15% of deaths among individuals under 70 years of age globally, contributing to 17 million such fatalities annually [ 3 , 4 ].",
+      "context_window": "diseases, account for 15% of deaths among individuals under 70 years of age globally, contributing to 17 million such fatalities",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1283",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1283,
+      "sentence": "MICT traditionally considered the gold standard for fat-reduction exercise prescriptions, employs standardized protocols involving 30-60 min of aerobic exercise at 60-70% HRmax to effectively modify body fat distribution.",
+      "context_window": "zed protocols involving 30-60 min of aerobic exercise at 60-70% HRmax to effectively modify body fat distribution. However,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1623",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1623,
+      "sentence": "HIIT has emerged as a promising alternative, demonstrating unique potential for managing chronic conditions like diabetes and obesity through its characteristic protocol of 20-s bouts at 90% VO\u2082peak interspersed with 40-s recovery periods [ 7 , 8 ].",
+      "context_window": "besity through its characteristic protocol of 20-s bouts at 90% VO\u2082peak interspersed with 40-s recovery periods [ 7 , 8 ].",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1912",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1912,
+      "sentence": "Compared to weight-bearing exercises like running, cycling reduces knee joint loading by approximately 40%, enhancing suitability for obese individuals and those with joint dysfunction [ 9 , 10 ].",
+      "context_window": "unning, cycling reduces knee joint loading by approximately 40%, enhancing suitability for obese individuals and those with",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-1316",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1316,
+      "sentence": "Participants: Included studies involving adults aged 18-60 years, while excluding those outside this age range.Intervention: Included studies employing HIIT protocols, excluding those where intensity failed to reach 80-100% VO\u2082peak or maximum heart rate.",
+      "context_window": "]. Participants: Included studies involving adults aged 18-60 years, while excluding those outside this age range.Intervention:",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1479",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1479,
+      "sentence": "Participants: Included studies involving adults aged 18-60 years, while excluding those outside this age range.Intervention: Included studies employing HIIT protocols, excluding those where intensity failed to reach 80-100% VO\u2082peak or maximum heart rate.",
+      "context_window": "otocols, excluding those where intensity failed to reach 80-100% VO\u2082peak or maximum heart rate. Control: Included studies us",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-4084",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4084,
+      "sentence": "The following thresholds were applied: 0% \u2264 I 2 < 50% indicated acceptable heterogeneity, while 50% \u2264 I 2 < 100% suggested substantial heterogeneity.",
+      "context_window": "and I 2 statistics. The following thresholds were applied: 0% \u2264 I 2 < 50% indicated acceptable heterogeneity, while 50% \u2264",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-4095",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4095,
+      "sentence": "The following thresholds were applied: 0% \u2264 I 2 < 50% indicated acceptable heterogeneity, while 50% \u2264 I 2 < 100% suggested substantial heterogeneity.",
+      "context_window": "atistics. The following thresholds were applied: 0% \u2264 I 2 < 50% indicated acceptable heterogeneity, while 50% \u2264 I 2 < 100%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-4141",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4141,
+      "sentence": "The following thresholds were applied: 0% \u2264 I 2 < 50% indicated acceptable heterogeneity, while 50% \u2264 I 2 < 100% suggested substantial heterogeneity.",
+      "context_window": "d: 0% \u2264 I 2 < 50% indicated acceptable heterogeneity, while 50% \u2264 I 2 < 100% suggested substantial heterogeneity. For any a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-4153",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4153,
+      "sentence": "The following thresholds were applied: 0% \u2264 I 2 < 50% indicated acceptable heterogeneity, while 50% \u2264 I 2 < 100% suggested substantial heterogeneity.",
+      "context_window": "< 50% indicated acceptable heterogeneity, while 50% \u2264 I 2 < 100% suggested substantial heterogeneity. For any analyses showi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-4241",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4241,
+      "sentence": "For any analyses showing heterogeneity (I 2 > 0%), sensitivity analyses were conducted to identify outlier studies and explore potential sources of heterogeneity through careful examination of the relevant publications.",
+      "context_window": "eterogeneity. For any analyses showing heterogeneity (I 2 > 0%), sensitivity analyses were conducted to identify outlier s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-n-700",
+      "claim_type": "sample_size",
+      "raw_text": "n = 267",
+      "numeric_values": [
+        267.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 700,
+      "sentence": "The final analysis comprised 527 participants who completed the trials (HIIT group: n = 267; MICT group: n = 260).",
+      "context_window": "ised 527 participants who completed the trials (HIIT group: n = 267; MICT group: n = 260). All studies implemented cycling-base",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-n-721",
+      "claim_type": "sample_size",
+      "raw_text": "n = 260",
+      "numeric_values": [
+        260.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 721,
+      "sentence": "The final analysis comprised 527 participants who completed the trials (HIIT group: n = 267; MICT group: n = 260).",
+      "context_window": "who completed the trials (HIIT group: n = 267; MICT group: n = 260). All studies implemented cycling-based interventions lasti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-793",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 793,
+      "sentence": "All studies implemented cycling-based interventions lasting 2-24 weeks, with a frequency of 3-5 sessions per week.",
+      "context_window": "l studies implemented cycling-based interventions lasting 2-24 weeks, with a frequency of 3-5 sessions per week. Table 1 summari",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-963",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 963,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "cluded studies. Basic information of the literature 4 min 80%-95%HRmax; 3 min 70%HRmax 30 s 90%HRmax; 90 s Low intensi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-967",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 967,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "ed studies. Basic information of the literature 4 min 80%-95%HRmax; 3 min 70%HRmax 30 s 90%HRmax; 90 s Low intensity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-984",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 984,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "c information of the literature 4 min 80%-95%HRmax; 3 min 70%HRmax 30 s 90%HRmax; 90 s Low intensity 1 min 80%-85%HRma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-999",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 999,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "f the literature 4 min 80%-95%HRmax; 3 min 70%HRmax 30 s 90%HRmax; 90 s Low intensity 1 min 80%-85%HRmax; 4 min 50%HR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1036",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1036,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "3 min 70%HRmax 30 s 90%HRmax; 90 s Low intensity 1 min 80%-85%HRmax; 4 min 50%HRmax 30 s 200% Wmax; 2 min 30W 30 s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1040",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1040,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "min 70%HRmax 30 s 90%HRmax; 90 s Low intensity 1 min 80%-85%HRmax; 4 min 50%HRmax 30 s 200% Wmax; 2 min 30W 30 s 30%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1057",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1057,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "s 90%HRmax; 90 s Low intensity 1 min 80%-85%HRmax; 4 min 50%HRmax 30 s 200% Wmax; 2 min 30W 30 s 30% HRmax; 20 s 50%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1072",
+      "claim_type": "percentage",
+      "raw_text": "200%",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1072,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "s Low intensity 1 min 80%-85%HRmax; 4 min 50%HRmax 30 s 200% Wmax; 2 min 30W 30 s 30% HRmax; 20 s 50%-60% HEmax; 10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1100",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1100,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "85%HRmax; 4 min 50%HRmax 30 s 200% Wmax; 2 min 30W 30 s 30% HRmax; 20 s 50%-60% HEmax; 10 s 90% HRmax 30 s exhaustio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1117",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1117,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "50%HRmax 30 s 200% Wmax; 2 min 30W 30 s 30% HRmax; 20 s 50%-60% HEmax; 10 s 90% HRmax 30 s exhaustion exercise; 4 mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1121",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1121,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "Rmax 30 s 200% Wmax; 2 min 30W 30 s 30% HRmax; 20 s 50%-60% HEmax; 10 s 90% HRmax 30 s exhaustion exercise; 4 min re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1138",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1138,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "max; 2 min 30W 30 s 30% HRmax; 20 s 50%-60% HEmax; 10 s 90% HRmax 30 s exhaustion exercise; 4 min restore VO 2 peak;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1240",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1240,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "n restore VO 2 peak; 2-3 min Low intensity 10 s Sprint; 65%-75%HRmax 30 s 170Wpeak; 2 min rest 1 min 90%HRmax; 1 mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1244",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1244,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "store VO 2 peak; 2-3 min Low intensity 10 s Sprint; 65%-75%HRmax 30 s 170Wpeak; 2 min rest 1 min 90%HRmax; 1 min 15",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1288",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1288,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "s Sprint; 65%-75%HRmax 30 s 170Wpeak; 2 min rest 1 min 90%HRmax; 1 min 15%Wpeak 30 s 180% Maximum power; 4 min rest",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1305",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1305,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "5%HRmax 30 s 170Wpeak; 2 min rest 1 min 90%HRmax; 1 min 15%Wpeak 30 s 180% Maximum power; 4 min rest 1 min 100%VO2 p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1320",
+      "claim_type": "percentage",
+      "raw_text": "180%",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1320,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "70Wpeak; 2 min rest 1 min 90%HRmax; 1 min 15%Wpeak 30 s 180% Maximum power; 4 min rest 1 min 100%VO2 peak; 1 min 50W",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1359",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1359,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "1 min 15%Wpeak 30 s 180% Maximum power; 4 min rest 1 min 100%VO2 peak; 1 min 50W 30 s exhaustion exercise; 4 min rest",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1430",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1430,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "k; 1 min 50W 30 s exhaustion exercise; 4 min rest 3 min 80%VO2 peak; 3 min 40%VO2 peak 4 min 90%VO2 peak; 5 min 50%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1450",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1450,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "exhaustion exercise; 4 min rest 3 min 80%VO2 peak; 3 min 40%VO2 peak 4 min 90%VO2 peak; 5 min 50% VO2 peak 4 min 80%V",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1469",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1469,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "; 4 min rest 3 min 80%VO2 peak; 3 min 40%VO2 peak 4 min 90%VO2 peak; 5 min 50% VO2 peak 4 min 80%VO2 peak; 3 min 50%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1489",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1489,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "80%VO2 peak; 3 min 40%VO2 peak 4 min 90%VO2 peak; 5 min 50% VO2 peak 4 min 80%VO2 peak; 3 min 50%VO2 peak As shown i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1509",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1509,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "40%VO2 peak 4 min 90%VO2 peak; 5 min 50% VO2 peak 4 min 80%VO2 peak; 3 min 50%VO2 peak As shown in Fig. 2 , the risk",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1529",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1529,
+      "sentence": "Basic information of the literature\n\n4 min 80%-95%HRmax;\n\n3 min 70%HRmax\n\n30 s 90%HRmax;\n\n90 s Low intensity\n\n1 min 80%-85%HRmax;\n\n4 min 50%HRmax\n\n30 s 200% Wmax;\n\n2 min 30W\n\n30 s 30% HRmax;\n\n20 s 50%-60% HEmax;\n\n10 s 90% HRmax\n\n30 s exhaustion exercise;\n\n4 min restore\n\nVO 2 peak;\n\n2-3 min Low intensity\n\n10 s Sprint;\n\n65%-75%HRmax\n\n30 s 170Wpeak;\n\n2 min rest\n\n1 min 90%HRmax;\n\n1 min 15%Wpeak\n\n30 s 180% Maximum power;\n\n4 min rest\n\n1 min 100%VO2 peak;\n\n1 min 50W\n\n30 s exhaustion exercise;\n\n4 min rest\n\n3 min 80%VO2 peak;\n\n3 min 40%VO2 peak\n\n4 min 90%VO2 peak;\n\n5 min 50% VO2 peak\n\n4 min 80%VO2 peak;\n\n3 min 50%VO2 peak\n\nAs shown in Fig.",
+      "context_window": "90%VO2 peak; 5 min 50% VO2 peak 4 min 80%VO2 peak; 3 min 50%VO2 peak As shown in Fig. 2 , the risk of bias assessment r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-3945",
+      "claim_type": "percentage",
+      "raw_text": "80.3%",
+      "numeric_values": [
+        80.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3945,
+      "sentence": "Significant heterogeneity was observed across studies (I 2 = 80.3%, P < 0.001), warranting a random-effects model.",
+      "context_window": "ignificant heterogeneity was observed across studies (I 2 = 80.3%, P < 0.001), warranting a random-effects model. The analysi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-3952",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3952,
+      "sentence": "Significant heterogeneity was observed across studies (I 2 = 80.3%, P < 0.001), warranting a random-effects model.",
+      "context_window": "ant heterogeneity was observed across studies (I 2 = 80.3%, P < 0.001), warranting a random-effects model. The analysis revealed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-4123",
+      "claim_type": "unit_value",
+      "raw_text": "0.25 kg",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4123,
+      "sentence": "The analysis revealed that high-intensity interval cycling significantly reduced BMI compared to control conditions (SMD = -0.25 kg/m 2 , 95% CI: -0.45 to -0.06, P = 0.014).",
+      "context_window": "ficantly reduced BMI compared to control conditions (SMD = -0.25 kg/m 2 , 95% CI: -0.45 to -0.06, P = 0.014). Subgroup analyses",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-4137",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.45 to -0.06",
+      "numeric_values": [
+        -0.45,
+        -0.06
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4137,
+      "sentence": "The analysis revealed that high-intensity interval cycling significantly reduced BMI compared to control conditions (SMD = -0.25 kg/m 2 , 95% CI: -0.45 to -0.06, P = 0.014).",
+      "context_window": "ed BMI compared to control conditions (SMD = -0.25 kg/m 2 , 95% CI: -0.45 to -0.06, P = 0.014). Subgroup analyses demonstrated differential ef",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-4161",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4161,
+      "sentence": "The analysis revealed that high-intensity interval cycling significantly reduced BMI compared to control conditions (SMD = -0.25 kg/m 2 , 95% CI: -0.45 to -0.06, P = 0.014).",
+      "context_window": "ol conditions (SMD = -0.25 kg/m 2 , 95% CI: -0.45 to -0.06, P = 0.014). Subgroup analyses demonstrated differential effects: BMI",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-4285",
+      "claim_type": "unit_value",
+      "raw_text": "0.40 kg",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4285,
+      "sentence": "Subgroup analyses demonstrated differential effects: BMI significantly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999).",
+      "context_window": "BMI significantly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-4299",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.03 to 0.77",
+      "numeric_values": [
+        0.03,
+        0.77
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4299,
+      "sentence": "Subgroup analyses demonstrated differential effects: BMI significantly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999).",
+      "context_window": "ntly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-4321",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4321,
+      "sentence": "Subgroup analyses demonstrated differential effects: BMI significantly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999).",
+      "context_window": "ical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95%",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-4372",
+      "claim_type": "unit_value",
+      "raw_text": "0.59 kg",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4372,
+      "sentence": "Subgroup analyses demonstrated differential effects: BMI significantly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999).",
+      "context_window": "to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no sig",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-4386",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.84 to -0.34",
+      "numeric_values": [
+        -0.84,
+        -0.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4386,
+      "sentence": "Subgroup analyses demonstrated differential effects: BMI significantly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999).",
+      "context_window": ".042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-4410",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4410,
+      "sentence": "Subgroup analyses demonstrated differential effects: BMI significantly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999).",
+      "context_window": "e populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary populations",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-4487",
+      "claim_type": "unit_value",
+      "raw_text": "0.00 kg",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4487,
+      "sentence": "Subgroup analyses demonstrated differential effects: BMI significantly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999).",
+      "context_window": "howed no significant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999). Forest map of BMI",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-4501",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.62 to 0.62",
+      "numeric_values": [
+        -0.62,
+        0.62
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4501,
+      "sentence": "Subgroup analyses demonstrated differential effects: BMI significantly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999).",
+      "context_window": "ficant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999). Forest map of BMI subgroup analysis Figure 4",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-4524",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.999",
+      "numeric_values": [
+        0.999
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4524,
+      "sentence": "Subgroup analyses demonstrated differential effects: BMI significantly increased in clinical populations (SMD = 0.40 kg/m 2 , 95% CI: 0.03 to 0.77, P = 0.042), decreased in obese populations (SMD = -0.59 kg/m 2 , 95% CI: -0.84 to -0.34, P < 0.001), and showed no significant change in sedentary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999).",
+      "context_window": "ary populations (SMD = 0.00 kg/m 2 , 95% CI: -0.62 to 0.62, P > 0.999). Forest map of BMI subgroup analysis Figure 4 shows the",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-4702",
+      "claim_type": "percentage",
+      "raw_text": "29.6%",
+      "numeric_values": [
+        29.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4702,
+      "sentence": "The heterogeneity among the literatures is relatively small (I 2 = 29.6%, P = 0.163), and a fixed-effects model was used for the analysis.",
+      "context_window": "erogeneity among the literatures is relatively small (I 2 = 29.6%, P = 0.163), and a fixed-effects model was used for the ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-4709",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.163",
+      "numeric_values": [
+        0.163
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4709,
+      "sentence": "The heterogeneity among the literatures is relatively small (I 2 = 29.6%, P = 0.163), and a fixed-effects model was used for the analysis.",
+      "context_window": "ity among the literatures is relatively small (I 2 = 29.6%, P = 0.163), and a fixed-effects model was used for the analysis. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-4945",
+      "claim_type": "percentage",
+      "raw_text": "0.17%",
+      "numeric_values": [
+        0.17
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4945,
+      "sentence": "The results of the meta-analysis showed that compared with the control group, high-intensity intermittent cycling had no significant effect on body fat percentage (SMD = -0.17%, 95% CI: -0.39 to 0.06, P = 0.160).",
+      "context_window": "ng had no significant effect on body fat percentage (SMD = -0.17%, 95% CI: -0.39 to 0.06, P = 0.160). The results of subgroup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-4952",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.39 to 0.06",
+      "numeric_values": [
+        -0.39,
+        0.06
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4952,
+      "sentence": "The results of the meta-analysis showed that compared with the control group, high-intensity intermittent cycling had no significant effect on body fat percentage (SMD = -0.17%, 95% CI: -0.39 to 0.06, P = 0.160).",
+      "context_window": "no significant effect on body fat percentage (SMD = -0.17%, 95% CI: -0.39 to 0.06, P = 0.160). The results of subgroup analysis showed that h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-4975",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.160",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4975,
+      "sentence": "The results of the meta-analysis showed that compared with the control group, high-intensity intermittent cycling had no significant effect on body fat percentage (SMD = -0.17%, 95% CI: -0.39 to 0.06, P = 0.160).",
+      "context_window": "n body fat percentage (SMD = -0.17%, 95% CI: -0.39 to 0.06, P = 0.160). The results of subgroup analysis showed that high-intensi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-5098",
+      "claim_type": "percentage",
+      "raw_text": "0.20%",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5098,
+      "sentence": "The results of subgroup analysis showed that high-intensity intermittent cycling had effects on disease (SMD = 0.20%, 95% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.00, P = 0.052) There was no significant effect on the body fat percentage of the population.",
+      "context_window": "ntensity intermittent cycling had effects on disease (SMD = 0.20%, 95% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-5105",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.31 to 0.72",
+      "numeric_values": [
+        -0.31,
+        0.72
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5105,
+      "sentence": "The results of subgroup analysis showed that high-intensity intermittent cycling had effects on disease (SMD = 0.20%, 95% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.00, P = 0.052) There was no significant effect on the body fat percentage of the population.",
+      "context_window": "y intermittent cycling had effects on disease (SMD = 0.20%, 95% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-5128",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.450",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5128,
+      "sentence": "The results of subgroup analysis showed that high-intensity intermittent cycling had effects on disease (SMD = 0.20%, 95% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.00, P = 0.052) There was no significant effect on the body fat percentage of the population.",
+      "context_window": "had effects on disease (SMD = 0.20%, 95% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.00, P = 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-5159",
+      "claim_type": "percentage",
+      "raw_text": "0.26%",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5159,
+      "sentence": "The results of subgroup analysis showed that high-intensity intermittent cycling had effects on disease (SMD = 0.20%, 95% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.00, P = 0.052) There was no significant effect on the body fat percentage of the population.",
+      "context_window": ".20%, 95% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.00, P = 0.052) There was no significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-5166",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.51 to 0.00",
+      "numeric_values": [
+        -0.51,
+        0.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5166,
+      "sentence": "The results of subgroup analysis showed that high-intensity intermittent cycling had effects on disease (SMD = 0.20%, 95% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.00, P = 0.052) There was no significant effect on the body fat percentage of the population.",
+      "context_window": "5% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.00, P = 0.052) There was no significant effect on the body fat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-5189",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.052",
+      "numeric_values": [
+        0.052
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5189,
+      "sentence": "The results of subgroup analysis showed that high-intensity intermittent cycling had effects on disease (SMD = 0.20%, 95% CI: -0.31 to 0.72, P = 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.00, P = 0.052) There was no significant effect on the body fat percentage of the population.",
+      "context_window": "= 0.450) and obesity (SMD = -0.26%, 95% CI: -0.51 to 0.00, P = 0.052) There was no significant effect on the body fat percentage",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-5476",
+      "claim_type": "percentage",
+      "raw_text": "7.9%",
+      "numeric_values": [
+        7.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5476,
+      "sentence": "The analysis revealed low heterogeneity across studies (I 2 = 7.9%, P = 0.369), justifying the use of a fixed-effects model.",
+      "context_window": "e analysis revealed low heterogeneity across studies (I 2 = 7.9%, P = 0.369), justifying the use of a fixed-effects model. N",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-5482",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.369",
+      "numeric_values": [
+        0.369
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5482,
+      "sentence": "The analysis revealed low heterogeneity across studies (I 2 = 7.9%, P = 0.369), justifying the use of a fixed-effects model.",
+      "context_window": "ysis revealed low heterogeneity across studies (I 2 = 7.9%, P = 0.369), justifying the use of a fixed-effects model. No significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-5646",
+      "claim_type": "unit_value",
+      "raw_text": "0.18 kg",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5646,
+      "sentence": "No significant difference was found between high-intensity interval cycling and control conditions (SMD = -0.18 kg, 95% CI: -0.43 to 0.06, P = 0.134).",
+      "context_window": "h-intensity interval cycling and control conditions (SMD = -0.18 kg, 95% CI: -0.43 to 0.06, P = 0.134). Subgroup analyses indic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-5655",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.43 to 0.06",
+      "numeric_values": [
+        -0.43,
+        0.06
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5655,
+      "sentence": "No significant difference was found between high-intensity interval cycling and control conditions (SMD = -0.18 kg, 95% CI: -0.43 to 0.06, P = 0.134).",
+      "context_window": "ty interval cycling and control conditions (SMD = -0.18 kg, 95% CI: -0.43 to 0.06, P = 0.134). Subgroup analyses indicated non-significant ef",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-5678",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.134",
+      "numeric_values": [
+        0.134
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5678,
+      "sentence": "No significant difference was found between high-intensity interval cycling and control conditions (SMD = -0.18 kg, 95% CI: -0.43 to 0.06, P = 0.134).",
+      "context_window": "control conditions (SMD = -0.18 kg, 95% CI: -0.43 to 0.06, P = 0.134). Subgroup analyses indicated non-significant effects for b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-5779",
+      "claim_type": "unit_value",
+      "raw_text": "0.25 kg",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5779,
+      "sentence": "Subgroup analyses indicated non-significant effects for both clinical populations (SMD = 0.25 kg, 95% CI: -0.38 to 0.89, P = 0.435) and obese populations (SMD = -0.26 kg, 95% CI: -0.52 to 0.00, P = 0.575).",
+      "context_window": "on-significant effects for both clinical populations (SMD = 0.25 kg, 95% CI: -0.38 to 0.89, P = 0.435) and obese populations (S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-5788",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.38 to 0.89",
+      "numeric_values": [
+        -0.38,
+        0.89
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5788,
+      "sentence": "Subgroup analyses indicated non-significant effects for both clinical populations (SMD = 0.25 kg, 95% CI: -0.38 to 0.89, P = 0.435) and obese populations (SMD = -0.26 kg, 95% CI: -0.52 to 0.00, P = 0.575).",
+      "context_window": "icant effects for both clinical populations (SMD = 0.25 kg, 95% CI: -0.38 to 0.89, P = 0.435) and obese populations (SMD = -0.26 kg, 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-5811",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.435",
+      "numeric_values": [
+        0.435
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5811,
+      "sentence": "Subgroup analyses indicated non-significant effects for both clinical populations (SMD = 0.25 kg, 95% CI: -0.38 to 0.89, P = 0.435) and obese populations (SMD = -0.26 kg, 95% CI: -0.52 to 0.00, P = 0.575).",
+      "context_window": "clinical populations (SMD = 0.25 kg, 95% CI: -0.38 to 0.89, P = 0.435) and obese populations (SMD = -0.26 kg, 95% CI: -0.52 to 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-5852",
+      "claim_type": "unit_value",
+      "raw_text": "0.26 kg",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5852,
+      "sentence": "Subgroup analyses indicated non-significant effects for both clinical populations (SMD = 0.25 kg, 95% CI: -0.38 to 0.89, P = 0.435) and obese populations (SMD = -0.26 kg, 95% CI: -0.52 to 0.00, P = 0.575).",
+      "context_window": "CI: -0.38 to 0.89, P = 0.435) and obese populations (SMD = -0.26 kg, 95% CI: -0.52 to 0.00, P = 0.575). Forest map of fat mass",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-5861",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.52 to 0.00",
+      "numeric_values": [
+        -0.52,
+        0.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5861,
+      "sentence": "Subgroup analyses indicated non-significant effects for both clinical populations (SMD = 0.25 kg, 95% CI: -0.38 to 0.89, P = 0.435) and obese populations (SMD = -0.26 kg, 95% CI: -0.52 to 0.00, P = 0.575).",
+      "context_window": "to 0.89, P = 0.435) and obese populations (SMD = -0.26 kg, 95% CI: -0.52 to 0.00, P = 0.575). Forest map of fat mass subgroup analysis Fig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-5884",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.575",
+      "numeric_values": [
+        0.575
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5884,
+      "sentence": "Subgroup analyses indicated non-significant effects for both clinical populations (SMD = 0.25 kg, 95% CI: -0.38 to 0.89, P = 0.435) and obese populations (SMD = -0.26 kg, 95% CI: -0.52 to 0.00, P = 0.575).",
+      "context_window": "d obese populations (SMD = -0.26 kg, 95% CI: -0.52 to 0.00, P = 0.575). Forest map of fat mass subgroup analysis Figure 6 shows",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-6091",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6091,
+      "sentence": "The analysis demonstrated minimal heterogeneity (I 2 = 0.0%, P = 0.511), supporting the use of a fixed-effect model.",
+      "context_window": "ies. The analysis demonstrated minimal heterogeneity (I 2 = 0.0%, P = 0.511), supporting the use of a fixed-effect model. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-6097",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.511",
+      "numeric_values": [
+        0.511
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6097,
+      "sentence": "The analysis demonstrated minimal heterogeneity (I 2 = 0.0%, P = 0.511), supporting the use of a fixed-effect model.",
+      "context_window": "he analysis demonstrated minimal heterogeneity (I 2 = 0.0%, P = 0.511), supporting the use of a fixed-effect model. The pooled re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-6296",
+      "claim_type": "unit_value",
+      "raw_text": "0.11 kg",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6296,
+      "sentence": "The pooled results indicated no significant effect of high-intensity interval cycling on lean body mass compared to control conditions (SMD = -0.11 kg, 95% CI: -0.38 to 0.16, P = 0.461).",
+      "context_window": "ng on lean body mass compared to control conditions (SMD = -0.11 kg, 95% CI: -0.38 to 0.16, P = 0.461). Subgroup analyses revea",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-6305",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.38 to 0.16",
+      "numeric_values": [
+        -0.38,
+        0.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6305,
+      "sentence": "The pooled results indicated no significant effect of high-intensity interval cycling on lean body mass compared to control conditions (SMD = -0.11 kg, 95% CI: -0.38 to 0.16, P = 0.461).",
+      "context_window": "n body mass compared to control conditions (SMD = -0.11 kg, 95% CI: -0.38 to 0.16, P = 0.461). Subgroup analyses revealed non-significant eff",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-6328",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.461",
+      "numeric_values": [
+        0.461
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6328,
+      "sentence": "The pooled results indicated no significant effect of high-intensity interval cycling on lean body mass compared to control conditions (SMD = -0.11 kg, 95% CI: -0.38 to 0.16, P = 0.461).",
+      "context_window": "control conditions (SMD = -0.11 kg, 95% CI: -0.38 to 0.16, P = 0.461). Subgroup analyses revealed non-significant effects for bo",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-6429",
+      "claim_type": "unit_value",
+      "raw_text": "0.14 kg",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6429,
+      "sentence": "Subgroup analyses revealed non-significant effects for both clinical populations (SMD = -0.14 kg, 95% CI: -0.65 to 0.38, P = 0.623) and obese populations (SMD = -0.10 kg, 95% CI: -0.42 to 0.22, P = 0.541).",
+      "context_window": "n-significant effects for both clinical populations (SMD = -0.14 kg, 95% CI: -0.65 to 0.38, P = 0.623) and obese populations (S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-6438",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.65 to 0.38",
+      "numeric_values": [
+        -0.65,
+        0.38
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6438,
+      "sentence": "Subgroup analyses revealed non-significant effects for both clinical populations (SMD = -0.14 kg, 95% CI: -0.65 to 0.38, P = 0.623) and obese populations (SMD = -0.10 kg, 95% CI: -0.42 to 0.22, P = 0.541).",
+      "context_window": "cant effects for both clinical populations (SMD = -0.14 kg, 95% CI: -0.65 to 0.38, P = 0.623) and obese populations (SMD = -0.10 kg, 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-6461",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.623",
+      "numeric_values": [
+        0.623
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6461,
+      "sentence": "Subgroup analyses revealed non-significant effects for both clinical populations (SMD = -0.14 kg, 95% CI: -0.65 to 0.38, P = 0.623) and obese populations (SMD = -0.10 kg, 95% CI: -0.42 to 0.22, P = 0.541).",
+      "context_window": "linical populations (SMD = -0.14 kg, 95% CI: -0.65 to 0.38, P = 0.623) and obese populations (SMD = -0.10 kg, 95% CI: -0.42 to 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-6502",
+      "claim_type": "unit_value",
+      "raw_text": "0.10 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6502,
+      "sentence": "Subgroup analyses revealed non-significant effects for both clinical populations (SMD = -0.14 kg, 95% CI: -0.65 to 0.38, P = 0.623) and obese populations (SMD = -0.10 kg, 95% CI: -0.42 to 0.22, P = 0.541).",
+      "context_window": "CI: -0.65 to 0.38, P = 0.623) and obese populations (SMD = -0.10 kg, 95% CI: -0.42 to 0.22, P = 0.541). Forest map of Lean bod",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-6511",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.42 to 0.22",
+      "numeric_values": [
+        -0.42,
+        0.22
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6511,
+      "sentence": "Subgroup analyses revealed non-significant effects for both clinical populations (SMD = -0.14 kg, 95% CI: -0.65 to 0.38, P = 0.623) and obese populations (SMD = -0.10 kg, 95% CI: -0.42 to 0.22, P = 0.541).",
+      "context_window": "to 0.38, P = 0.623) and obese populations (SMD = -0.10 kg, 95% CI: -0.42 to 0.22, P = 0.541). Forest map of Lean body mass subgroup analysi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-6534",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.541",
+      "numeric_values": [
+        0.541
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6534,
+      "sentence": "Subgroup analyses revealed non-significant effects for both clinical populations (SMD = -0.14 kg, 95% CI: -0.65 to 0.38, P = 0.623) and obese populations (SMD = -0.10 kg, 95% CI: -0.42 to 0.22, P = 0.541).",
+      "context_window": "d obese populations (SMD = -0.10 kg, 95% CI: -0.42 to 0.22, P = 0.541). Forest map of Lean body mass subgroup analysis Figure 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-6754",
+      "claim_type": "percentage",
+      "raw_text": "83.0%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6754,
+      "sentence": "Substantial heterogeneity was observed across studies (I 2 = 83.0%, P < 0.001), necessitating a random-effects model.",
+      "context_window": "ubstantial heterogeneity was observed across studies (I 2 = 83.0%, P < 0.001), necessitating a random-effects model. The pool",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-6761",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6761,
+      "sentence": "Substantial heterogeneity was observed across studies (I 2 = 83.0%, P < 0.001), necessitating a random-effects model.",
+      "context_window": "ial heterogeneity was observed across studies (I 2 = 83.0%, P < 0.001), necessitating a random-effects model. The pooled analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-6925",
+      "claim_type": "unit_value",
+      "raw_text": "0.26 mL",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 6925,
+      "sentence": "The pooled analysis demonstrated that HIIT significantly improved VO 2 peak compared to control conditions (SMD = 0.26 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.08 to 0.44, P = 0.007).",
+      "context_window": "ly improved VO 2 peak compared to control conditions (SMD = 0.26 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.08 to 0.44, P = 0.007). Subgroup",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-6949",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.08 to 0.44",
+      "numeric_values": [
+        0.08,
+        0.44
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6949,
+      "sentence": "The pooled analysis demonstrated that HIIT significantly improved VO 2 peak compared to control conditions (SMD = 0.26 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.08 to 0.44, P = 0.007).",
+      "context_window": "mpared to control conditions (SMD = 0.26 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.08 to 0.44, P = 0.007). Subgroup analyses revealed significant improve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-6971",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6971,
+      "sentence": "The pooled analysis demonstrated that HIIT significantly improved VO 2 peak compared to control conditions (SMD = 0.26 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.08 to 0.44, P = 0.007).",
+      "context_window": "itions (SMD = 0.26 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.08 to 0.44, P = 0.007). Subgroup analyses revealed significant improvements in ob",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-7063",
+      "claim_type": "unit_value",
+      "raw_text": "0.23 mL",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 7063,
+      "sentence": "Subgroup analyses revealed significant improvements in obese populations (SMD = 0.23 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001), while showing no significant effect in clinical populations.",
+      "context_window": "vealed significant improvements in obese populations (SMD = 0.23 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-7087",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.01 to 0.45",
+      "numeric_values": [
+        0.01,
+        0.45
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7087,
+      "sentence": "Subgroup analyses revealed significant improvements in obese populations (SMD = 0.23 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001), while showing no significant effect in clinical populations.",
+      "context_window": "vements in obese populations (SMD = 0.23 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 mL.kg\u207b 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-7109",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7109,
+      "sentence": "Subgroup analyses revealed significant improvements in obese populations (SMD = 0.23 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001), while showing no significant effect in clinical populations.",
+      "context_window": "ations (SMD = 0.23 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 mL.kg\u207b 1 .min\u207b 1 , 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-7153",
+      "claim_type": "unit_value",
+      "raw_text": "6.21 mL",
+      "numeric_values": [
+        6.21
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 7153,
+      "sentence": "Subgroup analyses revealed significant improvements in obese populations (SMD = 0.23 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001), while showing no significant effect in clinical populations.",
+      "context_window": ": 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001), while sho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-ci-7177",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 4.68 to 7.74",
+      "numeric_values": [
+        4.68,
+        7.74
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7177,
+      "sentence": "Subgroup analyses revealed significant improvements in obese populations (SMD = 0.23 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001), while showing no significant effect in clinical populations.",
+      "context_window": "1) and sedentary populations (SMD = 6.21 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001), while showing no significant effect in clinica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-7199",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7199,
+      "sentence": "Subgroup analyses revealed significant improvements in obese populations (SMD = 0.23 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 0.01 to 0.45, P = 0.041) and sedentary populations (SMD = 6.21 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001), while showing no significant effect in clinical populations.",
+      "context_window": "ations (SMD = 6.21 mL.kg\u207b 1 .min\u207b 1 , 95% CI: 4.68 to 7.74, P < 0.001), while showing no significant effect in clinical populatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-8146",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8146,
+      "sentence": "Heterogeneity in this study was assessed using Cochran's Q test, which indicated significant heterogeneity for both BMI (I 2 > 50%) and VO\u2082peak (I 2 > 50%).",
+      "context_window": "ich indicated significant heterogeneity for both BMI (I 2 > 50%) and VO\u2082peak (I 2 > 50%). Subgroup analysis of BMI revealed",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-8170",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8170,
+      "sentence": "Heterogeneity in this study was assessed using Cochran's Q test, which indicated significant heterogeneity for both BMI (I 2 > 50%) and VO\u2082peak (I 2 > 50%).",
+      "context_window": "t heterogeneity for both BMI (I 2 > 50%) and VO\u2082peak (I 2 > 50%). Subgroup analysis of BMI revealed statistically significa",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-8294",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8294,
+      "sentence": "Subgroup analysis of BMI revealed statistically significant differences in effect sizes across population subgroups ( p = 0.009), confirming that participant characteristics are a major source of heterogeneity.",
+      "context_window": "t differences in effect sizes across population subgroups ( p = 0.009), confirming that participant characteristics are a major s",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-8451",
+      "claim_type": "percentage",
+      "raw_text": "75.2%",
+      "numeric_values": [
+        75.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8451,
+      "sentence": "Notably, heterogeneity was highest in the obese subgroup (I 2 = 75.2%, p < 0.001), likely attributable to variations in obesity classification and baseline health status among the included samples.",
+      "context_window": "bly, heterogeneity was highest in the obese subgroup (I 2 = 75.2%, p < 0.001), likely attributable to variations in obesity c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-8458",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8458,
+      "sentence": "Notably, heterogeneity was highest in the obese subgroup (I 2 = 75.2%, p < 0.001), likely attributable to variations in obesity classification and baseline health status among the included samples.",
+      "context_window": "terogeneity was highest in the obese subgroup (I 2 = 75.2%, p < 0.001), likely attributable to variations in obesity classificati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-8685",
+      "claim_type": "percentage",
+      "raw_text": "31.7%",
+      "numeric_values": [
+        31.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8685,
+      "sentence": "In the VO\u2082peak subgroup analysis, heterogeneity was moderately low in the disease population (I 2 = 31.7%, p = 0.198), suggesting relatively consistent effect directions and magnitudes across studies.",
+      "context_window": "geneity was moderately low in the disease population (I 2 = 31.7%, p = 0.198), suggesting relatively consistent effect direct",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-8692",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.198",
+      "numeric_values": [
+        0.198
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8692,
+      "sentence": "In the VO\u2082peak subgroup analysis, heterogeneity was moderately low in the disease population (I 2 = 31.7%, p = 0.198), suggesting relatively consistent effect directions and magnitudes across studies.",
+      "context_window": "was moderately low in the disease population (I 2 = 31.7%, p = 0.198), suggesting relatively consistent effect directions and ma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-8857",
+      "claim_type": "percentage",
+      "raw_text": "68.2%",
+      "numeric_values": [
+        68.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8857,
+      "sentence": "In contrast, high heterogeneity persisted in the obese subgroup (I 2 = 68.2%, p < 0.001), again possibly due to differences in obesity severity and baseline health.",
+      "context_window": ", high heterogeneity persisted in the obese subgroup (I 2 = 68.2%, p < 0.001), again possibly due to differences in obesity s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-8864",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8864,
+      "sentence": "In contrast, high heterogeneity persisted in the obese subgroup (I 2 = 68.2%, p < 0.001), again possibly due to differences in obesity severity and baseline health.",
+      "context_window": "heterogeneity persisted in the obese subgroup (I 2 = 68.2%, p < 0.001), again possibly due to differences in obesity severity and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-948",
+      "claim_type": "unit_value",
+      "raw_text": "35 kg",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 948,
+      "sentence": "Firstly, variations in baseline characteristics of participants, BMI ranges of obese individuals (28-35 kg/m 2 ) and disease durations of clinical populations (1-10 years) varied significantly across studies, potentially affecting intervention responses.",
+      "context_window": "istics of participants, BMI ranges of obese individuals (28-35 kg/m 2 ) and disease durations of clinical populations (1-10 y",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-1009",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1009,
+      "sentence": "Firstly, variations in baseline characteristics of participants, BMI ranges of obese individuals (28-35 kg/m 2 ) and disease durations of clinical populations (1-10 years) varied significantly across studies, potentially affecting intervention responses.",
+      "context_window": "5 kg/m 2 ) and disease durations of clinical populations (1-10 years) varied significantly across studies, potentially affecting",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1159",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1159,
+      "sentence": "Secondly, differences in HIIT protocol design intensity (80%-100% VO\u2082peak), interval duration (10 s-4 min), and recovery methods (low-intensity cycling/rest) differed.",
+      "context_window": "s. Secondly, differences in HIIT protocol design intensity (80%-100% VO\u2082peak), interval duration (10 s-4 min), and recovery",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-1163",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1163,
+      "sentence": "Secondly, differences in HIIT protocol design intensity (80%-100% VO\u2082peak), interval duration (10 s-4 min), and recovery methods (low-intensity cycling/rest) differed.",
+      "context_window": "econdly, differences in HIIT protocol design intensity (80%-100% VO\u2082peak), interval duration (10 s-4 min), and recovery meth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-4867",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4867,
+      "sentence": "Regarding BMI regulation, HIIT significantly reduced BMI in obese participants (SMD = -0.57, P < 0.001), aligning with Programa et al. [ 47 ] findings (SMD = -0.49) but demonstrating greater effect size.",
+      "context_window": "gnificantly reduced BMI in obese participants (SMD = -0.57, P < 0.001), aligning with Programa et al. [ 47 ] findings (SMD = -0.4",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-p-5169",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5169,
+      "sentence": "Conversely, we observed increased BMI in clinical populations (SMD = 0.38, P = 0.042), consistent with Jing-Xin Liu et al. [ 48 ] observations in type 2 diabetes patients.",
+      "context_window": "observed increased BMI in clinical populations (SMD = 0.38, P = 0.042), consistent with Jing-Xin Liu et al. [ 48 ] observations i",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-6604",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6604,
+      "sentence": "For individuals with obesity, HIIT protocol on a cycle ergometer-consisting of 4 min intervals at 90%VO 2 peak followed by 3 min active recovery at 50%VO 2 peak, performed 3-4 times/week for over 12 weeks is recommended.",
+      "context_window": "tocol on a cycle ergometer-consisting of 4 min intervals at 90%VO 2 peak followed by 3 min active recovery at 50%VO 2 peak,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-6654",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6654,
+      "sentence": "For individuals with obesity, HIIT protocol on a cycle ergometer-consisting of 4 min intervals at 90%VO 2 peak followed by 3 min active recovery at 50%VO 2 peak, performed 3-4 times/week for over 12 weeks is recommended.",
+      "context_window": "ervals at 90%VO 2 peak followed by 3 min active recovery at 50%VO 2 peak, performed 3-4 times/week for over 12 weeks is rec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-6702",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6702,
+      "sentence": "For individuals with obesity, HIIT protocol on a cycle ergometer-consisting of 4 min intervals at 90%VO 2 peak followed by 3 min active recovery at 50%VO 2 peak, performed 3-4 times/week for over 12 weeks is recommended.",
+      "context_window": "recovery at 50%VO 2 peak, performed 3-4 times/week for over 12 weeks is recommended. This regimen can effectively lower BMI and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-7449",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7449,
+      "sentence": "For sedentary individuals, a progressive approach is recommended, beginning with lower intensity HIIT (e.g., 3 min at 75%VO 2 peak/3 min at 50%VO 2 peak) five times/week for over 12 weeks.",
+      "context_window": "mended, beginning with lower intensity HIIT (e.g., 3 min at 75%VO 2 peak/3 min at 50%VO 2 peak) five times/week for over 12",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-pct-7471",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7471,
+      "sentence": "For sedentary individuals, a progressive approach is recommended, beginning with lower intensity HIIT (e.g., 3 min at 75%VO 2 peak/3 min at 50%VO 2 peak) five times/week for over 12 weeks.",
+      "context_window": "lower intensity HIIT (e.g., 3 min at 75%VO 2 peak/3 min at 50%VO 2 peak) five times/week for over 12 weeks. Extending the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-7510",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 7510,
+      "sentence": "For sedentary individuals, a progressive approach is recommended, beginning with lower intensity HIIT (e.g., 3 min at 75%VO 2 peak/3 min at 50%VO 2 peak) five times/week for over 12 weeks.",
+      "context_window": "5%VO 2 peak/3 min at 50%VO 2 peak) five times/week for over 12 weeks. Extending the intervention to 24 weeks can further amplify",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12911145_the_effects_of_hiit_and_mict_on_body_fat_composition_and_car-u-7550",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 7550,
+      "sentence": "Extending the intervention to 24 weeks can further amplify improvements in BMI and VO 2 peak.",
+      "context_window": "times/week for over 12 weeks. Extending the intervention to 24 weeks can further amplify improvements in BMI and VO 2 peak. Adhe",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

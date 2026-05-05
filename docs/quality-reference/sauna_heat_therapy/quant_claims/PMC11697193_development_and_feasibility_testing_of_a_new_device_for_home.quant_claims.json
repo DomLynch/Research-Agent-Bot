@@ -1,0 +1,1399 @@
+{
+  "paper_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home",
+  "doi": "10.1016/j.jvscit.2024.101676",
+  "extracted_at": "2026-05-05T22:38:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 19,
+    "mean_sd": 35,
+    "percentage": 11,
+    "p_value": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-1301",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1301,
+      "sentence": "The prototype's feasibility and safety were evaluated in a single-arm pilot trial with six symptomatic patients with PAD, who were asked to apply the therapy daily for 90 minutes for 12 weeks.",
+      "context_window": "ho were asked to apply the therapy daily for 90 minutes for 12 weeks. Primary outcomes included completion rates, safety, and de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1753",
+      "claim_type": "mean_sd",
+      "raw_text": "33.8 \u00b1 0.8",
+      "numeric_values": [
+        33.8,
+        0.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1753,
+      "sentence": "Leg HT gradually increased leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes and reduced arterial blood pressure, with mean reductions of 13 mm Hg in systolic and 12 mm Hg in diastolic blood pressure after treatment.",
+      "context_window": "ntion. Leg HT gradually increased leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes and reduced arterial blood",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1769",
+      "claim_type": "mean_sd",
+      "raw_text": "38.7 \u00b1 0.7",
+      "numeric_values": [
+        38.7,
+        0.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1769,
+      "sentence": "Leg HT gradually increased leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes and reduced arterial blood pressure, with mean reductions of 13 mm Hg in systolic and 12 mm Hg in diastolic blood pressure after treatment.",
+      "context_window": "adually increased leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes and reduced arterial blood pressure, with m",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-1857",
+      "claim_type": "unit_value",
+      "raw_text": "13 mm",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1857,
+      "sentence": "Leg HT gradually increased leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes and reduced arterial blood pressure, with mean reductions of 13 mm Hg in systolic and 12 mm Hg in diastolic blood pressure after treatment.",
+      "context_window": "nd reduced arterial blood pressure, with mean reductions of 13 mm Hg in systolic and 12 mm Hg in diastolic blood pressure aft",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-1882",
+      "claim_type": "unit_value",
+      "raw_text": "12 mm",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1882,
+      "sentence": "Leg HT gradually increased leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes and reduced arterial blood pressure, with mean reductions of 13 mm Hg in systolic and 12 mm Hg in diastolic blood pressure after treatment.",
+      "context_window": "pressure, with mean reductions of 13 mm Hg in systolic and 12 mm Hg in diastolic blood pressure after treatment. All partici",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-649",
+      "claim_type": "unit_value",
+      "raw_text": "15 mm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 649,
+      "sentence": "Once at temperature, the user initiates treatment, triggering the air pump to inflate the six bladders to 15 mm Hg over 15 seconds.",
+      "context_window": "ent, triggering the air pump to inflate the six bladders to 15 mm Hg over 15 seconds. The pressure is then held for another 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-748",
+      "claim_type": "unit_value",
+      "raw_text": "0 mm",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 748,
+      "sentence": "The pressure is then held for another 15 seconds before being reduced to 0 mm Hg at the 30-second mark.",
+      "context_window": "is then held for another 15 seconds before being reduced to 0 mm Hg at the 30-second mark. This cycle repeats for 90 minutes",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-1853",
+      "claim_type": "unit_value",
+      "raw_text": "15 mm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 1853,
+      "sentence": "The air bladders intermittently inflate to 15 mm Hg, ensuring consistent contact between the water-circulating pads and the skin.",
+      "context_window": "hrough the pads. The air bladders intermittently inflate to 15 mm Hg, ensuring consistent contact between the water-circulati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-3123",
+      "claim_type": "unit_value",
+      "raw_text": "15 mm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3123,
+      "sentence": "The system is programmed to gently inflate the bladders to 15 mm Hg over approximately 10 to 15 seconds.",
+      "context_window": "The system is programmed to gently inflate the bladders to 15 mm Hg over approximately 10 to 15 seconds. This pressure is ma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-3250",
+      "claim_type": "unit_value",
+      "raw_text": "0 mm",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3250,
+      "sentence": "This pressure is maintained for an additional 15 seconds before being reduced to 0 mm Hg.",
+      "context_window": "tained for an additional 15 seconds before being reduced to 0 mm Hg. The sleeves are equipped with thermistors to monitor sk",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-3971",
+      "claim_type": "unit_value",
+      "raw_text": "15 mm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3971,
+      "sentence": "The air bladders intermittently inflate to 15 mm Hg, ensuring consistent contact between the water-circulating pads and the skin.",
+      "context_window": "hrough the pads. The air bladders intermittently inflate to 15 mm Hg, ensuring consistent contact between the water-circulati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-5231",
+      "claim_type": "unit_value",
+      "raw_text": "15 mm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5231,
+      "sentence": "The system is programmed to gently inflate the bladders to 15 mm Hg over approximately 10 to 15 seconds.",
+      "context_window": "The system is programmed to gently inflate the bladders to 15 mm Hg over approximately 10 to 15 seconds. This pressure is ma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-5358",
+      "claim_type": "unit_value",
+      "raw_text": "0 mm",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5358,
+      "sentence": "This pressure is maintained for an additional 15 seconds before being reduced to 0 mm Hg.",
+      "context_window": "tained for an additional 15 seconds before being reduced to 0 mm Hg. The sleeves are equipped with thermistors to monitor sk",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-5803",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5803,
+      "sentence": "Participants were provided the prototype HT device and were asked to apply the therapy daily (90 minutes, 7 days/week) for 12 weeks.",
+      "context_window": "vice and were asked to apply the therapy daily (90 minutes, 7 days/week) for 12 weeks. The first participant was enrolled on M",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-5820",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5820,
+      "sentence": "Participants were provided the prototype HT device and were asked to apply the therapy daily (90 minutes, 7 days/week) for 12 weeks.",
+      "context_window": "ed to apply the therapy daily (90 minutes, 7 days/week) for 12 weeks. The first participant was enrolled on May 30, 2023. The fi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-6592",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 6592,
+      "sentence": "Men and women 60 years or older with a resting ABI of \u22640.90 in at least one leg were included in the study.",
+      "context_window": "om local peripheral vascular disease clinics. Men and women 60 years or older with a resting ABI of \u22640.90 in at least one leg we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-6779",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6779,
+      "sentence": "Individuals with a resting ABI of >0.91 at baseline were eligible if their ABI decreased by \u226520% after a heel-rise test.",
+      "context_window": ">0.91 at baseline were eligible if their ABI decreased by \u226520% after a heel-rise test. The exclusion criteria included the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-12018",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12018,
+      "sentence": "Before maximal testing, they completed a standardized warm-up consisting of three submaximal contractions, each held for 5 seconds at approximately 50% of perceived maximal effort.",
+      "context_window": "imal contractions, each held for 5 seconds at approximately 50% of perceived maximal effort. Following the warm-up, partici",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-627",
+      "claim_type": "mean_sd",
+      "raw_text": "33.8 \u00b1 0.8",
+      "numeric_values": [
+        33.8,
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 627,
+      "sentence": "Exposure to HT induced a gradual increase in leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes, F(1.838, 9.190) = 153.2, P < .0001 ( Fig 4 , A ).",
+      "context_window": "HT induced a gradual increase in leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes, F(1.838, 9.190) = 153.2, P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-643",
+      "claim_type": "mean_sd",
+      "raw_text": "38.7 \u00b1 0.7",
+      "numeric_values": [
+        38.7,
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 643,
+      "sentence": "Exposure to HT induced a gradual increase in leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes, F(1.838, 9.190) = 153.2, P < .0001 ( Fig 4 , A ).",
+      "context_window": "adual increase in leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes, F(1.838, 9.190) = 153.2, P < .0001 ( Fig 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-p-696",
+      "claim_type": "p_value",
+      "raw_text": "P < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 696,
+      "sentence": "Exposure to HT induced a gradual increase in leg skin temperature from 33.8 \u00b1 0.8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes, F(1.838, 9.190) = 153.2, P < .0001 ( Fig 4 , A ).",
+      "context_window": "8\u00b0C to 38.7 \u00b1 0.7\u00b0C at 90 minutes, F(1.838, 9.190) = 153.2, P < .0001 ( Fig 4 , A ). HT also promoted a reduction, albeit not sta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-910",
+      "claim_type": "unit_value",
+      "raw_text": "13 mm",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 910,
+      "sentence": "The mean decrease in systolic and diastolic pressures after 90 minutes of heat treatment was 13 mm Hg and 12 mm Hg, respectively ( Figs 4 , B and C ).",
+      "context_window": "diastolic pressures after 90 minutes of heat treatment was 13 mm Hg and 12 mm Hg, respectively ( Figs 4 , B and C ). Table I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-923",
+      "claim_type": "unit_value",
+      "raw_text": "12 mm",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 923,
+      "sentence": "The mean decrease in systolic and diastolic pressures after 90 minutes of heat treatment was 13 mm Hg and 12 mm Hg, respectively ( Figs 4 , B and C ).",
+      "context_window": "essures after 90 minutes of heat treatment was 13 mm Hg and 12 mm Hg, respectively ( Figs 4 , B and C ). Table I Baseline cha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1065",
+      "claim_type": "mean_sd",
+      "raw_text": "70.50 \u00b1 7.45",
+      "numeric_values": [
+        70.5,
+        7.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1065,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "he participants Variables All participants No. 6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) H",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1147",
+      "claim_type": "mean_sd",
+      "raw_text": "171.78 \u00b1 12.15",
+      "numeric_values": [
+        171.78,
+        12.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1147,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1173",
+      "claim_type": "mean_sd",
+      "raw_text": "86.53 \u00b1 20.94",
+      "numeric_values": [
+        86.53,
+        20.94
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1173,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1199",
+      "claim_type": "mean_sd",
+      "raw_text": "29.10 \u00b1 5.29",
+      "numeric_values": [
+        29.1,
+        5.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1199,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "ght, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Typ",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1234",
+      "claim_type": "mean_sd",
+      "raw_text": "0.65 \u00b1 0.20",
+      "numeric_values": [
+        0.65,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1234,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "6.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (6",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1256",
+      "claim_type": "mean_sd",
+      "raw_text": "0.83 \u00b1 0.06",
+      "numeric_values": [
+        0.83,
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1256,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1356",
+      "claim_type": "mean_sd",
+      "raw_text": "29.50 \u00b1 1.22",
+      "numeric_values": [
+        29.5,
+        1.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1356,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1415",
+      "claim_type": "mean_sd",
+      "raw_text": "131.06 \u00b1 9.41",
+      "numeric_values": [
+        131.06,
+        9.41
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1415,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1454",
+      "claim_type": "mean_sd",
+      "raw_text": "68.11 \u00b1 6.98",
+      "numeric_values": [
+        68.11,
+        6.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1454,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "tolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihype",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1600",
+      "claim_type": "mean_sd",
+      "raw_text": "389.21 \u00b1 75.45",
+      "numeric_values": [
+        389.21,
+        75.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1600,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "0.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI,",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1633",
+      "claim_type": "mean_sd",
+      "raw_text": "32.12 \u00b1 17.98",
+      "numeric_values": [
+        32.12,
+        17.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1633,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": "6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-1656",
+      "claim_type": "mean_sd",
+      "raw_text": "10.40 \u00b1 4.20",
+      "numeric_values": [
+        10.4,
+        4.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1656,
+      "sentence": "6 Age, years 70.50 \u00b1 7.45 Sex Male 4 (66.67) Female 2 (33.33) Race White 6 (100.00) Height, cm 171.78 \u00b1 12.15 Weight, kg 86.53 \u00b1 20.94 BMI, kg/m 2 29.10 \u00b1 5.29 ABI Most affected leg 0.65 \u00b1 0.20 Other leg 0.83 \u00b1 0.06 Type 2 diabetes No 2 (33.33) Yes 4 (66.67) Hypertension No 2 (33.33) Yes 4 (66.67) MMSE 29.50 \u00b1 1.22 Blood pressure, mm Hg Systolic blood pressure 131.06 \u00b1 9.41 Diastolic blood pressure 68.11 \u00b1 6.98 Medication Statin 5 (83.33) Antidiabetic 4 (66.67) Antihypertension 6 (100.00) Anti-inflammatory 5 (83.33) 6-Minute walk distance, m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, five times sit to stand test; MMSE, mini-mental status examination.",
+      "context_window": ", m 389.21 \u00b1 75.45 Calf strength, Nm 32.12 \u00b1 17.98 FTSTS, s 10.40 \u00b1 4.20 ABI, Ankle-brachial index; BMI, body mass index; FTSTS, fiv",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-p-2204",
+      "claim_type": "p_value",
+      "raw_text": "P < .028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2204,
+      "sentence": "When a significant main effect was detected, Sidak adjustment was applied to compare the time points relative to the baseline. \u2217 P < .028 vs time 0 (baseline).",
+      "context_window": "lied to compare the time points relative to the baseline. \u2217 P < .028 vs time 0 (baseline). Baseline characteristics of the part",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-p-2813",
+      "claim_type": "p_value",
+      "raw_text": "P < .028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2813,
+      "sentence": "When a significant main effect was detected, Sidak adjustment was applied to compare the time points relative to the baseline. \u2217 P < .028 vs time 0 (baseline).",
+      "context_window": "lied to compare the time points relative to the baseline. \u2217 P < .028 vs time 0 (baseline). All participants completed the 12-we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-3281",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3281,
+      "sentence": "Participants reported completing more than 90% of required home-based treatment sessions.",
+      "context_window": "t complications. Participants reported completing more than 90% of required home-based treatment sessions. The responses to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-3595",
+      "claim_type": "mean_sd",
+      "raw_text": "2.00 \u00b1 1.41",
+      "numeric_values": [
+        2.0,
+        1.41
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3595,
+      "sentence": "2.00 \u00b1 1.41 2.",
+      "context_window": ". I think that I would like to use this product frequently. 2.00 \u00b1 1.41 2. I found the product unnecessarily complex. 0.50 \u00b1 0.55 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-3653",
+      "claim_type": "mean_sd",
+      "raw_text": "0.50 \u00b1 0.55",
+      "numeric_values": [
+        0.5,
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3653,
+      "sentence": "0.50 \u00b1 0.55 3.",
+      "context_window": ". 2.00 \u00b1 1.41 2. I found the product unnecessarily complex. 0.50 \u00b1 0.55 3. I thought the product was easy to use. 1.83 \u00b1 1.72 4. I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-3707",
+      "claim_type": "mean_sd",
+      "raw_text": "1.83 \u00b1 1.72",
+      "numeric_values": [
+        1.83,
+        1.72
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3707,
+      "sentence": "1.83 \u00b1 1.72 4.",
+      "context_window": "plex. 0.50 \u00b1 0.55 3. I thought the product was easy to use. 1.83 \u00b1 1.72 4. I think that I would need the support of a technical per",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-3814",
+      "claim_type": "mean_sd",
+      "raw_text": "0.67 \u00b1 1.63",
+      "numeric_values": [
+        0.67,
+        1.63
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3814,
+      "sentence": "0.67 \u00b1 1.63 5.",
+      "context_window": "pport of a technical person to be able to use this product. 0.67 \u00b1 1.63 5. I found the various functions in the product were well i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-3896",
+      "claim_type": "mean_sd",
+      "raw_text": "1.67 \u00b1 1.51",
+      "numeric_values": [
+        1.67,
+        1.51
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3896,
+      "sentence": "1.67 \u00b1 1.51 6.",
+      "context_window": "the various functions in the product were well integrated. 1.67 \u00b1 1.51 6. I thought there was too much inconsistency in this produ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-3971",
+      "claim_type": "mean_sd",
+      "raw_text": "0.50 \u00b1 0.84",
+      "numeric_values": [
+        0.5,
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3971,
+      "sentence": "0.50 \u00b1 0.84 7.",
+      "context_window": "I thought there was too much inconsistency in this product. 0.50 \u00b1 0.84 7. I imagine that most people would learn to use this produ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-4059",
+      "claim_type": "mean_sd",
+      "raw_text": "2.50 \u00b1 1.38",
+      "numeric_values": [
+        2.5,
+        1.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4059,
+      "sentence": "2.50 \u00b1 1.38 8.",
+      "context_window": "t most people would learn to use this product very quickly. 2.50 \u00b1 1.38 8. I found the product very awkward to use. 2.00 \u00b1 1.26 9.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-4115",
+      "claim_type": "mean_sd",
+      "raw_text": "2.00 \u00b1 1.26",
+      "numeric_values": [
+        2.0,
+        1.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4115,
+      "sentence": "2.00 \u00b1 1.26 9.",
+      "context_window": "ly. 2.50 \u00b1 1.38 8. I found the product very awkward to use. 2.00 \u00b1 1.26 9. I felt very confident using the product. 2.50 \u00b1 0.84 10.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-4171",
+      "claim_type": "mean_sd",
+      "raw_text": "2.50 \u00b1 0.84",
+      "numeric_values": [
+        2.5,
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4171,
+      "sentence": "2.50 \u00b1 0.84 10.",
+      "context_window": "se. 2.00 \u00b1 1.26 9. I felt very confident using the product. 2.50 \u00b1 0.84 10. I needed to learn a lot of things before I could get go",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-4265",
+      "claim_type": "mean_sd",
+      "raw_text": "0.33 \u00b1 0.52",
+      "numeric_values": [
+        0.33,
+        0.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4265,
+      "sentence": "0.33 \u00b1 0.52 Total 66.25 \u00b1 11.59 Values are means \u00b1 standard deviation.",
+      "context_window": "a lot of things before I could get going with this product. 0.33 \u00b1 0.52 Total 66.25 \u00b1 11.59 Values are means \u00b1 standard deviation.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-4283",
+      "claim_type": "mean_sd",
+      "raw_text": "66.25 \u00b1 11.59",
+      "numeric_values": [
+        66.25,
+        11.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4283,
+      "sentence": "0.33 \u00b1 0.52 Total 66.25 \u00b1 11.59 Values are means \u00b1 standard deviation.",
+      "context_window": "fore I could get going with this product. 0.33 \u00b1 0.52 Total 66.25 \u00b1 11.59 Values are means \u00b1 standard deviation. To score the system",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-p-5760",
+      "claim_type": "p_value",
+      "raw_text": "P = .07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5760,
+      "sentence": "On average, participants displayed an increase in 6-minute walk distance from baseline of +32.2 meters ( P = .07; 95% confidence interval [CI], -4.595 to 69.24) ( Fig 5 , A ), which is clinically meaningful for patients with PAD.",
+      "context_window": "e in 6-minute walk distance from baseline of +32.2 meters ( P = .07; 95% confidence interval [CI], -4.595 to 69.24) ( Fig 5 , A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-5769",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5769,
+      "sentence": "On average, participants displayed an increase in 6-minute walk distance from baseline of +32.2 meters ( P = .07; 95% confidence interval [CI], -4.595 to 69.24) ( Fig 5 , A ), which is clinically meaningful for patients with PAD.",
+      "context_window": "nute walk distance from baseline of +32.2 meters ( P = .07; 95% confidence interval [CI], -4.595 to 69.24) ( Fig 5 , A ), w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-p-5983",
+      "claim_type": "p_value",
+      "raw_text": "P = .14",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5983,
+      "sentence": "33 The improvement in walking endurance was coupled with increased calf muscle strength (+4.4 Nm; P = .14; 95% CI, -2.154 to 11.15) ( Fig 5 , B ) and a decrease in the time required to complete the five-times sit-to-stand test (-1.9 seconds; P = .12\u2019 95% CI, -4.615 to 0.7420) ( Fig 5 , C ).",
+      "context_window": "e was coupled with increased calf muscle strength (+4.4 Nm; P = .14; 95% CI, -2.154 to 11.15) ( Fig 5 , B ) and a decrease in t",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-5992",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5992,
+      "sentence": "33 The improvement in walking endurance was coupled with increased calf muscle strength (+4.4 Nm; P = .14; 95% CI, -2.154 to 11.15) ( Fig 5 , B ) and a decrease in the time required to complete the five-times sit-to-stand test (-1.9 seconds; P = .12\u2019 95% CI, -4.615 to 0.7420) ( Fig 5 , C ).",
+      "context_window": "pled with increased calf muscle strength (+4.4 Nm; P = .14; 95% CI, -2.154 to 11.15) ( Fig 5 , B ) and a decrease in the ti",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-p-6127",
+      "claim_type": "p_value",
+      "raw_text": "P = .12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6127,
+      "sentence": "33 The improvement in walking endurance was coupled with increased calf muscle strength (+4.4 Nm; P = .14; 95% CI, -2.154 to 11.15) ( Fig 5 , B ) and a decrease in the time required to complete the five-times sit-to-stand test (-1.9 seconds; P = .12\u2019 95% CI, -4.615 to 0.7420) ( Fig 5 , C ).",
+      "context_window": "to complete the five-times sit-to-stand test (-1.9 seconds; P = .12\u2019 95% CI, -4.615 to 0.7420) ( Fig 5 , C ). Table III display",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-6136",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6136,
+      "sentence": "33 The improvement in walking endurance was coupled with increased calf muscle strength (+4.4 Nm; P = .14; 95% CI, -2.154 to 11.15) ( Fig 5 , B ) and a decrease in the time required to complete the five-times sit-to-stand test (-1.9 seconds; P = .12\u2019 95% CI, -4.615 to 0.7420) ( Fig 5 , C ).",
+      "context_window": "te the five-times sit-to-stand test (-1.9 seconds; P = .12\u2019 95% CI, -4.615 to 0.7420) ( Fig 5 , C ). Table III displays the",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-p-6315",
+      "claim_type": "p_value",
+      "raw_text": "P = .16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6315,
+      "sentence": "The self-reported walking speed scores increased in five of the six participants (+11 points; P = .16; 95% CI, -6.539 to 28.71).",
+      "context_window": "ores increased in five of the six participants (+11 points; P = .16; 95% CI, -6.539 to 28.71). As shown in Fig 6 , five patient",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-6324",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6324,
+      "sentence": "The self-reported walking speed scores increased in five of the six participants (+11 points; P = .16; 95% CI, -6.539 to 28.71).",
+      "context_window": "eased in five of the six participants (+11 points; P = .16; 95% CI, -6.539 to 28.71). As shown in Fig 6 , five patients dis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-6458",
+      "claim_type": "unit_value",
+      "raw_text": "5.66 mm",
+      "numeric_values": [
+        5.66
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 6458,
+      "sentence": "As shown in Fig 6 , five patients displayed a reduction in systolic blood pressure compared with baseline (-5.66 mm Hg; P = .33; 95% CI, -19.40 to 8.062) and four patients had a reduction in diastolic pressure (-1.16 mm Hg; P = .76; 95% CI, -10.49 to 8.156).",
+      "context_window": "duction in systolic blood pressure compared with baseline (-5.66 mm Hg; P = .33; 95% CI, -19.40 to 8.062) and four patients had",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-p-6470",
+      "claim_type": "p_value",
+      "raw_text": "P = .33",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6470,
+      "sentence": "As shown in Fig 6 , five patients displayed a reduction in systolic blood pressure compared with baseline (-5.66 mm Hg; P = .33; 95% CI, -19.40 to 8.062) and four patients had a reduction in diastolic pressure (-1.16 mm Hg; P = .76; 95% CI, -10.49 to 8.156).",
+      "context_window": "ystolic blood pressure compared with baseline (-5.66 mm Hg; P = .33; 95% CI, -19.40 to 8.062) and four patients had a reduction",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-6479",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6479,
+      "sentence": "As shown in Fig 6 , five patients displayed a reduction in systolic blood pressure compared with baseline (-5.66 mm Hg; P = .33; 95% CI, -19.40 to 8.062) and four patients had a reduction in diastolic pressure (-1.16 mm Hg; P = .76; 95% CI, -10.49 to 8.156).",
+      "context_window": "lood pressure compared with baseline (-5.66 mm Hg; P = .33; 95% CI, -19.40 to 8.062) and four patients had a reduction in d",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-6562",
+      "claim_type": "unit_value",
+      "raw_text": "1.16 mm",
+      "numeric_values": [
+        1.16
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 6562,
+      "sentence": "As shown in Fig 6 , five patients displayed a reduction in systolic blood pressure compared with baseline (-5.66 mm Hg; P = .33; 95% CI, -19.40 to 8.062) and four patients had a reduction in diastolic pressure (-1.16 mm Hg; P = .76; 95% CI, -10.49 to 8.156).",
+      "context_window": ") and four patients had a reduction in diastolic pressure (-1.16 mm Hg; P = .76; 95% CI, -10.49 to 8.156). Fig 5 Individual res",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-p-6574",
+      "claim_type": "p_value",
+      "raw_text": "P = .76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6574,
+      "sentence": "As shown in Fig 6 , five patients displayed a reduction in systolic blood pressure compared with baseline (-5.66 mm Hg; P = .33; 95% CI, -19.40 to 8.062) and four patients had a reduction in diastolic pressure (-1.16 mm Hg; P = .76; 95% CI, -10.49 to 8.156).",
+      "context_window": "atients had a reduction in diastolic pressure (-1.16 mm Hg; P = .76; 95% CI, -10.49 to 8.156). Fig 5 Individual responses to th",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-6583",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6583,
+      "sentence": "As shown in Fig 6 , five patients displayed a reduction in systolic blood pressure compared with baseline (-5.66 mm Hg; P = .33; 95% CI, -19.40 to 8.062) and four patients had a reduction in diastolic pressure (-1.16 mm Hg; P = .76; 95% CI, -10.49 to 8.156).",
+      "context_window": "ad a reduction in diastolic pressure (-1.16 mm Hg; P = .76; 95% CI, -10.49 to 8.156). Fig 5 Individual responses to the 6-m",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-7088",
+      "claim_type": "mean_sd",
+      "raw_text": "61.85 \u00b1 32.78",
+      "numeric_values": [
+        61.85,
+        32.78
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7088,
+      "sentence": "Table III Change from baseline to the 12-week follow-up in the scores of the walking impairment questionnaire ( WIQ ) Baseline 12-Week follow-up Difference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means \u00b1 standard deviation or mean (95% confidence interval).",
+      "context_window": "follow-up Difference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 6",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-7102",
+      "claim_type": "mean_sd",
+      "raw_text": "73.11 \u00b1 27.31",
+      "numeric_values": [
+        73.11,
+        27.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7102,
+      "sentence": "Table III Change from baseline to the 12-week follow-up in the scores of the walking impairment questionnaire ( WIQ ) Baseline 12-Week follow-up Difference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means \u00b1 standard deviation or mean (95% confidence interval).",
+      "context_window": "ference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 7",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-7160",
+      "claim_type": "mean_sd",
+      "raw_text": "63.59 \u00b1 28.02",
+      "numeric_values": [
+        63.59,
+        28.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7160,
+      "sentence": "Table III Change from baseline to the 12-week follow-up in the scores of the walking impairment questionnaire ( WIQ ) Baseline 12-Week follow-up Difference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means \u00b1 standard deviation or mean (95% confidence interval).",
+      "context_window": "8 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-7174",
+      "claim_type": "mean_sd",
+      "raw_text": "73.55 \u00b1 23.42",
+      "numeric_values": [
+        73.55,
+        23.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7174,
+      "sentence": "Table III Change from baseline to the 12-week follow-up in the scores of the walking impairment questionnaire ( WIQ ) Baseline 12-Week follow-up Difference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means \u00b1 standard deviation or mean (95% confidence interval).",
+      "context_window": "1 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-7234",
+      "claim_type": "mean_sd",
+      "raw_text": "65.97 \u00b1 31.12",
+      "numeric_values": [
+        65.97,
+        31.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7234,
+      "sentence": "Table III Change from baseline to the 12-week follow-up in the scores of the walking impairment questionnaire ( WIQ ) Baseline 12-Week follow-up Difference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means \u00b1 standard deviation or mean (95% confidence interval).",
+      "context_window": "73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-7248",
+      "claim_type": "mean_sd",
+      "raw_text": "68.75 \u00b1 32.99",
+      "numeric_values": [
+        68.75,
+        32.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7248,
+      "sentence": "Table III Change from baseline to the 12-week follow-up in the scores of the walking impairment questionnaire ( WIQ ) Baseline 12-Week follow-up Difference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means \u00b1 standard deviation or mean (95% confidence interval).",
+      "context_window": "9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 3",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-7312",
+      "claim_type": "mean_sd",
+      "raw_text": "61.94 \u00b1 32.59",
+      "numeric_values": [
+        61.94,
+        32.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7312,
+      "sentence": "Table III Change from baseline to the 12-week follow-up in the scores of the walking impairment questionnaire ( WIQ ) Baseline 12-Week follow-up Difference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means \u00b1 standard deviation or mean (95% confidence interval).",
+      "context_window": "5 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-msd-7326",
+      "claim_type": "mean_sd",
+      "raw_text": "73.02 \u00b1 27.31",
+      "numeric_values": [
+        73.02,
+        27.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7326,
+      "sentence": "Table III Change from baseline to the 12-week follow-up in the scores of the walking impairment questionnaire ( WIQ ) Baseline 12-Week follow-up Difference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means \u00b1 standard deviation or mean (95% confidence interval).",
+      "context_window": "(-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means \u00b1 standard dev",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-7415",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7415,
+      "sentence": "Table III Change from baseline to the 12-week follow-up in the scores of the walking impairment questionnaire ( WIQ ) Baseline 12-Week follow-up Difference in changes P value Distance score (%) 61.85 \u00b1 32.78 73.11 \u00b1 27.31 11.26 (-6.65 to 29.16) .167 Speed score (%) 63.59 \u00b1 28.02 73.55 \u00b1 23.42 9.96 (-7.90 to 27.83) .211 Climbing score (%) 65.97 \u00b1 31.12 68.75 \u00b1 32.99 2.78 (-20.47 to 26.03) .771 Overall WIQ score (%) 61.94 \u00b1 32.59 73.02 \u00b1 27.31 11.08 (-6.69 to 28.86) .170 Values are means \u00b1 standard deviation or mean (95% confidence interval).",
+      "context_window": "28.86) .170 Values are means \u00b1 standard deviation or mean (95% confidence interval). Data were compared using paired two-s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-pct-8161",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8161,
+      "sentence": "Change from baseline to the 12-week follow-up in the scores of the walking impairment questionnaire ( WIQ )\n\nValues are means \u00b1 standard deviation or mean (95% confidence interval).",
+      "context_window": "ire ( WIQ ) Values are means \u00b1 standard deviation or mean (95% confidence interval). Data were compared using paired two-s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-u-1182",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1182,
+      "sentence": "In a preliminary study involving a small sample of patients with symptomatic PAD, we demonstrated that unsupervised, home-based leg HT using the device daily for 12 weeks is feasible and well-tolerated.",
+      "context_window": "unsupervised, home-based leg HT using the device daily for 12 weeks is feasible and well-tolerated. These promising findings la",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11697193_development_and_feasibility_testing_of_a_new_device_for_home-p-2783",
+      "claim_type": "p_value",
+      "raw_text": "P = .07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2783,
+      "sentence": "20 Although the increase from baseline (+32.2 m) was not statistically significant ( P = .07), it exceeds the threshold for what is considered a large improvement in walking ability for patients with PAD.",
+      "context_window": "from baseline (+32.2 m) was not statistically significant ( P = .07), it exceeds the threshold for what is considered a large i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

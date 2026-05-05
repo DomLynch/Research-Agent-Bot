@@ -1,0 +1,409 @@
+{
+  "paper_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ",
+  "doi": "10.1155/2017/7985728",
+  "extracted_at": "2026-05-05T22:35:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 18,
+    "unit_value": 3,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-872",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 872,
+      "sentence": "Protein intake was independently correlated with SMI after adjusting for age, hemoglobin A1c, C-peptide index, exercise, smoking, insulin treatment, total energy intake, and C-reactive protein (standardized regression coefficient = 0.664, P < 0.001 in men and standardized regression coefficient = 0.516, P = 0.005 in women).",
+      "context_window": "ctive protein (standardized regression coefficient = 0.664, P < 0.001 in men and standardized regression coefficient = 0.516, P =",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-938",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 938,
+      "sentence": "Protein intake was independently correlated with SMI after adjusting for age, hemoglobin A1c, C-peptide index, exercise, smoking, insulin treatment, total energy intake, and C-reactive protein (standardized regression coefficient = 0.664, P < 0.001 in men and standardized regression coefficient = 0.516, P = 0.005 in women).",
+      "context_window": "001 in men and standardized regression coefficient = 0.516, P = 0.005 in women). Additionally, the animal protein to vegetable pr",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-1139",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1139,
+      "sentence": "Additionally, the animal protein to vegetable protein ratio was negatively correlated with SMI after adjusting for covariates in men (standardized regression coefficient = -0.339, P = 0.005).",
+      "context_window": "iates in men (standardized regression coefficient = -0.339, P = 0.005). We found that total protein intake, especially vegetable",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-u-941",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 941,
+      "sentence": "In addition, it has been recommended that 1.0-1.2 g/kg BW/day of dietary protein intake for adults aged \u226565 years should be consumed to keep and regain muscle mass and function [ 8 ].",
+      "context_window": "-1.2 g/kg BW/day of dietary protein intake for adults aged \u226565 years should be consumed to keep and regain muscle mass and funct",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-u-250",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 250,
+      "sentence": "We included type 2 diabetes patients of age \u2265 65 years and without physical inactivity.",
+      "context_window": "o April 2016. We included type 2 diabetes patients of age \u2265 65 years and without physical inactivity. We excluded the patients w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-u-877",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 877,
+      "sentence": "BDHQ estimates the dietary intake of 58 food item situation of the past 1 month.",
+      "context_window": "es the dietary intake of 58 food item situation of the past 1 month. BDHQ evaluates dietary habits during the preceding month a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-pct-213",
+      "claim_type": "percentage",
+      "raw_text": "94.0%",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 213,
+      "sentence": "Among them, a total of 218 patients completed the questionnaire (129 men and 89 women), yielding a collection rate of 94.0%.",
+      "context_window": "naire (129 men and 89 women), yielding a collection rate of 94.0%. We excluded 22 patients (15 men and 7 women) with incomple",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-1476",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1476,
+      "sentence": "Protein intake (g/kg BW/day) was positively associated with SMI ( r = 0.262, P = 0.010 in men and r = 0.295, P = 0.013 in women).",
+      "context_window": "/kg BW/day) was positively associated with SMI ( r = 0.262, P = 0.010 in men and r = 0.295, P = 0.013 in women). Animal protein a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-1508",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1508,
+      "sentence": "Protein intake (g/kg BW/day) was positively associated with SMI ( r = 0.262, P = 0.010 in men and r = 0.295, P = 0.013 in women).",
+      "context_window": "iated with SMI ( r = 0.262, P = 0.010 in men and r = 0.295, P = 0.013 in women). Animal protein and vegetable protein intakes wer",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-1628",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.040",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1628,
+      "sentence": "Animal protein and vegetable protein intakes were also positively associated with SMI ( r = 0.209, P = 0.040, r = 0.279, and P = 0.019 in men and r = 0.316, P = 0.002, r = 0.357, and P = 0.002 in women).",
+      "context_window": "takes were also positively associated with SMI ( r = 0.209, P = 0.040, r = 0.279, and P = 0.019 in men and r = 0.316, P = 0.002,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-1654",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1654,
+      "sentence": "Animal protein and vegetable protein intakes were also positively associated with SMI ( r = 0.209, P = 0.040, r = 0.279, and P = 0.019 in men and r = 0.316, P = 0.002, r = 0.357, and P = 0.002 in women).",
+      "context_window": "associated with SMI ( r = 0.209, P = 0.040, r = 0.279, and P = 0.019 in men and r = 0.316, P = 0.002, r = 0.357, and P = 0.002 i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-1686",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1686,
+      "sentence": "Animal protein and vegetable protein intakes were also positively associated with SMI ( r = 0.209, P = 0.040, r = 0.279, and P = 0.019 in men and r = 0.316, P = 0.002, r = 0.357, and P = 0.002 in women).",
+      "context_window": ", P = 0.040, r = 0.279, and P = 0.019 in men and r = 0.316, P = 0.002, r = 0.357, and P = 0.002 in women). Simple correlation on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-1712",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1712,
+      "sentence": "Animal protein and vegetable protein intakes were also positively associated with SMI ( r = 0.209, P = 0.040, r = 0.279, and P = 0.019 in men and r = 0.316, P = 0.002, r = 0.357, and P = 0.002 in women).",
+      "context_window": "d P = 0.019 in men and r = 0.316, P = 0.002, r = 0.357, and P = 0.002 in women). Simple correlation on skeletal muscle index. B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-1970",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1970,
+      "sentence": "Protein intake (g/kg BW/day) was independently correlated with SMI (standardized regression coefficient = 0.664, P < 0.001 in men and standardized regression coefficient = 0.516, P = 0.005 in women).",
+      "context_window": "ated with SMI (standardized regression coefficient = 0.664, P < 0.001 in men and standardized regression coefficient = 0.516, P =",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-2036",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2036,
+      "sentence": "Protein intake (g/kg BW/day) was independently correlated with SMI (standardized regression coefficient = 0.664, P < 0.001 in men and standardized regression coefficient = 0.516, P = 0.005 in women).",
+      "context_window": "001 in men and standardized regression coefficient = 0.516, P = 0.005 in women). Both animal protein intake (g/kg BW/day) (standa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-2144",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2144,
+      "sentence": "Both animal protein intake (g/kg BW/day) (standardized regression coefficient = 0.410, P = 0.003 in men and standardized regression coefficient = 0.437, P = 0.007 in women) and vegetable protein intake (g/kg BW/day) (standardized regression coefficient = 0.625, P = <0.001 in men and standardized regression coefficient = 0.690, P = <0.001 in women) were also associated with SMI.",
+      "context_window": "(g/kg BW/day) (standardized regression coefficient = 0.410, P = 0.003 in men and standardized regression coefficient = 0.437, P =",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-2210",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2210,
+      "sentence": "Both animal protein intake (g/kg BW/day) (standardized regression coefficient = 0.410, P = 0.003 in men and standardized regression coefficient = 0.437, P = 0.007 in women) and vegetable protein intake (g/kg BW/day) (standardized regression coefficient = 0.625, P = <0.001 in men and standardized regression coefficient = 0.690, P = <0.001 in women) were also associated with SMI.",
+      "context_window": "003 in men and standardized regression coefficient = 0.437, P = 0.007 in women) and vegetable protein intake (g/kg BW/day) (stand",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-2618",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2618,
+      "sentence": "Additionally, the animal protein to vegetable protein ratio was negatively correlated with SMI after adjusting for covariates in men (standardized regression coefficient = -0.339, P = 0.005).",
+      "context_window": "iates in men (standardized regression coefficient = -0.339, P = 0.005). Multiple regression analysis on skeletal muscle index.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-2603",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2603,
+      "sentence": "In fact, CRP was positively associated with animal protein to vegetable protein ratio in men ( r = 0.23, P = 0.024 by Spearman's correlation analyses) in this study.",
+      "context_window": "nimal protein to vegetable protein ratio in men ( r = 0.23, P = 0.024 by Spearman's correlation analyses) in this study. Moreover",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-3211",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3211,
+      "sentence": "The standardized regression coefficient became weak, although the animal protein to vegetable protein ratio was inversely correlated with SMI in men (standardized regression coefficient = -0.262, P = 0.045).",
+      "context_window": "h SMI in men (standardized regression coefficient = -0.262, P = 0.045). This result means that the antioxidant nutrients are invo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-3640",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.183",
+      "numeric_values": [
+        0.183
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3640,
+      "sentence": "The proportion of protein intake (% energy) was not correlated with SMI (standardized regression coefficient = 0.14, P = 0.183 in men and standardized regression coefficient = 0.08, P = 0.529 in women) after adjusting for covariates, which is different from that of protein intake (g/kg BW).",
+      "context_window": "lated with SMI (standardized regression coefficient = 0.14, P = 0.183 in men and standardized regression coefficient = 0.08, P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5676451_protein_intake_especially_vegetable_protein_intake_is_associ-p-3705",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.529",
+      "numeric_values": [
+        0.529
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3705,
+      "sentence": "The proportion of protein intake (% energy) was not correlated with SMI (standardized regression coefficient = 0.14, P = 0.183 in men and standardized regression coefficient = 0.08, P = 0.529 in women) after adjusting for covariates, which is different from that of protein intake (g/kg BW).",
+      "context_window": ".183 in men and standardized regression coefficient = 0.08, P = 0.529 in women) after adjusting for covariates, which is differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

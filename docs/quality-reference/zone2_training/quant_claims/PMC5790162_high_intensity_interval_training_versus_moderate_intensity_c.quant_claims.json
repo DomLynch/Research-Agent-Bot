@@ -1,0 +1,2076 @@
+{
+  "paper_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c",
+  "doi": "10.2147/OAJSM.S150596",
+  "extracted_at": "2026-05-05T22:43:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 36,
+    "percentage": 46,
+    "p_value": 12,
+    "sample_size": 11,
+    "confidence_interval": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1278",
+      "claim_type": "unit_value",
+      "raw_text": "0.34 mL",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 1278,
+      "sentence": "HIIT was significantly superior to MICT in improving cardiorespiratory fitness overall (SMD 0.34 mL/kg/min; 95% confidence interval [CI; 0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "to MICT in improving cardiorespiratory fitness overall (SMD 0.34 mL/kg/min; 95% confidence interval [CI; 0.2-0.48]; p <0.00001;",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-1294",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1294,
+      "sentence": "HIIT was significantly superior to MICT in improving cardiorespiratory fitness overall (SMD 0.34 mL/kg/min; 95% confidence interval [CI; 0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "ving cardiorespiratory fitness overall (SMD 0.34 mL/kg/min; 95% confidence interval [CI; 0.2-0.48]; p <0.00001; I 2 =28%).",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-1334",
+      "claim_type": "p_value",
+      "raw_text": "p <0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1334,
+      "sentence": "HIIT was significantly superior to MICT in improving cardiorespiratory fitness overall (SMD 0.34 mL/kg/min; 95% confidence interval [CI; 0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "SMD 0.34 mL/kg/min; 95% confidence interval [CI; 0.2-0.48]; p <0.00001; I 2 =28%). There were no deaths or cardiac events requirin",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-1351",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1351,
+      "sentence": "HIIT was significantly superior to MICT in improving cardiorespiratory fitness overall (SMD 0.34 mL/kg/min; 95% confidence interval [CI; 0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "n; 95% confidence interval [CI; 0.2-0.48]; p <0.00001; I 2 =28%). There were no deaths or cardiac events requiring hospital",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-1535",
+      "claim_type": "sample_size",
+      "raw_text": "n=14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1535,
+      "sentence": "Overall, there were more adverse events reported as a result of the MICT (n=14) intervention than the HIIT intervention (n=9).",
+      "context_window": "were more adverse events reported as a result of the MICT (n=14) intervention than the HIIT intervention (n=9). However, so",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-1582",
+      "claim_type": "sample_size",
+      "raw_text": "n=9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1582,
+      "sentence": "Overall, there were more adverse events reported as a result of the MICT (n=14) intervention than the HIIT intervention (n=9).",
+      "context_window": "of the MICT (n=14) intervention than the HIIT intervention (n=9). However, some adverse events (n=5) were not classified by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-1618",
+      "claim_type": "sample_size",
+      "raw_text": "n=5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1618,
+      "sentence": "However, some adverse events (n=5) were not classified by intervention group.",
+      "context_window": "the HIIT intervention (n=9). However, some adverse events (n=5) were not classified by intervention group. HIIT is superi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1888",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1888,
+      "sentence": "Programs of 7-12 weeks\u2019 duration resulted in the largest improvements in cardiorespiratory fitness for patients with coronary artery disease.",
+      "context_window": "nificant for CR programs of >6-week duration. Programs of 7-12 weeks\u2019 duration resulted in the largest improvements in cardiores",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-106",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 106,
+      "sentence": "Coronary heart disease (CHD) results in one in four deaths globally - an increase from one in five deaths 20 years ago.",
+      "context_window": "four deaths globally - an increase from one in five deaths 20 years ago. 1 A systematic analysis for the Global Burden of Disea",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-323",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 323,
+      "sentence": "In the last 20 years, YLL attributed to CHD has increased by 28%.",
+      "context_window": "death surpassing lower respiratory infections. In the last 20 years, YLL attributed to CHD has increased by 28%. 1 Cardiac reh",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-372",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 372,
+      "sentence": "In the last 20 years, YLL attributed to CHD has increased by 28%.",
+      "context_window": "n the last 20 years, YLL attributed to CHD has increased by 28%. 1 Cardiac rehabilitation (CR) is an important tool in sec",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2085",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2085,
+      "sentence": "This is because, for every one metabolic equivalent (MET) improvement in cardiorespiratory fitness, there is an 8-17% reduction in all-cause mortality, and cardiorespiratory fitness levels can predict prognosis in patients with known CHD.",
+      "context_window": "ET) improvement in cardiorespiratory fitness, there is an 8-17% reduction in all-cause mortality, and cardiorespiratory fit",
+      "claim_role": "background",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-3882",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3882,
+      "sentence": "These systematic reviews, however, had methodological limitations including high heterogeneity ( I 2 =83-93%) 16 , 18 and lacked sufficient reporting of methods implemented to calculate standard deviations, particularly when no p -value was published in individual randomised controlled trial (RCT) publications.",
+      "context_window": "ological limitations including high heterogeneity ( I 2 =83-93%) 16 , 18 and lacked sufficient reporting of methods impleme",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-507",
+      "claim_type": "sample_size",
+      "raw_text": "n=2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 507,
+      "sentence": "31 - 47 The RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1).",
+      "context_window": "shed in English. 31 - 47 The RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-522",
+      "claim_type": "sample_size",
+      "raw_text": "n=1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 522,
+      "sentence": "31 - 47 The RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1).",
+      "context_window": ". 31 - 47 The RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-536",
+      "claim_type": "sample_size",
+      "raw_text": "n=4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 536,
+      "sentence": "31 - 47 The RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1).",
+      "context_window": "RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-550",
+      "claim_type": "sample_size",
+      "raw_text": "n=3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 550,
+      "sentence": "31 - 47 The RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1).",
+      "context_window": "ucted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-565",
+      "claim_type": "sample_size",
+      "raw_text": "n=1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 565,
+      "sentence": "31 - 47 The RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1).",
+      "context_window": "(n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1). The tot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-579",
+      "claim_type": "sample_size",
+      "raw_text": "n=4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 579,
+      "sentence": "31 - 47 The RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1).",
+      "context_window": "m (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1). The total number of p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-598",
+      "claim_type": "sample_size",
+      "raw_text": "n=1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 598,
+      "sentence": "31 - 47 The RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1).",
+      "context_window": "4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1). The total number of participants analyze",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-n-615",
+      "claim_type": "sample_size",
+      "raw_text": "n=1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 615,
+      "sentence": "31 - 47 The RCTs were conducted in the US (n=2), Belgium (n=1), Brazil (n=4), Canada (n=3), Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1).",
+      "context_window": "Germany (n=1), Norway (n=4), South Korea (n=1), and Spain (n=1). The total number of participants analyzed across all stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1029",
+      "claim_type": "unit_value",
+      "raw_text": "76 years",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1029,
+      "sentence": "The age range of participants was 52-76 years, with 10 studies reporting mean ages <60 years and seven studies reporting mean ages >60 years.",
+      "context_window": "al revascularizations. The age range of participants was 52-76 years, with 10 studies reporting mean ages <60 years and seven st",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1076",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1076,
+      "sentence": "The age range of participants was 52-76 years, with 10 studies reporting mean ages <60 years and seven studies reporting mean ages >60 years.",
+      "context_window": "pants was 52-76 years, with 10 studies reporting mean ages <60 years and seven studies reporting mean ages >60 years. Individual",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1124",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1124,
+      "sentence": "The age range of participants was 52-76 years, with 10 studies reporting mean ages <60 years and seven studies reporting mean ages >60 years.",
+      "context_window": "mean ages <60 years and seven studies reporting mean ages >60 years. Individual patient characteristics for each study can be s",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1244",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1244,
+      "sentence": "Intervention duration ranged from 4 weeks to 12 months, with four studies reporting data for 0-6 weeks, 35 , 42 , 44 , 46 11 studies reporting data for 7-12 weeks, 32 , 34 , 36 - 40 , 42 , 43 , 45 , 47 and five studies reporting data for >12 weeks.",
+      "context_window": "can be seen in Table 1 . Intervention duration ranged from 4 weeks to 12 months, with four studies reporting data for 0-6 week",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1255",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1255,
+      "sentence": "Intervention duration ranged from 4 weeks to 12 months, with four studies reporting data for 0-6 weeks, 35 , 42 , 44 , 46 11 studies reporting data for 7-12 weeks, 32 , 34 , 36 - 40 , 42 , 43 , 45 , 47 and five studies reporting data for >12 weeks.",
+      "context_window": "in Table 1 . Intervention duration ranged from 4 weeks to 12 months, with four studies reporting data for 0-6 weeks, 35 , 42 ,",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1305",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1305,
+      "sentence": "Intervention duration ranged from 4 weeks to 12 months, with four studies reporting data for 0-6 weeks, 35 , 42 , 44 , 46 11 studies reporting data for 7-12 weeks, 32 , 34 , 36 - 40 , 42 , 43 , 45 , 47 and five studies reporting data for >12 weeks.",
+      "context_window": "weeks to 12 months, with four studies reporting data for 0-6 weeks, 35 , 42 , 44 , 46 11 studies reporting data for 7-12 weeks",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1364",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1364,
+      "sentence": "Intervention duration ranged from 4 weeks to 12 months, with four studies reporting data for 0-6 weeks, 35 , 42 , 44 , 46 11 studies reporting data for 7-12 weeks, 32 , 34 , 36 - 40 , 42 , 43 , 45 , 47 and five studies reporting data for >12 weeks.",
+      "context_window": "-6 weeks, 35 , 42 , 44 , 46 11 studies reporting data for 7-12 weeks, 32 , 34 , 36 - 40 , 42 , 43 , 45 , 47 and five studies rep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1449",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1449,
+      "sentence": "Intervention duration ranged from 4 weeks to 12 months, with four studies reporting data for 0-6 weeks, 35 , 42 , 44 , 46 11 studies reporting data for 7-12 weeks, 32 , 34 , 36 - 40 , 42 , 43 , 45 , 47 and five studies reporting data for >12 weeks.",
+      "context_window": "40 , 42 , 43 , 45 , 47 and five studies reporting data for >12 weeks. 31 , 33 , 35 , 41 , 43 Four studies had data that fit acro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1768",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1768,
+      "sentence": "Of these, nine studies conducted the intervention 3 days/week, 31 , 32 , 38 , 40 - 42 , 44 , 45 , 47 four studies for 2 days/week, 33 , 37 , 39 , 43 and two studies for 5 days/week.",
+      "context_window": "rvention. Of these, nine studies conducted the intervention 3 days/week, 31 , 32 , 38 , 40 - 42 , 44 , 45 , 47 four studies fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1836",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1836,
+      "sentence": "Of these, nine studies conducted the intervention 3 days/week, 31 , 32 , 38 , 40 - 42 , 44 , 45 , 47 four studies for 2 days/week, 33 , 37 , 39 , 43 and two studies for 5 days/week.",
+      "context_window": "eek, 31 , 32 , 38 , 40 - 42 , 44 , 45 , 47 four studies for 2 days/week, 33 , 37 , 39 , 43 and two studies for 5 days/week. 35",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1887",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1887,
+      "sentence": "Of these, nine studies conducted the intervention 3 days/week, 31 , 32 , 38 , 40 - 42 , 44 , 45 , 47 four studies for 2 days/week, 33 , 37 , 39 , 43 and two studies for 5 days/week.",
+      "context_window": "dies for 2 days/week, 33 , 37 , 39 , 43 and two studies for 5 days/week. 35 , 36 One study ran sessions four times a day 46 an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2581",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2581,
+      "sentence": "All studies conducted exercise within the intensity guidelines (HIIT \u226585% VO 2 peak or \u226585% heart rate reserve [HRR] or \u226590% heart rate max [HRM] interspersed with lower level exercise and MICT [50-75%VO 2 peak or 50-75% HRR or 50-80% HRM]).",
+      "context_window": "s conducted exercise within the intensity guidelines (HIIT \u226585% VO 2 peak or \u226585% heart rate reserve [HRR] or \u226590% heart ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2599",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2599,
+      "sentence": "All studies conducted exercise within the intensity guidelines (HIIT \u226585% VO 2 peak or \u226585% heart rate reserve [HRR] or \u226590% heart rate max [HRM] interspersed with lower level exercise and MICT [50-75%VO 2 peak or 50-75% HRR or 50-80% HRM]).",
+      "context_window": "se within the intensity guidelines (HIIT \u226585% VO 2 peak or \u226585% heart rate reserve [HRR] or \u226590% heart rate max [HRM] inter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2632",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2632,
+      "sentence": "All studies conducted exercise within the intensity guidelines (HIIT \u226585% VO 2 peak or \u226585% heart rate reserve [HRR] or \u226590% heart rate max [HRM] interspersed with lower level exercise and MICT [50-75%VO 2 peak or 50-75% HRR or 50-80% HRM]).",
+      "context_window": "s (HIIT \u226585% VO 2 peak or \u226585% heart rate reserve [HRR] or \u226590% heart rate max [HRM] interspersed with lower level exercise",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2709",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2709,
+      "sentence": "All studies conducted exercise within the intensity guidelines (HIIT \u226585% VO 2 peak or \u226585% heart rate reserve [HRR] or \u226590% heart rate max [HRM] interspersed with lower level exercise and MICT [50-75%VO 2 peak or 50-75% HRR or 50-80% HRM]).",
+      "context_window": "x [HRM] interspersed with lower level exercise and MICT [50-75%VO 2 peak or 50-75% HRR or 50-80% HRM]). The PEDro-Scale wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2728",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2728,
+      "sentence": "All studies conducted exercise within the intensity guidelines (HIIT \u226585% VO 2 peak or \u226585% heart rate reserve [HRR] or \u226590% heart rate max [HRM] interspersed with lower level exercise and MICT [50-75%VO 2 peak or 50-75% HRR or 50-80% HRM]).",
+      "context_window": "d with lower level exercise and MICT [50-75%VO 2 peak or 50-75% HRR or 50-80% HRM]). The PEDro-Scale was used to analyze s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2742",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2742,
+      "sentence": "All studies conducted exercise within the intensity guidelines (HIIT \u226585% VO 2 peak or \u226585% heart rate reserve [HRR] or \u226590% heart rate max [HRM] interspersed with lower level exercise and MICT [50-75%VO 2 peak or 50-75% HRR or 50-80% HRM]).",
+      "context_window": "evel exercise and MICT [50-75%VO 2 peak or 50-75% HRR or 50-80% HRM]). The PEDro-Scale was used to analyze study quality.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2947",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2947,
+      "sentence": "Of the 17 studies, 13 (76%) were of good quality, three (18%) were of fair quality, and one (6%) was of poor quality ( Table 3 ).",
+      "context_window": "pancies were discussed and resolved. Of the 17 studies, 13 (76%) were of good quality, three (18%) were of fair quality, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2981",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2981,
+      "sentence": "Of the 17 studies, 13 (76%) were of good quality, three (18%) were of fair quality, and one (6%) was of poor quality ( Table 3 ).",
+      "context_window": "d. Of the 17 studies, 13 (76%) were of good quality, three (18%) were of fair quality, and one (6%) was of poor quality ( T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-3017",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3017,
+      "sentence": "Of the 17 studies, 13 (76%) were of good quality, three (18%) were of fair quality, and one (6%) was of poor quality ( Table 3 ).",
+      "context_window": "of good quality, three (18%) were of fair quality, and one (6%) was of poor quality ( Table 3 ). Studies were separated i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-3137",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3137,
+      "sentence": "Studies were separated into three groups depending upon duration (0-6, 7-12, and >12 weeks), and a meta-analysis was conducted to analyze VO 2 peak changes or VO 2 at anaerobic threshold.",
+      "context_window": "into three groups depending upon duration (0-6, 7-12, and >12 weeks), and a meta-analysis was conducted to analyze VO 2 peak ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-3621",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3621,
+      "sentence": "The meta-analysis identified that, of the 17 studies, 16 significantly ( p <0.05) favored HIIT.",
+      "context_window": "ysis identified that, of the 17 studies, 16 significantly ( p <0.05) favored HIIT. 31 - 45 , 47 One favored MICT; 46 however, t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-3743",
+      "claim_type": "p_value",
+      "raw_text": "p =0.3758",
+      "numeric_values": [
+        0.3758
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3743,
+      "sentence": "31 - 45 , 47 One favored MICT; 46 however, the results were not significant in our meta-analysis ( p =0.3758).",
+      "context_window": "er, the results were not significant in our meta-analysis ( p =0.3758). HIIT was significantly superior to MICT in improving VO 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-3823",
+      "claim_type": "unit_value",
+      "raw_text": "0.34 mL",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 3823,
+      "sentence": "HIIT was significantly superior to MICT in improving VO 2 peak (SMD 0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "significantly superior to MICT in improving VO 2 peak (SMD 0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%). For studi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-ci-3839",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [0.2-0.48",
+      "numeric_values": [
+        0.2,
+        0.48
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3839,
+      "sentence": "HIIT was significantly superior to MICT in improving VO 2 peak (SMD 0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "uperior to MICT in improving VO 2 peak (SMD 0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%). For studies of up to 6-week durati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-3858",
+      "claim_type": "p_value",
+      "raw_text": "p <0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3858,
+      "sentence": "HIIT was significantly superior to MICT in improving VO 2 peak (SMD 0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "improving VO 2 peak (SMD 0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%). For studies of up to 6-week duration, HIIT was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-3875",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3875,
+      "sentence": "HIIT was significantly superior to MICT in improving VO 2 peak (SMD 0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "ak (SMD 0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%). For studies of up to 6-week duration, HIIT was shown to i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-3975",
+      "claim_type": "unit_value",
+      "raw_text": "0.19 mL",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 3975,
+      "sentence": "For studies of up to 6-week duration, HIIT was shown to improve VO 2 peak more than MICT (SMD 0.19 mL/kg/min; 95% CI [-0.16 to 0.54]; p =0.3; I 2 =45%); however, this was not significant.",
+      "context_window": "on, HIIT was shown to improve VO 2 peak more than MICT (SMD 0.19 mL/kg/min; 95% CI [-0.16 to 0.54]; p =0.3; I 2 =45%); however,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-ci-3991",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-0.16 to 0.54",
+      "numeric_values": [
+        -0.16,
+        0.54
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3991,
+      "sentence": "For studies of up to 6-week duration, HIIT was shown to improve VO 2 peak more than MICT (SMD 0.19 mL/kg/min; 95% CI [-0.16 to 0.54]; p =0.3; I 2 =45%); however, this was not significant.",
+      "context_window": "wn to improve VO 2 peak more than MICT (SMD 0.19 mL/kg/min; 95% CI [-0.16 to 0.54]; p =0.3; I 2 =45%); however, this was not significant. For",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-4015",
+      "claim_type": "p_value",
+      "raw_text": "p =0.3",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4015,
+      "sentence": "For studies of up to 6-week duration, HIIT was shown to improve VO 2 peak more than MICT (SMD 0.19 mL/kg/min; 95% CI [-0.16 to 0.54]; p =0.3; I 2 =45%); however, this was not significant.",
+      "context_window": "more than MICT (SMD 0.19 mL/kg/min; 95% CI [-0.16 to 0.54]; p =0.3; I 2 =45%); however, this was not significant. For interven",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-4028",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4028,
+      "sentence": "For studies of up to 6-week duration, HIIT was shown to improve VO 2 peak more than MICT (SMD 0.19 mL/kg/min; 95% CI [-0.16 to 0.54]; p =0.3; I 2 =45%); however, this was not significant.",
+      "context_window": "T (SMD 0.19 mL/kg/min; 95% CI [-0.16 to 0.54]; p =0.3; I 2 =45%); however, this was not significant. For interventions of 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-4092",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4092,
+      "sentence": "For interventions of 7-12 weeks, HIIT was found to be significantly superior to MICT in improving VO 2 peak (SMD 0.43 mL/kg/min; 95% CI [0.23-0.62], p <0.0001; I 2 =15%).",
+      "context_window": "; however, this was not significant. For interventions of 7-12 weeks, HIIT was found to be significantly superior to MICT in imp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-4182",
+      "claim_type": "unit_value",
+      "raw_text": "0.43 mL",
+      "numeric_values": [
+        0.43
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 4182,
+      "sentence": "For interventions of 7-12 weeks, HIIT was found to be significantly superior to MICT in improving VO 2 peak (SMD 0.43 mL/kg/min; 95% CI [0.23-0.62], p <0.0001; I 2 =15%).",
+      "context_window": "significantly superior to MICT in improving VO 2 peak (SMD 0.43 mL/kg/min; 95% CI [0.23-0.62], p <0.0001; I 2 =15%). For studi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-ci-4198",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [0.23-0.62",
+      "numeric_values": [
+        0.23,
+        0.62
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4198,
+      "sentence": "For interventions of 7-12 weeks, HIIT was found to be significantly superior to MICT in improving VO 2 peak (SMD 0.43 mL/kg/min; 95% CI [0.23-0.62], p <0.0001; I 2 =15%).",
+      "context_window": "uperior to MICT in improving VO 2 peak (SMD 0.43 mL/kg/min; 95% CI [0.23-0.62], p <0.0001; I 2 =15%). For studies of >12-weeks duration,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-4218",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4218,
+      "sentence": "For interventions of 7-12 weeks, HIIT was found to be significantly superior to MICT in improving VO 2 peak (SMD 0.43 mL/kg/min; 95% CI [0.23-0.62], p <0.0001; I 2 =15%).",
+      "context_window": "mproving VO 2 peak (SMD 0.43 mL/kg/min; 95% CI [0.23-0.62], p <0.0001; I 2 =15%). For studies of >12-weeks duration, HIIT was sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-4234",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4234,
+      "sentence": "For interventions of 7-12 weeks, HIIT was found to be significantly superior to MICT in improving VO 2 peak (SMD 0.43 mL/kg/min; 95% CI [0.23-0.62], p <0.0001; I 2 =15%).",
+      "context_window": "ak (SMD 0.43 mL/kg/min; 95% CI [0.23-0.62], p <0.0001; I 2 =15%). For studies of >12-weeks duration, HIIT was significantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-4343",
+      "claim_type": "unit_value",
+      "raw_text": "0.32 mL",
+      "numeric_values": [
+        0.32
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 4343,
+      "sentence": "For studies of >12-weeks duration, HIIT was significantly superior to MICT in improving VO 2 peak (SMD 0.32 mL/kg/min; 95% CI [0.07-0.56]; p =0.01; I 2 =35%).",
+      "context_window": "significantly superior to MICT in improving VO 2 peak (SMD 0.32 mL/kg/min; 95% CI [0.07-0.56]; p =0.01; I 2 =35%). Figure 3 d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-ci-4359",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [0.07-0.56",
+      "numeric_values": [
+        0.07,
+        0.56
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4359,
+      "sentence": "For studies of >12-weeks duration, HIIT was significantly superior to MICT in improving VO 2 peak (SMD 0.32 mL/kg/min; 95% CI [0.07-0.56]; p =0.01; I 2 =35%).",
+      "context_window": "uperior to MICT in improving VO 2 peak (SMD 0.32 mL/kg/min; 95% CI [0.07-0.56]; p =0.01; I 2 =35%). Figure 3 depicts a funnel plot for p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-4379",
+      "claim_type": "p_value",
+      "raw_text": "p =0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4379,
+      "sentence": "For studies of >12-weeks duration, HIIT was significantly superior to MICT in improving VO 2 peak (SMD 0.32 mL/kg/min; 95% CI [0.07-0.56]; p =0.01; I 2 =35%).",
+      "context_window": "mproving VO 2 peak (SMD 0.32 mL/kg/min; 95% CI [0.07-0.56]; p =0.01; I 2 =35%). Figure 3 depicts a funnel plot for publication",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-4393",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4393,
+      "sentence": "For studies of >12-weeks duration, HIIT was significantly superior to MICT in improving VO 2 peak (SMD 0.32 mL/kg/min; 95% CI [0.07-0.56]; p =0.01; I 2 =35%).",
+      "context_window": "peak (SMD 0.32 mL/kg/min; 95% CI [0.07-0.56]; p =0.01; I 2 =35%). Figure 3 depicts a funnel plot for publication bias that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-4528",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4528,
+      "sentence": "Although the majority of trials (13/17; 76%) commented on adverse events resulting from exercise interventions, 32 - 37 , 39 - 42 , 44 - 46 no studies stated the use of a specific protocol to collect adverse events.",
+      "context_window": "is to be unlikely. Although the majority of trials (13/17; 76%) commented on adverse events resulting from exercise interv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-4871",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4871,
+      "sentence": "One study (7%) reported that three cardiac events occurred in the MICT training group.",
+      "context_window": "ed in either intervention group during training. One study (7%) reported that three cardiac events occurred in the MICT tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-5114",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5114,
+      "sentence": "42 Although one study (7%) reported incidences of angina resulting in drop out occurring in both groups, specific details were not reported.",
+      "context_window": "the post-intervention exercise test. 42 Although one study (7%) reported incidences of angina resulting in drop out occurr",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-5294",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5294,
+      "sentence": "37 Of the 13 studies reporting adverse events, three studies (23%) reported additional adverse events for the HIIT intervention.",
+      "context_window": "Of the 13 studies reporting adverse events, three studies (23%) reported additional adverse events for the HIIT interventi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-5506",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5506,
+      "sentence": "37 Five studies (38%) reported additional adverse events in the MICT intervention branch.",
+      "context_window": "ncreatitis, and intermittent claudication. 37 Five studies (38%) reported additional adverse events in the MICT interventio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-5830",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5830,
+      "sentence": "40 In addition, two studies (14%) reported additional adverse events; however, they did not describe to which intervention group the participants had belonged.",
+      "context_window": "ing, 39 and limiting leg pain. 40 In addition, two studies (14%) reported additional adverse events; however, they did not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-6167",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6167,
+      "sentence": "Less than half the studies (6/17; 35%) reported dropout rates by intervention group.",
+      "context_window": "adverse events reported. Less than half the studies (6/17; 35%) reported dropout rates by intervention group. Of those tha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-6397",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6397,
+      "sentence": "For the 0-6 weeks-duration studies, heterogeneity dropped to 0% when Kim et al 44 was removed, and total heterogeneity was similar (26%).",
+      "context_window": "vity analysis was conducted within each subgroup. For the 0-6 weeks-duration studies, heterogeneity dropped to 0% when Kim et a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-6448",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6448,
+      "sentence": "For the 0-6 weeks-duration studies, heterogeneity dropped to 0% when Kim et al 44 was removed, and total heterogeneity was similar (26%).",
+      "context_window": "or the 0-6 weeks-duration studies, heterogeneity dropped to 0% when Kim et al 44 was removed, and total heterogeneity was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-6519",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6519,
+      "sentence": "For the 0-6 weeks-duration studies, heterogeneity dropped to 0% when Kim et al 44 was removed, and total heterogeneity was similar (26%).",
+      "context_window": "et al 44 was removed, and total heterogeneity was similar (26%). For studies of 7-12 weeks duration, removal of results fr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-6542",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6542,
+      "sentence": "For studies of 7-12 weeks duration, removal of results from Conraads et al 42 reduced the heterogeneity to 6%; however, it increased the total heterogeneity to 31%.",
+      "context_window": "and total heterogeneity was similar (26%). For studies of 7-12 weeks duration, removal of results from Conraads et al 42 reduced",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-6632",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6632,
+      "sentence": "For studies of 7-12 weeks duration, removal of results from Conraads et al 42 reduced the heterogeneity to 6%; however, it increased the total heterogeneity to 31%.",
+      "context_window": "results from Conraads et al 42 reduced the heterogeneity to 6%; however, it increased the total heterogeneity to 31%. Remo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-6685",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6685,
+      "sentence": "For studies of 7-12 weeks duration, removal of results from Conraads et al 42 reduced the heterogeneity to 6%; however, it increased the total heterogeneity to 31%.",
+      "context_window": "ity to 6%; however, it increased the total heterogeneity to 31%. Removal of Rognmo et al 32 dropped heterogeneity to 0% and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-6742",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6742,
+      "sentence": "Removal of Rognmo et al 32 dropped heterogeneity to 0% and the overall heterogeneity to 22%.",
+      "context_window": "to 31%. Removal of Rognmo et al 32 dropped heterogeneity to 0% and the overall heterogeneity to 22%. Both these studies we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-6778",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6778,
+      "sentence": "Removal of Rognmo et al 32 dropped heterogeneity to 0% and the overall heterogeneity to 22%.",
+      "context_window": "ropped heterogeneity to 0% and the overall heterogeneity to 22%. Both these studies were of good quality (PEDRO-Scale 6).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-6978",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6978,
+      "sentence": "In the subgroup which included studies of >12-week duration, removing the 3-month data from Jensen et al 31 dropped the heterogeneity to 0% and overall heterogeneity to 17%.",
+      "context_window": "onth data from Jensen et al 31 dropped the heterogeneity to 0% and overall heterogeneity to 17%. The study by Jensen et al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-7010",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7010,
+      "sentence": "In the subgroup which included studies of >12-week duration, removing the 3-month data from Jensen et al 31 dropped the heterogeneity to 0% and overall heterogeneity to 17%.",
+      "context_window": "ropped the heterogeneity to 0% and overall heterogeneity to 17%. The study by Jensen et al 31 was of good quality (Pedro sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-7236",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7236,
+      "sentence": "Moreover, Jensen et al 31 had the lowest standard deviation variation and favored HIIT; 31 however, it included participants who had an ejection fraction <50%.",
+      "context_window": "ver, it included participants who had an ejection fraction <50%. The exact measures were not recorded. As there was no ment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-7401",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7401,
+      "sentence": "As there was no mention of participants having been diagnosed with heart failure, we assumed their ejection fraction was >40% and included this study in the meta-analysis.",
+      "context_window": "with heart failure, we assumed their ejection fraction was >40% and included this study in the meta-analysis. Rocco et al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-7807",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7807,
+      "sentence": "When both studies were removed, the heterogeneity in the subgroup dropped to 8%; however, the overall heterogeneity then increased to 32%.",
+      "context_window": "were removed, the heterogeneity in the subgroup dropped to 8%; however, the overall heterogeneity then increased to 32%.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-7864",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7864,
+      "sentence": "When both studies were removed, the heterogeneity in the subgroup dropped to 8%; however, the overall heterogeneity then increased to 32%.",
+      "context_window": "to 8%; however, the overall heterogeneity then increased to 32%. The overall effect remained the same throughout all sensit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-467",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 467,
+      "sentence": "Interventions of >12 weeks did not show larger gains in cardiorespiratory fitness from continued HIIT training, as was expected.",
+      "context_window": "ry fitness to a greater extent than MICT. Interventions of >12 weeks did not show larger gains in cardiorespiratory fitness from",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-604",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 604,
+      "sentence": "In addition, programs of \u22646 weeks did not result in significant changes.",
+      "context_window": "d HIIT training, as was expected. In addition, programs of \u22646 weeks did not result in significant changes. Our findings that H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-840",
+      "claim_type": "unit_value",
+      "raw_text": "1.53 mL",
+      "numeric_values": [
+        1.53
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 840,
+      "sentence": "Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attributed to HIIT; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed to HIIT; and Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009).",
+      "context_window": "s meta-analyses. Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardioresp",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-ci-856",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.84-2.23",
+      "numeric_values": [
+        0.84,
+        2.23
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 856,
+      "sentence": "Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attributed to HIIT; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed to HIIT; and Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009).",
+      "context_window": "Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attribute",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-874",
+      "claim_type": "p_value",
+      "raw_text": "p =0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 874,
+      "sentence": "Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attributed to HIIT; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed to HIIT; and Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009).",
+      "context_window": "ound a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attributed to HIIT;",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-986",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 mL",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 986,
+      "sentence": "Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attributed to HIIT; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed to HIIT; and Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009).",
+      "context_window": "ributed to HIIT; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespir",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-ci-1001",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.18-3.03",
+      "numeric_values": [
+        0.18,
+        3.03
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1001,
+      "sentence": "Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attributed to HIIT; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed to HIIT; and Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009).",
+      "context_window": "; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-1019",
+      "claim_type": "p_value",
+      "raw_text": "p =0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1019,
+      "sentence": "Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attributed to HIIT; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed to HIIT; and Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009).",
+      "context_window": "found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed to HIIT;",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1131",
+      "claim_type": "unit_value",
+      "raw_text": "1.78 mL",
+      "numeric_values": [
+        1.78
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 1131,
+      "sentence": "Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attributed to HIIT; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed to HIIT; and Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009).",
+      "context_window": "buted to HIIT; and Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009). It is important to hig",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-ci-1147",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.45-3.11",
+      "numeric_values": [
+        0.45,
+        3.11
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1147,
+      "sentence": "Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attributed to HIIT; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed to HIIT; and Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009).",
+      "context_window": "nd Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009). It is important to highlight that we decided to",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-1165",
+      "claim_type": "p_value",
+      "raw_text": "p =0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1165,
+      "sentence": "Elliot et al 17 found a mean difference of 1.53 mL/kg/min (95% CI 0.84-2.23; p =0.0001) increase in cardiorespiratory fitness attributed to HIIT; Pattyn et al 16 found a mean difference of 1.6 mL/kg/min (95% CI 0.18-3.03; p =0.03) increase in cardiorespiratory fitness attributed to HIIT; and Liou et al 18 found a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009).",
+      "context_window": "ound a mean difference of 1.78 mL/kg/min (95% CI 0.45-3.11, p =0.009). It is important to highlight that we decided to use SMD,",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-1320",
+      "claim_type": "unit_value",
+      "raw_text": "0.34 mL",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 1320,
+      "sentence": "It is important to highlight that we decided to use SMD, instead of MD, to account for differences in measurement procedures and interventions (0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "or differences in measurement procedures and interventions (0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%). Had we us",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-ci-1336",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [0.2-0.48",
+      "numeric_values": [
+        0.2,
+        0.48
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1336,
+      "sentence": "It is important to highlight that we decided to use SMD, instead of MD, to account for differences in measurement procedures and interventions (0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "n measurement procedures and interventions (0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%). Had we used MD, our findings would",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-1355",
+      "claim_type": "p_value",
+      "raw_text": "p <0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1355,
+      "sentence": "It is important to highlight that we decided to use SMD, instead of MD, to account for differences in measurement procedures and interventions (0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "dures and interventions (0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%). Had we used MD, our findings would be similar t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-1372",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1372,
+      "sentence": "It is important to highlight that we decided to use SMD, instead of MD, to account for differences in measurement procedures and interventions (0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%).",
+      "context_window": "ntions (0.34 mL/kg/min; 95% CI [0.2-0.48]; p <0.00001; I 2 =28%). Had we used MD, our findings would be similar to those of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-ci-1471",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.76-1.55",
+      "numeric_values": [
+        0.76,
+        1.55
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1471,
+      "sentence": "Had we used MD, our findings would be similar to those of previously reported reviews (1.15; 95% CI 0.76-1.55); p <0.00001 and the heterogeneity would have dropped to 13%.",
+      "context_window": "d be similar to those of previously reported reviews (1.15; 95% CI 0.76-1.55); p <0.00001 and the heterogeneity would have dropped to 13",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-p-1490",
+      "claim_type": "p_value",
+      "raw_text": "p <0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1490,
+      "sentence": "Had we used MD, our findings would be similar to those of previously reported reviews (1.15; 95% CI 0.76-1.55); p <0.00001 and the heterogeneity would have dropped to 13%.",
+      "context_window": "se of previously reported reviews (1.15; 95% CI 0.76-1.55); p <0.00001 and the heterogeneity would have dropped to 13%. To the be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-1545",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1545,
+      "sentence": "Had we used MD, our findings would be similar to those of previously reported reviews (1.15; 95% CI 0.76-1.55); p <0.00001 and the heterogeneity would have dropped to 13%.",
+      "context_window": "55); p <0.00001 and the heterogeneity would have dropped to 13%. To the best of the authors\u2019 knowledge, our systematic rev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2313",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2313,
+      "sentence": "The overall heterogeneity in our meta-analysis was minimal (28%).",
+      "context_window": "The overall heterogeneity in our meta-analysis was minimal (28%). Test for subgroup differences revealed 0% heterogeneity.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2358",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2358,
+      "sentence": "Test for subgroup differences revealed 0% heterogeneity.",
+      "context_window": "s was minimal (28%). Test for subgroup differences revealed 0% heterogeneity. With respect to duration, all time frames of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-2474",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2474,
+      "sentence": "With respect to duration, all time frames of interventions favored HIIT; however, only durations >6 weeks were found to be significant.",
+      "context_window": "mes of interventions favored HIIT; however, only durations >6 weeks were found to be significant. Although studies that were of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-2543",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2543,
+      "sentence": "Although studies that were of <6 weeks duration had moderate heterogeneity (45%), and one study in this group favored MICT, this was not significant.",
+      "context_window": "ere found to be significant. Although studies that were of <6 weeks duration had moderate heterogeneity (45%), and one study in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-2588",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2588,
+      "sentence": "Although studies that were of <6 weeks duration had moderate heterogeneity (45%), and one study in this group favored MICT, this was not significant.",
+      "context_window": "that were of <6 weeks duration had moderate heterogeneity (45%), and one study in this group favored MICT, this was not si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-2705",
+      "claim_type": "unit_value",
+      "raw_text": "12 week",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "week",
+      "source_section": "discussion",
+      "source_offset": 2705,
+      "sentence": "46\n\nIt appears that undertaking HIIT for 7-12 week duration elicited the largest SMD in cardiorespiratory fitness, with studies of greater duration eliciting slightly less overall improvements.",
+      "context_window": "not significant. 46 It appears that undertaking HIIT for 7-12 week duration elicited the largest SMD in cardiorespiratory fitn",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-2936",
+      "claim_type": "unit_value",
+      "raw_text": "7 weeks",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2936,
+      "sentence": "This may have implications to delivery length of CR service, where programs of <7 weeks or >12 weeks may be suboptimal when implementing HIIT.",
+      "context_window": "ations to delivery length of CR service, where programs of <7 weeks or >12 weeks may be suboptimal when implementing HIIT. We d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-2948",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2948,
+      "sentence": "This may have implications to delivery length of CR service, where programs of <7 weeks or >12 weeks may be suboptimal when implementing HIIT.",
+      "context_window": "livery length of CR service, where programs of <7 weeks or >12 weeks may be suboptimal when implementing HIIT. We did not includ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-3071",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 3071,
+      "sentence": "We did not include a study which investigated the longer term benefits (1 year post intervention) of HIIT versus MICT as it did not report that the intensity of exercise was monitored throughout the entire study.",
+      "context_window": "nclude a study which investigated the longer term benefits (1 year post intervention) of HIIT versus MICT as it did not report",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-446",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 446,
+      "sentence": "HIIT participants were prescribed exercise at 90-95% peak heart rate and MICT participants exercised at 70-75% peak heart rate; however, the authors acknowledged that the MICT group exercised closer to 80% peak heart rate and the HIIT group closer to 88% peak heart rate.",
+      "context_window": "en groups. HIIT participants were prescribed exercise at 90-95% peak heart rate and MICT participants exercised at 70-75% p",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-504",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 504,
+      "sentence": "HIIT participants were prescribed exercise at 90-95% peak heart rate and MICT participants exercised at 70-75% peak heart rate; however, the authors acknowledged that the MICT group exercised closer to 80% peak heart rate and the HIIT group closer to 88% peak heart rate.",
+      "context_window": "0-95% peak heart rate and MICT participants exercised at 70-75% peak heart rate; however, the authors acknowledged that the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-599",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 599,
+      "sentence": "HIIT participants were prescribed exercise at 90-95% peak heart rate and MICT participants exercised at 70-75% peak heart rate; however, the authors acknowledged that the MICT group exercised closer to 80% peak heart rate and the HIIT group closer to 88% peak heart rate.",
+      "context_window": "uthors acknowledged that the MICT group exercised closer to 80% peak heart rate and the HIIT group closer to 88% peak heart",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-pct-648",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 648,
+      "sentence": "HIIT participants were prescribed exercise at 90-95% peak heart rate and MICT participants exercised at 70-75% peak heart rate; however, the authors acknowledged that the MICT group exercised closer to 80% peak heart rate and the HIIT group closer to 88% peak heart rate.",
+      "context_window": "closer to 80% peak heart rate and the HIIT group closer to 88% peak heart rate. 42 The higher intensity used by the MICT e",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5790162_high_intensity_interval_training_versus_moderate_intensity_c-u-182",
+      "claim_type": "unit_value",
+      "raw_text": "7 weeks",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 182,
+      "sentence": "When conducting a subgroup analysis, it was shown that interventions lasting >7 weeks resulted in greater improvements in cardiorespiratory fitness in CR patients with CAD.",
+      "context_window": "subgroup analysis, it was shown that interventions lasting >7 weeks resulted in greater improvements in cardiorespiratory fitne",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

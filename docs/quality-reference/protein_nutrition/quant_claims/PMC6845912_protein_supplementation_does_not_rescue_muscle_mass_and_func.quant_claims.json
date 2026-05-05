@@ -1,0 +1,66 @@
+{
+  "paper_id": "PMC6845912_protein_supplementation_does_not_rescue_muscle_mass_and_func",
+  "doi": "10.1093/geroni/igz038.332",
+  "extracted_at": "2026-05-05T22:35:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6845912_protein_supplementation_does_not_rescue_muscle_mass_and_func-n-585",
+      "claim_type": "sample_size",
+      "raw_text": "N=136",
+      "numeric_values": [
+        136.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 585,
+      "sentence": "The aim of this study was to investigate whether the provision of protein supplements for breakfast and lunch meals over the course of a year would make healthy, older, home-dwelling adults (N=136) take in more protein and whether that then would affect their muscle mass (primary outcome) and a number of metabolic health parameters, muscle strength parameters and functional capabilities.",
+      "context_window": "of a year would make healthy, older, home-dwelling adults (N=136) take in more protein and whether that then would affect th",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6845912_protein_supplementation_does_not_rescue_muscle_mass_and_func-pct-795",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 795,
+      "sentence": "More than 77% ingested more than 75% of the provided supplements, irrespective of supplementation type (isocaloric carbohydrate; collagen hydrolysate low quality protein: whey hydrolysate high quality protein).",
+      "context_window": "strength parameters and functional capabilities. More than 77% ingested more than 75% of the provided supplements, irrespe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6845912_protein_supplementation_does_not_rescue_muscle_mass_and_func-pct-818",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 818,
+      "sentence": "More than 77% ingested more than 75% of the provided supplements, irrespective of supplementation type (isocaloric carbohydrate; collagen hydrolysate low quality protein: whey hydrolysate high quality protein).",
+      "context_window": "d functional capabilities. More than 77% ingested more than 75% of the provided supplements, irrespective of supplementatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

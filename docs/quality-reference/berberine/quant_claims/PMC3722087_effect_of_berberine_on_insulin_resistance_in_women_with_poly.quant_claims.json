@@ -1,0 +1,468 @@
+{
+  "paper_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly",
+  "doi": "10.1186/1745-6215-14-226",
+  "extracted_at": "2026-05-05T22:22:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 12,
+    "sample_size": 4,
+    "p_value": 5,
+    "mean_sd": 3,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-807",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 807,
+      "sentence": "Berberine or placebo will be taken orally for 12 weeks.",
+      "context_window": "o two groups. Berberine or placebo will be taken orally for 12 weeks. The primary outcome is the whole body insulin action asses",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-n-3205",
+      "claim_type": "sample_size",
+      "raw_text": "n = 31",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3205,
+      "sentence": "Eighty-nine Chinese PCOS women with insulin resistance were randomized into one of three treatment groups: berberine + cyproterone acetate (CPA) (n = 31), metformin + CPA (n = 30), and placebo + CPA (n = 28), for three months.",
+      "context_window": "ee treatment groups: berberine + cyproterone acetate (CPA) (n = 31), metformin + CPA (n = 30), and placebo + CPA (n = 28), for",
+      "claim_role": "background",
+      "endpoint": "insulin sensitivity",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-n-3231",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3231,
+      "sentence": "Eighty-nine Chinese PCOS women with insulin resistance were randomized into one of three treatment groups: berberine + cyproterone acetate (CPA) (n = 31), metformin + CPA (n = 30), and placebo + CPA (n = 28), for three months.",
+      "context_window": "rine + cyproterone acetate (CPA) (n = 31), metformin + CPA (n = 30), and placebo + CPA (n = 28), for three months. Treatment w",
+      "claim_role": "background",
+      "endpoint": "insulin sensitivity",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-n-3259",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3259,
+      "sentence": "Eighty-nine Chinese PCOS women with insulin resistance were randomized into one of three treatment groups: berberine + cyproterone acetate (CPA) (n = 31), metformin + CPA (n = 30), and placebo + CPA (n = 28), for three months.",
+      "context_window": "CPA) (n = 31), metformin + CPA (n = 30), and placebo + CPA (n = 28), for three months. Treatment with berberine + CPA in compa",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-p-3414",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3414,
+      "sentence": "Treatment with berberine + CPA in comparison to metformin + CPA showed a decreased waist circumference and waist-to-hip ratio ( P <0.01), decreased total cholesterol (TG) and LDL-C ( P <0.05), and increased HDL-C and sex hormone binding globuline (SHBG) ( P <0.05).",
+      "context_window": "ed a decreased waist circumference and waist-to-hip ratio ( P <0.01), decreased total cholesterol (TG) and LDL-C ( P <0.05), an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-p-3469",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3469,
+      "sentence": "Treatment with berberine + CPA in comparison to metformin + CPA showed a decreased waist circumference and waist-to-hip ratio ( P <0.01), decreased total cholesterol (TG) and LDL-C ( P <0.05), and increased HDL-C and sex hormone binding globuline (SHBG) ( P <0.05).",
+      "context_window": "io ( P <0.01), decreased total cholesterol (TG) and LDL-C ( P <0.05), and increased HDL-C and sex hormone binding globuline (SH",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-p-3542",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3542,
+      "sentence": "Treatment with berberine + CPA in comparison to metformin + CPA showed a decreased waist circumference and waist-to-hip ratio ( P <0.01), decreased total cholesterol (TG) and LDL-C ( P <0.05), and increased HDL-C and sex hormone binding globuline (SHBG) ( P <0.05).",
+      "context_window": "increased HDL-C and sex hormone binding globuline (SHBG) ( P <0.05). Similarly, treatment with berberine + CPA in comparison t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-p-3811",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3811,
+      "sentence": "Similarly, treatment with berberine + CPA in comparison to placebo + CPA showed a decrease in wrist-to-hip ratio (WHR), fasting plasma glucose, fasting insulin, homeostasis model assessment for insulin resistance (HOMA-IR), triglyceride (TC), LDL-C, and TG ( P <0.05) as well as an increase in HDL-C and SHBG ( P <0.01).",
+      "context_window": "in resistance (HOMA-IR), triglyceride (TC), LDL-C, and TG ( P <0.05) as well as an increase in HDL-C and SHBG ( P <0.01). The a",
+      "claim_role": "dose",
+      "endpoint": "insulin sensitivity",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-p-3863",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 3863,
+      "sentence": "Similarly, treatment with berberine + CPA in comparison to placebo + CPA showed a decrease in wrist-to-hip ratio (WHR), fasting plasma glucose, fasting insulin, homeostasis model assessment for insulin resistance (HOMA-IR), triglyceride (TC), LDL-C, and TG ( P <0.05) as well as an increase in HDL-C and SHBG ( P <0.01).",
+      "context_window": "nd TG ( P <0.05) as well as an increase in HDL-C and SHBG ( P <0.01). The author concluded that berberine, in comparison to met",
+      "claim_role": "dose",
+      "endpoint": "insulin sensitivity",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-1022",
+      "claim_type": "unit_value",
+      "raw_text": "35 years",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1022,
+      "sentence": "1) Women aged between 18 and 35 years.",
+      "context_window": "have any exclusion criteria. 1) Women aged between 18 and 35 years. 2) Confirmed diagnosis of PCOS according to the modified",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-1249",
+      "claim_type": "unit_value",
+      "raw_text": "23 kg",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1249,
+      "sentence": "3) Body mass index equal to or greater than 23 kg/m 2 .",
+      "context_window": "erandrogenism. 3) Body mass index equal to or greater than 23 kg/m 2 . 4) With no desire of children within 6 month. PCOS",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-1299",
+      "claim_type": "unit_value",
+      "raw_text": "6 month",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 1299,
+      "sentence": "4) With no desire of children within 6 month.",
+      "context_window": "ater than 23 kg/m 2 . 4) With no desire of children within 6 month. PCOS is defined by the modified Rotterdam criteria: oligo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-1440",
+      "claim_type": "unit_value",
+      "raw_text": "9 mm",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 1440,
+      "sentence": "PCOS is defined by the modified Rotterdam criteria: oligomenorrhea or amenorrhea, together with presence of \u226512 antral follicles (\u22649 mm) and/or ovarian volume >10 mL on transvaginal scanning, and/or clinical/biochemical hyperandrogenism.",
+      "context_window": "menorrhea, together with presence of \u226512 antral follicles (\u22649 mm) and/or ovarian volume >10 mL on transvaginal scanning, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-1469",
+      "claim_type": "unit_value",
+      "raw_text": "10 mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1469,
+      "sentence": "PCOS is defined by the modified Rotterdam criteria: oligomenorrhea or amenorrhea, together with presence of \u226512 antral follicles (\u22649 mm) and/or ovarian volume >10 mL on transvaginal scanning, and/or clinical/biochemical hyperandrogenism.",
+      "context_window": "ence of \u226512 antral follicles (\u22649 mm) and/or ovarian volume >10 mL on transvaginal scanning, and/or clinical/biochemical hyper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-1604",
+      "claim_type": "unit_value",
+      "raw_text": "35 days",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1604,
+      "sentence": "Oligomenorrhea is defined as an intermenstrual interval >35 days and <8 menstrual bleedings in the past year.",
+      "context_window": "m. Oligomenorrhea is defined as an intermenstrual interval >35 days and <8 menstrual bleedings in the past year. Amenorrhea is",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-1710",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1710,
+      "sentence": "Amenorrhea is defined as an intermenstrual interval >90 days.",
+      "context_window": "year. Amenorrhea is defined as an intermenstrual interval >90 days. Clinical hyperandrogenism in mainland China is defined wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-2606",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2606,
+      "sentence": "Berberine or placebo will be administrated orally for 12 weeks.",
+      "context_window": "cebo. Berberine or placebo will be administrated orally for 12 weeks. Berberine and placebo were produced by the same pharmaceut",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-2811",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2811,
+      "sentence": "The trial has two phases: 12 weeks treatment with either berberine or placebo and three months follow-up (Figure 1 ).",
+      "context_window": "ppearance, size, odor and taste. The trial has two phases: 12 weeks treatment with either berberine or placebo and three months",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-n-3522",
+      "claim_type": "sample_size",
+      "raw_text": "n = 120",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3522,
+      "sentence": "Subjects (n = 120) will be allocated randomly into one of the two groups in a ratio of 1:1.",
+      "context_window": "d size of ovarian cysts or developing follicles. Subjects (n = 120) will be allocated randomly into one of the two groups in a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-msd-4437",
+      "claim_type": "mean_sd",
+      "raw_text": "13.34 \u00b1 1.41",
+      "numeric_values": [
+        13.34,
+        1.41
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4437,
+      "sentence": "The cut-off value of GDR in normal controls is (13.34 \u00b1 1.41) mg/(kg\u00d7min) [ 23 ].",
+      "context_window": "lin action. The cut-off value of GDR in normal controls is (13.34 \u00b1 1.41) mg/(kg\u00d7min) [ 23 ]. 1) Oral glucose tolerance test (OGTT)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-msd-6622",
+      "claim_type": "mean_sd",
+      "raw_text": "7.42 \u00b1 2.37",
+      "numeric_values": [
+        7.42,
+        2.37
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6622,
+      "sentence": "According to previous results of berberine on type 2 diabetes [ 9 ], the GDR (the primary outcome) is 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7min) in the control group.",
+      "context_window": "on type 2 diabetes [ 9 ], the GDR (the primary outcome) is 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-6629",
+      "claim_type": "unit_value",
+      "raw_text": "2.37 mg",
+      "numeric_values": [
+        2.37
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6629,
+      "sentence": "According to previous results of berberine on type 2 diabetes [ 9 ], the GDR (the primary outcome) is 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7min) in the control group.",
+      "context_window": "e 2 diabetes [ 9 ], the GDR (the primary outcome) is 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7min)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-msd-6673",
+      "claim_type": "mean_sd",
+      "raw_text": "6.06 \u00b1 2.21",
+      "numeric_values": [
+        6.06,
+        2.21
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6673,
+      "sentence": "According to previous results of berberine on type 2 diabetes [ 9 ], the GDR (the primary outcome) is 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7min) in the control group.",
+      "context_window": "come) is 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7min) in the control group. The sample size was estim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-u-6680",
+      "claim_type": "unit_value",
+      "raw_text": "2.21 mg",
+      "numeric_values": [
+        2.21
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6680,
+      "sentence": "According to previous results of berberine on type 2 diabetes [ 9 ], the GDR (the primary outcome) is 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7min) in the control group.",
+      "context_window": "s 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7min) in the control group. The sample size was estimate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-pct-6838",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6838,
+      "sentence": "Considering a 15% drop-out rate over the course of the study, 120 total patients will be enrolled; 60 patients in each group.",
+      "context_window": "\u03b1 = 0.05, \u03b2 = 0.1, which results in 52/group. Considering a 15% drop-out rate over the course of the study, 120 total patie",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

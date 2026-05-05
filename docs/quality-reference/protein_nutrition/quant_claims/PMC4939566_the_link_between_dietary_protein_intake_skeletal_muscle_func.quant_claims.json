@@ -1,0 +1,83 @@
+{
+  "paper_id": "PMC4939566_the_link_between_dietary_protein_intake_skeletal_muscle_func",
+  "doi": "10.3390/healthcare3030529",
+  "extracted_at": "2026-05-05T22:35:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4939566_the_link_between_dietary_protein_intake_skeletal_muscle_func-pct-1203",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1203,
+      "sentence": "Sarcopenia can appear as early as age 40, increasing significantly over the age of 80, often resulting in 50% or greater loss of muscle strength [ 3 ].",
+      "context_window": "easing significantly over the age of 80, often resulting in 50% or greater loss of muscle strength [ 3 ]. The causes of sar",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4939566_the_link_between_dietary_protein_intake_skeletal_muscle_func-pct-2513",
+      "claim_type": "percentage",
+      "raw_text": "31.6%",
+      "numeric_values": [
+        31.6
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2513,
+      "sentence": "For example, the prevalence of obesity among men aged 65-74 increased from 31.6% in 1999-2002 to 41.5% in 2007-2010.",
+      "context_window": "e prevalence of obesity among men aged 65-74 increased from 31.6% in 1999-2002 to 41.5% in 2007-2010. Between 2007 and 2010,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4939566_the_link_between_dietary_protein_intake_skeletal_muscle_func-pct-2535",
+      "claim_type": "percentage",
+      "raw_text": "41.5%",
+      "numeric_values": [
+        41.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2535,
+      "sentence": "For example, the prevalence of obesity among men aged 65-74 increased from 31.6% in 1999-2002 to 41.5% in 2007-2010.",
+      "context_window": "y among men aged 65-74 increased from 31.6% in 1999-2002 to 41.5% in 2007-2010. Between 2007 and 2010, approximately 35% of a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4939566_the_link_between_dietary_protein_intake_skeletal_muscle_func-pct-2592",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2592,
+      "sentence": "Between 2007 and 2010, approximately 35% of adults age 65 and over were obese [ 1 ].",
+      "context_window": "to 41.5% in 2007-2010. Between 2007 and 2010, approximately 35% of adults age 65 and over were obese [ 1 ]. Nutrition is a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

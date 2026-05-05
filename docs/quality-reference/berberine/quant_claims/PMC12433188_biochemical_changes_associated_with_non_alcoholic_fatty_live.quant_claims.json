@@ -1,0 +1,671 @@
+{
+  "paper_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live",
+  "doi": "10.3389/fphar.2025.1460643",
+  "extracted_at": "2026-05-05T22:22:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "confidence_interval": 9,
+    "percentage": 13,
+    "unit_value": 12,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-ci-790",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.04-1.01",
+      "numeric_values": [
+        0.04,
+        1.01
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 790,
+      "sentence": "Clinically, berberine significantly reduced fasting blood glucose (FBG) levels, with an effect size of 0.53 (95% CI: 0.04-1.01).",
+      "context_window": "ng blood glucose (FBG) levels, with an effect size of 0.53 (95% CI: 0.04-1.01). In preclinical settings, berberine consistently demonstra",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-372",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 372,
+      "sentence": "Non-alcoholic fatty liver disease (NAFLD), now increasingly referred to as Metabolic Associated Steatohepatitis (MASLD),despite the recent nomenclature shift to MASLD, this systematic review and meta-analysis will continue to use NAFLD to align with the studies included and the existing literature.NAFLD is characterized by the accumulation of triglycerides in more than 5% of hepatocytes, occurring without significant alcohol consumption ( Powell et al., 2021 ).",
+      "context_window": "acterized by the accumulation of triglycerides in more than 5% of hepatocytes, occurring without significant alcohol consu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-4827",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4827,
+      "sentence": "These results will be framed within 95% confidence intervals (CI) for subsequent analytical scrutiny.",
+      "context_window": "ying disparate scales). These results will be framed within 95% confidence intervals (CI) for subsequent analytical scrutin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-5026",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5026,
+      "sentence": "Acknowledging the inherent variability across individual studies, we will employ a random-effects model if the I 2 statistic exceeds 50%; conversely, a fixed-effects model will be used when the I 2 value is below 50%.",
+      "context_window": "employ a random-effects model if the I 2 statistic exceeds 50%; conversely, a fixed-effects model will be used when the I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-5106",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5106,
+      "sentence": "Acknowledging the inherent variability across individual studies, we will employ a random-effects model if the I 2 statistic exceeds 50%; conversely, a fixed-effects model will be used when the I 2 value is below 50%.",
+      "context_window": "ixed-effects model will be used when the I 2 value is below 50%.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-1215",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1215,
+      "sentence": "Most studies, mainly conducted in China, had intervention durations that varied, with the majority lasting for 16 weeks.",
+      "context_window": "ention durations that varied, with the majority lasting for 16 weeks. The trials by Nejati et al. (2022) , Chang et al. (2016) ,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-4153",
+      "claim_type": "percentage",
+      "raw_text": "70.3%",
+      "numeric_values": [
+        70.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4153,
+      "sentence": "Specifically, LDL cholesterol had an I 2 value of 70.3% with a significant P-value of 0.034.",
+      "context_window": "studies. Specifically, LDL cholesterol had an I 2 value of 70.3% with a significant P-value of 0.034. TC displayed an I 2 of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-4219",
+      "claim_type": "percentage",
+      "raw_text": "80.3%",
+      "numeric_values": [
+        80.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4219,
+      "sentence": "TC displayed an I 2 of 80.3% with a P-value of 0.006, highlighting the substantial variability among the included studies for these markers.",
+      "context_window": "with a significant P-value of 0.034. TC displayed an I 2 of 80.3% with a P-value of 0.006, highlighting the substantial varia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-4419",
+      "claim_type": "percentage",
+      "raw_text": "50.9%",
+      "numeric_values": [
+        50.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4419,
+      "sentence": "Conversely, the heterogeneity for TG was relatively moderate with an I 2 value of 50.9%, indicating more consistency in the results for this parameter.",
+      "context_window": "geneity for TG was relatively moderate with an I 2 value of 50.9%, indicating more consistency in the results for this parame",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-4984",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4984,
+      "sentence": "The effect size (SMD) of FBG was 0.53, with a 95% confidence interval ranging from 0.04 to 1.01.",
+      "context_window": "g FBG levels. The effect size (SMD) of FBG was 0.53, with a 95% confidence interval ranging from 0.04 to 1.01. This indicat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-6487",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6487,
+      "sentence": "Furthermore, we noted that the 95% CI for most of these indicators did not encompass 0, indicating that these effects are statistically significant.",
+      "context_window": "ive impact on these markers. Furthermore, we noted that the 95% CI for most of these indicators did not encompass 0, indica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-ci-6983",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -4.00, -1.49",
+      "numeric_values": [
+        -4.0,
+        -1.49
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6983,
+      "sentence": "Specifically, ALT showed an effect size (SMD) of -2.74 (95% CI: -4.00, -1.49), and AST reported an SMD of -2.53 (95% CI: -3.75, -1.31).",
+      "context_window": "ts. Specifically, ALT showed an effect size (SMD) of -2.74 (95% CI: -4.00, -1.49), and AST reported an SMD of -2.53 (95% CI: -3.75, -1.31).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-ci-7040",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -3.75, -1.31",
+      "numeric_values": [
+        -3.75,
+        -1.31
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7040,
+      "sentence": "Specifically, ALT showed an effect size (SMD) of -2.74 (95% CI: -4.00, -1.49), and AST reported an SMD of -2.53 (95% CI: -3.75, -1.31).",
+      "context_window": "4 (95% CI: -4.00, -1.49), and AST reported an SMD of -2.53 (95% CI: -3.75, -1.31). Both markers displayed substantial heterogeneity with I 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-7138",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7138,
+      "sentence": "Both markers displayed substantial heterogeneity with I 2 values exceeding 90% ( Figure 3 ).",
+      "context_window": "splayed substantial heterogeneity with I 2 values exceeding 90% ( Figure 3 ). Forest plots for liver function indicators i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-ci-7404",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.34, -0.24",
+      "numeric_values": [
+        -2.34,
+        -0.24
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7404,
+      "sentence": "On the metabolic front, FBG levels from 5 studies manifested a notable decline, highlighted by an SMD of -1.29 (95% CI: -2.34, -0.24), highlighting berberine\u2019s positive modulation of glucose metabolism.",
+      "context_window": "nifested a notable decline, highlighted by an SMD of -1.29 (95% CI: -2.34, -0.24), highlighting berberine\u2019s positive modulation of glucose m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-ci-7616",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.16, 1.49",
+      "numeric_values": [
+        0.16,
+        1.49
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7616,
+      "sentence": "Concurrently, we observed lipid metabolism alterations: HDL levels surged in 12 studies, demonstrated by an SMD of 0.83 (95% CI: 0.16, 1.49).",
+      "context_window": "evels surged in 12 studies, demonstrated by an SMD of 0.83 (95% CI: 0.16, 1.49). In contrast, LDL and TC levels decreased across 13 and 14",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-ci-7752",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.80, -1.75",
+      "numeric_values": [
+        -2.8,
+        -1.75
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7752,
+      "sentence": "In contrast, LDL and TC levels decreased across 13 and 14 studies respectively, with effect sizes measuring -2.27 (95% CI: -2.80, -1.75) for LDL and -2.55 (95% CI: -3.34, -1.75) for TC ( Figure 4 ).",
+      "context_window": "14 studies respectively, with effect sizes measuring -2.27 (95% CI: -2.80, -1.75) for LDL and -2.55 (95% CI: -3.34, -1.75) for TC ( Figure 4",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-ci-7793",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -3.34, -1.75",
+      "numeric_values": [
+        -3.34,
+        -1.75
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7793,
+      "sentence": "In contrast, LDL and TC levels decreased across 13 and 14 studies respectively, with effect sizes measuring -2.27 (95% CI: -2.80, -1.75) for LDL and -2.55 (95% CI: -3.34, -1.75) for TC ( Figure 4 ).",
+      "context_window": "s measuring -2.27 (95% CI: -2.80, -1.75) for LDL and -2.55 (95% CI: -3.34, -1.75) for TC ( Figure 4 ). Forest plots for glycemic and lipid",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-ci-8225",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -4.00, -1.85",
+      "numeric_values": [
+        -4.0,
+        -1.85
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8225,
+      "sentence": "Notably, hepatic TG across 7 studies demonstrated an SMD of -2.93 (95% CI: -4.00, -1.85), indicating berberine\u2019s potential in curtailing intracellular hepatic fat deposition ( Figure 5 ).",
+      "context_window": ", hepatic TG across 7 studies demonstrated an SMD of -2.93 (95% CI: -4.00, -1.85), indicating berberine\u2019s potential in curtailing intracellu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-8694",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 8694,
+      "sentence": "Regarding dosage, the \u2264100 mg/kg group showed the most pronounced reduction in AST (SMD -2.41; 95% CI -4.21 to -0.61) and ALT (-2.92; -4.17 to -1.66), with controlled heterogeneity (I 2 = 0-84%).",
+      "context_window": "on key biochemical markers of NAFLD. Regarding dosage, the \u2264100 mg/kg group showed the most pronounced reduction in AST (SMD -",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-ci-8766",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -4.21 to -0.61",
+      "numeric_values": [
+        -4.21,
+        -0.61
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8766,
+      "sentence": "Regarding dosage, the \u2264100 mg/kg group showed the most pronounced reduction in AST (SMD -2.41; 95% CI -4.21 to -0.61) and ALT (-2.92; -4.17 to -1.66), with controlled heterogeneity (I 2 = 0-84%).",
+      "context_window": "oup showed the most pronounced reduction in AST (SMD -2.41; 95% CI -4.21 to -0.61) and ALT (-2.92; -4.17 to -1.66), with controlled heterogen",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-8861",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8861,
+      "sentence": "Regarding dosage, the \u2264100 mg/kg group showed the most pronounced reduction in AST (SMD -2.41; 95% CI -4.21 to -0.61) and ALT (-2.92; -4.17 to -1.66), with controlled heterogeneity (I 2 = 0-84%).",
+      "context_window": "92; -4.17 to -1.66), with controlled heterogeneity (I 2 = 0-84%). In contrast, the >150 mg/kg group exhibited deeper point",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-8885",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 8885,
+      "sentence": "In contrast, the >150 mg/kg group exhibited deeper point estimates but wider confidence intervals and higher heterogeneity (I 2 > 94%), suggesting potential interstudy differences or nonlinear responses from excessive doses.",
+      "context_window": "h controlled heterogeneity (I 2 = 0-84%). In contrast, the >150 mg/kg group exhibited deeper point estimates but wider confide",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-8997",
+      "claim_type": "percentage",
+      "raw_text": "94%",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8997,
+      "sentence": "In contrast, the >150 mg/kg group exhibited deeper point estimates but wider confidence intervals and higher heterogeneity (I 2 > 94%), suggesting potential interstudy differences or nonlinear responses from excessive doses.",
+      "context_window": "wider confidence intervals and higher heterogeneity (I 2 > 94%), suggesting potential interstudy differences or nonlinear",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-9178",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9178,
+      "sentence": "LDL and total cholesterol showed robust reductions at intermediate-to-high doses (100-150 mg/kg and >150 mg/kg), with low-to-moderate heterogeneity (I 2 = 0-77%).",
+      "context_window": "showed robust reductions at intermediate-to-high doses (100-150 mg/kg and >150 mg/kg), with low-to-moderate heterogeneity (I 2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-9193",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9193,
+      "sentence": "LDL and total cholesterol showed robust reductions at intermediate-to-high doses (100-150 mg/kg and >150 mg/kg), with low-to-moderate heterogeneity (I 2 = 0-77%).",
+      "context_window": "eductions at intermediate-to-high doses (100-150 mg/kg and >150 mg/kg), with low-to-moderate heterogeneity (I 2 = 0-77%). For",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-9249",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9249,
+      "sentence": "LDL and total cholesterol showed robust reductions at intermediate-to-high doses (100-150 mg/kg and >150 mg/kg), with low-to-moderate heterogeneity (I 2 = 0-77%).",
+      "context_window": "nd >150 mg/kg), with low-to-moderate heterogeneity (I 2 = 0-77%). For duration, AST demonstrated significant improvement on",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-9323",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9323,
+      "sentence": "For duration, AST demonstrated significant improvement only within \u226412 weeks (-2.59; P < 0.001), while AST, LDL, and TC showed statistically significant decreases in both \u226412 and >12 weeks.",
+      "context_window": "tion, AST demonstrated significant improvement only within \u226412 weeks (-2.59; P < 0.001), while AST, LDL, and TC showed statistic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-p-9340",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9340,
+      "sentence": "For duration, AST demonstrated significant improvement only within \u226412 weeks (-2.59; P < 0.001), while AST, LDL, and TC showed statistically significant decreases in both \u226412 and >12 weeks.",
+      "context_window": "rated significant improvement only within \u226412 weeks (-2.59; P < 0.001), while AST, LDL, and TC showed statistically significant d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-9435",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9435,
+      "sentence": "For duration, AST demonstrated significant improvement only within \u226412 weeks (-2.59; P < 0.001), while AST, LDL, and TC showed statistically significant decreases in both \u226412 and >12 weeks.",
+      "context_window": "showed statistically significant decreases in both \u226412 and >12 weeks. Notably, HDL elevation achieved statistical significance o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-p-9539",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9539,
+      "sentence": "Notably, HDL elevation achieved statistical significance only in the >12-week subgroup (1.40; P < 0.001) with zero heterogeneity.",
+      "context_window": "atistical significance only in the >12-week subgroup (1.40; P < 0.001) with zero heterogeneity. Taken together, a dose of around",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-9608",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9608,
+      "sentence": "Taken together, a dose of around 100 mg/kg for at least 12 weeks may be the optimal window for both efficacy and interpretability of heterogeneity. (Detailed results are shown in Table 5 ).",
+      "context_window": ") with zero heterogeneity. Taken together, a dose of around 100 mg/kg for at least 12 weeks may be the optimal window for both",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-9631",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9631,
+      "sentence": "Taken together, a dose of around 100 mg/kg for at least 12 weeks may be the optimal window for both efficacy and interpretability of heterogeneity. (Detailed results are shown in Table 5 ).",
+      "context_window": "ty. Taken together, a dose of around 100 mg/kg for at least 12 weeks may be the optimal window for both efficacy and interpretab",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-6130",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 6130,
+      "sentence": "Animal studies often use berberine doses of 100-200 mg/kg (converted by body surface area, equivalent to 8-16 mg/kg in humans), while the commonly used clinical dose is 0.9-1.5 g/day (\u224812-21 mg/kg).",
+      "context_window": "ounted for. Animal studies often use berberine doses of 100-200 mg/kg (converted by body surface area, equivalent to 8-16 mg/k",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-6189",
+      "claim_type": "unit_value",
+      "raw_text": "16 mg",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 6189,
+      "sentence": "Animal studies often use berberine doses of 100-200 mg/kg (converted by body surface area, equivalent to 8-16 mg/kg in humans), while the commonly used clinical dose is 0.9-1.5 g/day (\u224812-21 mg/kg).",
+      "context_window": "-200 mg/kg (converted by body surface area, equivalent to 8-16 mg/kg in humans), while the commonly used clinical dose is 0.9",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-6270",
+      "claim_type": "unit_value",
+      "raw_text": "21 mg",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 6270,
+      "sentence": "Animal studies often use berberine doses of 100-200 mg/kg (converted by body surface area, equivalent to 8-16 mg/kg in humans), while the commonly used clinical dose is 0.9-1.5 g/day (\u224812-21 mg/kg).",
+      "context_window": "while the commonly used clinical dose is 0.9-1.5 g/day (\u224812-21 mg/kg). The dose difference may partly explain the phenomenon",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,913 @@
+{
+  "paper_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from",
+  "doi": "10.1002/fsn3.3902",
+  "extracted_at": "2026-05-05T22:35:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 13,
+    "p_value": 20,
+    "percentage": 17
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-568",
+      "claim_type": "unit_value",
+      "raw_text": "31 years",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 568,
+      "sentence": "A randomized single\u2010blind crossover trial with 19 healthy participants aged 19-31 years was conducted.",
+      "context_window": "\u2010blind crossover trial with 19 healthy participants aged 19-31 years was conducted. Participants attended two separate testing s",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-944",
+      "claim_type": "p_value",
+      "raw_text": "p > .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 944,
+      "sentence": "There were no significant differences in mean food mass, food energy intake, or subjective appetite ratings between the high and SP snacks (all p > .05).",
+      "context_window": "ective appetite ratings between the high and SP snacks (all p > .05). Mean protein intake was significantly increased with HP s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-1049",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1049,
+      "sentence": "Mean protein intake was significantly increased with HP snacks compared with standard snacks ( p < .001).",
+      "context_window": "ly increased with HP snacks compared with standard snacks ( p < .001). Plasma glucose median incremental area under the curve an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-1179",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1179,
+      "sentence": "Plasma glucose median incremental area under the curve and mean peak were significantly higher with the SP snacks (all p < .05) but remained within the reference range.",
+      "context_window": "mean peak were significantly higher with the SP snacks (all p < .05) but remained within the reference range. This study demons",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-361",
+      "claim_type": "percentage",
+      "raw_text": "66.4%",
+      "numeric_values": [
+        66.4
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 361,
+      "sentence": "In 2020-2021, 66.4% of Australian adults reported their alcohol consumption did not change, whereas 23.9% decreased consumption and 9.8% increased consumption when compared with 12 months earlier (Australian Bureau of Statistics, 2022 ).",
+      "context_window": "es to play a substantial part in the culture. In 2020-2021, 66.4% of Australian adults reported their alcohol consumption did",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-447",
+      "claim_type": "percentage",
+      "raw_text": "23.9%",
+      "numeric_values": [
+        23.9
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 447,
+      "sentence": "In 2020-2021, 66.4% of Australian adults reported their alcohol consumption did not change, whereas 23.9% decreased consumption and 9.8% increased consumption when compared with 12 months earlier (Australian Bureau of Statistics, 2022 ).",
+      "context_window": "reported their alcohol consumption did not change, whereas 23.9% decreased consumption and 9.8% increased consumption when c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-479",
+      "claim_type": "percentage",
+      "raw_text": "9.8%",
+      "numeric_values": [
+        9.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 479,
+      "sentence": "In 2020-2021, 66.4% of Australian adults reported their alcohol consumption did not change, whereas 23.9% decreased consumption and 9.8% increased consumption when compared with 12 months earlier (Australian Bureau of Statistics, 2022 ).",
+      "context_window": "ion did not change, whereas 23.9% decreased consumption and 9.8% increased consumption when compared with 12 months earlier",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-525",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 525,
+      "sentence": "In 2020-2021, 66.4% of Australian adults reported their alcohol consumption did not change, whereas 23.9% decreased consumption and 9.8% increased consumption when compared with 12 months earlier (Australian Bureau of Statistics, 2022 ).",
+      "context_window": "nsumption and 9.8% increased consumption when compared with 12 months earlier (Australian Bureau of Statistics, 2022 ). The ener",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-764",
+      "claim_type": "percentage",
+      "raw_text": "67.0%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 764,
+      "sentence": "The majority of Australian adults (67.0%) are now above a healthy weight (Australian Bureau of Statistics, 2018 ), a key risk factor for developing chronic diseases such as cardiovascular disease and diabetes (World Health Organization, 2014 ).",
+      "context_window": "leading to weight gain. The majority of Australian adults (67.0%) are now above a healthy weight (Australian Bureau of Stati",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-282",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 282,
+      "sentence": "All participants attended on two separate days, separated by an interval of at least 1 week.",
+      "context_window": "on two separate days, separated by an interval of at least 1 week. Participants were healthy adults with a body mass index b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-364",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 364,
+      "sentence": "Participants were healthy adults with a body mass index between 18.5 and 30 kg/m 2 with non\u2010restrained eating behavior and not dieting to lose weight.",
+      "context_window": "were healthy adults with a body mass index between 18.5 and 30 kg/m 2 with non\u2010restrained eating behavior and not dieting to",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-478",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 478,
+      "sentence": "The inclusion criteria were aged 18-65 years; usual consumers of alcoholic beverages with an average between 10 and 210 g of ethanol per week.",
+      "context_window": "dieting to lose weight. The inclusion criteria were aged 18-65 years; usual consumers of alcoholic beverages with an average bet",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-4012",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4012,
+      "sentence": "The bean and rice crisps were matched with the cassava crisps within 8% for percentage energy from total carbohydrates and for percentage energy from fat.",
+      "context_window": "and rice crisps were matched with the cassava crisps within 8% for percentage energy from total carbohydrates and for perc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-4110",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4110,
+      "sentence": "There was a 21% difference in the percentage energy from available carbohydrates between the snacks.",
+      "context_window": "rbohydrates and for percentage energy from fat. There was a 21% difference in the percentage energy from available carbohyd",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-4273",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4273,
+      "sentence": "The black sesame rice crackers were matched with the potato crisps within 6% for percentage energy from total carbohydrates and percentage energy from fat.",
+      "context_window": "me rice crackers were matched with the potato crisps within 6% for percentage energy from total carbohydrates and percenta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-4367",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4367,
+      "sentence": "There was a 12% difference in percentage energy from available carbohydrates between the snacks.",
+      "context_window": "l carbohydrates and percentage energy from fat. There was a 12% difference in percentage energy from available carbohydrate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-6972",
+      "claim_type": "unit_value",
+      "raw_text": "292 mL",
+      "numeric_values": [
+        292.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 6972,
+      "sentence": "Participants then consumed two glasses (292 mL) of white wine, which contained 30 g of ethanol, within 15 min.",
+      "context_window": "logue scales (VAS). Participants then consumed two glasses (292 mL) of white wine, which contained 30 g of ethanol, within 15",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-8052",
+      "claim_type": "percentage",
+      "raw_text": "0.02%",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8052,
+      "sentence": "Participants were permitted to leave when their breath alcohol concentration was measured with a breathalyzer (AlcoLimit Breathalyzers, Manly Vale, Australia) to be 0.02% or below.",
+      "context_window": "yzer (AlcoLimit Breathalyzers, Manly Vale, Australia) to be 0.02% or below. This session was repeated with the alternate snac",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-8129",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 8129,
+      "sentence": "This session was repeated with the alternate snacks at least 1 week later.",
+      "context_window": "his session was repeated with the alternate snacks at least 1 week later. Participants were provided with a written debrief b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-9278",
+      "claim_type": "unit_value",
+      "raw_text": "7.5 mL",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 9278,
+      "sentence": "At each time point, a blood sample of 7.5 mL was collected from participants and stored in a 4 mL ethylenediaminetetraacetic acid (EDTA) tube and a 3.5 mL serum separator tube.",
+      "context_window": "o, California, USA). At each time point, a blood sample of 7.5 mL was collected from participants and stored in a 4 mL ethyle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-9333",
+      "claim_type": "unit_value",
+      "raw_text": "4 mL",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 9333,
+      "sentence": "At each time point, a blood sample of 7.5 mL was collected from participants and stored in a 4 mL ethylenediaminetetraacetic acid (EDTA) tube and a 3.5 mL serum separator tube.",
+      "context_window": "e of 7.5 mL was collected from participants and stored in a 4 mL ethylenediaminetetraacetic acid (EDTA) tube and a 3.5 mL se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-9388",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 mL",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 9388,
+      "sentence": "At each time point, a blood sample of 7.5 mL was collected from participants and stored in a 4 mL ethylenediaminetetraacetic acid (EDTA) tube and a 3.5 mL serum separator tube.",
+      "context_window": "in a 4 mL ethylenediaminetetraacetic acid (EDTA) tube and a 3.5 mL serum separator tube. The plasma samples from the EDTA tube",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-10170",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10170,
+      "sentence": "All samples were analyzed in duplicate; any sample with a coefficient of variation difference of more than 5% was re\u2010run.",
+      "context_window": "ple with a coefficient of variation difference of more than 5% was re\u2010run. The intra\u2010assay coefficient of variation for gl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-10310",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10310,
+      "sentence": "The intra\u2010assay coefficient of variation for glucose, total cholesterol, triglycerides, and ethyl alcohol concentration was <2%.",
+      "context_window": "sterol, triglycerides, and ethyl alcohol concentration was <2%. Twenty subjects per group were deemed sufficient to detec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-12290",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 12290,
+      "sentence": "A value of p < .05 was considered statistically significant.",
+      "context_window": "BM SPSS version 25, IBM Corp., Armonk, NY, USA). A value of p < .05 was considered statistically significant. No correction for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-676",
+      "claim_type": "unit_value",
+      "raw_text": "31 years",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 676,
+      "sentence": "The age range of the 19 participants was 19-31 years and the BMI range was 19.0-26.8 kg/m 2 .",
+      "context_window": "ed in Table 2 . The age range of the 19 participants was 19-31 years and the BMI range was 19.0-26.8 kg/m 2 . The weight range w",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-712",
+      "claim_type": "unit_value",
+      "raw_text": "26.8 kg",
+      "numeric_values": [
+        26.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 712,
+      "sentence": "The age range of the 19 participants was 19-31 years and the BMI range was 19.0-26.8 kg/m 2 .",
+      "context_window": "19 participants was 19-31 years and the BMI range was 19.0-26.8 kg/m 2 . The weight range was 46.3-85 kg and the usual alcohol",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-u-752",
+      "claim_type": "unit_value",
+      "raw_text": "85 kg",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 752,
+      "sentence": "The weight range was 46.3-85 kg and the usual alcohol consumption range was 1-10 standard drinks per week.",
+      "context_window": "BMI range was 19.0-26.8 kg/m 2 . The weight range was 46.3-85 kg and the usual alcohol consumption range was 1-10 standard d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-1032",
+      "claim_type": "p_value",
+      "raw_text": "p = .88",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1032,
+      "sentence": "There were no differences in the consumption of mean food mass ( p = .88) or mean food energy intake ( p = .28) between HP and SP snacks (Table 3 ).",
+      "context_window": "were no differences in the consumption of mean food mass ( p = .88) or mean food energy intake ( p = .28) between HP and SP sn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-1070",
+      "claim_type": "p_value",
+      "raw_text": "p = .28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1070,
+      "sentence": "There were no differences in the consumption of mean food mass ( p = .88) or mean food energy intake ( p = .28) between HP and SP snacks (Table 3 ).",
+      "context_window": "n of mean food mass ( p = .88) or mean food energy intake ( p = .28) between HP and SP snacks (Table 3 ). The mean protein inta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-1230",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1230,
+      "sentence": "The mean protein intake was higher with HP snacks (mean difference: 33.5 g protein, 559 kJ) than with SP snacks ( p < .001).",
+      "context_window": "n difference: 33.5 g protein, 559 kJ) than with SP snacks ( p < .001). No differences were observed between the snacks for mean",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-1356",
+      "claim_type": "p_value",
+      "raw_text": "p = .25",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1356,
+      "sentence": "No differences were observed between the snacks for mean fat intake (HP: 55.6 g \u00b1 SD 18.5 g and SP: 59.3 g \u00b1 20 g, p = .25) and mean total carbohydrate intake (HP: 105 g \u00b1 33.9 g and SP: 111 g \u00b1 33.8 g, p = .38).",
+      "context_window": "n fat intake (HP: 55.6 g \u00b1 SD 18.5 g and SP: 59.3 g \u00b1 20 g, p = .25) and mean total carbohydrate intake (HP: 105 g \u00b1 33.9 g and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-1444",
+      "claim_type": "p_value",
+      "raw_text": "p = .38",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1444,
+      "sentence": "No differences were observed between the snacks for mean fat intake (HP: 55.6 g \u00b1 SD 18.5 g and SP: 59.3 g \u00b1 20 g, p = .25) and mean total carbohydrate intake (HP: 105 g \u00b1 33.9 g and SP: 111 g \u00b1 33.8 g, p = .38).",
+      "context_window": "ohydrate intake (HP: 105 g \u00b1 33.9 g and SP: 111 g \u00b1 33.8 g, p = .38). However, the mean available carbohydrate intake was signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-1607",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1607,
+      "sentence": "However, the mean available carbohydrate intake was significantly higher with the SP snacks (mean difference: 28.2 g of available carbohydrates, 479 kJ, p < .001).",
+      "context_window": "mean difference: 28.2 g of available carbohydrates, 479 kJ, p < .001). Sub\u2010analyses for males and females were consistent with t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-1785",
+      "claim_type": "p_value",
+      "raw_text": "p = .03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1785,
+      "sentence": "Sub\u2010analyses for males and females were consistent with total group results except for mean fat intake in males, which was higher with SP snacks than with HP snacks ( p = .03).",
+      "context_window": "ales, which was higher with SP snacks than with HP snacks ( p = .03). Food energy and macronutrient intake for standard protei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-2123",
+      "claim_type": "p_value",
+      "raw_text": "p = .19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2123,
+      "sentence": "At baseline, no differences were observed between the HP and SP snacks for mean hunger (HP: 65.7 \u00b1 SD 25.8 and SP: 57.3 \u00b1 SD 26.0, p = .19, d = 0.65), mean desire to eat (HP: 65.6 \u00b1 SD 22.7 and SP: 63.1 \u00b1 SD 24.7, p = .50, d = 0.70), and mean fullness ratings (HP: 22.2 \u00b1 SD 15.7 and SP: 24.3 \u00b1 SD 20.6, p = .17, d = 0.32).",
+      "context_window": "for mean hunger (HP: 65.7 \u00b1 SD 25.8 and SP: 57.3 \u00b1 SD 26.0, p = .19, d = 0.65), mean desire to eat (HP: 65.6 \u00b1 SD 22.7 and SP:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-2206",
+      "claim_type": "p_value",
+      "raw_text": "p = .50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2206,
+      "sentence": "At baseline, no differences were observed between the HP and SP snacks for mean hunger (HP: 65.7 \u00b1 SD 25.8 and SP: 57.3 \u00b1 SD 26.0, p = .19, d = 0.65), mean desire to eat (HP: 65.6 \u00b1 SD 22.7 and SP: 63.1 \u00b1 SD 24.7, p = .50, d = 0.70), and mean fullness ratings (HP: 22.2 \u00b1 SD 15.7 and SP: 24.3 \u00b1 SD 20.6, p = .17, d = 0.32).",
+      "context_window": "n desire to eat (HP: 65.6 \u00b1 SD 22.7 and SP: 63.1 \u00b1 SD 24.7, p = .50, d = 0.70), and mean fullness ratings (HP: 22.2 \u00b1 SD 15.7 a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-2296",
+      "claim_type": "p_value",
+      "raw_text": "p = .17",
+      "numeric_values": [
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2296,
+      "sentence": "At baseline, no differences were observed between the HP and SP snacks for mean hunger (HP: 65.7 \u00b1 SD 25.8 and SP: 57.3 \u00b1 SD 26.0, p = .19, d = 0.65), mean desire to eat (HP: 65.6 \u00b1 SD 22.7 and SP: 63.1 \u00b1 SD 24.7, p = .50, d = 0.70), and mean fullness ratings (HP: 22.2 \u00b1 SD 15.7 and SP: 24.3 \u00b1 SD 20.6, p = .17, d = 0.32).",
+      "context_window": "ullness ratings (HP: 22.2 \u00b1 SD 15.7 and SP: 24.3 \u00b1 SD 20.6, p = .17, d = 0.32). No differences were observed between the HP and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-2399",
+      "claim_type": "p_value",
+      "raw_text": "p = .97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2399,
+      "sentence": "No differences were observed between the HP and SP snacks for median hunger tAUC ( p = .97, Figure 2a ), mean desire to eat tAUC ( p = .67, Figure 2b ), and mean fullness tAUC ( p = .17, Figure 2c ).",
+      "context_window": "erved between the HP and SP snacks for median hunger tAUC ( p = .97, Figure 2a ), mean desire to eat tAUC ( p = .67, Figure 2b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-2447",
+      "claim_type": "p_value",
+      "raw_text": "p = .67",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2447,
+      "sentence": "No differences were observed between the HP and SP snacks for median hunger tAUC ( p = .97, Figure 2a ), mean desire to eat tAUC ( p = .67, Figure 2b ), and mean fullness tAUC ( p = .17, Figure 2c ).",
+      "context_window": "nger tAUC ( p = .97, Figure 2a ), mean desire to eat tAUC ( p = .67, Figure 2b ), and mean fullness tAUC ( p = .17, Figure 2c )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-2494",
+      "claim_type": "p_value",
+      "raw_text": "p = .17",
+      "numeric_values": [
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2494,
+      "sentence": "No differences were observed between the HP and SP snacks for median hunger tAUC ( p = .97, Figure 2a ), mean desire to eat tAUC ( p = .67, Figure 2b ), and mean fullness tAUC ( p = .17, Figure 2c ).",
+      "context_window": "o eat tAUC ( p = .67, Figure 2b ), and mean fullness tAUC ( p = .17, Figure 2c ). The mean peak plasma glucose concentration (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-2561",
+      "claim_type": "p_value",
+      "raw_text": "p = .004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2561,
+      "sentence": "The mean peak plasma glucose concentration ( p = .004, Figure 3a ) and median plasma glucose iAUC ( p = .006) were significantly higher with SP snacks compared with HP snacks.",
+      "context_window": ", Figure 2c ). The mean peak plasma glucose concentration ( p = .004, Figure 3a ) and median plasma glucose iAUC ( p = .006) wer",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-2616",
+      "claim_type": "p_value",
+      "raw_text": "p = .006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2616,
+      "sentence": "The mean peak plasma glucose concentration ( p = .004, Figure 3a ) and median plasma glucose iAUC ( p = .006) were significantly higher with SP snacks compared with HP snacks.",
+      "context_window": "on ( p = .004, Figure 3a ) and median plasma glucose iAUC ( p = .006) were significantly higher with SP snacks compared with HP",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-p-2805",
+      "claim_type": "p_value",
+      "raw_text": "p = .02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2805,
+      "sentence": "The mean serum triglycerides peak concentration was significantly higher with the HP snacks than the SP snacks ( p = .02, Figure 3b ).",
+      "context_window": "ignificantly higher with the HP snacks than the SP snacks ( p = .02, Figure 3b ). There were no differences between the snacks",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-4326",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4326,
+      "sentence": "Of all participants, the overall liking of the SP potato crisps and the SP cassava crisps was 84% and 89%, respectively.",
+      "context_window": "iking of the SP potato crisps and the SP cassava crisps was 84% and 89%, respectively. The median 9\u2010point hedonic scale sco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-4334",
+      "claim_type": "percentage",
+      "raw_text": "89%",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4334,
+      "sentence": "Of all participants, the overall liking of the SP potato crisps and the SP cassava crisps was 84% and 89%, respectively.",
+      "context_window": "the SP potato crisps and the SP cassava crisps was 84% and 89%, respectively. The median 9\u2010point hedonic scale scores for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-4666",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4666,
+      "sentence": "For the overall liking of the HP snacks, there was a preference for the bean and rice crisps (84%), compared with the black sesame rice crackers (42%).",
+      "context_window": "nacks, there was a preference for the bean and rice crisps (84%), compared with the black sesame rice crackers (42%). This",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-4718",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4718,
+      "sentence": "For the overall liking of the HP snacks, there was a preference for the bean and rice crisps (84%), compared with the black sesame rice crackers (42%).",
+      "context_window": "crisps (84%), compared with the black sesame rice crackers (42%). This was reflected in the median scores for flavor, textu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-5042",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5042,
+      "sentence": "For the overall liking of the dips, all participants liked the standard dip, whereas 95% of participants liked the fortified protein dip.",
+      "context_window": "the dips, all participants liked the standard dip, whereas 95% of participants liked the fortified protein dip. The median",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10916573_exploring_the_short_term_impact_of_swapping_consumption_from-pct-1184",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1184,
+      "sentence": "This mean difference is slightly more than 50% of the Australian recommendations for daily protein for a 75\u2010kg adult male (National Health and Medical Research Council, 2006 ).",
+      "context_window": "with SP snacks. This mean difference is slightly more than 50% of the Australian recommendations for daily protein for a 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

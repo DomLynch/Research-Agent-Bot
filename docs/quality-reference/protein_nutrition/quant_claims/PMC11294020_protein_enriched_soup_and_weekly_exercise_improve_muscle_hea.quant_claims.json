@@ -1,0 +1,2286 @@
+{
+  "paper_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea",
+  "doi": "10.1002/jcsm.13481",
+  "extracted_at": "2026-05-05T22:35:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 63,
+    "unit_value": 26,
+    "percentage": 9,
+    "confidence_interval": 12,
+    "p_value": 12
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-863",
+      "claim_type": "mean_sd",
+      "raw_text": "64.65 \u00b1 4.84",
+      "numeric_values": [
+        64.65,
+        4.84
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 863,
+      "sentence": "In this trial, 97 out of 100 randomized participants (mean age: 64.65 \u00b1 4.84 years, 81.8% female) completed the study (47 in intervention group and 50 in control group).",
+      "context_window": "his trial, 97 out of 100 randomized participants (mean age: 64.65 \u00b1 4.84 years, 81.8% female) completed the study (47 in interventio",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-871",
+      "claim_type": "unit_value",
+      "raw_text": "4.84 years",
+      "numeric_values": [
+        4.84
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 871,
+      "sentence": "In this trial, 97 out of 100 randomized participants (mean age: 64.65 \u00b1 4.84 years, 81.8% female) completed the study (47 in intervention group and 50 in control group).",
+      "context_window": "l, 97 out of 100 randomized participants (mean age: 64.65 \u00b1 4.84 years, 81.8% female) completed the study (47 in intervention grou",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-pct-883",
+      "claim_type": "percentage",
+      "raw_text": "81.8%",
+      "numeric_values": [
+        81.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 883,
+      "sentence": "In this trial, 97 out of 100 randomized participants (mean age: 64.65 \u00b1 4.84 years, 81.8% female) completed the study (47 in intervention group and 50 in control group).",
+      "context_window": "100 randomized participants (mean age: 64.65 \u00b1 4.84 years, 81.8% female) completed the study (47 in intervention group and 5",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1009",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1009,
+      "sentence": "Compared results of baselines, at 1 and 3 months of intervention, significant improvements in waist circumference (83.48 \u00b1 10.22 vs.",
+      "context_window": "in control group). Compared results of baselines, at 1 and 3 months of intervention, significant improvements in waist circumfe",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1084",
+      "claim_type": "mean_sd",
+      "raw_text": "83.48 \u00b1 10.22",
+      "numeric_values": [
+        83.48,
+        10.22
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1084,
+      "sentence": "Compared results of baselines, at 1 and 3 months of intervention, significant improvements in waist circumference (83.48 \u00b1 10.22 vs.",
+      "context_window": "ervention, significant improvements in waist circumference (83.48 \u00b1 10.22 vs. 82.5 \u00b1 9.88 vs. 82.37 \u00b1 9.42 cm, P for trend = 0.046),",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1102",
+      "claim_type": "mean_sd",
+      "raw_text": "82.5 \u00b1 9.88",
+      "numeric_values": [
+        82.5,
+        9.88
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1102,
+      "sentence": "82.5 \u00b1 9.88 vs.",
+      "context_window": "cant improvements in waist circumference (83.48 \u00b1 10.22 vs. 82.5 \u00b1 9.88 vs. 82.37 \u00b1 9.42 cm, P for trend = 0.046), 6\u2010min walking di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1118",
+      "claim_type": "mean_sd",
+      "raw_text": "82.37 \u00b1 9.42",
+      "numeric_values": [
+        82.37,
+        9.42
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1118,
+      "sentence": "82.37 \u00b1 9.42 cm, P for trend = 0.046), 6\u2010min walking distance (525.65 \u00b1 58.46 vs.",
+      "context_window": "s in waist circumference (83.48 \u00b1 10.22 vs. 82.5 \u00b1 9.88 vs. 82.37 \u00b1 9.42 cm, P for trend = 0.046), 6\u2010min walking distance (525.65 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1126",
+      "claim_type": "unit_value",
+      "raw_text": "9.42 cm",
+      "numeric_values": [
+        9.42
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 1126,
+      "sentence": "82.37 \u00b1 9.42 cm, P for trend = 0.046), 6\u2010min walking distance (525.65 \u00b1 58.46 vs.",
+      "context_window": "st circumference (83.48 \u00b1 10.22 vs. 82.5 \u00b1 9.88 vs. 82.37 \u00b1 9.42 cm, P for trend = 0.046), 6\u2010min walking distance (525.65 \u00b1 58.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1181",
+      "claim_type": "mean_sd",
+      "raw_text": "525.65 \u00b1 58.46",
+      "numeric_values": [
+        525.65,
+        58.46
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1181,
+      "sentence": "82.37 \u00b1 9.42 cm, P for trend = 0.046), 6\u2010min walking distance (525.65 \u00b1 58.46 vs.",
+      "context_window": "37 \u00b1 9.42 cm, P for trend = 0.046), 6\u2010min walking distance (525.65 \u00b1 58.46 vs. 534.47 \u00b1 51.87 vs. 552.02 \u00b1 57.66 m, P for trend = 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1200",
+      "claim_type": "mean_sd",
+      "raw_text": "534.47 \u00b1 51.87",
+      "numeric_values": [
+        534.47,
+        51.87
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1200,
+      "sentence": "534.47 \u00b1 51.87 vs.",
+      "context_window": "trend = 0.046), 6\u2010min walking distance (525.65 \u00b1 58.46 vs. 534.47 \u00b1 51.87 vs. 552.02 \u00b1 57.66 m, P for trend = 0.001), five\u2010time sit\u2010t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1219",
+      "claim_type": "mean_sd",
+      "raw_text": "552.02 \u00b1 57.66",
+      "numeric_values": [
+        552.02,
+        57.66
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1219,
+      "sentence": "552.02 \u00b1 57.66 m, P for trend = 0.001), five\u2010time sit\u2010to\u2010stand time (7.63 \u00b1 1.63 vs.",
+      "context_window": "min walking distance (525.65 \u00b1 58.46 vs. 534.47 \u00b1 51.87 vs. 552.02 \u00b1 57.66 m, P for trend = 0.001), five\u2010time sit\u2010to\u2010stand time (7.63",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1288",
+      "claim_type": "mean_sd",
+      "raw_text": "7.63 \u00b1 1.63",
+      "numeric_values": [
+        7.63,
+        1.63
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1288,
+      "sentence": "552.02 \u00b1 57.66 m, P for trend = 0.001), five\u2010time sit\u2010to\u2010stand time (7.63 \u00b1 1.63 vs.",
+      "context_window": "57.66 m, P for trend = 0.001), five\u2010time sit\u2010to\u2010stand time (7.63 \u00b1 1.63 vs. 6.81 \u00b1 1.8 vs. 6.4 \u00b1 1.42 s, P for trend <0.001), grip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1304",
+      "claim_type": "mean_sd",
+      "raw_text": "6.81 \u00b1 1.8",
+      "numeric_values": [
+        6.81,
+        1.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1304,
+      "sentence": "6.81 \u00b1 1.8 vs.",
+      "context_window": "rend = 0.001), five\u2010time sit\u2010to\u2010stand time (7.63 \u00b1 1.63 vs. 6.81 \u00b1 1.8 vs. 6.4 \u00b1 1.42 s, P for trend <0.001), grip strength (26.74",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1319",
+      "claim_type": "mean_sd",
+      "raw_text": "6.4 \u00b1 1.42",
+      "numeric_values": [
+        6.4,
+        1.42
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1319,
+      "sentence": "6.4 \u00b1 1.42 s, P for trend <0.001), grip strength (26.74 \u00b1 6.54 vs.",
+      "context_window": "five\u2010time sit\u2010to\u2010stand time (7.63 \u00b1 1.63 vs. 6.81 \u00b1 1.8 vs. 6.4 \u00b1 1.42 s, P for trend <0.001), grip strength (26.74 \u00b1 6.54 vs. 27.",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1369",
+      "claim_type": "mean_sd",
+      "raw_text": "26.74 \u00b1 6.54",
+      "numeric_values": [
+        26.74,
+        6.54
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1369,
+      "sentence": "6.4 \u00b1 1.42 s, P for trend <0.001), grip strength (26.74 \u00b1 6.54 vs.",
+      "context_window": "\u00b1 1.8 vs. 6.4 \u00b1 1.42 s, P for trend <0.001), grip strength (26.74 \u00b1 6.54 vs. 27.53 \u00b1 6.99 vs. 28.52 \u00b1 7.09 kg, P for trend <0.001),",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1386",
+      "claim_type": "mean_sd",
+      "raw_text": "27.53 \u00b1 6.99",
+      "numeric_values": [
+        27.53,
+        6.99
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1386,
+      "sentence": "27.53 \u00b1 6.99 vs.",
+      "context_window": ".42 s, P for trend <0.001), grip strength (26.74 \u00b1 6.54 vs. 27.53 \u00b1 6.99 vs. 28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1403",
+      "claim_type": "mean_sd",
+      "raw_text": "28.52 \u00b1 7.09",
+      "numeric_values": [
+        28.52,
+        7.09
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1403,
+      "sentence": "28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs.",
+      "context_window": "d <0.001), grip strength (26.74 \u00b1 6.54 vs. 27.53 \u00b1 6.99 vs. 28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs. 27.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1411",
+      "claim_type": "unit_value",
+      "raw_text": "7.09 kg",
+      "numeric_values": [
+        7.09
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1411,
+      "sentence": "28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs.",
+      "context_window": "), grip strength (26.74 \u00b1 6.54 vs. 27.53 \u00b1 6.99 vs. 28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs. 27.73",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1456",
+      "claim_type": "mean_sd",
+      "raw_text": "26.8 \u00b1 2.14",
+      "numeric_values": [
+        26.8,
+        2.14
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1456,
+      "sentence": "28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs.",
+      "context_window": "99 vs. 28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs. 27.73 \u00b1 1.74 vs. 27.55 \u00b1 1.72, P for trend <0.001) were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1472",
+      "claim_type": "mean_sd",
+      "raw_text": "27.73 \u00b1 1.74",
+      "numeric_values": [
+        27.73,
+        1.74
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1472,
+      "sentence": "27.73 \u00b1 1.74 vs.",
+      "context_window": ".09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs. 27.73 \u00b1 1.74 vs. 27.55 \u00b1 1.72, P for trend <0.001) were discerned within",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1489",
+      "claim_type": "mean_sd",
+      "raw_text": "27.55 \u00b1 1.72",
+      "numeric_values": [
+        27.55,
+        1.72
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1489,
+      "sentence": "27.55 \u00b1 1.72, P for trend <0.001) were discerned within the intervention group.",
+      "context_window": "nd <0.001), and MNA score (26.8 \u00b1 2.14 vs. 27.73 \u00b1 1.74 vs. 27.55 \u00b1 1.72, P for trend <0.001) were discerned within the intervention",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1646",
+      "claim_type": "mean_sd",
+      "raw_text": "105.32 \u00b1 49.84",
+      "numeric_values": [
+        105.32,
+        49.84
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1646,
+      "sentence": "The intervention demonstrated a significant reduction in serum triglyceride (105.32 \u00b1 49.84 vs.",
+      "context_window": "demonstrated a significant reduction in serum triglyceride (105.32 \u00b1 49.84 vs. 101.36 \u00b1 42.58 vs. 93.43 \u00b1 41.49 mg/dL, P for trend = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1665",
+      "claim_type": "mean_sd",
+      "raw_text": "101.36 \u00b1 42.58",
+      "numeric_values": [
+        101.36,
+        42.58
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1665,
+      "sentence": "101.36 \u00b1 42.58 vs.",
+      "context_window": "ificant reduction in serum triglyceride (105.32 \u00b1 49.84 vs. 101.36 \u00b1 42.58 vs. 93.43 \u00b1 41.49 mg/dL, P for trend = 0.023), increased HD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1684",
+      "claim_type": "mean_sd",
+      "raw_text": "93.43 \u00b1 41.49",
+      "numeric_values": [
+        93.43,
+        41.49
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1684,
+      "sentence": "93.43 \u00b1 41.49 mg/dL, P for trend = 0.023), increased HDL\u2010C (60.04 \u00b1 16.21 vs.",
+      "context_window": "n serum triglyceride (105.32 \u00b1 49.84 vs. 101.36 \u00b1 42.58 vs. 93.43 \u00b1 41.49 mg/dL, P for trend = 0.023), increased HDL\u2010C (60.04 \u00b1 16.21",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1692",
+      "claim_type": "unit_value",
+      "raw_text": "41.49 mg/dL",
+      "numeric_values": [
+        41.49
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1692,
+      "sentence": "93.43 \u00b1 41.49 mg/dL, P for trend = 0.023), increased HDL\u2010C (60.04 \u00b1 16.21 vs.",
+      "context_window": "triglyceride (105.32 \u00b1 49.84 vs. 101.36 \u00b1 42.58 vs. 93.43 \u00b1 41.49 mg/dL, P for trend = 0.023), increased HDL\u2010C (60.04 \u00b1 16.21 vs. 6",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1744",
+      "claim_type": "mean_sd",
+      "raw_text": "60.04 \u00b1 16.21",
+      "numeric_values": [
+        60.04,
+        16.21
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1744,
+      "sentence": "93.43 \u00b1 41.49 mg/dL, P for trend = 0.023), increased HDL\u2010C (60.04 \u00b1 16.21 vs.",
+      "context_window": "93.43 \u00b1 41.49 mg/dL, P for trend = 0.023), increased HDL\u2010C (60.04 \u00b1 16.21 vs. 60 \u00b1 17.37 vs. 62.55 \u00b1 18.27 mg/dL, P for trend = 0.02)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1762",
+      "claim_type": "mean_sd",
+      "raw_text": "60 \u00b1 17.37",
+      "numeric_values": [
+        60.0,
+        17.37
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1762,
+      "sentence": "60 \u00b1 17.37 vs.",
+      "context_window": "L, P for trend = 0.023), increased HDL\u2010C (60.04 \u00b1 16.21 vs. 60 \u00b1 17.37 vs. 62.55 \u00b1 18.27 mg/dL, P for trend = 0.02), and DHEA\u2010S le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1777",
+      "claim_type": "mean_sd",
+      "raw_text": "62.55 \u00b1 18.27",
+      "numeric_values": [
+        62.55,
+        18.27
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1777,
+      "sentence": "62.55 \u00b1 18.27 mg/dL, P for trend = 0.02), and DHEA\u2010S levels (97.11 \u00b1 54.39 vs.",
+      "context_window": "= 0.023), increased HDL\u2010C (60.04 \u00b1 16.21 vs. 60 \u00b1 17.37 vs. 62.55 \u00b1 18.27 mg/dL, P for trend = 0.02), and DHEA\u2010S levels (97.11 \u00b1 54.3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1785",
+      "claim_type": "unit_value",
+      "raw_text": "18.27 mg/dL",
+      "numeric_values": [
+        18.27
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1785,
+      "sentence": "62.55 \u00b1 18.27 mg/dL, P for trend = 0.02), and DHEA\u2010S levels (97.11 \u00b1 54.39 vs.",
+      "context_window": ", increased HDL\u2010C (60.04 \u00b1 16.21 vs. 60 \u00b1 17.37 vs. 62.55 \u00b1 18.27 mg/dL, P for trend = 0.02), and DHEA\u2010S levels (97.11 \u00b1 54.39 vs.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1838",
+      "claim_type": "mean_sd",
+      "raw_text": "97.11 \u00b1 54.39",
+      "numeric_values": [
+        97.11,
+        54.39
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1838,
+      "sentence": "62.55 \u00b1 18.27 mg/dL, P for trend = 0.02), and DHEA\u2010S levels (97.11 \u00b1 54.39 vs.",
+      "context_window": "2.55 \u00b1 18.27 mg/dL, P for trend = 0.02), and DHEA\u2010S levels (97.11 \u00b1 54.39 vs. 103.39 \u00b1 56.75 vs. 106.83 \u00b1 60.56 \u03bcg/dL, P for trend =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1856",
+      "claim_type": "mean_sd",
+      "raw_text": "103.39 \u00b1 56.75",
+      "numeric_values": [
+        103.39,
+        56.75
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1856,
+      "sentence": "103.39 \u00b1 56.75 vs.",
+      "context_window": ", P for trend = 0.02), and DHEA\u2010S levels (97.11 \u00b1 54.39 vs. 103.39 \u00b1 56.75 vs. 106.83 \u00b1 60.56 \u03bcg/dL, P for trend = 0.002). Serum myost",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1875",
+      "claim_type": "mean_sd",
+      "raw_text": "106.83 \u00b1 60.56",
+      "numeric_values": [
+        106.83,
+        60.56
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1875,
+      "sentence": "106.83 \u00b1 60.56 \u03bcg/dL, P for trend = 0.002).",
+      "context_window": "2), and DHEA\u2010S levels (97.11 \u00b1 54.39 vs. 103.39 \u00b1 56.75 vs. 106.83 \u00b1 60.56 \u03bcg/dL, P for trend = 0.002). Serum myostatin did not differ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2015",
+      "claim_type": "mean_sd",
+      "raw_text": "9118.88 \u00b1 5811.68",
+      "numeric_values": [
+        9118.88,
+        5811.68
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2015,
+      "sentence": "Serum myostatin did not differ in both groups, but serum leptin levels significantly increased (9118.88 \u00b1 5811.68 vs.",
+      "context_window": "th groups, but serum leptin levels significantly increased (9118.88 \u00b1 5811.68 vs. 11508.97 \u00b1 7151.08 vs. 11220.80 \u00b1 7190.71 pg/mL, P for",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2037",
+      "claim_type": "mean_sd",
+      "raw_text": "11508.97 \u00b1 7151.08",
+      "numeric_values": [
+        11508.97,
+        7151.08
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2037,
+      "sentence": "11508.97 \u00b1 7151.08 vs.",
+      "context_window": "eptin levels significantly increased (9118.88 \u00b1 5811.68 vs. 11508.97 \u00b1 7151.08 vs. 11220.80 \u00b1 7190.71 pg/mL, P for trend = 0.016) in contr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2060",
+      "claim_type": "mean_sd",
+      "raw_text": "11220.80 \u00b1 7190.71",
+      "numeric_values": [
+        11220.8,
+        7190.71
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2060,
+      "sentence": "11220.80 \u00b1 7190.71 pg/mL, P for trend = 0.016) in controls.",
+      "context_window": "tly increased (9118.88 \u00b1 5811.68 vs. 11508.97 \u00b1 7151.08 vs. 11220.80 \u00b1 7190.71 pg/mL, P for trend = 0.016) in controls. The intervention g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-2208",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 6.88 to 40.79",
+      "numeric_values": [
+        6.88,
+        40.79
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2208,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": "d greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-2231",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2231,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": "in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-2283",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.59 to -0.15",
+      "numeric_values": [
+        -1.59,
+        -0.15
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2283,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": "40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-2307",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2307,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": "\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), se",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-2340",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.20 to 1.71",
+      "numeric_values": [
+        0.2,
+        1.71
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2340,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": "7, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.8",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-2362",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2362,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": ".15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-2407",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -27.83 to -2.20",
+      "numeric_values": [
+        -27.83,
+        -2.2
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2407,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": "0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-2432",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2432,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": ", serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-2462",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -16.98 to -1.47",
+      "numeric_values": [
+        -16.98,
+        -1.47
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2462,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": ".01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-2487",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2487,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": ".20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-2528",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.45 to 19.51",
+      "numeric_values": [
+        0.45,
+        19.51
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2528,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": ": -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls. Protein\u2010enriched soup with weekl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-2551",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2551,
+      "sentence": "The intervention group showed greater improvements in 6 min walking distance (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), five\u2010time sit\u2010to\u2010stand test (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), MNA score (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022), LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls.",
+      "context_window": "0.020), and DHEA\u2010S levels (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04) than controls. Protein\u2010enriched soup with weekly exercise",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-2625",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2625,
+      "sentence": "Protein\u2010enriched soup with weekly exercise over 12 weeks significantly improved physical performance, lipid profile, and DHEA\u2010S levels among middle\u2010aged and older adults with inadequate protein intake, while studies assessing long\u2010term benefits of the intervention are needed.",
+      "context_window": "controls. Protein\u2010enriched soup with weekly exercise over 12 weeks significantly improved physical performance, lipid profile,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-2871",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2871,
+      "sentence": "16 , 17 , 18\n\nAccording to the PROT\u2010AGE study group, individuals aged over 65 years should aim for a daily protein intake of 1.0 to 1.2 g/kg of body weight to maintain and restore lean body mass and function, while those with acute or chronic conditions may benefit from a higher intake of 1.2-1.5 grams of protein per kilogram of body weight.",
+      "context_window": "ccording to the PROT\u2010AGE study group, individuals aged over 65 years should aim for a daily protein intake of 1.0 to 1.2 g/kg of",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-pct-3632",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3632,
+      "sentence": "22 Despite the abovementioned guidelines, 23-27% of community\u2010dwelling older adults have insufficient protein intake (<1.0 g/kg/day), as revealed by a recent systematic review.",
+      "context_window": "etary sources. 22 Despite the abovementioned guidelines, 23-27% of community\u2010dwelling older adults have insufficient protei",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-601",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 601,
+      "sentence": "All the participants for the trial were community\u2010dwelling individuals aged 50-75 years, at least one fall event within the past year, providing informed consent and agreeing to comply with the study protocol were eligible to join this trial.",
+      "context_window": "s for the trial were community\u2010dwelling individuals aged 50-75 years, at least one fall event within the past year, providing in",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1123",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 m/s",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 1123,
+      "sentence": "Those who were unable to follow the study design, had a 6\u2010m usual gait speed of <0.3 m/s, suffered functional impairment due to extremity fractures or severe arthritis, were undergoing cancer treatment, had a history of gouty arthritis or severe renal insufficiency (estimated glomerular filtration rate <30 mL/min/1.73 m 2 ), suffered from severe visual or hearing impairment, received hormone therapy within the last 3 months or intended to during the study period, had clinical conditions that were unsuitable for the study, such as uncontrolled cardiopulmonary disease or uncontrolled mental illness, or had neurological diseases such as stroke, parkinsonism, or peripheral neuropathy with intermittent claudication were excluded, as were those with contraindications for bioimpedance analysis (BIA) examination.",
+      "context_window": "to follow the study design, had a 6\u2010m usual gait speed of <0.3 m/s, suffered functional impairment due to extremity fractures",
+      "claim_role": "duration",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1347",
+      "claim_type": "unit_value",
+      "raw_text": "30 mL/min",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 1347,
+      "sentence": "Those who were unable to follow the study design, had a 6\u2010m usual gait speed of <0.3 m/s, suffered functional impairment due to extremity fractures or severe arthritis, were undergoing cancer treatment, had a history of gouty arthritis or severe renal insufficiency (estimated glomerular filtration rate <30 mL/min/1.73 m 2 ), suffered from severe visual or hearing impairment, received hormone therapy within the last 3 months or intended to during the study period, had clinical conditions that were unsuitable for the study, such as uncontrolled cardiopulmonary disease or uncontrolled mental illness, or had neurological diseases such as stroke, parkinsonism, or peripheral neuropathy with intermittent claudication were excluded, as were those with contraindications for bioimpedance analysis (BIA) examination.",
+      "context_window": "renal insufficiency (estimated glomerular filtration rate <30 mL/min/1.73 m 2 ), suffered from severe visual or hearing impairme",
+      "claim_role": "duration",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1461",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1461,
+      "sentence": "Those who were unable to follow the study design, had a 6\u2010m usual gait speed of <0.3 m/s, suffered functional impairment due to extremity fractures or severe arthritis, were undergoing cancer treatment, had a history of gouty arthritis or severe renal insufficiency (estimated glomerular filtration rate <30 mL/min/1.73 m 2 ), suffered from severe visual or hearing impairment, received hormone therapy within the last 3 months or intended to during the study period, had clinical conditions that were unsuitable for the study, such as uncontrolled cardiopulmonary disease or uncontrolled mental illness, or had neurological diseases such as stroke, parkinsonism, or peripheral neuropathy with intermittent claudication were excluded, as were those with contraindications for bioimpedance analysis (BIA) examination.",
+      "context_window": "earing impairment, received hormone therapy within the last 3 months or intended to during the study period, had clinical condit",
+      "claim_role": "duration",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-pct-2193",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2193,
+      "sentence": "18 Hence, we assumed with the effective size of 0.3, and at least 100 participants is needed to achieve a discriminatory power of 80% at the two\u2010tail \u03b1 significance level of 5% and considering an estimated dropout rate of 20%.",
+      "context_window": "participants is needed to achieve a discriminatory power of 80% at the two\u2010tail \u03b1 significance level of 5% and considering",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-pct-2237",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2237,
+      "sentence": "18 Hence, we assumed with the effective size of 0.3, and at least 100 participants is needed to achieve a discriminatory power of 80% at the two\u2010tail \u03b1 significance level of 5% and considering an estimated dropout rate of 20%.",
+      "context_window": "natory power of 80% at the two\u2010tail \u03b1 significance level of 5% and considering an estimated dropout rate of 20%. This stu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-pct-2285",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2285,
+      "sentence": "18 Hence, we assumed with the effective size of 0.3, and at least 100 participants is needed to achieve a discriminatory power of 80% at the two\u2010tail \u03b1 significance level of 5% and considering an estimated dropout rate of 20%.",
+      "context_window": "ce level of 5% and considering an estimated dropout rate of 20%. This study aimed to recruit 100 eligible participants who",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-300",
+      "claim_type": "mean_sd",
+      "raw_text": "64.66 \u00b1 4.84",
+      "numeric_values": [
+        64.66,
+        4.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 300,
+      "sentence": "The mean age of all participants was 64.66 \u00b1 4.84 years, with 81.8% being female.",
+      "context_window": "ratio into two groups. The mean age of all participants was 64.66 \u00b1 4.84 years, with 81.8% being female. Notably, the participants'",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-308",
+      "claim_type": "unit_value",
+      "raw_text": "4.84 years",
+      "numeric_values": [
+        4.84
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 308,
+      "sentence": "The mean age of all participants was 64.66 \u00b1 4.84 years, with 81.8% being female.",
+      "context_window": "to two groups. The mean age of all participants was 64.66 \u00b1 4.84 years, with 81.8% being female. Notably, the participants' averag",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-pct-325",
+      "claim_type": "percentage",
+      "raw_text": "81.8%",
+      "numeric_values": [
+        81.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 325,
+      "sentence": "The mean age of all participants was 64.66 \u00b1 4.84 years, with 81.8% being female.",
+      "context_window": "e mean age of all participants was 64.66 \u00b1 4.84 years, with 81.8% being female. Notably, the participants' average daily prot",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-422",
+      "claim_type": "mean_sd",
+      "raw_text": "0.80 \u00b1 0.17",
+      "numeric_values": [
+        0.8,
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 422,
+      "sentence": "Notably, the participants' average daily protein intake before the study was 0.80 \u00b1 0.17 g/kg.",
+      "context_window": "icipants' average daily protein intake before the study was 0.80 \u00b1 0.17 g/kg. However, three participants in the interventional gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1758",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1758,
+      "sentence": "In the intervention group, a progressive and significant reduction in waist circumference was observed, evident both before the intervention and at 1 and 3 months post\u2010intervention (83.48 \u00b1 10.22 vs.",
+      "context_window": "observed, evident both before the intervention and at 1 and 3 months post\u2010intervention (83.48 \u00b1 10.22 vs. 82.5 \u00b1 9.88 vs. 82.37",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1786",
+      "claim_type": "mean_sd",
+      "raw_text": "83.48 \u00b1 10.22",
+      "numeric_values": [
+        83.48,
+        10.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1786,
+      "sentence": "In the intervention group, a progressive and significant reduction in waist circumference was observed, evident both before the intervention and at 1 and 3 months post\u2010intervention (83.48 \u00b1 10.22 vs.",
+      "context_window": "e the intervention and at 1 and 3 months post\u2010intervention (83.48 \u00b1 10.22 vs. 82.5 \u00b1 9.88 vs. 82.37 \u00b1 9.42 cm, P for trend = 0.046).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1804",
+      "claim_type": "mean_sd",
+      "raw_text": "82.5 \u00b1 9.88",
+      "numeric_values": [
+        82.5,
+        9.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1804,
+      "sentence": "82.5 \u00b1 9.88 vs.",
+      "context_window": "and at 1 and 3 months post\u2010intervention (83.48 \u00b1 10.22 vs. 82.5 \u00b1 9.88 vs. 82.37 \u00b1 9.42 cm, P for trend = 0.046). Moreover, the im",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1820",
+      "claim_type": "mean_sd",
+      "raw_text": "82.37 \u00b1 9.42",
+      "numeric_values": [
+        82.37,
+        9.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1820,
+      "sentence": "82.37 \u00b1 9.42 cm, P for trend = 0.046).",
+      "context_window": "months post\u2010intervention (83.48 \u00b1 10.22 vs. 82.5 \u00b1 9.88 vs. 82.37 \u00b1 9.42 cm, P for trend = 0.046). Moreover, the improvement in func",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1828",
+      "claim_type": "unit_value",
+      "raw_text": "9.42 cm",
+      "numeric_values": [
+        9.42
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 1828,
+      "sentence": "82.37 \u00b1 9.42 cm, P for trend = 0.046).",
+      "context_window": "ost\u2010intervention (83.48 \u00b1 10.22 vs. 82.5 \u00b1 9.88 vs. 82.37 \u00b1 9.42 cm, P for trend = 0.046). Moreover, the improvement in functio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1943",
+      "claim_type": "mean_sd",
+      "raw_text": "525.65 \u00b1 58.46",
+      "numeric_values": [
+        525.65,
+        58.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1943,
+      "sentence": "Moreover, the improvement in functional parameters, such as 6\u2010min walking distance (525.65 \u00b1 58.46 vs.",
+      "context_window": "t in functional parameters, such as 6\u2010min walking distance (525.65 \u00b1 58.46 vs. 534.47 \u00b1 51.87 vs. 552.02 \u00b1 57.66 m, P for trend = 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1962",
+      "claim_type": "mean_sd",
+      "raw_text": "534.47 \u00b1 51.87",
+      "numeric_values": [
+        534.47,
+        51.87
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1962,
+      "sentence": "534.47 \u00b1 51.87 vs.",
+      "context_window": "ameters, such as 6\u2010min walking distance (525.65 \u00b1 58.46 vs. 534.47 \u00b1 51.87 vs. 552.02 \u00b1 57.66 m, P for trend = 0.001), time of 5\u2010time",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-1981",
+      "claim_type": "mean_sd",
+      "raw_text": "552.02 \u00b1 57.66",
+      "numeric_values": [
+        552.02,
+        57.66
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1981,
+      "sentence": "552.02 \u00b1 57.66 m, P for trend = 0.001), time of 5\u2010time sit\u2010to\u2010stand (7.63 \u00b1 1.63 vs.",
+      "context_window": "min walking distance (525.65 \u00b1 58.46 vs. 534.47 \u00b1 51.87 vs. 552.02 \u00b1 57.66 m, P for trend = 0.001), time of 5\u2010time sit\u2010to\u2010stand (7.63",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2050",
+      "claim_type": "mean_sd",
+      "raw_text": "7.63 \u00b1 1.63",
+      "numeric_values": [
+        7.63,
+        1.63
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2050,
+      "sentence": "552.02 \u00b1 57.66 m, P for trend = 0.001), time of 5\u2010time sit\u2010to\u2010stand (7.63 \u00b1 1.63 vs.",
+      "context_window": "57.66 m, P for trend = 0.001), time of 5\u2010time sit\u2010to\u2010stand (7.63 \u00b1 1.63 vs. 6.81 \u00b1 1.80 vs. 6.4 \u00b1 1.42 s, P for trend <0.001), hand",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2066",
+      "claim_type": "mean_sd",
+      "raw_text": "6.81 \u00b1 1.80",
+      "numeric_values": [
+        6.81,
+        1.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2066,
+      "sentence": "6.81 \u00b1 1.80 vs.",
+      "context_window": "rend = 0.001), time of 5\u2010time sit\u2010to\u2010stand (7.63 \u00b1 1.63 vs. 6.81 \u00b1 1.80 vs. 6.4 \u00b1 1.42 s, P for trend <0.001), handgrip strength (2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2082",
+      "claim_type": "mean_sd",
+      "raw_text": "6.4 \u00b1 1.42",
+      "numeric_values": [
+        6.4,
+        1.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2082,
+      "sentence": "6.4 \u00b1 1.42 s, P for trend <0.001), handgrip strength (26.74 \u00b1 6.54 vs.",
+      "context_window": "ime of 5\u2010time sit\u2010to\u2010stand (7.63 \u00b1 1.63 vs. 6.81 \u00b1 1.80 vs. 6.4 \u00b1 1.42 s, P for trend <0.001), handgrip strength (26.74 \u00b1 6.54 vs.",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2136",
+      "claim_type": "mean_sd",
+      "raw_text": "26.74 \u00b1 6.54",
+      "numeric_values": [
+        26.74,
+        6.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2136,
+      "sentence": "6.4 \u00b1 1.42 s, P for trend <0.001), handgrip strength (26.74 \u00b1 6.54 vs.",
+      "context_window": "0 vs. 6.4 \u00b1 1.42 s, P for trend <0.001), handgrip strength (26.74 \u00b1 6.54 vs. 27.53 \u00b1 6.99 vs. 28.52 \u00b1 7.09 kg, P for trend <0.001),",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2153",
+      "claim_type": "mean_sd",
+      "raw_text": "27.53 \u00b1 6.99",
+      "numeric_values": [
+        27.53,
+        6.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2153,
+      "sentence": "27.53 \u00b1 6.99 vs.",
+      "context_window": "s, P for trend <0.001), handgrip strength (26.74 \u00b1 6.54 vs. 27.53 \u00b1 6.99 vs. 28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2170",
+      "claim_type": "mean_sd",
+      "raw_text": "28.52 \u00b1 7.09",
+      "numeric_values": [
+        28.52,
+        7.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2170,
+      "sentence": "28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs.",
+      "context_window": ".001), handgrip strength (26.74 \u00b1 6.54 vs. 27.53 \u00b1 6.99 vs. 28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs. 27.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-2178",
+      "claim_type": "unit_value",
+      "raw_text": "7.09 kg",
+      "numeric_values": [
+        7.09
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2178,
+      "sentence": "28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs.",
+      "context_window": "andgrip strength (26.74 \u00b1 6.54 vs. 27.53 \u00b1 6.99 vs. 28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs. 27.73",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2223",
+      "claim_type": "mean_sd",
+      "raw_text": "26.8 \u00b1 2.14",
+      "numeric_values": [
+        26.8,
+        2.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2223,
+      "sentence": "28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs.",
+      "context_window": "99 vs. 28.52 \u00b1 7.09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs. 27.73 \u00b1 1.74 vs. 27.55 \u00b1 1.72, P for trend <0.001) were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2239",
+      "claim_type": "mean_sd",
+      "raw_text": "27.73 \u00b1 1.74",
+      "numeric_values": [
+        27.73,
+        1.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2239,
+      "sentence": "27.73 \u00b1 1.74 vs.",
+      "context_window": ".09 kg, P for trend <0.001), and MNA score (26.8 \u00b1 2.14 vs. 27.73 \u00b1 1.74 vs. 27.55 \u00b1 1.72, P for trend <0.001) were also observed. A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2256",
+      "claim_type": "mean_sd",
+      "raw_text": "27.55 \u00b1 1.72",
+      "numeric_values": [
+        27.55,
+        1.72
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2256,
+      "sentence": "27.55 \u00b1 1.72, P for trend <0.001) were also observed.",
+      "context_window": "nd <0.001), and MNA score (26.8 \u00b1 2.14 vs. 27.73 \u00b1 1.74 vs. 27.55 \u00b1 1.72, P for trend <0.001) were also observed. Additionally, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2412",
+      "claim_type": "mean_sd",
+      "raw_text": "105.32 \u00b1 49.84",
+      "numeric_values": [
+        105.32,
+        49.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2412,
+      "sentence": "Additionally, the intervention group exhibited significant decrease in serum levels of triglycerides (105.32 \u00b1 49.84 vs.",
+      "context_window": "ited significant decrease in serum levels of triglycerides (105.32 \u00b1 49.84 vs. 101.36 \u00b1 42.58 vs. 93.43 \u00b1 41.49 mg/dL, P for trend = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2431",
+      "claim_type": "mean_sd",
+      "raw_text": "101.36 \u00b1 42.58",
+      "numeric_values": [
+        101.36,
+        42.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2431,
+      "sentence": "101.36 \u00b1 42.58 vs.",
+      "context_window": "crease in serum levels of triglycerides (105.32 \u00b1 49.84 vs. 101.36 \u00b1 42.58 vs. 93.43 \u00b1 41.49 mg/dL, P for trend = 0.023) and increases",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2450",
+      "claim_type": "mean_sd",
+      "raw_text": "93.43 \u00b1 41.49",
+      "numeric_values": [
+        93.43,
+        41.49
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2450,
+      "sentence": "93.43 \u00b1 41.49 mg/dL, P for trend = 0.023) and increases in HDL\u2010C (60.04 \u00b1 16.21 vs.",
+      "context_window": "els of triglycerides (105.32 \u00b1 49.84 vs. 101.36 \u00b1 42.58 vs. 93.43 \u00b1 41.49 mg/dL, P for trend = 0.023) and increases in HDL\u2010C (60.04 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-2458",
+      "claim_type": "unit_value",
+      "raw_text": "41.49 mg/dL",
+      "numeric_values": [
+        41.49
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 2458,
+      "sentence": "93.43 \u00b1 41.49 mg/dL, P for trend = 0.023) and increases in HDL\u2010C (60.04 \u00b1 16.21 vs.",
+      "context_window": "riglycerides (105.32 \u00b1 49.84 vs. 101.36 \u00b1 42.58 vs. 93.43 \u00b1 41.49 mg/dL, P for trend = 0.023) and increases in HDL\u2010C (60.04 \u00b1 16.21",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2516",
+      "claim_type": "mean_sd",
+      "raw_text": "60.04 \u00b1 16.21",
+      "numeric_values": [
+        60.04,
+        16.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2516,
+      "sentence": "93.43 \u00b1 41.49 mg/dL, P for trend = 0.023) and increases in HDL\u2010C (60.04 \u00b1 16.21 vs.",
+      "context_window": "\u00b1 41.49 mg/dL, P for trend = 0.023) and increases in HDL\u2010C (60.04 \u00b1 16.21 vs. 60 \u00b1 17.37 vs. 62.55 \u00b1 18.27 mg/dL, P for trend = 0.02)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2534",
+      "claim_type": "mean_sd",
+      "raw_text": "60 \u00b1 17.37",
+      "numeric_values": [
+        60.0,
+        17.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2534,
+      "sentence": "60 \u00b1 17.37 vs.",
+      "context_window": "or trend = 0.023) and increases in HDL\u2010C (60.04 \u00b1 16.21 vs. 60 \u00b1 17.37 vs. 62.55 \u00b1 18.27 mg/dL, P for trend = 0.02) and DHEA\u2010S lev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2549",
+      "claim_type": "mean_sd",
+      "raw_text": "62.55 \u00b1 18.27",
+      "numeric_values": [
+        62.55,
+        18.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2549,
+      "sentence": "62.55 \u00b1 18.27 mg/dL, P for trend = 0.02) and DHEA\u2010S levels (97.11 \u00b1 54.39 vs.",
+      "context_window": "3) and increases in HDL\u2010C (60.04 \u00b1 16.21 vs. 60 \u00b1 17.37 vs. 62.55 \u00b1 18.27 mg/dL, P for trend = 0.02) and DHEA\u2010S levels (97.11 \u00b1 54.39",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-2557",
+      "claim_type": "unit_value",
+      "raw_text": "18.27 mg/dL",
+      "numeric_values": [
+        18.27
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 2557,
+      "sentence": "62.55 \u00b1 18.27 mg/dL, P for trend = 0.02) and DHEA\u2010S levels (97.11 \u00b1 54.39 vs.",
+      "context_window": "ncreases in HDL\u2010C (60.04 \u00b1 16.21 vs. 60 \u00b1 17.37 vs. 62.55 \u00b1 18.27 mg/dL, P for trend = 0.02) and DHEA\u2010S levels (97.11 \u00b1 54.39 vs. 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2609",
+      "claim_type": "mean_sd",
+      "raw_text": "97.11 \u00b1 54.39",
+      "numeric_values": [
+        97.11,
+        54.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2609,
+      "sentence": "62.55 \u00b1 18.27 mg/dL, P for trend = 0.02) and DHEA\u2010S levels (97.11 \u00b1 54.39 vs.",
+      "context_window": "62.55 \u00b1 18.27 mg/dL, P for trend = 0.02) and DHEA\u2010S levels (97.11 \u00b1 54.39 vs. 103.39 \u00b1 56.75 vs. 106.83 \u00b1 60.56 \u03bcg/dL, P for trend =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2627",
+      "claim_type": "mean_sd",
+      "raw_text": "103.39 \u00b1 56.75",
+      "numeric_values": [
+        103.39,
+        56.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2627,
+      "sentence": "103.39 \u00b1 56.75 vs.",
+      "context_window": "L, P for trend = 0.02) and DHEA\u2010S levels (97.11 \u00b1 54.39 vs. 103.39 \u00b1 56.75 vs. 106.83 \u00b1 60.56 \u03bcg/dL, P for trend = 0.002). On the othe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2646",
+      "claim_type": "mean_sd",
+      "raw_text": "106.83 \u00b1 60.56",
+      "numeric_values": [
+        106.83,
+        60.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2646,
+      "sentence": "106.83 \u00b1 60.56 \u03bcg/dL, P for trend = 0.002).",
+      "context_window": "02) and DHEA\u2010S levels (97.11 \u00b1 54.39 vs. 103.39 \u00b1 56.75 vs. 106.83 \u00b1 60.56 \u03bcg/dL, P for trend = 0.002). On the other hand, the control",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2782",
+      "claim_type": "mean_sd",
+      "raw_text": "24.74 \u00b1 6.9",
+      "numeric_values": [
+        24.74,
+        6.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2782,
+      "sentence": "On the other hand, the control group exhibited a significant increase in handgrip strength (24.74 \u00b1 6.9 vs.",
+      "context_window": "roup exhibited a significant increase in handgrip strength (24.74 \u00b1 6.9 vs. 24.58 \u00b1 7.5 vs. 25.9 \u00b1 7.05 kg, P for trend = 0.002), s",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2798",
+      "claim_type": "mean_sd",
+      "raw_text": "24.58 \u00b1 7.5",
+      "numeric_values": [
+        24.58,
+        7.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2798,
+      "sentence": "24.58 \u00b1 7.5 vs.",
+      "context_window": "significant increase in handgrip strength (24.74 \u00b1 6.9 vs. 24.58 \u00b1 7.5 vs. 25.9 \u00b1 7.05 kg, P for trend = 0.002), serum leptin leve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2814",
+      "claim_type": "mean_sd",
+      "raw_text": "25.9 \u00b1 7.05",
+      "numeric_values": [
+        25.9,
+        7.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2814,
+      "sentence": "25.9 \u00b1 7.05 kg, P for trend = 0.002), serum leptin level (9118.88 \u00b1 5811.68 vs.",
+      "context_window": "rease in handgrip strength (24.74 \u00b1 6.9 vs. 24.58 \u00b1 7.5 vs. 25.9 \u00b1 7.05 kg, P for trend = 0.002), serum leptin level (9118.88 \u00b1 581",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-2821",
+      "claim_type": "unit_value",
+      "raw_text": "7.05 kg",
+      "numeric_values": [
+        7.05
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2821,
+      "sentence": "25.9 \u00b1 7.05 kg, P for trend = 0.002), serum leptin level (9118.88 \u00b1 5811.68 vs.",
+      "context_window": "n handgrip strength (24.74 \u00b1 6.9 vs. 24.58 \u00b1 7.5 vs. 25.9 \u00b1 7.05 kg, P for trend = 0.002), serum leptin level (9118.88 \u00b1 5811.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2872",
+      "claim_type": "mean_sd",
+      "raw_text": "9118.88 \u00b1 5811.68",
+      "numeric_values": [
+        9118.88,
+        5811.68
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2872,
+      "sentence": "25.9 \u00b1 7.05 kg, P for trend = 0.002), serum leptin level (9118.88 \u00b1 5811.68 vs.",
+      "context_window": ". 25.9 \u00b1 7.05 kg, P for trend = 0.002), serum leptin level (9118.88 \u00b1 5811.68 vs. 11508.97 \u00b1 7151.08 vs. 11220.80 \u00b1 7190.71 mg/dL, P for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2894",
+      "claim_type": "mean_sd",
+      "raw_text": "11508.97 \u00b1 7151.08",
+      "numeric_values": [
+        11508.97,
+        7151.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2894,
+      "sentence": "11508.97 \u00b1 7151.08 vs.",
+      "context_window": "r trend = 0.002), serum leptin level (9118.88 \u00b1 5811.68 vs. 11508.97 \u00b1 7151.08 vs. 11220.80 \u00b1 7190.71 mg/dL, P for trend = 0.007) levels a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-2917",
+      "claim_type": "mean_sd",
+      "raw_text": "11220.80 \u00b1 7190.71",
+      "numeric_values": [
+        11220.8,
+        7190.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2917,
+      "sentence": "11220.80 \u00b1 7190.71 mg/dL, P for trend = 0.007) levels and marginal increase of LDL\u2010C levels (110.92 \u00b1 22.31 vs.",
+      "context_window": "leptin level (9118.88 \u00b1 5811.68 vs. 11508.97 \u00b1 7151.08 vs. 11220.80 \u00b1 7190.71 mg/dL, P for trend = 0.007) levels and marginal increase of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-2928",
+      "claim_type": "unit_value",
+      "raw_text": "7190.71 mg/dL",
+      "numeric_values": [
+        7190.71
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 2928,
+      "sentence": "11220.80 \u00b1 7190.71 mg/dL, P for trend = 0.007) levels and marginal increase of LDL\u2010C levels (110.92 \u00b1 22.31 vs.",
+      "context_window": "el (9118.88 \u00b1 5811.68 vs. 11508.97 \u00b1 7151.08 vs. 11220.80 \u00b1 7190.71 mg/dL, P for trend = 0.007) levels and marginal increase of LDL\u2010C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-3010",
+      "claim_type": "mean_sd",
+      "raw_text": "110.92 \u00b1 22.31",
+      "numeric_values": [
+        110.92,
+        22.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3010,
+      "sentence": "11220.80 \u00b1 7190.71 mg/dL, P for trend = 0.007) levels and marginal increase of LDL\u2010C levels (110.92 \u00b1 22.31 vs.",
+      "context_window": "rend = 0.007) levels and marginal increase of LDL\u2010C levels (110.92 \u00b1 22.31 vs. 115.97 \u00b1 30.25 vs. 118.38 \u00b1 22.19, P for trend = 0.065)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-3029",
+      "claim_type": "mean_sd",
+      "raw_text": "115.97 \u00b1 30.25",
+      "numeric_values": [
+        115.97,
+        30.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3029,
+      "sentence": "115.97 \u00b1 30.25 vs.",
+      "context_window": "s and marginal increase of LDL\u2010C levels (110.92 \u00b1 22.31 vs. 115.97 \u00b1 30.25 vs. 118.38 \u00b1 22.19, P for trend = 0.065). Demographic char",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-msd-3048",
+      "claim_type": "mean_sd",
+      "raw_text": "118.38 \u00b1 22.19",
+      "numeric_values": [
+        118.38,
+        22.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3048,
+      "sentence": "118.38 \u00b1 22.19, P for trend = 0.065).",
+      "context_window": "ease of LDL\u2010C levels (110.92 \u00b1 22.31 vs. 115.97 \u00b1 30.25 vs. 118.38 \u00b1 22.19, P for trend = 0.065). Demographic characteristics of stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-3805",
+      "claim_type": "unit_value",
+      "raw_text": "3 month",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 3805,
+      "sentence": "Within\u2010group comparison in intervention group and placebo group during 3 month intervention period\n\nALT, alanine transaminase; BMI, body mass index; CCI, Charlson Co\u2010morbidity Index; CES\u2010D, Center for Epidemiological Studies Depression Scale; CRP, C\u2010reaction protein; DHEA\u2010S, dehydroepiandrosterone sulfate; Hb, haemoglobin; HDL, high\u2010density lipoprotein cholesterol; HOMA\u2010IR, homeostasis model assessment of insulin resistance; IPAQ, The International Physical Activity Questionnaire; LDL, low\u2010density lipoprotein cholesterol; MNA, Mini\u2010Nutritional Assessment; MoCA, Montreal Cognitive Assessment; RASM, relative skeletal muscle index; WBC, white blood cell.",
+      "context_window": "p comparison in intervention group and placebo group during 3 month intervention period ALT, alanine transaminase; BMI, body m",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-4768",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 6.88 to 40.79",
+      "numeric_values": [
+        6.88,
+        40.79
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4768,
+      "sentence": "Notably, the 6\u2010min walking distance improved significantly (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), indicating enhanced physical endurance.",
+      "context_window": "he 6\u2010min walking distance improved significantly (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), indicating enhanced physical endurance. The fi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-4791",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4791,
+      "sentence": "Notably, the 6\u2010min walking distance improved significantly (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), indicating enhanced physical endurance.",
+      "context_window": "ce improved significantly (\u03b2 = 0.71, 95% CI: 6.88 to 40.79, P = 0.006), indicating enhanced physical endurance. The five\u2010time sit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-4920",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.59 to -0.15",
+      "numeric_values": [
+        -1.59,
+        -0.15
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4920,
+      "sentence": "The five\u2010time sit\u2010to\u2010stand test showed a significant improvement (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), reflecting an enhanced physical performance.",
+      "context_window": "\u2010to\u2010stand test showed a significant improvement (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), reflecting an enhanced physical performance. I",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-4944",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4944,
+      "sentence": "The five\u2010time sit\u2010to\u2010stand test showed a significant improvement (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), reflecting an enhanced physical performance.",
+      "context_window": "significant improvement (\u03b2 = -0.87, 95% CI: -1.59 to -0.15, P = 0.017), reflecting an enhanced physical performance. In addition,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-5089",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.20 to 1.71",
+      "numeric_values": [
+        0.2,
+        1.71
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5089,
+      "sentence": "In addition, the MNA score increased significantly in the intervention group (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), indicating improved nutritional status.",
+      "context_window": "ncreased significantly in the intervention group (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), indicating improved nutritional status. Blood",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-5111",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5111,
+      "sentence": "In addition, the MNA score increased significantly in the intervention group (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), indicating improved nutritional status.",
+      "context_window": "in the intervention group (\u03b2 = 0.96, 95% CI: 0.20 to 1.71, P = 0.013), indicating improved nutritional status. Blood laboratory",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-5260",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -27.83 to -2.20",
+      "numeric_values": [
+        -27.83,
+        -2.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5260,
+      "sentence": "Blood laboratory test results showed a significant reduction in serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022) and LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020) levels, suggesting an improved lipid profile and metabolism.",
+      "context_window": "a significant reduction in serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022) and LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-5285",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5285,
+      "sentence": "Blood laboratory test results showed a significant reduction in serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022) and LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020) levels, suggesting an improved lipid profile and metabolism.",
+      "context_window": "n serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022) and LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-5318",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -16.98 to -1.47",
+      "numeric_values": [
+        -16.98,
+        -1.47
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5318,
+      "sentence": "Blood laboratory test results showed a significant reduction in serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022) and LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020) levels, suggesting an improved lipid profile and metabolism.",
+      "context_window": ", 95% CI: -27.83 to -2.20, P = 0.022) and LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020) levels, suggesting an improved lipid profile an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-5343",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5343,
+      "sentence": "Blood laboratory test results showed a significant reduction in serum triglycerides (\u03b2 = -15.01, 95% CI: -27.83 to -2.20, P = 0.022) and LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020) levels, suggesting an improved lipid profile and metabolism.",
+      "context_window": ", P = 0.022) and LDL\u2010C (\u03b2 = -9.23, 95% CI: -16.98 to -1.47, P = 0.020) levels, suggesting an improved lipid profile and metabolis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-ci-5505",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.45 to 19.51",
+      "numeric_values": [
+        0.45,
+        19.51
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5505,
+      "sentence": "Moreover, DHEA\u2010S levels were significantly increased in the intervention group (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04).",
+      "context_window": "ignificantly increased in the intervention group (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04). These findings indicate the significant positiv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-p-5528",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5528,
+      "sentence": "Moreover, DHEA\u2010S levels were significantly increased in the intervention group (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04).",
+      "context_window": "in the intervention group (\u03b2 = 9.98, 95% CI: 0.45 to 19.51, P = 0.04). These findings indicate the significant positive effects",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-5824",
+      "claim_type": "unit_value",
+      "raw_text": "3 month",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 5824,
+      "sentence": "Between\u2010group comparison of differences during 3 month intervention period\n\nALT, alanine transaminase; BMI, body mass index; CCI, Charlson Co\u2010morbidity Index; CES\u2010D, Center for Epidemiological Studies Depression Scale; CRP, C\u2010reaction protein; DHEA\u2010S, dehydroepiandrosterone sulfate; Hb, haemoglobin; HDL, high\u2010density lipoprotein cholesterol; HOMA\u2010IR, homeostasis model assessment of insulin resistance; IPAQ, The International Physical Activity Questionnaire; LDL, low\u2010density lipoprotein cholesterol; MNA, Mini\u2010Nutritional Assessment; MoCA, Montreal Cognitive Assessment; RASM, relative skeletal muscle index; WBC, white blood cell.",
+      "context_window": "tly change. Between\u2010group comparison of differences during 3 month intervention period ALT, alanine transaminase; BMI, body m",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-355",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 355,
+      "sentence": "This randomized controlled trial investigated the effects of protein\u2010enriched soup supplementation plus once weekly exercise on community\u2010dwelling middle\u2010aged and older individuals with inadequate dietary protein intake (1.0 g/kg/day), revealing significant improvements in muscle function, nutrition status, lipid metabolism, and DHEA\u2010S levels following 12 weeks of intervention.",
+      "context_window": "ition status, lipid metabolism, and DHEA\u2010S levels following 12 weeks of intervention. Several studies have demonstrated a synerg",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-1117",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1117,
+      "sentence": "32 Besides, the Vitality, Independence, and Vigour 2 study (VIVE2), examining multi\u2010nutritional supplementation (whey protein 20 g and Vitamin D 800 IU) alongside exercise training (3 times/week) for 6 months in mobility\u2010limited older adults revealed no further improvement with added nutritional supplementation in gait speed.",
+      "context_window": "in D 800 IU) alongside exercise training (3 times/week) for 6 months in mobility\u2010limited older adults revealed no further improv",
+      "claim_role": "population",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-pct-4039",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4039,
+      "sentence": "Our study showed that middle\u2010aged and elderly individuals who previously had a suboptimal protein intake exhibited a notable 11% decrease in triglycerides and a 4% rise in HDL\u2010cholesterol when enhanced their diet with protein\u2010enriched soup for 3 months.",
+      "context_window": "viously had a suboptimal protein intake exhibited a notable 11% decrease in triglycerides and a 4% rise in HDL\u2010cholesterol",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-pct-4075",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4075,
+      "sentence": "Our study showed that middle\u2010aged and elderly individuals who previously had a suboptimal protein intake exhibited a notable 11% decrease in triglycerides and a 4% rise in HDL\u2010cholesterol when enhanced their diet with protein\u2010enriched soup for 3 months.",
+      "context_window": "ake exhibited a notable 11% decrease in triglycerides and a 4% rise in HDL\u2010cholesterol when enhanced their diet with prote",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-4158",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 4158,
+      "sentence": "Our study showed that middle\u2010aged and elderly individuals who previously had a suboptimal protein intake exhibited a notable 11% decrease in triglycerides and a 4% rise in HDL\u2010cholesterol when enhanced their diet with protein\u2010enriched soup for 3 months.",
+      "context_window": "rol when enhanced their diet with protein\u2010enriched soup for 3 months. In a meta\u2010analysis encompassing 22 studies, it was discern",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-pct-5490",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5490,
+      "sentence": "In our research, we observed that DHEA, which is converted into active androgens or estrogens 39 and experiences a decline with age, reaches only 10-20% of its original levels in individuals in their 70s and 80s.",
+      "context_window": "gens 39 and experiences a decline with age, reaches only 10-20% of its original levels in individuals in their 70s and 80s.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11294020_protein_enriched_soup_and_weekly_exercise_improve_muscle_hea-u-8590",
+      "claim_type": "unit_value",
+      "raw_text": "3 month",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "month",
+      "source_section": "discussion",
+      "source_offset": 8590,
+      "sentence": "Notably, the improvement in handgrip strength in the control group and MNA in intervention group were documented over the course of the 3 month study.",
+      "context_window": "n intervention group were documented over the course of the 3 month study. These observations may be attributed to the health e",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

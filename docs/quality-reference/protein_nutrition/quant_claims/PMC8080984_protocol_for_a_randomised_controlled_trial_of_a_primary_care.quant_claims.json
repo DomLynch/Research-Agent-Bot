@@ -1,0 +1,642 @@
+{
+  "paper_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care",
+  "doi": "10.12688/hrbopenres.13188.2",
+  "extracted_at": "2026-05-05T22:35:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 31,
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-616",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 616,
+      "sentence": "The prevalence of frailty is estimated at 11% in adults aged \u226550 years and increases to some 50% in those >80 years of age 4 , 5 .",
+      "context_window": "total population. The prevalence of frailty is estimated at 11% in adults aged \u226550 years and increases to some 50% in those",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-u-636",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 636,
+      "sentence": "The prevalence of frailty is estimated at 11% in adults aged \u226550 years and increases to some 50% in those >80 years of age 4 , 5 .",
+      "context_window": "e prevalence of frailty is estimated at 11% in adults aged \u226550 years and increases to some 50% in those >80 years of age 4 , 5 .",
+      "claim_role": "protocol",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-667",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 667,
+      "sentence": "The prevalence of frailty is estimated at 11% in adults aged \u226550 years and increases to some 50% in those >80 years of age 4 , 5 .",
+      "context_window": "mated at 11% in adults aged \u226550 years and increases to some 50% in those >80 years of age 4 , 5 . General Practitioners (G",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-u-681",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 681,
+      "sentence": "The prevalence of frailty is estimated at 11% in adults aged \u226550 years and increases to some 50% in those >80 years of age 4 , 5 .",
+      "context_window": "n adults aged \u226550 years and increases to some 50% in those >80 years of age 4 , 5 . General Practitioners (GPs) are in a unique",
+      "claim_role": "protocol",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-u-970",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 970,
+      "sentence": "Since 2017 the new General Medical Services (GMS) contract in England mandates that all primary care practices use an appropriate tool to identify patients aged \u226565 years who are living with moderate or severe frailty.",
+      "context_window": "ractices use an appropriate tool to identify patients aged \u226565 years who are living with moderate or severe frailty. GPs are als",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-u-3038",
+      "claim_type": "unit_value",
+      "raw_text": "34 kg",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 3038,
+      "sentence": "Limitations include reduced accuracy for people with BMI > 34 kg/m 2 , though the technology remains acceptable for monitoring changes in body composition over time.",
+      "context_window": "Limitations include reduced accuracy for people with BMI > 34 kg/m 2 , though the technology remains acceptable for monitori",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-4948",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4948,
+      "sentence": "Selected results include:\n\nA total of 94 of 107 eligible people (88%) participated (average age 77, 59 females (63%)).",
+      "context_window": "ted results include: A total of 94 of 107 eligible people (88%) participated (average age 77, 59 females (63%)). 95% of fe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-4995",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4995,
+      "sentence": "Selected results include:\n\nA total of 94 of 107 eligible people (88%) participated (average age 77, 59 females (63%)).",
+      "context_window": "ible people (88%) participated (average age 77, 59 females (63%)). 95% of females and 78% of males enrolled. Only 15% had p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5002",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5002,
+      "sentence": "95% of females and 78% of males enrolled.",
+      "context_window": "ople (88%) participated (average age 77, 59 females (63%)). 95% of females and 78% of males enrolled. Only 15% had previous",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5021",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5021,
+      "sentence": "95% of females and 78% of males enrolled.",
+      "context_window": "ated (average age 77, 59 females (63%)). 95% of females and 78% of males enrolled. Only 15% had previously considered resis",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5049",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5049,
+      "sentence": "Only 15% had previously considered resistance exercises.",
+      "context_window": "ales (63%)). 95% of females and 78% of males enrolled. Only 15% had previously considered resistance exercises. Participan",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5190",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5190,
+      "sentence": "Overall, 32% described exercises as \u2018very easy\u2019, 55% \u2018somewhat easy\u2019, 7% \u2018neither easy nor hard\u2019, 6% \u2018somewhat hard and 0% \u2018very hard\u2019.",
+      "context_window": "ises both easy to follow and generally easy to do. Overall, 32% described exercises as \u2018very easy\u2019, 55% \u2018somewhat easy\u2019, 7%",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5230",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5230,
+      "sentence": "Overall, 32% described exercises as \u2018very easy\u2019, 55% \u2018somewhat easy\u2019, 7% \u2018neither easy nor hard\u2019, 6% \u2018somewhat hard and 0% \u2018very hard\u2019.",
+      "context_window": "asy to do. Overall, 32% described exercises as \u2018very easy\u2019, 55% \u2018somewhat easy\u2019, 7% \u2018neither easy nor hard\u2019, 6% \u2018somewhat h",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5251",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5251,
+      "sentence": "Overall, 32% described exercises as \u2018very easy\u2019, 55% \u2018somewhat easy\u2019, 7% \u2018neither easy nor hard\u2019, 6% \u2018somewhat hard and 0% \u2018very hard\u2019.",
+      "context_window": "2% described exercises as \u2018very easy\u2019, 55% \u2018somewhat easy\u2019, 7% \u2018neither easy nor hard\u2019, 6% \u2018somewhat hard and 0% \u2018very har",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5279",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5279,
+      "sentence": "Overall, 32% described exercises as \u2018very easy\u2019, 55% \u2018somewhat easy\u2019, 7% \u2018neither easy nor hard\u2019, 6% \u2018somewhat hard and 0% \u2018very hard\u2019.",
+      "context_window": "ery easy\u2019, 55% \u2018somewhat easy\u2019, 7% \u2018neither easy nor hard\u2019, 6% \u2018somewhat hard and 0% \u2018very hard\u2019. At one month, 66% of pa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5301",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5301,
+      "sentence": "Overall, 32% described exercises as \u2018very easy\u2019, 55% \u2018somewhat easy\u2019, 7% \u2018neither easy nor hard\u2019, 6% \u2018somewhat hard and 0% \u2018very hard\u2019.",
+      "context_window": "at easy\u2019, 7% \u2018neither easy nor hard\u2019, 6% \u2018somewhat hard and 0% \u2018very hard\u2019. At one month, 66% of participants called were",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5332",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5332,
+      "sentence": "At one month, 66% of participants called were exercising regularly (76% of females, 50% of males).",
+      "context_window": "hard\u2019, 6% \u2018somewhat hard and 0% \u2018very hard\u2019. At one month, 66% of participants called were exercising regularly (76% of fe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5386",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5386,
+      "sentence": "At one month, 66% of participants called were exercising regularly (76% of females, 50% of males).",
+      "context_window": "onth, 66% of participants called were exercising regularly (76% of females, 50% of males). At two months, compliance among",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5402",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5402,
+      "sentence": "At one month, 66% of participants called were exercising regularly (76% of females, 50% of males).",
+      "context_window": "ticipants called were exercising regularly (76% of females, 50% of males). At two months, compliance among those who had no",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5497",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5497,
+      "sentence": "At two months, compliance among those who had not been called at one month was: 65% (67% of females, 62% of males).",
+      "context_window": "iance among those who had not been called at one month was: 65% (67% of females, 62% of males). However, compliance among t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5502",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5502,
+      "sentence": "At two months, compliance among those who had not been called at one month was: 65% (67% of females, 62% of males).",
+      "context_window": "among those who had not been called at one month was: 65% (67% of females, 62% of males). However, compliance among those",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5518",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5518,
+      "sentence": "At two months, compliance among those who had not been called at one month was: 65% (67% of females, 62% of males).",
+      "context_window": "had not been called at one month was: 65% (67% of females, 62% of males). However, compliance among those previously calle",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5595",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5595,
+      "sentence": "However, compliance among those previously called was higher: 78% (88% of females, 63% of males).",
+      "context_window": "wever, compliance among those previously called was higher: 78% (88% of females, 63% of males). 64% of those who were not d",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5600",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5600,
+      "sentence": "However, compliance among those previously called was higher: 78% (88% of females, 63% of males).",
+      "context_window": ", compliance among those previously called was higher: 78% (88% of females, 63% of males). 64% of those who were not doing",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5616",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5616,
+      "sentence": "However, compliance among those previously called was higher: 78% (88% of females, 63% of males).",
+      "context_window": "ng those previously called was higher: 78% (88% of females, 63% of males). 64% of those who were not doing exercises at one",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5631",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5631,
+      "sentence": "64% of those who were not doing exercises at one month had taken them up following the single phone call (67% of females, 63% of males).",
+      "context_window": "usly called was higher: 78% (88% of females, 63% of males). 64% of those who were not doing exercises at one month had take",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5737",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5737,
+      "sentence": "64% of those who were not doing exercises at one month had taken them up following the single phone call (67% of females, 63% of males).",
+      "context_window": "ne month had taken them up following the single phone call (67% of females, 63% of males). Many described how the home-bas",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-5753",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5753,
+      "sentence": "64% of those who were not doing exercises at one month had taken them up following the single phone call (67% of females, 63% of males).",
+      "context_window": "en them up following the single phone call (67% of females, 63% of males). Many described how the home-based exercises hel",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-6053",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6053,
+      "sentence": "14% felt \u2018much better\u2019, 52% \u2018slightly better\u2019, 34% \u2018about the same\u2019, 0% \u2018slightly worse\u2019, and 0% \u2018much worse\u2019\n\nEach of the eight areas of focus of the Bowen feasibility model have been addressed and satisfy overall feasibility.",
+      "context_window": "ult of doing the exercises and none reported feeling worse. 14% felt \u2018much better\u2019, 52% \u2018slightly better\u2019, 34% \u2018about the s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-6077",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6077,
+      "sentence": "14% felt \u2018much better\u2019, 52% \u2018slightly better\u2019, 34% \u2018about the same\u2019, 0% \u2018slightly worse\u2019, and 0% \u2018much worse\u2019\n\nEach of the eight areas of focus of the Bowen feasibility model have been addressed and satisfy overall feasibility.",
+      "context_window": "es and none reported feeling worse. 14% felt \u2018much better\u2019, 52% \u2018slightly better\u2019, 34% \u2018about the same\u2019, 0% \u2018slightly worse",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-6100",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6100,
+      "sentence": "14% felt \u2018much better\u2019, 52% \u2018slightly better\u2019, 34% \u2018about the same\u2019, 0% \u2018slightly worse\u2019, and 0% \u2018much worse\u2019\n\nEach of the eight areas of focus of the Bowen feasibility model have been addressed and satisfy overall feasibility.",
+      "context_window": "eling worse. 14% felt \u2018much better\u2019, 52% \u2018slightly better\u2019, 34% \u2018about the same\u2019, 0% \u2018slightly worse\u2019, and 0% \u2018much worse\u2019",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-6122",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6122,
+      "sentence": "14% felt \u2018much better\u2019, 52% \u2018slightly better\u2019, 34% \u2018about the same\u2019, 0% \u2018slightly worse\u2019, and 0% \u2018much worse\u2019\n\nEach of the eight areas of focus of the Bowen feasibility model have been addressed and satisfy overall feasibility.",
+      "context_window": "\u2018much better\u2019, 52% \u2018slightly better\u2019, 34% \u2018about the same\u2019, 0% \u2018slightly worse\u2019, and 0% \u2018much worse\u2019 Each of the eight ar",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-6147",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6147,
+      "sentence": "14% felt \u2018much better\u2019, 52% \u2018slightly better\u2019, 34% \u2018about the same\u2019, 0% \u2018slightly worse\u2019, and 0% \u2018much worse\u2019\n\nEach of the eight areas of focus of the Bowen feasibility model have been addressed and satisfy overall feasibility.",
+      "context_window": "tly better\u2019, 34% \u2018about the same\u2019, 0% \u2018slightly worse\u2019, and 0% \u2018much worse\u2019 Each of the eight areas of focus of the Bowen",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-8665",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 8665,
+      "sentence": "71% of studies measuring impact on frailty status demonstrated significant improvement.",
+      "context_window": "sses, falls, dependency, disability and improved mortality. 71% of studies measuring impact on frailty status demonstrated",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8080984_protocol_for_a_randomised_controlled_trial_of_a_primary_care-pct-8753",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 8753,
+      "sentence": "69% of studies measuring impact on singular frailty indicators or other criteria demonstrated significant improvement.",
+      "context_window": "act on frailty status demonstrated significant improvement. 69% of studies measuring impact on singular frailty indicators",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

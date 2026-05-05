@@ -1,0 +1,102 @@
+{
+  "paper_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl",
+  "doi": "10.1186/s12970-018-0215-1",
+  "extracted_at": "2026-05-05T22:35:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-u-7010",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 7010,
+      "sentence": "More recently, Macnaughton et al. [ 22 ] employed a randomized, double-blind, within-subject design whereby resistance-trained men participated in two trials separated by ~ 2 weeks.",
+      "context_window": "tance-trained men participated in two trials separated by ~ 2 weeks. During one trial subjects received 20 g of whey protein im",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-pct-7328",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7328,
+      "sentence": "Results showed that the myofibrillar fractional synthetic rate was ~ 20% higher from consumption of the 40 g compared to the 20 g condition.",
+      "context_window": "howed that the myofibrillar fractional synthetic rate was ~ 20% higher from consumption of the 40 g compared to the 20 g co",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-pct-7902",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7902,
+      "sentence": "It should be noted that findings by McNaughton et al. [ 22 ] are somewhat in contrast to previous work by Moore et al. showing no statistically significant differences in MPS between provision of a 20 g and 40 g dose of whey in young men following a leg extension bout, although the higher dose produced an 11% greater absolute increase [ 23 ].",
+      "context_window": "a leg extension bout, although the higher dose produced an 11% greater absolute increase [ 23 ]. Whether differences betwe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-u-8491",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "introduction",
+      "source_offset": 8491,
+      "sentence": "Kim et al. [ 24 ] endeavored to investigate this topic by provision of either 40 or 70 g of beef protein consumed as part of a mixed meal on two distinct occasions separated by a ~ 1 week washout period.",
+      "context_window": "of a mixed meal on two distinct occasions separated by a ~ 1 week washout period. Results showed that the higher protein inta",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5828430_how_much_protein_can_the_body_use_in_a_single_meal_for_muscl-pct-2228",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 2228,
+      "sentence": "A recent meta-analysis on protein supplementation involving resistance trainees reported an upper 95% confidence interval (CI) of 2.2 g/kg/day [ 6 ].",
+      "context_window": "lementation involving resistance trainees reported an upper 95% confidence interval (CI) of 2.2 g/kg/day [ 6 ]. Bandegan et",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

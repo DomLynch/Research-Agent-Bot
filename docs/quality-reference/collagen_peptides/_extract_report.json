@@ -1,0 +1,2179 @@
+{
+  "topic": "collagen_peptides",
+  "retrieval_mode": "calibrated",
+  "n_queries": 5,
+  "n_unique_candidates": 278,
+  "n_selected_for_fetch": 278,
+  "n_pmcid_resolved": 80,
+  "n_extracted": 70,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10015953",
+    "PMC10099820",
+    "PMC10102402",
+    "PMC10158542",
+    "PMC10217007",
+    "PMC10323738",
+    "PMC10341422",
+    "PMC10346300",
+    "PMC10411303",
+    "PMC10773595",
+    "PMC10918634",
+    "PMC10935399",
+    "PMC10999617",
+    "PMC11051156",
+    "PMC11282471",
+    "PMC11303056",
+    "PMC1132053",
+    "PMC11351696",
+    "PMC11381813",
+    "PMC11393225",
+    "PMC11595708",
+    "PMC11626298",
+    "PMC11685464",
+    "PMC1183981",
+    "PMC1184193",
+    "PMC11842160",
+    "PMC11943682",
+    "PMC12231941",
+    "PMC12348347",
+    "PMC12348636",
+    "PMC12420642",
+    "PMC12428112",
+    "PMC12520035",
+    "PMC12525885",
+    "PMC12661388",
+    "PMC12739960",
+    "PMC12846929",
+    "PMC12936244",
+    "PMC2223810",
+    "PMC2896882",
+    "PMC3299808",
+    "PMC4013666",
+    "PMC4113802",
+    "PMC4430332",
+    "PMC4685482",
+    "PMC4745978",
+    "PMC5183725",
+    "PMC5406074",
+    "PMC5983275",
+    "PMC6356409",
+    "PMC6472052",
+    "PMC6566347",
+    "PMC6566836",
+    "PMC6891674",
+    "PMC7041297",
+    "PMC7041324",
+    "PMC7049534",
+    "PMC7070905",
+    "PMC7074124",
+    "PMC7271718",
+    "PMC7328867",
+    "PMC7361993",
+    "PMC7699565",
+    "PMC7818267",
+    "PMC7915677",
+    "PMC8000627",
+    "PMC8037141",
+    "PMC8125453",
+    "PMC8251659",
+    "PMC8441532",
+    "PMC8508667",
+    "PMC8534417",
+    "PMC9077692",
+    "PMC9311920",
+    "PMC9469746",
+    "PMC9686691",
+    "PMC9689929",
+    "PMC9865037",
+    "PMC9926638",
+    "PMC9998191"
+  ],
+  "active_paper_ids": [
+    "PMC10015953_randomized_double_blind_four_arm_pilot_study_on_the_effects_",
+    "PMC10099820_predictors_for_hemostatic_thrombin_gelatin_matrix_usage_in_s",
+    "PMC10158542_dietary_collagen_peptides_alleviate_exercise_induced_muscle_",
+    "PMC10217007_improving_the_sustainability_of_processing_by_products_extra",
+    "PMC10323738_exploring_dog_antler_chews_as_a_novel_source_of_collagen_sup",
+    "PMC10341422_study_of_elastin_hydrolyzed_collagen_and_collagen_like_produ",
+    "PMC10346300_chitosan_gelatin_and_collagen_hydrogels_for_bone_regeneratio",
+    "PMC10411303_collagen_peptides_supplementation_improves_function_pain_and",
+    "PMC10773595_exploring_the_impact_of_hydrolyzed_collagen_oral_supplementa",
+    "PMC10918634_speciescan_semi_automated_taxonomic_identification_of_bone_c",
+    "PMC10935399_subcutaneous_application_of_a_gelatin_hyaluronic_acid_hydrog",
+    "PMC10999617_reduction_in_systemic_muscle_stress_markers_after_exercise_i",
+    "PMC11051156_a_randomized_controlled_trial_comparing_collagen_matrix_to_h",
+    "PMC11282471_the_collagen_synthesis_response_to_an_acute_bout_of_resistan",
+    "PMC11303056_anti_inflammatory_and_antioxidant_properties_of_a_new_mixtur",
+    "PMC11351696_marine_antioxidants_from_marine_collagen_and_collagen_peptid",
+    "PMC11381813_hydrolyzed_collagen_exploring_its_applications_in_the_food_a",
+    "PMC11393225_restoration_of_the_ultrastructural_integrity_of_the_dermal_c",
+    "PMC11595708_clinical_efficacy_and_safety_of_ultrasound_guided_injection_",
+    "PMC11626298_the_evidence_from_in_vitro_primary_fibroblasts_and_a_randomi",
+    "PMC11685464_toward_mechanistic_understanding_of_wettability_alteration_i",
+    "PMC11943682_total_thyroidectomy_with_harmonic_scalpel_combined_with_gela",
+    "PMC12231941_efficacy_of_hydrolyzed_collagen_injections_compared_to_plate",
+    "PMC12348347_biodegradable_nr_latex_films_with_lignocellulosic_and_collag",
+    "PMC12348636_progress_in_research_on_animal_collagen_peptides_preparation",
+    "PMC12420642_the_role_of_pre_soaked_bone_cement_gelatin_sponge_strips_in_",
+    "PMC12428112_studies_on_the_structure_and_properties_of_ultrasound_assist",
+    "PMC12520035_the_effects_of_ingesting_a_single_bolus_of_hydrolyzed_collag",
+    "PMC12525885_the_fish_collagen_supplementation_and_proteomic_features_in_",
+    "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin",
+    "PMC12739960_collagen_supplementation_and_regenerative_health_advances_in",
+    "PMC12846929_comparative_effects_of_mkare_eggshell_membrane_and_hydrolyze",
+    "PMC12936244_immune_modulatory_effects_of_bioactive_collagen_peptides_imp",
+    "PMC2223810_optical_rotation_and_helical_polypeptide_chain_configuration",
+    "PMC2896882_effects_of_sizes_and_conformations_of_fish_scale_collagen_pe",
+    "PMC4013666_preparation_and_characterization_of_gelatin_nanofibers_conta",
+    "PMC4113802_type_ii_collagen_and_gelatin_from_silvertip_shark_carcharhin",
+    "PMC4685482_dietary_supplementation_with_specific_collagen_peptides_has_",
+    "PMC4745978_skin_antiageing_and_systemic_redox_effects_of_supplementatio",
+    "PMC5406074_350_560_m_gelatin_sponge_particles_combined_with_transcathet",
+    "PMC5983275_effect_of_fish_collagen_hydrolysates_on_type_i_collagen_mrna",
+    "PMC6356409_oral_supplementation_of_specific_collagen_peptides_combined_",
+    "PMC6472052_anti_oxidative_and_anti_aging_activities_of_porcine_by_produ",
+    "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post",
+    "PMC6566836_significant_amounts_of_functional_collagen_peptides_can_be_i",
+    "PMC6891674_hydrolyzed_collagen_sources_and_applications",
+    "PMC7041297_intraoperative_injection_of_absorbable_gelatin_sponge_ags_mi",
+    "PMC7041324_a_dermonutrient_containing_special_collagen_peptides_improve",
+    "PMC7070905_collagen_hydrolysates_for_skin_protection_oral_administratio",
+    "PMC7074124_characterization_and_antioxidant_activity_of_collagen_gelati",
+    "PMC7271718_beneficial_effects_of_food_supplements_based_on_hydrolyzed_c",
+    "PMC7328867_effect_of_an_oral_nutrition_supplement_containing_collagen_p",
+    "PMC7361993_mueller_matrix_analysis_of_collagen_and_gelatin_containing_s",
+    "PMC7699565_redox_potential_and_antioxidant_capacity_of_bovine_bone_coll",
+    "PMC7818267_quality_attributes_of_partially_hydrolyzed_collagen_in_a_liq",
+    "PMC7915677_the_influence_of_specific_bioactive_collagen_peptides_on_kne",
+    "PMC8000627_cosmetic_biomedical_and_pharmaceutical_applications_of_fish_",
+    "PMC8037141_collagen_hydrolysate_prepared_from_chicken_by_product_as_a_f",
+    "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod",
+    "PMC8251659_a_collagen_hydrolysate_milk_protein_blend_stimulates_muscle_",
+    "PMC8441532_specific_bioactive_collagen_peptides_in_osteopenia_and_osteo",
+    "PMC8508667_proteoglycan_combined_with_hyaluronic_acid_and_hydrolyzed_co",
+    "PMC8534417_development_of_hydrolysis_and_defatting_processes_for_produc",
+    "PMC9077692_a_rapid_and_simple_uplc_ms_ms_method_using_collagen_marker_p",
+    "PMC9311920_gelatin_methacryloyl_hydrogels_for_musculoskeletal_tissue_re",
+    "PMC9686691_effects_of_enzymatic_and_ultrasound_assisted_extraction_on_p",
+    "PMC9689929_effects_of_chitosan_collagen_peptides_cinnamon_bark_essentia",
+    "PMC9865037_isolation_and_characterization_of_collagen_and_collagen_pept",
+    "PMC9926638_gelatin_methacryloyl_gelma_loaded_with_concentrated_hypoxic_",
+    "PMC9998191_the_effect_of_gelatin_coating_and_sonication_on_the_quality_"
+  ],
+  "failures": [
+    {
+      "title": "Low-molecular-weight collagen peptides supplement promotes a healthy skin: A ran",
+      "doi": "10.1111/jocd.16026",
+      "pmid": "37822045",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Impact of Oral Collagen Supplementation on Joint Function, Muscle Recovery, ",
+      "doi": "10.12775/jehs.2024.67.55035",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of hydrolyzed collagen supplementation on skin aging: a systematic revie",
+      "doi": "10.1111/ijd.15518",
+      "pmid": "33742704",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen supplementation for skin health: A mechanistic systematic review.",
+      "doi": "10.1111/jocd.13435",
+      "pmid": "32436266",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral intake of specific bioactive collagen peptides reduces skin wrinkles and in",
+      "doi": "10.1159/000355523",
+      "pmid": "24401291",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral supplementation of specific collagen peptides has beneficial effects on hum",
+      "doi": "10.1159/000351376",
+      "pmid": "23949208",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hydrolyzed collagen supplementation prior to resistance exercise augments collag",
+      "doi": "10.1152/ajpendo.00252.2024",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Supplementation of hydrolyzed collagen to the aging process of the skin: A revie",
+      "doi": "10.15562/ism.v15i1.1969",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of a Food Supplement with Collagen Hydrolysate and Micronutrients on ",
+      "doi": "10.16966/2576-2826.158",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen peptides combined with type II in joint pain of the elderly",
+      "doi": "10.32749/nucleodoconhecimento.com.br/nutrition/collagen-peptides",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral collagen supplementation for skin aging: A fad or the future?",
+      "doi": "10.1111/jocd.13096",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen peptides promote photoaging skin cell repair by activating the TGF-\u03b2/Sm",
+      "doi": "10.1039/c9fo00610a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen Peptides and Cellular Aging",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hydrolyzed Collagen Formulation vs Placebo in Knee Osteoarthritis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "MyNOURISH: Hydrolysed Collagen Supplementation in Older Adults With Fragility Fr",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of Oral Collagen Peptides on Skin Barrier Function in Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Characteristics of candies made from Catfish ( Pangasius sp.) skin collagen, gel",
+      "doi": "10.1051/bioconf/202622102006",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ACE inhibitory and DPP-IV inhibitory activity of collagen peptides derived from ",
+      "doi": "10.1186/s42825-026-00248-7",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Potential Impact of Collagen Supplementation in Healthy Aging and Longevity:",
+      "doi": "10.47363/jone/2026(5)142",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral Administration of Specific Bioactive Collagen Peptides in the Treatment of ",
+      "doi": "10.1159/000551215",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen Supplementation and Bone Health: A Narrative Review.",
+      "doi": "10.36740/wlek/218222",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "CHARACTERISTICS OF COLLAGEN HYDROLYSATE FROM PANGASIUS (<i>Pangasius</i> sp.) SK",
+      "doi": "10.24319/jtpk.17.151-161",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Collagen Supplementation in Bone Metabolism and Structure: A Scoping",
+      "doi": "10.1097/jsm.0000000000001442",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Hydrolyzed Collagen\u2010Enriched Diet on Aquaponic Tilapia ( Oreochrom",
+      "doi": "10.1155/are/5566681",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Effects of Two Oral Bioactive Collagen Peptides On Skin Properties and ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Collagen Supplementation on Tendinopathy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Comprehensive Analysis of Hydrolyzed Collagen Supplementation Effects on Skin ",
+      "doi": "10.70749/ijbr.v3i5.1601",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Biomimicry of Bone Architecture Through Collagen/Gelatin Hydrogel Based Scaffold",
+      "doi": "10.18502/aanbt.v6i1.18263",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of sausage products with collagen hydrolysate and cranberry for elder",
+      "doi": "10.15587/1729-4061.2025.341942",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Collagen Supplementation in Improving Skin Quality and Joint Functio",
+      "doi": "10.12775/jehs.2025.80.58371",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a Ready-to-Drink Hydrolyzed Collagen from Sea Bass Skin on Skin Healt",
+      "doi": "10.3390/sci7040134",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Oral Intake of Specific Bovine-Derived Bioactive Collagen Peptides Has a Sti",
+      "doi": "10.3390/cosmetics12020079",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Complex of Collagen Peptides and Glycosaminoglycans: Prevention and Treatment of",
+      "doi": "10.1134/s2079086424600449",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Analysis of Collagen Supplementation Forms and Their Effects on Mult",
+      "doi": "10.12775/jehs.2024.65.55474",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Assessment of Anti-aging Efficacy of Marine Collagen Peptides",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Combined Whey Protein and Collagen Supplementation in Resistance-Trained Men",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral Supplementation With Active Collagen Peptides and Skin Health Improvement",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Rehabilitation and Supplementation With Hydrolyzed Collagen vs. Whey ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hydrolyzed Collagen and Undenatured Collagen Type II in OA Knee",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of the Effect of a Food Supplement Based on Hydrolyzed Collagen on Jo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Collagen Peptides, in Combination With Resistance Training, on Body Co",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Repairing the Defect of Intervertebral Disc With Autologous BMSC and Gelatin Spo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Collagen Peptides on Skin Health: A Clinical Trial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Shaping the mechanical properties of a gelatin hydrogel interface via amination",
+      "doi": "10.1101/2024.10.14.618299",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Hydrolyzed Collagen in Combating Skin Aging: A Literature Review",
+      "doi": "10.12775/qs.2024.36.56552",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Oral Collagen Supplementation on Skin Aging",
+      "doi": "10.12775/qs.2024.20.53977",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Using an aqueous solution of hydrolyzed collagen in phosphate buffer (drug Compo",
+      "doi": "10.29296/25877305-2024-10-13",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "influence of available oral collagen supplementation on the function of joints a",
+      "doi": "10.12775/jehs.2024.61.014",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Jumping Exercise Combined With Collagen Supplementation Preserves Bone Mineral D",
+      "doi": "10.1123/ijsnem.2023-0080",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Innovative Marine\u2010Sourced Hydroxyapatite, Chitosan, Collagen, and Gelatin for Ec",
+      "doi": "10.1002/jbm.a.37833",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Specific Bioactive Collagen Peptides on Tendon Remodeling during 1",
+      "doi": "10.1249/mss.0000000000003242",
+      "pmid": "37436929",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative, Randomized Study on the Anti-inflammatory and Regenerative Efficacy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and Efficacy of an Ab Interno Gelatin Stent (XEN63) With or Without Mitom",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resistance Training and Hydrolyzed Collagen Supplementation in Middle-aged Adult",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy Evaluation of Hydrolyzed Collagen Peptide on Knees, Hips, and Ankle Pai",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "BENEFITS OF HYDROLYZED COLLAGEN TYPE 1 SUPPLEMENTATION ON SKIN HEALTH",
+      "doi": "10.51249/hs.v3i02.1285",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of oral supplements containing collagen peptides rich in X-Hyp or X-H",
+      "doi": "10.1039/d3fo02873a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Molecular caviar\u201d of hydrolyzed collagen from tilapia skin: marketing and sensor",
+      "doi": "10.15406/mojfpt.2023.11.00278",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Experience with the use of gelatin tannate in complex therapy in patients with a",
+      "doi": "10.51793/os.2023.26.2.008",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen supplementation - does it bring real benefits?",
+      "doi": "10.12775/qs.2023.13.01.008",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Extraction of collagen bone fish (Thunnus albacares) into gelatin with CH3COOH t",
+      "doi": "10.53022/oarjbp.2022.4.2.0027",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Karakteristik Kolagen dari Kulit dan Sisik Ikan Coklatan, Swanggi, dan Kurisi se",
+      "doi": "10.17844/jphpi.v25i3.43598",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Topical Effect of rhGDF-5 Embedded in a Collagen\u2013Gelatin Scaffold for Accele",
+      "doi": "10.3390/app12020867",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "What we know about oral collagen supplementation for skin health - a literature ",
+      "doi": "10.12775/jehs.2023.13.01.038",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development, preparation and characterization of chitosan, gelatin and heparin m",
+      "doi": "10.1007/s42452-021-04928-3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Collagen Peptides on Recovery Following Eccentric Exercise in Resista",
+      "doi": "10.1123/ijsnem.2020-0149",
+      "pmid": "33186897",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Four-weeks daily intake of oral collagen hydrolysate results in improved skin el",
+      "doi": "10.1080/09546634.2020.1725412",
+      "pmid": "32009486",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized, Double-Blind, Placebo- Controlled Study Trial to Evaluate the Pote",
+      "doi": "10.19080/jojcs.2021.12.555850",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acute Resistance Exercise and Hydrolyzed Collagen Supplementation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hydrolyzed Collagen in the Reduction of Osteoarticular Pain and Functional Limit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resistance Training and Hydrolyzed Collagen Supplementation in Healthy Young Adu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Muscle-Tendon Mechanics During Locomotor Tasks, Efficacy of Collagen Supplementa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Myths and media in oral collagen supplementation for the skin, nails, and hair: ",
+      "doi": "10.1111/jocd.14567",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Nutritional Supplement Blend of Collagen Peptides, Lutein and Wheat Lipid Extr",
+      "doi": "10.19080/jojdc.2020.04.555633",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral Supplementation of Collagen Peptides Improves Skin Hydration by Increasing ",
+      "doi": "10.1159/000513988",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hydrolyzed Collagen Supplementation on Lower Body Stiffness in Recreational Tria",
+      "doi": "10.5812/asjsm.107893",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen/Gelatin Extraction from Poultry Skin and Mechanically Deboned Meat (MDM",
+      "doi": "10.24323/akademik-gida.976929",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effects of lemon verbena extract and hydrolyzed collagen supplementation, ei",
+      "doi": "10.1096/fasebj.2021.35.s1.03579",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Functional Properties of Yellowfin Tuna (Thunnus albacares) Skin Collagen Hydrol",
+      "doi": "10.12944/crnfsj.9.3.12",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of triamcinolone-soaked absorbable gelatin foam (gelfoam) as a treatment for",
+      "doi": "10.1186/s43163-021-00097-7",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of collagen supplementation on pain scores in healthy individuals ",
+      "doi": "10.1139/apnm-2019-0654",
+      "pmid": "31990581",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Formulation and characterization of anti\u2010aging cosmetic emulsions based on colla",
+      "doi": "10.24264/icams-2020.ii.6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Processing variables of direct-write, near-field electrospinning impact size and",
+      "doi": "10.1101/2020.09.17.301804",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of a collagen hydrolysate and antioxidants\u2010containing nutraceutical on ",
+      "doi": "10.1111/jocd.13404",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Novel Hyp-Gly-containing antiplatelet peptides from collagen hydrolysate after s",
+      "doi": "10.1039/d0fo00219d",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Whey beverage with collagen hydrolysate from salmon skin and feijoa",
+      "doi": "10.1088/1755-1315/421/3/032017",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Understanding aesthetic interest in oral collagen peptides: A 5\u2010year national as",
+      "doi": "10.1111/jocd.13555",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen peptides from Pangasius fish skin as antioxidants",
+      "doi": "10.1088/1755-1315/404/1/012055",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Liposomal dexamethasone\u2013moxifloxacin nanoparticle combinations with collagen/gel",
+      "doi": "10.1088/1748-605x/ab9510",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral Collagen Supplementation: A Systematic Review of Dermatological Application",
+      "doi": null,
+      "pmid": "30681787",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral Collagen Supplementation: A Systematic Review of Dermatological Application",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Autogenous Bone Mixed With Xenograft Versus Xenograft Alone Versus Absorbent Gel",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Gelatin-Collagen Nonwoven Scaffold Provides an Alternative to Suprathel for Trea",
+      "doi": "10.1097/01.asw.0000558047.07348.3b",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bioactivity and Tablet Formulation from Spirulina and Collagen Hydrolysate of Ti",
+      "doi": "10.17844/jphpi.v22i3.28925",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Activity And Kinetics of \u03b1-Glucosidase Inhibition by Collagen Hydrolysate From T",
+      "doi": "10.1088/1742-6596/1341/3/032015",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Formulation and characterization of some oil in water cosmetic emulsions based o",
+      "doi": "10.1515/pac-2018-0911",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Antioxidant and antifungal activities of collagen hydrolysates from skin of milk",
+      "doi": "10.1088/1755-1315/278/1/012040",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Daily oral supplementation with collagen peptides combined with vitamins and oth",
+      "doi": "10.1016/j.nutres.2018.06.001",
+      "pmid": "30122200",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Thermal and natural aging of bagasse paper sheets coated with gelatin",
+      "doi": "10.1515/npprj-2018-3033",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improvement of skin condition on skin moisture and anti-melanogenesis by collage",
+      "doi": "10.1088/1757-899x/382/2/022067",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral supplementation with specific bioactive collagen peptides improves nail gro",
+      "doi": "10.1111/jocd.12393",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improvement of activity-related knee joint discomfort following supplementation ",
+      "doi": "10.1139/apnm-2016-0390",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The presence of food-derived collagen peptides in human body-structure and biolo",
+      "doi": "10.1039/c7fo01275f",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The anti-photoaging effect of antioxidant collagen peptides from silver carp (Hy",
+      "doi": "10.1039/c6fo01499b",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "SPECIFIC NATURAL BIOACTIVE TYPE 1 COLLAGEN PEPTIDES ORAL INTAKE REVERSE SKIN AGI",
+      "doi": "10.14283/jarcp.2016.97",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Biological Effect of Hydrolyzed Collagen on Bone Metabolism",
+      "doi": "10.1080/10408398.2015.1038377",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Drying Temperature on Physical Properties of Thin Gelatin Films",
+      "doi": "10.1080/07373937.2013.808206",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "THE EFFECTS OF ANIMAL AGE AND ACETIC ACID CONCENTRATION ON PIGSKIN GELATIN CHARA",
+      "doi": "10.14710/jitaa.37.3.176-182",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence Of Age On Red Wine Colour During Fining With Bentonite And Gelatin",
+      "doi": "10.1080/10942912.2010.487625",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Biological Bone Markers and Hydrolyzed Collagen Supplement in Menopausal Healthy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of broiler age and extraction temperature on characteristic chicken feet ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study on the Water-Aging Properties of Gelatin-Glucose and Gelatin-Urea Films: T",
+      "doi": "10.1080/03602559.2010.496422",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of whey and fortified collagen hydrolysate protein supplements on nitrog",
+      "doi": "10.1016/j.jada.2009.03.003",
+      "pmid": "19465192",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Interplay between Shear Loading and Structural Aging in a Physical Gelatin Gel",
+      "doi": "10.1103/physrevlett.103.138302",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development of Gelatin Hydrogel Pads as Antibacterial Wound Dressings",
+      "doi": "10.1002/mabi.200900131",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of the effects of gelatin and a modern hydroxyethyl starch solution o",
+      "doi": "10.1093/bja/aen016",
+      "pmid": "18305082",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Placebo-Controlled Study of Collagen Hydrolysate in Subjects With Knee Osteoar",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Randomized evaluation of fluid resuscitation with crystalloid (saline) and collo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative study of the physiological properties of collagen, gelatin and colla",
+      "doi": "10.1111/j.1467-2494.2004.00251.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen Hydrolysate Improves Joint Function in Adults with Mild Symptoms of Ost",
+      "doi": "10.1249/00005768-200405001-00730",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen Hydrolysate Improves Joint Function in Adults with Mild Symptoms of Ost",
+      "doi": "10.1097/00005768-200405001-00730",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of two different volume replacement regimens on renal function in elde",
+      "doi": "10.1007/s00134-003-1702-6",
+      "pmid": "12665995",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a hydrolyzed collagen dressing on the healing of open wounds in dogs",
+      "doi": "10.2460/ajvr.2000.61.1574",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Extracting Conditions for Megrim ( Lepidorhombus boscii ) Skin Collagen Affect F",
+      "doi": "10.1111/j.1365-2621.2000.tb16022.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bone resorption assessed by immunoassay of urinary cross-linked collagen peptide",
+      "doi": "10.1002/jbmr.5650090706",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Substantivity to hair and skin of 125l\u2010labelled collagen hydrolysates under appl",
+      "doi": "10.1111/j.1467-2494.1985.tb00398.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hydration and density of collagen and gelatin",
+      "doi": "10.1002/app.1964.070080430",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Can good sleep quality enhance the benefits of oral collagen supplementation in ",
+      "doi": "10.1007/s00403-025-03860-5",
+      "pmid": "39912934",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Technological aspects and health effects of hydrolyzed collagen and application ",
+      "doi": "10.1080/10408398.2022.2163974",
+      "pmid": "36625363",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urinary collagen peptides: Source of markers for bone metabolic processes in kid",
+      "doi": "10.1002/prca.202200118",
+      "pmid": "37365945",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A micronutrient mixture with collagen peptides, probiotics, cannabidiol, and die",
+      "doi": "10.1016/j.mad.2022.111757",
+      "pmid": "36460123",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of a novel hydrolyzed collagen formulation in treating patients wi",
+      "doi": "10.1007/s00264-020-04616-8",
+      "pmid": "32447428",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Monetite addition into gelatin based freeze-dried scaffolds for improved mechani",
+      "doi": "10.1088/1748-605x/ac2e17",
+      "pmid": "34624878",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bone Growth Capacity of Human Umbilical Cord Mesenchymal Stem Cells and BMP-2 Se",
+      "doi": "10.1177/1055665620962360",
+      "pmid": "34047209",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resorbable PCEC/gelatin-bismuth doped bioglass-graphene oxide bilayer membranes ",
+      "doi": "10.1088/1748-605x/ab007b",
+      "pmid": "30665204",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mechanical properties and biocompatibility of in situ enzymatically cross-linked",
+      "doi": "10.5301/ijao.5000553",
+      "pmid": "28315501",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of gelatin sponges in Mohs micrographic surgery defects and staged melanoma ",
+      "doi": null,
+      "pmid": "21197526",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Radical scavenging activity of 'Nikogori' gelatin gel food made from head, bone,",
+      "doi": null,
+      "pmid": "17982692",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An aggressive interventional protocol for early midtrimester premature rupture o",
+      "doi": "10.1067/mob.2002.127124",
+      "pmid": "12439492",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "EFFECTIVENESS OF ORAL COLLAGEN SUPPLEMENTATION IN IMPROVING SKIN ELASTICITY AND ",
+      "doi": "10.31435/ijitss.1(49).2026.4852",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Beneficial Effects of Multi-Micronutrient Supplementation with Collagen Peptides",
+      "doi": "10.1007/s13555-024-01184-2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral Supplementation of Low-Molecular-Weight Collagen Peptides Reduces Skin Wrin",
+      "doi": "10.1089/jmf.2022.k.0097",
+      "pmid": "36516059",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hydrolyzed collagen and cranberry powder in cooked sausages: Optimization using ",
+      "doi": "10.21603/2308-4057-2027-1-697",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effects and mechanisms of collagen peptides for alleviating skin ageing",
+      "doi": "10.1007/s44403-026-00046-3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Urinary collagen peptides predict mortality",
+      "doi": "10.1101/2025.06.05.25329025",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Investigations into the Biochemical Properties of Penicillin G Amidase in Collag",
+      "doi": "10.2174/0115734080374723250908050654",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen Peptides Made of Pork Hyaline Cartilages for Nutritology and Biomedicin",
+      "doi": "10.7868/s3034527825050148",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "<b>A Randomized Trial of Collagen Peptides Combined with Resistance Training for",
+      "doi": "10.61919/p482kk34",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Use of Collagen Hydrolysate from Chromium Waste in the Optimization of Leath",
+      "doi": "10.3390/su17177912",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Advances in Collagen-/Gelatin-Based Hydrogels: Rheological Properties and Applic",
+      "doi": "10.3390/macromol5040055",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen Supplementation: Benefits and Potential Risks for Athletes and Health-C",
+      "doi": "10.24818/mrt.25.17.02.01",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anti-aging Effects of Low Molecular Weight Collagen Peptides Supplementation on ",
+      "doi": "10.20944/preprints202407.1363.v1",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Study of Thermal and Bromelain Enzymatic Hydrolysis of Peptide Fish ",
+      "doi": "10.52711/0974-360x.2024.00807",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efek Penambahan Kolesterol dan Tween 80 terhadap Karakteristik dan Stabilitas Fi",
+      "doi": "10.25026/jsk.v6i1.2291",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Superamphiphilic aerogels with 2D lamellar structure of gelatin-tuned 3D supramo",
+      "doi": "10.1186/s42825-024-00166-6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "STUDY ON PREPARATION AND CHARACTERIZATION OF SACHI SEED OIL BASED EMULSION CONTA",
+      "doi": "10.18173/2354-1059.2024-0024",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Characterization and Stability Test of Hydrolyzed Collagen Glyserosomes",
+      "doi": "10.20473/jfiki.v11i12024.71-79",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effectiveness of Oral Fish Collagen Supplementation on Skin Aging: A Systema",
+      "doi": "10.28933/ajodrr-2023-01-0505ig",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Placebo Controlled Efficacy Evaluation of the Hydrolyzed Collagen Peptide In Adu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Extraction, Isolation and Characterization of Collagen Peptide from Fish and Rec",
+      "doi": "10.53555/sfs.v10i2.2719",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Medical use of hydrolyzed collagen in osteoporosis",
+      "doi": "10.18103/mra.v11i9.4358",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of Hydrolyzed Collagen on Regenerated Cellulosic Fibres",
+      "doi": "10.1002/slct.202301089",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Spider-capture-silk mimicking fibers with high-performance fog collection derive",
+      "doi": "10.1186/s42825-023-00112-y",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of the Efficacy of a Hydrolyzed Collagen Supplement for Improving Ski",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish collagen peptides and its encapsulation",
+      "doi": "10.51470/bca.2022.22.2.4181",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Efficacy of AP Collagen Peptides Intake on Skin Wrinkle, Elasticity, and Hyd",
+      "doi": "10.3746/jkfn.2021.50.5.429",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Application of Collagen Hydrolysate Extracted from Limed Hide Waste in the Crop ",
+      "doi": "10.52568/000603",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Application of Collagen Hydrolysate Extracted from Limed Hide Waste in the Crop ",
+      "doi": "10.52568/000603/jcsp/43.05.2021",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Review of the Literature Relating to Collagen Hydrolysate and Its Potential Cl",
+      "doi": "10.9734/jammr/2021/v33i1530981",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Positive effect of fish-derived Bioactive Collagen Peptides on skin health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of combined hydrolyzed collagen and maltodextrin as carrier agents in ",
+      "doi": "10.1590/1981-6723.25419",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hydrolyzed Collagen Combined With Djulis and Green Caviar Improve Skin Condition",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effects of collagen peptides on muscle damage, inflammation and bone turnove",
+      "doi": "10.1007/s00726-019-02706-5",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of collagen hydrolysate components on fabrication of collagen/PVA comp",
+      "doi": "10.1177/0040517519885020",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Polyfunctional Materials Based on Collagen Hydrolysate Obtained from Swim Bladde",
+      "doi": "10.4028/www.scientific.net/msf.945.422",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of Crosslinking Agent Concentration on The Microencapsulation Paramete",
+      "doi": "10.24178/ijrs.2018.4.3.12",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of Crosslinking Agent Concentration on The Microencapsulation Paramete",
+      "doi": "10.24178/ijhm.2018.3.2.14",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Collagen supplementation as a complementary therapy for the prevention and treat",
+      "doi": "10.1590/1809-9823.2016.14145",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Spouted bed drying efficiency of bovine hydrolyzed collagen",
+      "doi": "10.1590/1981-6723.1015",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Oral Supplementation Based on Hydrolyzed Collagen and Vitamins Improves Skin ",
+      "doi": "10.4172/2167-065x.1000142",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Effects of Ingesting Collagen Hydrolysate on Facial Skin Properties\u2015A R",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a nutritional supplement containing collagen peptides on skin elastic",
+      "doi": "10.4103/2278-019x.146161",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Screening for novel cell adhesive regions in bovine Achilles tendon collagen pep",
+      "doi": "10.1139/bcb-2013-0026",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Biomedical and Pharmaceutical Application of Fish Collagen and Gelatin: A Review",
+      "doi": "10.6000/1929-5634.2013.02.04.6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hydrolyzed collagen, modified starch and guar gum addition in turkey ham",
+      "doi": "10.1590/s0103-84782012005000037",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Hydrolyzed Collagen from Tilapia Scale on Bread Quality",
+      "doi": "10.4028/www.scientific.net/amr.183-185.500",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anti-Melanogenic Activities of Collagen Peptides from Jellyfish (Stomolophus mel",
+      "doi": "10.4028/www.scientific.net/amr.343-344.505",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Folding Studies of pH\u2010Dependent Collagen Peptides",
+      "doi": "10.1111/j.1747-0285.2009.00929.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Solid\u2010state NMR studies of collagen\u2010based parchments and gelatin",
+      "doi": "10.1002/bip.20217",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Synthesis of heterotrimeric collagen peptides containing the \u03b11\u03b21 integrin recog",
+      "doi": "10.1002/psc.385",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Design and synthesis of heterotrimeric collagen peptides with a built\u2010in cystine",
+      "doi": "10.1016/s0014-5793(96)01212-4",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Conformation dependence of integrin-type II collagen binding: Inability of colla",
+      "doi": "10.1242/jcs.107.4.993",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "7 Final Report on the Safety Assessment of Hydrolyzed Collagen",
+      "doi": "10.3109/10915818509078691",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Studies of collagen fold formation in aqueous solutions of \u03b1\u2010gelatin III",
+      "doi": "10.1002/bip.360230213",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Studies of the collagen fold formation in aqueous solutions of \u03b1\u2010gelatin. II",
+      "doi": "10.1002/bip.1980.360190110",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Reconstitution of collagen\u2010fold structure with stretching of gelatin film",
+      "doi": "10.1002/bip.1976.360150806",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Raman scattering of collagen, gelatin, and elastin",
+      "doi": "10.1002/bip.1975.360140211",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dielectric Properties of Solid-State Gelatin and Collagen",
+      "doi": "10.1143/jjap.5.962",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    }
+  ],
+  "papers_resolved": {
+    "PMC7328867": {
+      "title": "Effect of an Oral Nutrition Supplement Containing Collagen Peptides on Stratum Corneum Hydration and Skin Elasticity in Hospitalized Older Adults: A Multicenter Open-label Randomized Controlled Study.",
+      "doi": "10.1097/01.asw.0000655492.40898.55",
+      "pmid": "32195722",
+      "year": 2020,
+      "venue": "Adv Skin Wound Care",
+      "sources": [
+        "crossref",
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC6472052": {
+      "title": "Anti-Oxidative and Anti-Aging Activities of Porcine By-Product Collagen Hydrolysates Produced by Commercial Proteases: Effect of Hydrolysis and Ultrafiltration",
+      "doi": "10.3390/molecules24061104",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Molecules",
+      "sources": [
+        "crossref",
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC12661388": {
+      "title": "The Sustained Effects of Bioactive Collagen Peptides on Skin Health: A Randomized, Double-Blind, Placebo-Controlled Clinical Study.",
+      "doi": "10.1111/jocd.70565",
+      "pmid": "41311286",
+      "year": 2025,
+      "venue": "J Cosmet Dermatol",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC11842160": {
+      "title": "The Effects of Type I Collagen Hydrolysate Supplementation on Bones, Muscles, and Joints: A Systematic Review",
+      "doi": "10.52965/001c.129086",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Orthopedic Reviews",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC12231941": {
+      "title": "Efficacy of hydrolyzed collagen injections compared to platelet-rich plasma and hyaluronic acid in the treatment of patients with symptomatic knee osteoarthritis: a retrospective clinical study",
+      "doi": "10.1186/s12891-025-08811-9",
+      "pmid": null,
+      "year": 2025,
+      "venue": "BMC Musculoskeletal Disorders",
+      "sources": [
+        "crossref",
+        "doaj"
+      ]
+    },
+    "PMC10015953": {
+      "title": "Randomized, double-blind, four-arm pilot study on the effects of chicken essence and type II collagen hydrolysate on joint, bone, and muscle functions.",
+      "doi": "10.1186/s12937-023-00837-w",
+      "pmid": "36918892",
+      "year": 2023,
+      "venue": "Nutr J",
+      "sources": [
+        "doaj",
+        "pubmed"
+      ]
+    },
+    "PMC10102402": {
+      "title": "Collagen supplementation in skin and orthopedic diseases: A review of the literature",
+      "doi": "10.1016/j.heliyon.2023.e14961",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Heliyon",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC9926638": {
+      "title": "Gelatin methacryloyl (GelMA) loaded with concentrated hypoxic pretreated adipose-derived mesenchymal stem cells(ADSCs) conditioned medium promotes wound healing and vascular regeneration in aged skin",
+      "doi": "10.1186/s40824-023-00352-3",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Biomaterials Research",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC10341422": {
+      "title": "Study of Elastin, Hydrolyzed Collagen and Collagen-like Products in a Tri-Layered Chitosan Membrane to Test Anti-Aging Skin Properties",
+      "doi": "10.3390/ijms241311016",
+      "pmid": null,
+      "year": 2023,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC8125453": {
+      "title": "The Influence of Specific Bioactive Collagen Peptides on Body Composition and Muscle Strength in Middle-Aged, Untrained Men: A Randomized Controlled Trial.",
+      "doi": "10.3390/ijerph18094837",
+      "pmid": "33946565",
+      "year": 2021,
+      "venue": "Int J Environ Res Public Health",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC7070905": {
+      "title": "Collagen Hydrolysates for Skin Protection: Oral Administration and Topical Formulation",
+      "doi": "10.3390/antiox9020181",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Antioxidants",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC7699565": {
+      "title": "Redox Potential and Antioxidant Capacity of Bovine Bone Collagen Peptides towards Stable Free Radicals, and Bovine Meat Lipids and Proteins. Effect of Animal Age, Bone Anatomy and Proteases\u2014A Step Forward towards Collagen-Rich Tissue Valorisation",
+      "doi": "10.3390/molecules25225422",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Molecules",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC5983275": {
+      "title": "Effect of Fish Collagen Hydrolysates on Type I Collagen mRNA Levels of Human Dermal Fibroblast Culture",
+      "doi": "10.3390/md16050144",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Marine Drugs",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC5406074": {
+      "title": "350-560 \u03bcm gelatin sponge particles combined with transcatheter arterial chemoembolization for the treatment of elderly hepatocellular carcinoma: The safety and efficacy.",
+      "doi": "10.1097/md.0000000000006629",
+      "pmid": "28422858",
+      "year": 2017,
+      "venue": "Medicine (Baltimore)",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC4745978": {
+      "title": "Skin Antiageing and Systemic Redox Effects of Supplementation with Marine Collagen Peptides and Plant\u2010Derived Antioxidants: A Single\u2010Blind Case\u2010Control Clinical Study",
+      "doi": "10.1155/2016/4389410",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Oxidative Medicine and Cellular Longevity",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC12846929": {
+      "title": "Comparative effects of MKARE\u00ae eggshell membrane and hydrolyzed collagen as nutricosmetics on skin biophysical properties: a randomized clinical trial",
+      "doi": "10.3389/fnut.2025.1689701",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12420642": {
+      "title": "The Role of Pre-soaked Bone Cement Gelatin Sponge Strips in Sealing Anterior Vertebral Wall Defects During Percutaneous Kyphoplasty for Osteoporotic Thoracolumbar Compression Fractures in the Elderly: A Retrospective Study",
+      "doi": "10.1177/21925682251379024",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Global Spine Journal",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12428112": {
+      "title": "Studies on the Structure and Properties of Ultrasound-Assisted Enzymatic Digestion of Collagen Peptides Derived from Chinemys reevesii Skin",
+      "doi": "10.3390/foods14172960",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Foods",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11626298": {
+      "title": "The evidence from in vitro primary fibroblasts and a randomized, double\u2010blind, placebo\u2010controlled clinical trial of tuna collagen peptides intake on skin health",
+      "doi": "10.1111/jocd.16500",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Journal of Cosmetic Dermatology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11595708": {
+      "title": "Clinical Efficacy and Safety of Ultrasound-Guided Injection with Low-Molecular-Weight Peptides from Hydrolyzed Collagen in Patients with Partial Supraspinatus Tendon Tears: A Pilot Study",
+      "doi": "10.3390/life14111351",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Life",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10918634": {
+      "title": "SpecieScan: semi-automated taxonomic identification of bone collagen peptides from MALDI-ToF-MS",
+      "doi": "10.1093/bioinformatics/btae054",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Bioinformatics",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10999617": {
+      "title": "Reduction in systemic muscle stress markers after exercise-induced muscle damage following concurrent training and supplementation with specific collagen peptides \u2013 a randomized controlled trial",
+      "doi": "10.3389/fnut.2024.1384112",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11303056": {
+      "title": "Anti-Inflammatory and Antioxidant Properties of a New Mixture of Vitamin C, Collagen Peptides, Resveratrol, and Astaxanthin in Tenocytes: Molecular Basis for Future Applications in Tendinopathies",
+      "doi": "10.1155/2024/5273198",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Mediators of Inflammation",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11393225": {
+      "title": "Restoration of the Ultrastructural Integrity of the Dermal Collagen Network by 12-Week Ingestion of Special Collagen Peptides",
+      "doi": "10.1007/s13555-024-01251-8",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Dermatology and Therapy",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11685464": {
+      "title": "Toward mechanistic understanding of wettability alteration in carbonate rocks in the presence of nanoparticles, gelatin biopolymer, and core-shell nanocomposite of Fe3O4@gelatin",
+      "doi": "10.1038/s41598-024-80893-2",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10411303": {
+      "title": "Collagen peptides supplementation improves function, pain, and physical and mental outcomes in active adults.",
+      "doi": "10.1080/15502783.2023.2243252",
+      "pmid": "37551682",
+      "year": 2023,
+      "venue": "J Int Soc Sports Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC10773595": {
+      "title": "Exploring the Impact of Hydrolyzed Collagen Oral Supplementation on Skin Rejuvenation: A Systematic Review and Meta-Analysis",
+      "doi": "10.7759/cureus.50231",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Cureus",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10158542": {
+      "title": "Dietary collagen peptides alleviate exercise-induced muscle soreness in healthy middle-aged males: a randomized double-blinded crossover clinical trial",
+      "doi": "10.1080/15502783.2023.2206392",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Journal of the International Society of Sports Nutrition",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9998191": {
+      "title": "The Effect of Gelatin Coating and Sonication on the Quality Properties of Wet-Aging Pork Loins",
+      "doi": "10.5851/kosfa.2022.e74",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Food Science of Animal Resources",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9865037": {
+      "title": "Isolation and Characterization of Collagen and Collagen Peptides with Hyaluronidase Inhibition Activity Derived from the Skin of Marlin (Istiophoridae)",
+      "doi": "10.3390/molecules28020889",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Molecules",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10346300": {
+      "title": "Chitosan, Gelatin, and Collagen Hydrogels for Bone Regeneration",
+      "doi": "10.3390/polym15132762",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Polymers",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10099820": {
+      "title": "Predictors for hemostatic thrombin-gelatin matrix usage in spine surgery: a multicenter observational study",
+      "doi": "10.1186/s12891-023-06408-8",
+      "pmid": null,
+      "year": 2023,
+      "venue": "BMC Musculoskeletal Disorders",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9311920": {
+      "title": "Gelatin Methacryloyl Hydrogels for Musculoskeletal Tissue Regeneration",
+      "doi": "10.3390/bioengineering9070332",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Bioengineering",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9689929": {
+      "title": "Effects of Chitosan/Collagen Peptides/Cinnamon Bark Essential Oil Composite Coating on the Quality of Dry-Aged Beef",
+      "doi": "10.3390/foods11223638",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Foods",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9686691": {
+      "title": "Effects of Enzymatic- and Ultrasound-Assisted Extraction on Physicochemical and Antioxidant Properties of Collagen Hydrolysate Fractions from Alaska Pollack (Theragra chalcogramma) Skin",
+      "doi": "10.3390/antiox11112112",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Antioxidants",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8251659": {
+      "title": "A collagen hydrolysate/milk protein-blend stimulates muscle anabolism equivalently to an isoenergetic milk protein-blend containing a greater quantity of essential amino acids in older men.",
+      "doi": "10.1016/j.clnu.2021.01.002",
+      "pmid": "33487503",
+      "year": 2021,
+      "venue": "Clin Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC7915677": {
+      "title": "The Influence of Specific Bioactive Collagen Peptides on Knee Joint Discomfort in Young Physically Active Adults: A Randomized Controlled Trial",
+      "doi": "10.3390/nu13020523",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8037141": {
+      "title": "Collagen Hydrolysate Prepared from Chicken By-Product as a Functional Polymer in Cosmetic Formulation",
+      "doi": "10.3390/molecules26072021",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Molecules",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8441532": {
+      "title": "Specific Bioactive Collagen Peptides in Osteopenia and Osteoporosis: Long-Term Observation in Postmenopausal Women",
+      "doi": "10.11005/jbm.2021.28.3.207",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Journal of Bone Metabolism",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8534417": {
+      "title": "Development of Hydrolysis and Defatting Processes for Production of Lowered Fishy Odor Hydrolyzed Collagen from Fatty Skin of Sockeye Salmon (Oncorhynchus nerka)",
+      "doi": "10.3390/foods10102257",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Foods",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7049534": {
+      "title": "Whey protein but not collagen peptides stimulate acute and longer-term muscle protein synthesis with and without resistance exercise in healthy older women: a randomized controlled trial.",
+      "doi": "10.1093/ajcn/nqz332",
+      "pmid": "31919527",
+      "year": 2020,
+      "venue": "Am J Clin Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC7041297": {
+      "title": "Intraoperative injection of absorbable gelatin sponge (AGS) mixed with cement followed by spinal decompression to treat elderly with vertebral hemangiomas",
+      "doi": "10.1186/s12891-020-3143-6",
+      "pmid": null,
+      "year": 2020,
+      "venue": "BMC Musculoskeletal Disorders",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7041324": {
+      "title": "A Dermonutrient Containing Special Collagen Peptides Improves Skin Structure and Function: A Randomized, Placebo-Controlled, Triple-Blind Trial Using Confocal Laser Scanning Microscopy on the Cosmetic Effects and Tolerance of a Drinkable Collagen Supplement",
+      "doi": "10.1089/jmf.2019.0197",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Journal of Medicinal Food",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7074124": {
+      "title": "Characterization and Antioxidant Activity of Collagen, Gelatin, and the Derived Peptides from Yellowfin Tuna (Thunnus albacares) Skin",
+      "doi": "10.3390/md18020098",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Marine Drugs",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7361993": {
+      "title": "Mueller Matrix Analysis of Collagen and Gelatin Containing Samples Towards More Objective Skin Tissue Diagnostics",
+      "doi": "10.3390/polym12061400",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Polymers",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7818267": {
+      "title": "Quality attributes of partially hydrolyzed collagen in a liquid formulation used for skin care",
+      "doi": "10.1111/jocd.13439",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Journal of Cosmetic Dermatology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6566836": {
+      "title": "Significant Amounts of Functional Collagen Peptides Can Be Incorporated in the Diet While Maintaining Indispensable Amino Acid Balance",
+      "doi": "10.3390/nu11051079",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6891674": {
+      "title": "Hydrolyzed Collagen\u2014Sources and Applications",
+      "doi": "10.3390/molecules24224031",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Molecules",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7271718": {
+      "title": "Beneficial effects of food supplements based on hydrolyzed collagen for skin care (Review)",
+      "doi": "10.3892/etm.2019.8342",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Experimental and Therapeutic Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6356409": {
+      "title": "Oral Supplementation of Specific Collagen Peptides Combined with Calf-Strengthening Exercises Enhances Function and Reduces Pain in Achilles Tendinopathy Patients",
+      "doi": "10.3390/nu11010076",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9077692": {
+      "title": "A rapid and simple UPLC-MS/MS method using collagen marker peptides for identification of porcine gelatin",
+      "doi": "10.1039/c7ra12539a",
+      "pmid": null,
+      "year": 2018,
+      "venue": "RSC Advances",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5183725": {
+      "title": "Vitamin C-enriched gelatin supplementation before intermittent activity augments collagen synthesis.",
+      "doi": "10.3945/ajcn.116.138594",
+      "pmid": "27852613",
+      "year": 2017,
+      "venue": "Am J Clin Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4685482": {
+      "title": "Dietary Supplementation with Specific Collagen Peptides Has a Body Mass Index-Dependent Beneficial Effect on Cellulite Morphology",
+      "doi": "10.1089/jmf.2015.0022",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Journal of Medicinal Food",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4013666": {
+      "title": "Preparation and Characterization of Gelatin Nanofibers Containing Silver Nanoparticles",
+      "doi": "10.3390/ijms15046857",
+      "pmid": null,
+      "year": 2014,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4430332": {
+      "title": "Non\u2010Covalent Photo\u2010Patterning of Gelatin Matrices Using Caged Collagen Mimetic Peptides",
+      "doi": "10.1002/mabi.201400436",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Macromolecular Bioscience",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC1183981": {
+      "title": "Neutral metallo-proteinases of rabbit bone. Separation in latent forms of distinct enzymes that when activated degrade collagen, gelatin and proteoglycans",
+      "doi": "10.1042/bj1710493",
+      "pmid": null,
+      "year": 1978,
+      "venue": "Biochemical Journal",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12348636": {
+      "title": "Progress in Research on Animal Collagen Peptides: Preparation, Bioactivity, and Application.",
+      "doi": "10.3390/molecules30153061",
+      "pmid": "40807236",
+      "year": 2025,
+      "venue": "Molecules",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC12525885": {
+      "title": "The Fish Collagen Supplementation and Proteomic Features in Healthy Women-A Crossover Study.",
+      "doi": "10.3390/nu17193052",
+      "pmid": "41097129",
+      "year": 2025,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC11943682": {
+      "title": "Total Thyroidectomy with Harmonic Scalpel Combined with Gelatin Thrombin Hemostatic: A Focus on the Elderly Population-A Multicentric Study.",
+      "doi": "10.3390/medicina61030496",
+      "pmid": "40142307",
+      "year": 2025,
+      "venue": "Medicina (Kaunas)",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9469746": {
+      "title": "Aligned Gelatin Microribbon Scaffolds with Hydroxyapatite Gradient for Engineering the Bone-Tendon Interface.",
+      "doi": "10.1089/ten.tea.2021.0099",
+      "pmid": "35229651",
+      "year": 2022,
+      "venue": "Tissue Eng Part A",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC12520035": {
+      "title": "The Effects of Ingesting a Single Bolus of Hydrolyzed Collagen versus Free Amino Acids on Muscle Connective Protein Synthesis Rates.",
+      "doi": "10.1249/mss.0000000000003788",
+      "pmid": "40523226",
+      "year": 2025,
+      "venue": "Med Sci Sports Exerc",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12739960": {
+      "title": "Collagen supplementation and regenerative health: advances in biomarker detection and smart material integration",
+      "doi": "10.3389/fnut.2025.1716166",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC6566347": {
+      "title": "Enzymatic Hydrolysis of a Collagen Hydrolysate Enhances Postprandial Absorption Rate\u2014A Randomized Controlled Trial",
+      "doi": "10.3390/nu11051064",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC12936244": {
+      "title": "Immune-Modulatory Effects of Bioactive Collagen Peptides Improve Skin Health in Middle-Aged Women",
+      "doi": "10.1007/s13555-026-01654-9",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Dermatology and Therapy",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12348347": {
+      "title": "Biodegradable NR Latex Films with Lignocellulosic and Collagen Hydrolysate Fillers",
+      "doi": "10.3390/ma18153711",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Materials",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10935399": {
+      "title": "Subcutaneous Application of a Gelatin/Hyaluronic Acid Hydrogel Induces the Production of Skin Extracellular Matrix",
+      "doi": "10.3390/polym16050573",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Polymers",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11381813": {
+      "title": "Hydrolyzed collagen: Exploring its applications in the food and beverage industries and assessing its impact on human health \u2013 A comprehensive review",
+      "doi": "10.1016/j.heliyon.2024.e36433",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Heliyon",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11351696": {
+      "title": "Marine Antioxidants from Marine Collagen and Collagen Peptides with Nutraceuticals Applications: A Review",
+      "doi": "10.3390/antiox13080919",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Antioxidants",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11051156": {
+      "title": "A Randomized Controlled Trial Comparing Collagen Matrix to Hemostatic Gelatin Sponge as Socket Seal in Alveolar Ridge Preservation",
+      "doi": "10.3390/jcm13082293",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Journal of Clinical Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10217007": {
+      "title": "Improving the Sustainability of Processing By-Products: Extraction and Recent Biological Activities of Collagen Peptides",
+      "doi": "10.3390/foods12101965",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Foods",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11282471": {
+      "title": "The Collagen Synthesis Response to an Acute Bout of Resistance Exercise Is Greater when Ingesting 30 g Hydrolyzed Collagen Compared with 15 g and 0 g in Resistance-Trained Young Men",
+      "doi": "10.1016/j.tjnut.2023.10.030",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Journal of Nutrition",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10323738": {
+      "title": "Exploring dog antler chews as a novel source of collagen supplementation: extraction and characterization of collagen from red deer antlers",
+      "doi": "10.5114/bta.2023.127208",
+      "pmid": null,
+      "year": 2023,
+      "venue": "BioTechnologia",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8000627": {
+      "title": "Cosmetic, Biomedical and Pharmaceutical Applications of Fish Gelatin/Hydrolysates",
+      "doi": "10.3390/md19030145",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Marine Drugs",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8508667": {
+      "title": "Proteoglycan Combined with Hyaluronic Acid and Hydrolyzed Collagen Restores the Skin Barrier in Mild Atopic Dermatitis and Dry, Eczema-Prone Skin: A Pilot Study",
+      "doi": "10.3390/ijms221910189",
+      "pmid": null,
+      "year": 2021,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4113802": {
+      "title": "Type II Collagen and Gelatin from Silvertip Shark (Carcharhinus albimarginatus) Cartilage: Isolation, Purification, Physicochemical and Antioxidant Properties",
+      "doi": "10.3390/md12073852",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Marine Drugs",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3299808": {
+      "title": "Uv damage of collagen: Insights from model collagen peptides",
+      "doi": "10.1002/bip.21725",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Biopolymers",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2896882": {
+      "title": "Effects of Sizes and Conformations of Fish-Scale Collagen Peptides on Facial Skin Qualities and Transdermal Penetration Efficiency",
+      "doi": "10.1155/2010/757301",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Journal of Biomedicine and Biotechnology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1132053": {
+      "title": "Cell-mediated degradation of type IV collagen and gelatin films is dependent on the activation of matrix metalloproteinases",
+      "doi": "10.1042/bj2880605",
+      "pmid": null,
+      "year": 1992,
+      "venue": "Biochemical Journal",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC1184193": {
+      "title": "Identification of the sites in collagen \u03b1-chains that bind serum anti-gelatin factor (cold-insoluble globulin)",
+      "doi": "10.1042/bj1690055",
+      "pmid": null,
+      "year": 1978,
+      "venue": "Biochemical Journal",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2223810": {
+      "title": "OPTICAL ROTATION AND HELICAL POLYPEPTIDE CHAIN CONFIGURATION IN COLLAGEN AND GELATIN",
+      "doi": "10.1083/jcb.1.3.203",
+      "pmid": null,
+      "year": 1955,
+      "venue": "The Journal of Cell Biology",
+      "sources": [
+        "crossref"
+      ]
+    }
+  }
+}

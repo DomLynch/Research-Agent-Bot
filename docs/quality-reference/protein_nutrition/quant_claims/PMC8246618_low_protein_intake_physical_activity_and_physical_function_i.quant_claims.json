@@ -1,0 +1,1499 @@
+{
+  "paper_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i",
+  "doi": "10.1093/ajcn/nqab051",
+  "extracted_at": "2026-05-05T22:35:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "confidence_interval": 16,
+    "sample_size": 13,
+    "unit_value": 6,
+    "percentage": 28,
+    "mean_sd": 9,
+    "hazard_ratio": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-1315",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.009, 0.032",
+      "numeric_values": [
+        0.009,
+        0.032
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1315,
+      "sentence": "Higher protein intake was modestly protective of decline in walking speed in a dose-dependent manner [e.g., protein intake \u22651.2 compared with 0.8 g/kg adjusted body weight (aBW)/d: \u03b2 = 0.024, 95% CI: 0.009, 0.032 SD/y], with no clear indication of interaction with PA.",
+      "context_window": "ared with 0.8 g/kg adjusted body weight (aBW)/d: \u03b2 = 0.024, 95% CI: 0.009, 0.032 SD/y], with no clear indication of interaction with PA. Par",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-1329",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1754",
+      "numeric_values": [
+        1754.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1329,
+      "sentence": "We used data from baseline and all 3 follow-up waves for all participants who agreed to be part of the NuAge Database and Biobank ( n = 1754 at baseline).",
+      "context_window": "s who agreed to be part of the NuAge Database and Biobank ( n = 1754 at baseline). LASA is an ongoing nationally representative",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-1514",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3107",
+      "numeric_values": [
+        3107.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1514,
+      "sentence": "The study started in 1992/93 ( n = 3107) and participants were followed every 3 y until 2018/2019 (most recent wave: wave J).",
+      "context_window": "residing in The Netherlands. The study started in 1992/93 ( n = 3107) and participants were followed every 3 y until 2018/2019 (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-1697",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1002",
+      "numeric_values": [
+        1002.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1697,
+      "sentence": "Two additional cohorts were recruited from the same sampling frames at 10 y (2002/2003, n = 1002) and 20 y (2012/2013, n = 1023) after the baseline ( 25 ).",
+      "context_window": "recruited from the same sampling frames at 10 y (2002/2003, n = 1002) and 20 y (2012/2013, n = 1023) after the baseline ( 25 ).",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-1728",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1023",
+      "numeric_values": [
+        1023.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1728,
+      "sentence": "Two additional cohorts were recruited from the same sampling frames at 10 y (2002/2003, n = 1002) and 20 y (2012/2013, n = 1023) after the baseline ( 25 ).",
+      "context_window": "g frames at 10 y (2002/2003, n = 1002) and 20 y (2012/2013, n = 1023) after the baseline ( 25 ). We used data from wave 3B (2012",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-3028",
+      "claim_type": "sample_size",
+      "raw_text": "n = 44",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3028,
+      "sentence": "We excluded participants ( Figure 1 ) who were institutionalized ( n = 44), had very poor cognitive status (score <18 in the Mini-Mental State Examination or with diagnosed dementia) and no proxy for dietary assessment ( n = 18), had missing dietary intake data ( n = 800), had very high reported energy intake, that is, >3500 kcal/d for females or >4000 kcal/d for males ( n = 52), or had no data on BMI ( n = 58).",
+      "context_window": "uded participants ( Figure 1 ) who were institutionalized ( n = 44), had very poor cognitive status (score <18 in the Mini-Men",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-3182",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3182,
+      "sentence": "We excluded participants ( Figure 1 ) who were institutionalized ( n = 44), had very poor cognitive status (score <18 in the Mini-Mental State Examination or with diagnosed dementia) and no proxy for dietary assessment ( n = 18), had missing dietary intake data ( n = 800), had very high reported energy intake, that is, >3500 kcal/d for females or >4000 kcal/d for males ( n = 52), or had no data on BMI ( n = 58).",
+      "context_window": "h diagnosed dementia) and no proxy for dietary assessment ( n = 18), had missing dietary intake data ( n = 800), had very high",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-3225",
+      "claim_type": "sample_size",
+      "raw_text": "n = 800",
+      "numeric_values": [
+        800.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3225,
+      "sentence": "We excluded participants ( Figure 1 ) who were institutionalized ( n = 44), had very poor cognitive status (score <18 in the Mini-Mental State Examination or with diagnosed dementia) and no proxy for dietary assessment ( n = 18), had missing dietary intake data ( n = 800), had very high reported energy intake, that is, >3500 kcal/d for females or >4000 kcal/d for males ( n = 52), or had no data on BMI ( n = 58).",
+      "context_window": "ary assessment ( n = 18), had missing dietary intake data ( n = 800), had very high reported energy intake, that is, >3500 kcal",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-3335",
+      "claim_type": "sample_size",
+      "raw_text": "n = 52",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3335,
+      "sentence": "We excluded participants ( Figure 1 ) who were institutionalized ( n = 44), had very poor cognitive status (score <18 in the Mini-Mental State Examination or with diagnosed dementia) and no proxy for dietary assessment ( n = 18), had missing dietary intake data ( n = 800), had very high reported energy intake, that is, >3500 kcal/d for females or >4000 kcal/d for males ( n = 52), or had no data on BMI ( n = 58).",
+      "context_window": "at is, >3500 kcal/d for females or >4000 kcal/d for males ( n = 52), or had no data on BMI ( n = 58). The analytic sample comp",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-3368",
+      "claim_type": "sample_size",
+      "raw_text": "n = 58",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3368,
+      "sentence": "We excluded participants ( Figure 1 ) who were institutionalized ( n = 44), had very poor cognitive status (score <18 in the Mini-Mental State Examination or with diagnosed dementia) and no proxy for dietary assessment ( n = 18), had missing dietary intake data ( n = 800), had very high reported energy intake, that is, >3500 kcal/d for females or >4000 kcal/d for males ( n = 52), or had no data on BMI ( n = 58).",
+      "context_window": "r >4000 kcal/d for males ( n = 52), or had no data on BMI ( n = 58). The analytic sample comprised 5658-5725 (depending on the",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-u-5447",
+      "claim_type": "unit_value",
+      "raw_text": "27 kg",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5447,
+      "sentence": "For participants with an undesirable body weight (BW), BW was adjusted to be within the desired BMI for older adults of 22-27 kg/m 2 and calculated as previously described ( 33 , 34 ).",
+      "context_window": "djusted to be within the desired BMI for older adults of 22-27 kg/m 2 and calculated as previously described ( 33 , 34 ). By",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-u-10070",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 m/s",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 10070,
+      "sentence": "In LASA, participants were asked if they had any difficulty walking for 5 min outside the house without stopping (equivalent to 240 m if walking speed was 0.8 m/s), and if they could walk up and down a staircase of 15 steps without resting.",
+      "context_window": "without stopping (equivalent to 240 m if walking speed was 0.8 m/s), and if they could walk up and down a staircase of 15 step",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-15551",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15551,
+      "sentence": "Results are presented as \u03b2s and 95% CIs for the joint models, and as HRs and 95% CIs for the multistate models.",
+      "context_window": "and clinical significance. Results are presented as \u03b2s and 95% CIs for the joint models, and as HRs and 95% CIs for the mu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-15596",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15596,
+      "sentence": "Results are presented as \u03b2s and 95% CIs for the joint models, and as HRs and 95% CIs for the multistate models.",
+      "context_window": "nted as \u03b2s and 95% CIs for the joint models, and as HRs and 95% CIs for the multistate models.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-111",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 111,
+      "sentence": "The analytic sample consisted of 5725 participants with a median age of 75.0 y (IQR: 71.6-79.0 y) at baseline, 53% of which ( n = 3035) were females ( Table 1 ).",
+      "context_window": "with a median age of 75.0 y (IQR: 71.6-79.0 y) at baseline, 53% of which ( n = 3035) were females ( Table 1 ). Most partici",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-126",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3035",
+      "numeric_values": [
+        3035.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 126,
+      "sentence": "The analytic sample consisted of 5725 participants with a median age of 75.0 y (IQR: 71.6-79.0 y) at baseline, 53% of which ( n = 3035) were females ( Table 1 ).",
+      "context_window": "ge of 75.0 y (IQR: 71.6-79.0 y) at baseline, 53% of which ( n = 3035) were females ( Table 1 ). Most participants were from the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-212",
+      "claim_type": "percentage",
+      "raw_text": "46.5%",
+      "numeric_values": [
+        46.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 212,
+      "sentence": "Most participants were from the Health ABC study (46.5%), followed by NuAge (30.1%), Newcastle 85+ (12.6%), and LASA (10.8%) at baseline ( Table 1 , Figure 1 ).",
+      "context_window": "able 1 ). Most participants were from the Health ABC study (46.5%), followed by NuAge (30.1%), Newcastle 85+ (12.6%), and LAS",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-239",
+      "claim_type": "percentage",
+      "raw_text": "30.1%",
+      "numeric_values": [
+        30.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 239,
+      "sentence": "Most participants were from the Health ABC study (46.5%), followed by NuAge (30.1%), Newcastle 85+ (12.6%), and LASA (10.8%) at baseline ( Table 1 , Figure 1 ).",
+      "context_window": "were from the Health ABC study (46.5%), followed by NuAge (30.1%), Newcastle 85+ (12.6%), and LASA (10.8%) at baseline ( Tab",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-262",
+      "claim_type": "percentage",
+      "raw_text": "12.6%",
+      "numeric_values": [
+        12.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 262,
+      "sentence": "Most participants were from the Health ABC study (46.5%), followed by NuAge (30.1%), Newcastle 85+ (12.6%), and LASA (10.8%) at baseline ( Table 1 , Figure 1 ).",
+      "context_window": "BC study (46.5%), followed by NuAge (30.1%), Newcastle 85+ (12.6%), and LASA (10.8%) at baseline ( Table 1 , Figure 1 ). At b",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-280",
+      "claim_type": "percentage",
+      "raw_text": "10.8%",
+      "numeric_values": [
+        10.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 280,
+      "sentence": "Most participants were from the Health ABC study (46.5%), followed by NuAge (30.1%), Newcastle 85+ (12.6%), and LASA (10.8%) at baseline ( Table 1 , Figure 1 ).",
+      "context_window": "followed by NuAge (30.1%), Newcastle 85+ (12.6%), and LASA (10.8%) at baseline ( Table 1 , Figure 1 ). At baseline, 28%, 23%,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-336",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 336,
+      "sentence": "At baseline, 28%, 23%, 21%, and 28% of the participants had protein intake <0.8, 0.8-0.99, 1.0-1.19, and \u22651.2 g/kg aBW/d, respectively ( Table 1 ).",
+      "context_window": "SA (10.8%) at baseline ( Table 1 , Figure 1 ). At baseline, 28%, 23%, 21%, and 28% of the participants had protein intake <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-341",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 341,
+      "sentence": "At baseline, 28%, 23%, 21%, and 28% of the participants had protein intake <0.8, 0.8-0.99, 1.0-1.19, and \u22651.2 g/kg aBW/d, respectively ( Table 1 ).",
+      "context_window": "0.8%) at baseline ( Table 1 , Figure 1 ). At baseline, 28%, 23%, 21%, and 28% of the participants had protein intake <0.8,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-346",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 346,
+      "sentence": "At baseline, 28%, 23%, 21%, and 28% of the participants had protein intake <0.8, 0.8-0.99, 1.0-1.19, and \u22651.2 g/kg aBW/d, respectively ( Table 1 ).",
+      "context_window": "at baseline ( Table 1 , Figure 1 ). At baseline, 28%, 23%, 21%, and 28% of the participants had protein intake <0.8, 0.8-0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-355",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 355,
+      "sentence": "At baseline, 28%, 23%, 21%, and 28% of the participants had protein intake <0.8, 0.8-0.99, 1.0-1.19, and \u22651.2 g/kg aBW/d, respectively ( Table 1 ).",
+      "context_window": "ine ( Table 1 , Figure 1 ). At baseline, 28%, 23%, 21%, and 28% of the participants had protein intake <0.8, 0.8-0.99, 1.0-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-840",
+      "claim_type": "percentage",
+      "raw_text": "29.6%",
+      "numeric_values": [
+        29.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 840,
+      "sentence": "The protein intake groups were of similar age (age was \u201cstatistically\u201d different but this difference was not meaningful), sex ratio, education, multimorbidity, cognition, and smoking status, but differed in alcohol consumption and energy intake (higher protein intake category included a higher proportion of alcohol drinkers and higher energy intake) and in PA (e.g., 29.6% of those with protein intake \u22651.2 g/kg aBW/d had a low level of PA, whereas this was 36.7% in those with protein intake <0.8 g/kg aBW/d).",
+      "context_window": "alcohol drinkers and higher energy intake) and in PA (e.g., 29.6% of those with protein intake \u22651.2 g/kg aBW/d had a low leve",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-931",
+      "claim_type": "percentage",
+      "raw_text": "36.7%",
+      "numeric_values": [
+        36.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 931,
+      "sentence": "The protein intake groups were of similar age (age was \u201cstatistically\u201d different but this difference was not meaningful), sex ratio, education, multimorbidity, cognition, and smoking status, but differed in alcohol consumption and energy intake (higher protein intake category included a higher proportion of alcohol drinkers and higher energy intake) and in PA (e.g., 29.6% of those with protein intake \u22651.2 g/kg aBW/d had a low level of PA, whereas this was 36.7% in those with protein intake <0.8 g/kg aBW/d).",
+      "context_window": "ake \u22651.2 g/kg aBW/d had a low level of PA, whereas this was 36.7% in those with protein intake <0.8 g/kg aBW/d). Participants",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-msd-1172",
+      "claim_type": "mean_sd",
+      "raw_text": "2.5 \u00b1 2.4",
+      "numeric_values": [
+        2.5,
+        2.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1172,
+      "sentence": "Maximum follow-up time was 8.5 y (mean: 2.5 \u00b1 2.4 y).",
+      "context_window": "tation ( Table 1 ). Maximum follow-up time was 8.5 y (mean: 2.5 \u00b1 2.4 y). Walking speed decreased modestly with age (from 1.06 \u00b1",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-msd-1234",
+      "claim_type": "mean_sd",
+      "raw_text": "1.06 \u00b1 0.28",
+      "numeric_values": [
+        1.06,
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1234,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "5 \u00b1 2.4 y). Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-u-1241",
+      "claim_type": "unit_value",
+      "raw_text": "0.28 m/s",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 1241,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "y). Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-msd-1265",
+      "claim_type": "mean_sd",
+      "raw_text": "1.01 \u00b1 0.25",
+      "numeric_values": [
+        1.01,
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1265,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "ased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the prop",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-u-1272",
+      "claim_type": "unit_value",
+      "raw_text": "0.25 m/s",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 1272,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "destly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proporti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-msd-1296",
+      "claim_type": "mean_sd",
+      "raw_text": "1.03 \u00b1 0.23",
+      "numeric_values": [
+        1.03,
+        0.23
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1296,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mob",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-u-1303",
+      "claim_type": "unit_value",
+      "raw_text": "0.23 m/s",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 1303,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobilit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-1410",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1410,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "icipants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-1416",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1031",
+      "numeric_values": [
+        1031.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1416,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "ts with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-1507",
+      "claim_type": "percentage",
+      "raw_text": "30.2%",
+      "numeric_values": [
+        30.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1507,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "ifficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Sup",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-1515",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1092",
+      "numeric_values": [
+        1092.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1515,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "y walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental F",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-1539",
+      "claim_type": "percentage",
+      "raw_text": "35.4%",
+      "numeric_values": [
+        35.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1539,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "line, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-n-1547",
+      "claim_type": "sample_size",
+      "raw_text": "n = 605",
+      "numeric_values": [
+        605.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1547,
+      "sentence": "Walking speed decreased modestly with age (from 1.06 \u00b1 0.28 m/s at baseline to 1.01 \u00b1 0.25 m/s at wave 4, and 1.03 \u00b1 0.23 m/s at wave 5), and the proportion of participants with mobility limitation increased with age [e.g., 18% ( n = 1031) of participants had difficulty walking >200 m at baseline, and this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ).",
+      "context_window": "d this increased to 30.2% ( n = 1092) at wave 4 and 35.4% ( n = 605) at wave 5] ( Supplemental Figure 2 , Table 2 ). Health and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-2190",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2190,
+      "sentence": "Nondifference between protein intake categories was assessed with \u03c7 2 test for categorical variables and ANOVA/Kruskal-Wallis for continuous variables along with the effect size and SD or 95% CI. aBW, adjusted body weight; Health ABC, Health, Aging and Body Composition Study; LASA, Longitudinal Aging Study Amsterdam; N85+, Newcastle 85 + Study; NuAge, Quebec Longitudinal Study on Nutrition and Successful Aging.",
+      "context_window": "r continuous variables along with the effect size and SD or 95% CI. aBW, adjusted body weight; Health ABC, Health, Aging an",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-3511",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.116, -0.100",
+      "numeric_values": [
+        -0.116,
+        -0.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3511,
+      "sentence": "In the model adjusted for sex, age, and education, walking speed ( z -score) decreased on average by 0.107 SD (95% CI: -0.116, -0.100) per year.",
+      "context_window": "walking speed ( z -score) decreased on average by 0.107 SD (95% CI: -0.116, -0.100) per year. In the same model, higher protein intake was mod",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-3772",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.020, 0.117",
+      "numeric_values": [
+        0.02,
+        0.117
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3772,
+      "sentence": "For example, a protein intake \u22651.2 g/kg aBW/d was associated with 0.076 SD (95% CI: 0.020, 0.117) faster walking speed and 0.024 SD (95% CI: 0.007, 0.034) per year slower decline in walking speed compared with a protein intake <0.8 g/kg aBW/d.",
+      "context_window": "rotein intake \u22651.2 g/kg aBW/d was associated with 0.076 SD (95% CI: 0.020, 0.117) faster walking speed and 0.024 SD (95% CI: 0.007, 0.034) p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-3829",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.007, 0.034",
+      "numeric_values": [
+        0.007,
+        0.034
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3829,
+      "sentence": "For example, a protein intake \u22651.2 g/kg aBW/d was associated with 0.076 SD (95% CI: 0.020, 0.117) faster walking speed and 0.024 SD (95% CI: 0.007, 0.034) per year slower decline in walking speed compared with a protein intake <0.8 g/kg aBW/d.",
+      "context_window": "D (95% CI: 0.020, 0.117) faster walking speed and 0.024 SD (95% CI: 0.007, 0.034) per year slower decline in walking speed compared with a p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-4315",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.011, 0.098",
+      "numeric_values": [
+        -0.011,
+        0.098
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4315,
+      "sentence": "For example, in the fully adjusted model, a protein intake \u22651.2 compared with <0.8 g/kg aBW/d was associated with 0.053 SD (95% CI: -0.011, 0.098) faster walking speed and 0.024 SD (95% CI: 0.009, 0.032) per year slower decline in walking speed ( Figure 2C ).",
+      "context_window": "compared with <0.8 g/kg aBW/d was associated with 0.053 SD (95% CI: -0.011, 0.098) faster walking speed and 0.024 SD (95% CI: 0.009, 0.032) p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-4373",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.009, 0.032",
+      "numeric_values": [
+        0.009,
+        0.032
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4373,
+      "sentence": "For example, in the fully adjusted model, a protein intake \u22651.2 compared with <0.8 g/kg aBW/d was associated with 0.053 SD (95% CI: -0.011, 0.098) faster walking speed and 0.024 SD (95% CI: 0.009, 0.032) per year slower decline in walking speed ( Figure 2C ).",
+      "context_window": "(95% CI: -0.011, 0.098) faster walking speed and 0.024 SD (95% CI: 0.009, 0.032) per year slower decline in walking speed ( Figure 2C ). Re",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-4647",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4647,
+      "sentence": "Association between protein intake categories (g/kg aBW/d) and walking speed ( z -score) over time (\u03b2 coefficients and 95% CIs).",
+      "context_window": "and walking speed ( z -score) over time (\u03b2 coefficients and 95% CIs). The analytic sample consisted of 5725 participants. A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-msd-5455",
+      "claim_type": "mean_sd",
+      "raw_text": "1.70 \u00b1 0.55",
+      "numeric_values": [
+        1.7,
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5455,
+      "sentence": "There were also 1612 incident cases of difficulty climbing stairs and 932 who recovered ( Table 4 ) from one wave to another (mean: 1.70 \u00b1 0.55 y between each wave).",
+      "context_window": "2 who recovered ( Table 4 ) from one wave to another (mean: 1.70 \u00b1 0.55 y between each wave). In the fully adjusted models, higher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-5734",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5734,
+      "sentence": "Participants with a protein intake of 0.8-0.99 g/kg aBW/d were 16% less likely to develop difficulty walking (HR: 0.84; 95% CI: 0.72, 0.99) ( Table 3 ) and 22% less likely to develop difficulty climbing stairs (HR: 0.78; 95% CI: 0.67, 0.92) ( Table 4 ) compared with participants with protein intake <0.8 g/kg aBW/d.",
+      "context_window": "ticipants with a protein intake of 0.8-0.99 g/kg aBW/d were 16% less likely to develop difficulty walking (HR: 0.84; 95% CI",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-hr-a-5781",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5781,
+      "sentence": "Participants with a protein intake of 0.8-0.99 g/kg aBW/d were 16% less likely to develop difficulty walking (HR: 0.84; 95% CI: 0.72, 0.99) ( Table 3 ) and 22% less likely to develop difficulty climbing stairs (HR: 0.78; 95% CI: 0.67, 0.92) ( Table 4 ) compared with participants with protein intake <0.8 g/kg aBW/d.",
+      "context_window": "g aBW/d were 16% less likely to develop difficulty walking (HR: 0.84; 95% CI: 0.72, 0.99) ( Table 3 ) and 22% less likely to dev",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-5791",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.72, 0.99",
+      "numeric_values": [
+        0.72,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5791,
+      "sentence": "Participants with a protein intake of 0.8-0.99 g/kg aBW/d were 16% less likely to develop difficulty walking (HR: 0.84; 95% CI: 0.72, 0.99) ( Table 3 ) and 22% less likely to develop difficulty climbing stairs (HR: 0.78; 95% CI: 0.67, 0.92) ( Table 4 ) compared with participants with protein intake <0.8 g/kg aBW/d.",
+      "context_window": "re 16% less likely to develop difficulty walking (HR: 0.84; 95% CI: 0.72, 0.99) ( Table 3 ) and 22% less likely to develop difficulty clim",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-5827",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5827,
+      "sentence": "Participants with a protein intake of 0.8-0.99 g/kg aBW/d were 16% less likely to develop difficulty walking (HR: 0.84; 95% CI: 0.72, 0.99) ( Table 3 ) and 22% less likely to develop difficulty climbing stairs (HR: 0.78; 95% CI: 0.67, 0.92) ( Table 4 ) compared with participants with protein intake <0.8 g/kg aBW/d.",
+      "context_window": "ulty walking (HR: 0.84; 95% CI: 0.72, 0.99) ( Table 3 ) and 22% less likely to develop difficulty climbing stairs (HR: 0.78",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-hr-a-5882",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.78",
+      "numeric_values": [
+        0.78
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5882,
+      "sentence": "Participants with a protein intake of 0.8-0.99 g/kg aBW/d were 16% less likely to develop difficulty walking (HR: 0.84; 95% CI: 0.72, 0.99) ( Table 3 ) and 22% less likely to develop difficulty climbing stairs (HR: 0.78; 95% CI: 0.67, 0.92) ( Table 4 ) compared with participants with protein intake <0.8 g/kg aBW/d.",
+      "context_window": "and 22% less likely to develop difficulty climbing stairs (HR: 0.78; 95% CI: 0.67, 0.92) ( Table 4 ) compared with participants",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-5892",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.67, 0.92",
+      "numeric_values": [
+        0.67,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5892,
+      "sentence": "Participants with a protein intake of 0.8-0.99 g/kg aBW/d were 16% less likely to develop difficulty walking (HR: 0.84; 95% CI: 0.72, 0.99) ( Table 3 ) and 22% less likely to develop difficulty climbing stairs (HR: 0.78; 95% CI: 0.67, 0.92) ( Table 4 ) compared with participants with protein intake <0.8 g/kg aBW/d.",
+      "context_window": "ess likely to develop difficulty climbing stairs (HR: 0.78; 95% CI: 0.67, 0.92) ( Table 4 ) compared with participants with protein intake",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-hr-a-6099",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6099,
+      "sentence": "This protective association was also observed for a protein intake of 1.0-1.19 g/kg aBW/d (difficulty walking, HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92) compared with <0.8 g/kg aBW/d.",
+      "context_window": "protein intake of 1.0-1.19 g/kg aBW/d (difficulty walking, HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76;",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-6109",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.59, 0.86",
+      "numeric_values": [
+        0.59,
+        0.86
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6109,
+      "sentence": "This protective association was also observed for a protein intake of 1.0-1.19 g/kg aBW/d (difficulty walking, HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92) compared with <0.8 g/kg aBW/d.",
+      "context_window": "ntake of 1.0-1.19 g/kg aBW/d (difficulty walking, HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91),",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-hr-a-6157",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6157,
+      "sentence": "This protective association was also observed for a protein intake of 1.0-1.19 g/kg aBW/d (difficulty walking, HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92) compared with <0.8 g/kg aBW/d.",
+      "context_window": ", HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty wa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-6167",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.63, 0.91",
+      "numeric_values": [
+        0.63,
+        0.91
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6167,
+      "sentence": "This protective association was also observed for a protein intake of 1.0-1.19 g/kg aBW/d (difficulty walking, HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92) compared with <0.8 g/kg aBW/d.",
+      "context_window": "; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95%",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-hr-a-6232",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.69",
+      "numeric_values": [
+        0.69
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6232,
+      "sentence": "This protective association was also observed for a protein intake of 1.0-1.19 g/kg aBW/d (difficulty walking, HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92) compared with <0.8 g/kg aBW/d.",
+      "context_window": "I: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76;",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-6242",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.56, 0.84",
+      "numeric_values": [
+        0.56,
+        0.84
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6242,
+      "sentence": "This protective association was also observed for a protein intake of 1.0-1.19 g/kg aBW/d (difficulty walking, HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92) compared with <0.8 g/kg aBW/d.",
+      "context_window": ".91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-hr-a-6290",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6290,
+      "sentence": "This protective association was also observed for a protein intake of 1.0-1.19 g/kg aBW/d (difficulty walking, HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92) compared with <0.8 g/kg aBW/d.",
+      "context_window": ", HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92) compared with <0.8 g/kg aBW/d. Higher",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-6300",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.62, 0.92",
+      "numeric_values": [
+        0.62,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6300,
+      "sentence": "This protective association was also observed for a protein intake of 1.0-1.19 g/kg aBW/d (difficulty walking, HR: 0.71; 95% CI: 0.59, 0.86; difficulty climbing stairs, HR: 0.76; 95% CI: 0.63, 0.91), and of \u22651.2 g/kg aBW/d (difficulty walking, HR: 0.69; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92) compared with <0.8 g/kg aBW/d.",
+      "context_window": "; 95% CI: 0.56, 0.84; difficulty climbing stairs, HR: 0.76; 95% CI: 0.62, 0.92) compared with <0.8 g/kg aBW/d. Higher protein intake, even",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-6824",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6824,
+      "sentence": "HRs and 95% CIs for the contribution of protein intake categories to transitions in self-reported difficulty walking 1\n\nMultistate models were used to determine the association between protein intake and transitions in difficulty walking.",
+      "context_window": "g/kg actual BW/d ( Supplemental Tables 6 and 7 ). HRs and 95% CIs for the contribution of protein intake categories to tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-7357",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7357,
+      "sentence": "HRs and 95% CIs for the contribution of protein intake categories to transitions in self-reported difficulty climbing stairs 1\n\nMultistate models were used to determine the association between protein intake and transitions in difficulty climbing stairs.",
+      "context_window": "tivity. aBW, adjusted body weight; ref., referent. HRs and 95% CIs for the contribution of protein intake categories to tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-8290",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0, 0.05",
+      "numeric_values": [
+        0.0,
+        0.05
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8290,
+      "sentence": "Although there was a trend within the same PA category for a slightly slower decline in walking speed for higher protein intake [e.g., participants with \u22651.2 compared with <0.8 g protein/kg aBW/d and medium PA had a slower decline in walking speed of 0.03 SD (95% CI: 0, 0.05)/y], there was no evidence of other associations (Supplemental Figure 3).",
+      "context_window": "medium PA had a slower decline in walking speed of 0.03 SD (95% CI: 0, 0.05)/y], there was no evidence of other associations (Supplemen",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-9206",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9206,
+      "sentence": "For example, participants with a protein intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8 g/kg aBW/d and high PA to transition to difficulty climbing stairs, whereas participants with a protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing stairs within the high PA category ( Figure 3 ).",
+      "context_window": "ants with a protein intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-hr-a-9223",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9223,
+      "sentence": "For example, participants with a protein intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8 g/kg aBW/d and high PA to transition to difficulty climbing stairs, whereas participants with a protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing stairs within the high PA category ( Figure 3 ).",
+      "context_window": "in intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-9233",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.37, 0.87",
+      "numeric_values": [
+        0.37,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9233,
+      "sentence": "For example, participants with a protein intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8 g/kg aBW/d and high PA to transition to difficulty climbing stairs, whereas participants with a protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing stairs within the high PA category ( Figure 3 ).",
+      "context_window": "\u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8 g/kg aBW/d and high",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-9430",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9430,
+      "sentence": "For example, participants with a protein intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8 g/kg aBW/d and high PA to transition to difficulty climbing stairs, whereas participants with a protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing stairs within the high PA category ( Figure 3 ).",
+      "context_window": "ticipants with a protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-hr-a-9447",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9447,
+      "sentence": "For example, participants with a protein intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8 g/kg aBW/d and high PA to transition to difficulty climbing stairs, whereas participants with a protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing stairs within the high PA category ( Figure 3 ).",
+      "context_window": "protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-9457",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.42, 0.93",
+      "numeric_values": [
+        0.42,
+        0.93
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9457,
+      "sentence": "For example, participants with a protein intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8 g/kg aBW/d and high PA to transition to difficulty climbing stairs, whereas participants with a protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing stairs within the high PA category ( Figure 3 ).",
+      "context_window": "take of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8-0.99 g/kg aBW/d wer",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-9537",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9537,
+      "sentence": "For example, participants with a protein intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8 g/kg aBW/d and high PA to transition to difficulty climbing stairs, whereas participants with a protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing stairs within the high PA category ( Figure 3 ).",
+      "context_window": "and those with a protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-hr-a-9554",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.72",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9554,
+      "sentence": "For example, participants with a protein intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8 g/kg aBW/d and high PA to transition to difficulty climbing stairs, whereas participants with a protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing stairs within the high PA category ( Figure 3 ).",
+      "context_window": "protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-ci-9564",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.51, 1.02",
+      "numeric_values": [
+        0.51,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9564,
+      "sentence": "For example, participants with a protein intake \u22651.2 g/kg aBW/d and high PA were 43% less likely (HR: 0.57; 95% CI: 0.37, 0.87) than those with a protein intake <0.8 g/kg aBW/d and high PA to transition to difficulty climbing stairs, whereas participants with a protein intake of 1.0-1.19 g/kg aBW/d were 38% less likely (HR: 0.62; 95% CI: 0.42, 0.93) and those with a protein intake of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing stairs within the high PA category ( Figure 3 ).",
+      "context_window": "take of 0.8-0.99 g/kg aBW/d were 28% less likely (HR: 0.72; 95% CI: 0.51, 1.02) to transition to difficulty climbing stairs within the hig",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-9679",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9679,
+      "sentence": "HRs and 95% CIs for the contribution of protein intake in grams per kilogram adjusted body weight per day to incident mobility limitations (i.e., difficulty walking >200 m and climbing stairs) by physical activity category over time.",
+      "context_window": "g stairs within the high PA category ( Figure 3 ). HRs and 95% CIs for the contribution of protein intake in grams per kil",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-u-1436",
+      "claim_type": "unit_value",
+      "raw_text": "0.05 m/s",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "m/s",
+      "source_section": "discussion",
+      "source_offset": 1436,
+      "sentence": "This could be explained by the larger sample size in our study, providing more power to detect this modest association, especially because the decline in walking speed was small (prior to z -score transformation it declined by 0.05 m/s over the study period), which could be insufficient to see a more clinically relevant association with higher protein intake.",
+      "context_window": "was small (prior to z -score transformation it declined by 0.05 m/s over the study period), which could be insufficient to see",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-4067",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4067,
+      "sentence": "Our findings are in line with results from the study by Beasley et al. ( 12 ), in which the rate of self-reported physical function decline was 52% lower in females with a mean protein intake of 1.19 \u00b1 0.20 g/kg BW/d than in females with a protein intake of 0.97 \u00b1 0.17 g/kg BW/d.",
+      "context_window": "ich the rate of self-reported physical function decline was 52% lower in females with a mean protein intake of 1.19 \u00b1 0.20",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-msd-4118",
+      "claim_type": "mean_sd",
+      "raw_text": "1.19 \u00b1 0.20",
+      "numeric_values": [
+        1.19,
+        0.2
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4118,
+      "sentence": "Our findings are in line with results from the study by Beasley et al. ( 12 ), in which the rate of self-reported physical function decline was 52% lower in females with a mean protein intake of 1.19 \u00b1 0.20 g/kg BW/d than in females with a protein intake of 0.97 \u00b1 0.17 g/kg BW/d.",
+      "context_window": "line was 52% lower in females with a mean protein intake of 1.19 \u00b1 0.20 g/kg BW/d than in females with a protein intake of 0.97 \u00b1 0",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-msd-4181",
+      "claim_type": "mean_sd",
+      "raw_text": "0.97 \u00b1 0.17",
+      "numeric_values": [
+        0.97,
+        0.17
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4181,
+      "sentence": "Our findings are in line with results from the study by Beasley et al. ( 12 ), in which the rate of self-reported physical function decline was 52% lower in females with a mean protein intake of 1.19 \u00b1 0.20 g/kg BW/d than in females with a protein intake of 0.97 \u00b1 0.17 g/kg BW/d.",
+      "context_window": "9 \u00b1 0.20 g/kg BW/d than in females with a protein intake of 0.97 \u00b1 0.17 g/kg BW/d. Together, these results suggest that even a prot",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-pct-4455",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4455,
+      "sentence": "However, as such a (high) protein recommendation could have many substantial implications (e.g., for >70% of community-dwelling older adults, health care, food industry, and environment), such recommendations should only be set when sufficient high-quality evidence is available.",
+      "context_window": "dation could have many substantial implications (e.g., for >70% of community-dwelling older adults, health care, food indus",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-msd-6498",
+      "claim_type": "mean_sd",
+      "raw_text": "26 \u00b1 26",
+      "numeric_values": [
+        26.0,
+        26.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6498,
+      "sentence": "A later systematic review of 36 RCTs in nonfrail older adults concluded that walking speed tended to improve more with protein supplementation in combination with resistance exercise after 26 \u00b1 26 wk compared with resistance exercise only ( 22 ).",
+      "context_window": "pplementation in combination with resistance exercise after 26 \u00b1 26 wk compared with resistance exercise only ( 22 ). Differenc",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8246618_low_protein_intake_physical_activity_and_physical_function_i-msd-8071",
+      "claim_type": "mean_sd",
+      "raw_text": "1.70 \u00b1 0.55",
+      "numeric_values": [
+        1.7,
+        0.55
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 8071,
+      "sentence": "A fourth limitation is that mobility limitation states were assigned at every data collection point (mean =1.70 \u00b1 0.55 y) between each wave but unobserved incidence and recovery from these mobility limitation states could have occurred between waves.",
+      "context_window": "states were assigned at every data collection point (mean =1.70 \u00b1 0.55 y) between each wave but unobserved incidence and recovery",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

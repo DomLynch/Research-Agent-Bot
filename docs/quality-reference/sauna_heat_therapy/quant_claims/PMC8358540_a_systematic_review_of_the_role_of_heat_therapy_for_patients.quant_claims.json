@@ -1,0 +1,884 @@
+{
+  "paper_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients",
+  "doi": "10.1177/1358863X20983475",
+  "extracted_at": "2026-05-05T22:38:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 14,
+    "confidence_interval": 24,
+    "unit_value": 7,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-779",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 779,
+      "sentence": "The 6-minute walk distance significantly improved following whole-body immersion ( p = 0.03; ES 0.94, 95% CI: 0.06-1.82), but not after Waon therapy or a water-perfused garment.",
+      "context_window": "nce significantly improved following whole-body immersion ( p = 0.03; ES 0.94, 95% CI: 0.06-1.82), but not after Waon therapy or",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-798",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.06-1.82",
+      "numeric_values": [
+        0.06,
+        1.82
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 798,
+      "sentence": "The 6-minute walk distance significantly improved following whole-body immersion ( p = 0.03; ES 0.94, 95% CI: 0.06-1.82), but not after Waon therapy or a water-perfused garment.",
+      "context_window": "mproved following whole-body immersion ( p = 0.03; ES 0.94, 95% CI: 0.06-1.82), but not after Waon therapy or a water-perfused garment. A",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-967",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 967,
+      "sentence": "Ankle-brachial pressure indices were significantly improved following whole-body immersion ( p = 0.01; ES 1.10, 95% CI: 0.20-1.99) but not after other therapies.",
+      "context_window": "ere significantly improved following whole-body immersion ( p = 0.01; ES 1.10, 95% CI: 0.20-1.99) but not after other therapies.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-986",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.20-1.99",
+      "numeric_values": [
+        0.2,
+        1.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 986,
+      "sentence": "Ankle-brachial pressure indices were significantly improved following whole-body immersion ( p = 0.01; ES 1.10, 95% CI: 0.20-1.99) but not after other therapies.",
+      "context_window": "mproved following whole-body immersion ( p = 0.01; ES 1.10, 95% CI: 0.20-1.99) but not after other therapies. No form of heat therapy dem",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-u-514",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 514,
+      "sentence": "Only full-text articles published in English and relating to adults (over 18 years of age) were included.",
+      "context_window": "articles published in English and relating to adults (over 18 years of age) were included. Titles and abstracts identified were",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-2923",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2923,
+      "sentence": "Effective heat therapy interventions were identified as those that induce a significantly greater change ( p < 0.05) for at least one outcome, when compared to a control condition.",
+      "context_window": "ified as those that induce a significantly greater change ( p < 0.05) for at least one outcome, when compared to a control condi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-u-572",
+      "claim_type": "unit_value",
+      "raw_text": "73 years",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 572,
+      "sentence": "17 Mean age of included participants was 73 years and 76% were male.",
+      "context_window": "group with ulcers. 17 Mean age of included participants was 73 years and 76% were male. The large majority of patients included",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-pct-585",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 585,
+      "sentence": "17 Mean age of included participants was 73 years and 76% were male.",
+      "context_window": "cers. 17 Mean age of included participants was 73 years and 76% were male. The large majority of patients included in the s",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-u-1132",
+      "claim_type": "unit_value",
+      "raw_text": "69 years",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1132,
+      "sentence": "Mean age of included participants was 69 years of age, mostly male, and medications were similar to above.",
+      "context_window": "n (Fontaine IIA/IIB). Mean age of included participants was 69 years of age, mostly male, and medications were similar to above.",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-4480",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4480,
+      "sentence": "Means difference testing demonstrated this improvement was significant ( p = 0.03; large ES 0.94, 95% CI: 0.06-1.82) in Akerman et al.",
+      "context_window": "nce testing demonstrated this improvement was significant ( p = 0.03; large ES 0.94, 95% CI: 0.06-1.82) in Akerman et al. 17 Dif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-4505",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.06-1.82",
+      "numeric_values": [
+        0.06,
+        1.82
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4505,
+      "sentence": "Means difference testing demonstrated this improvement was significant ( p = 0.03; large ES 0.94, 95% CI: 0.06-1.82) in Akerman et al.",
+      "context_window": "this improvement was significant ( p = 0.03; large ES 0.94, 95% CI: 0.06-1.82) in Akerman et al. 17 Differences were not significant in S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-4627",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.12 to 1.66",
+      "numeric_values": [
+        -0.12,
+        1.66
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4627,
+      "sentence": "17 Differences were not significant in Shinsato et al., 22 with a moderate ES (0.77, 95% CI: -0.12 to 1.66) (although it crosses zero) and a non-significant very small ES in Monroe et al. (0.16, 95% CI: -0.56 to 0.87), again crossing zero.",
+      "context_window": "ignificant in Shinsato et al., 22 with a moderate ES (0.77, 95% CI: -0.12 to 1.66) (although it crosses zero) and a non-significant very smal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-4737",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.56 to 0.87",
+      "numeric_values": [
+        -0.56,
+        0.87
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4737,
+      "sentence": "17 Differences were not significant in Shinsato et al., 22 with a moderate ES (0.77, 95% CI: -0.12 to 1.66) (although it crosses zero) and a non-significant very small ES in Monroe et al. (0.16, 95% CI: -0.56 to 0.87), again crossing zero.",
+      "context_window": "and a non-significant very small ES in Monroe et al. (0.16, 95% CI: -0.56 to 0.87), again crossing zero. 23 Only Akerman et al. reported a ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-4876",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.32 to 1.39",
+      "numeric_values": [
+        -0.32,
+        1.39
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4876,
+      "sentence": "23 Only Akerman et al. reported a change in PFWD post-intervention, with a moderate ES (0.53, 95% CI: -0.32 to 1.39), which was not significant between SEP and whole-body immersion.",
+      "context_window": "change in PFWD post-intervention, with a moderate ES (0.53, 95% CI: -0.32 to 1.39), which was not significant between SEP and whole-body imme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-5102",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5102,
+      "sentence": "17 , 22 , 23 Means difference testing demonstrated a statistically significant improvement in ABPI ( p = 0.01; large ES 1.10, 95% CI: 0.20-1.99) favouring whole-body immersion compared to SEP.",
+      "context_window": "onstrated a statistically significant improvement in ABPI ( p = 0.01; large ES 1.10, 95% CI: 0.20-1.99) favouring whole-body imm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-5127",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.20-1.99",
+      "numeric_values": [
+        0.2,
+        1.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5127,
+      "sentence": "17 , 22 , 23 Means difference testing demonstrated a statistically significant improvement in ABPI ( p = 0.01; large ES 1.10, 95% CI: 0.20-1.99) favouring whole-body immersion compared to SEP.",
+      "context_window": "significant improvement in ABPI ( p = 0.01; large ES 1.10, 95% CI: 0.20-1.99) favouring whole-body immersion compared to SEP. 17 Shinsat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-5373",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.37 to 1.37",
+      "numeric_values": [
+        -0.37,
+        1.37
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5373,
+      "sentence": "17 Shinsato et al. and Monroe et al. both had moderate ES, which were not statistically different when compared to best medical therapy and sham treatment, respectively (ES 0.50, 95% CI: -0.37 to 1.37 and ES 0.50, 95% CI: -0.14 to 1.32).",
+      "context_window": "medical therapy and sham treatment, respectively (ES 0.50, 95% CI: -0.37 to 1.37 and ES 0.50, 95% CI: -0.14 to 1.32). 22 , 23 Both Akerman",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-5408",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.14 to 1.32",
+      "numeric_values": [
+        -0.14,
+        1.32
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5408,
+      "sentence": "17 Shinsato et al. and Monroe et al. both had moderate ES, which were not statistically different when compared to best medical therapy and sham treatment, respectively (ES 0.50, 95% CI: -0.37 to 1.37 and ES 0.50, 95% CI: -0.14 to 1.32).",
+      "context_window": ", respectively (ES 0.50, 95% CI: -0.37 to 1.37 and ES 0.50, 95% CI: -0.14 to 1.32). 22 , 23 Both Akerman et al. and Monroe et al. measured a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-5845",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5845,
+      "sentence": "For individual components, Monroe et al. reported a significant difference in the \u2018physical function\u2019 component favouring heat therapy ( p = 0.018) compared to sham treatment after 6 weeks.",
+      "context_window": "the \u2018physical function\u2019 component favouring heat therapy ( p = 0.018) compared to sham treatment after 6 weeks. 23 Mean differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-u-5889",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5889,
+      "sentence": "For individual components, Monroe et al. reported a significant difference in the \u2018physical function\u2019 component favouring heat therapy ( p = 0.018) compared to sham treatment after 6 weeks.",
+      "context_window": "heat therapy ( p = 0.018) compared to sham treatment after 6 weeks. 23 Mean difference testing demonstrated that this was not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-5991",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.46 to 0.97",
+      "numeric_values": [
+        -0.46,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5991,
+      "sentence": "23 Mean difference testing demonstrated that this was not significant with a small ES (0.25, 95% CI: -0.46 to 0.97).",
+      "context_window": "trated that this was not significant with a small ES (0.25, 95% CI: -0.46 to 0.97). Akerman et al. reported a statistical difference between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-6134",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6134,
+      "sentence": "Akerman et al. reported a statistical difference between whole-body immersion and SEP in the \u2018bodily pain\u2019 component ( p = 0.041).",
+      "context_window": "ole-body immersion and SEP in the \u2018bodily pain\u2019 component ( p = 0.041). 17 Mean difference testing demonstrated that this was not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-6239",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.60 to 1.08",
+      "numeric_values": [
+        -0.6,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6239,
+      "sentence": "17 Mean difference testing demonstrated that this was not significant with a small ES (0.24, 95% CI: -0.60 to 1.08).",
+      "context_window": "trated that this was not significant with a small ES (0.24, 95% CI: -0.60 to 1.08). Role emotion was significantly different ( p = 0.05) betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-6306",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6306,
+      "sentence": "Role emotion was significantly different ( p = 0.05) between groups favouring heat therapy, with a large ES (0.86, 95% CI: -0.41 to 1.29), although it crosses zero.",
+      "context_window": "-0.60 to 1.08). Role emotion was significantly different ( p = 0.05) between groups favouring heat therapy, with a large ES (0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-6378",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.41 to 1.29",
+      "numeric_values": [
+        -0.41,
+        1.29
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6378,
+      "sentence": "Role emotion was significantly different ( p = 0.05) between groups favouring heat therapy, with a large ES (0.86, 95% CI: -0.41 to 1.29), although it crosses zero.",
+      "context_window": "tween groups favouring heat therapy, with a large ES (0.86, 95% CI: -0.41 to 1.29), although it crosses zero. Both Akerman et al. and Monroe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-6721",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.37-0.33",
+      "numeric_values": [
+        1.37,
+        0.33
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6721,
+      "sentence": "17 , 23 With regard to systolic blood pressure, Akerman et al. demonstrated that heat therapy reduced systolic blood pressure compared to SEP (moderate ES 0.52, 95% CI: 1.37-0.33) with no effect noted in Monroe et al.",
+      "context_window": "systolic blood pressure compared to SEP (moderate ES 0.52, 95% CI: 1.37-0.33) with no effect noted in Monroe et al. Diastolic blood pres",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-6881",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.26 to 0.43",
+      "numeric_values": [
+        -1.26,
+        0.43
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6881,
+      "sentence": "Diastolic blood pressure and mean arterial pressure was also reduced in Akerman et al. (small ES 0.41, 95% CI: -1.26 to 0.43 and moderate ES -0.59, 95% CI: -1.44 to 0.26).",
+      "context_window": "pressure was also reduced in Akerman et al. (small ES 0.41, 95% CI: -1.26 to 0.43 and moderate ES -0.59, 95% CI: -1.44 to 0.26). All three a",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-6926",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.44 to 0.26",
+      "numeric_values": [
+        -1.44,
+        0.26
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6926,
+      "sentence": "Diastolic blood pressure and mean arterial pressure was also reduced in Akerman et al. (small ES 0.41, 95% CI: -1.26 to 0.43 and moderate ES -0.59, 95% CI: -1.44 to 0.26).",
+      "context_window": "small ES 0.41, 95% CI: -1.26 to 0.43 and moderate ES -0.59, 95% CI: -1.44 to 0.26). All three acute studies included a measurement of poplit",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-7300",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.13-6.14",
+      "numeric_values": [
+        2.13,
+        6.14
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7300,
+      "sentence": "Pellinger et al. and Thomas et al. reported that blood flow in the popliteal artery was increased: large ES 4.13, 95% CI: 2.13-6.14 and large ES 1.53, 95% CI: 0.58-2.48, respectively.",
+      "context_window": "flow in the popliteal artery was increased: large ES 4.13, 95% CI: 2.13-6.14 and large ES 1.53, 95% CI: 0.58-2.48, respectively. Neff et",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-7337",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.58-2.48",
+      "numeric_values": [
+        0.58,
+        2.48
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7337,
+      "sentence": "Pellinger et al. and Thomas et al. reported that blood flow in the popliteal artery was increased: large ES 4.13, 95% CI: 2.13-6.14 and large ES 1.53, 95% CI: 0.58-2.48, respectively.",
+      "context_window": "reased: large ES 4.13, 95% CI: 2.13-6.14 and large ES 1.53, 95% CI: 0.58-2.48, respectively. Neff et al. reported a statistically signifi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-pct-7460",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7460,
+      "sentence": "Neff et al. reported a statistically significant increase in popliteal artery blood flow (76%, p < 0.01); however, insufficient data were reported to calculate an ES.",
+      "context_window": "ically significant increase in popliteal artery blood flow (76%, p < 0.01); however, insufficient data were reported to cal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-7465",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7465,
+      "sentence": "Neff et al. reported a statistically significant increase in popliteal artery blood flow (76%, p < 0.01); however, insufficient data were reported to calculate an ES.",
+      "context_window": "y significant increase in popliteal artery blood flow (76%, p < 0.01); however, insufficient data were reported to calculate an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-7783",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.09-4.70",
+      "numeric_values": [
+        2.09,
+        4.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7783,
+      "sentence": "24 , 26 Thomas et al. demonstrated an increase in core temperature by 1.8\u00b0C (aural measurement) at the end of the session (large ES 3.40, 95% CI: 2.09-4.70).",
+      "context_window": "ural measurement) at the end of the session (large ES 3.40, 95% CI: 2.09-4.70). 26 Upon cessation of the intervention, Neff et al. demons",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-7957",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7957,
+      "sentence": "26 Upon cessation of the intervention, Neff et al. demonstrated a significant increase in core temperature in comparison to the control condition (0.8\u00b0C, p < 0.01); however, insufficient data were reported to calculate an ES.",
+      "context_window": "temperature in comparison to the control condition (0.8\u00b0C, p < 0.01); however, insufficient data were reported to calculate an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-8202",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 9.6-16.03",
+      "numeric_values": [
+        9.6,
+        16.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8202,
+      "sentence": "Only Neff et al. reported changes in skin temperature - demonstrating an increase in skin temperature (~7.0\u00b0C) upon cessation of the heat therapy treatment (large ES 12.81, 95% CI: 9.6-16.03).",
+      "context_window": "on cessation of the heat therapy treatment (large ES 12.81, 95% CI: 9.6-16.03). 24 Both Thomas et al. and Neff et al. reported heart rat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-8466",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.89-2.90",
+      "numeric_values": [
+        0.89,
+        2.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8466,
+      "sentence": "24 , 26 Thomas et al. and Neff et al. reported increases in heart rate at the cessation of a single heat therapy treatment (large ES 1.89, 95% CI: 0.89-2.90 and large ES 5.83, 95% CI: 4.24-7.42, respectively).",
+      "context_window": "essation of a single heat therapy treatment (large ES 1.89, 95% CI: 0.89-2.90 and large ES 5.83, 95% CI: 4.24-7.42, respectively). Both T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-8503",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 4.24-7.42",
+      "numeric_values": [
+        4.24,
+        7.42
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8503,
+      "sentence": "24 , 26 Thomas et al. and Neff et al. reported increases in heart rate at the cessation of a single heat therapy treatment (large ES 1.89, 95% CI: 0.89-2.90 and large ES 5.83, 95% CI: 4.24-7.42, respectively).",
+      "context_window": "atment (large ES 1.89, 95% CI: 0.89-2.90 and large ES 5.83, 95% CI: 4.24-7.42, respectively). Both Thomas et al. and Neff et al. reported",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-8760",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.68-2.62",
+      "numeric_values": [
+        0.68,
+        2.62
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8760,
+      "sentence": "Thomas et al. demonstrated a decrease in systolic (large ES 1.65, 95% CI: 0.68-2.62) and diastolic blood pressure (large ES 1.108, 95% CI: 0.18-2.43), while mean arterial pressure was also reduced (large ES 1.49, 95% CI: 0.54-2.43).",
+      "context_window": "et al. demonstrated a decrease in systolic (large ES 1.65, 95% CI: 0.68-2.62) and diastolic blood pressure (large ES 1.108, 95% CI: 0.18",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-8825",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.18-2.43",
+      "numeric_values": [
+        0.18,
+        2.43
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8825,
+      "sentence": "Thomas et al. demonstrated a decrease in systolic (large ES 1.65, 95% CI: 0.68-2.62) and diastolic blood pressure (large ES 1.108, 95% CI: 0.18-2.43), while mean arterial pressure was also reduced (large ES 1.49, 95% CI: 0.54-2.43).",
+      "context_window": "I: 0.68-2.62) and diastolic blood pressure (large ES 1.108, 95% CI: 0.18-2.43), while mean arterial pressure was also reduced (large ES 1",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-ci-8907",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.54-2.43",
+      "numeric_values": [
+        0.54,
+        2.43
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8907,
+      "sentence": "Thomas et al. demonstrated a decrease in systolic (large ES 1.65, 95% CI: 0.68-2.62) and diastolic blood pressure (large ES 1.108, 95% CI: 0.18-2.43), while mean arterial pressure was also reduced (large ES 1.49, 95% CI: 0.54-2.43).",
+      "context_window": "ile mean arterial pressure was also reduced (large ES 1.49, 95% CI: 0.54-2.43). Neff et al. also reported statistically significant decre",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-u-9017",
+      "claim_type": "unit_value",
+      "raw_text": "11 mmHg",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 9017,
+      "sentence": "Neff et al. also reported statistically significant decreases in systolic blood pressure (11 mmHg, p < 0.01), diastolic blood pressure (6 mmHg, p < 0.01) and mean arterial pressure (8 mmHg, p < 0.01); however, insufficient data were reported to calculate effect sizes or CIs.",
+      "context_window": "istically significant decreases in systolic blood pressure (11 mmHg, p < 0.01), diastolic blood pressure (6 mmHg, p < 0.01) and",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-9026",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9026,
+      "sentence": "Neff et al. also reported statistically significant decreases in systolic blood pressure (11 mmHg, p < 0.01), diastolic blood pressure (6 mmHg, p < 0.01) and mean arterial pressure (8 mmHg, p < 0.01); however, insufficient data were reported to calculate effect sizes or CIs.",
+      "context_window": "significant decreases in systolic blood pressure (11 mmHg, p < 0.01), diastolic blood pressure (6 mmHg, p < 0.01) and mean arte",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-u-9063",
+      "claim_type": "unit_value",
+      "raw_text": "6 mmHg",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 9063,
+      "sentence": "Neff et al. also reported statistically significant decreases in systolic blood pressure (11 mmHg, p < 0.01), diastolic blood pressure (6 mmHg, p < 0.01) and mean arterial pressure (8 mmHg, p < 0.01); however, insufficient data were reported to calculate effect sizes or CIs.",
+      "context_window": "ood pressure (11 mmHg, p < 0.01), diastolic blood pressure (6 mmHg, p < 0.01) and mean arterial pressure (8 mmHg, p < 0.01); h",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-9071",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9071,
+      "sentence": "Neff et al. also reported statistically significant decreases in systolic blood pressure (11 mmHg, p < 0.01), diastolic blood pressure (6 mmHg, p < 0.01) and mean arterial pressure (8 mmHg, p < 0.01); however, insufficient data were reported to calculate effect sizes or CIs.",
+      "context_window": "sure (11 mmHg, p < 0.01), diastolic blood pressure (6 mmHg, p < 0.01) and mean arterial pressure (8 mmHg, p < 0.01); however, in",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-u-9109",
+      "claim_type": "unit_value",
+      "raw_text": "8 mmHg",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 9109,
+      "sentence": "Neff et al. also reported statistically significant decreases in systolic blood pressure (11 mmHg, p < 0.01), diastolic blood pressure (6 mmHg, p < 0.01) and mean arterial pressure (8 mmHg, p < 0.01); however, insufficient data were reported to calculate effect sizes or CIs.",
+      "context_window": "ood pressure (6 mmHg, p < 0.01) and mean arterial pressure (8 mmHg, p < 0.01); however, insufficient data were reported to cal",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-9117",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9117,
+      "sentence": "Neff et al. also reported statistically significant decreases in systolic blood pressure (11 mmHg, p < 0.01), diastolic blood pressure (6 mmHg, p < 0.01) and mean arterial pressure (8 mmHg, p < 0.01); however, insufficient data were reported to calculate effect sizes or CIs.",
+      "context_window": "sure (6 mmHg, p < 0.01) and mean arterial pressure (8 mmHg, p < 0.01); however, insufficient data were reported to calculate eff",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8358540_a_systematic_review_of_the_role_of_heat_therapy_for_patients-p-9331",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9331,
+      "sentence": "Endothelin-1 was significantly reduced ( p = 0.026) 30 minutes after cessation of heat therapy treatment; unfortunately, insufficient data were reported to calculate the magnitude of this effect.",
+      "context_window": "ngiogenic markers. Endothelin-1 was significantly reduced ( p = 0.026) 30 minutes after cessation of heat therapy treatment; unfo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

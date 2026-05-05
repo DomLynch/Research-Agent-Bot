@@ -1,0 +1,3159 @@
+{
+  "paper_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti",
+  "doi": "10.3390/nu14020375",
+  "extracted_at": "2026-05-05T22:35:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 49,
+    "p_value": 15,
+    "sample_size": 2,
+    "mean_sd": 30,
+    "percentage": 77
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-414",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 414,
+      "sentence": "Participants included 53 women, age 45-64 years.",
+      "context_window": "ts on muscle health. Participants included 53 women, age 45-64 years. All participants received NE and PRx; those randomized to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-952",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 952,
+      "sentence": "Protein intake (g/kg body weight) increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no significant difference between groups.",
+      "context_window": "h parameters. Protein intake (g/kg body weight) increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-n-978",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 978,
+      "sentence": "Protein intake (g/kg body weight) increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no significant difference between groups.",
+      "context_window": "ke (g/kg body weight) increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-986",
+      "claim_type": "mean_sd",
+      "raw_text": "0.8 \u00b1 0.2",
+      "numeric_values": [
+        0.8,
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 986,
+      "sentence": "Protein intake (g/kg body weight) increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no significant difference between groups.",
+      "context_window": "body weight) increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 w",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-999",
+      "claim_type": "mean_sd",
+      "raw_text": "1.2 \u00b1 0.3",
+      "numeric_values": [
+        1.2,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 999,
+      "sentence": "Protein intake (g/kg body weight) increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no significant difference between groups.",
+      "context_window": "increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no signif",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-n-1023",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1023,
+      "sentence": "Protein intake (g/kg body weight) increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no significant difference between groups.",
+      "context_window": "not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no significant difference betw",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1031",
+      "claim_type": "mean_sd",
+      "raw_text": "1.0 \u00b1 0.2",
+      "numeric_values": [
+        1.0,
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "Protein intake (g/kg body weight) increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no significant difference between groups.",
+      "context_window": "ched ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no significant difference between groups.",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1044",
+      "claim_type": "mean_sd",
+      "raw_text": "1.4 \u00b1 0.3",
+      "numeric_values": [
+        1.4,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1044,
+      "sentence": "Protein intake (g/kg body weight) increased ( p < 0.001): not-coached ( n = 28) 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no significant difference between groups.",
+      "context_window": ") 0.8 \u00b1 0.2 to 1.2 \u00b1 0.3 and coached ( n = 25) 1.0 \u00b1 0.2 to 1.4 \u00b1 0.3 with no significant difference between groups. A greater pe",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-1158",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1158,
+      "sentence": "A greater percentage of coached-group participants met ( p = 0.04) breakfast (72%) and met ( p < 0.001) three-meal (76%) PRx versus not-coached participants (25% and 53%, respectively).",
+      "context_window": "s. A greater percentage of coached-group participants met ( p = 0.04) breakfast (72%) and met ( p < 0.001) three-meal (76%) PRx",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-1179",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1179,
+      "sentence": "A greater percentage of coached-group participants met ( p = 0.04) breakfast (72%) and met ( p < 0.001) three-meal (76%) PRx versus not-coached participants (25% and 53%, respectively).",
+      "context_window": "ge of coached-group participants met ( p = 0.04) breakfast (72%) and met ( p < 0.001) three-meal (76%) PRx versus not-coach",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-1194",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1194,
+      "sentence": "A greater percentage of coached-group participants met ( p = 0.04) breakfast (72%) and met ( p < 0.001) three-meal (76%) PRx versus not-coached participants (25% and 53%, respectively).",
+      "context_window": "roup participants met ( p = 0.04) breakfast (72%) and met ( p < 0.001) three-meal (76%) PRx versus not-coached participants (25%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-1217",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1217,
+      "sentence": "A greater percentage of coached-group participants met ( p = 0.04) breakfast (72%) and met ( p < 0.001) three-meal (76%) PRx versus not-coached participants (25% and 53%, respectively).",
+      "context_window": "p = 0.04) breakfast (72%) and met ( p < 0.001) three-meal (76%) PRx versus not-coached participants (25% and 53%, respecti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-1259",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1259,
+      "sentence": "A greater percentage of coached-group participants met ( p = 0.04) breakfast (72%) and met ( p < 0.001) three-meal (76%) PRx versus not-coached participants (25% and 53%, respectively).",
+      "context_window": ".001) three-meal (76%) PRx versus not-coached participants (25% and 53%, respectively). Participants in both groups exhibit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-1267",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1267,
+      "sentence": "A greater percentage of coached-group participants met ( p = 0.04) breakfast (72%) and met ( p < 0.001) three-meal (76%) PRx versus not-coached participants (25% and 53%, respectively).",
+      "context_window": "ree-meal (76%) PRx versus not-coached participants (25% and 53%, respectively). Participants in both groups exhibited signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-1341",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1341,
+      "sentence": "Participants in both groups exhibited significantly ( p < 0.001) improved times for the five-chair rise test and 4 mgait speed test.",
+      "context_window": "ely). Participants in both groups exhibited significantly ( p < 0.001) improved times for the five-chair rise test and 4 mgait sp",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-509",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 509,
+      "sentence": "National Health and Nutrition Examination Surveys 2005-2014 data from a group of 11,680 adults reported an inadequate protein intake (less than the recommended dietary allowance (RDA) of 0.8 g/kg body weight) among 45% of females and 31% of males aged 51-60 years and among 48% of females and 37% of males aged 61-70 years [ 4 , 6 ].",
+      "context_window": "nded dietary allowance (RDA) of 0.8 g/kg body weight) among 45% of females and 31% of males aged 51-60 years and among 48%",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-528",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 528,
+      "sentence": "National Health and Nutrition Examination Surveys 2005-2014 data from a group of 11,680 adults reported an inadequate protein intake (less than the recommended dietary allowance (RDA) of 0.8 g/kg body weight) among 45% of females and 31% of males aged 51-60 years and among 48% of females and 37% of males aged 61-70 years [ 4 , 6 ].",
+      "context_window": "nce (RDA) of 0.8 g/kg body weight) among 45% of females and 31% of males aged 51-60 years and among 48% of females and 37%",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-549",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 549,
+      "sentence": "National Health and Nutrition Examination Surveys 2005-2014 data from a group of 11,680 adults reported an inadequate protein intake (less than the recommended dietary allowance (RDA) of 0.8 g/kg body weight) among 45% of females and 31% of males aged 51-60 years and among 48% of females and 37% of males aged 61-70 years [ 4 , 6 ].",
+      "context_window": "body weight) among 45% of females and 31% of males aged 51-60 years and among 48% of females and 37% of males aged 61-70 years",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-568",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 568,
+      "sentence": "National Health and Nutrition Examination Surveys 2005-2014 data from a group of 11,680 adults reported an inadequate protein intake (less than the recommended dietary allowance (RDA) of 0.8 g/kg body weight) among 45% of females and 31% of males aged 51-60 years and among 48% of females and 37% of males aged 61-70 years [ 4 , 6 ].",
+      "context_window": "45% of females and 31% of males aged 51-60 years and among 48% of females and 37% of males aged 61-70 years [ 4 , 6 ]. The",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-587",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 587,
+      "sentence": "National Health and Nutrition Examination Surveys 2005-2014 data from a group of 11,680 adults reported an inadequate protein intake (less than the recommended dietary allowance (RDA) of 0.8 g/kg body weight) among 45% of females and 31% of males aged 51-60 years and among 48% of females and 37% of males aged 61-70 years [ 4 , 6 ].",
+      "context_window": "31% of males aged 51-60 years and among 48% of females and 37% of males aged 61-70 years [ 4 , 6 ]. The percentages rose e",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-608",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 608,
+      "sentence": "National Health and Nutrition Examination Surveys 2005-2014 data from a group of 11,680 adults reported an inadequate protein intake (less than the recommended dietary allowance (RDA) of 0.8 g/kg body weight) among 45% of females and 31% of males aged 51-60 years and among 48% of females and 37% of males aged 61-70 years [ 4 , 6 ].",
+      "context_window": "-60 years and among 48% of females and 37% of males aged 61-70 years [ 4 , 6 ]. The percentages rose even higher for adults \u2265 71",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-674",
+      "claim_type": "unit_value",
+      "raw_text": "71 years",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 674,
+      "sentence": "The percentages rose even higher for adults \u2265 71 years [ 4 , 6 ].",
+      "context_window": "rs [ 4 , 6 ]. The percentages rose even higher for adults \u2265 71 years [ 4 , 6 ]. Moreover, a meta-analysis across cohorts residin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-945",
+      "claim_type": "percentage",
+      "raw_text": "23.6%",
+      "numeric_values": [
+        23.6
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 945,
+      "sentence": "Moreover, a meta-analysis across cohorts residing in Canada, the Netherlands, and the United Kingdom also documented inadequate protein intakes (below the RDA) among older adults living independently, with a higher overall pooled prevalence in women (23.6%) than men (18.8%) [ 8 ].",
+      "context_window": "endently, with a higher overall pooled prevalence in women (23.6%) than men (18.8%) [ 8 ]. Further, when 1.2 g protein/kg bod",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-962",
+      "claim_type": "percentage",
+      "raw_text": "18.8%",
+      "numeric_values": [
+        18.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 962,
+      "sentence": "Moreover, a meta-analysis across cohorts residing in Canada, the Netherlands, and the United Kingdom also documented inadequate protein intakes (below the RDA) among older adults living independently, with a higher overall pooled prevalence in women (23.6%) than men (18.8%) [ 8 ].",
+      "context_window": "higher overall pooled prevalence in women (23.6%) than men (18.8%) [ 8 ]. Further, when 1.2 g protein/kg body weight (represe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-1154",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1154,
+      "sentence": "Further, when 1.2 g protein/kg body weight (representing newer recommendations) was used as a cut-off value, the percentage of older adults with inadequate intake ranged from 65-76% [ 8 ].",
+      "context_window": "ntage of older adults with inadequate intake ranged from 65-76% [ 8 ]. Possible reasons for the insufficient protein intake",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-1871",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1871,
+      "sentence": "While the RDA (which was determined based largely on nitrogen balance studies dating back to 1940s and did not rely on indicators such as muscle health) has remained for decades at 0.8 g protein/kg body weight/day for adults, a growing body of research studies have indicated that protein intakes above the RDA, especially for adults > 40 years, are needed to increase muscle protein synthesis and attenuate losses in muscle health (and thus lessen the risk of sarcopenia and its associated adverse consequences) [ 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21 , 22 , 23 , 24 ].",
+      "context_window": "that protein intakes above the RDA, especially for adults > 40 years, are needed to increase muscle protein synthesis and attenu",
+      "claim_role": "dose",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-172",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 172,
+      "sentence": "Participant inclusion criteria were female, 45-64 years of age, self-reported as healthy, English speaking/reading, able to communicate by telephone, willing to consume protein-containing animal products and make changes to their diet.",
+      "context_window": "communities. Participant inclusion criteria were female, 45-64 years of age, self-reported as healthy, English speaking/reading,",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-1082",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1082,
+      "sentence": "Weight was measured using an electronic scale (Healthometer, Model 349KLX, McCook, IL, USA) at baseline and 12 weeks.",
+      "context_window": "ealthometer, Model 349KLX, McCook, IL, USA) at baseline and 12 weeks. Body mass index (BMI, in kg/m 2 ) was calculated from the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-1260",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1260,
+      "sentence": "Intakes of energy, protein, carbohydrate, and fat were assessed at baseline, 12 weeks as well as at week 4 utilizing three (two weekdays, a weekend day) 24-h diet recalls at each time point.",
+      "context_window": ", protein, carbohydrate, and fat were assessed at baseline, 12 weeks as well as at week 4 utilizing three (two weekdays, a weeke",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-2426",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2426,
+      "sentence": "The macronutrient contents of the diet (as a percentage of energy intake) and the percentage of protein ingested from animal and plant sources were also calculated at baseline and 12 weeks.",
+      "context_window": "imal and plant sources were also calculated at baseline and 12 weeks. Muscle Mass. Skeletal muscle mass was assessed via bioele",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-2611",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2611,
+      "sentence": "Skeletal muscle mass was assessed via bioelectrical impedance analysis (BIA) (RJL Systems BIA-Quantum IV Analyzer \u00ae , Clinton Township, MI, USA) at baseline and 12 weeks.",
+      "context_window": "IV Analyzer \u00ae , Clinton Township, MI, USA) at baseline and 12 weeks. Electrodes were attached to the right hand and foot of par",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-3076",
+      "claim_type": "unit_value",
+      "raw_text": "86 years",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3076,
+      "sentence": "This equation was previously developed and cross-validated against magnetic resonance imaging measures of whole-body muscle mass in a sample of 269 adults, 18 to 86 years and with BMIs from 16 to 48 kg/m 2 [ 17 ].",
+      "context_window": "of whole-body muscle mass in a sample of 269 adults, 18 to 86 years and with BMIs from 16 to 48 kg/m 2 [ 17 ]. Skeletal muscle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-3110",
+      "claim_type": "unit_value",
+      "raw_text": "48 kg",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3110,
+      "sentence": "This equation was previously developed and cross-validated against magnetic resonance imaging measures of whole-body muscle mass in a sample of 269 adults, 18 to 86 years and with BMIs from 16 to 48 kg/m 2 [ 17 ].",
+      "context_window": "mple of 269 adults, 18 to 86 years and with BMIs from 16 to 48 kg/m 2 [ 17 ]. Skeletal muscle index (SMI) was calculated for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-3207",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3207,
+      "sentence": "Skeletal muscle index (SMI) was calculated for each participant (baseline and 12 weeks) by dividing skeletal muscle mass (kg) by body weight (kg) and multiplying by 100 [ 45 ].",
+      "context_window": "dex (SMI) was calculated for each participant (baseline and 12 weeks) by dividing skeletal muscle mass (kg) by body weight (kg)",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-3748",
+      "claim_type": "unit_value",
+      "raw_text": "39 years",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3748,
+      "sentence": "A SMI was considered normal if it was greater than one standard deviation above the sex-specific mean based on a sample of over 6000 young adults (aged 18 to 39 years) from the NHANES III data [ 45 ].",
+      "context_window": "ean based on a sample of over 6000 young adults (aged 18 to 39 years) from the NHANES III data [ 45 ]. SMI cutoff values and the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-3850",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3850,
+      "sentence": "SMI cutoff values and their interpretation for women are: >28% \u201cnormal\u201d, between 22% and 28% indicative of Class 1 sarcopenia, and <22% indicative of Class II sarcopenia [ 45 ].",
+      "context_window": "SMI cutoff values and their interpretation for women are: >28% \u201cnormal\u201d, between 22% and 28% indicative of Class 1 sarcope",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-3872",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3872,
+      "sentence": "SMI cutoff values and their interpretation for women are: >28% \u201cnormal\u201d, between 22% and 28% indicative of Class 1 sarcopenia, and <22% indicative of Class II sarcopenia [ 45 ].",
+      "context_window": "their interpretation for women are: >28% \u201cnormal\u201d, between 22% and 28% indicative of Class 1 sarcopenia, and <22% indicati",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-3880",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3880,
+      "sentence": "SMI cutoff values and their interpretation for women are: >28% \u201cnormal\u201d, between 22% and 28% indicative of Class 1 sarcopenia, and <22% indicative of Class II sarcopenia [ 45 ].",
+      "context_window": "nterpretation for women are: >28% \u201cnormal\u201d, between 22% and 28% indicative of Class 1 sarcopenia, and <22% indicative of Cl",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-3923",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3923,
+      "sentence": "SMI cutoff values and their interpretation for women are: >28% \u201cnormal\u201d, between 22% and 28% indicative of Class 1 sarcopenia, and <22% indicative of Class II sarcopenia [ 45 ].",
+      "context_window": "between 22% and 28% indicative of Class 1 sarcopenia, and <22% indicative of Class II sarcopenia [ 45 ]. Muscle Strength",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-4075",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4075,
+      "sentence": "Skeletal muscle strength and function tests were completed at baseline and 12 weeks.",
+      "context_window": "strength and function tests were completed at baseline and 12 weeks. These tests included: dominant-hand grip strength (Jamar d",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-4604",
+      "claim_type": "unit_value",
+      "raw_text": "16 kg",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 4604,
+      "sentence": "Grip strength, five-chair rise test, and 4 m gait speed measurements were also compared with age and gender-specific cut-off values (grip strength < 16 kg, five-chair rise times > 15 s, and gait speed \u2264 0.8 m/s) to assess risk for sarcopenia [ 14 , 49 , 50 ].",
+      "context_window": "ith age and gender-specific cut-off values (grip strength < 16 kg, five-chair rise times > 15 s, and gait speed \u2264 0.8 m/s) to",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-4658",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 m/s",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 4658,
+      "sentence": "Grip strength, five-chair rise test, and 4 m gait speed measurements were also compared with age and gender-specific cut-off values (grip strength < 16 kg, five-chair rise times > 15 s, and gait speed \u2264 0.8 m/s) to assess risk for sarcopenia [ 14 , 49 , 50 ].",
+      "context_window": "gth < 16 kg, five-chair rise times > 15 s, and gait speed \u2264 0.8 m/s) to assess risk for sarcopenia [ 14 , 49 , 50 ]. One week",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-5011",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5011,
+      "sentence": "One week after the collection of baseline data, all participants met individually with a registered dietitian/nutritionist (RDN) and were provided with an individualized per-meal protein prescription (0.4 g protein/kg body weight/meal with adjusted body weight used for individuals with a BMI > 28 kg/m 2 ), and nutrition education (verbally and written) focusing on protein-containing food sources and needed food portion sizes to meet each individual\u2019s protein prescription.",
+      "context_window": "with adjusted body weight used for individuals with a BMI > 28 kg/m 2 ), and nutrition education (verbally and written) focus",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-5549",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5549,
+      "sentence": "Coached-group participants received weekly diet coaching for 10 weeks which focused on assisting participants in increasing their protein-rich food selections at meals.",
+      "context_window": "oached-group participants received weekly diet coaching for 10 weeks which focused on assisting participants in increasing their",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-5953",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5953,
+      "sentence": "At 12 weeks, participants were requestioned on the maintenance of physical activity routines and reassessed for weight, dietary intake, and muscle health (i.e., muscle mass, strength, and function) using the same procedures utilized at baseline.",
+      "context_window": "duration, and intensity) nor to try to gain/lose weight. At 12 weeks, participants were requestioned on the maintenance of physi",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6732",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6732,
+      "sentence": "A total of 54 participants were recruited to allow for a possible attrition rate of 15%.",
+      "context_window": "ts were recruited to allow for a possible attrition rate of 15%. Descriptive statistics were used to illustrate gender, rac",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-151",
+      "claim_type": "percentage",
+      "raw_text": "98%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 151,
+      "sentence": "The remaining 53 participants (98% retention) completed the study, 25 in the coached group and 28 in the not-coached group.",
+      "context_window": "on-study associated reasons. The remaining 53 participants (98% retention) completed the study, 25 in the coached group and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-332",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 332,
+      "sentence": "Participants in the coached group attended a mean of 8.6 coaching sessions (out of 10); 64% of participants in the coached group attended at least nine sessions.",
+      "context_window": "group attended a mean of 8.6 coaching sessions (out of 10); 64% of participants in the coached group attended at least nine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-714",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 714,
+      "sentence": "The majority of participants in both groups were non-Hispanic white (not-coached 75%, coached 84%) followed by African American (not-coached 14%, coached 8%) with 4-year college degree plus some post-college education (not-coached 43%, coached 36%) followed by 4-year college degree (not- coached 36%, coached 32%).",
+      "context_window": "cipants in both groups were non-Hispanic white (not-coached 75%, coached 84%) followed by African American (not-coached 14%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-727",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 727,
+      "sentence": "The majority of participants in both groups were non-Hispanic white (not-coached 75%, coached 84%) followed by African American (not-coached 14%, coached 8%) with 4-year college degree plus some post-college education (not-coached 43%, coached 36%) followed by 4-year college degree (not- coached 36%, coached 32%).",
+      "context_window": "th groups were non-Hispanic white (not-coached 75%, coached 84%) followed by African American (not-coached 14%, coached 8%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-774",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 774,
+      "sentence": "The majority of participants in both groups were non-Hispanic white (not-coached 75%, coached 84%) followed by African American (not-coached 14%, coached 8%) with 4-year college degree plus some post-college education (not-coached 43%, coached 36%) followed by 4-year college degree (not- coached 36%, coached 32%).",
+      "context_window": "75%, coached 84%) followed by African American (not-coached 14%, coached 8%) with 4-year college degree plus some post-coll",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-787",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 787,
+      "sentence": "The majority of participants in both groups were non-Hispanic white (not-coached 75%, coached 84%) followed by African American (not-coached 14%, coached 8%) with 4-year college degree plus some post-college education (not-coached 43%, coached 36%) followed by 4-year college degree (not- coached 36%, coached 32%).",
+      "context_window": "84%) followed by African American (not-coached 14%, coached 8%) with 4-year college degree plus some post-college educatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-864",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 864,
+      "sentence": "The majority of participants in both groups were non-Hispanic white (not-coached 75%, coached 84%) followed by African American (not-coached 14%, coached 8%) with 4-year college degree plus some post-college education (not-coached 43%, coached 36%) followed by 4-year college degree (not- coached 36%, coached 32%).",
+      "context_window": "ollege degree plus some post-college education (not-coached 43%, coached 36%) followed by 4-year college degree (not- coach",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-877",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 877,
+      "sentence": "The majority of participants in both groups were non-Hispanic white (not-coached 75%, coached 84%) followed by African American (not-coached 14%, coached 8%) with 4-year college degree plus some post-college education (not-coached 43%, coached 36%) followed by 4-year college degree (not- coached 36%, coached 32%).",
+      "context_window": "plus some post-college education (not-coached 43%, coached 36%) followed by 4-year college degree (not- coached 36%, coach",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-930",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 930,
+      "sentence": "The majority of participants in both groups were non-Hispanic white (not-coached 75%, coached 84%) followed by African American (not-coached 14%, coached 8%) with 4-year college degree plus some post-college education (not-coached 43%, coached 36%) followed by 4-year college degree (not- coached 36%, coached 32%).",
+      "context_window": "oached 36%) followed by 4-year college degree (not- coached 36%, coached 32%). No statistically significant differences in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-943",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 943,
+      "sentence": "The majority of participants in both groups were non-Hispanic white (not-coached 75%, coached 84%) followed by African American (not-coached 14%, coached 8%) with 4-year college degree plus some post-college education (not-coached 43%, coached 36%) followed by 4-year college degree (not- coached 36%, coached 32%).",
+      "context_window": "ollowed by 4-year college degree (not- coached 36%, coached 32%). No statistically significant differences in education or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1153",
+      "claim_type": "mean_sd",
+      "raw_text": "68.0 \u00b1 11.3",
+      "numeric_values": [
+        68.0,
+        11.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1153,
+      "sentence": "At the end of the study, weight and BMI did not significantly differ between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group.",
+      "context_window": "gnificantly differ between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg;",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-1160",
+      "claim_type": "unit_value",
+      "raw_text": "11.3 kg",
+      "numeric_values": [
+        11.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1160,
+      "sentence": "At the end of the study, weight and BMI did not significantly differ between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group.",
+      "context_window": "ntly differ between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1169",
+      "claim_type": "mean_sd",
+      "raw_text": "25.2 \u00b1 3.7",
+      "numeric_values": [
+        25.2,
+        3.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1169,
+      "sentence": "At the end of the study, weight and BMI did not significantly differ between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group.",
+      "context_window": "er between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-1176",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 kg",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1176,
+      "sentence": "At the end of the study, weight and BMI did not significantly differ between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group.",
+      "context_window": "een participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1209",
+      "claim_type": "mean_sd",
+      "raw_text": "64.3 \u00b1 12.1",
+      "numeric_values": [
+        64.3,
+        12.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1209,
+      "sentence": "At the end of the study, weight and BMI did not significantly differ between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group.",
+      "context_window": "ed (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group. However, the mean weight of",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-1216",
+      "claim_type": "unit_value",
+      "raw_text": "12.1 kg",
+      "numeric_values": [
+        12.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1216,
+      "sentence": "At the end of the study, weight and BMI did not significantly differ between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group.",
+      "context_window": "0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group. However, the mean weight of the",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1225",
+      "claim_type": "mean_sd",
+      "raw_text": "24.3 \u00b1 4.1",
+      "numeric_values": [
+        24.3,
+        4.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1225,
+      "sentence": "At the end of the study, weight and BMI did not significantly differ between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group.",
+      "context_window": "kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group. However, the mean weight of the coached gro",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-1232",
+      "claim_type": "unit_value",
+      "raw_text": "4.1 kg",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1232,
+      "sentence": "At the end of the study, weight and BMI did not significantly differ between participants in the not-coached (68.0 \u00b1 11.3 kg; 25.2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group.",
+      "context_window": "2 \u00b1 3.7 kg/m 2 ) versus the coached (64.3 \u00b1 12.1 kg; 24.3 \u00b1 4.1 kg/m 2 ) group. However, the mean weight of the coached group",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-1340",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1340,
+      "sentence": "However, the mean weight of the coached group participants slightly but significantly ( p = 0.002) increased from baseline to the end of the study (63.4 \u00b1 11.9 to 64.3 \u00b1 12.1 kg, respectively).",
+      "context_window": "the coached group participants slightly but significantly ( p = 0.002) increased from baseline to the end of the study (63.4 \u00b1 11",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1400",
+      "claim_type": "mean_sd",
+      "raw_text": "63.4 \u00b1 11.9",
+      "numeric_values": [
+        63.4,
+        11.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1400,
+      "sentence": "However, the mean weight of the coached group participants slightly but significantly ( p = 0.002) increased from baseline to the end of the study (63.4 \u00b1 11.9 to 64.3 \u00b1 12.1 kg, respectively).",
+      "context_window": "p = 0.002) increased from baseline to the end of the study (63.4 \u00b1 11.9 to 64.3 \u00b1 12.1 kg, respectively). Baseline. No significant",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1415",
+      "claim_type": "mean_sd",
+      "raw_text": "64.3 \u00b1 12.1",
+      "numeric_values": [
+        64.3,
+        12.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1415,
+      "sentence": "However, the mean weight of the coached group participants slightly but significantly ( p = 0.002) increased from baseline to the end of the study (63.4 \u00b1 11.9 to 64.3 \u00b1 12.1 kg, respectively).",
+      "context_window": "eased from baseline to the end of the study (63.4 \u00b1 11.9 to 64.3 \u00b1 12.1 kg, respectively). Baseline. No significant differences in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-1422",
+      "claim_type": "unit_value",
+      "raw_text": "12.1 kg",
+      "numeric_values": [
+        12.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1422,
+      "sentence": "However, the mean weight of the coached group participants slightly but significantly ( p = 0.002) increased from baseline to the end of the study (63.4 \u00b1 11.9 to 64.3 \u00b1 12.1 kg, respectively).",
+      "context_window": "rom baseline to the end of the study (63.4 \u00b1 11.9 to 64.3 \u00b1 12.1 kg, respectively). Baseline. No significant differences in pr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-1701",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1701,
+      "sentence": "However, three-meal protein intake, expressed as g/kg body weight, was significantly ( p = 0.01) greater in the coached group (0.9 \u00b1 0.2) versus the not-coached (0.7 \u00b1 0.2) group.",
+      "context_window": "intake, expressed as g/kg body weight, was significantly ( p = 0.01) greater in the coached group (0.9 \u00b1 0.2) versus the not-co",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1741",
+      "claim_type": "mean_sd",
+      "raw_text": "0.9 \u00b1 0.2",
+      "numeric_values": [
+        0.9,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1741,
+      "sentence": "However, three-meal protein intake, expressed as g/kg body weight, was significantly ( p = 0.01) greater in the coached group (0.9 \u00b1 0.2) versus the not-coached (0.7 \u00b1 0.2) group.",
+      "context_window": "was significantly ( p = 0.01) greater in the coached group (0.9 \u00b1 0.2) versus the not-coached (0.7 \u00b1 0.2) group. Three-meal prote",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1776",
+      "claim_type": "mean_sd",
+      "raw_text": "0.7 \u00b1 0.2",
+      "numeric_values": [
+        0.7,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1776,
+      "sentence": "However, three-meal protein intake, expressed as g/kg body weight, was significantly ( p = 0.01) greater in the coached group (0.9 \u00b1 0.2) versus the not-coached (0.7 \u00b1 0.2) group.",
+      "context_window": "er in the coached group (0.9 \u00b1 0.2) versus the not-coached (0.7 \u00b1 0.2) group. Three-meal protein intake averaged 53.8 \u00b1 14.8 g pe",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1829",
+      "claim_type": "mean_sd",
+      "raw_text": "53.8 \u00b1 14.8",
+      "numeric_values": [
+        53.8,
+        14.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1829,
+      "sentence": "Three-meal protein intake averaged 53.8 \u00b1 14.8 g per day in the coached group and 49.0 \u00b1 13.9 g per day in the not-coached group with no significant difference between groups.",
+      "context_window": "ached (0.7 \u00b1 0.2) group. Three-meal protein intake averaged 53.8 \u00b1 14.8 g per day in the coached group and 49.0 \u00b1 13.9 g per day in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-1876",
+      "claim_type": "mean_sd",
+      "raw_text": "49.0 \u00b1 13.9",
+      "numeric_values": [
+        49.0,
+        13.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1876,
+      "sentence": "Three-meal protein intake averaged 53.8 \u00b1 14.8 g per day in the coached group and 49.0 \u00b1 13.9 g per day in the not-coached group with no significant difference between groups.",
+      "context_window": "ake averaged 53.8 \u00b1 14.8 g per day in the coached group and 49.0 \u00b1 13.9 g per day in the not-coached group with no significant diff",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-1983",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1983,
+      "sentence": "At baseline, 45% of participants (four participants in the coached (16%) and eight participants in the not-coached group (29%) consumed less than the RDA for protein.",
+      "context_window": "with no significant difference between groups. At baseline, 45% of participants (four participants in the coached (16%) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-2038",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2038,
+      "sentence": "At baseline, 45% of participants (four participants in the coached (16%) and eight participants in the not-coached group (29%) consumed less than the RDA for protein.",
+      "context_window": "ine, 45% of participants (four participants in the coached (16%) and eight participants in the not-coached group (29%) cons",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-2092",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2092,
+      "sentence": "At baseline, 45% of participants (four participants in the coached (16%) and eight participants in the not-coached group (29%) consumed less than the RDA for protein.",
+      "context_window": "ched (16%) and eight participants in the not-coached group (29%) consumed less than the RDA for protein. Protein Intakes o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-2572",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2572,
+      "sentence": "Percentage of participants meeting protein prescription at meals by group at baseline, 4 and 12 weeks (end). * Significant difference coached versus not-coached group participants.",
+      "context_window": "g protein prescription at meals by group at baseline, 4 and 12 weeks (end). * Significant difference coached versus not-coached",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-2774",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2774,
+      "sentence": "At the end of the 12-week study, three-meal protein intake (expressed g/kg body weight) significantly ( p < 0.001) increased from baseline in both groups.",
+      "context_window": "protein intake (expressed g/kg body weight) significantly ( p < 0.001) increased from baseline in both groups. Specifically, in t",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-2891",
+      "claim_type": "mean_sd",
+      "raw_text": "0.9 \u00b1 0.2",
+      "numeric_values": [
+        0.9,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2891,
+      "sentence": "Specifically, in the coached group, protein intake increased from 0.9 \u00b1 0.2 g/kg body weight at baseline to 1.3 \u00b1 0.2 g/kg body weight at 12 weeks and in the not-coached group from 0.7 \u00b1 0.2 at baseline to 1.2 \u00b1 0.3 g/kg body weight at 12 weeks.",
+      "context_window": "ically, in the coached group, protein intake increased from 0.9 \u00b1 0.2 g/kg body weight at baseline to 1.3 \u00b1 0.2 g/kg body weight",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-2933",
+      "claim_type": "mean_sd",
+      "raw_text": "1.3 \u00b1 0.2",
+      "numeric_values": [
+        1.3,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2933,
+      "sentence": "Specifically, in the coached group, protein intake increased from 0.9 \u00b1 0.2 g/kg body weight at baseline to 1.3 \u00b1 0.2 g/kg body weight at 12 weeks and in the not-coached group from 0.7 \u00b1 0.2 at baseline to 1.2 \u00b1 0.3 g/kg body weight at 12 weeks.",
+      "context_window": "ke increased from 0.9 \u00b1 0.2 g/kg body weight at baseline to 1.3 \u00b1 0.2 g/kg body weight at 12 weeks and in the not-coached group f",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-2963",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2963,
+      "sentence": "Specifically, in the coached group, protein intake increased from 0.9 \u00b1 0.2 g/kg body weight at baseline to 1.3 \u00b1 0.2 g/kg body weight at 12 weeks and in the not-coached group from 0.7 \u00b1 0.2 at baseline to 1.2 \u00b1 0.3 g/kg body weight at 12 weeks.",
+      "context_window": "kg body weight at baseline to 1.3 \u00b1 0.2 g/kg body weight at 12 weeks and in the not-coached group from 0.7 \u00b1 0.2 at baseline to",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-3006",
+      "claim_type": "mean_sd",
+      "raw_text": "0.7 \u00b1 0.2",
+      "numeric_values": [
+        0.7,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3006,
+      "sentence": "Specifically, in the coached group, protein intake increased from 0.9 \u00b1 0.2 g/kg body weight at baseline to 1.3 \u00b1 0.2 g/kg body weight at 12 weeks and in the not-coached group from 0.7 \u00b1 0.2 at baseline to 1.2 \u00b1 0.3 g/kg body weight at 12 weeks.",
+      "context_window": "g body weight at 12 weeks and in the not-coached group from 0.7 \u00b1 0.2 at baseline to 1.2 \u00b1 0.3 g/kg body weight at 12 weeks. Ther",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-3031",
+      "claim_type": "mean_sd",
+      "raw_text": "1.2 \u00b1 0.3",
+      "numeric_values": [
+        1.2,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3031,
+      "sentence": "Specifically, in the coached group, protein intake increased from 0.9 \u00b1 0.2 g/kg body weight at baseline to 1.3 \u00b1 0.2 g/kg body weight at 12 weeks and in the not-coached group from 0.7 \u00b1 0.2 at baseline to 1.2 \u00b1 0.3 g/kg body weight at 12 weeks.",
+      "context_window": "and in the not-coached group from 0.7 \u00b1 0.2 at baseline to 1.2 \u00b1 0.3 g/kg body weight at 12 weeks. There was also a significant",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-3061",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3061,
+      "sentence": "Specifically, in the coached group, protein intake increased from 0.9 \u00b1 0.2 g/kg body weight at baseline to 1.3 \u00b1 0.2 g/kg body weight at 12 weeks and in the not-coached group from 0.7 \u00b1 0.2 at baseline to 1.2 \u00b1 0.3 g/kg body weight at 12 weeks.",
+      "context_window": "from 0.7 \u00b1 0.2 at baseline to 1.2 \u00b1 0.3 g/kg body weight at 12 weeks. There was also a significant change in three-meal protein",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-3231",
+      "claim_type": "mean_sd",
+      "raw_text": "49.0 \u00b1 13.9",
+      "numeric_values": [
+        49.0,
+        13.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3231,
+      "sentence": "There was also a significant change in three-meal protein intake (g/day) for both the coached and not-coached groups, with the not-coached group improving from 49.0 \u00b1 13.9 g (baseline) to 80.0 \u00b1 20.4 g (week 4) to 77.4 \u00b1 16.4 g (week 12), and with the coached group improving from 53.8 \u00b1 14.8 g (baseline) to 81.2 \u00b1 16.0 g (week 4) to 84.2 \u00b1 14.5 g (week 12) [V = 0.76, F(2, 50) = 80.5, p < 0 .001, \u03b7 2 = 0.763].",
+      "context_window": "t-coached groups, with the not-coached group improving from 49.0 \u00b1 13.9 g (baseline) to 80.0 \u00b1 20.4 g (week 4) to 77.4 \u00b1 16.4 g (we",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-3259",
+      "claim_type": "mean_sd",
+      "raw_text": "80.0 \u00b1 20.4",
+      "numeric_values": [
+        80.0,
+        20.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3259,
+      "sentence": "There was also a significant change in three-meal protein intake (g/day) for both the coached and not-coached groups, with the not-coached group improving from 49.0 \u00b1 13.9 g (baseline) to 80.0 \u00b1 20.4 g (week 4) to 77.4 \u00b1 16.4 g (week 12), and with the coached group improving from 53.8 \u00b1 14.8 g (baseline) to 81.2 \u00b1 16.0 g (week 4) to 84.2 \u00b1 14.5 g (week 12) [V = 0.76, F(2, 50) = 80.5, p < 0 .001, \u03b7 2 = 0.763].",
+      "context_window": "ot-coached group improving from 49.0 \u00b1 13.9 g (baseline) to 80.0 \u00b1 20.4 g (week 4) to 77.4 \u00b1 16.4 g (week 12), and with the coached",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-3285",
+      "claim_type": "mean_sd",
+      "raw_text": "77.4 \u00b1 16.4",
+      "numeric_values": [
+        77.4,
+        16.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3285,
+      "sentence": "There was also a significant change in three-meal protein intake (g/day) for both the coached and not-coached groups, with the not-coached group improving from 49.0 \u00b1 13.9 g (baseline) to 80.0 \u00b1 20.4 g (week 4) to 77.4 \u00b1 16.4 g (week 12), and with the coached group improving from 53.8 \u00b1 14.8 g (baseline) to 81.2 \u00b1 16.0 g (week 4) to 84.2 \u00b1 14.5 g (week 12) [V = 0.76, F(2, 50) = 80.5, p < 0 .001, \u03b7 2 = 0.763].",
+      "context_window": "from 49.0 \u00b1 13.9 g (baseline) to 80.0 \u00b1 20.4 g (week 4) to 77.4 \u00b1 16.4 g (week 12), and with the coached group improving from 53.8",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-3352",
+      "claim_type": "mean_sd",
+      "raw_text": "53.8 \u00b1 14.8",
+      "numeric_values": [
+        53.8,
+        14.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3352,
+      "sentence": "There was also a significant change in three-meal protein intake (g/day) for both the coached and not-coached groups, with the not-coached group improving from 49.0 \u00b1 13.9 g (baseline) to 80.0 \u00b1 20.4 g (week 4) to 77.4 \u00b1 16.4 g (week 12), and with the coached group improving from 53.8 \u00b1 14.8 g (baseline) to 81.2 \u00b1 16.0 g (week 4) to 84.2 \u00b1 14.5 g (week 12) [V = 0.76, F(2, 50) = 80.5, p < 0 .001, \u03b7 2 = 0.763].",
+      "context_window": "16.4 g (week 12), and with the coached group improving from 53.8 \u00b1 14.8 g (baseline) to 81.2 \u00b1 16.0 g (week 4) to 84.2 \u00b1 14.5 g (we",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-3380",
+      "claim_type": "mean_sd",
+      "raw_text": "81.2 \u00b1 16.0",
+      "numeric_values": [
+        81.2,
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3380,
+      "sentence": "There was also a significant change in three-meal protein intake (g/day) for both the coached and not-coached groups, with the not-coached group improving from 49.0 \u00b1 13.9 g (baseline) to 80.0 \u00b1 20.4 g (week 4) to 77.4 \u00b1 16.4 g (week 12), and with the coached group improving from 53.8 \u00b1 14.8 g (baseline) to 81.2 \u00b1 16.0 g (week 4) to 84.2 \u00b1 14.5 g (week 12) [V = 0.76, F(2, 50) = 80.5, p < 0 .001, \u03b7 2 = 0.763].",
+      "context_window": "he coached group improving from 53.8 \u00b1 14.8 g (baseline) to 81.2 \u00b1 16.0 g (week 4) to 84.2 \u00b1 14.5 g (week 12) [V = 0.76, F(2, 50) =",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-3406",
+      "claim_type": "mean_sd",
+      "raw_text": "84.2 \u00b1 14.5",
+      "numeric_values": [
+        84.2,
+        14.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3406,
+      "sentence": "There was also a significant change in three-meal protein intake (g/day) for both the coached and not-coached groups, with the not-coached group improving from 49.0 \u00b1 13.9 g (baseline) to 80.0 \u00b1 20.4 g (week 4) to 77.4 \u00b1 16.4 g (week 12), and with the coached group improving from 53.8 \u00b1 14.8 g (baseline) to 81.2 \u00b1 16.0 g (week 4) to 84.2 \u00b1 14.5 g (week 12) [V = 0.76, F(2, 50) = 80.5, p < 0 .001, \u03b7 2 = 0.763].",
+      "context_window": "from 53.8 \u00b1 14.8 g (baseline) to 81.2 \u00b1 16.0 g (week 4) to 84.2 \u00b1 14.5 g (week 12) [V = 0.76, F(2, 50) = 80.5, p < 0 .001, \u03b7 2 = 0",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-3683",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3683,
+      "sentence": "When examining protein intake (g/kg body weight) at each meal at 12 weeks, intake at breakfast (but not lunch and dinner) was significantly ( p = 0.004) greater in the coached group (0.4 \u00b1 0.1 g/kg body weight) than the not-coached group (0.3 \u00b1 0.1 g/kg body weight).",
+      "context_window": "examining protein intake (g/kg body weight) at each meal at 12 weeks, intake at breakfast (but not lunch and dinner) was signifi",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-3760",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3760,
+      "sentence": "When examining protein intake (g/kg body weight) at each meal at 12 weeks, intake at breakfast (but not lunch and dinner) was significantly ( p = 0.004) greater in the coached group (0.4 \u00b1 0.1 g/kg body weight) than the not-coached group (0.3 \u00b1 0.1 g/kg body weight).",
+      "context_window": "at breakfast (but not lunch and dinner) was significantly ( p = 0.004) greater in the coached group (0.4 \u00b1 0.1 g/kg body weight)",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-3801",
+      "claim_type": "mean_sd",
+      "raw_text": "0.4 \u00b1 0.1",
+      "numeric_values": [
+        0.4,
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3801,
+      "sentence": "When examining protein intake (g/kg body weight) at each meal at 12 weeks, intake at breakfast (but not lunch and dinner) was significantly ( p = 0.004) greater in the coached group (0.4 \u00b1 0.1 g/kg body weight) than the not-coached group (0.3 \u00b1 0.1 g/kg body weight).",
+      "context_window": "as significantly ( p = 0.004) greater in the coached group (0.4 \u00b1 0.1 g/kg body weight) than the not-coached group (0.3 \u00b1 0.1 g/k",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-3857",
+      "claim_type": "mean_sd",
+      "raw_text": "0.3 \u00b1 0.1",
+      "numeric_values": [
+        0.3,
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3857,
+      "sentence": "When examining protein intake (g/kg body weight) at each meal at 12 weeks, intake at breakfast (but not lunch and dinner) was significantly ( p = 0.004) greater in the coached group (0.4 \u00b1 0.1 g/kg body weight) than the not-coached group (0.3 \u00b1 0.1 g/kg body weight).",
+      "context_window": "up (0.4 \u00b1 0.1 g/kg body weight) than the not-coached group (0.3 \u00b1 0.1 g/kg body weight). Further, at 12 weeks none of the partici",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-3898",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3898,
+      "sentence": "Further, at 12 weeks none of the participants in the coached group versus three participants (11%) in the not-coached group consumed less the RDA for protein.",
+      "context_window": "not-coached group (0.3 \u00b1 0.1 g/kg body weight). Further, at 12 weeks none of the participants in the coached group versus three",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-3980",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3980,
+      "sentence": "Further, at 12 weeks none of the participants in the coached group versus three participants (11%) in the not-coached group consumed less the RDA for protein.",
+      "context_window": "articipants in the coached group versus three participants (11%) in the not-coached group consumed less the RDA for protein",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-4343",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4343,
+      "sentence": "At baseline, a significant difference was evident between the groups at only dinner, with a significantly greater percentage of coached group participants (56%) meeting the per-meal protein prescription than the not-coached group participants (21%).",
+      "context_window": "ificantly greater percentage of coached group participants (56%) meeting the per-meal protein prescription than the not-coa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-4431",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4431,
+      "sentence": "At baseline, a significant difference was evident between the groups at only dinner, with a significantly greater percentage of coached group participants (56%) meeting the per-meal protein prescription than the not-coached group participants (21%).",
+      "context_window": "otein prescription than the not-coached group participants (21%). The effect of the coaching was clear at 12 weeks with 72%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-4477",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4477,
+      "sentence": "The effect of the coaching was clear at 12 weeks with 72% of participants in the coached group meeting the protein prescription at breakfast versus only 25% of participants in the not-coached group ( p < 0.001).",
+      "context_window": "participants (21%). The effect of the coaching was clear at 12 weeks with 72% of participants in the coached group meeting the p",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-4491",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4491,
+      "sentence": "The effect of the coaching was clear at 12 weeks with 72% of participants in the coached group meeting the protein prescription at breakfast versus only 25% of participants in the not-coached group ( p < 0.001).",
+      "context_window": "21%). The effect of the coaching was clear at 12 weeks with 72% of participants in the coached group meeting the protein pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-4590",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4590,
+      "sentence": "The effect of the coaching was clear at 12 weeks with 72% of participants in the coached group meeting the protein prescription at breakfast versus only 25% of participants in the not-coached group ( p < 0.001).",
+      "context_window": "p meeting the protein prescription at breakfast versus only 25% of participants in the not-coached group ( p < 0.001). The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-4637",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4637,
+      "sentence": "The effect of the coaching was clear at 12 weeks with 72% of participants in the coached group meeting the protein prescription at breakfast versus only 25% of participants in the not-coached group ( p < 0.001).",
+      "context_window": "versus only 25% of participants in the not-coached group ( p < 0.001). The participants who received diet coaching were 7.7 time",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-4739",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4739,
+      "sentence": "The participants who received diet coaching were 7.7 times more likely (OR \u03c7 2 (1) 11.71, p < 0.001, Phi 0.47) to meet their protein prescription at breakfast than those in the not-coached group.",
+      "context_window": "diet coaching were 7.7 times more likely (OR \u03c7 2 (1) 11.71, p < 0.001, Phi 0.47) to meet their protein prescription at breakfast",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-4858",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4858,
+      "sentence": "Moreover, at 12 weeks, the percentage of participants in the coached group (76%) who met the three-meal protein prescription, i.e., \u22651.2 g protein/kg body weight per day, was significantly ( p = 0.04) greater than those in the not-coach group (53%) ( Figure 2 ).",
+      "context_window": "breakfast than those in the not-coached group. Moreover, at 12 weeks, the percentage of participants in the coached group (76%)",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-4921",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4921,
+      "sentence": "Moreover, at 12 weeks, the percentage of participants in the coached group (76%) who met the three-meal protein prescription, i.e., \u22651.2 g protein/kg body weight per day, was significantly ( p = 0.04) greater than those in the not-coach group (53%) ( Figure 2 ).",
+      "context_window": "weeks, the percentage of participants in the coached group (76%) who met the three-meal protein prescription, i.e., \u22651.2 g",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-5036",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5036,
+      "sentence": "Moreover, at 12 weeks, the percentage of participants in the coached group (76%) who met the three-meal protein prescription, i.e., \u22651.2 g protein/kg body weight per day, was significantly ( p = 0.04) greater than those in the not-coach group (53%) ( Figure 2 ).",
+      "context_window": "\u22651.2 g protein/kg body weight per day, was significantly ( p = 0.04) greater than those in the not-coach group (53%) ( Figure 2",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5089",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5089,
+      "sentence": "Moreover, at 12 weeks, the percentage of participants in the coached group (76%) who met the three-meal protein prescription, i.e., \u22651.2 g protein/kg body weight per day, was significantly ( p = 0.04) greater than those in the not-coach group (53%) ( Figure 2 ).",
+      "context_window": "ntly ( p = 0.04) greater than those in the not-coach group (53%) ( Figure 2 ). The coached participants were 2.7 times more",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-5177",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5177,
+      "sentence": "The coached participants were 2.7 times more likely (OR \u03c7 2 (1) 2.89 p = 0.04, Phi 0.23) to meet their protein prescription than the not-coached group participants.",
+      "context_window": "ed participants were 2.7 times more likely (OR \u03c7 2 (1) 2.89 p = 0.04, Phi 0.23) to meet their protein prescription than the not-",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-5383",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5383,
+      "sentence": "Percentage of participants meeting the three-meal protein prescription by group. * Significantly different ( p = 0.04) coached versus not coached.",
+      "context_window": "protein prescription by group. * Significantly different ( p = 0.04) coached versus not coached. The overall pattern exhibited",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5688",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5688,
+      "sentence": "The percentage of not-coached participants who met the protein prescription at each meal increased between baseline and week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively).",
+      "context_window": "e and week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, res",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5694",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5694,
+      "sentence": "The percentage of not-coached participants who met the protein prescription at each meal increased between baseline and week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively).",
+      "context_window": "week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respective",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5701",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5701,
+      "sentence": "The percentage of not-coached participants who met the protein prescription at each meal increased between baseline and week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively).",
+      "context_window": "but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5728",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5728,
+      "sentence": "The percentage of not-coached participants who met the protein prescription at each meal increased between baseline and week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively).",
+      "context_window": "week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5735",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5735,
+      "sentence": "The percentage of not-coached participants who met the protein prescription at each meal increased between baseline and week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively).",
+      "context_window": ": breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5742",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5742,
+      "sentence": "The percentage of not-coached participants who met the protein prescription at each meal increased between baseline and week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively).",
+      "context_window": "fast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5774",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5774,
+      "sentence": "The percentage of not-coached participants who met the protein prescription at each meal increased between baseline and week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively).",
+      "context_window": "vely), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively). This pattern is in contrast t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5781",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5781,
+      "sentence": "The percentage of not-coached participants who met the protein prescription at each meal increased between baseline and week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively).",
+      "context_window": "lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively). This pattern is in contrast to what",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5788",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5788,
+      "sentence": "The percentage of not-coached participants who met the protein prescription at each meal increased between baseline and week 4 but then declined again at week 12: breakfast (0% to 36% to 25%, respectively), lunch (25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively).",
+      "context_window": "25% to 61% to 46%, respectively), and dinner (21% to 75% to 71%, respectively). This pattern is in contrast to what was obs",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5986",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5986,
+      "sentence": "This pattern is in contrast to what was observed (i.e., continued improvements at each meal) among participants in the coached group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively).",
+      "context_window": "coached group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5992",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5992,
+      "sentence": "This pattern is in contrast to what was observed (i.e., continued improvements at each meal) among participants in the coached group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively).",
+      "context_window": "ed group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respective",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-5999",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5999,
+      "sentence": "This pattern is in contrast to what was observed (i.e., continued improvements at each meal) among participants in the coached group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively).",
+      "context_window": "p at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6026",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6026,
+      "sentence": "This pattern is in contrast to what was observed (i.e., continued improvements at each meal) among participants in the coached group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively).",
+      "context_window": "week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6033",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6033,
+      "sentence": "This pattern is in contrast to what was observed (i.e., continued improvements at each meal) among participants in the coached group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively).",
+      "context_window": ": breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6040",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6040,
+      "sentence": "This pattern is in contrast to what was observed (i.e., continued improvements at each meal) among participants in the coached group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively).",
+      "context_window": "fast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6072",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6072,
+      "sentence": "This pattern is in contrast to what was observed (i.e., continued improvements at each meal) among participants in the coached group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively).",
+      "context_window": "vely), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively). An evaluation of the number o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6079",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6079,
+      "sentence": "This pattern is in contrast to what was observed (i.e., continued improvements at each meal) among participants in the coached group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively).",
+      "context_window": "lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively). An evaluation of the number of parti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6086",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6086,
+      "sentence": "This pattern is in contrast to what was observed (i.e., continued improvements at each meal) among participants in the coached group at baseline, week 4, and week 12: breakfast (8% to 36% to 72%, respectively), lunch (28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively).",
+      "context_window": "28% to 56% to 68%, respectively), and dinner (56% to 76% to 84%, respectively). An evaluation of the number of participants",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-6201",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6201,
+      "sentence": "An evaluation of the number of participants who met their protein prescription at each meal at 12 weeks showed that 12 of the 25 (48%) participants in the coached group met this goal versus only 5 of 28 (18%) participants in the not coached group.",
+      "context_window": "icipants who met their protein prescription at each meal at 12 weeks showed that 12 of the 25 (48%) participants in the coached",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6236",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6236,
+      "sentence": "An evaluation of the number of participants who met their protein prescription at each meal at 12 weeks showed that 12 of the 25 (48%) participants in the coached group met this goal versus only 5 of 28 (18%) participants in the not coached group.",
+      "context_window": "cription at each meal at 12 weeks showed that 12 of the 25 (48%) participants in the coached group met this goal versus onl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6310",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6310,
+      "sentence": "An evaluation of the number of participants who met their protein prescription at each meal at 12 weeks showed that 12 of the 25 (48%) participants in the coached group met this goal versus only 5 of 28 (18%) participants in the not coached group.",
+      "context_window": "nts in the coached group met this goal versus only 5 of 28 (18%) participants in the not coached group. Energy intake did",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-6438",
+      "claim_type": "mean_sd",
+      "raw_text": "1397 \u00b1 254",
+      "numeric_values": [
+        1397.0,
+        254.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6438,
+      "sentence": "Energy intake did not significantly differ between groups at baseline (not-coached 1397 \u00b1 254 kcal; coached 1398 \u00b1 245 kcal) or at 12 weeks (not-coached 1363 \u00b1 413 kcal; coached 1323 \u00b1 427 kcal).",
+      "context_window": "ignificantly differ between groups at baseline (not-coached 1397 \u00b1 254 kcal; coached 1398 \u00b1 245 kcal) or at 12 weeks (not-coached",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-6463",
+      "claim_type": "mean_sd",
+      "raw_text": "1398 \u00b1 245",
+      "numeric_values": [
+        1398.0,
+        245.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6463,
+      "sentence": "Energy intake did not significantly differ between groups at baseline (not-coached 1397 \u00b1 254 kcal; coached 1398 \u00b1 245 kcal) or at 12 weeks (not-coached 1363 \u00b1 413 kcal; coached 1323 \u00b1 427 kcal).",
+      "context_window": "en groups at baseline (not-coached 1397 \u00b1 254 kcal; coached 1398 \u00b1 245 kcal) or at 12 weeks (not-coached 1363 \u00b1 413 kcal; coached",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-6486",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6486,
+      "sentence": "Energy intake did not significantly differ between groups at baseline (not-coached 1397 \u00b1 254 kcal; coached 1398 \u00b1 245 kcal) or at 12 weeks (not-coached 1363 \u00b1 413 kcal; coached 1323 \u00b1 427 kcal).",
+      "context_window": "not-coached 1397 \u00b1 254 kcal; coached 1398 \u00b1 245 kcal) or at 12 weeks (not-coached 1363 \u00b1 413 kcal; coached 1323 \u00b1 427 kcal). No",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-6508",
+      "claim_type": "mean_sd",
+      "raw_text": "1363 \u00b1 413",
+      "numeric_values": [
+        1363.0,
+        413.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6508,
+      "sentence": "Energy intake did not significantly differ between groups at baseline (not-coached 1397 \u00b1 254 kcal; coached 1398 \u00b1 245 kcal) or at 12 weeks (not-coached 1363 \u00b1 413 kcal; coached 1323 \u00b1 427 kcal).",
+      "context_window": "kcal; coached 1398 \u00b1 245 kcal) or at 12 weeks (not-coached 1363 \u00b1 413 kcal; coached 1323 \u00b1 427 kcal). No significant differences",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-msd-6533",
+      "claim_type": "mean_sd",
+      "raw_text": "1323 \u00b1 427",
+      "numeric_values": [
+        1323.0,
+        427.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6533,
+      "sentence": "Energy intake did not significantly differ between groups at baseline (not-coached 1397 \u00b1 254 kcal; coached 1398 \u00b1 245 kcal) or at 12 weeks (not-coached 1363 \u00b1 413 kcal; coached 1323 \u00b1 427 kcal).",
+      "context_window": "kcal) or at 12 weeks (not-coached 1363 \u00b1 413 kcal; coached 1323 \u00b1 427 kcal). No significant differences were found within groups",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-6710",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6710,
+      "sentence": "Protein intake as a percentage of energy rose significantly ( p < 0.001) within the not-coached group (16% at baseline to 25% at week 12) and the coached group (18% at baseline to 27% at week 12) but did not differ significantly between groups.",
+      "context_window": "otein intake as a percentage of energy rose significantly ( p < 0.001) within the not-coached group (16% at baseline to 25% at we",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6751",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6751,
+      "sentence": "Protein intake as a percentage of energy rose significantly ( p < 0.001) within the not-coached group (16% at baseline to 25% at week 12) and the coached group (18% at baseline to 27% at week 12) but did not differ significantly between groups.",
+      "context_window": "se significantly ( p < 0.001) within the not-coached group (16% at baseline to 25% at week 12) and the coached group (18% a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6770",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6770,
+      "sentence": "Protein intake as a percentage of energy rose significantly ( p < 0.001) within the not-coached group (16% at baseline to 25% at week 12) and the coached group (18% at baseline to 27% at week 12) but did not differ significantly between groups.",
+      "context_window": "p < 0.001) within the not-coached group (16% at baseline to 25% at week 12) and the coached group (18% at baseline to 27% a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6809",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6809,
+      "sentence": "Protein intake as a percentage of energy rose significantly ( p < 0.001) within the not-coached group (16% at baseline to 25% at week 12) and the coached group (18% at baseline to 27% at week 12) but did not differ significantly between groups.",
+      "context_window": "(16% at baseline to 25% at week 12) and the coached group (18% at baseline to 27% at week 12) but did not differ significa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6828",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6828,
+      "sentence": "Protein intake as a percentage of energy rose significantly ( p < 0.001) within the not-coached group (16% at baseline to 25% at week 12) and the coached group (18% at baseline to 27% at week 12) but did not differ significantly between groups.",
+      "context_window": "o 25% at week 12) and the coached group (18% at baseline to 27% at week 12) but did not differ significantly between groups",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-6896",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6896,
+      "sentence": "At 12 weeks, 75% of protein intake was from animal sources in both groups; this compares to 67% of dietary protein intake from animal sources in both groups at baseline.",
+      "context_window": "eek 12) but did not differ significantly between groups. At 12 weeks, 75% of protein intake was from animal sources in both grou",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6906",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6906,
+      "sentence": "At 12 weeks, 75% of protein intake was from animal sources in both groups; this compares to 67% of dietary protein intake from animal sources in both groups at baseline.",
+      "context_window": "t did not differ significantly between groups. At 12 weeks, 75% of protein intake was from animal sources in both groups; t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-6985",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6985,
+      "sentence": "At 12 weeks, 75% of protein intake was from animal sources in both groups; this compares to 67% of dietary protein intake from animal sources in both groups at baseline.",
+      "context_window": "ke was from animal sources in both groups; this compares to 67% of dietary protein intake from animal sources in both group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-7086",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7086,
+      "sentence": "Fat intake represented 40% of energy at both baseline and 12 weeks in the not-coached group and 39% of energy at baseline and 37% of energy at 12 weeks in the coached groups.",
+      "context_window": "sources in both groups at baseline. Fat intake represented 40% of energy at both baseline and 12 weeks in the not-coached",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-7121",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7121,
+      "sentence": "Fat intake represented 40% of energy at both baseline and 12 weeks in the not-coached group and 39% of energy at baseline and 37% of energy at 12 weeks in the coached groups.",
+      "context_window": ". Fat intake represented 40% of energy at both baseline and 12 weeks in the not-coached group and 39% of energy at baseline and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-7159",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7159,
+      "sentence": "Fat intake represented 40% of energy at both baseline and 12 weeks in the not-coached group and 39% of energy at baseline and 37% of energy at 12 weeks in the coached groups.",
+      "context_window": "at both baseline and 12 weeks in the not-coached group and 39% of energy at baseline and 37% of energy at 12 weeks in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-7189",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7189,
+      "sentence": "Fat intake represented 40% of energy at both baseline and 12 weeks in the not-coached group and 39% of energy at baseline and 37% of energy at 12 weeks in the coached groups.",
+      "context_window": "in the not-coached group and 39% of energy at baseline and 37% of energy at 12 weeks in the coached groups. As a percentag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-7206",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7206,
+      "sentence": "Fat intake represented 40% of energy at both baseline and 12 weeks in the not-coached group and 39% of energy at baseline and 37% of energy at 12 weeks in the coached groups.",
+      "context_window": "ed group and 39% of energy at baseline and 37% of energy at 12 weeks in the coached groups. As a percentage of energy, carbohydr",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-7295",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7295,
+      "sentence": "As a percentage of energy, carbohydrate intake comprised 40% at baseline and 37% at 12 weeks in the not-coached group, and 41% at baseline and 37% at 12 weeks in the not-coached group.",
+      "context_window": "s. As a percentage of energy, carbohydrate intake comprised 40% at baseline and 37% at 12 weeks in the not-coached group, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-7315",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7315,
+      "sentence": "As a percentage of energy, carbohydrate intake comprised 40% at baseline and 37% at 12 weeks in the not-coached group, and 41% at baseline and 37% at 12 weeks in the not-coached group.",
+      "context_window": "f energy, carbohydrate intake comprised 40% at baseline and 37% at 12 weeks in the not-coached group, and 41% at baseline a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-7322",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7322,
+      "sentence": "As a percentage of energy, carbohydrate intake comprised 40% at baseline and 37% at 12 weeks in the not-coached group, and 41% at baseline and 37% at 12 weeks in the not-coached group.",
+      "context_window": "y, carbohydrate intake comprised 40% at baseline and 37% at 12 weeks in the not-coached group, and 41% at baseline and 37% at 12",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-7361",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7361,
+      "sentence": "As a percentage of energy, carbohydrate intake comprised 40% at baseline and 37% at 12 weeks in the not-coached group, and 41% at baseline and 37% at 12 weeks in the not-coached group.",
+      "context_window": "baseline and 37% at 12 weeks in the not-coached group, and 41% at baseline and 37% at 12 weeks in the not-coached group.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-7381",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7381,
+      "sentence": "As a percentage of energy, carbohydrate intake comprised 40% at baseline and 37% at 12 weeks in the not-coached group, and 41% at baseline and 37% at 12 weeks in the not-coached group.",
+      "context_window": "12 weeks in the not-coached group, and 41% at baseline and 37% at 12 weeks in the not-coached group. At baseline, no sign",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-7388",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7388,
+      "sentence": "As a percentage of energy, carbohydrate intake comprised 40% at baseline and 37% at 12 weeks in the not-coached group, and 41% at baseline and 37% at 12 weeks in the not-coached group.",
+      "context_window": "ks in the not-coached group, and 41% at baseline and 37% at 12 weeks in the not-coached group. At baseline, no significant diff",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-7710",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7710,
+      "sentence": "At 12 weeks, skeletal muscle mass and SMI did not significantly differ from baseline in either group, and did not significantly differ between groups.",
+      "context_window": "in the not-coached versus the coached group ( Table 3 ). At 12 weeks, skeletal muscle mass and SMI did not significantly differ",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-8067",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 8067,
+      "sentence": "In contrast, at 12 weeks, participants in both groups exhibited significantly ( p < 0.001) improved times for the five-chair rise test and the 4 m gait speed test ( Table 3 ).",
+      "context_window": "n the not-coached versus the coached group. In contrast, at 12 weeks, participants in both groups exhibited significantly ( p <",
+      "claim_role": "protocol",
+      "endpoint": "walk speed",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-p-8131",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8131,
+      "sentence": "In contrast, at 12 weeks, participants in both groups exhibited significantly ( p < 0.001) improved times for the five-chair rise test and the 4 m gait speed test ( Table 3 ).",
+      "context_window": "eeks, participants in both groups exhibited significantly ( p < 0.001) improved times for the five-chair rise test and the 4 m ga",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-8584",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8584,
+      "sentence": "When compared to cut-off points indicating risk for sarcopenia at baseline one participant (2%) in the coached group had a gait speed \u22640.8 m/s and one participant (2%) in the not-coached group had a five-chair rise test >15 s.",
+      "context_window": "indicating risk for sarcopenia at baseline one participant (2%) in the coached group had a gait speed \u22640.8 m/s and one par",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-8627",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 m/s",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 8627,
+      "sentence": "When compared to cut-off points indicating risk for sarcopenia at baseline one participant (2%) in the coached group had a gait speed \u22640.8 m/s and one participant (2%) in the not-coached group had a five-chair rise test >15 s.",
+      "context_window": "one participant (2%) in the coached group had a gait speed \u22640.8 m/s and one participant (2%) in the not-coached group had a fiv",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-8656",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8656,
+      "sentence": "When compared to cut-off points indicating risk for sarcopenia at baseline one participant (2%) in the coached group had a gait speed \u22640.8 m/s and one participant (2%) in the not-coached group had a five-chair rise test >15 s.",
+      "context_window": "oached group had a gait speed \u22640.8 m/s and one participant (2%) in the not-coached group had a five-chair rise test >15 s.",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-8722",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 8722,
+      "sentence": "By 12 weeks, both participants exhibited improved times and were no longer classified at risk for sarcopenia.",
+      "context_window": "the not-coached group had a five-chair rise test >15 s. By 12 weeks, both participants exhibited improved times and were no lon",
+      "claim_role": "protocol",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-8912",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8912,
+      "sentence": "Based on baseline SMI, five coached-group and five not-coached group participants (19% of total sample) had a SMI of 22-28% consistent with Class I sarcopenia, and one not-coached group participant (2% of total sample) had a SMI classified as Class II sarcopenia.",
+      "context_window": "five coached-group and five not-coached group participants (19% of total sample) had a SMI of 22-28% consistent with Class",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-8949",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8949,
+      "sentence": "Based on baseline SMI, five coached-group and five not-coached group participants (19% of total sample) had a SMI of 22-28% consistent with Class I sarcopenia, and one not-coached group participant (2% of total sample) had a SMI classified as Class II sarcopenia.",
+      "context_window": "ed group participants (19% of total sample) had a SMI of 22-28% consistent with Class I sarcopenia, and one not-coached gro",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-9028",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9028,
+      "sentence": "Based on baseline SMI, five coached-group and five not-coached group participants (19% of total sample) had a SMI of 22-28% consistent with Class I sarcopenia, and one not-coached group participant (2% of total sample) had a SMI classified as Class II sarcopenia.",
+      "context_window": "Class I sarcopenia, and one not-coached group participant (2% of total sample) had a SMI classified as Class II sarcopeni",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-9112",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9112,
+      "sentence": "Thus, at baseline, 21% of this group had a SMI indicative of sarcopenia.",
+      "context_window": "a SMI classified as Class II sarcopenia. Thus, at baseline, 21% of this group had a SMI indicative of sarcopenia. At 12 wee",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-9169",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9169,
+      "sentence": "At 12 weeks, no changes occurred with the exception that one of the five not-coached group participants went from Class I to Class II sarcopenia and the not-coached group participant with Class II sarcopenia was reclassified with Class I sarcopenia.",
+      "context_window": "e, 21% of this group had a SMI indicative of sarcopenia. At 12 weeks, no changes occurred with the exception that one of the fiv",
+      "claim_role": "protocol",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-2807",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2807,
+      "sentence": "These findings suggest that while nutrition education and a protein prescription may be valuable in initiating and maintaining behavior change over a 4-week period, the effectiveness of behavior change without the coaching intervention wanes sometime between 4 and 12 weeks.",
+      "context_window": "hout the coaching intervention wanes sometime between 4 and 12 weeks. Future investigations are needed to the determine the freq",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-5036",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5036,
+      "sentence": "These findings are consistent with another study in which 47 older women exhibited no significant change in muscle mass after 10 weeks of receiving either high protein (1.2 g/kg body weight) or the protein RDA [ 55 ].",
+      "context_window": "women exhibited no significant change in muscle mass after 10 weeks of receiving either high protein (1.2 g/kg body weight) or",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-5845",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5845,
+      "sentence": "Similarly, Aleman-Mateo and associates [ 38 ] found that 100 healthy older adults provided with 210 g ricotta cheese daily (containing 18 g protein versus a placebo) for 12 weeks exhibited a small but significant increase (0.6 kg) in appendicular skeletal muscle mass.",
+      "context_window": "cheese daily (containing 18 g protein versus a placebo) for 12 weeks exhibited a small but significant increase (0.6 kg) in appe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-5898",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 kg",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 5898,
+      "sentence": "Similarly, Aleman-Mateo and associates [ 38 ] found that 100 healthy older adults provided with 210 g ricotta cheese daily (containing 18 g protein versus a placebo) for 12 weeks exhibited a small but significant increase (0.6 kg) in appendicular skeletal muscle mass.",
+      "context_window": "o) for 12 weeks exhibited a small but significant increase (0.6 kg) in appendicular skeletal muscle mass. The reason(s) for th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-7229",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7229,
+      "sentence": "Additional studies examining the impact of diet coaching on protein intake that are of longer duration, that include an additional control group not given a per-meal protein prescription or nutrition education, and that includes larger more diverse groups of women are warranted especially given 45% of the participants were not consuming the RDA for protein.",
+      "context_window": "more diverse groups of women are warranted especially given 45% of the participants were not consuming the RDA for protein.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-pct-7327",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7327,
+      "sentence": "Further, while this study found a 21% prevalence of sarcopenia based on BIA-derived SMI and compared with NHANES III based cut-off values and the work of Janssen, Heymsfield and Ross [ 45 ], additional studies should be conducted examining the prevalence of sarcopenia in middle-aged women based on the latest means of identification.",
+      "context_window": "ming the RDA for protein. Further, while this study found a 21% prevalence of sarcopenia based on BIA-derived SMI and compa",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8781460_effectiveness_of_a_per_meal_protein_prescription_and_nutriti-u-680",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 680,
+      "sentence": "While the study\u2019s nutrition education component afforded participants the opportunity to gain knowledge in order to self-select preferred high-quality protein sources to meet their individualized daily protein prescription, the diet coaching enabled a greater percentage of the participants to sustain behavior change after 4 weeks and through the rest of the 12-week study period.",
+      "context_window": "entage of the participants to sustain behavior change after 4 weeks and through the rest of the 12-week study period. Diet coac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

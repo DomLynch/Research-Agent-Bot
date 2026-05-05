@@ -1,0 +1,1059 @@
+{
+  "paper_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi",
+  "doi": "10.3389/fmicb.2019.01066",
+  "extracted_at": "2026-05-05T22:22:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 22,
+    "p_value": 19,
+    "percentage": 16,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-788",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 788,
+      "sentence": "Here, we fed grass carp ( Ctenopharyngodon idellus ) a diet supplemented with BBR at a dose of 30 mg/Kg body weight daily and compared them with grass carp fed a regular fish feed diet.",
+      "context_window": "yngodon idellus ) a diet supplemented with BBR at a dose of 30 mg/Kg body weight daily and compared them with grass carp fed",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-1041",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1041,
+      "sentence": "Biochemical analysis revealed that fish fed BBR had significantly reduced serum glucose, total cholesterol (TC), and triglyceride (TG) levels, and increased TC ( p < 0.05) and TG ( p < 0.01) levels in the liver.",
+      "context_window": "erol (TC), and triglyceride (TG) levels, and increased TC ( p < 0.05) and TG ( p < 0.01) levels in the liver. Deep amplicon sequ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-1060",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1060,
+      "sentence": "Biochemical analysis revealed that fish fed BBR had significantly reduced serum glucose, total cholesterol (TC), and triglyceride (TG) levels, and increased TC ( p < 0.05) and TG ( p < 0.01) levels in the liver.",
+      "context_window": "lyceride (TG) levels, and increased TC ( p < 0.05) and TG ( p < 0.01) levels in the liver. Deep amplicon sequencing of the V4 re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-1747",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1747,
+      "sentence": "Spearman\u2019s rank correlation showed that 32 berberine-OTUs were significantly negative correlated with glucose ( p < 0.05).",
+      "context_window": "-OTUs were significantly negative correlated with glucose ( p < 0.05). It indicates that BBR may affect the levels of serum gluc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-1309",
+      "claim_type": "unit_value",
+      "raw_text": "2000 years",
+      "numeric_values": [
+        2000.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1309,
+      "sentence": "As a botanical drug, BBR or BBR-containing herbs have been used to treat intestinal infections, particularly bacterial diarrhea, for at least 2000 years in China ( Tang et al., 2009 ).",
+      "context_window": "l infections, particularly bacterial diarrhea, for at least 2000 years in China ( Tang et al., 2009 ). BBR has been listed in the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-2872",
+      "claim_type": "percentage",
+      "raw_text": "0.68%",
+      "numeric_values": [
+        0.68
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2872,
+      "sentence": "Moreover, it has an extreme low absolute bioavailability of 0.68% in rats ( Chen et al., 2011 ) and the maximum concentration (Cmax) of BBR in the plasma of rats is 4 ng/ml after oral administration of 100 mg/kg BBR ( Liu et al., 2009 ; Zhang et al., 2012 ).",
+      "context_window": "Moreover, it has an extreme low absolute bioavailability of 0.68% in rats ( Chen et al., 2011 ) and the maximum concentration",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-3014",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3014,
+      "sentence": "Moreover, it has an extreme low absolute bioavailability of 0.68% in rats ( Chen et al., 2011 ) and the maximum concentration (Cmax) of BBR in the plasma of rats is 4 ng/ml after oral administration of 100 mg/kg BBR ( Liu et al., 2009 ; Zhang et al., 2012 ).",
+      "context_window": "the plasma of rats is 4 ng/ml after oral administration of 100 mg/kg BBR ( Liu et al., 2009 ; Zhang et al., 2012 ). The maxim",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-3165",
+      "claim_type": "unit_value",
+      "raw_text": "2.95 ng/mL",
+      "numeric_values": [
+        2.95
+      ],
+      "units": "ng/mL",
+      "source_section": "introduction",
+      "source_offset": 3165,
+      "sentence": "The maximum concentration (Cmax) of BBR in the plasma of tilapia ( Oreochromis niloticus ) is 2.95 ng/mL after oral administration of 30 mg/kg BBR ( Qin, 2014 ).",
+      "context_window": "f BBR in the plasma of tilapia ( Oreochromis niloticus ) is 2.95 ng/mL after oral administration of 30 mg/kg BBR ( Qin, 2014 ). As",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-3205",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3205,
+      "sentence": "The maximum concentration (Cmax) of BBR in the plasma of tilapia ( Oreochromis niloticus ) is 2.95 ng/mL after oral administration of 30 mg/kg BBR ( Qin, 2014 ).",
+      "context_window": "omis niloticus ) is 2.95 ng/mL after oral administration of 30 mg/kg BBR ( Qin, 2014 ). As BBR is poorly absorbed into the sy",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-4225",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 4225,
+      "sentence": "We orally administered 30 mg/Kg fish body weight daily, which is the Highest Permission Dosage for controlling bacterial diseases such as enteritis in fish ( Yang, 2005 ), and measured the glucose, TG and TC levels in serum and liver.",
+      "context_window": "of glucose and lipids in grass carp. We orally administered 30 mg/Kg fish body weight daily, which is the Highest Permission",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-662",
+      "claim_type": "unit_value",
+      "raw_text": "14.8 cm",
+      "numeric_values": [
+        14.8
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 662,
+      "sentence": "Juvenile grass carp with mean body weight 34.0 g (standard deviation (SD) 0.73) and mean total length 14.8 cm (SD 0.26) were collected from the same spawn and kindly provided by the farm of PRFRI.",
+      "context_window": "34.0 g (standard deviation (SD) 0.73) and mean total length 14.8 cm (SD 0.26) were collected from the same spawn and kindly pro",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-1298",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1298,
+      "sentence": "The fish were fed 2% of their body weight twice daily for 2 weeks in acclimatization culture prior to the experiment ( Wang J. et al., 2017 ).",
+      "context_window": ", respectively ( Zhang L. et al., 2010 ). The fish were fed 2% of their body weight twice daily for 2 weeks in acclimatiza",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-1338",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1338,
+      "sentence": "The fish were fed 2% of their body weight twice daily for 2 weeks in acclimatization culture prior to the experiment ( Wang J. et al., 2017 ).",
+      "context_window": ". The fish were fed 2% of their body weight twice daily for 2 weeks in acclimatization culture prior to the experiment ( Wang J",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-1585",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1585,
+      "sentence": "For the BBR group, fish were fed with feeds that were supplemented with 30 mg/Kg body weight of BBR daily ( Yang, 2005 ) for the first 7 days.",
+      "context_window": "group, fish were fed with feeds that were supplemented with 30 mg/Kg body weight of BBR daily ( Yang, 2005 ) for the first 7",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-1648",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1648,
+      "sentence": "For the BBR group, fish were fed with feeds that were supplemented with 30 mg/Kg body weight of BBR daily ( Yang, 2005 ) for the first 7 days.",
+      "context_window": "mg/Kg body weight of BBR daily ( Yang, 2005 ) for the first 7 days. Then, from the 8th to 56th day, BBR fish were fed feeds wi",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-msd-1955",
+      "claim_type": "mean_sd",
+      "raw_text": "28 \u00b1 1",
+      "numeric_values": [
+        28.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1955,
+      "sentence": "Water temperature, dissolved oxygen, ammonia-nitrogen, and nitrite nitrogen were maintained at approximately 28 \u00b1 1\u00b0C, 5-6 mg.L -1 , and <0.35 mg.L -1 , and <0.01 mg.L -1 , respectively.",
+      "context_window": "ogen, and nitrite nitrogen were maintained at approximately 28 \u00b1 1\u00b0C, 5-6 mg.L -1 , and <0.35 mg.L -1 , and <0.01 mg.L -1 , re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-1967",
+      "claim_type": "unit_value",
+      "raw_text": "6 mg",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1967,
+      "sentence": "Water temperature, dissolved oxygen, ammonia-nitrogen, and nitrite nitrogen were maintained at approximately 28 \u00b1 1\u00b0C, 5-6 mg.L -1 , and <0.35 mg.L -1 , and <0.01 mg.L -1 , respectively.",
+      "context_window": "trite nitrogen were maintained at approximately 28 \u00b1 1\u00b0C, 5-6 mg.L -1 , and <0.35 mg.L -1 , and <0.01 mg.L -1 , respectively",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-1984",
+      "claim_type": "unit_value",
+      "raw_text": "0.35 mg",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1984,
+      "sentence": "Water temperature, dissolved oxygen, ammonia-nitrogen, and nitrite nitrogen were maintained at approximately 28 \u00b1 1\u00b0C, 5-6 mg.L -1 , and <0.35 mg.L -1 , and <0.01 mg.L -1 , respectively.",
+      "context_window": "re maintained at approximately 28 \u00b1 1\u00b0C, 5-6 mg.L -1 , and <0.35 mg.L -1 , and <0.01 mg.L -1 , respectively. For 56 days, the f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-2004",
+      "claim_type": "unit_value",
+      "raw_text": "0.01 mg",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2004,
+      "sentence": "Water temperature, dissolved oxygen, ammonia-nitrogen, and nitrite nitrogen were maintained at approximately 28 \u00b1 1\u00b0C, 5-6 mg.L -1 , and <0.35 mg.L -1 , and <0.01 mg.L -1 , respectively.",
+      "context_window": "roximately 28 \u00b1 1\u00b0C, 5-6 mg.L -1 , and <0.35 mg.L -1 , and <0.01 mg.L -1 , respectively. For 56 days, the fish received a daily",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-2037",
+      "claim_type": "unit_value",
+      "raw_text": "56 days",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2037,
+      "sentence": "For 56 days, the fish received a daily feeding rate of approximately 2% body weight.",
+      "context_window": ", and <0.35 mg.L -1 , and <0.01 mg.L -1 , respectively. For 56 days, the fish received a daily feeding rate of approximately 2%",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-2102",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2102,
+      "sentence": "For 56 days, the fish received a daily feeding rate of approximately 2% body weight.",
+      "context_window": "ys, the fish received a daily feeding rate of approximately 2% body weight. The weight of fish in each group was determine",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-2302",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2302,
+      "sentence": "Before sampling collection, fish were anesthetized by immersing in 60 mg.L -1 MS-222 (Sigma, United States).",
+      "context_window": "sampling collection, fish were anesthetized by immersing in 60 mg.L -1 MS-222 (Sigma, United States). Then the body length an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-3084",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 cm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3084,
+      "sentence": "Approximated 2.0 cm of hindgut containing the contents of the intestinal tract was collected from each fish.",
+      "context_window": "ately 0.5-1.0 g of liver tissue was collected. Approximated 2.0 cm of hindgut containing the contents of the intestinal tract",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-4241",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4241,
+      "sentence": "Statistical significance was determined at p < 0.05.",
+      "context_window": "-way ANOVA test. Statistical significance was determined at p < 0.05. All genomic DNA of fish gut microbes was extracted using",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-4534",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4534,
+      "sentence": "The quality, integrity, and concentration of each DNA sample was determined by 1% agarose gel electrophoresis and a NanoDrop ND-2000 spectrophotometer (Thermo Fisher Scientific, United States).",
+      "context_window": "ity, and concentration of each DNA sample was determined by 1% agarose gel electrophoresis and a NanoDrop ND-2000 spectrop",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-5558",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5558,
+      "sentence": "Then, all the merged sequences were mixed to pick Operational Taxonomic Units (OTUs) with an identity threshold of 97% using the UPARSE pipeline ( Edgar, 2013 ).",
+      "context_window": "tional Taxonomic Units (OTUs) with an identity threshold of 97% using the UPARSE pipeline ( Edgar, 2013 ). The representati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-370",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 370,
+      "sentence": "The levels of glucose, TC, and TG in blood sera in the BBR-fed group were significantly ( p < 0.05, p < 0.05 and P < 0.05, respectively) lower than those in the control group from days 3 to 9; however, these significant differences disappeared after day 14 when BBR-supplemented feeding stopped ( Figure 1A-C ).",
+      "context_window": "TG in blood sera in the BBR-fed group were significantly ( p < 0.05, p < 0.05 and P < 0.05, respectively) lower than those in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-380",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 380,
+      "sentence": "The levels of glucose, TC, and TG in blood sera in the BBR-fed group were significantly ( p < 0.05, p < 0.05 and P < 0.05, respectively) lower than those in the control group from days 3 to 9; however, these significant differences disappeared after day 14 when BBR-supplemented feeding stopped ( Figure 1A-C ).",
+      "context_window": "od sera in the BBR-fed group were significantly ( p < 0.05, p < 0.05 and P < 0.05, respectively) lower than those in the control",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-393",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 393,
+      "sentence": "The levels of glucose, TC, and TG in blood sera in the BBR-fed group were significantly ( p < 0.05, p < 0.05 and P < 0.05, respectively) lower than those in the control group from days 3 to 9; however, these significant differences disappeared after day 14 when BBR-supplemented feeding stopped ( Figure 1A-C ).",
+      "context_window": "e BBR-fed group were significantly ( p < 0.05, p < 0.05 and P < 0.05, respectively) lower than those in the control group from d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-690",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 690,
+      "sentence": "Compared with the control group, the levels of TC and TG in the liver were significantly higher ( p < 0.05, p < 0.01, respectively) in the BBR group from day 7 to 21, but there were no significant differences days 1 to 3 before BBR-supplemented feeding, or on day 28 after BBR-supplemented feeding had stopped for 3 weeks ( Figure 1D-E ).",
+      "context_window": "evels of TC and TG in the liver were significantly higher ( p < 0.05, p < 0.01, respectively) in the BBR group from day 7 to 21,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-700",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 700,
+      "sentence": "Compared with the control group, the levels of TC and TG in the liver were significantly higher ( p < 0.05, p < 0.01, respectively) in the BBR group from day 7 to 21, but there were no significant differences days 1 to 3 before BBR-supplemented feeding, or on day 28 after BBR-supplemented feeding had stopped for 3 weeks ( Figure 1D-E ).",
+      "context_window": "C and TG in the liver were significantly higher ( p < 0.05, p < 0.01, respectively) in the BBR group from day 7 to 21, but there",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-906",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 906,
+      "sentence": "Compared with the control group, the levels of TC and TG in the liver were significantly higher ( p < 0.05, p < 0.01, respectively) in the BBR group from day 7 to 21, but there were no significant differences days 1 to 3 before BBR-supplemented feeding, or on day 28 after BBR-supplemented feeding had stopped for 3 weeks ( Figure 1D-E ).",
+      "context_window": "or on day 28 after BBR-supplemented feeding had stopped for 3 weeks ( Figure 1D-E ). Effect of berberine (BBR) on serum and li",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-1248",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1248,
+      "sentence": "Differences were assessed using ANOVA and denoted as follows: \u2217 p < 0.05; \u2217\u2217 p < 0.01; NS, not significant.",
+      "context_window": "erences were assessed using ANOVA and denoted as follows: \u2217 p < 0.05; \u2217\u2217 p < 0.01; NS, not significant. After trimming and filt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-1261",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1261,
+      "sentence": "Differences were assessed using ANOVA and denoted as follows: \u2217 p < 0.05; \u2217\u2217 p < 0.01; NS, not significant.",
+      "context_window": "assessed using ANOVA and denoted as follows: \u2217 p < 0.05; \u2217\u2217 p < 0.01; NS, not significant. After trimming and filtering, a tota",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-1406",
+      "claim_type": "percentage",
+      "raw_text": "98%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1406,
+      "sentence": "More than 98% of the high-quality reads were retained and clustered to 1670 OTUs with 97% similarity after removing the \u2018Unknown,\u2019 \u201cCyanobacterial,\u201d \u201cchloroplast,\u201d or \u201cmitochondria\u201d sequences.",
+      "context_window": "gh-quality reads were generated from 108 samples. More than 98% of the high-quality reads were retained and clustered to 16",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-1482",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1482,
+      "sentence": "More than 98% of the high-quality reads were retained and clustered to 1670 OTUs with 97% similarity after removing the \u2018Unknown,\u2019 \u201cCyanobacterial,\u201d \u201cchloroplast,\u201d or \u201cmitochondria\u201d sequences.",
+      "context_window": "quality reads were retained and clustered to 1670 OTUs with 97% similarity after removing the \u2018Unknown,\u2019 \u201cCyanobacterial,\u201d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-1691",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1691,
+      "sentence": "A total of 1561 OTUs were assigned to defined phyla using a RDP classifier with a bootstrap cutoff of 80%.",
+      "context_window": "ned phyla using a RDP classifier with a bootstrap cutoff of 80%. The most abundant species of grass carp gut microbiota at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-1860",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1860,
+      "sentence": "The most abundant species of grass carp gut microbiota at the phylum level were Fusobacteria, Firmicutes, Bacteroidetes, and Proteobacteria ( Figure 2A , more than 99% in total), while Cetobacterium, Bacteroides, Bacillus, Lactococcus, Enterococcus, Erysipelatoclostridium , and Proteocatella were dominant at the genus level ( Figure 2C , more than 75% in total).",
+      "context_window": ", Bacteroidetes, and Proteobacteria ( Figure 2A , more than 99% in total), while Cetobacterium, Bacteroides, Bacillus, Lact",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-2046",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2046,
+      "sentence": "The most abundant species of grass carp gut microbiota at the phylum level were Fusobacteria, Firmicutes, Bacteroidetes, and Proteobacteria ( Figure 2A , more than 99% in total), while Cetobacterium, Bacteroides, Bacillus, Lactococcus, Enterococcus, Erysipelatoclostridium , and Proteocatella were dominant at the genus level ( Figure 2C , more than 75% in total).",
+      "context_window": "la were dominant at the genus level ( Figure 2C , more than 75% in total). The composition of gut microbiota changed dynami",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-2318",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2318,
+      "sentence": "For example, compared with day 0, the relative abundance of Fusobacteria, including Cetobacterium , increased significantly (from 25 to 75%), while the Firmicutes, including Bacillus , Lactococcus , and Enterococcus significantly decreased (from 55 to 10%) by day 28 in the control group.",
+      "context_window": "cluding Cetobacterium , increased significantly (from 25 to 75%), while the Firmicutes, including Bacillus , Lactococcus ,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-2434",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2434,
+      "sentence": "For example, compared with day 0, the relative abundance of Fusobacteria, including Cetobacterium , increased significantly (from 25 to 75%), while the Firmicutes, including Bacillus , Lactococcus , and Enterococcus significantly decreased (from 55 to 10%) by day 28 in the control group.",
+      "context_window": "ccus , and Enterococcus significantly decreased (from 55 to 10%) by day 28 in the control group. In addition, the relative",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-2683",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2683,
+      "sentence": "In addition, the relative abundance of Bacteroides was obviously increased from the beginning to the mid-sampling days, and significantly decreased at the end of the sampling days in the control group (from 5 to 40%, then to 15%).",
+      "context_window": "he end of the sampling days in the control group (from 5 to 40%, then to 15%). At the end of the sampling days, the relativ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-2696",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2696,
+      "sentence": "In addition, the relative abundance of Bacteroides was obviously increased from the beginning to the mid-sampling days, and significantly decreased at the end of the sampling days in the control group (from 5 to 40%, then to 15%).",
+      "context_window": "sampling days in the control group (from 5 to 40%, then to 15%). At the end of the sampling days, the relative abundance o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-3596",
+      "claim_type": "percentage",
+      "raw_text": "6.24%",
+      "numeric_values": [
+        6.24
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3596,
+      "sentence": "Even though the diversity and relative abundance of some beneficial bacterium, such as Bacteroides were slightly decreased during BBR feeding (19.04, 12.77, and 6.24% on days 1, 3, and 7, respectively), the composition of gut microbiota was more diverse and stable after the BBR feeding was stopped than in the control group.",
+      "context_window": "re slightly decreased during BBR feeding (19.04, 12.77, and 6.24% on days 1, 3, and 7, respectively), the composition of gut",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-5722",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5722,
+      "sentence": "Compared with day 0, the alpha diversity on day 28 was significantly decreased in the control group (Kruskal-Wallis rank sum test, p < 0.0001, Figure 4 ).",
+      "context_window": "creased in the control group (Kruskal-Wallis rank sum test, p < 0.0001, Figure 4 ). At the same time, the alpha diversity changed",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-5860",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5860,
+      "sentence": "At the same time, the alpha diversity changed dynamically in the BBR feeding group (Kruskal-Wallis rank sum test, p < 0.05, Supplementary Figure S5 ) between days 0 and 28.",
+      "context_window": "lly in the BBR feeding group (Kruskal-Wallis rank sum test, p < 0.05, Supplementary Figure S5 ) between days 0 and 28. The alpha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-6244",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6244,
+      "sentence": "Compared to the control group, the alpha diversity was lower during BBR feeding, and became higher after BBR feeding stopped in the BBR group (Welch\u2019s t -test, p < 0.05).",
+      "context_window": "fter BBR feeding stopped in the BBR group (Welch\u2019s t -test, p < 0.05). Species richness of control group of four alpha diversit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-6654",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6654,
+      "sentence": "Compared with the control group, the gut microbial community distances were significant decreased from days 0 to 28 (Kruskal-Wallis rank sum test, p < 0.005, Supplementary Figure S4 ).",
+      "context_window": "decreased from days 0 to 28 (Kruskal-Wallis rank sum test, p < 0.005, Supplementary Figure S4 ). In the BBR group, the distances",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-6923",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6923,
+      "sentence": "In the BBR group, the distances between fish gut microbial communities within sample groups were significantly decreased during BBR feeding, and were significantly increased after BBR feeding stopped (Kruskal-Wallis rank sum test, p < 0.00001, Figure 5 ).",
+      "context_window": "ed after BBR feeding stopped (Kruskal-Wallis rank sum test, p < 0.00001, Figure 5 ). Sample distance within berberine (BBR) fed gr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-pct-7266",
+      "claim_type": "percentage",
+      "raw_text": "0.01%",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7266,
+      "sentence": "In total, 42 high abundance OTUs (relative abundance >0.01%) were significantly correlated with the levels of glucose, TC, and TG in serum and liver ( Figure 6 ).",
+      "context_window": "-C ). In total, 42 high abundance OTUs (relative abundance >0.01%) were significantly correlated with the levels of glucose,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-8316",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8316,
+      "sentence": "Correlation between host phenotype and gut bacterial species. \u2217 denotes p < 0.01; + denotes p < 0.05.",
+      "context_window": "between host phenotype and gut bacterial species. \u2217 denotes p < 0.01; + denotes p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-8336",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8336,
+      "sentence": "Correlation between host phenotype and gut bacterial species. \u2217 denotes p < 0.01; + denotes p < 0.05.",
+      "context_window": "pe and gut bacterial species. \u2217 denotes p < 0.01; + denotes p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-427",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 427,
+      "sentence": "The maximum concentration (Cmax) of BBR in the plasma of rats is 4 ng/ml after oral administration of 100 mg/kg BBR ( Liu et al., 2009 ; Zhang et al., 2012 ).",
+      "context_window": "the plasma of rats is 4 ng/ml after oral administration of 100 mg/kg BBR ( Liu et al., 2009 ; Zhang et al., 2012 ). The maxim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-578",
+      "claim_type": "unit_value",
+      "raw_text": "2.95 ng/mL",
+      "numeric_values": [
+        2.95
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 578,
+      "sentence": "The maximum concentration (Cmax) of BBR in the plasma of tilapia ( Oreochromis niloticus ) is 2.95 ng/mL after oral administration of 30 mg/kg BBR ( Qin, 2014 ).",
+      "context_window": "f BBR in the plasma of tilapia ( Oreochromis niloticus ) is 2.95 ng/mL after oral administration of 30 mg/kg BBR ( Qin, 2014 ). Ef",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-618",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 618,
+      "sentence": "The maximum concentration (Cmax) of BBR in the plasma of tilapia ( Oreochromis niloticus ) is 2.95 ng/mL after oral administration of 30 mg/kg BBR ( Qin, 2014 ).",
+      "context_window": "omis niloticus ) is 2.95 ng/mL after oral administration of 30 mg/kg BBR ( Qin, 2014 ). Effective concentrations required for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-1467",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1467,
+      "sentence": "The dosage of BBR for anti-bacterial diseases in fish in the Chinese fisheries pharmacopeia is 15-30 mg/kg body weight ( Yang, 2005 ).",
+      "context_window": "iseases in fish in the Chinese fisheries pharmacopeia is 15-30 mg/kg body weight ( Yang, 2005 ). The present study is the fir",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-u-1573",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1573,
+      "sentence": "The present study is the first to report that oral administration of 30 mg/kg BBR, which is the Highest Permissible Dosage in the Chinese fisheries pharmacopeia, strongly reduced glucose level in grass carp.",
+      "context_window": "nt study is the first to report that oral administration of 30 mg/kg BBR, which is the Highest Permissible Dosage in the Chin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6520828_berberine_influences_blood_glucose_via_modulating_the_gut_mi-p-2009",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2009,
+      "sentence": "This was inferred from our results, as 32 high abundance OTUs (mainly in the BBR group) were significantly negatively correlated with levels of glucose ( p < 0.05).",
+      "context_window": "ignificantly negatively correlated with levels of glucose ( p < 0.05). These results broaden our view that BBR lowers blood gluc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

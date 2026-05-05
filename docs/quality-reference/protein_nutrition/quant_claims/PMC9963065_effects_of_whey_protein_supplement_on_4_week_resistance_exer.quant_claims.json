@@ -1,0 +1,1420 @@
+{
+  "paper_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer",
+  "doi": "10.3390/nu15041003",
+  "extracted_at": "2026-05-05T22:35:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 4,
+    "p_value": 12,
+    "mean_sd": 19,
+    "unit_value": 28,
+    "percentage": 14
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-n-314",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 314,
+      "sentence": "(1) The purpose of this study was to investigate the effect of whey protein supplementation under dietary control on improvements in muscle mass and function following resistance exercise training. (2) Thirty-two men were randomly assigned to a whey protein supplementation group taking whey protein isolate (PSG, n = 17) and a placebo group (CON, n = 15).",
+      "context_window": "ein supplementation group taking whey protein isolate (PSG, n = 17) and a placebo group (CON, n = 15). Participants were provi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-n-348",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 348,
+      "sentence": "(1) The purpose of this study was to investigate the effect of whey protein supplementation under dietary control on improvements in muscle mass and function following resistance exercise training. (2) Thirty-two men were randomly assigned to a whey protein supplementation group taking whey protein isolate (PSG, n = 17) and a placebo group (CON, n = 15).",
+      "context_window": "hey protein isolate (PSG, n = 17) and a placebo group (CON, n = 15). Participants were provided with three meals per day corre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-689",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 689,
+      "sentence": "The supervised resistance exercise program was conducted 60 min per day, six days per week, for four weeks. (3) Post-intervention, there was a significant interaction between groups in terms of muscle mass increase ( p = 0.033, \u03b7 2 = 0.14), with a greater increase in the PSG.",
+      "context_window": "teraction between groups in terms of muscle mass increase ( p = 0.033, \u03b7 2 = 0.14), with a greater increase in the PSG. There wer",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-869",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 869,
+      "sentence": "There were also significant interactions between the groups and increases in peak torque of the dominant knee flexors ( p = 0.048, \u03b7 2 = 0.12), dominant shoulder extensors, and non-dominant shoulder extensors ( p = 0.028, \u03b7 2 = 0.15; p = 0.015, \u03b7 2 = 0.18), and the total work of the dominant knee and shoulder extensors ( p = 0.012, \u03b7 2 = 0.19; p = 0.013, \u03b7 2 = 0.19), with greater increases in the PSG. (4) These results suggest that whey protein supplementation enhances resistance exercise-induced increase in muscle mass and overall muscular strength and endurance, independent of dietary influence.",
+      "context_window": "and increases in peak torque of the dominant knee flexors ( p = 0.048, \u03b7 2 = 0.12), dominant shoulder extensors, and non-dominant",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-960",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 960,
+      "sentence": "There were also significant interactions between the groups and increases in peak torque of the dominant knee flexors ( p = 0.048, \u03b7 2 = 0.12), dominant shoulder extensors, and non-dominant shoulder extensors ( p = 0.028, \u03b7 2 = 0.15; p = 0.015, \u03b7 2 = 0.18), and the total work of the dominant knee and shoulder extensors ( p = 0.012, \u03b7 2 = 0.19; p = 0.013, \u03b7 2 = 0.19), with greater increases in the PSG. (4) These results suggest that whey protein supplementation enhances resistance exercise-induced increase in muscle mass and overall muscular strength and endurance, independent of dietary influence.",
+      "context_window": "t shoulder extensors, and non-dominant shoulder extensors ( p = 0.028, \u03b7 2 = 0.15; p = 0.015, \u03b7 2 = 0.18), and the total work of",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-983",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 983,
+      "sentence": "There were also significant interactions between the groups and increases in peak torque of the dominant knee flexors ( p = 0.048, \u03b7 2 = 0.12), dominant shoulder extensors, and non-dominant shoulder extensors ( p = 0.028, \u03b7 2 = 0.15; p = 0.015, \u03b7 2 = 0.18), and the total work of the dominant knee and shoulder extensors ( p = 0.012, \u03b7 2 = 0.19; p = 0.013, \u03b7 2 = 0.19), with greater increases in the PSG. (4) These results suggest that whey protein supplementation enhances resistance exercise-induced increase in muscle mass and overall muscular strength and endurance, independent of dietary influence.",
+      "context_window": "nd non-dominant shoulder extensors ( p = 0.028, \u03b7 2 = 0.15; p = 0.015, \u03b7 2 = 0.18), and the total work of the dominant knee and s",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-1072",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1072,
+      "sentence": "There were also significant interactions between the groups and increases in peak torque of the dominant knee flexors ( p = 0.048, \u03b7 2 = 0.12), dominant shoulder extensors, and non-dominant shoulder extensors ( p = 0.028, \u03b7 2 = 0.15; p = 0.015, \u03b7 2 = 0.18), and the total work of the dominant knee and shoulder extensors ( p = 0.012, \u03b7 2 = 0.19; p = 0.013, \u03b7 2 = 0.19), with greater increases in the PSG. (4) These results suggest that whey protein supplementation enhances resistance exercise-induced increase in muscle mass and overall muscular strength and endurance, independent of dietary influence.",
+      "context_window": "he total work of the dominant knee and shoulder extensors ( p = 0.012, \u03b7 2 = 0.19; p = 0.013, \u03b7 2 = 0.19), with greater increases",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-1095",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1095,
+      "sentence": "There were also significant interactions between the groups and increases in peak torque of the dominant knee flexors ( p = 0.048, \u03b7 2 = 0.12), dominant shoulder extensors, and non-dominant shoulder extensors ( p = 0.028, \u03b7 2 = 0.15; p = 0.015, \u03b7 2 = 0.18), and the total work of the dominant knee and shoulder extensors ( p = 0.012, \u03b7 2 = 0.19; p = 0.013, \u03b7 2 = 0.19), with greater increases in the PSG. (4) These results suggest that whey protein supplementation enhances resistance exercise-induced increase in muscle mass and overall muscular strength and endurance, independent of dietary influence.",
+      "context_window": "minant knee and shoulder extensors ( p = 0.012, \u03b7 2 = 0.19; p = 0.013, \u03b7 2 = 0.19), with greater increases in the PSG. (4) These",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-165",
+      "claim_type": "mean_sd",
+      "raw_text": "174 \u00b1 5",
+      "numeric_values": [
+        174.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 165,
+      "sentence": "We recruited men with standard Korean body sizes (height: 174 \u00b1 5 cm, weight: 74 \u00b1 4 kg) for the study [ 21 ] in order to reduce the variation in physique and sex differences as much as possible.",
+      "context_window": ". We recruited men with standard Korean body sizes (height: 174 \u00b1 5 cm, weight: 74 \u00b1 4 kg) for the study [ 21 ] in order to red",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-171",
+      "claim_type": "unit_value",
+      "raw_text": "5 cm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 171,
+      "sentence": "We recruited men with standard Korean body sizes (height: 174 \u00b1 5 cm, weight: 74 \u00b1 4 kg) for the study [ 21 ] in order to reduce the variation in physique and sex differences as much as possible.",
+      "context_window": "ecruited men with standard Korean body sizes (height: 174 \u00b1 5 cm, weight: 74 \u00b1 4 kg) for the study [ 21 ] in order to reduce",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-185",
+      "claim_type": "mean_sd",
+      "raw_text": "74 \u00b1 4",
+      "numeric_values": [
+        74.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 185,
+      "sentence": "We recruited men with standard Korean body sizes (height: 174 \u00b1 5 cm, weight: 74 \u00b1 4 kg) for the study [ 21 ] in order to reduce the variation in physique and sex differences as much as possible.",
+      "context_window": "ith standard Korean body sizes (height: 174 \u00b1 5 cm, weight: 74 \u00b1 4 kg) for the study [ 21 ] in order to reduce the variation i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-190",
+      "claim_type": "unit_value",
+      "raw_text": "4 kg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 190,
+      "sentence": "We recruited men with standard Korean body sizes (height: 174 \u00b1 5 cm, weight: 74 \u00b1 4 kg) for the study [ 21 ] in order to reduce the variation in physique and sex differences as much as possible.",
+      "context_window": "tandard Korean body sizes (height: 174 \u00b1 5 cm, weight: 74 \u00b1 4 kg) for the study [ 21 ] in order to reduce the variation in p",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-402",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 402,
+      "sentence": "All participants were non-smokers and relatively healthy sedentary individuals (no exercise within 3 months).",
+      "context_window": "elatively healthy sedentary individuals (no exercise within 3 months). They also had no allergies to dairy or lactose intoleranc",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-515",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 515,
+      "sentence": "They also had no allergies to dairy or lactose intolerance and no alcohol consumption within the last 3 months.",
+      "context_window": "tose intolerance and no alcohol consumption within the last 3 months. They were randomly assigned to a whey protein supplement i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-n-795",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 795,
+      "sentence": "However, mainly due to COVID-19, 1 PSG participant, and 3 CON participants dropped out; therefore, only the results of 32 (PSG, n = 17; CON, n = 15) participants were finally included in the data analysis.",
+      "context_window": "ipants dropped out; therefore, only the results of 32 (PSG, n = 17; CON, n = 15) participants were finally included in the dat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-n-808",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 808,
+      "sentence": "However, mainly due to COVID-19, 1 PSG participant, and 3 CON participants dropped out; therefore, only the results of 32 (PSG, n = 17; CON, n = 15) participants were finally included in the data analysis.",
+      "context_window": "d out; therefore, only the results of 32 (PSG, n = 17; CON, n = 15) participants were finally included in the data analysis. T",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-1494",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1494,
+      "sentence": "Both groups underwent resistance exercise training for 4 weeks.",
+      "context_window": "tes. Both groups underwent resistance exercise training for 4 weeks. For dietary control, each participant was given 3 meals a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-2094",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2094,
+      "sentence": "All participants were provided 3 meals a day, which was equal to their calculated daily calorie intake during the 4 weeks of intervention.",
+      "context_window": "s equal to their calculated daily calorie intake during the 4 weeks of intervention. A packed meal company (Salady Inc., Seoul,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-2235",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2235,
+      "sentence": "A packed meal company (Salady Inc., Seoul, Republic of Korea) prepared each meal for each participant at a ratio of 10% protein, 30% fat, and 60% carbohydrates based on the individual\u2019s calculated daily calorie intake.",
+      "context_window": "orea) prepared each meal for each participant at a ratio of 10% protein, 30% fat, and 60% carbohydrates based on the indivi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-2248",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2248,
+      "sentence": "A packed meal company (Salady Inc., Seoul, Republic of Korea) prepared each meal for each participant at a ratio of 10% protein, 30% fat, and 60% carbohydrates based on the individual\u2019s calculated daily calorie intake.",
+      "context_window": "d each meal for each participant at a ratio of 10% protein, 30% fat, and 60% carbohydrates based on the individual\u2019s calcul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-2261",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2261,
+      "sentence": "A packed meal company (Salady Inc., Seoul, Republic of Korea) prepared each meal for each participant at a ratio of 10% protein, 30% fat, and 60% carbohydrates based on the individual\u2019s calculated daily calorie intake.",
+      "context_window": "or each participant at a ratio of 10% protein, 30% fat, and 60% carbohydrates based on the individual\u2019s calculated daily ca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-3482",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3482,
+      "sentence": "All participants performed resistance exercise at 60-70% of 1-repetition maximum (RM) for 60 min per day, 6 days per week for 4 weeks.",
+      "context_window": "part. All participants performed resistance exercise at 60-70% of 1-repetition maximum (RM) for 60 min per day, 6 days per",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-3535",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3535,
+      "sentence": "All participants performed resistance exercise at 60-70% of 1-repetition maximum (RM) for 60 min per day, 6 days per week for 4 weeks.",
+      "context_window": "at 60-70% of 1-repetition maximum (RM) for 60 min per day, 6 days per week for 4 weeks. The exercise program consisted of 5 m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-3555",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3555,
+      "sentence": "All participants performed resistance exercise at 60-70% of 1-repetition maximum (RM) for 60 min per day, 6 days per week for 4 weeks.",
+      "context_window": "tition maximum (RM) for 60 min per day, 6 days per week for 4 weeks. The exercise program consisted of 5 min of warm-up, 50 min",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-3678",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 3678,
+      "sentence": "The exercise program consisted of 5 min of warm-up, 50 min of main exercise, and 5 min of cool-down exercise, and 1 day of rest was taken after 6 days of exercise.",
+      "context_window": "min of main exercise, and 5 min of cool-down exercise, and 1 day of rest was taken after 6 days of exercise. The exercise pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-3708",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3708,
+      "sentence": "The exercise program consisted of 5 min of warm-up, 50 min of main exercise, and 5 min of cool-down exercise, and 1 day of rest was taken after 6 days of exercise.",
+      "context_window": "in of cool-down exercise, and 1 day of rest was taken after 6 days of exercise. The exercise program was divided into chest, b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-3984",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3984,
+      "sentence": "To gradually increase the intensity, exercise was performed at 60% of the 1-RM in weeks 1 and 2 and 70% of the 1-RM in weeks 3 and 4.",
+      "context_window": "gradually increase the intensity, exercise was performed at 60% of the 1-RM in weeks 1 and 2 and 70% of the 1-RM in weeks 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-4021",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4021,
+      "sentence": "To gradually increase the intensity, exercise was performed at 60% of the 1-RM in weeks 1 and 2 and 70% of the 1-RM in weeks 3 and 4.",
+      "context_window": "rcise was performed at 60% of the 1-RM in weeks 1 and 2 and 70% of the 1-RM in weeks 3 and 4. All participants were advised",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-7035",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7035,
+      "sentence": "The statistical significance level was set at p < 0.05.",
+      "context_window": "nce exercise. The statistical significance level was set at p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-75",
+      "claim_type": "mean_sd",
+      "raw_text": "23.5 \u00b1 2.7",
+      "numeric_values": [
+        23.5,
+        2.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 75,
+      "sentence": "The average age, weight, height, and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively.",
+      "context_window": ", weight, height, and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-82",
+      "claim_type": "unit_value",
+      "raw_text": "2.7 years",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 82,
+      "sentence": "The average age, weight, height, and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively.",
+      "context_window": "t, height, and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , res",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-93",
+      "claim_type": "mean_sd",
+      "raw_text": "72.9 \u00b1 2.4",
+      "numeric_values": [
+        72.9,
+        2.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 93,
+      "sentence": "The average age, weight, height, and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively.",
+      "context_window": "and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively. T",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-100",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 kg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 100,
+      "sentence": "The average age, weight, height, and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively.",
+      "context_window": "y mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively. The",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-108",
+      "claim_type": "mean_sd",
+      "raw_text": "174.4 \u00b1 3.1",
+      "numeric_values": [
+        174.4,
+        3.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 108,
+      "sentence": "The average age, weight, height, and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively.",
+      "context_window": "ndex (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively. The average age,",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-116",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 cm",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 116,
+      "sentence": "The average age, weight, height, and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively.",
+      "context_window": "I) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively. The average age, wei",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-128",
+      "claim_type": "mean_sd",
+      "raw_text": "24.0 \u00b1 1.2",
+      "numeric_values": [
+        24.0,
+        1.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 128,
+      "sentence": "The average age, weight, height, and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively.",
+      "context_window": "G were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively. The average age, weight, height, and",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-135",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 kg",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 135,
+      "sentence": "The average age, weight, height, and body mass index (BMI) of the PSG were 23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively.",
+      "context_window": "23.5 \u00b1 2.7 years, 72.9 \u00b1 2.4 kg, 174.4 \u00b1 3.1 cm, and 24.0 \u00b1 1.2 kg/m 2 , respectively. The average age, weight, height, and BM",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-218",
+      "claim_type": "mean_sd",
+      "raw_text": "24.5 \u00b1 3.3",
+      "numeric_values": [
+        24.5,
+        3.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 218,
+      "sentence": "The average age, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively.",
+      "context_window": "ly. The average age, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-225",
+      "claim_type": "unit_value",
+      "raw_text": "3.3 years",
+      "numeric_values": [
+        3.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 225,
+      "sentence": "The average age, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively.",
+      "context_window": "average age, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , re",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-236",
+      "claim_type": "mean_sd",
+      "raw_text": "73.7 \u00b1 2.4",
+      "numeric_values": [
+        73.7,
+        2.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 236,
+      "sentence": "The average age, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively.",
+      "context_window": "e, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-243",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 kg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 243,
+      "sentence": "The average age, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively.",
+      "context_window": "ht, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively. The",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-251",
+      "claim_type": "mean_sd",
+      "raw_text": "174.4 \u00b1 3.5",
+      "numeric_values": [
+        174.4,
+        3.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 251,
+      "sentence": "The average age, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively.",
+      "context_window": "ht, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively. The RMR was 1965",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-259",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 cm",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 259,
+      "sentence": "The average age, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively.",
+      "context_window": "BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively. The RMR was 1965.0",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-271",
+      "claim_type": "mean_sd",
+      "raw_text": "24.3 \u00b1 1.85",
+      "numeric_values": [
+        24.3,
+        1.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 271,
+      "sentence": "The average age, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively.",
+      "context_window": "ON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively. The RMR was 1965.0 \u00b1 165.1 kcal in t",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-278",
+      "claim_type": "unit_value",
+      "raw_text": "1.85 kg",
+      "numeric_values": [
+        1.85
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 278,
+      "sentence": "The average age, weight, height, and BMI of the CON was 24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively.",
+      "context_window": "24.5 \u00b1 3.3 years, 73.7 \u00b1 2.4 kg, 174.4 \u00b1 3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively. The RMR was 1965.0 \u00b1 165.1 kcal in the",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-318",
+      "claim_type": "mean_sd",
+      "raw_text": "1965.0 \u00b1 165.1",
+      "numeric_values": [
+        1965.0,
+        165.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 318,
+      "sentence": "The RMR was 1965.0 \u00b1 165.1 kcal in the PSG and 2041.5 \u00b1 210.2 kcal in the CON.",
+      "context_window": "3.5 cm, and 24.3 \u00b1 1.85 kg/m 2 , respectively. The RMR was 1965.0 \u00b1 165.1 kcal in the PSG and 2041.5 \u00b1 210.2 kcal in the CON. There w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-353",
+      "claim_type": "mean_sd",
+      "raw_text": "2041.5 \u00b1 210.2",
+      "numeric_values": [
+        2041.5,
+        210.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 353,
+      "sentence": "The RMR was 1965.0 \u00b1 165.1 kcal in the PSG and 2041.5 \u00b1 210.2 kcal in the CON.",
+      "context_window": "espectively. The RMR was 1965.0 \u00b1 165.1 kcal in the PSG and 2041.5 \u00b1 210.2 kcal in the CON. There were no significant differences in b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-523",
+      "claim_type": "mean_sd",
+      "raw_text": "2358.0 \u00b1 198.1",
+      "numeric_values": [
+        2358.0,
+        198.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 523,
+      "sentence": "The estimated calorie intake for the PSG and CON was 2358.0 \u00b1 198.1 and 2,449.8 \u00b1 252.3 kcal/day, respectively.",
+      "context_window": "oups. The estimated calorie intake for the PSG and CON was 2358.0 \u00b1 198.1 and 2,449.8 \u00b1 252.3 kcal/day, respectively. The actual calo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-544",
+      "claim_type": "mean_sd",
+      "raw_text": "449.8 \u00b1 252.3",
+      "numeric_values": [
+        449.8,
+        252.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 544,
+      "sentence": "The estimated calorie intake for the PSG and CON was 2358.0 \u00b1 198.1 and 2,449.8 \u00b1 252.3 kcal/day, respectively.",
+      "context_window": "calorie intake for the PSG and CON was 2358.0 \u00b1 198.1 and 2,449.8 \u00b1 252.3 kcal/day, respectively. The actual calorie intake for the P",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-632",
+      "claim_type": "mean_sd",
+      "raw_text": "2249.6 \u00b1 122.8",
+      "numeric_values": [
+        2249.6,
+        122.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 632,
+      "sentence": "The actual calorie intake for the PSG and CON was 2249.6 \u00b1 122.8 and 2322.1 \u00b1 156.2 kcal/day, respectively.",
+      "context_window": "ectively. The actual calorie intake for the PSG and CON was 2249.6 \u00b1 122.8 and 2322.1 \u00b1 156.2 kcal/day, respectively. There were no di",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-651",
+      "claim_type": "mean_sd",
+      "raw_text": "2322.1 \u00b1 156.2",
+      "numeric_values": [
+        2322.1,
+        156.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 651,
+      "sentence": "The actual calorie intake for the PSG and CON was 2249.6 \u00b1 122.8 and 2322.1 \u00b1 156.2 kcal/day, respectively.",
+      "context_window": "l calorie intake for the PSG and CON was 2249.6 \u00b1 122.8 and 2322.1 \u00b1 156.2 kcal/day, respectively. There were no differences between t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-909",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 909,
+      "sentence": "However, the actual calorie intake was significantly lower than the estimated caloric intake in the PSG by 108.4 kcal/day ( p = 0.001) and the CON by 127.8 kcal/day ( p = 0.020).",
+      "context_window": "the estimated caloric intake in the PSG by 108.4 kcal/day ( p = 0.001) and the CON by 127.8 kcal/day ( p = 0.020). Nevertheless,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-952",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 952,
+      "sentence": "However, the actual calorie intake was significantly lower than the estimated caloric intake in the PSG by 108.4 kcal/day ( p = 0.001) and the CON by 127.8 kcal/day ( p = 0.020).",
+      "context_window": "108.4 kcal/day ( p = 0.001) and the CON by 127.8 kcal/day ( p = 0.020). Nevertheless, there was no difference between the groups",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-1099",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1099,
+      "sentence": "The changes in body composition after 4 weeks of resistance exercise are shown in Table 1 .",
+      "context_window": "e in calorie intake. The changes in body composition after 4 weeks of resistance exercise are shown in Table 1 . Both groups s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-1359",
+      "claim_type": "mean_sd",
+      "raw_text": "32.14 \u00b1 2.17",
+      "numeric_values": [
+        32.14,
+        2.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1359,
+      "sentence": "Muscle mass at baseline was 32.14 \u00b1 2.17 kg in the PSG and 31.96 \u00b1 1.91 kg in the CON, and there was no statistical difference between the groups.",
+      "context_window": "n the groups or these changes. Muscle mass at baseline was 32.14 \u00b1 2.17 kg in the PSG and 31.96 \u00b1 1.91 kg in the CON, and there was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-1367",
+      "claim_type": "unit_value",
+      "raw_text": "2.17 kg",
+      "numeric_values": [
+        2.17
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1367,
+      "sentence": "Muscle mass at baseline was 32.14 \u00b1 2.17 kg in the PSG and 31.96 \u00b1 1.91 kg in the CON, and there was no statistical difference between the groups.",
+      "context_window": "oups or these changes. Muscle mass at baseline was 32.14 \u00b1 2.17 kg in the PSG and 31.96 \u00b1 1.91 kg in the CON, and there was no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-1390",
+      "claim_type": "mean_sd",
+      "raw_text": "31.96 \u00b1 1.91",
+      "numeric_values": [
+        31.96,
+        1.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1390,
+      "sentence": "Muscle mass at baseline was 32.14 \u00b1 2.17 kg in the PSG and 31.96 \u00b1 1.91 kg in the CON, and there was no statistical difference between the groups.",
+      "context_window": "Muscle mass at baseline was 32.14 \u00b1 2.17 kg in the PSG and 31.96 \u00b1 1.91 kg in the CON, and there was no statistical difference betw",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-1398",
+      "claim_type": "unit_value",
+      "raw_text": "1.91 kg",
+      "numeric_values": [
+        1.91
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1398,
+      "sentence": "Muscle mass at baseline was 32.14 \u00b1 2.17 kg in the PSG and 31.96 \u00b1 1.91 kg in the CON, and there was no statistical difference between the groups.",
+      "context_window": "mass at baseline was 32.14 \u00b1 2.17 kg in the PSG and 31.96 \u00b1 1.91 kg in the CON, and there was no statistical difference between",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-1484",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1484,
+      "sentence": "After 4 weeks of resistance exercise, the PSG showed a significant increase in muscle mass to 32.48 \u00b1 2.43 kg ( p = 0.033), while the CON did not ( Figure 1 ).",
+      "context_window": "ere was no statistical difference between the groups. After 4 weeks of resistance exercise, the PSG showed a significant increa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-msd-1572",
+      "claim_type": "mean_sd",
+      "raw_text": "32.48 \u00b1 2.43",
+      "numeric_values": [
+        32.48,
+        2.43
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1572,
+      "sentence": "After 4 weeks of resistance exercise, the PSG showed a significant increase in muscle mass to 32.48 \u00b1 2.43 kg ( p = 0.033), while the CON did not ( Figure 1 ).",
+      "context_window": "se, the PSG showed a significant increase in muscle mass to 32.48 \u00b1 2.43 kg ( p = 0.033), while the CON did not ( Figure 1 ). There",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-1580",
+      "claim_type": "unit_value",
+      "raw_text": "2.43 kg",
+      "numeric_values": [
+        2.43
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1580,
+      "sentence": "After 4 weeks of resistance exercise, the PSG showed a significant increase in muscle mass to 32.48 \u00b1 2.43 kg ( p = 0.033), while the CON did not ( Figure 1 ).",
+      "context_window": "PSG showed a significant increase in muscle mass to 32.48 \u00b1 2.43 kg ( p = 0.033), while the CON did not ( Figure 1 ). There was",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-1590",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1590,
+      "sentence": "After 4 weeks of resistance exercise, the PSG showed a significant increase in muscle mass to 32.48 \u00b1 2.43 kg ( p = 0.033), while the CON did not ( Figure 1 ).",
+      "context_window": "a significant increase in muscle mass to 32.48 \u00b1 2.43 kg ( p = 0.033), while the CON did not ( Figure 1 ). There was a significa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-1726",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1726,
+      "sentence": "There was a significant interaction between the groups and an increase in muscle mass ( p = 0.033, \u03b7 2 = 0.14).",
+      "context_window": "raction between the groups and an increase in muscle mass ( p = 0.033, \u03b7 2 = 0.14). The muscular strength and endurance before a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-p-3532",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.057",
+      "numeric_values": [
+        0.057
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3532,
+      "sentence": "The PSG showed significantly increased total work of dominant knee extensors and dominant shoulder extensors, but the CON showed no significant changes, although the CON showed a tendency to increase the total work of dominant shoulder extensors ( p = 0.057).",
+      "context_window": "to increase the total work of dominant shoulder extensors ( p = 0.057). There was no significant interaction between the groups a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-2596",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2596,
+      "sentence": "This could be mainly due to the significant decrease in body fat mass of approximately 20% in the PSG and 12% in the CON.",
+      "context_window": "the significant decrease in body fat mass of approximately 20% in the PSG and 12% in the CON. Because the changes in muscl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-2615",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2615,
+      "sentence": "This could be mainly due to the significant decrease in body fat mass of approximately 20% in the PSG and 12% in the CON.",
+      "context_window": "crease in body fat mass of approximately 20% in the PSG and 12% in the CON. Because the changes in muscle mass were much sm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-2814",
+      "claim_type": "unit_value",
+      "raw_text": "3.2 kg",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 2814,
+      "sentence": "In fact, in the PSG, the change in body fat mass was -3.2 kg, while the change in muscle mass was +0.3 kg.",
+      "context_window": "rred. In fact, in the PSG, the change in body fat mass was -3.2 kg, while the change in muscle mass was +0.3 kg. In the CON, t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-2859",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 kg",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 2859,
+      "sentence": "In fact, in the PSG, the change in body fat mass was -3.2 kg, while the change in muscle mass was +0.3 kg.",
+      "context_window": "fat mass was -3.2 kg, while the change in muscle mass was +0.3 kg. In the CON, the change in body fat mass was -2.0 kg, while",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-2912",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 kg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 2912,
+      "sentence": "In the CON, the change in body fat mass was -2.0 kg, while there were no changes in muscle mass.",
+      "context_window": "s was +0.3 kg. In the CON, the change in body fat mass was -2.0 kg, while there were no changes in muscle mass. Another possib",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-3111",
+      "claim_type": "percentage",
+      "raw_text": "4.6%",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3111,
+      "sentence": "Another possibility for weight loss in this study may be that the actual calorie intake was lower than the estimated caloric intake (approximately 4.6% in the PSG and 4.4% in the CON).",
+      "context_window": "was lower than the estimated caloric intake (approximately 4.6% in the PSG and 4.4% in the CON). We attempted to accurately",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-3131",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3131,
+      "sentence": "Another possibility for weight loss in this study may be that the actual calorie intake was lower than the estimated caloric intake (approximately 4.6% in the PSG and 4.4% in the CON).",
+      "context_window": "estimated caloric intake (approximately 4.6% in the PSG and 4.4% in the CON). We attempted to accurately calculate the daily",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-3662",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3662,
+      "sentence": "Nevertheless, these unintentionally reduced calorie intakes could be considered to be within acceptable variability for a typical diet because even in previous studies with calorie restriction, the variation in calorie intake was approximately 6% to 10% [ 27 , 28 ].",
+      "context_window": "triction, the variation in calorie intake was approximately 6% to 10% [ 27 , 28 ]. Most weight loss programs reduce energy",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-3668",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3668,
+      "sentence": "Nevertheless, these unintentionally reduced calorie intakes could be considered to be within acceptable variability for a typical diet because even in previous studies with calorie restriction, the variation in calorie intake was approximately 6% to 10% [ 27 , 28 ].",
+      "context_window": "on, the variation in calorie intake was approximately 6% to 10% [ 27 , 28 ]. Most weight loss programs reduce energy intake",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-3738",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3738,
+      "sentence": "Most weight loss programs reduce energy intake by 25-60% below the expected energy requirements, with the goal of losing an average of 5-8% of weight [ 29 , 30 , 31 ].",
+      "context_window": "28 ]. Most weight loss programs reduce energy intake by 25-60% below the expected energy requirements, with the goal of lo",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-pct-3822",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3822,
+      "sentence": "Most weight loss programs reduce energy intake by 25-60% below the expected energy requirements, with the goal of losing an average of 5-8% of weight [ 29 , 30 , 31 ].",
+      "context_window": "nergy requirements, with the goal of losing an average of 5-8% of weight [ 29 , 30 , 31 ]. However, the possibility that t",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-4486",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4486,
+      "sentence": "After 4 weeks of resistance exercise, there were significant differences between the two groups in selective muscular strength of the knee and shoulder.",
+      "context_window": "the muscle, regardless of muscle hypertrophy [ 32 ]. After 4 weeks of resistance exercise, there were significant differences",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9963065_effects_of_whey_protein_supplement_on_4_week_resistance_exer-u-7837",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 7837,
+      "sentence": "Jang et al. [ 38 ] reported that protein supplementation for 12 weeks combined with resistance exercise without normal dietary control produced a synergistic effect on muscular endurance.",
+      "context_window": "ang et al. [ 38 ] reported that protein supplementation for 12 weeks combined with resistance exercise without normal dietary co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

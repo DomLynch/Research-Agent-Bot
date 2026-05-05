@@ -1,0 +1,1330 @@
+{
+  "paper_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro",
+  "doi": "10.3390/nu15092039",
+  "extracted_at": "2026-05-05T22:35:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 20,
+    "percentage": 14,
+    "p_value": 27,
+    "sample_size": 11,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-153",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 153,
+      "sentence": "It is estimated that by 2050, one in five people will be over 60 years of age [ 1 ].",
+      "context_window": "is estimated that by 2050, one in five people will be over 60 years of age [ 1 ]. Given the ageing of populations, it is essent",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-1247",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1247,
+      "sentence": "The prevalence of sarcopenia in people over 60 and 80 years of age is estimated at 5-13% and 11-50%, respectively [ 7 , 8 ].",
+      "context_window": "0 [ 3 ]. The prevalence of sarcopenia in people over 60 and 80 years of age is estimated at 5-13% and 11-50%, respectively [ 7 ,",
+      "claim_role": "protocol",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-1281",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1281,
+      "sentence": "The prevalence of sarcopenia in people over 60 and 80 years of age is estimated at 5-13% and 11-50%, respectively [ 7 , 8 ].",
+      "context_window": "nia in people over 60 and 80 years of age is estimated at 5-13% and 11-50%, respectively [ 7 , 8 ]. According to the latest",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-1292",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1292,
+      "sentence": "The prevalence of sarcopenia in people over 60 and 80 years of age is estimated at 5-13% and 11-50%, respectively [ 7 , 8 ].",
+      "context_window": "le over 60 and 80 years of age is estimated at 5-13% and 11-50%, respectively [ 7 , 8 ]. According to the latest consensus,",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-2130",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2130,
+      "sentence": "Inclusion criteria were as follows:\n\nHuman studies (studies in adults >60 years old);\n\nPatients with diagnosed sarcopenia;\n\nLanguages: Polish, English, and German;\n\nRandomised placebo-controlled clinical trial;\n\nIntervention: whey protein supplementation compared to placebo/control group.",
+      "context_window": "riteria were as follows: Human studies (studies in adults >60 years old); Patients with diagnosed sarcopenia; Languages: Poli",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-3667",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3667,
+      "sentence": "We explored study heterogeneity using the chi-square test of homogeneity, with p < 0.05 indicating significant heterogeneity.",
+      "context_window": "eterogeneity using the chi-square test of homogeneity, with p < 0.05 indicating significant heterogeneity. All analyses were two",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-393",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 393,
+      "sentence": "Primary reasons for exclusion were: wrong comparison [protein supplementation, general nutritional supplementation, and leucine supplementation] ( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that were included in the meta-analysis ( Figure 1 ).",
+      "context_window": "nutritional supplementation, and leucine supplementation] ( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), s",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-423",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 423,
+      "sentence": "Primary reasons for exclusion were: wrong comparison [protein supplementation, general nutritional supplementation, and leucine supplementation] ( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that were included in the meta-analysis ( Figure 1 ).",
+      "context_window": "nd leucine supplementation] ( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2)",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-450",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 450,
+      "sentence": "Primary reasons for exclusion were: wrong comparison [protein supplementation, general nutritional supplementation, and leucine supplementation] ( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that were included in the meta-analysis ( Figure 1 ).",
+      "context_window": "( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-482",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 482,
+      "sentence": "Primary reasons for exclusion were: wrong comparison [protein supplementation, general nutritional supplementation, and leucine supplementation] ( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that were included in the meta-analysis ( Figure 1 ).",
+      "context_window": "n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-510",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 510,
+      "sentence": "Primary reasons for exclusion were: wrong comparison [protein supplementation, general nutritional supplementation, and leucine supplementation] ( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that were included in the meta-analysis ( Figure 1 ).",
+      "context_window": "n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding te",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-527",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 527,
+      "sentence": "Primary reasons for exclusion were: wrong comparison [protein supplementation, general nutritional supplementation, and leucine supplementation] ( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that were included in the meta-analysis ( Figure 1 ).",
+      "context_window": "a prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that we",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-545",
+      "claim_type": "unit_value",
+      "raw_text": "55 years",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 545,
+      "sentence": "Primary reasons for exclusion were: wrong comparison [protein supplementation, general nutritional supplementation, and leucine supplementation] ( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that were included in the meta-analysis ( Figure 1 ).",
+      "context_window": "2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that were included in the me",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-556",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 556,
+      "sentence": "Primary reasons for exclusion were: wrong comparison [protein supplementation, general nutritional supplementation, and leucine supplementation] ( n = 12), sarcopenic obesity ( n = 5), frailty syndrome ( n = 5), sarcopenia prevention ( n = 2), group not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that were included in the meta-analysis ( Figure 1 ).",
+      "context_window": "not precise ( n = 2), review ( n = 2), and age < 55 years ( n = 1), yielding ten studies that were included in the meta-analy",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-987",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 987,
+      "sentence": "The studies were conducted as a multicentre study in Europe (Belgium, Germany, Ireland, Italy, Sweden, and the United Kingdom) [ 24 , 25 , 26 , 29 , 30 , 31 , 32 , 33 ] ( n = 8), the Near East ( n = 1) [ 28 ], and East Asia ( n = 1) [ 27 ] ( Table 1 ).",
+      "context_window": "United Kingdom) [ 24 , 25 , 26 , 29 , 30 , 31 , 32 , 33 ] ( n = 8), the Near East ( n = 1) [ 28 ], and East Asia ( n = 1) [ 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-1011",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1011,
+      "sentence": "The studies were conducted as a multicentre study in Europe (Belgium, Germany, Ireland, Italy, Sweden, and the United Kingdom) [ 24 , 25 , 26 , 29 , 30 , 31 , 32 , 33 ] ( n = 8), the Near East ( n = 1) [ 28 ], and East Asia ( n = 1) [ 27 ] ( Table 1 ).",
+      "context_window": "5 , 26 , 29 , 30 , 31 , 32 , 33 ] ( n = 8), the Near East ( n = 1) [ 28 ], and East Asia ( n = 1) [ 27 ] ( Table 1 ). Charac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-1042",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1042,
+      "sentence": "The studies were conducted as a multicentre study in Europe (Belgium, Germany, Ireland, Italy, Sweden, and the United Kingdom) [ 24 , 25 , 26 , 29 , 30 , 31 , 32 , 33 ] ( n = 8), the Near East ( n = 1) [ 28 ], and East Asia ( n = 1) [ 27 ] ( Table 1 ).",
+      "context_window": "] ( n = 8), the Near East ( n = 1) [ 28 ], and East Asia ( n = 1) [ 27 ] ( Table 1 ). Characteristics of the included studi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-n-1621",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1373",
+      "numeric_values": [
+        1373.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1621,
+      "sentence": "There were 2498 patients included, with a predominance of females ( n = 1373, 54.96%).",
+      "context_window": "re 2498 patients included, with a predominance of females ( n = 1373, 54.96%). The size of the study groups ranged from 60 to 38",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-1631",
+      "claim_type": "percentage",
+      "raw_text": "54.96%",
+      "numeric_values": [
+        54.96
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1631,
+      "sentence": "There were 2498 patients included, with a predominance of females ( n = 1373, 54.96%).",
+      "context_window": "tients included, with a predominance of females ( n = 1373, 54.96%). The size of the study groups ranged from 60 to 380 people",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-1782",
+      "claim_type": "unit_value",
+      "raw_text": "83.77 years",
+      "numeric_values": [
+        83.77
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1782,
+      "sentence": "The overall mean age of the participants for the ten studies was between 74.03 and 83.77 years.",
+      "context_window": "the participants for the ten studies was between 74.03 and 83.77 years. Mostly, all the included studies employed an intervention",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-1863",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1863,
+      "sentence": "Mostly, all the included studies employed an intervention period of 13 weeks [ 24 , 25 , 28 , 29 , 30 , 33 ].",
+      "context_window": "all the included studies employed an intervention period of 13 weeks [ 24 , 25 , 28 , 29 , 30 , 33 ]. One study had an intervent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-1945",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1945,
+      "sentence": "One study had an intervention period of 52 weeks [ 26 ].",
+      "context_window": "8 , 29 , 30 , 33 ]. One study had an intervention period of 52 weeks [ 26 ]. Other studies lasted 26 [ 27 ] or 12 weeks [ 31 ],",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-1996",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1996,
+      "sentence": "Other studies lasted 26 [ 27 ] or 12 weeks [ 31 ], with one study having a short intervention period of 4-8 weeks [ 32 ].",
+      "context_window": "eriod of 52 weeks [ 26 ]. Other studies lasted 26 [ 27 ] or 12 weeks [ 31 ], with one study having a short intervention period o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-2068",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2068,
+      "sentence": "Other studies lasted 26 [ 27 ] or 12 weeks [ 31 ], with one study having a short intervention period of 4-8 weeks [ 32 ].",
+      "context_window": "1 ], with one study having a short intervention period of 4-8 weeks [ 32 ]. All the studies had interventions with either whey",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-3191",
+      "claim_type": "unit_value",
+      "raw_text": "5.7 kg",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3191,
+      "sentence": "Measurement of sarcopenia in the analysed studies.\n\n\u201cthe RSMI < 5.7 kg/m 2 for women and <7.0 kg/m 2 for men using bioelectric impedance analysis (BIA, Inbody 720);\n\nhandgrip strength < 18 kg for women and <26 kg for men, or 6-m usual walk speed <0.8 m/s\n\nnd-no data;; source: the authors\u2019 own analysis, EWGSOP: European Working Group for Sarcopenia in Older People.",
+      "context_window": "urement of sarcopenia in the analysed studies. \u201cthe RSMI < 5.7 kg/m 2 for women and <7.0 kg/m 2 for men using bioelectric imp",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-3217",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 kg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3217,
+      "sentence": "Measurement of sarcopenia in the analysed studies.\n\n\u201cthe RSMI < 5.7 kg/m 2 for women and <7.0 kg/m 2 for men using bioelectric impedance analysis (BIA, Inbody 720);\n\nhandgrip strength < 18 kg for women and <26 kg for men, or 6-m usual walk speed <0.8 m/s\n\nnd-no data;; source: the authors\u2019 own analysis, EWGSOP: European Working Group for Sarcopenia in Older People.",
+      "context_window": "he analysed studies. \u201cthe RSMI < 5.7 kg/m 2 for women and <7.0 kg/m 2 for men using bioelectric impedance analysis (BIA, Inbo",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-3313",
+      "claim_type": "unit_value",
+      "raw_text": "18 kg",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3313,
+      "sentence": "Measurement of sarcopenia in the analysed studies.\n\n\u201cthe RSMI < 5.7 kg/m 2 for women and <7.0 kg/m 2 for men using bioelectric impedance analysis (BIA, Inbody 720);\n\nhandgrip strength < 18 kg for women and <26 kg for men, or 6-m usual walk speed <0.8 m/s\n\nnd-no data;; source: the authors\u2019 own analysis, EWGSOP: European Working Group for Sarcopenia in Older People.",
+      "context_window": "impedance analysis (BIA, Inbody 720); handgrip strength < 18 kg for women and <26 kg for men, or 6-m usual walk speed <0.8",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-3334",
+      "claim_type": "unit_value",
+      "raw_text": "26 kg",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3334,
+      "sentence": "Measurement of sarcopenia in the analysed studies.\n\n\u201cthe RSMI < 5.7 kg/m 2 for women and <7.0 kg/m 2 for men using bioelectric impedance analysis (BIA, Inbody 720);\n\nhandgrip strength < 18 kg for women and <26 kg for men, or 6-m usual walk speed <0.8 m/s\n\nnd-no data;; source: the authors\u2019 own analysis, EWGSOP: European Working Group for Sarcopenia in Older People.",
+      "context_window": "BIA, Inbody 720); handgrip strength < 18 kg for women and <26 kg for men, or 6-m usual walk speed <0.8 m/s nd-no data;; sou",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-3374",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 m/s",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 3374,
+      "sentence": "Measurement of sarcopenia in the analysed studies.\n\n\u201cthe RSMI < 5.7 kg/m 2 for women and <7.0 kg/m 2 for men using bioelectric impedance analysis (BIA, Inbody 720);\n\nhandgrip strength < 18 kg for women and <26 kg for men, or 6-m usual walk speed <0.8 m/s\n\nnd-no data;; source: the authors\u2019 own analysis, EWGSOP: European Working Group for Sarcopenia in Older People.",
+      "context_window": "8 kg for women and <26 kg for men, or 6-m usual walk speed <0.8 m/s nd-no data;; source: the authors\u2019 own analysis, EWGSOP: Eu",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-msd-4062",
+      "claim_type": "mean_sd",
+      "raw_text": "17.4 \u00b1 13.1",
+      "numeric_values": [
+        17.4,
+        13.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4062,
+      "sentence": "The mean study duration was 17.4 \u00b1 13.1 weeks (range = 4-26 weeks).",
+      "context_window": "balance test, and gait speed. The mean study duration was 17.4 \u00b1 13.1 weeks (range = 4-26 weeks). A daily dose of active product",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-4069",
+      "claim_type": "unit_value",
+      "raw_text": "13.1 weeks",
+      "numeric_values": [
+        13.1
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4069,
+      "sentence": "The mean study duration was 17.4 \u00b1 13.1 weeks (range = 4-26 weeks).",
+      "context_window": "e test, and gait speed. The mean study duration was 17.4 \u00b1 13.1 weeks (range = 4-26 weeks). A daily dose of active product in mos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-4091",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4091,
+      "sentence": "The mean study duration was 17.4 \u00b1 13.1 weeks (range = 4-26 weeks).",
+      "context_window": ". The mean study duration was 17.4 \u00b1 13.1 weeks (range = 4-26 weeks). A daily dose of active product in most of the articles wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-5424",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.686",
+      "numeric_values": [
+        0.686
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5424,
+      "sentence": "The results are presented in Figure 2 ( p = 0.686; Z = 0.404; CI 95%: -0.101-0.153).",
+      "context_window": "icular muscle mass. The results are presented in Figure 2 ( p = 0.686; Z = 0.404; CI 95%: -0.101-0.153). Egger\u2019s test did not ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-5449",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5449,
+      "sentence": "The results are presented in Figure 2 ( p = 0.686; Z = 0.404; CI 95%: -0.101-0.153).",
+      "context_window": "esults are presented in Figure 2 ( p = 0.686; Z = 0.404; CI 95%: -0.101-0.153). Egger\u2019s test did not indicate publication b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-5561",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.08136",
+      "numeric_values": [
+        0.08136
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5561,
+      "sentence": "Egger\u2019s test did not indicate publication bias, as shown in Figure 3 . ( t value = 2.16554, p = 0.08136).",
+      "context_window": "blication bias, as shown in Figure 3 . ( t value = 2.16554, p = 0.08136). No heterogeneity was detected. The effect size for appen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-5724",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.938",
+      "numeric_values": [
+        0.938
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5724,
+      "sentence": "Q = 0.409, df (Q) = 3, p = 0.938, and I squared = 0.000.",
+      "context_window": "ing whey protein intake vs. placebo. Q = 0.409, df (Q) = 3, p = 0.938, and I squared = 0.000. Black squares depict each study eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-6144",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.171",
+      "numeric_values": [
+        0.171
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6144,
+      "sentence": "Regarding the effect of whey protein intake on handgrip strength, the data showed no difference compared with the control intervention, as shown in Figure 4 ( p = 0.171; Z = 1.369; CI 95%: -0.055-0.309).",
+      "context_window": "pared with the control intervention, as shown in Figure 4 ( p = 0.171; Z = 1.369; CI 95%: -0.055-0.309). Egger\u2019s test did not ind",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-6169",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6169,
+      "sentence": "Regarding the effect of whey protein intake on handgrip strength, the data showed no difference compared with the control intervention, as shown in Figure 4 ( p = 0.171; Z = 1.369; CI 95%: -0.055-0.309).",
+      "context_window": "tervention, as shown in Figure 4 ( p = 0.171; Z = 1.369; CI 95%: -0.055-0.309). Egger\u2019s test did not indicate publication b",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-6279",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.15172",
+      "numeric_values": [
+        0.15172
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6279,
+      "sentence": "Egger\u2019s test did not indicate publication bias, as shown in Figure 5 ( t value = 1.14660, p = 0.15172).",
+      "context_window": "publication bias, as shown in Figure 5 ( t value = 1.14660, p = 0.15172). The effect size for handgrip strength when using whey pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-6400",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6400,
+      "sentence": "Q = 14.023, df (Q) = 6, p = 0.029, and I squared = 57.212.",
+      "context_window": "ng whey protein intake vs. placebo. Q = 14.023, df (Q) = 6, p = 0.029, and I squared = 57.212. Black squares depict each study ef",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-6841",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.364",
+      "numeric_values": [
+        0.364
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6841,
+      "sentence": "Chair and Stand Test\n\nRegarding the effect of whey protein intake on physical performance, the data showed that there were no changes in the chair and stand test, as shown in Figure 6 ( p = 0.364; Z = 0.908; CI 95%: -0.196-0.534).",
+      "context_window": "changes in the chair and stand test, as shown in Figure 6 ( p = 0.364; Z = 0.908; CI 95%: -0.196-0.534). Egger\u2019s test did not ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-6866",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6866,
+      "sentence": "Chair and Stand Test\n\nRegarding the effect of whey protein intake on physical performance, the data showed that there were no changes in the chair and stand test, as shown in Figure 6 ( p = 0.364; Z = 0.908; CI 95%: -0.196-0.534).",
+      "context_window": "stand test, as shown in Figure 6 ( p = 0.364; Z = 0.908; CI 95%: -0.196-0.534). Egger\u2019s test did not indicate publication b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-6976",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.09114",
+      "numeric_values": [
+        0.09114
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6976,
+      "sentence": "Egger\u2019s test did not indicate publication bias, as shown in Figure 7 ( t value = 2.00908, p = 0.09114).",
+      "context_window": "publication bias, as shown in Figure 7 ( t value = 2.00908, p = 0.09114). When we excluded an outlier study by Rondanelli et al. (2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-7086",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.864",
+      "numeric_values": [
+        0.864
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7086,
+      "sentence": "When we excluded an outlier study by Rondanelli et al. (2020), the results remained unchanged ( p = 0.864; Z = 0.171; CI 95%: -0.125-0.149).",
+      "context_window": "Rondanelli et al. (2020), the results remained unchanged ( p = 0.864; Z = 0.171; CI 95%: -0.125-0.149). The effect size for cha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-7111",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7111,
+      "sentence": "When we excluded an outlier study by Rondanelli et al. (2020), the results remained unchanged ( p = 0.864; Z = 0.171; CI 95%: -0.125-0.149).",
+      "context_window": ", the results remained unchanged ( p = 0.864; Z = 0.171; CI 95%: -0.125-0.149). The effect size for chair and stand test r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-7246",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.000",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7246,
+      "sentence": "Q = 29.810, df (Q) = 3, p = 0.000, and I squared = 89.936.",
+      "context_window": "ng whey protein intake vs. placebo. Q = 29.810, df (Q) = 3, p = 0.000, and I squared = 89.936. Black squares depict each study ef",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-7672",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.552",
+      "numeric_values": [
+        0.552
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7672,
+      "sentence": "Regarding the effect of whey protein intake on physical performance, the data showed that whey protein intake did not significantly affect SPPB, as shown in Figure 8 ( p = 0.552; Z = 0.640; CI 95%: -0.071-0.140).",
+      "context_window": "e did not significantly affect SPPB, as shown in Figure 8 ( p = 0.552; Z = 0.640; CI 95%: -0.071-0.140). Egger\u2019s test did not ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-7697",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7697,
+      "sentence": "Regarding the effect of whey protein intake on physical performance, the data showed that whey protein intake did not significantly affect SPPB, as shown in Figure 8 ( p = 0.552; Z = 0.640; CI 95%: -0.071-0.140).",
+      "context_window": "ffect SPPB, as shown in Figure 8 ( p = 0.552; Z = 0.640; CI 95%: -0.071-0.140). Egger\u2019s test did not indicate publication b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-7807",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.16149",
+      "numeric_values": [
+        0.16149
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7807,
+      "sentence": "Egger\u2019s test did not indicate publication bias, as shown in Figure 9 ( t value = 1.09617, p = 0.16149).",
+      "context_window": "publication bias, as shown in Figure 9 ( t value = 1.09617, p = 0.16149). The effect size for SPPB rate when using whey protein in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-7919",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.903",
+      "numeric_values": [
+        0.903
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7919,
+      "sentence": "Q = 2.178, df (Q) = 6, p = 0.903, and I squared = 0.000.",
+      "context_window": "ing whey protein intake vs. placebo. Q = 2.178, df (Q) = 6, p = 0.903, and I squared = 0.000. Black squares depict each study eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-8307",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.140",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8307,
+      "sentence": "Regarding the effect of whey protein intake on physical performance, the data showed that there were no changes in weight, as shown in Figure 10 ( p = 0.140; Z = 1.477; CI 95%: -0.032-0.230).",
+      "context_window": "at there were no changes in weight, as shown in Figure 10 ( p = 0.140; Z = 1.477; CI 95%: -0.032-0.230). Egger\u2019s test did not ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-8332",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8332,
+      "sentence": "Regarding the effect of whey protein intake on physical performance, the data showed that there were no changes in weight, as shown in Figure 10 ( p = 0.140; Z = 1.477; CI 95%: -0.032-0.230).",
+      "context_window": "in weight, as shown in Figure 10 ( p = 0.140; Z = 1.477; CI 95%: -0.032-0.230). Egger\u2019s test did not indicate publication b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-8444",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.26970",
+      "numeric_values": [
+        0.2697
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8444,
+      "sentence": "Egger\u2019s test did not indicate publication bias, as shown in Figure 11 . (t value = 0.65839, p = 0.26970).",
+      "context_window": "blication bias, as shown in Figure 11 . (t value = 0.65839, p = 0.26970). The effect size for weight rate when using whey protein",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-8558",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.765",
+      "numeric_values": [
+        0.765
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8558,
+      "sentence": "Q = 3.341, df (Q) = 6, p = 0.765, and I squared = 0.000.",
+      "context_window": "ing whey protein intake vs. placebo. Q = 3.341, df (Q) = 6, p = 0.765, and I squared = 0.000. Black squares depict each study eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-8982",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.269",
+      "numeric_values": [
+        0.269
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8982,
+      "sentence": "Regarding the effect of whey protein intake on the risk of malnutrition according to MNA, the data showed that there were no changes in the risk of malnutrition, as shown in Figure 12 ( p = 0.269; Z = -1.105; CI 95%: 0.468-1.236).",
+      "context_window": "hanges in the risk of malnutrition, as shown in Figure 12 ( p = 0.269; Z = -1.105; CI 95%: 0.468-1.236). The effect size for ris",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-9008",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9008,
+      "sentence": "Regarding the effect of whey protein intake on the risk of malnutrition according to MNA, the data showed that there were no changes in the risk of malnutrition, as shown in Figure 12 ( p = 0.269; Z = -1.105; CI 95%: 0.468-1.236).",
+      "context_window": "utrition, as shown in Figure 12 ( p = 0.269; Z = -1.105; CI 95%: 0.468-1.236). The effect size for risk of malnutrition ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-9153",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.643",
+      "numeric_values": [
+        0.643
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9153,
+      "sentence": "Q = 0.215, df (Q) = 1, p = 0.643, and I squared = 0.000.",
+      "context_window": "ing whey protein intake vs. placebo. Q = 0.215, df (Q) = 1, p = 0.643, and I squared = 0.000. Black squares depict each study eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-9503",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.975",
+      "numeric_values": [
+        0.975
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9503,
+      "sentence": "Regarding the effect of whey protein intake on malnourishment according to MNA, the data showed that there were no changes in the risk of malnutrition, as shown in Figure 13 ( p = 0.975; Z = 0.031; CI 95%: 0.148-7.184).",
+      "context_window": "hanges in the risk of malnutrition, as shown in Figure 13 ( p = 0.975; Z = 0.031; CI 95%: 0.148-7.184). The effect size for maln",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-9528",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9528,
+      "sentence": "Regarding the effect of whey protein intake on malnourishment according to MNA, the data showed that there were no changes in the risk of malnutrition, as shown in Figure 13 ( p = 0.975; Z = 0.031; CI 95%: 0.148-7.184).",
+      "context_window": "nutrition, as shown in Figure 13 ( p = 0.975; Z = 0.031; CI 95%: 0.148-7.184). The effect size for malnourishment accordin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-9667",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.975",
+      "numeric_values": [
+        0.975
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9667,
+      "sentence": "Q = 0.001, df (Q) = 1, p = 0.975, and I squared = 0.000.",
+      "context_window": "ing whey protein intake vs. placebo. Q = 0.001, df (Q) = 1, p = 0.975, and I squared = 0.000. Black squares depict each study eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-10019",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.503",
+      "numeric_values": [
+        0.503
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10019,
+      "sentence": "Regarding the effect of whey protein intake on well nourishment according to MNA, the data showed that there were no changes in the risk of malnutrition, as shown in Figure 14 ( p = 0.503; Z = 0.670; CI 95%: 0.959-1.090).",
+      "context_window": "hanges in the risk of malnutrition, as shown in Figure 14 ( p = 0.503; Z = 0.670; CI 95%: 0.959-1.090). The effect size for well",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-10044",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10044,
+      "sentence": "Regarding the effect of whey protein intake on well nourishment according to MNA, the data showed that there were no changes in the risk of malnutrition, as shown in Figure 14 ( p = 0.503; Z = 0.670; CI 95%: 0.959-1.090).",
+      "context_window": "nutrition, as shown in Figure 14 ( p = 0.503; Z = 0.670; CI 95%: 0.959-1.090). The effect size for well nourishment accord",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-10185",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.336",
+      "numeric_values": [
+        0.336
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10185,
+      "sentence": "Q = 0.927, df (Q) = 1, p = 0.336, and I squared = 0.000.",
+      "context_window": "ing whey protein intake vs. placebo. Q = 0.927, df (Q) = 1, p = 0.336, and I squared = 0.000. Black squares depict each study eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-10756",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 10756,
+      "sentence": "However, one should remember that the coefficient is extremely low, and the majority of studies in this aspect were performed longer (around 13 weeks) than shorter (one study, 6 weeks).",
+      "context_window": "ity of studies in this aspect were performed longer (around 13 weeks) than shorter (one study, 6 weeks). Additionally, a correla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-10791",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 10791,
+      "sentence": "However, one should remember that the coefficient is extremely low, and the majority of studies in this aspect were performed longer (around 13 weeks) than shorter (one study, 6 weeks).",
+      "context_window": "performed longer (around 13 weeks) than shorter (one study, 6 weeks). Additionally, a correlation was found between the chair a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-11194",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0252",
+      "numeric_values": [
+        0.0252
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11194,
+      "sentence": "A meta-regression using a random-effects model revealed that the study duration (weeks) (Q = 5.01, df = 1, p = 0.0252 with coefficient = -0.0083, SE = 0.0037, Z = -2.24) significantly affected the handgrip strength rate ( Table 4 ).",
+      "context_window": "revealed that the study duration (weeks) (Q = 5.01, df = 1, p = 0.0252 with coefficient = -0.0083, SE = 0.0037, Z = -2.24) signifi",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-11416",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0000",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11416,
+      "sentence": "A meta-regression using a random-effects model revealed that study duration (Q = 29.12, df = 1, p = 0.0000 with coefficient = -0.1522, SE = 0.0282, Z = -5.40), age of the participants (Q = 29.20, df = 1, p = 0.0000 with coefficient = 0.2822, SE = 0.0522, Z = 5.40), and percentage of analysed participants (Q = 29.12, df = 1, p = 0.0000 with coefficient = -0.0042, SE = 0.0008, Z = -5.40) significantly affect the chair and stand test rate ( Table 4 ).",
+      "context_window": "ects model revealed that study duration (Q = 29.12, df = 1, p = 0.0000 with coefficient = -0.1522, SE = 0.0282, Z = -5.40), age of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-11524",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0000",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11524,
+      "sentence": "A meta-regression using a random-effects model revealed that study duration (Q = 29.12, df = 1, p = 0.0000 with coefficient = -0.1522, SE = 0.0282, Z = -5.40), age of the participants (Q = 29.20, df = 1, p = 0.0000 with coefficient = 0.2822, SE = 0.0522, Z = 5.40), and percentage of analysed participants (Q = 29.12, df = 1, p = 0.0000 with coefficient = -0.0042, SE = 0.0008, Z = -5.40) significantly affect the chair and stand test rate ( Table 4 ).",
+      "context_window": "82, Z = -5.40), age of the participants (Q = 29.20, df = 1, p = 0.0000 with coefficient = 0.2822, SE = 0.0522, Z = 5.40), and perc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-p-11646",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0000",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11646,
+      "sentence": "A meta-regression using a random-effects model revealed that study duration (Q = 29.12, df = 1, p = 0.0000 with coefficient = -0.1522, SE = 0.0282, Z = -5.40), age of the participants (Q = 29.20, df = 1, p = 0.0000 with coefficient = 0.2822, SE = 0.0522, Z = 5.40), and percentage of analysed participants (Q = 29.12, df = 1, p = 0.0000 with coefficient = -0.0042, SE = 0.0008, Z = -5.40) significantly affect the chair and stand test rate ( Table 4 ).",
+      "context_window": "and percentage of analysed participants (Q = 29.12, df = 1, p = 0.0000 with coefficient = -0.0042, SE = 0.0008, Z = -5.40) signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-3486",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3486,
+      "sentence": "The duration of the intervention ranged from 8 weeks to 1 year [ 39 ].",
+      "context_window": "tively [ 39 ]. The duration of the intervention ranged from 8 weeks to 1 year [ 39 ]. However, the meta-analysis of Wand et al",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-u-3497",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 3497,
+      "sentence": "The duration of the intervention ranged from 8 weeks to 1 year [ 39 ].",
+      "context_window": "]. The duration of the intervention ranged from 8 weeks to 1 year [ 39 ]. However, the meta-analysis of Wand et al. suggests",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-5962",
+      "claim_type": "percentage",
+      "raw_text": "49.7%",
+      "numeric_values": [
+        49.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5962,
+      "sentence": "In a systematic review and meta-analysis by Lighthart-Melis et al. [ 44 ], ten studies (2427 participants) showed a high association and considerable overlap (49.7%) between physical (pre-) frailty and (risk of) malnutrition, while seven studies (2506 participants) showed a high association and considerable overlap (41.6%) between sarcopenia and (risk of) malnutrition.",
+      "context_window": "ipants) showed a high association and considerable overlap (49.7%) between physical (pre-) frailty and (risk of) malnutrition",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10180973_the_impact_of_whey_protein_supplementation_on_sarcopenia_pro-pct-6121",
+      "claim_type": "percentage",
+      "raw_text": "41.6%",
+      "numeric_values": [
+        41.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6121,
+      "sentence": "In a systematic review and meta-analysis by Lighthart-Melis et al. [ 44 ], ten studies (2427 participants) showed a high association and considerable overlap (49.7%) between physical (pre-) frailty and (risk of) malnutrition, while seven studies (2506 participants) showed a high association and considerable overlap (41.6%) between sarcopenia and (risk of) malnutrition.",
+      "context_window": "ipants) showed a high association and considerable overlap (41.6%) between sarcopenia and (risk of) malnutrition. The authors",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

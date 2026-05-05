@@ -1,0 +1,158 @@
+{
+  "paper_id": "PMC12491381_lack_of_gastric_emptying_at_autopsy_eleven_days_after_heat_t",
+  "doi": "10.1007/s12024-024-00931-3",
+  "extracted_at": "2026-05-05T22:38:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 5,
+    "unit_value": 2,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12491381_lack_of_gastric_emptying_at_autopsy_eleven_days_after_heat_t-pct-160",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 160,
+      "sentence": "He suffered third-degree burns to approximately 50% of his body surface area.",
+      "context_window": "lf an hour. He suffered third-degree burns to approximately 50% of his body surface area. Despite immediate transport to a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12491381_lack_of_gastric_emptying_at_autopsy_eleven_days_after_heat_t-u-44",
+      "claim_type": "unit_value",
+      "raw_text": "161 cm",
+      "numeric_values": [
+        161.0
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 44,
+      "sentence": "The body of the elderly, overweight man was 161 cm long and weighed 98 kg, with a BMI (body mass index) of 37.8.",
+      "context_window": "The body of the elderly, overweight man was 161 cm long and weighed 98 kg, with a BMI (body mass index) of 37.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12491381_lack_of_gastric_emptying_at_autopsy_eleven_days_after_heat_t-u-68",
+      "claim_type": "unit_value",
+      "raw_text": "98 kg",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 68,
+      "sentence": "The body of the elderly, overweight man was 161 cm long and weighed 98 kg, with a BMI (body mass index) of 37.8.",
+      "context_window": "of the elderly, overweight man was 161 cm long and weighed 98 kg, with a BMI (body mass index) of 37.8. The autopsy revealed",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12491381_lack_of_gastric_emptying_at_autopsy_eleven_days_after_heat_t-pct-2152",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2152,
+      "sentence": "60% of the patients had delayed gastric emptying with a mean t 50 of 163 \u00b1 7 min.",
+      "context_window": "st. Delayed gastric emptying was defined as t 50 > 140 min. 60% of the patients had delayed gastric emptying with a mean t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12491381_lack_of_gastric_emptying_at_autopsy_eleven_days_after_heat_t-msd-2221",
+      "claim_type": "mean_sd",
+      "raw_text": "163 \u00b1 7",
+      "numeric_values": [
+        163.0,
+        7.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2221,
+      "sentence": "60% of the patients had delayed gastric emptying with a mean t 50 of 163 \u00b1 7 min.",
+      "context_window": "e patients had delayed gastric emptying with a mean t 50 of 163 \u00b1 7 min. Patients with burns were most commonly affected (77%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12491381_lack_of_gastric_emptying_at_autopsy_eleven_days_after_heat_t-pct-2283",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2283,
+      "sentence": "Patients with burns were most commonly affected (77%) followed by patients with intracerebral injury (67%).",
+      "context_window": "3 \u00b1 7 min. Patients with burns were most commonly affected (77%) followed by patients with intracerebral injury (67%). This",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12491381_lack_of_gastric_emptying_at_autopsy_eleven_days_after_heat_t-pct-2336",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2336,
+      "sentence": "Patients with burns were most commonly affected (77%) followed by patients with intracerebral injury (67%).",
+      "context_window": "ected (77%) followed by patients with intracerebral injury (67%). This study also found an association between gastric empt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12491381_lack_of_gastric_emptying_at_autopsy_eleven_days_after_heat_t-pct-2719",
+      "claim_type": "percentage",
+      "raw_text": "18.5%",
+      "numeric_values": [
+        18.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2719,
+      "sentence": "18.5% of the patients had such symptoms.",
+      "context_window": "for gastrointestinal symptoms such as nausea and diarrhea. 18.5% of the patients had such symptoms. An impairment of the ent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

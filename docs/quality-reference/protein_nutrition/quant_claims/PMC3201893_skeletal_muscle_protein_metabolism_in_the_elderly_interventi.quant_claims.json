@@ -1,0 +1,660 @@
+{
+  "paper_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi",
+  "doi": "10.1186/1743-7075-8-68",
+  "extracted_at": "2026-05-05T22:35:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 10,
+    "percentage": 26
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-u-55",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 55,
+      "sentence": "Demographics indicate that the world's population aged 60 years and over will more than triple within 50 years from 600 million in the year 2000, to more than 2 billion by 2050 [ 1 ].",
+      "context_window": "Demographics indicate that the world's population aged 60 years and over will more than triple within 50 years from 600 mil",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-u-102",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 102,
+      "sentence": "Demographics indicate that the world's population aged 60 years and over will more than triple within 50 years from 600 million in the year 2000, to more than 2 billion by 2050 [ 1 ].",
+      "context_window": "ulation aged 60 years and over will more than triple within 50 years from 600 million in the year 2000, to more than 2 billion b",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-1441",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1441,
+      "sentence": "Age-related sarcopenia begins in our 4-5 th decade and proceeds at ~0.6% annually thereafter [ 5 ].",
+      "context_window": "ted sarcopenia begins in our 4-5 th decade and proceeds at ~0.6% annually thereafter [ 5 ]. Such a rate of sarcopenic muscle",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-5077",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5077,
+      "sentence": "Specifically, reductions in the resting fractional synthesis rates of muscle protein, on the order of 20-30%, were reported in the elderly compared with the young.",
+      "context_window": "ional synthesis rates of muscle protein, on the order of 20-30%, were reported in the elderly compared with the young. In a",
+      "claim_role": "background",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-5244",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5244,
+      "sentence": "In addition, others reported that surrogate markers of myofibrillar proteolysis were elevated by as much as 50% in the elderly as compared with younger adults [ 25 ].",
+      "context_window": "ers of myofibrillar proteolysis were elevated by as much as 50% in the elderly as compared with younger adults [ 25 ]. Howe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-5491",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5491,
+      "sentence": "0.5-1.5% per year between 50-80 years old [ 26 ]).",
+      "context_window": "sting would be greater than is typically observed (i.e. 0.5-1.5% per year between 50-80 years old [ 26 ]). Furthermore, a ge",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-u-5516",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 5516,
+      "sentence": "0.5-1.5% per year between 50-80 years old [ 26 ]).",
+      "context_window": "an is typically observed (i.e. 0.5-1.5% per year between 50-80 years old [ 26 ]). Furthermore, a general inconsistency of findin",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-15528",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 15528,
+      "sentence": "Using frequent small bolus feedings, Welle and Thornton [ 58 ] suggested that low (7% total energy), moderate (14% total energy) and high protein (28% total energy) meals stimulate rates of MPS to a similar extent.",
+      "context_window": "lus feedings, Welle and Thornton [ 58 ] suggested that low (7% total energy), moderate (14% total energy) and high protein",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-15556",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 15556,
+      "sentence": "Using frequent small bolus feedings, Welle and Thornton [ 58 ] suggested that low (7% total energy), moderate (14% total energy) and high protein (28% total energy) meals stimulate rates of MPS to a similar extent.",
+      "context_window": "nton [ 58 ] suggested that low (7% total energy), moderate (14% total energy) and high protein (28% total energy) meals sti",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-15592",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 15592,
+      "sentence": "Using frequent small bolus feedings, Welle and Thornton [ 58 ] suggested that low (7% total energy), moderate (14% total energy) and high protein (28% total energy) meals stimulate rates of MPS to a similar extent.",
+      "context_window": "otal energy), moderate (14% total energy) and high protein (28% total energy) meals stimulate rates of MPS to a similar ext",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-17923",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 17923,
+      "sentence": "Star indicates MPS in both young and elderly after 6.7 g of EAA (typically found in 15 g of whey protein) enriched with leucine (41% or ~2.8 g) [ 36 ].",
+      "context_window": "cally found in 15 g of whey protein) enriched with leucine (41% or ~2.8 g) [ 36 ]. Finely dashed lines indicate the hypothe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-20348",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 20348,
+      "sentence": "Consistent with the thesis that leucinemia is important in 'driving' MPS, the work of Katsanos and colleagues [ 36 ] demonstrated that 6.7 g of EAA (equivalent to ~15 g of whey), increased MPS above rest in the elderly, but only after the leucine content of EAA's was increased from 26 to 41% (1.7 to 2.8 g).",
+      "context_window": "after the leucine content of EAA's was increased from 26 to 41% (1.7 to 2.8 g). In line with our hypothesis that younger mu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-20454",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 20454,
+      "sentence": "In line with our hypothesis that younger muscles are more anabolically sensitive, the 26% low-leucine treatment in this study was sufficient to increase MPS in the young.",
+      "context_window": "s that younger muscles are more anabolically sensitive, the 26% low-leucine treatment in this study was sufficient to incre",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-u-21795",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 21795,
+      "sentence": "Another suggestion is that leucine supplementation may need to be provided over a much longer period (i.e. > 8 months) than has previously been studied [ 69 ].",
+      "context_window": "n may need to be provided over a much longer period (i.e. > 8 months) than has previously been studied [ 69 ]. Finally, given ev",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-u-22437",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 22437,
+      "sentence": "Most likely, however, is that the rate of any potential leucine-enhanced gains in feeding-induced MPS to augment muscle mass are going to be too small for methods such as DXA and biopsy to detect, even over a period of 6 months [ 71 ].",
+      "context_window": "ods such as DXA and biopsy to detect, even over a period of 6 months [ 71 ]. At this time it is not possible to definitively con",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-u-23155",
+      "claim_type": "unit_value",
+      "raw_text": "75 kg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 23155,
+      "sentence": "For example, given our findings that the elderly require more protein to increase MPS above rest than the young, in a 75 kg individual consuming ~60 g of protein daily (based on the RDA of 0.8 g.kg -1 ), this would mean consuming ~20 g of protein with each meal, as opposed to a typical feeding regimen in which the elderly typically ingest smaller amounts of protein with breakfast (~8 g) and lunch (~12 g) and the majority of dietary protein with dinner (~40 g) [ 73 ].",
+      "context_window": "ore protein to increase MPS above rest than the young, in a 75 kg individual consuming ~60 g of protein daily (based on the R",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-24089",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 24089,
+      "sentence": "For example, a 30% decline in resting (from 0.03%.h -1 to 0.027%.h -1 for 10 of 24 h in a day) and feeding-stimulated (from 0.06%.h -1 to 0.042%.h -1 for 14 of 24 h in a day) myofibrillar protein synthesis would only result in a lower requirement for protein approximating 0.1 g protein.d -1 (assuming a 70 kg male with 30 kg of muscle and that muscle is a homogeneous pool) which is well within the error of the nitrogen balance method.",
+      "context_window": "ured in a short-term nitrogen balance study. For example, a 30% decline in resting (from 0.03%.h -1 to 0.027%.h -1 for 10 o",
+      "claim_role": "background",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-24118",
+      "claim_type": "percentage",
+      "raw_text": "0.03%",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 24118,
+      "sentence": "For example, a 30% decline in resting (from 0.03%.h -1 to 0.027%.h -1 for 10 of 24 h in a day) and feeding-stimulated (from 0.06%.h -1 to 0.042%.h -1 for 14 of 24 h in a day) myofibrillar protein synthesis would only result in a lower requirement for protein approximating 0.1 g protein.d -1 (assuming a 70 kg male with 30 kg of muscle and that muscle is a homogeneous pool) which is well within the error of the nitrogen balance method.",
+      "context_window": "balance study. For example, a 30% decline in resting (from 0.03%.h -1 to 0.027%.h -1 for 10 of 24 h in a day) and feeding-st",
+      "claim_role": "background",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-24132",
+      "claim_type": "percentage",
+      "raw_text": "0.027%",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 24132,
+      "sentence": "For example, a 30% decline in resting (from 0.03%.h -1 to 0.027%.h -1 for 10 of 24 h in a day) and feeding-stimulated (from 0.06%.h -1 to 0.042%.h -1 for 14 of 24 h in a day) myofibrillar protein synthesis would only result in a lower requirement for protein approximating 0.1 g protein.d -1 (assuming a 70 kg male with 30 kg of muscle and that muscle is a homogeneous pool) which is well within the error of the nitrogen balance method.",
+      "context_window": ". For example, a 30% decline in resting (from 0.03%.h -1 to 0.027%.h -1 for 10 of 24 h in a day) and feeding-stimulated (from",
+      "claim_role": "background",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-24198",
+      "claim_type": "percentage",
+      "raw_text": "0.06%",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 24198,
+      "sentence": "For example, a 30% decline in resting (from 0.03%.h -1 to 0.027%.h -1 for 10 of 24 h in a day) and feeding-stimulated (from 0.06%.h -1 to 0.042%.h -1 for 14 of 24 h in a day) myofibrillar protein synthesis would only result in a lower requirement for protein approximating 0.1 g protein.d -1 (assuming a 70 kg male with 30 kg of muscle and that muscle is a homogeneous pool) which is well within the error of the nitrogen balance method.",
+      "context_window": ".h -1 for 10 of 24 h in a day) and feeding-stimulated (from 0.06%.h -1 to 0.042%.h -1 for 14 of 24 h in a day) myofibrillar p",
+      "claim_role": "background",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-24212",
+      "claim_type": "percentage",
+      "raw_text": "0.042%",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 24212,
+      "sentence": "For example, a 30% decline in resting (from 0.03%.h -1 to 0.027%.h -1 for 10 of 24 h in a day) and feeding-stimulated (from 0.06%.h -1 to 0.042%.h -1 for 14 of 24 h in a day) myofibrillar protein synthesis would only result in a lower requirement for protein approximating 0.1 g protein.d -1 (assuming a 70 kg male with 30 kg of muscle and that muscle is a homogeneous pool) which is well within the error of the nitrogen balance method.",
+      "context_window": "f 24 h in a day) and feeding-stimulated (from 0.06%.h -1 to 0.042%.h -1 for 14 of 24 h in a day) myofibrillar protein synthesi",
+      "claim_role": "background",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-u-24378",
+      "claim_type": "unit_value",
+      "raw_text": "70 kg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 24378,
+      "sentence": "For example, a 30% decline in resting (from 0.03%.h -1 to 0.027%.h -1 for 10 of 24 h in a day) and feeding-stimulated (from 0.06%.h -1 to 0.042%.h -1 for 14 of 24 h in a day) myofibrillar protein synthesis would only result in a lower requirement for protein approximating 0.1 g protein.d -1 (assuming a 70 kg male with 30 kg of muscle and that muscle is a homogeneous pool) which is well within the error of the nitrogen balance method.",
+      "context_window": "nt for protein approximating 0.1 g protein.d -1 (assuming a 70 kg male with 30 kg of muscle and that muscle is a homogeneous",
+      "claim_role": "background",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-u-24394",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 24394,
+      "sentence": "For example, a 30% decline in resting (from 0.03%.h -1 to 0.027%.h -1 for 10 of 24 h in a day) and feeding-stimulated (from 0.06%.h -1 to 0.042%.h -1 for 14 of 24 h in a day) myofibrillar protein synthesis would only result in a lower requirement for protein approximating 0.1 g protein.d -1 (assuming a 70 kg male with 30 kg of muscle and that muscle is a homogeneous pool) which is well within the error of the nitrogen balance method.",
+      "context_window": "pproximating 0.1 g protein.d -1 (assuming a 70 kg male with 30 kg of muscle and that muscle is a homogeneous pool) which is w",
+      "claim_role": "background",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-25436",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 25436,
+      "sentence": "It has been shown that low-intensity resistance-exercise (20-50% 1RM), coupled with blood flow occlusion to the working muscle (using of an inflatable cuff), induces hypertrophy and strength gains similar to those found with high-intensity resistance exercise [ 81 , 82 ].",
+      "context_window": "t has been shown that low-intensity resistance-exercise (20-50% 1RM), coupled with blood flow occlusion to the working musc",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-25761",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 25761,
+      "sentence": "Specifically, Fry et al. [ 83 ] demonstrated that low-intensity leg resistance exercise (4 sets of 15-30 reps at 20% 1RM) with blood flow restriction, increased mTOR signalling phosphorylation and MPS by ~56% above rest in the elderly over 3 h post-exercise.",
+      "context_window": "-intensity leg resistance exercise (4 sets of 15-30 reps at 20% 1RM) with blood flow restriction, increased mTOR signalling",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-25853",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 25853,
+      "sentence": "Specifically, Fry et al. [ 83 ] demonstrated that low-intensity leg resistance exercise (4 sets of 15-30 reps at 20% 1RM) with blood flow restriction, increased mTOR signalling phosphorylation and MPS by ~56% above rest in the elderly over 3 h post-exercise.",
+      "context_window": "tion, increased mTOR signalling phosphorylation and MPS by ~56% above rest in the elderly over 3 h post-exercise. Given tha",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-26644",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 26644,
+      "sentence": "In a study by Fry et al. [ 83 ] it was shown that resistance exercise at 20% 1RM, without blood restriction, was not sufficient to increase rates of MPS above rest.",
+      "context_window": "Fry et al. [ 83 ] it was shown that resistance exercise at 20% 1RM, without blood restriction, was not sufficient to incre",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-26886",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 26886,
+      "sentence": "A recent publication from our laboratory [ 84 ], albeit in healthy young adults, showed that low-load high volume leg resistance exercise to failure (30% of 1RM) was more effective at increasing MPS than high-load low volume resistance exercise to failure (90% of 1RM).",
+      "context_window": "at low-load high volume leg resistance exercise to failure (30% of 1RM) was more effective at increasing MPS than high-load",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-26993",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 26993,
+      "sentence": "A recent publication from our laboratory [ 84 ], albeit in healthy young adults, showed that low-load high volume leg resistance exercise to failure (30% of 1RM) was more effective at increasing MPS than high-load low volume resistance exercise to failure (90% of 1RM).",
+      "context_window": "S than high-load low volume resistance exercise to failure (90% of 1RM). Specifically, weight lifting at 30% of 1RM to fail",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-27038",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 27038,
+      "sentence": "Specifically, weight lifting at 30% of 1RM to failure induced similar increases in MPS to that found after lifting 90% of 1RM to failure at 4 h post-exercise [ 84 ].",
+      "context_window": "se to failure (90% of 1RM). Specifically, weight lifting at 30% of 1RM to failure induced similar increases in MPS to that",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-27121",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 27121,
+      "sentence": "Specifically, weight lifting at 30% of 1RM to failure induced similar increases in MPS to that found after lifting 90% of 1RM to failure at 4 h post-exercise [ 84 ].",
+      "context_window": "nduced similar increases in MPS to that found after lifting 90% of 1RM to failure at 4 h post-exercise [ 84 ]. This respons",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-27797",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 27797,
+      "sentence": "Previously, we have shown [ 76 ] that low-intensity resistance exercise training (40% of 1RM), 3 times a week for 12 weeks, increases leg strength, but not muscle thickness in the elderly, suggestive of a neuromuscular adaptation.",
+      "context_window": "own [ 76 ] that low-intensity resistance exercise training (40% of 1RM), 3 times a week for 12 weeks, increases leg strengt",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-u-27829",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 27829,
+      "sentence": "Previously, we have shown [ 76 ] that low-intensity resistance exercise training (40% of 1RM), 3 times a week for 12 weeks, increases leg strength, but not muscle thickness in the elderly, suggestive of a neuromuscular adaptation.",
+      "context_window": "sistance exercise training (40% of 1RM), 3 times a week for 12 weeks, increases leg strength, but not muscle thickness in the el",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-27995",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 27995,
+      "sentence": "In contrast, high-intensity resistance exercise (80% 1RM) in the elderly induced greater strength gains than the low-intensity group, accompanied by an increase in quadriceps muscle thickness [ 76 ].",
+      "context_window": "daptation. In contrast, high-intensity resistance exercise (80% 1RM) in the elderly induced greater strength gains than the",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-pct-28302",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 28302,
+      "sentence": "Importantly, ~10 repetitions per set were performed by both the low and high-intensity groups in this study [ 76 ], thus the low-intensity group performed ~50% less volume (repetitions x mass).",
+      "context_window": "this study [ 76 ], thus the low-intensity group performed ~50% less volume (repetitions x mass). Given these data, we sugg",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3201893_skeletal_muscle_protein_metabolism_in_the_elderly_interventi-u-31896",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 31896,
+      "sentence": "For example, in older adults, Esmark et al. [ 92 ] showed that resistance training (over 12 weeks) followed by immediate ingestion of 10 g of protein resulted in greater gains in muscle cross-section and isokinetic strength, compared with a group who delayed protein intake until 2 h after each work-out.",
+      "context_window": "Esmark et al. [ 92 ] showed that resistance training (over 12 weeks) followed by immediate ingestion of 10 g of protein resulte",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

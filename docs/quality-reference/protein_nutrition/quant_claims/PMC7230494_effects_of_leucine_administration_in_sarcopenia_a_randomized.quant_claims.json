@@ -1,0 +1,2637 @@
+{
+  "paper_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized",
+  "doi": "10.3390/nu12040932",
+  "extracted_at": "2026-05-05T22:35:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 23,
+    "p_value": 46,
+    "percentage": 25,
+    "mean_sd": 49
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-658",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 658,
+      "sentence": "The participants were randomized to a parallel group intervention of 13 weeks\u2019 duration with a daily intake of leucine (6 g/day) or placebo (lactose, 6 g/day).",
+      "context_window": "cipants were randomized to a parallel group intervention of 13 weeks\u2019 duration with a daily intake of leucine (6 g/day) or place",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-1282",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1282,
+      "sentence": "Administration of leucine was well-tolerated and significantly improves some criteria of sarcopenia in elderly individuals such as functional performance measured by walking time ( p = 0.011), and improved lean mass index.",
+      "context_window": "s such as functional performance measured by walking time ( p = 0.011), and improved lean mass index. For respiratory muscle func",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-1408",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1408,
+      "sentence": "For respiratory muscle function, the leucine-treated group improved significantly ( p = 0.026) in maximum static expiratory force compared to the placebo.",
+      "context_window": "unction, the leucine-treated group improved significantly ( p = 0.026) in maximum static expiratory force compared to the placebo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-365",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 365,
+      "sentence": "Its prevalence has been estimated at 5%-13% in people aged 60-70 and as high as 50% in those aged over 80 [ 3 ].",
+      "context_window": "d mortality [ 1 , 2 ]. Its prevalence has been estimated at 5%-13% in people aged 60-70 and as high as 50% in those aged o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-368",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 368,
+      "sentence": "Its prevalence has been estimated at 5%-13% in people aged 60-70 and as high as 50% in those aged over 80 [ 3 ].",
+      "context_window": "ortality [ 1 , 2 ]. Its prevalence has been estimated at 5%-13% in people aged 60-70 and as high as 50% in those aged over",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-408",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 408,
+      "sentence": "Its prevalence has been estimated at 5%-13% in people aged 60-70 and as high as 50% in those aged over 80 [ 3 ].",
+      "context_window": "een estimated at 5%-13% in people aged 60-70 and as high as 50% in those aged over 80 [ 3 ]. Several reports performed in o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-1028",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1028,
+      "sentence": "A recent study conducted in the US population, based on the National Health and Nutrition Examination Survey (NHANES) survey, demonstrated that muscle mass is a significant predictor of longevity for all-cause mortality [ 6 ] taking into account men and women over 55 or 65 years of age and over, respectively.",
+      "context_window": "ortality [ 6 ] taking into account men and women over 55 or 65 years of age and over, respectively. One of the main pathway by w",
+      "claim_role": "protocol",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-1538",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1538,
+      "sentence": "Confirming this, metabolic studies showed that older individuals aged 65 years and over require approximately 2% more protein intake per meal to maximize muscle protein synthesis [ 13 ].",
+      "context_window": "this, metabolic studies showed that older individuals aged 65 years and over require approximately 2% more protein intake per m",
+      "claim_role": "population",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-1578",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1578,
+      "sentence": "Confirming this, metabolic studies showed that older individuals aged 65 years and over require approximately 2% more protein intake per meal to maximize muscle protein synthesis [ 13 ].",
+      "context_window": "er individuals aged 65 years and over require approximately 2% more protein intake per meal to maximize muscle protein syn",
+      "claim_role": "population",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-1683",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1683,
+      "sentence": "Furthermore, globally, only 40% of older adults meet the recommended daily protein intake and 10% of older women do not even meet the estimated minimal average requirement [ 14 , 15 ].",
+      "context_window": "uscle protein synthesis [ 13 ]. Furthermore, globally, only 40% of older adults meet the recommended daily protein intake a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-1749",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1749,
+      "sentence": "Furthermore, globally, only 40% of older adults meet the recommended daily protein intake and 10% of older women do not even meet the estimated minimal average requirement [ 14 , 15 ].",
+      "context_window": "older adults meet the recommended daily protein intake and 10% of older women do not even meet the estimated minimal avera",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-179",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 179,
+      "sentence": "All individuals fulfilled the inclusion criterion to be able to walk 6 m and were 65 years or over.",
+      "context_window": "led the inclusion criterion to be able to walk 6 m and were 65 years or over. The exclusion criteria were severe cognitive impai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-865",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 865,
+      "sentence": "The sample size was estimated as a function of the differences in the measurements between the groups that should be detected (=1 sarcopenia criterion among the six parameters of sarcopenia muscle strength, muscle mass, walking time, maximum static inspiratory (MIP) or expiratory (MEP) pressures at the mouth, and peak expiratory flow (PEF)), the standard deviation of those values, the p-value (0.05) and the power (90%).",
+      "context_window": "eviation of those values, the p-value (0.05) and the power (90%). In such old institutionalized individuals like those enro",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-954",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 954,
+      "sentence": "In such old institutionalized individuals like those enrolled in the RCT (mean age 79 years old), our experience showed that there is a variability range 10%-30% of dropouts in experimental studies performed in nursing homes.",
+      "context_window": "alized individuals like those enrolled in the RCT (mean age 79 years old), our experience showed that there is a variability ran",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-1025",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1025,
+      "sentence": "In such old institutionalized individuals like those enrolled in the RCT (mean age 79 years old), our experience showed that there is a variability range 10%-30% of dropouts in experimental studies performed in nursing homes.",
+      "context_window": "d), our experience showed that there is a variability range 10%-30% of dropouts in experimental studies performed in nursin",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-1029",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1029,
+      "sentence": "In such old institutionalized individuals like those enrolled in the RCT (mean age 79 years old), our experience showed that there is a variability range 10%-30% of dropouts in experimental studies performed in nursing homes.",
+      "context_window": "our experience showed that there is a variability range 10%-30% of dropouts in experimental studies performed in nursing ho",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-1136",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1136,
+      "sentence": "For this reason, we assumed a power of 90% in order to minimize the impact of an eventual high rate of dropouts during the study.",
+      "context_window": "ed in nursing homes. For this reason, we assumed a power of 90% in order to minimize the impact of an eventual high rate of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-1252",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1252,
+      "sentence": "As a result, to achieve 90% power with a two-sided 5% level of significance, and to detect a minimum difference of one sarcopenia parameter (we measured six sarcopenia parameters) between the placebo and leucine groups, we calculated that a sample size of a total of 44 patients would enter this two-treatment crossover study [ 22 ].",
+      "context_window": "rate of dropouts during the study. As a result, to achieve 90% power with a two-sided 5% level of significance, and to det",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-1279",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1279,
+      "sentence": "As a result, to achieve 90% power with a two-sided 5% level of significance, and to detect a minimum difference of one sarcopenia parameter (we measured six sarcopenia parameters) between the placebo and leucine groups, we calculated that a sample size of a total of 44 patients would enter this two-treatment crossover study [ 22 ].",
+      "context_window": "study. As a result, to achieve 90% power with a two-sided 5% level of significance, and to detect a minimum difference o",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-3835",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 m/s",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 3835,
+      "sentence": "Sarcopenia was measured according to the guidelines of the European Working Group on Sarcopenia in Older People (EWGSOP) [ 1 ], and can be assessed by means of indirect measures of muscle function and muscle mass, such as low walking speed (\u22640.8 m/s walking 4.6 m), handgrip strength assessed by dynamometry (men \u2264 30 kg/m 2 and women \u2264 20 kg/m 2 ) and the loss of lean mass calculated using the equation formulated by Janssen [ 17 ] based on the resistance values obtained in the whole body bioimpedance assessment (women \u2264 5.5 kg/m 2 and men \u2264 7.25 kg/m 2 ).",
+      "context_window": "uscle function and muscle mass, such as low walking speed (\u22640.8 m/s walking 4.6 m), handgrip strength assessed by dynamometry (",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-3908",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3908,
+      "sentence": "Sarcopenia was measured according to the guidelines of the European Working Group on Sarcopenia in Older People (EWGSOP) [ 1 ], and can be assessed by means of indirect measures of muscle function and muscle mass, such as low walking speed (\u22640.8 m/s walking 4.6 m), handgrip strength assessed by dynamometry (men \u2264 30 kg/m 2 and women \u2264 20 kg/m 2 ) and the loss of lean mass calculated using the equation formulated by Janssen [ 17 ] based on the resistance values obtained in the whole body bioimpedance assessment (women \u2264 5.5 kg/m 2 and men \u2264 7.25 kg/m 2 ).",
+      "context_window": "ng 4.6 m), handgrip strength assessed by dynamometry (men \u2264 30 kg/m 2 and women \u2264 20 kg/m 2 ) and the loss of lean mass calcu",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-3930",
+      "claim_type": "unit_value",
+      "raw_text": "20 kg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3930,
+      "sentence": "Sarcopenia was measured according to the guidelines of the European Working Group on Sarcopenia in Older People (EWGSOP) [ 1 ], and can be assessed by means of indirect measures of muscle function and muscle mass, such as low walking speed (\u22640.8 m/s walking 4.6 m), handgrip strength assessed by dynamometry (men \u2264 30 kg/m 2 and women \u2264 20 kg/m 2 ) and the loss of lean mass calculated using the equation formulated by Janssen [ 17 ] based on the resistance values obtained in the whole body bioimpedance assessment (women \u2264 5.5 kg/m 2 and men \u2264 7.25 kg/m 2 ).",
+      "context_window": "rength assessed by dynamometry (men \u2264 30 kg/m 2 and women \u2264 20 kg/m 2 ) and the loss of lean mass calculated using the equati",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-4118",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 kg",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 4118,
+      "sentence": "Sarcopenia was measured according to the guidelines of the European Working Group on Sarcopenia in Older People (EWGSOP) [ 1 ], and can be assessed by means of indirect measures of muscle function and muscle mass, such as low walking speed (\u22640.8 m/s walking 4.6 m), handgrip strength assessed by dynamometry (men \u2264 30 kg/m 2 and women \u2264 20 kg/m 2 ) and the loss of lean mass calculated using the equation formulated by Janssen [ 17 ] based on the resistance values obtained in the whole body bioimpedance assessment (women \u2264 5.5 kg/m 2 and men \u2264 7.25 kg/m 2 ).",
+      "context_window": "obtained in the whole body bioimpedance assessment (women \u2264 5.5 kg/m 2 and men \u2264 7.25 kg/m 2 ). These lean mass values can be",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-4139",
+      "claim_type": "unit_value",
+      "raw_text": "7.25 kg",
+      "numeric_values": [
+        7.25
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 4139,
+      "sentence": "Sarcopenia was measured according to the guidelines of the European Working Group on Sarcopenia in Older People (EWGSOP) [ 1 ], and can be assessed by means of indirect measures of muscle function and muscle mass, such as low walking speed (\u22640.8 m/s walking 4.6 m), handgrip strength assessed by dynamometry (men \u2264 30 kg/m 2 and women \u2264 20 kg/m 2 ) and the loss of lean mass calculated using the equation formulated by Janssen [ 17 ] based on the resistance values obtained in the whole body bioimpedance assessment (women \u2264 5.5 kg/m 2 and men \u2264 7.25 kg/m 2 ).",
+      "context_window": "body bioimpedance assessment (women \u2264 5.5 kg/m 2 and men \u2264 7.25 kg/m 2 ). These lean mass values can be adjusted to different",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-4270",
+      "claim_type": "unit_value",
+      "raw_text": "8.31 kg/m2",
+      "numeric_values": [
+        8.31
+      ],
+      "units": "kg/m2",
+      "source_section": "methods",
+      "source_offset": 4270,
+      "sentence": "These lean mass values can be adjusted to different populations, with cut-off values for the Spanish population off 8.31 kg/m2 for men and 6.68 kg/m2 for women [ 10 ].",
+      "context_window": "lations, with cut-off values for the Spanish population off 8.31 kg/m2 for men and 6.68 kg/m2 for women [ 10 ]. We assessed body c",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-4293",
+      "claim_type": "unit_value",
+      "raw_text": "6.68 kg/m2",
+      "numeric_values": [
+        6.68
+      ],
+      "units": "kg/m2",
+      "source_section": "methods",
+      "source_offset": 4293,
+      "sentence": "These lean mass values can be adjusted to different populations, with cut-off values for the Spanish population off 8.31 kg/m2 for men and 6.68 kg/m2 for women [ 10 ].",
+      "context_window": "alues for the Spanish population off 8.31 kg/m2 for men and 6.68 kg/m2 for women [ 10 ]. We assessed body composition by bioelectr",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-6544",
+      "claim_type": "unit_value",
+      "raw_text": "1 mm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 6544,
+      "sentence": "The data obtained were volumes and forced pulmonary capacities: forced vital capacity (FVC), forced expiratory volume in the first second (FEV1), FEV1/FVC, forced expiratory volume in diameter tracks smaller than 1 mm (FEV2575, FEV25, FEV50, FEV75) and peak expiratory flow (PEF).",
+      "context_window": "C, forced expiratory volume in diameter tracks smaller than 1 mm (FEV2575, FEV25, FEV50, FEV75) and peak expiratory flow (PE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-7296",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7296,
+      "sentence": "MIP was measured at residual volume and MEP at total lung capacity to record the maximum value of three maneuvers that vary by less than 10%.",
+      "context_window": "the maximum value of three maneuvers that vary by less than 10%. The standardized regulations for this test were followed [",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-7556",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7556,
+      "sentence": "At least three trials were performed (with less than 10% variation between trials or they were discarded) and the highest result was recorded.",
+      "context_window": "test. At least three trials were performed (with less than 10% variation between trials or they were discarded) and the hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-8670",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 8670,
+      "sentence": "We determined the extent of physical activity by the self-administered International Physical Activity Questionnaire (IPAQ) whose questions ask about the time spent being physically active in the last 7 days.",
+      "context_window": "sk about the time spent being physically active in the last 7 days. Blood samples were taken in fasting conditions between 7:",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-10431",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10431,
+      "sentence": "In order to estimate the magnitude of the significant changes ( p < 0.05) between the two experimental group we calculated Cohen\u2019s d and effect size r (small (d = 0.2), medium (d = 0.5), and large (d \u2265 0.8)).",
+      "context_window": "rder to estimate the magnitude of the significant changes ( p < 0.05) between the two experimental group we calculated Cohen\u2019s d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-10612",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10612,
+      "sentence": "Statistical significance was set at p < 0.05, and statistical analysis was performed with the SPSS 24.0 (SPSS Inc., Chicago, IL, USA) software package.",
+      "context_window": ", and large (d \u2265 0.8)). Statistical significance was set at p < 0.05, and statistical analysis was performed with the SPSS 24.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-37",
+      "claim_type": "mean_sd",
+      "raw_text": "78.9 \u00b1 7.9",
+      "numeric_values": [
+        78.9,
+        7.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 37,
+      "sentence": "The mean age of the participants was 78.9 \u00b1 7.9 (SD) (range 65-93 years).",
+      "context_window": "The mean age of the participants was 78.9 \u00b1 7.9 (SD) (range 65-93 years). No significant difference ( p = 0",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-63",
+      "claim_type": "unit_value",
+      "raw_text": "93 years",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 63,
+      "sentence": "The mean age of the participants was 78.9 \u00b1 7.9 (SD) (range 65-93 years).",
+      "context_window": "mean age of the participants was 78.9 \u00b1 7.9 (SD) (range 65-93 years). No significant difference ( p = 0.81) was observed betwee",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-102",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.81",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 102,
+      "sentence": "No significant difference ( p = 0.81) was observed between the mean age of individuals in the leucine group (78.4 \u00b1 8.4) compared to the placebo group (79.0 \u00b1 7.6).",
+      "context_window": "\u00b1 7.9 (SD) (range 65-93 years). No significant difference ( p = 0.81) was observed between the mean age of individuals in the le",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-183",
+      "claim_type": "mean_sd",
+      "raw_text": "78.4 \u00b1 8.4",
+      "numeric_values": [
+        78.4,
+        8.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 183,
+      "sentence": "No significant difference ( p = 0.81) was observed between the mean age of individuals in the leucine group (78.4 \u00b1 8.4) compared to the placebo group (79.0 \u00b1 7.6).",
+      "context_window": "d between the mean age of individuals in the leucine group (78.4 \u00b1 8.4) compared to the placebo group (79.0 \u00b1 7.6). No significant",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-226",
+      "claim_type": "mean_sd",
+      "raw_text": "79.0 \u00b1 7.6",
+      "numeric_values": [
+        79.0,
+        7.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 226,
+      "sentence": "No significant difference ( p = 0.81) was observed between the mean age of individuals in the leucine group (78.4 \u00b1 8.4) compared to the placebo group (79.0 \u00b1 7.6).",
+      "context_window": "e leucine group (78.4 \u00b1 8.4) compared to the placebo group (79.0 \u00b1 7.6). No significant difference ( p = 0.97) was found regarding",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-267",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 267,
+      "sentence": "No significant difference ( p = 0.97) was found regarding the distribution of sexes in the experimental groups.",
+      "context_window": "the placebo group (79.0 \u00b1 7.6). No significant difference ( p = 0.97) was found regarding the distribution of sexes in the exper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-419",
+      "claim_type": "mean_sd",
+      "raw_text": "1770 \u00b1 196",
+      "numeric_values": [
+        1770.0,
+        196.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 419,
+      "sentence": "The mean energy intake at baseline from the dieticians\u2019 reports was 1770 \u00b1 196 kcal/day for the leucine group and 1758 \u00b1 168 kcal/day for the placebo group, with no differences between groups ( p = 0.96).",
+      "context_window": "energy intake at baseline from the dieticians\u2019 reports was 1770 \u00b1 196 kcal/day for the leucine group and 1758 \u00b1 168 kcal/day for",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-465",
+      "claim_type": "mean_sd",
+      "raw_text": "1758 \u00b1 168",
+      "numeric_values": [
+        1758.0,
+        168.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 465,
+      "sentence": "The mean energy intake at baseline from the dieticians\u2019 reports was 1770 \u00b1 196 kcal/day for the leucine group and 1758 \u00b1 168 kcal/day for the placebo group, with no differences between groups ( p = 0.96).",
+      "context_window": "\u2019 reports was 1770 \u00b1 196 kcal/day for the leucine group and 1758 \u00b1 168 kcal/day for the placebo group, with no differences between",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-545",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 545,
+      "sentence": "The mean energy intake at baseline from the dieticians\u2019 reports was 1770 \u00b1 196 kcal/day for the leucine group and 1758 \u00b1 168 kcal/day for the placebo group, with no differences between groups ( p = 0.96).",
+      "context_window": "for the placebo group, with no differences between groups ( p = 0.96). At 6 weeks of treatment, mean energy intake was 1632 \u00b1 18",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-559",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 559,
+      "sentence": "At 6 weeks of treatment, mean energy intake was 1632 \u00b1 188 kcal/day for the leucine group and 1690 \u00b1 204 kcal/day for the placebo group with no differences between groups ( p = 0.83).",
+      "context_window": "o group, with no differences between groups ( p = 0.96). At 6 weeks of treatment, mean energy intake was 1632 \u00b1 188 kcal/day fo",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-604",
+      "claim_type": "mean_sd",
+      "raw_text": "1632 \u00b1 188",
+      "numeric_values": [
+        1632.0,
+        188.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 604,
+      "sentence": "At 6 weeks of treatment, mean energy intake was 1632 \u00b1 188 kcal/day for the leucine group and 1690 \u00b1 204 kcal/day for the placebo group with no differences between groups ( p = 0.83).",
+      "context_window": "p = 0.96). At 6 weeks of treatment, mean energy intake was 1632 \u00b1 188 kcal/day for the leucine group and 1690 \u00b1 204 kcal/day for",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-650",
+      "claim_type": "mean_sd",
+      "raw_text": "1690 \u00b1 204",
+      "numeric_values": [
+        1690.0,
+        204.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 650,
+      "sentence": "At 6 weeks of treatment, mean energy intake was 1632 \u00b1 188 kcal/day for the leucine group and 1690 \u00b1 204 kcal/day for the placebo group with no differences between groups ( p = 0.83).",
+      "context_window": "gy intake was 1632 \u00b1 188 kcal/day for the leucine group and 1690 \u00b1 204 kcal/day for the placebo group with no differences between",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-729",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 729,
+      "sentence": "At 6 weeks of treatment, mean energy intake was 1632 \u00b1 188 kcal/day for the leucine group and 1690 \u00b1 204 kcal/day for the placebo group with no differences between groups ( p = 0.83).",
+      "context_window": "for the placebo group with no differences between groups ( p = 0.83). After completion of the trial mean energy intake was 1694",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-793",
+      "claim_type": "mean_sd",
+      "raw_text": "1694 \u00b1 152",
+      "numeric_values": [
+        1694.0,
+        152.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 793,
+      "sentence": "After completion of the trial mean energy intake was 1694 \u00b1 152 kcal/day for the leucine group and 1707 \u00b1 195 kcal/day for the placebo group with no differences between groups ( p = 0.91).",
+      "context_window": "0.83). After completion of the trial mean energy intake was 1694 \u00b1 152 kcal/day for the leucine group and 1707 \u00b1 195 kcal/day for",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-839",
+      "claim_type": "mean_sd",
+      "raw_text": "1707 \u00b1 195",
+      "numeric_values": [
+        1707.0,
+        195.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 839,
+      "sentence": "After completion of the trial mean energy intake was 1694 \u00b1 152 kcal/day for the leucine group and 1707 \u00b1 195 kcal/day for the placebo group with no differences between groups ( p = 0.91).",
+      "context_window": "gy intake was 1694 \u00b1 152 kcal/day for the leucine group and 1707 \u00b1 195 kcal/day for the placebo group with no differences between",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-918",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.91",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 918,
+      "sentence": "After completion of the trial mean energy intake was 1694 \u00b1 152 kcal/day for the leucine group and 1707 \u00b1 195 kcal/day for the placebo group with no differences between groups ( p = 0.91).",
+      "context_window": "for the placebo group with no differences between groups ( p = 0.91). The primary outcome measured was the effect of treatment",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-2018",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2018,
+      "sentence": "The baseline evaluation was performed approximately 5 weeks before randomization due to ethical protocol issues in the nursing homes.",
+      "context_window": "ation). The baseline evaluation was performed approximately 5 weeks before randomization due to ethical protocol issues in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-2888",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2888,
+      "sentence": "The treatment with leucine or placebo lasted 13 weeks.",
+      "context_window": "nds to Spain). The treatment with leucine or placebo lasted 13 weeks. All participants were re-evaluated (sarcopenia, geriatric",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-3002",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 3002,
+      "sentence": "All participants were re-evaluated (sarcopenia, geriatric assessments and blood sample analyses) within 1 month of completion of the study.",
+      "context_window": "ia, geriatric assessments and blood sample analyses) within 1 month of completion of the study. The flowchart of the RCT is sh",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-3142",
+      "claim_type": "percentage",
+      "raw_text": "86.0%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3142,
+      "sentence": "A total of forty-two participants completed the study (86.0%) (14 men and 29 women).",
+      "context_window": "1 . A total of forty-two participants completed the study (86.0%) (14 men and 29 women). Dropout rates were not significantl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-3211",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3211,
+      "sentence": "Dropout rates were not significantly ( p = 0.71) different between groups (five participants in the leucine group and three participants in the placebo group stopped the treatment and did not wish to participate for unknown reasons).",
+      "context_window": "4 men and 29 women). Dropout rates were not significantly ( p = 0.71) different between groups (five participants in the leucine",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-3431",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3431,
+      "sentence": "No significant changes ( p = 0.84) in drug administration prescribed for the comorbidities were observed between the two groups during the trial.",
+      "context_window": "participate for unknown reasons). No significant changes ( p = 0.84) in drug administration prescribed for the comorbidities we",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-3671",
+      "claim_type": "percentage",
+      "raw_text": "91.5%",
+      "numeric_values": [
+        91.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3671,
+      "sentence": "In those individuals completing all the study protocol and included in the analysis, intervention compliance was high (91.5% in the leucine group and 93.5% in the placebo group) from baseline to follow-up, and did not differ significantly between groups.",
+      "context_window": "included in the analysis, intervention compliance was high (91.5% in the leucine group and 93.5% in the placebo group) from b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-3702",
+      "claim_type": "percentage",
+      "raw_text": "93.5%",
+      "numeric_values": [
+        93.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3702,
+      "sentence": "In those individuals completing all the study protocol and included in the analysis, intervention compliance was high (91.5% in the leucine group and 93.5% in the placebo group) from baseline to follow-up, and did not differ significantly between groups.",
+      "context_window": "vention compliance was high (91.5% in the leucine group and 93.5% in the placebo group) from baseline to follow-up, and did n",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-4118",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4118,
+      "sentence": "The two experimental groups (leucine and placebo) were not significantly different at baseline (see Table 1 ) except for the lean mass index, which was significantly lower in the leucine group compared to the control group ( p = 0.02).",
+      "context_window": "lower in the leucine group compared to the control group ( p = 0.02). Handgrip strength and walking time values did not differ",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4234",
+      "claim_type": "mean_sd",
+      "raw_text": "43.03 \u00b1 4.10",
+      "numeric_values": [
+        43.03,
+        4.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4234,
+      "sentence": "Handgrip strength and walking time values did not differ between the groups at baseline (leucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively).",
+      "context_window": "d not differ between the groups at baseline (leucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine grou",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4266",
+      "claim_type": "mean_sd",
+      "raw_text": "35.97 \u00b1 0.41",
+      "numeric_values": [
+        35.97,
+        0.41
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4266,
+      "sentence": "Handgrip strength and walking time values did not differ between the groups at baseline (leucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively).",
+      "context_window": "at baseline (leucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group:",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-4280",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.242",
+      "numeric_values": [
+        0.242
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4280,
+      "sentence": "Handgrip strength and walking time values did not differ between the groups at baseline (leucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively).",
+      "context_window": "eucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4308",
+      "claim_type": "mean_sd",
+      "raw_text": "10.7 \u00b1 2.85",
+      "numeric_values": [
+        10.7,
+        2.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4308,
+      "sentence": "Handgrip strength and walking time values did not differ between the groups at baseline (leucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively).",
+      "context_window": "s. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively). T",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4339",
+      "claim_type": "mean_sd",
+      "raw_text": "10.43 \u00b1 2.42",
+      "numeric_values": [
+        10.43,
+        2.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4339,
+      "sentence": "Handgrip strength and walking time values did not differ between the groups at baseline (leucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively).",
+      "context_window": "p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively). The only differences were in in t",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-4353",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.944",
+      "numeric_values": [
+        0.944
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4353,
+      "sentence": "Handgrip strength and walking time values did not differ between the groups at baseline (leucine group: 43.03 \u00b1 4.10 vs. placebo group: 35.97 \u00b1 0.41; p = 0.242 and leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively).",
+      "context_window": "leucine group 10.7 \u00b1 2.85 vs. placebo group: 10.43 \u00b1 2.42; p = 0.944 respectively). The only differences were in in the muscle m",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4525",
+      "claim_type": "mean_sd",
+      "raw_text": "8.3 \u00b1 1.8",
+      "numeric_values": [
+        8.3,
+        1.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4525,
+      "sentence": "The only differences were in in the muscle mass index, with greater muscle mass in the control group compared to the leucine group (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77, effect size r = 0.36).",
+      "context_window": "control group compared to the leucine group (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4554",
+      "claim_type": "mean_sd",
+      "raw_text": "10.4 \u00b1 3.4",
+      "numeric_values": [
+        10.4,
+        3.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4554,
+      "sentence": "The only differences were in in the muscle mass index, with greater muscle mass in the control group compared to the leucine group (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77, effect size r = 0.36).",
+      "context_window": "leucine group (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77, effect size r = 0.36). Followi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-4566",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4566,
+      "sentence": "The only differences were in in the muscle mass index, with greater muscle mass in the control group compared to the leucine group (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77, effect size r = 0.36).",
+      "context_window": "up (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77, effect size r = 0.36). Following the int",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4726",
+      "claim_type": "mean_sd",
+      "raw_text": "8.3 \u00b1 1.7",
+      "numeric_values": [
+        8.3,
+        1.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4726,
+      "sentence": "Following the intervention, there was no difference between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285.",
+      "context_window": "ce between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4755",
+      "claim_type": "mean_sd",
+      "raw_text": "9.9 \u00b1 3.4",
+      "numeric_values": [
+        9.9,
+        3.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4755,
+      "sentence": "Following the intervention, there was no difference between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285.",
+      "context_window": "cle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine gro",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-4766",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4766,
+      "sentence": "Following the intervention, there was no difference between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285.",
+      "context_window": "dex: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4828",
+      "claim_type": "mean_sd",
+      "raw_text": "16.4 \u00b1 10.7",
+      "numeric_values": [
+        16.4,
+        10.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4828,
+      "sentence": "Following the intervention, there was no difference between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285.",
+      "context_window": "= 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time va",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4859",
+      "claim_type": "mean_sd",
+      "raw_text": "18.3 \u00b1 8.8",
+      "numeric_values": [
+        18.3,
+        8.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4859,
+      "sentence": "Following the intervention, there was no difference between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285.",
+      "context_window": "ength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-4871",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4871,
+      "sentence": "Following the intervention, there was no difference between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285.",
+      "context_window": ": leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4925",
+      "claim_type": "mean_sd",
+      "raw_text": "8.27 \u00b1 1.10",
+      "numeric_values": [
+        8.27,
+        1.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4925,
+      "sentence": "Following the intervention, there was no difference between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285.",
+      "context_window": "8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285. The changes indu",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4956",
+      "claim_type": "mean_sd",
+      "raw_text": "9.92 \u00b1 1.05",
+      "numeric_values": [
+        9.92,
+        1.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4956,
+      "sentence": "Following the intervention, there was no difference between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285.",
+      "context_window": "values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285. The changes induced by leucine administration i",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-4969",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.285",
+      "numeric_values": [
+        0.285
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4969,
+      "sentence": "Following the intervention, there was no difference between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285.",
+      "context_window": "leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285. The changes induced by leucine administration in sarcopeni",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-5244",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5244,
+      "sentence": "There was a significant difference in walking time compared to baseline levels, expressed as 100% between the leucine and placebo groups, with an increase in the time required to complete the distance in the placebo group (leucine group: 101.43 \u00b1 6.00 vs. placebo group: 134.41 \u00b1 10.47; p = 0.011, Cohen\u2019s d = 3.88, effect size r = 0.89).",
+      "context_window": "e in walking time compared to baseline levels, expressed as 100% between the leucine and placebo groups, with an increase in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-5389",
+      "claim_type": "mean_sd",
+      "raw_text": "101.43 \u00b1 6.00",
+      "numeric_values": [
+        101.43,
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5389,
+      "sentence": "There was a significant difference in walking time compared to baseline levels, expressed as 100% between the leucine and placebo groups, with an increase in the time required to complete the distance in the placebo group (leucine group: 101.43 \u00b1 6.00 vs. placebo group: 134.41 \u00b1 10.47; p = 0.011, Cohen\u2019s d = 3.88, effect size r = 0.89).",
+      "context_window": "complete the distance in the placebo group (leucine group: 101.43 \u00b1 6.00 vs. placebo group: 134.41 \u00b1 10.47; p = 0.011, Cohen\u2019s d = 3",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-5422",
+      "claim_type": "mean_sd",
+      "raw_text": "134.41 \u00b1 10.47",
+      "numeric_values": [
+        134.41,
+        10.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5422,
+      "sentence": "There was a significant difference in walking time compared to baseline levels, expressed as 100% between the leucine and placebo groups, with an increase in the time required to complete the distance in the placebo group (leucine group: 101.43 \u00b1 6.00 vs. placebo group: 134.41 \u00b1 10.47; p = 0.011, Cohen\u2019s d = 3.88, effect size r = 0.89).",
+      "context_window": "cebo group (leucine group: 101.43 \u00b1 6.00 vs. placebo group: 134.41 \u00b1 10.47; p = 0.011, Cohen\u2019s d = 3.88, effect size r = 0.89). There",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-5438",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5438,
+      "sentence": "There was a significant difference in walking time compared to baseline levels, expressed as 100% between the leucine and placebo groups, with an increase in the time required to complete the distance in the placebo group (leucine group: 101.43 \u00b1 6.00 vs. placebo group: 134.41 \u00b1 10.47; p = 0.011, Cohen\u2019s d = 3.88, effect size r = 0.89).",
+      "context_window": "ine group: 101.43 \u00b1 6.00 vs. placebo group: 134.41 \u00b1 10.47; p = 0.011, Cohen\u2019s d = 3.88, effect size r = 0.89). There were no sig",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-5619",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5619,
+      "sentence": "There were no significant differences between the groups in skeletal muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437).",
+      "context_window": "muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-5640",
+      "claim_type": "mean_sd",
+      "raw_text": "97.09 \u00b1 3.24",
+      "numeric_values": [
+        97.09,
+        3.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5640,
+      "sentence": "There were no significant differences between the groups in skeletal muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437).",
+      "context_window": "pared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgri",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-5672",
+      "claim_type": "mean_sd",
+      "raw_text": "102.75 \u00b1 2.29",
+      "numeric_values": [
+        102.75,
+        2.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5672,
+      "sentence": "There were no significant differences between the groups in skeletal muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437).",
+      "context_window": "sed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-5687",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.168",
+      "numeric_values": [
+        0.168
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5687,
+      "sentence": "There were no significant differences between the groups in skeletal muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437).",
+      "context_window": "ucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs.",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-5739",
+      "claim_type": "mean_sd",
+      "raw_text": "94.44 \u00b1 2.88",
+      "numeric_values": [
+        94.44,
+        2.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5739,
+      "sentence": "There were no significant differences between the groups in skeletal muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437).",
+      "context_window": "\u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437). The significa",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-5771",
+      "claim_type": "mean_sd",
+      "raw_text": "101.33 \u00b1 8.22",
+      "numeric_values": [
+        101.33,
+        8.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5771,
+      "sentence": "There were no significant differences between the groups in skeletal muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437).",
+      "context_window": "ip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437). The significant change in walking time led to",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-5786",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.437",
+      "numeric_values": [
+        0.437
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5786,
+      "sentence": "There were no significant differences between the groups in skeletal muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437).",
+      "context_window": "ucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437). The significant change in walking time led to an increase",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-5955",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5955,
+      "sentence": "The significant change in walking time led to an increase in the prevalence of subjects meeting the walking time sarcopenia criterion in the control group ( p = 0.027).",
+      "context_window": "he walking time sarcopenia criterion in the control group ( p = 0.027). Percentage changes of calf perimeters after leucine admin",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-6039",
+      "claim_type": "mean_sd",
+      "raw_text": "97.95 \u00b1 1.19",
+      "numeric_values": [
+        97.95,
+        1.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6039,
+      "sentence": "Percentage changes of calf perimeters after leucine administration were 97.95 \u00b1 1.19 for the leucine group vs.",
+      "context_window": "hanges of calf perimeters after leucine administration were 97.95 \u00b1 1.19 for the leucine group vs. 99.59 \u00b1 1.10 for the placebo grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-6078",
+      "claim_type": "mean_sd",
+      "raw_text": "99.59 \u00b1 1.10",
+      "numeric_values": [
+        99.59,
+        1.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6078,
+      "sentence": "99.59 \u00b1 1.10 for the placebo group; p = 0.325.",
+      "context_window": "administration were 97.95 \u00b1 1.19 for the leucine group vs. 99.59 \u00b1 1.10 for the placebo group; p = 0.325. The same trend was observ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-6114",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.325",
+      "numeric_values": [
+        0.325
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6114,
+      "sentence": "99.59 \u00b1 1.10 for the placebo group; p = 0.325.",
+      "context_window": "r the leucine group vs. 99.59 \u00b1 1.10 for the placebo group; p = 0.325. The same trend was observed in the arm perimeter, with no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-6286",
+      "claim_type": "mean_sd",
+      "raw_text": "101.58 \u00b1 1.48",
+      "numeric_values": [
+        101.58,
+        1.48
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6286,
+      "sentence": "The same trend was observed in the arm perimeter, with no differences at baseline or after treatment, or in the percentage change between groups (leucine group: 101.58 \u00b1 1.48 vs. placebo group: 99.81 \u00b1 2.17; p = 0.505).",
+      "context_window": "or in the percentage change between groups (leucine group: 101.58 \u00b1 1.48 vs. placebo group: 99.81 \u00b1 2.17; p = 0.505). There were als",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-6319",
+      "claim_type": "mean_sd",
+      "raw_text": "99.81 \u00b1 2.17",
+      "numeric_values": [
+        99.81,
+        2.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6319,
+      "sentence": "The same trend was observed in the arm perimeter, with no differences at baseline or after treatment, or in the percentage change between groups (leucine group: 101.58 \u00b1 1.48 vs. placebo group: 99.81 \u00b1 2.17; p = 0.505).",
+      "context_window": "een groups (leucine group: 101.58 \u00b1 1.48 vs. placebo group: 99.81 \u00b1 2.17; p = 0.505). There were also no differences between groups",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-6333",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.505",
+      "numeric_values": [
+        0.505
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6333,
+      "sentence": "The same trend was observed in the arm perimeter, with no differences at baseline or after treatment, or in the percentage change between groups (leucine group: 101.58 \u00b1 1.48 vs. placebo group: 99.81 \u00b1 2.17; p = 0.505).",
+      "context_window": "ucine group: 101.58 \u00b1 1.48 vs. placebo group: 99.81 \u00b1 2.17; p = 0.505). There were also no differences between groups before and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-6682",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6682,
+      "sentence": "Similarly, no differences between groups were found when analyzing changes in the fat mass index ( p = 0.45) or MNA total score ( p = 0.27) or the risk of malnutrition ( p = 0.18) based on a cut-off score < 24 in the MNA screening test [ 24 ].",
+      "context_window": "s were found when analyzing changes in the fat mass index ( p = 0.45) or MNA total score ( p = 0.27) or the risk of malnutrition",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-6713",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6713,
+      "sentence": "Similarly, no differences between groups were found when analyzing changes in the fat mass index ( p = 0.45) or MNA total score ( p = 0.27) or the risk of malnutrition ( p = 0.18) based on a cut-off score < 24 in the MNA screening test [ 24 ].",
+      "context_window": "nges in the fat mass index ( p = 0.45) or MNA total score ( p = 0.27) or the risk of malnutrition ( p = 0.18) based on a cut-off",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-6753",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.18",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6753,
+      "sentence": "Similarly, no differences between groups were found when analyzing changes in the fat mass index ( p = 0.45) or MNA total score ( p = 0.27) or the risk of malnutrition ( p = 0.18) based on a cut-off score < 24 in the MNA screening test [ 24 ].",
+      "context_window": "r MNA total score ( p = 0.27) or the risk of malnutrition ( p = 0.18) based on a cut-off score < 24 in the MNA screening test [",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-6873",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.929",
+      "numeric_values": [
+        0.929
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6873,
+      "sentence": "There was no difference between the groups ( p = 0.929) when analyzing walking speed in terms of the use of walking aids (elderly people who can walk independently or who require the use of a cane or a walker).",
+      "context_window": "test [ 24 ]. There was no difference between the groups ( p = 0.929) when analyzing walking speed in terms of the use of walkin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-7266",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.163",
+      "numeric_values": [
+        0.163
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7266,
+      "sentence": "In addition, no significant correlations were found between either mild ( p = 0.163, rho = 0.238, Spearman test) nor moderate ( p = 0.481, rho = 0.121, Spearman test) physical activity by IPAQ and walking speed.",
+      "context_window": "o significant correlations were found between either mild ( p = 0.163, rho = 0.238, Spearman test) nor moderate ( p = 0.481, rho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-7320",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.481",
+      "numeric_values": [
+        0.481
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7320,
+      "sentence": "In addition, no significant correlations were found between either mild ( p = 0.163, rho = 0.238, Spearman test) nor moderate ( p = 0.481, rho = 0.121, Spearman test) physical activity by IPAQ and walking speed.",
+      "context_window": "ild ( p = 0.163, rho = 0.238, Spearman test) nor moderate ( p = 0.481, rho = 0.121, Spearman test) physical activity by IPAQ and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-7774",
+      "claim_type": "mean_sd",
+      "raw_text": "29.85 \u00b1 3.05",
+      "numeric_values": [
+        29.85,
+        3.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7774,
+      "sentence": "The baseline values of MIP were LG: 29.85 \u00b1 3.05 vs.",
+      "context_window": "respiratory sarcopenia. The baseline values of MIP were LG: 29.85 \u00b1 3.05 vs. PG: 29.62 \u00b1 3.05; p = 0.958; the MEP values were LG: 50",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-7795",
+      "claim_type": "mean_sd",
+      "raw_text": "29.62 \u00b1 3.05",
+      "numeric_values": [
+        29.62,
+        3.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7795,
+      "sentence": "PG: 29.62 \u00b1 3.05; p = 0.958; the MEP values were LG: 50.44 \u00b1 5.14 vs.",
+      "context_window": "a. The baseline values of MIP were LG: 29.85 \u00b1 3.05 vs. PG: 29.62 \u00b1 3.05; p = 0.958; the MEP values were LG: 50.44 \u00b1 5.14 vs. PG: 59",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-7809",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.958",
+      "numeric_values": [
+        0.958
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7809,
+      "sentence": "PG: 29.62 \u00b1 3.05; p = 0.958; the MEP values were LG: 50.44 \u00b1 5.14 vs.",
+      "context_window": "e values of MIP were LG: 29.85 \u00b1 3.05 vs. PG: 29.62 \u00b1 3.05; p = 0.958; the MEP values were LG: 50.44 \u00b1 5.14 vs. PG: 59.30 \u00b1 3.79;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-7844",
+      "claim_type": "mean_sd",
+      "raw_text": "50.44 \u00b1 5.14",
+      "numeric_values": [
+        50.44,
+        5.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7844,
+      "sentence": "PG: 29.62 \u00b1 3.05; p = 0.958; the MEP values were LG: 50.44 \u00b1 5.14 vs.",
+      "context_window": "05 vs. PG: 29.62 \u00b1 3.05; p = 0.958; the MEP values were LG: 50.44 \u00b1 5.14 vs. PG: 59.30 \u00b1 3.79; p = 0.188 and the PEF values were LG:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-7865",
+      "claim_type": "mean_sd",
+      "raw_text": "59.30 \u00b1 3.79",
+      "numeric_values": [
+        59.3,
+        3.79
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7865,
+      "sentence": "PG: 59.30 \u00b1 3.79; p = 0.188 and the PEF values were LG: 2.59 \u00b1 0.26 vs.",
+      "context_window": "05; p = 0.958; the MEP values were LG: 50.44 \u00b1 5.14 vs. PG: 59.30 \u00b1 3.79; p = 0.188 and the PEF values were LG: 2.59 \u00b1 0.26 vs. PG:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-7879",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.188",
+      "numeric_values": [
+        0.188
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7879,
+      "sentence": "PG: 59.30 \u00b1 3.79; p = 0.188 and the PEF values were LG: 2.59 \u00b1 0.26 vs.",
+      "context_window": "the MEP values were LG: 50.44 \u00b1 5.14 vs. PG: 59.30 \u00b1 3.79; p = 0.188 and the PEF values were LG: 2.59 \u00b1 0.26 vs. PG: 2.66 \u00b1 0.27",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-7917",
+      "claim_type": "mean_sd",
+      "raw_text": "2.59 \u00b1 0.26",
+      "numeric_values": [
+        2.59,
+        0.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7917,
+      "sentence": "PG: 59.30 \u00b1 3.79; p = 0.188 and the PEF values were LG: 2.59 \u00b1 0.26 vs.",
+      "context_window": "vs. PG: 59.30 \u00b1 3.79; p = 0.188 and the PEF values were LG: 2.59 \u00b1 0.26 vs. PG: 2.66 \u00b1 0.27; p = 0.858. Following the intervention,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-7937",
+      "claim_type": "mean_sd",
+      "raw_text": "2.66 \u00b1 0.27",
+      "numeric_values": [
+        2.66,
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7937,
+      "sentence": "PG: 2.66 \u00b1 0.27; p = 0.858.",
+      "context_window": "; p = 0.188 and the PEF values were LG: 2.59 \u00b1 0.26 vs. PG: 2.66 \u00b1 0.27; p = 0.858. Following the intervention, the MIP values were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-7950",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.858",
+      "numeric_values": [
+        0.858
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7950,
+      "sentence": "PG: 2.66 \u00b1 0.27; p = 0.858.",
+      "context_window": "nd the PEF values were LG: 2.59 \u00b1 0.26 vs. PG: 2.66 \u00b1 0.27; p = 0.858. Following the intervention, the MIP values were LG: 31.89",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8013",
+      "claim_type": "mean_sd",
+      "raw_text": "31.89 \u00b1 3.17",
+      "numeric_values": [
+        31.89,
+        3.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8013,
+      "sentence": "Following the intervention, the MIP values were LG: 31.89 \u00b1 3.17 vs.",
+      "context_window": "0.858. Following the intervention, the MIP values were LG: 31.89 \u00b1 3.17 vs. PG: 26.75 \u00b1 3.62; p = 0.291, MEP values were LG: 46.91",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8034",
+      "claim_type": "mean_sd",
+      "raw_text": "26.75 \u00b1 3.62",
+      "numeric_values": [
+        26.75,
+        3.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8034,
+      "sentence": "PG: 26.75 \u00b1 3.62; p = 0.291, MEP values were LG: 46.91 \u00b1 4.68 vs.",
+      "context_window": "intervention, the MIP values were LG: 31.89 \u00b1 3.17 vs. PG: 26.75 \u00b1 3.62; p = 0.291, MEP values were LG: 46.91 \u00b1 4.68 vs. PG: 45.83",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-8048",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.291",
+      "numeric_values": [
+        0.291
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8048,
+      "sentence": "PG: 26.75 \u00b1 3.62; p = 0.291, MEP values were LG: 46.91 \u00b1 4.68 vs.",
+      "context_window": "the MIP values were LG: 31.89 \u00b1 3.17 vs. PG: 26.75 \u00b1 3.62; p = 0.291, MEP values were LG: 46.91 \u00b1 4.68 vs. PG: 45.83 \u00b1 4.90; p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8079",
+      "claim_type": "mean_sd",
+      "raw_text": "46.91 \u00b1 4.68",
+      "numeric_values": [
+        46.91,
+        4.68
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8079,
+      "sentence": "PG: 26.75 \u00b1 3.62; p = 0.291, MEP values were LG: 46.91 \u00b1 4.68 vs.",
+      "context_window": "\u00b1 3.17 vs. PG: 26.75 \u00b1 3.62; p = 0.291, MEP values were LG: 46.91 \u00b1 4.68 vs. PG: 45.83 \u00b1 4.90; p = 0.875 and the PEF values were LG:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8100",
+      "claim_type": "mean_sd",
+      "raw_text": "45.83 \u00b1 4.90",
+      "numeric_values": [
+        45.83,
+        4.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8100,
+      "sentence": "PG: 45.83 \u00b1 4.90; p = 0.875 and the PEF values were LG: 2.73 \u00b1 0.26 vs.",
+      "context_window": "\u00b1 3.62; p = 0.291, MEP values were LG: 46.91 \u00b1 4.68 vs. PG: 45.83 \u00b1 4.90; p = 0.875 and the PEF values were LG: 2.73 \u00b1 0.26 vs. PG:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-8114",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.875",
+      "numeric_values": [
+        0.875
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8114,
+      "sentence": "PG: 45.83 \u00b1 4.90; p = 0.875 and the PEF values were LG: 2.73 \u00b1 0.26 vs.",
+      "context_window": "291, MEP values were LG: 46.91 \u00b1 4.68 vs. PG: 45.83 \u00b1 4.90; p = 0.875 and the PEF values were LG: 2.73 \u00b1 0.26 vs. PG: 2.39 \u00b1 0.20",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8152",
+      "claim_type": "mean_sd",
+      "raw_text": "2.73 \u00b1 0.26",
+      "numeric_values": [
+        2.73,
+        0.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8152,
+      "sentence": "PG: 45.83 \u00b1 4.90; p = 0.875 and the PEF values were LG: 2.73 \u00b1 0.26 vs.",
+      "context_window": "vs. PG: 45.83 \u00b1 4.90; p = 0.875 and the PEF values were LG: 2.73 \u00b1 0.26 vs. PG: 2.39 \u00b1 0.20; p = 0.325. The changes in values of re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8172",
+      "claim_type": "mean_sd",
+      "raw_text": "2.39 \u00b1 0.20",
+      "numeric_values": [
+        2.39,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8172,
+      "sentence": "PG: 2.39 \u00b1 0.20; p = 0.325.",
+      "context_window": "; p = 0.875 and the PEF values were LG: 2.73 \u00b1 0.26 vs. PG: 2.39 \u00b1 0.20; p = 0.325. The changes in values of respiratory sarcopenia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-8185",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.325",
+      "numeric_values": [
+        0.325
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8185,
+      "sentence": "PG: 2.39 \u00b1 0.20; p = 0.325.",
+      "context_window": "nd the PEF values were LG: 2.73 \u00b1 0.26 vs. PG: 2.39 \u00b1 0.20; p = 0.325. The changes in values of respiratory sarcopenia expressed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8486",
+      "claim_type": "mean_sd",
+      "raw_text": "99.05 \u00b1 6.80",
+      "numeric_values": [
+        99.05,
+        6.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8486,
+      "sentence": "There was a significant difference in MEP between the leucine and placebo group, with a significant decline in expiratory muscle strength in the placebo group (LG: 99.05 \u00b1 6.80 vs.",
+      "context_window": "ine in expiratory muscle strength in the placebo group (LG: 99.05 \u00b1 6.80 vs. PG: 77.67 \u00b1 5.85; p = 0.026, Cohen\u2019s d = 3.37, effect s",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8507",
+      "claim_type": "mean_sd",
+      "raw_text": "77.67 \u00b1 5.85",
+      "numeric_values": [
+        77.67,
+        5.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8507,
+      "sentence": "PG: 77.67 \u00b1 5.85; p = 0.026, Cohen\u2019s d = 3.37, effect size r = 0.86).",
+      "context_window": "cle strength in the placebo group (LG: 99.05 \u00b1 6.80 vs. PG: 77.67 \u00b1 5.85; p = 0.026, Cohen\u2019s d = 3.37, effect size r = 0.86). There",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-8521",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8521,
+      "sentence": "PG: 77.67 \u00b1 5.85; p = 0.026, Cohen\u2019s d = 3.37, effect size r = 0.86).",
+      "context_window": "n the placebo group (LG: 99.05 \u00b1 6.80 vs. PG: 77.67 \u00b1 5.85; p = 0.026, Cohen\u2019s d = 3.37, effect size r = 0.86). There were no sta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8643",
+      "claim_type": "mean_sd",
+      "raw_text": "116.32 \u00b1 9.44",
+      "numeric_values": [
+        116.32,
+        9.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8643,
+      "sentence": "There were no statistical differences between the groups for MIP (LG: 116.32 \u00b1 9.44 vs.",
+      "context_window": "no statistical differences between the groups for MIP (LG: 116.32 \u00b1 9.44 vs. PG: 93.94 \u00b1 9.40; p = 0.105) or PEF values (LG: 110.75",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8665",
+      "claim_type": "mean_sd",
+      "raw_text": "93.94 \u00b1 9.40",
+      "numeric_values": [
+        93.94,
+        9.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8665,
+      "sentence": "PG: 93.94 \u00b1 9.40; p = 0.105) or PEF values (LG: 110.75 \u00b1 6.61 vs.",
+      "context_window": "ences between the groups for MIP (LG: 116.32 \u00b1 9.44 vs. PG: 93.94 \u00b1 9.40; p = 0.105) or PEF values (LG: 110.75 \u00b1 6.61 vs. PG: 100.46",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-8679",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.105",
+      "numeric_values": [
+        0.105
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8679,
+      "sentence": "PG: 93.94 \u00b1 9.40; p = 0.105) or PEF values (LG: 110.75 \u00b1 6.61 vs.",
+      "context_window": "the groups for MIP (LG: 116.32 \u00b1 9.44 vs. PG: 93.94 \u00b1 9.40; p = 0.105) or PEF values (LG: 110.75 \u00b1 6.61 vs. PG: 100.46 \u00b1 6.24; p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8709",
+      "claim_type": "mean_sd",
+      "raw_text": "110.75 \u00b1 6.61",
+      "numeric_values": [
+        110.75,
+        6.61
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8709,
+      "sentence": "PG: 93.94 \u00b1 9.40; p = 0.105) or PEF values (LG: 110.75 \u00b1 6.61 vs.",
+      "context_window": "\u00b1 9.44 vs. PG: 93.94 \u00b1 9.40; p = 0.105) or PEF values (LG: 110.75 \u00b1 6.61 vs. PG: 100.46 \u00b1 6.24; p = 0.272). Given the relevance of b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-8731",
+      "claim_type": "mean_sd",
+      "raw_text": "100.46 \u00b1 6.24",
+      "numeric_values": [
+        100.46,
+        6.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8731,
+      "sentence": "PG: 100.46 \u00b1 6.24; p = 0.272).",
+      "context_window": "\u00b1 9.40; p = 0.105) or PEF values (LG: 110.75 \u00b1 6.61 vs. PG: 100.46 \u00b1 6.24; p = 0.272). Given the relevance of bronchodilator intake a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-8746",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.272",
+      "numeric_values": [
+        0.272
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8746,
+      "sentence": "PG: 100.46 \u00b1 6.24; p = 0.272).",
+      "context_window": "05) or PEF values (LG: 110.75 \u00b1 6.61 vs. PG: 100.46 \u00b1 6.24; p = 0.272). Given the relevance of bronchodilator intake and smoking,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-8999",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.287",
+      "numeric_values": [
+        0.287
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8999,
+      "sentence": "However, no differences were found for any of the parameters studied according to the use of bronchodilators ( p = 0.287; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495; p = 0.380), for MIP, MEP and PEF respectively.",
+      "context_window": "arameters studied according to the use of bronchodilators ( p = 0.287; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-9010",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.242",
+      "numeric_values": [
+        0.242
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9010,
+      "sentence": "However, no differences were found for any of the parameters studied according to the use of bronchodilators ( p = 0.287; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495; p = 0.380), for MIP, MEP and PEF respectively.",
+      "context_window": "tudied according to the use of bronchodilators ( p = 0.287; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-9021",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.792",
+      "numeric_values": [
+        0.792
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9021,
+      "sentence": "However, no differences were found for any of the parameters studied according to the use of bronchodilators ( p = 0.287; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495; p = 0.380), for MIP, MEP and PEF respectively.",
+      "context_window": "rding to the use of bronchodilators ( p = 0.287; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495; p = 0.380),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-9057",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.379",
+      "numeric_values": [
+        0.379
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9057,
+      "sentence": "However, no differences were found for any of the parameters studied according to the use of bronchodilators ( p = 0.287; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495; p = 0.380), for MIP, MEP and PEF respectively.",
+      "context_window": "( p = 0.287; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495; p = 0.380), for MIP, MEP and PEF respectively.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-9068",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.495",
+      "numeric_values": [
+        0.495
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9068,
+      "sentence": "However, no differences were found for any of the parameters studied according to the use of bronchodilators ( p = 0.287; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495; p = 0.380), for MIP, MEP and PEF respectively.",
+      "context_window": "; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495; p = 0.380), for MIP, MEP and PEF respectively. Routine bl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-9079",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.380",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9079,
+      "sentence": "However, no differences were found for any of the parameters studied according to the use of bronchodilators ( p = 0.287; p = 0.242; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495; p = 0.380), for MIP, MEP and PEF respectively.",
+      "context_window": "; p = 0.792) or tobacco consumption ( p = 0.379; p = 0.495; p = 0.380), for MIP, MEP and PEF respectively. Routine blood analysi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-9558",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9558,
+      "sentence": "As shown in Table 2 , no significant differences were observed between the leucine and placebo groups (significance at p < 0.05).",
+      "context_window": "ved between the leucine and placebo groups (significance at p < 0.05). No significant differences were observed in these analyti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-2243",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2243,
+      "sentence": "In addition, the beneficial effect of keeping the muscle mass stable over time may be also related to the improvement of nutritional status achieved among the individuals in the leucine-treated group because at the baseline, 38% of the individuals in this group had a risk of malnutrition (as assessed by the MNA test) and supplementation with leucine could have afforded some benefit in this subgroup of malnourished patients.",
+      "context_window": "duals in the leucine-treated group because at the baseline, 38% of the individuals in this group had a risk of malnutrition",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-2517",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2517,
+      "sentence": "In contrast, in the placebo group the risk of malnutrition occurred in 23% of the sample and this difference is unlikely to have accounted for the loss of muscle mass observed in the placebo group over time.",
+      "context_window": ", in the placebo group the risk of malnutrition occurred in 23% of the sample and this difference is unlikely to have accou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-3065",
+      "claim_type": "unit_value",
+      "raw_text": "71 years",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3065,
+      "sentence": "Our results for the lack of effect on muscle mass and strength in the leucine group are consistent with two studies performed on older men, in which leucine supplementation (7.5 g/day) did not alter muscle mass or strength in either healthy elderly men (mean age 71 years) [ 37 ] or older men with type 2 diabetes [ 38 ].",
+      "context_window": "le mass or strength in either healthy elderly men (mean age 71 years) [ 37 ] or older men with type 2 diabetes [ 38 ]. In contra",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-8181",
+      "claim_type": "unit_value",
+      "raw_text": "20 ng/mL",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 8181,
+      "sentence": "The current guidelines [ 58 ] establish vitamin D deficiency when serum 25-hydroxyvitamin D (25(OH)D) levels are less than 20 ng/mL (50 nmol/liter).",
+      "context_window": "en serum 25-hydroxyvitamin D (25(OH)D) levels are less than 20 ng/mL (50 nmol/liter). In our study, the mean levels were around",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-8249",
+      "claim_type": "unit_value",
+      "raw_text": "40 ng/mL",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 8249,
+      "sentence": "In our study, the mean levels were around 40 ng/mL and none of the individuals had levels below 20 ng/mL.",
+      "context_window": "(50 nmol/liter). In our study, the mean levels were around 40 ng/mL and none of the individuals had levels below 20 ng/mL. A re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-u-8303",
+      "claim_type": "unit_value",
+      "raw_text": "20 ng/mL",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 8303,
+      "sentence": "In our study, the mean levels were around 40 ng/mL and none of the individuals had levels below 20 ng/mL.",
+      "context_window": "round 40 ng/mL and none of the individuals had levels below 20 ng/mL. A report performed in the US population (referring to the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-8401",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8401,
+      "sentence": "A report performed in the US population (referring to the 2003-2006 period) stated that 9% had low serum 25-hydroxyvitamin D concentration (<50 nmol/L) [ 59 , 60 ].",
+      "context_window": "population (referring to the 2003-2006 period) stated that 9% had low serum 25-hydroxyvitamin D concentration (<50 nmol/L",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-9284",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9284,
+      "sentence": "There were eight participants (16%) that did not wish to continue for unknown reasons, which could have biased the results compared to an intention-to-treat analysis.",
+      "context_window": "resents several limitations. There were eight participants (16%) that did not wish to continue for unknown reasons, which c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-10625",
+      "claim_type": "percentage",
+      "raw_text": "31.8%",
+      "numeric_values": [
+        31.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10625,
+      "sentence": "As shown in Table 1 , assistance with walking (i.e., the aid of a walker) was required by 31.8% in the placebo group and 35% in the leucine group.",
+      "context_window": "ce with walking (i.e., the aid of a walker) was required by 31.8% in the placebo group and 35% in the leucine group. In all t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-pct-10656",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10656,
+      "sentence": "As shown in Table 1 , assistance with walking (i.e., the aid of a walker) was required by 31.8% in the placebo group and 35% in the leucine group.",
+      "context_window": "of a walker) was required by 31.8% in the placebo group and 35% in the leucine group. In all the participating nursing home",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

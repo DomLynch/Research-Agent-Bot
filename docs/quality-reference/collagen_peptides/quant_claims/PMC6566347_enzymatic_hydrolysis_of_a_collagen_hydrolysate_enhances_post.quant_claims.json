@@ -1,0 +1,823 @@
+{
+  "paper_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post",
+  "doi": "10.3390/nu11051064",
+  "extracted_at": "2026-05-05T22:25:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 13,
+    "p_value": 29,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-673",
+      "claim_type": "unit_value",
+      "raw_text": "250 mL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 673,
+      "sentence": "A randomized, blinded, cross-over study was conducted where ten healthy male subjects received either 35 g enzymatically hydrolyzed collagen protein (EHC), 35 g non-enzymatically hydrolyzed collagen protein (NC) or placebo (250 mL water) on three nonconsecutive days.",
+      "context_window": "-enzymatically hydrolyzed collagen protein (NC) or placebo (250 mL water) on three nonconsecutive days. Blood samples were dra",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-1155",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1155,
+      "sentence": "In addition, the absorption rate and bioavailability of glycine, proline and hydroxyproline were significantly higher for EHC ( p < 0.05).",
+      "context_window": "line and hydroxyproline were significantly higher for EHC ( p < 0.05). In conclusion, ingestion of collagen hydrolysates increas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-606",
+      "claim_type": "unit_value",
+      "raw_text": "2 kg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 606,
+      "sentence": "Exclusion criteria included: the use of medication that could influence postprandial absorption; muscular, tendon or metabolic illnesses; smoking; hypertension; use of supplements during the trial period; weight loss or gain of more than 2 kg during the trial period; and working night shifts.",
+      "context_window": "s during the trial period; weight loss or gain of more than 2 kg during the trial period; and working night shifts. The tria",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-2475",
+      "claim_type": "unit_value",
+      "raw_text": "250 mL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2475,
+      "sentence": "On trial days, participants arrived in the morning after an overnight fast and consumed a drink containing either EHC, NC, or placebo dissolved in 250 mL water.",
+      "context_window": "a drink containing either EHC, NC, or placebo dissolved in 250 mL water. The drinks were consumed within 2 min and the time w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-2643",
+      "claim_type": "unit_value",
+      "raw_text": "100 mL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2643,
+      "sentence": "Immediately following consumption of the drink, all participants consumed 100 mL water to attenuate the mouthfeel and taste of the trial product.",
+      "context_window": "llowing consumption of the drink, all participants consumed 100 mL water to attenuate the mouthfeel and taste of the trial pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-4453",
+      "claim_type": "unit_value",
+      "raw_text": "200 mL",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4453,
+      "sentence": "Collagen powder corresponding to 35 g protein was dissolved in 200 mL ~50 \u00b0C hot water.",
+      "context_window": "lagen powder corresponding to 35 g protein was dissolved in 200 mL ~50 \u00b0C hot water. Prior to ingestion, four ice cubes (~50 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-4515",
+      "claim_type": "unit_value",
+      "raw_text": "50 mL",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4515,
+      "sentence": "Prior to ingestion, four ice cubes (~50 mL) were added to allow drinks to cool.",
+      "context_window": "0 mL ~50 \u00b0C hot water. Prior to ingestion, four ice cubes (~50 mL) were added to allow drinks to cool. In each experimental",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-4611",
+      "claim_type": "unit_value",
+      "raw_text": "8 mL",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4611,
+      "sentence": "In each experimental trial, eight blood samples of ~8 mL were collected into evacuated containers containing lithium heparin.",
+      "context_window": "cool. In each experimental trial, eight blood samples of ~8 mL were collected into evacuated containers containing lithium",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-5131",
+      "claim_type": "unit_value",
+      "raw_text": "73 mm",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5131,
+      "sentence": "The VAS consisted of a 73 mm horizontal unbroken line with a statement anchored at each end describing the extremes, e.g., \u201cI am not hungry at all\u201d, \u201cI have never been more hungry\u201d, \u201cI am not full at all\u201d, \u201cI am very full\u201d.",
+      "context_window": "VAS, consisting of three questions. The VAS consisted of a 73 mm horizontal unbroken line with a statement anchored at each",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-5531",
+      "claim_type": "unit_value",
+      "raw_text": "73 mm",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5531,
+      "sentence": "The intensity of the feeling (distance of the vertical mark from the origin on the left) was measured, yielding a score in the range 0-73 mm.",
+      "context_window": "on the left) was measured, yielding a score in the range 0-73 mm. Thawed plasma samples were filtered using 10K Amicon Ultr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-5921",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5921,
+      "sentence": "Subsequently, 400 \u03bcL plasma filtrate was transferred to a 5 mm NMR tube containing 100 \u03bcL sodium-hydrogen phosphate buffer (50 mM Na 2 HPO 4 , pH 7.4), 25 \u03bcL deuterium oxide (D 2 O) with 0.05% TSP and 75 \u03bcL D 2 O.",
+      "context_window": ". Subsequently, 400 \u03bcL plasma filtrate was transferred to a 5 mm NMR tube containing 100 \u03bcL sodium-hydrogen phosphate buffer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-pct-6050",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6050,
+      "sentence": "Subsequently, 400 \u03bcL plasma filtrate was transferred to a 5 mm NMR tube containing 100 \u03bcL sodium-hydrogen phosphate buffer (50 mM Na 2 HPO 4 , pH 7.4), 25 \u03bcL deuterium oxide (D 2 O) with 0.05% TSP and 75 \u03bcL D 2 O.",
+      "context_window": "mM Na 2 HPO 4 , pH 7.4), 25 \u03bcL deuterium oxide (D 2 O) with 0.05% TSP and 75 \u03bcL D 2 O. 1 H NMR spectroscopy was performed on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-6210",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 6210,
+      "sentence": "1 H NMR spectroscopy was performed on a Bruker Avance III 600 MHz NMR spectrometer operating at a 1 H frequency of 600.13 MHz with a 5 mm 1 H TXI probe (Bruker Biospin, Reinstetten, Germany).",
+      "context_window": "ctrometer operating at a 1 H frequency of 600.13 MHz with a 5 mm 1 H TXI probe (Bruker Biospin, Reinstetten, Germany). Spect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-7300",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7300,
+      "sentence": "Blood sample concentrations and area under the curve (AUC) data were analyzed using a two-factor RM ANOVA with statistical significance defined as p < 0.05.",
+      "context_window": "wo-factor RM ANOVA with statistical significance defined as p < 0.05. All data sets were tested for normal distribution and sphe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-7862",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 mmol",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 7862,
+      "sentence": "Previous trials of 35 g hydrolyzed vs. non-hydrolyzed milk protein tests have shown a difference in amino acid uptake of 1.4 mmol * 6 h/L (this difference was only evident over the first 4 h) [ 16 ].",
+      "context_window": "otein tests have shown a difference in amino acid uptake of 1.4 mmol * 6 h/L (this difference was only evident over the first 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-pct-8183",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8183,
+      "sentence": "Assuming that the difference in amino acid concentration accumulated over four hours after ingestion of EHC and NC is of a similar magnitude, a test population of 8 would enable detection of a significant difference (significance level 0.05, 80% power, SD 1.0 mmol * 4 h/L).",
+      "context_window": "ction of a significant difference (significance level 0.05, 80% power, SD 1.0 mmol * 4 h/L). Nevertheless, we included 10 s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-u-8197",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 8197,
+      "sentence": "Assuming that the difference in amino acid concentration accumulated over four hours after ingestion of EHC and NC is of a similar magnitude, a test population of 8 would enable detection of a significant difference (significance level 0.05, 80% power, SD 1.0 mmol * 4 h/L).",
+      "context_window": "nificant difference (significance level 0.05, 80% power, SD 1.0 mmol * 4 h/L). Nevertheless, we included 10 subjects to account",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-720",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 720,
+      "sentence": "In addition, after EHC and NC intake, a significantly higher postprandial plasma concentration was observed compared with placebo ( p < 0.05) for all AAs except histidine and methionine ( Table 3 ).",
+      "context_window": "l plasma concentration was observed compared with placebo ( p < 0.05) for all AAs except histidine and methionine ( Table 3 ). H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-1515",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0059",
+      "numeric_values": [
+        0.0059
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1515,
+      "sentence": "Overall statistical analysis showed a significant difference between EHC and NC for plasma concentrations of glycine ( p = 0.0059), hydroxyproline ( p = 0.0087), proline ( p = 0.0074) and the sum of glycine, proline and hydroxyproline (Gly-Pro-Hyp) ( p = 0.0003).",
+      "context_window": "e between EHC and NC for plasma concentrations of glycine ( p = 0.0059), hydroxyproline ( p = 0.0087), proline ( p = 0.0074) and t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-1545",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0087",
+      "numeric_values": [
+        0.0087
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1545,
+      "sentence": "Overall statistical analysis showed a significant difference between EHC and NC for plasma concentrations of glycine ( p = 0.0059), hydroxyproline ( p = 0.0087), proline ( p = 0.0074) and the sum of glycine, proline and hydroxyproline (Gly-Pro-Hyp) ( p = 0.0003).",
+      "context_window": "a concentrations of glycine ( p = 0.0059), hydroxyproline ( p = 0.0087), proline ( p = 0.0074) and the sum of glycine, proline and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-1568",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0074",
+      "numeric_values": [
+        0.0074
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1568,
+      "sentence": "Overall statistical analysis showed a significant difference between EHC and NC for plasma concentrations of glycine ( p = 0.0059), hydroxyproline ( p = 0.0087), proline ( p = 0.0074) and the sum of glycine, proline and hydroxyproline (Gly-Pro-Hyp) ( p = 0.0003).",
+      "context_window": "cine ( p = 0.0059), hydroxyproline ( p = 0.0087), proline ( p = 0.0074) and the sum of glycine, proline and hydroxyproline (Gly-Pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-1647",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1647,
+      "sentence": "Overall statistical analysis showed a significant difference between EHC and NC for plasma concentrations of glycine ( p = 0.0059), hydroxyproline ( p = 0.0087), proline ( p = 0.0074) and the sum of glycine, proline and hydroxyproline (Gly-Pro-Hyp) ( p = 0.0003).",
+      "context_window": "sum of glycine, proline and hydroxyproline (Gly-Pro-Hyp) ( p = 0.0003). In addition, plasma concentrations of these AAs were sign",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-2095",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0029",
+      "numeric_values": [
+        0.0029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2095,
+      "sentence": "These findings show that overall the glycine concentration was higher for EHC compared to both NC ( p = 0.0029) and placebo ( p < 0.0001).",
+      "context_window": "cine concentration was higher for EHC compared to both NC ( p = 0.0029) and placebo ( p < 0.0001). Plasma concentration of proline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-2121",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2121,
+      "sentence": "These findings show that overall the glycine concentration was higher for EHC compared to both NC ( p = 0.0029) and placebo ( p < 0.0001).",
+      "context_window": "her for EHC compared to both NC ( p = 0.0029) and placebo ( p < 0.0001). Plasma concentration of proline showed a significantly hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-2417",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0028",
+      "numeric_values": [
+        0.0028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2417,
+      "sentence": "A separate AUC analysis showed that overall the concentration of proline was significantly higher following consumption of EHC compared to NC ( p = 0.0028) and placebo ( p < 0.0001) ( Figure 3 D).",
+      "context_window": "cantly higher following consumption of EHC compared to NC ( p = 0.0028) and placebo ( p < 0.0001) ( Figure 3 D). Analysis of hydro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-2443",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2443,
+      "sentence": "A separate AUC analysis showed that overall the concentration of proline was significantly higher following consumption of EHC compared to NC ( p = 0.0028) and placebo ( p < 0.0001) ( Figure 3 D).",
+      "context_window": "nsumption of EHC compared to NC ( p = 0.0028) and placebo ( p < 0.0001) ( Figure 3 D). Analysis of hydroxyproline concentrations s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-2910",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0082",
+      "numeric_values": [
+        0.0082
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2910,
+      "sentence": "Furthermore, a separate AUC analysis showed an overall higher concentration of hydroxyproline following consumption of EHC compared to NC ( p = 0.0082) and placebo ( p < 0.0001) ( Figure 3 F).",
+      "context_window": "ydroxyproline following consumption of EHC compared to NC ( p = 0.0082) and placebo ( p < 0.0001) ( Figure 3 F). Analysis of the t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-2936",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2936,
+      "sentence": "Furthermore, a separate AUC analysis showed an overall higher concentration of hydroxyproline following consumption of EHC compared to NC ( p = 0.0082) and placebo ( p < 0.0001) ( Figure 3 F).",
+      "context_window": "nsumption of EHC compared to NC ( p = 0.0082) and placebo ( p < 0.0001) ( Figure 3 F). Analysis of the total sum of glycine, proli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-3417",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0002",
+      "numeric_values": [
+        0.0002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3417,
+      "sentence": "A separate AUC analysis showed a significantly higher Gly-Pro-Hyp concentration following consumption of EHC compared to NC ( p = 0.0002) and placebo ( p < 0.001) ( Figure 3 H).",
+      "context_window": "concentration following consumption of EHC compared to NC ( p = 0.0002) and placebo ( p < 0.001) ( Figure 3 H). Overall analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-3443",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3443,
+      "sentence": "A separate AUC analysis showed a significantly higher Gly-Pro-Hyp concentration following consumption of EHC compared to NC ( p = 0.0002) and placebo ( p < 0.001) ( Figure 3 H).",
+      "context_window": "nsumption of EHC compared to NC ( p = 0.0002) and placebo ( p < 0.001) ( Figure 3 H). Overall analysis of plasma glucose showed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-3532",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3532,
+      "sentence": "Overall analysis of plasma glucose showed no effect of time ( p = 0.57), treatment ( p = 0.87) or time*treatment interaction ( p = 0.4239).",
+      "context_window": "erall analysis of plasma glucose showed no effect of time ( p = 0.57), treatment ( p = 0.87) or time*treatment interaction ( p =",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-3555",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.87",
+      "numeric_values": [
+        0.87
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3555,
+      "sentence": "Overall analysis of plasma glucose showed no effect of time ( p = 0.57), treatment ( p = 0.87) or time*treatment interaction ( p = 0.4239).",
+      "context_window": "a glucose showed no effect of time ( p = 0.57), treatment ( p = 0.87) or time*treatment interaction ( p = 0.4239). Accordingly,",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-3597",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.4239",
+      "numeric_values": [
+        0.4239
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3597,
+      "sentence": "Overall analysis of plasma glucose showed no effect of time ( p = 0.57), treatment ( p = 0.87) or time*treatment interaction ( p = 0.4239).",
+      "context_window": ".57), treatment ( p = 0.87) or time*treatment interaction ( p = 0.4239). Accordingly, the AUC showed no significant effect of trea",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-3675",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3675,
+      "sentence": "Accordingly, the AUC showed no significant effect of treatment ( p = 0.99) or time*treatment interaction ( p = 0.93) on the plasma concentration of glucose.",
+      "context_window": "dingly, the AUC showed no significant effect of treatment ( p = 0.99) or time*treatment interaction ( p = 0.93) on the plasma co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-3717",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.93",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3717,
+      "sentence": "Accordingly, the AUC showed no significant effect of treatment ( p = 0.99) or time*treatment interaction ( p = 0.93) on the plasma concentration of glucose.",
+      "context_window": "ct of treatment ( p = 0.99) or time*treatment interaction ( p = 0.93) on the plasma concentration of glucose. Data are shown in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-3914",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3914,
+      "sentence": "Overall analysis for VAS 1 (how hungry are you) showed a significant effect of time ( p < 0.0001), whereas no effect of treatment ( p = 0.27) or time*treatment interaction ( p = 0.2005) were observed.",
+      "context_window": "(how hungry are you) showed a significant effect of time ( p < 0.0001), whereas no effect of treatment ( p = 0.27) or time*treatm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-3960",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3960,
+      "sentence": "Overall analysis for VAS 1 (how hungry are you) showed a significant effect of time ( p < 0.0001), whereas no effect of treatment ( p = 0.27) or time*treatment interaction ( p = 0.2005) were observed.",
+      "context_window": "ect of time ( p < 0.0001), whereas no effect of treatment ( p = 0.27) or time*treatment interaction ( p = 0.2005) were observed.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-4002",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.2005",
+      "numeric_values": [
+        0.2005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4002,
+      "sentence": "Overall analysis for VAS 1 (how hungry are you) showed a significant effect of time ( p < 0.0001), whereas no effect of treatment ( p = 0.27) or time*treatment interaction ( p = 0.2005) were observed.",
+      "context_window": "ct of treatment ( p = 0.27) or time*treatment interaction ( p = 0.2005) were observed. Similarly, overall analysis of VAS 2 data (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-4128",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4128,
+      "sentence": "Similarly, overall analysis of VAS 2 data (how full are you) showed a significant effect of time ( p < 0.0001), but no effect of treatment ( p = 0.22) or time*treatment interaction ( p = 0.65).",
+      "context_window": "ta (how full are you) showed a significant effect of time ( p < 0.0001), but no effect of treatment ( p = 0.22) or time*treatment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-4170",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4170,
+      "sentence": "Similarly, overall analysis of VAS 2 data (how full are you) showed a significant effect of time ( p < 0.0001), but no effect of treatment ( p = 0.22) or time*treatment interaction ( p = 0.65).",
+      "context_window": "effect of time ( p < 0.0001), but no effect of treatment ( p = 0.22) or time*treatment interaction ( p = 0.65). Overall analysi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-4212",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4212,
+      "sentence": "Similarly, overall analysis of VAS 2 data (how full are you) showed a significant effect of time ( p < 0.0001), but no effect of treatment ( p = 0.22) or time*treatment interaction ( p = 0.65).",
+      "context_window": "ct of treatment ( p = 0.22) or time*treatment interaction ( p = 0.65). Overall analysis of VAS 3 data (how filled up do you feel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-4320",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4320,
+      "sentence": "Overall analysis of VAS 3 data (how filled up do you feel) showed a significant effect of time ( p < 0.0001) but not of treatment ( p = 0.275) or time*treatment interaction ( p = 0.2203).",
+      "context_window": "illed up do you feel) showed a significant effect of time ( p < 0.0001) but not of treatment ( p = 0.275) or time*treatment intera",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-4355",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.275",
+      "numeric_values": [
+        0.275
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4355,
+      "sentence": "Overall analysis of VAS 3 data (how filled up do you feel) showed a significant effect of time ( p < 0.0001) but not of treatment ( p = 0.275) or time*treatment interaction ( p = 0.2203).",
+      "context_window": "ificant effect of time ( p < 0.0001) but not of treatment ( p = 0.275) or time*treatment interaction ( p = 0.2203). VAS data can",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-p-4398",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.2203",
+      "numeric_values": [
+        0.2203
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4398,
+      "sentence": "Overall analysis of VAS 3 data (how filled up do you feel) showed a significant effect of time ( p < 0.0001) but not of treatment ( p = 0.275) or time*treatment interaction ( p = 0.2203).",
+      "context_window": "t of treatment ( p = 0.275) or time*treatment interaction ( p = 0.2203). VAS data can be found in the supplementary material (Figu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6566347_enzymatic_hydrolysis_of_a_collagen_hydrolysate_enhances_post-pct-9514",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9514,
+      "sentence": "Thus, Veldhorst et al. (2009) investigated the effects of different proteins on satiety and subsequent energy intake and found that ad libitum intake was 20% lower after consumption of a breakfast gelatin compared to casein, soy or whey [ 37 ].",
+      "context_window": "bsequent energy intake and found that ad libitum intake was 20% lower after consumption of a breakfast gelatin compared to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "paper_id": "PMC5479895_targeting_inflammation_and_downstream_protein_metabolism_in_",
+  "doi": "10.3389/fphys.2017.00434",
+  "extracted_at": "2026-05-05T22:35:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5479895_targeting_inflammation_and_downstream_protein_metabolism_in_-pct-405",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 405,
+      "sentence": "A reduction in sarcopenia of just 10% would save $1.1 billion in health care savings by reducing major surgeries and hospitalization in patients (Sousa et al., 2016 ).",
+      "context_window": "avy public health burden. A reduction in sarcopenia of just 10% would save $1.1 billion in health care savings by reducing",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5479895_targeting_inflammation_and_downstream_protein_metabolism_in_-u-2035",
+      "claim_type": "unit_value",
+      "raw_text": "55 years",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 2035,
+      "sentence": "Future research in humans should better establish how the dose of leucine (vs. other amino acids) in relation to daily protein intake, energy intake and different exercise regimens (resistance exercise alone, aerobic exercise alone or concurrent training) affects the quality of muscle during the middle years of life (35-55 years of age) as well as during the aging process (>65 years of age).",
+      "context_window": "s the quality of muscle during the middle years of life (35-55 years of age) as well as during the aging process (>65 years of a",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5479895_targeting_inflammation_and_downstream_protein_metabolism_in_-u-2090",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 2090,
+      "sentence": "Future research in humans should better establish how the dose of leucine (vs. other amino acids) in relation to daily protein intake, energy intake and different exercise regimens (resistance exercise alone, aerobic exercise alone or concurrent training) affects the quality of muscle during the middle years of life (35-55 years of age) as well as during the aging process (>65 years of age).",
+      "context_window": "(35-55 years of age) as well as during the aging process (>65 years of age). Additional studies may then investigate to what ex",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,1043 @@
+{
+  "paper_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont",
+  "doi": "10.5114/jhk/205427",
+  "extracted_at": "2026-05-05T22:43:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "confidence_interval": 3,
+    "p_value": 18,
+    "percentage": 28,
+    "unit_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-ci-599",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [0.15, 0.72",
+      "numeric_values": [
+        0.15,
+        0.72
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 599,
+      "sentence": "HIIT significantly improved RE compared to MICT (SMD = 0.44, 95% CI [0.15, 0.72], Z = 3.01, p < 0.05).",
+      "context_window": "IIT significantly improved RE compared to MICT (SMD = 0.44, 95% CI [0.15, 0.72], Z = 3.01, p < 0.05). MICT showed a greater effect on VO 2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-630",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 630,
+      "sentence": "HIIT significantly improved RE compared to MICT (SMD = 0.44, 95% CI [0.15, 0.72], Z = 3.01, p < 0.05).",
+      "context_window": "ompared to MICT (SMD = 0.44, 95% CI [0.15, 0.72], Z = 3.01, p < 0.05). MICT showed a greater effect on VO 2max (MD = 2.48, 95% C",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-ci-693",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [1.61, 3.34",
+      "numeric_values": [
+        1.61,
+        3.34
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 693,
+      "sentence": "MICT showed a greater effect on VO 2max (MD = 2.48, 95% CI [1.61, 3.34], Z = 5.60, p < 0.05).",
+      "context_window": "0.05). MICT showed a greater effect on VO 2max (MD = 2.48, 95% CI [1.61, 3.34], Z = 5.60, p < 0.05). HIIT was more effective at reducing",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-724",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 724,
+      "sentence": "MICT showed a greater effect on VO 2max (MD = 2.48, 95% CI [1.61, 3.34], Z = 5.60, p < 0.05).",
+      "context_window": "ffect on VO 2max (MD = 2.48, 95% CI [1.61, 3.34], Z = 5.60, p < 0.05). HIIT was more effective at reducing blood lactate levels",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-ci-805",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-0.28, -0.02",
+      "numeric_values": [
+        -0.28,
+        -0.02
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 805,
+      "sentence": "HIIT was more effective at reducing blood lactate levels (MD = -0.15, 95% CI [-0.28, -0.02], Z = 2.20, p < 0.05).",
+      "context_window": "ore effective at reducing blood lactate levels (MD = -0.15, 95% CI [-0.28, -0.02], Z = 2.20, p < 0.05). The results indicate that HIIT was m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-838",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 838,
+      "sentence": "HIIT was more effective at reducing blood lactate levels (MD = -0.15, 95% CI [-0.28, -0.02], Z = 2.20, p < 0.05).",
+      "context_window": "actate levels (MD = -0.15, 95% CI [-0.28, -0.02], Z = 2.20, p < 0.05). The results indicate that HIIT was more effective than MI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-5145",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5145,
+      "sentence": "When a significant result ( p < 0.05) was observed, a funnel plot test was also performed to assess publication bias.",
+      "context_window": "verall results remained robust. When a significant result ( p < 0.05) was observed, a funnel plot test was also performed to ass",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-6635",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6635,
+      "sentence": "Then, statistical heterogeneity was discussed using the I 2 statistic, where values of 25%, 50%, and 75% indicated low, moderate, and high heterogeneity, respectively ( Higgins et al., 2003 ).",
+      "context_window": "eity was discussed using the I 2 statistic, where values of 25%, 50%, and 75% indicated low, moderate, and high heterogenei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-6640",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6640,
+      "sentence": "Then, statistical heterogeneity was discussed using the I 2 statistic, where values of 25%, 50%, and 75% indicated low, moderate, and high heterogeneity, respectively ( Higgins et al., 2003 ).",
+      "context_window": "was discussed using the I 2 statistic, where values of 25%, 50%, and 75% indicated low, moderate, and high heterogeneity, r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-6649",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6649,
+      "sentence": "Then, statistical heterogeneity was discussed using the I 2 statistic, where values of 25%, 50%, and 75% indicated low, moderate, and high heterogeneity, respectively ( Higgins et al., 2003 ).",
+      "context_window": "ssed using the I 2 statistic, where values of 25%, 50%, and 75% indicated low, moderate, and high heterogeneity, respective",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-6833",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6833,
+      "sentence": "The synthesis of the included trials was considered to exhibit significant heterogeneity if p < 0.1 or I 2 > 0.5, prompting the use of a random effects model.",
+      "context_window": "ials was considered to exhibit significant heterogeneity if p < 0.1 or I 2 > 0.5, prompting the use of a random effects model.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-u-985",
+      "claim_type": "unit_value",
+      "raw_text": "46.9 years",
+      "numeric_values": [
+        46.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 985,
+      "sentence": "A total of 168 participants (110 males and 48 females) were included in the analysis, with age ranging from 21.9 to 46.9 years.",
+      "context_window": "ere included in the analysis, with age ranging from 21.9 to 46.9 years. Maximal oxygen uptake data were recorded, with values rang",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-u-1267",
+      "claim_type": "unit_value",
+      "raw_text": "39.3 years",
+      "numeric_values": [
+        39.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1267,
+      "sentence": "39.3 years), body mass (81.6 vs.",
+      "context_window": "mal differences at baseline were observed for age (38.2 vs. 39.3 years), body mass (81.6 vs. 82.2 kg), body height (1.82 vs. 1.81",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-u-1300",
+      "claim_type": "unit_value",
+      "raw_text": "82.2 kg",
+      "numeric_values": [
+        82.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1300,
+      "sentence": "82.2 kg), body height (1.82 vs.",
+      "context_window": "observed for age (38.2 vs. 39.3 years), body mass (81.6 vs. 82.2 kg), body height (1.82 vs. 1.81 m), and VO 2max (59.6 vs. 59.3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-u-1363",
+      "claim_type": "unit_value",
+      "raw_text": "59.3 mL",
+      "numeric_values": [
+        59.3
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 1363,
+      "sentence": "59.3 mL\u2022kg -1 \u2022min -1 ) between the control and HIIT groups.",
+      "context_window": "2 kg), body height (1.82 vs. 1.81 m), and VO 2max (59.6 vs. 59.3 mL\u2022kg -1 \u2022min -1 ) between the control and HIIT groups. Seven",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-u-4282",
+      "claim_type": "unit_value",
+      "raw_text": "2 mmol",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4282,
+      "sentence": "The first lactate threshold (LT1) occurs at approximately 2 mmol\u2022L -1 , while the second lactate threshold (LT2) is observed at approximately 4 mmol\u2022L -1 ( Seiler and Kjerland, 2006 ).",
+      "context_window": ". The first lactate threshold (LT1) occurs at approximately 2 mmol\u2022L -1 , while the second lactate threshold (LT2) is observed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-u-4366",
+      "claim_type": "unit_value",
+      "raw_text": "4 mmol",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4366,
+      "sentence": "The first lactate threshold (LT1) occurs at approximately 2 mmol\u2022L -1 , while the second lactate threshold (LT2) is observed at approximately 4 mmol\u2022L -1 ( Seiler and Kjerland, 2006 ).",
+      "context_window": "second lactate threshold (LT2) is observed at approximately 4 mmol\u2022L -1 ( Seiler and Kjerland, 2006 ). The ventilation thresho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-4546",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4546,
+      "sentence": "The ventilation threshold exhibits a similar pattern, with the first ventilation threshold (VT1) corresponding to the LT1 (approximately 75% VO 2max ) and the second ventilation threshold (VT2) aligning with the LT2 (approximately 85% VO 2max ) ( Keir et al., 2022 ).",
+      "context_window": "ion threshold (VT1) corresponding to the LT1 (approximately 75% VO 2max ) and the second ventilation threshold (VT2) aligni",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-4640",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4640,
+      "sentence": "The ventilation threshold exhibits a similar pattern, with the first ventilation threshold (VT1) corresponding to the LT1 (approximately 75% VO 2max ) and the second ventilation threshold (VT2) aligning with the LT2 (approximately 85% VO 2max ) ( Keir et al., 2022 ).",
+      "context_window": "lation threshold (VT2) aligning with the LT2 (approximately 85% VO 2max ) ( Keir et al., 2022 ). Based on the research cond",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-4943",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4943,
+      "sentence": "Based on the research conducted by Casado et al. (2022) , this study categorized exercise intensity into three commonly utilized training zones for subgroup analysis: Zone 1 (Z1) corresponded to speeds below the first ventilatory or lactate threshold (approximately 70% VO 2max ), Zone 2 (Z2) included speeds between the first and second thresholds (approximately 75%-85% VO 2max ), and Zone 3 (Z3) encompassed speeds exceeding the second threshold (above 85% VO 2max ) ( Casado et al., 2022 ; St\u00f6ggl and Sperlich, 2015 ).",
+      "context_window": "w the first ventilatory or lactate threshold (approximately 70% VO 2max ), Zone 2 (Z2) included speeds between the first an",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-5041",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5041,
+      "sentence": "Based on the research conducted by Casado et al. (2022) , this study categorized exercise intensity into three commonly utilized training zones for subgroup analysis: Zone 1 (Z1) corresponded to speeds below the first ventilatory or lactate threshold (approximately 70% VO 2max ), Zone 2 (Z2) included speeds between the first and second thresholds (approximately 75%-85% VO 2max ), and Zone 3 (Z3) encompassed speeds exceeding the second threshold (above 85% VO 2max ) ( Casado et al., 2022 ; St\u00f6ggl and Sperlich, 2015 ).",
+      "context_window": "eeds between the first and second thresholds (approximately 75%-85% VO 2max ), and Zone 3 (Z3) encompassed speeds exceeding",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-5045",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5045,
+      "sentence": "Based on the research conducted by Casado et al. (2022) , this study categorized exercise intensity into three commonly utilized training zones for subgroup analysis: Zone 1 (Z1) corresponded to speeds below the first ventilatory or lactate threshold (approximately 70% VO 2max ), Zone 2 (Z2) included speeds between the first and second thresholds (approximately 75%-85% VO 2max ), and Zone 3 (Z3) encompassed speeds exceeding the second threshold (above 85% VO 2max ) ( Casado et al., 2022 ; St\u00f6ggl and Sperlich, 2015 ).",
+      "context_window": "between the first and second thresholds (approximately 75%-85% VO 2max ), and Zone 3 (Z3) encompassed speeds exceeding the",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-5133",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5133,
+      "sentence": "Based on the research conducted by Casado et al. (2022) , this study categorized exercise intensity into three commonly utilized training zones for subgroup analysis: Zone 1 (Z1) corresponded to speeds below the first ventilatory or lactate threshold (approximately 70% VO 2max ), Zone 2 (Z2) included speeds between the first and second thresholds (approximately 75%-85% VO 2max ), and Zone 3 (Z3) encompassed speeds exceeding the second threshold (above 85% VO 2max ) ( Casado et al., 2022 ; St\u00f6ggl and Sperlich, 2015 ).",
+      "context_window": "3) encompassed speeds exceeding the second threshold (above 85% VO 2max ) ( Casado et al., 2022 ; St\u00f6ggl and Sperlich, 2015",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-5631",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5631,
+      "sentence": "In Z1, the heterogeneity among studies was low (I 2 = 7%, p = 0.38).",
+      "context_window": "tudy. In Z1, the heterogeneity among studies was low (I 2 = 7%, p = 0.38). The standardized mean difference (SMD) was 0.40",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-5635",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.38",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5635,
+      "sentence": "In Z1, the heterogeneity among studies was low (I 2 = 7%, p = 0.38).",
+      "context_window": ". In Z1, the heterogeneity among studies was low (I 2 = 7%, p = 0.38). The standardized mean difference (SMD) was 0.40, with a 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-5702",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5702,
+      "sentence": "The standardized mean difference (SMD) was 0.40, with a 95% confidence interval of [0.04, 0.76], indicating statistical significance (Z = 2.16, p < 0.05).",
+      "context_window": "8). The standardized mean difference (SMD) was 0.40, with a 95% confidence interval of [0.04, 0.76], indicating statistical",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-5790",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5790,
+      "sentence": "The standardized mean difference (SMD) was 0.40, with a 95% confidence interval of [0.04, 0.76], indicating statistical significance (Z = 2.16, p < 0.05).",
+      "context_window": "0.04, 0.76], indicating statistical significance (Z = 2.16, p < 0.05). These results suggest that HIIT was more effective than M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-5963",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5963,
+      "sentence": "In Z2, there was minimal heterogeneity among the studies (I 2 = 34%, p = 0.19).",
+      "context_window": "2, there was minimal heterogeneity among the studies (I 2 = 34%, p = 0.19). The standardized mean difference (SMD) was 0.68",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-5968",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5968,
+      "sentence": "In Z2, there was minimal heterogeneity among the studies (I 2 = 34%, p = 0.19).",
+      "context_window": "ere was minimal heterogeneity among the studies (I 2 = 34%, p = 0.19). The standardized mean difference (SMD) was 0.68, with a 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-6035",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6035,
+      "sentence": "The standardized mean difference (SMD) was 0.68, with a 95% confidence interval of [0.13, 1.24], showing statistical significance (Z = 2.40, p < 0.05).",
+      "context_window": "9). The standardized mean difference (SMD) was 0.68, with a 95% confidence interval of [0.13, 1.24], showing statistical si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-6120",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6120,
+      "sentence": "The standardized mean difference (SMD) was 0.68, with a 95% confidence interval of [0.13, 1.24], showing statistical significance (Z = 2.40, p < 0.05).",
+      "context_window": "f [0.13, 1.24], showing statistical significance (Z = 2.40, p < 0.05). The results indicated that subjects following HIIT exhibi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-6392",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6392,
+      "sentence": "In Z3, where speeds exceeded the lactate threshold, there was no intra-group heterogeneity (I 2 = 40%, p > 0.1).",
+      "context_window": "te threshold, there was no intra-group heterogeneity (I 2 = 40%, p > 0.1). The standardized mean difference (SMD) was 0.14,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-6397",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6397,
+      "sentence": "In Z3, where speeds exceeded the lactate threshold, there was no intra-group heterogeneity (I 2 = 40%, p > 0.1).",
+      "context_window": "reshold, there was no intra-group heterogeneity (I 2 = 40%, p > 0.1). The standardized mean difference (SMD) was 0.14, with a 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-6463",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6463,
+      "sentence": "The standardized mean difference (SMD) was 0.14, with a 95% confidence interval of [-0.60, 0.88].",
+      "context_window": "1). The standardized mean difference (SMD) was 0.14, with a 95% confidence interval of [-0.60, 0.88]. There was no statisti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-6584",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6584,
+      "sentence": "There was no statistical significance in training results within Z3 (Z = 0.37, p > 0.05), which indicates that there was no significant difference in subjects\u2019 running economy between HIIT and MICT at speeds exceeding the lactate threshold.",
+      "context_window": "tical significance in training results within Z3 (Z = 0.37, p > 0.05), which indicates that there was no significant difference",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-6795",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6795,
+      "sentence": "The heterogeneity between groups was low (I 2 = 24%, p > 0.1).",
+      "context_window": "threshold. The heterogeneity between groups was low (I 2 = 24%, p > 0.1). The standardized mean difference (SMD) between g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-6800",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6800,
+      "sentence": "The heterogeneity between groups was low (I 2 = 24%, p > 0.1).",
+      "context_window": "hold. The heterogeneity between groups was low (I 2 = 24%, p > 0.1). The standardized mean difference (SMD) between groups was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-6881",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6881,
+      "sentence": "The standardized mean difference (SMD) between groups was 0.44, with a 95% confidence interval of [0.15, 0.72], indicating statistical significance (Z = 3.01, p < 0.05).",
+      "context_window": "dized mean difference (SMD) between groups was 0.44, with a 95% confidence interval of [0.15, 0.72], indicating statistical",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-6969",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6969,
+      "sentence": "The standardized mean difference (SMD) between groups was 0.44, with a 95% confidence interval of [0.15, 0.72], indicating statistical significance (Z = 3.01, p < 0.05).",
+      "context_window": "0.15, 0.72], indicating statistical significance (Z = 3.01, p < 0.05). This indicates that both HIIT and MICT had a greater effe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-7508",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7508,
+      "sentence": "The heterogeneity among the groups was low (I 2 = 38%, p = 0.12), which justified the use of a fixed-effects model.",
+      "context_window": "periment. The heterogeneity among the groups was low (I 2 = 38%, p = 0.12), which justified the use of a fixed-effects mode",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-7513",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7513,
+      "sentence": "The heterogeneity among the groups was low (I 2 = 38%, p = 0.12), which justified the use of a fixed-effects model.",
+      "context_window": "ent. The heterogeneity among the groups was low (I 2 = 38%, p = 0.12), which justified the use of a fixed-effects model. In gene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-7614",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7614,
+      "sentence": "In general, when the I 2 value is below 50% (or the commonly used threshold is 25%-50%), the heterogeneity is small, the results tend to be consistent, and the use of fixed-effect models is a suitable choice.",
+      "context_window": "ixed-effects model. In general, when the I 2 value is below 50% (or the commonly used threshold is 25%-50%), the heterogene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-7653",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7653,
+      "sentence": "In general, when the I 2 value is below 50% (or the commonly used threshold is 25%-50%), the heterogeneity is small, the results tend to be consistent, and the use of fixed-effect models is a suitable choice.",
+      "context_window": "e I 2 value is below 50% (or the commonly used threshold is 25%-50%), the heterogeneity is small, the results tend to be co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-7657",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7657,
+      "sentence": "In general, when the I 2 value is below 50% (or the commonly used threshold is 25%-50%), the heterogeneity is small, the results tend to be consistent, and the use of fixed-effect models is a suitable choice.",
+      "context_window": "2 value is below 50% (or the commonly used threshold is 25%-50%), the heterogeneity is small, the results tend to be consis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-7825",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7825,
+      "sentence": "The mean difference (MD) was 2.48, with a 95% confidence interval of [1.61, 3.34], indicating statistical significance (Z = 5.60, p < 0.05).",
+      "context_window": "suitable choice. The mean difference (MD) was 2.48, with a 95% confidence interval of [1.61, 3.34], indicating statistical",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-7913",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7913,
+      "sentence": "The mean difference (MD) was 2.48, with a 95% confidence interval of [1.61, 3.34], indicating statistical significance (Z = 5.60, p < 0.05).",
+      "context_window": "1.61, 3.34], indicating statistical significance (Z = 5.60, p < 0.05). The findings revealed significant differences in VO 2max",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-8387",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8387,
+      "sentence": "There was no heterogeneity among the groups (I 2 = 0%, p > 0.1), and a fixed-effect model was employed for the analysis.",
+      "context_window": "vention. There was no heterogeneity among the groups (I 2 = 0%, p > 0.1), and a fixed-effect model was employed for the an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-8391",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8391,
+      "sentence": "There was no heterogeneity among the groups (I 2 = 0%, p > 0.1), and a fixed-effect model was employed for the analysis.",
+      "context_window": "ion. There was no heterogeneity among the groups (I 2 = 0%, p > 0.1), and a fixed-effect model was employed for the analysis. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-8527",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8527,
+      "sentence": "The research summary indicated a mean difference (MD) of 0.15, with a 95% confidence interval of [-0.28, -0.02], which was statistically significant (Z = 2.20, p < 0.05).",
+      "context_window": "ch summary indicated a mean difference (MD) of 0.15, with a 95% confidence interval of [-0.28, -0.02], which was statistica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-8617",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8617,
+      "sentence": "The research summary indicated a mean difference (MD) of 0.15, with a 95% confidence interval of [-0.28, -0.02], which was statistically significant (Z = 2.20, p < 0.05).",
+      "context_window": ".28, -0.02], which was statistically significant (Z = 2.20, p < 0.05). The results indicated that lactic acid production in HIIT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-p-9275",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9275,
+      "sentence": "The Egger\u2019s test for asymmetry yielded no significant results ( p > 0.05), and further statistical tests indicated that the distribution of study effects was likely unbiased.",
+      "context_window": "Egger\u2019s test for asymmetry yielded no significant results ( p > 0.05), and further statistical tests indicated that the distribu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-u-5514",
+      "claim_type": "unit_value",
+      "raw_text": "4 mmol",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 5514,
+      "sentence": "This finding is consistent with research indicating that when lactate concentration is greater than 4 mmol/L, the enhancement in running economy diminishes ( Zinner et al., 2018 ).",
+      "context_window": "indicating that when lactate concentration is greater than 4 mmol/L, the enhancement in running economy diminishes ( Zinner e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-12410",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12410,
+      "sentence": "Dietary intake of carbohydrates and fats influences fuel utilization and running economy ( Maunder et al., 2021 ), with low carbohydrate (<20%) and high fat (>60%) intake promoting fat oxidation and improved submaximal running economy ( Che et al., 2021 ).",
+      "context_window": "g economy ( Maunder et al., 2021 ), with low carbohydrate (<20%) and high fat (>60%) intake promoting fat oxidation and imp",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-12430",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12430,
+      "sentence": "Dietary intake of carbohydrates and fats influences fuel utilization and running economy ( Maunder et al., 2021 ), with low carbohydrate (<20%) and high fat (>60%) intake promoting fat oxidation and improved submaximal running economy ( Che et al., 2021 ).",
+      "context_window": "et al., 2021 ), with low carbohydrate (<20%) and high fat (>60%) intake promoting fat oxidation and improved submaximal run",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-13519",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 13519,
+      "sentence": "One study found adherence dropping from 82% to 29% at 12 months.",
+      "context_window": "Roy et al., 2018 ). One study found adherence dropping from 82% to 29% at 12 months. During a 12-month follow-up, MICT part",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-pct-13526",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 13526,
+      "sentence": "One study found adherence dropping from 82% to 29% at 12 months.",
+      "context_window": "al., 2018 ). One study found adherence dropping from 82% to 29% at 12 months. During a 12-month follow-up, MICT participant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-u-13533",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 13533,
+      "sentence": "One study found adherence dropping from 82% to 29% at 12 months.",
+      "context_window": "18 ). One study found adherence dropping from 82% to 29% at 12 months. During a 12-month follow-up, MICT participants were more l",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

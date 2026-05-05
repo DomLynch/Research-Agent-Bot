@@ -1,0 +1,921 @@
+{
+  "paper_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort",
+  "doi": "10.1186/s12916-018-1198-0",
+  "extracted_at": "2026-05-05T22:38:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 16,
+    "percentage": 15,
+    "p_value": 10,
+    "sample_size": 3,
+    "confidence_interval": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-507",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 507,
+      "sentence": "Sauna bathing habits were assessed at baseline in a sample of 1688 participants (mean age 63; range 53-74 years), of whom 51.4% were women.",
+      "context_window": "ine in a sample of 1688 participants (mean age 63; range 53-74 years), of whom 51.4% were women. Multivariable-adjusted hazard r",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-526",
+      "claim_type": "percentage",
+      "raw_text": "51.4%",
+      "numeric_values": [
+        51.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 526,
+      "sentence": "Sauna bathing habits were assessed at baseline in a sample of 1688 participants (mean age 63; range 53-74 years), of whom 51.4% were women.",
+      "context_window": "1688 participants (mean age 63; range 53-74 years), of whom 51.4% were women. Multivariable-adjusted hazard ratios (HRs) were",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-766",
+      "claim_type": "unit_value",
+      "raw_text": "15.0 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 766,
+      "sentence": "A total of 181 fatal CVD events occurred during a median follow-up of 15.0 years (interquartile range, 14.1-15.9).",
+      "context_window": "181 fatal CVD events occurred during a median follow-up of 15.0 years (interquartile range, 14.1-15.9). The risk of CVD mortality",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-1033",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1033,
+      "sentence": "In age- and sex-adjusted analysis, compared with participants who had one sauna bathing session per week, HRs (95% CIs) for CVD mortality were 0.71 (0.52 to 0.98) and 0.30 (0.14 to 0.64) for participants with two to three and four to seven sauna sessions per week, respectively.",
+      "context_window": "rticipants who had one sauna bathing session per week, HRs (95% CIs) for CVD mortality were 0.71 (0.52 to 0.98) and 0.30 (0",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-1385",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1385,
+      "sentence": "After adjustment for established CVD risk factors, potential confounders including physical activity, socioeconomic status, and incident coronary heart disease, the corresponding HRs (95% CIs) were 0.75 (0.52 to 1.08) and 0.23 (0.08 to 0.65), respectively.",
+      "context_window": "and incident coronary heart disease, the corresponding HRs (95% CIs) were 0.75 (0.52 to 1.08) and 0.23 (0.08 to 0.65), resp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-p-1745",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1745,
+      "sentence": "Addition of information on sauna bathing frequency to a CVD mortality risk prediction model containing established risk factors was associated with a C-index change (0.0091; P = 0.010), difference in - 2 log likelihood ( P = 0.019), and categorical net reclassification improvement (4.14%; P = 0.004).",
+      "context_window": "risk factors was associated with a C-index change (0.0091; P = 0.010), difference in - 2 log likelihood ( P = 0.019), and catego",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-p-1792",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1792,
+      "sentence": "Addition of information on sauna bathing frequency to a CVD mortality risk prediction model containing established risk factors was associated with a C-index change (0.0091; P = 0.010), difference in - 2 log likelihood ( P = 0.019), and categorical net reclassification improvement (4.14%; P = 0.004).",
+      "context_window": "nge (0.0091; P = 0.010), difference in - 2 log likelihood ( P = 0.019), and categorical net reclassification improvement (4.14%;",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-1854",
+      "claim_type": "percentage",
+      "raw_text": "4.14%",
+      "numeric_values": [
+        4.14
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1854,
+      "sentence": "Addition of information on sauna bathing frequency to a CVD mortality risk prediction model containing established risk factors was associated with a C-index change (0.0091; P = 0.010), difference in - 2 log likelihood ( P = 0.019), and categorical net reclassification improvement (4.14%; P = 0.004).",
+      "context_window": "= 0.019), and categorical net reclassification improvement (4.14%; P = 0.004). Higher frequency and duration of sauna bathin",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-p-1861",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1861,
+      "sentence": "Addition of information on sauna bathing frequency to a CVD mortality risk prediction model containing established risk factors was associated with a C-index change (0.0091; P = 0.010), difference in - 2 log likelihood ( P = 0.019), and categorical net reclassification improvement (4.14%; P = 0.004).",
+      "context_window": "), and categorical net reclassification improvement (4.14%; P = 0.004). Higher frequency and duration of sauna bathing are each",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-265",
+      "claim_type": "unit_value",
+      "raw_text": "61 years",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 265,
+      "sentence": "The KIHD Study was initially based on a cohort of men aged 42-61 years who were living in Kuopio and the surrounding rural communities in the east of Finland.",
+      "context_window": "e KIHD Study was initially based on a cohort of men aged 42-61 years who were living in Kuopio and the surrounding rural communi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-n-526",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2358",
+      "numeric_values": [
+        2358.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 526,
+      "sentence": "In this cohort which is being utilized for this analysis, participants ( n = 2358) comprised a randomly selected sample of 1351 women and 1007 men aged 53.4 to 73.8 years.",
+      "context_window": "t which is being utilized for this analysis, participants ( n = 2358) comprised a randomly selected sample of 1351 women and 100",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-613",
+      "claim_type": "unit_value",
+      "raw_text": "73.8 years",
+      "numeric_values": [
+        73.8
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 613,
+      "sentence": "In this cohort which is being utilized for this analysis, participants ( n = 2358) comprised a randomly selected sample of 1351 women and 1007 men aged 53.4 to 73.8 years.",
+      "context_window": "mly selected sample of 1351 women and 1007 men aged 53.4 to 73.8 years. Of 2072 eligible participants, 1774 participated in the cu",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-1528",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1528,
+      "sentence": "Flowchart of the prospective study setting included in the analyses on sauna bathing and fatal cardiovascular outcomes\n\nIn a traditional Finnish sauna, there is dry air with a relative humidity of about 10-20%.",
+      "context_window": "auna, there is dry air with a relative humidity of about 10-20%. It is possible to increase the humidity temporarily by thr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-1675",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1675,
+      "sentence": "It is possible to increase the humidity temporarily by throwing water on the hot rocks of the sauna heater, although it usually remains below 20%.",
+      "context_window": "ocks of the sauna heater, although it usually remains below 20%. The recommended temperature for sauna is from 80 to 100 \u00b0C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-4228",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4228,
+      "sentence": "Participants were instructed to fast overnight, abstain from alcohol consumption for at least 3 days, and to keep away from smoking for at least 12 h prior to blood specimen collection.",
+      "context_window": "st overnight, abstain from alcohol consumption for at least 3 days, and to keep away from smoking for at least 12 h prior to b",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-5916",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5916,
+      "sentence": "Hazard ratios (HRs) with 95% confidence intervals (CIs) for CVD mortality were calculated using Cox proportional hazard models after confirming the assumptions of the proportionality of hazards using Schoenfeld residuals [ 29 ].",
+      "context_window": "rd deviation, SD) and percentages. Hazard ratios (HRs) with 95% confidence intervals (CIs) for CVD mortality were calculate",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-n-6539",
+      "claim_type": "sample_size",
+      "raw_text": "n = 43",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6539,
+      "sentence": "In a subsidiary analysis, we categorized frequency of sauna bathing into 0-1, 2-3, and 4-7 times per week, including participants who did not use sauna at all ( n = 43).",
+      "context_window": "week, including participants who did not use sauna at all ( n = 43). Hazard ratios of the associations of frequency and durati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-8669",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 8669,
+      "sentence": "To minimize biases due to reverse causation, sensitivity analysis involved excluding the first 5 years of follow-up.",
+      "context_window": "ausation, sensitivity analysis involved excluding the first 5 years of follow-up. To assess whether adding information on the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-9425",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 9425,
+      "sentence": "Reclassification analysis was restricted to the first 10 years of follow-up and was assessed using the net reclassification improvement (NRI) [ 33 ] and integrated discrimination improvement (IDI) [ 33 ].",
+      "context_window": "hing. Reclassification analysis was restricted to the first 10 years of follow-up and was assessed using the net reclassificatio",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-9673",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9673,
+      "sentence": "Reclassification analysis was based on predicted 10-year CVD mortality risk categories of low (< 1%), intermediate (1 to < 5%), and high (\u2265 5%) risk as previously reported [ 35 ].",
+      "context_window": "n predicted 10-year CVD mortality risk categories of low (< 1%), intermediate (1 to < 5%), and high (\u2265 5%) risk as previou",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-9699",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9699,
+      "sentence": "Reclassification analysis was based on predicted 10-year CVD mortality risk categories of low (< 1%), intermediate (1 to < 5%), and high (\u2265 5%) risk as previously reported [ 35 ].",
+      "context_window": "rtality risk categories of low (< 1%), intermediate (1 to < 5%), and high (\u2265 5%) risk as previously reported [ 35 ]. Given",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-9716",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9716,
+      "sentence": "Reclassification analysis was based on predicted 10-year CVD mortality risk categories of low (< 1%), intermediate (1 to < 5%), and high (\u2265 5%) risk as previously reported [ 35 ].",
+      "context_window": "gories of low (< 1%), intermediate (1 to < 5%), and high (\u2265 5%) risk as previously reported [ 35 ]. Given that Harrell\u2019s C",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-174",
+      "claim_type": "percentage",
+      "raw_text": "51.4%",
+      "numeric_values": [
+        51.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 174,
+      "sentence": "There were 867 (51.4%) female and 821 (48.6%) male participants.",
+      "context_window": "ency of sauna bathing is shown in Table 1 . There were 867 (51.4%) female and 821 (48.6%) male participants. The mean (SD) ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-197",
+      "claim_type": "percentage",
+      "raw_text": "48.6%",
+      "numeric_values": [
+        48.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 197,
+      "sentence": "There were 867 (51.4%) female and 821 (48.6%) male participants.",
+      "context_window": "s shown in Table 1 . There were 867 (51.4%) female and 821 (48.6%) male participants. The mean (SD) age, BMI, and waist-to-hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-275",
+      "claim_type": "unit_value",
+      "raw_text": "63 years",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 275,
+      "sentence": "The mean (SD) age, BMI, and waist-to-hip ratio were 63 years (7), 27.9 kg/m 2 (4.4), and 0.91 (0.09), respectively.",
+      "context_window": "ipants. The mean (SD) age, BMI, and waist-to-hip ratio were 63 years (7), 27.9 kg/m 2 (4.4), and 0.91 (0.09), respectively. The",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-289",
+      "claim_type": "unit_value",
+      "raw_text": "27.9 kg",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 289,
+      "sentence": "The mean (SD) age, BMI, and waist-to-hip ratio were 63 years (7), 27.9 kg/m 2 (4.4), and 0.91 (0.09), respectively.",
+      "context_window": "an (SD) age, BMI, and waist-to-hip ratio were 63 years (7), 27.9 kg/m 2 (4.4), and 0.91 (0.09), respectively. The median (inter",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-2230",
+      "claim_type": "unit_value",
+      "raw_text": "15.0 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2230,
+      "sentence": "Physical activity was assessed using the 12-month physical activity questionnaire\n\n\u2021 Socio-economic status is a summary index that combines measures of income, education, occupation, occupational prestige, material standard of living, and housing conditions, all of which were assessed with self-reported questionnaires\n\nDuring a median (interquartile range) follow-up of 15.0 years (14.1-15.9) (23,601 person-years at risk), a total of 181 CVD deaths occurred.",
+      "context_window": "nnaires During a median (interquartile range) follow-up of 15.0 years (14.1-15.9) (23,601 person-years at risk), a total of 181 C",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-ci-2489",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 7.9 to 12.9",
+      "numeric_values": [
+        7.9,
+        12.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2489,
+      "sentence": "Cardiovascular mortality rates per 1000 person-years across the three frequency groups of sauna bathing (one, two to three, and four to seven times per week) were 10.1 (95% CI 7.9 to 12.9), 7.6 (6.3 to 9.2), and 2.7 (1.3 to 5.4), respectively.",
+      "context_window": "two to three, and four to seven times per week) were 10.1 (95% CI 7.9 to 12.9), 7.6 (6.3 to 9.2), and 2.7 (1.3 to 5.4), respectively. Acc",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-p-2772",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2772,
+      "sentence": "According to the frequency of sauna bathing, cumulative hazard curves demonstrated the lowest risk of CVD mortality among participants who had four to seven sauna sessions per week compared to other groups ( P < 0.001 for the log-rank test; Fig.",
+      "context_window": "to seven sauna sessions per week compared to other groups ( P < 0.001 for the log-rank test; Fig. 2 ). A restricted cubic spline",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-ci-3139",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.52 to 0.98",
+      "numeric_values": [
+        0.52,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3139,
+      "sentence": "In the analyses adjusted only for age and sex, compared to participants who had one sauna session per week, the HRs of CVD mortality were 0.71 (95% CI 0.52 to 0.98) and 0.30 (0.14 to 0.64) for participants with two to three and four to seven sauna sessions per week, respectively (Table 2 ).",
+      "context_window": "sauna session per week, the HRs of CVD mortality were 0.71 (95% CI 0.52 to 0.98) and 0.30 (0.14 to 0.64) for participants with two to three",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-ci-3408",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.56 to 1.07",
+      "numeric_values": [
+        0.56,
+        1.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3408,
+      "sentence": "Additional adjustment for several established risk factors and potential confounders minimally attenuated the HRs: 0.77 (95% CI 0.56 to 1.07) for two to three sauna bathing sessions per week and 0.36 (0.17 to 0.77) for four to seven sauna bathing sessions per week.",
+      "context_window": "d potential confounders minimally attenuated the HRs: 0.77 (95% CI 0.56 to 1.07) for two to three sauna bathing sessions per week and 0.36",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-ci-3733",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.52 to 1.08",
+      "numeric_values": [
+        0.52,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3733,
+      "sentence": "The corresponding HRs (for two to three and four to seven sauna bathing sessions per week) remained consistent after adjustment for incident CHD as a time-varying covariate: 0.75 (95% CI 0.52 to 1.08) and 0.23 (0.08 to 0.65), respectively (Table 2 ).",
+      "context_window": "ustment for incident CHD as a time-varying covariate: 0.75 (95% CI 0.52 to 1.08) and 0.23 (0.08 to 0.65), respectively (Table 2 ). The resu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-4941",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4941,
+      "sentence": "The dashed lines represent the 95% confidence intervals\n\nHazard ratios of cardiovascular mortality according to the frequency of sauna bathing, overall and among men and women\n\nModel 1: adjusted for age and gender\n\nModel 2: model 1 plus body mass index, smoking, systolic blood pressure, serum low-density lipoprotein cholesterol, alcohol consumption, previous myocardial infarction, and type 2 diabetes\n\nModel 3: model 2 plus physical activity (duration per week) and socio-economic status\n\nModel 4: model 3 plus incident coronary heart disease as a time-dependent covariate\n\nCI confidence interval, HR hazard ratio, NE not estimated because of zero event rate; analysis is based on 1688 participants and 181 cardiovascular deaths\n\n*The model was limited to the population at risk and did not include those who already had coronary heart disease\n\nCardiovascular mortality rates per 1000 person-years of follow-up across the three groups of sauna bathing duration (\u2264 15, 16-45, > 45 min/week) were 9.6 (95% CI 7.5 to 12.3), 7.6 (6.2 to 9.3), and 5.1 (3.4 to 7.7), respectively.",
+      "context_window": "rction, and type 2 diabetes. The dashed lines represent the 95% confidence intervals Hazard ratios of cardiovascular morta",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-ci-5913",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 7.5 to 12.3",
+      "numeric_values": [
+        7.5,
+        12.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5913,
+      "sentence": "The dashed lines represent the 95% confidence intervals\n\nHazard ratios of cardiovascular mortality according to the frequency of sauna bathing, overall and among men and women\n\nModel 1: adjusted for age and gender\n\nModel 2: model 1 plus body mass index, smoking, systolic blood pressure, serum low-density lipoprotein cholesterol, alcohol consumption, previous myocardial infarction, and type 2 diabetes\n\nModel 3: model 2 plus physical activity (duration per week) and socio-economic status\n\nModel 4: model 3 plus incident coronary heart disease as a time-dependent covariate\n\nCI confidence interval, HR hazard ratio, NE not estimated because of zero event rate; analysis is based on 1688 participants and 181 cardiovascular deaths\n\n*The model was limited to the population at risk and did not include those who already had coronary heart disease\n\nCardiovascular mortality rates per 1000 person-years of follow-up across the three groups of sauna bathing duration (\u2264 15, 16-45, > 45 min/week) were 9.6 (95% CI 7.5 to 12.3), 7.6 (6.2 to 9.3), and 5.1 (3.4 to 7.7), respectively.",
+      "context_window": "una bathing duration (\u2264 15, 16-45, > 45 min/week) were 9.6 (95% CI 7.5 to 12.3), 7.6 (6.2 to 9.3), and 5.1 (3.4 to 7.7), respectively. Cum",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-p-6147",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6147,
+      "sentence": "Cumulative hazard curves demonstrated a greater risk of CVD mortality among participants having a sauna bath of \u2264 15 min/week compared with the other groups ( P = 0.028 for the log-rank test; Fig.",
+      "context_window": "auna bath of \u2264 15 min/week compared with the other groups ( P = 0.028 for the log-rank test; Fig. 2 ). In the analysis adjusted f",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-8679",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8679,
+      "sentence": "CI, confidence interval\n\nHazard ratios of cardiovascular mortality according to the weekly duration of sauna bathing, overall and among men and women\n\nModel 1: adjusted for age and gender\n\nModel 2: model 1 plus body mass index, smoking, systolic blood pressure, serum low-density lipoprotein cholesterol, alcohol consumption, previous myocardial infarction, and type 2 diabetes\n\nModel 3: model 2 plus physical activity (duration per week) and socio-economic status\n\nModel 4: model 3 plus incident coronary heart disease as a time-dependent covariate\n\nCI confidence interval, HR hazard ratio; analysis is based on 1688 participants and 181 cardiovascular deaths\n\n*The model was limited to the population at risk and did not include those who already had coronary heart disease\n\nThe associations of both frequency and duration of sauna bathing with CVD mortality risk remained consistent in the analyses that excluded the first 5 years of follow-up (Additional file 2 : Tables S1-S2).",
+      "context_window": "remained consistent in the analyses that excluded the first 5 years of follow-up (Additional file 2 : Tables S1-S2). In a subsi",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-ci-10719",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.7382-0.8049",
+      "numeric_values": [
+        0.7382,
+        0.8049
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10719,
+      "sentence": "Hazard ratios are reported comparing > 45 min of sauna bathing per week with \u2264 15 min of sauna bathing per week. * P -value for meta-regression\n\nA risk prediction model for CVD mortality containing conventional risk factors yielded a C-index of 0.7716 (95% CI 0.7382-0.8049; P < 0.001).",
+      "context_window": "ning conventional risk factors yielded a C-index of 0.7716 (95% CI 0.7382-0.8049; P < 0.001). After addition of information on the frequency",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-p-10741",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10741,
+      "sentence": "Hazard ratios are reported comparing > 45 min of sauna bathing per week with \u2264 15 min of sauna bathing per week. * P -value for meta-regression\n\nA risk prediction model for CVD mortality containing conventional risk factors yielded a C-index of 0.7716 (95% CI 0.7382-0.8049; P < 0.001).",
+      "context_window": "factors yielded a C-index of 0.7716 (95% CI 0.7382-0.8049; P < 0.001). After addition of information on the frequency of sauna b",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-p-10857",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10857,
+      "sentence": "After addition of information on the frequency of sauna bathing, the C-index was 0.7807 (0.7486-0.8128; P < 0.001), representing a significant increase of 0.0091 (0.0022-0.0160; P = 0.010).",
+      "context_window": "cy of sauna bathing, the C-index was 0.7807 (0.7486-0.8128; P < 0.001), representing a significant increase of 0.0091 (0.0022-0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-p-10931",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10931,
+      "sentence": "After addition of information on the frequency of sauna bathing, the C-index was 0.7807 (0.7486-0.8128; P < 0.001), representing a significant increase of 0.0091 (0.0022-0.0160; P = 0.010).",
+      "context_window": "presenting a significant increase of 0.0091 (0.0022-0.0160; P = 0.010). In addition, when investigating differences in the -2 log",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-11381",
+      "claim_type": "percentage",
+      "raw_text": "4.14%",
+      "numeric_values": [
+        4.14
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11381,
+      "sentence": "There was a significant improvement in the classification of participants into predicted 10-year CVD mortality risk categories (NRI: 4.14%, 1.30-6.97%; P = 0.004).",
+      "context_window": "into predicted 10-year CVD mortality risk categories (NRI: 4.14%, 1.30-6.97%; P = 0.004). The IDI was 0.0037 (0.0002-0.0072;",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-pct-11393",
+      "claim_type": "percentage",
+      "raw_text": "6.97%",
+      "numeric_values": [
+        6.97
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11393,
+      "sentence": "There was a significant improvement in the classification of participants into predicted 10-year CVD mortality risk categories (NRI: 4.14%, 1.30-6.97%; P = 0.004).",
+      "context_window": "ted 10-year CVD mortality risk categories (NRI: 4.14%, 1.30-6.97%; P = 0.004). The IDI was 0.0037 (0.0002-0.0072; P = 0.041).",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-p-11400",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11400,
+      "sentence": "There was a significant improvement in the classification of participants into predicted 10-year CVD mortality risk categories (NRI: 4.14%, 1.30-6.97%; P = 0.004).",
+      "context_window": "year CVD mortality risk categories (NRI: 4.14%, 1.30-6.97%; P = 0.004). The IDI was 0.0037 (0.0002-0.0072; P = 0.041).",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-p-11447",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11447,
+      "sentence": "The IDI was 0.0037 (0.0002-0.0072; P = 0.041).",
+      "context_window": "1.30-6.97%; P = 0.004). The IDI was 0.0037 (0.0002-0.0072; P = 0.041).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-57",
+      "claim_type": "unit_value",
+      "raw_text": "14 years",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 57,
+      "sentence": "The findings of this long-term prospective study of over 14 years follow-up suggest that the cardiovascular benefits of sauna bathing may exist in both men and women.",
+      "context_window": "The findings of this long-term prospective study of over 14 years follow-up suggest that the cardiovascular benefits of sauna",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-3294",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 kg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3294,
+      "sentence": "Sweat is typically secreted at a rate which corresponds to an average total secretion of 0.5 kg during a sauna bathing session [ 5 , 39 ].",
+      "context_window": "t a rate which corresponds to an average total secretion of 0.5 kg during a sauna bathing session [ 5 , 39 ]. Increased sweati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-7456",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7456,
+      "sentence": "Our findings were robust to the exclusion of the first 5 years of follow-up, minimizing the possibility of reverse causation bias as the explanation for our findings.",
+      "context_window": "ood. Our findings were robust to the exclusion of the first 5 years of follow-up, minimizing the possibility of reverse causati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-n-8321",
+      "claim_type": "sample_size",
+      "raw_text": "N = 181",
+      "numeric_values": [
+        181.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 8321,
+      "sentence": "The relatively low event rate for cardiovascular deaths ( N = 181) precluded detailed assessment of (i) effect modification by relevant clinical characteristics on the associations and (ii) dose-response relationships of the associations.",
+      "context_window": ". The relatively low event rate for cardiovascular deaths ( N = 181) precluded detailed assessment of (i) effect modification b",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-9024",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 9024,
+      "sentence": "It is possible that underlying diagnosed or undiagnosed diseases may have an effect on sauna bathing habits, suggesting reverse causality; however, our subgroup analyses according to various clinical characteristics were consistent and the associations remained robust in several sensitivity analyses, independent of many underlying clinical conditions and exclusion of the first 5 years of follow-up.",
+      "context_window": "y underlying clinical conditions and exclusion of the first 5 years of follow-up. Sauna bathing habits may have changed during",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6262976_sauna_bathing_is_associated_with_reduced_cardiovascular_mort-u-12286",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 12286,
+      "sentence": "In another study in which six male distance runners completed 3 weeks of post-training sauna bathing, study participants experienced an enhancement in endurance running performance [ 61 ].",
+      "context_window": "another study in which six male distance runners completed 3 weeks of post-training sauna bathing, study participants experien",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

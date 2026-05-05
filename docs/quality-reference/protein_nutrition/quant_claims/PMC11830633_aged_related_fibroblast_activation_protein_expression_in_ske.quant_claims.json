@@ -1,0 +1,464 @@
+{
+  "paper_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske",
+  "doi": "10.1002/jcsm.13730",
+  "extracted_at": "2026-05-05T22:35:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 4,
+    "p_value": 14,
+    "percentage": 5,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-n-420",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 420,
+      "sentence": "This retrospective analysis studied 54 patients with lung cancer ( n = 27) and pancreatic cancer ( n = 27) using FAPI PET/CT.",
+      "context_window": "trospective analysis studied 54 patients with lung cancer ( n = 27) and pancreatic cancer ( n = 27) using FAPI PET/CT. Imaging",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-n-452",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 452,
+      "sentence": "This retrospective analysis studied 54 patients with lung cancer ( n = 27) and pancreatic cancer ( n = 27) using FAPI PET/CT.",
+      "context_window": "patients with lung cancer ( n = 27) and pancreatic cancer ( n = 27) using FAPI PET/CT. Imaging\u2010based muscle features including",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-998",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 998,
+      "sentence": "Analysis revealed a moderate to strong positive correlation between FAPI SUVmean and age ( \u03c1 = 0.368, p = 0.006), with older age groups showing higher muscle uptake.",
+      "context_window": "itive correlation between FAPI SUVmean and age ( \u03c1 = 0.368, p = 0.006), with older age groups showing higher muscle uptake. Withi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-1154",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1154,
+      "sentence": "Within specific cohorts, the FAPI\u201074 group demonstrated a stronger correlation ( \u03c1 = 0.500, p = 0.008) compared to the FAPI\u201046 group ( \u03c1 = 0.319, p = 0.105).",
+      "context_window": "I\u201074 group demonstrated a stronger correlation ( \u03c1 = 0.500, p = 0.008) compared to the FAPI\u201046 group ( \u03c1 = 0.319, p = 0.105). SUV",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-1208",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.105",
+      "numeric_values": [
+        0.105
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1208,
+      "sentence": "Within specific cohorts, the FAPI\u201074 group demonstrated a stronger correlation ( \u03c1 = 0.500, p = 0.008) compared to the FAPI\u201046 group ( \u03c1 = 0.319, p = 0.105).",
+      "context_window": ".500, p = 0.008) compared to the FAPI\u201046 group ( \u03c1 = 0.319, p = 0.105). SUVmean also correlated negatively with muscle density (H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-1294",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1294,
+      "sentence": "SUVmean also correlated negatively with muscle density (HU) ( \u03c1 = -0.298, p = 0.029), suggesting an association with higher fat infiltration.",
+      "context_window": "orrelated negatively with muscle density (HU) ( \u03c1 = -0.298, p = 0.029), suggesting an association with higher fat infiltration. G",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-1467",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1467,
+      "sentence": "GTEx data supported these findings, showing a significant increase in FAP expression across age groups ( p < 0.001), with the highest median FAP in the 70-79 age group.",
+      "context_window": "significant increase in FAP expression across age groups ( p < 0.001), with the highest median FAP in the 70-79 age group. This",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-pct-124",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 124,
+      "sentence": "Fibroblast activation protein (FAP) is predominantly expressed in cancer\u2010associated fibroblasts within the tumour stroma of 80%-90% of cancers, playing a pivotal role in modulating tumour behaviour [ 1 ].",
+      "context_window": "n cancer\u2010associated fibroblasts within the tumour stroma of 80%-90% of cancers, playing a pivotal role in modulating tumour",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-pct-128",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 128,
+      "sentence": "Fibroblast activation protein (FAP) is predominantly expressed in cancer\u2010associated fibroblasts within the tumour stroma of 80%-90% of cancers, playing a pivotal role in modulating tumour behaviour [ 1 ].",
+      "context_window": "ncer\u2010associated fibroblasts within the tumour stroma of 80%-90% of cancers, playing a pivotal role in modulating tumour beh",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-n-208",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 208,
+      "sentence": "The first cohort ( n = 27) focused on patients with nonsmall cell lung cancer (NSCLC) planning for curative surgery.",
+      "context_window": "to explore specific clinical inquiries. The first cohort ( n = 27) focused on patients with nonsmall cell lung cancer (NSCLC)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-n-326",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 326,
+      "sentence": "The second cohort ( n = 27) targeted individuals with newly diagnosed pancreatic ductal adenocarcinoma (PDAC).",
+      "context_window": "(NSCLC) planning for curative surgery. The second cohort ( n = 27) targeted individuals with newly diagnosed pancreatic ducta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-u-1040",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 1040,
+      "sentence": "CT images were acquired using the following parameters: 120 kVp, 35 mAs, slice thickness 5 mm, slice increment 3 mm and pitch 1.2.",
+      "context_window": "the following parameters: 120 kVp, 35 mAs, slice thickness 5 mm, slice increment 3 mm and pitch 1.2. Image analysis was pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-u-1062",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 1062,
+      "sentence": "CT images were acquired using the following parameters: 120 kVp, 35 mAs, slice thickness 5 mm, slice increment 3 mm and pitch 1.2.",
+      "context_window": "ers: 120 kVp, 35 mAs, slice thickness 5 mm, slice increment 3 mm and pitch 1.2. Image analysis was performed using MIM soft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-303",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 303,
+      "sentence": "However, muscle SUVmean was significantly higher in the FAPI\u201074 group compared to the FAPI\u201046 group ( p < 0.001).",
+      "context_window": "higher in the FAPI\u201074 group compared to the FAPI\u201046 group ( p < 0.001). Patient characteristics. To ensure the reliability of m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-pct-466",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 466,
+      "sentence": "To ensure the reliability of measurements, intermeasurer consistency was evaluated, revealing excellent ICC values of 1.00 (95% CI, 0.98-1.00) for SUVmean, 0.99 (95% CI, 0.96-1.00) for average HU and 0.96 (95% CI, 0.92-0.99) for SMI (Figure S2 ).",
+      "context_window": "ency was evaluated, revealing excellent ICC values of 1.00 (95% CI, 0.98-1.00) for SUVmean, 0.99 (95% CI, 0.96-1.00) for av",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-pct-504",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 504,
+      "sentence": "To ensure the reliability of measurements, intermeasurer consistency was evaluated, revealing excellent ICC values of 1.00 (95% CI, 0.98-1.00) for SUVmean, 0.99 (95% CI, 0.96-1.00) for average HU and 0.96 (95% CI, 0.92-0.99) for SMI (Figure S2 ).",
+      "context_window": "t ICC values of 1.00 (95% CI, 0.98-1.00) for SUVmean, 0.99 (95% CI, 0.96-1.00) for average HU and 0.96 (95% CI, 0.92-0.99)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-pct-548",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 548,
+      "sentence": "To ensure the reliability of measurements, intermeasurer consistency was evaluated, revealing excellent ICC values of 1.00 (95% CI, 0.98-1.00) for SUVmean, 0.99 (95% CI, 0.96-1.00) for average HU and 0.96 (95% CI, 0.92-0.99) for SMI (Figure S2 ).",
+      "context_window": "SUVmean, 0.99 (95% CI, 0.96-1.00) for average HU and 0.96 (95% CI, 0.92-0.99) for SMI (Figure S2 ). The correlation analy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-729",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 729,
+      "sentence": "The correlation analysis revealed moderate and statistically significant positive correlation between SUVmean and patient age ( \u03c1 = 0.368, p = 0.006), suggesting an age\u2010related increase in FAPI uptake in skeletal muscle (Figure 1A ).",
+      "context_window": "ve correlation between SUVmean and patient age ( \u03c1 = 0.368, p = 0.006), suggesting an age\u2010related increase in FAPI uptake in skel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-935",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 935,
+      "sentence": "Within the agent\u2010specific subgroups, the FAPI\u201074 group demonstrated a strong positive correlation ( \u03c1 = 0.500, p = 0.008), indicating statistical significance.",
+      "context_window": "oup demonstrated a strong positive correlation ( \u03c1 = 0.500, p = 0.008), indicating statistical significance. In contrast, the FAP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-1101",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.105",
+      "numeric_values": [
+        0.105
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1101,
+      "sentence": "In contrast, the FAPI\u201046 group showed a moderate correlation ( \u03c1 = 0.319), which was not statistically significant ( p = 0.105) but indicated a trend toward increased FAPI uptake with age.",
+      "context_window": "ion ( \u03c1 = 0.319), which was not statistically significant ( p = 0.105) but indicated a trend toward increased FAPI uptake with ag",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-1267",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1267,
+      "sentence": "Additionally, SUVmean showed a mild negative correlation with muscle average HU ( \u03c1 = -0.298, p = 0.029), indicating that higher SUVmean values are associated with lower muscle densities (Figure 1B ).",
+      "context_window": "d negative correlation with muscle average HU ( \u03c1 = -0.298, p = 0.029), indicating that higher SUVmean values are associated with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-1470",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.035",
+      "numeric_values": [
+        0.035
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1470,
+      "sentence": "This trend was consistent in both subgroups, with FAPI\u201046 showing a correlation of \u03c1 = -0.408 ( p = 0.035) and FAPI\u201074 showing \u03c1 = -0.404 ( p = 0.037).",
+      "context_window": "bgroups, with FAPI\u201046 showing a correlation of \u03c1 = -0.408 ( p = 0.035) and FAPI\u201074 showing \u03c1 = -0.404 ( p = 0.037). No significan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-1514",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.037",
+      "numeric_values": [
+        0.037
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1514,
+      "sentence": "This trend was consistent in both subgroups, with FAPI\u201046 showing a correlation of \u03c1 = -0.408 ( p = 0.035) and FAPI\u201074 showing \u03c1 = -0.404 ( p = 0.037).",
+      "context_window": "of \u03c1 = -0.408 ( p = 0.035) and FAPI\u201074 showing \u03c1 = -0.404 ( p = 0.037). No significant correlation was observed between SUVmean a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-1608",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.789",
+      "numeric_values": [
+        0.789
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1608,
+      "sentence": "No significant correlation was observed between SUVmean and the SMI ( \u03c1 = -0.034, p = 0.789), and this lack of correlation remained consistent when the data were analysed separately by gender.\n\n(a) Correlation between skeletal muscle SUVmean and age. (b) Correlation between SUVmean and average CT Hounsfield unit of the skeletal muscle.",
+      "context_window": "tion was observed between SUVmean and the SMI ( \u03c1 = -0.034, p = 0.789), and this lack of correlation remained consistent when the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11830633_aged_related_fibroblast_activation_protein_expression_in_ske-p-1984",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1984,
+      "sentence": "The analysis revealed a significant variation in FAP gene expression across different age groups (Kruskal\u2010Wallis test, p < 0.001).",
+      "context_window": "xpression across different age groups (Kruskal\u2010Wallis test, p < 0.001). Median FAP scores demonstrated a discernible increasing t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

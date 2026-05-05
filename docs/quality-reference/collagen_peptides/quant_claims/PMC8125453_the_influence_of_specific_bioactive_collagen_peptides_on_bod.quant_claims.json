@@ -1,0 +1,1890 @@
+{
+  "paper_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod",
+  "doi": "10.3390/ijerph18094837",
+  "extracted_at": "2026-05-05T22:25:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "p_value": 25,
+    "mean_sd": 21,
+    "unit_value": 38,
+    "percentage": 16
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-n-643",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 643,
+      "sentence": "They ingested 15 g of specific collagen peptides (n = 30; CP-G), placebo (n = 31; P-G), or whey protein (n = 36; WP-G) daily.",
+      "context_window": "program. They ingested 15 g of specific collagen peptides (n = 30; CP-G), placebo (n = 31; P-G), or whey protein (n = 36; WP-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-n-667",
+      "claim_type": "sample_size",
+      "raw_text": "n = 31",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 667,
+      "sentence": "They ingested 15 g of specific collagen peptides (n = 30; CP-G), placebo (n = 31; P-G), or whey protein (n = 36; WP-G) daily.",
+      "context_window": "15 g of specific collagen peptides (n = 30; CP-G), placebo (n = 31; P-G), or whey protein (n = 36; WP-G) daily. Changes in fat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-n-698",
+      "claim_type": "sample_size",
+      "raw_text": "n = 36",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 698,
+      "sentence": "They ingested 15 g of specific collagen peptides (n = 30; CP-G), placebo (n = 31; P-G), or whey protein (n = 36; WP-G) daily.",
+      "context_window": "des (n = 30; CP-G), placebo (n = 31; P-G), or whey protein (n = 36; WP-G) daily. Changes in fat free mass and fat mass were de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-894",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 894,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "strength was measured. All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg;",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-946",
+      "claim_type": "mean_sd",
+      "raw_text": "3.42 \u00b1 2.54",
+      "numeric_values": [
+        3.42,
+        2.54
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 946,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "antly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mas",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-953",
+      "claim_type": "unit_value",
+      "raw_text": "2.54 kg",
+      "numeric_values": [
+        2.54
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 953,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-969",
+      "claim_type": "mean_sd",
+      "raw_text": "1.83 \u00b1 2.09",
+      "numeric_values": [
+        1.83,
+        2.09
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 969,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "ved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.1",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-976",
+      "claim_type": "unit_value",
+      "raw_text": "2.09 kg",
+      "numeric_values": [
+        2.09
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 976,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "els in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 k",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-993",
+      "claim_type": "mean_sd",
+      "raw_text": "2.27 \u00b1 2.56",
+      "numeric_values": [
+        2.27,
+        2.56
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 993,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "ass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.1",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-1000",
+      "claim_type": "unit_value",
+      "raw_text": "2.56 kg",
+      "numeric_values": [
+        2.56
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1000,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "P-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 k",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-1030",
+      "claim_type": "mean_sd",
+      "raw_text": "5.28 \u00b1 3.19",
+      "numeric_values": [
+        5.28,
+        3.19
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1030,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": ".83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and le",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-1037",
+      "claim_type": "unit_value",
+      "raw_text": "3.19 kg",
+      "numeric_values": [
+        3.19
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1037,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": ".09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg s",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-1054",
+      "claim_type": "mean_sd",
+      "raw_text": "3.39 \u00b1 3.13",
+      "numeric_values": [
+        3.39,
+        3.13
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1054,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": ".27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-1061",
+      "claim_type": "unit_value",
+      "raw_text": "3.13 kg",
+      "numeric_values": [
+        3.13
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1061,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": ".56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 1",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-1079",
+      "claim_type": "mean_sd",
+      "raw_text": "4.08 \u00b1 2.80",
+      "numeric_values": [
+        4.08,
+        2.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1079,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "(\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-1086",
+      "claim_type": "unit_value",
+      "raw_text": "2.80 kg",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1086,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "= -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N;",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-1121",
+      "claim_type": "mean_sd",
+      "raw_text": "163 \u00b1 189",
+      "numeric_values": [
+        163.0,
+        189.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1121,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N). The main analy",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-1141",
+      "claim_type": "mean_sd",
+      "raw_text": "100 \u00b1 154",
+      "numeric_values": [
+        100.0,
+        154.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1141,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N). The main analysis revealed a stati",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-1162",
+      "claim_type": "mean_sd",
+      "raw_text": "120 \u00b1 233",
+      "numeric_values": [
+        120.0,
+        233.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1162,
+      "sentence": "All participants had significantly ( p < 0.01) improved levels in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg; \u0394P-G = 1.83 \u00b1 2.09 kg; \u0394WP-G = 2.27 \u00b1 2.56 kg), fat mass (\u0394 CP-G = -5.28 \u00b1 3.19 kg; \u0394P-G = -3.39 \u00b1 3.13 kg; \u0394WP-G = -4.08 \u00b1 2.80 kg) and leg strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N).",
+      "context_window": "strength (\u0394CP-G = 163 \u00b1 189 N; \u0394P-G = 100 \u00b1 154 N; \u0394WP-G = 120 \u00b1 233 N). The main analysis revealed a statistically significantl",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-1268",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1268,
+      "sentence": "The main analysis revealed a statistically significantly higher increase in fat free mass ( p = 0.010) and decrease in fat mass ( p = 0.023) in the CP-G compared with the P-G.",
+      "context_window": "tistically significantly higher increase in fat free mass ( p = 0.010) and decrease in fat mass ( p = 0.023) in the CP-G compared",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-1306",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.023",
+      "numeric_values": [
+        0.023
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1306,
+      "sentence": "The main analysis revealed a statistically significantly higher increase in fat free mass ( p = 0.010) and decrease in fat mass ( p = 0.023) in the CP-G compared with the P-G.",
+      "context_window": "se in fat free mass ( p = 0.010) and decrease in fat mass ( p = 0.023) in the CP-G compared with the P-G. The exploratory analysi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-3495",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3495,
+      "sentence": "The aim of the present study was, therefore, to examine the effect of supplementation with 15 g of specific collagen peptides in combination with RT on body composition and muscle strength in order to evaluate if the positive results from a sarcopenic population could be confirmed in a younger male population (30-60 years).",
+      "context_window": "ulation could be confirmed in a younger male population (30-60 years). Regarding the results of the previous study with specifi",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-216",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 216,
+      "sentence": "In total, 120 overweight men (body mass index = 27.5 to 35, fat mass > 25%) were recruited.",
+      "context_window": "20 overweight men (body mass index = 27.5 to 35, fat mass > 25%) were recruited. To examine a homogenous age group consider",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-348",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 348,
+      "sentence": "To examine a homogenous age group considering the muscle metabolism, the participants were aged between 30 and 60 years [ 29 ].",
+      "context_window": "uscle metabolism, the participants were aged between 30 and 60 years [ 29 ]. Based on the data of a previous trial in older men",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-5515",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5515,
+      "sentence": "The placebo consisted of silicon dioxide, and the whey protein was a whey isolate (Volactive \u00ae 90%, Hertfordshire, UK).",
+      "context_window": "oxide, and the whey protein was a whey isolate (Volactive \u00ae 90%, Hertfordshire, UK). Table S1 shows the amino acid composit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-5753",
+      "claim_type": "unit_value",
+      "raw_text": "250 mL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 5753,
+      "sentence": "The powders had to be dissolved in 250 mL of water at room temperature and ingested once daily.",
+      "context_window": "ng a daily dose of 15 g. The powders had to be dissolved in 250 mL of water at room temperature and ingested once daily. Parti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-6485",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 6485,
+      "sentence": "The sessions were performed three times weekly over a period of 12 weeks.",
+      "context_window": "sessions were performed three times weekly over a period of 12 weeks. Training began with a ten minute cardio-training (50 to 10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-6888",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6888,
+      "sentence": "The load was adjusted individually to facilitate the proper execution of the required repetitions as follows: week 1-2: fifteen repetitions with 70% of one repetition maximum (RM), week 3-4: twelve repetitions with 75% of 1 RM, week 5-8: ten repetitions with 80% of 1 RM; week 9-12: eight repetitions with 85% of 1 RM.",
+      "context_window": "repetitions as follows: week 1-2: fifteen repetitions with 70% of one repetition maximum (RM), week 3-4: twelve repetition",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-6958",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6958,
+      "sentence": "The load was adjusted individually to facilitate the proper execution of the required repetitions as follows: week 1-2: fifteen repetitions with 70% of one repetition maximum (RM), week 3-4: twelve repetitions with 75% of 1 RM, week 5-8: ten repetitions with 80% of 1 RM; week 9-12: eight repetitions with 85% of 1 RM.",
+      "context_window": "repetition maximum (RM), week 3-4: twelve repetitions with 75% of 1 RM, week 5-8: ten repetitions with 80% of 1 RM; week 9",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-7002",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7002,
+      "sentence": "The load was adjusted individually to facilitate the proper execution of the required repetitions as follows: week 1-2: fifteen repetitions with 70% of one repetition maximum (RM), week 3-4: twelve repetitions with 75% of 1 RM, week 5-8: ten repetitions with 80% of 1 RM; week 9-12: eight repetitions with 85% of 1 RM.",
+      "context_window": "epetitions with 75% of 1 RM, week 5-8: ten repetitions with 80% of 1 RM; week 9-12: eight repetitions with 85% of 1 RM. If",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-7049",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7049,
+      "sentence": "The load was adjusted individually to facilitate the proper execution of the required repetitions as follows: week 1-2: fifteen repetitions with 70% of one repetition maximum (RM), week 3-4: twelve repetitions with 75% of 1 RM, week 5-8: ten repetitions with 80% of 1 RM; week 9-12: eight repetitions with 85% of 1 RM.",
+      "context_window": "titions with 80% of 1 RM; week 9-12: eight repetitions with 85% of 1 RM. If all sets were performed with the correct techni",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-7148",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7148,
+      "sentence": "If all sets were performed with the correct technique, the load was increased by 5 to 10%.",
+      "context_window": "with the correct technique, the load was increased by 5 to 10%. Researchers noted the participants\u2019 load for each exercise",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-7539",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7539,
+      "sentence": "An effect of the study supplements could be expected if at least 80% of the supplements were taken [ 32 ].",
+      "context_window": "fect of the study supplements could be expected if at least 80% of the supplements were taken [ 32 ]. Compliance was theref",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-7715",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7715,
+      "sentence": "Compliance was therefore monitored by the collection of unused samples, and participants were excluded from the analysis if less than 80% of the supplements were taken.",
+      "context_window": "d participants were excluded from the analysis if less than 80% of the supplements were taken. Compliance for resistance tr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-8084",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8084,
+      "sentence": "All data are presented as mean \u00b1 standard deviation (SD) in tables and text and mean \u00b1 the 95% confidence interval (95% CI) in figures.",
+      "context_window": "\u00b1 standard deviation (SD) in tables and text and mean \u00b1 the 95% confidence interval (95% CI) in figures. SPSS statistics (I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-8109",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8109,
+      "sentence": "All data are presented as mean \u00b1 standard deviation (SD) in tables and text and mean \u00b1 the 95% confidence interval (95% CI) in figures.",
+      "context_window": "in tables and text and mean \u00b1 the 95% confidence interval (95% CI) in figures. SPSS statistics (IBM SPSS Statistics for Wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-1466",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1466,
+      "sentence": "For this parameter, the baseline data were imbalanced with a significantly lower mean waist circumference in the P-G in comparison with the CP-G ( p = 0.011).",
+      "context_window": "aist circumference in the P-G in comparison with the CP-G ( p = 0.011). The current investigation identified a significant impro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-1733",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1733,
+      "sentence": "Moreover, bone mineral content and skeletal muscle mass increased statistically significantly ( p < 0.05) in all groups during the course of the study.",
+      "context_window": "keletal muscle mass increased statistically significantly ( p < 0.05) in all groups during the course of the study. The main an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-1908",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1908,
+      "sentence": "The main analysis showed that the specific collagen peptide supplementation exhibited a statistically significantly ( p = 0.010) greater gain in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg) than placebo (\u0394P-G = 1.83 \u00b1 2.09 kg), as seen in Figure 2 .",
+      "context_window": "e supplementation exhibited a statistically significantly ( p = 0.010) greater gain in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg) tha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-1958",
+      "claim_type": "mean_sd",
+      "raw_text": "3.42 \u00b1 2.54",
+      "numeric_values": [
+        3.42,
+        2.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1958,
+      "sentence": "The main analysis showed that the specific collagen peptide supplementation exhibited a statistically significantly ( p = 0.010) greater gain in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg) than placebo (\u0394P-G = 1.83 \u00b1 2.09 kg), as seen in Figure 2 .",
+      "context_window": "icantly ( p = 0.010) greater gain in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg) than placebo (\u0394P-G = 1.83 \u00b1 2.09 kg), as seen in Figure",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-1965",
+      "claim_type": "unit_value",
+      "raw_text": "2.54 kg",
+      "numeric_values": [
+        2.54
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1965,
+      "sentence": "The main analysis showed that the specific collagen peptide supplementation exhibited a statistically significantly ( p = 0.010) greater gain in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg) than placebo (\u0394P-G = 1.83 \u00b1 2.09 kg), as seen in Figure 2 .",
+      "context_window": "( p = 0.010) greater gain in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg) than placebo (\u0394P-G = 1.83 \u00b1 2.09 kg), as seen in Figure 2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-1995",
+      "claim_type": "mean_sd",
+      "raw_text": "1.83 \u00b1 2.09",
+      "numeric_values": [
+        1.83,
+        2.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1995,
+      "sentence": "The main analysis showed that the specific collagen peptide supplementation exhibited a statistically significantly ( p = 0.010) greater gain in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg) than placebo (\u0394P-G = 1.83 \u00b1 2.09 kg), as seen in Figure 2 .",
+      "context_window": "fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg) than placebo (\u0394P-G = 1.83 \u00b1 2.09 kg), as seen in Figure 2 . The additional increase in fat f",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-2002",
+      "claim_type": "unit_value",
+      "raw_text": "2.09 kg",
+      "numeric_values": [
+        2.09
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2002,
+      "sentence": "The main analysis showed that the specific collagen peptide supplementation exhibited a statistically significantly ( p = 0.010) greater gain in fat free mass (\u0394CP-G = 3.42 \u00b1 2.54 kg) than placebo (\u0394P-G = 1.83 \u00b1 2.09 kg), as seen in Figure 2 .",
+      "context_window": "e mass (\u0394CP-G = 3.42 \u00b1 2.54 kg) than placebo (\u0394P-G = 1.83 \u00b1 2.09 kg), as seen in Figure 2 . The additional increase in fat free",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-2291",
+      "claim_type": "mean_sd",
+      "raw_text": "1.23 \u00b1 1.25",
+      "numeric_values": [
+        1.23,
+        1.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2291,
+      "sentence": "These results are in line with the changes in the estimated skeletal muscle mass (\u0394CP-G = 1.23 \u00b1 1.25 kg; \u0394P-G = 0.514 \u00b1 1.05 kg; p = 0.011; d = 0.621).",
+      "context_window": "the changes in the estimated skeletal muscle mass (\u0394CP-G = 1.23 \u00b1 1.25 kg; \u0394P-G = 0.514 \u00b1 1.05 kg; p = 0.011; d = 0.621). The decr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-2298",
+      "claim_type": "unit_value",
+      "raw_text": "1.25 kg",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2298,
+      "sentence": "These results are in line with the changes in the estimated skeletal muscle mass (\u0394CP-G = 1.23 \u00b1 1.25 kg; \u0394P-G = 0.514 \u00b1 1.05 kg; p = 0.011; d = 0.621).",
+      "context_window": "anges in the estimated skeletal muscle mass (\u0394CP-G = 1.23 \u00b1 1.25 kg; \u0394P-G = 0.514 \u00b1 1.05 kg; p = 0.011; d = 0.621). The decreas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-2314",
+      "claim_type": "mean_sd",
+      "raw_text": "0.514 \u00b1 1.05",
+      "numeric_values": [
+        0.514,
+        1.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2314,
+      "sentence": "These results are in line with the changes in the estimated skeletal muscle mass (\u0394CP-G = 1.23 \u00b1 1.25 kg; \u0394P-G = 0.514 \u00b1 1.05 kg; p = 0.011; d = 0.621).",
+      "context_window": "imated skeletal muscle mass (\u0394CP-G = 1.23 \u00b1 1.25 kg; \u0394P-G = 0.514 \u00b1 1.05 kg; p = 0.011; d = 0.621). The decrease in fat mass was als",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-2322",
+      "claim_type": "unit_value",
+      "raw_text": "1.05 kg",
+      "numeric_values": [
+        1.05
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2322,
+      "sentence": "These results are in line with the changes in the estimated skeletal muscle mass (\u0394CP-G = 1.23 \u00b1 1.25 kg; \u0394P-G = 0.514 \u00b1 1.05 kg; p = 0.011; d = 0.621).",
+      "context_window": "keletal muscle mass (\u0394CP-G = 1.23 \u00b1 1.25 kg; \u0394P-G = 0.514 \u00b1 1.05 kg; p = 0.011; d = 0.621). The decrease in fat mass was also s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-2331",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2331,
+      "sentence": "These results are in line with the changes in the estimated skeletal muscle mass (\u0394CP-G = 1.23 \u00b1 1.25 kg; \u0394P-G = 0.514 \u00b1 1.05 kg; p = 0.011; d = 0.621).",
+      "context_window": "uscle mass (\u0394CP-G = 1.23 \u00b1 1.25 kg; \u0394P-G = 0.514 \u00b1 1.05 kg; p = 0.011; d = 0.621). The decrease in fat mass was also statisticall",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-2425",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.023",
+      "numeric_values": [
+        0.023
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2425,
+      "sentence": "The decrease in fat mass was also statistically significantly higher ( p = 0.023) in CP-G (\u0394CP-G = -5.28 \u00b1 3.19 kg) compared with P-G (\u0394P-G = -3.39 \u00b1 3.13 kg).",
+      "context_window": "e in fat mass was also statistically significantly higher ( p = 0.023) in CP-G (\u0394CP-G = -5.28 \u00b1 3.19 kg) compared with P-G (\u0394P-G",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-2454",
+      "claim_type": "mean_sd",
+      "raw_text": "5.28 \u00b1 3.19",
+      "numeric_values": [
+        5.28,
+        3.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2454,
+      "sentence": "The decrease in fat mass was also statistically significantly higher ( p = 0.023) in CP-G (\u0394CP-G = -5.28 \u00b1 3.19 kg) compared with P-G (\u0394P-G = -3.39 \u00b1 3.13 kg).",
+      "context_window": "tically significantly higher ( p = 0.023) in CP-G (\u0394CP-G = -5.28 \u00b1 3.19 kg) compared with P-G (\u0394P-G = -3.39 \u00b1 3.13 kg). The clinica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-2461",
+      "claim_type": "unit_value",
+      "raw_text": "3.19 kg",
+      "numeric_values": [
+        3.19
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2461,
+      "sentence": "The decrease in fat mass was also statistically significantly higher ( p = 0.023) in CP-G (\u0394CP-G = -5.28 \u00b1 3.19 kg) compared with P-G (\u0394P-G = -3.39 \u00b1 3.13 kg).",
+      "context_window": "significantly higher ( p = 0.023) in CP-G (\u0394CP-G = -5.28 \u00b1 3.19 kg) compared with P-G (\u0394P-G = -3.39 \u00b1 3.13 kg). The clinical r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-2497",
+      "claim_type": "mean_sd",
+      "raw_text": "3.39 \u00b1 3.13",
+      "numeric_values": [
+        3.39,
+        3.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2497,
+      "sentence": "The decrease in fat mass was also statistically significantly higher ( p = 0.023) in CP-G (\u0394CP-G = -5.28 \u00b1 3.19 kg) compared with P-G (\u0394P-G = -3.39 \u00b1 3.13 kg).",
+      "context_window": "n CP-G (\u0394CP-G = -5.28 \u00b1 3.19 kg) compared with P-G (\u0394P-G = -3.39 \u00b1 3.13 kg). The clinical relevance of these results was confirmed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-2504",
+      "claim_type": "unit_value",
+      "raw_text": "3.13 kg",
+      "numeric_values": [
+        3.13
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2504,
+      "sentence": "The decrease in fat mass was also statistically significantly higher ( p = 0.023) in CP-G (\u0394CP-G = -5.28 \u00b1 3.19 kg) compared with P-G (\u0394P-G = -3.39 \u00b1 3.13 kg).",
+      "context_window": "(\u0394CP-G = -5.28 \u00b1 3.19 kg) compared with P-G (\u0394P-G = -3.39 \u00b1 3.13 kg). The clinical relevance of these results was confirmed by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-2637",
+      "claim_type": "unit_value",
+      "raw_text": "16.3 kg",
+      "numeric_values": [
+        16.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2637,
+      "sentence": "Muscle strength increased by 163 N (~16.3 kg) in CP-G and 100 N (~10 kg) in P-G.",
+      "context_window": "fect size (d = 0.579). Muscle strength increased by 163 N (~16.3 kg) in CP-G and 100 N (~10 kg) in P-G. The higher increase in",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-2666",
+      "claim_type": "unit_value",
+      "raw_text": "10 kg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2666,
+      "sentence": "Muscle strength increased by 163 N (~16.3 kg) in CP-G and 100 N (~10 kg) in P-G.",
+      "context_window": "strength increased by 163 N (~16.3 kg) in CP-G and 100 N (~10 kg) in P-G. The higher increase in muscle strength by the addi",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-2963",
+      "claim_type": "mean_sd",
+      "raw_text": "3.41 \u00b1 2.22",
+      "numeric_values": [
+        3.41,
+        2.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2963,
+      "sentence": "The decrease in waist circumference was more pronounced in the CP-G (-3.41 \u00b1 2.22 cm) compared with the P-G (-2.50 \u00b1 4.19 cm), but the group differences were not statistically significant ( p = 0.292; d = 0.270).",
+      "context_window": "se in waist circumference was more pronounced in the CP-G (-3.41 \u00b1 2.22 cm) compared with the P-G (-2.50 \u00b1 4.19 cm), but the group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-2970",
+      "claim_type": "unit_value",
+      "raw_text": "2.22 cm",
+      "numeric_values": [
+        2.22
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 2970,
+      "sentence": "The decrease in waist circumference was more pronounced in the CP-G (-3.41 \u00b1 2.22 cm) compared with the P-G (-2.50 \u00b1 4.19 cm), but the group differences were not statistically significant ( p = 0.292; d = 0.270).",
+      "context_window": "aist circumference was more pronounced in the CP-G (-3.41 \u00b1 2.22 cm) compared with the P-G (-2.50 \u00b1 4.19 cm), but the group dif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-3003",
+      "claim_type": "mean_sd",
+      "raw_text": "2.50 \u00b1 4.19",
+      "numeric_values": [
+        2.5,
+        4.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3003,
+      "sentence": "The decrease in waist circumference was more pronounced in the CP-G (-3.41 \u00b1 2.22 cm) compared with the P-G (-2.50 \u00b1 4.19 cm), but the group differences were not statistically significant ( p = 0.292; d = 0.270).",
+      "context_window": "unced in the CP-G (-3.41 \u00b1 2.22 cm) compared with the P-G (-2.50 \u00b1 4.19 cm), but the group differences were not statistically signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-3010",
+      "claim_type": "unit_value",
+      "raw_text": "4.19 cm",
+      "numeric_values": [
+        4.19
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 3010,
+      "sentence": "The decrease in waist circumference was more pronounced in the CP-G (-3.41 \u00b1 2.22 cm) compared with the P-G (-2.50 \u00b1 4.19 cm), but the group differences were not statistically significant ( p = 0.292; d = 0.270).",
+      "context_window": "n the CP-G (-3.41 \u00b1 2.22 cm) compared with the P-G (-2.50 \u00b1 4.19 cm), but the group differences were not statistically signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-3083",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.292",
+      "numeric_values": [
+        0.292
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3083,
+      "sentence": "The decrease in waist circumference was more pronounced in the CP-G (-3.41 \u00b1 2.22 cm) compared with the P-G (-2.50 \u00b1 4.19 cm), but the group differences were not statistically significant ( p = 0.292; d = 0.270).",
+      "context_window": "the group differences were not statistically significant ( p = 0.292; d = 0.270). An intention to treat analysis was also perfo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-3397",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3397,
+      "sentence": "As shown in Table 3 , the results of the exploratory analysis revealed statistically significant differences between all study groups with respect to fat free mass ( p = 0.033).",
+      "context_window": "es between all study groups with respect to fat free mass ( p = 0.033). No statistically significant differences were observed wh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-3522",
+      "claim_type": "mean_sd",
+      "raw_text": "2.27 \u00b1 2.56",
+      "numeric_values": [
+        2.27,
+        2.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3522,
+      "sentence": "No statistically significant differences were observed when comparing the gain in fat free mass in WP-G (\u0394WP-G = 2.27 \u00b1 2.56 kg) with the results of the CP-G ( p = 0.074) or P-G ( p = 0.442) in the post hoc analysis.",
+      "context_window": "d when comparing the gain in fat free mass in WP-G (\u0394WP-G = 2.27 \u00b1 2.56 kg) with the results of the CP-G ( p = 0.074) or P-G ( p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-3529",
+      "claim_type": "unit_value",
+      "raw_text": "2.56 kg",
+      "numeric_values": [
+        2.56
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3529,
+      "sentence": "No statistically significant differences were observed when comparing the gain in fat free mass in WP-G (\u0394WP-G = 2.27 \u00b1 2.56 kg) with the results of the CP-G ( p = 0.074) or P-G ( p = 0.442) in the post hoc analysis.",
+      "context_window": "comparing the gain in fat free mass in WP-G (\u0394WP-G = 2.27 \u00b1 2.56 kg) with the results of the CP-G ( p = 0.074) or P-G ( p = 0.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-3569",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.074",
+      "numeric_values": [
+        0.074
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3569,
+      "sentence": "No statistically significant differences were observed when comparing the gain in fat free mass in WP-G (\u0394WP-G = 2.27 \u00b1 2.56 kg) with the results of the CP-G ( p = 0.074) or P-G ( p = 0.442) in the post hoc analysis.",
+      "context_window": "P-G (\u0394WP-G = 2.27 \u00b1 2.56 kg) with the results of the CP-G ( p = 0.074) or P-G ( p = 0.442) in the post hoc analysis. In contrast",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-3589",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.442",
+      "numeric_values": [
+        0.442
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3589,
+      "sentence": "No statistically significant differences were observed when comparing the gain in fat free mass in WP-G (\u0394WP-G = 2.27 \u00b1 2.56 kg) with the results of the CP-G ( p = 0.074) or P-G ( p = 0.442) in the post hoc analysis.",
+      "context_window": "2.56 kg) with the results of the CP-G ( p = 0.074) or P-G ( p = 0.442) in the post hoc analysis. In contrast to the collagen pept",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-3815",
+      "claim_type": "mean_sd",
+      "raw_text": "0.728 \u00b1 1.27",
+      "numeric_values": [
+        0.728,
+        1.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3815,
+      "sentence": "Similarly, the changes in estimated skeletal muscle mass in WP-G (\u0394WP-G = 0.728 \u00b1 1.27 kg) were not statistically significantly different from the changes in CP-G ( p = 0.076) or P-G ( p = 0.460) in the post hoc analysis.",
+      "context_window": "changes in estimated skeletal muscle mass in WP-G (\u0394WP-G = 0.728 \u00b1 1.27 kg) were not statistically significantly different from the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-3823",
+      "claim_type": "unit_value",
+      "raw_text": "1.27 kg",
+      "numeric_values": [
+        1.27
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3823,
+      "sentence": "Similarly, the changes in estimated skeletal muscle mass in WP-G (\u0394WP-G = 0.728 \u00b1 1.27 kg) were not statistically significantly different from the changes in CP-G ( p = 0.076) or P-G ( p = 0.460) in the post hoc analysis.",
+      "context_window": "in estimated skeletal muscle mass in WP-G (\u0394WP-G = 0.728 \u00b1 1.27 kg) were not statistically significantly different from the ch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-3906",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.076",
+      "numeric_values": [
+        0.076
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3906,
+      "sentence": "Similarly, the changes in estimated skeletal muscle mass in WP-G (\u0394WP-G = 0.728 \u00b1 1.27 kg) were not statistically significantly different from the changes in CP-G ( p = 0.076) or P-G ( p = 0.460) in the post hoc analysis.",
+      "context_window": "stically significantly different from the changes in CP-G ( p = 0.076) or P-G ( p = 0.460) in the post hoc analysis. Furthermore,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-3926",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.460",
+      "numeric_values": [
+        0.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3926,
+      "sentence": "Similarly, the changes in estimated skeletal muscle mass in WP-G (\u0394WP-G = 0.728 \u00b1 1.27 kg) were not statistically significantly different from the changes in CP-G ( p = 0.076) or P-G ( p = 0.460) in the post hoc analysis.",
+      "context_window": "ly different from the changes in CP-G ( p = 0.076) or P-G ( p = 0.460) in the post hoc analysis. Furthermore, the whey protein su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-4214",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.054",
+      "numeric_values": [
+        0.054
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4214,
+      "sentence": "Concerning fat mass, no statistically significant difference between all of the groups was observed ( p = 0.054).",
+      "context_window": "ificant difference between all of the groups was observed ( p = 0.054). The decrease in fat mass in WP-G (\u0394WP-G = -4.08 \u00b1 2.80 kg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-4269",
+      "claim_type": "mean_sd",
+      "raw_text": "4.08 \u00b1 2.80",
+      "numeric_values": [
+        4.08,
+        2.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4269,
+      "sentence": "The decrease in fat mass in WP-G (\u0394WP-G = -4.08 \u00b1 2.80 kg) did not achieve statistical significance equivalent to the differences between CP-G ( p = 0.111) and P-G ( p = 0.341) in the post hoc analysis.",
+      "context_window": "ed ( p = 0.054). The decrease in fat mass in WP-G (\u0394WP-G = -4.08 \u00b1 2.80 kg) did not achieve statistical significance equivalent to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-4276",
+      "claim_type": "unit_value",
+      "raw_text": "2.80 kg",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4276,
+      "sentence": "The decrease in fat mass in WP-G (\u0394WP-G = -4.08 \u00b1 2.80 kg) did not achieve statistical significance equivalent to the differences between CP-G ( p = 0.111) and P-G ( p = 0.341) in the post hoc analysis.",
+      "context_window": "= 0.054). The decrease in fat mass in WP-G (\u0394WP-G = -4.08 \u00b1 2.80 kg) did not achieve statistical significance equivalent to the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-4371",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.111",
+      "numeric_values": [
+        0.111
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4371,
+      "sentence": "The decrease in fat mass in WP-G (\u0394WP-G = -4.08 \u00b1 2.80 kg) did not achieve statistical significance equivalent to the differences between CP-G ( p = 0.111) and P-G ( p = 0.341) in the post hoc analysis.",
+      "context_window": "l significance equivalent to the differences between CP-G ( p = 0.111) and P-G ( p = 0.341) in the post hoc analysis. Again, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-4392",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.341",
+      "numeric_values": [
+        0.341
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4392,
+      "sentence": "The decrease in fat mass in WP-G (\u0394WP-G = -4.08 \u00b1 2.80 kg) did not achieve statistical significance equivalent to the differences between CP-G ( p = 0.111) and P-G ( p = 0.341) in the post hoc analysis.",
+      "context_window": "lent to the differences between CP-G ( p = 0.111) and P-G ( p = 0.341) in the post hoc analysis. Again, the intake of whey protei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-4670",
+      "claim_type": "unit_value",
+      "raw_text": "12 kg",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4670,
+      "sentence": "Participants following RT in combination with whey protein supplementation improved their muscle strength by 120 N (~12 kg).",
+      "context_window": "n supplementation improved their muscle strength by 120 N (~12 kg). Comparing the changes in muscle strength between WP-G and",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-4743",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.417",
+      "numeric_values": [
+        0.417
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4743,
+      "sentence": "Comparing the changes in muscle strength between WP-G and CP-G ( p = 0.417) or P-G ( p = 0.685), a low effect (d = 0.100) and no statistical differences were detected.",
+      "context_window": "ring the changes in muscle strength between WP-G and CP-G ( p = 0.417) or P-G ( p = 0.685), a low effect (d = 0.100) and no stati",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-4763",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.685",
+      "numeric_values": [
+        0.685
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4763,
+      "sentence": "Comparing the changes in muscle strength between WP-G and CP-G ( p = 0.417) or P-G ( p = 0.685), a low effect (d = 0.100) and no statistical differences were detected.",
+      "context_window": "muscle strength between WP-G and CP-G ( p = 0.417) or P-G ( p = 0.685), a low effect (d = 0.100) and no statistical differences w",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-msd-4896",
+      "claim_type": "mean_sd",
+      "raw_text": "2.51 \u00b1 4.56",
+      "numeric_values": [
+        2.51,
+        4.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4896,
+      "sentence": "The decrease in waist circumference in the WP-G (-2.51 \u00b1 4.56 cm) was not statistically significantly different when compared with CP-G ( p = 0.323) or P-G ( p = 0.996).",
+      "context_window": "detected. The decrease in waist circumference in the WP-G (-2.51 \u00b1 4.56 cm) was not statistically significantly different when comp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-4903",
+      "claim_type": "unit_value",
+      "raw_text": "4.56 cm",
+      "numeric_values": [
+        4.56
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 4903,
+      "sentence": "The decrease in waist circumference in the WP-G (-2.51 \u00b1 4.56 cm) was not statistically significantly different when compared with CP-G ( p = 0.323) or P-G ( p = 0.996).",
+      "context_window": "d. The decrease in waist circumference in the WP-G (-2.51 \u00b1 4.56 cm) was not statistically significantly different when compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-4984",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.323",
+      "numeric_values": [
+        0.323
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4984,
+      "sentence": "The decrease in waist circumference in the WP-G (-2.51 \u00b1 4.56 cm) was not statistically significantly different when compared with CP-G ( p = 0.323) or P-G ( p = 0.996).",
+      "context_window": "istically significantly different when compared with CP-G ( p = 0.323) or P-G ( p = 0.996). Taking the P-G as reference, the addi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-5004",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.996",
+      "numeric_values": [
+        0.996
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5004,
+      "sentence": "The decrease in waist circumference in the WP-G (-2.51 \u00b1 4.56 cm) was not statistically significantly different when compared with CP-G ( p = 0.323) or P-G ( p = 0.996).",
+      "context_window": "tly different when compared with CP-G ( p = 0.323) or P-G ( p = 0.996). Taking the P-G as reference, the additional effect of whe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-5548",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5548,
+      "sentence": "During the course of the study, a statistically significant ( p = 0.043) reduction in energy intake and a tendential decrease in carbohydrate intake ( p = 0.079) could be observed in the P-G.",
+      "context_window": "ring the course of the study, a statistically significant ( p = 0.043) reduction in energy intake and a tendential decrease in ca",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-5637",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.079",
+      "numeric_values": [
+        0.079
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5637,
+      "sentence": "During the course of the study, a statistically significant ( p = 0.043) reduction in energy intake and a tendential decrease in carbohydrate intake ( p = 0.079) could be observed in the P-G.",
+      "context_window": "y intake and a tendential decrease in carbohydrate intake ( p = 0.079) could be observed in the P-G. As a potential consequence,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-5719",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.016",
+      "numeric_values": [
+        0.016
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5719,
+      "sentence": "As a potential consequence, the energy ( p = 0.016) and carbohydrate intake ( p = 0.026) in post-intervention assessment differed significantly between CP-G and P-G.",
+      "context_window": "served in the P-G. As a potential consequence, the energy ( p = 0.016) and carbohydrate intake ( p = 0.026) in post-intervention",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-p-5756",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5756,
+      "sentence": "As a potential consequence, the energy ( p = 0.016) and carbohydrate intake ( p = 0.026) in post-intervention assessment differed significantly between CP-G and P-G.",
+      "context_window": "sequence, the energy ( p = 0.016) and carbohydrate intake ( p = 0.026) in post-intervention assessment differed significantly bet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-756",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 kg",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 756,
+      "sentence": "Current evidence suggests that an average gain in fat free mass of 1.1 kg can be obtained by a training intervention lasting at least 10 weeks [ 5 ].",
+      "context_window": "evidence suggests that an average gain in fat free mass of 1.1 kg can be obtained by a training intervention lasting at least",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-823",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 823,
+      "sentence": "Current evidence suggests that an average gain in fat free mass of 1.1 kg can be obtained by a training intervention lasting at least 10 weeks [ 5 ].",
+      "context_window": "can be obtained by a training intervention lasting at least 10 weeks [ 5 ]. Current data from controlled trials and meta-analyse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-1074",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1074,
+      "sentence": "In meta-analysis, the mean differences of fat free mass between protein supplementation and placebo is reported as 0.3-1.0 kg [ 7 , 34 , 35 ].",
+      "context_window": "ween protein supplementation and placebo is reported as 0.3-1.0 kg [ 7 , 34 , 35 ]. According to a previous review, gains in l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-1273",
+      "claim_type": "unit_value",
+      "raw_text": "5 kg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1273,
+      "sentence": "According to a previous review, gains in lean mass as a result of resistance training combined with protein supplementation in trained and untrained adults ranged from 0.2 to 5 kg [ 36 ].",
+      "context_window": "entation in trained and untrained adults ranged from 0.2 to 5 kg [ 36 ]. These data are congruent with the findings of the p",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-1474",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 kg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1474,
+      "sentence": "Taking the placebo as a reference, the effect of whey protein in this trial was an additional increase in fat free mass of 0.5 kg while the administration of the applied specific collagen peptide resulted in a 1.6 kg greater gain in fat free mass.",
+      "context_window": "n this trial was an additional increase in fat free mass of 0.5 kg while the administration of the applied specific collagen p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-1561",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 kg",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1561,
+      "sentence": "Taking the placebo as a reference, the effect of whey protein in this trial was an additional increase in fat free mass of 0.5 kg while the administration of the applied specific collagen peptide resulted in a 1.6 kg greater gain in fat free mass.",
+      "context_window": "tion of the applied specific collagen peptide resulted in a 1.6 kg greater gain in fat free mass. In a previous investigation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-1780",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 kg",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1780,
+      "sentence": "In a previous investigation, a 12-week RT combined with the supplementation of 15 g of specific collagen peptides showed a positive effect on body composition, which resulted in a 1.3 kg higher gain in fat free mass compared to placebo in elderly sarcopenic men [ 10 ].",
+      "context_window": "a positive effect on body composition, which resulted in a 1.3 kg higher gain in fat free mass compared to placebo in elderly",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-5524",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5524,
+      "sentence": "Other explanations for the higher increase in fat free mass after collagen peptide supplementation include the theory that about 10% of skeletal muscles consist of collagen, which makes a major contribution to the function and biochemical structure of skeletal muscles [ 43 ].",
+      "context_window": "lagen peptide supplementation include the theory that about 10% of skeletal muscles consist of collagen, which makes a majo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-7183",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7183,
+      "sentence": "A meta-analysis by Peterson et al. reported an average increase in strength of 20-30% irrespective of the measuring method used [ 5 ].",
+      "context_window": "erson et al. reported an average increase in strength of 20-30% irrespective of the measuring method used [ 5 ]. These find",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-7744",
+      "claim_type": "unit_value",
+      "raw_text": "5.3 kg",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7744,
+      "sentence": "However, the LMM analysis revealed that participants who had received collagen peptides decreased their fat mass statistically significantly by 5.3 kg compared with the placebo group with a fat mass reduction of 3.4 kg.",
+      "context_window": "des decreased their fat mass statistically significantly by 5.3 kg compared with the placebo group with a fat mass reduction o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-7812",
+      "claim_type": "unit_value",
+      "raw_text": "3.4 kg",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7812,
+      "sentence": "However, the LMM analysis revealed that participants who had received collagen peptides decreased their fat mass statistically significantly by 5.3 kg compared with the placebo group with a fat mass reduction of 3.4 kg.",
+      "context_window": "ompared with the placebo group with a fat mass reduction of 3.4 kg. This finding is consistent with the results of a previous",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-8088",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 kg",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 8088,
+      "sentence": "In this trial, collagen peptide supplementation led to a statistically significant fat mass reduction of 5.5 kg and a decrease of fat mass by 2.9 kg in the placebo group.",
+      "context_window": "on led to a statistically significant fat mass reduction of 5.5 kg and a decrease of fat mass by 2.9 kg in the placebo group.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-8125",
+      "claim_type": "unit_value",
+      "raw_text": "2.9 kg",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 8125,
+      "sentence": "In this trial, collagen peptide supplementation led to a statistically significant fat mass reduction of 5.5 kg and a decrease of fat mass by 2.9 kg in the placebo group.",
+      "context_window": "fat mass reduction of 5.5 kg and a decrease of fat mass by 2.9 kg in the placebo group. The exploratory analysis revealed no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-8609",
+      "claim_type": "percentage",
+      "raw_text": "2.3%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8609,
+      "sentence": "In the present study, a moderate reduction of 2.3% in the waist circumference could be observed in the WP-G and P-G.",
+      "context_window": "g metabolism. In the present study, a moderate reduction of 2.3% in the waist circumference could be observed in the WP-G an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-8808",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8808,
+      "sentence": "In the group of participants that had received the specific collagen peptides the effect was slightly higher with a decrease of 3.1%.",
+      "context_window": "peptides the effect was slightly higher with a decrease of 3.1%. It is assumed that considerably enhanced body fat mass-esp",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-pct-9970",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9970,
+      "sentence": "There is evidence that resistance training three times per week for four months resulted in a 2-4% gain in bone mineral density (~60-120 g bone mass) [ 54 ], which is in line with the current finding.",
+      "context_window": "aining three times per week for four months resulted in a 2-4% gain in bone mineral density (~60-120 g bone mass) [ 54 ],",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-10416",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 kg",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 10416,
+      "sentence": "A daily intake of a further 40 kcal (170 kJ) would result in a weight gain of 1.8 kg (4 lb) in five years [ 55 ].",
+      "context_window": "a further 40 kcal (170 kJ) would result in a weight gain of 1.8 kg (4 lb) in five years [ 55 ]. Furthermore, none of the study",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8125453_the_influence_of_specific_bioactive_collagen_peptides_on_bod-u-10633",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 10633,
+      "sentence": "It must be mentioned that the P-G showed a lower energy intake after 12 weeks.",
+      "context_window": "e mentioned that the P-G showed a lower energy intake after 12 weeks. The significant differences of energy intake between the C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

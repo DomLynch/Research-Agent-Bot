@@ -1,0 +1,2213 @@
+{
+  "paper_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i",
+  "doi": "10.1111/jsr.70195",
+  "extracted_at": "2026-05-05T22:39:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 38,
+    "sample_size": 21,
+    "unit_value": 20,
+    "mean_sd": 19,
+    "p_value": 21,
+    "correlation": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-124",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 124,
+      "sentence": "Problems with initiating and maintaining sleep are among the most common health complaints, with prevalence rates exceeding 50% depending on the survey.",
+      "context_window": "t common health complaints, with prevalence rates exceeding 50% depending on the survey. Preventing the progression to chro",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-556",
+      "claim_type": "sample_size",
+      "raw_text": "N = 191",
+      "numeric_values": [
+        191.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 556,
+      "sentence": "Participants were assigned to an intervention group ( N = 191, ages 20-75) or a waitlist control group ( N = 72, ages 22-77) and assessed at three time points: Pre\u2010intervention (T0), Post\u2010intervention (T1, after 7\u2010week course) and Follow\u2010up (T2, 3 months after course initiation) using the Insomnia Severity Index (ISI), Sleep Hygiene Index (SHI) and sleep diary entries.",
+      "context_window": "toms. Participants were assigned to an intervention group ( N = 191, ages 20-75) or a waitlist control group ( N = 72, ages 22-",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-607",
+      "claim_type": "sample_size",
+      "raw_text": "N = 72",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 607,
+      "sentence": "Participants were assigned to an intervention group ( N = 191, ages 20-75) or a waitlist control group ( N = 72, ages 22-77) and assessed at three time points: Pre\u2010intervention (T0), Post\u2010intervention (T1, after 7\u2010week course) and Follow\u2010up (T2, 3 months after course initiation) using the Insomnia Severity Index (ISI), Sleep Hygiene Index (SHI) and sleep diary entries.",
+      "context_window": "group ( N = 191, ages 20-75) or a waitlist control group ( N = 72, ages 22-77) and assessed at three time points: Pre\u2010interve",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-748",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 748,
+      "sentence": "Participants were assigned to an intervention group ( N = 191, ages 20-75) or a waitlist control group ( N = 72, ages 22-77) and assessed at three time points: Pre\u2010intervention (T0), Post\u2010intervention (T1, after 7\u2010week course) and Follow\u2010up (T2, 3 months after course initiation) using the Insomnia Severity Index (ISI), Sleep Hygiene Index (SHI) and sleep diary entries.",
+      "context_window": "t\u2010intervention (T1, after 7\u2010week course) and Follow\u2010up (T2, 3 months after course initiation) using the Insomnia Severity Index",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-936",
+      "claim_type": "mean_sd",
+      "raw_text": "4.8 \u00b1 3.7",
+      "numeric_values": [
+        4.8,
+        3.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 936,
+      "sentence": "Results showed a significant reduction in insomnia severity (-4.8 \u00b1 3.7 ISI points) and improved sleep hygiene (-3.5 \u00b1 4.5 SHI points) from T0 to T1 ( d = 1.35, and d = 0.69, respectively), with stable effects maintained at the 3\u2010month follow\u2010up.",
+      "context_window": "sults showed a significant reduction in insomnia severity (-4.8 \u00b1 3.7 ISI points) and improved sleep hygiene (-3.5 \u00b1 4.5 SHI poin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-987",
+      "claim_type": "mean_sd",
+      "raw_text": "3.5 \u00b1 4.5",
+      "numeric_values": [
+        3.5,
+        4.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 987,
+      "sentence": "Results showed a significant reduction in insomnia severity (-4.8 \u00b1 3.7 ISI points) and improved sleep hygiene (-3.5 \u00b1 4.5 SHI points) from T0 to T1 ( d = 1.35, and d = 0.69, respectively), with stable effects maintained at the 3\u2010month follow\u2010up.",
+      "context_window": "verity (-4.8 \u00b1 3.7 ISI points) and improved sleep hygiene (-3.5 \u00b1 4.5 SHI points) from T0 to T1 ( d = 1.35, and d = 0.69, respect",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1147",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1147,
+      "sentence": "Remission was achieved by 48% of the intervention group compared to 18% of the control group.",
+      "context_window": "ntained at the 3\u2010month follow\u2010up. Remission was achieved by 48% of the intervention group compared to 18% of the control gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1189",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1189,
+      "sentence": "Remission was achieved by 48% of the intervention group compared to 18% of the control group.",
+      "context_window": "n was achieved by 48% of the intervention group compared to 18% of the control group. Improvements were also observed in sl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1544",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1544,
+      "sentence": "Notably, 68% of users reported sustained improvements in their sleep.",
+      "context_window": "rumination significantly reduced ( d = 0.16-0.59). Notably, 68% of users reported sustained improvements in their sleep. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-146",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 146,
+      "sentence": "According to recent surveys, approximately 43% of adults in Germany reported experiencing sleep disturbances within the past 12 months (Bocksch 2023 ).",
+      "context_window": "intaining sleep. According to recent surveys, approximately 43% of adults in Germany reported experiencing sleep disturbanc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-228",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 228,
+      "sentence": "According to recent surveys, approximately 43% of adults in Germany reported experiencing sleep disturbances within the past 12 months (Bocksch 2023 ).",
+      "context_window": "ny reported experiencing sleep disturbances within the past 12 months (Bocksch 2023 ). Among these individuals, an estimated 5%-1",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-293",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 293,
+      "sentence": "Among these individuals, an estimated 5%-10% develop chronic insomnia (Heidbreder et al.",
+      "context_window": "nths (Bocksch 2023 ). Among these individuals, an estimated 5%-10% develop chronic insomnia (Heidbreder et al. 2025 ), whi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-296",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 296,
+      "sentence": "Among these individuals, an estimated 5%-10% develop chronic insomnia (Heidbreder et al.",
+      "context_window": "s (Bocksch 2023 ). Among these individuals, an estimated 5%-10% develop chronic insomnia (Heidbreder et al. 2025 ), which i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-633",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 633,
+      "sentence": "In the absence of treatment, chronic insomnia tends to persist, with longitudinal studies showing that 70% of patients continue to experience symptoms even 3 years later (Ohayon 2009 ).",
+      "context_window": "ia tends to persist, with longitudinal studies showing that 70% of patients continue to experience symptoms even 3 years la",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-686",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 686,
+      "sentence": "In the absence of treatment, chronic insomnia tends to persist, with longitudinal studies showing that 70% of patients continue to experience symptoms even 3 years later (Ohayon 2009 ).",
+      "context_window": "g that 70% of patients continue to experience symptoms even 3 years later (Ohayon 2009 ). Chronic sleep disturbances not only s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1265",
+      "claim_type": "percentage",
+      "raw_text": "9.4%",
+      "numeric_values": [
+        9.4
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1265,
+      "sentence": "In Germany, the 2017 DAK Health Report estimated that 9.4% of employees were affected by insomnia, with approximately four sick days per 100 insured individuals attributed to sleep disorders (Marschall et al.",
+      "context_window": "25 ). In Germany, the 2017 DAK Health Report estimated that 9.4% of employees were affected by insomnia, with approximately",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-443",
+      "claim_type": "sample_size",
+      "raw_text": "N = 265",
+      "numeric_values": [
+        265.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 443,
+      "sentence": "After completion of screening questionnaires (described in more detail in the section \u2018participants\u2019), participants were randomised using blocked randomisation to one of the two groups: first treatment group was filled ( N = 265), then control group ( N = 70), then treatment group ( N = 25), then control group ( N = 10), then treatment group ( N = 10), then control group ( N = 21).",
+      "context_window": "o one of the two groups: first treatment group was filled ( N = 265), then control group ( N = 70), then treatment group ( N =",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-474",
+      "claim_type": "sample_size",
+      "raw_text": "N = 70",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 474,
+      "sentence": "After completion of screening questionnaires (described in more detail in the section \u2018participants\u2019), participants were randomised using blocked randomisation to one of the two groups: first treatment group was filled ( N = 265), then control group ( N = 70), then treatment group ( N = 25), then control group ( N = 10), then treatment group ( N = 10), then control group ( N = 21).",
+      "context_window": "treatment group was filled ( N = 265), then control group ( N = 70), then treatment group ( N = 25), then control group ( N =",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-506",
+      "claim_type": "sample_size",
+      "raw_text": "N = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 506,
+      "sentence": "After completion of screening questionnaires (described in more detail in the section \u2018participants\u2019), participants were randomised using blocked randomisation to one of the two groups: first treatment group was filled ( N = 265), then control group ( N = 70), then treatment group ( N = 25), then control group ( N = 10), then treatment group ( N = 10), then control group ( N = 21).",
+      "context_window": "265), then control group ( N = 70), then treatment group ( N = 25), then control group ( N = 10), then treatment group ( N =",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-536",
+      "claim_type": "sample_size",
+      "raw_text": "N = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 536,
+      "sentence": "After completion of screening questionnaires (described in more detail in the section \u2018participants\u2019), participants were randomised using blocked randomisation to one of the two groups: first treatment group was filled ( N = 265), then control group ( N = 70), then treatment group ( N = 25), then control group ( N = 10), then treatment group ( N = 10), then control group ( N = 21).",
+      "context_window": "= 70), then treatment group ( N = 25), then control group ( N = 10), then treatment group ( N = 10), then control group ( N =",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-568",
+      "claim_type": "sample_size",
+      "raw_text": "N = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 568,
+      "sentence": "After completion of screening questionnaires (described in more detail in the section \u2018participants\u2019), participants were randomised using blocked randomisation to one of the two groups: first treatment group was filled ( N = 265), then control group ( N = 70), then treatment group ( N = 25), then control group ( N = 10), then treatment group ( N = 10), then control group ( N = 21).",
+      "context_window": "= 25), then control group ( N = 10), then treatment group ( N = 10), then control group ( N = 21). Randomisation was conducted",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-598",
+      "claim_type": "sample_size",
+      "raw_text": "N = 21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 598,
+      "sentence": "After completion of screening questionnaires (described in more detail in the section \u2018participants\u2019), participants were randomised using blocked randomisation to one of the two groups: first treatment group was filled ( N = 265), then control group ( N = 70), then treatment group ( N = 25), then control group ( N = 10), then treatment group ( N = 10), then control group ( N = 21).",
+      "context_window": "= 10), then treatment group ( N = 10), then control group ( N = 21). Randomisation was conducted by an independent person who",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-1259",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1259,
+      "sentence": "The treatment group underwent three measurement points: pre\u2010intervention (T0), post\u2010intervention (T1, after completing the 7\u2010week course) and follow\u2010up (T2, approximately 12 weeks after course initiation).",
+      "context_window": "pleting the 7\u2010week course) and follow\u2010up (T2, approximately 12 weeks after course initiation). The treatment group was instructe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-1402",
+      "claim_type": "unit_value",
+      "raw_text": "100 days",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1402,
+      "sentence": "The treatment group was instructed to complete the app\u2010based CBT\u2010I sleep course between T0 and T1 within 42-100 days.",
+      "context_window": "he app\u2010based CBT\u2010I sleep course between T0 and T1 within 42-100 days. Participants who did not complete the program in the given",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-1571",
+      "claim_type": "unit_value",
+      "raw_text": "39 days",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1571,
+      "sentence": "Participants who did not complete the program in the given time were not included in the analysis (one participant who completed the course prematurely within 39 days was nevertheless included in the analysis).",
+      "context_window": "one participant who completed the course prematurely within 39 days was nevertheless included in the analysis). The waitlist co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-1791",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1791,
+      "sentence": "All participants were instructed to fill out the surveys within 10 days after an e\u2010mail invitation (five participants who responded within 13 days were still included in the analysis).",
+      "context_window": "participants were instructed to fill out the surveys within 10 days after an e\u2010mail invitation (five participants who responded",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-1866",
+      "claim_type": "unit_value",
+      "raw_text": "13 days",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1866,
+      "sentence": "All participants were instructed to fill out the surveys within 10 days after an e\u2010mail invitation (five participants who responded within 13 days were still included in the analysis).",
+      "context_window": "n e\u2010mail invitation (five participants who responded within 13 days were still included in the analysis). For complete particip",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-1989",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1989,
+      "sentence": "For complete participation, participants were compensated with a voucher for 6 months of dCBT\u2010I app access and the opportunity to enter a prize draw for \u20ac50.",
+      "context_window": "icipation, participants were compensated with a voucher for 6 months of dCBT\u2010I app access and the opportunity to enter a prize d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-2348",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2348,
+      "sentence": "With a statistical power of 80% and a significance level of p < 0.05, a minimum sample size of N = 128 (64 participants per group) was calculated.",
+      "context_window": "treatment effects was assumed. With a statistical power of 80% and a significance level of p < 0.05, a minimum sample size",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-2380",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2380,
+      "sentence": "With a statistical power of 80% and a significance level of p < 0.05, a minimum sample size of N = 128 (64 participants per group) was calculated.",
+      "context_window": "With a statistical power of 80% and a significance level of p < 0.05, a minimum sample size of N = 128 (64 participants per grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-2415",
+      "claim_type": "sample_size",
+      "raw_text": "N = 128",
+      "numeric_values": [
+        128.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2415,
+      "sentence": "With a statistical power of 80% and a significance level of p < 0.05, a minimum sample size of N = 128 (64 participants per group) was calculated.",
+      "context_window": "a significance level of p < 0.05, a minimum sample size of N = 128 (64 participants per group) was calculated. In order to ens",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-3376",
+      "claim_type": "unit_value",
+      "raw_text": "7 weeks",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3376,
+      "sentence": "The program was intended to be completed over the course of 7 weeks chronologically, with one module per week.",
+      "context_window": "The program was intended to be completed over the course of 7 weeks chronologically, with one module per week. Modules included",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-6154",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 6154,
+      "sentence": "Inclusion criteria including being at least 18 years of age, having sufficient German language proficiency, and providing informed consent were applied at study allocation and an Insomnia Severity Index (ISI; Bastien et al.",
+      "context_window": "sleep measures. Inclusion criteria including being at least 18 years of age, having sufficient German language proficiency, and",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-6812",
+      "claim_type": "sample_size",
+      "raw_text": "N = 224",
+      "numeric_values": [
+        224.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6812,
+      "sentence": "Of these, N = 224 individuals (77.5%) completed the sleep course, resulting in a drop\u2010out rate of approximately 22.5%.",
+      "context_window": "inally invited, 378 completed the pre\u2010assessment. Of these, N = 224 individuals (77.5%) completed the sleep course, resulting i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-6833",
+      "claim_type": "percentage",
+      "raw_text": "77.5%",
+      "numeric_values": [
+        77.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6833,
+      "sentence": "Of these, N = 224 individuals (77.5%) completed the sleep course, resulting in a drop\u2010out rate of approximately 22.5%.",
+      "context_window": "ompleted the pre\u2010assessment. Of these, N = 224 individuals (77.5%) completed the sleep course, resulting in a drop\u2010out rate o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-6914",
+      "claim_type": "percentage",
+      "raw_text": "22.5%",
+      "numeric_values": [
+        22.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6914,
+      "sentence": "Of these, N = 224 individuals (77.5%) completed the sleep course, resulting in a drop\u2010out rate of approximately 22.5%.",
+      "context_window": "sleep course, resulting in a drop\u2010out rate of approximately 22.5%. Ultimately, a total of N = 263 participants were included",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-6945",
+      "claim_type": "sample_size",
+      "raw_text": "N = 263",
+      "numeric_values": [
+        263.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6945,
+      "sentence": "Ultimately, a total of N = 263 participants were included in the final evaluation ( N = 191 participants in the intervention group and N = 72 in the waitlist control group).",
+      "context_window": "op\u2010out rate of approximately 22.5%. Ultimately, a total of N = 263 participants were included in the final evaluation ( N = 19",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-7006",
+      "claim_type": "sample_size",
+      "raw_text": "N = 191",
+      "numeric_values": [
+        191.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7006,
+      "sentence": "Ultimately, a total of N = 263 participants were included in the final evaluation ( N = 191 participants in the intervention group and N = 72 in the waitlist control group).",
+      "context_window": "= 263 participants were included in the final evaluation ( N = 191 participants in the intervention group and N = 72 in the wa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-7057",
+      "claim_type": "sample_size",
+      "raw_text": "N = 72",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7057,
+      "sentence": "Ultimately, a total of N = 263 participants were included in the final evaluation ( N = 191 participants in the intervention group and N = 72 in the waitlist control group).",
+      "context_window": "uation ( N = 191 participants in the intervention group and N = 72 in the waitlist control group). All of them completed all m",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-7315",
+      "claim_type": "unit_value",
+      "raw_text": "46.95 years",
+      "numeric_values": [
+        46.95
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 7315,
+      "sentence": "The average age was 46.95 years (SD = 11.10; age range: 20-77 years, Table 2 ).",
+      "context_window": "215 women, 47 men and 1 diverse person. The average age was 46.95 years (SD = 11.10; age range: 20-77 years, Table 2 ). The initial",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-7354",
+      "claim_type": "unit_value",
+      "raw_text": "77 years",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 7354,
+      "sentence": "The average age was 46.95 years (SD = 11.10; age range: 20-77 years, Table 2 ).",
+      "context_window": "The average age was 46.95 years (SD = 11.10; age range: 20-77 years, Table 2 ). The initial average insomnia symptoms measured",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-7522",
+      "claim_type": "mean_sd",
+      "raw_text": "11.59 \u00b1 3.80",
+      "numeric_values": [
+        11.59,
+        3.8
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7522,
+      "sentence": "The initial average insomnia symptoms measured via the ISI score at T0 were comparable between the treatment group and the waitlist control group (11.59 \u00b1 3.80 and 12.97 \u00b1 3.17), indicating, on average a level of sub\u2010threshold insomnia in both groups.",
+      "context_window": "between the treatment group and the waitlist control group (11.59 \u00b1 3.80 and 12.97 \u00b1 3.17), indicating, on average a level of sub\u2010th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-7539",
+      "claim_type": "mean_sd",
+      "raw_text": "12.97 \u00b1 3.17",
+      "numeric_values": [
+        12.97,
+        3.17
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7539,
+      "sentence": "The initial average insomnia symptoms measured via the ISI score at T0 were comparable between the treatment group and the waitlist control group (11.59 \u00b1 3.80 and 12.97 \u00b1 3.17), indicating, on average a level of sub\u2010threshold insomnia in both groups.",
+      "context_window": "ment group and the waitlist control group (11.59 \u00b1 3.80 and 12.97 \u00b1 3.17), indicating, on average a level of sub\u2010threshold insomnia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-7727",
+      "claim_type": "mean_sd",
+      "raw_text": "30.05 \u00b1 5.07",
+      "numeric_values": [
+        30.05,
+        5.07
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7727,
+      "sentence": "Sleep Hygiene measured via the SHI was comparable between the treatment and waitlist control group (30.05 \u00b1 5.07 and 29.05 \u00b1 5.69), indicating overall an average level of sleep hygiene in both groups (average SHI = 27-34; Mastin et al.",
+      "context_window": "omparable between the treatment and waitlist control group (30.05 \u00b1 5.07 and 29.05 \u00b1 5.69), indicating overall an average level of s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-7744",
+      "claim_type": "mean_sd",
+      "raw_text": "29.05 \u00b1 5.69",
+      "numeric_values": [
+        29.05,
+        5.69
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7744,
+      "sentence": "Sleep Hygiene measured via the SHI was comparable between the treatment and waitlist control group (30.05 \u00b1 5.07 and 29.05 \u00b1 5.69), indicating overall an average level of sleep hygiene in both groups (average SHI = 27-34; Mastin et al.",
+      "context_window": "the treatment and waitlist control group (30.05 \u00b1 5.07 and 29.05 \u00b1 5.69), indicating overall an average level of sleep hygiene in b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-8007",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8007,
+      "sentence": "Pre\u2010assessment group comparisons between the treatment and the waitlist control group were non\u2010significant for ISI ( t (134.7) = -1.11, p = 0.27), SHI ( t (116.6) = -0.65, p = 0.52), age ( t (118.6) = 1.44, p = 0.15) and gender ( \u03c7 2 (1) = 0.01, p = 0.93).",
+      "context_window": "rol group were non\u2010significant for ISI ( t (134.7) = -1.11, p = 0.27), SHI ( t (116.6) = -0.65, p = 0.52), age ( t (118.6) = 1.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-8043",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.52",
+      "numeric_values": [
+        0.52
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8043,
+      "sentence": "Pre\u2010assessment group comparisons between the treatment and the waitlist control group were non\u2010significant for ISI ( t (134.7) = -1.11, p = 0.27), SHI ( t (116.6) = -0.65, p = 0.52), age ( t (118.6) = 1.44, p = 0.15) and gender ( \u03c7 2 (1) = 0.01, p = 0.93).",
+      "context_window": "SI ( t (134.7) = -1.11, p = 0.27), SHI ( t (116.6) = -0.65, p = 0.52), age ( t (118.6) = 1.44, p = 0.15) and gender ( \u03c7 2 (1) =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-8078",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.15",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8078,
+      "sentence": "Pre\u2010assessment group comparisons between the treatment and the waitlist control group were non\u2010significant for ISI ( t (134.7) = -1.11, p = 0.27), SHI ( t (116.6) = -0.65, p = 0.52), age ( t (118.6) = 1.44, p = 0.15) and gender ( \u03c7 2 (1) = 0.01, p = 0.93).",
+      "context_window": "SHI ( t (116.6) = -0.65, p = 0.52), age ( t (118.6) = 1.44, p = 0.15) and gender ( \u03c7 2 (1) = 0.01, p = 0.93). The sleep diary sh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-8117",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.93",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8117,
+      "sentence": "Pre\u2010assessment group comparisons between the treatment and the waitlist control group were non\u2010significant for ISI ( t (134.7) = -1.11, p = 0.27), SHI ( t (116.6) = -0.65, p = 0.52), age ( t (118.6) = 1.44, p = 0.15) and gender ( \u03c7 2 (1) = 0.01, p = 0.93).",
+      "context_window": "( t (118.6) = 1.44, p = 0.15) and gender ( \u03c7 2 (1) = 0.01, p = 0.93). The sleep diary showed an average SOL of 28.90 \u00b1 33.84, W",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-8169",
+      "claim_type": "mean_sd",
+      "raw_text": "28.90 \u00b1 33.84",
+      "numeric_values": [
+        28.9,
+        33.84
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8169,
+      "sentence": "The sleep diary showed an average SOL of 28.90 \u00b1 33.84, WASO of 24.90 \u00b1 37.93 and TST of 418.01 \u00b1 85.38.",
+      "context_window": "= 0.01, p = 0.93). The sleep diary showed an average SOL of 28.90 \u00b1 33.84, WASO of 24.90 \u00b1 37.93 and TST of 418.01 \u00b1 85.38. Demograp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-8192",
+      "claim_type": "mean_sd",
+      "raw_text": "24.90 \u00b1 37.93",
+      "numeric_values": [
+        24.9,
+        37.93
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8192,
+      "sentence": "The sleep diary showed an average SOL of 28.90 \u00b1 33.84, WASO of 24.90 \u00b1 37.93 and TST of 418.01 \u00b1 85.38.",
+      "context_window": "sleep diary showed an average SOL of 28.90 \u00b1 33.84, WASO of 24.90 \u00b1 37.93 and TST of 418.01 \u00b1 85.38. Demographic characteristics: Ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-8217",
+      "claim_type": "mean_sd",
+      "raw_text": "418.01 \u00b1 85.38",
+      "numeric_values": [
+        418.01,
+        85.38
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8217,
+      "sentence": "The sleep diary showed an average SOL of 28.90 \u00b1 33.84, WASO of 24.90 \u00b1 37.93 and TST of 418.01 \u00b1 85.38.",
+      "context_window": "rage SOL of 28.90 \u00b1 33.84, WASO of 24.90 \u00b1 37.93 and TST of 418.01 \u00b1 85.38. Demographic characteristics: Age, gender ( n , %). Abbre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-8562",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 8562,
+      "sentence": "2001 ), which assessed perceived sleep difficulties over the past 2 weeks.",
+      "context_window": ", which assessed perceived sleep difficulties over the past 2 weeks. The seven items are rated on a five\u2010point Likert scale (0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-12491",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12491,
+      "sentence": "In order to determine the sleep diary parameters, as well as further secondary outcome measures, all sleep variables were automatically checked and adjusted beforehand: A value range was defined for each variable, which limits the probability of false data defined as follows: TST Max and TIB Max = 720 min; SE: 0%-100%, SL Max = 300 min and WASO Max = 360 min.",
+      "context_window": "data defined as follows: TST Max and TIB Max = 720 min; SE: 0%-100%, SL Max = 300 min and WASO Max = 360 min. Afterwards,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-12494",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12494,
+      "sentence": "In order to determine the sleep diary parameters, as well as further secondary outcome measures, all sleep variables were automatically checked and adjusted beforehand: A value range was defined for each variable, which limits the probability of false data defined as follows: TST Max and TIB Max = 720 min; SE: 0%-100%, SL Max = 300 min and WASO Max = 360 min.",
+      "context_window": "a defined as follows: TST Max and TIB Max = 720 min; SE: 0%-100%, SL Max = 300 min and WASO Max = 360 min. Afterwards, for e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-63",
+      "claim_type": "mean_sd",
+      "raw_text": "12.97 \u00b1 3.17",
+      "numeric_values": [
+        12.97,
+        3.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 63,
+      "sentence": "Insomnia symptoms measured via the ISI score improved from T0 (12.97 \u00b1 3.17) to T1 (8.18 \u00b1 3.85) for the treatment group ( t (191) = 17.75, p < 0.001, d = 1.35, Table 3 and Figure 2 ).",
+      "context_window": "omnia symptoms measured via the ISI score improved from T0 (12.97 \u00b1 3.17) to T1 (8.18 \u00b1 3.85) for the treatment group ( t (191) = 17",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-84",
+      "claim_type": "mean_sd",
+      "raw_text": "8.18 \u00b1 3.85",
+      "numeric_values": [
+        8.18,
+        3.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 84,
+      "sentence": "Insomnia symptoms measured via the ISI score improved from T0 (12.97 \u00b1 3.17) to T1 (8.18 \u00b1 3.85) for the treatment group ( t (191) = 17.75, p < 0.001, d = 1.35, Table 3 and Figure 2 ).",
+      "context_window": "ed via the ISI score improved from T0 (12.97 \u00b1 3.17) to T1 (8.18 \u00b1 3.85) for the treatment group ( t (191) = 17.75, p < 0.001, d =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-140",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 140,
+      "sentence": "Insomnia symptoms measured via the ISI score improved from T0 (12.97 \u00b1 3.17) to T1 (8.18 \u00b1 3.85) for the treatment group ( t (191) = 17.75, p < 0.001, d = 1.35, Table 3 and Figure 2 ).",
+      "context_window": "T1 (8.18 \u00b1 3.85) for the treatment group ( t (191) = 17.75, p < 0.001, d = 1.35, Table 3 and Figure 2 ). For the main outcome par",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-260",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 260,
+      "sentence": "For the main outcome parameter ISI score, a mixed model ( \u03c7 2 (3) = 239.1, p < 0.001, R 2 = 0.28) found a significant group \u00d7 time interaction effect, with post hoc comparisons indicating an improvement from T0 to T1 in the treatment group ( t (260) = 18.62, p < 0.001, b = 4.79, SE = 0.26), but no difference in the waitlist control group ( t (260) = 0.50, p = 0.62, b = 2.11, SE = 0.42; see Supporting Information for full model).",
+      "context_window": "tcome parameter ISI score, a mixed model ( \u03c7 2 (3) = 239.1, p < 0.001, R 2 = 0.28) found a significant group \u00d7 time interaction e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-444",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 444,
+      "sentence": "For the main outcome parameter ISI score, a mixed model ( \u03c7 2 (3) = 239.1, p < 0.001, R 2 = 0.28) found a significant group \u00d7 time interaction effect, with post hoc comparisons indicating an improvement from T0 to T1 in the treatment group ( t (260) = 18.62, p < 0.001, b = 4.79, SE = 0.26), but no difference in the waitlist control group ( t (260) = 0.50, p = 0.62, b = 2.11, SE = 0.42; see Supporting Information for full model).",
+      "context_window": "ent from T0 to T1 in the treatment group ( t (260) = 18.62, p < 0.001, b = 4.79, SE = 0.26), but no difference in the waitlist co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-543",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 543,
+      "sentence": "For the main outcome parameter ISI score, a mixed model ( \u03c7 2 (3) = 239.1, p < 0.001, R 2 = 0.28) found a significant group \u00d7 time interaction effect, with post hoc comparisons indicating an improvement from T0 to T1 in the treatment group ( t (260) = 18.62, p < 0.001, b = 4.79, SE = 0.26), but no difference in the waitlist control group ( t (260) = 0.50, p = 0.62, b = 2.11, SE = 0.42; see Supporting Information for full model).",
+      "context_window": "difference in the waitlist control group ( t (260) = 0.50, p = 0.62, b = 2.11, SE = 0.42; see Supporting Information for full m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-641",
+      "claim_type": "mean_sd",
+      "raw_text": "6.59 \u00b1 3.92",
+      "numeric_values": [
+        6.59,
+        3.92
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 641,
+      "sentence": "Greatest improvements (6.59 \u00b1 3.92 points) were found for participants with moderate insomnia ( d = 2.05), while individuals with sub\u2010threshold insomnia also showed a significant reduction in insomnia symptoms ( d = 1.44).",
+      "context_window": "porting Information for full model). Greatest improvements (6.59 \u00b1 3.92 points) were found for participants with moderate insomnia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-860",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 860,
+      "sentence": "At post\u2010treatment, 48% of the treatment group met the criterion for remission (ISI < 8), compared to 18% in the waitlist control group.",
+      "context_window": "uction in insomnia symptoms ( d = 1.44). At post\u2010treatment, 48% of the treatment group met the criterion for remission (ISI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-942",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 942,
+      "sentence": "At post\u2010treatment, 48% of the treatment group met the criterion for remission (ISI < 8), compared to 18% in the waitlist control group.",
+      "context_window": "roup met the criterion for remission (ISI < 8), compared to 18% in the waitlist control group. A Pearson chi\u2010squared test r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-1093",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1093,
+      "sentence": "A Pearson chi\u2010squared test revealed a significant difference between the two groups on remission ( \u03c7 2 (1) = 20.41, p < 0.001).",
+      "context_window": "ence between the two groups on remission ( \u03c7 2 (1) = 20.41, p < 0.001). At the end of the dCBT\u2010I program, 21% of participants in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1139",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1139,
+      "sentence": "At the end of the dCBT\u2010I program, 21% of participants in the intervention group achieved clinically relevant improvements in insomnia symptoms (defined as a reduction in ISI score of more than 8 points), compared to 0% in the waitlist control group.",
+      "context_window": "(1) = 20.41, p < 0.001). At the end of the dCBT\u2010I program, 21% of participants in the intervention group achieved clinical",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1321",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1321,
+      "sentence": "At the end of the dCBT\u2010I program, 21% of participants in the intervention group achieved clinically relevant improvements in insomnia symptoms (defined as a reduction in ISI score of more than 8 points), compared to 0% in the waitlist control group.",
+      "context_window": "reduction in ISI score of more than 8 points), compared to 0% in the waitlist control group. Overview of dCBT\u2010I course o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-1680",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1680,
+      "sentence": "Insomnia severity (ISI) and sleep hygiene (SHI) at pre (T0, before the start of the course), post (T1, after completing the 7\u2010week course) and follow\u2010up (T2, 3 months after the start of the digital CBT\u2010I course).",
+      "context_window": "(T1, after completing the 7\u2010week course) and follow\u2010up (T2, 3 months after the start of the digital CBT\u2010I course). Depicted are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-1986",
+      "claim_type": "mean_sd",
+      "raw_text": "30.0 \u00b1 5.07",
+      "numeric_values": [
+        30.0,
+        5.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1986,
+      "sentence": "Paired t \u2010tests showed significant improvements in sleep hygiene measured via the SHI from T0 (30.0 \u00b1 5.07) to T1 (26.60 \u00b1 4.90) for the treatment group ( t (191) = 10.64, p < 0.001, Cohen's d = 0.69; Table 4 and Figure 2 ).",
+      "context_window": "improvements in sleep hygiene measured via the SHI from T0 (30.0 \u00b1 5.07) to T1 (26.60 \u00b1 4.90) for the treatment group ( t (191) = 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-2006",
+      "claim_type": "mean_sd",
+      "raw_text": "26.60 \u00b1 4.90",
+      "numeric_values": [
+        26.6,
+        4.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2006,
+      "sentence": "Paired t \u2010tests showed significant improvements in sleep hygiene measured via the SHI from T0 (30.0 \u00b1 5.07) to T1 (26.60 \u00b1 4.90) for the treatment group ( t (191) = 10.64, p < 0.001, Cohen's d = 0.69; Table 4 and Figure 2 ).",
+      "context_window": "p hygiene measured via the SHI from T0 (30.0 \u00b1 5.07) to T1 (26.60 \u00b1 4.90) for the treatment group ( t (191) = 10.64, p < 0.001, Cohe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-2063",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2063,
+      "sentence": "Paired t \u2010tests showed significant improvements in sleep hygiene measured via the SHI from T0 (30.0 \u00b1 5.07) to T1 (26.60 \u00b1 4.90) for the treatment group ( t (191) = 10.64, p < 0.001, Cohen's d = 0.69; Table 4 and Figure 2 ).",
+      "context_window": "1 (26.60 \u00b1 4.90) for the treatment group ( t (191) = 10.64, p < 0.001, Cohen's d = 0.69; Table 4 and Figure 2 ). For the main out",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-2188",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2188,
+      "sentence": "For the main outcome parameter SHI, the mixed model ( \u03c7 2 (3) = 106.96, p < 0.001; R 2 = 0.12) found a significant group \u00d7 time interaction effect.",
+      "context_window": "outcome parameter SHI, the mixed model ( \u03c7 2 (3) = 106.96, p < 0.001; R 2 = 0.12) found a significant group \u00d7 time interaction e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-2365",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2365,
+      "sentence": "Post hoc comparisons indicate an improvement from T0 to T1 in the treatment group ( t (260) = 11.24, p < 0.001, b = 3.46, SE = 0.31), but no difference in the waitlist control group ( t (260) = 0.75, p = 0.62, b = 0.38, SE = 0.50; see Supporting Information for full model).",
+      "context_window": "ent from T0 to T1 in the treatment group ( t (260) = 11.24, p < 0.001, b = 3.46, SE = 0.31), but no difference in the waitlist co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-2464",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2464,
+      "sentence": "Post hoc comparisons indicate an improvement from T0 to T1 in the treatment group ( t (260) = 11.24, p < 0.001, b = 3.46, SE = 0.31), but no difference in the waitlist control group ( t (260) = 0.75, p = 0.62, b = 0.38, SE = 0.50; see Supporting Information for full model).",
+      "context_window": "difference in the waitlist control group ( t (260) = 0.75, p = 0.62, b = 0.38, SE = 0.50; see Supporting Information for full m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-3377",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3377,
+      "sentence": "There were no significant differences for irregular wake times, prolonged bedtimes in the morning, or alcohol/tobacco/caffeine use 4 h before sleep (all p < 0.05).",
+      "context_window": "ning, or alcohol/tobacco/caffeine use 4 h before sleep (all p < 0.05). Item\u2010level mixed model analyses revealed that while beha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-4127",
+      "claim_type": "mean_sd",
+      "raw_text": "0.56 \u00b1\n\n1.07",
+      "numeric_values": [
+        0.56,
+        1.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4127,
+      "sentence": "0.56 \u00b1\n\n1.07\n\nA large within effect size between pre\u2010assessment (T0) and follow\u2010up (T2) regarding insomnia severity ( d = 1.40), and moderate effects for sleep hygiene ( d = 0.94) in the treatment group were found.",
+      "context_window": "rs at item level of the Sleep Hygiene Index (SHI; M \u00b1 SD). 0.56 \u00b1 1.07 A large within effect size between pre\u2010assessment (T0) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-4421",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4421,
+      "sentence": "There were significant improvements for both ISI and SHI between post (T1) and 3 months follow\u2010up\u2010assessment (T2) with small effect sizes ( d ISI = 0.21, d SHI = 0.27).",
+      "context_window": "ant improvements for both ISI and SHI between post (T1) and 3 months follow\u2010up\u2010assessment (T2) with small effect sizes ( d ISI =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-5187",
+      "claim_type": "percentage",
+      "raw_text": "4.28%",
+      "numeric_values": [
+        4.28
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5187,
+      "sentence": "The prolonged total sleep time, TST (+11 min) alongside a shortening of the time in bed, TIB (-11 min, n.s.), led to an increased sleep efficiency, SE (-4.28%, d = 0.71).",
+      "context_window": "(-11 min, n.s.), led to an increased sleep efficiency, SE (-4.28%, d = 0.71). The improvements in sleep parameters correspond",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-5677",
+      "claim_type": "sample_size",
+      "raw_text": "N = 80",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5677,
+      "sentence": "Depicted are total sleep time (TST, N = 80), sleep onset latency (SOL, N = 82), wake after sleep onset (WASO, N = 82) and sleep efficiency (SE, N = 82).",
+      "context_window": "of the dCBT\u2010I program. Depicted are total sleep time (TST, N = 80), sleep onset latency (SOL, N = 82), wake after sleep onset",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-5712",
+      "claim_type": "sample_size",
+      "raw_text": "N = 82",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5712,
+      "sentence": "Depicted are total sleep time (TST, N = 80), sleep onset latency (SOL, N = 82), wake after sleep onset (WASO, N = 82) and sleep efficiency (SE, N = 82).",
+      "context_window": "e total sleep time (TST, N = 80), sleep onset latency (SOL, N = 82), wake after sleep onset (WASO, N = 82) and sleep efficienc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-5751",
+      "claim_type": "sample_size",
+      "raw_text": "N = 82",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5751,
+      "sentence": "Depicted are total sleep time (TST, N = 80), sleep onset latency (SOL, N = 82), wake after sleep onset (WASO, N = 82) and sleep efficiency (SE, N = 82).",
+      "context_window": "onset latency (SOL, N = 82), wake after sleep onset (WASO, N = 82) and sleep efficiency (SE, N = 82). Sample size varies per",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-5785",
+      "claim_type": "sample_size",
+      "raw_text": "N = 82",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5785,
+      "sentence": "Depicted are total sleep time (TST, N = 80), sleep onset latency (SOL, N = 82), wake after sleep onset (WASO, N = 82) and sleep efficiency (SE, N = 82).",
+      "context_window": "after sleep onset (WASO, N = 82) and sleep efficiency (SE, N = 82). Sample size varies per comparison due to nights without s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-6250",
+      "claim_type": "sample_size",
+      "raw_text": "N = 224",
+      "numeric_values": [
+        224.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6250,
+      "sentence": "Out of the 378 participants that completed the pre\u2010assessment, N = 224 (77.5%) completed the sleep course, resulting in a drop\u2010out rate of approximately 22.5%.",
+      "context_window": "of the 378 participants that completed the pre\u2010assessment, N = 224 (77.5%) completed the sleep course, resulting in a drop\u2010out",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-6259",
+      "claim_type": "percentage",
+      "raw_text": "77.5%",
+      "numeric_values": [
+        77.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6259,
+      "sentence": "Out of the 378 participants that completed the pre\u2010assessment, N = 224 (77.5%) completed the sleep course, resulting in a drop\u2010out rate of approximately 22.5%.",
+      "context_window": "78 participants that completed the pre\u2010assessment, N = 224 (77.5%) completed the sleep course, resulting in a drop\u2010out rate o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-6340",
+      "claim_type": "percentage",
+      "raw_text": "22.5%",
+      "numeric_values": [
+        22.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6340,
+      "sentence": "Out of the 378 participants that completed the pre\u2010assessment, N = 224 (77.5%) completed the sleep course, resulting in a drop\u2010out rate of approximately 22.5%.",
+      "context_window": "sleep course, resulting in a drop\u2010out rate of approximately 22.5%. On average, users took 69 \u00b1 16 days to complete the dCBT\u2010I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-6370",
+      "claim_type": "mean_sd",
+      "raw_text": "69 \u00b1 16",
+      "numeric_values": [
+        69.0,
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6370,
+      "sentence": "On average, users took 69 \u00b1 16 days to complete the dCBT\u2010I course (time between T0 and T1), during which they used the integrated sleep diary function of the app, on average, 39 \u00b1 23 times.",
+      "context_window": "rop\u2010out rate of approximately 22.5%. On average, users took 69 \u00b1 16 days to complete the dCBT\u2010I course (time between T0 and T1)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-6375",
+      "claim_type": "unit_value",
+      "raw_text": "16 days",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6375,
+      "sentence": "On average, users took 69 \u00b1 16 days to complete the dCBT\u2010I course (time between T0 and T1), during which they used the integrated sleep diary function of the app, on average, 39 \u00b1 23 times.",
+      "context_window": "ut rate of approximately 22.5%. On average, users took 69 \u00b1 16 days to complete the dCBT\u2010I course (time between T0 and T1), dur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-6522",
+      "claim_type": "mean_sd",
+      "raw_text": "39 \u00b1 23",
+      "numeric_values": [
+        39.0,
+        23.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6522,
+      "sentence": "On average, users took 69 \u00b1 16 days to complete the dCBT\u2010I course (time between T0 and T1), during which they used the integrated sleep diary function of the app, on average, 39 \u00b1 23 times.",
+      "context_window": "the integrated sleep diary function of the app, on average, 39 \u00b1 23 times. At follow\u2010up, 68% of participants reported being con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-6551",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6551,
+      "sentence": "At follow\u2010up, 68% of participants reported being confident that the course had sustainably improved their sleep ( n = 129; i.e., Usefulness \u2265 Rather true ).",
+      "context_window": "nction of the app, on average, 39 \u00b1 23 times. At follow\u2010up, 68% of participants reported being confident that the course ha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-6651",
+      "claim_type": "sample_size",
+      "raw_text": "n = 129",
+      "numeric_values": [
+        129.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6651,
+      "sentence": "At follow\u2010up, 68% of participants reported being confident that the course had sustainably improved their sleep ( n = 129; i.e., Usefulness \u2265 Rather true ).",
+      "context_window": "dent that the course had sustainably improved their sleep ( n = 129; i.e., Usefulness \u2265 Rather true ). Additionally, 22.5% repo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-6708",
+      "claim_type": "percentage",
+      "raw_text": "22.5%",
+      "numeric_values": [
+        22.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6708,
+      "sentence": "Additionally, 22.5% reported continued mental engagement with the program content ( n = 43; i.e., Continued Mental Engagement \u2265 Rather true ), and 51.8% reported ongoing sleep documentation after completing the program ( n = 99; i.e., Continued Sleep Documentation \u2265 Rather true ).",
+      "context_window": "( n = 129; i.e., Usefulness \u2265 Rather true ). Additionally, 22.5% reported continued mental engagement with the program conte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-6778",
+      "claim_type": "sample_size",
+      "raw_text": "n = 43",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6778,
+      "sentence": "Additionally, 22.5% reported continued mental engagement with the program content ( n = 43; i.e., Continued Mental Engagement \u2265 Rather true ), and 51.8% reported ongoing sleep documentation after completing the program ( n = 99; i.e., Continued Sleep Documentation \u2265 Rather true ).",
+      "context_window": "rted continued mental engagement with the program content ( n = 43; i.e., Continued Mental Engagement \u2265 Rather true ), and 51.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-6841",
+      "claim_type": "percentage",
+      "raw_text": "51.8%",
+      "numeric_values": [
+        51.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6841,
+      "sentence": "Additionally, 22.5% reported continued mental engagement with the program content ( n = 43; i.e., Continued Mental Engagement \u2265 Rather true ), and 51.8% reported ongoing sleep documentation after completing the program ( n = 99; i.e., Continued Sleep Documentation \u2265 Rather true ).",
+      "context_window": "43; i.e., Continued Mental Engagement \u2265 Rather true ), and 51.8% reported ongoing sleep documentation after completing the p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-n-6915",
+      "claim_type": "sample_size",
+      "raw_text": "n = 99",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6915,
+      "sentence": "Additionally, 22.5% reported continued mental engagement with the program content ( n = 43; i.e., Continued Mental Engagement \u2265 Rather true ), and 51.8% reported ongoing sleep documentation after completing the program ( n = 99; i.e., Continued Sleep Documentation \u2265 Rather true ).",
+      "context_window": "ongoing sleep documentation after completing the program ( n = 99; i.e., Continued Sleep Documentation \u2265 Rather true ). A co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-7226",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7226,
+      "sentence": "Perceived Usefulness significantly correlated with increased Continued Mental Engagement ( r = 0.63, p < 0.001) and Continued Sleep Documentation ( r = 0.29, p < 0.001) after the end of the course.",
+      "context_window": "ated with increased Continued Mental Engagement ( r = 0.63, p < 0.001) and Continued Sleep Documentation ( r = 0.29, p < 0.001) a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-7283",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7283,
+      "sentence": "Perceived Usefulness significantly correlated with increased Continued Mental Engagement ( r = 0.63, p < 0.001) and Continued Sleep Documentation ( r = 0.29, p < 0.001) after the end of the course.",
+      "context_window": "3, p < 0.001) and Continued Sleep Documentation ( r = 0.29, p < 0.001) after the end of the course. A higher rating of Usefulness",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-7444",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7444,
+      "sentence": "A higher rating of Usefulness is also associated with more frequent use of the sleep diary during the dCBT\u2010I ( r = 0.22, p < 0.01) and a shorter duration in which the course was completed ( r = -0.18, p < 0.05).",
+      "context_window": "equent use of the sleep diary during the dCBT\u2010I ( r = 0.22, p < 0.01) and a shorter duration in which the course was completed (",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-7524",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7524,
+      "sentence": "A higher rating of Usefulness is also associated with more frequent use of the sleep diary during the dCBT\u2010I ( r = 0.22, p < 0.01) and a shorter duration in which the course was completed ( r = -0.18, p < 0.05).",
+      "context_window": "ter duration in which the course was completed ( r = -0.18, p < 0.05). In addition, increased Usefulness was correlated with a g",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-7655",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7655,
+      "sentence": "In addition, increased Usefulness was correlated with a greater reduction in the ISI score both for \u0394T0-T1 ( r = -0.23, p < 0.01) and \u0394T1-T2 ( r = -0.33, p < 0.001).",
+      "context_window": "ter reduction in the ISI score both for \u0394T0-T1 ( r = -0.23, p < 0.01) and \u0394T1-T2 ( r = -0.33, p < 0.001).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-p-7689",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7689,
+      "sentence": "In addition, increased Usefulness was correlated with a greater reduction in the ISI score both for \u0394T0-T1 ( r = -0.23, p < 0.01) and \u0394T1-T2 ( r = -0.33, p < 0.001).",
+      "context_window": "h for \u0394T0-T1 ( r = -0.23, p < 0.01) and \u0394T1-T2 ( r = -0.33, p < 0.001).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1016",
+      "claim_type": "percentage",
+      "raw_text": "48.2%",
+      "numeric_values": [
+        48.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1016,
+      "sentence": "Notably, 48.2% of participants in the intervention group (compared to 18% in the control group) achieved remission (ISI < 8), and 21.5% showed a clinically meaningful improvement (\u2265 8\u2010point reduction on the ISI), in contrast to 0% in the control group.",
+      "context_window": "ariae et al. 2016 ; d = 0.39 in Soh et al. 2020 ). Notably, 48.2% of participants in the intervention group (compared to 18%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1077",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1077,
+      "sentence": "Notably, 48.2% of participants in the intervention group (compared to 18% in the control group) achieved remission (ISI < 8), and 21.5% showed a clinically meaningful improvement (\u2265 8\u2010point reduction on the ISI), in contrast to 0% in the control group.",
+      "context_window": "8.2% of participants in the intervention group (compared to 18% in the control group) achieved remission (ISI < 8), and 21.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1137",
+      "claim_type": "percentage",
+      "raw_text": "21.5%",
+      "numeric_values": [
+        21.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1137,
+      "sentence": "Notably, 48.2% of participants in the intervention group (compared to 18% in the control group) achieved remission (ISI < 8), and 21.5% showed a clinically meaningful improvement (\u2265 8\u2010point reduction on the ISI), in contrast to 0% in the control group.",
+      "context_window": "18% in the control group) achieved remission (ISI < 8), and 21.5% showed a clinically meaningful improvement (\u2265 8\u2010point reduc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1235",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1235,
+      "sentence": "Notably, 48.2% of participants in the intervention group (compared to 18% in the control group) achieved remission (ISI < 8), and 21.5% showed a clinically meaningful improvement (\u2265 8\u2010point reduction on the ISI), in contrast to 0% in the control group.",
+      "context_window": "mprovement (\u2265 8\u2010point reduction on the ISI), in contrast to 0% in the control group. The remission rate is comparable to o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1370",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1370,
+      "sentence": "The remission rate is comparable to other digital CBT\u2010I programs (e.g., Ritterband et al. ( 2022 ) reported a 40% remission rate, Maurer et al. ( 2025 ) a 38% remission rate).",
+      "context_window": "CBT\u2010I programs (e.g., Ritterband et al. ( 2022 ) reported a 40% remission rate, Maurer et al. ( 2025 ) a 38% remission rate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1415",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1415,
+      "sentence": "The remission rate is comparable to other digital CBT\u2010I programs (e.g., Ritterband et al. ( 2022 ) reported a 40% remission rate, Maurer et al. ( 2025 ) a 38% remission rate).",
+      "context_window": "2 ) reported a 40% remission rate, Maurer et al. ( 2025 ) a 38% remission rate). The discrepancy between the relatively hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1497",
+      "claim_type": "percentage",
+      "raw_text": "48.2%",
+      "numeric_values": [
+        48.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1497,
+      "sentence": "The discrepancy between the relatively high remission rate (48.2%) and the lower proportion of participants showing a clinically meaningful change (21.5%) can be explained by the low baseline ISI scores in the sample, with a mean ISI of 12.97 at study onset-indicative of subclinical insomnia.",
+      "context_window": "The discrepancy between the relatively high remission rate (48.2%) and the lower proportion of participants showing a clinica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-1585",
+      "claim_type": "percentage",
+      "raw_text": "21.5%",
+      "numeric_values": [
+        21.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1585,
+      "sentence": "The discrepancy between the relatively high remission rate (48.2%) and the lower proportion of participants showing a clinically meaningful change (21.5%) can be explained by the low baseline ISI scores in the sample, with a mean ISI of 12.97 at study onset-indicative of subclinical insomnia.",
+      "context_window": "ion of participants showing a clinically meaningful change (21.5%) can be explained by the low baseline ISI scores in the sam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-2319",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2319,
+      "sentence": "2019 ), and in some cases, up to 10 years post\u2010intervention (Jernel\u00f6v et al.",
+      "context_window": "hs (Van der Zweerde et al. 2019 ), and in some cases, up to 10 years post\u2010intervention (Jernel\u00f6v et al. 2022 ). The SHI allowed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-2680",
+      "claim_type": "mean_sd",
+      "raw_text": "26.9 \u00b1 7.5",
+      "numeric_values": [
+        26.9,
+        7.5
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2680,
+      "sentence": "These improvements are comparable to Pchelina et al. ( 2018 ), who found a reduction from 26.9 \u00b1 7.5 to 23.9 \u00b1 5.7 points pre post the CBT\u2010I intervention.",
+      "context_window": "ble to Pchelina et al. ( 2018 ), who found a reduction from 26.9 \u00b1 7.5 to 23.9 \u00b1 5.7 points pre post the CBT\u2010I intervention. Signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-msd-2694",
+      "claim_type": "mean_sd",
+      "raw_text": "23.9 \u00b1 5.7",
+      "numeric_values": [
+        23.9,
+        5.7
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2694,
+      "sentence": "These improvements are comparable to Pchelina et al. ( 2018 ), who found a reduction from 26.9 \u00b1 7.5 to 23.9 \u00b1 5.7 points pre post the CBT\u2010I intervention.",
+      "context_window": "a et al. ( 2018 ), who found a reduction from 26.9 \u00b1 7.5 to 23.9 \u00b1 5.7 points pre post the CBT\u2010I intervention. Significant improve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-5394",
+      "claim_type": "percentage",
+      "raw_text": "83.7%",
+      "numeric_values": [
+        83.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5394,
+      "sentence": "Significant improvements were observed in nearly all parameters: (1) sleep efficiency (SE) increased from 83.7% to 87.8% (+4.28%, d = 0.71), (2) sleep onset latency (SOL) decreased by 8.4 min ( d = 0.48), (3) wake after sleep onset (WASO) decreased by 5.96 min ( d = 0.38), (4) the number of nocturnal awakenings declined by 0.25 episodes ( d = 0.38) and (5) subjective sleep quality improved by 0.16 points ( d = 0.27).",
+      "context_window": "ly all parameters: (1) sleep efficiency (SE) increased from 83.7% to 87.8% (+4.28%, d = 0.71), (2) sleep onset latency (SOL)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-5403",
+      "claim_type": "percentage",
+      "raw_text": "87.8%",
+      "numeric_values": [
+        87.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5403,
+      "sentence": "Significant improvements were observed in nearly all parameters: (1) sleep efficiency (SE) increased from 83.7% to 87.8% (+4.28%, d = 0.71), (2) sleep onset latency (SOL) decreased by 8.4 min ( d = 0.48), (3) wake after sleep onset (WASO) decreased by 5.96 min ( d = 0.38), (4) the number of nocturnal awakenings declined by 0.25 episodes ( d = 0.38) and (5) subjective sleep quality improved by 0.16 points ( d = 0.27).",
+      "context_window": "rameters: (1) sleep efficiency (SE) increased from 83.7% to 87.8% (+4.28%, d = 0.71), (2) sleep onset latency (SOL) decreased",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-5411",
+      "claim_type": "percentage",
+      "raw_text": "4.28%",
+      "numeric_values": [
+        4.28
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5411,
+      "sentence": "Significant improvements were observed in nearly all parameters: (1) sleep efficiency (SE) increased from 83.7% to 87.8% (+4.28%, d = 0.71), (2) sleep onset latency (SOL) decreased by 8.4 min ( d = 0.48), (3) wake after sleep onset (WASO) decreased by 5.96 min ( d = 0.38), (4) the number of nocturnal awakenings declined by 0.25 episodes ( d = 0.38) and (5) subjective sleep quality improved by 0.16 points ( d = 0.27).",
+      "context_window": ": (1) sleep efficiency (SE) increased from 83.7% to 87.8% (+4.28%, d = 0.71), (2) sleep onset latency (SOL) decreased by 8.4",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-6488",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6488,
+      "sentence": "A total of 68% of participants reported a lasting improvement in their sleep as a result of the course.",
+      "context_window": "s the subjective evaluation of sleep underline. A total of 68% of participants reported a lasting improvement in their sle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-corr-6676",
+      "claim_type": "correlation",
+      "raw_text": "( r = 0.23)",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6676,
+      "sentence": "Perceived sustainability of the effects correlated significantly with reductions in ISI scores ( r = 0.23), continued cognitive engagement with the course content ( r = 0.63) and regular use of the sleep diary.",
+      "context_window": "ects correlated significantly with reductions in ISI scores ( r = 0.23), continued cognitive engagement with the course content ( r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-corr-6744",
+      "claim_type": "correlation",
+      "raw_text": "( r = 0.63)",
+      "numeric_values": [
+        0.63
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6744,
+      "sentence": "Perceived sustainability of the effects correlated significantly with reductions in ISI scores ( r = 0.23), continued cognitive engagement with the course content ( r = 0.63) and regular use of the sleep diary.",
+      "context_window": "23), continued cognitive engagement with the course content ( r = 0.63) and regular use of the sleep diary. These findings highligh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-7063",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7063,
+      "sentence": "Generalisability is limited due to the gender imbalance in the sample (82% female).",
+      "context_window": "ility is limited due to the gender imbalance in the sample (82% female). Moreover, our sample included potentially women un",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-8711",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8711,
+      "sentence": "Long\u2010term follow\u2010up periods of 1-3 years or more would also be valuable.",
+      "context_window": "ant for ongoing adherence. Long\u2010term follow\u2010up periods of 1-3 years or more would also be valuable.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-pct-124",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 124,
+      "sentence": "Generalisability is limited due to the gender imbalance in the sample (82% female).",
+      "context_window": "ility is limited due to the gender imbalance in the sample (82% female). Moreover, our sample included potentially women un",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13003281_digital_app_based_cognitive_behaviour_therapy_cbt_i_course_i-u-1772",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 1772,
+      "sentence": "Long\u2010term follow\u2010up periods of 1-3 years or more would also be valuable.",
+      "context_window": "ant for ongoing adherence. Long\u2010term follow\u2010up periods of 1-3 years or more would also be valuable.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

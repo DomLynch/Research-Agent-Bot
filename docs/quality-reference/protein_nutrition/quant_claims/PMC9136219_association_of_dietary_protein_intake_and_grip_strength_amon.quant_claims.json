@@ -1,0 +1,1040 @@
+{
+  "paper_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon",
+  "doi": "10.3389/fnut.2022.873512",
+  "extracted_at": "2026-05-05T22:35:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 8,
+    "mean_sd": 17,
+    "p_value": 13,
+    "unit_value": 14,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-n-432",
+      "claim_type": "sample_size",
+      "raw_text": "N = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 432,
+      "sentence": "Data from the National Health and Nutrition Examination Survey (NHANES) 2011-2014 for adults 19 + years ( N = 9,214) were used with exclusions for pregnant and lactating women.",
+      "context_window": "amination Survey (NHANES) 2011-2014 for adults 19 + years ( N = 9,214) were used with exclusions for pregnant and lactating w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1031",
+      "claim_type": "mean_sd",
+      "raw_text": "83.6 \u00b1 0.5",
+      "numeric_values": [
+        83.6,
+        0.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "Mean intake of TP among adults aged 19 + years was 83.6 \u00b1 0.5 g/day, and 2/3rd of this was from animal sources (including dairy).",
+      "context_window": "nicity. Mean intake of TP among adults aged 19 + years was 83.6 \u00b1 0.5 g/day, and 2/3rd of this was from animal sources (including",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-1136",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1136,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": "animal sources (including dairy). Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1242",
+      "claim_type": "mean_sd",
+      "raw_text": "1.27 \u00b1 0.19",
+      "numeric_values": [
+        1.27,
+        0.19
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1242,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": "PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1255",
+      "claim_type": "mean_sd",
+      "raw_text": "0.76 \u00b1 0.20",
+      "numeric_values": [
+        0.76,
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1255,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": "ine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1272",
+      "claim_type": "mean_sd",
+      "raw_text": "1.33 \u00b1 0.23",
+      "numeric_values": [
+        1.33,
+        0.23
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1272,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": "lts 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25,",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-1303",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1303,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": ".27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1317",
+      "claim_type": "mean_sd",
+      "raw_text": "1.14 \u00b1 0.27",
+      "numeric_values": [
+        1.14,
+        0.27
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1317,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": "76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively),",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1330",
+      "claim_type": "mean_sd",
+      "raw_text": "1.06 \u00b1 0.25",
+      "numeric_values": [
+        1.06,
+        0.25
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1330,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": "d 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + year",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1343",
+      "claim_type": "mean_sd",
+      "raw_text": "0.77 \u00b1 0.30",
+      "numeric_values": [
+        0.77,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1343,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": ", respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1360",
+      "claim_type": "mean_sd",
+      "raw_text": "1.18 \u00b1 0.27",
+      "numeric_values": [
+        1.18,
+        0.27
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1360,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": "19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.2",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1408",
+      "claim_type": "mean_sd",
+      "raw_text": "0.95 \u00b1 0.26",
+      "numeric_values": [
+        0.95,
+        0.26
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1408,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": "\u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, an",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1421",
+      "claim_type": "mean_sd",
+      "raw_text": "1.08 \u00b1 0.27",
+      "numeric_values": [
+        1.08,
+        0.27
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1421,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": ".18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); howev",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1438",
+      "claim_type": "mean_sd",
+      "raw_text": "1.05 \u00b1 0.27",
+      "numeric_values": [
+        1.05,
+        0.27
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1438,
+      "sentence": "Grip strength increased ( p < 0.05) with increasing quartiles of TP, AP, PP, and leucine among all adults 19 + years (\u03b2 = 1.340.19, 1.27 \u00b1 0.19, 0.76 \u00b1 0.20, and 1.33 \u00b1 0.23, respectively), 19-50 years (\u03b2 = 1.14 \u00b1 0.27, 1.06 \u00b1 0.25, 0.77 \u00b1 0.30, and 1.18 \u00b1 0.27, respectively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase was more pronounced for AP than PP.",
+      "context_window": "ctively), and 51 + years (\u03b2 = 0.95 \u00b1 0.26, 1.08 \u00b1 0.27, and 1.05 \u00b1 0.27, respectively, for TP, AP, and Leu); however, the increase",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-1576",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1576,
+      "sentence": "Grip strength also increased ( p < 0.05) with increasing the number of meal occasions containing > 20 g of dietary protein (\u03b2 = 1.50 \u00b1 0.20, 1.41 \u00b1 0.25, and 0.91 \u00b1 0.37 for 19+, 19-50, and 51 + years, respectively), and significant increases were detected for two meals compared to zero meals.",
+      "context_window": "e pronounced for AP than PP. Grip strength also increased ( p < 0.05) with increasing the number of meal occasions containing >",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1673",
+      "claim_type": "mean_sd",
+      "raw_text": "1.50 \u00b1 0.20",
+      "numeric_values": [
+        1.5,
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1673,
+      "sentence": "Grip strength also increased ( p < 0.05) with increasing the number of meal occasions containing > 20 g of dietary protein (\u03b2 = 1.50 \u00b1 0.20, 1.41 \u00b1 0.25, and 0.91 \u00b1 0.37 for 19+, 19-50, and 51 + years, respectively), and significant increases were detected for two meals compared to zero meals.",
+      "context_window": "of meal occasions containing > 20 g of dietary protein (\u03b2 = 1.50 \u00b1 0.20, 1.41 \u00b1 0.25, and 0.91 \u00b1 0.37 for 19+, 19-50, and 51 + year",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1686",
+      "claim_type": "mean_sd",
+      "raw_text": "1.41 \u00b1 0.25",
+      "numeric_values": [
+        1.41,
+        0.25
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1686,
+      "sentence": "Grip strength also increased ( p < 0.05) with increasing the number of meal occasions containing > 20 g of dietary protein (\u03b2 = 1.50 \u00b1 0.20, 1.41 \u00b1 0.25, and 0.91 \u00b1 0.37 for 19+, 19-50, and 51 + years, respectively), and significant increases were detected for two meals compared to zero meals.",
+      "context_window": "ions containing > 20 g of dietary protein (\u03b2 = 1.50 \u00b1 0.20, 1.41 \u00b1 0.25, and 0.91 \u00b1 0.37 for 19+, 19-50, and 51 + years, respective",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-1703",
+      "claim_type": "mean_sd",
+      "raw_text": "0.91 \u00b1 0.37",
+      "numeric_values": [
+        0.91,
+        0.37
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1703,
+      "sentence": "Grip strength also increased ( p < 0.05) with increasing the number of meal occasions containing > 20 g of dietary protein (\u03b2 = 1.50 \u00b1 0.20, 1.41 \u00b1 0.25, and 0.91 \u00b1 0.37 for 19+, 19-50, and 51 + years, respectively), and significant increases were detected for two meals compared to zero meals.",
+      "context_window": "20 g of dietary protein (\u03b2 = 1.50 \u00b1 0.20, 1.41 \u00b1 0.25, and 0.91 \u00b1 0.37 for 19+, 19-50, and 51 + years, respectively), and signific",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-pct-1021",
+      "claim_type": "percentage",
+      "raw_text": "97.5%",
+      "numeric_values": [
+        97.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1021,
+      "sentence": "It is based on a meta-analysis of nitrogen balance studies ( 3 ) and is meant to serve as the minimum requirement to achieve a neutral nitrogen balance for 97.5% of the adult population.",
+      "context_window": "nimum requirement to achieve a neutral nitrogen balance for 97.5% of the adult population. It is important to note that it is",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-pct-740",
+      "claim_type": "percentage",
+      "raw_text": "130%",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 740,
+      "sentence": "The NHANES 2011-2012 and 2013-2014 cycles included oversampling of subgroups, including some racial/ethnic minorities: (Hispanic, non-Hispanic black, and non-Hispanic Asian); non-Hispanic white at or below 130% of poverty level; and those aged 80 years and older.",
+      "context_window": "ck, and non-Hispanic Asian); non-Hispanic white at or below 130% of poverty level; and those aged 80 years and older. The Na",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-778",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 778,
+      "sentence": "The NHANES 2011-2012 and 2013-2014 cycles included oversampling of subgroups, including some racial/ethnic minorities: (Hispanic, non-Hispanic black, and non-Hispanic Asian); non-Hispanic white at or below 130% of poverty level; and those aged 80 years and older.",
+      "context_window": "nic white at or below 130% of poverty level; and those aged 80 years and older. The National Center for Health Statistics Resear",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-pct-1009",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1009,
+      "sentence": "The overall survey examination response rate was \u223c70%, and additional details of NHANES are available elsewhere ( 42 ).",
+      "context_window": "consent. The overall survey examination response rate was \u223c70%, and additional details of NHANES are available elsewhere (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-pct-4237",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4237,
+      "sentence": "Linear regression analyses were used to assess the association of dietary protein and leucine intake quartiles with combined grip strength; to assess whether consuming \u2265 20 g of dietary protein at meals and snacks, or at one or more meals was related to combined grip strength (the r-square of models in those 19 + y was typically around 65%).",
+      "context_window": "the r-square of models in those 19 + y was typically around 65%). Based on Dietary Reference Intake groups, separate analys",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-n-4365",
+      "claim_type": "sample_size",
+      "raw_text": "N = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4365,
+      "sentence": "Based on Dietary Reference Intake groups, separate analyses were conducted for adults (gender combined) aged 19 + years ( N = 9,214), 19-50 years ( N = 5,091) and 51 + years ( N = 4,123), after adjusting data for age, gender, and ethnicity (Hispanic, White, Black, Asian, and other) and for 19 + years men and women after adjusting for age and ethnicity.",
+      "context_window": "re conducted for adults (gender combined) aged 19 + years ( N = 9,214), 19-50 years ( N = 5,091) and 51 + years ( N = 4,123),",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-4380",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4380,
+      "sentence": "Based on Dietary Reference Intake groups, separate analyses were conducted for adults (gender combined) aged 19 + years ( N = 9,214), 19-50 years ( N = 5,091) and 51 + years ( N = 4,123), after adjusting data for age, gender, and ethnicity (Hispanic, White, Black, Asian, and other) and for 19 + years men and women after adjusting for age and ethnicity.",
+      "context_window": "r adults (gender combined) aged 19 + years ( N = 9,214), 19-50 years ( N = 5,091) and 51 + years ( N = 4,123), after adjusting d",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-n-4391",
+      "claim_type": "sample_size",
+      "raw_text": "N = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4391,
+      "sentence": "Based on Dietary Reference Intake groups, separate analyses were conducted for adults (gender combined) aged 19 + years ( N = 9,214), 19-50 years ( N = 5,091) and 51 + years ( N = 4,123), after adjusting data for age, gender, and ethnicity (Hispanic, White, Black, Asian, and other) and for 19 + years men and women after adjusting for age and ethnicity.",
+      "context_window": "ender combined) aged 19 + years ( N = 9,214), 19-50 years ( N = 5,091) and 51 + years ( N = 4,123), after adjusting data for",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-n-4419",
+      "claim_type": "sample_size",
+      "raw_text": "N = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4419,
+      "sentence": "Based on Dietary Reference Intake groups, separate analyses were conducted for adults (gender combined) aged 19 + years ( N = 9,214), 19-50 years ( N = 5,091) and 51 + years ( N = 4,123), after adjusting data for age, gender, and ethnicity (Hispanic, White, Black, Asian, and other) and for 19 + years men and women after adjusting for age and ethnicity.",
+      "context_window": "ars ( N = 9,214), 19-50 years ( N = 5,091) and 51 + years ( N = 4,123), after adjusting data for age, gender, and ethnicity (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-4753",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4753,
+      "sentence": "Significance for all statistical evaluations was set at p < 0.05.",
+      "context_window": "is. Significance for all statistical evaluations was set at p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-146",
+      "claim_type": "mean_sd",
+      "raw_text": "83.6 \u00b1 0.5",
+      "numeric_values": [
+        83.6,
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 146,
+      "sentence": "Mean intake of TP among adults aged 19 + years was 83.6 \u00b1 0.5 g/day, and 2/3rd of this was from animal sources (including dairy).",
+      "context_window": "groups. Mean intake of TP among adults aged 19 + years was 83.6 \u00b1 0.5 g/day, and 2/3rd of this was from animal sources (including",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-240",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 240,
+      "sentence": "Adults aged 19-50 years consumed about 12 g more TP than older adults aged 51 + years.",
+      "context_window": "s was from animal sources (including dairy). Adults aged 19-50 years consumed about 12 g more TP than older adults aged 51 + yea",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-377",
+      "claim_type": "mean_sd",
+      "raw_text": "98.8 \u00b1 0.7",
+      "numeric_values": [
+        98.8,
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 377,
+      "sentence": "Men aged 19 + years consumed more TP than women aged 19 + years (98.8 \u00b1 0.7 vs.",
+      "context_window": "ged 19 + years consumed more TP than women aged 19 + years (98.8 \u00b1 0.7 vs. 68.5 \u00b1 0.5 g/day total protein). Overall mean and mean",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-msd-392",
+      "claim_type": "mean_sd",
+      "raw_text": "68.5 \u00b1 0.5",
+      "numeric_values": [
+        68.5,
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 392,
+      "sentence": "68.5 \u00b1 0.5 g/day total protein).",
+      "context_window": "consumed more TP than women aged 19 + years (98.8 \u00b1 0.7 vs. 68.5 \u00b1 0.5 g/day total protein). Overall mean and mean intake of quar",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-n-641",
+      "claim_type": "sample_size",
+      "raw_text": "N = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 641,
+      "sentence": "N = 9,954 for age 19 + years, 5,432 for age 19-50 years and 4,522 for age 51 + years.",
+      "context_window": "2011-2014. Dietary animal protein includes dairy protein. N = 9,954 for age 19 + years, 5,432 for age 19-50 years and 4,522",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-688",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 688,
+      "sentence": "N = 9,954 for age 19 + years, 5,432 for age 19-50 years and 4,522 for age 51 + years.",
+      "context_window": "iry protein. N = 9,954 for age 19 + years, 5,432 for age 19-50 years and 4,522 for age 51 + years. Table 2 shows the data for c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-1354",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1354,
+      "sentence": "Similar increases in grip strength with increasing quartiles of protein were obtained when data were separately analyzed for adults aged 19-50 years for TP, AP, and PP, and for adults aged 51 + years for TP and AP.",
+      "context_window": "ained when data were separately analyzed for adults aged 19-50 years for TP, AP, and PP, and for adults aged 51 + years for TP a",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-2605",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2605,
+      "sentence": "Dietary animal protein includes dairy protein. * and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05.",
+      "context_window": "* and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05. N = 9,214 for age 19 + years, 5,091 for age 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-2618",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2618,
+      "sentence": "Dietary animal protein includes dairy protein. * and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05.",
+      "context_window": "cate significant difference from Quartile 1 at p < 0.01 and p < 0.05. N = 9,214 for age 19 + years, 5,091 for age 19-50 years, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-n-2628",
+      "claim_type": "sample_size",
+      "raw_text": "N = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2628,
+      "sentence": "N = 9,214 for age 19 + years, 5,091 for age 19-50 years, and 4,123 for age 51 + years.",
+      "context_window": "ficant difference from Quartile 1 at p < 0.01 and p < 0.05. N = 9,214 for age 19 + years, 5,091 for age 19-50 years, and 4,12",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-2675",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2675,
+      "sentence": "N = 9,214 for age 19 + years, 5,091 for age 19-50 years, and 4,123 for age 51 + years.",
+      "context_window": "nd p < 0.05. N = 9,214 for age 19 + years, 5,091 for age 19-50 years, and 4,123 for age 51 + years. Association of dietary prot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-3088",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3088,
+      "sentence": "Dietary animal protein includes dairy protein. * and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05.",
+      "context_window": "* and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05. N = 4,631 for age 19 + years, 2,606 for age 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-3101",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3101,
+      "sentence": "Dietary animal protein includes dairy protein. * and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05.",
+      "context_window": "cate significant difference from Quartile 1 at p < 0.01 and p < 0.05. N = 4,631 for age 19 + years, 2,606 for age 19-50 years, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-n-3111",
+      "claim_type": "sample_size",
+      "raw_text": "N = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3111,
+      "sentence": "N = 4,631 for age 19 + years, 2,606 for age 19-50 years, and 2,025 for age 51 + years.",
+      "context_window": "ficant difference from Quartile 1 at p < 0.01 and p < 0.05. N = 4,631 for age 19 + years, 2,606 for age 19-50 years, and 2,02",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-3158",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3158,
+      "sentence": "N = 4,631 for age 19 + years, 2,606 for age 19-50 years, and 2,025 for age 51 + years.",
+      "context_window": "nd p < 0.05. N = 4,631 for age 19 + years, 2,606 for age 19-50 years, and 2,025 for age 51 + years. Association of dietary prot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-3581",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3581,
+      "sentence": "Dietary animal protein includes dairy protein. * and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05.",
+      "context_window": "* and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05. N = 4,583 for age 19 + years, 2,485 for age 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-3594",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3594,
+      "sentence": "Dietary animal protein includes dairy protein. * and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05.",
+      "context_window": "cate significant difference from Quartile 1 at p < 0.01 and p < 0.05. N = 4,583 for age 19 + years, 2,485 for age 19-50 years, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-n-3604",
+      "claim_type": "sample_size",
+      "raw_text": "N = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3604,
+      "sentence": "N = 4,583 for age 19 + years, 2,485 for age 19-50 years, and 2,098 for age 51 + years.",
+      "context_window": "ficant difference from Quartile 1 at p < 0.01 and p < 0.05. N = 4,583 for age 19 + years, 2,485 for age 19-50 years, and 2,09",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-3651",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3651,
+      "sentence": "N = 4,583 for age 19 + years, 2,485 for age 19-50 years, and 2,098 for age 51 + years.",
+      "context_window": "nd p < 0.05. N = 4,583 for age 19 + years, 2,485 for age 19-50 years, and 2,098 for age 51 + years. Combined grip strength also",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-4590",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4590,
+      "sentence": "Refer to Table 1 for leucine intake quartiles. * and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05.",
+      "context_window": "* and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05. We also compared combined grip strength amon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-4603",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4603,
+      "sentence": "Refer to Table 1 for leucine intake quartiles. * and # indicate significant difference from Quartile 1 at p < 0.01 and p < 0.05.",
+      "context_window": "cate significant difference from Quartile 1 at p < 0.01 and p < 0.05. We also compared combined grip strength among adults cons",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-5683",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5683,
+      "sentence": "Similarly, adults aged 19-50 years consuming over 20 g dietary protein at lunch, dinner, or snack also had higher combined grip strength than those with below 20 g for those meal occasions.",
+      "context_window": "protein for those meal occasions. Similarly, adults aged 19-50 years consuming over 20 g dietary protein at lunch, dinner, or sn",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-6900",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6900,
+      "sentence": "Data adjusted for age, gender, and ethnicity; and presented as least square mean \u00b1 standard error. * and # indicate significant difference from Zero Meals at p < 0.01 and p < 0.05.",
+      "context_window": "* and # indicate significant difference from Zero Meals at p < 0.01 and p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-p-6913",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6913,
+      "sentence": "Data adjusted for age, gender, and ethnicity; and presented as least square mean \u00b1 standard error. * and # indicate significant difference from Zero Meals at p < 0.01 and p < 0.05.",
+      "context_window": "cate significant difference from Zero Meals at p < 0.01 and p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-3446",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3446,
+      "sentence": "However, when the analysis was stratified by age, AP, but not PP was significantly linked to grip strength in adults aged 51 + years, whereas the relationship of either animal or plant dietary protein was not significant in adults aged less than 60 years in an analysis of Framingham Offspring cohort ( 38 ).",
+      "context_window": "ietary protein was not significant in adults aged less than 60 years in an analysis of Framingham Offspring cohort ( 38 ). In an",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-3995",
+      "claim_type": "unit_value",
+      "raw_text": "51 years",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3995,
+      "sentence": "Additionally, in adults over 51 years of age, the association with grip strength was observed only for AP but not for PP.",
+      "context_window": "for PP) in the present study. Additionally, in adults over 51 years of age, the association with grip strength was observed onl",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-6389",
+      "claim_type": "unit_value",
+      "raw_text": "34 mg/kg/day",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6389,
+      "sentence": "Based on the indicator amino acid oxidation method, leucine requirements of healthy older adults were recently suggested to be more than double the amount current national (estimated average requirement of 34 mg/kg/day) and international (39 mg/kg/day) recommendations ( 62 ).",
+      "context_window": "e amount current national (estimated average requirement of 34 mg/kg/day) and international (39 mg/kg/day) recommendations ( 62 ). T",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9136219_association_of_dietary_protein_intake_and_grip_strength_amon-u-6422",
+      "claim_type": "unit_value",
+      "raw_text": "39 mg/kg/day",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6422,
+      "sentence": "Based on the indicator amino acid oxidation method, leucine requirements of healthy older adults were recently suggested to be more than double the amount current national (estimated average requirement of 34 mg/kg/day) and international (39 mg/kg/day) recommendations ( 62 ).",
+      "context_window": "ted average requirement of 34 mg/kg/day) and international (39 mg/kg/day) recommendations ( 62 ). The other EAAs are also needed to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

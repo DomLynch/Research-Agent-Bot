@@ -1,0 +1,1382 @@
+{
+  "paper_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be",
+  "doi": "10.1038/s41467-021-25701-5",
+  "extracted_at": "2026-05-05T22:22:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 35,
+    "percentage": 27,
+    "p_value": 6,
+    "sample_size": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-463",
+      "claim_type": "unit_value",
+      "raw_text": "18 weeks",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 463,
+      "sentence": "Treatment was for 18 weeks with a primary endpoint of reduction in liver fat content measured by magnetic resonance imaging proton density fat fraction.",
+      "context_window": "ver disease and diabetes ( NCT03656744 ). Treatment was for 18 weeks with a primary endpoint of reduction in liver fat content m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-770",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 770,
+      "sentence": "Thus, subjects receiving 1000 mg twice a day of berberine ursodeoxycholate had significantly greater reduction in liver fat content than in placebo recipients (mean absolute decrease -4.8% vs. -2.0% ( p = 0.011).",
+      "context_window": "pecified primary endpoint was met. Thus, subjects receiving 1000 mg twice a day of berberine ursodeoxycholate had significantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-929",
+      "claim_type": "percentage",
+      "raw_text": "4.8%",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 929,
+      "sentence": "Thus, subjects receiving 1000 mg twice a day of berberine ursodeoxycholate had significantly greater reduction in liver fat content than in placebo recipients (mean absolute decrease -4.8% vs. -2.0% ( p = 0.011).",
+      "context_window": "content than in placebo recipients (mean absolute decrease -4.8% vs. -2.0% ( p = 0.011). Compared to placebo, subjects recei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-939",
+      "claim_type": "percentage",
+      "raw_text": "2.0%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 939,
+      "sentence": "Thus, subjects receiving 1000 mg twice a day of berberine ursodeoxycholate had significantly greater reduction in liver fat content than in placebo recipients (mean absolute decrease -4.8% vs. -2.0% ( p = 0.011).",
+      "context_window": "an in placebo recipients (mean absolute decrease -4.8% vs. -2.0% ( p = 0.011). Compared to placebo, subjects receiving this",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-p-946",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 946,
+      "sentence": "Thus, subjects receiving 1000 mg twice a day of berberine ursodeoxycholate had significantly greater reduction in liver fat content than in placebo recipients (mean absolute decrease -4.8% vs. -2.0% ( p = 0.011).",
+      "context_window": "lacebo recipients (mean absolute decrease -4.8% vs. -2.0% ( p = 0.011). Compared to placebo, subjects receiving this dose also ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-2902",
+      "claim_type": "unit_value",
+      "raw_text": "18 weeks",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2902,
+      "sentence": "The aim of this study was to determine the effect of two different doses of BUDCA on liver fat content (LFC) in patients with diabetes and presumed NASH when administered for 18 weeks.",
+      "context_window": "ients with diabetes and presumed NASH when administered for 18 weeks. Here, we show that the higher dose of BUDCA tested in thi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-2987",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 2987,
+      "sentence": "Here, we show that the higher dose of BUDCA tested in this phase 2 study (1000 mg twice a day) results in a significant reduction in liver fat content after 18 weeks of treatment.",
+      "context_window": "that the higher dose of BUDCA tested in this phase 2 study (1000 mg twice a day) results in a significant reduction in liver fa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-3070",
+      "claim_type": "unit_value",
+      "raw_text": "18 weeks",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3070,
+      "sentence": "Here, we show that the higher dose of BUDCA tested in this phase 2 study (1000 mg twice a day) results in a significant reduction in liver fat content after 18 weeks of treatment.",
+      "context_window": "sults in a significant reduction in liver fat content after 18 weeks of treatment. This improvement in liver fat content is asso",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-120",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 120,
+      "sentence": "Presumed NASH was defined based largely on magnetic resonance imaging derived proton density fat fraction (MRI-PDFF) of 10% or more 16 .",
+      "context_window": "e imaging derived proton density fat fraction (MRI-PDFF) of 10% or more 16 . Additional inclusion criteria further enriched",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-432",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 432,
+      "sentence": "Subjects had to be overweight or obese with a body mass index of 25 kg/m 2 or more.",
+      "context_window": "cts had to be overweight or obese with a body mass index of 25 kg/m 2 or more. Study subjects were recruited at specialized",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-1083",
+      "claim_type": "unit_value",
+      "raw_text": "3.2 mg/dL",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 1083,
+      "sentence": "Although liver biopsies were not done as a part of this study, subjects with clear evidence of cirrhosis were excluded, based upon a platelet count of less than 150,000/mm 3 , serum albumin levels less than 3.2 mg/dL, or current or previous history of clinical hepatic decompensation.",
+      "context_window": "of less than 150,000/mm 3 , serum albumin levels less than 3.2 mg/dL, or current or previous history of clinical hepatic decompe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-1304",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1304,
+      "sentence": "Subjects were permitted to continue their current treatment regimen for diabetes provided they had been on a stable dose regimen for at least 90 days.",
+      "context_window": "rovided they had been on a stable dose regimen for at least 90 days. The treatment duration was for 18 weeks and study subjects",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-1344",
+      "claim_type": "unit_value",
+      "raw_text": "18 weeks",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1344,
+      "sentence": "The treatment duration was for 18 weeks and study subjects were seen at intervals of 2 to 4 weeks throughout.",
+      "context_window": "egimen for at least 90 days. The treatment duration was for 18 weeks and study subjects were seen at intervals of 2 to 4 weeks t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-1403",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1403,
+      "sentence": "The treatment duration was for 18 weeks and study subjects were seen at intervals of 2 to 4 weeks throughout.",
+      "context_window": "18 weeks and study subjects were seen at intervals of 2 to 4 weeks throughout. LFC was measured at baseline and after 18 weeks",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-1462",
+      "claim_type": "unit_value",
+      "raw_text": "18 weeks",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1462,
+      "sentence": "LFC was measured at baseline and after 18 weeks of therapy.",
+      "context_window": "4 weeks throughout. LFC was measured at baseline and after 18 weeks of therapy. In addition, changes in liver chemistry tests,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-n-2828",
+      "claim_type": "sample_size",
+      "raw_text": "n = 89",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2828,
+      "sentence": "The achieved sample size in the efficacy population ( n = 89) was lower than the planned sample size ( n = 105).",
+      "context_window": "tors. The achieved sample size in the efficacy population ( n = 89) was lower than the planned sample size ( n = 105). This 15",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-n-2877",
+      "claim_type": "sample_size",
+      "raw_text": "n = 105",
+      "numeric_values": [
+        105.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2877,
+      "sentence": "The achieved sample size in the efficacy population ( n = 89) was lower than the planned sample size ( n = 105).",
+      "context_window": "pulation ( n = 89) was lower than the planned sample size ( n = 105). This 15% decrease in sample size resulted in standard err",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-2892",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2892,
+      "sentence": "This 15% decrease in sample size resulted in standard errors that were about 9% larger than they would have been with the full sample size.",
+      "context_window": "89) was lower than the planned sample size ( n = 105). This 15% decrease in sample size resulted in standard errors that we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-2964",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2964,
+      "sentence": "This 15% decrease in sample size resulted in standard errors that were about 9% larger than they would have been with the full sample size.",
+      "context_window": "in sample size resulted in standard errors that were about 9% larger than they would have been with the full sample size.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-3085",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3085,
+      "sentence": "It is also of note that the observed treatment effect for 1000 mg (2.8566) was smaller than planned (5%).",
+      "context_window": ". It is also of note that the observed treatment effect for 1000 mg (2.8566) was smaller than planned (5%). However, the observ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-3128",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3128,
+      "sentence": "It is also of note that the observed treatment effect for 1000 mg (2.8566) was smaller than planned (5%).",
+      "context_window": "tment effect for 1000 mg (2.8566) was smaller than planned (5%). However, the observed standard deviations were smaller th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-3461",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3461,
+      "sentence": "Randomisation: Patients with diabetes and presumed NASH were randomised, using permuted blocks without additional stratification, into one of three treatment groups, in a 1:1:1 ratio as follows: (1) BUDCA 500 mg BID (2) 1000 mg BID, and (3) matching placebo.",
+      "context_window": "ee treatment groups, in a 1:1:1 ratio as follows: (1) BUDCA 500 mg BID (2) 1000 mg BID, and (3) matching placebo. Through the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-3476",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3476,
+      "sentence": "Randomisation: Patients with diabetes and presumed NASH were randomised, using permuted blocks without additional stratification, into one of three treatment groups, in a 1:1:1 ratio as follows: (1) BUDCA 500 mg BID (2) 1000 mg BID, and (3) matching placebo.",
+      "context_window": "oups, in a 1:1:1 ratio as follows: (1) BUDCA 500 mg BID (2) 1000 mg BID, and (3) matching placebo. Through the use of a blinded",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-4452",
+      "claim_type": "percentage",
+      "raw_text": "6.3%",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4452,
+      "sentence": "Statistical methods: Assuming a standard deviation of 6.3% for changes from Baseline in LFC, 35 subjects in each treatment group provided 90% power to show a difference of 5 percentage points between any 2 treatment groups at the 5% level of significance.",
+      "context_window": "day. Statistical methods: Assuming a standard deviation of 6.3% for changes from Baseline in LFC, 35 subjects in each treat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-4536",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4536,
+      "sentence": "Statistical methods: Assuming a standard deviation of 6.3% for changes from Baseline in LFC, 35 subjects in each treatment group provided 90% power to show a difference of 5 percentage points between any 2 treatment groups at the 5% level of significance.",
+      "context_window": "seline in LFC, 35 subjects in each treatment group provided 90% power to show a difference of 5 percentage points between a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-4628",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4628,
+      "sentence": "Statistical methods: Assuming a standard deviation of 6.3% for changes from Baseline in LFC, 35 subjects in each treatment group provided 90% power to show a difference of 5 percentage points between any 2 treatment groups at the 5% level of significance.",
+      "context_window": "f 5 percentage points between any 2 treatment groups at the 5% level of significance. To allow for a dropout rate of 10%,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-4685",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4685,
+      "sentence": "To allow for a dropout rate of 10%, up to 39 subjects could have been randomised to each of the 3 treatment groups.",
+      "context_window": "he 5% level of significance. To allow for a dropout rate of 10%, up to 39 subjects could have been randomised to each of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-5292",
+      "claim_type": "unit_value",
+      "raw_text": "80 days",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5292,
+      "sentence": "The Efficacy Set is a subset of the Modified Efficacy Set consisting of subjects that completed at least 80 days of study drug dosing and had a week 18 or Early Termination (ET) visit MRI-PDFF assessment.",
+      "context_window": "Efficacy Set consisting of subjects that completed at least 80 days of study drug dosing and had a week 18 or Early Termination",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-159",
+      "claim_type": "unit_value",
+      "raw_text": "56 years",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 159,
+      "sentence": "Of the remaining 100 subjects, their mean age was 56 years (range 26 to 75) and they included 72 females.",
+      "context_window": "Fig. 1 ). Of the remaining 100 subjects, their mean age was 56 years (range 26 to 75) and they included 72 females. Most of the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-237",
+      "claim_type": "percentage",
+      "raw_text": "91%",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 237,
+      "sentence": "Most of the subjects (91%) were white and 38% were of Hispanic ethnicity.",
+      "context_window": "to 75) and they included 72 females. Most of the subjects (91%) were white and 38% were of Hispanic ethnicity. Although al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-257",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 257,
+      "sentence": "Most of the subjects (91%) were white and 38% were of Hispanic ethnicity.",
+      "context_window": "luded 72 females. Most of the subjects (91%) were white and 38% were of Hispanic ethnicity. Although all patients had a his",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-385",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 385,
+      "sentence": "Although all patients had a history of diabetes, the mean HbA1c level of those who enrolled was 7.1% (range 5.1 to 9.4%).",
+      "context_window": "of diabetes, the mean HbA1c level of those who enrolled was 7.1% (range 5.1 to 9.4%). Of note, 94 of 100 subjects were takin",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-404",
+      "claim_type": "percentage",
+      "raw_text": "9.4%",
+      "numeric_values": [
+        9.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 404,
+      "sentence": "Although all patients had a history of diabetes, the mean HbA1c level of those who enrolled was 7.1% (range 5.1 to 9.4%).",
+      "context_window": "an HbA1c level of those who enrolled was 7.1% (range 5.1 to 9.4%). Of note, 94 of 100 subjects were taking medication(s) for",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-734",
+      "claim_type": "percentage",
+      "raw_text": "19.4%",
+      "numeric_values": [
+        19.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 734,
+      "sentence": "Findings from multiparametric MRI showed that the mean liver fat content of the subjects was 19.4% at baseline (range 9.0 to 43.5%) and the mean corrected T1 was 940 (range 802 to 1412).",
+      "context_window": "showed that the mean liver fat content of the subjects was 19.4% at baseline (range 9.0 to 43.5%) and the mean corrected T1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-766",
+      "claim_type": "percentage",
+      "raw_text": "43.5%",
+      "numeric_values": [
+        43.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 766,
+      "sentence": "Findings from multiparametric MRI showed that the mean liver fat content of the subjects was 19.4% at baseline (range 9.0 to 43.5%) and the mean corrected T1 was 940 (range 802 to 1412).",
+      "context_window": "content of the subjects was 19.4% at baseline (range 9.0 to 43.5%) and the mean corrected T1 was 940 (range 802 to 1412). The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-1403",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1403,
+      "sentence": "In general, the best treatment responses were seen with the higher dose of BUDCA (1000 mg BID).",
+      "context_window": "reatment responses were seen with the higher dose of BUDCA (1000 mg BID). On average, absolute LFC decreased by 4.8% in this hi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-1455",
+      "claim_type": "percentage",
+      "raw_text": "4.8%",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1455,
+      "sentence": "On average, absolute LFC decreased by 4.8% in this high dose group, compared to only 2.0% with placebo ( p = 0.011).",
+      "context_window": "BUDCA (1000 mg BID). On average, absolute LFC decreased by 4.8% in this high dose group, compared to only 2.0% with placebo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-1502",
+      "claim_type": "percentage",
+      "raw_text": "2.0%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1502,
+      "sentence": "On average, absolute LFC decreased by 4.8% in this high dose group, compared to only 2.0% with placebo ( p = 0.011).",
+      "context_window": "decreased by 4.8% in this high dose group, compared to only 2.0% with placebo ( p = 0.011). The relative decrease in LFC in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-p-1522",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1522,
+      "sentence": "On average, absolute LFC decreased by 4.8% in this high dose group, compared to only 2.0% with placebo ( p = 0.011).",
+      "context_window": "this high dose group, compared to only 2.0% with placebo ( p = 0.011). The relative decrease in LFC in this group was 24.1%, com",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-1581",
+      "claim_type": "percentage",
+      "raw_text": "24.1%",
+      "numeric_values": [
+        24.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1581,
+      "sentence": "The relative decrease in LFC in this group was 24.1%, compared to 8.3% with placebo ( p = 0.016).",
+      "context_window": "p = 0.011). The relative decrease in LFC in this group was 24.1%, compared to 8.3% with placebo ( p = 0.016). While there wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-1600",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1600,
+      "sentence": "The relative decrease in LFC in this group was 24.1%, compared to 8.3% with placebo ( p = 0.016).",
+      "context_window": "lative decrease in LFC in this group was 24.1%, compared to 8.3% with placebo ( p = 0.016). While there was an apparent dose",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-p-1620",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.016",
+      "numeric_values": [
+        0.016
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1620,
+      "sentence": "The relative decrease in LFC in this group was 24.1%, compared to 8.3% with placebo ( p = 0.016).",
+      "context_window": "FC in this group was 24.1%, compared to 8.3% with placebo ( p = 0.016). While there was an apparent dose-response with regard to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-1725",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1725,
+      "sentence": "While there was an apparent dose-response with regard to the proportion achieving at least a 5% absolute decrease or a 30% relative decrease in LFC, these changes were not statistically significant.",
+      "context_window": "response with regard to the proportion achieving at least a 5% absolute decrease or a 30% relative decrease in LFC, these",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-1751",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1751,
+      "sentence": "While there was an apparent dose-response with regard to the proportion achieving at least a 5% absolute decrease or a 30% relative decrease in LFC, these changes were not statistically significant.",
+      "context_window": "e proportion achieving at least a 5% absolute decrease or a 30% relative decrease in LFC, these changes were not statistica",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-2306",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2306,
+      "sentence": "Tests are 1000 mg or 500 mg vs. placebo.\n\na A placebo subject had data available at Week 18/ET but did not have baseline data, so they were not included in the absolute and relative change from baseline analyses in the Efficacy Set.\n\n*Primary endpoint results for efficacy set.\n\n**Modified efficacy set.\n\n***Safety set.",
+      "context_window": "ine value of associated parameters as covariates. Tests are 1000 mg or 500 mg vs. placebo. a A placebo subject had data availa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-2317",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2317,
+      "sentence": "Tests are 1000 mg or 500 mg vs. placebo.\n\na A placebo subject had data available at Week 18/ET but did not have baseline data, so they were not included in the absolute and relative change from baseline analyses in the Efficacy Set.\n\n*Primary endpoint results for efficacy set.\n\n**Modified efficacy set.\n\n***Safety set.",
+      "context_window": "f associated parameters as covariates. Tests are 1000 mg or 500 mg vs. placebo. a A placebo subject had data available at Wee",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-2737",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2737,
+      "sentence": "Mean HbA1c levels decreased by 0.6% in the 1000 mg BID group and 0.3% in the 500 mg BID group compared to an increase of 0.1% in the placebo group.",
+      "context_window": "control with BUDCA therapy. Mean HbA1c levels decreased by 0.6% in the 1000 mg BID group and 0.3% in the 500 mg BID group c",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-2749",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2749,
+      "sentence": "Mean HbA1c levels decreased by 0.6% in the 1000 mg BID group and 0.3% in the 500 mg BID group compared to an increase of 0.1% in the placebo group.",
+      "context_window": "h BUDCA therapy. Mean HbA1c levels decreased by 0.6% in the 1000 mg BID group and 0.3% in the 500 mg BID group compared to an i",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-2771",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2771,
+      "sentence": "Mean HbA1c levels decreased by 0.6% in the 1000 mg BID group and 0.3% in the 500 mg BID group compared to an increase of 0.1% in the placebo group.",
+      "context_window": "HbA1c levels decreased by 0.6% in the 1000 mg BID group and 0.3% in the 500 mg BID group compared to an increase of 0.1% in",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-2783",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2783,
+      "sentence": "Mean HbA1c levels decreased by 0.6% in the 1000 mg BID group and 0.3% in the 500 mg BID group compared to an increase of 0.1% in the placebo group.",
+      "context_window": "decreased by 0.6% in the 1000 mg BID group and 0.3% in the 500 mg BID group compared to an increase of 0.1% in the placebo gr",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-2827",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2827,
+      "sentence": "Mean HbA1c levels decreased by 0.6% in the 1000 mg BID group and 0.3% in the 500 mg BID group compared to an increase of 0.1% in the placebo group.",
+      "context_window": "and 0.3% in the 500 mg BID group compared to an increase of 0.1% in the placebo group. No significant changes were noted in",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-3067",
+      "claim_type": "unit_value",
+      "raw_text": "16 mg/dL",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 3067,
+      "sentence": "Levels of LDL cholesterol decreased by an average of 16 mg/dL in the high dose group ( p = 0.072) and triglyceride levels decreased by 41 mg/dL in the 500 mg BID dose group ( p = 0.04), although not with the higher dose.",
+      "context_window": "evels. Levels of LDL cholesterol decreased by an average of 16 mg/dL in the high dose group ( p = 0.072) and triglyceride levels",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-p-3101",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.072",
+      "numeric_values": [
+        0.072
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3101,
+      "sentence": "Levels of LDL cholesterol decreased by an average of 16 mg/dL in the high dose group ( p = 0.072) and triglyceride levels decreased by 41 mg/dL in the 500 mg BID dose group ( p = 0.04), although not with the higher dose.",
+      "context_window": "ecreased by an average of 16 mg/dL in the high dose group ( p = 0.072) and triglyceride levels decreased by 41 mg/dL in the 500 m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-3149",
+      "claim_type": "unit_value",
+      "raw_text": "41 mg/dL",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 3149,
+      "sentence": "Levels of LDL cholesterol decreased by an average of 16 mg/dL in the high dose group ( p = 0.072) and triglyceride levels decreased by 41 mg/dL in the 500 mg BID dose group ( p = 0.04), although not with the higher dose.",
+      "context_window": "ose group ( p = 0.072) and triglyceride levels decreased by 41 mg/dL in the 500 mg BID dose group ( p = 0.04), although not with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-3165",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3165,
+      "sentence": "Levels of LDL cholesterol decreased by an average of 16 mg/dL in the high dose group ( p = 0.072) and triglyceride levels decreased by 41 mg/dL in the 500 mg BID dose group ( p = 0.04), although not with the higher dose.",
+      "context_window": "0.072) and triglyceride levels decreased by 41 mg/dL in the 500 mg BID dose group ( p = 0.04), although not with the higher do",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-p-3189",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3189,
+      "sentence": "Levels of LDL cholesterol decreased by an average of 16 mg/dL in the high dose group ( p = 0.072) and triglyceride levels decreased by 41 mg/dL in the 500 mg BID dose group ( p = 0.04), although not with the higher dose.",
+      "context_window": "levels decreased by 41 mg/dL in the 500 mg BID dose group ( p = 0.04), although not with the higher dose. There was no significa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-3385",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 kg",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3385,
+      "sentence": "Finally, subjects receiving the higher dose lost an average of 3.5 kg in weight ( p = 0.012).",
+      "context_window": "ally, subjects receiving the higher dose lost an average of 3.5 kg in weight ( p = 0.012). Figure 2 shows the decreases in liv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-p-3404",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3404,
+      "sentence": "Finally, subjects receiving the higher dose lost an average of 3.5 kg in weight ( p = 0.012).",
+      "context_window": "iving the higher dose lost an average of 3.5 kg in weight ( p = 0.012). Figure 2 shows the decreases in liver fat content, HbA1c,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-n-3547",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3547,
+      "sentence": "Liver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving berberine ursodeoxycholate (BUDCA) 1000 mg twice a day (BID), 500 mg BID or placebo, respectively.",
+      "context_window": "ht in individual subjects. Liver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) i",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-n-3560",
+      "claim_type": "sample_size",
+      "raw_text": "n = 31",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3560,
+      "sentence": "Liver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving berberine ursodeoxycholate (BUDCA) 1000 mg twice a day (BID), 500 mg BID or placebo, respectively.",
+      "context_window": "ual subjects. Liver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-n-3576",
+      "claim_type": "sample_size",
+      "raw_text": "n = 33",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3576,
+      "sentence": "Liver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving berberine ursodeoxycholate (BUDCA) 1000 mg twice a day (BID), 500 mg BID or placebo, respectively.",
+      "context_window": "iver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n =",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-n-3626",
+      "claim_type": "sample_size",
+      "raw_text": "n = 26",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3626,
+      "sentence": "Liver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving berberine ursodeoxycholate (BUDCA) 1000 mg twice a day (BID), 500 mg BID or placebo, respectively.",
+      "context_window": "] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving be",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-n-3639",
+      "claim_type": "sample_size",
+      "raw_text": "n = 29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3639,
+      "sentence": "Liver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving berberine ursodeoxycholate (BUDCA) 1000 mg twice a day (BID), 500 mg BID or placebo, respectively.",
+      "context_window": "33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving berberine ursod",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-n-3655",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3655,
+      "sentence": "Liver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving berberine ursodeoxycholate (BUDCA) 1000 mg twice a day (BID), 500 mg BID or placebo, respectively.",
+      "context_window": "obin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving berberine ursodeoxycholate (BUD",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-3725",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3725,
+      "sentence": "Liver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving berberine ursodeoxycholate (BUDCA) 1000 mg twice a day (BID), 500 mg BID or placebo, respectively.",
+      "context_window": "among subjects receiving berberine ursodeoxycholate (BUDCA) 1000 mg twice a day (BID), 500 mg BID or placebo, respectively. Ch",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-3752",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3752,
+      "sentence": "Liver fat content in panels a [ n = 30], b [ n = 31] and c [ n = 33], and hemoglobin A1c (HbA1C) in panels d [ n = 26], e [ n = 29] and f [ n = 32]), among subjects receiving berberine ursodeoxycholate (BUDCA) 1000 mg twice a day (BID), 500 mg BID or placebo, respectively.",
+      "context_window": "rberine ursodeoxycholate (BUDCA) 1000 mg twice a day (BID), 500 mg BID or placebo, respectively. Changes in serum levels of b",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-4017",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4017,
+      "sentence": "Supplementary Table 3 shows these changes from baseline in the highest dose group (1000 mg BID).",
+      "context_window": "hows these changes from baseline in the highest dose group (1000 mg BID). While there was an increase in the total bile acids,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-4895",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4895,
+      "sentence": "Only nine subjects had to discontinue BUDCA related to adverse events compared to only one on placebo, all but one of these being in the 1000 mg BID dosage group.",
+      "context_window": "d to only one on placebo, all but one of these being in the 1000 mg BID dosage group. Three serious adverse events occurred dur",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-5126",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5126,
+      "sentence": "Three serious adverse events occurred during the conduct of this study, one in a placebo recipient (bladder cancer) and two on BUDCA, neither of which were attributed to the study drug (one patient in the 500 mg BID group experienced a complication of low blood oxygen following elective shoulder surgery with an intercostal nerve block and the other, taking 1000 mg BID, had an acute myocardial infarction).",
+      "context_window": "which were attributed to the study drug (one patient in the 500 mg BID group experienced a complication of low blood oxygen fo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-5280",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5280,
+      "sentence": "Three serious adverse events occurred during the conduct of this study, one in a placebo recipient (bladder cancer) and two on BUDCA, neither of which were attributed to the study drug (one patient in the 500 mg BID group experienced a complication of low blood oxygen following elective shoulder surgery with an intercostal nerve block and the other, taking 1000 mg BID, had an acute myocardial infarction).",
+      "context_window": "rgery with an intercostal nerve block and the other, taking 1000 mg BID, had an acute myocardial infarction). Adverse events.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-838",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 838,
+      "sentence": "All subjects had to have at least 10% LFC by MRI-PDFF and in addition, they had to have corrected T1 values on MRI at a baseline of at least 830 msec.",
+      "context_window": "ion and hepatic fibrosis. All subjects had to have at least 10% LFC by MRI-PDFF and in addition, they had to have corrected",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-4684",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 kg",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4684,
+      "sentence": "This study found that the use of BUDCA is also associated with significant weight loss (an average of 3.5 kg in the group dosed with 1000 mg BID).",
+      "context_window": "also associated with significant weight loss (an average of 3.5 kg in the group dosed with 1000 mg BID). The mechanism of this",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-4715",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4715,
+      "sentence": "This study found that the use of BUDCA is also associated with significant weight loss (an average of 3.5 kg in the group dosed with 1000 mg BID).",
+      "context_window": "t weight loss (an average of 3.5 kg in the group dosed with 1000 mg BID). The mechanism of this weight loss is not clear. It is",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-pct-5208",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5208,
+      "sentence": "Gastrointestinal side effects including diarrhea and abdominal discomfort were the most frequently reported adverse event and necessitated discontinuation of study drug in about 12% of subjects.",
+      "context_window": "ent and necessitated discontinuation of study drug in about 12% of subjects. UDCA itself is associated with diarrhea and ot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-6965",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 6965,
+      "sentence": "While a dose-dependent effect was noted with some parameters, in general, the 500 mg BID dose was less effective than the 1000 mg BID dose.",
+      "context_window": "dent effect was noted with some parameters, in general, the 500 mg BID dose was less effective than the 1000 mg BID dose. The",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8448729_a_phase_2_proof_of_concept_randomised_controlled_trial_of_be-u-7009",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 7009,
+      "sentence": "While a dose-dependent effect was noted with some parameters, in general, the 500 mg BID dose was less effective than the 1000 mg BID dose.",
+      "context_window": "in general, the 500 mg BID dose was less effective than the 1000 mg BID dose. The adverse event profile was minimal and dose-de",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

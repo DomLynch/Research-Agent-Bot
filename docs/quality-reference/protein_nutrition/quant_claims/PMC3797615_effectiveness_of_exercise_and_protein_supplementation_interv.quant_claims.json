@@ -1,0 +1,2212 @@
+{
+  "paper_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv",
+  "doi": "10.2147/CIA.S46826",
+  "extracted_at": "2026-05-05T22:35:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 33,
+    "percentage": 58,
+    "p_value": 24,
+    "sample_size": 6,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-666",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 666,
+      "sentence": "Thus, this study aimed to determine the effectiveness of exercise intervention and protein supplementation either alone or in combination for 12 weeks, on body composition, functional fitness, and oxidative stress among elderly Malays with sarcopenia.",
+      "context_window": "protein supplementation either alone or in combination for 12 weeks, on body composition, functional fitness, and oxidative str",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-821",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 821,
+      "sentence": "Sixty five sarcopenic elderly Malays aged 60-74 years were assigned to the control group, exercise group (ExG), protein supplementation group (PrG), or the combination of exercise and protein supplementation group.",
+      "context_window": "th sarcopenia. Sixty five sarcopenic elderly Malays aged 60-74 years were assigned to the control group, exercise group (ExG), p",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1099",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1099,
+      "sentence": "A significant interaction effect between body weight and body mass index (BMI) was observed, with the PrG (-2.1% body weight, -1.8% BMI) showing the highest reductions.",
+      "context_window": "ight and body mass index (BMI) was observed, with the PrG (-2.1% body weight, -1.8% BMI) showing the highest reductions. Fur",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1118",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1118,
+      "sentence": "A significant interaction effect between body weight and body mass index (BMI) was observed, with the PrG (-2.1% body weight, -1.8% BMI) showing the highest reductions.",
+      "context_window": "index (BMI) was observed, with the PrG (-2.1% body weight, -1.8% BMI) showing the highest reductions. Further, there was a d",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1206",
+      "claim_type": "percentage",
+      "raw_text": "4.5%",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1206,
+      "sentence": "Further, there was a decrease in % body fat (-4.5%) and an increase in fat-free mass (kg) (+5.7%) in the ExG after 12 weeks ( P < 0.05).",
+      "context_window": "t reductions. Further, there was a decrease in % body fat (-4.5%) and an increase in fat-free mass (kg) (+5.7%) in the ExG a",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1252",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1252,
+      "sentence": "Further, there was a decrease in % body fat (-4.5%) and an increase in fat-free mass (kg) (+5.7%) in the ExG after 12 weeks ( P < 0.05).",
+      "context_window": "% body fat (-4.5%) and an increase in fat-free mass (kg) (+5.7%) in the ExG after 12 weeks ( P < 0.05). The highest increme",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-1275",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1275,
+      "sentence": "Further, there was a decrease in % body fat (-4.5%) and an increase in fat-free mass (kg) (+5.7%) in the ExG after 12 weeks ( P < 0.05).",
+      "context_window": "an increase in fat-free mass (kg) (+5.7%) in the ExG after 12 weeks ( P < 0.05). The highest increments in lower and upper body",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-1286",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1286,
+      "sentence": "Further, there was a decrease in % body fat (-4.5%) and an increase in fat-free mass (kg) (+5.7%) in the ExG after 12 weeks ( P < 0.05).",
+      "context_window": "e in fat-free mass (kg) (+5.7%) in the ExG after 12 weeks ( P < 0.05). The highest increments in lower and upper body strength w",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1379",
+      "claim_type": "percentage",
+      "raw_text": "73.2%",
+      "numeric_values": [
+        73.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1379,
+      "sentence": "The highest increments in lower and upper body strength were observed in the PrG (73.2%) and ExG (47.6%), respectively.",
+      "context_window": "in lower and upper body strength were observed in the PrG (73.2%) and ExG (47.6%), respectively. In addition, the ExG showed",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1395",
+      "claim_type": "percentage",
+      "raw_text": "47.6%",
+      "numeric_values": [
+        47.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1395,
+      "sentence": "The highest increments in lower and upper body strength were observed in the PrG (73.2%) and ExG (47.6%), respectively.",
+      "context_window": "per body strength were observed in the PrG (73.2%) and ExG (47.6%), respectively. In addition, the ExG showed a reduction in",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-710",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 710,
+      "sentence": "It is known that muscle strength declines by 15% per decade after the age of 50 years and by 30% per decade after the age of 70, leading to sarcopenia.",
+      "context_window": "ealthy aging. It is known that muscle strength declines by 15% per decade after the age of 50 years and by 30% per decade",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-742",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 742,
+      "sentence": "It is known that muscle strength declines by 15% per decade after the age of 50 years and by 30% per decade after the age of 70, leading to sarcopenia.",
+      "context_window": "muscle strength declines by 15% per decade after the age of 50 years and by 30% per decade after the age of 70, leading to sarco",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-758",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 758,
+      "sentence": "It is known that muscle strength declines by 15% per decade after the age of 50 years and by 30% per decade after the age of 70, leading to sarcopenia.",
+      "context_window": "declines by 15% per decade after the age of 50 years and by 30% per decade after the age of 70, leading to sarcopenia. 4 Th",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-860",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 860,
+      "sentence": "4 The prevalence of sarcopenia varies from 6% to 24%, depending on the geographical location, diagnostic tool, and cutoff points used.",
+      "context_window": "g to sarcopenia. 4 The prevalence of sarcopenia varies from 6% to 24%, depending on the geographical location, diagnostic",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-866",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 866,
+      "sentence": "4 The prevalence of sarcopenia varies from 6% to 24%, depending on the geographical location, diagnostic tool, and cutoff points used.",
+      "context_window": "arcopenia. 4 The prevalence of sarcopenia varies from 6% to 24%, depending on the geographical location, diagnostic tool, a",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-3772",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3772,
+      "sentence": "Thus, this study aimed to determine the beneficial effects of exercise and protein supplementation, either alone or in combination, on the improvement of body composition, physical fitness, and oxidative stress among community-dwelling elderly people aged 60 years and above, with sarcopenia.",
+      "context_window": "idative stress among community-dwelling elderly people aged 60 years and above, with sarcopenia. It was hypothesized that a well",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-n-151",
+      "claim_type": "sample_size",
+      "raw_text": "n = 47",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 151,
+      "sentence": "A total of 65 sarcopenic subjects (men, n = 47; women, n = 18) were identified in the screening phase among 388 older adults (men, n = 155; women, n = 233) residing in low-cost flats and houses in Cheras, Kuala Lumpur (the capital city of Malaysia).",
+      "context_window": "y 2010 to May 2010. A total of 65 sarcopenic subjects (men, n = 47; women, n = 18) were identified in the screening phase amon",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-n-166",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 166,
+      "sentence": "A total of 65 sarcopenic subjects (men, n = 47; women, n = 18) were identified in the screening phase among 388 older adults (men, n = 155; women, n = 233) residing in low-cost flats and houses in Cheras, Kuala Lumpur (the capital city of Malaysia).",
+      "context_window": "010. A total of 65 sarcopenic subjects (men, n = 47; women, n = 18) were identified in the screening phase among 388 older adu",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-n-242",
+      "claim_type": "sample_size",
+      "raw_text": "n = 155",
+      "numeric_values": [
+        155.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 242,
+      "sentence": "A total of 65 sarcopenic subjects (men, n = 47; women, n = 18) were identified in the screening phase among 388 older adults (men, n = 155; women, n = 233) residing in low-cost flats and houses in Cheras, Kuala Lumpur (the capital city of Malaysia).",
+      "context_window": "ntified in the screening phase among 388 older adults (men, n = 155; women, n = 233) residing in low-cost flats and houses in C",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-n-258",
+      "claim_type": "sample_size",
+      "raw_text": "n = 233",
+      "numeric_values": [
+        233.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 258,
+      "sentence": "A total of 65 sarcopenic subjects (men, n = 47; women, n = 18) were identified in the screening phase among 388 older adults (men, n = 155; women, n = 233) residing in low-cost flats and houses in Cheras, Kuala Lumpur (the capital city of Malaysia).",
+      "context_window": "creening phase among 388 older adults (men, n = 155; women, n = 233) residing in low-cost flats and houses in Cheras, Kuala Lum",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-737",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 737,
+      "sentence": "The inclusion criteria were: elderly people aged 60 years old and above with sarcopenia (assessed using bioimpedance analysis, with the skeletal muscle cutoff points of less than 10.75 kg/m 2 for men and 6.75 kg/m 2 for women, as suggested by Janssen et al 5 ); permanent residents for at least 1 year prior to study, and with no terminal illness that could have limited their involvement and compliance to the intervention.",
+      "context_window": "(Ex+PrG). The inclusion criteria were: elderly people aged 60 years old and above with sarcopenia (assessed using bioimpedance",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-867",
+      "claim_type": "unit_value",
+      "raw_text": "10.75 kg",
+      "numeric_values": [
+        10.75
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 867,
+      "sentence": "The inclusion criteria were: elderly people aged 60 years old and above with sarcopenia (assessed using bioimpedance analysis, with the skeletal muscle cutoff points of less than 10.75 kg/m 2 for men and 6.75 kg/m 2 for women, as suggested by Janssen et al 5 ); permanent residents for at least 1 year prior to study, and with no terminal illness that could have limited their involvement and compliance to the intervention.",
+      "context_window": "alysis, with the skeletal muscle cutoff points of less than 10.75 kg/m 2 for men and 6.75 kg/m 2 for women, as suggested by Jans",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-892",
+      "claim_type": "unit_value",
+      "raw_text": "6.75 kg",
+      "numeric_values": [
+        6.75
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 892,
+      "sentence": "The inclusion criteria were: elderly people aged 60 years old and above with sarcopenia (assessed using bioimpedance analysis, with the skeletal muscle cutoff points of less than 10.75 kg/m 2 for men and 6.75 kg/m 2 for women, as suggested by Janssen et al 5 ); permanent residents for at least 1 year prior to study, and with no terminal illness that could have limited their involvement and compliance to the intervention.",
+      "context_window": "muscle cutoff points of less than 10.75 kg/m 2 for men and 6.75 kg/m 2 for women, as suggested by Janssen et al 5 ); permanent",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-983",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 983,
+      "sentence": "The inclusion criteria were: elderly people aged 60 years old and above with sarcopenia (assessed using bioimpedance analysis, with the skeletal muscle cutoff points of less than 10.75 kg/m 2 for men and 6.75 kg/m 2 for women, as suggested by Janssen et al 5 ); permanent residents for at least 1 year prior to study, and with no terminal illness that could have limited their involvement and compliance to the intervention.",
+      "context_window": "sted by Janssen et al 5 ); permanent residents for at least 1 year prior to study, and with no terminal illness that could hav",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-1199",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1199,
+      "sentence": "Subjects who had been regularly consuming protein and dietary supplementation for the 3 months prior to the study and those with unstable chronic diseases were excluded.",
+      "context_window": "larly consuming protein and dietary supplementation for the 3 months prior to the study and those with unstable chronic diseases",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-1686",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 1686,
+      "sentence": "At baseline (1 week prior to the intervention), the primary outcomes (anthropometry and body composition) and secondary outcomes (fitness test and functional fitness) were measured.",
+      "context_window": "l level, and employment) and health profiling. At baseline (1 week prior to the intervention), the primary outcomes (anthropom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-1857",
+      "claim_type": "unit_value",
+      "raw_text": "10 mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1857,
+      "sentence": "A 10 mL venous blood sample was drawn from the antecubital vein, with the subject in a seated position, after an overnight fast.",
+      "context_window": "omes (fitness test and functional fitness) were measured. A 10 mL venous blood sample was drawn from the antecubital vein, wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-2485",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2485,
+      "sentence": "18\n\nThe exercise group received approximately 60 minutes of moderately intensive, well-rounded activities in facilitated group sessions, held twice a week for 12 weeks at a local community center to ensure that participants would use the correct/recommended exercise techniques.",
+      "context_window": "vities in facilitated group sessions, held twice a week for 12 weeks at a local community center to ensure that participants wou",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4612",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4612,
+      "sentence": "The energy composition of the protein supplementation contained 23% protein, 0.8% fat, and 0.3% carbohydrates.",
+      "context_window": "energy composition of the protein supplementation contained 23% protein, 0.8% fat, and 0.3% carbohydrates. This protein sup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4625",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4625,
+      "sentence": "The energy composition of the protein supplementation contained 23% protein, 0.8% fat, and 0.3% carbohydrates.",
+      "context_window": "ition of the protein supplementation contained 23% protein, 0.8% fat, and 0.3% carbohydrates. This protein supplementation w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4639",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4639,
+      "sentence": "The energy composition of the protein supplementation contained 23% protein, 0.8% fat, and 0.3% carbohydrates.",
+      "context_window": "rotein supplementation contained 23% protein, 0.8% fat, and 0.3% carbohydrates. This protein supplementation was chosen beca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-5506",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5506,
+      "sentence": "The CG received a relaxation exercise program every 2 weeks for 3 months, supervised by the researchers, to maintain the interaction and increase the motivation of the subjects during the intervention.",
+      "context_window": "y week. The CG received a relaxation exercise program every 2 weeks for 3 months, supervised by the researchers, to maintain th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-5518",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5518,
+      "sentence": "The CG received a relaxation exercise program every 2 weeks for 3 months, supervised by the researchers, to maintain the interaction and increase the motivation of the subjects during the intervention.",
+      "context_window": "CG received a relaxation exercise program every 2 weeks for 3 months, supervised by the researchers, to maintain the interaction",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-5737",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5737,
+      "sentence": "Anthropometric parameters were measured, including: body weight, to the nearest 0.1 kg, using a Tanita Digital Lithium Scale HD319 (Tanita Corp, Tokyo, Japan); height, using SECA Leicester Portable Height Measure (Seca GmbH and Co, Hamburg, Germany); and waist circumference, using a Seca measuring tape, to the nearest 0.1 cm.",
+      "context_window": "eters were measured, including: body weight, to the nearest 0.1 kg, using a Tanita Digital Lithium Scale HD319 (Tanita Corp, T",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-5977",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 cm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5977,
+      "sentence": "Anthropometric parameters were measured, including: body weight, to the nearest 0.1 kg, using a Tanita Digital Lithium Scale HD319 (Tanita Corp, Tokyo, Japan); height, using SECA Leicester Portable Height Measure (Seca GmbH and Co, Hamburg, Germany); and waist circumference, using a Seca measuring tape, to the nearest 0.1 cm.",
+      "context_window": "circumference, using a Seca measuring tape, to the nearest 0.1 cm. A Maltron Bio-Scan 916 (Maltron International Ltd, Rayleig",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-7562",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 7562,
+      "sentence": "21 In addition, handgrip strength was assessed as an estimate of muscle strength; functional fitness (handgrip strength) was measured using a pinchgrip Dynamometer (JAMAR Hydraulic Hand Dynamometer; Patterson Medical Holdings, Inc, Bolingbrook, IL,USA) to the nearest 0.1 kg.",
+      "context_window": "Medical Holdings, Inc, Bolingbrook, IL,USA) to the nearest 0.1 kg. The plasma was thawed once for the ascertainment of oxida",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-n-29",
+      "claim_type": "sample_size",
+      "raw_text": "n = 47",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29,
+      "sentence": "A total of 65 subjects (men, n = 47; women, n = 18) completed the intervention program, with a response rate of 86.7%.",
+      "context_window": "A total of 65 subjects (men, n = 47; women, n = 18) completed the intervention program, with a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-n-44",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 44,
+      "sentence": "A total of 65 subjects (men, n = 47; women, n = 18) completed the intervention program, with a response rate of 86.7%.",
+      "context_window": "A total of 65 subjects (men, n = 47; women, n = 18) completed the intervention program, with a response rate o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-112",
+      "claim_type": "percentage",
+      "raw_text": "86.7%",
+      "numeric_values": [
+        86.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 112,
+      "sentence": "A total of 65 subjects (men, n = 47; women, n = 18) completed the intervention program, with a response rate of 86.7%.",
+      "context_window": "completed the intervention program, with a response rate of 86.7%. About ten participants failed to complete the intervention",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-msd-433",
+      "claim_type": "mean_sd",
+      "raw_text": "67.1 \u00b1 5.3",
+      "numeric_values": [
+        67.1,
+        5.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 433,
+      "sentence": "The baseline characteristics of the 65 participants (mean age 67.1 \u00b1 5.3 years) are presented in Table 1 .",
+      "context_window": "e baseline characteristics of the 65 participants (mean age 67.1 \u00b1 5.3 years) are presented in Table 1 . Only 7.7% of subjects wer",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-440",
+      "claim_type": "unit_value",
+      "raw_text": "5.3 years",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 440,
+      "sentence": "The baseline characteristics of the 65 participants (mean age 67.1 \u00b1 5.3 years) are presented in Table 1 .",
+      "context_window": "ine characteristics of the 65 participants (mean age 67.1 \u00b1 5.3 years) are presented in Table 1 . Only 7.7% of subjects were work",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-483",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 483,
+      "sentence": "Only 7.7% of subjects were working; only 12.3% were married and 87.7% were either single or a widow/widower.",
+      "context_window": "(mean age 67.1 \u00b1 5.3 years) are presented in Table 1 . Only 7.7% of subjects were working; only 12.3% were married and 87.7%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-519",
+      "claim_type": "percentage",
+      "raw_text": "12.3%",
+      "numeric_values": [
+        12.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 519,
+      "sentence": "Only 7.7% of subjects were working; only 12.3% were married and 87.7% were either single or a widow/widower.",
+      "context_window": "ented in Table 1 . Only 7.7% of subjects were working; only 12.3% were married and 87.7% were either single or a widow/widowe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-542",
+      "claim_type": "percentage",
+      "raw_text": "87.7%",
+      "numeric_values": [
+        87.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 542,
+      "sentence": "Only 7.7% of subjects were working; only 12.3% were married and 87.7% were either single or a widow/widower.",
+      "context_window": "7.7% of subjects were working; only 12.3% were married and 87.7% were either single or a widow/widower. About 17.2% had no f",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-593",
+      "claim_type": "percentage",
+      "raw_text": "17.2%",
+      "numeric_values": [
+        17.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 593,
+      "sentence": "About 17.2% had no formal education, while 82.8% had formal education (completed middle and high school).",
+      "context_window": "ried and 87.7% were either single or a widow/widower. About 17.2% had no formal education, while 82.8% had formal education (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-630",
+      "claim_type": "percentage",
+      "raw_text": "82.8%",
+      "numeric_values": [
+        82.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 630,
+      "sentence": "About 17.2% had no formal education, while 82.8% had formal education (completed middle and high school).",
+      "context_window": "a widow/widower. About 17.2% had no formal education, while 82.8% had formal education (completed middle and high school). Al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-699",
+      "claim_type": "percentage",
+      "raw_text": "13.8%",
+      "numeric_values": [
+        13.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 699,
+      "sentence": "Also, 13.8% had a history of geriatric falls.",
+      "context_window": "formal education (completed middle and high school). Also, 13.8% had a history of geriatric falls. There were no significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-981",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 981,
+      "sentence": "There were significant differences in carbohydrate and protein intake among the groups at baseline ( P < 0.05); thus these parameters were included as covariates in the analysis.",
+      "context_window": "bohydrate and protein intake among the groups at baseline ( P < 0.05); thus these parameters were included as covariates in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-1268",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1268,
+      "sentence": "After the 12-week intervention, significant interaction effects were noted for body weight ( F 3,61 = 2.467) ( P < 0.05), body mass index (BMI) ( F 3,61 = 2.278) ( P < 0.05), % body fat ( F 3,61 = 2.567) ( P < 0.05), % fat-free mass ( F 3,61 = 3.281) ( P < 0.05), and % total body water ( F 3,61 = 4.609) ( P < 0.05).",
+      "context_window": "tion effects were noted for body weight ( F 3,61 = 2.467) ( P < 0.05), body mass index (BMI) ( F 3,61 = 2.278) ( P < 0.05), % bo",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-1321",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1321,
+      "sentence": "After the 12-week intervention, significant interaction effects were noted for body weight ( F 3,61 = 2.467) ( P < 0.05), body mass index (BMI) ( F 3,61 = 2.278) ( P < 0.05), % body fat ( F 3,61 = 2.567) ( P < 0.05), % fat-free mass ( F 3,61 = 3.281) ( P < 0.05), and % total body water ( F 3,61 = 4.609) ( P < 0.05).",
+      "context_window": "467) ( P < 0.05), body mass index (BMI) ( F 3,61 = 2.278) ( P < 0.05), % body fat ( F 3,61 = 2.567) ( P < 0.05), % fat-free mass",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-1363",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1363,
+      "sentence": "After the 12-week intervention, significant interaction effects were noted for body weight ( F 3,61 = 2.467) ( P < 0.05), body mass index (BMI) ( F 3,61 = 2.278) ( P < 0.05), % body fat ( F 3,61 = 2.567) ( P < 0.05), % fat-free mass ( F 3,61 = 3.281) ( P < 0.05), and % total body water ( F 3,61 = 4.609) ( P < 0.05).",
+      "context_window": "F 3,61 = 2.278) ( P < 0.05), % body fat ( F 3,61 = 2.567) ( P < 0.05), % fat-free mass ( F 3,61 = 3.281) ( P < 0.05), and % tota",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-1410",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1410,
+      "sentence": "After the 12-week intervention, significant interaction effects were noted for body weight ( F 3,61 = 2.467) ( P < 0.05), body mass index (BMI) ( F 3,61 = 2.278) ( P < 0.05), % body fat ( F 3,61 = 2.567) ( P < 0.05), % fat-free mass ( F 3,61 = 3.281) ( P < 0.05), and % total body water ( F 3,61 = 4.609) ( P < 0.05).",
+      "context_window": "1 = 2.567) ( P < 0.05), % fat-free mass ( F 3,61 = 3.281) ( P < 0.05), and % total body water ( F 3,61 = 4.609) ( P < 0.05). A t",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-1464",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1464,
+      "sentence": "After the 12-week intervention, significant interaction effects were noted for body weight ( F 3,61 = 2.467) ( P < 0.05), body mass index (BMI) ( F 3,61 = 2.278) ( P < 0.05), % body fat ( F 3,61 = 2.567) ( P < 0.05), % fat-free mass ( F 3,61 = 3.281) ( P < 0.05), and % total body water ( F 3,61 = 4.609) ( P < 0.05).",
+      "context_window": "81) ( P < 0.05), and % total body water ( F 3,61 = 4.609) ( P < 0.05). A time effect was seen for BMI ( F 3,61 = 3.647) ( P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-1526",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1526,
+      "sentence": "A time effect was seen for BMI ( F 3,61 = 3.647) ( P < 0.05) and % total body water ( F 3,61 = 6.215) ( P < 0.05), while a group effect was seen for % total body water ( F 3,61 = 3.413) ( P < 0.05) ( Table 2 ).",
+      "context_window": "< 0.05). A time effect was seen for BMI ( F 3,61 = 3.647) ( P < 0.05) and % total body water ( F 3,61 = 6.215) ( P < 0.05), whil",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-1579",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1579,
+      "sentence": "A time effect was seen for BMI ( F 3,61 = 3.647) ( P < 0.05) and % total body water ( F 3,61 = 6.215) ( P < 0.05), while a group effect was seen for % total body water ( F 3,61 = 3.413) ( P < 0.05) ( Table 2 ).",
+      "context_window": "647) ( P < 0.05) and % total body water ( F 3,61 = 6.215) ( P < 0.05), while a group effect was seen for % total body water ( F",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-1663",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1663,
+      "sentence": "A time effect was seen for BMI ( F 3,61 = 3.647) ( P < 0.05) and % total body water ( F 3,61 = 6.215) ( P < 0.05), while a group effect was seen for % total body water ( F 3,61 = 3.413) ( P < 0.05) ( Table 2 ).",
+      "context_window": "effect was seen for % total body water ( F 3,61 = 3.413) ( P < 0.05) ( Table 2 ). It was found that the PrG group had the large",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1761",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1761,
+      "sentence": "It was found that the PrG group had the largest decrease in body weight (\u0394-2.1%) and BMI (-1.8%) throughout the 12-week intervention as compared with baseline.",
+      "context_window": "at the PrG group had the largest decrease in body weight (\u0394-2.1%) and BMI (-1.8%) throughout the 12-week intervention as com",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1777",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1777,
+      "sentence": "It was found that the PrG group had the largest decrease in body weight (\u0394-2.1%) and BMI (-1.8%) throughout the 12-week intervention as compared with baseline.",
+      "context_window": "had the largest decrease in body weight (\u0394-2.1%) and BMI (-1.8%) throughout the 12-week intervention as compared with basel",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1886",
+      "claim_type": "percentage",
+      "raw_text": "11.6%",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1886,
+      "sentence": "The ExG showed a decrease in body fat (-11.6%) and an increase in fat-free mass (+5.1%) during the 12-week intervention as compared with baseline.",
+      "context_window": "ared with baseline. The ExG showed a decrease in body fat (-11.6%) and an increase in fat-free mass (+5.1%) during the 12-wee",
+      "claim_role": "duration",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1928",
+      "claim_type": "percentage",
+      "raw_text": "5.1%",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1928,
+      "sentence": "The ExG showed a decrease in body fat (-11.6%) and an increase in fat-free mass (+5.1%) during the 12-week intervention as compared with baseline.",
+      "context_window": "ase in body fat (-11.6%) and an increase in fat-free mass (+5.1%) during the 12-week intervention as compared with baseline.",
+      "claim_role": "duration",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-2093",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2093,
+      "sentence": "As shown in Table 3 , there was an interaction effect for the Chair Stand Test ( F 3,61 = 3.833) ( P < 0.05), Arm Curl Test ( F 3,61 = 4.282) ( P < 0.05), and the 8-Foot Up and Go Test ( F 3,61 = 2.737) ( P < 0.05).",
+      "context_window": "raction effect for the Chair Stand Test ( F 3,61 = 3.833) ( P < 0.05), Arm Curl Test ( F 3,61 = 4.282) ( P < 0.05), and the 8-Fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-2138",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2138,
+      "sentence": "As shown in Table 3 , there was an interaction effect for the Chair Stand Test ( F 3,61 = 3.833) ( P < 0.05), Arm Curl Test ( F 3,61 = 4.282) ( P < 0.05), and the 8-Foot Up and Go Test ( F 3,61 = 2.737) ( P < 0.05).",
+      "context_window": ",61 = 3.833) ( P < 0.05), Arm Curl Test ( F 3,61 = 4.282) ( P < 0.05), and the 8-Foot Up and Go Test ( F 3,61 = 2.737) ( P < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-2199",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2199,
+      "sentence": "As shown in Table 3 , there was an interaction effect for the Chair Stand Test ( F 3,61 = 3.833) ( P < 0.05), Arm Curl Test ( F 3,61 = 4.282) ( P < 0.05), and the 8-Foot Up and Go Test ( F 3,61 = 2.737) ( P < 0.05).",
+      "context_window": "< 0.05), and the 8-Foot Up and Go Test ( F 3,61 = 2.737) ( P < 0.05). A significant group effect was noted for the Chair Stand",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-2292",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2292,
+      "sentence": "A significant group effect was noted for the Chair Stand Test ( F 3,61 = 7.533) ( P < 0.05) and Arm Curl ( F 3,61 = 6.310) ( P < 0.05), and a time effect for the Chair Stand Test ( F 3,61 = 11.123) ( P < 0.05) and Arm Curl Test ( F 3,61 = 7.082) ( P < 0.05).",
+      "context_window": "fect was noted for the Chair Stand Test ( F 3,61 = 7.533) ( P < 0.05) and Arm Curl ( F 3,61 = 6.310) ( P < 0.05), and a time eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-2335",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2335,
+      "sentence": "A significant group effect was noted for the Chair Stand Test ( F 3,61 = 7.533) ( P < 0.05) and Arm Curl ( F 3,61 = 6.310) ( P < 0.05), and a time effect for the Chair Stand Test ( F 3,61 = 11.123) ( P < 0.05) and Arm Curl Test ( F 3,61 = 7.082) ( P < 0.05).",
+      "context_window": "3,61 = 7.533) ( P < 0.05) and Arm Curl ( F 3,61 = 6.310) ( P < 0.05), and a time effect for the Chair Stand Test ( F 3,61 = 11.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-2410",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2410,
+      "sentence": "A significant group effect was noted for the Chair Stand Test ( F 3,61 = 7.533) ( P < 0.05) and Arm Curl ( F 3,61 = 6.310) ( P < 0.05), and a time effect for the Chair Stand Test ( F 3,61 = 11.123) ( P < 0.05) and Arm Curl Test ( F 3,61 = 7.082) ( P < 0.05).",
+      "context_window": "a time effect for the Chair Stand Test ( F 3,61 = 11.123) ( P < 0.05) and Arm Curl Test ( F 3,61 = 7.082) ( P < 0.05). With resp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-2458",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2458,
+      "sentence": "A significant group effect was noted for the Chair Stand Test ( F 3,61 = 7.533) ( P < 0.05) and Arm Curl ( F 3,61 = 6.310) ( P < 0.05), and a time effect for the Chair Stand Test ( F 3,61 = 11.123) ( P < 0.05) and Arm Curl Test ( F 3,61 = 7.082) ( P < 0.05).",
+      "context_window": "= 11.123) ( P < 0.05) and Arm Curl Test ( F 3,61 = 7.082) ( P < 0.05). With respect to the Chair Stand Test, the PrG (+73.2%) sh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-2517",
+      "claim_type": "percentage",
+      "raw_text": "73.2%",
+      "numeric_values": [
+        73.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2517,
+      "sentence": "With respect to the Chair Stand Test, the PrG (+73.2%) showed the highest increment, followed by the ExG + PrG (+62.8%) and ExG (23.8%) compared with the CG (+10.3%), at 12 weeks ( Figure 1 ).",
+      "context_window": "P < 0.05). With respect to the Chair Stand Test, the PrG (+73.2%) showed the highest increment, followed by the ExG + PrG (+",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-2582",
+      "claim_type": "percentage",
+      "raw_text": "62.8%",
+      "numeric_values": [
+        62.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2582,
+      "sentence": "With respect to the Chair Stand Test, the PrG (+73.2%) showed the highest increment, followed by the ExG + PrG (+62.8%) and ExG (23.8%) compared with the CG (+10.3%), at 12 weeks ( Figure 1 ).",
+      "context_window": ") showed the highest increment, followed by the ExG + PrG (+62.8%) and ExG (23.8%) compared with the CG (+10.3%), at 12 weeks",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-2598",
+      "claim_type": "percentage",
+      "raw_text": "23.8%",
+      "numeric_values": [
+        23.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2598,
+      "sentence": "With respect to the Chair Stand Test, the PrG (+73.2%) showed the highest increment, followed by the ExG + PrG (+62.8%) and ExG (23.8%) compared with the CG (+10.3%), at 12 weeks ( Figure 1 ).",
+      "context_window": "hest increment, followed by the ExG + PrG (+62.8%) and ExG (23.8%) compared with the CG (+10.3%), at 12 weeks ( Figure 1 ). F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-2628",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2628,
+      "sentence": "With respect to the Chair Stand Test, the PrG (+73.2%) showed the highest increment, followed by the ExG + PrG (+62.8%) and ExG (23.8%) compared with the CG (+10.3%), at 12 weeks ( Figure 1 ).",
+      "context_window": "e ExG + PrG (+62.8%) and ExG (23.8%) compared with the CG (+10.3%), at 12 weeks ( Figure 1 ). Furthermore, for the Arm Curl T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-2639",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2639,
+      "sentence": "With respect to the Chair Stand Test, the PrG (+73.2%) showed the highest increment, followed by the ExG + PrG (+62.8%) and ExG (23.8%) compared with the CG (+10.3%), at 12 weeks ( Figure 1 ).",
+      "context_window": "(+62.8%) and ExG (23.8%) compared with the CG (+10.3%), at 12 weeks ( Figure 1 ). Furthermore, for the Arm Curl Test (indicatin",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-2784",
+      "claim_type": "percentage",
+      "raw_text": "47.6%",
+      "numeric_values": [
+        47.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2784,
+      "sentence": "Furthermore, for the Arm Curl Test (indicating upper arm muscle strength), the highest increment was observed in the ExG (47.6%), followed by the Ex+PrG (38.4%) and PrG (36.7%) as compared with the CG (-10.9%) ( Figure 2 ).",
+      "context_window": "e strength), the highest increment was observed in the ExG (47.6%), followed by the Ex+PrG (38.4%) and PrG (36.7%) as compare",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-2816",
+      "claim_type": "percentage",
+      "raw_text": "38.4%",
+      "numeric_values": [
+        38.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2816,
+      "sentence": "Furthermore, for the Arm Curl Test (indicating upper arm muscle strength), the highest increment was observed in the ExG (47.6%), followed by the Ex+PrG (38.4%) and PrG (36.7%) as compared with the CG (-10.9%) ( Figure 2 ).",
+      "context_window": "nt was observed in the ExG (47.6%), followed by the Ex+PrG (38.4%) and PrG (36.7%) as compared with the CG (-10.9%) ( Figure",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-2832",
+      "claim_type": "percentage",
+      "raw_text": "36.7%",
+      "numeric_values": [
+        36.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2832,
+      "sentence": "Furthermore, for the Arm Curl Test (indicating upper arm muscle strength), the highest increment was observed in the ExG (47.6%), followed by the Ex+PrG (38.4%) and PrG (36.7%) as compared with the CG (-10.9%) ( Figure 2 ).",
+      "context_window": "in the ExG (47.6%), followed by the Ex+PrG (38.4%) and PrG (36.7%) as compared with the CG (-10.9%) ( Figure 2 ). In the 8-Fo",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-2865",
+      "claim_type": "percentage",
+      "raw_text": "10.9%",
+      "numeric_values": [
+        10.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2865,
+      "sentence": "Furthermore, for the Arm Curl Test (indicating upper arm muscle strength), the highest increment was observed in the ExG (47.6%), followed by the Ex+PrG (38.4%) and PrG (36.7%) as compared with the CG (-10.9%) ( Figure 2 ).",
+      "context_window": "he Ex+PrG (38.4%) and PrG (36.7%) as compared with the CG (-10.9%) ( Figure 2 ). In the 8-Foot Up and Go Test, the PrG (-2.3;",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-3011",
+      "claim_type": "percentage",
+      "raw_text": "26.6%",
+      "numeric_values": [
+        26.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3011,
+      "sentence": "In the 8-Foot Up and Go Test, the PrG (-2.3; 28.3) showed the highest reduction for this test, followed by the Ex+PrG (-2.2; 26.6%) and ExG (-1.9; 21.7%) ( Figure 3 ).",
+      "context_window": "hest reduction for this test, followed by the Ex+PrG (-2.2; 26.6%) and ExG (-1.9; 21.7%) ( Figure 3 ). However, the CG (+1.3;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-3033",
+      "claim_type": "percentage",
+      "raw_text": "21.7%",
+      "numeric_values": [
+        21.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3033,
+      "sentence": "In the 8-Foot Up and Go Test, the PrG (-2.3; 28.3) showed the highest reduction for this test, followed by the Ex+PrG (-2.2; 26.6%) and ExG (-1.9; 21.7%) ( Figure 3 ).",
+      "context_window": "s test, followed by the Ex+PrG (-2.2; 26.6%) and ExG (-1.9; 21.7%) ( Figure 3 ). However, the CG (+1.3; 1.2%) showed an incre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-3077",
+      "claim_type": "percentage",
+      "raw_text": "1.2%",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3077,
+      "sentence": "However, the CG (+1.3; 1.2%) showed an increment in the 8-Foot Up and Go Test as compared with baseline.",
+      "context_window": "and ExG (-1.9; 21.7%) ( Figure 3 ). However, the CG (+1.3; 1.2%) showed an increment in the 8-Foot Up and Go Test as compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-3344",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3344,
+      "sentence": "This study also found that the Chair Sit and Reach Test, Backscratch Test, six-minute Walk Test, and the Handgrip Strength Test remained unchanged throughout the 12-week intervention ( P > 0.05).",
+      "context_window": "st remained unchanged throughout the 12-week intervention ( P > 0.05). Table 4 shows a significant group effect ( F 3,61 = 2.96",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-3417",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3417,
+      "sentence": "Table 4 shows a significant group effect ( F 3,61 = 2.969) ( P < 0.05) and time effect ( F 3,61 = 3.777) ( P < 0.05) for protein carbonyl.",
+      "context_window": "able 4 shows a significant group effect ( F 3,61 = 2.969) ( P < 0.05) and time effect ( F 3,61 = 3.777) ( P < 0.05) for protein",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-3463",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3463,
+      "sentence": "Table 4 shows a significant group effect ( F 3,61 = 2.969) ( P < 0.05) and time effect ( F 3,61 = 3.777) ( P < 0.05) for protein carbonyl.",
+      "context_window": "61 = 2.969) ( P < 0.05) and time effect ( F 3,61 = 3.777) ( P < 0.05) for protein carbonyl. A decrease in protein carbonyl level",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-3600",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3600,
+      "sentence": "A decrease in protein carbonyl levels after the 12-week intervention was observed in the ExG+PrG (-0.01 [50%]) and CG (-0.01 [33.0%]) as compared with baseline.",
+      "context_window": "he 12-week intervention was observed in the ExG+PrG (-0.01 [50%]) and CG (-0.01 [33.0%]) as compared with baseline. Further",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-3621",
+      "claim_type": "percentage",
+      "raw_text": "33.0%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3621,
+      "sentence": "A decrease in protein carbonyl levels after the 12-week intervention was observed in the ExG+PrG (-0.01 [50%]) and CG (-0.01 [33.0%]) as compared with baseline.",
+      "context_window": "on was observed in the ExG+PrG (-0.01 [50%]) and CG (-0.01 [33.0%]) as compared with baseline. Further, only the ExG+PrG (-0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-3690",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3690,
+      "sentence": "Further, only the ExG+PrG (-0.01 [50%]) showed a reduction in protein carbonyl levels at 12 weeks as compared with the CG.",
+      "context_window": "s compared with baseline. Further, only the ExG+PrG (-0.01 [50%]) showed a reduction in protein carbonyl levels at 12 weeks",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-3745",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3745,
+      "sentence": "Further, only the ExG+PrG (-0.01 [50%]) showed a reduction in protein carbonyl levels at 12 weeks as compared with the CG.",
+      "context_window": ".01 [50%]) showed a reduction in protein carbonyl levels at 12 weeks as compared with the CG. On the other hand, SOD levels sho",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-3863",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3863,
+      "sentence": "On the other hand, SOD levels showed a significant time effect ( F 3,61 = 9.276) ( P < 0.05) and an interaction effect ( F 3,61 = 5.963) ( P < 0.05) after 12 weeks of intervention ( Table 4 ).",
+      "context_window": "levels showed a significant time effect ( F 3,61 = 9.276) ( P < 0.05) and an interaction effect ( F 3,61 = 5.963) ( P < 0.05) af",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-3919",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3919,
+      "sentence": "On the other hand, SOD levels showed a significant time effect ( F 3,61 = 9.276) ( P < 0.05) and an interaction effect ( F 3,61 = 5.963) ( P < 0.05) after 12 weeks of intervention ( Table 4 ).",
+      "context_window": ") ( P < 0.05) and an interaction effect ( F 3,61 = 5.963) ( P < 0.05) after 12 weeks of intervention ( Table 4 ). An increment o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-3935",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3935,
+      "sentence": "On the other hand, SOD levels showed a significant time effect ( F 3,61 = 9.276) ( P < 0.05) and an interaction effect ( F 3,61 = 5.963) ( P < 0.05) after 12 weeks of intervention ( Table 4 ).",
+      "context_window": "d an interaction effect ( F 3,61 = 5.963) ( P < 0.05) after 12 weeks of intervention ( Table 4 ). An increment of mean changes w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4033",
+      "claim_type": "percentage",
+      "raw_text": "91.2%",
+      "numeric_values": [
+        91.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4033,
+      "sentence": "An increment of mean changes was observed in the PrG (+5.2 [91.2%]) and CrG (+1.7 [22.9%]).",
+      "context_window": "An increment of mean changes was observed in the PrG (+5.2 [91.2%]) and CrG (+1.7 [22.9%]). However, SOD levels decreased in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4056",
+      "claim_type": "percentage",
+      "raw_text": "22.9%",
+      "numeric_values": [
+        22.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4056,
+      "sentence": "An increment of mean changes was observed in the PrG (+5.2 [91.2%]) and CrG (+1.7 [22.9%]).",
+      "context_window": "anges was observed in the PrG (+5.2 [91.2%]) and CrG (+1.7 [22.9%]). However, SOD levels decreased in the ExG (-3.9 [38.2%])",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4113",
+      "claim_type": "percentage",
+      "raw_text": "38.2%",
+      "numeric_values": [
+        38.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4113,
+      "sentence": "However, SOD levels decreased in the ExG (-3.9 [38.2%]) after 12 weeks.",
+      "context_window": "7 [22.9%]). However, SOD levels decreased in the ExG (-3.9 [38.2%]) after 12 weeks. In comparison with the CG, an increase in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-4127",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4127,
+      "sentence": "However, SOD levels decreased in the ExG (-3.9 [38.2%]) after 12 weeks.",
+      "context_window": "wever, SOD levels decreased in the ExG (-3.9 [38.2%]) after 12 weeks. In comparison with the CG, an increase in SOD levels was o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4221",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4221,
+      "sentence": "In comparison with the CG, an increase in SOD levels was observed in the ExG (+0.3 [5.7%]) and PrG (+0.3 [5.7%]).",
+      "context_window": "G, an increase in SOD levels was observed in the ExG (+0.3 [5.7%]) and PrG (+0.3 [5.7%]). Meanwhile, the ExG+PrG (-0.9 [34.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4243",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4243,
+      "sentence": "In comparison with the CG, an increase in SOD levels was observed in the ExG (+0.3 [5.7%]) and PrG (+0.3 [5.7%]).",
+      "context_window": "levels was observed in the ExG (+0.3 [5.7%]) and PrG (+0.3 [5.7%]). Meanwhile, the ExG+PrG (-0.9 [34.6%]) showed no changes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4281",
+      "claim_type": "percentage",
+      "raw_text": "34.6%",
+      "numeric_values": [
+        34.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4281,
+      "sentence": "Meanwhile, the ExG+PrG (-0.9 [34.6%]) showed no changes in SOD level after 12 weeks of intervention.",
+      "context_window": "5.7%]) and PrG (+0.3 [5.7%]). Meanwhile, the ExG+PrG (-0.9 [34.6%]) showed no changes in SOD level after 12 weeks of interven",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-4326",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4326,
+      "sentence": "Meanwhile, the ExG+PrG (-0.9 [34.6%]) showed no changes in SOD level after 12 weeks of intervention.",
+      "context_window": "ExG+PrG (-0.9 [34.6%]) showed no changes in SOD level after 12 weeks of intervention. For lipid hydroperoxide, a significant gro",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-4424",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4424,
+      "sentence": "For lipid hydroperoxide, a significant group effect ( F 3,61 = 4.098) ( P < 0.05) and a time effect ( F 3,61 = 3.244) ( P < 0.05) were noted ( Table 4 ).",
+      "context_window": "droperoxide, a significant group effect ( F 3,61 = 4.098) ( P < 0.05) and a time effect ( F 3,61 = 3.244) ( P < 0.05) were noted",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-p-4472",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4472,
+      "sentence": "For lipid hydroperoxide, a significant group effect ( F 3,61 = 4.098) ( P < 0.05) and a time effect ( F 3,61 = 3.244) ( P < 0.05) were noted ( Table 4 ).",
+      "context_window": "= 4.098) ( P < 0.05) and a time effect ( F 3,61 = 3.244) ( P < 0.05) were noted ( Table 4 ). An increment in mean was observed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4567",
+      "claim_type": "percentage",
+      "raw_text": "81.9%",
+      "numeric_values": [
+        81.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4567,
+      "sentence": "An increment in mean was observed only in the ExG+PrG (+1.2 [81.9%]); whereas the PrG (-0.7 [19.1%]), ExG (-0.1 [5.1%]), and the CG (-1.3 [38.2%]) showed a decrease in lipid hydroperoxide levels as compared with baseline.",
+      "context_window": "n increment in mean was observed only in the ExG+PrG (+1.2 [81.9%]); whereas the PrG (-0.7 [19.1%]), ExG (-0.1 [5.1%]), and t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4599",
+      "claim_type": "percentage",
+      "raw_text": "19.1%",
+      "numeric_values": [
+        19.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4599,
+      "sentence": "An increment in mean was observed only in the ExG+PrG (+1.2 [81.9%]); whereas the PrG (-0.7 [19.1%]), ExG (-0.1 [5.1%]), and the CG (-1.3 [38.2%]) showed a decrease in lipid hydroperoxide levels as compared with baseline.",
+      "context_window": "only in the ExG+PrG (+1.2 [81.9%]); whereas the PrG (-0.7 [19.1%]), ExG (-0.1 [5.1%]), and the CG (-1.3 [38.2%]) showed a de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4619",
+      "claim_type": "percentage",
+      "raw_text": "5.1%",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4619,
+      "sentence": "An increment in mean was observed only in the ExG+PrG (+1.2 [81.9%]); whereas the PrG (-0.7 [19.1%]), ExG (-0.1 [5.1%]), and the CG (-1.3 [38.2%]) showed a decrease in lipid hydroperoxide levels as compared with baseline.",
+      "context_window": "(+1.2 [81.9%]); whereas the PrG (-0.7 [19.1%]), ExG (-0.1 [5.1%]), and the CG (-1.3 [38.2%]) showed a decrease in lipid hyd",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4645",
+      "claim_type": "percentage",
+      "raw_text": "38.2%",
+      "numeric_values": [
+        38.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4645,
+      "sentence": "An increment in mean was observed only in the ExG+PrG (+1.2 [81.9%]); whereas the PrG (-0.7 [19.1%]), ExG (-0.1 [5.1%]), and the CG (-1.3 [38.2%]) showed a decrease in lipid hydroperoxide levels as compared with baseline.",
+      "context_window": "he PrG (-0.7 [19.1%]), ExG (-0.1 [5.1%]), and the CG (-1.3 [38.2%]) showed a decrease in lipid hydroperoxide levels as compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-4757",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4757,
+      "sentence": "In comparison with the CG at 12 weeks, the PrG (+0.7 [31.6%]), ExG+PrG (0.6 [26.0%]), and ExG (+0.3 [12.1%]) showed an increment in lipid hydroperoxide levels.",
+      "context_window": "els as compared with baseline. In comparison with the CG at 12 weeks, the PrG (+0.7 [31.6%]), ExG+PrG (0.6 [26.0%]), and ExG (+0",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4782",
+      "claim_type": "percentage",
+      "raw_text": "31.6%",
+      "numeric_values": [
+        31.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4782,
+      "sentence": "In comparison with the CG at 12 weeks, the PrG (+0.7 [31.6%]), ExG+PrG (0.6 [26.0%]), and ExG (+0.3 [12.1%]) showed an increment in lipid hydroperoxide levels.",
+      "context_window": "line. In comparison with the CG at 12 weeks, the PrG (+0.7 [31.6%]), ExG+PrG (0.6 [26.0%]), and ExG (+0.3 [12.1%]) showed an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4805",
+      "claim_type": "percentage",
+      "raw_text": "26.0%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4805,
+      "sentence": "In comparison with the CG at 12 weeks, the PrG (+0.7 [31.6%]), ExG+PrG (0.6 [26.0%]), and ExG (+0.3 [12.1%]) showed an increment in lipid hydroperoxide levels.",
+      "context_window": "h the CG at 12 weeks, the PrG (+0.7 [31.6%]), ExG+PrG (0.6 [26.0%]), and ExG (+0.3 [12.1%]) showed an increment in lipid hydr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-4829",
+      "claim_type": "percentage",
+      "raw_text": "12.1%",
+      "numeric_values": [
+        12.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4829,
+      "sentence": "In comparison with the CG at 12 weeks, the PrG (+0.7 [31.6%]), ExG+PrG (0.6 [26.0%]), and ExG (+0.3 [12.1%]) showed an increment in lipid hydroperoxide levels.",
+      "context_window": "e PrG (+0.7 [31.6%]), ExG+PrG (0.6 [26.0%]), and ExG (+0.3 [12.1%]) showed an increment in lipid hydroperoxide levels. The IG",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-330",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 330,
+      "sentence": "First, having examined the effects on body composition, the PrG showed the highest reduction in body weight and BMI after 12 weeks of intervention.",
+      "context_window": "G showed the highest reduction in body weight and BMI after 12 weeks of intervention. These findings contradicted a previous stu",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-479",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 479,
+      "sentence": "These findings contradicted a previous study in which body weight and BMI did not change following soy supplementation for 12 weeks among hyperlipidemic males.",
+      "context_window": "ht and BMI did not change following soy supplementation for 12 weeks among hyperlipidemic males. 24 This may be due to a higher",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-912",
+      "claim_type": "percentage",
+      "raw_text": "2.4%",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 912,
+      "sentence": "This is also in contrast with another study that showed an improvement in fat-free mass of about 2.4% after 12 weeks of intervention with amino acid supplementation.",
+      "context_window": "study that showed an improvement in fat-free mass of about 2.4% after 12 weeks of intervention with amino acid supplementat",
+      "claim_role": "duration",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-923",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 923,
+      "sentence": "This is also in contrast with another study that showed an improvement in fat-free mass of about 2.4% after 12 weeks of intervention with amino acid supplementation.",
+      "context_window": "showed an improvement in fat-free mass of about 2.4% after 12 weeks of intervention with amino acid supplementation. 14 This st",
+      "claim_role": "duration",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1093",
+      "claim_type": "percentage",
+      "raw_text": "2.4%",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1093,
+      "sentence": "14 This study was also inconsistent with previous research that showed an improvement in fat-free mass by about 2.4% after 12 weeks of intervention with amino acid supplementation.",
+      "context_window": "search that showed an improvement in fat-free mass by about 2.4% after 12 weeks of intervention with amino acid supplementat",
+      "claim_role": "duration",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-1104",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1104,
+      "sentence": "14 This study was also inconsistent with previous research that showed an improvement in fat-free mass by about 2.4% after 12 weeks of intervention with amino acid supplementation.",
+      "context_window": "showed an improvement in fat-free mass by about 2.4% after 12 weeks of intervention with amino acid supplementation. Here, the",
+      "claim_role": "duration",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1235",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1235,
+      "sentence": "Here, the discrepancy might be due to the higher composition of leucine (40% of the total amino acid) in that study as compared with 28.8% in the present study.",
+      "context_window": "crepancy might be due to the higher composition of leucine (40% of the total amino acid) in that study as compared with 28.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-1295",
+      "claim_type": "percentage",
+      "raw_text": "28.8%",
+      "numeric_values": [
+        28.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1295,
+      "sentence": "Here, the discrepancy might be due to the higher composition of leucine (40% of the total amino acid) in that study as compared with 28.8% in the present study.",
+      "context_window": "40% of the total amino acid) in that study as compared with 28.8% in the present study. 14 However, our findings were in agre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-3510",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3510,
+      "sentence": "16 Another study highlighted the benefit of resistance training in preventing muscle loss, and it was noted that resistance training could incur strength gains in older adults ranging from 25% to 100%, or more, through muscle hypertrophy and increased motor unit recruitment.",
+      "context_window": "ing could incur strength gains in older adults ranging from 25% to 100%, or more, through muscle hypertrophy and increased",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-3517",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3517,
+      "sentence": "16 Another study highlighted the benefit of resistance training in preventing muscle loss, and it was noted that resistance training could incur strength gains in older adults ranging from 25% to 100%, or more, through muscle hypertrophy and increased motor unit recruitment.",
+      "context_window": "ld incur strength gains in older adults ranging from 25% to 100%, or more, through muscle hypertrophy and increased motor un",
+      "claim_role": "effect",
+      "endpoint": "muscle hypertrophy",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-pct-5138",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5138,
+      "sentence": "A previous study reported an IGF-1 increment of 37% in Brazilian women aged 45-70 years old, after 16 weeks of resistance training.",
+      "context_window": "sarcopenia. A previous study reported an IGF-1 increment of 37% in Brazilian women aged 45-70 years old, after 16 weeks of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-5169",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5169,
+      "sentence": "A previous study reported an IGF-1 increment of 37% in Brazilian women aged 45-70 years old, after 16 weeks of resistance training.",
+      "context_window": "ported an IGF-1 increment of 37% in Brazilian women aged 45-70 years old, after 16 weeks of resistance training. 26 This finding",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-5189",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5189,
+      "sentence": "A previous study reported an IGF-1 increment of 37% in Brazilian women aged 45-70 years old, after 16 weeks of resistance training.",
+      "context_window": "ement of 37% in Brazilian women aged 45-70 years old, after 16 weeks of resistance training. 26 This finding contradicts our fin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-5442",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5442,
+      "sentence": "This may be due to the lesser frequency of exercise in the program in our study - only two times per week for 12 weeks as compared with the previous study, which had exercises three times a week for 16 weeks.",
+      "context_window": "e in the program in our study - only two times per week for 12 weeks as compared with the previous study, which had exercises th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3797615_effectiveness_of_exercise_and_protein_supplementation_interv-u-5531",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5531,
+      "sentence": "This may be due to the lesser frequency of exercise in the program in our study - only two times per week for 12 weeks as compared with the previous study, which had exercises three times a week for 16 weeks.",
+      "context_window": "previous study, which had exercises three times a week for 16 weeks. 21 On the other hand, the causal pathway leading to inflam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

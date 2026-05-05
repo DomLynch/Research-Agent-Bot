@@ -1,0 +1,702 @@
+{
+  "paper_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_",
+  "doi": "10.3390/nu15132870",
+  "extracted_at": "2026-05-05T22:35:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 8,
+    "mean_sd": 3,
+    "p_value": 18,
+    "unit_value": 8,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-n-591",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 591,
+      "sentence": "Methods: We conducted two investigator-blinded, randomized crossover trials in young ( n = 30; mean age \u00b1 SD: 26.0 \u00b1 4.9 y) and older adults ( n = 25; mean age \u00b1 SD: 64.2 \u00b1 6.6 y).",
+      "context_window": "nvestigator-blinded, randomized crossover trials in young ( n = 30; mean age \u00b1 SD: 26.0 \u00b1 4.9 y) and older adults ( n = 25; me",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-msd-614",
+      "claim_type": "mean_sd",
+      "raw_text": "26.0 \u00b1 4.9",
+      "numeric_values": [
+        26.0,
+        4.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 614,
+      "sentence": "Methods: We conducted two investigator-blinded, randomized crossover trials in young ( n = 30; mean age \u00b1 SD: 26.0 \u00b1 4.9 y) and older adults ( n = 25; mean age \u00b1 SD: 64.2 \u00b1 6.6 y).",
+      "context_window": "ndomized crossover trials in young ( n = 30; mean age \u00b1 SD: 26.0 \u00b1 4.9 y) and older adults ( n = 25; mean age \u00b1 SD: 64.2 \u00b1 6.6 y).",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-n-647",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 647,
+      "sentence": "Methods: We conducted two investigator-blinded, randomized crossover trials in young ( n = 30; mean age \u00b1 SD: 26.0 \u00b1 4.9 y) and older adults ( n = 25; mean age \u00b1 SD: 64.2 \u00b1 6.6 y).",
+      "context_window": "g ( n = 30; mean age \u00b1 SD: 26.0 \u00b1 4.9 y) and older adults ( n = 25; mean age \u00b1 SD: 64.2 \u00b1 6.6 y). Participants completed four",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-msd-670",
+      "claim_type": "mean_sd",
+      "raw_text": "64.2 \u00b1 6.6",
+      "numeric_values": [
+        64.2,
+        6.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 670,
+      "sentence": "Methods: We conducted two investigator-blinded, randomized crossover trials in young ( n = 30; mean age \u00b1 SD: 26.0 \u00b1 4.9 y) and older adults ( n = 25; mean age \u00b1 SD: 64.2 \u00b1 6.6 y).",
+      "context_window": "SD: 26.0 \u00b1 4.9 y) and older adults ( n = 25; mean age \u00b1 SD: 64.2 \u00b1 6.6 y). Participants completed four testing sessions where they",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-1356",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1356,
+      "sentence": "Two oz-eq portions of pork (7.36 g EAA) and eggs (5.38 g EAA) resulted in greater EAA bioavailability than black beans (3.02 g EAA) and almonds (1.85 g EAA) in young and older adults, separately or combined ( p < 0.0001 for all).",
+      "context_window": "g EAA) in young and older adults, separately or combined ( p < 0.0001 for all). Pork resulted in greater EAA bioavailability than",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-1450",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1450,
+      "sentence": "Pork resulted in greater EAA bioavailability than eggs in young adults ( p < 0.0001), older adults ( p = 0.0007), and combined ( p < 0.0001).",
+      "context_window": "in greater EAA bioavailability than eggs in young adults ( p < 0.0001), older adults ( p = 0.0007), and combined ( p < 0.0001). T",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-1478",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0007",
+      "numeric_values": [
+        0.0007
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1478,
+      "sentence": "Pork resulted in greater EAA bioavailability than eggs in young adults ( p < 0.0001), older adults ( p = 0.0007), and combined ( p < 0.0001).",
+      "context_window": "ity than eggs in young adults ( p < 0.0001), older adults ( p = 0.0007), and combined ( p < 0.0001). There were no differences in",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-1506",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1506,
+      "sentence": "Pork resulted in greater EAA bioavailability than eggs in young adults ( p < 0.0001), older adults ( p = 0.0007), and combined ( p < 0.0001).",
+      "context_window": "s ( p < 0.0001), older adults ( p = 0.0007), and combined ( p < 0.0001). There were no differences in EAA bioavailability between",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-u-640",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 640,
+      "sentence": "Study inclusion criteria were: aged 22-39 or 55-75 years for young and older adults, respectively; BMI 20-35 kg/m 2 ; weight stable (\u00b14.5 kg for the previous three months); not currently (or within three months pre-study) following a moderate to vigorous intensity exercise regimen of >3 h/wk; not acutely ill; non-smoking; not diabetic; not pregnant or lactating; willing to limit purposeful physical exercise for 48 h before each testing day; willing and able to consume study foods and beverages and travel to testing facilities.",
+      "context_window": "e, IN, USA. Study inclusion criteria were: aged 22-39 or 55-75 years for young and older adults, respectively; BMI 20-35 kg/m 2",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-u-698",
+      "claim_type": "unit_value",
+      "raw_text": "35 kg",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 698,
+      "sentence": "Study inclusion criteria were: aged 22-39 or 55-75 years for young and older adults, respectively; BMI 20-35 kg/m 2 ; weight stable (\u00b14.5 kg for the previous three months); not currently (or within three months pre-study) following a moderate to vigorous intensity exercise regimen of >3 h/wk; not acutely ill; non-smoking; not diabetic; not pregnant or lactating; willing to limit purposeful physical exercise for 48 h before each testing day; willing and able to consume study foods and beverages and travel to testing facilities.",
+      "context_window": "5-75 years for young and older adults, respectively; BMI 20-35 kg/m 2 ; weight stable (\u00b14.5 kg for the previous three months)",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-u-726",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 kg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 726,
+      "sentence": "Study inclusion criteria were: aged 22-39 or 55-75 years for young and older adults, respectively; BMI 20-35 kg/m 2 ; weight stable (\u00b14.5 kg for the previous three months); not currently (or within three months pre-study) following a moderate to vigorous intensity exercise regimen of >3 h/wk; not acutely ill; non-smoking; not diabetic; not pregnant or lactating; willing to limit purposeful physical exercise for 48 h before each testing day; willing and able to consume study foods and beverages and travel to testing facilities.",
+      "context_window": "er adults, respectively; BMI 20-35 kg/m 2 ; weight stable (\u00b14.5 kg for the previous three months); not currently (or within th",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-u-1198",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1198,
+      "sentence": "Exclusion criteria for this study included: age < 22 and >39 or <55 and >75 years for young and older adults, respectively; BMI < 20 or >35 kg/m 2 ; weight change > 4.5 kg within three months pre-study; exercising moderately to vigorously for >3 h/wk; being diabetic (fasting blood glucose > 126 mg/dL); being a smoker.",
+      "context_window": "teria for this study included: age < 22 and >39 or <55 and >75 years for young and older adults, respectively; BMI < 20 or >35 k",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-u-1262",
+      "claim_type": "unit_value",
+      "raw_text": "35 kg",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1262,
+      "sentence": "Exclusion criteria for this study included: age < 22 and >39 or <55 and >75 years for young and older adults, respectively; BMI < 20 or >35 kg/m 2 ; weight change > 4.5 kg within three months pre-study; exercising moderately to vigorously for >3 h/wk; being diabetic (fasting blood glucose > 126 mg/dL); being a smoker.",
+      "context_window": "ears for young and older adults, respectively; BMI < 20 or >35 kg/m 2 ; weight change > 4.5 kg within three months pre-study;",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-u-1290",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 kg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1290,
+      "sentence": "Exclusion criteria for this study included: age < 22 and >39 or <55 and >75 years for young and older adults, respectively; BMI < 20 or >35 kg/m 2 ; weight change > 4.5 kg within three months pre-study; exercising moderately to vigorously for >3 h/wk; being diabetic (fasting blood glucose > 126 mg/dL); being a smoker.",
+      "context_window": "lts, respectively; BMI < 20 or >35 kg/m 2 ; weight change > 4.5 kg within three months pre-study; exercising moderately to vig",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-u-1417",
+      "claim_type": "unit_value",
+      "raw_text": "126 mg/dL",
+      "numeric_values": [
+        126.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 1417,
+      "sentence": "Exclusion criteria for this study included: age < 22 and >39 or <55 and >75 years for young and older adults, respectively; BMI < 20 or >35 kg/m 2 ; weight change > 4.5 kg within three months pre-study; exercising moderately to vigorously for >3 h/wk; being diabetic (fasting blood glucose > 126 mg/dL); being a smoker.",
+      "context_window": "rously for >3 h/wk; being diabetic (fasting blood glucose > 126 mg/dL); being a smoker. Testing of young adults was done between",
+      "claim_role": "population",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-u-5094",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 5094,
+      "sentence": "Blood samples were collected into serum- and plasma-separator tubes at the specified time points, centrifuged for 15 min at 4000 rpm and 4 \u00b0C, aliquoted into 1 mL microcentrifuge tubes, and stored at -80 \u00b0C as previously described [ 13 ].",
+      "context_window": "centrifuged for 15 min at 4000 rpm and 4 \u00b0C, aliquoted into 1 mL microcentrifuge tubes, and stored at -80 \u00b0C as previously d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-n-6134",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6134,
+      "sentence": "Applying this variability to the power calculation for the current studies indicated that n = 30 adults would provide a sufficient sample size to detect statistical significance (\u03b1 \u2264 0.05) and avoid type II errors (\u03b2 \u2265 80%) for a differential EAA iAUCpos of 350 \u00b1 2000 \u03bcg/mL/h (effect size f = 0.175).",
+      "context_window": "he power calculation for the current studies indicated that n = 30 adults would provide a sufficient sample size to detect sta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-pct-6263",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6263,
+      "sentence": "Applying this variability to the power calculation for the current studies indicated that n = 30 adults would provide a sufficient sample size to detect statistical significance (\u03b1 \u2264 0.05) and avoid type II errors (\u03b2 \u2265 80%) for a differential EAA iAUCpos of 350 \u00b1 2000 \u03bcg/mL/h (effect size f = 0.175).",
+      "context_window": "tical significance (\u03b1 \u2264 0.05) and avoid type II errors (\u03b2 \u2265 80%) for a differential EAA iAUCpos of 350 \u00b1 2000 \u03bcg/mL/h (effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-msd-6302",
+      "claim_type": "mean_sd",
+      "raw_text": "350 \u00b1 2000",
+      "numeric_values": [
+        350.0,
+        2000.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6302,
+      "sentence": "Applying this variability to the power calculation for the current studies indicated that n = 30 adults would provide a sufficient sample size to detect statistical significance (\u03b1 \u2264 0.05) and avoid type II errors (\u03b2 \u2265 80%) for a differential EAA iAUCpos of 350 \u00b1 2000 \u03bcg/mL/h (effect size f = 0.175).",
+      "context_window": "type II errors (\u03b2 \u2265 80%) for a differential EAA iAUCpos of 350 \u00b1 2000 \u03bcg/mL/h (effect size f = 0.175). Statistical analyses of TA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-6911",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6911,
+      "sentence": "Statistical significance was assigned with a Bonferroni-adjusted p < 0.05.",
+      "context_window": "stical significance was assigned with a Bonferroni-adjusted p < 0.05. As there were no differential EAA iAUCpos responses betwee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-2607",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2607,
+      "sentence": "Different symbols indicate a significant difference between or among trials at each time point (Bonferroni adjusted, p < 0.05). * denotes a significant difference between pork or eggs vs. black beans. \u2020 denotes a significant difference between pork or eggs vs. almonds. \u2021 denotes a significant difference between pork and eggs. \u00a5 denotes a significant difference between pork and almonds. # denotes a significant difference between pork and black beans. (C) Essential amino acids with positive incremental area under the curve (iAUCpos) for pork (black bars), eggs (gray bars), black beans (white bars), and almonds (dashed black and white bars) for young and older adults.",
+      "context_window": "en or among trials at each time point (Bonferroni adjusted, p < 0.05). * denotes a significant difference between pork or eggs v",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-3251",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3251,
+      "sentence": "Different letters indicate a significant difference among trials within an age group ( p < 0.05).",
+      "context_window": "a significant difference among trials within an age group ( p < 0.05). All values are least squares means \u00b1 SE; young adults: n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-n-3317",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3317,
+      "sentence": "All values are least squares means \u00b1 SE; young adults: n = 30 (15 females, 15 males); older adults: n = 25 (15 females, 10 males).",
+      "context_window": "05). All values are least squares means \u00b1 SE; young adults: n = 30 (15 females, 15 males); older adults: n = 25 (15 females, 1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-n-3362",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3362,
+      "sentence": "All values are least squares means \u00b1 SE; young adults: n = 30 (15 females, 15 males); older adults: n = 25 (15 females, 10 males).",
+      "context_window": "young adults: n = 30 (15 females, 15 males); older adults: n = 25 (15 females, 10 males). A main effect of protein oz-eq foo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-5262",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5262,
+      "sentence": "Different symbols indicate a significant difference between or among trials at each time point (Bonferroni adjusted, p < 0.05). * denotes a significant difference between pork or eggs and black beans. \u2020 denotes a significant difference between pork or eggs and almonds. \u2021 denotes a significant difference between pork vs. eggs. ( B ) Essential amino acids: positive incremental area under the curve (iAUCpos) for pork (black bars), eggs (gray bars), black beans (white bars), and almonds (dashed black and white bars) for young and older adults combined.",
+      "context_window": "en or among trials at each time point (Bonferroni adjusted, p < 0.05). * denotes a significant difference between pork or eggs a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-5767",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5767,
+      "sentence": "Different letters indicate a significant difference among trials ( p < 0.05).",
+      "context_window": "nt letters indicate a significant difference among trials ( p < 0.05). All values are least squares means \u00b1 SE; n = 55 (30 (15 f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-n-5819",
+      "claim_type": "sample_size",
+      "raw_text": "n = 55",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5819,
+      "sentence": "All values are least squares means \u00b1 SE; n = 55 (30 (15 females, 15 males) young adults and 25 (15 females, 10 males) older adults).",
+      "context_window": "rials ( p < 0.05). All values are least squares means \u00b1 SE; n = 55 (30 (15 females, 15 males) young adults and 25 (15 females,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-6680",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.055",
+      "numeric_values": [
+        0.055
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6680,
+      "sentence": "No differences among trials were observed for insulin iAUCpos, although it trended toward significance ( p = 0.055).",
+      "context_window": "insulin iAUCpos, although it trended toward significance ( p = 0.055). Insulin iAUC trended toward being greater for black bean",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-6766",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.068",
+      "numeric_values": [
+        0.068
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6766,
+      "sentence": "Insulin iAUC trended toward being greater for black beans than almonds ( p = 0.068). ( Table S4 and Figure S5C ).",
+      "context_window": "trended toward being greater for black beans than almonds ( p = 0.068). ( Table S4 and Figure S5C ). At 60 min, insulin was great",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-7599",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.082",
+      "numeric_values": [
+        0.082
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7599,
+      "sentence": "There was no main effect of protein oz-eq food source on glucose iAUCpos, although it trended toward significance ( p = 0.082).",
+      "context_window": "glucose iAUCpos, although it trended toward significance ( p = 0.082). Glucose iAUCpos was not different among trials, although",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-7741",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.083",
+      "numeric_values": [
+        0.083
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7741,
+      "sentence": "Glucose iAUCpos was not different among trials, although glucose iAUCpos trended toward being greater for pork than for almonds ( p = 0.083) ( Table S5 and Figure S9B ).",
+      "context_window": "os trended toward being greater for pork than for almonds ( p = 0.083) ( Table S5 and Figure S9B ). Time point analysis identifie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-7943",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.064",
+      "numeric_values": [
+        0.064
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7943,
+      "sentence": "Time point analysis identified that glucose was greater for black beans than for pork or eggs at 60 min and trended toward being greater than almonds at 60 min ( p = 0.064) ( Table S5 and Figure S9A ).",
+      "context_window": "n and trended toward being greater than almonds at 60 min ( p = 0.064) ( Table S5 and Figure S9A ). A main effect of protein oz-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-8178",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.059",
+      "numeric_values": [
+        0.059
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8178,
+      "sentence": "Insulin iAUCpos was not different among trials, although it trended toward being greater for black beans than for almonds ( p = 0.059) ( Table S5 and Figure S10B ).",
+      "context_window": "ded toward being greater for black beans than for almonds ( p = 0.059) ( Table S5 and Figure S10B ). Time point analysis identifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-9521",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9521,
+      "sentence": "Different symbols indicate a significant difference between or among trials at each time point (Bonferroni adjusted, p < 0.05). * denotes a significant difference between pork or eggs vs. black beans. \u2020 denotes a significant difference between pork or eggs and almonds. \u2021 denotes a significant difference between pork and eggs. ( C ).",
+      "context_window": "en or among trials at each time point (Bonferroni adjusted, p < 0.05). * denotes a significant difference between pork or eggs v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-10065",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10065,
+      "sentence": "Different letters indicate a significant difference among trials within an age group (Bonferroni adjusted p < 0.05). **** denotes a significant difference between females and males for pork (Bonferroni adjusted p < 0.0001).",
+      "context_window": "rence among trials within an age group (Bonferroni adjusted p < 0.05). **** denotes a significant difference between females and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-p-10170",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10170,
+      "sentence": "Different letters indicate a significant difference among trials within an age group (Bonferroni adjusted p < 0.05). **** denotes a significant difference between females and males for pork (Bonferroni adjusted p < 0.0001).",
+      "context_window": "nce between females and males for pork (Bonferroni adjusted p < 0.0001). All values are least squares means \u00b1 SE; females: n = 30;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-n-10233",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10233,
+      "sentence": "All values are least squares means \u00b1 SE; females: n = 30; males: n = 25.",
+      "context_window": "0.0001). All values are least squares means \u00b1 SE; females: n = 30; males: n = 25. Glucose and insulin iAUCpos were not diffe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10343739_effects_of_consuming_ounce_equivalent_portions_of_animal_vs_-n-10248",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10248,
+      "sentence": "All values are least squares means \u00b1 SE; females: n = 30; males: n = 25.",
+      "context_window": "alues are least squares means \u00b1 SE; females: n = 30; males: n = 25. Glucose and insulin iAUCpos were not different between fe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

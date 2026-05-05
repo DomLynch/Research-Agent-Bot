@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC10663750_addressing_the_preventive_and_therapeutic_perspective_of_ber",
+  "doi": "10.1016/j.heliyon.2023.e21233",
+  "extracted_at": "2026-05-05T22:22:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10663750_addressing_the_preventive_and_therapeutic_perspective_of_ber-u-233",
+      "claim_type": "unit_value",
+      "raw_text": "79 year",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "year",
+      "source_section": "introduction",
+      "source_offset": 233,
+      "sentence": "In 2021, DM alone has affected more than 500 million people of age 20-79 year worldwide and approximately 800 million new cases of DM are expected in 2045 [ 1 ].",
+      "context_window": "M alone has affected more than 500 million people of age 20-79 year worldwide and approximately 800 million new cases of DM are",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10663750_addressing_the_preventive_and_therapeutic_perspective_of_ber-pct-1386",
+      "claim_type": "percentage",
+      "raw_text": "10 %",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1386,
+      "sentence": "Though effective, however their irregular use sometime leads to severe hypoglycemia which accounts for 4-10 % of DM related deaths [ 5 ].",
+      "context_window": "sometime leads to severe hypoglycemia which accounts for 4-10 % of DM related deaths [ 5 ]. Recently, use of artificial int",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

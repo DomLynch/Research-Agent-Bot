@@ -1,0 +1,120 @@
+{
+  "paper_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas",
+  "doi": "10.3390/nu13041205",
+  "extracted_at": "2026-05-05T22:35:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas-u-1042",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 mL/min",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mL/min",
+      "source_section": "abstract",
+      "source_offset": 1042,
+      "sentence": "We may prioritize protein restriction in CKD patients with a high risk of end-stage kidney disease (ESKD), classified to stage G4 to G5, but may loosen protein restriction in ESKD-low risk CKD stage G3 patients with proteinuria <0.5 g/day, and rate of eGFR decline <3.0 mL/min/1.73 m 2 /year.",
+      "context_window": "ents with proteinuria <0.5 g/day, and rate of eGFR decline <3.0 mL/min/1.73 m 2 /year. However, the effect of increasing protein i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas-pct-3027",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3027,
+      "sentence": "In fact, protein energy wasting (PEW) assessed by clinical global assessment was observed in 2% of CKD stage G1-2, 16% of CKD G3-4, 31% of CKD G5 without dialysis, and 44% of CKD G5D [ 19 ].",
+      "context_window": "PEW) assessed by clinical global assessment was observed in 2% of CKD stage G1-2, 16% of CKD G3-4, 31% of CKD G5 without d",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas-pct-3049",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3049,
+      "sentence": "In fact, protein energy wasting (PEW) assessed by clinical global assessment was observed in 2% of CKD stage G1-2, 16% of CKD G3-4, 31% of CKD G5 without dialysis, and 44% of CKD G5D [ 19 ].",
+      "context_window": "cal global assessment was observed in 2% of CKD stage G1-2, 16% of CKD G3-4, 31% of CKD G5 without dialysis, and 44% of CKD",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas-pct-3066",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3066,
+      "sentence": "In fact, protein energy wasting (PEW) assessed by clinical global assessment was observed in 2% of CKD stage G1-2, 16% of CKD G3-4, 31% of CKD G5 without dialysis, and 44% of CKD G5D [ 19 ].",
+      "context_window": "ment was observed in 2% of CKD stage G1-2, 16% of CKD G3-4, 31% of CKD G5 without dialysis, and 44% of CKD G5D [ 19 ]. On t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas-pct-3102",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3102,
+      "sentence": "In fact, protein energy wasting (PEW) assessed by clinical global assessment was observed in 2% of CKD stage G1-2, 16% of CKD G3-4, 31% of CKD G5 without dialysis, and 44% of CKD G5D [ 19 ].",
+      "context_window": "G1-2, 16% of CKD G3-4, 31% of CKD G5 without dialysis, and 44% of CKD G5D [ 19 ]. On the other hand, protein restriction i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8067427_optimal_protein_intake_in_pre_dialysis_chronic_kidney_diseas-pct-3442",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3442,
+      "sentence": "Participants in the highest quintile of protein intake lost approximately 40% less lean mass than did those in the lowest quintile of protein intake [ 20 ].",
+      "context_window": "n the highest quintile of protein intake lost approximately 40% less lean mass than did those in the lowest quintile of pro",
+      "claim_role": "background",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

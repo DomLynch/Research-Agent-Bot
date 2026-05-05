@@ -1,0 +1,3121 @@
+{
+  "paper_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise",
+  "doi": "10.14814/phy2.70776",
+  "extracted_at": "2026-05-05T22:35:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 38,
+    "p_value": 66,
+    "mean_sd": 27,
+    "unit_value": 21,
+    "sample_size": 18,
+    "correlation": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-389",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 389,
+      "sentence": "FED and EXFED consumed a mixed carbohydrate and AA beverage enriched with L\u2010[1\u2010 13 C]leucine (25%) and L\u2010[ ring \u2010 2 H 5 ]phenylalanine (30%) at rest or after a bout of resistance exercise, while FAST consumed only the equivalent tracer dose.",
+      "context_window": "bohydrate and AA beverage enriched with L\u2010[1\u2010 13 C]leucine (25%) and L\u2010[ ring \u2010 2 H 5 ]phenylalanine (30%) at rest or after",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-431",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 431,
+      "sentence": "FED and EXFED consumed a mixed carbohydrate and AA beverage enriched with L\u2010[1\u2010 13 C]leucine (25%) and L\u2010[ ring \u2010 2 H 5 ]phenylalanine (30%) at rest or after a bout of resistance exercise, while FAST consumed only the equivalent tracer dose.",
+      "context_window": "[1\u2010 13 C]leucine (25%) and L\u2010[ ring \u2010 2 H 5 ]phenylalanine (30%) at rest or after a bout of resistance exercise, while FAST",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-802",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 802,
+      "sentence": "LEUMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h).",
+      "context_window": "ecursor\u2010product method. LEUMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-822",
+      "claim_type": "mean_sd",
+      "raw_text": "0.090 \u00b1 0.024",
+      "numeric_values": [
+        0.09,
+        0.024
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 822,
+      "sentence": "LEUMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h).",
+      "context_window": "od. LEUMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-830",
+      "claim_type": "percentage",
+      "raw_text": "0.024%",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 830,
+      "sentence": "LEUMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h).",
+      "context_window": "yoPS over 300 min was greater ( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-860",
+      "claim_type": "mean_sd",
+      "raw_text": "0.067 \u00b1 0.028",
+      "numeric_values": [
+        0.067,
+        0.028
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 860,
+      "sentence": "LEUMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h).",
+      "context_window": "( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h). PHEMyoPS over 300",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-868",
+      "claim_type": "percentage",
+      "raw_text": "0.028%",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 868,
+      "sentence": "LEUMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h).",
+      "context_window": "01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h). PHEMyoPS over 300 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-896",
+      "claim_type": "mean_sd",
+      "raw_text": "0.024 \u00b1 0.015",
+      "numeric_values": [
+        0.024,
+        0.015
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 896,
+      "sentence": "LEUMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h).",
+      "context_window": "/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h). PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-904",
+      "claim_type": "percentage",
+      "raw_text": "0.015%",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 904,
+      "sentence": "LEUMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.090 \u00b1 0.024%/h; mean \u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h).",
+      "context_window": "\u00b1 SD) and FED (0.067 \u00b1 0.028%/h) compared to FAST (0.024 \u00b1 0.015%/h). PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-951",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 951,
+      "sentence": "PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h).",
+      "context_window": "AST (0.024 \u00b1 0.015%/h). PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-971",
+      "claim_type": "mean_sd",
+      "raw_text": "0.128 \u00b1 0.034",
+      "numeric_values": [
+        0.128,
+        0.034
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 971,
+      "sentence": "PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h).",
+      "context_window": "h). PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-979",
+      "claim_type": "percentage",
+      "raw_text": "0.034%",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 979,
+      "sentence": "PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h).",
+      "context_window": "yoPS over 300 min was greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-998",
+      "claim_type": "mean_sd",
+      "raw_text": "0.098 \u00b1 0.020",
+      "numeric_values": [
+        0.098,
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 998,
+      "sentence": "PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h).",
+      "context_window": "as greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h). There was a positi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-1006",
+      "claim_type": "percentage",
+      "raw_text": "0.020%",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1006,
+      "sentence": "PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h).",
+      "context_window": "er ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h). There was a positiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-1034",
+      "claim_type": "mean_sd",
+      "raw_text": "0.056 \u00b1 0.012",
+      "numeric_values": [
+        0.056,
+        0.012
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1034,
+      "sentence": "PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h).",
+      "context_window": "28 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h). There was a positive correlation ( r = 0.81, p < 0.000",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-1042",
+      "claim_type": "percentage",
+      "raw_text": "0.012%",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1042,
+      "sentence": "PHEMyoPS over 300 min was greater ( p < 0.01) in EXFED (0.128 \u00b1 0.034%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h).",
+      "context_window": "34%/h) and FED (0.098 \u00b1 0.020%/h) compared to FAST (0.056 \u00b1 0.012%/h). There was a positive correlation ( r = 0.81, p < 0.0001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-1098",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1098,
+      "sentence": "There was a positive correlation ( r = 0.81, p < 0.0001) between LEUMyoPS and.",
+      "context_window": "6 \u00b1 0.012%/h). There was a positive correlation ( r = 0.81, p < 0.0001) between LEUMyoPS and. Oral essential amino acid tracer ing",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-554",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 554,
+      "sentence": "Participants were recruited via postings at the University of Toronto and were recreationally active (e.g., performed weightlifting, running, and team\u2010sport activity) 2-5 times per week for at least 6 months before enrolment.",
+      "context_window": "g, and team\u2010sport activity) 2-5 times per week for at least 6 months before enrolment. Participants were tracer na\u00efve with no pa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-1334",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1334,
+      "sentence": "Participants reported to the laboratory for baseline testing 5-7 days before the metabolic trial, which included body composition testing and exercise familiarization.",
+      "context_window": "ticipants reported to the laboratory for baseline testing 5-7 days before the metabolic trial, which included body composition",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-1933",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1933,
+      "sentence": "Participants warmed up with ~50% of their estimated 1\u2010RM, and weight was progressively added to determine their 1\u2010RM within 4-5 attempts.",
+      "context_window": "press; and (iv) leg extension. Participants warmed up with ~50% of their estimated 1\u2010RM, and weight was progressively added",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-2128",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2128,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "rticipants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), res",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2135",
+      "claim_type": "mean_sd",
+      "raw_text": "22 \u00b1 6",
+      "numeric_values": [
+        22.0,
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2135,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "nts were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-2140",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2140,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "ere randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED:",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2149",
+      "claim_type": "mean_sd",
+      "raw_text": "72 \u00b1 13",
+      "numeric_values": [
+        72.0,
+        13.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2149,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "mly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-2154",
+      "claim_type": "unit_value",
+      "raw_text": "13 kg",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2154,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "ssigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2171",
+      "claim_type": "mean_sd",
+      "raw_text": "14 \u00b1 4",
+      "numeric_values": [
+        14.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2171,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "ed\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-2176",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2176,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "sted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-2207",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2207,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or e",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2214",
+      "claim_type": "mean_sd",
+      "raw_text": "23 \u00b1 5",
+      "numeric_values": [
+        23.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2214,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-2219",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2219,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (E",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2228",
+      "claim_type": "mean_sd",
+      "raw_text": "77 \u00b1 4",
+      "numeric_values": [
+        77.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2228,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "s; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-2233",
+      "claim_type": "unit_value",
+      "raw_text": "4 kg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2233,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "\u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2249",
+      "claim_type": "mean_sd",
+      "raw_text": "14 \u00b1 4",
+      "numeric_values": [
+        14.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2249,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-2254",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2254,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "ed\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-2292",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2292,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) cond",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2299",
+      "claim_type": "mean_sd",
+      "raw_text": "22 \u00b1 2",
+      "numeric_values": [
+        22.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2299,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "ody mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition. P",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-2304",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2304,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "ass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition. Partici",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2313",
+      "claim_type": "mean_sd",
+      "raw_text": "78 \u00b1 10",
+      "numeric_values": [
+        78.0,
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2313,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition. Participants wer",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-2318",
+      "claim_type": "unit_value",
+      "raw_text": "10 kg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2318,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "ody fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition. Participants were i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2335",
+      "claim_type": "mean_sd",
+      "raw_text": "13 \u00b1 5",
+      "numeric_values": [
+        13.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2335,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "cise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition. Participants were instructed to refra",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-2340",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2340,
+      "sentence": "After baseline testing, participants were randomly assigned to a rested\u2010fasted (FAST: n = 7, 22 \u00b1 6 years; 72 \u00b1 13 kg body mass; 14 \u00b1 4% body fat), rested\u2010fed (FED: n = 7; 23 \u00b1 5 years; 77 \u00b1 4 kg body mass; 14 \u00b1 4% body fat), or exercise\u2010fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition.",
+      "context_window": "fed (EXFED: n = 8; 22 \u00b1 2 years; 78 \u00b1 10 kg body mass; 13 \u00b1 5% body fat) condition. Participants were instructed to refrai",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-3110",
+      "claim_type": "unit_value",
+      "raw_text": "8 mL",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3110,
+      "sentence": "A baseline blood sample was collected in an 8 mL EDTA Vacutainer\u00ae (BD) and chilled on ice to determine basal leucine concentrations and background tracer enrichments.",
+      "context_window": "blood sampling. A baseline blood sample was collected in an 8 mL EDTA Vacutainer\u00ae (BD) and chilled on ice to determine basal",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-3269",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3269,
+      "sentence": "The catheter remained patent with a 0.9% saline flush after each subsequent blood draw.",
+      "context_window": "und tracer enrichments. The catheter remained patent with a 0.9% saline flush after each subsequent blood draw. Shortly ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-3435",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3435,
+      "sentence": "Shortly thereafter, a baseline muscle biopsy was collected from the middle region of the vastus lateralis using a 5 mm Bergstr\u00f6m needle modified for manual suction under 2% lidocaine local anesthesia to determine background muscle\u2010bound tracer enrichments.",
+      "context_window": "cted from the middle region of the vastus lateralis using a 5 mm Bergstr\u00f6m needle modified for manual suction under 2% lidoc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-3491",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3491,
+      "sentence": "Shortly thereafter, a baseline muscle biopsy was collected from the middle region of the vastus lateralis using a 5 mm Bergstr\u00f6m needle modified for manual suction under 2% lidocaine local anesthesia to determine background muscle\u2010bound tracer enrichments.",
+      "context_window": "g a 5 mm Bergstr\u00f6m needle modified for manual suction under 2% lidocaine local anesthesia to determine background muscle\u2010b",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-3775",
+      "claim_type": "unit_value",
+      "raw_text": "3 cm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3775,
+      "sentence": "Each subsequent biopsy was obtained from separate incisions (~2-3 cm apart) in alternating legs.",
+      "context_window": "subsequent biopsy was obtained from separate incisions (~2-3 cm apart) in alternating legs. Immediately after this biopsy p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-4101",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4101,
+      "sentence": "Each exercise was performed at 75% of their pre\u2010determined 1\u2010RM with ~90 s rest between sets.",
+      "context_window": "ants in FAST and FED rested. Each exercise was performed at 75% of their pre\u2010determined 1\u2010RM with ~90 s rest between sets.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-5436",
+      "claim_type": "unit_value",
+      "raw_text": "500 mL",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 5436,
+      "sentence": "Inc., Raleigh, NC) modeled on the composition of egg protein based on a test beverage used by Kato et al. ( 2016 ), and 0.75 g.kg -1 carbohydrate (TANG, Kraft Canada Inc., Mississauga, ON) dissolved in 500 mL water.",
+      "context_window": "ate (TANG, Kraft Canada Inc., Mississauga, ON) dissolved in 500 mL water. This protein dose was selected as we (Pennings et al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-5720",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5720,
+      "sentence": "To measure dietary amino acid incorporation and MyoPS from oral tracers the leucine content (~20 mg.kg -1 ) of the beverage was enriched to 25% with L\u2010[1\u2010 13 C]leucine (CLM\u2010468\u2010PK; Cambridge Isotope Laboratories Inc., Montreal, PQ) and phenylalanine content (~14 mg.kg -1 ) was enriched to 30% with L\u2010[ ring \u2010 2 H 5 ]phenylalanine (DLM\u20101258\u2010PK; Cambridge Isotope Laboratories Inc., Montreal, PQ).",
+      "context_window": "rporation and MyoPS from oral tracers the leucine content (~20 mg.kg -1 ) of the beverage was enriched to 25% with L\u2010[1\u2010 13 C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-5766",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5766,
+      "sentence": "To measure dietary amino acid incorporation and MyoPS from oral tracers the leucine content (~20 mg.kg -1 ) of the beverage was enriched to 25% with L\u2010[1\u2010 13 C]leucine (CLM\u2010468\u2010PK; Cambridge Isotope Laboratories Inc., Montreal, PQ) and phenylalanine content (~14 mg.kg -1 ) was enriched to 30% with L\u2010[ ring \u2010 2 H 5 ]phenylalanine (DLM\u20101258\u2010PK; Cambridge Isotope Laboratories Inc., Montreal, PQ).",
+      "context_window": "ine content (~20 mg.kg -1 ) of the beverage was enriched to 25% with L\u2010[1\u2010 13 C]leucine (CLM\u2010468\u2010PK; Cambridge Isotope Labo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-5886",
+      "claim_type": "unit_value",
+      "raw_text": "14 mg",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5886,
+      "sentence": "To measure dietary amino acid incorporation and MyoPS from oral tracers the leucine content (~20 mg.kg -1 ) of the beverage was enriched to 25% with L\u2010[1\u2010 13 C]leucine (CLM\u2010468\u2010PK; Cambridge Isotope Laboratories Inc., Montreal, PQ) and phenylalanine content (~14 mg.kg -1 ) was enriched to 30% with L\u2010[ ring \u2010 2 H 5 ]phenylalanine (DLM\u20101258\u2010PK; Cambridge Isotope Laboratories Inc., Montreal, PQ).",
+      "context_window": "aboratories Inc., Montreal, PQ) and phenylalanine content (~14 mg.kg -1 ) was enriched to 30% with L\u2010[ ring \u2010 2 H 5 ]phenylal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-5916",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5916,
+      "sentence": "To measure dietary amino acid incorporation and MyoPS from oral tracers the leucine content (~20 mg.kg -1 ) of the beverage was enriched to 25% with L\u2010[1\u2010 13 C]leucine (CLM\u2010468\u2010PK; Cambridge Isotope Laboratories Inc., Montreal, PQ) and phenylalanine content (~14 mg.kg -1 ) was enriched to 30% with L\u2010[ ring \u2010 2 H 5 ]phenylalanine (DLM\u20101258\u2010PK; Cambridge Isotope Laboratories Inc., Montreal, PQ).",
+      "context_window": ") and phenylalanine content (~14 mg.kg -1 ) was enriched to 30% with L\u2010[ ring \u2010 2 H 5 ]phenylalanine (DLM\u20101258\u2010PK; Cambridg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-6294",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6294,
+      "sentence": "Participants in FAST ingested only the tracers (i.e., ~5 mg.kg -1 L\u2010[1\u2010 13 C]leucine and ~ 4 mg.kg -1 L\u2010[ ring \u2010 2 H 5 ]phenylalanine) as a pulse dose (Zhang et al., 2002 ) dissolved in 200 mL water to establish the metabolic fate of the tracers into myofibrillar proteins independent of the stimulatory effect of additional amino acids and resistance exercise on MyoPS.",
+      "context_window": "4 ). Participants in FAST ingested only the tracers (i.e., ~5 mg.kg -1 L\u2010[1\u2010 13 C]leucine and ~ 4 mg.kg -1 L\u2010[ ring \u2010 2 H 5",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-6330",
+      "claim_type": "unit_value",
+      "raw_text": "4 mg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6330,
+      "sentence": "Participants in FAST ingested only the tracers (i.e., ~5 mg.kg -1 L\u2010[1\u2010 13 C]leucine and ~ 4 mg.kg -1 L\u2010[ ring \u2010 2 H 5 ]phenylalanine) as a pulse dose (Zhang et al., 2002 ) dissolved in 200 mL water to establish the metabolic fate of the tracers into myofibrillar proteins independent of the stimulatory effect of additional amino acids and resistance exercise on MyoPS.",
+      "context_window": "nly the tracers (i.e., ~5 mg.kg -1 L\u2010[1\u2010 13 C]leucine and ~ 4 mg.kg -1 L\u2010[ ring \u2010 2 H 5 ]phenylalanine) as a pulse dose (Zha",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-6425",
+      "claim_type": "unit_value",
+      "raw_text": "200 mL",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 6425,
+      "sentence": "Participants in FAST ingested only the tracers (i.e., ~5 mg.kg -1 L\u2010[1\u2010 13 C]leucine and ~ 4 mg.kg -1 L\u2010[ ring \u2010 2 H 5 ]phenylalanine) as a pulse dose (Zhang et al., 2002 ) dissolved in 200 mL water to establish the metabolic fate of the tracers into myofibrillar proteins independent of the stimulatory effect of additional amino acids and resistance exercise on MyoPS.",
+      "context_window": "alanine) as a pulse dose (Zhang et al., 2002 ) dissolved in 200 mL water to establish the metabolic fate of the tracers into m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-6821",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6821,
+      "sentence": "Plasma (100 \u03bcL) was deproteinized in 100% acetonitrile and centrifuged at 3000 \u00d7 g for 5 min at 4\u00b0C.",
+      "context_window": "Inc., Santa Clara CA). Plasma (100 \u03bcL) was deproteinized in 100% acetonitrile and centrifuged at 3000 \u00d7 g for 5 min at 4\u00b0C.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-6999",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6999,
+      "sentence": "Free amino acids were dried under N 2 at 50\u00b0C and converted to their t \u2010bdmcs derivatives in acetonitrile/MTBSTFA+1%TBDMCS (Sigma\u2010Aldrich Canada Co., Oakville, ON), and the mixture was heated for 30 min at 100\u00b0C before GC\u2010MS analysis.",
+      "context_window": "erted to their t \u2010bdmcs derivatives in acetonitrile/MTBSTFA+1%TBDMCS (Sigma\u2010Aldrich Canada Co., Oakville, ON), and the mix",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-8316",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 8316,
+      "sentence": "Myofibrillar protein\u2010enriched fractions were isolated from ~25 mg wet muscle tissue as previously described (Hannaian et al., 2020 ).",
+      "context_window": "Myofibrillar protein\u2010enriched fractions were isolated from ~25 mg wet muscle tissue as previously described (Hannaian et al.,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-9042",
+      "claim_type": "unit_value",
+      "raw_text": "2.1 mm",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 9042,
+      "sentence": "Briefly, samples were injected onto a 3.5 \u03bcm 2.1 mm \u00d7 150 mm column (XTerra, Waters, Mississauga, ON) on a 1290 liquid chromatography system (Agilent Technologies Inc.) coupled to a mass spectrometer (Q\u2010Trap 5500, SCIEX, Framingham, MA).",
+      "context_window": "t al., 2020 ). Briefly, samples were injected onto a 3.5 \u03bcm 2.1 mm \u00d7 150 mm column (XTerra, Waters, Mississauga, ON) on a 1290",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-9051",
+      "claim_type": "unit_value",
+      "raw_text": "150 mm",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 9051,
+      "sentence": "Briefly, samples were injected onto a 3.5 \u03bcm 2.1 mm \u00d7 150 mm column (XTerra, Waters, Mississauga, ON) on a 1290 liquid chromatography system (Agilent Technologies Inc.) coupled to a mass spectrometer (Q\u2010Trap 5500, SCIEX, Framingham, MA).",
+      "context_window": "20 ). Briefly, samples were injected onto a 3.5 \u03bcm 2.1 mm \u00d7 150 mm column (XTerra, Waters, Mississauga, ON) on a 1290 liquid c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-9285",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9285,
+      "sentence": "Samples were eluted isocratic using a gradient of 0.1% formic acid and 0.1% formic acid/acetonitrile with a total run time of 3 min.",
+      "context_window": "ham, MA). Samples were eluted isocratic using a gradient of 0.1% formic acid and 0.1% formic acid/acetonitrile with a total",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-9306",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9306,
+      "sentence": "Samples were eluted isocratic using a gradient of 0.1% formic acid and 0.1% formic acid/acetonitrile with a total run time of 3 min.",
+      "context_window": "e eluted isocratic using a gradient of 0.1% formic acid and 0.1% formic acid/acetonitrile with a total run time of 3 min. En",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-11449",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11449,
+      "sentence": "Specifically, MyoPS was ~43% greater in EXFED (0.070 \u00b1 0.008%.h -1 ) compared to FED (0.049 \u00b1 0.008%.h -1 ), with an effect size of ~2.7 and significant differences between conditions.",
+      "context_window": "riod (Moore, Tang, et al., 2009 ). Specifically, MyoPS was ~43% greater in EXFED (0.070 \u00b1 0.008%.h -1 ) compared to FED (0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-11471",
+      "claim_type": "mean_sd",
+      "raw_text": "0.070 \u00b1 0.008",
+      "numeric_values": [
+        0.07,
+        0.008
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11471,
+      "sentence": "Specifically, MyoPS was ~43% greater in EXFED (0.070 \u00b1 0.008%.h -1 ) compared to FED (0.049 \u00b1 0.008%.h -1 ), with an effect size of ~2.7 and significant differences between conditions.",
+      "context_window": "al., 2009 ). Specifically, MyoPS was ~43% greater in EXFED (0.070 \u00b1 0.008%.h -1 ) compared to FED (0.049 \u00b1 0.008%.h -1 ), with an eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-11479",
+      "claim_type": "percentage",
+      "raw_text": "0.008%",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11479,
+      "sentence": "Specifically, MyoPS was ~43% greater in EXFED (0.070 \u00b1 0.008%.h -1 ) compared to FED (0.049 \u00b1 0.008%.h -1 ), with an effect size of ~2.7 and significant differences between conditions.",
+      "context_window": "9 ). Specifically, MyoPS was ~43% greater in EXFED (0.070 \u00b1 0.008%.h -1 ) compared to FED (0.049 \u00b1 0.008%.h -1 ), with an effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-11510",
+      "claim_type": "mean_sd",
+      "raw_text": "0.049 \u00b1 0.008",
+      "numeric_values": [
+        0.049,
+        0.008
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11510,
+      "sentence": "Specifically, MyoPS was ~43% greater in EXFED (0.070 \u00b1 0.008%.h -1 ) compared to FED (0.049 \u00b1 0.008%.h -1 ), with an effect size of ~2.7 and significant differences between conditions.",
+      "context_window": "3% greater in EXFED (0.070 \u00b1 0.008%.h -1 ) compared to FED (0.049 \u00b1 0.008%.h -1 ), with an effect size of ~2.7 and significant differ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-11518",
+      "claim_type": "percentage",
+      "raw_text": "0.008%",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11518,
+      "sentence": "Specifically, MyoPS was ~43% greater in EXFED (0.070 \u00b1 0.008%.h -1 ) compared to FED (0.049 \u00b1 0.008%.h -1 ), with an effect size of ~2.7 and significant differences between conditions.",
+      "context_window": "er in EXFED (0.070 \u00b1 0.008%.h -1 ) compared to FED (0.049 \u00b1 0.008%.h -1 ), with an effect size of ~2.7 and significant differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-11693",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11693,
+      "sentence": "Therefore, with an \u03b1 = 0.05 and a \u03b2 = 0.8, we reasoned that a similar sample size ( n = 7 per group) would be sufficient to detect a significant difference between FED and EXFED (i.e., our two anabolic conditions).",
+      "context_window": ".05 and a \u03b2 = 0.8, we reasoned that a similar sample size ( n = 7 per group) would be sufficient to detect a significant diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-12889",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 12889,
+      "sentence": "For all analyses the level of significance was p < 0.05, and all results are presented as means \u00b1 SD.",
+      "context_window": "dial period. For all analyses the level of significance was p < 0.05, and all results are presented as means \u00b1 SD.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-44",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 44,
+      "sentence": "There was a time by condition interaction ( p < 0.0001) for plasma leucine concentrations (Figure 2 ).",
+      "context_window": "There was a time by condition interaction ( p < 0.0001) for plasma leucine concentrations (Figure 2 ). Plasma leuc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-152",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 152,
+      "sentence": "Plasma leucine concentrations were greater (all, p < 0.0001) in FED and EXFED compared to FAST at t = 20, 40, 60, and 80 min with no differences (all, p \u2265 0.08) between FED and EXFED at any time point.",
+      "context_window": "igure 2 ). Plasma leucine concentrations were greater (all, p < 0.0001) in FED and EXFED compared to FAST at t = 20, 40, 60, and 8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-254",
+      "claim_type": "p_value",
+      "raw_text": "p \u2265 0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 254,
+      "sentence": "Plasma leucine concentrations were greater (all, p < 0.0001) in FED and EXFED compared to FAST at t = 20, 40, 60, and 80 min with no differences (all, p \u2265 0.08) between FED and EXFED at any time point.",
+      "context_window": "AST at t = 20, 40, 60, and 80 min with no differences (all, p \u2265 0.08) between FED and EXFED at any time point. FED and EXFED pla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-369",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 369,
+      "sentence": "FED and EXFED plasma leucine concentrations were elevated (all, p \u2264 0.01) above basal levels after beverage ingestion and remained elevated until t = 80 min, whereas in FAST plasma leucine concentrations did not change (all, p > 0.99) from basal values.",
+      "context_window": "and EXFED plasma leucine concentrations were elevated (all, p \u2264 0.01) above basal levels after beverage ingestion and remained e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-530",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 530,
+      "sentence": "FED and EXFED plasma leucine concentrations were elevated (all, p \u2264 0.01) above basal levels after beverage ingestion and remained elevated until t = 80 min, whereas in FAST plasma leucine concentrations did not change (all, p > 0.99) from basal values.",
+      "context_window": "in FAST plasma leucine concentrations did not change (all, p > 0.99) from basal values. Plasma leucine concentrations (\u03bcmol.l",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-671",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 671,
+      "sentence": "Plasma leucine concentrations (\u03bcmol.l -1 ): Time effect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.05).",
+      "context_window": "fect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time po",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-751",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 751,
+      "sentence": "Plasma leucine concentrations (\u03bcmol.l -1 ): Time effect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.05).",
+      "context_window": "FED and EXFED different from FAST at same time point (all, p \u2264 0.05). Data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-789",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 789,
+      "sentence": "FAST: n = 7; FED: n = 7; EXFED: n = 8.",
+      "context_window": "same time point (all, p \u2264 0.05). Data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n = 8. Figure adapted from (Mazzulla, 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-801",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 801,
+      "sentence": "FAST: n = 7; FED: n = 7; EXFED: n = 8.",
+      "context_window": "int (all, p \u2264 0.05). Data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n = 8. Figure adapted from (Mazzulla, 2022 ). Indi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-815",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 815,
+      "sentence": "FAST: n = 7; FED: n = 7; EXFED: n = 8.",
+      "context_window": "0.05). Data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n = 8. Figure adapted from (Mazzulla, 2022 ). Individual plasma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-990",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 990,
+      "sentence": "There was a time by condition interaction ( p < 0.0001) for plasma L\u2010[1\u2010 13 C]leucine enrichments (Figure 3a ).",
+      "context_window": "in Figure S1 . There was a time by condition interaction ( p < 0.0001) for plasma L\u2010[1\u2010 13 C]leucine enrichments (Figure 3a ). Pl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-1115",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1115,
+      "sentence": "Plasma L\u2010[1\u2010 13 C]leucine enrichments were greater (all, p \u2264 0.001) in FAST compared to FED and EXFED at t = 20, 40, and 60 min with no differences (all, p \u2265 0.15) between FED and EXFED at any time point.",
+      "context_window": "). Plasma L\u2010[1\u2010 13 C]leucine enrichments were greater (all, p \u2264 0.001) in FAST compared to FED and EXFED at t = 20, 40, and 60 mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-1212",
+      "claim_type": "p_value",
+      "raw_text": "p \u2265 0.15",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1212,
+      "sentence": "Plasma L\u2010[1\u2010 13 C]leucine enrichments were greater (all, p \u2264 0.001) in FAST compared to FED and EXFED at t = 20, 40, and 60 min with no differences (all, p \u2265 0.15) between FED and EXFED at any time point.",
+      "context_window": "d EXFED at t = 20, 40, and 60 min with no differences (all, p \u2265 0.15) between FED and EXFED at any time point. During all three",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-1350",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1350,
+      "sentence": "During all three conditions, plasma L\u2010[1\u2010 13 C]leucine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 300 min.\n\n(a) Plasma L\u2010[1\u2010 13 C]leucine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, and time\u00d7condition interaction, all p \u2264 0.0002. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.001); (b) Plasma [ 13 C]KIC enrichments (MPE): Time effect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time point (all, p < 0.0001); (c) Change in myofibrillar\u2010bound L\u2010[1\u2010 13 C]leucine enrichments over 300 min (\u0394LEU; Atom Percent Excess): Main effect, p = 0.002; (d) Leucine derived MyoPS over 300 min (%.h -1 ; LEUMyoPS): Main effect, p < 0.0001.",
+      "context_window": ", plasma L\u2010[1\u2010 13 C]leucine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-1583",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.0002",
+      "numeric_values": [
+        0.0002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1583,
+      "sentence": "During all three conditions, plasma L\u2010[1\u2010 13 C]leucine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 300 min.\n\n(a) Plasma L\u2010[1\u2010 13 C]leucine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, and time\u00d7condition interaction, all p \u2264 0.0002. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.001); (b) Plasma [ 13 C]KIC enrichments (MPE): Time effect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time point (all, p < 0.0001); (c) Change in myofibrillar\u2010bound L\u2010[1\u2010 13 C]leucine enrichments over 300 min (\u0394LEU; Atom Percent Excess): Main effect, p = 0.002; (d) Leucine derived MyoPS over 300 min (%.h -1 ; LEUMyoPS): Main effect, p < 0.0001.",
+      "context_window": "fect, condition effect, and time\u00d7condition interaction, all p \u2264 0.0002. *Denotes FED and EXFED different from FAST at same time po",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-1663",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1663,
+      "sentence": "During all three conditions, plasma L\u2010[1\u2010 13 C]leucine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 300 min.\n\n(a) Plasma L\u2010[1\u2010 13 C]leucine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, and time\u00d7condition interaction, all p \u2264 0.0002. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.001); (b) Plasma [ 13 C]KIC enrichments (MPE): Time effect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time point (all, p < 0.0001); (c) Change in myofibrillar\u2010bound L\u2010[1\u2010 13 C]leucine enrichments over 300 min (\u0394LEU; Atom Percent Excess): Main effect, p = 0.002; (d) Leucine derived MyoPS over 300 min (%.h -1 ; LEUMyoPS): Main effect, p < 0.0001.",
+      "context_window": "FED and EXFED different from FAST at same time point (all, p \u2264 0.001); (b) Plasma [ 13 C]KIC enrichments (MPE): Time effect, con",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-1783",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1783,
+      "sentence": "During all three conditions, plasma L\u2010[1\u2010 13 C]leucine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 300 min.\n\n(a) Plasma L\u2010[1\u2010 13 C]leucine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, and time\u00d7condition interaction, all p \u2264 0.0002. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.001); (b) Plasma [ 13 C]KIC enrichments (MPE): Time effect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time point (all, p < 0.0001); (c) Change in myofibrillar\u2010bound L\u2010[1\u2010 13 C]leucine enrichments over 300 min (\u0394LEU; Atom Percent Excess): Main effect, p = 0.002; (d) Leucine derived MyoPS over 300 min (%.h -1 ; LEUMyoPS): Main effect, p < 0.0001.",
+      "context_window": "fect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time po",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-1863",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1863,
+      "sentence": "During all three conditions, plasma L\u2010[1\u2010 13 C]leucine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 300 min.\n\n(a) Plasma L\u2010[1\u2010 13 C]leucine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, and time\u00d7condition interaction, all p \u2264 0.0002. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.001); (b) Plasma [ 13 C]KIC enrichments (MPE): Time effect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time point (all, p < 0.0001); (c) Change in myofibrillar\u2010bound L\u2010[1\u2010 13 C]leucine enrichments over 300 min (\u0394LEU; Atom Percent Excess): Main effect, p = 0.002; (d) Leucine derived MyoPS over 300 min (%.h -1 ; LEUMyoPS): Main effect, p < 0.0001.",
+      "context_window": "FED and EXFED different from FAST at same time point (all, p < 0.0001); (c) Change in myofibrillar\u2010bound L\u2010[1\u2010 13 C]leucine enric",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-1995",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1995,
+      "sentence": "During all three conditions, plasma L\u2010[1\u2010 13 C]leucine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 300 min.\n\n(a) Plasma L\u2010[1\u2010 13 C]leucine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, and time\u00d7condition interaction, all p \u2264 0.0002. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.001); (b) Plasma [ 13 C]KIC enrichments (MPE): Time effect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time point (all, p < 0.0001); (c) Change in myofibrillar\u2010bound L\u2010[1\u2010 13 C]leucine enrichments over 300 min (\u0394LEU; Atom Percent Excess): Main effect, p = 0.002; (d) Leucine derived MyoPS over 300 min (%.h -1 ; LEUMyoPS): Main effect, p < 0.0001.",
+      "context_window": "ents over 300 min (\u0394LEU; Atom Percent Excess): Main effect, p = 0.002; (d) Leucine derived MyoPS over 300 min (%.h -1 ; LEUMyoPS)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-2079",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2079,
+      "sentence": "During all three conditions, plasma L\u2010[1\u2010 13 C]leucine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 300 min.\n\n(a) Plasma L\u2010[1\u2010 13 C]leucine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, and time\u00d7condition interaction, all p \u2264 0.0002. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.001); (b) Plasma [ 13 C]KIC enrichments (MPE): Time effect, condition effect, and time\u00d7condition interaction, all p < 0.0001. *Denotes FED and EXFED different from FAST at same time point (all, p < 0.0001); (c) Change in myofibrillar\u2010bound L\u2010[1\u2010 13 C]leucine enrichments over 300 min (\u0394LEU; Atom Percent Excess): Main effect, p = 0.002; (d) Leucine derived MyoPS over 300 min (%.h -1 ; LEUMyoPS): Main effect, p < 0.0001.",
+      "context_window": "erived MyoPS over 300 min (%.h -1 ; LEUMyoPS): Main effect, p < 0.0001. All data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-2122",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2122,
+      "sentence": "FAST: n = 7; FED: n = 7; EXFED: n = 8.",
+      "context_window": "S): Main effect, p < 0.0001. All data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n = 8. Figure adapted from (Mazzulla, 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-2134",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2134,
+      "sentence": "FAST: n = 7; FED: n = 7; EXFED: n = 8.",
+      "context_window": "ect, p < 0.0001. All data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n = 8. Figure adapted from (Mazzulla, 2022 ). Ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-2148",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2148,
+      "sentence": "FAST: n = 7; FED: n = 7; EXFED: n = 8.",
+      "context_window": "1. All data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n = 8. Figure adapted from (Mazzulla, 2022 ). There was a time b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-2239",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2239,
+      "sentence": "There was a time by condition interaction ( p < 0.0001) for plasma [ 13 C]KIC enrichments (Figure 3b ).",
+      "context_window": "zulla, 2022 ). There was a time by condition interaction ( p < 0.0001) for plasma [ 13 C]KIC enrichments (Figure 3b ). Plasma [ 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-2348",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2348,
+      "sentence": "Plasma [ 13 C]KIC enrichments were greater (all, p < 0.0001) in FAST compared to FED and EXFED at t = 20, 40, and 60 min with no differences (all, p \u2265 0.09) between FED and EXFED at any time point.",
+      "context_window": "gure 3b ). Plasma [ 13 C]KIC enrichments were greater (all, p < 0.0001) in FAST compared to FED and EXFED at t = 20, 40, and 60 mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-2446",
+      "claim_type": "p_value",
+      "raw_text": "p \u2265 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2446,
+      "sentence": "Plasma [ 13 C]KIC enrichments were greater (all, p < 0.0001) in FAST compared to FED and EXFED at t = 20, 40, and 60 min with no differences (all, p \u2265 0.09) between FED and EXFED at any time point.",
+      "context_window": "d EXFED at t = 20, 40, and 60 min with no differences (all, p \u2265 0.09) between FED and EXFED at any time point. During all three",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-2576",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2576,
+      "sentence": "During all three conditions, plasma [ 13 C]KIC enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 300 min.",
+      "context_window": "nditions, plasma [ 13 C]KIC enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-2698",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2698,
+      "sentence": "There was a main effect ( p < 0.0001) for plasma [ 13 C]KIC precursor pool enrichments over the 300\u2010min postprandial period (data not shown).",
+      "context_window": "ined elevated until t = 300 min. There was a main effect ( p < 0.0001) for plasma [ 13 C]KIC precursor pool enrichments over the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-2872",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2872,
+      "sentence": "Precursor pool [ 13 C]KIC enrichments were greater (both, p = 0.0001) in FAST (6.07 \u00b1 0.46 MPE) compared to FED (5.18 \u00b1 0.19 MPE) and EXFED (5.05 \u00b1 0.21 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": ". Precursor pool [ 13 C]KIC enrichments were greater (both, p = 0.0001) in FAST (6.07 \u00b1 0.46 MPE) compared to FED (5.18 \u00b1 0.19 MPE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2893",
+      "claim_type": "mean_sd",
+      "raw_text": "6.07 \u00b1 0.46",
+      "numeric_values": [
+        6.07,
+        0.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2893,
+      "sentence": "Precursor pool [ 13 C]KIC enrichments were greater (both, p = 0.0001) in FAST (6.07 \u00b1 0.46 MPE) compared to FED (5.18 \u00b1 0.19 MPE) and EXFED (5.05 \u00b1 0.21 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "C]KIC enrichments were greater (both, p = 0.0001) in FAST (6.07 \u00b1 0.46 MPE) compared to FED (5.18 \u00b1 0.19 MPE) and EXFED (5.05 \u00b1 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2927",
+      "claim_type": "mean_sd",
+      "raw_text": "5.18 \u00b1 0.19",
+      "numeric_values": [
+        5.18,
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2927,
+      "sentence": "Precursor pool [ 13 C]KIC enrichments were greater (both, p = 0.0001) in FAST (6.07 \u00b1 0.46 MPE) compared to FED (5.18 \u00b1 0.19 MPE) and EXFED (5.05 \u00b1 0.21 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "oth, p = 0.0001) in FAST (6.07 \u00b1 0.46 MPE) compared to FED (5.18 \u00b1 0.19 MPE) and EXFED (5.05 \u00b1 0.21 MPE) with no differences ( p >",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-2955",
+      "claim_type": "mean_sd",
+      "raw_text": "5.05 \u00b1 0.21",
+      "numeric_values": [
+        5.05,
+        0.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2955,
+      "sentence": "Precursor pool [ 13 C]KIC enrichments were greater (both, p = 0.0001) in FAST (6.07 \u00b1 0.46 MPE) compared to FED (5.18 \u00b1 0.19 MPE) and EXFED (5.05 \u00b1 0.21 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "07 \u00b1 0.46 MPE) compared to FED (5.18 \u00b1 0.19 MPE) and EXFED (5.05 \u00b1 0.21 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-2994",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2994,
+      "sentence": "Precursor pool [ 13 C]KIC enrichments were greater (both, p = 0.0001) in FAST (6.07 \u00b1 0.46 MPE) compared to FED (5.18 \u00b1 0.19 MPE) and EXFED (5.05 \u00b1 0.21 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "0.19 MPE) and EXFED (5.05 \u00b1 0.21 MPE) with no differences ( p > 0.99) between FED and EXFED. There was a main effect ( p = 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-3054",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3054,
+      "sentence": "There was a main effect ( p = 0.002) for \u0394LEU representing dietary leucine incorporation into myofibrillar proteins over 300 min (Figure 3c ). \u0394LEU over 300 min was greater ( p = 0.001) in EXFED compared to FAST with no differences between FED and EXFED ( p = 0.19) or FAST and FED ( p = 0.13).",
+      "context_window": "p > 0.99) between FED and EXFED. There was a main effect ( p = 0.002) for \u0394LEU representing dietary leucine incorporation into m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-3203",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3203,
+      "sentence": "There was a main effect ( p = 0.002) for \u0394LEU representing dietary leucine incorporation into myofibrillar proteins over 300 min (Figure 3c ). \u0394LEU over 300 min was greater ( p = 0.001) in EXFED compared to FAST with no differences between FED and EXFED ( p = 0.19) or FAST and FED ( p = 0.13).",
+      "context_window": "over 300 min (Figure 3c ). \u0394LEU over 300 min was greater ( p = 0.001) in EXFED compared to FAST with no differences between FED",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-3284",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3284,
+      "sentence": "There was a main effect ( p = 0.002) for \u0394LEU representing dietary leucine incorporation into myofibrillar proteins over 300 min (Figure 3c ). \u0394LEU over 300 min was greater ( p = 0.001) in EXFED compared to FAST with no differences between FED and EXFED ( p = 0.19) or FAST and FED ( p = 0.13).",
+      "context_window": "ompared to FAST with no differences between FED and EXFED ( p = 0.19) or FAST and FED ( p = 0.13). There was a main effect ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-3312",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.13",
+      "numeric_values": [
+        0.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3312,
+      "sentence": "There was a main effect ( p = 0.002) for \u0394LEU representing dietary leucine incorporation into myofibrillar proteins over 300 min (Figure 3c ). \u0394LEU over 300 min was greater ( p = 0.001) in EXFED compared to FAST with no differences between FED and EXFED ( p = 0.19) or FAST and FED ( p = 0.13).",
+      "context_window": "erences between FED and EXFED ( p = 0.19) or FAST and FED ( p = 0.13). There was a main effect ( p < 0.0001) for LEUMyoPS over",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-3350",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3350,
+      "sentence": "There was a main effect ( p < 0.0001) for LEUMyoPS over 300 min (Figure 3d ; Table 1 ).",
+      "context_window": "19) or FAST and FED ( p = 0.13). There was a main effect ( p < 0.0001) for LEUMyoPS over 300 min (Figure 3d ; Table 1 ). LEUMyoPS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-3453",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3453,
+      "sentence": "LEUMyoPS over 300 min was greater (both, p \u2264 0.01) in FED and EXFED compared to FAST with no differences ( p = 0.20) between FED and EXFED.",
+      "context_window": "re 3d ; Table 1 ). LEUMyoPS over 300 min was greater (both, p \u2264 0.01) in FED and EXFED compared to FAST with no differences ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-3519",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.20",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3519,
+      "sentence": "LEUMyoPS over 300 min was greater (both, p \u2264 0.01) in FED and EXFED compared to FAST with no differences ( p = 0.20) between FED and EXFED.",
+      "context_window": "01) in FED and EXFED compared to FAST with no differences ( p = 0.20) between FED and EXFED. Myofibrillar protein synthesis (%/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-3696",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3696,
+      "sentence": "Note : Table depicts mean \u00b1 SD for MyoPS in the fasted (FAST; n = 7), fed (FED; n = 7), and exercise\u2010fed (EXFED; n = 8) conditions.",
+      "context_window": "te : Table depicts mean \u00b1 SD for MyoPS in the fasted (FAST; n = 7), fed (FED; n = 7), and exercise\u2010fed (EXFED; n = 8) conditi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-3714",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3714,
+      "sentence": "Note : Table depicts mean \u00b1 SD for MyoPS in the fasted (FAST; n = 7), fed (FED; n = 7), and exercise\u2010fed (EXFED; n = 8) conditions.",
+      "context_window": "mean \u00b1 SD for MyoPS in the fasted (FAST; n = 7), fed (FED; n = 7), and exercise\u2010fed (EXFED; n = 8) conditions. Means within",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-3747",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3747,
+      "sentence": "Note : Table depicts mean \u00b1 SD for MyoPS in the fasted (FAST; n = 7), fed (FED; n = 7), and exercise\u2010fed (EXFED; n = 8) conditions.",
+      "context_window": "d (FAST; n = 7), fed (FED; n = 7), and exercise\u2010fed (EXFED; n = 8) conditions. Means within a tracer with different letters a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-3840",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3840,
+      "sentence": "Means within a tracer with different letters are significantly different; p < 0.05.",
+      "context_window": "tracer with different letters are significantly different; p < 0.05. There was a time by condition interaction ( p < 0.0001) f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-3895",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3895,
+      "sentence": "There was a time by condition interaction ( p < 0.0001) for plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments (Figure 4a ).",
+      "context_window": "ent; p < 0.05. There was a time by condition interaction ( p < 0.0001) for plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments (Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-4046",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4046,
+      "sentence": "Plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments were greater (all, p \u2264 0.05) in FAST compared to FED and EXFED at t = 20, 40, and 60 min, with no differences (all, p \u2265 0.47) between FED and EXFED at any time point.",
+      "context_window": "ring \u2010 2 H 5 ]phenylalanine enrichments were greater (all, p \u2264 0.05) in FAST compared to FED and EXFED at t = 20, 40, and 60 mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-4143",
+      "claim_type": "p_value",
+      "raw_text": "p \u2265 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4143,
+      "sentence": "Plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments were greater (all, p \u2264 0.05) in FAST compared to FED and EXFED at t = 20, 40, and 60 min, with no differences (all, p \u2265 0.47) between FED and EXFED at any time point.",
+      "context_window": "EXFED at t = 20, 40, and 60 min, with no differences (all, p \u2265 0.47) between FED and EXFED at any time point. During all three",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-4294",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4294,
+      "sentence": "During all three conditions, plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 180 min.\n\n(a) Plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, time\u00d7condition interaction, all p \u2264 0.02. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.05); (b) Change in myofibrillar\u2010bound L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments over 120 and 300 min (MPE; \u0394PHE); \u0394PHE over 120 min: Main effect, p = 0.003; \u0394PHE over 300 min: Main effect, p = 0.0003; (c) Phenylalanine derived MyoPS over 120 and 300 min (%.h -1 ; PHEMyoPS); PHEMyoPS over 120 min: Main effect, p < 0.0001; PHEMyoPS over 300 min: Main effect, p < 0.0001.).",
+      "context_window": "ring \u2010 2 H 5 ]phenylalanine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-4536",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4536,
+      "sentence": "During all three conditions, plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 180 min.\n\n(a) Plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, time\u00d7condition interaction, all p \u2264 0.02. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.05); (b) Change in myofibrillar\u2010bound L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments over 120 and 300 min (MPE; \u0394PHE); \u0394PHE over 120 min: Main effect, p = 0.003; \u0394PHE over 300 min: Main effect, p = 0.0003; (c) Phenylalanine derived MyoPS over 120 and 300 min (%.h -1 ; PHEMyoPS); PHEMyoPS over 120 min: Main effect, p < 0.0001; PHEMyoPS over 300 min: Main effect, p < 0.0001.).",
+      "context_window": "e effect, condition effect, time\u00d7condition interaction, all p \u2264 0.02. *Denotes FED and EXFED different from FAST at same time po",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-4614",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4614,
+      "sentence": "During all three conditions, plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 180 min.\n\n(a) Plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, time\u00d7condition interaction, all p \u2264 0.02. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.05); (b) Change in myofibrillar\u2010bound L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments over 120 and 300 min (MPE; \u0394PHE); \u0394PHE over 120 min: Main effect, p = 0.003; \u0394PHE over 300 min: Main effect, p = 0.0003; (c) Phenylalanine derived MyoPS over 120 and 300 min (%.h -1 ; PHEMyoPS); PHEMyoPS over 120 min: Main effect, p < 0.0001; PHEMyoPS over 300 min: Main effect, p < 0.0001.).",
+      "context_window": "FED and EXFED different from FAST at same time point (all, p \u2264 0.05); (b) Change in myofibrillar\u2010bound L\u2010[ ring \u2010 2 H 5 ]phenyl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-4768",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4768,
+      "sentence": "During all three conditions, plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 180 min.\n\n(a) Plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, time\u00d7condition interaction, all p \u2264 0.02. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.05); (b) Change in myofibrillar\u2010bound L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments over 120 and 300 min (MPE; \u0394PHE); \u0394PHE over 120 min: Main effect, p = 0.003; \u0394PHE over 300 min: Main effect, p = 0.0003; (c) Phenylalanine derived MyoPS over 120 and 300 min (%.h -1 ; PHEMyoPS); PHEMyoPS over 120 min: Main effect, p < 0.0001; PHEMyoPS over 300 min: Main effect, p < 0.0001.).",
+      "context_window": "20 and 300 min (MPE; \u0394PHE); \u0394PHE over 120 min: Main effect, p = 0.003; \u0394PHE over 300 min: Main effect, p = 0.0003; (c) Phenylalan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-4811",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4811,
+      "sentence": "During all three conditions, plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 180 min.\n\n(a) Plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, time\u00d7condition interaction, all p \u2264 0.02. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.05); (b) Change in myofibrillar\u2010bound L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments over 120 and 300 min (MPE; \u0394PHE); \u0394PHE over 120 min: Main effect, p = 0.003; \u0394PHE over 300 min: Main effect, p = 0.0003; (c) Phenylalanine derived MyoPS over 120 and 300 min (%.h -1 ; PHEMyoPS); PHEMyoPS over 120 min: Main effect, p < 0.0001; PHEMyoPS over 300 min: Main effect, p < 0.0001.).",
+      "context_window": "in: Main effect, p = 0.003; \u0394PHE over 300 min: Main effect, p = 0.0003; (c) Phenylalanine derived MyoPS over 120 and 300 min (%.h",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-4933",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4933,
+      "sentence": "During all three conditions, plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 180 min.\n\n(a) Plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, time\u00d7condition interaction, all p \u2264 0.02. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.05); (b) Change in myofibrillar\u2010bound L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments over 120 and 300 min (MPE; \u0394PHE); \u0394PHE over 120 min: Main effect, p = 0.003; \u0394PHE over 300 min: Main effect, p = 0.0003; (c) Phenylalanine derived MyoPS over 120 and 300 min (%.h -1 ; PHEMyoPS); PHEMyoPS over 120 min: Main effect, p < 0.0001; PHEMyoPS over 300 min: Main effect, p < 0.0001.).",
+      "context_window": "in (%.h -1 ; PHEMyoPS); PHEMyoPS over 120 min: Main effect, p < 0.0001; PHEMyoPS over 300 min: Main effect, p < 0.0001.). All data",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-4981",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4981,
+      "sentence": "During all three conditions, plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments were elevated (all, p \u2264 0.05) above basal levels after beverage ingestion and remained elevated until t = 180 min.\n\n(a) Plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments (Mole Percent Excess; MPE): Time effect, condition effect, time\u00d7condition interaction, all p \u2264 0.02. *Denotes FED and EXFED different from FAST at same time point (all, p \u2264 0.05); (b) Change in myofibrillar\u2010bound L\u2010[ ring \u2010 2 H 5 ]phenylalanine enrichments over 120 and 300 min (MPE; \u0394PHE); \u0394PHE over 120 min: Main effect, p = 0.003; \u0394PHE over 300 min: Main effect, p = 0.0003; (c) Phenylalanine derived MyoPS over 120 and 300 min (%.h -1 ; PHEMyoPS); PHEMyoPS over 120 min: Main effect, p < 0.0001; PHEMyoPS over 300 min: Main effect, p < 0.0001.).",
+      "context_window": "ain effect, p < 0.0001; PHEMyoPS over 300 min: Main effect, p < 0.0001.). All data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED:",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-5026",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5026,
+      "sentence": "FAST: n = 7; FED: n = 7; EXFED: n = 8.",
+      "context_window": ": Main effect, p < 0.0001.). All data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n = 8. Figure adapted from (Mazzulla, 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-5038",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5038,
+      "sentence": "FAST: n = 7; FED: n = 7; EXFED: n = 8.",
+      "context_window": "t, p < 0.0001.). All data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n = 8. Figure adapted from (Mazzulla, 2022 ). Ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-5052",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5052,
+      "sentence": "FAST: n = 7; FED: n = 7; EXFED: n = 8.",
+      "context_window": "). All data are means \u00b1 SD. FAST: n = 7; FED: n = 7; EXFED: n = 8. Figure adapted from (Mazzulla, 2022 ). There was a main e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-5125",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5125,
+      "sentence": "There was a main effect ( p = 0.003) for \u0394PHE representing dietary phenylalanine incorporation into myofibrillar proteins over 120 min (Figure 4b ). \u0394PHE over 120 min was greater (both, p \u2264 0.02) in EXFED compared to FAST and FED with no differences ( p = 0.99) between FAST and FED.",
+      "context_window": "adapted from (Mazzulla, 2022 ). There was a main effect ( p = 0.003) for \u0394PHE representing dietary phenylalanine incorporation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-5285",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5285,
+      "sentence": "There was a main effect ( p = 0.003) for \u0394PHE representing dietary phenylalanine incorporation into myofibrillar proteins over 120 min (Figure 4b ). \u0394PHE over 120 min was greater (both, p \u2264 0.02) in EXFED compared to FAST and FED with no differences ( p = 0.99) between FAST and FED.",
+      "context_window": "120 min (Figure 4b ). \u0394PHE over 120 min was greater (both, p \u2264 0.02) in EXFED compared to FAST and FED with no differences ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-5351",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5351,
+      "sentence": "There was a main effect ( p = 0.003) for \u0394PHE representing dietary phenylalanine incorporation into myofibrillar proteins over 120 min (Figure 4b ). \u0394PHE over 120 min was greater (both, p \u2264 0.02) in EXFED compared to FAST and FED with no differences ( p = 0.99) between FAST and FED.",
+      "context_window": "02) in EXFED compared to FAST and FED with no differences ( p = 0.99) between FAST and FED. When assessing plasma L\u2010[ ring \u2010 2 H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-5528",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5528,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 120\u2010min postprandial period, there was a main effect ( p = 0.0001) for condition whereby they were greater (both, p \u2264 0.0005) in FAST (7.92 \u00b1 0.85 MPE) compared to FED (5.76 \u00b1 0.57 MPE) and EXFED (5.96 \u00b1 0.95 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "the 120\u2010min postprandial period, there was a main effect ( p = 0.0001) for condition whereby they were greater (both, p \u2264 0.0005)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-5587",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.0005",
+      "numeric_values": [
+        0.0005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5587,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 120\u2010min postprandial period, there was a main effect ( p = 0.0001) for condition whereby they were greater (both, p \u2264 0.0005) in FAST (7.92 \u00b1 0.85 MPE) compared to FED (5.76 \u00b1 0.57 MPE) and EXFED (5.96 \u00b1 0.95 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "p = 0.0001) for condition whereby they were greater (both, p \u2264 0.0005) in FAST (7.92 \u00b1 0.85 MPE) compared to FED (5.76 \u00b1 0.57 MPE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-5608",
+      "claim_type": "mean_sd",
+      "raw_text": "7.92 \u00b1 0.85",
+      "numeric_values": [
+        7.92,
+        0.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5608,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 120\u2010min postprandial period, there was a main effect ( p = 0.0001) for condition whereby they were greater (both, p \u2264 0.0005) in FAST (7.92 \u00b1 0.85 MPE) compared to FED (5.76 \u00b1 0.57 MPE) and EXFED (5.96 \u00b1 0.95 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "ition whereby they were greater (both, p \u2264 0.0005) in FAST (7.92 \u00b1 0.85 MPE) compared to FED (5.76 \u00b1 0.57 MPE) and EXFED (5.96 \u00b1 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-5642",
+      "claim_type": "mean_sd",
+      "raw_text": "5.76 \u00b1 0.57",
+      "numeric_values": [
+        5.76,
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5642,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 120\u2010min postprandial period, there was a main effect ( p = 0.0001) for condition whereby they were greater (both, p \u2264 0.0005) in FAST (7.92 \u00b1 0.85 MPE) compared to FED (5.76 \u00b1 0.57 MPE) and EXFED (5.96 \u00b1 0.95 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "oth, p \u2264 0.0005) in FAST (7.92 \u00b1 0.85 MPE) compared to FED (5.76 \u00b1 0.57 MPE) and EXFED (5.96 \u00b1 0.95 MPE) with no differences ( p >",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-5670",
+      "claim_type": "mean_sd",
+      "raw_text": "5.96 \u00b1 0.95",
+      "numeric_values": [
+        5.96,
+        0.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5670,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 120\u2010min postprandial period, there was a main effect ( p = 0.0001) for condition whereby they were greater (both, p \u2264 0.0005) in FAST (7.92 \u00b1 0.85 MPE) compared to FED (5.76 \u00b1 0.57 MPE) and EXFED (5.96 \u00b1 0.95 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "92 \u00b1 0.85 MPE) compared to FED (5.76 \u00b1 0.57 MPE) and EXFED (5.96 \u00b1 0.95 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-5709",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5709,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 120\u2010min postprandial period, there was a main effect ( p = 0.0001) for condition whereby they were greater (both, p \u2264 0.0005) in FAST (7.92 \u00b1 0.85 MPE) compared to FED (5.76 \u00b1 0.57 MPE) and EXFED (5.96 \u00b1 0.95 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "0.57 MPE) and EXFED (5.96 \u00b1 0.95 MPE) with no differences ( p > 0.99) between FED and EXFED. This resulted in a main effect ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-5775",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5775,
+      "sentence": "This resulted in a main effect ( p < 0.0001) for PHEMyoPS over 120 min, whereby EXFED was greater (both, p \u2264 0.01) compared to FAST and FED with no differences ( p = 0.12) between FAST and FED (Figure 4c ; Table 1 ).",
+      "context_window": "99) between FED and EXFED. This resulted in a main effect ( p < 0.0001) for PHEMyoPS over 120 min, whereby EXFED was greater (both",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-5847",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5847,
+      "sentence": "This resulted in a main effect ( p < 0.0001) for PHEMyoPS over 120 min, whereby EXFED was greater (both, p \u2264 0.01) compared to FAST and FED with no differences ( p = 0.12) between FAST and FED (Figure 4c ; Table 1 ).",
+      "context_window": "for PHEMyoPS over 120 min, whereby EXFED was greater (both, p \u2264 0.01) compared to FAST and FED with no differences ( p = 0.12) b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-5904",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5904,
+      "sentence": "This resulted in a main effect ( p < 0.0001) for PHEMyoPS over 120 min, whereby EXFED was greater (both, p \u2264 0.01) compared to FAST and FED with no differences ( p = 0.12) between FAST and FED (Figure 4c ; Table 1 ).",
+      "context_window": "h, p \u2264 0.01) compared to FAST and FED with no differences ( p = 0.12) between FAST and FED (Figure 4c ; Table 1 ). There was a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-5986",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0003",
+      "numeric_values": [
+        0.0003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5986,
+      "sentence": "There was a main effect ( p = 0.0003) for \u0394PHE representing dietary phenylalanine incorporation into myofibrillar proteins over 300 min whereby it was greater (both, p \u2264 0.03) in FED and EXFED compared to FAST with no differences ( p = 0.16) between FED and EXFED (Figure 4b ).",
+      "context_window": "and FED (Figure 4c ; Table 1 ). There was a main effect ( p = 0.0003) for \u0394PHE representing dietary phenylalanine incorporation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-6126",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6126,
+      "sentence": "There was a main effect ( p = 0.0003) for \u0394PHE representing dietary phenylalanine incorporation into myofibrillar proteins over 300 min whereby it was greater (both, p \u2264 0.03) in FED and EXFED compared to FAST with no differences ( p = 0.16) between FED and EXFED (Figure 4b ).",
+      "context_window": "brillar proteins over 300 min whereby it was greater (both, p \u2264 0.03) in FED and EXFED compared to FAST with no differences ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-6192",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6192,
+      "sentence": "There was a main effect ( p = 0.0003) for \u0394PHE representing dietary phenylalanine incorporation into myofibrillar proteins over 300 min whereby it was greater (both, p \u2264 0.03) in FED and EXFED compared to FAST with no differences ( p = 0.16) between FED and EXFED (Figure 4b ).",
+      "context_window": "03) in FED and EXFED compared to FAST with no differences ( p = 0.16) between FED and EXFED (Figure 4b ). When assessing plasma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-6382",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6382,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 300\u2010min postprandial period there was a main effect ( p = 0.02) whereby enrichments were greater (both, p \u2264 0.05) in FAST (4.89 \u00b1 0.55 MPE) compared to FED (4.15 \u00b1 0.43 MPE) and EXFED (4.06 \u00b1 0.61 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "r the 300\u2010min postprandial period there was a main effect ( p = 0.02) whereby enrichments were greater (both, p \u2264 0.05) in FAST",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-6432",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6432,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 300\u2010min postprandial period there was a main effect ( p = 0.02) whereby enrichments were greater (both, p \u2264 0.05) in FAST (4.89 \u00b1 0.55 MPE) compared to FED (4.15 \u00b1 0.43 MPE) and EXFED (4.06 \u00b1 0.61 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "effect ( p = 0.02) whereby enrichments were greater (both, p \u2264 0.05) in FAST (4.89 \u00b1 0.55 MPE) compared to FED (4.15 \u00b1 0.43 MPE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-6451",
+      "claim_type": "mean_sd",
+      "raw_text": "4.89 \u00b1 0.55",
+      "numeric_values": [
+        4.89,
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6451,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 300\u2010min postprandial period there was a main effect ( p = 0.02) whereby enrichments were greater (both, p \u2264 0.05) in FAST (4.89 \u00b1 0.55 MPE) compared to FED (4.15 \u00b1 0.43 MPE) and EXFED (4.06 \u00b1 0.61 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "whereby enrichments were greater (both, p \u2264 0.05) in FAST (4.89 \u00b1 0.55 MPE) compared to FED (4.15 \u00b1 0.43 MPE) and EXFED (4.06 \u00b1 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-6485",
+      "claim_type": "mean_sd",
+      "raw_text": "4.15 \u00b1 0.43",
+      "numeric_values": [
+        4.15,
+        0.43
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6485,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 300\u2010min postprandial period there was a main effect ( p = 0.02) whereby enrichments were greater (both, p \u2264 0.05) in FAST (4.89 \u00b1 0.55 MPE) compared to FED (4.15 \u00b1 0.43 MPE) and EXFED (4.06 \u00b1 0.61 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "(both, p \u2264 0.05) in FAST (4.89 \u00b1 0.55 MPE) compared to FED (4.15 \u00b1 0.43 MPE) and EXFED (4.06 \u00b1 0.61 MPE) with no differences ( p >",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-6513",
+      "claim_type": "mean_sd",
+      "raw_text": "4.06 \u00b1 0.61",
+      "numeric_values": [
+        4.06,
+        0.61
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6513,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 300\u2010min postprandial period there was a main effect ( p = 0.02) whereby enrichments were greater (both, p \u2264 0.05) in FAST (4.89 \u00b1 0.55 MPE) compared to FED (4.15 \u00b1 0.43 MPE) and EXFED (4.06 \u00b1 0.61 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "89 \u00b1 0.55 MPE) compared to FED (4.15 \u00b1 0.43 MPE) and EXFED (4.06 \u00b1 0.61 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-6552",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6552,
+      "sentence": "When assessing plasma L\u2010[ ring \u2010 2 H 5 ]phenylalanine precursor pool enrichments over the 300\u2010min postprandial period there was a main effect ( p = 0.02) whereby enrichments were greater (both, p \u2264 0.05) in FAST (4.89 \u00b1 0.55 MPE) compared to FED (4.15 \u00b1 0.43 MPE) and EXFED (4.06 \u00b1 0.61 MPE) with no differences ( p > 0.99) between FED and EXFED.",
+      "context_window": "0.43 MPE) and EXFED (4.06 \u00b1 0.61 MPE) with no differences ( p > 0.99) between FED and EXFED. This resulted in a main effect ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-6618",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6618,
+      "sentence": "This resulted in a main effect ( p < 0.0001) for PHEMyoPS over 300 min whereby FED and EXFED were greater (both, p \u2264 0.02) compared to FAST, with a trend ( p = 0.08) toward greater PHEMyoPS in EXFED when compared to FED (Figure 4c ).",
+      "context_window": "99) between FED and EXFED. This resulted in a main effect ( p < 0.0001) for PHEMyoPS over 300 min whereby FED and EXFED were great",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-6698",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6698,
+      "sentence": "This resulted in a main effect ( p < 0.0001) for PHEMyoPS over 300 min whereby FED and EXFED were greater (both, p \u2264 0.02) compared to FAST, with a trend ( p = 0.08) toward greater PHEMyoPS in EXFED when compared to FED (Figure 4c ).",
+      "context_window": "yoPS over 300 min whereby FED and EXFED were greater (both, p \u2264 0.02) compared to FAST, with a trend ( p = 0.08) toward greater",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-6741",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6741,
+      "sentence": "This resulted in a main effect ( p < 0.0001) for PHEMyoPS over 300 min whereby FED and EXFED were greater (both, p \u2264 0.02) compared to FAST, with a trend ( p = 0.08) toward greater PHEMyoPS in EXFED when compared to FED (Figure 4c ).",
+      "context_window": "e greater (both, p \u2264 0.02) compared to FAST, with a trend ( p = 0.08) toward greater PHEMyoPS in EXFED when compared to FED (Fig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-6898",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6898,
+      "sentence": "When collapsed across conditions there was a positive correlation ( r = 0.81, p < 0.0001) between LEUMyoPS and PHEMyoPS over 300 min (Figure 5a ).",
+      "context_window": "oss conditions there was a positive correlation ( r = 0.81, p < 0.0001) between LEUMyoPS and PHEMyoPS over 300 min (Figure 5a ). H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-msd-7006",
+      "claim_type": "mean_sd",
+      "raw_text": "0.034 \u00b1 0.023",
+      "numeric_values": [
+        0.034,
+        0.023
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7006,
+      "sentence": "However, assessing the bias revealed a 0.034 \u00b1 0.023%/h bias toward PHEMyoPS rates (Figure 5b ).\n\n(a) Correlation between leucine (LEUMyoPS) and phenylalanine (PHEMyoPS) derived MyoPS over 300 min: R = 0.81, p < 0.0001.",
+      "context_window": "00 min (Figure 5a ). However, assessing the bias revealed a 0.034 \u00b1 0.023%/h bias toward PHEMyoPS rates (Figure 5b ). (a) Correlatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-7014",
+      "claim_type": "percentage",
+      "raw_text": "0.023%",
+      "numeric_values": [
+        0.023
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7014,
+      "sentence": "However, assessing the bias revealed a 0.034 \u00b1 0.023%/h bias toward PHEMyoPS rates (Figure 5b ).\n\n(a) Correlation between leucine (LEUMyoPS) and phenylalanine (PHEMyoPS) derived MyoPS over 300 min: R = 0.81, p < 0.0001.",
+      "context_window": "Figure 5a ). However, assessing the bias revealed a 0.034 \u00b1 0.023%/h bias toward PHEMyoPS rates (Figure 5b ). (a) Correlation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-p-7175",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7175,
+      "sentence": "However, assessing the bias revealed a 0.034 \u00b1 0.023%/h bias toward PHEMyoPS rates (Figure 5b ).\n\n(a) Correlation between leucine (LEUMyoPS) and phenylalanine (PHEMyoPS) derived MyoPS over 300 min: R = 0.81, p < 0.0001.",
+      "context_window": "nylalanine (PHEMyoPS) derived MyoPS over 300 min: R = 0.81, p < 0.0001. Total n = 22. Line defined by Y = 0.7569X - 0.0108. (b) Bl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-7193",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7193,
+      "sentence": "Total n = 22.",
+      "context_window": "PS) derived MyoPS over 300 min: R = 0.81, p < 0.0001. Total n = 22. Line defined by Y = 0.7569X - 0.0108. (b) Bland-Altman Plo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-7413",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7413,
+      "sentence": "Thick hashed line represents mean bias with thin hashed lines the upper and lower 95% confidence interval.",
+      "context_window": "esents mean bias with thin hashed lines the upper and lower 95% confidence interval. Figure adapted from (Mazzulla, 2022 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-344",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 344,
+      "sentence": "We showed that our complete crystalline amino acid mixture labeled with 25% L\u2010[1\u2010 13 C]leucine and 30% L\u2010[ ring \u2010 2 H 5 ]phenylalanine detected changes in dietary amino acid incorporation into myofibrillar proteins and the stimulation of MyoPS over a range of anabolic stimuli.",
+      "context_window": "at our complete crystalline amino acid mixture labeled with 25% L\u2010[1\u2010 13 C]leucine and 30% L\u2010[ ring \u2010 2 H 5 ]phenylalanine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-371",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 371,
+      "sentence": "We showed that our complete crystalline amino acid mixture labeled with 25% L\u2010[1\u2010 13 C]leucine and 30% L\u2010[ ring \u2010 2 H 5 ]phenylalanine detected changes in dietary amino acid incorporation into myofibrillar proteins and the stimulation of MyoPS over a range of anabolic stimuli.",
+      "context_window": "amino acid mixture labeled with 25% L\u2010[1\u2010 13 C]leucine and 30% L\u2010[ ring \u2010 2 H 5 ]phenylalanine detected changes in dietary",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-561",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 561,
+      "sentence": "Despite a ~31% greater LEUMyoPS and PHEMyoPS observed in EXFED versus FED over 300 min, we were unable to detect statistically significant differences between our two anabolic conditions.",
+      "context_window": "ation of MyoPS over a range of anabolic stimuli. Despite a ~31% greater LEUMyoPS and PHEMyoPS observed in EXFED versus FED",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-n-821",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 821,
+      "sentence": "A retrospective power calculation based on PHEMyoPS revealed that a sample size of n = 13 per group would be required to detect significant differences between FED and EXFED suggesting we may have been underpowered with our between group design, although biopsy timing, as discussed below, may have also contributed to the lack of statistical difference.",
+      "context_window": "alculation based on PHEMyoPS revealed that a sample size of n = 13 per group would be required to detect significant differenc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-corr-1139",
+      "claim_type": "correlation",
+      "raw_text": "( r = 0.81)",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1139,
+      "sentence": "Nevertheless, the strong positive correlation ( r = 0.81) we observed between LEUMyoPS and PHEMyoPS indicates that oral single labeled [13C]leucine and multi\u2010labeled [D5]phenylalanine tracers are qualitatively similar practical tools to detect differences in MyoPS across varying physiological states, especially when intravenous infusions are not possible or the choice depends on available equipment (IRMS vs.",
+      "context_window": "l difference. Nevertheless, the strong positive correlation ( r = 0.81) we observed between LEUMyoPS and PHEMyoPS indicates that or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-u-1990",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 1990,
+      "sentence": "Ingesting ~5 mg.kg -1 L\u2010[1\u2010 13 C]leucine had no detectable effect on plasma leucine concentrations in the present study and, therefore, would presumably not have resulted in any stimulation of muscle protein synthesis rates.",
+      "context_window": "to skeletal muscle (Smith et al., 1992 , 1998 ). Ingesting ~5 mg.kg -1 L\u2010[1\u2010 13 C]leucine had no detectable effect on plasma",
+      "claim_role": "unknown",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-3336",
+      "claim_type": "percentage",
+      "raw_text": "0.024%",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3336,
+      "sentence": "However, our estimated fasted MyoPS rates via oral L\u2010[1\u2010 13 C]leucine (~0.024%/h) are slightly lower than those previously reported by the primed constant infusion using plasma KIC enrichment as the precursor (~0.031-0.061%/h) (Smith et al., 2011 ) but somewhat higher by oral L\u2010[ ring \u2010 2 H 5 ]phenylalanine (~0.054%/h) compared to our previous investigations with intravenous administration and plasma enrichment as the precursor (~0.011-031) (Abou Sawan et al., 2018 ; Paulussen et al., 2023 ; van Vliet et al., 2019 ).",
+      "context_window": "estimated fasted MyoPS rates via oral L\u2010[1\u2010 13 C]leucine (~0.024%/h) are slightly lower than those previously reported by the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-3481",
+      "claim_type": "percentage",
+      "raw_text": "0.061%",
+      "numeric_values": [
+        0.061
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3481,
+      "sentence": "However, our estimated fasted MyoPS rates via oral L\u2010[1\u2010 13 C]leucine (~0.024%/h) are slightly lower than those previously reported by the primed constant infusion using plasma KIC enrichment as the precursor (~0.031-0.061%/h) (Smith et al., 2011 ) but somewhat higher by oral L\u2010[ ring \u2010 2 H 5 ]phenylalanine (~0.054%/h) compared to our previous investigations with intravenous administration and plasma enrichment as the precursor (~0.011-031) (Abou Sawan et al., 2018 ; Paulussen et al., 2023 ; van Vliet et al., 2019 ).",
+      "context_window": "fusion using plasma KIC enrichment as the precursor (~0.031-0.061%/h) (Smith et al., 2011 ) but somewhat higher by oral L\u2010[ ri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-3575",
+      "claim_type": "percentage",
+      "raw_text": "0.054%",
+      "numeric_values": [
+        0.054
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3575,
+      "sentence": "However, our estimated fasted MyoPS rates via oral L\u2010[1\u2010 13 C]leucine (~0.024%/h) are slightly lower than those previously reported by the primed constant infusion using plasma KIC enrichment as the precursor (~0.031-0.061%/h) (Smith et al., 2011 ) but somewhat higher by oral L\u2010[ ring \u2010 2 H 5 ]phenylalanine (~0.054%/h) compared to our previous investigations with intravenous administration and plasma enrichment as the precursor (~0.011-031) (Abou Sawan et al., 2018 ; Paulussen et al., 2023 ; van Vliet et al., 2019 ).",
+      "context_window": "t somewhat higher by oral L\u2010[ ring \u2010 2 H 5 ]phenylalanine (~0.054%/h) compared to our previous investigations with intravenous",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-5431",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5431,
+      "sentence": "When measured over 300 min, EXFED was numerically (~25%-30%, depending on tracer) greater than FED, which is broadly consistent with the anabolic effect of resistance exercise to sensitize skeletal muscle to dietary amino acids (Churchward\u2010Venne et al., 2012 ; Moore, Tang, et al., 2009 ; Witard et al., 2014 ).",
+      "context_window": "2023 ). When measured over 300 min, EXFED was numerically (~25%-30%, depending on tracer) greater than FED, which is broadl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-5435",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5435,
+      "sentence": "When measured over 300 min, EXFED was numerically (~25%-30%, depending on tracer) greater than FED, which is broadly consistent with the anabolic effect of resistance exercise to sensitize skeletal muscle to dietary amino acids (Churchward\u2010Venne et al., 2012 ; Moore, Tang, et al., 2009 ; Witard et al., 2014 ).",
+      "context_window": "). When measured over 300 min, EXFED was numerically (~25%-30%, depending on tracer) greater than FED, which is broadly co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-6650",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6650,
+      "sentence": "Thus, the lack of statistical differences between FED and EXFED may be related to the low plasma tracer enrichment (~1%-2%) that could have limited the differential myofibrillar tracer incorporation over the final hour of our protocol.",
+      "context_window": "EXFED may be related to the low plasma tracer enrichment (~1%-2%) that could have limited the differential myofibrillar t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-6653",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6653,
+      "sentence": "Thus, the lack of statistical differences between FED and EXFED may be related to the low plasma tracer enrichment (~1%-2%) that could have limited the differential myofibrillar tracer incorporation over the final hour of our protocol.",
+      "context_window": "FED may be related to the low plasma tracer enrichment (~1%-2%) that could have limited the differential myofibrillar trac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-8601",
+      "claim_type": "percentage",
+      "raw_text": "0.42%",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8601,
+      "sentence": "Nevertheless, the mean difference in MyoPS between FAST and FED (~0.043 vs. ~0.42%/h, respectively) and FED and EXFED (~0.023 vs. ~0.03%/h, respectively) were similar between leucine and phenylalanine tracers, respectively.",
+      "context_window": "mean difference in MyoPS between FAST and FED (~0.043 vs. ~0.42%/h, respectively) and FED and EXFED (~0.023 vs. ~0.03%/h, re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12956835_oral_amino_acid_tracer_delivery_detects_feeding_and_exercise-pct-8655",
+      "claim_type": "percentage",
+      "raw_text": "0.03%",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8655,
+      "sentence": "Nevertheless, the mean difference in MyoPS between FAST and FED (~0.043 vs. ~0.42%/h, respectively) and FED and EXFED (~0.023 vs. ~0.03%/h, respectively) were similar between leucine and phenylalanine tracers, respectively.",
+      "context_window": "vs. ~0.42%/h, respectively) and FED and EXFED (~0.023 vs. ~0.03%/h, respectively) were similar between leucine and phenylala",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

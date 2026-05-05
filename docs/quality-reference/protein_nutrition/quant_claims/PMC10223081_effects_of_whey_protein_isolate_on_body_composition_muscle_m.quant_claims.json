@@ -1,0 +1,810 @@
+{
+  "paper_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m",
+  "doi": "10.3390/nu15102320",
+  "extracted_at": "2026-05-05T22:35:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 20,
+    "percentage": 12,
+    "p_value": 8,
+    "mean_sd": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-601",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 601,
+      "sentence": "For this purpose, twenty-five patients of both genders with predominantly NYHA I functional class and a median age of 65.5 (60.5-71.0) years were used to conduct a randomized, single-blind, placebo-controlled clinical trial and received 30 g per day of WPI for 12 weeks.",
+      "context_window": "trolled clinical trial and received 30 g per day of WPI for 12 weeks. Anthropometric measurements, body composition analysis, an",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-824",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 824,
+      "sentence": "An increase in skeletal muscle mass was observed in the intervention group after 12 weeks.",
+      "context_window": "al muscle mass was observed in the intervention group after 12 weeks. A reduction in waist circumference, body fat percentage, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-1041",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1041,
+      "sentence": "No significant effect on muscle strength was observed after 12 weeks of intervention.",
+      "context_window": "No significant effect on muscle strength was observed after 12 weeks of intervention. These data demonstrate that WPI consumptio",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-1294",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1294,
+      "sentence": "Nutritional recommendations for an older adult (>65 years) population propose an increase in daily protein intake (1-1.2 g/kg/day; 1.2-1.5 g/kg/day in case of inflammatory disease), preferably of high-quality protein (i.e., whey protein), containing large amounts of essential amino acids (EAAs) such as leucine.",
+      "context_window": "vailable. Nutritional recommendations for an older adult (>65 years) population propose an increase in daily protein intake (1-",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-474",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 474,
+      "sentence": "Inclusion criteria were age \u226550 years, HF class I or II NYHA, clinical stability (symptoms and medications) for at least 4 weeks before inclusion, and left ventricular ejection fraction (LVEF) \u2264 50% (echocardiographically defined).",
+      "context_window": "ing scheduling, were assessed. Inclusion criteria were age \u226550 years, HF class I or II NYHA, clinical stability (symptoms and me",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-566",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 566,
+      "sentence": "Inclusion criteria were age \u226550 years, HF class I or II NYHA, clinical stability (symptoms and medications) for at least 4 weeks before inclusion, and left ventricular ejection fraction (LVEF) \u2264 50% (echocardiographically defined).",
+      "context_window": "clinical stability (symptoms and medications) for at least 4 weeks before inclusion, and left ventricular ejection fraction (L",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-640",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 640,
+      "sentence": "Inclusion criteria were age \u226550 years, HF class I or II NYHA, clinical stability (symptoms and medications) for at least 4 weeks before inclusion, and left ventricular ejection fraction (LVEF) \u2264 50% (echocardiographically defined).",
+      "context_window": "inclusion, and left ventricular ejection fraction (LVEF) \u2264 50% (echocardiographically defined). Exclusion criteria were cr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-723",
+      "claim_type": "unit_value",
+      "raw_text": "50 mL/min",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 723,
+      "sentence": "Exclusion criteria were creatinine clearance <50 mL/min/1.73 m 2 , impaired hepatic function (alanine aminotransferase > 150 U/L), hepatic cirrhosis, or allergy to milk proteins.",
+      "context_window": "lly defined). Exclusion criteria were creatinine clearance <50 mL/min/1.73 m 2 , impaired hepatic function (alanine aminotransfer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-1137",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1137,
+      "sentence": "Patients were instructed to consume the supplements once a day for 12 weeks.",
+      "context_window": "s were instructed to consume the supplements once a day for 12 weeks. The packaging and distribution of the supplements were per",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-1541",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1541,
+      "sentence": "All initial evaluations were repeated after 12 weeks of supplementation.",
+      "context_window": "on evaluations. All initial evaluations were repeated after 12 weeks of supplementation. Systolic blood pressure (SBP) and dias",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-3590",
+      "claim_type": "unit_value",
+      "raw_text": "10.75 kg",
+      "numeric_values": [
+        10.75
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3590,
+      "sentence": "Moderate to severe sarcopenia was considered present when SMI was <10.75 kg/m 2 for men and <6.75 kg/m 2 for women [ 20 ].",
+      "context_window": "e to severe sarcopenia was considered present when SMI was <10.75 kg/m 2 for men and <6.75 kg/m 2 for women [ 20 ]. The assessm",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-3616",
+      "claim_type": "unit_value",
+      "raw_text": "6.75 kg",
+      "numeric_values": [
+        6.75
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3616,
+      "sentence": "Moderate to severe sarcopenia was considered present when SMI was <10.75 kg/m 2 for men and <6.75 kg/m 2 for women [ 20 ].",
+      "context_window": "considered present when SMI was <10.75 kg/m 2 for men and <6.75 kg/m 2 for women [ 20 ]. The assessment of the patients\u2019 diet",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-4619",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4619,
+      "sentence": "Considering a gain of 500 g in the WP group compared to the placebo, with a standard deviation (SD) of 409.7 g, 11 patients were required in each group (5% alpha, 80% power).",
+      "context_window": "n (SD) of 409.7 g, 11 patients were required in each group (5% alpha, 80% power). The results from a similar study with WP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-4629",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4629,
+      "sentence": "Considering a gain of 500 g in the WP group compared to the placebo, with a standard deviation (SD) of 409.7 g, 11 patients were required in each group (5% alpha, 80% power).",
+      "context_window": "409.7 g, 11 patients were required in each group (5% alpha, 80% power). The results from a similar study with WP supplement",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-p-5314",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5314,
+      "sentence": "A value of p < 0.05 was considered statistically significant.",
+      "context_window": "ith IBM \u00ae SPSS \u00ae Statistics software version 23. A value of p < 0.05 was considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-175",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 175,
+      "sentence": "Eight patients were lost to follow-up, and only 15 and 10 patients, respectively, completed the 12 weeks of the study.",
+      "context_window": "p, and only 15 and 10 patients, respectively, completed the 12 weeks of the study. The flowchart of patient inclusion and follow",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-321",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 321,
+      "sentence": "A comparison between patients who completed the 12 weeks of supplementation and those who did not was performed ( Supplementary Material ), and the only differences found were the prevalence of diabetes (44.0% vs.",
+      "context_window": "Figure 1 . A comparison between patients who completed the 12 weeks of supplementation and those who did not was performed ( Su",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-477",
+      "claim_type": "percentage",
+      "raw_text": "44.0%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 477,
+      "sentence": "A comparison between patients who completed the 12 weeks of supplementation and those who did not was performed ( Supplementary Material ), and the only differences found were the prevalence of diabetes (44.0% vs.",
+      "context_window": "the only differences found were the prevalence of diabetes (44.0% vs. 87.5%, p = 0.032), glycemia (104 (93.5-123.5) vs. 145 (",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-487",
+      "claim_type": "percentage",
+      "raw_text": "87.5%",
+      "numeric_values": [
+        87.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 487,
+      "sentence": "87.5%, p = 0.032), glycemia (104 (93.5-123.5) vs.",
+      "context_window": "ifferences found were the prevalence of diabetes (44.0% vs. 87.5%, p = 0.032), glycemia (104 (93.5-123.5) vs. 145 (123.0-173.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-p-494",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.032",
+      "numeric_values": [
+        0.032
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 494,
+      "sentence": "87.5%, p = 0.032), glycemia (104 (93.5-123.5) vs.",
+      "context_window": "ces found were the prevalence of diabetes (44.0% vs. 87.5%, p = 0.032), glycemia (104 (93.5-123.5) vs. 145 (123.0-173.7), p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-p-556",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 556,
+      "sentence": "145 (123.0-173.7), p = 0.033), and prior myocardial infarction (100% vs.",
+      "context_window": "= 0.032), glycemia (104 (93.5-123.5) vs. 145 (123.0-173.7), p = 0.033), and prior myocardial infarction (100% vs. 75%, p = 0.01).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-601",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 601,
+      "sentence": "145 (123.0-173.7), p = 0.033), and prior myocardial infarction (100% vs.",
+      "context_window": "(123.0-173.7), p = 0.033), and prior myocardial infarction (100% vs. 75%, p = 0.01). No significant difference regarding LVE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-610",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 610,
+      "sentence": "75%, p = 0.01).",
+      "context_window": "3.7), p = 0.033), and prior myocardial infarction (100% vs. 75%, p = 0.01). No significant difference regarding LVEF, NYHA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-p-615",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 615,
+      "sentence": "75%, p = 0.01).",
+      "context_window": "p = 0.033), and prior myocardial infarction (100% vs. 75%, p = 0.01). No significant difference regarding LVEF, NYHA functional",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-msd-1755",
+      "claim_type": "mean_sd",
+      "raw_text": "1.3 \u00b1 0.51",
+      "numeric_values": [
+        1.3,
+        0.51
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1755,
+      "sentence": "When the supplementation is accounted for in the value of protein intake in T12, it changes to 1.3 \u00b1 0.51 g/kg/day, which is statistically significant compared to the baseline ( p = 0.007).",
+      "context_window": "ed for in the value of protein intake in T12, it changes to 1.3 \u00b1 0.51 g/kg/day, which is statistically significant compared to th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-p-1838",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1838,
+      "sentence": "When the supplementation is accounted for in the value of protein intake in T12, it changes to 1.3 \u00b1 0.51 g/kg/day, which is statistically significant compared to the baseline ( p = 0.007).",
+      "context_window": "ich is statistically significant compared to the baseline ( p = 0.007). Carbohydrate intake was close to adequate and both groups",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-2193",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2193,
+      "sentence": "After 12 weeks of WPI supplementation, waist circumference, fat mass, and % fat mass decreased, while skeletal muscle mass and skeletal muscle index increased when compared to placebo ( Figure 2 ).",
+      "context_window": "uced in the intervention group throughout the study. After 12 weeks of WPI supplementation, waist circumference, fat mass, and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-p-2500",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2500,
+      "sentence": "Handgrip strength showed a tendency towards increase (mean 25.7 kgf before and 28.1 kgf after WPI supplementation, p = 0.05).",
+      "context_window": "ean 25.7 kgf before and 28.1 kgf after WPI supplementation, p = 0.05). Of note, among patients who received the placebo, no sign",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-p-2926",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2926,
+      "sentence": "After WPI supplementation, serum urea showed a significant increase when compared to baseline ( p = 0.045), although this was not clinically relevant ( Table 3 ).",
+      "context_window": "a showed a significant increase when compared to baseline ( p = 0.045), although this was not clinically relevant ( Table 3 ). Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-3061",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3061,
+      "sentence": "The glomerular filtration rate was calculated at baseline and after 12 weeks of supplementation in order to assess the possible negative effect of WPI on renal function of the study participants, but no statistically significant difference was found [79.7 \u00b1 16.6 mL/min/1.73 m 2 vs.",
+      "context_window": "erular filtration rate was calculated at baseline and after 12 weeks of supplementation in order to assess the possible negative",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-msd-3244",
+      "claim_type": "mean_sd",
+      "raw_text": "79.7 \u00b1 16.6",
+      "numeric_values": [
+        79.7,
+        16.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3244,
+      "sentence": "The glomerular filtration rate was calculated at baseline and after 12 weeks of supplementation in order to assess the possible negative effect of WPI on renal function of the study participants, but no statistically significant difference was found [79.7 \u00b1 16.6 mL/min/1.73 m 2 vs.",
+      "context_window": "nts, but no statistically significant difference was found [79.7 \u00b1 16.6 mL/min/1.73 m 2 vs. 74.6 \u00b1 15.7 mL/min/1.73 m 2 , showing n",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-3251",
+      "claim_type": "unit_value",
+      "raw_text": "16.6 mL/min",
+      "numeric_values": [
+        16.6
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 3251,
+      "sentence": "The glomerular filtration rate was calculated at baseline and after 12 weeks of supplementation in order to assess the possible negative effect of WPI on renal function of the study participants, but no statistically significant difference was found [79.7 \u00b1 16.6 mL/min/1.73 m 2 vs.",
+      "context_window": "t no statistically significant difference was found [79.7 \u00b1 16.6 mL/min/1.73 m 2 vs. 74.6 \u00b1 15.7 mL/min/1.73 m 2 , showing no stati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-msd-3276",
+      "claim_type": "mean_sd",
+      "raw_text": "74.6 \u00b1 15.7",
+      "numeric_values": [
+        74.6,
+        15.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3276,
+      "sentence": "74.6 \u00b1 15.7 mL/min/1.73 m 2 , showing no statistical difference ( p = 0.052)].",
+      "context_window": "icant difference was found [79.7 \u00b1 16.6 mL/min/1.73 m 2 vs. 74.6 \u00b1 15.7 mL/min/1.73 m 2 , showing no statistical difference ( p = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-3283",
+      "claim_type": "unit_value",
+      "raw_text": "15.7 mL/min",
+      "numeric_values": [
+        15.7
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 3283,
+      "sentence": "74.6 \u00b1 15.7 mL/min/1.73 m 2 , showing no statistical difference ( p = 0.052)].",
+      "context_window": "ifference was found [79.7 \u00b1 16.6 mL/min/1.73 m 2 vs. 74.6 \u00b1 15.7 mL/min/1.73 m 2 , showing no statistical difference ( p = 0.052)].",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-p-3342",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.052",
+      "numeric_values": [
+        0.052
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3342,
+      "sentence": "74.6 \u00b1 15.7 mL/min/1.73 m 2 , showing no statistical difference ( p = 0.052)].",
+      "context_window": "15.7 mL/min/1.73 m 2 , showing no statistical difference ( p = 0.052)]. Neither clinical destabilizations (with or without the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-3502",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3502,
+      "sentence": "Neither clinical destabilizations (with or without the need for hospital admission) nor changes in patients\u2019 medications were reported during the 12 weeks of the study.",
+      "context_window": "r changes in patients\u2019 medications were reported during the 12 weeks of the study. No side effects related to gastrointestinal d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-1048",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1048,
+      "sentence": "In a recent study, Chen et al. examined the prevalence of sarcopenia in patients with HF and its association with adverse clinical outcomes and found that the overall prevalence of sarcopenia was 31%, and 18% in HF with preserved ejection fraction [ 26 ].",
+      "context_window": "mes and found that the overall prevalence of sarcopenia was 31%, and 18% in HF with preserved ejection fraction [ 26 ]. Sa",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-1057",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1057,
+      "sentence": "In a recent study, Chen et al. examined the prevalence of sarcopenia in patients with HF and its association with adverse clinical outcomes and found that the overall prevalence of sarcopenia was 31%, and 18% in HF with preserved ejection fraction [ 26 ].",
+      "context_window": "ound that the overall prevalence of sarcopenia was 31%, and 18% in HF with preserved ejection fraction [ 26 ]. Sarcopenia",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-1573",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1573,
+      "sentence": "Zhang et al., in another large meta-analysis, described a pooled prevalence of sarcopenia in patients with HF of 34%, ranging from 10% to 69% [ 3 ].",
+      "context_window": "ed a pooled prevalence of sarcopenia in patients with HF of 34%, ranging from 10% to 69% [ 3 ]. These numbers underscore th",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-1591",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1591,
+      "sentence": "Zhang et al., in another large meta-analysis, described a pooled prevalence of sarcopenia in patients with HF of 34%, ranging from 10% to 69% [ 3 ].",
+      "context_window": "ence of sarcopenia in patients with HF of 34%, ranging from 10% to 69% [ 3 ]. These numbers underscore the importance of th",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-pct-1598",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1598,
+      "sentence": "Zhang et al., in another large meta-analysis, described a pooled prevalence of sarcopenia in patients with HF of 34%, ranging from 10% to 69% [ 3 ].",
+      "context_window": "sarcopenia in patients with HF of 34%, ranging from 10% to 69% [ 3 ]. These numbers underscore the importance of this prob",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-msd-4745",
+      "claim_type": "mean_sd",
+      "raw_text": "0.6 \u00b1 0.7",
+      "numeric_values": [
+        0.6,
+        0.7
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4745,
+      "sentence": "With WPI, there was a significant increase in skeletal muscle mass (0.6 \u00b1 0.7 kg) after 12 weeks.",
+      "context_window": ", there was a significant increase in skeletal muscle mass (0.6 \u00b1 0.7 kg) after 12 weeks. Prior studies had described the effects",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-4751",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 kg",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4751,
+      "sentence": "With WPI, there was a significant increase in skeletal muscle mass (0.6 \u00b1 0.7 kg) after 12 weeks.",
+      "context_window": "e was a significant increase in skeletal muscle mass (0.6 \u00b1 0.7 kg) after 12 weeks. Prior studies had described the effects of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10223081_effects_of_whey_protein_isolate_on_body_composition_muscle_m-u-4765",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4765,
+      "sentence": "With WPI, there was a significant increase in skeletal muscle mass (0.6 \u00b1 0.7 kg) after 12 weeks.",
+      "context_window": "icant increase in skeletal muscle mass (0.6 \u00b1 0.7 kg) after 12 weeks. Prior studies had described the effects of WPI on muscle m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

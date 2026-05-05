@@ -1,0 +1,2140 @@
+{
+  "paper_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin",
+  "doi": "10.1111/jocd.70565",
+  "extracted_at": "2026-05-05T22:25:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 21,
+    "p_value": 17,
+    "percentage": 59,
+    "mean_sd": 19,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-736",
+      "claim_type": "unit_value",
+      "raw_text": "5000 mg/day",
+      "numeric_values": [
+        5000.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 736,
+      "sentence": "Subjects received either 5000 mg/day of BCP or placebo for 12 weeks, followed by a 4\u2010week washout period.",
+      "context_window": "healthy female participants aged. Subjects received either 5000 mg/day of BCP or placebo for 12 weeks, followed by a 4\u2010week washou",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-770",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 770,
+      "sentence": "Subjects received either 5000 mg/day of BCP or placebo for 12 weeks, followed by a 4\u2010week washout period.",
+      "context_window": "Subjects received either 5000 mg/day of BCP or placebo for 12 weeks, followed by a 4\u2010week washout period. Skin parameters-inclu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-1120",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1120,
+      "sentence": "BCP significantly improved dermal density, hydration, and TEWL compared to placebo after 12 weeks ( p < 0.05).",
+      "context_window": "rmal density, hydration, and TEWL compared to placebo after 12 weeks ( p < 0.05). These improvements were maintained during the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-1131",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1131,
+      "sentence": "BCP significantly improved dermal density, hydration, and TEWL compared to placebo after 12 weeks ( p < 0.05).",
+      "context_window": "y, hydration, and TEWL compared to placebo after 12 weeks ( p < 0.05). These improvements were maintained during the washout per",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-312",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 312,
+      "sentence": "Skin health and appearance depend primarily on the quantity and quality of dermal collagen [ 3 ], which constitutes 70%-80% of dermal dry weight and whose integrity directly determines skin elasticity, firmness, and moisture\u2010holding capacity [ 4 ].",
+      "context_window": "ity and quality of dermal collagen [ 3 ], which constitutes 70%-80% of dermal dry weight and whose integrity directly deter",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-316",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 316,
+      "sentence": "Skin health and appearance depend primarily on the quantity and quality of dermal collagen [ 3 ], which constitutes 70%-80% of dermal dry weight and whose integrity directly determines skin elasticity, firmness, and moisture\u2010holding capacity [ 4 ].",
+      "context_window": "and quality of dermal collagen [ 3 ], which constitutes 70%-80% of dermal dry weight and whose integrity directly determine",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-977",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 977,
+      "sentence": "Notably, from age 30 onward, dermal collagen content declined by 1%-2% per year, accompanied by disorganization and fragmentation of collagen fibers, ultimately leading to wrinkles, laxity, and reduced elasticity [ 7 ].",
+      "context_window": "ly, from age 30 onward, dermal collagen content declined by 1%-2% per year, accompanied by disorganization and fragmentati",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-980",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 980,
+      "sentence": "Notably, from age 30 onward, dermal collagen content declined by 1%-2% per year, accompanied by disorganization and fragmentation of collagen fibers, ultimately leading to wrinkles, laxity, and reduced elasticity [ 7 ].",
+      "context_window": "from age 30 onward, dermal collagen content declined by 1%-2% per year, accompanied by disorganization and fragmentation",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-191",
+      "claim_type": "unit_value",
+      "raw_text": "55 years",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 191,
+      "sentence": "Over a 16\u2010week period, 83 healthy female participants (aged 35-55 years) were randomly assigned to study groups.",
+      "context_window": "r a 16\u2010week period, 83 healthy female participants (aged 35-55 years) were randomly assigned to study groups. Inclusion criteria",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-1082",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1082,
+      "sentence": "Inclusion criteria required:\n\nFemale gender;\n\nGood systemic health;\n\nNo consumption of collagen peptide\u2010based functional foods within the past year;\n\nExclusion criteria comprised: Female participant\n\nPregnancy, lactation, or plans for pregnancy;\n\nPerimenopausal status;\n\nBody mass index (BMI) < 18.5 or > 27.9;\n\nHistory of chronic systemic diseases (e.g., cardiovascular, cerebrovascular, hepatic, or renal disorders), diabetes, or dermatological conditions (e.g., psoriasis, eczema, atopic dermatitis, severe acne);\n\nPsychological conditions such as depression or sleep disorders;\n\nCurrent smoking, alcohol dependence, or use of hormone therapy, anti\u2010obesity medications, absorption inhibitors, antidepressants, or appetite suppressants;\n\nRecent medical aesthetic procedures (e.g., chemical peels, laser treatments) at the test site within 3 months.",
+      "context_window": ", chemical peels, laser treatments) at the test site within 3 months. Topical application of hormonal or anti\u2010inflammatory agen",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-1177",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1177,
+      "sentence": "Topical application of hormonal or anti\u2010inflammatory agents at the test site within 2 months.",
+      "context_window": "ormonal or anti\u2010inflammatory agents at the test site within 2 months. Inability to avoid prolonged sun exposure; Participation",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-1278",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1278,
+      "sentence": "Inability to avoid prolonged sun exposure;\n\nParticipation in other clinical trials within 3 months.",
+      "context_window": "un exposure; Participation in other clinical trials within 3 months. Any condition deemed clinically unsuitable by investigato",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-2075",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2075,
+      "sentence": "Participants received daily supplementation for 12 weeks, followed by a 4\u2010week discontinuation phase to assess sustained effects.",
+      "context_window": "12, and 16. Participants received daily supplementation for 12 weeks, followed by a 4\u2010week discontinuation phase to assess susta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-2618",
+      "claim_type": "unit_value",
+      "raw_text": "5000 mg",
+      "numeric_values": [
+        5000.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2618,
+      "sentence": "Therefore, participants were randomized to receive either 5000 mg of BCP or a matching placebo once daily, with the composition shown in Table 1 .",
+      "context_window": ". Therefore, participants were randomized to receive either 5000 mg of BCP or a matching placebo once daily, with the compositi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-2765",
+      "claim_type": "unit_value",
+      "raw_text": "250 mL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2765,
+      "sentence": "For consistency, the powder was dissolved each morning in 250 mL of water at room temperature.",
+      "context_window": ". For consistency, the powder was dissolved each morning in 250 mL of water at room temperature. The intervention continued fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-2833",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2833,
+      "sentence": "The intervention continued for 12 weeks, followed by a 4\u2010week washout period to evaluate the durability of any observed skin effects.",
+      "context_window": "f water at room temperature. The intervention continued for 12 weeks, followed by a 4\u2010week washout period to evaluate the durabi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-3336",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mL/min",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 3336,
+      "sentence": "The mobile phase consisted of acetonitrile: water: trifluoroacetic acid (40:60:0.05, v/v/v) at a flow rate of 0.5 mL/min, with the column maintained at 30\u00b0C.",
+      "context_window": "trifluoroacetic acid (40:60:0.05, v/v/v) at a flow rate of 0.5 mL/min, with the column maintained at 30\u00b0C. A 10 \u03bcL aliquot of eac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-3866",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3866,
+      "sentence": "All clinical efficacy measurements were performed in a controlled environment (relative humidity 40%-60%, room temperature 20\u00b0C-24\u00b0C).",
+      "context_window": "re performed in a controlled environment (relative humidity 40%-60%, room temperature 20\u00b0C-24\u00b0C). Subjects rested quietly a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-3870",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3870,
+      "sentence": "All clinical efficacy measurements were performed in a controlled environment (relative humidity 40%-60%, room temperature 20\u00b0C-24\u00b0C).",
+      "context_window": "erformed in a controlled environment (relative humidity 40%-60%, room temperature 20\u00b0C-24\u00b0C). Subjects rested quietly and r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-893",
+      "claim_type": "mean_sd",
+      "raw_text": "43.85 \u00b1 7.06",
+      "numeric_values": [
+        43.85,
+        7.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 893,
+      "sentence": "There was no significant difference in age between groups (43.85 \u00b1 7.06 vs.",
+      "context_window": "There was no significant difference in age between groups (43.85 \u00b1 7.06 vs. 45.42 \u00b1 6.85 years, p = 0.81). Although the mean BMI wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-910",
+      "claim_type": "mean_sd",
+      "raw_text": "45.42 \u00b1 6.85",
+      "numeric_values": [
+        45.42,
+        6.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 910,
+      "sentence": "45.42 \u00b1 6.85 years, p = 0.81).",
+      "context_window": "nificant difference in age between groups (43.85 \u00b1 7.06 vs. 45.42 \u00b1 6.85 years, p = 0.81). Although the mean BMI was significantly h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-918",
+      "claim_type": "unit_value",
+      "raw_text": "6.85 years",
+      "numeric_values": [
+        6.85
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 918,
+      "sentence": "45.42 \u00b1 6.85 years, p = 0.81).",
+      "context_window": "difference in age between groups (43.85 \u00b1 7.06 vs. 45.42 \u00b1 6.85 years, p = 0.81). Although the mean BMI was significantly higher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-930",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.81",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 930,
+      "sentence": "45.42 \u00b1 6.85 years, p = 0.81).",
+      "context_window": "in age between groups (43.85 \u00b1 7.06 vs. 45.42 \u00b1 6.85 years, p = 0.81). Although the mean BMI was significantly higher in the tre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-1012",
+      "claim_type": "mean_sd",
+      "raw_text": "23.23 \u00b1 3.05",
+      "numeric_values": [
+        23.23,
+        3.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1012,
+      "sentence": "Although the mean BMI was significantly higher in the treatment group (23.23 \u00b1 3.05 vs.",
+      "context_window": "e mean BMI was significantly higher in the treatment group (23.23 \u00b1 3.05 vs. 21.82 \u00b1 2.09 kg/m 2 , p = 0.02), this difference is unl",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-1029",
+      "claim_type": "mean_sd",
+      "raw_text": "21.82 \u00b1 2.09",
+      "numeric_values": [
+        21.82,
+        2.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1029,
+      "sentence": "21.82 \u00b1 2.09 kg/m 2 , p = 0.02), this difference is unlikely to confound the intervention outcomes, as variations in BMI within this range have minimal impact on skin physiology or the response to collagen peptide supplementation.",
+      "context_window": "gnificantly higher in the treatment group (23.23 \u00b1 3.05 vs. 21.82 \u00b1 2.09 kg/m 2 , p = 0.02), this difference is unlikely to confound",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-1037",
+      "claim_type": "unit_value",
+      "raw_text": "2.09 kg",
+      "numeric_values": [
+        2.09
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1037,
+      "sentence": "21.82 \u00b1 2.09 kg/m 2 , p = 0.02), this difference is unlikely to confound the intervention outcomes, as variations in BMI within this range have minimal impact on skin physiology or the response to collagen peptide supplementation.",
+      "context_window": "tly higher in the treatment group (23.23 \u00b1 3.05 vs. 21.82 \u00b1 2.09 kg/m 2 , p = 0.02), this difference is unlikely to confound th",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-1051",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1051,
+      "sentence": "21.82 \u00b1 2.09 kg/m 2 , p = 0.02), this difference is unlikely to confound the intervention outcomes, as variations in BMI within this range have minimal impact on skin physiology or the response to collagen peptide supplementation.",
+      "context_window": "the treatment group (23.23 \u00b1 3.05 vs. 21.82 \u00b1 2.09 kg/m 2 , p = 0.02), this difference is unlikely to confound the intervention",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-1400",
+      "claim_type": "percentage",
+      "raw_text": "43.01%",
+      "numeric_values": [
+        43.01
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1400,
+      "sentence": "The BCP sample exhibited the following molecular\u2010weight distribution: as a cumulative distribution, 43.01% of peptide species were \u2264 1000 Da, 59.78% were \u2264 2000 Da, and 95.09% were < 10 000 Da (Figure S1 and Table 3 ).",
+      "context_window": "olecular\u2010weight distribution: as a cumulative distribution, 43.01% of peptide species were \u2264 1000 Da, 59.78% were \u2264 2000 Da, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-1442",
+      "claim_type": "percentage",
+      "raw_text": "59.78%",
+      "numeric_values": [
+        59.78
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1442,
+      "sentence": "The BCP sample exhibited the following molecular\u2010weight distribution: as a cumulative distribution, 43.01% of peptide species were \u2264 1000 Da, 59.78% were \u2264 2000 Da, and 95.09% were < 10 000 Da (Figure S1 and Table 3 ).",
+      "context_window": "ive distribution, 43.01% of peptide species were \u2264 1000 Da, 59.78% were \u2264 2000 Da, and 95.09% were < 10 000 Da (Figure S1 and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-1469",
+      "claim_type": "percentage",
+      "raw_text": "95.09%",
+      "numeric_values": [
+        95.09
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1469,
+      "sentence": "The BCP sample exhibited the following molecular\u2010weight distribution: as a cumulative distribution, 43.01% of peptide species were \u2264 1000 Da, 59.78% were \u2264 2000 Da, and 95.09% were < 10 000 Da (Figure S1 and Table 3 ).",
+      "context_window": "peptide species were \u2264 1000 Da, 59.78% were \u2264 2000 Da, and 95.09% were < 10 000 Da (Figure S1 and Table 3 ). The weight\u2010avera",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-1614",
+      "claim_type": "percentage",
+      "raw_text": "16.6%",
+      "numeric_values": [
+        16.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1614,
+      "sentence": "The weight\u2010average molecular weight was approximately 2353 Da with a hydroxyproline content of 16.6% (w/w).",
+      "context_window": "was approximately 2353 Da with a hydroxyproline content of 16.6% (w/w). The chromatographic profile obtained by liquid chrom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-2042",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2042,
+      "sentence": "Regarding moisture content (Figure 2A )the treated group showed significantly higher moisture content than the placebo group at Week 8 post\u2010intervention ( p < 0.001), and although there was a slight decrease at Week 16, the difference remained significant ( p < 0.0001).",
+      "context_window": "ontent than the placebo group at Week 8 post\u2010intervention ( p < 0.001), and although there was a slight decrease at Week 16, the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-2145",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2145,
+      "sentence": "Regarding moisture content (Figure 2A )the treated group showed significantly higher moisture content than the placebo group at Week 8 post\u2010intervention ( p < 0.001), and although there was a slight decrease at Week 16, the difference remained significant ( p < 0.0001).",
+      "context_window": "decrease at Week 16, the difference remained significant ( p < 0.0001). Specifically, the baseline moisture content in the treate",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2227",
+      "claim_type": "percentage",
+      "raw_text": "40.66%",
+      "numeric_values": [
+        40.66
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2227,
+      "sentence": "Specifically, the baseline moisture content in the treated group was 40.66% \u00b1 6.79%, which increased to 44.38% \u00b1 7.62% by Week 16, reflecting an average increase of 9.15%.",
+      "context_window": "lly, the baseline moisture content in the treated group was 40.66% \u00b1 6.79%, which increased to 44.38% \u00b1 7.62% by Week 16, refl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2236",
+      "claim_type": "percentage",
+      "raw_text": "6.79%",
+      "numeric_values": [
+        6.79
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2236,
+      "sentence": "Specifically, the baseline moisture content in the treated group was 40.66% \u00b1 6.79%, which increased to 44.38% \u00b1 7.62% by Week 16, reflecting an average increase of 9.15%.",
+      "context_window": "baseline moisture content in the treated group was 40.66% \u00b1 6.79%, which increased to 44.38% \u00b1 7.62% by Week 16, reflecting a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2262",
+      "claim_type": "percentage",
+      "raw_text": "44.38%",
+      "numeric_values": [
+        44.38
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2262,
+      "sentence": "Specifically, the baseline moisture content in the treated group was 40.66% \u00b1 6.79%, which increased to 44.38% \u00b1 7.62% by Week 16, reflecting an average increase of 9.15%.",
+      "context_window": "in the treated group was 40.66% \u00b1 6.79%, which increased to 44.38% \u00b1 7.62% by Week 16, reflecting an average increase of 9.15%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2271",
+      "claim_type": "percentage",
+      "raw_text": "7.62%",
+      "numeric_values": [
+        7.62
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2271,
+      "sentence": "Specifically, the baseline moisture content in the treated group was 40.66% \u00b1 6.79%, which increased to 44.38% \u00b1 7.62% by Week 16, reflecting an average increase of 9.15%.",
+      "context_window": "eated group was 40.66% \u00b1 6.79%, which increased to 44.38% \u00b1 7.62% by Week 16, reflecting an average increase of 9.15%. Meanwh",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2323",
+      "claim_type": "percentage",
+      "raw_text": "9.15%",
+      "numeric_values": [
+        9.15
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2323,
+      "sentence": "Specifically, the baseline moisture content in the treated group was 40.66% \u00b1 6.79%, which increased to 44.38% \u00b1 7.62% by Week 16, reflecting an average increase of 9.15%.",
+      "context_window": "4.38% \u00b1 7.62% by Week 16, reflecting an average increase of 9.15%. Meanwhile, the placebo group's moisture content decreased",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2407",
+      "claim_type": "percentage",
+      "raw_text": "38.58%",
+      "numeric_values": [
+        38.58
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2407,
+      "sentence": "Meanwhile, the placebo group's moisture content decreased from a baseline of 38.58% \u00b1 5.92% to 35.40% \u00b1 5.14% by Week 16, showing an average decline of 8.24%.",
+      "context_window": "acebo group's moisture content decreased from a baseline of 38.58% \u00b1 5.92% to 35.40% \u00b1 5.14% by Week 16, showing an average de",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2416",
+      "claim_type": "percentage",
+      "raw_text": "5.92%",
+      "numeric_values": [
+        5.92
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2416,
+      "sentence": "Meanwhile, the placebo group's moisture content decreased from a baseline of 38.58% \u00b1 5.92% to 35.40% \u00b1 5.14% by Week 16, showing an average decline of 8.24%.",
+      "context_window": "up's moisture content decreased from a baseline of 38.58% \u00b1 5.92% to 35.40% \u00b1 5.14% by Week 16, showing an average decline of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2425",
+      "claim_type": "percentage",
+      "raw_text": "35.40%",
+      "numeric_values": [
+        35.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2425,
+      "sentence": "Meanwhile, the placebo group's moisture content decreased from a baseline of 38.58% \u00b1 5.92% to 35.40% \u00b1 5.14% by Week 16, showing an average decline of 8.24%.",
+      "context_window": "ture content decreased from a baseline of 38.58% \u00b1 5.92% to 35.40% \u00b1 5.14% by Week 16, showing an average decline of 8.24%. E",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2434",
+      "claim_type": "percentage",
+      "raw_text": "5.14%",
+      "numeric_values": [
+        5.14
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2434,
+      "sentence": "Meanwhile, the placebo group's moisture content decreased from a baseline of 38.58% \u00b1 5.92% to 35.40% \u00b1 5.14% by Week 16, showing an average decline of 8.24%.",
+      "context_window": "ent decreased from a baseline of 38.58% \u00b1 5.92% to 35.40% \u00b1 5.14% by Week 16, showing an average decline of 8.24%. Effect of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2482",
+      "claim_type": "percentage",
+      "raw_text": "8.24%",
+      "numeric_values": [
+        8.24
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2482,
+      "sentence": "Meanwhile, the placebo group's moisture content decreased from a baseline of 38.58% \u00b1 5.92% to 35.40% \u00b1 5.14% by Week 16, showing an average decline of 8.24%.",
+      "context_window": "to 35.40% \u00b1 5.14% by Week 16, showing an average decline of 8.24%. Effect of specific collagen peptides on facial moisture:",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-2647",
+      "claim_type": "mean_sd",
+      "raw_text": "11.37 \u00b1 3.26",
+      "numeric_values": [
+        11.37,
+        3.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2647,
+      "sentence": "As shown in Figure 2B , the baseline TEWL in the placebo group was 11.37 \u00b1 3.26 g/m 2 /h, and at the end of the trial, the average TEWL increased to 11.72 \u00b1 3.25 g/m 2 /h, representing a 3.07% increase.",
+      "context_window": "n in Figure 2B , the baseline TEWL in the placebo group was 11.37 \u00b1 3.26 g/m 2 /h, and at the end of the trial, the average TEWL inc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-2729",
+      "claim_type": "mean_sd",
+      "raw_text": "11.72 \u00b1 3.25",
+      "numeric_values": [
+        11.72,
+        3.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2729,
+      "sentence": "As shown in Figure 2B , the baseline TEWL in the placebo group was 11.37 \u00b1 3.26 g/m 2 /h, and at the end of the trial, the average TEWL increased to 11.72 \u00b1 3.25 g/m 2 /h, representing a 3.07% increase.",
+      "context_window": "and at the end of the trial, the average TEWL increased to 11.72 \u00b1 3.25 g/m 2 /h, representing a 3.07% increase. In contrast, the T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2767",
+      "claim_type": "percentage",
+      "raw_text": "3.07%",
+      "numeric_values": [
+        3.07
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2767,
+      "sentence": "As shown in Figure 2B , the baseline TEWL in the placebo group was 11.37 \u00b1 3.26 g/m 2 /h, and at the end of the trial, the average TEWL increased to 11.72 \u00b1 3.25 g/m 2 /h, representing a 3.07% increase.",
+      "context_window": "age TEWL increased to 11.72 \u00b1 3.25 g/m 2 /h, representing a 3.07% increase. In contrast, the TEWL in the treated group showed",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-2905",
+      "claim_type": "mean_sd",
+      "raw_text": "10.85 \u00b1 2.20",
+      "numeric_values": [
+        10.85,
+        2.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2905,
+      "sentence": "The baseline TEWL in the treated group was 10.85 \u00b1 2.20 g/m 2 /h, and by Week 16, it had reduced to 9.00 \u00b1 1.55 g/m 2 /h (-17.05%).",
+      "context_window": "ecreasing trend. The baseline TEWL in the treated group was 10.85 \u00b1 2.20 g/m 2 /h, and by Week 16, it had reduced to 9.00 \u00b1 1.55 g/m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-2962",
+      "claim_type": "mean_sd",
+      "raw_text": "9.00 \u00b1 1.55",
+      "numeric_values": [
+        9.0,
+        1.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2962,
+      "sentence": "The baseline TEWL in the treated group was 10.85 \u00b1 2.20 g/m 2 /h, and by Week 16, it had reduced to 9.00 \u00b1 1.55 g/m 2 /h (-17.05%).",
+      "context_window": "as 10.85 \u00b1 2.20 g/m 2 /h, and by Week 16, it had reduced to 9.00 \u00b1 1.55 g/m 2 /h (-17.05%). The TEWL in the treated group was signi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-2985",
+      "claim_type": "percentage",
+      "raw_text": "17.05%",
+      "numeric_values": [
+        17.05
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2985,
+      "sentence": "The baseline TEWL in the treated group was 10.85 \u00b1 2.20 g/m 2 /h, and by Week 16, it had reduced to 9.00 \u00b1 1.55 g/m 2 /h (-17.05%).",
+      "context_window": "h, and by Week 16, it had reduced to 9.00 \u00b1 1.55 g/m 2 /h (-17.05%). The TEWL in the treated group was significantly lower tha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-3103",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3103,
+      "sentence": "The TEWL in the treated group was significantly lower than that in the placebo group starting from Week 12 ( p < 0.001) and was markedly lower by Week 16 ( p < 0.0001).",
+      "context_window": "ower than that in the placebo group starting from Week 12 ( p < 0.001) and was markedly lower by Week 16 ( p < 0.0001). These re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-3150",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3150,
+      "sentence": "The TEWL in the treated group was significantly lower than that in the placebo group starting from Week 12 ( p < 0.001) and was markedly lower by Week 16 ( p < 0.0001).",
+      "context_window": "om Week 12 ( p < 0.001) and was markedly lower by Week 16 ( p < 0.0001). These results indicated that, compared to the placebo gr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-3271",
+      "claim_type": "percentage",
+      "raw_text": "20.12%",
+      "numeric_values": [
+        20.12
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3271,
+      "sentence": "These results indicated that, compared to the placebo group, the bioactive collagen peptide group showed a 20.12% decrease in TEWL and a 17.39% increase in moisture content by Week 16.",
+      "context_window": "lacebo group, the bioactive collagen peptide group showed a 20.12% decrease in TEWL and a 17.39% increase in moisture content",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-3301",
+      "claim_type": "percentage",
+      "raw_text": "17.39%",
+      "numeric_values": [
+        17.39
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3301,
+      "sentence": "These results indicated that, compared to the placebo group, the bioactive collagen peptide group showed a 20.12% decrease in TEWL and a 17.39% increase in moisture content by Week 16.",
+      "context_window": "llagen peptide group showed a 20.12% decrease in TEWL and a 17.39% increase in moisture content by Week 16. BCP contributed to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-3851",
+      "claim_type": "mean_sd",
+      "raw_text": "9.11 \u00b1 1.01",
+      "numeric_values": [
+        9.11,
+        1.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3851,
+      "sentence": "Regarding firmness (F4), as shown in Figure 3B , the baseline average value in the placebo group was 9.11 \u00b1 1.01, and by Week 16, the average increased by 5.48%, suggesting reduced facial skin firmness.",
+      "context_window": "re 3B , the baseline average value in the placebo group was 9.11 \u00b1 1.01, and by Week 16, the average increased by 5.48%, suggesting",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-3905",
+      "claim_type": "percentage",
+      "raw_text": "5.48%",
+      "numeric_values": [
+        5.48
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3905,
+      "sentence": "Regarding firmness (F4), as shown in Figure 3B , the baseline average value in the placebo group was 9.11 \u00b1 1.01, and by Week 16, the average increased by 5.48%, suggesting reduced facial skin firmness.",
+      "context_window": "p was 9.11 \u00b1 1.01, and by Week 16, the average increased by 5.48%, suggesting reduced facial skin firmness. In contrast, the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-4016",
+      "claim_type": "mean_sd",
+      "raw_text": "8.99 \u00b1 0.90",
+      "numeric_values": [
+        8.99,
+        0.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4016,
+      "sentence": "In contrast, the treated group had a baseline average value of 8.99 \u00b1 0.90, which decreased to 8.06 \u00b1 0.96 by Week 16, showing a 10.34% reduction, indicating an improvement in facial firmness.",
+      "context_window": "contrast, the treated group had a baseline average value of 8.99 \u00b1 0.90, which decreased to 8.06 \u00b1 0.96 by Week 16, showing a 10.34",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-4048",
+      "claim_type": "mean_sd",
+      "raw_text": "8.06 \u00b1 0.96",
+      "numeric_values": [
+        8.06,
+        0.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4048,
+      "sentence": "In contrast, the treated group had a baseline average value of 8.99 \u00b1 0.90, which decreased to 8.06 \u00b1 0.96 by Week 16, showing a 10.34% reduction, indicating an improvement in facial firmness.",
+      "context_window": "a baseline average value of 8.99 \u00b1 0.90, which decreased to 8.06 \u00b1 0.96 by Week 16, showing a 10.34% reduction, indicating an impro",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-4082",
+      "claim_type": "percentage",
+      "raw_text": "10.34%",
+      "numeric_values": [
+        10.34
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4082,
+      "sentence": "In contrast, the treated group had a baseline average value of 8.99 \u00b1 0.90, which decreased to 8.06 \u00b1 0.96 by Week 16, showing a 10.34% reduction, indicating an improvement in facial firmness.",
+      "context_window": "0.90, which decreased to 8.06 \u00b1 0.96 by Week 16, showing a 10.34% reduction, indicating an improvement in facial firmness. Th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-4170",
+      "claim_type": "percentage",
+      "raw_text": "15.48%",
+      "numeric_values": [
+        15.48
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4170,
+      "sentence": "The reduction in F4 was 15.48% greater than that in the placebo group, with significant improvements observed at both Week 12 and Week 16 ( p < 0.0001).",
+      "context_window": "an improvement in facial firmness. The reduction in F4 was 15.48% greater than that in the placebo group, with significant im",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-4286",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4286,
+      "sentence": "The reduction in F4 was 15.48% greater than that in the placebo group, with significant improvements observed at both Week 12 and Week 16 ( p < 0.0001).",
+      "context_window": "ificant improvements observed at both Week 12 and Week 16 ( p < 0.0001). These results suggest that continuous intake of BCP for 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-4355",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4355,
+      "sentence": "These results suggest that continuous intake of BCP for 12 weeks can improve facial skin firmness, and this effect is sustained even after a 4\u2010week discontinuation period.",
+      "context_window": "1). These results suggest that continuous intake of BCP for 12 weeks can improve facial skin firmness, and this effect is sustai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-4848",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4848,
+      "sentence": "The data indicate that after 16 weeks of intervention, no significant differences in the epidermal thickness of the face and upper arm were observed between the treated and placebo groups (Figure 4A,D ), suggesting that specific collagen peptides have a limited effect on the epidermal layer.",
+      "context_window": "CP on deep skin tissue [ 28 ]. The data indicate that after 16 weeks of intervention, no significant differences in the epiderma",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-5572",
+      "claim_type": "mean_sd",
+      "raw_text": "1443.11 \u00b1 202.13",
+      "numeric_values": [
+        1443.11,
+        202.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5572,
+      "sentence": "For facial dermal thickness (Figure 4B,C ), the baseline average dermal thickness in the placebo group was 1443.11 \u00b1 202.13 \u03bcm, and by Week 16, it had reduced to 1271.45 \u00b1 207.21 \u03bcm, representing an 11.92% decrease.",
+      "context_window": "baseline average dermal thickness in the placebo group was 1443.11 \u00b1 202.13 \u03bcm, and by Week 16, it had reduced to 1271.45 \u00b1 207.21 \u03bcm,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-5627",
+      "claim_type": "mean_sd",
+      "raw_text": "1271.45 \u00b1 207.21",
+      "numeric_values": [
+        1271.45,
+        207.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5627,
+      "sentence": "For facial dermal thickness (Figure 4B,C ), the baseline average dermal thickness in the placebo group was 1443.11 \u00b1 202.13 \u03bcm, and by Week 16, it had reduced to 1271.45 \u00b1 207.21 \u03bcm, representing an 11.92% decrease.",
+      "context_window": "was 1443.11 \u00b1 202.13 \u03bcm, and by Week 16, it had reduced to 1271.45 \u00b1 207.21 \u03bcm, representing an 11.92% decrease. In contrast, the basel",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-5664",
+      "claim_type": "percentage",
+      "raw_text": "11.92%",
+      "numeric_values": [
+        11.92
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5664,
+      "sentence": "For facial dermal thickness (Figure 4B,C ), the baseline average dermal thickness in the placebo group was 1443.11 \u00b1 202.13 \u03bcm, and by Week 16, it had reduced to 1271.45 \u00b1 207.21 \u03bcm, representing an 11.92% decrease.",
+      "context_window": "16, it had reduced to 1271.45 \u00b1 207.21 \u03bcm, representing an 11.92% decrease. In contrast, the baseline dermal thickness in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-5749",
+      "claim_type": "mean_sd",
+      "raw_text": "1416.58 \u00b1 211.51",
+      "numeric_values": [
+        1416.58,
+        211.51
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5749,
+      "sentence": "In contrast, the baseline dermal thickness in the treated group was 1416.58 \u00b1 211.51 \u03bcm, and after the intervention, it was 1398.61 \u00b1 178.22 \u03bcm, showing a 1.27% decrease.",
+      "context_window": "ast, the baseline dermal thickness in the treated group was 1416.58 \u00b1 211.51 \u03bcm, and after the intervention, it was 1398.61 \u00b1 178.22 \u03bcm,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-5805",
+      "claim_type": "mean_sd",
+      "raw_text": "1398.61 \u00b1 178.22",
+      "numeric_values": [
+        1398.61,
+        178.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5805,
+      "sentence": "In contrast, the baseline dermal thickness in the treated group was 1416.58 \u00b1 211.51 \u03bcm, and after the intervention, it was 1398.61 \u00b1 178.22 \u03bcm, showing a 1.27% decrease.",
+      "context_window": "was 1416.58 \u00b1 211.51 \u03bcm, and after the intervention, it was 1398.61 \u00b1 178.22 \u03bcm, showing a 1.27% decrease. From Week 8 onward, the derma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-5836",
+      "claim_type": "percentage",
+      "raw_text": "1.27%",
+      "numeric_values": [
+        1.27
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5836,
+      "sentence": "In contrast, the baseline dermal thickness in the treated group was 1416.58 \u00b1 211.51 \u03bcm, and after the intervention, it was 1398.61 \u00b1 178.22 \u03bcm, showing a 1.27% decrease.",
+      "context_window": "ter the intervention, it was 1398.61 \u00b1 178.22 \u03bcm, showing a 1.27% decrease. From Week 8 onward, the dermal thickness in the t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-6004",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6004,
+      "sentence": "From Week 8 onward, the dermal thickness in the treated group remained higher than that in the placebo group and was significantly greater at Week 16 ( p < 0.05), indicating that BCP could reduce the loss of dermal thickness.",
+      "context_window": "he placebo group and was significantly greater at Week 16 ( p < 0.05), indicating that BCP could reduce the loss of dermal thick",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-6246",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6246,
+      "sentence": "Furthermore, improvements in dermal density were even more pronounced, with the treated group showing significant increases compared to the placebo group from Week 8 ( p < 0.0001).",
+      "context_window": "icant increases compared to the placebo group from Week 8 ( p < 0.0001). The baseline and Week 16 average dermal densities in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6335",
+      "claim_type": "percentage",
+      "raw_text": "15.55%",
+      "numeric_values": [
+        15.55
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6335,
+      "sentence": "The baseline and Week 16 average dermal densities in the treated group were 15.55% \u00b1 4.07% and 19.34% \u00b1 4.00%, respectively, reflecting a 19.20% increase.",
+      "context_window": "Week 16 average dermal densities in the treated group were 15.55% \u00b1 4.07% and 19.34% \u00b1 4.00%, respectively, reflecting a 19.2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6344",
+      "claim_type": "percentage",
+      "raw_text": "4.07%",
+      "numeric_values": [
+        4.07
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6344,
+      "sentence": "The baseline and Week 16 average dermal densities in the treated group were 15.55% \u00b1 4.07% and 19.34% \u00b1 4.00%, respectively, reflecting a 19.20% increase.",
+      "context_window": "average dermal densities in the treated group were 15.55% \u00b1 4.07% and 19.34% \u00b1 4.00%, respectively, reflecting a 19.20% incre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6354",
+      "claim_type": "percentage",
+      "raw_text": "19.34%",
+      "numeric_values": [
+        19.34
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6354,
+      "sentence": "The baseline and Week 16 average dermal densities in the treated group were 15.55% \u00b1 4.07% and 19.34% \u00b1 4.00%, respectively, reflecting a 19.20% increase.",
+      "context_window": "rmal densities in the treated group were 15.55% \u00b1 4.07% and 19.34% \u00b1 4.00%, respectively, reflecting a 19.20% increase. In the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6363",
+      "claim_type": "percentage",
+      "raw_text": "4.00%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6363,
+      "sentence": "The baseline and Week 16 average dermal densities in the treated group were 15.55% \u00b1 4.07% and 19.34% \u00b1 4.00%, respectively, reflecting a 19.20% increase.",
+      "context_window": "ities in the treated group were 15.55% \u00b1 4.07% and 19.34% \u00b1 4.00%, respectively, reflecting a 19.20% increase. In the placebo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6397",
+      "claim_type": "percentage",
+      "raw_text": "19.20%",
+      "numeric_values": [
+        19.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6397,
+      "sentence": "The baseline and Week 16 average dermal densities in the treated group were 15.55% \u00b1 4.07% and 19.34% \u00b1 4.00%, respectively, reflecting a 19.20% increase.",
+      "context_window": ".55% \u00b1 4.07% and 19.34% \u00b1 4.00%, respectively, reflecting a 19.20% increase. In the placebo group, the baseline and Week 16 de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6488",
+      "claim_type": "percentage",
+      "raw_text": "14.73%",
+      "numeric_values": [
+        14.73
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6488,
+      "sentence": "In the placebo group, the baseline and Week 16 dermal density values were 14.73% \u00b1 3.07% and 13.68% \u00b1 3.03%, respectively, showing a 7.13% decrease.",
+      "context_window": "group, the baseline and Week 16 dermal density values were 14.73% \u00b1 3.07% and 13.68% \u00b1 3.03%, respectively, showing a 7.13% d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6497",
+      "claim_type": "percentage",
+      "raw_text": "3.07%",
+      "numeric_values": [
+        3.07
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6497,
+      "sentence": "In the placebo group, the baseline and Week 16 dermal density values were 14.73% \u00b1 3.07% and 13.68% \u00b1 3.03%, respectively, showing a 7.13% decrease.",
+      "context_window": "he baseline and Week 16 dermal density values were 14.73% \u00b1 3.07% and 13.68% \u00b1 3.03%, respectively, showing a 7.13% decrease.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6507",
+      "claim_type": "percentage",
+      "raw_text": "13.68%",
+      "numeric_values": [
+        13.68
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6507,
+      "sentence": "In the placebo group, the baseline and Week 16 dermal density values were 14.73% \u00b1 3.07% and 13.68% \u00b1 3.03%, respectively, showing a 7.13% decrease.",
+      "context_window": "e and Week 16 dermal density values were 14.73% \u00b1 3.07% and 13.68% \u00b1 3.03%, respectively, showing a 7.13% decrease. For the d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6516",
+      "claim_type": "percentage",
+      "raw_text": "3.03%",
+      "numeric_values": [
+        3.03
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6516,
+      "sentence": "In the placebo group, the baseline and Week 16 dermal density values were 14.73% \u00b1 3.07% and 13.68% \u00b1 3.03%, respectively, showing a 7.13% decrease.",
+      "context_window": "k 16 dermal density values were 14.73% \u00b1 3.07% and 13.68% \u00b1 3.03%, respectively, showing a 7.13% decrease. For the dermal th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6547",
+      "claim_type": "percentage",
+      "raw_text": "7.13%",
+      "numeric_values": [
+        7.13
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6547,
+      "sentence": "In the placebo group, the baseline and Week 16 dermal density values were 14.73% \u00b1 3.07% and 13.68% \u00b1 3.03%, respectively, showing a 7.13% decrease.",
+      "context_window": "14.73% \u00b1 3.07% and 13.68% \u00b1 3.03%, respectively, showing a 7.13% decrease. For the dermal thickness in the upper arm (Figur",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-6691",
+      "claim_type": "mean_sd",
+      "raw_text": "798.34 \u00b1 124.03",
+      "numeric_values": [
+        798.34,
+        124.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6691,
+      "sentence": "For the dermal thickness in the upper arm (Figure 4E,F ), the baseline and Week 16 average thickness in the placebo group were 798.34 \u00b1 124.03 \u03bcm and 764.87 \u00b1 101.33 \u03bcm, respectively, reflecting a 4.19% decrease.",
+      "context_window": "ine and Week 16 average thickness in the placebo group were 798.34 \u00b1 124.03 \u03bcm and 764.87 \u00b1 101.33 \u03bcm, respectively, reflecting a 4.19%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-6714",
+      "claim_type": "mean_sd",
+      "raw_text": "764.87 \u00b1 101.33",
+      "numeric_values": [
+        764.87,
+        101.33
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6714,
+      "sentence": "For the dermal thickness in the upper arm (Figure 4E,F ), the baseline and Week 16 average thickness in the placebo group were 798.34 \u00b1 124.03 \u03bcm and 764.87 \u00b1 101.33 \u03bcm, respectively, reflecting a 4.19% decrease.",
+      "context_window": "thickness in the placebo group were 798.34 \u00b1 124.03 \u03bcm and 764.87 \u00b1 101.33 \u03bcm, respectively, reflecting a 4.19% decrease. In contrast,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6761",
+      "claim_type": "percentage",
+      "raw_text": "4.19%",
+      "numeric_values": [
+        4.19
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6761,
+      "sentence": "For the dermal thickness in the upper arm (Figure 4E,F ), the baseline and Week 16 average thickness in the placebo group were 798.34 \u00b1 124.03 \u03bcm and 764.87 \u00b1 101.33 \u03bcm, respectively, reflecting a 4.19% decrease.",
+      "context_window": "24.03 \u03bcm and 764.87 \u00b1 101.33 \u03bcm, respectively, reflecting a 4.19% decrease. In contrast, the baseline and Week 16 average thi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-6859",
+      "claim_type": "mean_sd",
+      "raw_text": "799.13 \u00b1 109.88",
+      "numeric_values": [
+        799.13,
+        109.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6859,
+      "sentence": "In contrast, the baseline and Week 16 average thickness in the treated group were 799.13 \u00b1 109.88 \u03bcm and 868.71 \u00b1 154.95 \u03bcm, representing an 8.70% increase.",
+      "context_window": "ine and Week 16 average thickness in the treated group were 799.13 \u00b1 109.88 \u03bcm and 868.71 \u00b1 154.95 \u03bcm, representing an 8.70% increase.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-msd-6882",
+      "claim_type": "mean_sd",
+      "raw_text": "868.71 \u00b1 154.95",
+      "numeric_values": [
+        868.71,
+        154.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6882,
+      "sentence": "In contrast, the baseline and Week 16 average thickness in the treated group were 799.13 \u00b1 109.88 \u03bcm and 868.71 \u00b1 154.95 \u03bcm, representing an 8.70% increase.",
+      "context_window": "thickness in the treated group were 799.13 \u00b1 109.88 \u03bcm and 868.71 \u00b1 154.95 \u03bcm, representing an 8.70% increase. Although the treated gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-6918",
+      "claim_type": "percentage",
+      "raw_text": "8.70%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6918,
+      "sentence": "In contrast, the baseline and Week 16 average thickness in the treated group were 799.13 \u00b1 109.88 \u03bcm and 868.71 \u00b1 154.95 \u03bcm, representing an 8.70% increase.",
+      "context_window": "799.13 \u00b1 109.88 \u03bcm and 868.71 \u00b1 154.95 \u03bcm, representing an 8.70% increase. Although the treated group had a higher dermal th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-7167",
+      "claim_type": "percentage",
+      "raw_text": "35.45%",
+      "numeric_values": [
+        35.45
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7167,
+      "sentence": "Regarding dermal density, the baseline values for the placebo and treated groups were 35.45% \u00b1 4.33% and 35.56% \u00b1 4.75%, respectively.",
+      "context_window": "the baseline values for the placebo and treated groups were 35.45% \u00b1 4.33% and 35.56% \u00b1 4.75%, respectively. By Week 16, the p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-7176",
+      "claim_type": "percentage",
+      "raw_text": "4.33%",
+      "numeric_values": [
+        4.33
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7176,
+      "sentence": "Regarding dermal density, the baseline values for the placebo and treated groups were 35.45% \u00b1 4.33% and 35.56% \u00b1 4.75%, respectively.",
+      "context_window": "ine values for the placebo and treated groups were 35.45% \u00b1 4.33% and 35.56% \u00b1 4.75%, respectively. By Week 16, the placebo g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-7186",
+      "claim_type": "percentage",
+      "raw_text": "35.56%",
+      "numeric_values": [
+        35.56
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7186,
+      "sentence": "Regarding dermal density, the baseline values for the placebo and treated groups were 35.45% \u00b1 4.33% and 35.56% \u00b1 4.75%, respectively.",
+      "context_window": "for the placebo and treated groups were 35.45% \u00b1 4.33% and 35.56% \u00b1 4.75%, respectively. By Week 16, the placebo group showed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-7195",
+      "claim_type": "percentage",
+      "raw_text": "4.75%",
+      "numeric_values": [
+        4.75
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7195,
+      "sentence": "Regarding dermal density, the baseline values for the placebo and treated groups were 35.45% \u00b1 4.33% and 35.56% \u00b1 4.75%, respectively.",
+      "context_window": "placebo and treated groups were 35.45% \u00b1 4.33% and 35.56% \u00b1 4.75%, respectively. By Week 16, the placebo group showed an 8.46",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-7256",
+      "claim_type": "percentage",
+      "raw_text": "8.46%",
+      "numeric_values": [
+        8.46
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7256,
+      "sentence": "By Week 16, the placebo group showed an 8.46% decrease to 32.45% \u00b1 3.72%, whereas the treated group exhibited a 4.89% increase to 37.30% \u00b1 3.22%.",
+      "context_window": ".75%, respectively. By Week 16, the placebo group showed an 8.46% decrease to 32.45% \u00b1 3.72%, whereas the treated group exhib",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-7274",
+      "claim_type": "percentage",
+      "raw_text": "32.45%",
+      "numeric_values": [
+        32.45
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7274,
+      "sentence": "By Week 16, the placebo group showed an 8.46% decrease to 32.45% \u00b1 3.72%, whereas the treated group exhibited a 4.89% increase to 37.30% \u00b1 3.22%.",
+      "context_window": ". By Week 16, the placebo group showed an 8.46% decrease to 32.45% \u00b1 3.72%, whereas the treated group exhibited a 4.89% increa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-7283",
+      "claim_type": "percentage",
+      "raw_text": "3.72%",
+      "numeric_values": [
+        3.72
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7283,
+      "sentence": "By Week 16, the placebo group showed an 8.46% decrease to 32.45% \u00b1 3.72%, whereas the treated group exhibited a 4.89% increase to 37.30% \u00b1 3.22%.",
+      "context_window": "16, the placebo group showed an 8.46% decrease to 32.45% \u00b1 3.72%, whereas the treated group exhibited a 4.89% increase to 37",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-7328",
+      "claim_type": "percentage",
+      "raw_text": "4.89%",
+      "numeric_values": [
+        4.89
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7328,
+      "sentence": "By Week 16, the placebo group showed an 8.46% decrease to 32.45% \u00b1 3.72%, whereas the treated group exhibited a 4.89% increase to 37.30% \u00b1 3.22%.",
+      "context_window": "se to 32.45% \u00b1 3.72%, whereas the treated group exhibited a 4.89% increase to 37.30% \u00b1 3.22%. Furthermore, the dermal density",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-7346",
+      "claim_type": "percentage",
+      "raw_text": "37.30%",
+      "numeric_values": [
+        37.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7346,
+      "sentence": "By Week 16, the placebo group showed an 8.46% decrease to 32.45% \u00b1 3.72%, whereas the treated group exhibited a 4.89% increase to 37.30% \u00b1 3.22%.",
+      "context_window": "2%, whereas the treated group exhibited a 4.89% increase to 37.30% \u00b1 3.22%. Furthermore, the dermal density of the treated gro",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-7355",
+      "claim_type": "percentage",
+      "raw_text": "3.22%",
+      "numeric_values": [
+        3.22
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7355,
+      "sentence": "By Week 16, the placebo group showed an 8.46% decrease to 32.45% \u00b1 3.72%, whereas the treated group exhibited a 4.89% increase to 37.30% \u00b1 3.22%.",
+      "context_window": "as the treated group exhibited a 4.89% increase to 37.30% \u00b1 3.22%. Furthermore, the dermal density of the treated group in th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-7500",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7500,
+      "sentence": "Furthermore, the dermal density of the treated group in the upper arm was significantly higher than that of the placebo group at Week 8 ( p < 0.05), and it remained significantly higher at both Week 12 and Week 16 ( p < 0.0001).",
+      "context_window": "ificantly higher than that of the placebo group at Week 8 ( p < 0.05), and it remained significantly higher at both Week 12 and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-7578",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7578,
+      "sentence": "Furthermore, the dermal density of the treated group in the upper arm was significantly higher than that of the placebo group at Week 8 ( p < 0.05), and it remained significantly higher at both Week 12 and Week 16 ( p < 0.0001).",
+      "context_window": "remained significantly higher at both Week 12 and Week 16 ( p < 0.0001). HFUS images in Figure 5 illustrate the changes in dermal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-8177",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 8177,
+      "sentence": "After 16 weeks of BCP supplementation, the treated group demonstrated a 10.65% increase in facial dermal thickness and a 26.33% enhancement in dermal density compared to the placebo group.",
+      "context_window": "nd upper arms: (A) placebo group; (B) treated group. After 16 weeks of BCP supplementation, the treated group demonstrated a 10",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-8243",
+      "claim_type": "percentage",
+      "raw_text": "10.65%",
+      "numeric_values": [
+        10.65
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8243,
+      "sentence": "After 16 weeks of BCP supplementation, the treated group demonstrated a 10.65% increase in facial dermal thickness and a 26.33% enhancement in dermal density compared to the placebo group.",
+      "context_window": "ks of BCP supplementation, the treated group demonstrated a 10.65% increase in facial dermal thickness and a 26.33% enhancemen",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-8292",
+      "claim_type": "percentage",
+      "raw_text": "26.33%",
+      "numeric_values": [
+        26.33
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8292,
+      "sentence": "After 16 weeks of BCP supplementation, the treated group demonstrated a 10.65% increase in facial dermal thickness and a 26.33% enhancement in dermal density compared to the placebo group.",
+      "context_window": "nstrated a 10.65% increase in facial dermal thickness and a 26.33% enhancement in dermal density compared to the placebo group",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-8511",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8511,
+      "sentence": "BCP contributes to improved impact on the structure and function of the dermal layer, and the improvement reached statistical significance by Week 8 ( p < 0.05).",
+      "context_window": "he improvement reached statistical significance by Week 8 ( p < 0.05). Moreover, the beneficial effects were sustained even duri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-53",
+      "claim_type": "percentage",
+      "raw_text": "16.6%",
+      "numeric_values": [
+        16.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 53,
+      "sentence": "In this study, our BCP demonstrated a Hyp content of 16.6%, with over 40% of peptides having molecular weights < 1 kDa.",
+      "context_window": "In this study, our BCP demonstrated a Hyp content of 16.6%, with over 40% of peptides having molecular weights < 1 kDa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-70",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 70,
+      "sentence": "In this study, our BCP demonstrated a Hyp content of 16.6%, with over 40% of peptides having molecular weights < 1 kDa.",
+      "context_window": "udy, our BCP demonstrated a Hyp content of 16.6%, with over 40% of peptides having molecular weights < 1 kDa. As a collagen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-409",
+      "claim_type": "unit_value",
+      "raw_text": "16 week",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "week",
+      "source_section": "discussion",
+      "source_offset": 409,
+      "sentence": "The 12-16 week washout period was designed based on Hyp\u2010containing oligopeptides' remarkable resistance to blood proteases, with previous in vivo studies showing low\u2010molecular\u2010weight collagen hydrolysates maintaining elevated skin levels for 14 days post\u2010administration [ 33 ].",
+      "context_window": "th initiator in wound healing processes [ 31 , 32 ]. The 12-16 week washout period was designed based on Hyp\u2010containing oligope",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-644",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 644,
+      "sentence": "The 12-16 week washout period was designed based on Hyp\u2010containing oligopeptides' remarkable resistance to blood proteases, with previous in vivo studies showing low\u2010molecular\u2010weight collagen hydrolysates maintaining elevated skin levels for 14 days post\u2010administration [ 33 ].",
+      "context_window": "collagen hydrolysates maintaining elevated skin levels for 14 days post\u2010administration [ 33 ]. The absorption characteristics",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-1661",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1661,
+      "sentence": "Based on BCP's high hydroxyproline content and low-molecular\u2010weight profile (> 40% < 1 kDa), we evaluated its effects on facial skin moisture content and TEWL.",
+      "context_window": "hydroxyproline content and low-molecular\u2010weight profile (> 40% < 1 kDa), we evaluated its effects on facial skin moisture",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-1881",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1881,
+      "sentence": "Compared with placebo, subjects receiving BCP exhibited a statistically significant increase in moisture content and a reduction in TEWL ( p < 0.05).",
+      "context_window": "cant increase in moisture content and a reduction in TEWL ( p < 0.05). These differences persisted at the 16\u2010week time point, in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-2293",
+      "claim_type": "unit_value",
+      "raw_text": "1650 mg/day",
+      "numeric_values": [
+        1650.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 2293,
+      "sentence": "Notably, this benefit appeared dose\u2010dependent: a prior study administering only 1650 mg/day of collagen peptides failed to improve TEWL in the forearm region [ 39 ], whereas our formulation-with its elevated Hyp content and optimized peptide size distribution-achieved significant, long\u2010lasting improvements in facial hydration and firmness.",
+      "context_window": "t appeared dose\u2010dependent: a prior study administering only 1650 mg/day of collagen peptides failed to improve TEWL in the forearm",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-3037",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3037,
+      "sentence": "In contrast, F4, reflecting structural resistance to negative pressure and thus skin firmness [ 40 ], was significantly increased in the BCP group compared with placebo ( p < 0.05), indicating rapid remodeling of the dermal collagen network in the treatment cohort.",
+      "context_window": "ficantly increased in the BCP group compared with placebo ( p < 0.05), indicating rapid remodeling of the dermal collagen networ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-u-4053",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4053,
+      "sentence": "Asserin et al. similarly reported improvements in collagen network architecture after 8 weeks of oral collagen peptide intervention [ 28 ].",
+      "context_window": "eported improvements in collagen network architecture after 8 weeks of oral collagen peptide intervention [ 28 ]. Notably, in",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-4233",
+      "claim_type": "percentage",
+      "raw_text": "45.8%",
+      "numeric_values": [
+        45.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4233,
+      "sentence": "Notably, in a prior clinical trial using 2.5 g/day of collagen peptides, skin hydration, elasticity, and density declined by 45.8%, 38.5%, and 31.3%, respectively, during the 12-16\u2010week washout period 19.",
+      "context_window": "ptides, skin hydration, elasticity, and density declined by 45.8%, 38.5%, and 31.3%, respectively, during the 12-16\u2010week wash",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-4240",
+      "claim_type": "percentage",
+      "raw_text": "38.5%",
+      "numeric_values": [
+        38.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4240,
+      "sentence": "Notably, in a prior clinical trial using 2.5 g/day of collagen peptides, skin hydration, elasticity, and density declined by 45.8%, 38.5%, and 31.3%, respectively, during the 12-16\u2010week washout period 19.",
+      "context_window": "skin hydration, elasticity, and density declined by 45.8%, 38.5%, and 31.3%, respectively, during the 12-16\u2010week washout per",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-pct-4251",
+      "claim_type": "percentage",
+      "raw_text": "31.3%",
+      "numeric_values": [
+        31.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4251,
+      "sentence": "Notably, in a prior clinical trial using 2.5 g/day of collagen peptides, skin hydration, elasticity, and density declined by 45.8%, 38.5%, and 31.3%, respectively, during the 12-16\u2010week washout period 19.",
+      "context_window": "tion, elasticity, and density declined by 45.8%, 38.5%, and 31.3%, respectively, during the 12-16\u2010week washout period 19. In",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-n-5198",
+      "claim_type": "sample_size",
+      "raw_text": "n = 77",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5198,
+      "sentence": "Study limitations include a modest sample size ( n = 77) from specific demographics, potentially limiting generalizability given environmental and genetic influences on collagen supplementation outcomes.",
+      "context_window": "itecture. Study limitations include a modest sample size ( n = 77) from specific demographics, potentially limiting generaliz",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-5902",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5902,
+      "sentence": "While meta\u2010analyses indicate collagen peptides' cardiovascular benefits (significant fat mass reduction, p = 0.010; LDL reduction, p = 0.048) [ 45 ].",
+      "context_window": "s' cardiovascular benefits (significant fat mass reduction, p = 0.010; LDL reduction, p = 0.048) [ 45 ]. In the context of sports",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12661388_the_sustained_effects_of_bioactive_collagen_peptides_on_skin-p-5928",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5928,
+      "sentence": "While meta\u2010analyses indicate collagen peptides' cardiovascular benefits (significant fat mass reduction, p = 0.010; LDL reduction, p = 0.048) [ 45 ].",
+      "context_window": "(significant fat mass reduction, p = 0.010; LDL reduction, p = 0.048) [ 45 ]. In the context of sports health, collagen peptides",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

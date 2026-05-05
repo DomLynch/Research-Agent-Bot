@@ -1,0 +1,1252 @@
+{
+  "paper_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce",
+  "doi": "10.3390/nu15020342",
+  "extracted_at": "2026-05-05T22:35:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 25,
+    "sample_size": 1,
+    "mean_sd": 13,
+    "p_value": 23,
+    "percentage": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-146",
+      "claim_type": "unit_value",
+      "raw_text": "13 days",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 146,
+      "sentence": "We examined the effects of 13 days plant-based (pea) protein supplementation compared to whey protein and placebo on EIMD in active older adults.",
+      "context_window": "e damage (EIMD) in young adults. We examined the effects of 13 days plant-based (pea) protein supplementation compared to whey",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-n-757",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 757,
+      "sentence": "Results : Participants walked 20-30 km and 2 dropped out, leaving n = 15 per subgroup.",
+      "context_window": "s : Participants walked 20-30 km and 2 dropped out, leaving n = 15 per subgroup. The whey group showed a significant attenuati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-929",
+      "claim_type": "mean_sd",
+      "raw_text": "175 \u00b1 90",
+      "numeric_values": [
+        175.0,
+        90.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 929,
+      "sentence": "The whey group showed a significant attenuation of the increase in EIMD at 24 h post-exercise compared to the pea and placebo group (CK concentration: 175 \u00b1 90 versus 300 \u00b1 309 versus 330 \u00b1 165, p = p < 0.001).",
+      "context_window": "se compared to the pea and placebo group (CK concentration: 175 \u00b1 90 versus 300 \u00b1 309 versus 330 \u00b1 165, p = p < 0.001). No diffe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-945",
+      "claim_type": "mean_sd",
+      "raw_text": "300 \u00b1 309",
+      "numeric_values": [
+        300.0,
+        309.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 945,
+      "sentence": "The whey group showed a significant attenuation of the increase in EIMD at 24 h post-exercise compared to the pea and placebo group (CK concentration: 175 \u00b1 90 versus 300 \u00b1 309 versus 330 \u00b1 165, p = p < 0.001).",
+      "context_window": "he pea and placebo group (CK concentration: 175 \u00b1 90 versus 300 \u00b1 309 versus 330 \u00b1 165, p = p < 0.001). No differences in LDH lev",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-962",
+      "claim_type": "mean_sd",
+      "raw_text": "330 \u00b1 165",
+      "numeric_values": [
+        330.0,
+        165.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 962,
+      "sentence": "The whey group showed a significant attenuation of the increase in EIMD at 24 h post-exercise compared to the pea and placebo group (CK concentration: 175 \u00b1 90 versus 300 \u00b1 309 versus 330 \u00b1 165, p = p < 0.001).",
+      "context_window": "o group (CK concentration: 175 \u00b1 90 versus 300 \u00b1 309 versus 330 \u00b1 165, p = p < 0.001). No differences in LDH levels, muscle stren",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-977",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 977,
+      "sentence": "The whey group showed a significant attenuation of the increase in EIMD at 24 h post-exercise compared to the pea and placebo group (CK concentration: 175 \u00b1 90 versus 300 \u00b1 309 versus 330 \u00b1 165, p = p < 0.001).",
+      "context_window": "centration: 175 \u00b1 90 versus 300 \u00b1 309 versus 330 \u00b1 165, p = p < 0.001). No differences in LDH levels, muscle strength, skeletal m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-pct-644",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 644,
+      "sentence": "It has been shown that more than 50% of physically active older adults do not reach the recommended protein intake of 1.2 g/kg/day [ 9 ].",
+      "context_window": "nthesis [ 5 , 6 , 7 , 8 ]. It has been shown that more than 50% of physically active older adults do not reach the recommen",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1197",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 1197,
+      "sentence": "In addition, a reduction in muscle damage was observed in young and middle-aged men after 4 days of eccentric exercise and supplementation both with pea and whey protein [ 5 ].",
+      "context_window": "scle damage was observed in young and middle-aged men after 4 days of eccentric exercise and supplementation both with pea and",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1687",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 1687,
+      "sentence": "This randomized double-blind placebo-controlled trial aimed to assess the effect of pea versus whey protein supplementation in comparison to placebo on exercise-induced increases in muscle damage markers in older adults 1, 2 and 3 days after endurance walking exercise.",
+      "context_window": "increases in muscle damage markers in older adults 1, 2 and 3 days after endurance walking exercise. Secondary outcome measure",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-144",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 144,
+      "sentence": "Individuals aged \u226560 years and capable of walking \u226520 km in a single exercise bout were eligible for inclusion.",
+      "context_window": "14 ] and advertisements via social media. Individuals aged \u226560 years and capable of walking \u226520 km in a single exercise bout wer",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-373",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 373,
+      "sentence": "Exclusion criteria were diabetes mellitus type I and II, being allergic or sensitive for milk proteins or lactose intolerance, a BMI > 30 kg/m 2 , Chronic Obstructive Pulmonary Disease (COPD), renal insufficiency, and an intestinal disease that may influence protein uptake.",
+      "context_window": "sensitive for milk proteins or lactose intolerance, a BMI > 30 kg/m 2 , Chronic Obstructive Pulmonary Disease (COPD), renal i",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-695",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 695,
+      "sentence": "Moreover, consumption of other freely available protein supplements was not allowed during the study period and participants were requested not to perform prolonged exercises in the 4 days before or after the endurance walking exercise.",
+      "context_window": "ts were requested not to perform prolonged exercises in the 4 days before or after the endurance walking exercise. All partici",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1442",
+      "claim_type": "unit_value",
+      "raw_text": "10 day",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 1442,
+      "sentence": "Measurements were performed at baseline (i.e., before supplement use), pre-exercise (i.e., after a 10 day pre-load period of supplement use) and three times post-exercise (+24 h, +48 h and +72 h).",
+      "context_window": "(i.e., before supplement use), pre-exercise (i.e., after a 10 day pre-load period of supplement use) and three times post-exe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1903",
+      "claim_type": "unit_value",
+      "raw_text": "13 days",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1903,
+      "sentence": "Participants were instructed to consume the assigned supplement twice a day for a period of 13 days (10 days prior to the exercise bout and 3 days post exercise).",
+      "context_window": "consume the assigned supplement twice a day for a period of 13 days (10 days prior to the exercise bout and 3 days post exercis",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1912",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1912,
+      "sentence": "Participants were instructed to consume the assigned supplement twice a day for a period of 13 days (10 days prior to the exercise bout and 3 days post exercise).",
+      "context_window": "he assigned supplement twice a day for a period of 13 days (10 days prior to the exercise bout and 3 days post exercise). This",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1951",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1951,
+      "sentence": "Participants were instructed to consume the assigned supplement twice a day for a period of 13 days (10 days prior to the exercise bout and 3 days post exercise).",
+      "context_window": "a period of 13 days (10 days prior to the exercise bout and 3 days post exercise). This pre-loading period was chosen as previ",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-4872",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4872,
+      "sentence": "Participants entered their full eating and drinking pattern during 2 days (at least one weekend day) in the pre-load period.",
+      "context_window": "pants entered their full eating and drinking pattern during 2 days (at least one weekend day) in the pre-load period. Particip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-pct-448",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 448,
+      "sentence": "Participants were predominantly male (80%), aged 70 \u00b1 6 years with a BMI of 24.2 \u00b1 2.8 kg/m 2 .",
+      "context_window": "cipants per subgroup. Participants were predominantly male (80%), aged 70 \u00b1 6 years with a BMI of 24.2 \u00b1 2.8 kg/m 2 . No di",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-459",
+      "claim_type": "mean_sd",
+      "raw_text": "70 \u00b1 6",
+      "numeric_values": [
+        70.0,
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 459,
+      "sentence": "Participants were predominantly male (80%), aged 70 \u00b1 6 years with a BMI of 24.2 \u00b1 2.8 kg/m 2 .",
+      "context_window": "subgroup. Participants were predominantly male (80%), aged 70 \u00b1 6 years with a BMI of 24.2 \u00b1 2.8 kg/m 2 . No differences were",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-464",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 464,
+      "sentence": "Participants were predominantly male (80%), aged 70 \u00b1 6 years with a BMI of 24.2 \u00b1 2.8 kg/m 2 .",
+      "context_window": "roup. Participants were predominantly male (80%), aged 70 \u00b1 6 years with a BMI of 24.2 \u00b1 2.8 kg/m 2 . No differences were obser",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-486",
+      "claim_type": "mean_sd",
+      "raw_text": "24.2 \u00b1 2.8",
+      "numeric_values": [
+        24.2,
+        2.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 486,
+      "sentence": "Participants were predominantly male (80%), aged 70 \u00b1 6 years with a BMI of 24.2 \u00b1 2.8 kg/m 2 .",
+      "context_window": "e predominantly male (80%), aged 70 \u00b1 6 years with a BMI of 24.2 \u00b1 2.8 kg/m 2 . No differences were observed for demographics and",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-493",
+      "claim_type": "unit_value",
+      "raw_text": "2.8 kg",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 493,
+      "sentence": "Participants were predominantly male (80%), aged 70 \u00b1 6 years with a BMI of 24.2 \u00b1 2.8 kg/m 2 .",
+      "context_window": "minantly male (80%), aged 70 \u00b1 6 years with a BMI of 24.2 \u00b1 2.8 kg/m 2 . No differences were observed for demographics and ant",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-1172",
+      "claim_type": "mean_sd",
+      "raw_text": "2078 \u00b1 528",
+      "numeric_values": [
+        2078.0,
+        528.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1172,
+      "sentence": "Total energy intake was 2078 \u00b1 528 kcal and comparable across groups ( p = 0.57, Table 2 ).",
+      "context_window": "d = day; en% = energy percentage). Total energy intake was 2078 \u00b1 528 kcal and comparable across groups ( p = 0.57, Table 2 ). Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-1219",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1219,
+      "sentence": "Total energy intake was 2078 \u00b1 528 kcal and comparable across groups ( p = 0.57, Table 2 ).",
+      "context_window": "y intake was 2078 \u00b1 528 kcal and comparable across groups ( p = 0.57, Table 2 ). The habitual daily protein intake was 1.13 g/kg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-1378",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.82",
+      "numeric_values": [
+        0.82
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1378,
+      "sentence": "The habitual daily protein intake was 1.13 g/kg/day at baseline and did not differ between the whey, pea and placebo supplemented group ( p = 0.82).",
+      "context_window": "ffer between the whey, pea and placebo supplemented group ( p = 0.82). A total of 40% of the participants had a protein intake b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-pct-1400",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1400,
+      "sentence": "A total of 40% of the participants had a protein intake below 1.0 g/kg/day, but the prevalence was comparable among the three groups.",
+      "context_window": "pea and placebo supplemented group ( p = 0.82). A total of 40% of the participants had a protein intake below 1.0 g/kg/day",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-1749",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1749,
+      "sentence": "The cumulative walking distance in kilometers in the past year was highly variable across participants (range: 0 to 4680 km/year), with a significantly lower cumulative walking distance for the pea versus whey protein group ( p = 0.004).",
+      "context_window": "ve walking distance for the pea versus whey protein group ( p = 0.004). Participants covered a walking distance of 24.3 \u00b1 4.9 km",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-1805",
+      "claim_type": "mean_sd",
+      "raw_text": "24.3 \u00b1 4.9",
+      "numeric_values": [
+        24.3,
+        4.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1805,
+      "sentence": "Participants covered a walking distance of 24.3 \u00b1 4.9 km with a duration of 5.2 \u00b1 1.1 h.",
+      "context_window": "p ( p = 0.004). Participants covered a walking distance of 24.3 \u00b1 4.9 km with a duration of 5.2 \u00b1 1.1 h. Walking distance and exe",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-1838",
+      "claim_type": "mean_sd",
+      "raw_text": "5.2 \u00b1 1.1",
+      "numeric_values": [
+        5.2,
+        1.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1838,
+      "sentence": "Participants covered a walking distance of 24.3 \u00b1 4.9 km with a duration of 5.2 \u00b1 1.1 h.",
+      "context_window": "ered a walking distance of 24.3 \u00b1 4.9 km with a duration of 5.2 \u00b1 1.1 h. Walking distance and exercise duration did not differ ac",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-1931",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1931,
+      "sentence": "Walking distance and exercise duration did not differ across the three groups ( p = 0.19 and p = 0.28, respectively).",
+      "context_window": "exercise duration did not differ across the three groups ( p = 0.19 and p = 0.28, respectively). The time-dependent exercise-i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-1944",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1944,
+      "sentence": "Walking distance and exercise duration did not differ across the three groups ( p = 0.19 and p = 0.28, respectively).",
+      "context_window": "ation did not differ across the three groups ( p = 0.19 and p = 0.28, respectively). The time-dependent exercise-induced increa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-2193",
+      "claim_type": "mean_sd",
+      "raw_text": "175 \u00b1 90",
+      "numeric_values": [
+        175.0,
+        90.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2193,
+      "sentence": "Peak CK concentrations (+24 h) were significantly lower in the whey (175 \u00b1 90 U/ l ) versus placebo (300 \u00b1 309 U/ l , p = 0.024) and pea supplemented group (330 \u00b1 125 U/ l , p = 0.022, Figure 2 A).",
+      "context_window": "oncentrations (+24 h) were significantly lower in the whey (175 \u00b1 90 U/ l ) versus placebo (300 \u00b1 309 U/ l , p = 0.024) and pea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-2225",
+      "claim_type": "mean_sd",
+      "raw_text": "300 \u00b1 309",
+      "numeric_values": [
+        300.0,
+        309.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2225,
+      "sentence": "Peak CK concentrations (+24 h) were significantly lower in the whey (175 \u00b1 90 U/ l ) versus placebo (300 \u00b1 309 U/ l , p = 0.024) and pea supplemented group (330 \u00b1 125 U/ l , p = 0.022, Figure 2 A).",
+      "context_window": "ficantly lower in the whey (175 \u00b1 90 U/ l ) versus placebo (300 \u00b1 309 U/ l , p = 0.024) and pea supplemented group (330 \u00b1 125 U/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-2242",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2242,
+      "sentence": "Peak CK concentrations (+24 h) were significantly lower in the whey (175 \u00b1 90 U/ l ) versus placebo (300 \u00b1 309 U/ l , p = 0.024) and pea supplemented group (330 \u00b1 125 U/ l , p = 0.022, Figure 2 A).",
+      "context_window": "the whey (175 \u00b1 90 U/ l ) versus placebo (300 \u00b1 309 U/ l , p = 0.024) and pea supplemented group (330 \u00b1 125 U/ l , p = 0.022, Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-2281",
+      "claim_type": "mean_sd",
+      "raw_text": "330 \u00b1 125",
+      "numeric_values": [
+        330.0,
+        125.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2281,
+      "sentence": "Peak CK concentrations (+24 h) were significantly lower in the whey (175 \u00b1 90 U/ l ) versus placebo (300 \u00b1 309 U/ l , p = 0.024) and pea supplemented group (330 \u00b1 125 U/ l , p = 0.022, Figure 2 A).",
+      "context_window": "bo (300 \u00b1 309 U/ l , p = 0.024) and pea supplemented group (330 \u00b1 125 U/ l , p = 0.022, Figure 2 A). No differences were observed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-2298",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2298,
+      "sentence": "Peak CK concentrations (+24 h) were significantly lower in the whey (175 \u00b1 90 U/ l ) versus placebo (300 \u00b1 309 U/ l , p = 0.024) and pea supplemented group (330 \u00b1 125 U/ l , p = 0.022, Figure 2 A).",
+      "context_window": "l , p = 0.024) and pea supplemented group (330 \u00b1 125 U/ l , p = 0.022, Figure 2 A). No differences were observed between the pea-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-2542",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2542,
+      "sentence": "Correction for the cumulative walking distance in the past year did not alter the observed findings in the statistical analyses ( p = 0.020).",
+      "context_window": "t alter the observed findings in the statistical analyses ( p = 0.020). Lactate dehydrogenase (LDH) levels increased over time (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-2611",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2611,
+      "sentence": "Lactate dehydrogenase (LDH) levels increased over time ( p < 0.001), and post hoc analyses showed that serum LDH levels at 72 h post-exercise were higher compared to 24 h and 48 h post-exercise ( p < 0.001, Figure 2 B).",
+      "context_window": "). Lactate dehydrogenase (LDH) levels increased over time ( p < 0.001), and post hoc analyses showed that serum LDH levels at 72",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-2750",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2750,
+      "sentence": "Lactate dehydrogenase (LDH) levels increased over time ( p < 0.001), and post hoc analyses showed that serum LDH levels at 72 h post-exercise were higher compared to 24 h and 48 h post-exercise ( p < 0.001, Figure 2 B).",
+      "context_window": "rcise were higher compared to 24 h and 48 h post-exercise ( p < 0.001, Figure 2 B). Nevertheless, no group differences ( p = 0.25",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-2811",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.25",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2811,
+      "sentence": "Nevertheless, no group differences ( p = 0.25) or interaction effects ( p = 0.54) were observed in LDH levels.",
+      "context_window": "< 0.001, Figure 2 B). Nevertheless, no group differences ( p = 0.25) or interaction effects ( p = 0.54) were observed in LDH le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-2846",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2846,
+      "sentence": "Nevertheless, no group differences ( p = 0.25) or interaction effects ( p = 0.54) were observed in LDH levels.",
+      "context_window": ", no group differences ( p = 0.25) or interaction effects ( p = 0.54) were observed in LDH levels. Change in Creatine kinase (C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-3167",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3167,
+      "sentence": "Data is presented as mean with Standard Error of the Mean (SEM), while statistical analyses were performed on the logarithmic transformed data with the pre-exercise values as a covariate. * p < 0.05 indicates significant group differences at the respective time-point.",
+      "context_window": "sformed data with the pre-exercise values as a covariate. * p < 0.05 indicates significant group differences at the respective t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-3317",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3317,
+      "sentence": "Maximum recorded handgrip strength was not different between groups ( p = 0.45), but handgrip strength increased over time ( p = 0.030).",
+      "context_window": "corded handgrip strength was not different between groups ( p = 0.45), but handgrip strength increased over time ( p = 0.030). T",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-3372",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.030",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3372,
+      "sentence": "Maximum recorded handgrip strength was not different between groups ( p = 0.45), but handgrip strength increased over time ( p = 0.030).",
+      "context_window": "ps ( p = 0.45), but handgrip strength increased over time ( p = 0.030). This increase did not differ across groups (Pinteraction",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-3533",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.98",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3533,
+      "sentence": "Leg strength, corrected for body weight, showed no group differences ( p = 0.98), nor differences over time ( p = 0.55, Figure 3 B).",
+      "context_window": "h, corrected for body weight, showed no group differences ( p = 0.98), nor differences over time ( p = 0.55, Figure 3 B). The sk",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-3572",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3572,
+      "sentence": "Leg strength, corrected for body weight, showed no group differences ( p = 0.98), nor differences over time ( p = 0.55, Figure 3 B).",
+      "context_window": "group differences ( p = 0.98), nor differences over time ( p = 0.55, Figure 3 B). The skeletal muscle mass of the participants,",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-3707",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3707,
+      "sentence": "The skeletal muscle mass of the participants, corrected for body weight (SMM%), was comparable between groups ( p = 0.39), decreased over time-points ( p = 0.015), but did not differ across groups ( p = 0.40, Figure 3 C).",
+      "context_window": "ted for body weight (SMM%), was comparable between groups ( p = 0.39), decreased over time-points ( p = 0.015), but did not diff",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-3747",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3747,
+      "sentence": "The skeletal muscle mass of the participants, corrected for body weight (SMM%), was comparable between groups ( p = 0.39), decreased over time-points ( p = 0.015), but did not differ across groups ( p = 0.40, Figure 3 C).",
+      "context_window": "le between groups ( p = 0.39), decreased over time-points ( p = 0.015), but did not differ across groups ( p = 0.40, Figure 3 C).",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-3794",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3794,
+      "sentence": "The skeletal muscle mass of the participants, corrected for body weight (SMM%), was comparable between groups ( p = 0.39), decreased over time-points ( p = 0.015), but did not differ across groups ( p = 0.40, Figure 3 C).",
+      "context_window": "ime-points ( p = 0.015), but did not differ across groups ( p = 0.40, Figure 3 C). Muscle soreness increased following exercise",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-3864",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3864,
+      "sentence": "Muscle soreness increased following exercise ( p = 0.042), but was comparable between groups ( p = 0.49, Figure 3 D).",
+      "context_window": "Figure 3 C). Muscle soreness increased following exercise ( p = 0.042), but was comparable between groups ( p = 0.49, Figure 3 D)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-p-3912",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.49",
+      "numeric_values": [
+        0.49
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3912,
+      "sentence": "Muscle soreness increased following exercise ( p = 0.042), but was comparable between groups ( p = 0.49, Figure 3 D).",
+      "context_window": "exercise ( p = 0.042), but was comparable between groups ( p = 0.49, Figure 3 D). Muscle parameters. Changes in handgrip stren",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1782",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1782,
+      "sentence": "Potential explanations, apart from the difference in plant protein source, for these discrepant outcomes, may be the higher dosage of the protein that was used (42 gr/day versus 25 gr/day [ 23 ]) and the younger age of study participants (<40 years versus >60 years) [ 15 , 23 ] in previous work compared to our study.",
+      "context_window": "gr/day [ 23 ]) and the younger age of study participants (<40 years versus >60 years) [ 15 , 23 ] in previous work compared to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-1799",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1799,
+      "sentence": "Potential explanations, apart from the difference in plant protein source, for these discrepant outcomes, may be the higher dosage of the protein that was used (42 gr/day versus 25 gr/day [ 23 ]) and the younger age of study participants (<40 years versus >60 years) [ 15 , 23 ] in previous work compared to our study.",
+      "context_window": "nd the younger age of study participants (<40 years versus >60 years) [ 15 , 23 ] in previous work compared to our study. Older",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-2464",
+      "claim_type": "unit_value",
+      "raw_text": "13 days",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2464,
+      "sentence": "Taken together, 13 days of pea protein supplementation at 25 g per day was insufficient to attenuate the moderate exercise-induced increase in CK levels following prolonged walking in older adults.",
+      "context_window": "onged walking exercise [ 1 , 2 , 29 , 30 ]. Taken together, 13 days of pea protein supplementation at 25 g per day was insuffic",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-3074",
+      "claim_type": "mean_sd",
+      "raw_text": "7.1 \u00b1 0.8",
+      "numeric_values": [
+        7.1,
+        0.8
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3074,
+      "sentence": "Plant based proteins have a relatively low leucine content (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ].",
+      "context_window": "Plant based proteins have a relatively low leucine content (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ]. Le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-pct-3080",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3080,
+      "sentence": "Plant based proteins have a relatively low leucine content (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ].",
+      "context_window": "based proteins have a relatively low leucine content (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ]. Leu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-msd-3121",
+      "claim_type": "mean_sd",
+      "raw_text": "8.8 \u00b1 0.7",
+      "numeric_values": [
+        8.8,
+        0.7
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3121,
+      "sentence": "Plant based proteins have a relatively low leucine content (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ].",
+      "context_window": "ine content (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ]. Leucine is known as one of the most important fac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-pct-3127",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3127,
+      "sentence": "Plant based proteins have a relatively low leucine content (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ].",
+      "context_window": "ntent (7.1 \u00b1 0.8%) compared to animal-based proteins (8.8 \u00b1 0.7%) [ 35 ]. Leucine is known as one of the most important fact",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-3359",
+      "claim_type": "unit_value",
+      "raw_text": "700 mg",
+      "numeric_values": [
+        700.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3359,
+      "sentence": "Previous studies have suggested that every protein supplement serving should contain at least 700 mg of leucine [ 37 ].",
+      "context_window": "at every protein supplement serving should contain at least 700 mg of leucine [ 37 ]. Given our standardized serving volume fo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-3518",
+      "claim_type": "unit_value",
+      "raw_text": "900 mg",
+      "numeric_values": [
+        900.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3518,
+      "sentence": "Given our standardized serving volume for every treatment arm, leucine content was lower for the pea versus whey protein supplement (900 mg versus 1150 mg, respectively).",
+      "context_window": "ntent was lower for the pea versus whey protein supplement (900 mg versus 1150 mg, respectively). The difference of 250 mg of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-3532",
+      "claim_type": "unit_value",
+      "raw_text": "1150 mg",
+      "numeric_values": [
+        1150.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3532,
+      "sentence": "Given our standardized serving volume for every treatment arm, leucine content was lower for the pea versus whey protein supplement (900 mg versus 1150 mg, respectively).",
+      "context_window": "r for the pea versus whey protein supplement (900 mg versus 1150 mg, respectively). The difference of 250 mg of leucine between",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-3574",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3574,
+      "sentence": "The difference of 250 mg of leucine between these supplements may have contributed to the distinct CK-response following exercise.",
+      "context_window": "nt (900 mg versus 1150 mg, respectively). The difference of 250 mg of leucine between these supplements may have contributed t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-5845",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5845,
+      "sentence": "Several studies with protein supplementation varying from 8 weeks to 1 years show an increase in lean body mass, muscle strength and muscle mass for both plant-based and animal-based protein sources in younger and older adults [ 11 , 46 , 47 , 48 , 49 , 50 ].",
+      "context_window": ". Several studies with protein supplementation varying from 8 weeks to 1 years show an increase in lean body mass, muscle stren",
+      "claim_role": "protocol",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-5856",
+      "claim_type": "unit_value",
+      "raw_text": "1 years",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5856,
+      "sentence": "Several studies with protein supplementation varying from 8 weeks to 1 years show an increase in lean body mass, muscle strength and muscle mass for both plant-based and animal-based protein sources in younger and older adults [ 11 , 46 , 47 , 48 , 49 , 50 ].",
+      "context_window": "tudies with protein supplementation varying from 8 weeks to 1 years show an increase in lean body mass, muscle strength and mus",
+      "claim_role": "protocol",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-6071",
+      "claim_type": "unit_value",
+      "raw_text": "13 days",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 6071,
+      "sentence": "This indicates that the 13 days of supplementation that was adopted in our study may not have been long enough to result in changes in muscle strength and skeletal muscle mass.",
+      "context_window": "ts [ 11 , 46 , 47 , 48 , 49 , 50 ]. This indicates that the 13 days of supplementation that was adopted in our study may not ha",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-6957",
+      "claim_type": "unit_value",
+      "raw_text": "200 kg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 6957,
+      "sentence": "The protocol used for assessment of 1 RM for leg strength made it difficult to determine 1 RM of participants that reached the maximum of 200 kg or the last attempt.",
+      "context_window": "determine 1 RM of participants that reached the maximum of 200 kg or the last attempt. This may have hampered the possible ef",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-pct-7412",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7412,
+      "sentence": "At last, this study had a fixed protein supplementation dose (25 g/day) which increased daily protein intake to >1.0 g/kg/day in 93% of our participants.",
+      "context_window": "y) which increased daily protein intake to >1.0 g/kg/day in 93% of our participants. A personalized protein supplementation",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9867418_supplementation_with_whey_protein_but_not_pea_protein_reduce-u-71",
+      "claim_type": "unit_value",
+      "raw_text": "13 days",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "days",
+      "source_section": "conclusion",
+      "source_offset": 71,
+      "sentence": "Our randomized double-blind placebo-controlled trial demonstrated that 13 days with 25 g per day of pea protein suppletion did not attenuate exercise-induced muscle damage in older adults compared to placebo.",
+      "context_window": "zed double-blind placebo-controlled trial demonstrated that 13 days with 25 g per day of pea protein suppletion did not attenua",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

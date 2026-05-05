@@ -1,0 +1,2271 @@
+{
+  "paper_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo",
+  "doi": "10.3390/healthcare10071346",
+  "extracted_at": "2026-05-05T22:43:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 8,
+    "unit_value": 27,
+    "percentage": 69,
+    "mean_sd": 6,
+    "p_value": 15
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-n-631",
+      "claim_type": "sample_size",
+      "raw_text": "n = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 631,
+      "sentence": "Sixty-eight participants performed either HIIT ( n = 34) on an elliptical trainer or MICT ( n = 34) on a treadmill, three times per week for 12 weeks.",
+      "context_window": "estigated. Sixty-eight participants performed either HIIT ( n = 34) on an elliptical trainer or MICT ( n = 34) on a treadmill,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-n-674",
+      "claim_type": "sample_size",
+      "raw_text": "n = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 674,
+      "sentence": "Sixty-eight participants performed either HIIT ( n = 34) on an elliptical trainer or MICT ( n = 34) on a treadmill, three times per week for 12 weeks.",
+      "context_window": "ed either HIIT ( n = 34) on an elliptical trainer or MICT ( n = 34) on a treadmill, three times per week for 12 weeks. HIIT pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-723",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 723,
+      "sentence": "Sixty-eight participants performed either HIIT ( n = 34) on an elliptical trainer or MICT ( n = 34) on a treadmill, three times per week for 12 weeks.",
+      "context_window": "or MICT ( n = 34) on a treadmill, three times per week for 12 weeks. HIIT produced significantly higher benefits on some physic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-838",
+      "claim_type": "percentage",
+      "raw_text": "12.4%",
+      "numeric_values": [
+        12.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 838,
+      "sentence": "HIIT produced significantly higher benefits on some physical parameters (six-minute walking test (HIIT: +12.4% vs.",
+      "context_window": "n some physical parameters (six-minute walking test (HIIT: +12.4% vs. MICT: +5.2%); step test (HIIT: +17.02% vs. MICT: +5.9%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-855",
+      "claim_type": "percentage",
+      "raw_text": "5.2%",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 855,
+      "sentence": "MICT: +5.2%); step test (HIIT: +17.02% vs.",
+      "context_window": "arameters (six-minute walking test (HIIT: +12.4% vs. MICT: +5.2%); step test (HIIT: +17.02% vs. MICT: +5.9%); ten-repetition",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-880",
+      "claim_type": "percentage",
+      "raw_text": "17.02%",
+      "numeric_values": [
+        17.02
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 880,
+      "sentence": "MICT: +5.2%); step test (HIIT: +17.02% vs.",
+      "context_window": "king test (HIIT: +12.4% vs. MICT: +5.2%); step test (HIIT: +17.02% vs. MICT: +5.9%); ten-repetition chair test (HIIT: -17.04%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-898",
+      "claim_type": "percentage",
+      "raw_text": "5.9%",
+      "numeric_values": [
+        5.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 898,
+      "sentence": "MICT: +5.9%); ten-repetition chair test (HIIT: -17.04% vs.",
+      "context_window": "12.4% vs. MICT: +5.2%); step test (HIIT: +17.02% vs. MICT: +5.9%); ten-repetition chair test (HIIT: -17.04% vs. MICT: -4.7%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-939",
+      "claim_type": "percentage",
+      "raw_text": "17.04%",
+      "numeric_values": [
+        17.04
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 939,
+      "sentence": "MICT: +5.9%); ten-repetition chair test (HIIT: -17.04% vs.",
+      "context_window": "+17.02% vs. MICT: +5.9%); ten-repetition chair test (HIIT: -17.04% vs. MICT: -4.7%)). Although both HIIT and MICT led to an im",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-957",
+      "claim_type": "percentage",
+      "raw_text": "4.7%",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 957,
+      "sentence": "MICT: -4.7%)).",
+      "context_window": "+5.9%); ten-repetition chair test (HIIT: -17.04% vs. MICT: -4.7%)). Although both HIIT and MICT led to an improvement in low",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1043",
+      "claim_type": "percentage",
+      "raw_text": "25.2%",
+      "numeric_values": [
+        25.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1043,
+      "sentence": "Although both HIIT and MICT led to an improvement in lower limb power (HIIT: +25.2% vs.",
+      "context_window": "and MICT led to an improvement in lower limb power (HIIT: +25.2% vs. MICT: +20.4%), only MICT led to higher improvement in l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1060",
+      "claim_type": "percentage",
+      "raw_text": "20.4%",
+      "numeric_values": [
+        20.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1060,
+      "sentence": "MICT: +20.4%), only MICT led to higher improvement in lower limb muscle strength (HIIT: +4.3% vs.",
+      "context_window": "an improvement in lower limb power (HIIT: +25.2% vs. MICT: +20.4%), only MICT led to higher improvement in lower limb muscle",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1142",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1142,
+      "sentence": "MICT: +20.4%), only MICT led to higher improvement in lower limb muscle strength (HIIT: +4.3% vs.",
+      "context_window": "to higher improvement in lower limb muscle strength (HIIT: +4.3% vs. MICT: +23.2%). HIIT was more beneficial for increasing",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1158",
+      "claim_type": "percentage",
+      "raw_text": "23.2%",
+      "numeric_values": [
+        23.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1158,
+      "sentence": "MICT: +23.2%).",
+      "context_window": "ement in lower limb muscle strength (HIIT: +4.3% vs. MICT: +23.2%). HIIT was more beneficial for increasing total lean body m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1235",
+      "claim_type": "percentage",
+      "raw_text": "1.58%",
+      "numeric_values": [
+        1.58
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1235,
+      "sentence": "HIIT was more beneficial for increasing total lean body mass (HIIT: +1.58% vs.",
+      "context_window": "more beneficial for increasing total lean body mass (HIIT: +1.58% vs. MICT: -0.81%), while MICT was more effective for decrea",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1252",
+      "claim_type": "percentage",
+      "raw_text": "0.81%",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1252,
+      "sentence": "MICT: -0.81%), while MICT was more effective for decreasing relative gynoid fat mass (HIIT: -1.09% vs.",
+      "context_window": "or increasing total lean body mass (HIIT: +1.58% vs. MICT: -0.81%), while MICT was more effective for decreasing relative gyn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1338",
+      "claim_type": "percentage",
+      "raw_text": "1.09%",
+      "numeric_values": [
+        1.09
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1338,
+      "sentence": "MICT: -0.81%), while MICT was more effective for decreasing relative gynoid fat mass (HIIT: -1.09% vs.",
+      "context_window": "e effective for decreasing relative gynoid fat mass (HIIT: -1.09% vs. MICT: -4.20%). Regarding adipose tissue gene expression",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1355",
+      "claim_type": "percentage",
+      "raw_text": "4.20%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1355,
+      "sentence": "MICT: -4.20%).",
+      "context_window": "ecreasing relative gynoid fat mass (HIIT: -1.09% vs. MICT: -4.20%). Regarding adipose tissue gene expression, a significant c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-msd-1561",
+      "claim_type": "mean_sd",
+      "raw_text": "32.10 \u00b1 39.37",
+      "numeric_values": [
+        32.1,
+        39.37
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1561,
+      "sentence": "Regarding adipose tissue gene expression, a significant change was observed for cell death-inducing DFFA (DNA fragmentation factor-alpha)-like effector A (CIDEA) in the HIIT group (A.U; HIIT at T0: 32.10 \u00b1 39.37 vs.",
+      "context_window": "like effector A (CIDEA) in the HIIT group (A.U; HIIT at T0: 32.10 \u00b1 39.37 vs. HIIT at T12: 48.2 \u00b1 59.2). Mitochondrial transcription",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-msd-1592",
+      "claim_type": "mean_sd",
+      "raw_text": "48.2 \u00b1 59.2",
+      "numeric_values": [
+        48.2,
+        59.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1592,
+      "sentence": "HIIT at T12: 48.2 \u00b1 59.2).",
+      "context_window": "HIIT group (A.U; HIIT at T0: 32.10 \u00b1 39.37 vs. HIIT at T12: 48.2 \u00b1 59.2). Mitochondrial transcription factor A (TFAM) content, a ma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1738",
+      "claim_type": "percentage",
+      "raw_text": "36.2%",
+      "numeric_values": [
+        36.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1738,
+      "sentence": "Mitochondrial transcription factor A (TFAM) content, a marker of mitochondrial biogenesis, increased significantly following HIIT (+36.2%) and MICT (+57.2%).",
+      "context_window": "ndrial biogenesis, increased significantly following HIIT (+36.2%) and MICT (+57.2%). A significant increase was observed in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1756",
+      "claim_type": "percentage",
+      "raw_text": "57.2%",
+      "numeric_values": [
+        57.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1756,
+      "sentence": "Mitochondrial transcription factor A (TFAM) content, a marker of mitochondrial biogenesis, increased significantly following HIIT (+36.2%) and MICT (+57.2%).",
+      "context_window": "increased significantly following HIIT (+36.2%) and MICT (+57.2%). A significant increase was observed in the HIIT group for",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1864",
+      "claim_type": "percentage",
+      "raw_text": "54.1%",
+      "numeric_values": [
+        54.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1864,
+      "sentence": "A significant increase was observed in the HIIT group for Translocase of Outer Membrane 20 (TOM20; +54.1%; marker of mitochondrial content), Mitofusin-2 (MFN2; +71.6%; marker of mitochondrial fusion) and Parkin RBR E3 Ubiquitin Protein Ligase (PARKIN; +42.3%; marker of mitophagy).",
+      "context_window": "he HIIT group for Translocase of Outer Membrane 20 (TOM20; +54.1%; marker of mitochondrial content), Mitofusin-2 (MFN2; +71.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1925",
+      "claim_type": "percentage",
+      "raw_text": "71.6%",
+      "numeric_values": [
+        71.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1925,
+      "sentence": "A significant increase was observed in the HIIT group for Translocase of Outer Membrane 20 (TOM20; +54.1%; marker of mitochondrial content), Mitofusin-2 (MFN2; +71.6%; marker of mitochondrial fusion) and Parkin RBR E3 Ubiquitin Protein Ligase (PARKIN; +42.3%; marker of mitophagy).",
+      "context_window": "4.1%; marker of mitochondrial content), Mitofusin-2 (MFN2; +71.6%; marker of mitochondrial fusion) and Parkin RBR E3 Ubiquiti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-2017",
+      "claim_type": "percentage",
+      "raw_text": "42.3%",
+      "numeric_values": [
+        42.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2017,
+      "sentence": "A significant increase was observed in the HIIT group for Translocase of Outer Membrane 20 (TOM20; +54.1%; marker of mitochondrial content), Mitofusin-2 (MFN2; +71.6%; marker of mitochondrial fusion) and Parkin RBR E3 Ubiquitin Protein Ligase (PARKIN; +42.3%; marker of mitophagy).",
+      "context_window": "usion) and Parkin RBR E3 Ubiquitin Protein Ligase (PARKIN; +42.3%; marker of mitophagy). Overall, our results indicate that e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-1745",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 1745,
+      "sentence": "First, a systematic review comparing the effect of aerobic HIIT and MICT (average of three times per week for 12-16 weeks) in adults (age \u2265 18 years) with impaired vascular function reported that HIIT was more effective than MICT in improving brachial artery vascular function [ 9 ].",
+      "context_window": "robic HIIT and MICT (average of three times per week for 12-16 weeks) in adults (age \u2265 18 years) with impaired vascular function",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-1772",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1772,
+      "sentence": "First, a systematic review comparing the effect of aerobic HIIT and MICT (average of three times per week for 12-16 weeks) in adults (age \u2265 18 years) with impaired vascular function reported that HIIT was more effective than MICT in improving brachial artery vascular function [ 9 ].",
+      "context_window": "e of three times per week for 12-16 weeks) in adults (age \u2265 18 years) with impaired vascular function reported that HIIT was mor",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-2042",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2042,
+      "sentence": "In obese individuals, a systematic review revealed that HIIT and MICT (interventions involving running and cycling for six to 16 weeks, with a frequency of two to five times per week) led to similar reductions in whole-body fat mass [ 10 , 11 ].",
+      "context_window": "ICT (interventions involving running and cycling for six to 16 weeks, with a frequency of two to five times per week) led to sim",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-4457",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 4457,
+      "sentence": "Additionally, 12 weeks of HIIT was also shown to increase multiple markers of mitochondrial content and quality control processes in obese older adults [ 25 ].",
+      "context_window": "ts [ 23 ] and overweight older adults [ 24 ]. Additionally, 12 weeks of HIIT was also shown to increase multiple markers of mito",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-4743",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 4743,
+      "sentence": "When comparing the effect of HIIT and MICT on the muscles\u2019 mitochondrial content in overweight and obese young adults, it was reported that 10 weeks of cycling HIIT (twice per week) was superior to MICT for increasing mitochondrial content [ 26 ].",
+      "context_window": "in overweight and obese young adults, it was reported that 10 weeks of cycling HIIT (twice per week) was superior to MICT for i",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-4938",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 4938,
+      "sentence": "Furthermore, in young obese adults, mitochondrial respiration similarly improved after 12 weeks (three times per week) of HIIT and MICT on a treadmill [ 27 ].",
+      "context_window": "adults, mitochondrial respiration similarly improved after 12 weeks (three times per week) of HIIT and MICT on a treadmill [ 27",
+      "claim_role": "effect",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-737",
+      "claim_type": "unit_value",
+      "raw_text": "40 kg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 737,
+      "sentence": "To be included in this study, participants had to meet the following criteria: (1) age 60 and over; (2) obese (BMI between 30 and 40 kg.m -2 or fat mass (%; DXA) equal or superior to 27% in men and 40% in women) or a waist circumference greater than 102 cm for men and 88 cm for women; (3) inactive (less than two hours of structured physical activity per week); (4) no involvement in a vigorous exercise program for at least 12 months; (5) able to follow the exercise training; (6) stable weight (\u00b15 kg) for 6 months; (7) non-smokers and moderate drinkers (max: 15 g/day of alcohol); (8) able to understand French or English; and (9) postmenopausal for women (i.e., 12 consecutive months without menses).",
+      "context_window": "riteria: (1) age 60 and over; (2) obese (BMI between 30 and 40 kg.m -2 or fat mass (%; DXA) equal or superior to 27% in men a",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-790",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 790,
+      "sentence": "To be included in this study, participants had to meet the following criteria: (1) age 60 and over; (2) obese (BMI between 30 and 40 kg.m -2 or fat mass (%; DXA) equal or superior to 27% in men and 40% in women) or a waist circumference greater than 102 cm for men and 88 cm for women; (3) inactive (less than two hours of structured physical activity per week); (4) no involvement in a vigorous exercise program for at least 12 months; (5) able to follow the exercise training; (6) stable weight (\u00b15 kg) for 6 months; (7) non-smokers and moderate drinkers (max: 15 g/day of alcohol); (8) able to understand French or English; and (9) postmenopausal for women (i.e., 12 consecutive months without menses).",
+      "context_window": "30 and 40 kg.m -2 or fat mass (%; DXA) equal or superior to 27% in men and 40% in women) or a waist circumference greater t",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-805",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 805,
+      "sentence": "To be included in this study, participants had to meet the following criteria: (1) age 60 and over; (2) obese (BMI between 30 and 40 kg.m -2 or fat mass (%; DXA) equal or superior to 27% in men and 40% in women) or a waist circumference greater than 102 cm for men and 88 cm for women; (3) inactive (less than two hours of structured physical activity per week); (4) no involvement in a vigorous exercise program for at least 12 months; (5) able to follow the exercise training; (6) stable weight (\u00b15 kg) for 6 months; (7) non-smokers and moderate drinkers (max: 15 g/day of alcohol); (8) able to understand French or English; and (9) postmenopausal for women (i.e., 12 consecutive months without menses).",
+      "context_window": "-2 or fat mass (%; DXA) equal or superior to 27% in men and 40% in women) or a waist circumference greater than 102 cm for",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-857",
+      "claim_type": "unit_value",
+      "raw_text": "102 cm",
+      "numeric_values": [
+        102.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 857,
+      "sentence": "To be included in this study, participants had to meet the following criteria: (1) age 60 and over; (2) obese (BMI between 30 and 40 kg.m -2 or fat mass (%; DXA) equal or superior to 27% in men and 40% in women) or a waist circumference greater than 102 cm for men and 88 cm for women; (3) inactive (less than two hours of structured physical activity per week); (4) no involvement in a vigorous exercise program for at least 12 months; (5) able to follow the exercise training; (6) stable weight (\u00b15 kg) for 6 months; (7) non-smokers and moderate drinkers (max: 15 g/day of alcohol); (8) able to understand French or English; and (9) postmenopausal for women (i.e., 12 consecutive months without menses).",
+      "context_window": "men and 40% in women) or a waist circumference greater than 102 cm for men and 88 cm for women; (3) inactive (less than two ho",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-876",
+      "claim_type": "unit_value",
+      "raw_text": "88 cm",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 876,
+      "sentence": "To be included in this study, participants had to meet the following criteria: (1) age 60 and over; (2) obese (BMI between 30 and 40 kg.m -2 or fat mass (%; DXA) equal or superior to 27% in men and 40% in women) or a waist circumference greater than 102 cm for men and 88 cm for women; (3) inactive (less than two hours of structured physical activity per week); (4) no involvement in a vigorous exercise program for at least 12 months; (5) able to follow the exercise training; (6) stable weight (\u00b15 kg) for 6 months; (7) non-smokers and moderate drinkers (max: 15 g/day of alcohol); (8) able to understand French or English; and (9) postmenopausal for women (i.e., 12 consecutive months without menses).",
+      "context_window": "n) or a waist circumference greater than 102 cm for men and 88 cm for women; (3) inactive (less than two hours of structured",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-1033",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1033,
+      "sentence": "To be included in this study, participants had to meet the following criteria: (1) age 60 and over; (2) obese (BMI between 30 and 40 kg.m -2 or fat mass (%; DXA) equal or superior to 27% in men and 40% in women) or a waist circumference greater than 102 cm for men and 88 cm for women; (3) inactive (less than two hours of structured physical activity per week); (4) no involvement in a vigorous exercise program for at least 12 months; (5) able to follow the exercise training; (6) stable weight (\u00b15 kg) for 6 months; (7) non-smokers and moderate drinkers (max: 15 g/day of alcohol); (8) able to understand French or English; and (9) postmenopausal for women (i.e., 12 consecutive months without menses).",
+      "context_window": "no involvement in a vigorous exercise program for at least 12 months; (5) able to follow the exercise training; (6) stable weigh",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-1106",
+      "claim_type": "unit_value",
+      "raw_text": "5 kg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1106,
+      "sentence": "To be included in this study, participants had to meet the following criteria: (1) age 60 and over; (2) obese (BMI between 30 and 40 kg.m -2 or fat mass (%; DXA) equal or superior to 27% in men and 40% in women) or a waist circumference greater than 102 cm for men and 88 cm for women; (3) inactive (less than two hours of structured physical activity per week); (4) no involvement in a vigorous exercise program for at least 12 months; (5) able to follow the exercise training; (6) stable weight (\u00b15 kg) for 6 months; (7) non-smokers and moderate drinkers (max: 15 g/day of alcohol); (8) able to understand French or English; and (9) postmenopausal for women (i.e., 12 consecutive months without menses).",
+      "context_window": ") able to follow the exercise training; (6) stable weight (\u00b15 kg) for 6 months; (7) non-smokers and moderate drinkers (max:",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-1116",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1116,
+      "sentence": "To be included in this study, participants had to meet the following criteria: (1) age 60 and over; (2) obese (BMI between 30 and 40 kg.m -2 or fat mass (%; DXA) equal or superior to 27% in men and 40% in women) or a waist circumference greater than 102 cm for men and 88 cm for women; (3) inactive (less than two hours of structured physical activity per week); (4) no involvement in a vigorous exercise program for at least 12 months; (5) able to follow the exercise training; (6) stable weight (\u00b15 kg) for 6 months; (7) non-smokers and moderate drinkers (max: 15 g/day of alcohol); (8) able to understand French or English; and (9) postmenopausal for women (i.e., 12 consecutive months without menses).",
+      "context_window": "follow the exercise training; (6) stable weight (\u00b15 kg) for 6 months; (7) non-smokers and moderate drinkers (max: 15 g/day of al",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-1813",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1813,
+      "sentence": "Sixty-eight participants completed the intervention and were matched according to age (+/-2 years) and sex so that the two training modalities could be compared (HIIT: n = 34 vs.",
+      "context_window": "eted the intervention and were matched according to age (+/-2 years) and sex so that the two training modalities could be compa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-n-1891",
+      "claim_type": "sample_size",
+      "raw_text": "n = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1891,
+      "sentence": "Sixty-eight participants completed the intervention and were matched according to age (+/-2 years) and sex so that the two training modalities could be compared (HIIT: n = 34 vs.",
+      "context_window": "o that the two training modalities could be compared (HIIT: n = 34 vs. MICT: n = 34). Among these participants, 30 received su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-n-1908",
+      "claim_type": "sample_size",
+      "raw_text": "n = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1908,
+      "sentence": "MICT: n = 34).",
+      "context_window": "aining modalities could be compared (HIIT: n = 34 vs. MICT: n = 34). Among these participants, 30 received subcutaneous abdomi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-n-1997",
+      "claim_type": "sample_size",
+      "raw_text": "n = 19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1997,
+      "sentence": "Among these participants, 30 received subcutaneous abdominal AT biopsies (HIIT: n = 19 vs.",
+      "context_window": "ants, 30 received subcutaneous abdominal AT biopsies (HIIT: n = 19 vs. MICT: n =11) and 25 received skeletal muscle biopsies (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-n-2014",
+      "claim_type": "sample_size",
+      "raw_text": "n =11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2014,
+      "sentence": "MICT: n =11) and 25 received skeletal muscle biopsies (HIIT: n = 11 vs.",
+      "context_window": "subcutaneous abdominal AT biopsies (HIIT: n = 19 vs. MICT: n =11) and 25 received skeletal muscle biopsies (HIIT: n = 11 vs.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-n-2069",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2069,
+      "sentence": "MICT: n =11) and 25 received skeletal muscle biopsies (HIIT: n = 11 vs.",
+      "context_window": "ICT: n =11) and 25 received skeletal muscle biopsies (HIIT: n = 11 vs. MICT: n = 14) pre- and post-intervention. To be conside",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-n-2086",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2086,
+      "sentence": "MICT: n = 14) pre- and post-intervention.",
+      "context_window": "5 received skeletal muscle biopsies (HIIT: n = 11 vs. MICT: n = 14) pre- and post-intervention. To be considered as having com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-2215",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2215,
+      "sentence": "To be considered as having completed the intervention, participants had to complete at least 80% of the training sessions (minimum: 29/36 sessions) and perform the evaluation pre- and post-intervention.",
+      "context_window": "ted the intervention, participants had to complete at least 80% of the training sessions (minimum: 29/36 sessions) and perf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-2780",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2780,
+      "sentence": "The duration of the exercise session was 30 min and divided as follows: (1) five minute warm-up at a low intensity (50-60% maximal heart rate (MHR) and/or 8-12 on Borg\u2019 scale); (2) twenty minutes of HIIT consisting of multiple 30-s high-intensity sprints (80-85% MHR or >17 on Borg\u2019 scale) alternated with 90 s at moderate intensity (65% MHR or 13-16 on Borg\u2019 scale); and (3) five-minute cool down period (50-60% MHR or 8-12 on Borg\u2019 scale).",
+      "context_window": "as follows: (1) five minute warm-up at a low intensity (50-60% maximal heart rate (MHR) and/or 8-12 on Borg\u2019 scale); (2) t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-2920",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2920,
+      "sentence": "The duration of the exercise session was 30 min and divided as follows: (1) five minute warm-up at a low intensity (50-60% maximal heart rate (MHR) and/or 8-12 on Borg\u2019 scale); (2) twenty minutes of HIIT consisting of multiple 30-s high-intensity sprints (80-85% MHR or >17 on Borg\u2019 scale) alternated with 90 s at moderate intensity (65% MHR or 13-16 on Borg\u2019 scale); and (3) five-minute cool down period (50-60% MHR or 8-12 on Borg\u2019 scale).",
+      "context_window": "HIIT consisting of multiple 30-s high-intensity sprints (80-85% MHR or >17 on Borg\u2019 scale) alternated with 90 s at moderate",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-2995",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2995,
+      "sentence": "The duration of the exercise session was 30 min and divided as follows: (1) five minute warm-up at a low intensity (50-60% maximal heart rate (MHR) and/or 8-12 on Borg\u2019 scale); (2) twenty minutes of HIIT consisting of multiple 30-s high-intensity sprints (80-85% MHR or >17 on Borg\u2019 scale) alternated with 90 s at moderate intensity (65% MHR or 13-16 on Borg\u2019 scale); and (3) five-minute cool down period (50-60% MHR or 8-12 on Borg\u2019 scale).",
+      "context_window": "on Borg\u2019 scale) alternated with 90 s at moderate intensity (65% MHR or 13-16 on Borg\u2019 scale); and (3) five-minute cool down",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-3070",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3070,
+      "sentence": "The duration of the exercise session was 30 min and divided as follows: (1) five minute warm-up at a low intensity (50-60% maximal heart rate (MHR) and/or 8-12 on Borg\u2019 scale); (2) twenty minutes of HIIT consisting of multiple 30-s high-intensity sprints (80-85% MHR or >17 on Borg\u2019 scale) alternated with 90 s at moderate intensity (65% MHR or 13-16 on Borg\u2019 scale); and (3) five-minute cool down period (50-60% MHR or 8-12 on Borg\u2019 scale).",
+      "context_window": "6 on Borg\u2019 scale); and (3) five-minute cool down period (50-60% MHR or 8-12 on Borg\u2019 scale). MHR percentage and/or perceive",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-3574",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3574,
+      "sentence": "Speed and resistance of the elliptical device were continuously adjusted during the intervention to ensure that the MHR was always above 80% during high intensity intervals.",
+      "context_window": "ng the intervention to ensure that the MHR was always above 80% during high intensity intervals. Participants followed a M",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-3844",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3844,
+      "sentence": "The MICT was performed at a moderate intensity (60-70% MHR or 13-14 Borg\u2019s scale) for one hour per session.",
+      "context_window": "uctors). The MICT was performed at a moderate intensity (60-70% MHR or 13-14 Borg\u2019s scale) for one hour per session. Speed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-4035",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4035,
+      "sentence": "Speed and resistance of the treadmill were continuously adjusted during the intervention to ensure that the MHR was always between 60-70% MHR or 13-14 on Borg\u2019s scale.",
+      "context_window": "e intervention to ensure that the MHR was always between 60-70% MHR or 13-14 on Borg\u2019s scale. Validated tests were used to",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-8838",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 8838,
+      "sentence": "The total length of the femur, voxel size (0.5 mm) and speed (10 mm.s -1 ) were the scanning variables entered into the software.",
+      "context_window": "ontents; cm 2 ). The total length of the femur, voxel size (0.5 mm) and speed (10 mm.s -1 ) were the scanning variables entere",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-8857",
+      "claim_type": "unit_value",
+      "raw_text": "10 mm",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 8857,
+      "sentence": "The total length of the femur, voxel size (0.5 mm) and speed (10 mm.s -1 ) were the scanning variables entered into the software.",
+      "context_window": "e total length of the femur, voxel size (0.5 mm) and speed (10 mm.s -1 ) were the scanning variables entered into the softwar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-9260",
+      "claim_type": "percentage",
+      "raw_text": "3.7%",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9260,
+      "sentence": "For muscle and fat area, ranges for precision errors were reported to be between 2.1 and 3.7% and 2.4 and 6.4%, respectively [ 38 ].",
+      "context_window": "es for precision errors were reported to be between 2.1 and 3.7% and 2.4 and 6.4%, respectively [ 38 ]. After an overnight",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-9277",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9277,
+      "sentence": "For muscle and fat area, ranges for precision errors were reported to be between 2.1 and 3.7% and 2.4 and 6.4%, respectively [ 38 ].",
+      "context_window": "errors were reported to be between 2.1 and 3.7% and 2.4 and 6.4%, respectively [ 38 ]. After an overnight fast of 12 h, 15",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-9338",
+      "claim_type": "unit_value",
+      "raw_text": "15 mL",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 9338,
+      "sentence": "After an overnight fast of 12 h, 15 mL of blood was collected from each participant to assess fasting serum levels of biochemical and hormonal markers.",
+      "context_window": ".4%, respectively [ 38 ]. After an overnight fast of 12 h, 15 mL of blood was collected from each participant to assess fast",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-10091",
+      "claim_type": "unit_value",
+      "raw_text": "12 cm",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 10091,
+      "sentence": "As previously described in Marcangeli et al. [ 25 ], biopsy samples were collected from an area in the lower quadrant (10-12 cm from the umbilicus) using a 12-gauge Yale needle.",
+      "context_window": "mples were collected from an area in the lower quadrant (10-12 cm from the umbilicus) using a 12-gauge Yale needle. Abdominal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-11830",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11830,
+      "sentence": "Each participant had to wear the device at least 85% of the time to be included in the study.",
+      "context_window": "swimming. Each participant had to wear the device at least 85% of the time to be included in the study. The validated Mon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-12004",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 12004,
+      "sentence": "In cases in which a subject had \u226412 years of education, an extra point was added to the total score [ 40 ].",
+      "context_window": "s cognitive status [ 40 ]. In cases in which a subject had \u226412 years of education, an extra point was added to the total score [",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-221",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 221,
+      "sentence": "More specifically, among the 36 sessions, participants completed an average of 34.9 sessions for the HIIT group (97%) and 34.6 sessions for the MICT group (96%).",
+      "context_window": "s completed an average of 34.9 sessions for the HIIT group (97%) and 34.6 sessions for the MICT group (96%). The baseline c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-264",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 264,
+      "sentence": "More specifically, among the 36 sessions, participants completed an average of 34.9 sessions for the HIIT group (97%) and 34.6 sessions for the MICT group (96%).",
+      "context_window": "the HIIT group (97%) and 34.6 sessions for the MICT group (96%). The baseline characteristics were similar for both groups",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-854",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 854,
+      "sentence": "A time*group interaction was observed for the six-minute walking test ( p = 0.004), the step test ( p < 0.0001), and the ten-repetition chair test ( p = 0.006; Figure 1 ).",
+      "context_window": "interaction was observed for the six-minute walking test ( p = 0.004), the step test ( p < 0.0001), and the ten-repetition chair",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-882",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 882,
+      "sentence": "A time*group interaction was observed for the six-minute walking test ( p = 0.004), the step test ( p < 0.0001), and the ten-repetition chair test ( p = 0.006; Figure 1 ).",
+      "context_window": "r the six-minute walking test ( p = 0.004), the step test ( p < 0.0001), and the ten-repetition chair test ( p = 0.006; Figure 1 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-931",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 931,
+      "sentence": "A time*group interaction was observed for the six-minute walking test ( p = 0.004), the step test ( p < 0.0001), and the ten-repetition chair test ( p = 0.006; Figure 1 ).",
+      "context_window": "tep test ( p < 0.0001), and the ten-repetition chair test ( p = 0.006; Figure 1 ). These results indicate that these two training",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1221",
+      "claim_type": "percentage",
+      "raw_text": "12.4%",
+      "numeric_values": [
+        12.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1221,
+      "sentence": "However, we observed a significantly higher benefit for HIIT than MICT on some physical parameters (six-minute walking test (HIIT: +12.4% vs.",
+      "context_window": "n some physical parameters (six-minute walking test (HIIT: +12.4% vs. MICT: +5.2%); step test (HIIT: +17.0% vs. MICT: +5.9%);",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1238",
+      "claim_type": "percentage",
+      "raw_text": "5.2%",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1238,
+      "sentence": "MICT: +5.2%); step test (HIIT: +17.0% vs.",
+      "context_window": "arameters (six-minute walking test (HIIT: +12.4% vs. MICT: +5.2%); step test (HIIT: +17.0% vs. MICT: +5.9%); ten-repetition",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1263",
+      "claim_type": "percentage",
+      "raw_text": "17.0%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1263,
+      "sentence": "MICT: +5.2%); step test (HIIT: +17.0% vs.",
+      "context_window": "king test (HIIT: +12.4% vs. MICT: +5.2%); step test (HIIT: +17.0% vs. MICT: +5.9%); ten-repetition chair test (HIIT: -17.0% v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1280",
+      "claim_type": "percentage",
+      "raw_text": "5.9%",
+      "numeric_values": [
+        5.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1280,
+      "sentence": "MICT: +5.9%); ten-repetition chair test (HIIT: -17.0% vs.",
+      "context_window": "+12.4% vs. MICT: +5.2%); step test (HIIT: +17.0% vs. MICT: +5.9%); ten-repetition chair test (HIIT: -17.0% vs. MICT: -4.7%))",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1321",
+      "claim_type": "percentage",
+      "raw_text": "17.0%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1321,
+      "sentence": "MICT: +5.9%); ten-repetition chair test (HIIT: -17.0% vs.",
+      "context_window": "+17.0% vs. MICT: +5.9%); ten-repetition chair test (HIIT: -17.0% vs. MICT: -4.7%)). Additionally, a clinical impact was obse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-1338",
+      "claim_type": "percentage",
+      "raw_text": "4.7%",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1338,
+      "sentence": "MICT: -4.7%)).",
+      "context_window": "+5.9%); ten-repetition chair test (HIIT: -17.0% vs. MICT: -4.7%)). Additionally, a clinical impact was observed for the HII",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-1750",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 m/s",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 1750,
+      "sentence": "Walking speed significantly increased in both groups, but a clinical impact was only observed for the HIIT group where walking speed increased by more than 0.1 m/s, the minimal increase in walking speed required for a change to be considered clinically significant [ 42 ].",
+      "context_window": "r the HIIT group where walking speed increased by more than 0.1 m/s, the minimal increase in walking speed required for a chang",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-1951",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1951,
+      "sentence": "Functional capacities and skeletal muscle function in obese older adults following 12 weeks of High-Intensity Interval Training (HIIT) and Moderate-Intensity Continuous Training (MICT).",
+      "context_window": "nd skeletal muscle function in obese older adults following 12 weeks of High-Intensity Interval Training (HIIT) and Moderate-Int",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-2439",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2439,
+      "sentence": "Time effect, Group effect and Time*Group effect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p <0.001 = HIIT effect, and MICT effect (analyzed using post-hoc tests).",
+      "context_window": "fect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p <0.001 = HIIT effect, and MICT effect (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-2452",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2452,
+      "sentence": "Time effect, Group effect and Time*Group effect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p <0.001 = HIIT effect, and MICT effect (analyzed using post-hoc tests).",
+      "context_window": "lyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p <0.001 = HIIT effect, and MICT effect (analyzed usin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-2466",
+      "claim_type": "p_value",
+      "raw_text": "p <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2466,
+      "sentence": "Time effect, Group effect and Time*Group effect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p <0.001 = HIIT effect, and MICT effect (analyzed using post-hoc tests).",
+      "context_window": "o-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p <0.001 = HIIT effect, and MICT effect (analyzed using post-hoc tes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-4272",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4272,
+      "sentence": "These parameters increased significantly more for the MICT group than HIIT group (Quadriceps strength (HIIT: +4.3% vs.",
+      "context_window": "the MICT group than HIIT group (Quadriceps strength (HIIT: +4.3% vs. MICT: +23.2%); quadriceps/body weight (HIIT: +4.1% vs.",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-4288",
+      "claim_type": "percentage",
+      "raw_text": "23.2%",
+      "numeric_values": [
+        23.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4288,
+      "sentence": "MICT: +23.2%); quadriceps/body weight (HIIT: +4.1% vs.",
+      "context_window": "han HIIT group (Quadriceps strength (HIIT: +4.3% vs. MICT: +23.2%); quadriceps/body weight (HIIT: +4.1% vs. MICT: +23.6%); qu",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-4327",
+      "claim_type": "percentage",
+      "raw_text": "4.1%",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4327,
+      "sentence": "MICT: +23.2%); quadriceps/body weight (HIIT: +4.1% vs.",
+      "context_window": "IT: +4.3% vs. MICT: +23.2%); quadriceps/body weight (HIIT: +4.1% vs. MICT: +23.6%); quadriceps/lean leg mass (HIIT: +2.3% vs",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-4343",
+      "claim_type": "percentage",
+      "raw_text": "23.6%",
+      "numeric_values": [
+        23.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4343,
+      "sentence": "MICT: +23.6%); quadriceps/lean leg mass (HIIT: +2.3% vs.",
+      "context_window": "CT: +23.2%); quadriceps/body weight (HIIT: +4.1% vs. MICT: +23.6%); quadriceps/lean leg mass (HIIT: +2.3% vs. MICT: +25.3%);",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-4384",
+      "claim_type": "percentage",
+      "raw_text": "2.3%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4384,
+      "sentence": "MICT: +23.6%); quadriceps/lean leg mass (HIIT: +2.3% vs.",
+      "context_window": ": +4.1% vs. MICT: +23.6%); quadriceps/lean leg mass (HIIT: +2.3% vs. MICT: +25.3%); Figure 2 ). Finally, both groups signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-4400",
+      "claim_type": "percentage",
+      "raw_text": "25.3%",
+      "numeric_values": [
+        25.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4400,
+      "sentence": "MICT: +25.3%); Figure 2 ).",
+      "context_window": ": +23.6%); quadriceps/lean leg mass (HIIT: +2.3% vs. MICT: +25.3%); Figure 2 ). Finally, both groups significantly improved l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-4497",
+      "claim_type": "percentage",
+      "raw_text": "25.2%",
+      "numeric_values": [
+        25.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4497,
+      "sentence": "Finally, both groups significantly improved lower limb muscle power [(HIIT: +25.2% vs.",
+      "context_window": "ups significantly improved lower limb muscle power [(HIIT: +25.2% vs. MICT: +20.4%); Figure 2 ]. Impact of HIIT and MICT on",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-4514",
+      "claim_type": "percentage",
+      "raw_text": "20.4%",
+      "numeric_values": [
+        20.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4514,
+      "sentence": "MICT: +20.4%); Figure 2 ].",
+      "context_window": "improved lower limb muscle power [(HIIT: +25.2% vs. MICT: +20.4%); Figure 2 ]. Impact of HIIT and MICT on skeletal muscle f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-6113",
+      "claim_type": "percentage",
+      "raw_text": "1.6%",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6113,
+      "sentence": "Participants improved only total (HIIT: +1.6% vs.",
+      "context_window": "body composition. Participants improved only total (HIIT: +1.6% vs. MICT: -0.8%) and leg (HIIT: 2.1% vs. MICT: -0.8%) lean",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-6129",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6129,
+      "sentence": "MICT: -0.8%) and leg (HIIT: 2.1% vs.",
+      "context_window": "n. Participants improved only total (HIIT: +1.6% vs. MICT: -0.8%) and leg (HIIT: 2.1% vs. MICT: -0.8%) lean muscle mass, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-6150",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6150,
+      "sentence": "MICT: -0.8%) and leg (HIIT: 2.1% vs.",
+      "context_window": "ved only total (HIIT: +1.6% vs. MICT: -0.8%) and leg (HIIT: 2.1% vs. MICT: -0.8%) lean muscle mass, and this improvement was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-6166",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6166,
+      "sentence": "MICT: -0.8%) lean muscle mass, and this improvement was greater in the HIIT than MICT group ( Figure 3 ).",
+      "context_window": "HIIT: +1.6% vs. MICT: -0.8%) and leg (HIIT: 2.1% vs. MICT: -0.8%) lean muscle mass, and this improvement was greater in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-6304",
+      "claim_type": "percentage",
+      "raw_text": "1.6%",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6304,
+      "sentence": "Participants improved only leg (HIIT: -1.6% vs.",
+      "context_window": "group ( Figure 3 ). Participants improved only leg (HIIT: -1.6% vs. MICT: -3.7%) and gyno\u00efd (HIIT: -1.1% vs. MICT: -4.2%) r",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-6320",
+      "claim_type": "percentage",
+      "raw_text": "3.7%",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6320,
+      "sentence": "MICT: -3.7%) and gyno\u00efd (HIIT: -1.1% vs.",
+      "context_window": "3 ). Participants improved only leg (HIIT: -1.6% vs. MICT: -3.7%) and gyno\u00efd (HIIT: -1.1% vs. MICT: -4.2%) relative fat mass",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-6345",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6345,
+      "sentence": "MICT: -3.7%) and gyno\u00efd (HIIT: -1.1% vs.",
+      "context_window": "d only leg (HIIT: -1.6% vs. MICT: -3.7%) and gyno\u00efd (HIIT: -1.1% vs. MICT: -4.2%) relative fat mass, and this improvement wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-6361",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6361,
+      "sentence": "MICT: -4.2%) relative fat mass, and this improvement was greater in the MICT than HIIT group ( Table 3 and Figure 4 ).",
+      "context_window": ": -1.6% vs. MICT: -3.7%) and gyno\u00efd (HIIT: -1.1% vs. MICT: -4.2%) relative fat mass, and this improvement was greater in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-6916",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6916,
+      "sentence": "Body composition parameters in obese older adults following 12 weeks of High-Intensity Interval Training (HIIT) and Moderate-Intensity Continuous Training (MICT).",
+      "context_window": "Body composition parameters in obese older adults following 12 weeks of High-Intensity Interval Training (HIIT) and Moderate-Int",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-7438",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7438,
+      "sentence": "HIIT = high-intensity interval training; MICT = moderate-intensity continuous training; Pre = before the 12-week intervention; Post = after the 12-week intervention; DXA = dual-energy X-ray absorptiometry; pQCT = peripheral quantitative computed tomography; BMI = body mass index; Time effect, Group effect and Time*Group effect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p < 0.001 = HIIT effect, and MICT effect (analyzed using post-hoc tests).",
+      "context_window": "fect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p < 0.001 = HIIT effect, and MICT effect",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-7451",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7451,
+      "sentence": "HIIT = high-intensity interval training; MICT = moderate-intensity continuous training; Pre = before the 12-week intervention; Post = after the 12-week intervention; DXA = dual-energy X-ray absorptiometry; pQCT = peripheral quantitative computed tomography; BMI = body mass index; Time effect, Group effect and Time*Group effect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p < 0.001 = HIIT effect, and MICT effect (analyzed using post-hoc tests).",
+      "context_window": "lyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p < 0.001 = HIIT effect, and MICT effect (analyzed usi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-7465",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7465,
+      "sentence": "HIIT = high-intensity interval training; MICT = moderate-intensity continuous training; Pre = before the 12-week intervention; Post = after the 12-week intervention; DXA = dual-energy X-ray absorptiometry; pQCT = peripheral quantitative computed tomography; BMI = body mass index; Time effect, Group effect and Time*Group effect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p < 0.001 = HIIT effect, and MICT effect (analyzed using post-hoc tests).",
+      "context_window": "o-way repeated measures ANOVA. * p < 0.05, ** p < 0.01, *** p < 0.001 = HIIT effect, and MICT effect (analyzed using post-hoc tes",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-9677",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9677,
+      "sentence": "Blood parameters in obese older adults following 12 weeks of High-Intensity Interval Training (HIIT) and Moderate-Intensity Continuous Training (MICT).",
+      "context_window": "able S3 . Blood parameters in obese older adults following 12 weeks of High-Intensity Interval Training (HIIT) and Moderate-Int",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-10373",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10373,
+      "sentence": "Time effect, Group effect and Time*Group effect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01 = HIIT effect, and MICT effect (analyzed using post-hoc tests).",
+      "context_window": "fect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01 = HIIT effect, and MICT effect (analyzed using",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-10386",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10386,
+      "sentence": "Time effect, Group effect and Time*Group effect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01 = HIIT effect, and MICT effect (analyzed using post-hoc tests).",
+      "context_window": "lyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01 = HIIT effect, and MICT effect (analyzed using post-hoc tes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-10557",
+      "claim_type": "percentage",
+      "raw_text": "8.8%",
+      "numeric_values": [
+        8.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10557,
+      "sentence": "The only significant time effect observed was for triglycerides, which significantly decreased (-8.8%) in the HIIT group.",
+      "context_window": "rved was for triglycerides, which significantly decreased (-8.8%) in the HIIT group. These results indicate that HIIT is eff",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-msd-11004",
+      "claim_type": "mean_sd",
+      "raw_text": "32.1 \u00b1 39.4",
+      "numeric_values": [
+        32.1,
+        39.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11004,
+      "sentence": "Although there was already a difference regarding CIDEA gene expression at baseline (HIIT: 32.1 \u00b1 39.4 vs.",
+      "context_window": "fference regarding CIDEA gene expression at baseline (HIIT: 32.1 \u00b1 39.4 vs. MICT: 16.1 \u00b1 37.1 A.U., p = 0.01), a significantly high",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-msd-11026",
+      "claim_type": "mean_sd",
+      "raw_text": "16.1 \u00b1 37.1",
+      "numeric_values": [
+        16.1,
+        37.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11026,
+      "sentence": "MICT: 16.1 \u00b1 37.1 A.U., p = 0.01), a significantly higher increase for this gene was observed in the HIIT group compared to the MICT group at the end of the intervention (HIIT: 48.2 \u00b1 59.2 vs.",
+      "context_window": "EA gene expression at baseline (HIIT: 32.1 \u00b1 39.4 vs. MICT: 16.1 \u00b1 37.1 A.U., p = 0.01), a significantly higher increase for this g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-11044",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11044,
+      "sentence": "MICT: 16.1 \u00b1 37.1 A.U., p = 0.01), a significantly higher increase for this gene was observed in the HIIT group compared to the MICT group at the end of the intervention (HIIT: 48.2 \u00b1 59.2 vs.",
+      "context_window": "at baseline (HIIT: 32.1 \u00b1 39.4 vs. MICT: 16.1 \u00b1 37.1 A.U., p = 0.01), a significantly higher increase for this gene was observe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-msd-11197",
+      "claim_type": "mean_sd",
+      "raw_text": "48.2 \u00b1 59.2",
+      "numeric_values": [
+        48.2,
+        59.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11197,
+      "sentence": "MICT: 16.1 \u00b1 37.1 A.U., p = 0.01), a significantly higher increase for this gene was observed in the HIIT group compared to the MICT group at the end of the intervention (HIIT: 48.2 \u00b1 59.2 vs.",
+      "context_window": "red to the MICT group at the end of the intervention (HIIT: 48.2 \u00b1 59.2 vs. MICT: 14.4 \u00b1 23.1 A.U., p < 0.001). Impact of HIIT and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-msd-11219",
+      "claim_type": "mean_sd",
+      "raw_text": "14.4 \u00b1 23.1",
+      "numeric_values": [
+        14.4,
+        23.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11219,
+      "sentence": "MICT: 14.4 \u00b1 23.1 A.U., p < 0.001).",
+      "context_window": "at the end of the intervention (HIIT: 48.2 \u00b1 59.2 vs. MICT: 14.4 \u00b1 23.1 A.U., p < 0.001). Impact of HIIT and MICT on adipose tissu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-11237",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11237,
+      "sentence": "MICT: 14.4 \u00b1 23.1 A.U., p < 0.001).",
+      "context_window": "intervention (HIIT: 48.2 \u00b1 59.2 vs. MICT: 14.4 \u00b1 23.1 A.U., p < 0.001). Impact of HIIT and MICT on adipose tissue mRNA gene expr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-12863",
+      "claim_type": "percentage",
+      "raw_text": "36.2%",
+      "numeric_values": [
+        36.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12863,
+      "sentence": "More specifically, TFAM increased significantly following HIIT (+36.2%) and MICT (+57.24%) ( Figure 6 ).",
+      "context_window": "specifically, TFAM increased significantly following HIIT (+36.2%) and MICT (+57.24%) ( Figure 6 ). A significant increase wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-12881",
+      "claim_type": "percentage",
+      "raw_text": "57.24%",
+      "numeric_values": [
+        57.24
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12881,
+      "sentence": "More specifically, TFAM increased significantly following HIIT (+36.2%) and MICT (+57.24%) ( Figure 6 ).",
+      "context_window": "increased significantly following HIIT (+36.2%) and MICT (+57.24%) ( Figure 6 ). A significant increase was observed for TOM2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-12951",
+      "claim_type": "percentage",
+      "raw_text": "54.14%",
+      "numeric_values": [
+        54.14
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12951,
+      "sentence": "A significant increase was observed for TOM20 (+54.14%), Mitofusin-2 (MFN2; +71.6%), and PARKIN (+42.32%) in the HIIT group only ( Figure 6 ).",
+      "context_window": "Figure 6 ). A significant increase was observed for TOM20 (+54.14%), Mitofusin-2 (MFN2; +71.6%), and PARKIN (+42.32%) in the H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-12980",
+      "claim_type": "percentage",
+      "raw_text": "71.6%",
+      "numeric_values": [
+        71.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12980,
+      "sentence": "A significant increase was observed for TOM20 (+54.14%), Mitofusin-2 (MFN2; +71.6%), and PARKIN (+42.32%) in the HIIT group only ( Figure 6 ).",
+      "context_window": "rease was observed for TOM20 (+54.14%), Mitofusin-2 (MFN2; +71.6%), and PARKIN (+42.32%) in the HIIT group only ( Figure 6 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-13001",
+      "claim_type": "percentage",
+      "raw_text": "42.32%",
+      "numeric_values": [
+        42.32
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13001,
+      "sentence": "A significant increase was observed for TOM20 (+54.14%), Mitofusin-2 (MFN2; +71.6%), and PARKIN (+42.32%) in the HIIT group only ( Figure 6 ).",
+      "context_window": "r TOM20 (+54.14%), Mitofusin-2 (MFN2; +71.6%), and PARKIN (+42.32%) in the HIIT group only ( Figure 6 ). Neither HIIT nor MICT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-13389",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 13389,
+      "sentence": "Skeletal muscle mitochondrial content in obese older adults following 12 weeks of High-Intensity Interval Training (HIIT) and Moderate-Intensity Continuous Training (MICT).",
+      "context_window": "uscle mitochondrial content in obese older adults following 12 weeks of High-Intensity Interval Training (HIIT) and Moderate-Int",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-14419",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14419,
+      "sentence": "Time effect, Group effect and Time*Group effect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01 = HIIT effect, and MICT effect (analyzed using post-hoc tests).",
+      "context_window": "fect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01 = HIIT effect, and MICT effect (analyzed using",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-p-14432",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14432,
+      "sentence": "Time effect, Group effect and Time*Group effect were analyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01 = HIIT effect, and MICT effect (analyzed using post-hoc tests).",
+      "context_window": "lyzed using two-way repeated measures ANOVA. * p < 0.05, ** p < 0.01 = HIIT effect, and MICT effect (analyzed using post-hoc tes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-408",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 408,
+      "sentence": "In this regard, the potential beneficial impacts of two aerobic training modalities (HIIT and MICT) performed over 12 weeks were investigated in obese older adults.",
+      "context_window": "aerobic training modalities (HIIT and MICT) performed over 12 weeks were investigated in obese older adults. The adherence leve",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-536",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 536,
+      "sentence": "The adherence level for our interventions was comparable between both groups (97% for HIIT and 96% for MICT).",
+      "context_window": "l for our interventions was comparable between both groups (97% for HIIT and 96% for MICT). This finding is in line with a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-553",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 553,
+      "sentence": "The adherence level for our interventions was comparable between both groups (97% for HIIT and 96% for MICT).",
+      "context_window": "ntions was comparable between both groups (97% for HIIT and 96% for MICT). This finding is in line with a previous study th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-3620",
+      "claim_type": "percentage",
+      "raw_text": "1.58%",
+      "numeric_values": [
+        1.58
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3620,
+      "sentence": "HIIT was more beneficial for increasing total lean body mass (HIIT: +1.58% vs.",
+      "context_window": "more beneficial for increasing total lean body mass (HIIT: +1.58% vs. MICT: -0.81%), while MICT was more beneficial for decre",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-3637",
+      "claim_type": "percentage",
+      "raw_text": "0.81%",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3637,
+      "sentence": "MICT: -0.81%), while MICT was more beneficial for decreasing relative gynoid fat mass (HIIT: -1.09% vs. -4.20%).",
+      "context_window": "or increasing total lean body mass (HIIT: +1.58% vs. MICT: -0.81%), while MICT was more beneficial for decreasing relative gy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-3724",
+      "claim_type": "percentage",
+      "raw_text": "1.09%",
+      "numeric_values": [
+        1.09
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3724,
+      "sentence": "MICT: -0.81%), while MICT was more beneficial for decreasing relative gynoid fat mass (HIIT: -1.09% vs. -4.20%).",
+      "context_window": "beneficial for decreasing relative gynoid fat mass (HIIT: -1.09% vs. -4.20%). These results are consistent with a previous s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-3735",
+      "claim_type": "percentage",
+      "raw_text": "4.20%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3735,
+      "sentence": "MICT: -0.81%), while MICT was more beneficial for decreasing relative gynoid fat mass (HIIT: -1.09% vs. -4.20%).",
+      "context_window": "for decreasing relative gynoid fat mass (HIIT: -1.09% vs. -4.20%). These results are consistent with a previous study showin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-3851",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3851,
+      "sentence": "These results are consistent with a previous study showing that total and visceral fat mass decreased after 12 weeks of MICT in obese older adults [ 47 ].",
+      "context_window": "dy showing that total and visceral fat mass decreased after 12 weeks of MICT in obese older adults [ 47 ]. In young adults, it w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-pct-5250",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5250,
+      "sentence": "Among all the parameters of gene expression, the reason why only CIDEA significantly changed following our intervention might be due to the insufficient changes in fat mass to induce molecular adaptations, since the changes were not clinically significant (delta change: <5%) [ 51 ].",
+      "context_window": "the changes were not clinically significant (delta change: <5%) [ 51 ]. Taken altogether, these data indicate that 12 week",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9315493_clinical_and_biological_adaptations_in_obese_older_adults_fo-u-5305",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5305,
+      "sentence": "Taken altogether, these data indicate that 12 weeks of HIIT or MICT had a limited impact on AT gene expression within the set of genes studied.",
+      "context_window": "ge: <5%) [ 51 ]. Taken altogether, these data indicate that 12 weeks of HIIT or MICT had a limited impact on AT gene expression",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

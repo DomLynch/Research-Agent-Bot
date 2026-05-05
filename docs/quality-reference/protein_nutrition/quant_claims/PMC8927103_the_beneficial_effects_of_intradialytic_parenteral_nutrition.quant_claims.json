@@ -1,0 +1,3358 @@
+{
+  "paper_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition",
+  "doi": "10.1038/s41598-022-08726-8",
+  "extracted_at": "2026-05-05T22:35:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 60,
+    "sample_size": 3,
+    "mean_sd": 49,
+    "p_value": 47,
+    "percentage": 24
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-624",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 624,
+      "sentence": "In IDPN group, most concentrated 3-in-1, fish-oil based parenteral nutrition was infused during HD for 3 months.",
+      "context_window": "sh-oil based parenteral nutrition was infused during HD for 3 months. The control group received intensive dietary counselling o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-707",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 707,
+      "sentence": "The control group received intensive dietary counselling once weekly for 3 months.",
+      "context_window": "roup received intensive dietary counselling once weekly for 3 months. Both groups were then followed for additional 3 months aft",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-763",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 763,
+      "sentence": "Both groups were then followed for additional 3 months after intervention.",
+      "context_window": "for 3 months. Both groups were then followed for additional 3 months after intervention. A total of 38 patients were randomized",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-841",
+      "claim_type": "unit_value",
+      "raw_text": "67.6 years",
+      "numeric_values": [
+        67.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 841,
+      "sentence": "A total of 38 patients were randomized (mean age 67.6 years).",
+      "context_window": "ervention. A total of 38 patients were randomized (mean age 67.6 years). After 3 months, serum albumin was significantly higher in",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-860",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 860,
+      "sentence": "After 3 months, serum albumin was significantly higher in the IDPN (n = 18) compared with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01).",
+      "context_window": "of 38 patients were randomized (mean age 67.6 years). After 3 months, serum albumin was significantly higher in the IDPN (n = 18",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-n-922",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 922,
+      "sentence": "After 3 months, serum albumin was significantly higher in the IDPN (n = 18) compared with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01).",
+      "context_window": "months, serum albumin was significantly higher in the IDPN (n = 18) compared with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-964",
+      "claim_type": "mean_sd",
+      "raw_text": "3.5 \u00b1 0.3",
+      "numeric_values": [
+        3.5,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 964,
+      "sentence": "After 3 months, serum albumin was significantly higher in the IDPN (n = 18) compared with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01).",
+      "context_window": "gher in the IDPN (n = 18) compared with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-977",
+      "claim_type": "mean_sd",
+      "raw_text": "3.8 \u00b1 0.2",
+      "numeric_values": [
+        3.8,
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 977,
+      "sentence": "After 3 months, serum albumin was significantly higher in the IDPN (n = 18) compared with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01).",
+      "context_window": "DPN (n = 18) compared with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-995",
+      "claim_type": "mean_sd",
+      "raw_text": "3.6 \u00b1 0.3",
+      "numeric_values": [
+        3.6,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 995,
+      "sentence": "After 3 months, serum albumin was significantly higher in the IDPN (n = 18) compared with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01).",
+      "context_window": "red with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01). Spontaneous die",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-1008",
+      "claim_type": "mean_sd",
+      "raw_text": "3.5 \u00b1 0.3",
+      "numeric_values": [
+        3.5,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1008,
+      "sentence": "After 3 months, serum albumin was significantly higher in the IDPN (n = 18) compared with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01).",
+      "context_window": "rol group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01). Spontaneous dietary intake (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-1038",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1038,
+      "sentence": "After 3 months, serum albumin was significantly higher in the IDPN (n = 18) compared with control group (from 3.5 \u00b1 0.3 to 3.8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01).",
+      "context_window": ".8 \u00b1 0.2 vs from 3.6 \u00b1 0.3 to 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01). Spontaneous dietary intake ( p = 0.04), body weight ( p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-1078",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1078,
+      "sentence": "Spontaneous dietary intake ( p = 0.04), body weight ( p = 0.01), and malnutrition inflammation score (MIS, p = 0.01) were improved in the IDPN, but not in the control group.",
+      "context_window": "g/dL, respectively, p = 0.01). Spontaneous dietary intake ( p = 0.04), body weight ( p = 0.01), and malnutrition inflammation sc",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-1103",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1103,
+      "sentence": "Spontaneous dietary intake ( p = 0.04), body weight ( p = 0.01), and malnutrition inflammation score (MIS, p = 0.01) were improved in the IDPN, but not in the control group.",
+      "context_window": ".01). Spontaneous dietary intake ( p = 0.04), body weight ( p = 0.01), and malnutrition inflammation score (MIS, p = 0.01) were",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-1156",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1156,
+      "sentence": "Spontaneous dietary intake ( p = 0.04), body weight ( p = 0.01), and malnutrition inflammation score (MIS, p = 0.01) were improved in the IDPN, but not in the control group.",
+      "context_window": "ight ( p = 0.01), and malnutrition inflammation score (MIS, p = 0.01) were improved in the IDPN, but not in the control group. M",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-1425",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1425,
+      "sentence": "Muscle mass, strength, serum prealbumin, interleukin-6, high sensitivity-c reactive protein, and acylated ghrelin were not significantly different but leptin levels increased in the control group after 3 months ( p = 0.03).",
+      "context_window": "rent but leptin levels increased in the control group after 3 months ( p = 0.03). At 6 months, serum albumin in the IDPN group w",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-1436",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1436,
+      "sentence": "Muscle mass, strength, serum prealbumin, interleukin-6, high sensitivity-c reactive protein, and acylated ghrelin were not significantly different but leptin levels increased in the control group after 3 months ( p = 0.03).",
+      "context_window": "ptin levels increased in the control group after 3 months ( p = 0.03). At 6 months, serum albumin in the IDPN group was persiste",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-1450",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1450,
+      "sentence": "At 6 months, serum albumin in the IDPN group was persistently higher than baseline ( p = 0.04).",
+      "context_window": "creased in the control group after 3 months ( p = 0.03). At 6 months, serum albumin in the IDPN group was persistently higher th",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-1532",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1532,
+      "sentence": "At 6 months, serum albumin in the IDPN group was persistently higher than baseline ( p = 0.04).",
+      "context_window": "n in the IDPN group was persistently higher than baseline ( p = 0.04). Neither volume overload nor uncontrolled hyperglycemia wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-335",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 335,
+      "sentence": "The magnitude of PEW is common across the whole spectrum of kidney disease worldwide and its median prevalence reaches 43% in patients undergoing maintenance HD 2 .",
+      "context_window": "kidney disease worldwide and its median prevalence reaches 43% in patients undergoing maintenance HD 2 . A cross-sectional",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-1103",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1103,
+      "sentence": "Moreover, a previous study reported that approximately 10% of HD patients discontinued ONS because of gastrointestinal complications 7 .",
+      "context_window": "ice. Moreover, a previous study reported that approximately 10% of HD patients discontinued ONS because of gastrointestinal",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-306",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 306,
+      "sentence": "Eligible participants were over 18 years of age, receiving maintenance HD for at least 3 months, having spontaneous dietary intake of energy \u2265 20 kilocalorie (kcal)/kilogram (kg)/day and protein intake \u2265 0.8 g/kg/day, being unable to tolerate ONS defined as the inability to tolerate at least one of the adverse gastrointestinal effects such as nausea, vomiting, bloating, or diarrhea, and presence of PEW defined as at least two of the following criteria of serum albumin level \u2264 3.5 g/dL 16 , 17 , serum prealbumin \u2264 30 mg/dL 18 , mild to moderate malnutrition evaluated by 7-point subjective global assessment (SGA) in category B, or MIS \u2265 5 points 2 .",
+      "context_window": "ysis centers were screened. Eligible participants were over 18 years of age, receiving maintenance HD for at least 3 months, hav",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-361",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 361,
+      "sentence": "Eligible participants were over 18 years of age, receiving maintenance HD for at least 3 months, having spontaneous dietary intake of energy \u2265 20 kilocalorie (kcal)/kilogram (kg)/day and protein intake \u2265 0.8 g/kg/day, being unable to tolerate ONS defined as the inability to tolerate at least one of the adverse gastrointestinal effects such as nausea, vomiting, bloating, or diarrhea, and presence of PEW defined as at least two of the following criteria of serum albumin level \u2264 3.5 g/dL 16 , 17 , serum prealbumin \u2264 30 mg/dL 18 , mild to moderate malnutrition evaluated by 7-point subjective global assessment (SGA) in category B, or MIS \u2265 5 points 2 .",
+      "context_window": "over 18 years of age, receiving maintenance HD for at least 3 months, having spontaneous dietary intake of energy \u2265 20 kilocalor",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-793",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg/dL",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 793,
+      "sentence": "Eligible participants were over 18 years of age, receiving maintenance HD for at least 3 months, having spontaneous dietary intake of energy \u2265 20 kilocalorie (kcal)/kilogram (kg)/day and protein intake \u2265 0.8 g/kg/day, being unable to tolerate ONS defined as the inability to tolerate at least one of the adverse gastrointestinal effects such as nausea, vomiting, bloating, or diarrhea, and presence of PEW defined as at least two of the following criteria of serum albumin level \u2264 3.5 g/dL 16 , 17 , serum prealbumin \u2264 30 mg/dL 18 , mild to moderate malnutrition evaluated by 7-point subjective global assessment (SGA) in category B, or MIS \u2265 5 points 2 .",
+      "context_window": "serum albumin level \u2264 3.5 g/dL 16 , 17 , serum prealbumin \u2264 30 mg/dL 18 , mild to moderate malnutrition evaluated by 7-point sub",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-1012",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/dL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 1012,
+      "sentence": "The exclusion criteria were participants with persistent fasting plasma glucose > 300 mg/dL, elevated serum triglyceride > 300 mg/dL, active heart failure, chronic infections such as tuberculosis or human immunodeficiency virus, cirrhosis, metastatic malignancy, pregnancy or lactation, ongoing treatment with immunosuppressive agents or corticosteroid, and history of allergy to any component of parenteral nutrition.",
+      "context_window": "were participants with persistent fasting plasma glucose > 300 mg/dL, elevated serum triglyceride > 300 mg/dL, active heart fail",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-1053",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/dL",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 1053,
+      "sentence": "The exclusion criteria were participants with persistent fasting plasma glucose > 300 mg/dL, elevated serum triglyceride > 300 mg/dL, active heart failure, chronic infections such as tuberculosis or human immunodeficiency virus, cirrhosis, metastatic malignancy, pregnancy or lactation, ongoing treatment with immunosuppressive agents or corticosteroid, and history of allergy to any component of parenteral nutrition.",
+      "context_window": "g plasma glucose > 300 mg/dL, elevated serum triglyceride > 300 mg/dL, active heart failure, chronic infections such as tuberculo",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-2012",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2012,
+      "sentence": "The study period was 6 months comprising 3 months of intervention and 3 months of intervention-free period.",
+      "context_window": "nts provided written informed consent. The study period was 6 months comprising 3 months of intervention and 3 months of interve",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-2032",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2032,
+      "sentence": "The study period was 6 months comprising 3 months of intervention and 3 months of intervention-free period.",
+      "context_window": "informed consent. The study period was 6 months comprising 3 months of intervention and 3 months of intervention-free period. T",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-2061",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2061,
+      "sentence": "The study period was 6 months comprising 3 months of intervention and 3 months of intervention-free period.",
+      "context_window": "period was 6 months comprising 3 months of intervention and 3 months of intervention-free period. The primary outcome was the ch",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2427",
+      "claim_type": "mean_sd",
+      "raw_text": "0.1 \u00b1 0.2",
+      "numeric_values": [
+        0.1,
+        0.2
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2427,
+      "sentence": "19 , it was found that IDPN treatment was associated with a significant increase in serum albumin by 0.1 \u00b1 0.2 g/dL in HD patients.",
+      "context_window": "associated with a significant increase in serum albumin by 0.1 \u00b1 0.2 g/dL in HD patients. To estimate the mean differences of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-2567",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2567,
+      "sentence": "To estimate the mean differences of the change of serum albumin of more than 0.22 g/dL with a study power of 80% and \u03b1 error of 0.05 between two independent samples 20 , the estimated sample size was 15 patients per group.",
+      "context_window": "serum albumin of more than 0.22 g/dL with a study power of 80% and \u03b1 error of 0.05 between two independent samples 20 , th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-2710",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2710,
+      "sentence": "To assume a drop-out rate of 20%, 19 patients were required in each group.",
+      "context_window": "ize was 15 patients per group. To assume a drop-out rate of 20%, 19 patients were required in each group. A block randomiza",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-3055",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3055,
+      "sentence": "All enrolled patients were randomized 1:1 to either receive IDPN plus standard counselling (IDPN group) or intensive dietary counselling (control group) for 3 months.",
+      "context_window": "group) or intensive dietary counselling (control group) for 3 months. Participants in the IDPN group received the most concentra",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-3329",
+      "claim_type": "unit_value",
+      "raw_text": "986 mL",
+      "numeric_values": [
+        986.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3329,
+      "sentence": "Participants in the IDPN group received the most concentrated 3-in-1 parenteral nutrition formula consisting of glucose, essential and non-essential amino acids and fish oil-based lipid emulsion with omega-3 fatty acids (SMOF Kabiven\u00ae central formula 1100 kcal in 986 mL).",
+      "context_window": "a-3 fatty acids (SMOF Kabiven\u00ae central formula 1100 kcal in 986 mL). IDPN was infused at a constant rate during 4 h, but not e",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-3590",
+      "claim_type": "unit_value",
+      "raw_text": "8 mL",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3590,
+      "sentence": "The initial delivered volume of IDPN was 8 mL/kg per session and then consecutively up-titrated to achieve the maximal rate of 16 mL/kg per session or the maximal volume of 986 mL according to the European Society for Clinical Nutrition and Metabolism (ESPEN) 21 .",
+      "context_window": "d ultrafiltration. The initial delivered volume of IDPN was 8 mL/kg per session and then consecutively up-titrated to achiev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-3676",
+      "claim_type": "unit_value",
+      "raw_text": "16 mL",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3676,
+      "sentence": "The initial delivered volume of IDPN was 8 mL/kg per session and then consecutively up-titrated to achieve the maximal rate of 16 mL/kg per session or the maximal volume of 986 mL according to the European Society for Clinical Nutrition and Metabolism (ESPEN) 21 .",
+      "context_window": "en consecutively up-titrated to achieve the maximal rate of 16 mL/kg per session or the maximal volume of 986 mL according to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-3722",
+      "claim_type": "unit_value",
+      "raw_text": "986 mL",
+      "numeric_values": [
+        986.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3722,
+      "sentence": "The initial delivered volume of IDPN was 8 mL/kg per session and then consecutively up-titrated to achieve the maximal rate of 16 mL/kg per session or the maximal volume of 986 mL according to the European Society for Clinical Nutrition and Metabolism (ESPEN) 21 .",
+      "context_window": "ximal rate of 16 mL/kg per session or the maximal volume of 986 mL according to the European Society for Clinical Nutrition an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-4418",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4418,
+      "sentence": "In the control group, patients obtained a more frequent intensive dietary counselling by a well-trained renal dietitian once weekly for 3 months.",
+      "context_window": "unselling by a well-trained renal dietitian once weekly for 3 months. The net calorie and protein deficit was calculated from th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5189",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5189,
+      "sentence": "Both groups were then followed for the additional 3 months without intervention until the end of study at 6 months.",
+      "context_window": "en meals. Both groups were then followed for the additional 3 months without intervention until the end of study at 6 months. An",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5245",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5245,
+      "sentence": "Both groups were then followed for the additional 3 months without intervention until the end of study at 6 months.",
+      "context_window": "nal 3 months without intervention until the end of study at 6 months. Any types of ONS were not allowed throughout the study per",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5639",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5639,
+      "sentence": "Clinical, biochemical, and body composition analysis by bioelectrical impedance analysis (BIA), and nutritional scoring system using MIS and 7-point SGA were collected at enrollment, 3 months, and the end of 6 months.",
+      "context_window": "tem using MIS and 7-point SGA were collected at enrollment, 3 months, and the end of 6 months. Blood samples were drawn from blo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5664",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5664,
+      "sentence": "Clinical, biochemical, and body composition analysis by bioelectrical impedance analysis (BIA), and nutritional scoring system using MIS and 7-point SGA were collected at enrollment, 3 months, and the end of 6 months.",
+      "context_window": "SGA were collected at enrollment, 3 months, and the end of 6 months. Blood samples were drawn from blood line before HD at midw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-6194",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 6194,
+      "sentence": "1 kg using a digital scale .",
+      "context_window": "using a stadiometer and recorded weight to the nearest 0 . 1 kg using a digital scale . Body mass index (BMI) was calculate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-8099",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8099,
+      "sentence": "We described patient characteristics using mean \u00b1 standard deviation (SD), or 95 % confident interval ( CI ) for normally distributed or median ( 25th-75th percentile ) for non-normally distributed variables, and proportions for categorical variables.",
+      "context_window": "nt characteristics using mean \u00b1 standard deviation (SD), or 95 % confident interval ( CI ) for normally distributed or media",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-8697",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 8697,
+      "sentence": "We also used linear regression analyses to test the association of outcomes changes between two groups after treatment and changes of outcomes at 3 and 6 months .",
+      "context_window": "two groups after treatment and changes of outcomes at 3 and 6 months . The data were analyzed in the intention-to-treat analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-n-147",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 147,
+      "sentence": "Sixty-nine patients were screened for eligibility criteria and a total of 38 patients met the inclusion criteria and were randomized in the study (n = 20 in the control group and n = 18 in the IDPN group).",
+      "context_window": "et the inclusion criteria and were randomized in the study (n = 20 in the control group and n = 18 in the IDPN group). All of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-n-179",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 179,
+      "sentence": "Sixty-nine patients were screened for eligibility criteria and a total of 38 patients met the inclusion criteria and were randomized in the study (n = 20 in the control group and n = 18 in the IDPN group).",
+      "context_window": "re randomized in the study (n = 20 in the control group and n = 18 in the IDPN group). All of the participants completed the 3",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-384",
+      "claim_type": "mean_sd",
+      "raw_text": "67.6 \u00b1 10.8",
+      "numeric_values": [
+        67.6,
+        10.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 384,
+      "sentence": "The mean age of the patients was 67.6 \u00b1 10.8 years with 42.1% men.",
+      "context_window": "-free follow up (Fig. 1 ). The mean age of the patients was 67.6 \u00b1 10.8 years with 42.1% men. The prevalence of diabetes was 44.7%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-391",
+      "claim_type": "unit_value",
+      "raw_text": "10.8 years",
+      "numeric_values": [
+        10.8
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 391,
+      "sentence": "The mean age of the patients was 67.6 \u00b1 10.8 years with 42.1% men.",
+      "context_window": "ollow up (Fig. 1 ). The mean age of the patients was 67.6 \u00b1 10.8 years with 42.1% men. The prevalence of diabetes was 44.7% with t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-407",
+      "claim_type": "percentage",
+      "raw_text": "42.1%",
+      "numeric_values": [
+        42.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 407,
+      "sentence": "The mean age of the patients was 67.6 \u00b1 10.8 years with 42.1% men.",
+      "context_window": "). The mean age of the patients was 67.6 \u00b1 10.8 years with 42.1% men. The prevalence of diabetes was 44.7% with the median d",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-449",
+      "claim_type": "percentage",
+      "raw_text": "44.7%",
+      "numeric_values": [
+        44.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 449,
+      "sentence": "The prevalence of diabetes was 44.7% with the median dialysis vintage of 3.2 (1.2-7.5) years.",
+      "context_window": "\u00b1 10.8 years with 42.1% men. The prevalence of diabetes was 44.7% with the median dialysis vintage of 3.2 (1.2-7.5) years. Ap",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-526",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 526,
+      "sentence": "Approximately 30% of patients had residual kidney function indicated by urine volume > 250 mL/day.",
+      "context_window": "dian dialysis vintage of 3.2 (1.2-7.5) years. Approximately 30% of patients had residual kidney function indicated by urine",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-599",
+      "claim_type": "unit_value",
+      "raw_text": "250 mL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 599,
+      "sentence": "Approximately 30% of patients had residual kidney function indicated by urine volume > 250 mL/day.",
+      "context_window": "ts had residual kidney function indicated by urine volume > 250 mL/day. All participants met the minimum required target of ur",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-781",
+      "claim_type": "mean_sd",
+      "raw_text": "3.5 \u00b1 0.3",
+      "numeric_values": [
+        3.5,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 781,
+      "sentence": "The average baseline serum albumin level, spontaneous energy, and protein intake were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respectively.",
+      "context_window": "albumin level, spontaneous energy, and protein intake were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-797",
+      "claim_type": "mean_sd",
+      "raw_text": "21.3 \u00b1 7.8",
+      "numeric_values": [
+        21.3,
+        7.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 797,
+      "sentence": "The average baseline serum albumin level, spontaneous energy, and protein intake were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respectively.",
+      "context_window": "spontaneous energy, and protein intake were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respectively. Baseline",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-825",
+      "claim_type": "mean_sd",
+      "raw_text": "0.9 \u00b1 0.3",
+      "numeric_values": [
+        0.9,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 825,
+      "sentence": "The average baseline serum albumin level, spontaneous energy, and protein intake were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respectively.",
+      "context_window": "ein intake were 3.5 \u00b1 0.3 g/dL, 21.3 \u00b1 7.8 kcal/kg/day, and 0.9 \u00b1 0.3 g/kg/day, respectively. Baseline demographic characteristic",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-1089",
+      "claim_type": "percentage",
+      "raw_text": "59.5%",
+      "numeric_values": [
+        59.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1089,
+      "sentence": "All patients were either in SGA category A (59.5%) or B (40.5%).",
+      "context_window": "ups (Table 1 ). All patients were either in SGA category A (59.5%) or B (40.5%). Overall, the mean MIS was 8.2 \u00b1 3.2 points w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-1102",
+      "claim_type": "percentage",
+      "raw_text": "40.5%",
+      "numeric_values": [
+        40.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1102,
+      "sentence": "All patients were either in SGA category A (59.5%) or B (40.5%).",
+      "context_window": "). All patients were either in SGA category A (59.5%) or B (40.5%). Overall, the mean MIS was 8.2 \u00b1 3.2 points with 91.8% of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-1136",
+      "claim_type": "mean_sd",
+      "raw_text": "8.2 \u00b1 3.2",
+      "numeric_values": [
+        8.2,
+        3.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1136,
+      "sentence": "Overall, the mean MIS was 8.2 \u00b1 3.2 points with 91.8% of patients had an MIS cutpoint of more than 5, indicating a PEW status.",
+      "context_window": "category A (59.5%) or B (40.5%). Overall, the mean MIS was 8.2 \u00b1 3.2 points with 91.8% of patients had an MIS cutpoint of more t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-1158",
+      "claim_type": "percentage",
+      "raw_text": "91.8%",
+      "numeric_values": [
+        91.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1158,
+      "sentence": "Overall, the mean MIS was 8.2 \u00b1 3.2 points with 91.8% of patients had an MIS cutpoint of more than 5, indicating a PEW status.",
+      "context_window": "B (40.5%). Overall, the mean MIS was 8.2 \u00b1 3.2 points with 91.8% of patients had an MIS cutpoint of more than 5, indicating",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-1600",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1600,
+      "sentence": "P < 0.05 consider significantly different between two groups.\n\n*Residual kidney function defined as urine volume > 250 ml/day.",
+      "context_window": ". Data are presented as mean \u00b1 SD and median (25th-75th). P < 0.05 consider significantly different between two groups. *Resi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-1784",
+      "claim_type": "percentage",
+      "raw_text": "97.3%",
+      "numeric_values": [
+        97.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1784,
+      "sentence": "Among patients receiving IDPN, treatment compliance was 97.3% based on prescribed volume for each dialysis session.",
+      "context_window": "y. Among patients receiving IDPN, treatment compliance was 97.3% based on prescribed volume for each dialysis session. There",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-1854",
+      "claim_type": "percentage",
+      "raw_text": "3.4%",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1854,
+      "sentence": "There was 3.4% of nonadherence for scheduled weekly administration of IDPN.",
+      "context_window": "d on prescribed volume for each dialysis session. There was 3.4% of nonadherence for scheduled weekly administration of IDPN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-1959",
+      "claim_type": "mean_sd",
+      "raw_text": "14.2 \u00b1 3.9",
+      "numeric_values": [
+        14.2,
+        3.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1959,
+      "sentence": "The mean delivered infusion volume was 14.2 \u00b1 3.9 mL/kg per 4-h HD session which provided the average energy of 902.4 \u00b1 113.3 kcal, protein of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated fatty acid of 4.5 \u00b1 0.6 g.",
+      "context_window": "inistration of IDPN. The mean delivered infusion volume was 14.2 \u00b1 3.9 mL/kg per 4-h HD session which provided the average energy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-1966",
+      "claim_type": "unit_value",
+      "raw_text": "3.9 mL",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 1966,
+      "sentence": "The mean delivered infusion volume was 14.2 \u00b1 3.9 mL/kg per 4-h HD session which provided the average energy of 902.4 \u00b1 113.3 kcal, protein of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated fatty acid of 4.5 \u00b1 0.6 g.",
+      "context_window": "tion of IDPN. The mean delivered infusion volume was 14.2 \u00b1 3.9 mL/kg per 4-h HD session which provided the average energy of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2032",
+      "claim_type": "mean_sd",
+      "raw_text": "902.4 \u00b1 113.3",
+      "numeric_values": [
+        902.4,
+        113.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2032,
+      "sentence": "The mean delivered infusion volume was 14.2 \u00b1 3.9 mL/kg per 4-h HD session which provided the average energy of 902.4 \u00b1 113.3 kcal, protein of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated fatty acid of 4.5 \u00b1 0.6 g.",
+      "context_window": "/kg per 4-h HD session which provided the average energy of 902.4 \u00b1 113.3 kcal, protein of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2063",
+      "claim_type": "mean_sd",
+      "raw_text": "41.0 \u00b1 5.2",
+      "numeric_values": [
+        41.0,
+        5.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2063,
+      "sentence": "The mean delivered infusion volume was 14.2 \u00b1 3.9 mL/kg per 4-h HD session which provided the average energy of 902.4 \u00b1 113.3 kcal, protein of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated fatty acid of 4.5 \u00b1 0.6 g.",
+      "context_window": "ovided the average energy of 902.4 \u00b1 113.3 kcal, protein of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated fatty acid of 4.5 \u00b1 0.6 g. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2119",
+      "claim_type": "mean_sd",
+      "raw_text": "4.5 \u00b1 0.6",
+      "numeric_values": [
+        4.5,
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2119,
+      "sentence": "The mean delivered infusion volume was 14.2 \u00b1 3.9 mL/kg per 4-h HD session which provided the average energy of 902.4 \u00b1 113.3 kcal, protein of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated fatty acid of 4.5 \u00b1 0.6 g.",
+      "context_window": "of 41.0 \u00b1 5.2 g, and omega-3 polyunsaturated fatty acid of 4.5 \u00b1 0.6 g. Total energy intake was increased to 27.6 \u00b1 6.5 kcal/kg/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2169",
+      "claim_type": "mean_sd",
+      "raw_text": "27.6 \u00b1 6.5",
+      "numeric_values": [
+        27.6,
+        6.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2169,
+      "sentence": "Total energy intake was increased to 27.6 \u00b1 6.5 kcal/kg/day and total protein intake was raised to 1.1 \u00b1 0.2 g/kg/day after IDPN supplementation.",
+      "context_window": "y acid of 4.5 \u00b1 0.6 g. Total energy intake was increased to 27.6 \u00b1 6.5 kcal/kg/day and total protein intake was raised to 1.1 \u00b1 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2231",
+      "claim_type": "mean_sd",
+      "raw_text": "1.1 \u00b1 0.2",
+      "numeric_values": [
+        1.1,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2231,
+      "sentence": "Total energy intake was increased to 27.6 \u00b1 6.5 kcal/kg/day and total protein intake was raised to 1.1 \u00b1 0.2 g/kg/day after IDPN supplementation.",
+      "context_window": ".6 \u00b1 6.5 kcal/kg/day and total protein intake was raised to 1.1 \u00b1 0.2 g/kg/day after IDPN supplementation. After 3 months of IDPN",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-2284",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2284,
+      "sentence": "After 3 months of IDPN supplementation, the mean serum albumin level increased by 0.3 (95% CI; 0.2-0.4) g/dL from baseline and was significantly higher in the IDPN compared with the control group (3.8 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01) (Fig.",
+      "context_window": "sed to 1.1 \u00b1 0.2 g/kg/day after IDPN supplementation. After 3 months of IDPN supplementation, the mean serum albumin level incre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-2365",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2365,
+      "sentence": "After 3 months of IDPN supplementation, the mean serum albumin level increased by 0.3 (95% CI; 0.2-0.4) g/dL from baseline and was significantly higher in the IDPN compared with the control group (3.8 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01) (Fig.",
+      "context_window": "lementation, the mean serum albumin level increased by 0.3 (95% CI; 0.2-0.4) g/dL from baseline and was significantly highe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2475",
+      "claim_type": "mean_sd",
+      "raw_text": "3.8 \u00b1 0.2",
+      "numeric_values": [
+        3.8,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2475,
+      "sentence": "After 3 months of IDPN supplementation, the mean serum albumin level increased by 0.3 (95% CI; 0.2-0.4) g/dL from baseline and was significantly higher in the IDPN compared with the control group (3.8 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01) (Fig.",
+      "context_window": "icantly higher in the IDPN compared with the control group (3.8 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01) (Fig. 2 ). The s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2488",
+      "claim_type": "mean_sd",
+      "raw_text": "3.5 \u00b1 0.3",
+      "numeric_values": [
+        3.5,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2488,
+      "sentence": "After 3 months of IDPN supplementation, the mean serum albumin level increased by 0.3 (95% CI; 0.2-0.4) g/dL from baseline and was significantly higher in the IDPN compared with the control group (3.8 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01) (Fig.",
+      "context_window": "r in the IDPN compared with the control group (3.8 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01) (Fig. 2 ). The significant im",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-2518",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2518,
+      "sentence": "After 3 months of IDPN supplementation, the mean serum albumin level increased by 0.3 (95% CI; 0.2-0.4) g/dL from baseline and was significantly higher in the IDPN compared with the control group (3.8 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01) (Fig.",
+      "context_window": "e control group (3.8 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.01) (Fig. 2 ). The significant improvement in serum albumin le",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2769",
+      "claim_type": "mean_sd",
+      "raw_text": "59.3 \u00b1 12.1",
+      "numeric_values": [
+        59.3,
+        12.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2769,
+      "sentence": "Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ).",
+      "context_window": "al Table S1 ). Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2784",
+      "claim_type": "mean_sd",
+      "raw_text": "61.2 \u00b1 11.9",
+      "numeric_values": [
+        61.2,
+        11.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2784,
+      "sentence": "Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ).",
+      "context_window": "Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-2791",
+      "claim_type": "unit_value",
+      "raw_text": "11.9 kg",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2791,
+      "sentence": "Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ).",
+      "context_window": "ight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it re",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-2805",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2805,
+      "sentence": "Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ).",
+      "context_window": "ficantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchange",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-2834",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2834,
+      "sentence": "Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ).",
+      "context_window": "\u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchanged in the control group (from 5",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2902",
+      "claim_type": "mean_sd",
+      "raw_text": "55.4 \u00b1 11.2",
+      "numeric_values": [
+        55.4,
+        11.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2902,
+      "sentence": "Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ).",
+      "context_window": "6) whereas it remained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ). BMI was also incre",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2917",
+      "claim_type": "mean_sd",
+      "raw_text": "56.1 \u00b1 11.4",
+      "numeric_values": [
+        56.1,
+        11.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2917,
+      "sentence": "Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ).",
+      "context_window": "emained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ). BMI was also increased in the IDP",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-2924",
+      "claim_type": "unit_value",
+      "raw_text": "11.4 kg",
+      "numeric_values": [
+        11.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2924,
+      "sentence": "Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ).",
+      "context_window": "unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ). BMI was also increased in the IDPN g",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-2933",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2933,
+      "sentence": "Body weight was significantly increased from 59.3 \u00b1 12.1 to 61.2 \u00b1 11.9 kg after 3 months of IDPN treatment ( p = 0.006) whereas it remained unchanged in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ).",
+      "context_window": "d in the control group (from 55.4 \u00b1 11.2 to 56.1 \u00b1 11.4 kg, p = 0.22) (Table 2 ). BMI was also increased in the IDPN group compa",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-3030",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3030,
+      "sentence": "BMI was also increased in the IDPN group compared with control group after 3 months but this was of borderline statistical significance ( p = 0.06).",
+      "context_window": "creased in the IDPN group compared with control group after 3 months but this was of borderline statistical significance ( p = 0",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-3093",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3093,
+      "sentence": "BMI was also increased in the IDPN group compared with control group after 3 months but this was of borderline statistical significance ( p = 0.06).",
+      "context_window": "onths but this was of borderline statistical significance ( p = 0.06). After adjusting for baseline consumption, oral energy int",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-3184",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3184,
+      "sentence": "After adjusting for baseline consumption, oral energy intake elevated by 281.2 (95% CI; 120.9-441.4, p = 0.001) kcal/day and protein intake increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN group.",
+      "context_window": "baseline consumption, oral energy intake elevated by 281.2 (95% CI; 120.9-441.4, p = 0.001) kcal/day and protein intake inc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-3205",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3205,
+      "sentence": "After adjusting for baseline consumption, oral energy intake elevated by 281.2 (95% CI; 120.9-441.4, p = 0.001) kcal/day and protein intake increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN group.",
+      "context_window": "oral energy intake elevated by 281.2 (95% CI; 120.9-441.4, p = 0.001) kcal/day and protein intake increased by 8.0 (95% CI; 0.4",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-3262",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3262,
+      "sentence": "After adjusting for baseline consumption, oral energy intake elevated by 281.2 (95% CI; 120.9-441.4, p = 0.001) kcal/day and protein intake increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN group.",
+      "context_window": "4, p = 0.001) kcal/day and protein intake increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN gro",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-3282",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3282,
+      "sentence": "After adjusting for baseline consumption, oral energy intake elevated by 281.2 (95% CI; 120.9-441.4, p = 0.001) kcal/day and protein intake increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN group.",
+      "context_window": "ay and protein intake increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN group. In contrast, spontane",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-3301",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3301,
+      "sentence": "After adjusting for baseline consumption, oral energy intake elevated by 281.2 (95% CI; 120.9-441.4, p = 0.001) kcal/day and protein intake increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN group.",
+      "context_window": "ke increased by 8.0 (95% CI; 0.4 - 15.5, p = 0.04) g/day at 3 months in the IDPN group. In contrast, spontaneous energy intake w",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-3423",
+      "claim_type": "mean_sd",
+      "raw_text": "206.8 \u00b1 310.9",
+      "numeric_values": [
+        206.8,
+        310.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3423,
+      "sentence": "In contrast, spontaneous energy intake was significantly reduced in the control group (from 1,206.8 \u00b1 310.9 to 1,035.2 \u00b1 233.4 kcal/day, p = 0.004).",
+      "context_window": "take was significantly reduced in the control group (from 1,206.8 \u00b1 310.9 to 1,035.2 \u00b1 233.4 kcal/day, p = 0.004). Despite IDPN admin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-3442",
+      "claim_type": "mean_sd",
+      "raw_text": "035.2 \u00b1 233.4",
+      "numeric_values": [
+        35.2,
+        233.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3442,
+      "sentence": "In contrast, spontaneous energy intake was significantly reduced in the control group (from 1,206.8 \u00b1 310.9 to 1,035.2 \u00b1 233.4 kcal/day, p = 0.004).",
+      "context_window": "tly reduced in the control group (from 1,206.8 \u00b1 310.9 to 1,035.2 \u00b1 233.4 kcal/day, p = 0.004). Despite IDPN administration for 3-mon",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-3466",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3466,
+      "sentence": "In contrast, spontaneous energy intake was significantly reduced in the control group (from 1,206.8 \u00b1 310.9 to 1,035.2 \u00b1 233.4 kcal/day, p = 0.004).",
+      "context_window": "ol group (from 1,206.8 \u00b1 310.9 to 1,035.2 \u00b1 233.4 kcal/day, p = 0.004). Despite IDPN administration for 3-month duration, dialysi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-3646",
+      "claim_type": "mean_sd",
+      "raw_text": "122.4 \u00b1 57.7",
+      "numeric_values": [
+        122.4,
+        57.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3646,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-3662",
+      "claim_type": "mean_sd",
+      "raw_text": "109.9 \u00b1 53.9",
+      "numeric_values": [
+        109.9,
+        53.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3662,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "ontrol group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%,",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-3670",
+      "claim_type": "unit_value",
+      "raw_text": "53.9 mg/dL",
+      "numeric_values": [
+        53.9
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 3670,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "roup including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-3682",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3682,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "ng plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-d",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-3709",
+      "claim_type": "mean_sd",
+      "raw_text": "5.5 \u00b1 0.8",
+      "numeric_values": [
+        5.5,
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3709,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": ".4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-3722",
+      "claim_type": "mean_sd",
+      "raw_text": "5.2 \u00b1 0.7",
+      "numeric_values": [
+        5.2,
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3722,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-3728",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3728,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "\u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 v",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-3734",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.34",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3734,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 2",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-3779",
+      "claim_type": "mean_sd",
+      "raw_text": "55.2 \u00b1 15.3",
+      "numeric_values": [
+        55.2,
+        15.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3779,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-3794",
+      "claim_type": "mean_sd",
+      "raw_text": "65.7 \u00b1 23.2",
+      "numeric_values": [
+        65.7,
+        23.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3794,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-3801",
+      "claim_type": "unit_value",
+      "raw_text": "23.2 mg/dL",
+      "numeric_values": [
+        23.2
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 3801,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "4), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-3813",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3813,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "ysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-3851",
+      "claim_type": "mean_sd",
+      "raw_text": "2.0 \u00b1 0.4",
+      "numeric_values": [
+        2.0,
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3851,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively. Comparison of serum",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-3864",
+      "claim_type": "mean_sd",
+      "raw_text": "1.9 \u00b1 0.6",
+      "numeric_values": [
+        1.9,
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3864,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively. Comparison of serum albumin level",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-3875",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.80",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3875,
+      "sentence": "Despite IDPN administration for 3-month duration, dialysis adequacy and metabolic profiles in the IDPN were similar to the control group including plasma triglyceride (122.4 \u00b1 57.7 vs 109.9 \u00b1 53.9 mg/dL, p = 0.50), hemoglobin A1C (5.5 \u00b1 0.8 vs 5.2 \u00b1 0.7%, p = 0.34), pre-dialysis blood urea nitrogen (55.2 \u00b1 15.3 vs 65.7 \u00b1 23.2 mg/dL, p = 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively.",
+      "context_window": "= 0.11), and single pool Kt/V urea (2.0 \u00b1 0.4 vs 1.9 \u00b1 0.6, p = 0.80) respectively. Comparison of serum albumin level as the pr",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-4083",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4083,
+      "sentence": "Data are shown as mean \u00b1 SD. p values for between groups comparison. *denotes p < 0.01 between the control and IDPN group at 3 months.",
+      "context_window": "mean \u00b1 SD. p values for between groups comparison. *denotes p < 0.01 between the control and IDPN group at 3 months. Comparison",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-4130",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4130,
+      "sentence": "Data are shown as mean \u00b1 SD. p values for between groups comparison. *denotes p < 0.01 between the control and IDPN group at 3 months.",
+      "context_window": "on. *denotes p < 0.01 between the control and IDPN group at 3 months. Comparison of changes of primary and secondary outcomes b",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-4623",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4623,
+      "sentence": "Data are presented as mean \u00b1 SD and median (25th-75th).\n\n* p value between groups comparison at month 3.\n\n** P < 0.01 after 3 months in the IDPN (intervention) group compared with baseline.\n\n\u2020 P < 0.05 after 3 months in the control group compared with baseline.",
+      "context_window": "75th). * p value between groups comparison at month 3. ** P < 0.01 after 3 months in the IDPN (intervention) group compared wi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-4638",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4638,
+      "sentence": "Data are presented as mean \u00b1 SD and median (25th-75th).\n\n* p value between groups comparison at month 3.\n\n** P < 0.01 after 3 months in the IDPN (intervention) group compared with baseline.\n\n\u2020 P < 0.05 after 3 months in the control group compared with baseline.",
+      "context_window": "ue between groups comparison at month 3. ** P < 0.01 after 3 months in the IDPN (intervention) group compared with baseline. \u2020",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-4707",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4707,
+      "sentence": "Data are presented as mean \u00b1 SD and median (25th-75th).\n\n* p value between groups comparison at month 3.\n\n** P < 0.01 after 3 months in the IDPN (intervention) group compared with baseline.\n\n\u2020 P < 0.05 after 3 months in the control group compared with baseline.",
+      "context_window": "in the IDPN (intervention) group compared with baseline. \u2020 P < 0.05 after 3 months in the control group compared with baseline.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-4722",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4722,
+      "sentence": "Data are presented as mean \u00b1 SD and median (25th-75th).\n\n* p value between groups comparison at month 3.\n\n** P < 0.01 after 3 months in the IDPN (intervention) group compared with baseline.\n\n\u2020 P < 0.05 after 3 months in the control group compared with baseline.",
+      "context_window": "tervention) group compared with baseline. \u2020 P < 0.05 after 3 months in the control group compared with baseline. Serum prealbu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-4846",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4846,
+      "sentence": "Serum prealbumin levels were comparable between groups at the end of 3 months.",
+      "context_window": "albumin levels were comparable between groups at the end of 3 months. The analysis of body composition revealed that there were",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-4962",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.69",
+      "numeric_values": [
+        0.69
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4962,
+      "sentence": "The analysis of body composition revealed that there were no absolute changes of total-body muscle mass ( p = 0.69), appendicular muscle mass ( p = 0.61), and total body fat ( p = 0.14) after 3 months.",
+      "context_window": "there were no absolute changes of total-body muscle mass ( p = 0.69), appendicular muscle mass ( p = 0.61), and total body fat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-5000",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.61",
+      "numeric_values": [
+        0.61
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5000,
+      "sentence": "The analysis of body composition revealed that there were no absolute changes of total-body muscle mass ( p = 0.69), appendicular muscle mass ( p = 0.61), and total body fat ( p = 0.14) after 3 months.",
+      "context_window": "al-body muscle mass ( p = 0.69), appendicular muscle mass ( p = 0.61), and total body fat ( p = 0.14) after 3 months. Muscle fun",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-5032",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.14",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5032,
+      "sentence": "The analysis of body composition revealed that there were no absolute changes of total-body muscle mass ( p = 0.69), appendicular muscle mass ( p = 0.61), and total body fat ( p = 0.14) after 3 months.",
+      "context_window": "appendicular muscle mass ( p = 0.61), and total body fat ( p = 0.14) after 3 months. Muscle function assessed by handgrip stren",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5048",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5048,
+      "sentence": "The analysis of body composition revealed that there were no absolute changes of total-body muscle mass ( p = 0.69), appendicular muscle mass ( p = 0.61), and total body fat ( p = 0.14) after 3 months.",
+      "context_window": "scle mass ( p = 0.61), and total body fat ( p = 0.14) after 3 months. Muscle function assessed by handgrip strength did not diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-5156",
+      "claim_type": "mean_sd",
+      "raw_text": "14.0 \u00b1 7.1",
+      "numeric_values": [
+        14.0,
+        7.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5156,
+      "sentence": "Muscle function assessed by handgrip strength did not differ between the control and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results were similar after stratification by gender (Table 2 ).",
+      "context_window": "trength did not differ between the control and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-5170",
+      "claim_type": "mean_sd",
+      "raw_text": "12.5 \u00b1 6.1",
+      "numeric_values": [
+        12.5,
+        6.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5170,
+      "sentence": "Muscle function assessed by handgrip strength did not differ between the control and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results were similar after stratification by gender (Table 2 ).",
+      "context_window": "t differ between the control and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results were similar",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5177",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 kg",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5177,
+      "sentence": "Muscle function assessed by handgrip strength did not differ between the control and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results were similar after stratification by gender (Table 2 ).",
+      "context_window": "r between the control and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results were similar aft",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-5199",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.48",
+      "numeric_values": [
+        0.48
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5199,
+      "sentence": "Muscle function assessed by handgrip strength did not differ between the control and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results were similar after stratification by gender (Table 2 ).",
+      "context_window": "and IDPN groups (14.0 \u00b1 7.1 vs 12.5 \u00b1 6.1 kg, respectively, p = 0.48) and those results were similar after stratification by gen",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-5460",
+      "claim_type": "percentage",
+      "raw_text": "83.3%",
+      "numeric_values": [
+        83.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5460,
+      "sentence": "Although the proportion of patients having MIS \u2265 5 points as categorical value in the IDPN group did not reach statistical significance compared with the control group (76.5 vs 83.3%, respectively, p = 0.61), the composite score assessed by MIS as continuous variables significantly reduced from 8.7 \u00b1 3.8 to 6.8 \u00b1 3.2 points after 3 months of IDPN ( p = 0.005).",
+      "context_window": "tical significance compared with the control group (76.5 vs 83.3%, respectively, p = 0.61), the composite score assessed by M",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-5481",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.61",
+      "numeric_values": [
+        0.61
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5481,
+      "sentence": "Although the proportion of patients having MIS \u2265 5 points as categorical value in the IDPN group did not reach statistical significance compared with the control group (76.5 vs 83.3%, respectively, p = 0.61), the composite score assessed by MIS as continuous variables significantly reduced from 8.7 \u00b1 3.8 to 6.8 \u00b1 3.2 points after 3 months of IDPN ( p = 0.005).",
+      "context_window": "mpared with the control group (76.5 vs 83.3%, respectively, p = 0.61), the composite score assessed by MIS as continuous variabl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-5579",
+      "claim_type": "mean_sd",
+      "raw_text": "8.7 \u00b1 3.8",
+      "numeric_values": [
+        8.7,
+        3.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5579,
+      "sentence": "Although the proportion of patients having MIS \u2265 5 points as categorical value in the IDPN group did not reach statistical significance compared with the control group (76.5 vs 83.3%, respectively, p = 0.61), the composite score assessed by MIS as continuous variables significantly reduced from 8.7 \u00b1 3.8 to 6.8 \u00b1 3.2 points after 3 months of IDPN ( p = 0.005).",
+      "context_window": "d by MIS as continuous variables significantly reduced from 8.7 \u00b1 3.8 to 6.8 \u00b1 3.2 points after 3 months of IDPN ( p = 0.005). Th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-5592",
+      "claim_type": "mean_sd",
+      "raw_text": "6.8 \u00b1 3.2",
+      "numeric_values": [
+        6.8,
+        3.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5592,
+      "sentence": "Although the proportion of patients having MIS \u2265 5 points as categorical value in the IDPN group did not reach statistical significance compared with the control group (76.5 vs 83.3%, respectively, p = 0.61), the composite score assessed by MIS as continuous variables significantly reduced from 8.7 \u00b1 3.8 to 6.8 \u00b1 3.2 points after 3 months of IDPN ( p = 0.005).",
+      "context_window": "ontinuous variables significantly reduced from 8.7 \u00b1 3.8 to 6.8 \u00b1 3.2 points after 3 months of IDPN ( p = 0.005). The non-laborat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5615",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5615,
+      "sentence": "Although the proportion of patients having MIS \u2265 5 points as categorical value in the IDPN group did not reach statistical significance compared with the control group (76.5 vs 83.3%, respectively, p = 0.61), the composite score assessed by MIS as continuous variables significantly reduced from 8.7 \u00b1 3.8 to 6.8 \u00b1 3.2 points after 3 months of IDPN ( p = 0.005).",
+      "context_window": "nificantly reduced from 8.7 \u00b1 3.8 to 6.8 \u00b1 3.2 points after 3 months of IDPN ( p = 0.005). The non-laboratory criteria of MIS sc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-5634",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5634,
+      "sentence": "Although the proportion of patients having MIS \u2265 5 points as categorical value in the IDPN group did not reach statistical significance compared with the control group (76.5 vs 83.3%, respectively, p = 0.61), the composite score assessed by MIS as continuous variables significantly reduced from 8.7 \u00b1 3.8 to 6.8 \u00b1 3.2 points after 3 months of IDPN ( p = 0.005).",
+      "context_window": "from 8.7 \u00b1 3.8 to 6.8 \u00b1 3.2 points after 3 months of IDPN ( p = 0.005). The non-laboratory criteria of MIS score including patien",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-5804",
+      "claim_type": "mean_sd",
+      "raw_text": "4.9 \u00b1 3.0",
+      "numeric_values": [
+        4.9,
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5804,
+      "sentence": "The non-laboratory criteria of MIS score including patients\u2019 related medical history and physical examination also significantly decreased in the IDPN group (4.9 \u00b1 3.0 to 3.5 \u00b1 2.4, p = 0.02).",
+      "context_window": "examination also significantly decreased in the IDPN group (4.9 \u00b1 3.0 to 3.5 \u00b1 2.4, p = 0.02). All nutritional outcomes after IDP",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-5817",
+      "claim_type": "mean_sd",
+      "raw_text": "3.5 \u00b1 2.4",
+      "numeric_values": [
+        3.5,
+        2.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5817,
+      "sentence": "The non-laboratory criteria of MIS score including patients\u2019 related medical history and physical examination also significantly decreased in the IDPN group (4.9 \u00b1 3.0 to 3.5 \u00b1 2.4, p = 0.02).",
+      "context_window": "lso significantly decreased in the IDPN group (4.9 \u00b1 3.0 to 3.5 \u00b1 2.4, p = 0.02). All nutritional outcomes after IDPN treatment w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-5828",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5828,
+      "sentence": "The non-laboratory criteria of MIS score including patients\u2019 related medical history and physical examination also significantly decreased in the IDPN group (4.9 \u00b1 3.0 to 3.5 \u00b1 2.4, p = 0.02).",
+      "context_window": "cantly decreased in the IDPN group (4.9 \u00b1 3.0 to 3.5 \u00b1 2.4, p = 0.02). All nutritional outcomes after IDPN treatment was summari",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-6329",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6329,
+      "sentence": "Percentage change = [(3 months follow up - baseline values)/baseline values] \u00d7 100. * denotes p < 0.05 after 3 months of IDPN treatment. ** indicates p < 0.01 between groups comparison at 3 months.",
+      "context_window": "mean \u00b1 standard error of mean (SEM). Percentage change = [(3 months follow up - baseline values)/baseline values] \u00d7 100. * deno",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-6401",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6401,
+      "sentence": "Percentage change = [(3 months follow up - baseline values)/baseline values] \u00d7 100. * denotes p < 0.05 after 3 months of IDPN treatment. ** indicates p < 0.01 between groups comparison at 3 months.",
+      "context_window": "low up - baseline values)/baseline values] \u00d7 100. * denotes p < 0.05 after 3 months of IDPN treatment. ** indicates p < 0.01 bet",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-6416",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6416,
+      "sentence": "Percentage change = [(3 months follow up - baseline values)/baseline values] \u00d7 100. * denotes p < 0.05 after 3 months of IDPN treatment. ** indicates p < 0.01 between groups comparison at 3 months.",
+      "context_window": "ne values)/baseline values] \u00d7 100. * denotes p < 0.05 after 3 months of IDPN treatment. ** indicates p < 0.01 between groups com",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-6457",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6457,
+      "sentence": "Percentage change = [(3 months follow up - baseline values)/baseline values] \u00d7 100. * denotes p < 0.05 after 3 months of IDPN treatment. ** indicates p < 0.01 between groups comparison at 3 months.",
+      "context_window": "tes p < 0.05 after 3 months of IDPN treatment. ** indicates p < 0.01 between groups comparison at 3 months. Regarding inflammat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-6495",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6495,
+      "sentence": "Percentage change = [(3 months follow up - baseline values)/baseline values] \u00d7 100. * denotes p < 0.05 after 3 months of IDPN treatment. ** indicates p < 0.01 between groups comparison at 3 months.",
+      "context_window": "eatment. ** indicates p < 0.01 between groups comparison at 3 months. Regarding inflammatory markers, both plasma IL-6 ( p = 0.",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-6557",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6557,
+      "sentence": "Regarding inflammatory markers, both plasma IL-6 ( p = 0.35) and hs-CRP levels ( p = 0.92) did not differ between groups comparison at 3 months.",
+      "context_window": "months. Regarding inflammatory markers, both plasma IL-6 ( p = 0.35) and hs-CRP levels ( p = 0.92) did not differ between group",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-6587",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6587,
+      "sentence": "Regarding inflammatory markers, both plasma IL-6 ( p = 0.35) and hs-CRP levels ( p = 0.92) did not differ between groups comparison at 3 months.",
+      "context_window": "y markers, both plasma IL-6 ( p = 0.35) and hs-CRP levels ( p = 0.92) did not differ between groups comparison at 3 months. Alth",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-6641",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6641,
+      "sentence": "Regarding inflammatory markers, both plasma IL-6 ( p = 0.35) and hs-CRP levels ( p = 0.92) did not differ between groups comparison at 3 months.",
+      "context_window": "els ( p = 0.92) did not differ between groups comparison at 3 months. Although plasma IL-6 levels tended to decrease in the IDPN",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-6749",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6749,
+      "sentence": "Although plasma IL-6 levels tended to decrease in the IDPN group from the beginning to the end of 3 months, this result did not reach statistical significance ( p = 0.56) (Table 2 ).",
+      "context_window": "decrease in the IDPN group from the beginning to the end of 3 months, this result did not reach statistical significance ( p = 0",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-6812",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.56",
+      "numeric_values": [
+        0.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6812,
+      "sentence": "Although plasma IL-6 levels tended to decrease in the IDPN group from the beginning to the end of 3 months, this result did not reach statistical significance ( p = 0.56) (Table 2 ).",
+      "context_window": "onths, this result did not reach statistical significance ( p = 0.56) (Table 2 ). For appetite-related biomarkers, plasma acylat",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-6934",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.86",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6934,
+      "sentence": "For appetite-related biomarkers, plasma acylated ghrelin levels were not different between groups ( p = 0.86) and also after at the end of 3 months for each group ( p > 0.05).",
+      "context_window": "acylated ghrelin levels were not different between groups ( p = 0.86) and also after at the end of 3 months for each group ( p >",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-6973",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6973,
+      "sentence": "For appetite-related biomarkers, plasma acylated ghrelin levels were not different between groups ( p = 0.86) and also after at the end of 3 months for each group ( p > 0.05).",
+      "context_window": "ent between groups ( p = 0.86) and also after at the end of 3 months for each group ( p > 0.05). Of note, plasma leptin levels w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-6999",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6999,
+      "sentence": "For appetite-related biomarkers, plasma acylated ghrelin levels were not different between groups ( p = 0.86) and also after at the end of 3 months for each group ( p > 0.05).",
+      "context_window": ".86) and also after at the end of 3 months for each group ( p > 0.05). Of note, plasma leptin levels were unaltered in the IDPN",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-7097",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7097,
+      "sentence": "Of note, plasma leptin levels were unaltered in the IDPN group after supplementation ( p = 0.62) whereas it was significantly increased from baseline to 3 months in the control group ( p = 0.03) (Table 2 ).",
+      "context_window": "ls were unaltered in the IDPN group after supplementation ( p = 0.62) whereas it was significantly increased from baseline to 3",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-7163",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7163,
+      "sentence": "Of note, plasma leptin levels were unaltered in the IDPN group after supplementation ( p = 0.62) whereas it was significantly increased from baseline to 3 months in the control group ( p = 0.03) (Table 2 ).",
+      "context_window": "62) whereas it was significantly increased from baseline to 3 months in the control group ( p = 0.03) (Table 2 ). At 6 months,",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-7195",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7195,
+      "sentence": "Of note, plasma leptin levels were unaltered in the IDPN group after supplementation ( p = 0.62) whereas it was significantly increased from baseline to 3 months in the control group ( p = 0.03) (Table 2 ).",
+      "context_window": "increased from baseline to 3 months in the control group ( p = 0.03) (Table 2 ). At 6 months, the average serum albumin in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-7221",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7221,
+      "sentence": "At 6 months, the average serum albumin in the IDPN group decreased by 0.1 (95% CI; -0.3 to 0.4) g/dL but were still significantly higher when compared with baseline (3.7 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.04) (Fig.",
+      "context_window": "o 3 months in the control group ( p = 0.03) (Table 2 ). At 6 months, the average serum albumin in the IDPN group decreased by 0",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-7293",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7293,
+      "sentence": "At 6 months, the average serum albumin in the IDPN group decreased by 0.1 (95% CI; -0.3 to 0.4) g/dL but were still significantly higher when compared with baseline (3.7 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.04) (Fig.",
+      "context_window": "e average serum albumin in the IDPN group decreased by 0.1 (95% CI; -0.3 to 0.4) g/dL but were still significantly higher w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-7384",
+      "claim_type": "mean_sd",
+      "raw_text": "3.7 \u00b1 0.2",
+      "numeric_values": [
+        3.7,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7384,
+      "sentence": "At 6 months, the average serum albumin in the IDPN group decreased by 0.1 (95% CI; -0.3 to 0.4) g/dL but were still significantly higher when compared with baseline (3.7 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.04) (Fig.",
+      "context_window": "ere still significantly higher when compared with baseline (3.7 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.04) (Fig. 2 ). Furth",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-7397",
+      "claim_type": "mean_sd",
+      "raw_text": "3.5 \u00b1 0.3",
+      "numeric_values": [
+        3.5,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7397,
+      "sentence": "At 6 months, the average serum albumin in the IDPN group decreased by 0.1 (95% CI; -0.3 to 0.4) g/dL but were still significantly higher when compared with baseline (3.7 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.04) (Fig.",
+      "context_window": "nificantly higher when compared with baseline (3.7 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.04) (Fig. 2 ). Furthermore, the a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-7427",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7427,
+      "sentence": "At 6 months, the average serum albumin in the IDPN group decreased by 0.1 (95% CI; -0.3 to 0.4) g/dL but were still significantly higher when compared with baseline (3.7 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.04) (Fig.",
+      "context_window": "d with baseline (3.7 \u00b1 0.2 vs 3.5 \u00b1 0.3 g/dL, respectively, p = 0.04) (Fig. 2 ). Furthermore, the average spontaneous oral energ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-7519",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7519,
+      "sentence": "Furthermore, the average spontaneous oral energy and protein intake at 6 months were persistently elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively).",
+      "context_window": ", the average spontaneous oral energy and protein intake at 6 months were persistently elevated from the study inception (1,323.",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-7583",
+      "claim_type": "mean_sd",
+      "raw_text": "323.3 \u00b1 650.7",
+      "numeric_values": [
+        323.3,
+        650.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7583,
+      "sentence": "Furthermore, the average spontaneous oral energy and protein intake at 6 months were persistently elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively).",
+      "context_window": "nths were persistently elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-7602",
+      "claim_type": "mean_sd",
+      "raw_text": "073.6 \u00b1 408.6",
+      "numeric_values": [
+        73.6,
+        408.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7602,
+      "sentence": "Furthermore, the average spontaneous oral energy and protein intake at 6 months were persistently elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively).",
+      "context_window": "tly elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-7626",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7626,
+      "sentence": "Furthermore, the average spontaneous oral energy and protein intake at 6 months were persistently elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively).",
+      "context_window": "udy inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectivel",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-7639",
+      "claim_type": "mean_sd",
+      "raw_text": "53.7 \u00b1 16.1",
+      "numeric_values": [
+        53.7,
+        16.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7639,
+      "sentence": "Furthermore, the average spontaneous oral energy and protein intake at 6 months were persistently elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively).",
+      "context_window": "(1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively). In the regre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-7654",
+      "claim_type": "mean_sd",
+      "raw_text": "44.6 \u00b1 17.9",
+      "numeric_values": [
+        44.6,
+        17.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7654,
+      "sentence": "Furthermore, the average spontaneous oral energy and protein intake at 6 months were persistently elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively).",
+      "context_window": ".7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively). In the regression model com",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-7673",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7673,
+      "sentence": "Furthermore, the average spontaneous oral energy and protein intake at 6 months were persistently elevated from the study inception (1,323.3 \u00b1 650.7 vs 1,073.6 \u00b1 408.6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively).",
+      "context_window": ".6 kcal/day, p = 0.04 and 53.7 \u00b1 16.1 vs 44.6 \u00b1 17.9 g/day, p = 0.02, respectively). In the regression model comparing outcome c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-7915",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.89",
+      "numeric_values": [
+        0.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7915,
+      "sentence": "In the regression model comparing outcome changes from month 3 to the study exit at month 6, there were no between-group differences in the absolute changes of any other nutritional parameters including body weight ( p = 0.89), serum prealbumin ( p = 0.17), and also MIS ( p = 0.19) (Table 3 ).",
+      "context_window": "of any other nutritional parameters including body weight ( p = 0.89), serum prealbumin ( p = 0.17), and also MIS ( p = 0.19) (T",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-7945",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.17",
+      "numeric_values": [
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7945,
+      "sentence": "In the regression model comparing outcome changes from month 3 to the study exit at month 6, there were no between-group differences in the absolute changes of any other nutritional parameters including body weight ( p = 0.89), serum prealbumin ( p = 0.17), and also MIS ( p = 0.19) (Table 3 ).",
+      "context_window": "eters including body weight ( p = 0.89), serum prealbumin ( p = 0.17), and also MIS ( p = 0.19) (Table 3 ). Changes of nutritio",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-7971",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7971,
+      "sentence": "In the regression model comparing outcome changes from month 3 to the study exit at month 6, there were no between-group differences in the absolute changes of any other nutritional parameters including body weight ( p = 0.89), serum prealbumin ( p = 0.17), and also MIS ( p = 0.19) (Table 3 ).",
+      "context_window": "t ( p = 0.89), serum prealbumin ( p = 0.17), and also MIS ( p = 0.19) (Table 3 ). Changes of nutritional parameters as continuo",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-8666",
+      "claim_type": "mean_sd",
+      "raw_text": "1.3 \u00b1 1.2",
+      "numeric_values": [
+        1.3,
+        1.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8666,
+      "sentence": "The excess extracellular fluid representing overhydration status did not differ between IDPN and the control group (1.3 \u00b1 1.2 vs 1.3 \u00b1 1.0 L, p = 0.98, respectively).",
+      "context_window": "n status did not differ between IDPN and the control group (1.3 \u00b1 1.2 vs 1.3 \u00b1 1.0 L, p = 0.98, respectively). None of the patien",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-8679",
+      "claim_type": "mean_sd",
+      "raw_text": "1.3 \u00b1 1.0",
+      "numeric_values": [
+        1.3,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8679,
+      "sentence": "The excess extracellular fluid representing overhydration status did not differ between IDPN and the control group (1.3 \u00b1 1.2 vs 1.3 \u00b1 1.0 L, p = 0.98, respectively).",
+      "context_window": "not differ between IDPN and the control group (1.3 \u00b1 1.2 vs 1.3 \u00b1 1.0 L, p = 0.98, respectively). None of the patients without di",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-8692",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.98",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8692,
+      "sentence": "The excess extracellular fluid representing overhydration status did not differ between IDPN and the control group (1.3 \u00b1 1.2 vs 1.3 \u00b1 1.0 L, p = 0.98, respectively).",
+      "context_window": "tween IDPN and the control group (1.3 \u00b1 1.2 vs 1.3 \u00b1 1.0 L, p = 0.98, respectively). None of the patients without diabetes and 2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-8759",
+      "claim_type": "percentage",
+      "raw_text": "22.2%",
+      "numeric_values": [
+        22.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8759,
+      "sentence": "None of the patients without diabetes and 22.2% of diabetes patients received an additional insulin injection during IDPN infusion.",
+      "context_window": "8, respectively). None of the patients without diabetes and 22.2% of diabetes patients received an additional insulin injecti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-8909",
+      "claim_type": "mean_sd",
+      "raw_text": "6.0 \u00b1 1.3",
+      "numeric_values": [
+        6.0,
+        1.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8909,
+      "sentence": "The mean dose of rapid-acting insulin used in the study was 6.0 \u00b1 1.3 (range 4-8) units per dialysis session.",
+      "context_window": "The mean dose of rapid-acting insulin used in the study was 6.0 \u00b1 1.3 (range 4-8) units per dialysis session. At the study comple",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-9255",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9255,
+      "sentence": "NS, no statistical significant difference between control and intervention group ( p > 0.05).",
+      "context_window": "ificant difference between control and intervention group ( p > 0.05).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-884",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 884,
+      "sentence": "Data from a large epidemiological cohort revealed that an increase in serum albumin of 0.2-0.3 g/dL was associated with 20% lower likelihood of death after adjusting for covariates 23 .",
+      "context_window": "crease in serum albumin of 0.2-0.3 g/dL was associated with 20% lower likelihood of death after adjusting for covariates 23",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-2094",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2094,
+      "sentence": "The lack of positive findings in the FineS 27 might be partly explained by the relatively high rates of IDPN discontinuation (33% at the end of study).",
+      "context_window": "ained by the relatively high rates of IDPN discontinuation (33% at the end of study). Furthermore, the study design used co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2632",
+      "claim_type": "mean_sd",
+      "raw_text": "10.3 \u00b1 4.0",
+      "numeric_values": [
+        10.3,
+        4.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2632,
+      "sentence": "This disparity in the results might be owing to the lower amount of the infused IDPN volume per session (10.3 \u00b1 4.0 vs 14.2 \u00b1 3.9 mL/kg/session) and higher proportion of severe malnourished participants in their study compared with ours (24.1 vs 0%).",
+      "context_window": "to the lower amount of the infused IDPN volume per session (10.3 \u00b1 4.0 vs 14.2 \u00b1 3.9 mL/kg/session) and higher proportion of sever",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-msd-2646",
+      "claim_type": "mean_sd",
+      "raw_text": "14.2 \u00b1 3.9",
+      "numeric_values": [
+        14.2,
+        3.9
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2646,
+      "sentence": "This disparity in the results might be owing to the lower amount of the infused IDPN volume per session (10.3 \u00b1 4.0 vs 14.2 \u00b1 3.9 mL/kg/session) and higher proportion of severe malnourished participants in their study compared with ours (24.1 vs 0%).",
+      "context_window": "mount of the infused IDPN volume per session (10.3 \u00b1 4.0 vs 14.2 \u00b1 3.9 mL/kg/session) and higher proportion of severe malnourished",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-2653",
+      "claim_type": "unit_value",
+      "raw_text": "3.9 mL",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 2653,
+      "sentence": "This disparity in the results might be owing to the lower amount of the infused IDPN volume per session (10.3 \u00b1 4.0 vs 14.2 \u00b1 3.9 mL/kg/session) and higher proportion of severe malnourished participants in their study compared with ours (24.1 vs 0%).",
+      "context_window": "f the infused IDPN volume per session (10.3 \u00b1 4.0 vs 14.2 \u00b1 3.9 mL/kg/session) and higher proportion of severe malnourished pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-2773",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2773,
+      "sentence": "This disparity in the results might be owing to the lower amount of the infused IDPN volume per session (10.3 \u00b1 4.0 vs 14.2 \u00b1 3.9 mL/kg/session) and higher proportion of severe malnourished participants in their study compared with ours (24.1 vs 0%).",
+      "context_window": "hed participants in their study compared with ours (24.1 vs 0%). Although prealbumin is often considered as a more sensit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-pct-3194",
+      "claim_type": "percentage",
+      "raw_text": "28.9%",
+      "numeric_values": [
+        28.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3194,
+      "sentence": "In recognition that serum prealbumin level is mainly determined by the degradation of retinol-binding protein in renal tubules 29 , this possibility might induce a more interfered result on serum prealbumin concentrations in our study (28.9% having significant residual kidney function) compared with almost anuric ESKD patients enrolled in the study by Marsen et al.",
+      "context_window": "red result on serum prealbumin concentrations in our study (28.9% having significant residual kidney function) compared with",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-3559",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3559,
+      "sentence": "In contrast to our report that showed a significant increment in body weight ( p = 0.01) and a trend toward higher BMI ( p = 0.06), previous noncontrolled studies 31 , 32 found that IDPN therapy using amino acid solution as a solitary component was associated with solely elevated serum albumin.",
+      "context_window": "report that showed a significant increment in body weight ( p = 0.01) and a trend toward higher BMI ( p = 0.06), previous noncon",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-p-3601",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3601,
+      "sentence": "In contrast to our report that showed a significant increment in body weight ( p = 0.01) and a trend toward higher BMI ( p = 0.06), previous noncontrolled studies 31 , 32 found that IDPN therapy using amino acid solution as a solitary component was associated with solely elevated serum albumin.",
+      "context_window": "in body weight ( p = 0.01) and a trend toward higher BMI ( p = 0.06), previous noncontrolled studies 31 , 32 found that IDPN th",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5427",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5427,
+      "sentence": "Although the novel generation of parenteral lipid emulsion extracting from fish oil with omega-3 fatty acid such as eicosapentaenoic acid (EPA) may provide anti-inflammatory properties on immune function 37 , plasma hs-CRP and IL-6 levels were unaffected after 3 months among IDPN and the control groups (Table 2 ).",
+      "context_window": "on 37 , plasma hs-CRP and IL-6 levels were unaffected after 3 months among IDPN and the control groups (Table 2 ). The lower dos",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5537",
+      "claim_type": "unit_value",
+      "raw_text": "2820 mg",
+      "numeric_values": [
+        2820.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5537,
+      "sentence": "The lower dose of EPA used in our study (approximately 2820 mg/week) might account for the negative findings compared with a previous report dose of fish oil-related immune modulating effects for at least equivalent to EPA 4200 mg weekly 38 .",
+      "context_window": "2 ). The lower dose of EPA used in our study (approximately 2820 mg/week) might account for the negative findings compared with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5705",
+      "claim_type": "unit_value",
+      "raw_text": "4200 mg",
+      "numeric_values": [
+        4200.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5705,
+      "sentence": "The lower dose of EPA used in our study (approximately 2820 mg/week) might account for the negative findings compared with a previous report dose of fish oil-related immune modulating effects for at least equivalent to EPA 4200 mg weekly 38 .",
+      "context_window": "ed immune modulating effects for at least equivalent to EPA 4200 mg weekly 38 . Our analysis revealed that there was a signific",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-5875",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5875,
+      "sentence": "Our analysis revealed that there was a significant elevation of plasma leptin in the control group whereas it remained unchanged in the IDPN group at 3 months (Table 2 ).",
+      "context_window": "ol group whereas it remained unchanged in the IDPN group at 3 months (Table 2 ). A growing body of evidence indicates that lepti",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8927103_the_beneficial_effects_of_intradialytic_parenteral_nutrition-u-7503",
+      "claim_type": "unit_value",
+      "raw_text": "14.2 mL",
+      "numeric_values": [
+        14.2
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 7503,
+      "sentence": "In spite of a potential of volume overload induced by IDPN, we found no fluid-related complications with the average infusion volume of 14.2 mL/kg per dialysis session in this study.",
+      "context_window": "d-related complications with the average infusion volume of 14.2 mL/kg per dialysis session in this study. Although fish oil ma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

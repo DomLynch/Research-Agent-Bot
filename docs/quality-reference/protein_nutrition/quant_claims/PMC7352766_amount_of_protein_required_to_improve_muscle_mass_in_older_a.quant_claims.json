@@ -1,0 +1,391 @@
+{
+  "paper_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a",
+  "doi": "10.3390/nu12061700",
+  "extracted_at": "2026-05-05T22:35:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "p_value": 3,
+    "percentage": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-574",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 574,
+      "sentence": "Ninety-six community-dwelling older adults consumed 0.8, 1.2, or 1.5 g/kg/day of protein and maintained their usual physical activity for 12 weeks.",
+      "context_window": "of protein and maintained their usual physical activity for 12 weeks. Increased protein intake of >0.54 g/kg/day was positively",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-p-729",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 729,
+      "sentence": "Increased protein intake of >0.54 g/kg/day was positively associated with changes in appendicular skeletal muscle mass (ASM)/weight ( B = 0.591, p = 0.026), ASM/body mass index ( B = 0.615, p = 0.023), and ASM:fat ratio ( B = 0.509, p = 0.030) in older men.",
+      "context_window": "appendicular skeletal muscle mass (ASM)/weight ( B = 0.591, p = 0.026), ASM/body mass index ( B = 0.615, p = 0.023), and ASM:fat",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-p-774",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.023",
+      "numeric_values": [
+        0.023
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 774,
+      "sentence": "Increased protein intake of >0.54 g/kg/day was positively associated with changes in appendicular skeletal muscle mass (ASM)/weight ( B = 0.591, p = 0.026), ASM/body mass index ( B = 0.615, p = 0.023), and ASM:fat ratio ( B = 0.509, p = 0.030) in older men.",
+      "context_window": "t ( B = 0.591, p = 0.026), ASM/body mass index ( B = 0.615, p = 0.023), and ASM:fat ratio ( B = 0.509, p = 0.030) in older men. H",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-p-817",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.030",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 817,
+      "sentence": "Increased protein intake of >0.54 g/kg/day was positively associated with changes in appendicular skeletal muscle mass (ASM)/weight ( B = 0.591, p = 0.026), ASM/body mass index ( B = 0.615, p = 0.023), and ASM:fat ratio ( B = 0.509, p = 0.030) in older men.",
+      "context_window": "dex ( B = 0.615, p = 0.023), and ASM:fat ratio ( B = 0.509, p = 0.030) in older men. However, change in protein intake was not as",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-351",
+      "claim_type": "percentage",
+      "raw_text": "20.8%",
+      "numeric_values": [
+        20.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 351,
+      "sentence": "Korea is classified as one of the most rapidly aging countries worldwide [ 2 ], and prevalence of sarcopenia has been reported to be 20.8% among Korean elderly as defined by the European Working Group on Sarcopenia in Older People [ 3 ].",
+      "context_window": "[ 2 ], and prevalence of sarcopenia has been reported to be 20.8% among Korean elderly as defined by the European Working Gro",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-826",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 826,
+      "sentence": "Previous studies reported that approximately 60% of frail older people had sarcopenia, and mortality was higher in frail older people with sarcopenia than in those without sarcopenia [ 6 , 7 ].",
+      "context_window": "adults [ 5 ]. Previous studies reported that approximately 60% of frail older people had sarcopenia, and mortality was hig",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-2154",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2154,
+      "sentence": "On the other hand, a meta-analysis of clinical trials showed that an average 60% (>0.31 g/kg/day) increased protein intake from habitual protein intake improved resistance training-induced muscle mass in adults [ 17 ].",
+      "context_window": ", a meta-analysis of clinical trials showed that an average 60% (>0.31 g/kg/day) increased protein intake from habitual pro",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-43",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 43,
+      "sentence": "Pre-frail or frail participants aged 70 to 85 years with risk of malnutrition were recruited at four welfare centers in Seoul, Korea, between May 2016 and August 2017.",
+      "context_window": "Pre-frail or frail participants aged 70 to 85 years with risk of malnutrition were recruited at four welfare ce",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-899",
+      "claim_type": "unit_value",
+      "raw_text": "340 mL",
+      "numeric_values": [
+        340.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 899,
+      "sentence": "All participants were supplemented with 200 kcal/day of powder with 340 mL of corn silk tea (Kwangdong Pharmaceutical, Seoul, Korea).",
+      "context_window": "icipants were supplemented with 200 kcal/day of powder with 340 mL of corn silk tea (Kwangdong Pharmaceutical, Seoul, Korea).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-2722",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 kg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2722,
+      "sentence": "The CHS frailty criteria comprise five criteria, with scores ranging from 0 to 5 (unintentional weight loss \u22654.5 kg during the last year, exhaustion, low physical activity, gait speed, and weakness) [ 4 ].",
+      "context_window": "with scores ranging from 0 to 5 (unintentional weight loss \u22654.5 kg during the last year, exhaustion, low physical activity, ga",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-3089",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 m/s",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 3089,
+      "sentence": "Slow walking speed was defined as <0.8 m/s from the average of the walking speed for 4 m, with 1.5 m before and after the walkway to allow for acceleration and deceleration.",
+      "context_window": "Activity Questionnaire. Slow walking speed was defined as <0.8 m/s from the average of the walking speed for 4 m, with 1.5 m b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-1275",
+      "claim_type": "percentage",
+      "raw_text": "200%",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1275,
+      "sentence": "A combination of exercise and 25 g of protein ingestion increased muscle protein synthesis (MPS) rate by 200%, whereas 25 g of protein ingestion only increased MPS rate by 100% in adults [ 28 ], suggesting that the amount of protein required to improve muscle mass could be lower when combined with exercise.",
+      "context_window": "ingestion increased muscle protein synthesis (MPS) rate by 200%, whereas 25 g of protein ingestion only increased MPS rate",
+      "claim_role": "effect",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-1342",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1342,
+      "sentence": "A combination of exercise and 25 g of protein ingestion increased muscle protein synthesis (MPS) rate by 200%, whereas 25 g of protein ingestion only increased MPS rate by 100% in adults [ 28 ], suggesting that the amount of protein required to improve muscle mass could be lower when combined with exercise.",
+      "context_window": "hereas 25 g of protein ingestion only increased MPS rate by 100% in adults [ 28 ], suggesting that the amount of protein req",
+      "claim_role": "effect",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-2021",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2021,
+      "sentence": "In a meta-analysis of clinical trials, an average 60% increase from habitual protein intake improved resistance training-induced muscle gain in adults [ 17 ].",
+      "context_window": "r adults. In a meta-analysis of clinical trials, an average 60% increase from habitual protein intake improved resistance t",
+      "claim_role": "effect",
+      "endpoint": "muscle hypertrophy",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-2187",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2187,
+      "sentence": "According to the present study, in older men, an average 97% increase (>0.54 g/kg/day) from habitual protein intake increased muscle mass without exercise, consistently suggesting that exercise and younger age required less protein to increase muscle mass.",
+      "context_window": "]. According to the present study, in older men, an average 97% increase (>0.54 g/kg/day) from habitual protein intake incr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-2474",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2474,
+      "sentence": "Previous studies reported that protein ingestion of 0.25 or 0.21 g/kg improved MPS by 56% in older men [ 31 ], but it was only 13% in older women [ 32 ].",
+      "context_window": "that protein ingestion of 0.25 or 0.21 g/kg improved MPS by 56% in older men [ 31 ], but it was only 13% in older women [ 3",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-2515",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2515,
+      "sentence": "Previous studies reported that protein ingestion of 0.25 or 0.21 g/kg improved MPS by 56% in older men [ 31 ], but it was only 13% in older women [ 32 ].",
+      "context_window": "kg improved MPS by 56% in older men [ 31 ], but it was only 13% in older women [ 32 ]. Additionally, Smith et al. [ 33 ] sh",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-2685",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2685,
+      "sentence": "Additionally, Smith et al. [ 33 ] showed that ingestion of a liquid meal of 220 kcal increased the muscle protein fractional synthesis rate by 80% in older men but not in older women.",
+      "context_window": "l increased the muscle protein fractional synthesis rate by 80% in older men but not in older women. These studies suggeste",
+      "claim_role": "effect",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-5049",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 m/s",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "m/s",
+      "source_section": "discussion",
+      "source_offset": 5049,
+      "sentence": "The present study showed that protein intake was not associated with gait speed in participants with usual gait speed of >1.0 m/s, but a gait speed <0.6 m/s was associated with protein intake based on a previous study reporting the beneficial effects of protein intake [ 39 ].",
+      "context_window": "d with gait speed in participants with usual gait speed of >1.0 m/s, but a gait speed <0.6 m/s was associated with protein inta",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-5076",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 m/s",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "m/s",
+      "source_section": "discussion",
+      "source_offset": 5076,
+      "sentence": "The present study showed that protein intake was not associated with gait speed in participants with usual gait speed of >1.0 m/s, but a gait speed <0.6 m/s was associated with protein intake based on a previous study reporting the beneficial effects of protein intake [ 39 ].",
+      "context_window": "ipants with usual gait speed of >1.0 m/s, but a gait speed <0.6 m/s was associated with protein intake based on a previous stud",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-6558",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6558,
+      "sentence": "However, the power of SMI was >70%, reliable for detecting differences.",
+      "context_window": "intake (g/kg/day) was small. However, the power of SMI was >70%, reliable for detecting differences. Second, the findings s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

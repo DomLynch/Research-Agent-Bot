@@ -1,0 +1,662 @@
+{
+  "paper_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc",
+  "doi": "10.1002/hsr2.393",
+  "extracted_at": "2026-05-05T22:38:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 4,
+    "percentage": 17,
+    "p_value": 6,
+    "unit_value": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-n-434",
+      "claim_type": "sample_size",
+      "raw_text": "N = 72",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 434,
+      "sentence": "Participants (N = 72) with at least one cardiovascular risk factor underwent, on two separate occasions: (a) a 30\u2010minute sauna at 75\u00b0C (SAUNA) and (b) the combination of a 15\u2010minute cycling exercise at 75% maximum heart rate followed by 15\u2010minute sauna exposure (EX+SAUNA).",
+      "context_window": "tion of aerobic exercise and sauna exposure. Participants (N = 72) with at least one cardiovascular risk factor underwent, on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-622",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 622,
+      "sentence": "Participants (N = 72) with at least one cardiovascular risk factor underwent, on two separate occasions: (a) a 30\u2010minute sauna at 75\u00b0C (SAUNA) and (b) the combination of a 15\u2010minute cycling exercise at 75% maximum heart rate followed by 15\u2010minute sauna exposure (EX+SAUNA).",
+      "context_window": "and (b) the combination of a 15\u2010minute cycling exercise at 75% maximum heart rate followed by 15\u2010minute sauna exposure (EX",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-1108",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1108,
+      "sentence": "From PRE\u2010POST, SAUNA had lower DBP (mean difference [95% CI] 2.5 [1.0, 4.1], P = .002) and MAP (2.5 [0.6, 4.3], P = .01).",
+      "context_window": "ively. From PRE\u2010POST, SAUNA had lower DBP (mean difference [95% CI] 2.5 [1.0, 4.1], P = .002) and MAP (2.5 [0.6, 4.3], P =",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-p-1132",
+      "claim_type": "p_value",
+      "raw_text": "P = .002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1132,
+      "sentence": "From PRE\u2010POST, SAUNA had lower DBP (mean difference [95% CI] 2.5 [1.0, 4.1], P = .002) and MAP (2.5 [0.6, 4.3], P = .01).",
+      "context_window": "UNA had lower DBP (mean difference [95% CI] 2.5 [1.0, 4.1], P = .002) and MAP (2.5 [0.6, 4.3], P = .01). However, EX+SAUNA had l",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-p-1167",
+      "claim_type": "p_value",
+      "raw_text": "P = .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1167,
+      "sentence": "From PRE\u2010POST, SAUNA had lower DBP (mean difference [95% CI] 2.5 [1.0, 4.1], P = .002) and MAP (2.5 [0.6, 4.3], P = .01).",
+      "context_window": "[95% CI] 2.5 [1.0, 4.1], P = .002) and MAP (2.5 [0.6, 4.3], P = .01). However, EX+SAUNA had lower SBP (-2.7 [-4.8, -0.5], P = .",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-p-1229",
+      "claim_type": "p_value",
+      "raw_text": "P = .02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1229,
+      "sentence": "However, EX+SAUNA had lower SBP (-2.7 [-4.8, -0.5], P = .02), DBP (-1.8 [-3.3, -0.4], P = .01), and MAP (-2.0 [-3.5, -0.5], P = .009) PRE\u2010POST30.",
+      "context_window": "= .01). However, EX+SAUNA had lower SBP (-2.7 [-4.8, -0.5], P = .02), DBP (-1.8 [-3.3, -0.4], P = .01), and MAP (-2.0 [-3.5, -0",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-p-1263",
+      "claim_type": "p_value",
+      "raw_text": "P = .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1263,
+      "sentence": "However, EX+SAUNA had lower SBP (-2.7 [-4.8, -0.5], P = .02), DBP (-1.8 [-3.3, -0.4], P = .01), and MAP (-2.0 [-3.5, -0.5], P = .009) PRE\u2010POST30.",
+      "context_window": "r SBP (-2.7 [-4.8, -0.5], P = .02), DBP (-1.8 [-3.3, -0.4], P = .01), and MAP (-2.0 [-3.5, -0.5], P = .009) PRE\u2010POST30. There w",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-p-1301",
+      "claim_type": "p_value",
+      "raw_text": "P = .009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1301,
+      "sentence": "However, EX+SAUNA had lower SBP (-2.7 [-4.8, -0.5], P = .02), DBP (-1.8 [-3.3, -0.4], P = .01), and MAP (-2.0 [-3.5, -0.5], P = .009) PRE\u2010POST30.",
+      "context_window": "P (-1.8 [-3.3, -0.4], P = .01), and MAP (-2.0 [-3.5, -0.5], P = .009) PRE\u2010POST30. There were no statistically significant differ",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-n-14",
+      "claim_type": "sample_size",
+      "raw_text": "N = 72",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 14,
+      "sentence": "Participants (N = 72; females = 33, males = 39) were recruited from the city of Jyv\u00e4skyl\u00e4, Central Finland, through the local out\u2010of\u2010hospital health care center.",
+      "context_window": "Participants (N = 72; females = 33, males = 39) were recruited from the city of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-u-579",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 mmol",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 579,
+      "sentence": "Hypercholesterolemia was defined as the use of cholesterol drugs or serum low\u2010density lipoprotein cholesterol over 3.5 mmol/L.",
+      "context_window": "rol drugs or serum low\u2010density lipoprotein cholesterol over 3.5 mmol/L. Hypertension was defined as having a systolic reading of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-u-661",
+      "claim_type": "unit_value",
+      "raw_text": "140 mm",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 661,
+      "sentence": "Hypertension was defined as having a systolic reading of greater than 140 mm Hg, and/or a diastolic reading of greater than 80 mm Hg on two or more separate resting measurements.",
+      "context_window": "on was defined as having a systolic reading of greater than 140 mm Hg, and/or a diastolic reading of greater than 80 mm Hg on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-u-715",
+      "claim_type": "unit_value",
+      "raw_text": "80 mm",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 715,
+      "sentence": "Hypertension was defined as having a systolic reading of greater than 140 mm Hg, and/or a diastolic reading of greater than 80 mm Hg on two or more separate resting measurements.",
+      "context_window": "than 140 mm Hg, and/or a diastolic reading of greater than 80 mm Hg on two or more separate resting measurements. Obesity wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-u-810",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 810,
+      "sentence": "Obesity was defined as body mass index >30 kg/m 2 .",
+      "context_window": "sting measurements. Obesity was defined as body mass index >30 kg/m 2 . Family history of CHD was considered positive if fath",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-u-880",
+      "claim_type": "unit_value",
+      "raw_text": "55 years",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 880,
+      "sentence": "Family history of CHD was considered positive if father (<55 years) or mother (<65 years) had premature CHD.",
+      "context_window": ". Family history of CHD was considered positive if father (<55 years) or mother (<65 years) had premature CHD. Menstrual status",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-u-902",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 902,
+      "sentence": "Family history of CHD was considered positive if father (<55 years) or mother (<65 years) had premature CHD.",
+      "context_window": "D was considered positive if father (<55 years) or mother (<65 years) had premature CHD. Menstrual status of female participants",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-1853",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1853,
+      "sentence": "A standalone 30\u2010minute sauna at 75\u00b0C (SAUNA), and 15\u2010minutes of cycling on a stationary bike at 75% of individual maximum heart rate, followed by 15\u2010minutes of sauna exposure (EX+SAUNA).",
+      "context_window": "(SAUNA), and 15\u2010minutes of cycling on a stationary bike at 75% of individual maximum heart rate, followed by 15\u2010minutes of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-2122",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2122,
+      "sentence": "A cycling exercise test was conducted on a separate day prior to the experiment to ascertain individual maximal exercise heart rates, which was then used to calculate individual 75% maximum.",
+      "context_window": "se heart rates, which was then used to calculate individual 75% maximum. The exercise test was conducted on an electromagne",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-3417",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3417,
+      "sentence": "The cycling load in watts was monitored and adjusted throughout the duration of the exercise to ensure that the heart rate for each participant was kept at 75% of their individual maximum exercise heart rate, pre\u2010calculated using data obtained from the exercise test.",
+      "context_window": "ensure that the heart rate for each participant was kept at 75% of their individual maximum exercise heart rate, pre\u2010calcul",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-3594",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3594,
+      "sentence": "The temperature and humidity of the exercise room were 21\u00b0C and 25%, respectively.",
+      "context_window": "temperature and humidity of the exercise room were 21\u00b0C and 25%, respectively. Participants were instructed to abstain from",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-4731",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4731,
+      "sentence": "Carotid to femoral measurement was adjusted to 80% (common carotid artery - common femoral artery \u00d7 0.8) for the calculation of PWV as recommended.",
+      "context_window": "oral artery. Carotid to femoral measurement was adjusted to 80% (common carotid artery - common femoral artery \u00d7 0.8) for t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-5222",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5222,
+      "sentence": "All measurements were taken by a single trained operator of the tonometer to minimize ascertainment biases and to ensure consistency and reliability (ICC 2.1:0.75 with 95% confidence interval [CI] = 0.63\u20100.83, SEM = 0.4).",
+      "context_window": "nd to ensure consistency and reliability (ICC 2.1:0.75 with 95% confidence interval [CI] = 0.63\u20100.83, SEM = 0.4). ICC estim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-5300",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5300,
+      "sentence": "ICC estimates and their 95% CIs were calculated using two repeated measurements taken 10 days apart (prior to the experiment) from 72 participants via the statistical software R, 30 based on a mean\u2010rating ( k = 2), absolute\u2010agreement, two\u2010way mixed\u2010effects model.",
+      "context_window": "erval [CI] = 0.63\u20100.83, SEM = 0.4). ICC estimates and their 95% CIs were calculated using two repeated measurements taken 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-u-5362",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5362,
+      "sentence": "ICC estimates and their 95% CIs were calculated using two repeated measurements taken 10 days apart (prior to the experiment) from 72 participants via the statistical software R, 30 based on a mean\u2010rating ( k = 2), absolute\u2010agreement, two\u2010way mixed\u2010effects model.",
+      "context_window": "% CIs were calculated using two repeated measurements taken 10 days apart (prior to the experiment) from 72 participants via th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-5616",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5616,
+      "sentence": "High\u2010quality recordings (defined as an in\u2010device quality index of more than 90% from an average of at least 10 cardiac cycles) were collected using the PulsePen device (DiaTecne s.r.l., Milan, Italy; www.pulsepen.com ) using methods that have been documented in previous studies.",
+      "context_window": "ordings (defined as an in\u2010device quality index of more than 90% from an average of at least 10 cardiac cycles) were collect",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-6283",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6283,
+      "sentence": "Thereafter, they were instructed to rest in a designated waiting lounge (21\u00b0C, humidity 25%) in a seated position for a duration of 30 minutes before the final measurement (POST30) was taken.",
+      "context_window": "cted to rest in a designated waiting lounge (21\u00b0C, humidity 25%) in a seated position for a duration of 30 minutes before t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-6682",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6682,
+      "sentence": "This was confirmed by 30% of the Shapiro\u2010Wilk normality tests for PRE, POST, and POST30 effects giving P \u2010values below .05.",
+      "context_window": "priori follow a normal distribution. This was confirmed by 30% of the Shapiro\u2010Wilk normality tests for PRE, POST, and POST",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-n-8697",
+      "claim_type": "sample_size",
+      "raw_text": "N = 72",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8697,
+      "sentence": "In the nonparametric bootstrap method, we resample the empirical distribution of responses by taking random samples equal in size to the original sample (N = 72) with replacement.",
+      "context_window": "taking random samples equal in size to the original sample (N = 72) with replacement. The resulting distribution asymptoticall",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-n-8811",
+      "claim_type": "sample_size",
+      "raw_text": "N = 72",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8811,
+      "sentence": "As N = 72 the bootstrap samples are drawn from a representative approximation for the population sampling distribution.",
+      "context_window": "symptotically approaches the true sampling distribution. As N = 72 the bootstrap samples are drawn from a representative appro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-p-10098",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10098,
+      "sentence": "The full\u2010sample comparisons were pre\u2010specified, with a priori determined significance level of P < .05 to be used for the adjusted P \u2010values along with a two\u2010tailed alternative hypothesis.",
+      "context_window": "e\u2010specified, with a priori determined significance level of P < .05 to be used for the adjusted P \u2010values along with a two\u2010tail",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-u-106",
+      "claim_type": "unit_value",
+      "raw_text": "86 mm",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 106,
+      "sentence": "Mean baseline SBP and DBP were 143 and 86 mm Hg, respectively.",
+      "context_window": "esented in Table 1 . Mean baseline SBP and DBP were 143 and 86 mm Hg, respectively. The three cardiovascular risk factors mos",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-211",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 211,
+      "sentence": "The three cardiovascular risk factors most commonly present were hyperlipidemia (71%), family history of CHD (43%), and obesity (31%).",
+      "context_window": "lar risk factors most commonly present were hyperlipidemia (71%), family history of CHD (43%), and obesity (31%). Particip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-240",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 240,
+      "sentence": "The three cardiovascular risk factors most commonly present were hyperlipidemia (71%), family history of CHD (43%), and obesity (31%).",
+      "context_window": "y present were hyperlipidemia (71%), family history of CHD (43%), and obesity (31%). Participant characteristics Abbrevia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-259",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 259,
+      "sentence": "The three cardiovascular risk factors most commonly present were hyperlipidemia (71%), family history of CHD (43%), and obesity (31%).",
+      "context_window": "rlipidemia (71%), family history of CHD (43%), and obesity (31%). Participant characteristics Abbreviations: DBP, brachia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-u-1316",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "discussion",
+      "source_offset": 1316,
+      "sentence": "Moreover, all pressure\u2010related markers had a clinically relevant reduction of 5 mm Hg or more.",
+      "context_window": "sure\u2010related markers had a clinically relevant reduction of 5 mm Hg or more. This was rather unforeseen, as lower values for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-7466",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7466,
+      "sentence": "Finally, the majority of our participants were regular sauna users (85%) of at least once a week, which limits the generalizability of our results to a broader population who do not use sauna regularly.",
+      "context_window": "the majority of our participants were regular sauna users (85%) of at least once a week, which limits the generalizability",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8485612_standalone_sauna_vs_exercise_followed_by_sauna_on_cardiovasc-pct-1026",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1026,
+      "sentence": "Finally, the majority of our participants were regular sauna users (85%) of at least once a week, which limits the generalizability of our results to a broader population who do not use sauna regularly.",
+      "context_window": "the majority of our participants were regular sauna users (85%) of at least once a week, which limits the generalizability",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

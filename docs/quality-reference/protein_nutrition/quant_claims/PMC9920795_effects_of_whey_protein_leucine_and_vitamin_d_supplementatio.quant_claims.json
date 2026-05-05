@@ -1,0 +1,790 @@
+{
+  "paper_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio",
+  "doi": "10.3390/nu15030521",
+  "extracted_at": "2026-05-05T22:35:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 16,
+    "percentage": 15,
+    "sample_size": 2,
+    "p_value": 9,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-1911",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1911,
+      "sentence": "In 2020, Ellis et al. [ 6 ] randomly assigned 31 people aged 65 years or older to take an amino acid supplement twice daily for six months or a placebo.",
+      "context_window": "n 2020, Ellis et al. [ 6 ] randomly assigned 31 people aged 65 years or older to take an amino acid supplement twice daily for s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-2336",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2336,
+      "sentence": "In 2013, Kim et al. [ 7 ] investigated the effects of nutritional supplements on 87 people aged over 65 years or older who met frailty criteria (usual gait speed, <0.6 m/s; mini nutritional assessment, <24).",
+      "context_window": "e effects of nutritional supplements on 87 people aged over 65 years or older who met frailty criteria (usual gait speed, <0.6 m",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-2399",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 m/s",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "m/s",
+      "source_section": "introduction",
+      "source_offset": 2399,
+      "sentence": "In 2013, Kim et al. [ 7 ] investigated the effects of nutritional supplements on 87 people aged over 65 years or older who met frailty criteria (usual gait speed, <0.6 m/s; mini nutritional assessment, <24).",
+      "context_window": "years or older who met frailty criteria (usual gait speed, <0.6 m/s; mini nutritional assessment, <24). Participants were rando",
+      "claim_role": "population",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-2668",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2668,
+      "sentence": "The nutritional supplement was consumed twice daily for 12 weeks, and the physical function of the supplement intake group improved by 5.9%, but no change was observed in the control group.",
+      "context_window": "nt. The nutritional supplement was consumed twice daily for 12 weeks, and the physical function of the supplement intake group i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-2747",
+      "claim_type": "percentage",
+      "raw_text": "5.9%",
+      "numeric_values": [
+        5.9
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2747,
+      "sentence": "The nutritional supplement was consumed twice daily for 12 weeks, and the physical function of the supplement intake group improved by 5.9%, but no change was observed in the control group.",
+      "context_window": "hysical function of the supplement intake group improved by 5.9%, but no change was observed in the control group. In additi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-3032",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3032,
+      "sentence": "In 2017, Ottestad et al. [ 8 ] evaluated the effect of protein-enriched milk on 36 people aged 70 years or older with reduced physical strength or activity capacity.",
+      "context_window": "uated the effect of protein-enriched milk on 36 people aged 70 years or older with reduced physical strength or activity capacit",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-3310",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3310,
+      "sentence": "Both protein and carbohydrate drinks were consumed twice daily for 12 weeks, and both the supplement intake group and the control group showed improvements in body composition and muscle strength evaluations.",
+      "context_window": "otein and carbohydrate drinks were consumed twice daily for 12 weeks, and both the supplement intake group and the control group",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-3919",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3919,
+      "sentence": "When the I 2 values were \u226450%, the pooled data were considered homogeneous, and a fixed-effects model was adopted.",
+      "context_window": "nconsistencies among the results. When the I 2 values were \u226450%, the pooled data were considered homogeneous, and a fixed-e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-4052",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4052,
+      "sentence": "In contrast, when I 2 values were more than 50%, the pooled data were considered to have substantial heterogeneity, and the random-effects model was applied for the data analyses.",
+      "context_window": "el was adopted. In contrast, when I 2 values were more than 50%, the pooled data were considered to have substantial hetero",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-4493",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4493,
+      "sentence": "Therefore, the resultant data were presented as standard mean differences (SMDs) and 95% confidence intervals (Cis).",
+      "context_window": "data were presented as standard mean differences (SMDs) and 95% confidence intervals (Cis). Statistical significance was se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-951",
+      "claim_type": "unit_value",
+      "raw_text": "77.7 years",
+      "numeric_values": [
+        77.7
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 951,
+      "sentence": "The mean age of all participants was 77.7 years, the mean body mass index (BMI) was 26.1 kg/m 2 , and the mean mini mental state examination (MMSE) score was 29, with no abnormalities in cognitive function.",
+      "context_window": "mobility limitations. The mean age of all participants was 77.7 years, the mean body mass index (BMI) was 26.1 kg/m 2 , and the m",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-998",
+      "claim_type": "unit_value",
+      "raw_text": "26.1 kg",
+      "numeric_values": [
+        26.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 998,
+      "sentence": "The mean age of all participants was 77.7 years, the mean body mass index (BMI) was 26.1 kg/m 2 , and the mean mini mental state examination (MMSE) score was 29, with no abnormalities in cognitive function.",
+      "context_window": "icipants was 77.7 years, the mean body mass index (BMI) was 26.1 kg/m 2 , and the mean mini mental state examination (MMSE) sco",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-n-1184",
+      "claim_type": "sample_size",
+      "raw_text": "n = 184",
+      "numeric_values": [
+        184.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1184,
+      "sentence": "Participants were randomly assigned to an experimental group ( n = 184) who received a vitamin D and leucine-enriched whey protein nutritional supplementation and a control group ( n = 196) who received an isocaloric product.",
+      "context_window": "ticipants were randomly assigned to an experimental group ( n = 184) who received a vitamin D and leucine-enriched whey protein",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-n-1302",
+      "claim_type": "sample_size",
+      "raw_text": "n = 196",
+      "numeric_values": [
+        196.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1302,
+      "sentence": "Participants were randomly assigned to an experimental group ( n = 184) who received a vitamin D and leucine-enriched whey protein nutritional supplementation and a control group ( n = 196) who received an isocaloric product.",
+      "context_window": "y protein nutritional supplementation and a control group ( n = 196) who received an isocaloric product. Per serving, the exper",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-2169",
+      "claim_type": "unit_value",
+      "raw_text": "80.3 years",
+      "numeric_values": [
+        80.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2169,
+      "sentence": "The mean age of all participants was 80.3 years, and the mean BMI was 23.89 kg/m 2 .",
+      "context_window": "ients with sarcopenia. The mean age of all participants was 80.3 years, and the mean BMI was 23.89 kg/m 2 . The mean MMSE score wa",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-2202",
+      "claim_type": "unit_value",
+      "raw_text": "23.89 kg",
+      "numeric_values": [
+        23.89
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2202,
+      "sentence": "The mean age of all participants was 80.3 years, and the mean BMI was 23.89 kg/m 2 .",
+      "context_window": "ge of all participants was 80.3 years, and the mean BMI was 23.89 kg/m 2 . The mean MMSE score was 21.1, and participants with m",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-3183",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3183,
+      "sentence": "The exercise was conducted 5 times a week for 12 weeks, and consisted of 5 min of warm-up, 5 min of strengthening exercise, 5 min of balance and gait training, and 5 min of cool-down.",
+      "context_window": "participants. The exercise was conducted 5 times a week for 12 weeks, and consisted of 5 min of warm-up, 5 min of strengthening",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-3976",
+      "claim_type": "unit_value",
+      "raw_text": "81.5 years",
+      "numeric_values": [
+        81.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3976,
+      "sentence": "The mean age of the participants was 81.5 years, the mean BMI was 21.6 kg/m 2 , and the mean MMSE score was 21.9, indicating no severe cognitive impairment.",
+      "context_window": "rcopenia participated. The mean age of the participants was 81.5 years, the mean BMI was 21.6 kg/m 2 , and the mean MMSE score was",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-4005",
+      "claim_type": "unit_value",
+      "raw_text": "21.6 kg",
+      "numeric_values": [
+        21.6
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4005,
+      "sentence": "The mean age of the participants was 81.5 years, the mean BMI was 21.6 kg/m 2 , and the mean MMSE score was 21.9, indicating no severe cognitive impairment.",
+      "context_window": "an age of the participants was 81.5 years, the mean BMI was 21.6 kg/m 2 , and the mean MMSE score was 21.9, indicating no sever",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-4405",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4405,
+      "sentence": "Participants received physical exercise interventions along with whey protein-based nutritional supplementation rich in leucine and vitamin D, or isocaloric product, with interventions lasting at least 4 weeks and up to 8 weeks.",
+      "context_window": "or isocaloric product, with interventions lasting at least 4 weeks and up to 8 weeks. The nutritional supplementation provided",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-4423",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4423,
+      "sentence": "Participants received physical exercise interventions along with whey protein-based nutritional supplementation rich in leucine and vitamin D, or isocaloric product, with interventions lasting at least 4 weeks and up to 8 weeks.",
+      "context_window": "duct, with interventions lasting at least 4 weeks and up to 8 weeks. The nutritional supplementation provided to the experiment",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-5235",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 kg",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5235,
+      "sentence": "After warming up for 5 min, toe raises, heel raises, knee raises, knee extension, hip flexion and lateral leg raises, knee flexion and extension with a weight of 0.5 to 1.5 kg on the ankle, upper and lower extremity flexion and extension exercises using resistance bands were performed for 5 to 10 min.",
+      "context_window": "raises, knee flexion and extension with a weight of 0.5 to 1.5 kg on the ankle, upper and lower extremity flexion and extensi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-6233",
+      "claim_type": "percentage",
+      "raw_text": "76.2%",
+      "numeric_values": [
+        76.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6233,
+      "sentence": "Of the 21 domains across all studies, 16 domains (76.2%) were determined to be low risk.",
+      "context_window": "gure 2 ). Of the 21 domains across all studies, 16 domains (76.2%) were determined to be low risk. Therefore, the overall ris",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-7056",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7056,
+      "sentence": "When analyzed without considering the involvement of a physical exercise program combined with nutritional supplementation, there was a significant difference between the experimental group and the control group regarding changes in appendicular muscle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%].",
+      "context_window": "p regarding changes in appendicular muscle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%]. Subgroup analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-p-7078",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7078,
+      "sentence": "When analyzed without considering the involvement of a physical exercise program combined with nutritional supplementation, there was a significant difference between the experimental group and the control group regarding changes in appendicular muscle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%].",
+      "context_window": "appendicular muscle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%]. Subgroup analysis was conducted, and the combi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-7095",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7095,
+      "sentence": "When analyzed without considering the involvement of a physical exercise program combined with nutritional supplementation, there was a significant difference between the experimental group and the control group regarding changes in appendicular muscle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%].",
+      "context_window": "cle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%]. Subgroup analysis was conducted, and the combination of n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-7436",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7436,
+      "sentence": "Significant improvements were noted in the experimental group compared to the control group; these improvements occurred both with and without the combination of the physical exercise program [SMD, 0.45; 95% CI, 0.10 to 0.80; p = 0.01; I 2 = N/A; and SMD, 0.21; 95% CI 0.01 to 0.41; p = 0.04; I 2 = N/A, respectively] ( Figure 3 ).",
+      "context_window": "he combination of the physical exercise program [SMD, 0.45; 95% CI, 0.10 to 0.80; p = 0.01; I 2 = N/A; and SMD, 0.21; 95% C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-p-7458",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7458,
+      "sentence": "Significant improvements were noted in the experimental group compared to the control group; these improvements occurred both with and without the combination of the physical exercise program [SMD, 0.45; 95% CI, 0.10 to 0.80; p = 0.01; I 2 = N/A; and SMD, 0.21; 95% CI 0.01 to 0.41; p = 0.04; I 2 = N/A, respectively] ( Figure 3 ).",
+      "context_window": "physical exercise program [SMD, 0.45; 95% CI, 0.10 to 0.80; p = 0.01; I 2 = N/A; and SMD, 0.21; 95% CI 0.01 to 0.41; p = 0.04; I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-ci-7494",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.01 to 0.41",
+      "numeric_values": [
+        0.01,
+        0.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7494,
+      "sentence": "Significant improvements were noted in the experimental group compared to the control group; these improvements occurred both with and without the combination of the physical exercise program [SMD, 0.45; 95% CI, 0.10 to 0.80; p = 0.01; I 2 = N/A; and SMD, 0.21; 95% CI 0.01 to 0.41; p = 0.04; I 2 = N/A, respectively] ( Figure 3 ).",
+      "context_window": "; 95% CI, 0.10 to 0.80; p = 0.01; I 2 = N/A; and SMD, 0.21; 95% CI 0.01 to 0.41; p = 0.04; I 2 = N/A, respectively] ( Figure 3 ). In the a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-p-7515",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7515,
+      "sentence": "Significant improvements were noted in the experimental group compared to the control group; these improvements occurred both with and without the combination of the physical exercise program [SMD, 0.45; 95% CI, 0.10 to 0.80; p = 0.01; I 2 = N/A; and SMD, 0.21; 95% CI 0.01 to 0.41; p = 0.04; I 2 = N/A, respectively] ( Figure 3 ).",
+      "context_window": "0; p = 0.01; I 2 = N/A; and SMD, 0.21; 95% CI 0.01 to 0.41; p = 0.04; I 2 = N/A, respectively] ( Figure 3 ). In the analysis of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-8188",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8188,
+      "sentence": "When analyzed without considering nutritional supplementation combined with exercise, no significant differences in handgrip strength improvement were noted between the experimental and the control groups [SMD, 1.03; 95% CI, -0.10 to 2.16; p = 0.07; I 2 = 97%].",
+      "context_window": "between the experimental and the control groups [SMD, 1.03; 95% CI, -0.10 to 2.16; p = 0.07; I 2 = 97%]. However, when a ph",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-p-8211",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8211,
+      "sentence": "When analyzed without considering nutritional supplementation combined with exercise, no significant differences in handgrip strength improvement were noted between the experimental and the control groups [SMD, 1.03; 95% CI, -0.10 to 2.16; p = 0.07; I 2 = 97%].",
+      "context_window": "l and the control groups [SMD, 1.03; 95% CI, -0.10 to 2.16; p = 0.07; I 2 = 97%]. However, when a physical exercise program was",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-8227",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8227,
+      "sentence": "When analyzed without considering nutritional supplementation combined with exercise, no significant differences in handgrip strength improvement were noted between the experimental and the control groups [SMD, 1.03; 95% CI, -0.10 to 2.16; p = 0.07; I 2 = 97%].",
+      "context_window": "l groups [SMD, 1.03; 95% CI, -0.10 to 2.16; p = 0.07; I 2 = 97%]. However, when a physical exercise program was used in com",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-8451",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8451,
+      "sentence": "However, when a physical exercise program was used in combination with nutritional supplementation, the experimental group showed significant improvements in handgrip strength compared to the control group [SMD, 1.52; 95% CI, 0.62 to 2.41; p = 0.0009; I 2 = 90], but there was no significant difference between the experimental group and the control group when the physical exercise program was not combined [SMD, 0.07; 95% CI, -0.13 to 0.27; p = 0.47; I 2 = N/A] ( Figure 4 A).",
+      "context_window": "handgrip strength compared to the control group [SMD, 1.52; 95% CI, 0.62 to 2.41; p = 0.0009; I 2 = 90], but there was no s",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-p-8473",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0009",
+      "numeric_values": [
+        0.0009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8473,
+      "sentence": "However, when a physical exercise program was used in combination with nutritional supplementation, the experimental group showed significant improvements in handgrip strength compared to the control group [SMD, 1.52; 95% CI, 0.62 to 2.41; p = 0.0009; I 2 = 90], but there was no significant difference between the experimental group and the control group when the physical exercise program was not combined [SMD, 0.07; 95% CI, -0.13 to 0.27; p = 0.47; I 2 = N/A] ( Figure 4 A).",
+      "context_window": "ared to the control group [SMD, 1.52; 95% CI, 0.62 to 2.41; p = 0.0009; I 2 = 90], but there was no significant difference between",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-8653",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8653,
+      "sentence": "However, when a physical exercise program was used in combination with nutritional supplementation, the experimental group showed significant improvements in handgrip strength compared to the control group [SMD, 1.52; 95% CI, 0.62 to 2.41; p = 0.0009; I 2 = 90], but there was no significant difference between the experimental group and the control group when the physical exercise program was not combined [SMD, 0.07; 95% CI, -0.13 to 0.27; p = 0.47; I 2 = N/A] ( Figure 4 A).",
+      "context_window": "the physical exercise program was not combined [SMD, 0.07; 95% CI, -0.13 to 0.27; p = 0.47; I 2 = N/A] ( Figure 4 A). In",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-p-8676",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8676,
+      "sentence": "However, when a physical exercise program was used in combination with nutritional supplementation, the experimental group showed significant improvements in handgrip strength compared to the control group [SMD, 1.52; 95% CI, 0.62 to 2.41; p = 0.0009; I 2 = 90], but there was no significant difference between the experimental group and the control group when the physical exercise program was not combined [SMD, 0.07; 95% CI, -0.13 to 0.27; p = 0.47; I 2 = N/A] ( Figure 4 A).",
+      "context_window": "program was not combined [SMD, 0.07; 95% CI, -0.13 to 0.27; p = 0.47; I 2 = N/A] ( Figure 4 A). In the analysis of SPPB scores,",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-9356",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9356,
+      "sentence": "When analyzed without considering if a physical exercise program was performed in conjunction with nutritional supplementation, no significant difference in SPPB scores between the experimental group and the control group [SMD, 1.01; 95% CI, -0.86 to 2.88; p = 0.29; I 2 = 98] were noted.",
+      "context_window": "en the experimental group and the control group [SMD, 1.01; 95% CI, -0.86 to 2.88; p = 0.29; I 2 = 98] were noted. However,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-p-9379",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.29",
+      "numeric_values": [
+        0.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9379,
+      "sentence": "When analyzed without considering if a physical exercise program was performed in conjunction with nutritional supplementation, no significant difference in SPPB scores between the experimental group and the control group [SMD, 1.01; 95% CI, -0.86 to 2.88; p = 0.29; I 2 = 98] were noted.",
+      "context_window": "up and the control group [SMD, 1.01; 95% CI, -0.86 to 2.88; p = 0.29; I 2 = 98] were noted. However, when a physical exercise pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-9617",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9617,
+      "sentence": "However, when a physical exercise program was performed with nutritional supplementation, the SPPB scores showed significant improvements in the control group compared to the experimental group [SMD, 1.97; 95% CI, 1.54 to 2.40; p < 0.00001; I 2 = 90].",
+      "context_window": "ontrol group compared to the experimental group [SMD, 1.97; 95% CI, 1.54 to 2.40; p < 0.00001; I 2 = 90]. However, the SPPB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-p-9639",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9639,
+      "sentence": "However, when a physical exercise program was performed with nutritional supplementation, the SPPB scores showed significant improvements in the control group compared to the experimental group [SMD, 1.97; 95% CI, 1.54 to 2.40; p < 0.00001; I 2 = 90].",
+      "context_window": "to the experimental group [SMD, 1.97; 95% CI, 1.54 to 2.40; p < 0.00001; I 2 = 90]. However, the SPPB scores showed no significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-9833",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9833,
+      "sentence": "However, the SPPB scores showed no significant improvement between the control and experimental groups when only nutritional supplementation was administered [SMD, 0.06; 95% CI, -0.14, 0.26; p = 0.54; I 2 = N/A] ( Figure 4 B).",
+      "context_window": "ly nutritional supplementation was administered [SMD, 0.06; 95% CI, -0.14, 0.26; p = 0.54; I 2 = N/A] ( Figure 4 B). The f",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-p-9854",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9854,
+      "sentence": "However, the SPPB scores showed no significant improvement between the control and experimental groups when only nutritional supplementation was administered [SMD, 0.06; 95% CI, -0.14, 0.26; p = 0.54; I 2 = N/A] ( Figure 4 B).",
+      "context_window": "mentation was administered [SMD, 0.06; 95% CI, -0.14, 0.26; p = 0.54; I 2 = N/A] ( Figure 4 B). The funnel plots for appendicul",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

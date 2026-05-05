@@ -1,0 +1,65 @@
+{
+  "paper_id": "PMC10976231_it_s_only_a_model_when_protein_structure_predictions_need_ex",
+  "doi": "10.3390/pathogens13030241",
+  "extracted_at": "2026-05-05T22:35:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10976231_it_s_only_a_model_when_protein_structure_predictions_need_ex-pct-100",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 100,
+      "sentence": "Human T-cell Leukemia Virus type 1 (HTLV-1) is a human retrovirus responsible for leukaemia in 5 to 10% of infected individuals.",
+      "context_window": "-1) is a human retrovirus responsible for leukaemia in 5 to 10% of infected individuals. Among the viral proteins, Tax has",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10976231_it_s_only_a_model_when_protein_structure_predictions_need_ex-pct-336",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 336,
+      "sentence": "HTLV is the etiological agent of adult T-cell leukaemia (ATL) and Tropical Spastic Paraparesis (TSP) which occur in 5 to 10% of infected people [ 2 ].",
+      "context_window": "and Tropical Spastic Paraparesis (TSP) which occur in 5 to 10% of infected people [ 2 ]. Interestingly, only HTLV type 1 v",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10976231_it_s_only_a_model_when_protein_structure_predictions_need_ex-pct-2108",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 2108,
+      "sentence": "Therefore, even for models which are predicted with pLDDT confidence scores around 70-80%, it should be recommended to use two or three distinct structure prediction algorithms to check if there is some convergence or not.",
+      "context_window": "which are predicted with pLDDT confidence scores around 70-80%, it should be recommended to use two or three distinct stru",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

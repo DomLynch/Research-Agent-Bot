@@ -1,0 +1,1543 @@
+{
+  "paper_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake",
+  "doi": "10.3390/nu13103560",
+  "extracted_at": "2026-05-05T22:35:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 12,
+    "percentage": 8,
+    "mean_sd": 16,
+    "unit_value": 13,
+    "p_value": 35
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-693",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 693,
+      "sentence": "This work investigated the effect of habitual dietary intake in young ( n = 10, 25.9 (3.2y)) and older ( n = 16, 70.2 (3.2y)) community-dwelling adults (16:10 male: female) on physiological muscle parameters.",
+      "context_window": "vestigated the effect of habitual dietary intake in young ( n = 10, 25.9 (3.2y)) and older ( n = 16, 70.2 (3.2y)) community-dw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-726",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 726,
+      "sentence": "This work investigated the effect of habitual dietary intake in young ( n = 10, 25.9 (3.2y)) and older ( n = 16, 70.2 (3.2y)) community-dwelling adults (16:10 male: female) on physiological muscle parameters.",
+      "context_window": "dietary intake in young ( n = 10, 25.9 (3.2y)) and older ( n = 16, 70.2 (3.2y)) community-dwelling adults (16:10 male: female",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-pct-965",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 965,
+      "sentence": "Post-absorptive MPS and MPS responses to feeding (4.25x basal metabolic rate; 16% protein) were determined in muscle biopsies of the m. vastus lateralis via stable isotope tracer ([1, 2 -13 C 2 ]-leucine) infusions with mass-spectrometric analyses.",
+      "context_window": "S and MPS responses to feeding (4.25x basal metabolic rate; 16% protein) were determined in muscle biopsies of the m. vastu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-1449",
+      "claim_type": "mean_sd",
+      "raw_text": "61.8 \u00b1 9.9",
+      "numeric_values": [
+        61.8,
+        9.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1449,
+      "sentence": "Whole-body lean mass (61.8 \u00b1 9.9 vs.",
+      "context_window": "1 ) were observed between age groups. Whole-body lean mass (61.8 \u00b1 9.9 vs. 49.8 \u00b1 11.9 kg, p = 0.01) and knee-extensor strength (8",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-1464",
+      "claim_type": "mean_sd",
+      "raw_text": "49.8 \u00b1 11.9",
+      "numeric_values": [
+        49.8,
+        11.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1464,
+      "sentence": "49.8 \u00b1 11.9 kg, p = 0.01) and knee-extensor strength (87.7 \u00b1 28.3 vs.",
+      "context_window": "ed between age groups. Whole-body lean mass (61.8 \u00b1 9.9 vs. 49.8 \u00b1 11.9 kg, p = 0.01) and knee-extensor strength (87.7 \u00b1 28.3 vs. 5",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-1471",
+      "claim_type": "unit_value",
+      "raw_text": "11.9 kg",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1471,
+      "sentence": "49.8 \u00b1 11.9 kg, p = 0.01) and knee-extensor strength (87.7 \u00b1 28.3 vs.",
+      "context_window": "een age groups. Whole-body lean mass (61.8 \u00b1 9.9 vs. 49.8 \u00b1 11.9 kg, p = 0.01) and knee-extensor strength (87.7 \u00b1 28.3 vs. 56.8",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-1480",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1480,
+      "sentence": "49.8 \u00b1 11.9 kg, p = 0.01) and knee-extensor strength (87.7 \u00b1 28.3 vs.",
+      "context_window": "roups. Whole-body lean mass (61.8 \u00b1 9.9 vs. 49.8 \u00b1 11.9 kg, p = 0.01) and knee-extensor strength (87.7 \u00b1 28.3 vs. 56.8 \u00b1 16.4 kg",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-1518",
+      "claim_type": "mean_sd",
+      "raw_text": "87.7 \u00b1 28.3",
+      "numeric_values": [
+        87.7,
+        28.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1518,
+      "sentence": "49.8 \u00b1 11.9 kg, p = 0.01) and knee-extensor strength (87.7 \u00b1 28.3 vs.",
+      "context_window": "9 vs. 49.8 \u00b1 11.9 kg, p = 0.01) and knee-extensor strength (87.7 \u00b1 28.3 vs. 56.8 \u00b1 16.4 kg, p = 0.002) were significantly higher in",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-1534",
+      "claim_type": "mean_sd",
+      "raw_text": "56.8 \u00b1 16.4",
+      "numeric_values": [
+        56.8,
+        16.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1534,
+      "sentence": "56.8 \u00b1 16.4 kg, p = 0.002) were significantly higher in young adults.",
+      "context_window": "9 kg, p = 0.01) and knee-extensor strength (87.7 \u00b1 28.3 vs. 56.8 \u00b1 16.4 kg, p = 0.002) were significantly higher in young adults. H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-1541",
+      "claim_type": "unit_value",
+      "raw_text": "16.4 kg",
+      "numeric_values": [
+        16.4
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1541,
+      "sentence": "56.8 \u00b1 16.4 kg, p = 0.002) were significantly higher in young adults.",
+      "context_window": "= 0.01) and knee-extensor strength (87.7 \u00b1 28.3 vs. 56.8 \u00b1 16.4 kg, p = 0.002) were significantly higher in young adults. Habi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-1550",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1550,
+      "sentence": "56.8 \u00b1 16.4 kg, p = 0.002) were significantly higher in young adults.",
+      "context_window": "and knee-extensor strength (87.7 \u00b1 28.3 vs. 56.8 \u00b1 16.4 kg, p = 0.002) were significantly higher in young adults. Habitual protei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-98",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 98,
+      "sentence": "Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited through the local community.",
+      "context_window": "lysis of previously published data [ 27 ]. Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopen",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-106",
+      "claim_type": "mean_sd",
+      "raw_text": "25 \u00b1 4",
+      "numeric_values": [
+        25.0,
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 106,
+      "sentence": "Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited through the local community.",
+      "context_window": "previously published data [ 27 ]. Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n =",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-121",
+      "claim_type": "mean_sd",
+      "raw_text": "23.3 \u00b1 2.5",
+      "numeric_values": [
+        23.3,
+        2.5
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 121,
+      "sentence": "Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited through the local community.",
+      "context_window": "lished data [ 27 ]. Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI:",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-128",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 kg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 128,
+      "sentence": "Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited through the local community.",
+      "context_window": "data [ 27 ]. Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-168",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 168,
+      "sentence": "Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited through the local community.",
+      "context_window": "\u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recru",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-176",
+      "claim_type": "mean_sd",
+      "raw_text": "70 \u00b1 3",
+      "numeric_values": [
+        70.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 176,
+      "sentence": "Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited through the local community.",
+      "context_window": "BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited thr",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-191",
+      "claim_type": "mean_sd",
+      "raw_text": "26.8 \u00b1 2.0",
+      "numeric_values": [
+        26.8,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 191,
+      "sentence": "Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited through the local community.",
+      "context_window": "kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited through the local comm",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-198",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 kg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 198,
+      "sentence": "Briefly, young ( n = 11, 25 \u00b1 4 y, BMI: 23.3 \u00b1 2.5 kg/m 2 ) and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited through the local community.",
+      "context_window": ") and older (non-sarcopenic, n = 16, 70 \u00b1 3 y, BMI: 26.8 \u00b1 2.0 kg/m 2 ) participants were recruited through the local communi",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-1903",
+      "claim_type": "unit_value",
+      "raw_text": "0.66 mg",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1903,
+      "sentence": "A primed, constant infusion of [1, 2 -13 C 2 ] leucine tracer (0.66 mg/kg, 1 mg/kg/h, 99 atoms percent; Cambridge Isotopes Ltd.) was then continually infused throughout the duration of the study (250 min).",
+      "context_window": "rimed, constant infusion of [1, 2 -13 C 2 ] leucine tracer (0.66 mg/kg, 1 mg/kg/h, 99 atoms percent; Cambridge Isotopes Ltd.) w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-1915",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1915,
+      "sentence": "A primed, constant infusion of [1, 2 -13 C 2 ] leucine tracer (0.66 mg/kg, 1 mg/kg/h, 99 atoms percent; Cambridge Isotopes Ltd.) was then continually infused throughout the duration of the study (250 min).",
+      "context_window": "ant infusion of [1, 2 -13 C 2 ] leucine tracer (0.66 mg/kg, 1 mg/kg/h, 99 atoms percent; Cambridge Isotopes Ltd.) was then c",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-2080",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 mg",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2080,
+      "sentence": "The tracer dose was increased (to 1.2 mg/kg/h) upon nutrition provision (at 130 min) to prevent tracer dilution.",
+      "context_window": "n of the study (250 min). The tracer dose was increased (to 1.2 mg/kg/h) upon nutrition provision (at 130 min) to prevent trac",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-pct-2189",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2189,
+      "sentence": "At 0, 120, and 250 min, using 1% lidocaine (B.",
+      "context_window": ") to prevent tracer dilution. At 0, 120, and 250 min, using 1% lidocaine (B. Braun Melsungen) as local anaesthetic, m. vas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-pct-2590",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2590,
+      "sentence": "After the second biopsy (~130 min) participants received an oral feed (Fortisip, Nutricia Clinical Care) with composition similar to that of a normal mixed meal (16% protein, 49% carbohydrate, 35% fat).",
+      "context_window": "e) with composition similar to that of a normal mixed meal (16% protein, 49% carbohydrate, 35% fat). This feed was provided",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-pct-2603",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2603,
+      "sentence": "After the second biopsy (~130 min) participants received an oral feed (Fortisip, Nutricia Clinical Care) with composition similar to that of a normal mixed meal (16% protein, 49% carbohydrate, 35% fat).",
+      "context_window": "sition similar to that of a normal mixed meal (16% protein, 49% carbohydrate, 35% fat). This feed was provided as an initia",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-pct-2621",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2621,
+      "sentence": "After the second biopsy (~130 min) participants received an oral feed (Fortisip, Nutricia Clinical Care) with composition similar to that of a normal mixed meal (16% protein, 49% carbohydrate, 35% fat).",
+      "context_window": "that of a normal mixed meal (16% protein, 49% carbohydrate, 35% fat). This feed was provided as an initial bolus (three dos",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-2778",
+      "claim_type": "unit_value",
+      "raw_text": "96 mL",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2778,
+      "sentence": "Doses were between 61 and 96 mL based on body weight to provide 6.5 kJ/kgBW/30 min [ 27 ].",
+      "context_window": "s at 30-min intervals thereafter. Doses were between 61 and 96 mL based on body weight to provide 6.5 kJ/kgBW/30 min [ 27 ].",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-3254",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3254,
+      "sentence": "All data are reported as mean \u00b1 SEM, with significance set at p < 0.05.",
+      "context_window": "l data are reported as mean \u00b1 SEM, with significance set at p < 0.05. Unpaired t -tests were used to determine between group dif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-565",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 565,
+      "sentence": "However, a significant difference was observed in relative fat intake between young and older adults ( p = 0.01) when expressed relative to BW.",
+      "context_window": "ved in relative fat intake between young and older adults ( p = 0.01) when expressed relative to BW. Habitual dietary intake pa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-653",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 653,
+      "sentence": "Habitual dietary intake parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Protein intake ( p = 0.62), ( B ) fat intake ( p = 0.81), ( C ) carbohydrate (CHO) intake ( p = 0.62), and ( D ) leucine intake ( p = 0.35).",
+      "context_window": "ative to BW. Habitual dietary intake parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Protein intake ( p = 0.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-673",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 673,
+      "sentence": "Habitual dietary intake parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Protein intake ( p = 0.62), ( B ) fat intake ( p = 0.81), ( C ) carbohydrate (CHO) intake ( p = 0.62), and ( D ) leucine intake ( p = 0.35).",
+      "context_window": "al dietary intake parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Protein intake ( p = 0.62), ( B ) fat intake",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-712",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 712,
+      "sentence": "Habitual dietary intake parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Protein intake ( p = 0.62), ( B ) fat intake ( p = 0.81), ( C ) carbohydrate (CHO) intake ( p = 0.62), and ( D ) leucine intake ( p = 0.35).",
+      "context_window": "n = 10) and older ( n = 16) adults. ( A ) Protein intake ( p = 0.62), ( B ) fat intake ( p = 0.81), ( C ) carbohydrate (CHO) in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-742",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.81",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 742,
+      "sentence": "Habitual dietary intake parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Protein intake ( p = 0.62), ( B ) fat intake ( p = 0.81), ( C ) carbohydrate (CHO) intake ( p = 0.62), and ( D ) leucine intake ( p = 0.35).",
+      "context_window": "dults. ( A ) Protein intake ( p = 0.62), ( B ) fat intake ( p = 0.81), ( C ) carbohydrate (CHO) intake ( p = 0.62), and ( D ) le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-787",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 787,
+      "sentence": "Habitual dietary intake parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Protein intake ( p = 0.62), ( B ) fat intake ( p = 0.81), ( C ) carbohydrate (CHO) intake ( p = 0.62), and ( D ) leucine intake ( p = 0.35).",
+      "context_window": ") fat intake ( p = 0.81), ( C ) carbohydrate (CHO) intake ( p = 0.62), and ( D ) leucine intake ( p = 0.35). Analysis via unpair",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-825",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 825,
+      "sentence": "Habitual dietary intake parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Protein intake ( p = 0.62), ( B ) fat intake ( p = 0.81), ( C ) carbohydrate (CHO) intake ( p = 0.62), and ( D ) leucine intake ( p = 0.35).",
+      "context_window": "ydrate (CHO) intake ( p = 0.62), and ( D ) leucine intake ( p = 0.35). Analysis via unpaired t -tests. WBLM was significantly h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-947",
+      "claim_type": "mean_sd",
+      "raw_text": "61.8 \u00b1 9.9",
+      "numeric_values": [
+        61.8,
+        9.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 947,
+      "sentence": "WBLM was significantly higher in young compared to older adults ( Figure 2 A, 61.8 \u00b1 9.9 vs.",
+      "context_window": "ntly higher in young compared to older adults ( Figure 2 A, 61.8 \u00b1 9.9 vs. 49.8 \u00b1 11.9 kg, p = 0.01), although there was no signif",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-962",
+      "claim_type": "mean_sd",
+      "raw_text": "49.8 \u00b1 11.9",
+      "numeric_values": [
+        49.8,
+        11.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 962,
+      "sentence": "49.8 \u00b1 11.9 kg, p = 0.01), although there was no significant difference in upper lean leg mass (ULLM) ( Figure 2 B; 4.99 \u00b1 1.28 vs.",
+      "context_window": "young compared to older adults ( Figure 2 A, 61.8 \u00b1 9.9 vs. 49.8 \u00b1 11.9 kg, p = 0.01), although there was no significant difference",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-969",
+      "claim_type": "unit_value",
+      "raw_text": "11.9 kg",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 969,
+      "sentence": "49.8 \u00b1 11.9 kg, p = 0.01), although there was no significant difference in upper lean leg mass (ULLM) ( Figure 2 B; 4.99 \u00b1 1.28 vs.",
+      "context_window": "ompared to older adults ( Figure 2 A, 61.8 \u00b1 9.9 vs. 49.8 \u00b1 11.9 kg, p = 0.01), although there was no significant difference in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-978",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 978,
+      "sentence": "49.8 \u00b1 11.9 kg, p = 0.01), although there was no significant difference in upper lean leg mass (ULLM) ( Figure 2 B; 4.99 \u00b1 1.28 vs.",
+      "context_window": "o older adults ( Figure 2 A, 61.8 \u00b1 9.9 vs. 49.8 \u00b1 11.9 kg, p = 0.01), although there was no significant difference in upper lea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-1078",
+      "claim_type": "mean_sd",
+      "raw_text": "4.99 \u00b1 1.28",
+      "numeric_values": [
+        4.99,
+        1.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1078,
+      "sentence": "49.8 \u00b1 11.9 kg, p = 0.01), although there was no significant difference in upper lean leg mass (ULLM) ( Figure 2 B; 4.99 \u00b1 1.28 vs.",
+      "context_window": "cant difference in upper lean leg mass (ULLM) ( Figure 2 B; 4.99 \u00b1 1.28 vs. 4.55 \u00b1 1.25 kg, p = 0.40). Despite this lack of differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-1094",
+      "claim_type": "mean_sd",
+      "raw_text": "4.55 \u00b1 1.25",
+      "numeric_values": [
+        4.55,
+        1.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1094,
+      "sentence": "4.55 \u00b1 1.25 kg, p = 0.40).",
+      "context_window": "in upper lean leg mass (ULLM) ( Figure 2 B; 4.99 \u00b1 1.28 vs. 4.55 \u00b1 1.25 kg, p = 0.40). Despite this lack of difference in ULLM (sel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-1101",
+      "claim_type": "unit_value",
+      "raw_text": "1.25 kg",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1101,
+      "sentence": "4.55 \u00b1 1.25 kg, p = 0.40).",
+      "context_window": "r lean leg mass (ULLM) ( Figure 2 B; 4.99 \u00b1 1.28 vs. 4.55 \u00b1 1.25 kg, p = 0.40). Despite this lack of difference in ULLM (select",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-1110",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1110,
+      "sentence": "4.55 \u00b1 1.25 kg, p = 0.40).",
+      "context_window": "g mass (ULLM) ( Figure 2 B; 4.99 \u00b1 1.28 vs. 4.55 \u00b1 1.25 kg, p = 0.40). Despite this lack of difference in ULLM (selected as ingu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-1301",
+      "claim_type": "mean_sd",
+      "raw_text": "87.7 \u00b1 28.3",
+      "numeric_values": [
+        87.7,
+        28.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1301,
+      "sentence": "Despite this lack of difference in ULLM (selected as inguinal crease to mid-point of the patella), young adults demonstrated significant KES compared to older adults ( Figure 1 D, 87.7 \u00b1 28.3 vs.",
+      "context_window": "ated significant KES compared to older adults ( Figure 1 D, 87.7 \u00b1 28.3 vs. 56.8 \u00b1 16.4 kg, p = 0.002), although WBS was not signif",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-1317",
+      "claim_type": "mean_sd",
+      "raw_text": "56.8 \u00b1 16.4",
+      "numeric_values": [
+        56.8,
+        16.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1317,
+      "sentence": "56.8 \u00b1 16.4 kg, p = 0.002), although WBS was not significantly different ( Figure 2 C; 79.9 \u00b1 21.9 vs.",
+      "context_window": "KES compared to older adults ( Figure 1 D, 87.7 \u00b1 28.3 vs. 56.8 \u00b1 16.4 kg, p = 0.002), although WBS was not significantly differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-1324",
+      "claim_type": "unit_value",
+      "raw_text": "16.4 kg",
+      "numeric_values": [
+        16.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1324,
+      "sentence": "56.8 \u00b1 16.4 kg, p = 0.002), although WBS was not significantly different ( Figure 2 C; 79.9 \u00b1 21.9 vs.",
+      "context_window": "mpared to older adults ( Figure 1 D, 87.7 \u00b1 28.3 vs. 56.8 \u00b1 16.4 kg, p = 0.002), although WBS was not significantly different (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-1333",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1333,
+      "sentence": "56.8 \u00b1 16.4 kg, p = 0.002), although WBS was not significantly different ( Figure 2 C; 79.9 \u00b1 21.9 vs.",
+      "context_window": "older adults ( Figure 1 D, 87.7 \u00b1 28.3 vs. 56.8 \u00b1 16.4 kg, p = 0.002), although WBS was not significantly different ( Figure 2 C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-1404",
+      "claim_type": "mean_sd",
+      "raw_text": "79.9 \u00b1 21.9",
+      "numeric_values": [
+        79.9,
+        21.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1404,
+      "sentence": "56.8 \u00b1 16.4 kg, p = 0.002), although WBS was not significantly different ( Figure 2 C; 79.9 \u00b1 21.9 vs.",
+      "context_window": "although WBS was not significantly different ( Figure 2 C; 79.9 \u00b1 21.9 vs. 65.3 \u00b1 19.4 kg, p = 0.08) between the age groups. Musc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-msd-1420",
+      "claim_type": "mean_sd",
+      "raw_text": "65.3 \u00b1 19.4",
+      "numeric_values": [
+        65.3,
+        19.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1420,
+      "sentence": "65.3 \u00b1 19.4 kg, p = 0.08) between the age groups.",
+      "context_window": "s not significantly different ( Figure 2 C; 79.9 \u00b1 21.9 vs. 65.3 \u00b1 19.4 kg, p = 0.08) between the age groups. Muscle mass and stre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-1427",
+      "claim_type": "unit_value",
+      "raw_text": "19.4 kg",
+      "numeric_values": [
+        19.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1427,
+      "sentence": "65.3 \u00b1 19.4 kg, p = 0.08) between the age groups.",
+      "context_window": "ignificantly different ( Figure 2 C; 79.9 \u00b1 21.9 vs. 65.3 \u00b1 19.4 kg, p = 0.08) between the age groups. Muscle mass and strengt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-1436",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1436,
+      "sentence": "65.3 \u00b1 19.4 kg, p = 0.08) between the age groups.",
+      "context_window": "tly different ( Figure 2 C; 79.9 \u00b1 21.9 vs. 65.3 \u00b1 19.4 kg, p = 0.08) between the age groups. Muscle mass and strength paramete",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-1518",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1518,
+      "sentence": "Muscle mass and strength parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Whole body lean mass, ( B ) upper leg lean mass, ( C ) whole body strength, and ( D ) knee extensor strength.",
+      "context_window": "age groups. Muscle mass and strength parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Whole body lean mass, (",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-1538",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1538,
+      "sentence": "Muscle mass and strength parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Whole body lean mass, ( B ) upper leg lean mass, ( C ) whole body strength, and ( D ) knee extensor strength.",
+      "context_window": "mass and strength parameters in young ( n = 10) and older ( n = 16) adults. ( A ) Whole body lean mass, ( B ) upper leg lean m",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2126",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2126,
+      "sentence": "There was no significant relationship between habitual protein intake (in g.kg -1 .day -1 ) and WBLM (R 2 = 0.037, p = 0.35) or ULLM (R 2 = 0.002, p = 0.81) ( Figure 3 A,B)).",
+      "context_window": "protein intake (in g.kg -1 .day -1 ) and WBLM (R 2 = 0.037, p = 0.35) or ULLM (R 2 = 0.002, p = 0.81) ( Figure 3 A,B)). There wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2158",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.81",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2158,
+      "sentence": "There was no significant relationship between habitual protein intake (in g.kg -1 .day -1 ) and WBLM (R 2 = 0.037, p = 0.35) or ULLM (R 2 = 0.002, p = 0.81) ( Figure 3 A,B)).",
+      "context_window": "-1 ) and WBLM (R 2 = 0.037, p = 0.35) or ULLM (R 2 = 0.002, p = 0.81) ( Figure 3 A,B)). There was also no relationship with musc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2257",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.37",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2257,
+      "sentence": "There was also no relationship with muscle strength (WBS (R 2 = 0.034, p = 0.37) or KES (R 2 = 0.001, p = 0.86)) ( Figure 3 C,D)) or MPS, either in the basal state (R 2 = 0.003, p = 0.79) nor in response to feeding (R 2 = 0.043, p = 0.31) ( Figure 3 E,F).",
+      "context_window": "lso no relationship with muscle strength (WBS (R 2 = 0.034, p = 0.37) or KES (R 2 = 0.001, p = 0.86)) ( Figure 3 C,D)) or MPS, e",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2288",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.86",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2288,
+      "sentence": "There was also no relationship with muscle strength (WBS (R 2 = 0.034, p = 0.37) or KES (R 2 = 0.001, p = 0.86)) ( Figure 3 C,D)) or MPS, either in the basal state (R 2 = 0.003, p = 0.79) nor in response to feeding (R 2 = 0.043, p = 0.31) ( Figure 3 E,F).",
+      "context_window": "strength (WBS (R 2 = 0.034, p = 0.37) or KES (R 2 = 0.001, p = 0.86)) ( Figure 3 C,D)) or MPS, either in the basal state (R 2 =",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2364",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2364,
+      "sentence": "There was also no relationship with muscle strength (WBS (R 2 = 0.034, p = 0.37) or KES (R 2 = 0.001, p = 0.86)) ( Figure 3 C,D)) or MPS, either in the basal state (R 2 = 0.003, p = 0.79) nor in response to feeding (R 2 = 0.043, p = 0.31) ( Figure 3 E,F).",
+      "context_window": "ure 3 C,D)) or MPS, either in the basal state (R 2 = 0.003, p = 0.79) nor in response to feeding (R 2 = 0.043, p = 0.31) ( Figur",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2415",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.31",
+      "numeric_values": [
+        0.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2415,
+      "sentence": "There was also no relationship with muscle strength (WBS (R 2 = 0.034, p = 0.37) or KES (R 2 = 0.001, p = 0.86)) ( Figure 3 C,D)) or MPS, either in the basal state (R 2 = 0.003, p = 0.79) nor in response to feeding (R 2 = 0.043, p = 0.31) ( Figure 3 E,F).",
+      "context_window": "= 0.003, p = 0.79) nor in response to feeding (R 2 = 0.043, p = 0.31) ( Figure 3 E,F). There was also no relationship with any a",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2600",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2600,
+      "sentence": "There was also no relationship with any aspect of muscle mass, function, or metabolism when protein intake was expressed relative to WBLM (ULLM: R 2 = 0.029, p = 0.40; WBS: R 2 = <0.01, p = 0.91; KES: R 2 = 0.022, p = 0.47; basal MPS: R 2 = <0.001, p = 0.98; postprandial MPS: R 2 = 0.116, p = 0.09).",
+      "context_window": "n intake was expressed relative to WBLM (ULLM: R 2 = 0.029, p = 0.40; WBS: R 2 = <0.01, p = 0.91; KES: R 2 = 0.022, p = 0.47; ba",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2628",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.91",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2628,
+      "sentence": "There was also no relationship with any aspect of muscle mass, function, or metabolism when protein intake was expressed relative to WBLM (ULLM: R 2 = 0.029, p = 0.40; WBS: R 2 = <0.01, p = 0.91; KES: R 2 = 0.022, p = 0.47; basal MPS: R 2 = <0.001, p = 0.98; postprandial MPS: R 2 = 0.116, p = 0.09).",
+      "context_window": "ive to WBLM (ULLM: R 2 = 0.029, p = 0.40; WBS: R 2 = <0.01, p = 0.91; KES: R 2 = 0.022, p = 0.47; basal MPS: R 2 = <0.001, p = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2656",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2656,
+      "sentence": "There was also no relationship with any aspect of muscle mass, function, or metabolism when protein intake was expressed relative to WBLM (ULLM: R 2 = 0.029, p = 0.40; WBS: R 2 = <0.01, p = 0.91; KES: R 2 = 0.022, p = 0.47; basal MPS: R 2 = <0.001, p = 0.98; postprandial MPS: R 2 = 0.116, p = 0.09).",
+      "context_window": "29, p = 0.40; WBS: R 2 = <0.01, p = 0.91; KES: R 2 = 0.022, p = 0.47; basal MPS: R 2 = <0.001, p = 0.98; postprandial MPS: R 2 =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2691",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.98",
+      "numeric_values": [
+        0.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2691,
+      "sentence": "There was also no relationship with any aspect of muscle mass, function, or metabolism when protein intake was expressed relative to WBLM (ULLM: R 2 = 0.029, p = 0.40; WBS: R 2 = <0.01, p = 0.91; KES: R 2 = 0.022, p = 0.47; basal MPS: R 2 = <0.001, p = 0.98; postprandial MPS: R 2 = 0.116, p = 0.09).",
+      "context_window": "0.91; KES: R 2 = 0.022, p = 0.47; basal MPS: R 2 = <0.001, p = 0.98; postprandial MPS: R 2 = 0.116, p = 0.09). Similarly, there",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2732",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2732,
+      "sentence": "There was also no relationship with any aspect of muscle mass, function, or metabolism when protein intake was expressed relative to WBLM (ULLM: R 2 = 0.029, p = 0.40; WBS: R 2 = <0.01, p = 0.91; KES: R 2 = 0.022, p = 0.47; basal MPS: R 2 = <0.001, p = 0.98; postprandial MPS: R 2 = 0.116, p = 0.09).",
+      "context_window": "MPS: R 2 = <0.001, p = 0.98; postprandial MPS: R 2 = 0.116, p = 0.09). Similarly, there was no relationship between habitual leu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2854",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2854,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "al leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; K",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2883",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.45",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2883,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; ba",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2911",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2911,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "3, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2939",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2939,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "24, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-2973",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2973,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "= 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-3014",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3014,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and meta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-3109",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3109,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; K",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-3138",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3138,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; ba",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-3166",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3166,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "9, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-3194",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3194,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "19, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-3228",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.25",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3228,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "= 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42). The relationshi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-p-3269",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.42",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3269,
+      "sentence": "Similarly, there was no relationship between habitual leucine intake relative to either BW (WBLM: R 2 = 0.013, p = 0.57; ULLM: R 2 = 0.024, p = 0.45; WBS: R 2 = 0.014, p = 0.57; KES: R 2 = 0.002, p = 0.83; basal MPS: R 2 = 0.029, p = 0.40; postprandial MPS: R 2 = 0.006, p = 0.71) or WBLM and our measures of muscle mass, function and metabolism (WBLM: R 2 = 0.109, p = 0.10; ULLM: R 2 = 0.019, p = 0.50; WBS: R 2 = 0.011, p = 0.62; KES: R 2 = <0.01, p = 0.99; basal MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42).",
+      "context_window": "MPS: R 2 = 0.055, p = 0.25; postprandial MPS: R 2 = 0.027, p = 0.42). The relationship between relative protein intake express",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-3411",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3411,
+      "sentence": "The relationship between relative protein intake expressed relative to body weight and physiological muscle parameters in young ( n = 10; open circles) and older ( n = 16; open circles) adults. ( A ) Whole body lean mass, ( B ) upper leg lean mass, ( C ) whole body strength, ( D ) knee extensor strength, ( E ) basal MPS, ( F ) fed state MPS.",
+      "context_window": "body weight and physiological muscle parameters in young ( n = 10; open circles) and older ( n = 16; open circles) adults. (",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-3445",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3445,
+      "sentence": "The relationship between relative protein intake expressed relative to body weight and physiological muscle parameters in young ( n = 10; open circles) and older ( n = 16; open circles) adults. ( A ) Whole body lean mass, ( B ) upper leg lean mass, ( C ) whole body strength, ( D ) knee extensor strength, ( E ) basal MPS, ( F ) fed state MPS.",
+      "context_window": "cle parameters in young ( n = 10; open circles) and older ( n = 16; open circles) adults. ( A ) Whole body lean mass, ( B ) up",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-pct-991",
+      "claim_type": "percentage",
+      "raw_text": "94%",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 991,
+      "sentence": "When considering these guidelines, we observed that all the young adults and all the older adults in this study except one (94%) achieved this threshold.",
+      "context_window": "g adults and all the older adults in this study except one (94%) achieved this threshold. Further, even when considering th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-pct-1192",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1192,
+      "sentence": "Further, even when considering the suggestion of alternative guidelines for healthy older adults as proposed by the PROT-AGE group of 1.0-1.2 g.kg -1 .day -1 [ 19 ], only 25% of the older adults in this study did not achieve this.",
+      "context_window": "the PROT-AGE group of 1.0-1.2 g.kg -1 .day -1 [ 19 ], only 25% of the older adults in this study did not achieve this. The",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-pct-1736",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1736,
+      "sentence": "This is in contrast to previously published results investigating the dietary habits of young, middle-aged, and older adults, which reported a significant difference in relative protein intake between young and older adults [ 17 ], and also reported that 65% of older adults did not reach a protein intake of 1.0 g.kg -1 .day -1 .",
+      "context_window": "tween young and older adults [ 17 ], and also reported that 65% of older adults did not reach a protein intake of 1.0 g.kg",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-1870",
+      "claim_type": "sample_size",
+      "raw_text": "n = 40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1870,
+      "sentence": "However, Smeuninx et al., did report on a larger sample ( n = 40 young and n = 40 older adults) and importantly recruited an older age group that was on average 7 years older than in this current study.",
+      "context_window": ". However, Smeuninx et al., did report on a larger sample ( n = 40 young and n = 40 older adults) and importantly recruited an",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-n-1887",
+      "claim_type": "sample_size",
+      "raw_text": "n = 40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1887,
+      "sentence": "However, Smeuninx et al., did report on a larger sample ( n = 40 young and n = 40 older adults) and importantly recruited an older age group that was on average 7 years older than in this current study.",
+      "context_window": "nx et al., did report on a larger sample ( n = 40 young and n = 40 older adults) and importantly recruited an older age group",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8539198_determining_the_influence_of_habitual_dietary_protein_intake-u-1973",
+      "claim_type": "unit_value",
+      "raw_text": "7 years",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1973,
+      "sentence": "However, Smeuninx et al., did report on a larger sample ( n = 40 young and n = 40 older adults) and importantly recruited an older age group that was on average 7 years older than in this current study.",
+      "context_window": "mportantly recruited an older age group that was on average 7 years older than in this current study. Aside from protein intake",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}
