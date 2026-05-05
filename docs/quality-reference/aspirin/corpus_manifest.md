@@ -14,5 +14,5 @@
 - `core_on_thesis`: 153
 - `background_mechanism`: 12
 - `adjacent_clinical`: 174
-- `off_thesis`: 2738
-- `reject`: 51
+- `off_thesis`: 2737
+- `reject`: 52
