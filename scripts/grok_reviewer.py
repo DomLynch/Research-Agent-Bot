@@ -163,7 +163,7 @@ def _build_grok_prompt(
                 f"effect={r.get('effect_direction', '?')} "
                 f"tier={r.get('evidence_tier', '?')}"
             )
-        receipt_header = "## Allowed body citations (Author-Year tokens)"
+        receipt_header = "## Allowed body citations — primary evidence (receipts)"
     else:
         receipt_lines = [
             f"- {r.get('receipt_id', '?')}: outcome={r.get('outcome_class', '?')} "
@@ -172,6 +172,54 @@ def _build_grok_prompt(
         ]
         receipt_header = "## Receipt list (use ONLY these for citations)"
 
+    # Reviewer wave 10 (2026-05-05) — Grok bg-lit awareness fix:
+    # The pipeline allows TWO citation pools in body prose:
+    #   1. Receipts (above) — primary corpus evidence
+    #   2. Background-literature registry — pre-vetted clinical
+    #      thresholds (Studenski 2011, Cesari 2009, Cruz-Jentoft 2019,
+    #      Bohannon 1997, Anisimov 2008, Owen 2000, etc.) admissible
+    #      ONLY when the citation_token appears in the same sentence
+    #      as the threshold value.
+    # Pre-fix Grok only saw pool #1 and flagged every bg-lit citation
+    # as 'unauthorized', generating dozens of false-positive P1 patches
+    # (rapamycin publication run had 19 unresolved). Now Grok sees
+    # both pools and only flags citations not in EITHER.
+    bglit_lines: list[str] = []
+    try:
+        from pathlib import Path
+        import json as _json
+        bg_path = (
+            Path(__file__).resolve().parent.parent
+            / "docs" / "background_literature.json"
+        )
+        if bg_path.exists():
+            bg_data = _json.loads(bg_path.read_text())
+            seen_tokens: set[str] = set()
+            for entry in bg_data.values():
+                if not isinstance(entry, dict):
+                    continue
+                token = (entry.get("citation_token") or "").strip()
+                numeric = (entry.get("numeric") or "").strip()
+                if not token or token in seen_tokens:
+                    continue
+                seen_tokens.add(token)
+                bglit_lines.append(
+                    f"- {token}: {numeric} ({entry.get('context', '')[:60]})"
+                )
+    except (OSError, ValueError, ImportError):
+        bglit_lines = []
+    bglit_header = (
+        "## Allowed body citations — background literature\n\n"
+        "These canonical citations are ALSO permitted in body prose, "
+        "alongside the receipt list above. They cite pre-vetted "
+        "clinical thresholds (gait-speed cutoffs, BMI thresholds, "
+        "etc.) and must NOT be flagged as 'unauthorized citations'."
+    )
+
+    bglit_section = (
+        f"\n\n{bglit_header}\n" + "\n".join(bglit_lines)
+        if bglit_lines else ""
+    )
     user = (
         f"# Paper to review ({len(paper_md.split())} words)\n\n"
         f"## Pipeline metadata\n"
@@ -182,6 +230,7 @@ def _build_grok_prompt(
         f"P1={'PASS' if audit_p1 else 'FAIL'}\n\n"
         f"{receipt_header}\n"
         + "\n".join(receipt_lines)
+        + bglit_section
         + "\n\n## Paper full text\n\n```markdown\n"
         + paper_md
         + "\n```\n\nNow produce the JSON patch list."
