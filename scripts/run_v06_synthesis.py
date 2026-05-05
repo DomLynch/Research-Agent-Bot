@@ -1752,10 +1752,23 @@ def _compute_unified_verdict(
     #   ≥ min_non_orthogonal_tensions (default 10)
     # Topic packs may override these in [certification_floors] table.
     # Below floor → max verdict is Trust-Spine Pass; never AAA.
+    # Reviewer P1 (2026-05-05 wave 8): cert floors are GLOBAL POLICY,
+    # not topic-pack overrideable downward. Topic packs may RAISE
+    # the bar (e.g. require ≥20 receipts for stricter topics) but
+    # cannot lower it below the default. This prevents thin-corpus
+    # topics from gaming the verdict by setting min_receipts=2.
+    _DEFAULT_MIN_RECEIPTS = 10
+    _DEFAULT_MIN_CLAIMS = 50
+    _DEFAULT_MIN_TENSIONS = 10
     floors = cert_floors or {}
-    min_rec = floors.get("min_receipts", 10)
-    min_claims = floors.get("min_high_conf_claims", 50)
-    min_tens = floors.get("min_non_orthogonal_tensions", 10)
+    min_rec = max(_DEFAULT_MIN_RECEIPTS,
+                  floors.get("min_receipts", _DEFAULT_MIN_RECEIPTS))
+    min_claims = max(_DEFAULT_MIN_CLAIMS,
+                     floors.get("min_high_conf_claims",
+                                _DEFAULT_MIN_CLAIMS))
+    min_tens = max(_DEFAULT_MIN_TENSIONS,
+                   floors.get("min_non_orthogonal_tensions",
+                              _DEFAULT_MIN_TENSIONS))
     # Skip floor check when caller passes no corpus signals (legacy
     # test callers using the pre-2026-05-05 signature). Production
     # callers from run_v06_synthesis always pass real values.

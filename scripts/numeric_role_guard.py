@@ -58,11 +58,28 @@ _ABOVE_WORDS = (
     r"exceeds", r"greater\s+than", r"≥", r">=",
     r"at\s+or\s+above",
 )
-# Allowlist — change-vs-change-threshold framings are ALWAYS legitimate
+# Allowlist — phrases that SIGNAL the threshold being discussed is a
+# change-threshold (MCID-style) rather than an absolute level. Broader
+# than the original list to avoid auto-stripping legitimate
+# recommendation/benchmark prose. Universal — no drug names.
 _CHANGE_THRESHOLD_ALLOWLIST = (
-    "clinically meaningful change", "minimal clinically important difference",
-    "MCID", "change threshold", "substantial change",
-    "meaningful change threshold", "change-score threshold",
+    "clinically meaningful", "clinically relevant",
+    "minimal clinically important difference", "MCID",
+    "change threshold", "change-score threshold",
+    "substantial change", "meaningful improvement",
+    "meaningful decrease", "meaningful difference",
+)
+
+# Explicit comparison framings — required for role_mismatch to fire.
+# Without this, sentences that merely MENTION change + threshold
+# (e.g. recommendation/benchmark prose) get stripped as false
+# positives. The role-mismatch P1 only fires when there's an actual
+# below/above/falls-at comparison happening.
+_EXPLICIT_COMPARISON_RE = re.compile(
+    r"\b(?:falls?|is|are|sits?|lies?|stays?)\s+"
+    r"(?:at\s+or\s+)?(?:below|above|under|over|less\s+than|greater\s+than)"
+    r"|≤|≥|<=|>=|\bbelow\s+the\b|\babove\s+the\b",
+    flags=re.IGNORECASE,
 )
 
 
@@ -245,17 +262,24 @@ def _check_role_mismatch(sentence: str) -> NumericIssue | None:
         return None  # change-vs-change-threshold is allowed
     if not _has_absolute_threshold(sentence):
         return None
+    # (c) Requires EXPLICIT comparison framing (below/above/falls-at)
+    # — without this, recommendation/benchmark prose that merely
+    # discusses both change scores and absolute thresholds in the
+    # same sentence gets stripped as false positives. Reviewer-
+    # tightened: P1 fires only on the precise misread pattern.
+    if not _EXPLICIT_COMPARISON_RE.search(sentence):
+        return None
     return NumericIssue(
         sentence=sentence,
-        issue_type="role_mismatch",
-        severity="P2",
+        issue_type="change_score_vs_absolute_threshold",
+        severity="P1",
         detail=(
-            "Sentence frames a numeric as a CHANGE score but mentions "
-            "an ABSOLUTE threshold (frailty cutoff, severity level, "
-            "etc.) in close proximity. Flagged P2 for human review — "
-            "the comparison may be invalid, but borderline cases "
-            "(MCID-style benchmarks, recommendation framing) require "
-            "judgment. Auto-strip-only via P1 escalation if needed."
+            "Sentence frames a numeric as a CHANGE score AND uses "
+            "explicit below/above/falls-at language to compare it "
+            "against an ABSOLUTE threshold (frailty cutoff, severity "
+            "level, etc.). This is a publication-blocker science "
+            "error: change scores cannot be meaningfully compared to "
+            "absolute-level thresholds. Auto-strip."
         ),
     )
 

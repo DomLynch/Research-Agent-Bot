@@ -176,10 +176,13 @@ def test_aaa_clears_when_above_cert_floor() -> None:
     assert v.verdict == "AAA"
 
 
-def test_cert_floor_overridable_via_topic_pack() -> None:
-    """Topic pack can lower or raise floors via cert_floors arg."""
+def test_cert_floor_topic_pack_can_raise_only_not_lower() -> None:
+    """Reviewer P1 (2026-05-05 wave 8): cert floors are global policy.
+    Topic packs may RAISE the bar but cannot lower it. A pack saying
+    min_receipts=3 gets max(default=10, pack=3) = 10, so a 3-receipt
+    corpus still fails the floor."""
     s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
-    # Lowered floor → corpus that was previously below now passes
+    # Pack tries to LOWER floor — must be ignored
     v = orch._compute_unified_verdict(
         s1, [], grok_unresolved_p1=0,
         n_receipts=3, n_high_conf_claims=18,
@@ -189,4 +192,22 @@ def test_cert_floor_overridable_via_topic_pack() -> None:
             "min_non_orthogonal_tensions": 3,
         },
     )
-    assert v.verdict == "AAA"
+    assert v.verdict == "Trust-Spine Pass"
+    assert "below certification floor" in v.reason
+
+
+def test_cert_floor_topic_pack_can_raise_above_default() -> None:
+    """A pack RAISING floor above default works — stricter topics
+    can require more corpus."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=12, n_high_conf_claims=60,
+        n_non_orthogonal_tensions=12,
+        cert_floors={
+            "min_receipts": 20,
+            "min_high_conf_claims": 100,
+            "min_non_orthogonal_tensions": 15,
+        },
+    )
+    assert v.verdict == "Trust-Spine Pass"

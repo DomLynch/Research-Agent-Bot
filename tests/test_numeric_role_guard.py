@@ -62,14 +62,17 @@ def test_arithmetic_universal_units_bmi():
 
 def test_role_mismatch_change_vs_absolute_frailty():
     """'A change of X is below the frailty cutoff' — change_score
-    compared to absolute_value threshold. Auto-strip."""
+    compared to absolute_value threshold via explicit comparison.
+    Reviewer-tightened: P1 issue_type='change_score_vs_absolute_threshold',
+    auto-strip."""
     s = (
         "The observed change of 0.05 m/s is below the 0.8 m/s "
         "frailty threshold, indicating severe impairment."
     )
     issue = _check_role_mismatch(s)
     assert issue is not None
-    assert issue.issue_type == "role_mismatch"
+    assert issue.issue_type == "change_score_vs_absolute_threshold"
+    assert issue.severity == "P1"
 
 
 def test_role_mismatch_allows_change_vs_change_threshold():
@@ -96,6 +99,20 @@ def test_role_mismatch_universal_bp():
     )
     issue = _check_role_mismatch(s)
     assert issue is not None
+    assert issue.severity == "P1"
+
+
+def test_role_mismatch_no_explicit_comparison_passes():
+    """Discussion of change scores AND thresholds without an
+    EXPLICIT below/above/falls-at comparison is allowed —
+    recommendation prose, MCID benchmarks, etc. are legitimate."""
+    s = (
+        "Future trials should target an annual gait-speed decline of "
+        "0.05 m/s, given established frailty cutoffs in the 0.8 m/s "
+        "range."
+    )
+    # No 'falls below', 'is above' — just discussion of both numerics
+    assert _check_role_mismatch(s) is None
 
 
 # ---------- malformed subject (duplicate-subject artifact) ---------
