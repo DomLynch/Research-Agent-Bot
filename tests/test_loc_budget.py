@@ -91,6 +91,15 @@ log so the synthesis engine knows WHY each paper sits in the
 corpus and which citation pool it belongs to. Pure heuristic, no
 LLM, universal across topics (2026-05-05).
 
+Wave 7 cont. — Evidence Factory slice 5 (15,250 → 15,450):
+agent/domain_evidence.py (~152 cloc — DomainProfile dataclass
+with 4 built-in profiles: BIOMEDICAL, ECONOMICS, MANAGEMENT,
+CS_AI). Decouples evidence-tier hierarchy + core/mechanism signal
+lists from biomedical hardcoding so topic packs can pick a domain
+via `domain = "..."` and the same pipeline services every domain.
+No per-domain `if` ladders in runtime — profile data flows in via
+get_profile(name). Universal across domains (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -98,7 +107,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 15250
+TOTAL_LIMIT = 15450
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
