@@ -50,6 +50,24 @@ from typing import Any, Iterable
 # overpower the prose body and make the paper unreadable.
 _MAX_ROWS = 40
 
+# Endpoint values that signal an UNBOUND or context-only claim.
+# Reviewer wave 9 (2026-05-05): the QEI rendered rows like
+# 'endpoint = unknown' and 'endpoint = background', which are
+# semantically empty for an evidence index. Universal across topics.
+_UNBOUND_ENDPOINTS = {"unknown", "background", "", "n/a", "none", "?"}
+
+# Unit categories that are TEMPORAL (duration, age) — only meaningful
+# in the QEI when the endpoint is itself a duration/age outcome.
+# Otherwise a row like 'endpoint=body mass index, value=65 years' is a
+# semantic mismatch (the 65 years was the patient age, not the BMI).
+_TEMPORAL_UNITS = {"years", "year", "months", "month", "weeks",
+                   "week", "days", "day", "hours"}
+_TEMPORAL_ENDPOINTS = {
+    "duration", "follow-up", "follow up", "follow_up", "study duration",
+    "trial duration", "median follow-up", "age", "treatment duration",
+    "intervention duration", "exposure duration",
+}
+
 
 @dataclass(frozen=True, slots=True)
 class EvidenceRow:
@@ -175,11 +193,40 @@ def build_results_table(
     return _render_md(rows, topic=topic)
 
 
+def _row_is_meaningful(claim: dict[str, Any]) -> bool:
+    """Reviewer wave 9 (2026-05-05): drop rows whose endpoint is
+    unbound or whose unit/endpoint combination is semantically
+    incoherent. Universal — no drug names, no specific values.
+
+    Rules (each one drops the row):
+      1. endpoint ∈ {unknown, background, '', n/a, none, ?}
+      2. claim_type='unit_value' with TEMPORAL units (years, months,
+         days) but endpoint isn't a duration/age outcome — that's a
+         age-or-duration value misattributed to a non-temporal
+         endpoint (e.g. 'BMI = 65 years' — wrong).
+    """
+    endpoint = (claim.get("endpoint") or "").strip().lower()
+    if endpoint in _UNBOUND_ENDPOINTS:
+        return False
+    claim_type = (claim.get("claim_type") or "").strip()
+    units = (claim.get("units") or "").strip().lower()
+    if claim_type == "unit_value" and units in _TEMPORAL_UNITS:
+        # Allow the row only if the endpoint is itself a temporal
+        # outcome (duration, follow-up, age).
+        if endpoint not in _TEMPORAL_ENDPOINTS:
+            return False
+    return True
+
+
 def _claim_to_row(
     claim: dict[str, Any], *, paper_id: str,
 ) -> EvidenceRow | None:
     """Transform one high-confidence claim into a table row.
-    Returns None for claims without a usable numeric value."""
+    Returns None for claims without a usable numeric value or whose
+    endpoint/unit combination is semantically incoherent (reviewer
+    wave 9 cleanup)."""
+    if not _row_is_meaningful(claim):
+        return None
     nums = claim.get("numeric_values") or []
     if not nums:
         return None

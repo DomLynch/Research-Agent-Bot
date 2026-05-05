@@ -115,14 +115,17 @@ def test_search_provenance_includes_tier_distribution() -> None:
 # =========== AI-Use Disclosure ====================================
 
 
-def test_ai_use_disclosure_declares_researka_independent_standard() -> None:
-    """RIS framing: Researka does NOT defer to ICMJE/Nature/BMJ.
-    Researka is its own AI-native research certification standard.
-    The disclosure must explicitly position itself this way."""
+def test_ai_use_disclosure_declares_audit_protocol_complement() -> None:
+    """Reviewer wave 9 (2026-05-05): combative 'does not defer to
+    ICMJE/Nature/BMJ' framing softened to journal-neutral
+    'complement, not replace' framing. The disclosure must
+    explicitly position itself as complementary to peer review."""
     md = appx.build_ai_use_disclosure(
         _fake_manifest(), model_stack=_fake_model_stack(),
     )
-    assert "Researka Independent Standard" in md
+    assert "complement" in md.lower()
+    assert "Researka A2A-AAA Protocol" in md
+    assert "ICMJE" not in md  # combative reference removed
     assert "Researka A2A-AAA" in md
     # Naming legacy policies is fine — the manifesto explicitly
     # contrasts with them — but the headline framing is RIS.

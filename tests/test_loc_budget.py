@@ -52,6 +52,17 @@ shortfalls. The anchor is structural — receipts/matrix/tier counts,
 no LLM, no fabrication risk; ensures Q11/Q12 floor is hit on
 thin-LLM-sample runs without prompt fragility (2026-05-05).
 
+Wave 6 — journal-polish triple (14,450 → 14,650): QEI semantic-role
+validation in agent/results_table.py (~30 cloc — drops endpoint=
+'unknown'/'background' rows + temporal-unit/non-temporal-endpoint
+mismatches like 'BMI=65 years'); PRISMA-bridge appendix in new
+agent/manuscript_prisma.py (~120 cloc — search strings, screening
+counts, inclusion/exclusion criteria, deterministic from
+manifest+topic_pack); softened AI-use disclosure (~0 net cloc —
+prose rewrite replacing 'does not defer to ICMJE' with
+'complement, not replace' framing). All three reviewer wave 9
+journal-submission polishes (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -59,7 +70,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 14450
+TOTAL_LIMIT = 14650
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

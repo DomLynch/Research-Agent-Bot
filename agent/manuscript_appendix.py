@@ -270,21 +270,24 @@ def build_ai_use_disclosure(
     *,
     verdict: str = "",
 ) -> str:
-    """AI-use disclosure under the Researka Independent Standard (RIS).
+    """AI-use disclosure (Researka A2A-AAA audit protocol).
 
-    Researka does not defer to ICMJE / Nature / BMJ AI-use policies —
-    those treat AI as a junior contributor that humans must oversee.
-    Researka is an AI-native research certification protocol where
-    every claim, citation, and numeric is gate-checked by deterministic
-    rules (the trust spine), every reviewer intervention is logged,
-    and the public bundle exposes the full error surface. The
-    'human accountability' that traditional venues require is here
-    replaced by inspectable, reproducible audit trails that any third
-    party can re-run.
+    Designed to **complement** conventional editorial and peer-review
+    evaluation, not to replace it. Every claim, citation, and numeric
+    in the manuscript is gate-checked by deterministic rules (the
+    trust spine), every automated revision is logged, and the public
+    bundle exposes the full provenance trail for inspection by any
+    third party. The protocol is offered as an additional
+    reproducibility and provenance layer that traditional human
+    review may evaluate alongside its usual checks.
 
-    A named human still SUBMITS the manuscript and accepts liability
-    for the act of submission, but the EVIDENCE STANDARD that backs
-    the claims is Researka's, not a human reviewer's."""
+    A named human submits the manuscript and accepts liability for
+    public release; the audit trail provides the per-claim
+    verification surface that supports the submitter's attestation.
+    Reviewer wave 9 (2026-05-05): softened from earlier 'does not
+    defer to ICMJE/Nature/BMJ' framing, which was tonally combative
+    for journal submission contexts. The substantive architecture
+    is unchanged."""
     model_stack = model_stack or {}
     n_llm_calls = manifest.get("n_llm_calls", 0)
     cost_usd = float(manifest.get("total_cost_usd", 0.0))
@@ -292,27 +295,27 @@ def build_ai_use_disclosure(
     repairs = manifest.get("claim_strength_repairs", 0)
 
     lines = [
-        "## AI-Use Disclosure (Researka Independent Standard)",
+        "## AI-Use Disclosure",
         "",
-        "This manuscript was produced under the **Researka A2A-AAA "
-        "Protocol** — an AI-native research certification standard "
-        "designed to be more inspectable and reproducible than "
-        "traditional human-only peer review. Researka does not "
-        "defer to ICMJE / Nature / BMJ legacy AI-use policies; the "
-        "evidence standard backing every claim in this paper is the "
-        "Researka trust spine described below.",
+        "This manuscript was produced under an AI-native audit "
+        "protocol (the Researka A2A-AAA Protocol) designed to "
+        "**complement, not replace,** conventional editorial peer "
+        "review. The protocol provides a reproducible audit trail "
+        "for every claim, citation, and numeric value in the "
+        "manuscript; this is intended as an additional reproducibility "
+        "and provenance layer that traditional human review may "
+        "evaluate alongside its usual checks.",
         "",
-        "**Why an independent standard?** Legacy AI-use policies "
-        "treat AI as a junior contributor whose work humans must "
-        "oversee — assuming humans can perform that oversight at "
-        "scale. They cannot. A 12,000-word evidence synthesis with "
-        "100+ numeric claims, 30+ citations, and 40+ cross-outcome "
-        "tensions is beyond the practical attention budget of any "
-        "human reviewer. Researka makes the audit trail itself the "
-        "primary accountability mechanism: the code that gates "
-        "every claim is public, the patches that revise the "
-        "manuscript are logged, and the verdict is reproducible by "
-        "any third party who re-runs the pipeline.",
+        "**Scope and rationale.** A multi-thousand-word evidence "
+        "synthesis containing dozens of numeric claims and citations "
+        "across multiple outcome classes is difficult to verify "
+        "exhaustively under standard editorial timeboxes. The audit "
+        "trail described below makes every claim individually "
+        "verifiable: the code that gates each claim is public, every "
+        "automated revision is logged, and any reviewer or third "
+        "party can re-run the pipeline against the public bundle and "
+        "reproduce the verdict. This is offered as a tractable "
+        "supplement to expert review, not as a substitute for it.",
         "",
         "### Models used and their roles",
         "",
@@ -578,8 +581,10 @@ def compose_appendix(
     'A2A-AAA-certified' language in the submitter block + AI-use
     disclosure is gated on the actual verdict. Trust-Spine Pass and
     SHIP-BLOCKED artifacts no longer overclaim AAA."""
+    from agent.manuscript_prisma import build_prisma_bridge_appendix
     blocks = [
         build_search_provenance_appendix(manifest, topic=topic),
+        build_prisma_bridge_appendix(manifest, topic=topic),
         build_ai_use_disclosure(
             manifest, audit, model_stack, verdict=verdict,
         ),
