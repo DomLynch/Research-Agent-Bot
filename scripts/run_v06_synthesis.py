@@ -1302,6 +1302,7 @@ async def _run_post_paper_pipeline(
         n_high_conf_claims=_n_claims,
         n_non_orthogonal_tensions=_n_tens,
         cert_floors=_cert_floors,
+        manifest=manifest,
     )
     paper_path.with_suffix(".final_verdict.json").write_text(
         json.dumps(dataclasses.asdict(unified), indent=2)
@@ -1672,7 +1673,12 @@ class UnifiedVerdict:
     even when stage1 + stage2 are clean, an unresolved Grok P1
     flag downgrades the verdict to 'Trust-Spine Pass — Human Review
     Required' rather than AAA (the harness can't autonomously verify
-    Grok's flag was wrong)."""
+    Grok's flag was wrong).
+
+    Wave 7 (2026-05-05): adds corpus_gaps + expansion_targets so a
+    sub-AAA verdict carries the actionable to-do list for the next
+    run instead of being a dead-end signal. Empty tuples when corpus
+    meets all gates."""
     verdict: str
     reason: str
     stage1_p1_pass: bool
@@ -1684,6 +1690,8 @@ class UnifiedVerdict:
     all_green: bool
     p1_clean: bool
     grok_unresolved_p1: int = 0
+    corpus_gaps: tuple[str, ...] = ()
+    expansion_targets: tuple[str, ...] = ()
 
 
 def _is_blocking(severity: str) -> bool:
@@ -1702,6 +1710,7 @@ def _compute_unified_verdict(
     n_high_conf_claims: int = 0,
     n_non_orthogonal_tensions: int = 0,
     cert_floors: dict[str, int] | None = None,
+    manifest: dict[str, Any] | None = None,
 ) -> UnifiedVerdict:
     """Worst-of(stage1, stage2, grok-unresolved). AAA reserved for
     fully-green (P1+P2 + zero unresolved Grok P1). SHIP-BLOCKED if
@@ -1854,6 +1863,25 @@ def _compute_unified_verdict(
             )
         )
 
+    # Wave 7 (Evidence Factory slice 2): compute corpus gaps so a
+    # sub-AAA verdict carries the actionable expansion to-do list
+    # for the next run. Universal — driven by manifest signals only,
+    # no per-topic logic. Empty tuples when the corpus already meets
+    # all gates (AAA path) or when the caller did not pass a manifest.
+    corpus_gaps: tuple[str, ...] = ()
+    expansion_targets: tuple[str, ...] = ()
+    if manifest is not None:
+        try:
+            from agent.corpus_expansion import compute_corpus_gaps
+            corpus_gaps, expansion_targets = compute_corpus_gaps(
+                manifest,
+                min_receipts=min_rec,
+                min_claims=min_claims,
+                min_tensions=min_tens,
+            )
+        except (ImportError, ValueError):
+            corpus_gaps, expansion_targets = (), ()
+
     return UnifiedVerdict(
         verdict=verdict,
         reason=reason,
@@ -1866,10 +1894,23 @@ def _compute_unified_verdict(
         all_green=all_green,
         p1_clean=p1_clean,
         grok_unresolved_p1=grok_unresolved_p1,
+        corpus_gaps=corpus_gaps,
+        expansion_targets=expansion_targets,
     )
 
 
 def _format_unified_verdict(u: UnifiedVerdict) -> str:
+    # Wave 7 (Evidence Factory slice 2): when the verdict carries
+    # corpus_gaps, append a Corpus Expansion To-Do block with a
+    # 1:1 gap→action mapping. Empty tuples → empty string.
+    expansion_md = ""
+    try:
+        from agent.corpus_expansion import format_expansion_section
+        expansion_md = format_expansion_section(
+            u.corpus_gaps, u.expansion_targets,
+        )
+    except ImportError:
+        expansion_md = ""
     return (
         f"# Unified Final Verdict\n\n"
         f"**Verdict: {u.verdict}**\n\n"
@@ -1903,6 +1944,7 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
         "stage-1 P2s or stage-2 P2 notes allowed.\n"
         "- **SHIP-BLOCKED** — ANY P1 fail in stage-1 OR stage-2 "
         "(unknown severities fail closed).\n"
+        + expansion_md
     )
 
 

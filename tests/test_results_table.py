@@ -19,6 +19,8 @@ from agent.results_table import (
     _short_citation,
     _truncate,
     build_results_table,
+    build_results_table_with_diagnostic,
+    format_empty_qei_placeholder,
 )
 
 
@@ -293,3 +295,111 @@ def test_evidence_row_immutable():
     )
     with pytest.raises(FrozenInstanceError):
         r.value = "999"  # type: ignore[misc]
+
+
+# ---------- Slice-1 closeout: empty-QEI diagnostic ----------------
+
+def test_diagnostic_counts_for_normal_corpus(tmp_path):
+    """Counter math on a populated corpus: every claim that survives
+    each gate should bump exactly one counter."""
+    claims_dir = tmp_path / "qc"
+    claims_dir.mkdir()
+    payload = {
+        "paper_id": "PMC1_demo",
+        "claims": [
+            # 1 high-conf, on-topic, meaningful → renders
+            {"claim_type": "p_value", "raw_text": "p=0.04",
+             "numeric_values": [0.04], "binding_confidence": "high",
+             "endpoint": "mortality", "arm": "metformin"},
+            # 1 high-conf, off-topic arm (drops at arm filter)
+            {"claim_type": "p_value", "raw_text": "p=0.05",
+             "numeric_values": [0.05], "binding_confidence": "high",
+             "endpoint": "mortality", "arm": "rapamycin"},
+            # 1 below confidence (drops before arm)
+            {"claim_type": "p_value", "raw_text": "p=0.06",
+             "numeric_values": [0.06], "binding_confidence": "none",
+             "endpoint": "mortality", "arm": "metformin"},
+        ],
+    }
+    (claims_dir / "PMC1.quant_claims.json").write_text(
+        json.dumps(payload),
+    )
+    md, diag = build_results_table_with_diagnostic(
+        claims_dir, topic="metformin",
+    )
+    assert diag["n_quant_files"] == 1
+    assert diag["n_total_claims"] == 3
+    assert diag["n_admissible"] == 2  # high+high (none dropped)
+    assert diag["n_topic_matched"] == 1  # metformin only
+    assert diag["drop_off_topic_arm"] == 1  # rapamycin dropped
+    assert diag["n_meaningful"] >= 1
+    assert diag["n_rendered"] == diag["n_after_quotas"]
+    assert "metformin" in md.lower()
+
+
+def test_diagnostic_empty_dir_returns_zeroed_counts(tmp_path):
+    """Missing dir → all counters zero, no crash, empty md."""
+    md, diag = build_results_table_with_diagnostic(
+        tmp_path / "nope", topic="x",
+    )
+    assert md == ""
+    assert diag["n_quant_files"] == 0
+    assert diag["n_total_claims"] == 0
+    assert diag["n_rendered"] == 0
+
+
+def test_diagnostic_non_receipt_filter_increments_drop_counter(tmp_path):
+    """Receipt-scope guard: paper not in accepted_paper_ids increments
+    drop_non_receipt_paper, not n_total_claims (we never opened the
+    file's claim list)."""
+    claims_dir = tmp_path / "qc"
+    claims_dir.mkdir()
+    (claims_dir / "PMC_outsider.quant_claims.json").write_text(
+        json.dumps({
+            "paper_id": "PMC_outsider",
+            "claims": [{"claim_type": "p_value", "raw_text": "p=0.04",
+                        "numeric_values": [0.04],
+                        "binding_confidence": "high",
+                        "endpoint": "x", "arm": "metformin"}],
+        }),
+    )
+    md, diag = build_results_table_with_diagnostic(
+        claims_dir, topic="metformin",
+        accepted_paper_ids=frozenset({"only_this_one"}),
+    )
+    assert md == ""
+    assert diag["drop_non_receipt_paper"] == 1
+    assert diag["n_total_claims"] == 0  # never reached the claims
+
+
+def test_format_empty_qei_placeholder_shows_diagnostic_numbers():
+    """The placeholder text must surface the breakdown so reviewers
+    see *why* the table is empty (universal across topics)."""
+    diag = {
+        "n_quant_files": 8, "n_total_claims": 47, "n_admissible": 12,
+        "n_topic_matched": 0, "n_meaningful": 0,
+        "drop_off_topic_arm": 12, "drop_non_receipt_paper": 3,
+    }
+    md = format_empty_qei_placeholder(diag, topic="rapamycin")
+    assert "rapamycin" in md
+    assert "8" in md       # n_quant_files
+    assert "47" in md      # n_total_claims
+    assert "12" in md      # n_admissible / drop_off_topic_arm
+    assert "Corpus Expansion To-Do" in md  # forward-points to verdict
+
+
+def test_format_empty_qei_placeholder_missing_keys_default_to_zero():
+    """An incomplete diag dict must not raise — uses .get(key, 0)."""
+    md = format_empty_qei_placeholder({}, topic="any_topic")
+    assert "any_topic" in md
+    assert "**0**" in md  # all counters render as 0
+
+
+def test_back_compat_build_results_table_still_returns_str(tmp_path):
+    """The thin wrapper preserves the pre-Slice-1 signature: str only,
+    no tuple. All existing callers + tests keep working."""
+    claims_dir = tmp_path / "qc"
+    claims_dir.mkdir()
+    out = build_results_table(claims_dir, topic="x")
+    assert isinstance(out, str)
+    assert out == ""

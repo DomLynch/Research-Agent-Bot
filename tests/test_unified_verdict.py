@@ -211,3 +211,98 @@ def test_cert_floor_topic_pack_can_raise_above_default() -> None:
         },
     )
     assert v.verdict == "Trust-Spine Pass"
+
+
+# ---------- Wave 7 / Slice 2: corpus_gaps + expansion_targets -------
+
+def test_corpus_gaps_default_empty_when_no_manifest_passed() -> None:
+    """Back-compat: callers that don't pass manifest get empty tuples,
+    not None — UnifiedVerdict.corpus_gaps is `tuple[str, ...] = ()`."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    v = orch._compute_unified_verdict(s1, [])
+    assert v.corpus_gaps == ()
+    assert v.expansion_targets == ()
+
+
+def test_corpus_gaps_populated_when_manifest_below_floor() -> None:
+    """Sub-AAA verdict carries the actionable to-do list. Universal —
+    no drug names, gaps are derived purely from manifest signals."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 3, "n_high_confidence_claims_total": 12,
+        "n_non_orthogonal_tensions": 1,
+        "receipts": [
+            {"outcome_class": "longevity", "evidence_tier": "B1",
+             "directness": "review", "receipt_id": "X_2024"},
+        ],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=3, n_high_conf_claims=12,
+        n_non_orthogonal_tensions=1,
+        manifest=manifest,
+    )
+    assert v.verdict == "Trust-Spine Pass"
+    assert len(v.corpus_gaps) >= 3  # receipts + claims + tensions
+    assert len(v.expansion_targets) == len(v.corpus_gaps)
+    assert any("Receipts" in g for g in v.corpus_gaps)
+
+
+def test_aaa_path_emits_no_corpus_gaps() -> None:
+    """An AAA-clearing run should emit empty corpus_gaps even when
+    manifest is passed — gaps are diagnostic, not noise."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 15,
+        "n_high_confidence_claims_total": 134,
+        "n_non_orthogonal_tensions": 42,
+        "receipts": [
+            {"outcome_class": "muscle_function", "evidence_tier": "A1",
+             "directness": "direct", "receipt_id": f"P{i}"}
+            for i in range(5)
+        ] + [
+            {"outcome_class": "cardiometabolic", "evidence_tier": "A1",
+             "directness": "direct", "receipt_id": f"Q{i}"}
+            for i in range(5)
+        ] + [
+            {"outcome_class": "longevity", "evidence_tier": "A2",
+             "directness": "direct", "receipt_id": f"R{i}"}
+            for i in range(5)
+        ],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=15, n_high_conf_claims=134,
+        n_non_orthogonal_tensions=42,
+        manifest=manifest,
+    )
+    assert v.verdict == "AAA"
+    assert v.corpus_gaps == ()
+    assert v.expansion_targets == ()
+
+
+def test_format_unified_verdict_includes_expansion_section() -> None:
+    """When the verdict carries gaps, the rendered markdown must
+    contain the Corpus Expansion To-Do block (Slice 2 wiring)."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 3, "n_high_confidence_claims_total": 12,
+        "n_non_orthogonal_tensions": 1, "receipts": [],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=3, n_high_conf_claims=12,
+        n_non_orthogonal_tensions=1, manifest=manifest,
+    )
+    md = orch._format_unified_verdict(v)
+    assert "Corpus Expansion To-Do" in md
+    assert "Gap:" in md
+    assert "Action:" in md
+
+
+def test_format_unified_verdict_omits_expansion_when_no_gaps() -> None:
+    """AAA path → no expansion section in the rendered markdown."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    v = orch._compute_unified_verdict(s1, [])
+    md = orch._format_unified_verdict(v)
+    assert "Corpus Expansion To-Do" not in md

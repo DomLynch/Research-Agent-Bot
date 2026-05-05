@@ -63,6 +63,18 @@ prose rewrite replacing 'does not defer to ICMJE' with
 'complement, not replace' framing). All three reviewer wave 9
 journal-submission polishes (2026-05-05).
 
+Wave 7 — Evidence Factory vertical slice 1+2 (14,650 → 14,900):
+agent/corpus_expansion.py (~163 cloc — universal Corpus Expansion
+Mode that turns sub-AAA verdicts into actionable to-do lists with
+quantity gaps + quality gaps + diversification targets); empty-QEI
+diagnostic in agent/results_table.py (~75 cloc —
+build_results_table_with_diagnostic returns counter dict + new
+format_empty_qei_placeholder surfaces 'why 0 rows' to reviewers).
+The Evidence Factory framing turns dead-end thin-corpus signals
+into operator-actionable expansion workflows; this slice is the
+foundation other slices (Journal-Ready verdict, dashboard, Corpus
+Factory v1, domain adapters) build on (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -70,7 +82,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 14650
+TOTAL_LIMIT = 14900
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

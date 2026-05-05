@@ -104,78 +104,104 @@ def build_results_table(
     quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
     accepted_paper_ids: frozenset[str] | None = None,
 ) -> str:
-    """Read every *.quant_claims.json in quant_dir, select rows under
-    per-category quotas to maximize distinct-numeric diversity (the
-    Q9 audit dedupes within category, so 12 sample_sizes count as 12
-    distinct but 12 percentages add 12 ADDITIONAL distinct numerics).
-    Empty string when no qualifying claims exist.
+    """Back-compat thin wrapper around `build_results_table_with_diagnostic`.
 
-    Cross-topic guard (P1 reviewer fix, 2026-05-04 wave 4): claims
-    whose `arm` field references a different drug than the topic's
-    active+placebo arm synonyms are dropped. A rapamycin-corpus paper
-    that quotes a metformin RCT comparator can otherwise leak
-    'arm=metformin' rows into a rapamycin Quantitative Evidence Index.
-    Looked up via the topic pack's active_arm_synonyms +
-    placebo_arm_synonyms fields; arm-empty claims are kept (no
-    cross-topic signal to filter on).
-
-    Receipt-scope guard (P2 reviewer fix, 2026-05-05 wave 6): when
-    `accepted_paper_ids` is provided, only quant_claims files whose
-    paper_id is in that set contribute rows. This prevents the
-    Quantitative Evidence Index from being padded with non-
-    contributing PMC papers — every row corresponds to a paper that
-    became a SPAR-accepted receipt in the synthesis. Universal across
-    topics; the caller computes the set from receipts via parsed
-    metadata DOIs/PMIDs. None disables the filter (back-compat for
-    tests / standalone calls).
+    Returns just the markdown body (empty string when no rows). All
+    selection logic, cross-topic guards, receipt-scope filtering, and
+    counter accounting live in the with-diagnostic variant — see that
+    function's docstring for the full contract.
     """
+    md, _diag = build_results_table_with_diagnostic(
+        quant_dir, topic=topic, max_rows=max_rows,
+        accepted_paper_ids=accepted_paper_ids,
+    )
+    return md
+
+
+def build_results_table_with_diagnostic(
+    quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
+    accepted_paper_ids: frozenset[str] | None = None,
+) -> tuple[str, dict[str, int]]:
+    """Same selection contract as build_results_table, but returns
+    `(md, diagnostic)` so callers know WHY the table is empty (or
+    sparse). Slice-1 reviewer fix (2026-05-05): an empty QEI must be
+    diagnostic — operators need to see whether the corpus had zero
+    quant claims, all claims were below admissibility, or all were
+    cross-topic / non-receipt / non-meaningful — so the corpus
+    expansion to-do can target the right gap.
+
+    Returned diagnostic keys:
+      - n_quant_files: parseable *.quant_claims.json files seen
+      - n_total_claims: claims across all files (pre-filter)
+      - n_admissible: passed _confidence_admissible
+      - n_topic_matched: also passed _arm_belongs_to_topic
+      - n_meaningful: also passed _row_is_meaningful (via _claim_to_row)
+      - n_after_quotas: rows that survived per-category / per-study
+        quotas + duplicate-value dedupe
+      - n_rendered: final row count in the markdown table
+      - drop_off_topic_arm: dropped by cross-topic arm filter
+      - drop_non_receipt_paper: skipped because paper_id not in
+        accepted_paper_ids (only counted when the filter is active)
+
+    Cross-topic guard (wave 4), receipt-scope guard (wave 6), and the
+    meaningful-row guard (wave 9) all participate; see comments below.
+    """
+    diag: dict[str, int] = {
+        "n_quant_files": 0,
+        "n_total_claims": 0,
+        "n_admissible": 0,
+        "n_topic_matched": 0,
+        "n_meaningful": 0,
+        "n_after_quotas": 0,
+        "n_rendered": 0,
+        "drop_off_topic_arm": 0,
+        "drop_non_receipt_paper": 0,
+    }
     rows: list[EvidenceRow] = []
     if not quant_dir.exists():
-        return ""
-    # Load the topic's active+placebo arm synonyms once for the
-    # cross-topic filter. Missing pack → no filter (back-compat).
+        return "", diag
     topic_arm_terms = _load_topic_arm_terms(topic)
-    # candidates: list of (score, claim_type, EvidenceRow, raw_value)
     candidates: list[tuple[int, str, EvidenceRow, str]] = []
     for path in sorted(quant_dir.glob("*.quant_claims.json")):
         try:
             data = json.loads(path.read_text())
         except (OSError, ValueError):
             continue
+        diag["n_quant_files"] += 1
         paper_id = data.get("paper_id") or path.stem.replace(
             ".quant_claims", ""
         )
-        # P2 receipt-scope: drop papers that didn't become receipts
         if accepted_paper_ids is not None and paper_id not in accepted_paper_ids:
+            diag["drop_non_receipt_paper"] += 1
             continue
         for claim in data.get("claims", []) or []:
+            diag["n_total_claims"] += 1
             if not _confidence_admissible(claim):
                 continue
+            diag["n_admissible"] += 1
             if not _arm_belongs_to_topic(claim, topic_arm_terms):
+                diag["drop_off_topic_arm"] += 1
                 continue
+            diag["n_topic_matched"] += 1
             row = _claim_to_row(claim, paper_id=paper_id)
             if row is None:
                 continue
+            diag["n_meaningful"] += 1
             score = _quality_score(claim)
             ct = claim.get("claim_type", "")
             candidates.append((score, ct, row, row.value))
     candidates.sort(key=lambda t: -t[0])
-    # Track per-category and per-study quotas.
     cat_count: dict[str, int] = {}
     seen_endpoints: dict[str, int] = {}
-    seen_values: set[str] = set()  # avoid duplicate numeric values
+    seen_values: set[str] = set()
     for _score, ct, row, value in candidates:
-        # Per-claim-type quota (drives audit Q9 unique-numeric diversity)
         quota = _CATEGORY_QUOTAS.get(ct, 4)
         if cat_count.get(ct, 0) >= quota:
             continue
-        # Per-study cap (≤4 rows per paper; Shot 3 dedup rule)
         if seen_endpoints.get(row.study_label, 0) >= 4:
             continue
-        # Skip exact-value duplicates (don't fill quota with same number)
         if value in seen_values:
             continue
-        # Skip same study+endpoint pair
         key = f"{row.study_label}|{row.endpoint}"
         if seen_endpoints.get(key, 0) >= 1:
             continue
@@ -188,9 +214,40 @@ def build_results_table(
         seen_values.add(value)
         if len(rows) >= max_rows:
             break
+    diag["n_after_quotas"] = len(rows)
     if not rows:
-        return ""
-    return _render_md(rows, topic=topic)
+        return "", diag
+    diag["n_rendered"] = len(rows)
+    return _render_md(rows, topic=topic), diag
+
+
+def format_empty_qei_placeholder(
+    diagnostic: dict[str, int], *, topic: str,
+) -> str:
+    """Diagnostic placeholder for the QEI section when no rows survive
+    all gates. Replaces the prior generic 'No high-confidence claims'
+    blurb with a structural breakdown so reviewers see exactly which
+    gate dropped the rows. Universal across topics — pure counter
+    rendering, no drug names, no per-topic prose.
+    """
+    n_files = diagnostic.get("n_quant_files", 0)
+    n_total = diagnostic.get("n_total_claims", 0)
+    n_adm = diagnostic.get("n_admissible", 0)
+    n_topic = diagnostic.get("n_topic_matched", 0)
+    n_meaning = diagnostic.get("n_meaningful", 0)
+    drop_arm = diagnostic.get("drop_off_topic_arm", 0)
+    drop_nr = diagnostic.get("drop_non_receipt_paper", 0)
+    return (
+        f"## Quantitative Evidence Index — {topic}\n\n"
+        f"_No qualifying rows. Corpus diagnostic — quant_claims files "
+        f"scanned: **{n_files}**; total claims read: **{n_total}**; "
+        f"admissible (HIGH/PARTIAL confidence): **{n_adm}**; "
+        f"topic-arm matched: **{n_topic}**; semantically meaningful: "
+        f"**{n_meaning}**. Dropped by guards: cross-topic arm = "
+        f"{drop_arm}, non-receipt papers = {drop_nr}. See Corpus "
+        f"Expansion To-Do in the final verdict for the actionable "
+        f"gap._\n"
+    )
 
 
 def _row_is_meaningful(claim: dict[str, Any]) -> bool:

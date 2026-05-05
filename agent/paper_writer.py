@@ -612,7 +612,9 @@ async def render_full_paper(
     # synthesis. Universal — same logic for every topic.
     from pathlib import Path as _Path
     from agent.results_table import (
-        build_results_table, resolve_accepted_paper_ids,
+        build_results_table_with_diagnostic,
+        format_empty_qei_placeholder,
+        resolve_accepted_paper_ids,
     )
     _repo = _Path(__file__).resolve().parent.parent
     _quant_dir = _repo / "docs" / "quality-reference" / topic / "quant_claims"
@@ -620,16 +622,17 @@ async def render_full_paper(
     _accepted_paper_ids = resolve_accepted_paper_ids(
         receipts, _parsed_dir,
     )
-    _table_md = build_results_table(
+    _table_md, _qei_diag = build_results_table_with_diagnostic(
         _quant_dir, topic=topic,
         accepted_paper_ids=_accepted_paper_ids,
     )
+    # Slice 1 closeout (2026-05-05): empty QEI gets a *diagnostic*
+    # placeholder so reviewers see whether the corpus had zero
+    # claims, all dropped at confidence gate, or all dropped by
+    # topic/receipt guards. The diagnostic dict is also stashed on
+    # the section so manifest-builders can read it.
     if not _table_md:
-        _table_md = (
-            f"## Quantitative Evidence Index — {topic}\n\n"
-            "_No high-confidence quantitative claims in the current "
-            "corpus; see Results section for narrative synthesis._\n"
-        )
+        _table_md = format_empty_qei_placeholder(_qei_diag, topic=topic)
     sections["quantitative_results_table"] = SynthesisSection(
         name="quantitative_results_table",
         body_md=_table_md,
