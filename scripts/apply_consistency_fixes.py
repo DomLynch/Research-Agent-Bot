@@ -86,6 +86,9 @@ def _extract_section(paper: str, heading: str) -> tuple[int, int, str]:
 
 def apply_fixes(
     paper_md: str, issues: list[dict],
+    *,
+    manifest: dict | None = None,
+    quant_claims_dir=None,
 ) -> tuple[str, list[dict]]:
     """Apply auto-fixable patches; return (new_md, log).
 
@@ -95,7 +98,14 @@ def apply_fixes(
     margin floor (Discussion/CD: 850 = Q11/Q12 800 + 50 margin;
     Limitations: 200; Conclusion: 150), the section is restored to
     its pre-strip state. Trust-spine deletion safety +
-    analytical-depth preservation."""
+    analytical-depth preservation.
+
+    Slice 7 P2 (2026-05-05): optional manifest + quant_claims_dir
+    let the Numeric Role Guard auto-strip RECEIPT-side source-
+    context drift (not just bg_lit-side). Without these, the audit
+    flags receipt-side drift but the fixer can't strip it because
+    it lacks the receipt → quant_claims mapping. Defaulted None
+    for back-compat with callers that don't have manifest context."""
     new_md = paper_md
     log: list[dict] = []
     # Snapshot for Fix #53 depth-preservation guard
@@ -497,13 +507,11 @@ def apply_fixes(
     except ImportError:
         _scan = None
     if _scan is not None:
-        # Best-effort: feed bg_lit registry for the drift check.
-        # apply_fixes doesn't receive a manifest argument so the
-        # quant_claims-side of drift fires only via
-        # _check_numeric_role_guard in final_consistency_audit
-        # (which has manifest access via _ACTIVE_MANIFEST). bg_lit
-        # alone still catches drift on canon citations like
-        # "Harrison 2009" / "Mannick 2014" / "Lamming 2012".
+        # Slice 7 P2: feed BOTH bg_lit registry AND manifest +
+        # quant_claims_dir so the auto-strip path covers VALUE drift
+        # AND ROLE drift on receipt-side citations (not just bg_lit
+        # canon). Falls back to bg_lit-only when caller didn't pass
+        # manifest (back-compat).
         import json as _json
         from pathlib import Path as _Path
         repo = _Path(__file__).resolve().parent.parent
@@ -514,8 +522,41 @@ def apply_fixes(
                 bg_lit_registry = _json.loads(bg_lit_path.read_text())
             except (OSError, ValueError):
                 bg_lit_registry = None
+        # Resolve quant_claims dir from topic in manifest if not given
+        qcd = quant_claims_dir
+        if qcd is None and isinstance(manifest, dict):
+            topic = manifest.get("topic")
+            if topic:
+                qcd = (
+                    repo / "docs" / "quality-reference" / topic
+                    / "quant_claims"
+                )
+        # Last-resort fallback: read _ACTIVE_MANIFEST + _ACTIVE_TOPIC
+        # globals from the orchestrator (preserves fix-#53c-style
+        # behavior for callers that don't thread manifest in).
+        manifest_obj = manifest
+        if manifest_obj is None:
+            try:
+                import sys as _sys
+                _sys.path.insert(0, str(repo / "scripts"))
+                import run_v06_synthesis as _orch
+                manifest_obj = getattr(_orch, "_ACTIVE_MANIFEST", None)
+                if qcd is None:
+                    topic = getattr(_orch, "_ACTIVE_TOPIC", None)
+                    if topic:
+                        qcd = (
+                            repo / "docs" / "quality-reference"
+                            / topic / "quant_claims"
+                        )
+            except (ImportError, AttributeError):
+                pass
         nrg_issues = _scan(
-            new_md, bg_lit_registry=bg_lit_registry,
+            new_md,
+            manifest=manifest_obj if isinstance(
+                manifest_obj, dict,
+            ) else None,
+            bg_lit_registry=bg_lit_registry,
+            quant_claims_dir=qcd,
         )
         if nrg_issues:
             new_md, n_stripped = _strip(new_md, nrg_issues)

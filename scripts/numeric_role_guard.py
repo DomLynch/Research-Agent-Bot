@@ -346,32 +346,41 @@ _DRIFT_NUMERIC_RE = re.compile(
 _NUMERIC_EPSILON = 1e-6
 
 
-def _build_citation_allowed_numerics(
+def _build_citation_role_index(
     *, manifest: dict | None,
     bg_lit_registry: dict | None,
     quant_claims_dir,
-) -> dict[str, set[str]]:
-    """Build {citation_token: {allowed_numeric_strings, ...}}.
+) -> dict[str, dict[str, set[str]]]:
+    """Build {citation_token: {numeric_variant: {role, ...}}}.
 
-    For each receipt in the manifest, look up its quant_claims.json
-    and extract every numeric_value. For each background_literature
-    entry, register its declared numeric. Caller fails-soft when the
-    registry is sparse (skip checks rather than false-flag)."""
+    For each numeric in the cited paper's source context, record
+    every ROLE it appears in (population baseline, change_score,
+    threshold, outcome value, etc.). The drift check uses this to
+    catch the failure mode where prose attributes a numeric to the
+    right citation but the WRONG role (e.g. prose says 'baseline
+    0.13 m/s' but Witham 2025 has 0.13 only as a change-score, not
+    a baseline).
+
+    Receipts: claim['claim_role'] (population / effect / baseline /
+    change_score / threshold / outcome / etc.) drives the role tag.
+    Background literature: bg_lit entries get role='canonical'
+    (single-role, since bg_lit is a flat numeric registry).
+
+    Empty role set for a value → no role data; caller falls back to
+    membership-only check (back-compat, fail-soft)."""
     import json as _json
     from pathlib import Path as _Path
-    out: dict[str, set[str]] = {}
-    # Background literature: token → declared numeric
+    out: dict[str, dict[str, set[str]]] = {}
     if bg_lit_registry:
         for entry in bg_lit_registry.values():
             tok = (entry.get("citation_token") or "").strip()
             num = (entry.get("numeric") or "").strip()
             if not tok:
                 continue
-            out.setdefault(tok, set())
+            slot = out.setdefault(tok, {})
             if num:
-                # Accept multiple representations of the same number
-                out[tok].update(_numeric_variants(num))
-    # Receipts: token → all numerics in that paper's quant_claims
+                for variant in _numeric_variants(num):
+                    slot.setdefault(variant, set()).add("canonical")
     if manifest is None:
         return out
     receipts = manifest.get("receipts") or []
@@ -382,7 +391,7 @@ def _build_citation_allowed_numerics(
         ).strip()
         if not tok:
             continue
-        out.setdefault(tok, set())
+        slot = out.setdefault(tok, {})
         paper_id = (r.get("paper_id") or r.get("receipt_id") or "")
         if not paper_id or qc_dir is None or not qc_dir.exists():
             continue
@@ -394,12 +403,29 @@ def _build_citation_allowed_numerics(
         except (OSError, ValueError):
             continue
         for claim in data.get("claims", []) or []:
+            role = (claim.get("claim_role") or "").strip().lower() or "outcome"
             for v in claim.get("numeric_values", []) or []:
-                if isinstance(v, (int, float)):
-                    out[tok].update(_numeric_variants(str(v)))
-                elif isinstance(v, str):
-                    out[tok].update(_numeric_variants(v))
+                vstr = str(v) if isinstance(v, (int, float)) else v
+                if not isinstance(vstr, str):
+                    continue
+                for variant in _numeric_variants(vstr):
+                    slot.setdefault(variant, set()).add(role)
     return out
+
+
+def _build_citation_allowed_numerics(
+    *, manifest: dict | None,
+    bg_lit_registry: dict | None,
+    quant_claims_dir,
+) -> dict[str, set[str]]:
+    """Slice 7 step 1 back-compat alias. Returns the value-set view
+    of the role index (collapses roles, keeps just the numerics)
+    so the existing membership-only fallback path keeps working."""
+    role_index = _build_citation_role_index(
+        manifest=manifest, bg_lit_registry=bg_lit_registry,
+        quant_claims_dir=quant_claims_dir,
+    )
+    return {tok: set(slot.keys()) for tok, slot in role_index.items()}
 
 
 def _numeric_variants(value: str) -> set[str]:
@@ -431,30 +457,103 @@ def _numeric_variants(value: str) -> set[str]:
 
 _DRIFT_PROXIMITY_WINDOW = 120  # chars; any citation within this distance is candidate
 
+# Slice 7 P1b: prose-role classifier. Each prose numeric belongs
+# to one role; the drift check compares the prose role to the source
+# claim_role for the same numeric value. Universal across topics +
+# domains (regex on English structural cues, no per-domain values).
+_PROSE_ROLE_PATTERNS: tuple[tuple[str, str], ...] = (
+    # baseline: "baseline X = N" / "starting X = N" / "pre-treatment N"
+    (r"\b(?:baseline|starting|pre[\-\s]?treatment|"
+     r"initial|enrolment|enrollment)\b", "baseline"),
+    # population: "participants aged N" / "n = N participants"
+    (r"\b(?:participants?|patients?|subjects?|sample\s+size|"
+     r"enrolled|recruited|aged?)\b", "population"),
+    # change_score: "change of N" / "improvement by N" / "reduction"
+    (r"\b(?:change|delta|difference|increase|decrease|improvement|"
+     r"reduction|decline|shift)\s+(?:of|by|in|from\s+baseline)?\b",
+     "change_score"),
+    # threshold: "threshold of N" / "above N" / "below N"
+    (r"\b(?:threshold|cut[\-\s]?off|cutoff|below|above|"
+     r"less\s+than|greater\s+than|exceeds?|falls?\s+(?:at\s+or\s+)?"
+     r"(?:below|above))\b", "threshold"),
+    # outcome / effect: "p = N" / "HR = N" / "reported N"
+    (r"\b(?:reported|observed|p\s*[<=>]|hr\s*=|or\s*=|rr\s*=|"
+     r"effect\s+size|outcome|primary\s+endpoint)\b", "effect"),
+)
+
+
+def _classify_prose_numeric_role(
+    sentence: str, num_pos: int, num: str,
+) -> str:
+    """Classify a prose numeric's role from the local sentence
+    context. Window: 60 chars before + 30 chars after the numeric.
+    Returns 'baseline' / 'population' / 'change_score' / 'threshold'
+    / 'effect' / 'outcome' (default).
+    Universal — operates on structural English cues only."""
+    start = max(0, num_pos - 60)
+    end = min(len(sentence), num_pos + len(num) + 30)
+    window = sentence[start:end].lower()
+    # Order matters: more specific patterns checked first
+    for pattern, role in _PROSE_ROLE_PATTERNS:
+        if re.search(pattern, window, flags=re.IGNORECASE):
+            return role
+    return "outcome"
+
+
+# Roles considered compatible (one of these in source means the
+# prose role is acceptable). Universal — biomedical / management /
+# economics all share these primitive role kinds.
+_ROLE_COMPATIBILITY: dict[str, frozenset[str]] = {
+    "baseline": frozenset(("baseline", "population", "outcome")),
+    "population": frozenset(("population", "baseline", "outcome")),
+    "change_score": frozenset(("change_score", "effect")),
+    "threshold": frozenset(("threshold", "canonical")),
+    "effect": frozenset(("effect", "change_score", "outcome")),
+    "outcome": frozenset((
+        "outcome", "effect", "population", "baseline",
+        "change_score", "canonical",
+    )),
+}
+
+
+def _roles_match(prose_role: str, source_roles: set[str]) -> bool:
+    """A prose role accepts any of its compatible source roles.
+    Special cases:
+      - source_roles empty (no role data) → pass (fail-soft)
+      - 'canonical' in source_roles (bg_lit registry numeric, which
+        is a flat fact without role interpretation) → pass for any
+        prose role. bg_lit numerics like 'Harrison 2009 / 14% mouse
+        lifespan' are legitimately quotable as a change_score in
+        prose even though they're tagged canonical in the registry."""
+    if not source_roles:
+        return True
+    if "canonical" in source_roles:
+        return True
+    compatible = _ROLE_COMPATIBILITY.get(
+        prose_role, frozenset(("outcome",)),
+    )
+    return bool(compatible & source_roles)
+
 
 def _check_source_context_drift(
     sentence: str,
-    citation_allowed: dict[str, set[str]],
+    citation_role_index: dict[str, dict[str, set[str]]],
 ) -> NumericIssue | None:
-    """For each numeric, gather ALL citations within
-    _DRIFT_PROXIMITY_WINDOW chars; if at least one of those
-    citations has the numeric in its registry, pass. Only flag
-    when EVERY nearby registered citation lacks the numeric.
+    """For each numeric, gather citations within
+    _DRIFT_PROXIMITY_WINDOW chars; the drift check now compares
+    prose ROLE to source CLAIM_ROLE per matching numeric value.
 
-    Why widened from "closest only": a sentence like
-      "0.8 m/s (Studenski 2011) or 27 kg ... (Cruz-Jentoft 2019)"
-    can legitimately attribute 27 to either citation depending on
-    sentence structure. Closest-only is brittle (the parenthetical
-    that 'owns' the numeric isn't always the geometrically closest
-    one). All-nearby-pass is conservative — if ANY plausibly-cited
-    paper has the numeric, no drift.
+    Two failure modes:
+      VALUE drift: numeric absent from every nearby citation's
+                   source context (the original Slice 7 P1 check)
+      ROLE drift:  numeric present in source but tagged with a
+                   different role than the prose used (P1b: 'prose
+                   says baseline 0.13 m/s but Witham has 0.13 only
+                   as a change_score').
 
-    Drift fires only when:
-      - At least one nearby citation HAS registry data, AND
-      - The numeric is in NONE of those nearby allowed sets.
-    Pure-unknown citations + year numerics + empty registries
-    fail-soft skip (no flag)."""
-    if not citation_allowed:
+    Both fire as severity=P1, issue_type='source_context_drift'.
+    Universal across topics + domains."""
+    if not citation_role_index:
         return None
     cite_matches = list(_CITATION_TOKEN_RE.finditer(sentence))
     if not cite_matches:
@@ -476,49 +575,84 @@ def _check_source_context_drift(
         return (match.start() + match.end()) // 2
 
     for num_pos, num in num_positions:
-        # Gather every citation within the proximity window.
         nearby = [
             c for c in cite_matches
             if abs(_midpoint(c) - num_pos) <= _DRIFT_PROXIMITY_WINDOW
         ]
         if not nearby:
             continue
-        # Filter to citations we actually have registry data for.
         nearby_keyed = [
             (f"{c.group(1)} {c.group(2)}", c) for c in nearby
         ]
         registered = [
-            (k, c) for k, c in nearby_keyed if k in citation_allowed
+            (k, c) for k, c in nearby_keyed
+            if k in citation_role_index
         ]
         if not registered:
-            # No nearby citation has registry data → fail-soft skip
             continue
         variants = _numeric_variants(num)
-        # Pass if numeric appears in ANY nearby registered citation
-        if any(
-            variants & citation_allowed[k] for k, _ in registered
-        ):
-            continue
-        # Drift: numeric in none of the nearby registered citations.
-        # Flag against the closest registered one for the report.
-        closest_reg = min(
-            registered,
-            key=lambda kc: abs(_midpoint(kc[1]) - num_pos),
+        # 1. Value-membership check (Slice 7 P1)
+        any_value_match = any(
+            variants & set(citation_role_index[k].keys())
+            for k, _ in registered
         )
-        return NumericIssue(
-            sentence=sentence,
-            issue_type="source_context_drift",
-            severity="P1",
-            detail=(
-                f"Numeric '{num}' near citation(s) "
-                f"{[k for k, _ in registered]} but not present in "
-                f"any of their source contexts (quant_claims / "
-                f"bg_lit registry). Closest: {closest_reg[0]}."
-            ),
-            suggested_fix=(
-                "Verify the cited paper or strip the sentence."
-            ),
+        if not any_value_match:
+            closest_reg = min(
+                registered,
+                key=lambda kc: abs(_midpoint(kc[1]) - num_pos),
+            )
+            return NumericIssue(
+                sentence=sentence,
+                issue_type="source_context_drift",
+                severity="P1",
+                detail=(
+                    f"Numeric '{num}' near citation(s) "
+                    f"{[k for k, _ in registered]} but not present "
+                    f"in any of their source contexts. Closest: "
+                    f"{closest_reg[0]}."
+                ),
+                suggested_fix=(
+                    "Verify the cited paper or strip the sentence."
+                ),
+            )
+        # 2. Role-match check (Slice 7 P1b — the deeper drift)
+        prose_role = _classify_prose_numeric_role(
+            sentence, num_pos, num,
         )
+        role_passed = False
+        all_source_roles: set[str] = set()
+        matched_token = None
+        for k, _ in registered:
+            for variant in variants:
+                source_roles = citation_role_index[k].get(variant)
+                if source_roles is None:
+                    continue
+                all_source_roles |= source_roles
+                if _roles_match(prose_role, source_roles):
+                    role_passed = True
+                    break
+                else:
+                    matched_token = matched_token or k
+            if role_passed:
+                break
+        if not role_passed and all_source_roles:
+            return NumericIssue(
+                sentence=sentence,
+                issue_type="source_context_drift",
+                severity="P1",
+                detail=(
+                    f"ROLE drift: prose uses '{num}' as "
+                    f"'{prose_role}' but source "
+                    f"({matched_token}) tags it as "
+                    f"{sorted(all_source_roles)}. Numeric exists "
+                    f"in cited paper but with different "
+                    f"interpretive role."
+                ),
+                suggested_fix=(
+                    "Verify the cited paper's claim role or strip "
+                    "the sentence."
+                ),
+            )
     return None
 
 
@@ -563,7 +697,11 @@ def scan_paper(
     The drift check runs on the body only (References section
     stripped) and skips Figure/Table/Equation reference sentences."""
     issues: list[NumericIssue] = []
-    citation_allowed = _build_citation_allowed_numerics(
+    # Slice 7 P1b: drift now uses a {token: {numeric: {roles}}}
+    # role index instead of the flat {token: {numerics}} set so the
+    # check can distinguish VALUE drift from ROLE drift. Both fire
+    # at severity=P1, issue_type='source_context_drift'.
+    citation_role_index = _build_citation_role_index(
         manifest=manifest,
         bg_lit_registry=bg_lit_registry,
         quant_claims_dir=quant_claims_dir,
@@ -587,7 +725,7 @@ def scan_paper(
                 and not _NON_CLAIM_PROXIMITY_RE.search(sentence)
             ):
                 issue = _check_source_context_drift(
-                    sentence, citation_allowed,
+                    sentence, citation_role_index,
                 )
                 if issue:
                     issues.append(issue)

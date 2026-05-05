@@ -22,7 +22,6 @@ import argparse
 import asyncio
 import json
 import sys
-from dataclasses import asdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent

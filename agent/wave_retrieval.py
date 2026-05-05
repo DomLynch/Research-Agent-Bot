@@ -33,10 +33,9 @@ from agent.retrieval_modes import (
     RetrievalParams, resolve_params,
 )
 from agent.sources.aggregator import (
-    AggregatedHit, _dedupe_key, discover_calibrated,
+    AggregatedHit, discover_calibrated,
 )
 from agent.topic_pack import RetrievalSpec
-from agent.types import RawHit
 
 
 @dataclass(frozen=True, slots=True)

@@ -14,9 +14,13 @@ from __future__ import annotations
 import asyncio
 import os
 from dataclasses import dataclass
-from typing import Iterable
+from typing import TYPE_CHECKING, Iterable
 
 import httpx
+
+if TYPE_CHECKING:
+    from agent.retrieval_modes import RetrievalParams
+    from agent.topic_pack import RetrievalSpec
 
 from agent.types import RawHit
 
@@ -126,9 +130,9 @@ def _dedupe_key(hit: RawHit) -> str:
 
 
 async def discover_calibrated(
-    spec: "RetrievalSpec",
+    spec: RetrievalSpec,
     *,
-    params: "RetrievalParams | None" = None,
+    params: RetrievalParams | None = None,
     enabled_sources: Iterable[str] | None = None,
     timeout: float = 120.0,
 ) -> tuple[list[AggregatedHit], dict[str, int]]:

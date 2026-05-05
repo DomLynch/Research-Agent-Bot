@@ -344,3 +344,109 @@ def test_scan_paper_back_compat_no_kwargs_works():
     # No drift check ran (registry empty)
     drift = [i for i in issues if i.issue_type == "source_context_drift"]
     assert drift == []
+
+
+# --- Slice 7 P1b: ROLE drift (not just value drift) ----------------
+
+def test_role_drift_flags_baseline_when_source_is_change_score(tmp_path):
+    """The user's blocker: prose says 'baseline gait speed 0.13 m/s'
+    but Witham 2025 has 0.13 only as a CHANGE_SCORE, not a baseline.
+    Numeric exists in source → value check passes. Role check must
+    fire."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_witham.quant_claims.json").write_text(
+        '{"paper_id":"PMC_witham","claims":[{'
+        '"claim_type":"unit_value","numeric_values":[0.13],'
+        '"binding_confidence":"high",'
+        '"claim_role":"change_score",'
+        '"endpoint":"walk speed",'
+        '"context_window":"clinically important improvement of 0.13 m/s"'
+        '}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_witham",
+        "citation_token": "Witham 2025",
+    }]}
+    paper = (
+        "Baseline gait speed in this cohort was 0.13 m/s "
+        "(Witham 2025), suggesting severely impaired mobility."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift, "ROLE drift should fire even when value matches"
+    assert "ROLE drift" in drift[0].detail
+    assert "baseline" in drift[0].detail.lower()
+    assert "change_score" in drift[0].detail.lower()
+
+
+def test_role_drift_passes_when_prose_role_matches_source(tmp_path):
+    """Same Witham 0.13 m/s — prose now correctly frames as change."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_witham.quant_claims.json").write_text(
+        '{"paper_id":"PMC_witham","claims":[{'
+        '"claim_type":"unit_value","numeric_values":[0.13],'
+        '"binding_confidence":"high",'
+        '"claim_role":"change_score",'
+        '"endpoint":"walk speed",'
+        '"context_window":"improvement of 0.13 m/s"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_witham",
+        "citation_token": "Witham 2025",
+    }]}
+    paper = (
+        "MET-PREVENT reported a clinically important improvement "
+        "of 0.13 m/s in walk speed (Witham 2025)."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == [], "Correct prose role should NOT trigger drift"
+
+
+def test_role_drift_outcome_compatible_with_population_baseline():
+    """A bg_lit/canonical numeric is compatible with any prose role
+    so the existing Harrison 2009 / 14% lifespan-extension sentence
+    still passes (no false positives on the bg_lit pool)."""
+    bg_lit = {
+        "harrison": {
+            "citation_token": "Harrison 2009",
+            "numeric": "14%",
+            "context": "median lifespan extension",
+        },
+    }
+    paper = (
+        "Harrison 2009 reported median lifespan increases of 14% "
+        "in males."
+    )
+    issues = scan_paper(paper, bg_lit_registry=bg_lit)
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []
+
+
+def test_role_drift_fail_soft_when_source_lacks_claim_role(tmp_path):
+    """Older quant_claims without claim_role → role check skipped
+    (back-compat / fail-soft)."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_old.quant_claims.json").write_text(
+        '{"paper_id":"PMC_old","claims":[{'
+        '"claim_type":"unit_value","numeric_values":[0.13],'
+        '"binding_confidence":"high"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_old",
+        "citation_token": "Older 2018",
+    }]}
+    paper = "Baseline gait speed 0.13 m/s (Older 2018)."
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    # Without claim_role on source, fail-soft passes
+    assert drift == []
