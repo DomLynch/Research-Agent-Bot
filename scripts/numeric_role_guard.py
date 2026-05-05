@@ -525,6 +525,8 @@ _PROSE_ROLE_PATTERNS: tuple[tuple[str, str], ...] = (
     (r"\b(?:threshold|cut[\-\s]?off|cutoff|below|above|"
      r"less\s+than|greater\s+than|exceeds?|falls?\s+(?:at\s+or\s+)?"
      r"(?:below|above))\b", "threshold"),
+    (r"\b(?:dose|dosing|mg|mcg|µg|g/day|mg/day|once\s+daily|"
+     r"weekly|administered|treated\s+with)\b", "dose"),
     # outcome / effect: "p = N" / "HR = N" / "reported N"
     (r"\b(?:reported|observed|p\s*[<=>]|hr\s*=|or\s*=|rr\s*=|"
      r"effect\s+size|outcome|primary\s+endpoint)\b", "effect"),
@@ -563,13 +565,14 @@ _ROLE_COMPATIBILITY: dict[str, frozenset[str]] = {
     "population": frozenset(("population", "baseline", "outcome")),
     "change_score": frozenset(("change_score", "effect", "outcome")),
     "threshold": frozenset(("threshold", "canonical")),
+    "dose": frozenset(("dose", "unit_value", "outcome", "effect")),
     "effect": frozenset(("effect", "change_score", "outcome")),
     # 'outcome' is the most permissive default (used when prose
     # role is unclassifiable); accepts most source roles to keep
     # false-positive rate low on ambiguous prose.
     "outcome": frozenset((
         "outcome", "effect", "population", "baseline",
-        "change_score", "canonical",
+        "change_score", "dose", "unit_value", "canonical",
     )),
 }
 

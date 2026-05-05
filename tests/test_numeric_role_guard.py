@@ -585,6 +585,35 @@ def test_role_drift_passes_when_prose_role_matches_source(tmp_path):
     assert drift == [], "Correct prose role should NOT trigger drift"
 
 
+def test_role_drift_passes_when_prose_uses_source_dose(tmp_path):
+    """Dose numerics near a valid citation are not role drift.
+
+    This keeps the guard from falsely blocking sentences like
+    "liraglutide 1.8 mg reduced HbA1c" when the cited source tags
+    1.8 mg as a dose.
+    """
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_glp1.quant_claims.json").write_text(
+        '{"paper_id":"PMC_glp1","claims":[{'
+        '"claim_type":"unit_value","numeric_values":[1.8],'
+        '"binding_confidence":"high","claim_role":"dose"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_glp1",
+        "citation_token": "Russell-Jones 2009",
+    }]}
+    paper = (
+        "Russell-Jones 2009 found that liraglutide 1.8 mg "
+        "reduced HbA1c versus placebo."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []
+
+
 def test_role_drift_outcome_compatible_with_population_baseline():
     """A bg_lit/canonical numeric is compatible with any prose role
     so the existing Harrison 2009 / 14% lifespan-extension sentence

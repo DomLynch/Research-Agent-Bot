@@ -489,9 +489,6 @@ def _build_population_summary(paper_meta: dict, n_subjects: list[float]) -> str:
         return ""  # review — no enrolled population
     else:
         pop = "adults"
-    if n_subjects:
-        n_total = int(sum(n_subjects))
-        return f"{pop}, n={n_total}"
     return pop
 
 

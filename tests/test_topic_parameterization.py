@@ -210,3 +210,16 @@ def test_receipt_thesis_uses_source_sentence_not_arm_paraphrase() -> None:
     )
     assert "semaglutide group" in thesis
     assert "metformin increase" not in thesis
+
+
+def test_population_summary_does_not_render_derived_sample_sum() -> None:
+    """Population summaries must not synthesize derived n totals.
+
+    Q2 traces literals in the corpus. If two arms are n=152, rendering
+    n=304 creates a true but untraceable derived number in prose.
+    """
+    summary = orch._build_population_summary(
+        {"title": "older adults trial"},
+        [152.0, 152.0],
+    )
+    assert summary == "older adults"
