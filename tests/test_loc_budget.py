@@ -140,6 +140,15 @@ breakdown (retrieved → classified_keep / drop → extractable_core
 / extractable_background) that Slice 6 step 4d dashboard reads
 (2026-05-05).
 
+Wave 7 cont. — Slice 8 step A (16,200 → 16,400): TRUE pagination
++ resume cursor. agent/paginated_retrieval.py (~200 cloc) —
+per-source paginator with cursor state files in runs/.cursors/.
+PAGEABLE_SOURCES allowlist is explicit (pubmed/crossref/
+semantic_scholar today; cursor adapters extend later). Honors
+GLOBAL_SAFETY_CAP across the union of all sources combined.
+Resumable: an interrupted 6-hour pull picks up at the last saved
+offset on restart. Universal across topics (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -147,7 +156,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 16200
+TOTAL_LIMIT = 16400
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

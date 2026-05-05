@@ -43,19 +43,29 @@ class PubMedClient:
         query: str,
         *,
         limit: int,
+        offset: int = 0,
     ) -> list[RawHit]:
-        ids = await self._esearch(client, query, limit=limit)
+        """Slice 8 step A: `offset` enables pagination via PubMed's
+        retstart param. offset=0 keeps back-compat with non-paginated
+        callers."""
+        ids = await self._esearch(
+            client, query, limit=limit, offset=offset,
+        )
         if not ids:
             return []
         return await self._efetch(client, ids, query=query, limit=limit)
 
-    async def _esearch(self, client: httpx.AsyncClient, query: str, *, limit: int) -> list[str]:
+    async def _esearch(
+        self, client: httpx.AsyncClient, query: str, *,
+        limit: int, offset: int = 0,
+    ) -> list[str]:
         params = {
             "db": "pubmed",
             "retmode": "json",
             # Earlier code over-fetched 3x as a "buffer" that was then discarded
             # in _efetch, wasting bandwidth and quota for no benefit.
             "retmax": str(max(1, limit)),
+            "retstart": str(max(0, offset)),
             "sort": "relevance",
             "term": clean_text(query, limit=3000),
         }

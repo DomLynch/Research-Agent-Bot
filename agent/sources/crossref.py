@@ -35,10 +35,15 @@ class CrossrefClient:
         query: str,
         *,
         limit: int,
+        offset: int = 0,
     ) -> list[RawHit]:
+        """Slice 8 step A: `offset` enables Crossref's native offset
+        pagination. Default 0 keeps back-compat with non-paginated
+        callers."""
         params = {
             "query": clean_text(query, limit=3000),
             "rows": str(max(1, min(limit, 1000))),
+            "offset": str(max(0, offset)),
             "filter": "type:journal-article,has-abstract:true",
             "select": "DOI,title,abstract,issued,container-title,author",
         }
