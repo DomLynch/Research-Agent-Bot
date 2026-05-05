@@ -307,11 +307,21 @@ async def _do_seed(
                 file=sys.stderr,
             )
 
-    # Write report
+    # Write report. `deduped` only exists on the legacy path; the
+    # calibrated path uses run_waves and writes its own corpus_manifest
+    # (see Slice 6 step 4d). Use locals() to fall back to len(selected)
+    # when running on the calibrated branch.
+    n_unique = len(deduped) if "deduped" in locals() else len(selected)
+    n_queries = len(pack.corpus_search_queries) if (
+        pack.corpus_search_queries
+    ) else 0
     report = {
         "topic": topic,
-        "n_queries": len(pack.corpus_search_queries),
-        "n_unique_candidates": len(deduped),
+        "retrieval_mode": (
+            "calibrated" if pack.retrieval is not None else "legacy"
+        ),
+        "n_queries": n_queries,
+        "n_unique_candidates": n_unique,
         "n_selected_for_fetch": len(selected),
         "n_pmcid_resolved": len(pmcids),
         "n_extracted": n_extracted,
