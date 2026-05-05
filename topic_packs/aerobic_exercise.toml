@@ -1,0 +1,46 @@
+topic = "aerobic_exercise"
+class_ = "exercise_intervention"
+
+aliases = ["aerobic exercise", "endurance training", "cardiorespiratory fitness", "walking program", "VO2max", "physical activity"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiorespiratory_fitness", "cognition", "mortality"]
+special_rules = [
+  "Separate structured aerobic training from observational physical-activity exposure.",
+  "VO2max, walking speed, cognition, cardiovascular events, and mortality are distinct outcome classes.",
+  "Athlete-only studies are indirect for aging unless older-adult endpoints are explicit.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["aerobic exercise", "endurance training", "walking", "physical activity", "cardio"]
+placebo_arm_synonyms = ["control", "usual care", "attention control", "stretching", "waitlist"]
+corpus_search_queries = [
+  "aerobic exercise AND aging AND randomized trial",
+  "endurance training AND older adults AND cognition",
+  "walking program AND elderly AND frailty",
+  "cardiorespiratory fitness AND mortality AND cohort",
+  "aerobic exercise AND VO2max AND older adults",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["aerobic exercise", "endurance training", "walking program", "cardiorespiratory fitness", "physical activity"]
+scope_terms = ["aging", "older adults", "elderly", "geriatric", "longevity", "healthspan", "frailty", "cognition", "mortality", "VO2max"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["athlete only", "pediatric only", "animal only", "in vitro only", "sports performance only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["cardiorespiratory fitness mechanism", "exercise epidemiology", "mitochondrial adaptation", "vascular aging"]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+cardiovascular_events = "lower_is_better"
+frailty = "lower_is_better"
+cognition = "higher_is_better"
+vo2max = "higher_is_better"
+gait_speed = "higher_is_better"
+physical_function = "higher_is_better"
+

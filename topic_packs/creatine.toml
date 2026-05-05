@@ -1,0 +1,44 @@
+topic = "creatine"
+class_ = "nutritional_supplement"
+
+aliases = ["creatine", "creatine monohydrate", "creatine supplementation", "phosphocreatine"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "muscle_function", "cognition"]
+special_rules = [
+  "Separate creatine alone from creatine plus resistance training.",
+  "Treat cognition, muscle strength, lean mass, and adverse renal signals as separate outcome classes.",
+  "Sports-performance studies are indirect unless older-adult or clinical aging endpoints are explicit.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["creatine", "creatine monohydrate", "phosphocreatine"]
+placebo_arm_synonyms = ["placebo", "control", "PLA", "maltodextrin", "usual care"]
+corpus_search_queries = [
+  "creatine supplementation AND older adults AND randomized trial",
+  "creatine AND aging AND muscle strength",
+  "creatine monohydrate AND cognition AND elderly",
+  "creatine AND sarcopenia AND trial",
+  "creatine AND safety AND kidney AND older adults",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["creatine", "creatine monohydrate", "creatine supplementation", "phosphocreatine"]
+scope_terms = ["aging", "older adults", "elderly", "geriatric", "sarcopenia", "muscle strength", "cognition", "frailty", "lean mass"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["athlete only", "pediatric only", "animal only", "in vitro only", "sports performance only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["phosphocreatine energetics", "muscle metabolism", "brain energetics", "supplement safety"]
+
+[endpoint_polarity]
+muscle_strength = "higher_is_better"
+lean_mass = "higher_is_better"
+cognition = "higher_is_better"
+frailty = "lower_is_better"
+renal_adverse_events = "lower_is_better"
+

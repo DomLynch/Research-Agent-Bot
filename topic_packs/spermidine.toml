@@ -1,0 +1,44 @@
+topic = "spermidine"
+class_ = "nutritional_supplement"
+
+aliases = ["spermidine", "spermidine supplementation", "polyamine"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "preclinical_lifespan", "meta_analysis", "safety_tolerability", "dosing_regimen", "cognition", "cardiometabolic"]
+special_rules = [
+  "Separate dietary spermidine exposure from supplement trials.",
+  "Autophagy and preclinical lifespan are background unless human outcomes align.",
+  "Cognition, cardiometabolic markers, mortality, and safety must be handled separately.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["spermidine", "spermidine supplementation", "polyamine"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = [
+  "spermidine AND aging AND human",
+  "spermidine supplementation AND randomized trial",
+  "spermidine AND cognition AND older adults",
+  "dietary spermidine AND mortality AND cohort",
+  "spermidine AND autophagy AND aging",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["spermidine", "spermidine supplementation", "polyamine"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cognition", "mortality", "autophagy", "cardiometabolic"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "cell culture only", "pediatric only", "plant biology only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["autophagy mechanism", "polyamine biology", "preclinical lifespan signal", "dietary exposure epidemiology"]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+cognition = "higher_is_better"
+cardiometabolic_risk = "lower_is_better"
+inflammation = "lower_is_better"
+adverse_events = "lower_is_better"
+

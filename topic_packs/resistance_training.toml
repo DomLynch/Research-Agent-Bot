@@ -1,0 +1,46 @@
+topic = "resistance_training"
+class_ = "exercise_intervention"
+
+aliases = ["resistance training", "strength training", "weight training", "progressive resistance exercise", "RET"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "physical_function", "muscle_mass", "frailty"]
+special_rules = [
+  "Distinguish supervised progressive resistance training from general physical activity.",
+  "Treat muscle mass, strength, gait speed, falls, and frailty as distinct outcome classes.",
+  "Older-adult functional outcomes are direct; athlete-only performance studies are indirect.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["resistance training", "strength training", "weight training", "exercise", "RET"]
+placebo_arm_synonyms = ["control", "usual care", "attention control", "stretching", "waitlist"]
+corpus_search_queries = [
+  "resistance training AND aging AND randomized trial",
+  "strength training AND older adults AND frailty",
+  "progressive resistance exercise AND sarcopenia",
+  "resistance training AND gait speed AND elderly",
+  "strength training AND falls AND older adults",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["resistance training", "strength training", "weight training", "progressive resistance exercise"]
+scope_terms = ["aging", "older adults", "elderly", "geriatric", "frailty", "sarcopenia", "gait speed", "falls", "physical function"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["athlete only", "pediatric only", "animal only", "in vitro only", "sports performance only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["muscle protein synthesis", "sarcopenia mechanism", "exercise geroscience", "frailty intervention history"]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+frailty = "lower_is_better"
+falls = "lower_is_better"
+muscle_strength = "higher_is_better"
+muscle_mass = "higher_is_better"
+gait_speed = "higher_is_better"
+physical_function = "higher_is_better"
+

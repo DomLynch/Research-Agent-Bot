@@ -1,0 +1,44 @@
+topic = "acarbose"
+class_ = "metabolic_drug"
+
+aliases = ["acarbose", "alpha-glucosidase inhibitor", "glucosidase inhibitor"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "preclinical_lifespan", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiometabolic"]
+special_rules = [
+  "Separate diabetes treatment trials from direct aging or longevity evidence.",
+  "Preclinical lifespan extension is background unless human endpoints align.",
+  "GI tolerability and adherence are central safety/feasibility outcomes.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["acarbose", "alpha-glucosidase inhibitor", "glucosidase inhibitor"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = [
+  "acarbose AND aging AND human",
+  "acarbose AND longevity",
+  "acarbose AND cardiovascular outcomes AND trial",
+  "alpha-glucosidase inhibitor AND mortality AND cohort",
+  "acarbose AND older adults AND diabetes",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["acarbose", "alpha-glucosidase inhibitor", "glucosidase inhibitor"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cardiovascular", "mortality", "diabetes", "insulin resistance"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "gestational diabetes only", "pharmacokinetics only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["postprandial glucose biology", "mouse lifespan signal", "glycemic variability", "diabetes prevention"]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+cardiovascular_events = "lower_is_better"
+hba1c = "lower_is_better"
+incident_diabetes = "lower_is_better"
+gi_adverse_events = "lower_is_better"
+

@@ -1,0 +1,44 @@
+topic = "urolithin_a"
+class_ = "nutritional_supplement"
+
+aliases = ["urolithin A", "urolithin-a", "UA", "mitopure"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "mitochondrial_function", "muscle_function"]
+special_rules = [
+  "Separate urolithin A supplementation from pomegranate/ellagitannin exposure.",
+  "Mitophagy biomarkers are surrogate endpoints unless tied to clinical function.",
+  "Muscle endurance, strength, mitochondrial biomarkers, and safety are separate outcome classes.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["urolithin A", "urolithin-a", "UA", "mitopure"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = [
+  "urolithin A AND aging AND human trial",
+  "urolithin A AND mitochondrial AND older adults",
+  "urolithin A AND muscle endurance AND randomized",
+  "mitopure AND clinical trial",
+  "urolithin A AND safety AND human",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["urolithin A", "urolithin-a", "mitopure"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "mitochondrial function", "mitophagy", "muscle function", "endurance"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "cell culture only", "pomegranate only", "pediatric only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["mitophagy mechanism", "mitochondrial aging", "ellagitannin metabolism", "muscle endurance biology"]
+
+[endpoint_polarity]
+mitochondrial_function = "higher_is_better"
+muscle_function = "higher_is_better"
+endurance = "higher_is_better"
+inflammation = "lower_is_better"
+adverse_events = "lower_is_better"
+

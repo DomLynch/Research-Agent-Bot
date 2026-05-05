@@ -1,0 +1,44 @@
+topic = "zone2_training"
+class_ = "exercise_intervention"
+
+aliases = ["zone 2 training", "low-intensity aerobic training", "moderate-intensity continuous training", "MICT", "endurance base training"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiorespiratory_fitness", "metabolic_health"]
+special_rules = [
+  "Separate branded zone-2 language from moderate-intensity continuous training in the literature.",
+  "VO2max, lactate threshold, insulin sensitivity, and blood pressure are separate outcomes.",
+  "Athlete-only evidence is indirect for longevity unless older-adult endpoints are explicit.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["zone 2", "low-intensity aerobic training", "moderate-intensity continuous training", "MICT", "endurance training"]
+placebo_arm_synonyms = ["control", "usual care", "attention control", "waitlist"]
+corpus_search_queries = [
+  "moderate-intensity continuous training AND older adults",
+  "low-intensity aerobic training AND aging AND trial",
+  "zone 2 training AND metabolic health",
+  "MICT AND older adults AND VO2max",
+  "endurance base training AND insulin sensitivity",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["zone 2 training", "low-intensity aerobic training", "moderate-intensity continuous training", "MICT", "endurance training"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "VO2max", "insulin sensitivity", "metabolic health", "cardiorespiratory fitness"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["athlete only", "pediatric only", "animal only", "in vitro only", "sports performance only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["mitochondrial adaptation", "lactate threshold", "aerobic base training", "metabolic flexibility"]
+
+[endpoint_polarity]
+vo2max = "higher_is_better"
+insulin_sensitivity = "higher_is_better"
+blood_pressure = "lower_is_better"
+cardiovascular_events = "lower_is_better"
+physical_function = "higher_is_better"
+

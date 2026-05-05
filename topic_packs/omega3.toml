@@ -1,0 +1,45 @@
+topic = "omega3"
+class_ = "nutritional_supplement"
+
+aliases = ["omega-3", "omega 3", "fish oil", "EPA", "DHA", "eicosapentaenoic acid", "docosahexaenoic acid"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiovascular_outcomes", "cognition", "inflammation"]
+special_rules = [
+  "Separate EPA-only, DHA-only, and mixed fish-oil formulations.",
+  "Treat cardiovascular, cognition, inflammation, and bleeding outcomes separately.",
+  "Primary-prevention and secondary-prevention populations must not be merged without qualification.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["omega-3", "fish oil", "EPA", "DHA", "icosapent ethyl"]
+placebo_arm_synonyms = ["placebo", "control", "olive oil", "corn oil", "mineral oil"]
+corpus_search_queries = [
+  "omega-3 AND aging AND randomized trial",
+  "fish oil AND older adults AND cognition",
+  "EPA DHA AND cardiovascular outcomes AND elderly",
+  "omega-3 AND inflammation AND aging",
+  "omega-3 fatty acids AND mortality AND meta-analysis",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["omega-3", "omega 3", "fish oil", "EPA", "DHA", "eicosapentaenoic acid", "docosahexaenoic acid", "icosapent ethyl"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "cognition", "cardiovascular", "inflammation", "mortality"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["pediatric only", "pregnancy only", "animal only", "in vitro only", "aquaculture only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["lipid mediator biology", "membrane biology", "cardiovascular trial history", "neuroinflammation"]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+cardiovascular_events = "lower_is_better"
+inflammation = "lower_is_better"
+triglycerides = "lower_is_better"
+cognition = "higher_is_better"
+bleeding = "lower_is_better"
+

@@ -1,0 +1,46 @@
+topic = "caloric_restriction"
+class_ = "dietary_pattern"
+
+aliases = ["caloric restriction", "calorie restriction", "energy restriction", "dietary restriction", "CR"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "metabolic_health", "biomarkers", "adherence"]
+special_rules = [
+  "Separate sustained caloric restriction from intermittent fasting.",
+  "Human biomarker changes are not equivalent to lifespan extension.",
+  "Monitor lean-mass loss, bone density, and adherence as safety/feasibility outcomes.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["caloric restriction", "calorie restriction", "energy restriction", "dietary restriction", "CR"]
+placebo_arm_synonyms = ["control", "usual diet", "ad libitum", "weight maintenance"]
+corpus_search_queries = [
+  "caloric restriction AND aging AND human trial",
+  "calorie restriction AND biomarkers AND aging",
+  "CALERIE AND aging",
+  "dietary restriction AND older adults AND randomized",
+  "caloric restriction AND longevity AND human",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["caloric restriction", "calorie restriction", "energy restriction", "dietary restriction", "CALERIE"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "biomarkers", "metabolic health", "frailty"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "eating disorder only", "religious fasting only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["caloric restriction lifespan biology", "mTOR AMPK sirtuin mechanism", "metabolic adaptation", "CALERIE history"]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+weight_loss = "higher_is_better"
+insulin_resistance = "lower_is_better"
+inflammation = "lower_is_better"
+lean_mass_loss = "lower_is_better"
+bone_density = "higher_is_better"
+adherence = "higher_is_better"
+

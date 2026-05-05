@@ -1,0 +1,44 @@
+topic = "protein_nutrition"
+class_ = "dietary_intervention"
+
+aliases = ["protein supplementation", "dietary protein", "whey protein", "essential amino acids", "leucine", "protein intake"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "muscle_mass", "physical_function", "sarcopenia"]
+special_rules = [
+  "Separate protein supplementation, total protein intake, whey, EAA, and leucine.",
+  "Exercise co-intervention must be explicitly separated from nutrition-only effects.",
+  "Renal safety claims require baseline kidney-function context.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["protein", "whey protein", "essential amino acids", "EAA", "leucine"]
+placebo_arm_synonyms = ["placebo", "control", "usual diet", "carbohydrate", "isocaloric control"]
+corpus_search_queries = [
+  "protein supplementation AND older adults AND randomized trial",
+  "whey protein AND sarcopenia AND elderly",
+  "leucine AND muscle mass AND aging",
+  "dietary protein AND frailty AND older adults",
+  "essential amino acids AND older adults AND physical function",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["protein supplementation", "dietary protein", "whey protein", "essential amino acids", "leucine", "protein intake"]
+scope_terms = ["aging", "older adults", "elderly", "sarcopenia", "frailty", "muscle mass", "muscle strength", "physical function"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["athlete only", "pediatric only", "animal only", "in vitro only", "bodybuilding only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["muscle protein synthesis", "anabolic resistance", "leucine threshold", "sarcopenia nutrition"]
+
+[endpoint_polarity]
+muscle_mass = "higher_is_better"
+muscle_strength = "higher_is_better"
+physical_function = "higher_is_better"
+frailty = "lower_is_better"
+renal_adverse_events = "lower_is_better"
+

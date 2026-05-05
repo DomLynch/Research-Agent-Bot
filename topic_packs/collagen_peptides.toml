@@ -1,0 +1,44 @@
+topic = "collagen_peptides"
+class_ = "nutritional_supplement"
+
+aliases = ["collagen peptides", "hydrolyzed collagen", "collagen supplementation", "gelatin", "collagen hydrolysate"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "skin_aging", "joint_function", "musculoskeletal"]
+special_rules = [
+  "Separate skin-aging, joint-pain, tendon, bone, and muscle outcomes.",
+  "Cosmetic endpoints are not equivalent to longevity or healthspan endpoints.",
+  "Co-interventions with resistance training must be separated from collagen-only effects.",
+]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["collagen peptides", "hydrolyzed collagen", "collagen supplementation", "gelatin", "collagen hydrolysate"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "maltodextrin"]
+corpus_search_queries = [
+  "collagen peptides AND aging AND randomized trial",
+  "hydrolyzed collagen AND skin aging",
+  "collagen supplementation AND older adults AND joint",
+  "collagen peptides AND bone density AND trial",
+  "collagen hydrolysate AND sarcopenia",
+]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["collagen peptides", "hydrolyzed collagen", "collagen supplementation", "gelatin", "collagen hydrolysate"]
+scope_terms = ["aging", "older adults", "elderly", "skin aging", "joint function", "bone density", "sarcopenia", "musculoskeletal"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "cosmetic device only", "wound dressing only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["collagen turnover", "extracellular matrix aging", "skin elasticity", "joint cartilage biology"]
+
+[endpoint_polarity]
+skin_elasticity = "higher_is_better"
+joint_pain = "lower_is_better"
+bone_density = "higher_is_better"
+muscle_function = "higher_is_better"
+adverse_events = "lower_is_better"
+
