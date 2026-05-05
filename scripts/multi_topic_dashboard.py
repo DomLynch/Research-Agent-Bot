@@ -57,6 +57,15 @@ class TopicSummary:
     # Slice 6 step 4d: corpus pipeline funnel per topic. Empty dict
     # when the topic hasn't run the calibrated pipeline yet.
     corpus_funnel: dict[str, int] = field(default_factory=dict)
+    # Slice 8 step F: full 9-stage extraction funnel from
+    # ExtractionFunnel (retrieved → classified → extracted → SPAR →
+    # clustered → synthesized). Empty dict when the topic hasn't
+    # run the end-game stack yet — dashboard skips that line.
+    extraction_funnel: dict[str, int] = field(default_factory=dict)
+    # Slice 8 step F: cluster summary {n_clusters, n_outcome_classes,
+    # n_design_types, n_top_receipts, n_total_receipts}. Empty when
+    # clusterer hasn't run.
+    cluster_summary: dict[str, int] = field(default_factory=dict)
 
 
 def _read_json(p: Path) -> dict | None:
@@ -231,6 +240,31 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
         if funnel_doc:
             corpus_funnel = dict(funnel_doc.get("funnel", {}))
 
+    # Slice 8 step F: full 9-stage extraction funnel from end-game
+    # pipeline. Lives in docs/quality-reference/<topic>/extraction_funnel.json
+    # written by ExtractionFunnel.write_funnel_sidecar.
+    extraction_funnel: dict[str, int] = {}
+    ef_path = (
+        REPO / "docs" / "quality-reference" / topic
+        / "extraction_funnel.json"
+    )
+    if ef_path.exists():
+        ef_doc = _read_json(ef_path)
+        if ef_doc:
+            extraction_funnel = dict(ef_doc.get("stages", {}))
+
+    # Slice 8 step F: cluster summary from the run dir's manifest
+    # (added when large-corpus writer + clusterer run).
+    cluster_summary: dict[str, int] = {}
+    cs_path = (
+        REPO / "docs" / "quality-reference" / topic
+        / "cluster_summary.json"
+    )
+    if cs_path.exists():
+        cs_doc = _read_json(cs_path)
+        if cs_doc:
+            cluster_summary = dict(cs_doc)
+
     return TopicSummary(
         topic=topic,
         n_runs=len(runs),
@@ -256,6 +290,8 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
         corpus_gaps=corpus_gaps,
         expansion_targets=expansion_targets,
         corpus_funnel=corpus_funnel,
+        extraction_funnel=extraction_funnel,
+        cluster_summary=cluster_summary,
     )
 
 
@@ -359,6 +395,34 @@ def render_md(summaries: list[TopicSummary]) -> str:
                 f"{s.corpus_funnel.get('classified_keep', 0)} → "
                 f"{s.corpus_funnel.get('extractable_core', 0)} / "
                 f"{s.corpus_funnel.get('extractable_background', 0)}"
+            )
+        # Slice 8 F: full end-game funnel when extraction stage ran.
+        if s.extraction_funnel:
+            ef = s.extraction_funnel
+            extracted = (
+                (ef.get("extracted_ok", 0) or 0)
+                + (ef.get("extracted_cached", 0) or 0)
+            )
+            lines.append(
+                f"- **End-game funnel** "
+                f"(retrieved → classified → extracted → SPAR → "
+                f"clustered → synthesized): "
+                f"{ef.get('retrieved', 0)} → "
+                f"{ef.get('classified_keep', 0)} → "
+                f"{extracted} → "
+                f"{ef.get('spar_accepted', 0)} → "
+                f"{ef.get('clustered_into_n', 0)} → "
+                f"{ef.get('synthesized', 0)}"
+            )
+        # Slice 8 F: cluster summary surfaces shape of synthesis input.
+        if s.cluster_summary:
+            cs = s.cluster_summary
+            lines.append(
+                f"- **Clusters:** {cs.get('n_clusters', 0)} "
+                f"({cs.get('n_outcome_classes', 0)} outcome classes, "
+                f"{cs.get('n_design_types', 0)} design types; "
+                f"top-{cs.get('n_top_receipts', 0)}-of-"
+                f"{cs.get('n_total_receipts', 0)} retained)"
             )
         lines.append("")
     lines += [
