@@ -326,8 +326,9 @@ def _check_malformed_subject(sentence: str) -> NumericIssue | None:
 # source-context fidelity.
 
 # Citation token: "Author YYYY" (plus optional [a-z] suffix).
+# Author can include a single hyphenated second part (Cruz-Jentoft).
 _CITATION_TOKEN_RE = re.compile(
-    r"\b([A-Z][a-zA-Z]+)\s+(\d{4}[a-z]?)\b",
+    r"\b([A-Z][a-zA-Z]+(?:-[A-Z][a-zA-Z]+)?)\s+(\d{4}[a-z]?)\b",
 )
 
 # Loose numeric extractor for source-context drift check. Picks up
@@ -428,53 +429,123 @@ def _numeric_variants(value: str) -> set[str]:
     return out
 
 
+_DRIFT_PROXIMITY_WINDOW = 120  # chars; any citation within this distance is candidate
+
+
 def _check_source_context_drift(
     sentence: str,
     citation_allowed: dict[str, set[str]],
 ) -> NumericIssue | None:
-    """For each citation token in the sentence, every nearby numeric
-    must appear in that citation's allowed set. Skipped when token is
-    unknown (fail-soft) or numeric set is empty (registry incomplete)."""
+    """For each numeric, gather ALL citations within
+    _DRIFT_PROXIMITY_WINDOW chars; if at least one of those
+    citations has the numeric in its registry, pass. Only flag
+    when EVERY nearby registered citation lacks the numeric.
+
+    Why widened from "closest only": a sentence like
+      "0.8 m/s (Studenski 2011) or 27 kg ... (Cruz-Jentoft 2019)"
+    can legitimately attribute 27 to either citation depending on
+    sentence structure. Closest-only is brittle (the parenthetical
+    that 'owns' the numeric isn't always the geometrically closest
+    one). All-nearby-pass is conservative — if ANY plausibly-cited
+    paper has the numeric, no drift.
+
+    Drift fires only when:
+      - At least one nearby citation HAS registry data, AND
+      - The numeric is in NONE of those nearby allowed sets.
+    Pure-unknown citations + year numerics + empty registries
+    fail-soft skip (no flag)."""
     if not citation_allowed:
         return None
-    tokens = _CITATION_TOKEN_RE.findall(sentence)
-    if not tokens:
+    cite_matches = list(_CITATION_TOKEN_RE.finditer(sentence))
+    if not cite_matches:
         return None
-    # Collect all numerics in the sentence
-    numerics = [m.group(1) for m in _DRIFT_NUMERIC_RE.finditer(sentence)]
-    if not numerics:
-        return None
-    for author, year in tokens:
-        token_key = f"{author} {year}"
-        allowed = citation_allowed.get(token_key)
-        if not allowed:
-            # Unknown citation → fail-soft skip (don't penalize prose
-            # for a token we have no source-context data on)
+    num_positions: list[tuple[int, str]] = []
+    for m in _DRIFT_NUMERIC_RE.finditer(sentence):
+        raw = m.group(1)
+        try:
+            f = float(raw)
+        except (TypeError, ValueError):
             continue
-        for num in numerics:
-            variants = _numeric_variants(num)
-            # Pure year numbers (e.g. "2014") are not claims — skip
-            try:
-                if 1900 <= float(num) <= 2100 and "." not in num:
-                    continue
-            except (TypeError, ValueError):
-                continue
-            if not (variants & allowed):
-                return NumericIssue(
-                    sentence=sentence,
-                    issue_type="source_context_drift",
-                    severity="P1",
-                    detail=(
-                        f"Numeric '{num}' attributed to "
-                        f"'{token_key}' but not present in that "
-                        f"paper's source context "
-                        f"(quant_claims / bg_lit registry)."
-                    ),
-                    suggested_fix=(
-                        "Verify the cited paper or strip the sentence."
-                    ),
-                )
+        if 1900 <= f <= 2100 and "." not in raw:
+            continue
+        num_positions.append((m.start(), raw))
+    if not num_positions:
+        return None
+
+    def _midpoint(match) -> int:
+        return (match.start() + match.end()) // 2
+
+    for num_pos, num in num_positions:
+        # Gather every citation within the proximity window.
+        nearby = [
+            c for c in cite_matches
+            if abs(_midpoint(c) - num_pos) <= _DRIFT_PROXIMITY_WINDOW
+        ]
+        if not nearby:
+            continue
+        # Filter to citations we actually have registry data for.
+        nearby_keyed = [
+            (f"{c.group(1)} {c.group(2)}", c) for c in nearby
+        ]
+        registered = [
+            (k, c) for k, c in nearby_keyed if k in citation_allowed
+        ]
+        if not registered:
+            # No nearby citation has registry data → fail-soft skip
+            continue
+        variants = _numeric_variants(num)
+        # Pass if numeric appears in ANY nearby registered citation
+        if any(
+            variants & citation_allowed[k] for k, _ in registered
+        ):
+            continue
+        # Drift: numeric in none of the nearby registered citations.
+        # Flag against the closest registered one for the report.
+        closest_reg = min(
+            registered,
+            key=lambda kc: abs(_midpoint(kc[1]) - num_pos),
+        )
+        return NumericIssue(
+            sentence=sentence,
+            issue_type="source_context_drift",
+            severity="P1",
+            detail=(
+                f"Numeric '{num}' near citation(s) "
+                f"{[k for k, _ in registered]} but not present in "
+                f"any of their source contexts (quant_claims / "
+                f"bg_lit registry). Closest: {closest_reg[0]}."
+            ),
+            suggested_fix=(
+                "Verify the cited paper or strip the sentence."
+            ),
+        )
     return None
+
+
+def _strip_references_section(paper_md: str) -> str:
+    """Slice 7 step 1: drift check is meaningless inside the
+    References section (PMIDs / DOIs / volumes / years are not
+    claim numerics). Strip everything from the first
+    '## References' / '## Bibliography' heading to end before
+    running the drift scan."""
+    import re as _re
+    m = _re.search(
+        r"^##\s+(References|Bibliography|Reference\s+List)\s*$",
+        paper_md, _re.MULTILINE | _re.IGNORECASE,
+    )
+    if m:
+        return paper_md[: m.start()]
+    return paper_md
+
+
+# Figure / Table / Section / Equation references — skip the drift
+# check on sentences that mention these (they cite a paper element,
+# not a claim numeric).
+_NON_CLAIM_PROXIMITY_RE = re.compile(
+    r"\b(?:Figure|Fig\.|Table|Tab\.|Section|Sec\.|Equation|Eq\.|"
+    r"Chapter|Appendix)\s+\d",
+    flags=re.IGNORECASE,
+)
 
 
 def scan_paper(
@@ -488,15 +559,17 @@ def scan_paper(
     report (audit P1 list, auto-strip, etc.).
 
     Slice 7 step 1: optional `manifest` + `bg_lit_registry` +
-    `quant_claims_dir` enable the source-context drift check
-    (numeric attributed to citation X must appear in X's source
-    context). Default-None values keep the back-compat call shape."""
+    `quant_claims_dir` enable the source-context drift check.
+    The drift check runs on the body only (References section
+    stripped) and skips Figure/Table/Equation reference sentences."""
     issues: list[NumericIssue] = []
     citation_allowed = _build_citation_allowed_numerics(
         manifest=manifest,
         bg_lit_registry=bg_lit_registry,
         quant_claims_dir=quant_claims_dir,
     )
+    body_for_drift = _strip_references_section(paper_md)
+    drift_sentences = set(_split_sentences(body_for_drift))
     for sentence in _split_sentences(paper_md):
         for check in (
             _check_arithmetic_violations,
@@ -508,13 +581,16 @@ def scan_paper(
                 issues.append(issue)
                 break  # one issue per sentence is enough to fail it
         else:
-            # Only run drift check when the cheaper checks pass —
-            # avoid double-reporting the same sentence.
-            issue = _check_source_context_drift(
-                sentence, citation_allowed,
-            )
-            if issue:
-                issues.append(issue)
+            # Drift check: body only, skip Figure/Table/Eq refs.
+            if (
+                sentence in drift_sentences
+                and not _NON_CLAIM_PROXIMITY_RE.search(sentence)
+            ):
+                issue = _check_source_context_drift(
+                    sentence, citation_allowed,
+                )
+                if issue:
+                    issues.append(issue)
     return issues
 
 
