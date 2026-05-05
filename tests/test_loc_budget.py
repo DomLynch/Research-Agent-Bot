@@ -168,6 +168,17 @@ hierarchy passed in (no biomedical hardcoding). Slice 8 E writer
 consumes cluster summaries instead of paper-by-paper dumps —
 keeps Q13 strict at 15% (2026-05-05).
 
+Wave 7 cont. — Slice 8 step E (16,800 → 17,000): large-corpus
+writer mode. agent/large_corpus_writer.py (~120 cloc) —
+build_results_section_clustered emits Results as O(n_clusters)
+prose (one paragraph per cluster) instead of O(n_receipts)
+paper-by-paper dump. Q13 stays strict at 15%; body length is
+controlled by composition, not by relaxing the audit.
+build_methods_section_clustered grounds Methods in the actual
+funnel + cluster summary (not boilerplate). LARGE_CORPUS_THRESHOLD
+= 20 receipts triggers the mode. Universal across topics + domains
+(2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -175,7 +186,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 16800
+TOTAL_LIMIT = 17000
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
