@@ -298,6 +298,82 @@ def test_source_context_drift_skips_unknown_citations():
     assert drift == []
 
 
+def test_source_context_drift_skips_closest_unknown_citation(tmp_path):
+    """If a numeric is closest to an unregistered guideline/canon cite,
+    do not assign it to a farther registered receipt citation."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_majeed.quant_claims.json").write_text(
+        '{"paper_id":"PMC_majeed","claims":[{'
+        '"numeric_values":[6.52,0.19,0.001],'
+        '"binding_confidence":"high","claim_role":"effect"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_majeed",
+        "citation_token": "Majeed 2021",
+    }]}
+    paper = (
+        "Majeed 2021 reported HbA1c reductions, consistent with the "
+        "ADA 2024 target of 7% for most adults with diabetes."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []
+
+
+def test_source_context_drift_skips_post_numeric_unknown_citation(tmp_path):
+    """A numeric followed by its own unknown/canon citation should not
+    be charged to an earlier registered citation in the same sentence."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_anisimov.quant_claims.json").write_text(
+        '{"paper_id":"PMC_anisimov","claims":[{'
+        '"numeric_values":[14],"binding_confidence":"high",'
+        '"claim_role":"effect"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_anisimov",
+        "citation_token": "Anisimov 2011",
+    }]}
+    paper = (
+        "Anisimov 2011 reported a 14% increase, consistent with the "
+        "canonical 5% benchmark (Anisimov 2008)."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []
+
+
+def test_source_context_drift_ignores_cited_footer_lines(tmp_path):
+    """Rendered `_Cited:` footers are metadata, not prose sentences."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_yang.quant_claims.json").write_text(
+        '{"paper_id":"PMC_yang","claims":[{'
+        '"numeric_values":[6],"binding_confidence":"high",'
+        '"claim_role":"background"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_yang",
+        "citation_token": "Yang 2023",
+    }]}
+    paper = (
+        "The matrix contains 283 tensions.\n\n"
+        " _Cited: `Yang 2023`_\n\n"
+        "## Methods\n\n"
+        "This was produced by v0.6."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []
+
+
 def test_source_context_drift_skips_year_numerics():
     """The year '2014' in 'Mannick 2014' must not be flagged as a
     drift — it's the citation token itself, not a claim."""
@@ -336,6 +412,56 @@ def test_source_context_drift_handles_numeric_variants():
         assert drift == [], f"failed on {prose_num!r}"
 
 
+def test_source_context_drift_handles_leading_decimal_p_values(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "walton.quant_claims.json").write_text(
+        '{"paper_id":"walton","claims":[{'
+        '"numeric_values":[0.003],"binding_confidence":"high",'
+        '"claim_role":"effect"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "walton",
+        "citation_token": "Walton 2019",
+    }]}
+    paper = "Walton 2019 reported lean-mass differences (p = .003)."
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []
+
+
+def test_source_context_drift_skips_deterministic_tables(tmp_path):
+    """QEI / structured evidence tables are numeric matrices, not
+    prose. The role guard must skip them to avoid false drift checks
+    and large-corpus quadratic scans."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_witham.quant_claims.json").write_text(
+        '{"paper_id":"PMC_witham","claims":[{'
+        '"claim_type":"unit_value","numeric_values":[0.13],'
+        '"binding_confidence":"high","claim_role":"change_score"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_witham",
+        "citation_token": "Witham 2025",
+    }]}
+    paper = (
+        "## Quantitative Evidence Index — metformin\n\n"
+        "| Study | Endpoint | Value |\n"
+        "|---|---|---|\n"
+        "| Witham 2025 | baseline gait speed | 0.13 m/s |\n\n"
+        "## Results\n\n"
+        "Witham 2025 reported no clear functional improvement."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []
+
+
 def test_scan_paper_back_compat_no_kwargs_works():
     """Existing callers passing only paper_md (no manifest /
     bg_lit) keep working — drift check is silently disabled."""
@@ -344,6 +470,29 @@ def test_scan_paper_back_compat_no_kwargs_works():
     # No drift check ran (registry empty)
     drift = [i for i in issues if i.issue_type == "source_context_drift"]
     assert drift == []
+
+
+def test_no_change_with_nonzero_parenthetical_unit_is_p1():
+    paper = (
+        "The trial found no change in walk speed (0.13 m/s) over "
+        "follow-up."
+    )
+    issues = scan_paper(paper)
+    found = [
+        i for i in issues
+        if i.issue_type == "no_change_nonzero_parenthetical"
+    ]
+    assert found and found[0].severity == "P1"
+
+
+def test_no_change_with_p_value_parenthetical_is_allowed():
+    paper = "The trial found no significant change in walk speed (p = 0.13)."
+    issues = scan_paper(paper)
+    found = [
+        i for i in issues
+        if i.issue_type == "no_change_nonzero_parenthetical"
+    ]
+    assert found == []
 
 
 # --- Slice 7 P1b: ROLE drift (not just value drift) ----------------
@@ -380,6 +529,33 @@ def test_role_drift_flags_baseline_when_source_is_change_score(tmp_path):
     assert "ROLE drift" in drift[0].detail
     assert "baseline" in drift[0].detail.lower()
     assert "change_score" in drift[0].detail.lower()
+
+
+def test_role_drift_flags_leading_citation_baseline_drift(tmp_path):
+    """Sentence-opening citations govern later numerics too."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_witham.quant_claims.json").write_text(
+        '{"paper_id":"PMC_witham","claims":[{'
+        '"claim_type":"unit_value","numeric_values":[0.13],'
+        '"binding_confidence":"high","claim_role":"effect"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_witham",
+        "citation_token": "Witham 2025",
+    }]}
+    paper = (
+        "Witham 2025 reported placebo groups showed no change in "
+        "frailty status and no change in walk speed, with a baseline "
+        "walk speed of 0.13 m/s in the placebo arm."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift, "leading-citation role drift should fire"
+    assert "baseline" in drift[0].detail.lower()
+    assert "effect" in drift[0].detail.lower()
 
 
 def test_role_drift_passes_when_prose_role_matches_source(tmp_path):

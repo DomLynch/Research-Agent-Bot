@@ -120,6 +120,26 @@ def test_q13_fails_when_analytical_ratio_below_15pct() -> None:
     assert "≥15%" in msg
 
 
+def test_q13_excludes_deterministic_tables_from_prose_denominator() -> None:
+    """Large-corpus tables are audit artifacts, not narrative prose.
+    Q13 keeps the 15% threshold but measures against prose body."""
+    paper = _build_paper(
+        discussion_words=1000, cross_domain_words=1000,
+        intro_words=500, methods_words=1000,
+    )
+    paper += (
+        "\n\n## Structured Evidence Tables\n\n"
+        + ("tableword " * 10000)
+        + "\n\n## Table 3: Cross-Domain Tensions\n\n"
+        + ("tableword " * 10000)
+        + "\n\n## References\n\n"
+        + ("refword " * 1000)
+    )
+    ok, msg = audit._check_analytical_ratio(paper)
+    assert ok is True
+    assert "≥15%" in msg
+
+
 # ============ Fix #44 — Q10 adaptive hedge density =====================
 
 

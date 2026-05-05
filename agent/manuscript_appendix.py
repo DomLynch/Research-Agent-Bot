@@ -238,10 +238,8 @@ def build_search_provenance_appendix(
 def _verdict_phrase(verdict: str) -> str:
     """Conditional certification phrase. Verdict-honest by construction:
     AAA            → 'Researka-Certified A2A-AAA artifact'
-    Trust-Spine    → 'Researka Trust-Spine Pass artifact (pending AAA
-                      certification on consecutive-run stability)'
-    SHIP-BLOCKED   → 'Researka preliminary audit-trail artifact (not yet
-                      certification-eligible)'
+    Trust-Spine    → 'Researka Trust-Spine Pass audit artifact'
+    SHIP-BLOCKED   → 'Researka preliminary audit artifact'
     other / unset  → 'Researka audit-trail artifact'
     Reviewer P1 (2026-05-05): the prior hardcoded 'A2A-AAA-certified'
     language overclaimed for Trust-Spine Pass artifacts (e.g. the
@@ -251,16 +249,33 @@ def _verdict_phrase(verdict: str) -> str:
         return "Researka-Certified A2A-AAA artifact"
     if v in ("Trust-Spine Pass",
              "Trust-Spine Pass — Agent Review Unresolved"):
-        return (
-            "Researka Trust-Spine Pass artifact (pending AAA "
-            "certification on consecutive-run stability)"
-        )
+        return "Researka Trust-Spine Pass audit artifact"
     if v == "SHIP-BLOCKED":
-        return (
-            "Researka preliminary audit-trail artifact (not yet "
-            "certification-eligible)"
-        )
+        return "Researka preliminary audit artifact"
     return "Researka audit-trail artifact"
+
+
+def _submitter_attestation_text(verdict: str) -> str:
+    v = (verdict or "").strip()
+    phrase = _verdict_phrase(v)
+    if v == "AAA":
+        return (
+            f"> I publicly release this {phrase} under the Researka "
+            "Independent Standard. I have inspected the trust-spine "
+            "bundle (paper + audit + consistency + patch trail + "
+            "citation registry + certification record + manifest) and "
+            "find no defects exceeding the certification tolerances. I "
+            "invite any third party to re-run the pipeline and report "
+            "errors via the public issue tracker. Errors found post-"
+            "release will be corrected via versioned re-cert."
+        )
+    return (
+        f"> I publicly release this {phrase} under the Researka "
+        "Independent Standard. This bundle is not represented as an "
+        "A2A-AAA certification. Its current verdict, limitations, "
+        "unresolved review items, and corpus gaps are recorded in the "
+        "audit trail for public inspection and re-run."
+    )
 
 
 def build_ai_use_disclosure(
@@ -391,9 +406,10 @@ def build_ai_use_disclosure(
         "P1 count, numeric traceability, consistency-issue count, "
         "citation leakage, word count, orphan-citation blocks vs "
         "the prior baseline.",
-        "7. **Researka A2A-AAA cert** — all of the above must be "
-        "clean for ≥2 consecutive runs (see "
-        "`full_paper.certification.md`).",
+        "7. **Unified verdict gate** — the run is labeled as AAA, "
+        "Trust-Spine Pass, or SHIP-BLOCKED from the audit record; "
+        "certification language is used only for artifacts that clear "
+        "the certification gate.",
         "",
         "### Run-level disclosure",
         "",
@@ -438,6 +454,7 @@ def build_human_accountability_template(*, verdict: str = "") -> str:
     invite error-reporting against it. The Researka audit trail,
     not my private review, is the primary accountability surface.'
     """
+    attestation = _submitter_attestation_text(verdict)
     return (
         "## Researka Submitter Block\n"
         "\n"
@@ -456,16 +473,7 @@ def build_human_accountability_template(*, verdict: str = "") -> str:
         "\n"
         "**Submitter attestation:**\n"
         "\n"
-        f"> I publicly release this {_verdict_phrase(verdict)} "
-        "under the Researka Independent Standard. I "
-        "have inspected the trust-spine bundle (paper + audit + "
-        "consistency + patch trail + citation registry + cert + "
-        "manifest) and find no defects exceeding the cert's "
-        "stated tolerances. I invite any third party to re-run "
-        "the pipeline and report errors via the public issue "
-        "tracker. Errors found post-release will be corrected "
-        "via versioned re-cert (no retraction theater — the new "
-        "verdict simply supersedes the prior).\n"
+        f"{attestation}\n"
         "\n"
         "**Conflict of interest:** _[Submitter to declare.]_\n"
         "\n"
@@ -475,7 +483,7 @@ def build_human_accountability_template(*, verdict: str = "") -> str:
         "secondary literature synthesis with no primary human or "
         "animal data collection.\n"
         "\n"
-        "**Versioning:** This artifact carries a unique cert ID "
+        "**Versioning:** This artifact carries a unique run ID "
         "+ git SHA. Re-running the pipeline at the same SHA on "
         "the same corpus reproduces the verdict; any divergence "
         "is itself a finding worth reporting.\n"
@@ -488,6 +496,7 @@ def build_data_code_availability(
     bundle_path: str | None = None,
     repo_url: str = "https://github.com/DomLynch/Research-Agent-Bot",
     topic: str = "the_topic",
+    verdict: str = "",
 ) -> str:
     """Data and Code Availability — links to the public bundle so
     a reviewer can reproduce the synthesis end-to-end.
@@ -500,6 +509,15 @@ def build_data_code_availability(
         f"`{bundle_path}`" if bundle_path
         else "see `bundles/<run_id>/` in the source repository"
     )
+    verdict_clean = (verdict or "").strip()
+    if verdict_clean == "AAA":
+        bundle_verdict_phrase = "the Researka A2A-AAA certification record"
+        sha_label = "Git SHA at certification"
+        code_label = "Cert/verdict code"
+    else:
+        bundle_verdict_phrase = "the unified verdict and audit record"
+        sha_label = "Git SHA at run"
+        code_label = "Verdict code"
     return (
         "## Data and Code Availability\n"
         "\n"
@@ -509,12 +527,12 @@ def build_data_code_availability(
         "### Public bundle\n"
         "\n"
         f"**Run ID:** `{run_id}`\n"
-        f"**Git SHA at certification:** `{git_sha}`\n"
+        f"**{sha_label}:** `{git_sha}`\n"
         f"**Bundle path:** {bundle_str}\n"
         "\n"
         "The bundle contains: the manuscript itself, the Stage-1 "
         "audit (Q1-Q13), the Stage-2 consistency audit (C01-C14), "
-        "the unified verdict, the Researka A2A-AAA certification, "
+        f"{bundle_verdict_phrase}, "
         "the full Grok review-patch list (raw), the orchestrator's "
         "decision per patch, the deterministic auto-fix log, the "
         "citation registry with traceback to corpus, the run "
@@ -540,7 +558,7 @@ def build_data_code_availability(
         "\n"
         "- Audit code: `scripts/audit_v06_paper.py` + "
         "`scripts/final_consistency_audit.py`\n"
-        "- Cert code: `scripts/certification_report.py`\n"
+        f"- {code_label}: `scripts/certification_report.py`\n"
         "- Patch-gate code: `scripts/apply_patches.py`\n"
         "- Repair-loop code: `scripts/run_v06_synthesis.py` "
         "(`_agent_repair_loop`)\n"
@@ -591,6 +609,7 @@ def compose_appendix(
         build_human_accountability_template(verdict=verdict),
         build_data_code_availability(
             run_id, git_sha, bundle_path=bundle_path, topic=topic,
+            verdict=verdict,
         ),
     ]
     return "\n\n".join(b.rstrip() for b in blocks) + "\n"

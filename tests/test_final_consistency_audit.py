@@ -48,6 +48,23 @@ def test_stale_spar_phrases_flagged_when_no_spar_ran() -> None:
     assert len(stale) >= 1
 
 
+def test_methods_not_run_disclosure_is_not_stale_boilerplate() -> None:
+    """Run-mode Methods may explicitly say SPAR did NOT run; that
+    negative disclosure is the contract, not stale boilerplate."""
+    paper = (
+        "## Methods\n\n"
+        "This synthesis used the v0.6 quant-claim adapter.\n\n"
+        "### What did NOT run\n\n"
+        "- SPAR (multi-judge panel adjudication) did NOT run on this corpus.\n"
+        "- Multi-receipt cluster aggregation did NOT run.\n\n"
+        "### Claim source\n\n"
+        "`docs/quality-reference/topic/quant_claims/*.json`.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    stale = [i for i in issues if i.issue_type == "stale_method_boilerplate"]
+    assert stale == []
+
+
 def test_duplicate_references_section_is_p1() -> None:
     """## References appearing twice = duplicate section bug."""
     paper = (
@@ -318,6 +335,13 @@ def test_polish_suppresses_triple_letter_in_identifier_context() -> None:
     )
 
 
+def test_polish_suppresses_uppercase_aaa_cert_label() -> None:
+    paper = "## Methods\n\nThe run is labeled as AAA, not preliminary.\n"
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    polish = [i for i in issues if i.issue_type == "malformed_word"]
+    assert polish == []
+
+
 def test_polish_suppresses_dup_word_followed_by_hyphen() -> None:
     """Fix #15: 'over over-claimed' is grammatical (preposition +
     hyphenated adjective); not a duplication artifact."""
@@ -342,6 +366,17 @@ def test_polish_skips_code_block_contents() -> None:
     issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
     polish = [i for i in issues if i.issue_type == "malformed_word"]
     assert polish == []
+
+
+def test_polish_skips_indented_code_block_spacing() -> None:
+    paper = (
+        "## Methods\n\n"
+        "Run the reproducibility command:\n\n"
+        "    python scripts/run.py  --topic metformin\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    spaces = [i for i in issues if i.issue_type == "double_space"]
+    assert spaces == []
 
 
 def test_polish_clean_paper_returns_no_polish_issues() -> None:
@@ -474,6 +509,116 @@ def test_apply_fixes_idempotent_for_citation_order() -> None:
     assert cite_log == []
 
 
+def test_polish_catches_duplicate_citation_year() -> None:
+    """C08: `Author et al. YYYY (YYYY)` is a duplicate year artifact."""
+    paper = (
+        "## Discussion\n\n"
+        "Witham et al. 2025 (2025) reported trial outcomes.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    dups = [i for i in issues if i.issue_type == "duplicate_citation_year"]
+    assert len(dups) == 1
+    assert dups[0].auto_fixable
+
+
+def test_apply_fixes_rewrites_duplicate_citation_year() -> None:
+    """`Witham et al. 2025 (2025)` → `Witham et al. 2025`."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "Witham et al. 2025 (2025) reported trial outcomes. "
+        "Konopka 2019 (2019) reported a mechanistic endpoint.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "Witham et al. 2025 (2025)" not in out
+    assert "Konopka 2019 (2019)" not in out
+    assert "Witham et al. 2025 reported" in out
+    assert "Konopka 2019 reported" in out
+    cite_log = [e for e in log if e["fix_type"] == "duplicate_citation_year"]
+    assert len(cite_log) == 1
+    assert cite_log[0]["n_changes"] == 2
+
+
+def test_apply_fixes_adds_preclinical_translation_hedge() -> None:
+    """Q6 backstop: preclinical transfer gets a neutral human hedge."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "The animal models showed improved lifespan. "
+        "The next sentence discusses trial design.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "Translational relevance to humans remains uncertain." in out
+    hedge_log = [
+        e for e in log if e["fix_type"] == "preclinical_translation_hedge"
+    ]
+    assert len(hedge_log) == 1
+
+
+def test_apply_fixes_does_not_rehedge_already_hedged_preclinical_sentence() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "The animal models showed improved lifespan, but translation "
+        "to humans remains uncertain.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert out == paper
+    assert not [
+        e for e in log if e["fix_type"] == "preclinical_translation_hedge"
+    ]
+
+
+def test_apply_fixes_fuzzy_strips_numeric_role_drift_snippet(monkeypatch) -> None:
+    """If exact sentence replacement misses, strip paragraph by evidence prefix."""
+    import sys as _sys
+    from dataclasses import dataclass
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    @dataclass
+    class FakeIssue:
+        sentence: str
+        severity: str = "P1"
+
+    def fake_scan(*_args, **_kwargs):
+        return [FakeIssue(
+            "Majeed 2021 found metformin reduced HbA1c to 6.52 ± 0.19% "
+            "with a significant decrease."
+        )]
+
+    def fake_strip(md, _issues):
+        return md, 0
+
+    fake_module = type("FakeNRG", (), {
+        "scan_paper": staticmethod(fake_scan),
+        "auto_strip_offending_sentences": staticmethod(fake_strip),
+    })
+    monkeypatch.setitem(_sys.modules, "numeric_role_guard", fake_module)
+    paper = (
+        "## Discussion\n\n"
+        "Context before.\n\n"
+        "Majeed 2021 found metformin reduced HbA1c to 6.52 ± 0.19% "
+        "with a significant decrease and extra trailing words.\n\n"
+        "Context after.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [], manifest={"topic": "metformin"})
+    assert "6.52 ± 0.19%" not in out
+    assert "Context before" in out
+    assert "Context after" in out
+    assert [e for e in log if e["fix_type"] == "numeric_role_guard_strip"]
+
+
 # Reviewer-fix LOW: fix_audit_verdict idempotency
 def test_fix_audit_verdict_is_idempotent() -> None:
     """Running fix_audit_verdict twice on the already-renamed text
@@ -516,7 +661,7 @@ def test_auto_fixer_does_not_strip_table_paragraphs() -> None:
         "| Walton 2019 | abstract | percentage | 7% | % |\n"
         "| Konopka 2019 | abstract | unit_value | 0.8 m/s | m/s |\n"
     )
-    fixed, log = fixer.apply_fixes(paper, [])
+    fixed, log = fixer.apply_fixes(paper, [], manifest=_empty_manifest())
     # Table rows MUST survive — they're structured evidence
     assert "| Walton 2019 |" in fixed
     assert "7%" in fixed
@@ -545,7 +690,7 @@ def test_auto_fixer_still_strips_unsourced_prose_sentences() -> None:
         "Diabetes guidelines target HbA1c below 7% in older adults. "
         "This is a different sentence with no background numeric.\n"
     )
-    fixed, log = fixer.apply_fixes(paper, [])
+    fixed, log = fixer.apply_fixes(paper, [], manifest=_empty_manifest())
     # The sentence with unsourced "7%" should be stripped
     assert "7%" not in fixed
     # The clean sentence survives
@@ -680,3 +825,59 @@ def test_apply_fixes_strips_spar_quarantine_in_limitations() -> None:
     assert "SPAR quarantine" not in fixed
     # Surrounding good sentence survives (or replaced by disclaimer)
     assert "Other limitations" in fixed
+
+
+def test_apply_fixes_preserves_methods_after_qei_not_run_block() -> None:
+    """Regression for the large-corpus metformin paper: stale-SPAR
+    cleanup must not eat `## Methods` or merge Methods into QEI."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Quantitative Evidence Index — topic\n\n"
+        "_Top 40 high-confidence numeric claims. Every row traces._\n\n"
+        "## Methods\n\n"
+        "This synthesis used the v0.6 quant-claim adapter.\n\n"
+        "### LLM roles\n\n"
+        "- **Writer:** model.\n\n"
+        "### What did NOT run\n\n"
+        "- SPAR (multi-judge panel adjudication) did NOT run on this corpus.\n"
+        "- Multi-receipt cluster aggregation did NOT run.\n\n"
+        "### Claim source\n\n"
+        "`docs/quality-reference/topic/quant_claims/*.json`.\n\n"
+        "## Results\n\nFindings.\n"
+    )
+    fixed, _log = fixer.apply_fixes(paper, [])
+    assert "## Methods\n\n" in fixed
+    assert "_Top 40 high-confidence numeric claims. Every row traces._" in fixed
+    assert fixed.index("## Quantitative Evidence Index") < fixed.index("## Methods")
+    assert fixed.index("## Methods") < fixed.index("### LLM roles")
+    assert fixed.index("### LLM roles") < fixed.index("## Results")
+
+
+def test_apply_fixes_backfills_cross_domain_after_review_trim() -> None:
+    """Grok can shorten Cross-Domain after writer backstop runs; the
+    deterministic fixer restores the Q12 floor without new numerics."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(
+        _Path(__file__).resolve().parent.parent / "scripts"
+    ))
+    import apply_consistency_fixes as fixer
+    import audit_v06_paper as audit_v06
+
+    paper = (
+        "## Cross-Domain Synthesis\n\n"
+        + ("word " * 758)
+        + "\n\n## Discussion\n\n"
+        + ("word " * 900)
+        + "\n\n## References\n\n- entry\n"
+    )
+    fixed, log = fixer.apply_fixes(paper, [], manifest=_empty_manifest())
+    ok, msg = audit_v06._check_cross_domain_depth(fixed)
+    assert ok is True, msg
+    assert "analytical_depth_backfill" in {x["fix_type"] for x in log}

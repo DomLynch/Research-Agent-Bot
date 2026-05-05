@@ -49,7 +49,8 @@ from agent.paper_writer_deterministic import (  # noqa: E402
     build_what_this_adds_section,
 )
 from agent.synthesis_schemas import (  # noqa: E402
-    ReceiptSummary, SynthesisThesis, Tension, TensionMatrix,
+    ReceiptSummary, SynthesisSection, SynthesisThesis, Tension,
+    TensionMatrix,
 )
 from agent.settings import load_settings  # noqa: E402
 
@@ -96,6 +97,118 @@ _ACTIVE_TOPIC: str = ""
 # scripts/final_consistency_audit.py:_check_numeric_role_guard) can
 # resolve receipt → quant_claims via the same global.
 _ACTIVE_MANIFEST: dict | None = None
+
+
+def _first_section_paragraph(section_md: str) -> str:
+    body = section_md.split("\n", 1)[1] if "\n" in section_md else ""
+    for para in re.split(r"\n\s*\n", body):
+        clean = para.strip()
+        if not clean or clean.startswith("###") or clean.startswith("_Cited:"):
+            continue
+        return clean
+    return ""
+
+
+def _restore_rendered_section_headings(
+    paper_md: str, sections: tuple[SynthesisSection, ...],
+) -> str:
+    """Renderer-owned headings must survive all post-processing.
+
+    Large-corpus runs exposed a document-assembly failure where a
+    section's prose survived but its `## Heading` was lost, causing Q7
+    section coverage to fail. This restores missing headings from the
+    typed section objects returned by the writer. Universal contract:
+    LLM/review patches may edit prose, but section objects own headings.
+    """
+    out = paper_md
+    for section in sections:
+        first_line = section.body_md.lstrip().splitlines()[0:1]
+        if not first_line or not first_line[0].startswith("## "):
+            continue
+        heading = first_line[0].strip()
+        if re.search(rf"^{re.escape(heading)}\b", out, re.MULTILINE):
+            continue
+        anchor = _first_section_paragraph(section.body_md)
+        if not anchor:
+            continue
+        pos = out.find(anchor)
+        if pos < 0:
+            short = anchor[:160].rstrip()
+            pos = out.find(short) if short else -1
+        if pos < 0:
+            if heading == "## Cross-Domain Synthesis":
+                out, restored = _insert_cross_domain_heading(out, heading)
+            elif heading == "## Conclusion":
+                out, restored = _insert_conclusion_heading(out, heading)
+            else:
+                restored = False
+            if restored:
+                continue
+            continue
+        out = out[:pos].rstrip() + f"\n\n{heading}\n\n" + out[pos:].lstrip()
+    return out
+
+
+def _heading_pos(markdown: str, heading: str, start: int = 0) -> int:
+    match = re.search(
+        rf"^{re.escape(heading)}\b", markdown[start:], re.MULTILINE,
+    )
+    return -1 if match is None else start + match.start()
+
+
+def _first_heading_after(markdown: str, headings: tuple[str, ...], start: int) -> int:
+    positions = [_heading_pos(markdown, h, start) for h in headings]
+    positions = [p for p in positions if p >= 0]
+    return min(positions) if positions else -1
+
+
+_CROSS_DOMAIN_PARA_RE = re.compile(
+    r"\b(?:cross-domain|tension|conflict|discrepanc|discordan|"
+    r"boundary condition|contradict)\b",
+    re.IGNORECASE,
+)
+
+
+def _insert_cross_domain_heading(markdown: str, heading: str) -> tuple[str, bool]:
+    start = _heading_pos(markdown, "## Results")
+    end = _heading_pos(markdown, "## Discussion", start)
+    if start < 0 or end < 0 or start >= end:
+        return markdown, False
+    segment = markdown[start:end]
+    for match in re.finditer(r"(?ms)(^|\n\n)([^\n#_].*?)(?=\n\n|$)", segment):
+        para = match.group(2).strip()
+        if not _CROSS_DOMAIN_PARA_RE.search(para):
+            continue
+        if "_Cited:" not in segment[: match.start(2)]:
+            continue
+        pos = start + match.start(2)
+        return (
+            markdown[:pos].rstrip() + f"\n\n{heading}\n\n"
+            + markdown[pos:].lstrip(),
+            True,
+        )
+    return markdown, False
+
+
+def _insert_conclusion_heading(markdown: str, heading: str) -> tuple[str, bool]:
+    start = _heading_pos(markdown, "## Limitations")
+    end = _first_heading_after(
+        markdown,
+        ("## Structured Evidence Tables", "## Search Provenance", "## References"),
+        start + 1 if start >= 0 else 0,
+    )
+    if start < 0 or end < 0 or start >= end:
+        return markdown, False
+    segment = markdown[start:end]
+    cited = list(re.finditer(r"^\s*_Cited:.*?_$", segment, re.MULTILINE))
+    if not cited:
+        return markdown, False
+    pos = start + cited[-1].end()
+    return (
+        markdown[:pos].rstrip() + f"\n\n{heading}\n\n"
+        + markdown[pos:].lstrip(),
+        True,
+    )
 
 
 def _set_topic(topic: str) -> None:
@@ -1023,6 +1136,9 @@ async def _run(
             f"Rendered Methods contains blocked phrases: {blocked_in_rendered}"
         )
     full_paper_md = _run_mode.replace_methods_in_paper(full_paper_md, methods_md)
+    full_paper_md = _restore_rendered_section_headings(
+        full_paper_md, sections,
+    )
     (out_dir / "run_mode_contract.json").write_text(
         json.dumps(dataclasses.asdict(contract), indent=2)
     )
@@ -1064,7 +1180,11 @@ async def _run(
                 # quant_claims and check role match. Without this the
                 # role-drift check silently fails (every token returns
                 # 'unknown citation' → fail-soft skip).
-                "citation_token": _author_year_token(r),
+                "citation_token": (
+                    citation_registry.get(r.receipt_id).body_citation
+                    if citation_registry.get(r.receipt_id) else
+                    _author_year_token(r)
+                ),
                 # paper_id resolved from receipt_id so quant_claims
                 # files are findable.
                 "paper_id": r.receipt_id,
@@ -1091,7 +1211,7 @@ async def _run(
     # this whole chain runs from one invocation. =====
     final_paper_md = await _run_post_paper_pipeline(
         paper_path=paper_path, manifest=manifest, out_dir=out_dir,
-        citation_registry=citation_registry,
+        citation_registry=citation_registry, sections=sections,
     )
     word_count = len(final_paper_md.split())
 
@@ -1110,6 +1230,7 @@ async def _run(
 async def _run_post_paper_pipeline(
     *, paper_path: Path, manifest: dict, out_dir: Path,
     citation_registry: dict | None = None,
+    sections: tuple[SynthesisSection, ...] = (),
 ) -> str:
     """Layer 1 deterministic audit + auto-fix → final-layer LLM review
     (Grok 4.3 → Mistral fallback) → auto-apply patches → final audit.
@@ -1137,7 +1258,9 @@ async def _run_post_paper_pipeline(
     paper_path.with_suffix(".consistency.md").write_text(
         _consistency_audit._format_summary(issues)
     )
-    paper_md, fix_log = _consistency_fixer.apply_fixes(paper_md, issues)
+    paper_md, fix_log = _consistency_fixer.apply_fixes(
+        paper_md, issues, manifest=manifest,
+    )
     paper_path.with_suffix(".fixed_log.json").write_text(
         json.dumps(fix_log, indent=2)
     )
@@ -1223,6 +1346,7 @@ async def _run_post_paper_pipeline(
             results=results,
             manifest=manifest,
         )
+        paper_md = _restore_rendered_section_headings(paper_md, sections)
 
         paper_path.write_text(paper_md)
         paper_path.with_suffix(".review_patch_log.json").write_text(json.dumps({
@@ -1329,10 +1453,12 @@ async def _run_post_paper_pipeline(
     pre_issues = _consistency_audit.run_audit(
         paper_md, manifest, pre_audit, pre_audit_md,
     )
-    if any(i.auto_fixable for i in pre_issues):
-        paper_md, _refix_log = _consistency_fixer.apply_fixes(
-            paper_md, pre_issues,
-        )
+    paper_md, _refix_log = _consistency_fixer.apply_fixes(
+        paper_md, pre_issues, manifest=manifest,
+        quant_claims_dir=QUANT_DIR,
+    )
+    paper_md = _restore_rendered_section_headings(paper_md, sections)
+    if _refix_log or any(i.auto_fixable for i in pre_issues):
         paper_path.write_text(paper_md)
     audit_report = _audit_v06.audit(paper_md)
     audit_path.write_text(json.dumps(audit_report, indent=2))

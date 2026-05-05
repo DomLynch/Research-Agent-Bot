@@ -9,12 +9,10 @@ import asyncio
 import sys
 from pathlib import Path
 
-import pytest
-
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from agent.sources.aggregator import (
-    AggregatedHit, _merge_and_dedupe, discover_calibrated,
+    _merge_and_dedupe, discover_calibrated,
 )
 from agent.retrieval_modes import resolve_params
 from agent.topic_pack import RetrievalSpec

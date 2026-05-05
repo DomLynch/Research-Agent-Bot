@@ -8,12 +8,10 @@ from __future__ import annotations
 
 import asyncio
 
-import pytest
-
 from agent.sources.aggregator import AggregatedHit
 from agent.topic_pack import RetrievalSpec
 from agent.wave_retrieval import (
-    Wave, WaveReport, compose_waves, run_waves,
+    compose_waves, run_waves,
 )
 
 

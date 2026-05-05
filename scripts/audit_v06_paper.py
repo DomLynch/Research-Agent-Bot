@@ -560,6 +560,33 @@ def _strip_publication_appendix(paper: str) -> str:
     return "\n".join(out)
 
 
+_ANALYTICAL_DENOMINATOR_EXCLUDE_RE = re.compile(
+    r"^##\s+(?:Quantitative Evidence Index\b|Structured Evidence "
+    r"Tables\b|Table\s+\d+\b|Table\s+\d+\s*\(|References\b)",
+    re.IGNORECASE,
+)
+
+
+def _strip_non_prose_sections_for_analytical_ratio(paper: str) -> str:
+    """Remove deterministic tables, QEI, references, and publication
+    appendix before computing Q13's analytical-prose denominator.
+
+    Q13 is a prose-composition gate. Counting 10k+ words of
+    deterministic evidence tables as body prose makes large-corpus
+    papers fail for being auditable. The 15% threshold stays strict;
+    the denominator is the narrative synthesis body."""
+    text = _strip_publication_appendix(paper)
+    lines = text.splitlines()
+    out: list[str] = []
+    skipping = False
+    for line in lines:
+        if line.startswith("## "):
+            skipping = bool(_ANALYTICAL_DENOMINATOR_EXCLUDE_RE.match(line))
+        if not skipping:
+            out.append(line)
+    return "\n".join(out)
+
+
 def _check_numeric_density(
     paper: str, threshold: float = 8.0,
 ) -> tuple[bool, str]:
@@ -701,7 +728,8 @@ def _check_analytical_ratio(paper: str) -> tuple[bool, str]:
     )
     n_disc = len(discussion.group(1).split()) if discussion else 0
     n_cross = len(cross.group(1).split()) if cross else 0
-    body_words = len(paper.split())
+    ratio_body = _strip_non_prose_sections_for_analytical_ratio(paper)
+    body_words = len(ratio_body.split())
     if body_words < 100:
         return False, "paper too short to compute analytical ratio"
     ratio = (n_disc + n_cross) / body_words

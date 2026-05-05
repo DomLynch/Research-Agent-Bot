@@ -202,6 +202,22 @@ def test_submitter_block_includes_template_placeholders() -> None:
     assert "versioned re-cert" in md.lower() or "Versioning" in md
 
 
+def test_submitter_block_does_not_certify_trust_spine_artifact() -> None:
+    """Non-AAA artifacts get audit wording, not certification wording."""
+    md = appx.build_human_accountability_template(verdict="Trust-Spine Pass")
+    assert "Trust-Spine Pass audit artifact" in md
+    assert "not represented as an A2A-AAA certification" in md
+    assert "certification tolerances" not in md
+    assert "pending AAA" not in md
+
+
+def test_submitter_block_uses_certification_wording_only_for_aaa() -> None:
+    """AAA artifacts may use certification wording."""
+    md = appx.build_human_accountability_template(verdict="AAA")
+    assert "Researka-Certified A2A-AAA artifact" in md
+    assert "certification tolerances" in md
+
+
 # =========== Data and Code Availability ===========================
 
 
@@ -235,6 +251,25 @@ def test_data_code_availability_invites_error_reports() -> None:
     assert "issue" in md.lower() or "github" in md.lower()
 
 
+def test_data_code_availability_non_aaa_uses_audit_bundle_language() -> None:
+    """TSP/blocked outputs are audit bundles, not certification bundles."""
+    md = appx.build_data_code_availability(
+        run_id="r1", git_sha="abc1234", verdict="Trust-Spine Pass",
+    )
+    assert "Git SHA at run" in md
+    assert "unified verdict and audit record" in md
+    assert "A2A-AAA certification" not in md
+
+
+def test_data_code_availability_aaa_keeps_certification_language() -> None:
+    """AAA outputs may expose the certification record."""
+    md = appx.build_data_code_availability(
+        run_id="r1", git_sha="abc1234", verdict="AAA",
+    )
+    assert "Git SHA at certification" in md
+    assert "A2A-AAA certification record" in md
+
+
 # =========== Top-level composer ===================================
 
 
@@ -256,6 +291,21 @@ def test_compose_appendix_assembles_all_four_sections() -> None:
     assert ai_pos > sp_pos
     assert sb_pos > ai_pos
     assert dc_pos > sb_pos
+
+
+def test_compose_appendix_does_not_emit_stale_spar_adjudication_phrase() -> None:
+    """Appendix prose must not reintroduce stale Stage-2 SPAR wording."""
+    md = appx.compose_appendix(
+        _fake_manifest(),
+        model_stack=_fake_model_stack(),
+        topic="metformin",
+        run_id="r1",
+        git_sha="abc1234",
+        verdict="Trust-Spine Pass",
+    )
+    assert "SPAR adjudication" not in md
+    assert "pending AAA" not in md
+    assert "cert's stated tolerances" not in md
 
 
 # =========== Splice helper ========================================

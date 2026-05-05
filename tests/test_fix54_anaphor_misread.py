@@ -159,8 +159,8 @@ def test_fix54_auto_strip_removes_misread_sentence() -> None:
     cited the threshold reference."""
     paper = (
         "## Frailty\n\n"
-        "The MET-PREVENT trial reported the placebo group showing "
-        "no change in frailty status or walk speed (0.13 m/s). "
+        "The MET-PREVENT trial reported a walk-speed change of "
+        "0.13 m/s in the placebo group. "
         "This walk speed value is below the 0.8 m/s threshold "
         "(Studenski 2011) associated with impaired mobility and "
         "frailty risk.\n\n"

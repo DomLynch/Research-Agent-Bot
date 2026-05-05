@@ -311,6 +311,53 @@ def _check_malformed_subject(sentence: str) -> NumericIssue | None:
     return None
 
 
+_NO_CHANGE_NONZERO_PAREN_RE = re.compile(
+    r"\bno\s+(?:meaningful\s+|clear\s+|significant\s+)?change\b"
+    r"[^.]{0,140}?\((?!\s*p\s*[<=>])([^)]*\d+\.?\d*[^)]*)\)",
+    flags=re.IGNORECASE,
+)
+
+
+def _check_no_change_nonzero_parenthetical(
+    sentence: str,
+) -> NumericIssue | None:
+    """Flag 'no change ... (0.13 m/s)' style sentences.
+
+    Parenthetical nonzero outcome values attached to a no-change claim
+    are ambiguous at best and often invert the source context. P-values
+    and confidence intervals are allowed; unit-bound outcome values are
+    not."""
+    m = _NO_CHANGE_NONZERO_PAREN_RE.search(sentence)
+    if not m:
+        return None
+    paren = m.group(1).lower()
+    if "ci" in paren or "confidence interval" in paren:
+        return None
+    unit_bound = re.search(
+        r"\b\d+\.?\d*\s*(?:m/s|kg|mg|%|mmhg|points?|scores?|units?)\b",
+        paren,
+        flags=re.IGNORECASE,
+    )
+    if not unit_bound:
+        return None
+    try:
+        value = float(re.match(r"\d+\.?\d*", unit_bound.group(0)).group(0))
+    except (AttributeError, TypeError, ValueError):
+        return None
+    if value == 0:
+        return None
+    return NumericIssue(
+        sentence=sentence,
+        issue_type="no_change_nonzero_parenthetical",
+        severity="P1",
+        detail=(
+            "Sentence frames an outcome as 'no change' while attaching "
+            f"a nonzero unit-bound parenthetical value ({unit_bound.group(0)!r}). "
+            "This is ambiguous source-context framing; strip the sentence."
+        ),
+    )
+
+
 # --- Slice 7 step 1: prose source-context numeric guard --------------
 #
 # The reviewer-flagged class: prose attributes a numeric to a citation
@@ -335,7 +382,7 @@ _CITATION_TOKEN_RE = re.compile(
 # every standalone number plus simple unit-bound numerics. Conservative
 # (we'd rather miss a number than false-positive an honest sentence).
 _DRIFT_NUMERIC_RE = re.compile(
-    r"\b(\d+\.?\d*)\s*"
+    r"(?<![\w.])(\d+\.\d+|\.\d+|\d+)\s*"
     r"(?:%|mg|g|kg|mL|L|m/s|months?|years?|weeks?|days?|"
     r"mmHg|bpm|U/L)?",
 )
@@ -436,6 +483,8 @@ def _numeric_variants(value: str) -> set[str]:
     ('0.8 m/s', '14%', '5 mg').
     """
     raw = str(value).strip()
+    if raw.startswith(".") and len(raw) > 1:
+        raw = f"0{raw}"
     out: set[str] = {raw}
     # Strip a trailing unit to extract the bare numeric.
     m = re.match(r"^(\d+\.?\d*)\s*", raw)
@@ -455,7 +504,7 @@ def _numeric_variants(value: str) -> set[str]:
     return out
 
 
-_DRIFT_PROXIMITY_WINDOW = 120  # chars; any citation within this distance is candidate
+_DRIFT_PROXIMITY_WINDOW = 180  # chars; any citation within this distance is candidate
 
 # Slice 7 P1b: prose-role classifier. Each prose numeric belongs
 # to one role; the drift check compares the prose role to the source
@@ -593,6 +642,25 @@ def _check_source_context_drift(
         nearby_keyed = [
             (f"{c.group(1)} {c.group(2)}", c) for c in nearby
         ]
+        closest_any = min(
+            nearby_keyed,
+            key=lambda kc: abs(_midpoint(kc[1]) - num_pos),
+        )
+        # If the number is closest to a citation we do not have source
+        # context for, fail soft instead of attributing it to a farther
+        # registered citation. This covers guideline/canon side-claims
+        # like "ADA 2024 target of 7%" or "Anisimov 2008 benchmark"
+        # in sentences that also cite receipt papers.
+        if closest_any[0] not in citation_role_index:
+            continue
+        post_unknown = [
+            (k, c) for k, c in nearby_keyed
+            if c.start() > num_pos
+            and c.start() - num_pos <= 80
+            and k not in citation_role_index
+        ]
+        if post_unknown:
+            continue
         registered = [
             (k, c) for k, c in nearby_keyed
             if k in citation_role_index
@@ -681,6 +749,39 @@ def _strip_references_section(paper_md: str) -> str:
     return paper_md
 
 
+def _strip_citation_footer_lines(paper_md: str) -> str:
+    """Remove deterministic `_Cited:` footer lines before prose-role
+    scanning. They are citation metadata, not prose, and can otherwise
+    merge adjacent section text into one synthetic sentence."""
+    return "\n".join(
+        line for line in paper_md.splitlines()
+        if not line.strip().startswith("_Cited:")
+    )
+
+
+_NON_PROSE_GUARD_SECTION_RE = re.compile(
+    r"^##\s+(?:Quantitative Evidence Index\b|Structured Evidence "
+    r"Tables\b|Table\s+\d+\b|Table\s+\d+\s*\(|References\b)",
+    flags=re.IGNORECASE,
+)
+
+
+def _strip_non_prose_guard_sections(paper_md: str) -> str:
+    """Drop deterministic tables/QEI/references before prose-role
+    scanning. These sections contain dense citation/numeric matrices,
+    not sentences; scanning them creates false drift checks and
+    quadratic work on large corpora."""
+    lines = paper_md.splitlines()
+    out: list[str] = []
+    skipping = False
+    for line in lines:
+        if line.startswith("## "):
+            skipping = bool(_NON_PROSE_GUARD_SECTION_RE.match(line))
+        if not skipping:
+            out.append(line)
+    return "\n".join(out)
+
+
 # Figure / Table / Section / Equation references — skip the drift
 # check on sentences that mention these (they cite a paper element,
 # not a claim numeric).
@@ -715,12 +816,16 @@ def scan_paper(
         bg_lit_registry=bg_lit_registry,
         quant_claims_dir=quant_claims_dir,
     )
-    body_for_drift = _strip_references_section(paper_md)
+    prose_md = _strip_citation_footer_lines(
+        _strip_non_prose_guard_sections(paper_md),
+    )
+    body_for_drift = _strip_references_section(prose_md)
     drift_sentences = set(_split_sentences(body_for_drift))
-    for sentence in _split_sentences(paper_md):
+    for sentence in _split_sentences(prose_md):
         for check in (
             _check_arithmetic_violations,
             _check_role_mismatch,
+            _check_no_change_nonzero_parenthetical,
             _check_malformed_subject,
         ):
             issue = check(sentence)

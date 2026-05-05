@@ -33,6 +33,19 @@ QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / "metformin" / "quant_clai
 
 __all__ = ["apply_patches", "main"]
 
+_REQUIRED_HEADINGS = (
+    "## Abstract",
+    "## Introduction",
+    "## Background",
+    "## Quantitative Evidence Index",
+    "## Methods",
+    "## Results",
+    "## Cross-Domain Synthesis",
+    "## Discussion",
+    "## Limitations",
+    "## Conclusion",
+)
+
 
 @dataclass(frozen=True, slots=True)
 class PatchResult:
@@ -68,6 +81,9 @@ def _load_receipt_ids(manifest: dict) -> set[str]:
     ids = set()
     for r in manifest.get("receipts", []):
         rid = r.get("receipt_id")
+        citation_token = r.get("citation_token")
+        if citation_token:
+            ids.add(str(citation_token))
         if rid:
             ids.add(rid)
             # Author Year short form
@@ -342,6 +358,7 @@ def apply_patches(
     receipt_ids = _load_receipt_ids(manifest)
     known_types = {"formatting", "citation", "numeric", "claim", "structure"}
 
+    pre_patch_md = paper_md
     for p in patches:
         ptype_raw = p.get("patch_type")
         ptype = ptype_raw if ptype_raw in known_types else "unknown"
@@ -507,7 +524,77 @@ def apply_patches(
             reason_for_decision=full_reason,
             before=before, after=after,
         ))
+    new_md, restored = _restore_required_section_headings(
+        pre_patch_md, new_md,
+    )
+    for heading in restored:
+        results.append(PatchResult(
+            patch_id=f"SECTION-CONTRACT-{heading[3:].replace(' ', '-')}",
+            patch_type="structure",
+            severity="P1",
+            decision="applied",
+            reason_for_decision=(
+                f"section-contract guard restored missing {heading!r} "
+                "heading after review-patch application"
+            ),
+            before="",
+            after=heading,
+        ))
     return new_md, results
+
+
+def _extract_heading_section(md: str, heading: str) -> str:
+    pattern = re.compile(
+        rf"^{re.escape(heading)}\b.*?(?=^##\s+|\Z)",
+        re.MULTILINE | re.DOTALL,
+    )
+    m = pattern.search(md)
+    return m.group(0) if m else ""
+
+
+def _first_section_paragraph(section_md: str) -> str:
+    body = section_md.split("\n", 1)[1] if "\n" in section_md else ""
+    for para in re.split(r"\n\s*\n", body):
+        clean = para.strip()
+        if not clean or clean.startswith("###") or clean.startswith("_Cited:"):
+            continue
+        return clean
+    return ""
+
+
+def _restore_required_section_headings(
+    before_md: str, after_md: str,
+) -> tuple[str, list[str]]:
+    """Review patches may delete a heading while leaving its prose.
+
+    The renderer owns section headings; reviewer patches only own local
+    text. If a required heading existed before patching and is missing
+    after patching, reinsert it before the surviving first paragraph of
+    that original section. This is universal section-contract repair,
+    not topic-specific prose surgery.
+    """
+    out = after_md
+    restored: list[str] = []
+    for heading in _REQUIRED_HEADINGS:
+        if not re.search(rf"^{re.escape(heading)}\b", before_md, re.MULTILINE):
+            continue
+        if re.search(rf"^{re.escape(heading)}\b", out, re.MULTILINE):
+            continue
+        section = _extract_heading_section(before_md, heading)
+        anchor = _first_section_paragraph(section)
+        if not anchor:
+            continue
+        pos = out.find(anchor)
+        if pos < 0:
+            # Try a shorter anchor; Grok may have trimmed the paragraph.
+            short = anchor[:160].rstrip()
+            pos = out.find(short) if short else -1
+        if pos < 0:
+            continue
+        insert = f"\n\n{heading}\n\n"
+        out = out[:pos].rstrip() + insert + out[pos:].lstrip()
+        restored.append(heading)
+    return out, restored
 
 
 def _post_apply_audit_safe(

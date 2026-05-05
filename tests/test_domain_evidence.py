@@ -5,7 +5,7 @@ the pipeline can read instead of hardcoded biomedical signal lists.
 from __future__ import annotations
 
 from agent.domain_evidence import (
-    BIOMEDICAL, CS_AI, DomainProfile, ECONOMICS, MANAGEMENT,
+    BIOMEDICAL, CS_AI, ECONOMICS, MANAGEMENT,
     get_profile, list_profiles,
 )
 

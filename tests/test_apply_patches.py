@@ -14,6 +14,10 @@ def _manifest() -> dict:
         "receipts": [
             {"receipt_id": "Walton_2019_MASTERS"},
             {"receipt_id": "Konopka_2019_metformin"},
+            {
+                "receipt_id": "PMC6400206_importance_of_physical_evaluation",
+                "citation_token": "Fukuoka 2019",
+            },
         ],
     }
 
@@ -411,6 +415,21 @@ def test_citation_patch_with_clean_author_year_still_applies() -> None:
     assert results[0].decision == "applied"
 
 
+def test_citation_patch_allows_manifest_citation_token() -> None:
+    """PMC receipts use registry body citations, not receipt_id-derived tokens."""
+    p = {
+        "id": "PX-token", "patch_type": "citation", "severity": "P1",
+        "location": "Results",
+        "before": "Fukuoka 2020 associates",
+        "after": "Fukuoka 2019 associates",
+        "reason": "correct body-citation year",
+    }
+    paper = "## Results\n\nFukuoka 2020 associates metformin use.\n"
+    out, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "Fukuoka 2019 associates" in out
+
+
 def test_citation_patch_preserving_existing_handles_does_not_double_block() -> None:
     """If both before AND after contain the same internal handle
     (legitimate edit elsewhere), the verifier shouldn't flag the
@@ -454,3 +473,33 @@ def test_numeric_patch_with_empty_proposer_reason_logs_only_gate_reason() -> Non
         _, results = apply_patches.apply_patches(paper, [p], _manifest())
     assert results[0].decision == "flagged"
     assert "Grok rationale" not in results[0].reason_for_decision
+
+
+def test_section_contract_restores_heading_after_review_patch() -> None:
+    """Reviewer patches may delete local prose but cannot remove renderer-owned headings."""
+    paper = (
+        "## Limitations\n\n"
+        "The corpus is limited.\n\n"
+        "## Conclusion\n\n"
+        "The boundary conditions remain unresolved.\n\n"
+        "## References\n\n"
+        "Walton 2019.\n"
+    )
+    # Simulate a bad formatting patch that swallowed the heading but
+    # left the original Conclusion paragraph in place.
+    patch = {
+        "id": "P-heading",
+        "patch_type": "formatting",
+        "severity": "P1",
+        "location": "Conclusion",
+        "before": "## Conclusion\n\nThe boundary conditions remain unresolved.",
+        "after": "The boundary conditions remain unresolved.",
+        "reason": "bad heading trim",
+    }
+    out, results = apply_patches.apply_patches(paper, [patch], _manifest())
+    assert "## Conclusion\n\nThe boundary conditions remain unresolved." in out
+    assert any(
+        r.patch_id == "SECTION-CONTRACT-Conclusion"
+        and r.decision == "applied"
+        for r in results
+    )

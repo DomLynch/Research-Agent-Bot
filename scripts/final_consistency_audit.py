@@ -207,6 +207,12 @@ def _check_stale_methods(paper: str, manifest: dict) -> list[ConsistencyIssue]:
         flags=re.DOTALL | re.MULTILINE,
     )
     methods_body = methods_match.group(1) if methods_match else ""
+    methods_body = re.sub(
+        r"^###\s+What did NOT run\b.*?(?=^### |\Z)",
+        "",
+        methods_body,
+        flags=re.DOTALL | re.MULTILINE,
+    )
     method_lc = methods_body.lower()
 
     # If manifest writer_path mentions paper_writer.py (NOT spar/synthesis),
@@ -418,7 +424,9 @@ def run_audit(
         paper_md, manifest,
     ))
     issues.extend(_check_abstract_over_grouping(paper_md, manifest))  # Fix #38
-    issues.extend(_check_numeric_role_guard(paper_md))  # 2026-05-05 universal
+    issues.extend(_check_numeric_role_guard(  # 2026-05-05 universal
+        paper_md, manifest,
+    ))
     return issues
 
 
@@ -430,7 +438,9 @@ def run_audit(
 #   - role_mismatch: change-score compared to absolute threshold
 #   - malformed_subject: 'the X group <verb> ... for the X group <was>'
 #     repair-artifact pattern
-def _check_numeric_role_guard(paper_md: str) -> list[ConsistencyIssue]:
+def _check_numeric_role_guard(
+    paper_md: str, manifest: dict | None = None,
+) -> list[ConsistencyIssue]:
     import json as _json
     import sys
     from pathlib import Path
@@ -453,22 +463,30 @@ def _check_numeric_role_guard(paper_md: str) -> list[ConsistencyIssue]:
     # Try to find a manifest sitting next to the paper. The audit
     # is invoked from various places; if manifest isn't readily
     # available, drift defers silently.
-    manifest_obj: dict | None = None
+    manifest_obj: dict | None = manifest
     quant_claims_dir = None
-    # `_topic` resolution: derive from manifest if we can read one
-    # via run_v06_synthesis's _ACTIVE_TOPIC global. Skip if not
-    # available.
+    # Topic resolution: prefer the explicit manifest topic so standalone
+    # re-audits use the same quant_claims pool as the run. Fall back to
+    # run_v06_synthesis's active topic during live orchestration.
+    topic = None
+    if isinstance(manifest_obj, dict):
+        topic = manifest_obj.get("topic")
+    if topic:
+        quant_claims_dir = (
+            repo / "docs" / "quality-reference" / str(topic)
+            / "quant_claims"
+        )
     try:
         sys.path.insert(0, str(repo / "scripts"))
         import run_v06_synthesis as _orch
-        topic = getattr(_orch, "_ACTIVE_TOPIC", None)
-        if topic:
+        active_topic = getattr(_orch, "_ACTIVE_TOPIC", None)
+        if quant_claims_dir is None and active_topic:
             quant_claims_dir = (
-                repo / "docs" / "quality-reference" / topic
+                repo / "docs" / "quality-reference" / active_topic
                 / "quant_claims"
             )
             mf_obj = getattr(_orch, "_ACTIVE_MANIFEST", None)
-            if isinstance(mf_obj, dict):
+            if manifest_obj is None and isinstance(mf_obj, dict):
                 manifest_obj = mf_obj
     except (ImportError, AttributeError):
         pass
@@ -672,6 +690,11 @@ _BROKEN_CITATION_ORDER_RE = re.compile(
     r"\b([A-Z][a-zA-Z]+)\s+(\d{4})\s+et\s+al\.?",
 )
 
+# "Witham et al. 2025 (2025)" → duplicate citation year artifact.
+_DUPLICATE_CITATION_YEAR_RE = re.compile(
+    r"\b([A-Z][a-zA-Z]+(?:\s+et\s+al\.)?)\s+(\d{4})\s+\(\2\)"
+)
+
 # Empty `_Cited:_` block — `_Cited: _` or `_Cited:_` with nothing
 # between colon and closing underscore.
 _EMPTY_CITED_BLOCK_RE = re.compile(r"_Cited:\s*_")
@@ -687,10 +710,18 @@ def _check_surface_polish(paper_md: str) -> list[ConsistencyIssue]:
     # Strip fenced code blocks before scanning so triple-letter runs
     # in code samples don't false-fire.
     haystack = re.sub(r"```.*?```", "", paper_md, flags=re.DOTALL)
+    haystack = "\n".join(
+        line for line in haystack.splitlines()
+        if not re.match(r"^\s{4,}\S", line)
+    )
 
     # Malformed words
     for kind, pat in _MALFORMED_WORD_PATTERNS:
         for m in pat.finditer(haystack):
+            # Uppercase acronyms/cert labels such as AAA are intentional,
+            # not misspelled prose tokens.
+            if m.group(0).isupper():
+                continue
             issues.append(ConsistencyIssue(
                 id=f"C08-malformed-{m.start()}",
                 severity="P2",
@@ -714,6 +745,20 @@ def _check_surface_polish(paper_md: str) -> list[ConsistencyIssue]:
             evidence=haystack[max(0, m.start() - 20):m.end() + 20],
             suggested_fix=(
                 f"`{author} {year} et al.` → `{author} et al. {year}`"
+            ),
+        ))
+
+    # Duplicate citation year
+    for m in _DUPLICATE_CITATION_YEAR_RE.finditer(haystack):
+        issues.append(ConsistencyIssue(
+            id=f"C08-dup-cite-year-{m.start()}",
+            severity="P2",
+            issue_type="duplicate_citation_year",
+            auto_fixable=True,
+            evidence=haystack[max(0, m.start() - 20):m.end() + 20],
+            suggested_fix=(
+                f"`{m.group(1)} {m.group(2)} ({m.group(2)})` → "
+                f"`{m.group(1)} {m.group(2)}`"
             ),
         ))
 
