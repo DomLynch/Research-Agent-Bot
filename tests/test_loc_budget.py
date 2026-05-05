@@ -100,6 +100,17 @@ via `domain = "..."` and the same pipeline services every domain.
 No per-domain `if` ladders in runtime — profile data flows in via
 get_profile(name). Universal across domains (2026-05-05).
 
+Wave 7 cont. — Evidence Factory slice 6 step 1 (15,450 → 15,650):
+agent/retrieval_modes.py (~193 cloc) — calibrated retrieval
+foundation. Defines 4 modes (smoke / calibrated [default] /
+exhaustive / snowball), GLOBAL_SAFETY_CAP=200_000 universal
+circuit breaker, MarginalYieldStopper (stops a wave when last 5
+pages produce <2% new-deduped or <1% core-candidate or >95%
+noise), and RetrievalParams dataclass that resolves mode → params
+so caller code is mode-agnostic. Replaces toy 30/15 defaults
+with principled "calibrated queries do the focusing; 200K is the
+safety bound" architecture (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -107,7 +118,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 15450
+TOTAL_LIMIT = 15650
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
