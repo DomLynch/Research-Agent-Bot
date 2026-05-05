@@ -89,6 +89,40 @@ corpus_search_queries = [
 canonical_rct_paper_ids = []
 
 
+# --- Calibrated retrieval -------------------------------------------
+
+[retrieval]
+topic_terms    = [
+  "NAD precursor", "NAD booster", "nicotinamide riboside",
+  "nicotinamide mononucleotide", "NR", "NMN", "nicotinamide",
+  "niacinamide",
+]
+scope_terms    = [
+  "aging", "older adults", "elderly", "geriatric", "longevity",
+  "healthspan", "frailty", "sarcopenia", "muscle function",
+  "cognition", "cardiometabolic",
+]
+evidence_types = [
+  "clinical trial", "randomized controlled trial", "cohort study",
+  "observational study", "meta-analysis", "systematic review",
+]
+exclude_terms  = [
+  "animal only", "in vitro only", "cell culture only",
+  "pediatric only", "dermatology only", "case report only",
+]
+date_from      = 2010
+languages      = ["English"]
+species        = ["humans"]
+
+[retrieval.background]
+allow = [
+  "NAD metabolism mechanism",
+  "sirtuin mechanism",
+  "mitochondrial aging rationale",
+  "supplement safety history",
+]
+
+
 # --- Canonical trials ------------------------------------------------
 
 [[canonical_trials]]

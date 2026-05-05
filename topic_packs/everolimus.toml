@@ -69,6 +69,68 @@ forbidden_verbs_for_results_role_with_protocol_keywords = [
 ]
 
 
+active_arm_synonyms = [
+  "everolimus",
+  "RAD001",
+  "Afinitor",
+  "Zortress",
+  "RTB101",
+  "mTOR inhibitor",
+]
+
+placebo_arm_synonyms = [
+  "placebo",
+  "control",
+  "PLA",
+  "vehicle",
+]
+
+corpus_search_queries = [
+  "everolimus AND aging AND human",
+  "RTB101 AND older adults AND clinical trial",
+  "everolimus AND immune function AND elderly",
+  "mTOR inhibitor AND aging AND clinical trial",
+  "everolimus AND frailty OR healthspan",
+  "everolimus AND safety AND older adults",
+]
+
+canonical_rct_paper_ids = []
+
+
+# --- Calibrated retrieval -------------------------------------------
+
+[retrieval]
+topic_terms    = [
+  "everolimus", "RAD001", "Afinitor", "Zortress", "RTB101",
+  "mTOR inhibitor", "mTORC1 inhibitor",
+]
+scope_terms    = [
+  "aging", "older adults", "elderly", "geriatric", "longevity",
+  "healthspan", "immune function", "immunosenescence", "frailty",
+]
+evidence_types = [
+  "clinical trial", "randomized controlled trial", "cohort study",
+  "observational study", "meta-analysis", "systematic review",
+  "phase 2", "phase 3",
+]
+exclude_terms  = [
+  "oncology only", "renal cell carcinoma only", "breast cancer only",
+  "transplant rejection only", "allograft only", "pediatric only",
+  "in vitro only", "animal only",
+]
+date_from      = 2010
+languages      = ["English"]
+species        = ["humans"]
+
+[retrieval.background]
+allow = [
+  "mTOR mechanism",
+  "immune-aging trial history",
+  "dose rationale",
+  "RTB101 field history",
+]
+
+
 # --- Canonical trials (informational; surface-check feeds qa_report) -------
 
 # Mannick et al. — phase 2b/3 RTB101 in older adults; the only randomized

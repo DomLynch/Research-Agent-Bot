@@ -45,7 +45,7 @@ from agent.topic_pack import (  # noqa: E402
     TopicPack, load_topic_pack,
 )
 from agent.wave_retrieval import run_waves  # noqa: E402
-from agent.retrieval_modes import resolve_params  # noqa: E402
+from agent.retrieval_modes import GLOBAL_SAFETY_CAP, resolve_params  # noqa: E402
 from agent.corpus_pipeline import (  # noqa: E402
     classify_and_filter, format_funnel_md,
 )
@@ -363,12 +363,18 @@ def main(argv: list[str] | None = None) -> int:
              "(e.g. metformin, rapamycin, GLP-1, statins).",
     )
     parser.add_argument(
-        "--limit", type=int, default=500,
-        help="Max papers to fetch per topic (default: 30).",
+        "--limit", type=int, default=GLOBAL_SAFETY_CAP,
+        help=(
+            "Universal fetch safety cap per topic "
+            f"(default: {GLOBAL_SAFETY_CAP}; circuit breaker, not target)."
+        ),
     )
     parser.add_argument(
-        "--max-per-source", type=int, default=200,
-        help="Max hits per source per query (default: 15).",
+        "--max-per-source", type=int, default=GLOBAL_SAFETY_CAP,
+        help=(
+            "Universal source safety cap per query "
+            f"(default: {GLOBAL_SAFETY_CAP}; legacy fallback only)."
+        ),
     )
     parser.add_argument(
         "--sources", nargs="+",

@@ -93,6 +93,39 @@ corpus_search_queries = [
 canonical_rct_paper_ids = []  # populated as corpus matures
 
 
+# --- Calibrated retrieval -------------------------------------------
+
+[retrieval]
+topic_terms    = [
+  "GLP-1 receptor agonist", "GLP-1 RA", "semaglutide",
+  "liraglutide", "dulaglutide", "exenatide", "tirzepatide",
+]
+scope_terms    = [
+  "aging", "older adults", "elderly", "geriatric", "longevity",
+  "healthspan", "frailty", "sarcopenia", "cardiovascular",
+  "cognition", "weight loss",
+]
+evidence_types = [
+  "clinical trial", "randomized controlled trial", "cohort study",
+  "observational study", "meta-analysis", "systematic review",
+]
+exclude_terms  = [
+  "pediatric only", "pregnancy only", "animal only", "in vitro only",
+  "case report only", "pharmacokinetics only",
+]
+date_from      = 2010
+languages      = ["English"]
+species        = ["humans"]
+
+[retrieval.background]
+allow = [
+  "incretin mechanism",
+  "cardiovascular outcome trial history",
+  "obesity pharmacology",
+  "cognitive aging hypothesis",
+]
+
+
 # --- Canonical trials ------------------------------------------------
 
 [[canonical_trials]]

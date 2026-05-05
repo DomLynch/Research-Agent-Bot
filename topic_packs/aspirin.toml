@@ -87,6 +87,39 @@ corpus_search_queries = [
 canonical_rct_paper_ids = []
 
 
+# --- Calibrated retrieval -------------------------------------------
+
+[retrieval]
+topic_terms    = [
+  "aspirin", "acetylsalicylic acid", "ASA", "salicylate",
+  "low-dose aspirin",
+]
+scope_terms    = [
+  "aging", "older adults", "elderly", "geriatric", "longevity",
+  "healthspan", "frailty", "primary prevention", "cardiovascular",
+  "cancer prevention",
+]
+evidence_types = [
+  "clinical trial", "randomized controlled trial", "cohort study",
+  "observational study", "meta-analysis", "systematic review",
+]
+exclude_terms  = [
+  "pediatric only", "acute treatment only", "perioperative only",
+  "platelet assay only", "in vitro only", "animal only",
+]
+date_from      = 2010
+languages      = ["English"]
+species        = ["humans"]
+
+[retrieval.background]
+allow = [
+  "COX mechanism",
+  "primary prevention guideline history",
+  "bleeding risk mechanism",
+  "ASPREE field history",
+]
+
+
 # --- Canonical trials ------------------------------------------------
 
 [[canonical_trials]]
