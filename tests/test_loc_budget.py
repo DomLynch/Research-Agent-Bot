@@ -121,6 +121,16 @@ quoting + NOT-clause exclusion. Required calibrated queries to
 actually reach the sources after the 240→3000 char clip-limit
 bump in every source adapter (2026-05-05).
 
+Wave 7 cont. — Evidence Factory slice 6 step 4b (15,850 → 16,000):
+agent/wave_retrieval.py (~125 cloc) — wave-based orchestration.
+Derives Precision / Recall / Background waves from a single
+RetrievalSpec, runs each via discover_calibrated, accumulates
+deduped hits across waves with first-touched pool assignment.
+Solves the "Harrison/Lamming canon papers get rejected" problem:
+background wave swaps scope_terms for [retrieval.background].allow
+so mechanism + dose-rationale + landmark papers land in the
+background pool, not the reject pile (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -128,7 +138,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 15850
+TOTAL_LIMIT = 16000
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
