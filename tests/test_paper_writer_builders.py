@@ -96,6 +96,24 @@ def test_scoped_repairs_receipt_id_with_one_char_typo() -> None:
     assert "cfab-01`" not in body
 
 
+def test_scoped_accepts_prose_topic_alias_for_underscore_topic() -> None:
+    """Topic ids are file-safe, but manuscripts use prose labels.
+    `intermittent_fasting` must validate against `intermittent fasting`.
+    """
+    parsed = {"paragraphs": [{
+        "text": (
+            "Intermittent fasting may improve cardiometabolic outcomes, "
+            "but intermittent fasting remains context-dependent."
+        ),
+        "receipt_ids": [],
+    }]}
+    section = build_scoped_from_parsed(
+        parsed, name="discussion", heading="## Discussion",
+        topic="intermittent_fasting", accepted=[_accepted("r1")],
+    )
+    assert section is not None
+
+
 def test_anchored_drops_fabricated_receipt_id_with_no_close_match() -> None:
     """LLM hallucinates a totally fake id ('metformin-fake-cluster-99').
     No valid id is within fuzzy-match distance, so the id gets dropped

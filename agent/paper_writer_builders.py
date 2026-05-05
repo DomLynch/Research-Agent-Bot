@@ -97,6 +97,13 @@ def _normalize(text: str) -> str:
     return " ".join(text.replace("·", ".").split()).lower()
 
 
+def _topic_aliases(topic: str) -> tuple[str, ...]:
+    """Accept file-safe and prose topic labels."""
+    raw = topic.strip()
+    variants = {raw, raw.replace("_", " "), raw.replace("-", " ")}
+    return tuple(_normalize(v) for v in variants if _normalize(v))
+
+
 def _accepted_corpus_norm(receipts: Sequence[ReceiptSummary]) -> str:
     parts: list[str] = []
     for r in receipts:
@@ -142,9 +149,9 @@ def _check_scoped_paragraph(
     if not text.strip():
         return False, "empty_paragraph"
     norm = _normalize(text)
-    topic_norm = _normalize(topic)
-    if topic_norm and norm.count(topic_norm) < 2:
-        return False, f"topic_alias_under_count:<2:{topic_norm!r}"
+    aliases = _topic_aliases(topic)
+    if aliases and max(norm.count(a) for a in aliases) < 2:
+        return False, f"topic_alias_under_count:<2:{aliases[0]!r}"
     if not any(h in norm for h in _HEDGE_PHRASES):
         return False, "missing_hedge_phrase"
     for m in _NUMERIC_RE.finditer(text):
