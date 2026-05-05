@@ -604,13 +604,26 @@ async def render_full_paper(
     # table density doesn't bottleneck on SPAR strictness. No LLM
     # cost, no fabrication risk; structurally lifts numeric density
     # without prompt fragility. See agent/results_table.py.
+    #
+    # Receipt-scope (2026-05-05 wave 6): map receipts → corpus
+    # paper_ids via parsed/*.paper_sections.json metadata (DOI / PMID
+    # match). Pass the resulting set to build_results_table so the
+    # QEI only shows papers that actually became receipts in this
+    # synthesis. Universal — same logic for every topic.
     from pathlib import Path as _Path
-    from agent.results_table import build_results_table
-    _quant_dir = (
-        _Path(__file__).resolve().parent.parent / "docs"
-        / "quality-reference" / topic / "quant_claims"
+    from agent.results_table import (
+        build_results_table, resolve_accepted_paper_ids,
     )
-    _table_md = build_results_table(_quant_dir, topic=topic)
+    _repo = _Path(__file__).resolve().parent.parent
+    _quant_dir = _repo / "docs" / "quality-reference" / topic / "quant_claims"
+    _parsed_dir = _repo / "docs" / "quality-reference" / topic / "parsed"
+    _accepted_paper_ids = resolve_accepted_paper_ids(
+        receipts, _parsed_dir,
+    )
+    _table_md = build_results_table(
+        _quant_dir, topic=topic,
+        accepted_paper_ids=_accepted_paper_ids,
+    )
     if not _table_md:
         _table_md = (
             f"## Quantitative Evidence Index — {topic}\n\n"

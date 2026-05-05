@@ -35,6 +35,13 @@ reliably lifting Q9 without prompt fragility). User mandated this
 as universal-not-topic-hack: "Do not prompt-hack aspirin/statins.
 Add universal deterministic numeric table" (2026-05-04).
 
+Wave 4 — reviewer P1/P2 publication-quality fixes (14,200 → 14,250):
+adds cross-topic arm filter (results_table._arm_belongs_to_topic
++ pack synonyms loader, ~50 cloc), receipt-scope guard
+(resolve_accepted_paper_ids + accepted_paper_ids param, ~50 cloc).
+Closes the 'arm=metformin row in rapamycin paper' P1 leak and the
+'QEI padded with non-contributing PMC papers' P2 (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -42,7 +49,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 14200
+TOTAL_LIMIT = 14250
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

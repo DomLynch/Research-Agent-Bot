@@ -84,6 +84,7 @@ _CATEGORY_QUOTAS = {
 
 def build_results_table(
     quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
+    accepted_paper_ids: frozenset[str] | None = None,
 ) -> str:
     """Read every *.quant_claims.json in quant_dir, select rows under
     per-category quotas to maximize distinct-numeric diversity (the
@@ -99,6 +100,16 @@ def build_results_table(
     Looked up via the topic pack's active_arm_synonyms +
     placebo_arm_synonyms fields; arm-empty claims are kept (no
     cross-topic signal to filter on).
+
+    Receipt-scope guard (P2 reviewer fix, 2026-05-05 wave 6): when
+    `accepted_paper_ids` is provided, only quant_claims files whose
+    paper_id is in that set contribute rows. This prevents the
+    Quantitative Evidence Index from being padded with non-
+    contributing PMC papers — every row corresponds to a paper that
+    became a SPAR-accepted receipt in the synthesis. Universal across
+    topics; the caller computes the set from receipts via parsed
+    metadata DOIs/PMIDs. None disables the filter (back-compat for
+    tests / standalone calls).
     """
     rows: list[EvidenceRow] = []
     if not quant_dir.exists():
@@ -116,6 +127,9 @@ def build_results_table(
         paper_id = data.get("paper_id") or path.stem.replace(
             ".quant_claims", ""
         )
+        # P2 receipt-scope: drop papers that didn't become receipts
+        if accepted_paper_ids is not None and paper_id not in accepted_paper_ids:
+            continue
         for claim in data.get("claims", []) or []:
             if not _confidence_admissible(claim):
                 continue
@@ -280,6 +294,51 @@ def _confidence_admissible(claim: dict[str, Any]) -> bool:
     """High or partial confidence admitted; 'none' / unbound rejected."""
     conf = (claim.get("binding_confidence") or "").lower()
     return conf in ("high", "partial")
+
+
+def resolve_accepted_paper_ids(
+    receipts: Any, parsed_dir: Path,
+) -> frozenset[str]:
+    """Map receipts → corpus paper_ids via parsed metadata.
+
+    For each parsed/<paper_id>.paper_sections.json, read its DOI +
+    PMID. Match against receipts' source_doi / source_pmid. The set
+    of paper_ids that match are the ones contributing evidence —
+    used to scope the Quantitative Evidence Index so non-receipt
+    papers don't pad the table (P2 reviewer fix wave 6).
+
+    Universal across topics, no per-topic logic. Empty frozenset
+    when receipts have no DOI/PMID (rare — drug topics populate
+    these). Empty set is treated as 'no filter' upstream so the
+    table doesn't go empty for back-compat callers.
+    """
+    if not parsed_dir.exists():
+        return frozenset()
+    receipt_dois: set[str] = set()
+    receipt_pmids: set[str] = set()
+    for r in receipts:
+        d = (getattr(r, "source_doi", None) or "").strip().lower()
+        if d:
+            receipt_dois.add(d)
+        p = (getattr(r, "source_pmid", None) or "").strip()
+        if p:
+            receipt_pmids.add(p)
+    if not receipt_dois and not receipt_pmids:
+        return frozenset()
+    accepted: set[str] = set()
+    for path in parsed_dir.glob("*.paper_sections.json"):
+        try:
+            data = json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        paper_id = (data.get("paper_id") or "").strip()
+        if not paper_id:
+            continue
+        d = (data.get("doi") or "").strip().lower()
+        p = (data.get("pmid") or "").strip()
+        if (d and d in receipt_dois) or (p and p in receipt_pmids):
+            accepted.add(paper_id)
+    return frozenset(accepted)
 
 
 def _load_topic_arm_terms(topic: str) -> frozenset[str]:
