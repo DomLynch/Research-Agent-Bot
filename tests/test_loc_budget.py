@@ -131,6 +131,15 @@ background wave swaps scope_terms for [retrieval.background].allow
 so mechanism + dose-rationale + landmark papers land in the
 background pool, not the reject pile (2026-05-05).
 
+Wave 7 cont. — Evidence Factory slice 6 step 4c (16,000 → 16,200):
+agent/corpus_pipeline.py (~159 cloc) — classify-before-extract gate.
+Drops reject + off_thesis from the extraction pool BEFORE the
+~1-2s/paper deterministic quant_claim_extract runs, saving 50-70%
+of CPU on a typical retrieval. CorpusManifest carries the funnel
+breakdown (retrieved → classified_keep / drop → extractable_core
+/ extractable_background) that Slice 6 step 4d dashboard reads
+(2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -138,7 +147,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 16000
+TOTAL_LIMIT = 16200
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
