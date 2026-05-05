@@ -162,6 +162,44 @@ def _key_from_aggregated(hit: AggregatedHit) -> str:
     return f"title:{hit.title.lower()[:80]}"
 
 
+def format_funnel_md(manifest: CorpusManifest) -> str:
+    """Render the funnel breakdown as markdown for the dashboard.
+
+    Slice 4d: surface every step of the corpus pipeline so an
+    operator can see where papers were dropped.
+    """
+    f = manifest.funnel
+    lines = [
+        f"### Corpus funnel — {manifest.topic}",
+        "",
+        "| Stage | Count |",
+        "|---|---|",
+        f"| Retrieved (post-dedupe) | {f.get('retrieved', 0)} |",
+        f"| Classified — keep | {f.get('classified_keep', 0)} |",
+        f"| Classified — drop | {f.get('classified_drop', 0)} |",
+        f"| Extractable — core pool | "
+        f"{f.get('extractable_core', 0)} |",
+        f"| Extractable — background pool | "
+        f"{f.get('extractable_background', 0)} |",
+        "",
+        "**Class distribution:**",
+        "",
+    ]
+    for cls in (
+        "core_on_thesis", "background_mechanism",
+        "adjacent_clinical", "off_thesis", "reject",
+    ):
+        n = f.get(f"class_{cls}", 0)
+        if n:
+            lines.append(f"- `{cls}`: {n}")
+    if f.get("cap_triggered"):
+        lines.append(
+            "\n_Note: GLOBAL_SAFETY_CAP fired; retrieval was "
+            "truncated. Tighten the calibrated query._",
+        )
+    return "\n".join(lines) + "\n"
+
+
 async def build_corpus_manifest(
     pack: TopicPack, *,
     params: RetrievalParams | None = None,
@@ -185,4 +223,5 @@ async def build_corpus_manifest(
 __all__ = [
     "CorpusEntry", "CorpusManifest",
     "classify_and_filter", "build_corpus_manifest",
+    "format_funnel_md",
 ]

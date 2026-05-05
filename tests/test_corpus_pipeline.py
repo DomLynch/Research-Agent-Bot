@@ -145,3 +145,38 @@ def test_empty_wave_report_produces_empty_manifest():
     assert manifest.entries == ()
     assert manifest.funnel["retrieved"] == 0
     assert manifest.funnel["classified_keep"] == 0
+
+
+# ---------- format_funnel_md (Slice 4d) -----------------------------
+
+def test_format_funnel_md_shows_each_stage():
+    """The funnel md must surface every stage (retrieved → keep →
+    drop → core / background) so an operator sees where papers
+    were dropped."""
+    from agent.corpus_pipeline import format_funnel_md
+    a = _hit(doi="10.1/A",
+             title="Statin RCT mortality",
+             abstract="randomized controlled trial mortality")
+    report = _wave_report([a])
+    manifest = classify_and_filter(
+        report, topic="statins", topic_aliases=("statin",),
+    )
+    md = format_funnel_md(manifest)
+    assert "Corpus funnel" in md
+    assert "Retrieved" in md
+    assert "Classified" in md
+    assert "core pool" in md
+    assert "background pool" in md
+    assert "core_on_thesis" in md
+
+
+def test_format_funnel_md_flags_safety_cap_when_triggered():
+    """When the GLOBAL_SAFETY_CAP fires, the markdown must call
+    it out so the operator knows to tighten the calibrated query."""
+    from agent.corpus_pipeline import format_funnel_md
+    manifest = CorpusManifest(
+        topic="x", entries=(),
+        funnel={"retrieved": 200_000, "cap_triggered": 1},
+    )
+    md = format_funnel_md(manifest)
+    assert "GLOBAL_SAFETY_CAP" in md or "truncated" in md.lower()

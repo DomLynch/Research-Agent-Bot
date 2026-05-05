@@ -54,6 +54,9 @@ class TopicSummary:
     journal_ready: bool = False
     corpus_gaps: tuple[str, ...] = field(default_factory=tuple)
     expansion_targets: tuple[str, ...] = field(default_factory=tuple)
+    # Slice 6 step 4d: corpus pipeline funnel per topic. Empty dict
+    # when the topic hasn't run the calibrated pipeline yet.
+    corpus_funnel: dict[str, int] = field(default_factory=dict)
 
 
 def _read_json(p: Path) -> dict | None:
@@ -215,6 +218,19 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
     corpus_gaps = tuple(verdict_doc.get("corpus_gaps") or [])
     expansion_targets = tuple(verdict_doc.get("expansion_targets") or [])
 
+    # Slice 6 step 4d: read the calibrated-pipeline corpus manifest
+    # if it exists. Funnel = {retrieved, classified_keep / drop,
+    # extractable_core / background, class_<each>, cap_triggered}.
+    corpus_funnel: dict[str, int] = {}
+    funnel_path = (
+        REPO / "docs" / "quality-reference" / topic
+        / "corpus_manifest.json"
+    )
+    if funnel_path.exists():
+        funnel_doc = _read_json(funnel_path)
+        if funnel_doc:
+            corpus_funnel = dict(funnel_doc.get("funnel", {}))
+
     return TopicSummary(
         topic=topic,
         n_runs=len(runs),
@@ -239,6 +255,7 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
         journal_ready=journal_ready,
         corpus_gaps=corpus_gaps,
         expansion_targets=expansion_targets,
+        corpus_funnel=corpus_funnel,
     )
 
 
@@ -334,6 +351,15 @@ def render_md(summaries: list[TopicSummary]) -> str:
                     if i < len(s.expansion_targets) else ""
                 )
                 lines.append(f"  - **{gap}** → {tgt}")
+        if s.corpus_funnel:
+            lines.append(
+                f"- **Corpus funnel** "
+                f"(retrieved → keep → core / background): "
+                f"{s.corpus_funnel.get('retrieved', 0)} → "
+                f"{s.corpus_funnel.get('classified_keep', 0)} → "
+                f"{s.corpus_funnel.get('extractable_core', 0)} / "
+                f"{s.corpus_funnel.get('extractable_background', 0)}"
+            )
         lines.append("")
     lines += [
         "## What this dashboard demonstrates",

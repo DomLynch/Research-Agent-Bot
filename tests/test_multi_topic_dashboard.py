@@ -180,3 +180,36 @@ def test_render_md_orders_topics_by_maturity_descending():
                  maturity_label="L2 — PARTIAL", journal_ready=False)
     md = dash.render_md([b, a])
     assert md.find("zeta") < md.find("alpha")
+
+
+def test_render_md_surfaces_corpus_funnel():
+    """When a topic has run the calibrated pipeline (corpus_funnel
+    populated), the per-topic detail section must show the funnel
+    (Slice 6 step 4d wiring)."""
+    s = _summary(
+        topic="rapamycin", maturity_level=3,
+        maturity_label="L3 — FLOOR-MET", journal_ready=False,
+        corpus_funnel={
+            "retrieved": 5000, "classified_keep": 3500,
+            "classified_drop": 1500,
+            "extractable_core": 2200,
+            "extractable_background": 1300,
+        },
+    )
+    md = dash.render_md([s])
+    assert "Corpus funnel" in md
+    assert "5000" in md
+    assert "3500" in md
+    assert "2200" in md and "1300" in md  # core / background
+
+
+def test_render_md_omits_funnel_when_no_data():
+    """A topic that hasn't run the calibrated pipeline yet has
+    empty corpus_funnel — dashboard skips the funnel line cleanly."""
+    s = _summary(
+        topic="aspirin", maturity_level=4,
+        maturity_label="L4 — AAA", journal_ready=False,
+        corpus_funnel={},
+    )
+    md = dash.render_md([s])
+    assert "Corpus funnel" not in md
