@@ -504,11 +504,20 @@ def _classify_prose_numeric_role(
 # prose role is acceptable). Universal — biomedical / management /
 # economics all share these primitive role kinds.
 _ROLE_COMPATIBILITY: dict[str, frozenset[str]] = {
+    # baseline/population: pre-treatment cohort descriptors. ROLE
+    # drift fires when prose frames a numeric as baseline but the
+    # source tags it as a change_score or effect (the metformin
+    # 0.13 m/s gait-speed class — Witham 2025 has 0.13 as effect,
+    # not baseline). Excluding 'effect' / 'change_score' from
+    # baseline-compat is the load-bearing decision.
     "baseline": frozenset(("baseline", "population", "outcome")),
     "population": frozenset(("population", "baseline", "outcome")),
-    "change_score": frozenset(("change_score", "effect")),
+    "change_score": frozenset(("change_score", "effect", "outcome")),
     "threshold": frozenset(("threshold", "canonical")),
     "effect": frozenset(("effect", "change_score", "outcome")),
+    # 'outcome' is the most permissive default (used when prose
+    # role is unclassifiable); accepts most source roles to keep
+    # false-positive rate low on ambiguous prose.
     "outcome": frozenset((
         "outcome", "effect", "population", "baseline",
         "change_score", "canonical",

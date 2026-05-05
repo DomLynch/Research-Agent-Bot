@@ -201,6 +201,40 @@ _ENDPOINT_POLARITY: dict[str, int] = {
 }
 
 
+def _author_year_token(receipt) -> str | None:
+    """Slice 7 P1b: resolve a receipt's 'Author YYYY' citation token
+    from its receipt_id (typically 'Author_YYYY_<slug>' or
+    'PMC<id>_<slug>'). Used to populate manifest['receipts'][i]
+    ['citation_token'] so the source-context drift check can map
+    prose citations to receipts' quant_claims.
+
+    Falls back to None when no Author/Year pair is parseable.
+    Universal — works for any topic + domain."""
+    rid = (receipt.receipt_id or "").strip()
+    if not rid:
+        return None
+    import re as _re
+    # Pattern 1: 'Author_YYYY' at start (e.g. 'Witham_2025_MET_PREVENT').
+    # \b doesn't fire after digits when followed by '_' (underscore is
+    # a word char) — use lookahead for end-of-id or '_' instead.
+    m = _re.match(
+        r"^([A-Z][a-zA-Z\-]+)_(\d{4}[a-z]?)(?=_|$)", rid,
+    )
+    if m:
+        return f"{m.group(1)} {m.group(2)}"
+    # Pattern 2: '<Author>_<Year>' embedded later
+    m = _re.search(
+        r"(?:^|[_\-])([A-Z][a-zA-Z\-]+)_(\d{4}[a-z]?)(?=_|$)", rid,
+    )
+    if m:
+        return f"{m.group(1)} {m.group(2)}"
+    # Pattern 3: PMCID prefix — fall back to source_year metadata
+    if hasattr(receipt, "source_year") and receipt.source_year:
+        # Try canonical_trial_id-style fallback if present
+        return None  # cannot resolve without author meta
+    return None
+
+
 def _claim_topic_effect(claim: dict) -> int:
     """Returns +1 if the active topic's compound has a good effect
     on this endpoint, -1 if bad, 0 if unclear/null.
@@ -1024,6 +1058,16 @@ async def _run(
                 "directness": r.directness,
                 "n_claims": r.n_claims,
                 "canonical_trial_id": r.canonical_trial_id,
+                # Slice 7 P1b fix (2026-05-05): populate citation_token
+                # so the source-context drift check can map prose
+                # tokens (e.g. "Witham 2025") to this receipt's
+                # quant_claims and check role match. Without this the
+                # role-drift check silently fails (every token returns
+                # 'unknown citation' → fail-soft skip).
+                "citation_token": _author_year_token(r),
+                # paper_id resolved from receipt_id so quant_claims
+                # files are findable.
+                "paper_id": r.receipt_id,
             }
             for r in receipts
         ],
