@@ -8,14 +8,25 @@ from agent.journal_surface_gate import (
 from agent.results_table import EvidenceRow
 
 
+def _words(n: int) -> str:
+    return " ".join(f"word{i}" for i in range(n))
+
+
 def _paper(row: str) -> str:
     return (
-        "## Introduction\n\nReal prose.\n\n"
+        f"## Abstract\n\n{_words(150)}\n\n"
+        f"## Introduction\n\n{_words(400)}\n\n"
+        f"## Background\n\n{_words(300)}\n\n"
         "## Quantitative Evidence Index — topic\n\n"
         "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
         "|---|---|---|---|---|---|\n"
         f"{row}\n\n"
-        "## Methods\n\nDeterministic methods.\n"
+        f"## Methods\n\n{_words(300)}\n\n"
+        f"## Results\n\n{_words(500)}\n\n"
+        f"## Cross-Domain Synthesis\n\n{_words(850)}\n\n"
+        f"## Discussion\n\n{_words(800)}\n\n"
+        f"## Limitations\n\n{_words(250)}\n\n"
+        f"## Conclusion\n\n{_words(250)}\n"
     )
 
 
@@ -43,6 +54,14 @@ def test_qei_surface_gate_flags_empty_and_malformed_rows():
     assert "malformed study id" in details
 
 
+def test_qei_surface_gate_flags_author_year_suffix_garbage():
+    report = evaluate_journal_surface(
+        _paper("| Palmer 2021ucos | fasting glucose | control | 7 mmol/L | mmol/L | — |"),
+    )
+    assert not report.passed
+    assert any("malformed study id: Palmer 2021ucos" in i.detail for i in report.issues)
+
+
 def test_placeholder_prose_blocks_journal_surface():
     paper = (
         "## Introduction\n\n"
@@ -52,6 +71,19 @@ def test_placeholder_prose_blocks_journal_surface():
     report = evaluate_journal_surface(paper)
     assert not report.passed
     assert report.issues[0].code == "placeholder_prose"
+
+
+def test_missing_cross_domain_blocks_journal_surface():
+    paper = _paper(
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+    ).replace("## Cross-Domain Synthesis", "## Cross-Domain Summary")
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(
+        i.code == "structure_surface"
+        and "missing required section: Cross-Domain Synthesis" in i.detail
+        for i in report.issues
+    )
 
 
 def test_valid_rows_pass_surface_gate():

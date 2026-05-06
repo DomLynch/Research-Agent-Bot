@@ -1,27 +1,4 @@
-"""Full-paper writer (Day 10.16) — produces a 5-15k-word publishable
-research synthesis from claim receipts + the Day 10 brief artifact.
-
-Reviewer-aligned architecture (Day 10.15 external review):
-  - The Day 10.x brief (`paper_synthesis.md`) stays as-is — it's the
-    structured evidence layer with auditable trust-spine guarantees.
-  - This module writes a NEW artifact (`full_paper.md`) alongside the
-    brief, with the prose shape readers expect of a research synthesis.
-
-Validation tiers (per section type):
-  - ANCHORED      every sentence cites ≥1 receipt_id
-                  (Abstract, Results, CrossDomainSynthesis,
-                   LimitationsFull)
-  - SCOPED        unanchored allowed; topic alias appears ≥2x per
-                  paragraph; hedge phrase required; no novel numerics
-                  (Introduction, Background, Discussion, Conclusion)
-  - DETERMINISTIC rendered from constants/metadata, no LLM call
-                  (Methods, ReferencesFull)
-
-Trust spine preserved: ANCHORED sections still drop sentences whose
-receipt_ids don't resolve, no novel numerics may enter, and SPAR-
-rejected receipts remain quarantined (NOT cited in the prose; their
-discussion happens explicitly in LimitationsFull).
-"""
+"""Full-paper writer for trust-spine synthesis manuscripts."""
 from __future__ import annotations
 
 from collections.abc import Mapping, Sequence

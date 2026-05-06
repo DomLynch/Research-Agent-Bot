@@ -1,11 +1,3 @@
-"""Post-render journal surface gate.
-
-Analytical certification proves traceability; this gate proves the
-rendered manuscript does not expose obvious machine residue. It is
-deterministic and topic-agnostic: endpoint text is mapped to broad
-semantic classes, unit text to broad unit classes, then compatibility
-is checked generically.
-"""
 from __future__ import annotations
 
 import re
@@ -33,15 +25,27 @@ _PLACEHOLDER_PATTERNS = (
     "this synthesis aims to contribute to the field by",
     "the evidence base is limited to accepted receipts",
 )
+_REQUIRED_SECTIONS = {
+    "Abstract": 150,
+    "Introduction": 400,
+    "Background": 300,
+    "Methods": 300,
+    "Results": 500,
+    "Cross-Domain Synthesis": 850,
+    "Discussion": 800,
+    "Limitations": 250,
+    "Conclusion": 250,
+}
 
 
 def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
-    """Return pass/fail for publication-surface sanity."""
     issues: list[SurfaceIssue] = []
     low = paper_md.lower()
     for pat in _PLACEHOLDER_PATTERNS:
         if pat in low:
             issues.append(SurfaceIssue("placeholder_prose", pat))
+    for msg in _section_issue_messages(paper_md):
+        issues.append(SurfaceIssue("structure_surface", msg))
     for row in _extract_qei_rows(paper_md):
         for msg in qei_row_issue_messages(row):
             issues.append(SurfaceIssue("qei_surface", msg))
@@ -49,7 +53,6 @@ def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
 
 
 def is_publishable_qei_row(row: Any) -> bool:
-    """Duck-typed check for EvidenceRow-like objects."""
     return not qei_row_issue_messages(_row_to_dict(row))
 
 
@@ -101,6 +104,28 @@ def _extract_qei_rows(paper_md: str) -> Iterable[dict[str, str]]:
     return tuple(rows)
 
 
+def _section_issue_messages(paper_md: str) -> tuple[str, ...]:
+    issues: list[str] = []
+    for heading, floor in _REQUIRED_SECTIONS.items():
+        body = _section_body(paper_md, heading)
+        if body is None:
+            issues.append(f"missing required section: {heading}")
+            continue
+        n = len(re.findall(r"\b\w+\b", body))
+        if n < floor:
+            issues.append(f"section too short: {heading} {n}/{floor} words")
+    return tuple(issues)
+
+
+def _section_body(paper_md: str, heading: str) -> str | None:
+    m = re.search(
+        rf"^##\s+{re.escape(heading)}\b.*?\n(.*?)(?=^##\s+|\Z)",
+        paper_md,
+        flags=re.M | re.S,
+    )
+    return m.group(1) if m else None
+
+
 def _row_to_dict(row: Any) -> dict[str, str]:
     if isinstance(row, dict):
         return {str(k): str(v) for k, v in row.items()}
@@ -116,7 +141,7 @@ def _row_to_dict(row: Any) -> dict[str, str]:
 
 def _malformed_study_id(study: str) -> bool:
     if "_" not in study:
-        return False
+        return bool(re.search(r"\b(?:19|20)\d{2}[a-z]{2,}$", study))
     return bool(re.search(r"(?:_\w{1,5}|_+)$", study))
 
 

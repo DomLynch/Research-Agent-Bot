@@ -33,6 +33,26 @@ def _make_run(
     return d
 
 
+def _surface_clean_paper() -> str:
+    def words(n: int) -> str:
+        return " ".join(f"word{i}" for i in range(n))
+    return "\n\n".join((
+        f"## Abstract\n\n{words(150)}",
+        f"## Introduction\n\n{words(400)}",
+        f"## Background\n\n{words(300)}",
+        "## Quantitative Evidence Index\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+        f"## Methods\n\n{words(300)}",
+        f"## Results\n\n{words(500)}",
+        f"## Cross-Domain Synthesis\n\n{words(850)}",
+        f"## Discussion\n\n{words(800)}",
+        f"## Limitations\n\n{words(250)}",
+        f"## Conclusion\n\n{words(250)}",
+    ))
+
+
 def test_summarize_topic_pulls_wave7_fields(tmp_path, monkeypatch):
     """Dashboard reads maturity_level / journal_ready / corpus_gaps
     from final_verdict.json."""
@@ -52,6 +72,7 @@ def test_summarize_topic_pulls_wave7_fields(tmp_path, monkeypatch):
         },
         manifest={"total_words": 11000, "total_cost_usd": 0.20},
     )
+    (run / "full_paper.md").write_text(_surface_clean_paper())
     summary = dash.summarize_topic("metformin", [run])
     assert summary.maturity_level == 5
     assert summary.maturity_label == "L5 — JOURNAL-READY"
