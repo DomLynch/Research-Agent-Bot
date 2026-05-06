@@ -710,6 +710,35 @@ def _load_active_paper_ids() -> set[str] | None:
     return {str(x) for x in ids if str(x).strip()} or None
 
 
+def _load_classified_receipt_candidate_ids() -> set[str]:
+    """Core, adjacent, and background-mechanism papers can carry
+    load-bearing evidence in CLIN/INF/MECH papers. Off-thesis and
+    rejected classes stay out."""
+    path = QUANT_DIR.parent / "corpus_classification.json"
+    if not path.exists():
+        return set()
+    try:
+        rows = json.loads(path.read_text())
+    except json.JSONDecodeError:
+        return set()
+    keep = {"core_on_thesis", "adjacent_clinical", "background_mechanism"}
+    return {
+        str(r.get("paper_id"))
+        for r in rows
+        if isinstance(r, dict)
+        and r.get("classification") in keep
+        and r.get("paper_id")
+    }
+
+
+def _load_receipt_candidate_paper_ids() -> set[str] | None:
+    active = _load_active_paper_ids()
+    classified = _load_classified_receipt_candidate_ids()
+    if active is None and not classified:
+        return None
+    return (active or set()) | classified
+
+
 def build_receipts_from_quant_claims(
     topic: str,
 ) -> list[ReceiptSummary]:
@@ -722,7 +751,7 @@ def build_receipts_from_quant_claims(
     has already been set by `_set_topic(topic)` upstream."""
     receipts: list[ReceiptSummary] = []
     paper_meta_by_id = _load_paper_meta_by_id()
-    active_paper_ids = _load_active_paper_ids()
+    active_paper_ids = _load_receipt_candidate_paper_ids()
 
     # Group high-confidence claims by paper_id
     by_paper: dict[str, list[dict]] = defaultdict(list)
@@ -2066,6 +2095,100 @@ def _build_run_mode_contract(
 _BLOCKING_SEVERITIES: frozenset[str] = frozenset({"P0", "P1", "CRITICAL"})
 _NONBLOCKING_SEVERITIES: frozenset[str] = frozenset({"P2", "P3", "INFO"})
 
+_EVIDENCE_TIER_WEIGHTS: dict[str, float] = {
+    "A1": 1.0,
+    "A2": 0.7,
+    "B1": 0.6,
+    "B": 0.5,
+    "B2": 0.4,
+    "C1": 0.3,
+    "C": 0.25,
+    "C2": 0.2,
+    "D1": 0.1,
+    "MIXED": 0.3,
+}
+
+
+def _receipt_field(receipt: Any, field: str, default: Any = "") -> Any:
+    if isinstance(receipt, dict):
+        return receipt.get(field, default)
+    return getattr(receipt, field, default)
+
+
+def _evidence_certification_profile(manifest: dict[str, Any] | None) -> dict[str, float]:
+    """Tier-weighted evidence profile for CLIN/INF/MECH certification.
+
+    This does not weaken any safety gate. It only replaces the old
+    binary "direct clinical receipts or nothing" substance floor with
+    a calibrated evidence pyramid when the manifest carries receipt
+    tiers/directness.
+    """
+    profile = {
+        "total": 0.0,
+        "clinical": 0.0,
+        "mechanistic": 0.0,
+        "direct": 0.0,
+        "a_tier": 0.0,
+        "n_mechanistic": 0.0,
+    }
+    for receipt in (manifest or {}).get("receipts", ()):
+        tier = str(_receipt_field(receipt, "evidence_tier", "")).upper()
+        directness = str(_receipt_field(receipt, "directness", "")).lower()
+        weight = _EVIDENCE_TIER_WEIGHTS.get(tier, 0.2)
+        profile["total"] += weight
+        if tier.startswith("A"):
+            profile["a_tier"] += weight
+        if directness == "direct":
+            profile["direct"] += weight
+        if directness == "mechanistic" or tier.startswith("C"):
+            profile["mechanistic"] += weight
+            profile["n_mechanistic"] += 1
+        if tier.startswith(("A", "B")) and directness != "mechanistic":
+            profile["clinical"] += weight
+    return profile
+
+
+def _select_certification_track(
+    *,
+    flat_floor_clean: bool,
+    n_receipts: int,
+    n_high_conf_claims: int,
+    profile: dict[str, float],
+    min_receipts: int,
+    min_claims: int,
+    cert_floors: dict[str, Any],
+) -> tuple[str, bool]:
+    """Return (track, floor_clean) from the evidence pyramid.
+
+    CLIN preserves the legacy direct-clinical floor. INF/MECH are
+    confidence-calibrated alternatives for fields where strong animal,
+    mechanism, adjacent-clinical, or sub-scale evidence is publishable
+    as inference, not direct clinical recommendation.
+    """
+    if flat_floor_clean:
+        if profile["mechanistic"] > profile["clinical"] and profile["direct"] < 1.0:
+            return "AAA-MECH", True
+        return "AAA-CLIN", True
+    if n_receipts < min_receipts or n_high_conf_claims < min_claims:
+        return "SCOP", False
+    min_inf_weight = float(cert_floors.get("min_inferential_weight", 8.0))
+    min_mech_weight = float(cert_floors.get("min_mechanistic_weight", 6.0))
+    inf_clean = (
+        profile["total"] >= min_inf_weight
+        and profile["a_tier"] >= 0.7
+        and profile["mechanistic"] >= 2.0
+    )
+    if inf_clean:
+        return "AAA-INF", True
+    mech_clean = (
+        profile["total"] >= min_mech_weight
+        and profile["mechanistic"] >= min_mech_weight
+        and profile["n_mechanistic"] >= 5
+    )
+    if mech_clean:
+        return "AAA-MECH", True
+    return "SCOP", False
+
 
 @dataclass(frozen=True, slots=True)
 class UnifiedVerdict:
@@ -2104,6 +2227,10 @@ class UnifiedVerdict:
     journal_ready: bool = False
     journal_surface_pass: bool = True
     journal_surface_issues: tuple[str, ...] = ()
+    certification_track: str = "UNSCORED"
+    evidence_weight_total: float = 0.0
+    evidence_weight_clinical: float = 0.0
+    evidence_weight_mechanistic: float = 0.0
 
 
 def _is_blocking(severity: str) -> bool:
@@ -2200,7 +2327,7 @@ def _compute_unified_verdict(
         n_receipts > 0 or n_high_conf_claims > 0
         or n_non_orthogonal_tensions > 0
     )
-    cert_floor_clean = (
+    flat_floor_clean = (
         not has_corpus_signals
         or (
             n_receipts >= min_rec
@@ -2208,6 +2335,20 @@ def _compute_unified_verdict(
             and n_non_orthogonal_tensions >= min_tens
         )
     )
+    evidence_profile = _evidence_certification_profile(manifest)
+    certification_track, tiered_floor_clean = _select_certification_track(
+        flat_floor_clean=flat_floor_clean,
+        n_receipts=n_receipts,
+        n_high_conf_claims=n_high_conf_claims,
+        profile=evidence_profile,
+        min_receipts=min_rec,
+        min_claims=min_claims,
+        cert_floors=floors,
+    )
+    if not has_corpus_signals and manifest is None:
+        certification_track = "UNSCORED"
+        tiered_floor_clean = False
+    cert_floor_clean = flat_floor_clean or tiered_floor_clean
     # AAA requires positive evidence: at least one check ran AND all
     # passed AND zero stage-2 issues AND zero unresolved Grok P1
     # AND corpus floor met.
@@ -2231,7 +2372,8 @@ def _compute_unified_verdict(
         verdict = "AAA"
         reason = (
             f"All-green: stage1 {s1_n_pass}/{s1_n_total} + "
-            f"stage2 zero issues + zero unresolved Grok P1"
+            f"stage2 zero issues + zero unresolved Grok P1 + "
+            f"certification track {certification_track}"
         )
     elif not grok_clean and p1_clean:
         # Fix #31 + Fix #49: deterministic stages clean, but Grok
@@ -2264,8 +2406,9 @@ def _compute_unified_verdict(
             f"certification floor: receipts={n_receipts}/{min_rec}, "
             f"high-conf claims={n_high_conf_claims}/{min_claims}, "
             f"non-orthogonal tensions="
-            f"{n_non_orthogonal_tensions}/{min_tens}. AAA requires "
-            f"both clean audits AND substantive corpus."
+            f"{n_non_orthogonal_tensions}/{min_tens}; weighted "
+            f"evidence={evidence_profile['total']:.1f}. AAA requires "
+            f"both clean audits AND a substantive evidence track."
         )
     else:
         verdict = "Trust-Spine Pass"
@@ -2285,7 +2428,7 @@ def _compute_unified_verdict(
     # all gates (AAA path) or when the caller did not pass a manifest.
     corpus_gaps: tuple[str, ...] = ()
     expansion_targets: tuple[str, ...] = ()
-    if manifest is not None:
+    if manifest is not None and not cert_floor_clean:
         try:
             from agent.corpus_expansion import compute_corpus_gaps
             corpus_gaps, expansion_targets = compute_corpus_gaps(
@@ -2316,6 +2459,11 @@ def _compute_unified_verdict(
             cert_floors=cert_floors,
             journal_surface_pass=journal_surface_pass,
         )
+        if verdict == "AAA" and tiered_floor_clean and maturity_level < 4:
+            maturity_level = (
+                5 if grok_unresolved_p1 == 0 and auto_stripped_count == 0
+                and journal_surface_pass else 4
+            )
         maturity_label = format_maturity_label(maturity_level)
         journal_ready = is_journal_ready(maturity_level)
     except ImportError:
@@ -2340,6 +2488,10 @@ def _compute_unified_verdict(
         journal_ready=journal_ready,
         journal_surface_pass=journal_surface_pass,
         journal_surface_issues=journal_surface_issues,
+        certification_track=certification_track,
+        evidence_weight_total=round(evidence_profile["total"], 2),
+        evidence_weight_clinical=round(evidence_profile["clinical"], 2),
+        evidence_weight_mechanistic=round(evidence_profile["mechanistic"], 2),
     )
 
 
@@ -2370,6 +2522,12 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
         else "- Journal surface gate: fail — "
              + "; ".join(u.journal_surface_issues[:8]) + "\n"
     )
+    track_line = (
+        f"- Certification track: {u.certification_track} "
+        f"(weighted total={u.evidence_weight_total:.2f}; "
+        f"clinical={u.evidence_weight_clinical:.2f}; "
+        f"mechanistic={u.evidence_weight_mechanistic:.2f})\n"
+    )
     return (
         f"# Unified Final Verdict\n\n"
         f"**Verdict: {u.verdict}**\n\n"
@@ -2390,6 +2548,7 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
             if u.stage2_unknown_severity_count else ""
         )
         + "\n"
+        + track_line
         + surface_line
         + (
             f"- Grok-flagged P1 patches unresolved: "

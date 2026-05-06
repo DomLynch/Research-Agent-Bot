@@ -213,6 +213,103 @@ def test_cert_floor_topic_pack_can_raise_above_default() -> None:
     assert v.verdict == "Trust-Spine Pass"
 
 
+def test_tiered_inferential_track_can_clear_without_tension_floor() -> None:
+    """Inferential geroscience papers can certify from weighted direct
+    + mechanistic evidence without pretending they are clinical-grade."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    receipts = [{
+        "receipt_id": "direct-adjacent",
+        "evidence_tier": "A2",
+        "directness": "direct",
+        "outcome_class": "safety",
+    }] + [{
+        "receipt_id": f"mech-{i}",
+        "evidence_tier": "C1",
+        "directness": "mechanistic",
+        "outcome_class": "mechanism",
+    } for i in range(25)]
+    manifest = {
+        "n_receipts": len(receipts),
+        "n_high_confidence_claims_total": 100,
+        "n_non_orthogonal_tensions": 0,
+        "receipts": receipts,
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=len(receipts), n_high_conf_claims=100,
+        n_non_orthogonal_tensions=0, manifest=manifest,
+    )
+    assert v.verdict == "AAA"
+    assert v.certification_track == "AAA-INF"
+    assert v.evidence_weight_total >= 8.0
+    assert v.maturity_level == 5
+    assert v.corpus_gaps == ()
+
+
+def test_tiered_mechanistic_track_can_clear_as_mech_not_clin() -> None:
+    """Mechanism-heavy fields can certify as AAA-MECH, not AAA-CLIN."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    receipts = [{
+        "receipt_id": f"mech-{i}",
+        "evidence_tier": "C1",
+        "directness": "mechanistic",
+        "outcome_class": "mechanism",
+    } for i in range(24)]
+    manifest = {
+        "n_receipts": len(receipts),
+        "n_high_confidence_claims_total": 90,
+        "n_non_orthogonal_tensions": 0,
+        "receipts": receipts,
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=len(receipts), n_high_conf_claims=90,
+        n_non_orthogonal_tensions=0, manifest=manifest,
+    )
+    assert v.verdict == "AAA"
+    assert v.certification_track == "AAA-MECH"
+    assert v.evidence_weight_mechanistic >= 6.0
+
+
+def test_tiered_floor_does_not_override_p1_blocker() -> None:
+    """Evidence weight is a substance floor only; P1 safety still wins."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    receipts = [{
+        "receipt_id": f"mech-{i}",
+        "evidence_tier": "C1",
+        "directness": "mechanistic",
+    } for i in range(24)]
+    manifest = {
+        "n_receipts": len(receipts),
+        "n_high_confidence_claims_total": 90,
+        "n_non_orthogonal_tensions": 0,
+        "receipts": receipts,
+    }
+    v = orch._compute_unified_verdict(
+        s1, [_FakeIssue("P1")], grok_unresolved_p1=0,
+        n_receipts=len(receipts), n_high_conf_claims=90,
+        n_non_orthogonal_tensions=0, manifest=manifest,
+    )
+    assert v.verdict == "SHIP-BLOCKED"
+    assert v.certification_track == "AAA-MECH"
+
+
+def test_receipt_candidates_include_background_mechanism(monkeypatch, tmp_path) -> None:
+    """Tiered acceptance widens receipt candidates to background
+    mechanisms but still excludes off-thesis papers."""
+    quant_dir = tmp_path / "quant_claims"
+    quant_dir.mkdir()
+    (tmp_path / "_extract_report.json").write_text(
+        '{"active_paper_ids": ["active"]}',
+    )
+    (tmp_path / "corpus_classification.json").write_text(
+        '[{"paper_id": "bg", "classification": "background_mechanism"},'
+        ' {"paper_id": "off", "classification": "off_thesis"}]',
+    )
+    monkeypatch.setattr(orch, "QUANT_DIR", quant_dir)
+    assert orch._load_receipt_candidate_paper_ids() == {"active", "bg"}
+
+
 # ---------- Wave 7 / Slice 2: corpus_gaps + expansion_targets -------
 
 def test_corpus_gaps_default_empty_when_no_manifest_passed() -> None:
