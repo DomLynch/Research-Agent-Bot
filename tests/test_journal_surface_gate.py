@@ -73,6 +73,17 @@ def test_placeholder_prose_blocks_journal_surface():
     assert report.issues[0].code == "placeholder_prose"
 
 
+def test_conclusion_fallback_prose_blocks_journal_surface():
+    paper = (
+        "## Conclusion\n\n"
+        "The conclusion is limited to claims that survive receipt "
+        "qualification, source-context checks, and final audit gates.\n"
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert report.issues[0].code == "placeholder_prose"
+
+
 def test_missing_cross_domain_blocks_journal_surface():
     paper = _paper(
         "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",

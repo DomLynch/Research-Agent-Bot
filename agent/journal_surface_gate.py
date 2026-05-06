@@ -24,6 +24,7 @@ _PLACEHOLDER_PATTERNS = (
     "the background is limited to corpus-supported context",
     "this synthesis aims to contribute to the field by",
     "the evidence base is limited to accepted receipts",
+    "the conclusion is limited to claims that survive receipt qualification",
 )
 _REQUIRED_SECTIONS = {
     "Abstract": 150,

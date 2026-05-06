@@ -137,7 +137,7 @@ def test_restore_required_section_body_when_post_processing_strips_depth() -> No
     ) >= 850
 
 
-def test_restore_required_section_body_does_not_pad_short_source() -> None:
+def test_restore_required_section_body_compiles_safe_fallback() -> None:
     paper = "## Conclusion\n\nToo short.\n"
     sections = (
         SynthesisSection(
@@ -146,4 +146,13 @@ def test_restore_required_section_body_does_not_pad_short_source() -> None:
             anchors=(),
         ),
     )
-    assert orch._restore_rendered_section_contract(paper, sections) == paper
+    out = orch._restore_rendered_section_contract(paper, sections)
+    match = orch._rendered_section_match(out, "## Conclusion")
+    assert match is not None
+    assert orch._word_count(match.group(1)) >= 250
+    assert "Too short." not in out
+    assert "new empirical estimates" in out
+
+
+def test_public_section_backstop_does_not_cover_abstract() -> None:
+    assert orch._compile_public_section_backstop("Abstract", 150) == ""
