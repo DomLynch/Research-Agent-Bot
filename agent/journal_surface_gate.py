@@ -162,6 +162,8 @@ def _unit_class(unit: str, value: str) -> str:
         return "pressure"
     if "m/s" in hay:
         return "speed"
+    if re.search(r"\b(years?|months?|weeks?|days?|hours?)\b", hay):
+        return "duration"
     if re.search(r"\bcm\b", hay):
         return "length"
     if re.search(r"\bkg\b", hay):

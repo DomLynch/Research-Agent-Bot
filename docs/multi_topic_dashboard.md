@@ -1,43 +1,43 @@
 # Researka Multi-Topic Dashboard
 
 **Topics attempted:** 18
-**Topics at L5 (Journal-Ready):** 7
+**Topics at L5 (Journal-Ready):** 0
 **Topics with ≥1 AAA run:** 11
 **Topics with consecutive-AAA cert:** 2
 **Total runs across all topics:** 120
-**Cumulative LLM cost:** $3.902
-**Total reviewer interventions logged:** 149 applied (9 via repair loop)
+**Cumulative LLM cost:** $3.527
+**Total reviewer interventions logged:** 166 applied (13 via repair loop)
 
 ## Per-Topic Status
 
 | Topic | Maturity | Best verdict | Journal | n_runs | AAA | Stage1 | S2 P1/P2 | Q2 | Words | Cost |
 |---|---|---|---|---|---|---|---|---|---|---|
-| acarbose | L5 — JOURNAL-READY | AAA | 📰 | 1 | 1 | 13/13 | 0/0 | 100% | 15,045 | $0.188 |
-| caloric_restriction | L5 — JOURNAL-READY | AAA | 📰 | 1 | 1 | 13/13 | 0/0 | 100% | 12,583 | $0.156 |
-| creatine | L5 — JOURNAL-READY | AAA | 📰 | 1 | 1 | 13/13 | 0/0 | 100% | 14,414 | $0.165 |
-| glp1 | L5 — JOURNAL-READY | AAA | 📰 | 5 | 1 | 13/13 | 0/0 | 100% | 19,809 | $0.254 |
-| intermittent_fasting | L5 — JOURNAL-READY | AAA | 📰 | 1 | 1 | 13/13 | 0/0 | 100% | 19,576 | $0.243 |
-| protein_nutrition | L5 — JOURNAL-READY | AAA | 📰 | 2 | 1 | 13/13 | 0/0 | 100% | 57,960 | $0.540 |
-| resistance_training | L5 — JOURNAL-READY | AAA | 📰 | 1 | 1 | 13/13 | 0/0 | 100% | 15,993 | $0.211 |
+| metformin | L4 — ANALYTICALLY CERTIFIED | AAA | — | 58 | 25 | 13/13 | 0/0 | 100% | 26,967 | $0.258 |
+| acarbose | L4 — ANALYTICALLY CERTIFIED | AAA | — | 1 | 1 | 13/13 | 0/0 | 100% | 15,045 | $0.188 |
+| caloric_restriction | L4 — ANALYTICALLY CERTIFIED | AAA | — | 1 | 1 | 13/13 | 0/0 | 100% | 12,583 | $0.156 |
+| creatine | L4 — ANALYTICALLY CERTIFIED | AAA | — | 1 | 1 | 13/13 | 0/0 | 100% | 14,414 | $0.165 |
+| glp1 | L4 — ANALYTICALLY CERTIFIED | AAA | — | 5 | 1 | 13/13 | 0/0 | 100% | 19,809 | $0.254 |
+| intermittent_fasting | L4 — ANALYTICALLY CERTIFIED | AAA | — | 1 | 1 | 13/13 | 0/0 | 100% | 19,576 | $0.243 |
+| protein_nutrition | L4 — ANALYTICALLY CERTIFIED | AAA | — | 2 | 1 | 13/13 | 0/0 | 100% | 57,960 | $0.540 |
+| resistance_training | L4 — ANALYTICALLY CERTIFIED | AAA | — | 1 | 1 | 13/13 | 0/0 | 100% | 15,993 | $0.211 |
+| rapamycin | L2 — PARTIAL | Trust-Spine Pass | — | 24 | 5 | 13/13 | 0/0 | 100% | 11,403 | $0.143 |
+| statins | L2 — PARTIAL | Trust-Spine Pass | — | 12 | 1 | 11/13 | 0/0 | 100% | 8,716 | $0.122 |
 | aerobic_exercise | L2 — PARTIAL | Trust-Spine Pass | — | 1 | 0 | 13/13 | 0/0 | 100% | 10,210 | $0.116 |
 | berberine | L2 — PARTIAL | Trust-Spine Pass | — | 1 | 0 | 13/13 | 0/0 | 100% | 9,892 | $0.146 |
 | nad_precursors | L2 — PARTIAL | Trust-Spine Pass | — | 1 | 0 | 13/13 | 0/0 | 100% | 8,559 | $0.136 |
 | zone2_training | L2 — PARTIAL | Trust-Spine Pass | — | 1 | 0 | 13/13 | 0/0 | 100% | 10,066 | $0.152 |
 | vitamin_d | L2 — PARTIAL | Trust-Spine Pass — Agent Review Unresolved | — | 1 | 0 | 12/13 | 0/0 | 100% | 9,806 | $0.122 |
 | omega3 | L2 — PARTIAL | SHIP-BLOCKED | — | 1 | 0 | 10/13 | 1/1 | 100% | 8,308 | $0.159 |
-| metformin | L? — pre-Wave-7 | AAA | — | 58 | 25 | 13/13 | 0/0 | 100% | 12,487 | $0.361 |
-| rapamycin | L? — pre-Wave-7 | AAA | — | 24 | 5 | 13/13 | 0/0 | 100% | 9,002 | $0.306 |
 | aspirin | L? — pre-Wave-7 | AAA | — | 7 | 1 | 13/13 | 0/0 | 100% | 7,553 | $0.236 |
-| statins | L? — pre-Wave-7 | AAA | — | 12 | 1 | 13/13 | 0/0 | 100% | 8,720 | $0.231 |
 | senolytics | L? — pre-Wave-7 | SHIP-BLOCKED | — | 1 | 0 | 10/13 | 1/0 | 100% | 6,462 | $0.178 |
 
 ## Best Run per Topic
 
-### acarbose — L5 — JOURNAL-READY
+### acarbose — L4 — ANALYTICALLY CERTIFIED
 
 - **Best run:** `synthesis-acarbose-v06-ACTIVE-2026-05-05T22-49-00Z`
 - **Verdict:** AAA
-- **Journal-Ready:** yes 📰
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -50,11 +50,11 @@
   - **Outcome diversity: only 2 classes (cardiometabolic, immune); floor 3** → Broaden retrieval queries to capture complementary endpoints (additional outcome classes).
 - **Corpus funnel** (retrieved → keep → core / background / adjacent): 2014 → 346 → 71 / 34 / 241
 
-### caloric_restriction — L5 — JOURNAL-READY
+### caloric_restriction — L4 — ANALYTICALLY CERTIFIED
 
 - **Best run:** `synthesis-caloric_restriction-v06-ACTIVE-2026-05-05T22-49-00Z`
 - **Verdict:** AAA
-- **Journal-Ready:** yes 📰
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -68,11 +68,11 @@
   - **A-tier receipts: 1/2 (corpus leans on B/C tier)** → Add ≥1 A1/A2 sources (Cochrane review / large RCT / pragmatic trial).
 - **Corpus funnel** (retrieved → keep → core / background / adjacent): 2660 → 1349 → 104 / 750 / 495
 
-### creatine — L5 — JOURNAL-READY
+### creatine — L4 — ANALYTICALLY CERTIFIED
 
 - **Best run:** `synthesis-creatine-v06-ACTIVE-2026-05-05T22-47-50Z`
 - **Verdict:** AAA
-- **Journal-Ready:** yes 📰
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -83,11 +83,11 @@
 - **Patches applied:** 15 (2 via repair loop)
 - **Corpus funnel** (retrieved → keep → core / background / adjacent): 2381 → 456 → 35 / 90 / 331
 
-### glp1 — L5 — JOURNAL-READY
+### glp1 — L4 — ANALYTICALLY CERTIFIED
 
 - **Best run:** `synthesis-glp1-v06-ACTIVE3-2026-05-05T22-18-50Z`
 - **Verdict:** AAA
-- **Journal-Ready:** yes 📰
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -98,11 +98,11 @@
 - **Patches applied:** 9 (1 via repair loop)
 - **Corpus funnel** (retrieved → keep → core / background / adjacent): 3123 → 895 → 124 / 57 / 714
 
-### intermittent_fasting — L5 — JOURNAL-READY
+### intermittent_fasting — L4 — ANALYTICALLY CERTIFIED
 
 - **Best run:** `synthesis-intermittent_fasting-v06-ACTIVE-2026-05-05T22-34-23Z`
 - **Verdict:** AAA
-- **Journal-Ready:** yes 📰
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -113,11 +113,26 @@
 - **Patches applied:** 8 (0 via repair loop)
 - **Corpus funnel** (retrieved → keep → core / background / adjacent): 2490 → 777 → 216 / 155 / 406
 
-### protein_nutrition — L5 — JOURNAL-READY
+### metformin — L4 — ANALYTICALLY CERTIFIED
+
+- **Best run:** `synthesis-metformin-v06-CODEXFIX2-2026-05-05T22-30-00Z`
+- **Verdict:** AAA
+- **Journal-Ready:** no
+- **Cert (consecutive-AAA gate):** PASS 🏆
+- **Stage-1 audit:** 13/13
+- **Stage-2 consistency:** P1=0 P2=0
+- **Q2 numeric traceability:** 100%
+- **Grok unresolved P1:** 0
+- **Word count:** 26,967
+- **LLM cost:** $0.258
+- **Patches applied:** 22 (1 via repair loop)
+- **Corpus funnel** (retrieved → keep → core / background / adjacent): 1962 → 378 → 146 / 232 / 0
+
+### protein_nutrition — L4 — ANALYTICALLY CERTIFIED
 
 - **Best run:** `synthesis-protein_nutrition-v06-FIXED-2026-05-05T23-37-32Z`
 - **Verdict:** AAA
-- **Journal-Ready:** yes 📰
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -128,11 +143,11 @@
 - **Patches applied:** 8 (0 via repair loop)
 - **Corpus funnel** (retrieved → keep → core / background / adjacent): 2934 → 1773 → 122 / 435 / 1216
 
-### resistance_training — L5 — JOURNAL-READY
+### resistance_training — L4 — ANALYTICALLY CERTIFIED
 
 - **Best run:** `synthesis-resistance_training-v06-ACTIVE-2026-05-05T22-34-24Z`
 - **Verdict:** AAA
-- **Journal-Ready:** yes 📰
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -201,6 +216,45 @@
   - **Non-orthogonal tensions: 6/10 (short by 4)** → Add receipts that contradict or complicate existing findings; need ≥4 more cross-receipt tensions.
   - **Outcome diversity: only 2 classes (cardiometabolic, muscle_function); floor 3** → Broaden retrieval queries to capture complementary endpoints (additional outcome classes).
 - **Corpus funnel** (retrieved → keep → core / background / adjacent): 2007 → 371 → 15 / 186 / 170
+
+### rapamycin — L2 — PARTIAL
+
+- **Best run:** `synthesis-rapamycin-v06-CALIBRATED-2026-05-05T19-30-00Z`
+- **Verdict:** Trust-Spine Pass
+- **Journal-Ready:** no
+- **Cert (consecutive-AAA gate):** PASS 🏆
+- **Stage-1 audit:** 13/13
+- **Stage-2 consistency:** P1=0 P2=0
+- **Q2 numeric traceability:** 100%
+- **Grok unresolved P1:** 0
+- **Word count:** 11,403
+- **LLM cost:** $0.143
+- **Patches applied:** 14 (3 via repair loop)
+- **Next expansion targets** (from corpus_gaps):
+  - **High-confidence claims: 49/50 (short by 1)** → Re-run extraction on existing parsed papers and/or expand corpus; need ≥1 more bound numeric claims.
+  - **Outcome diversity: only 2 classes (cardiometabolic, longevity); floor 3** → Broaden retrieval queries to capture complementary endpoints (additional outcome classes).
+- **Corpus funnel** (retrieved → keep → core / background / adjacent): 444 → 118 → 1 / 77 / 40
+
+### statins — L2 — PARTIAL
+
+- **Best run:** `synthesis-statins-v06-DIAG-2026-05-05T23-21-22Z`
+- **Verdict:** Trust-Spine Pass
+- **Journal-Ready:** no
+- **Cert (consecutive-AAA gate):** pending
+- **Stage-1 audit:** 11/13
+- **Stage-2 consistency:** P1=0 P2=0
+- **Q2 numeric traceability:** 100%
+- **Grok unresolved P1:** 0
+- **Word count:** 8,716
+- **LLM cost:** $0.122
+- **Patches applied:** 9 (0 via repair loop)
+- **Next expansion targets** (from corpus_gaps):
+  - **Receipts: 3/10 (short by 7)** → Add ≥7 more topic-fit receipts via `scripts/seed_topic_corpus.py --topic <T> --max-papers 28`.
+  - **High-confidence claims: 49/50 (short by 1)** → Re-run extraction on existing parsed papers and/or expand corpus; need ≥1 more bound numeric claims.
+  - **Non-orthogonal tensions: 3/10 (short by 7)** → Add receipts that contradict or complicate existing findings; need ≥7 more cross-receipt tensions.
+  - **Outcome diversity: only 1 classes (longevity); floor 3** → Broaden retrieval queries to capture complementary endpoints (additional outcome classes).
+  - **Direct-evidence receipts: 0/2 (have only reviews/indirect/mechanistic)** → Add ≥2 direct trial/RCT receipts (ClinicalTrials.gov, pragmatic-trial queries).
+- **Corpus funnel** (retrieved → keep → core / background / adjacent): 2612 → 705 → 136 / 105 / 464
 
 ### zone2_training — L2 — PARTIAL
 
@@ -278,51 +332,6 @@
 - **LLM cost:** $0.236
 - **Patches applied:** 4 (0 via repair loop)
 - **Corpus funnel** (retrieved → keep → core / background / adjacent): 3128 → 339 → 153 / 12 / 174
-
-### metformin — L? — pre-Wave-7
-
-- **Best run:** `synthesis-metformin-v06-AAA2-2026-05-04T15-22-03Z`
-- **Verdict:** AAA
-- **Journal-Ready:** no
-- **Cert (consecutive-AAA gate):** PASS 🏆
-- **Stage-1 audit:** 13/13
-- **Stage-2 consistency:** P1=0 P2=0
-- **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
-- **Word count:** 12,487
-- **LLM cost:** $0.361
-- **Patches applied:** 19 (0 via repair loop)
-- **Corpus funnel** (retrieved → keep → core / background / adjacent): 1962 → 378 → 146 / 232 / 0
-
-### rapamycin — L? — pre-Wave-7
-
-- **Best run:** `synthesis-rapamycin-v06-AAA4-2026-05-04T15-50-14Z`
-- **Verdict:** AAA
-- **Journal-Ready:** no
-- **Cert (consecutive-AAA gate):** PASS 🏆
-- **Stage-1 audit:** 13/13
-- **Stage-2 consistency:** P1=0 P2=0
-- **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
-- **Word count:** 9,002
-- **LLM cost:** $0.306
-- **Patches applied:** 8 (0 via repair loop)
-- **Corpus funnel** (retrieved → keep → core / background / adjacent): 444 → 118 → 1 / 77 / 40
-
-### statins — L? — pre-Wave-7
-
-- **Best run:** `synthesis-statins-v06-RESTAB3-2026-05-04T22-48-00Z`
-- **Verdict:** AAA
-- **Journal-Ready:** no
-- **Cert (consecutive-AAA gate):** pending
-- **Stage-1 audit:** 13/13
-- **Stage-2 consistency:** P1=0 P2=0
-- **Q2 numeric traceability:** 100%
-- **Grok unresolved P1:** 0
-- **Word count:** 8,720
-- **LLM cost:** $0.231
-- **Patches applied:** 1 (0 via repair loop)
-- **Corpus funnel** (retrieved → keep → core / background / adjacent): 2612 → 705 → 136 / 105 / 464
 
 ### senolytics — L? — pre-Wave-7
 

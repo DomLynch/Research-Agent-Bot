@@ -14,10 +14,10 @@ gates have been cleared):
   L2 — PARTIAL         claims exist, but below certification floor
   L3 — FLOOR-MET       cert floor met, but verdict not AAA
                        (audit failures or unresolved Grok flags)
-  L4 — AAA             verdict == "AAA"
+  L4 — ANALYTICAL      verdict == "AAA", but journal-surface or
+                       surgery gate still requires editorial work
   L5 — JOURNAL-READY   AAA + zero unresolved Grok + zero auto-strip
-                       surgery (i.e. no fragile body that needed
-                       structural patching to pass)
+                       surgery + clean journal-surface gate
 
 Journal-Ready is the strictest tier we expose; it gates "this run is
 ready to send to a peer-reviewed journal without further review."

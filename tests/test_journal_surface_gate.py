@@ -25,6 +25,7 @@ def test_qei_surface_gate_flags_endpoint_unit_mismatches():
         "| Brogi 2024 | blood pressure | control | 12 cm | cm | — |",
         "| Brogi 2024 | fasting glucose | control | 1.99 mmHg | mmHg | — |",
         "| Bülow 2023 | body mass index | protein | 38 kg | kg | — |",
+        "| Demo 2024 | body mass index | protein | 65 years | years | — |",
     ]
     for row in bad_rows:
         report = evaluate_journal_surface(_paper(row))

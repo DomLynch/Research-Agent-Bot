@@ -116,7 +116,24 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
     aaa_runs: list[str] = []
     cert_runs: list[str] = []
     best_run = None
-    best_rank = -1
+    best_rank: tuple[int, int, int, int, str] = (-1, -1, -1, -1, "")
+
+    import re as _re
+
+    def _extract_ts(name: str) -> str:
+        m = _re.search(
+            r"(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}Z)", name,
+        )
+        return m.group(1) if m else ""
+
+    def _surface_ok(run: Path) -> bool:
+        try:
+            from agent.journal_surface_gate import evaluate_journal_surface
+            return evaluate_journal_surface(
+                (run / "full_paper.md").read_text(),
+            ).passed
+        except (ImportError, OSError):
+            return False
 
     for r in sorted(runs):
         verdict_doc = _read_json(
@@ -126,12 +143,23 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
         verdict = verdict_doc.get("verdict", "Unknown")
         rank = _verdict_rank(verdict)
         if cert_doc and cert_doc.get("aaa_certified"):
-            rank += 1  # cert-clean prefers
             cert_runs.append(r.name)
         if verdict == "AAA":
             aaa_runs.append(r.name)
-        if rank > best_rank:
-            best_rank, best_run = rank, r
+        maturity = int(verdict_doc.get("maturity_level", 0))
+        journal = bool(verdict_doc.get("journal_ready", False))
+        if journal and not _surface_ok(r):
+            journal = False
+            maturity = min(maturity, 4)
+        rank_tuple = (
+            1 if journal else 0,
+            maturity,
+            1 if cert_doc and cert_doc.get("aaa_certified") else 0,
+            rank,
+            _extract_ts(r.name),
+        )
+        if rank_tuple > best_rank:
+            best_rank, best_run = rank_tuple, r
 
     if best_run is None:
         return TopicSummary(
@@ -173,13 +201,6 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
     # Sort AAA runs by extracted timestamp (chronological), not
     # alphabetical — different run-name prefixes (AAA2-, FINAL-,
     # public-, etc.) make alphabetical sort wrong.
-    import re as _re
-
-    def _extract_ts(name: str) -> str:
-        m = _re.search(
-            r"(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}Z)", name,
-        )
-        return m.group(1) if m else ""
     certified = False
     if len(aaa_runs) >= 2:
         # Sort by timestamp DESCENDING — most recent first
@@ -214,7 +235,22 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
     maturity_label = verdict_doc.get(
         "maturity_label", "L? — pre-Wave-7",
     )
+    if maturity_level == 4 and maturity_label == "L4 — AAA":
+        maturity_label = "L4 — ANALYTICALLY CERTIFIED"
     journal_ready = bool(verdict_doc.get("journal_ready", False))
+    if journal_ready:
+        try:
+            from agent.journal_surface_gate import evaluate_journal_surface
+            surface = evaluate_journal_surface(
+                (best_run / "full_paper.md").read_text(),
+            )
+            if not surface.passed:
+                journal_ready = False
+                if maturity_level >= 5:
+                    maturity_level = 4
+                    maturity_label = "L4 — ANALYTICALLY CERTIFIED"
+        except (ImportError, OSError):
+            journal_ready = False
     corpus_gaps = tuple(verdict_doc.get("corpus_gaps") or [])
     expansion_targets = tuple(verdict_doc.get("expansion_targets") or [])
 

@@ -60,6 +60,49 @@ def test_summarize_topic_pulls_wave7_fields(tmp_path, monkeypatch):
     assert summary.expansion_targets == ()
 
 
+def test_summarize_topic_caps_stale_l5_when_surface_fails(
+    tmp_path, monkeypatch,
+):
+    """Dashboard must not count old L5 verdict files as
+    Journal-Ready when the rendered paper fails the new surface gate."""
+    monkeypatch.setattr(dash, "REPO", tmp_path)
+    run = _make_run(
+        tmp_path, "synthesis-topic-v06-AAA1-2026-05-05T10-00-00Z",
+        verdict_doc={
+            "verdict": "AAA",
+            "stage1_pass_rate": "13/13",
+            "stage2_p1": 0, "stage2_p2": 0,
+            "grok_unresolved_p1": 0,
+            "maturity_level": 5,
+            "maturity_label": "L5 — JOURNAL-READY",
+            "journal_ready": True,
+        },
+    )
+    (run / "full_paper.md").write_text(
+        "## Introduction\n\n"
+        "This paper evaluates the topic through accepted receipts.\n",
+    )
+    summary = dash.summarize_topic("topic", [run])
+    assert summary.journal_ready is False
+    assert summary.maturity_level == 4
+    assert summary.maturity_label == "L4 — ANALYTICALLY CERTIFIED"
+
+
+def test_summarize_topic_normalizes_old_l4_label(tmp_path, monkeypatch):
+    monkeypatch.setattr(dash, "REPO", tmp_path)
+    run = _make_run(
+        tmp_path, "synthesis-topic-v06-AAA1-2026-05-05T10-00-00Z",
+        verdict_doc={
+            "verdict": "AAA",
+            "maturity_level": 4,
+            "maturity_label": "L4 — AAA",
+            "journal_ready": False,
+        },
+    )
+    summary = dash.summarize_topic("topic", [run])
+    assert summary.maturity_label == "L4 — ANALYTICALLY CERTIFIED"
+
+
 def test_summarize_topic_falls_back_for_pre_wave7_runs(
     tmp_path, monkeypatch,
 ):
