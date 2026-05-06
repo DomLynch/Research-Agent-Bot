@@ -1532,6 +1532,22 @@ async def _run_post_paper_pipeline(
     paper_path.with_suffix(".consistency.md").write_text(
         _consistency_audit._format_summary(final_issues)
     )
+    try:
+        from agent.journal_surface_gate import evaluate_journal_surface
+        surface_report = evaluate_journal_surface(paper_md)
+        _surface_issues = tuple(
+            f"{i.code}: {i.detail}" for i in surface_report.issues
+        )
+        paper_path.with_suffix(".journal_surface.json").write_text(
+            json.dumps({
+                "passed": surface_report.passed,
+                "issues": [dataclasses.asdict(i)
+                           for i in surface_report.issues],
+            }, indent=2)
+        )
+    except (ImportError, ValueError):
+        surface_report = None
+        _surface_issues = ("journal_surface_gate_unavailable",)
     # Pull corpus-density signals from manifest for cert-floor check
     _n_rec = int(manifest.get("n_receipts", 0))
     _n_claims = int(manifest.get("n_high_confidence_claims_total", 0))
@@ -1550,6 +1566,10 @@ async def _run_post_paper_pipeline(
         cert_floors=_cert_floors,
         manifest=manifest,
         auto_stripped_count=n_stripped,
+        journal_surface_pass=bool(
+            surface_report is not None and surface_report.passed
+        ),
+        journal_surface_issues=_surface_issues,
     )
     paper_path.with_suffix(".final_verdict.json").write_text(
         json.dumps(dataclasses.asdict(unified), indent=2)
@@ -1947,6 +1967,8 @@ class UnifiedVerdict:
     maturity_level: int = 0
     maturity_label: str = "L0 — UNSEEDED"
     journal_ready: bool = False
+    journal_surface_pass: bool = True
+    journal_surface_issues: tuple[str, ...] = ()
 
 
 def _is_blocking(severity: str) -> bool:
@@ -1967,6 +1989,8 @@ def _compute_unified_verdict(
     cert_floors: dict[str, int] | None = None,
     manifest: dict[str, Any] | None = None,
     auto_stripped_count: int = 0,
+    journal_surface_pass: bool = True,
+    journal_surface_issues: tuple[str, ...] = (),
 ) -> UnifiedVerdict:
     """Worst-of(stage1, stage2, grok-unresolved). AAA reserved for
     fully-green (P1+P2 + zero unresolved Grok P1). SHIP-BLOCKED if
@@ -2155,6 +2179,7 @@ def _compute_unified_verdict(
             grok_unresolved_p1=grok_unresolved_p1,
             auto_stripped_count=auto_stripped_count,
             cert_floors=cert_floors,
+            journal_surface_pass=journal_surface_pass,
         )
         maturity_label = format_maturity_label(maturity_level)
         journal_ready = is_journal_ready(maturity_level)
@@ -2178,6 +2203,8 @@ def _compute_unified_verdict(
         maturity_level=maturity_level,
         maturity_label=maturity_label,
         journal_ready=journal_ready,
+        journal_surface_pass=journal_surface_pass,
+        journal_surface_issues=journal_surface_issues,
     )
 
 
@@ -2196,10 +2223,17 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
     # Slice 3 (Wave 7): journal-ready badge + maturity ladder line.
     journal_line = (
         "**Journal-Ready: yes** — submission-grade certification "
-        "(AAA + zero unresolved Grok + zero auto-strip surgery).\n\n"
+        "(AAA + zero unresolved Grok + zero auto-strip surgery + "
+        "clean journal-surface gate).\n\n"
         if u.journal_ready
         else "**Journal-Ready: no** — see maturity level + components "
              "for what gates remain.\n\n"
+    )
+    surface_line = (
+        "- Journal surface gate: pass\n"
+        if u.journal_surface_pass
+        else "- Journal surface gate: fail — "
+             + "; ".join(u.journal_surface_issues[:8]) + "\n"
     )
     return (
         f"# Unified Final Verdict\n\n"
@@ -2221,6 +2255,7 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
             if u.stage2_unknown_severity_count else ""
         )
         + "\n"
+        + surface_line
         + (
             f"- Grok-flagged P1 patches unresolved: "
             f"{u.grok_unresolved_p1} "

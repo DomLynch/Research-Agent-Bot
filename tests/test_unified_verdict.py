@@ -356,6 +356,34 @@ def test_l4_aaa_but_surgery_blocks_journal_ready() -> None:
     assert v.journal_ready is False
 
 
+def test_l4_aaa_but_surface_gate_blocks_journal_ready() -> None:
+    """Analytical AAA remains AAA, but Journal-Ready is capped by
+    manuscript-surface failures."""
+    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    manifest = {
+        "n_receipts": 15, "n_high_confidence_claims_total": 134,
+        "n_non_orthogonal_tensions": 42,
+        "receipts": [
+            {"outcome_class": ["a", "b", "c"][i % 3],
+             "evidence_tier": "A1", "directness": "direct",
+             "receipt_id": f"P{i}"} for i in range(15)
+        ],
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=15, n_high_conf_claims=134,
+        n_non_orthogonal_tensions=42,
+        manifest=manifest, auto_stripped_count=0,
+        journal_surface_pass=False,
+        journal_surface_issues=("qei_surface: endpoint/unit mismatch",),
+    )
+    assert v.verdict == "AAA"
+    assert v.maturity_level == 4
+    assert v.journal_ready is False
+    md = orch._format_unified_verdict(v)
+    assert "Journal surface gate: fail" in md
+
+
 def test_l2_when_corpus_thin() -> None:
     """Below cert floor with claims → L2."""
     s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)

@@ -305,7 +305,7 @@ def test_diagnostic_counts_for_normal_corpus(tmp_path):
     claims_dir = tmp_path / "qc"
     claims_dir.mkdir()
     payload = {
-        "paper_id": "PMC1_demo",
+        "paper_id": "PMC1_demo_2024",
         "claims": [
             # 1 high-conf, on-topic, meaningful → renders
             {"claim_type": "p_value", "raw_text": "p=0.04",
@@ -335,6 +335,33 @@ def test_diagnostic_counts_for_normal_corpus(tmp_path):
     assert diag["n_meaningful"] >= 1
     assert diag["n_rendered"] == diag["n_after_quotas"]
     assert "metformin" in md.lower()
+
+
+def test_surface_gate_drops_unpublishable_qei_rows(tmp_path):
+    """Traceable but semantically unsafe rows should not render in
+    the public QEI table."""
+    claims_dir = tmp_path / "qc"
+    claims_dir.mkdir()
+    payload = {
+        "paper_id": "PMC1_cheung_2024_intermittent",
+        "claims": [
+            {"claim_type": "unit_value", "raw_text": "2.86 mg/dL",
+             "numeric_values": [2.86], "units": "mg/dL",
+             "binding_confidence": "high", "endpoint": "mortality",
+             "arm": "pooled"},
+            {"claim_type": "unit_value", "raw_text": "89 mg/dL",
+             "numeric_values": [89], "units": "mg/dL",
+             "binding_confidence": "high", "endpoint": "fasting glucose",
+             "arm": "pooled"},
+        ],
+    }
+    (claims_dir / "PMC1.quant_claims.json").write_text(json.dumps(payload))
+    md, diag = build_results_table_with_diagnostic(
+        claims_dir, topic="intermittent_fasting",
+    )
+    assert "2.86 mg/dL" not in md
+    assert "89 mg/dL" in md
+    assert diag["drop_surface_gate"] == 1
 
 
 def test_diagnostic_empty_dir_returns_zeroed_counts(tmp_path):

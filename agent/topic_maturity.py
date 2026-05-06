@@ -38,7 +38,7 @@ _LEVEL_LABELS: dict[int, str] = {
     1: "L1 — SEEDED",
     2: "L2 — PARTIAL",
     3: "L3 — FLOOR-MET",
-    4: "L4 — AAA",
+    4: "L4 — ANALYTICALLY CERTIFIED",
     5: "L5 — JOURNAL-READY",
 }
 
@@ -52,8 +52,8 @@ _LEVEL_DESCRIPTIONS: dict[int, str] = {
     3: "Corpus meets the certification floor, but the verdict is "
        "below AAA — audit failures, P1 issues, or unresolved Grok "
        "patches are in the way.",
-    4: "AAA verdict — all audits clean and the corpus meets every "
-       "floor. Suitable for internal release.",
+    4: "Analytical AAA — audits and corpus floors pass, but a "
+       "journal-surface or surgery gate still requires editorial work.",
     5: "Journal-Ready — AAA plus zero unresolved Grok flags plus "
        "zero auto-strip surgery. No structural patching was needed "
        "to clear the gates. Suitable for peer-reviewed submission.",
@@ -67,6 +67,7 @@ def compute_maturity_level(
     grok_unresolved_p1: int = 0,
     auto_stripped_count: int = 0,
     cert_floors: dict[str, int] | None = None,
+    journal_surface_pass: bool = True,
 ) -> int:
     """Pure function: returns 0-5 from manifest + unified-verdict
     signals. `verdict` is the UnifiedVerdict.verdict string ("AAA",
@@ -104,7 +105,11 @@ def compute_maturity_level(
     if verdict != "AAA":
         return 3
     # AAA achieved — distinguish L4 from L5 on hardening signals
-    if grok_unresolved_p1 == 0 and auto_stripped_count == 0:
+    if (
+        grok_unresolved_p1 == 0
+        and auto_stripped_count == 0
+        and journal_surface_pass
+    ):
         return 5
     return 4
 

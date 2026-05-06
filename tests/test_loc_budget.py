@@ -142,12 +142,20 @@ breakdown (retrieved → classified_keep / drop → extractable_core
 
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
+
+Wave 8 — Journal Surface Gate (16,200 → 16,400):
+agent/journal_surface_gate.py (~167 cloc) plus QEI filter wiring.
+Separates Analytical AAA from Journal-Ready by deterministically
+blocking visible manuscript residue: endpoint/unit mismatches,
+empty QEI rows, malformed study IDs, and fallback placeholder prose.
+This is the publication-surface certification layer requested after
+reviewers found traceable but non-publishable table rows (2026-05-06).
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 16200
+TOTAL_LIMIT = 16400
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

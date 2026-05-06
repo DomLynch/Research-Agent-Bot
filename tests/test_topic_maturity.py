@@ -80,6 +80,16 @@ def test_l5_when_aaa_clean_no_surgery():
     ) == 5
 
 
+def test_l4_when_journal_surface_gate_fails():
+    """Analytical AAA with visible manuscript residue is L4, not L5."""
+    m = {"n_receipts": 15, "n_high_confidence_claims_total": 60,
+         "n_non_orthogonal_tensions": 12}
+    assert compute_maturity_level(
+        m, verdict="AAA", grok_unresolved_p1=0, auto_stripped_count=0,
+        journal_surface_pass=False,
+    ) == 4
+
+
 def test_l5_unreachable_when_grok_unresolved_even_at_aaa():
     """Defensive: an AAA verdict with grok_unresolved>0 should NOT
     happen (verdict logic downgrades it). But if the inputs say so,
@@ -127,7 +137,7 @@ def test_topic_pack_cannot_lower_below_default():
 def test_label_formatting_for_each_level():
     for lvl, expected in [
         (0, "L0 — UNSEEDED"), (1, "L1 — SEEDED"), (2, "L2 — PARTIAL"),
-        (3, "L3 — FLOOR-MET"), (4, "L4 — AAA"),
+        (3, "L3 — FLOOR-MET"), (4, "L4 — ANALYTICALLY CERTIFIED"),
         (5, "L5 — JOURNAL-READY"),
     ]:
         assert format_maturity_label(lvl) == expected

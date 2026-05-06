@@ -142,6 +142,8 @@ def build_results_table_with_diagnostic(
       - drop_off_topic_arm: dropped by cross-topic arm filter
       - drop_non_receipt_paper: skipped because paper_id not in
         accepted_paper_ids (only counted when the filter is active)
+      - drop_surface_gate: dropped because the final row is not
+        manuscript-surface safe (e.g. endpoint/unit mismatch)
 
     Cross-topic guard (wave 4), receipt-scope guard (wave 6), and the
     meaningful-row guard (wave 9) all participate; see comments below.
@@ -156,6 +158,7 @@ def build_results_table_with_diagnostic(
         "n_rendered": 0,
         "drop_off_topic_arm": 0,
         "drop_non_receipt_paper": 0,
+        "drop_surface_gate": 0,
     }
     rows: list[EvidenceRow] = []
     if not quant_dir.exists():
@@ -187,6 +190,9 @@ def build_results_table_with_diagnostic(
             if row is None:
                 continue
             diag["n_meaningful"] += 1
+            if not _publishable_surface_row(row):
+                diag["drop_surface_gate"] += 1
+                continue
             score = _quality_score(claim)
             ct = claim.get("claim_type", "")
             candidates.append((score, ct, row, row.value))
@@ -237,6 +243,7 @@ def format_empty_qei_placeholder(
     n_meaning = diagnostic.get("n_meaningful", 0)
     drop_arm = diagnostic.get("drop_off_topic_arm", 0)
     drop_nr = diagnostic.get("drop_non_receipt_paper", 0)
+    drop_surface = diagnostic.get("drop_surface_gate", 0)
     return (
         f"## Quantitative Evidence Index — {topic}\n\n"
         f"_No qualifying rows. Corpus diagnostic — quant_claims files "
@@ -244,7 +251,8 @@ def format_empty_qei_placeholder(
         f"admissible (HIGH/PARTIAL confidence): **{n_adm}**; "
         f"topic-arm matched: **{n_topic}**; semantically meaningful: "
         f"**{n_meaning}**. Dropped by guards: cross-topic arm = "
-        f"{drop_arm}, non-receipt papers = {drop_nr}. See Corpus "
+        f"{drop_arm}, non-receipt papers = {drop_nr}, journal surface "
+        f"= {drop_surface}. See Corpus "
         f"Expansion To-Do in the final verdict for the actionable "
         f"gap._\n"
     )
@@ -319,6 +327,15 @@ def _claim_to_row(
         statistic=_truncate(statistic, 22),
         citation=citation,
     )
+
+
+def _publishable_surface_row(row: EvidenceRow) -> bool:
+    """Final manuscript-surface filter shared with the post-render gate."""
+    try:
+        from agent.journal_surface_gate import is_publishable_qei_row
+    except ImportError:
+        return True
+    return is_publishable_qei_row(row)
 
 
 def _format_value(v: float) -> str:
