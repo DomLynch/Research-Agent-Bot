@@ -127,7 +127,7 @@ class InferenceSpec:
     names the canon references allowed to support conservation logic.
     """
 
-    allow: bool = False
+    allow: bool = True
     accepted_mechanism_tiers: tuple[str, ...] = ()
     canon_references: tuple[str, ...] = ()
     max_inferences_per_paper: int = 5

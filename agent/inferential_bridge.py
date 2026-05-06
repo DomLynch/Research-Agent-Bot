@@ -6,7 +6,6 @@ never count as core evidence or raise certification floors.
 """
 from __future__ import annotations
 
-import json
 import re
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
@@ -19,6 +18,7 @@ from agent.synthesis_schemas import ReceiptSummary, SynthesisSection
 
 _CONFIDENCE = frozenset({"low", "medium", "high"})
 _NUMERIC_RE = re.compile(r"(?<![A-Za-z])(?:\d+(?:\.\d+)?|\d+\s*%)")
+_BENEFIT_RE = re.compile(r"\b(benefit|improv|enhanc|extend|protect|rejuvenat)\w*", re.I)
 
 
 @dataclass(frozen=True, slots=True)
@@ -59,6 +59,7 @@ def validate_inference(
     *,
     receipt_ids: set[str],
     canon_refs: set[str],
+    receipt_effects: Mapping[str, str] | None = None,
 ) -> tuple[str, ...]:
     errors: list[str] = []
     if not claim.tier.startswith("D1_"):
@@ -86,6 +87,10 @@ def validate_inference(
         errors.append(f"unknown existing_human_signal: {', '.join(missing_human)}")
     if claim.confidence == "high" and not claim.existing_human_signal:
         errors.append("high confidence requires existing_human_signal")
+    effects = receipt_effects or {}
+    anchor_effects = {effects.get(a, "") for a in claim.mechanism_anchor}
+    if _BENEFIT_RE.search(claim.claim) and anchor_effects <= {"", "null", "negative"}:
+        errors.append("benefit framing requires at least one positive/mixed anchor")
     prose = " ".join((claim.claim, claim.conservation_argument, claim.testability))
     if _NUMERIC_RE.search(prose):
         errors.append("D1 inference prose must not introduce new numerics")
@@ -97,12 +102,18 @@ def filter_valid_inferences(
     *,
     receipt_ids: set[str],
     canon_refs: set[str],
+    receipt_effects: Mapping[str, str] | None = None,
     max_n: int,
 ) -> tuple[InferenceClaim, ...]:
     kept: list[InferenceClaim] = []
     for raw in raw_claims:
         claim = claim_from_mapping(raw)
-        if not validate_inference(claim, receipt_ids=receipt_ids, canon_refs=canon_refs):
+        if not validate_inference(
+            claim,
+            receipt_ids=receipt_ids,
+            canon_refs=canon_refs,
+            receipt_effects=receipt_effects,
+        ):
             kept.append(claim)
         if len(kept) >= max_n:
             break
@@ -168,6 +179,16 @@ def _receipt_context(receipts: Sequence[ReceiptSummary]) -> str:
     return "\n".join(rows)
 
 
+def _derive_canon_refs(receipts: Sequence[ReceiptSummary], configured: set[str]) -> set[str]:
+    if configured:
+        return configured
+    derived = {
+        r.receipt_id for r in receipts
+        if r.directness in {"indirect", "mechanistic"} or r.evidence_tier[:1] in {"B", "C"}
+    }
+    return derived or {r.receipt_id for r in receipts}
+
+
 async def request_inference_claims(
     receipts: Sequence[ReceiptSummary],
     *,
@@ -179,22 +200,18 @@ async def request_inference_claims(
     seed: int | None = None,
 ) -> tuple[InferenceClaim, ...]:
     max_n = max(0, int(getattr(spec, "max_inferences_per_paper", 0) or 0))
-    canon = set(getattr(spec, "canon_references", ()) or ())
+    configured_canon = set(getattr(spec, "canon_references", ()) or ())
     receipt_ids = {r.receipt_id for r in receipts}
+    canon = _derive_canon_refs(receipts, configured_canon)
     if not receipts or not chain or max_n <= 0 or not canon:
         return ()
-    schema = {
-        "inferences": [{
-            "claim": "directional bridge claim without new numerics",
-            "mechanism_anchor": ["receipt_id from allowed list"],
-            "conservation_argument": "named bridge logic; no numerics",
-            "canon_refs": ["one configured canon reference"],
-            "existing_human_signal": ["receipt_id or none"],
-            "confidence": "low|medium|high",
-            "testability": "specific future test; no numerics",
-            "tier": "D1_inferential_bridge",
-        }]
-    }
+    schema = (
+        '{"inferences":[{"claim":"directional bridge claim without new numerics",'
+        '"mechanism_anchor":["receipt_id"],"conservation_argument":"named logic",'
+        '"canon_refs":["allowed ref"],"existing_human_signal":["receipt_id or none"],'
+        '"confidence":"low|medium|high","testability":"specific future test",'
+        '"tier":"D1_inferential_bridge"}]}'
+    )
     messages = [
         {"role": "system", "content": (
             "Emit JSON only. Create D1 inferential bridge claims. "
@@ -203,7 +220,7 @@ async def request_inference_claims(
         {"role": "user", "content": (
             f"Topic: {topic}\nAllowed canon refs: {sorted(canon)}\n"
             f"Receipts:\n{_receipt_context(receipts)}\n\n"
-            f"JSON shape:\n{json.dumps(schema)}"
+            f"JSON shape:\n{schema}"
         )},
     ]
     try:
@@ -225,16 +242,6 @@ async def request_inference_claims(
         [x for x in raw if isinstance(x, Mapping)],
         receipt_ids=receipt_ids,
         canon_refs=canon,
+        receipt_effects={r.receipt_id: r.effect_direction for r in receipts},
         max_n=max_n,
     )
-
-
-__all__ = [
-    "InferenceClaim",
-    "build_inferential_bridge_section",
-    "claim_from_mapping",
-    "filter_valid_inferences",
-    "render_inferential_bridge_section",
-    "request_inference_claims",
-    "validate_inference",
-]

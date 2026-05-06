@@ -82,3 +82,22 @@ def test_existing_human_signal_must_resolve_to_receipt() -> None:
         canon_refs={"Canon 2020"},
     )
     assert any("unknown existing_human_signal" in e for e in errors)
+
+
+def test_benefit_framing_requires_positive_or_mixed_anchor() -> None:
+    claim = InferenceClaim(
+        claim="The bridge may improve downstream healthspan interpretation.",
+        mechanism_anchor=("r1",),
+        conservation_argument="Canon supports the bridge.",
+        canon_refs=("Canon 2020",),
+        existing_human_signal=("none identified",),
+        confidence="low",
+        testability="Run prospective validation.",
+    )
+    errors = validate_inference(
+        claim,
+        receipt_ids={"r1"},
+        canon_refs={"Canon 2020"},
+        receipt_effects={"r1": "null"},
+    )
+    assert "benefit framing requires at least one positive/mixed anchor" in errors

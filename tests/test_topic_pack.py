@@ -324,3 +324,8 @@ def test_inference_spec_loads_from_topic_pack() -> None:
     assert "C1_preclinical" in pack.inference.accepted_mechanism_tiers
     assert "Harrison 2009" in pack.inference.canon_references
     assert pack.inference.max_inferences_per_paper == 5
+
+
+def test_inference_defaults_on_for_all_topic_packs() -> None:
+    for path in sorted(METFORMIN_PATH.parent.glob("*.toml")):
+        assert load_topic_pack(path).inference.allow is True, path.name
