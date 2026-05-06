@@ -149,6 +149,81 @@ def _restore_rendered_section_headings(
     return out
 
 
+def _restore_rendered_section_contract(
+    paper_md: str, sections: tuple[SynthesisSection, ...],
+) -> str:
+    out = _restore_rendered_section_headings(paper_md, sections)
+    return _restore_required_section_bodies(out, sections)
+
+
+def _restore_required_section_bodies(
+    paper_md: str, sections: tuple[SynthesisSection, ...],
+) -> str:
+    try:
+        from agent.journal_surface_gate import _REQUIRED_SECTIONS
+    except ImportError:
+        return paper_md
+    ordered = [
+        (s, _section_heading_from_body(s.body_md))
+        for s in sections
+    ]
+    out = paper_md
+    for idx, (section, heading) in enumerate(ordered):
+        if not heading:
+            continue
+        title = heading.removeprefix("## ").strip()
+        floor = _REQUIRED_SECTIONS.get(title)
+        if floor is None:
+            continue
+        source_body = _section_body_text(section.body_md, heading)
+        if _word_count(source_body) < floor:
+            continue
+        rendered = _rendered_section_match(out, heading)
+        if rendered is not None:
+            rendered_body = rendered.group(1)
+            if _word_count(rendered_body) >= floor:
+                continue
+            out = (
+                out[:rendered.start()].rstrip() + "\n\n"
+                + section.body_md.strip() + "\n\n"
+                + out[rendered.end():].lstrip()
+            ).lstrip()
+            continue
+        next_headings = tuple(
+            h for _s, h in ordered[idx + 1:] if h
+        ) + ("## References",)
+        pos = _first_heading_after(out, next_headings, 0)
+        if pos >= 0:
+            out = (
+                out[:pos].rstrip() + "\n\n" + section.body_md.strip()
+                + "\n\n" + out[pos:].lstrip()
+            )
+    return out
+
+
+def _section_heading_from_body(section_md: str) -> str:
+    first = section_md.lstrip().splitlines()[0:1]
+    return first[0].strip() if first and first[0].startswith("## ") else ""
+
+
+def _section_body_text(section_md: str, heading: str) -> str:
+    if section_md.lstrip().startswith(heading):
+        return section_md.lstrip().split("\n", 1)[1] if "\n" in section_md else ""
+    return section_md
+
+
+def _rendered_section_match(markdown: str, heading: str) -> re.Match[str] | None:
+    return re.search(
+        rf"^{re.escape(heading)}\b.*?\n(.*?)(?=^##\s+|\Z)",
+        markdown,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+
+
+def _word_count(text: str) -> int:
+    return len(re.findall(r"\b\w+\b", text))
+
+
 def _heading_pos(markdown: str, heading: str, start: int = 0) -> int:
     match = re.search(
         rf"^{re.escape(heading)}\b", markdown[start:], re.MULTILINE,
@@ -1202,7 +1277,7 @@ async def _run(
             f"Rendered Methods contains blocked phrases: {blocked_in_rendered}"
         )
     full_paper_md = _run_mode.replace_methods_in_paper(full_paper_md, methods_md)
-    full_paper_md = _restore_rendered_section_headings(
+    full_paper_md = _restore_rendered_section_contract(
         full_paper_md, sections,
     )
     (out_dir / "run_mode_contract.json").write_text(
@@ -1412,7 +1487,7 @@ async def _run_post_paper_pipeline(
             results=results,
             manifest=manifest,
         )
-        paper_md = _restore_rendered_section_headings(paper_md, sections)
+        paper_md = _restore_rendered_section_contract(paper_md, sections)
 
         paper_path.write_text(paper_md)
         paper_path.with_suffix(".review_patch_log.json").write_text(json.dumps({
@@ -1523,7 +1598,7 @@ async def _run_post_paper_pipeline(
         paper_md, pre_issues, manifest=manifest,
         quant_claims_dir=QUANT_DIR,
     )
-    paper_md = _restore_rendered_section_headings(paper_md, sections)
+    paper_md = _restore_rendered_section_contract(paper_md, sections)
     if _refix_log or any(i.auto_fixable for i in pre_issues):
         paper_path.write_text(paper_md)
     audit_report = _audit_v06.audit(paper_md)

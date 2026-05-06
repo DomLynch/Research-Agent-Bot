@@ -10,6 +10,10 @@ import run_v06_synthesis as orch  # noqa: E402
 from agent.synthesis_schemas import SynthesisSection  # noqa: E402
 
 
+def _words(n: int) -> str:
+    return " ".join(f"word{i}" for i in range(n))
+
+
 def test_restore_rendered_section_headings_from_typed_sections() -> None:
     paper = (
         "## Limitations\n\n"
@@ -102,3 +106,44 @@ def test_restore_conclusion_heading_after_limitations_citations() -> None:
     out = orch._restore_rendered_section_headings(paper, sections)
     assert "## Conclusion\n\nThe synthesis therefore remains conditional." in out
     assert out.index("## Conclusion") < out.index("## Structured Evidence Tables")
+
+
+def test_restore_required_section_body_when_post_processing_strips_depth() -> None:
+    paper = (
+        "## Results\n\n"
+        f"{_words(500)}\n\n"
+        "## Cross-Domain Synthesis\n\n"
+        "Too short.\n\n"
+        "## Discussion\n\n"
+        f"{_words(800)}\n"
+    )
+    full_cross_domain = (
+        "## Cross-Domain Synthesis\n\n"
+        f"{_words(850)}\n"
+    )
+    sections = (
+        SynthesisSection(
+            name="cross_domain_synthesis",
+            body_md=full_cross_domain,
+            anchors=(),
+        ),
+    )
+    out = orch._restore_rendered_section_contract(paper, sections)
+    assert "Too short." not in out
+    assert orch._word_count(
+        orch._rendered_section_match(
+            out, "## Cross-Domain Synthesis",
+        ).group(1),
+    ) >= 850
+
+
+def test_restore_required_section_body_does_not_pad_short_source() -> None:
+    paper = "## Conclusion\n\nToo short.\n"
+    sections = (
+        SynthesisSection(
+            name="conclusion",
+            body_md="## Conclusion\n\nStill short.\n",
+            anchors=(),
+        ),
+    )
+    assert orch._restore_rendered_section_contract(paper, sections) == paper
