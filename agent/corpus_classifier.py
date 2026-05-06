@@ -115,6 +115,8 @@ def _aliases_match(text: str, aliases: tuple[str, ...]) -> bool:
         variants = [a]
         if len(a) >= 4 and a[-1].isalnum() and not a.endswith("s"):
             variants.append(f"{a}s")
+        if a.endswith(" inhibitor"):
+            variants.append(a.removesuffix(" inhibitor") + " inhibition")
         for variant in variants:
             pattern = rf"(?<![a-z0-9]){re.escape(variant)}(?![a-z0-9])"
             for match in re.finditer(pattern, text):

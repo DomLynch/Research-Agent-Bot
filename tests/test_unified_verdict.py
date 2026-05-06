@@ -36,6 +36,17 @@ def _stage1_report(*, p1_pass: bool, n_pass: int, n_total: int = 10) -> dict:
     }
 
 
+def _stage1_report_with_d1_claims(n_claims: int) -> dict:
+    report = _stage1_report(p1_pass=True, n_pass=14, n_total=14)
+    report["checks"][-1] = {
+        "name": "Q14_inferential_bridge_contract",
+        "passed": True,
+        "p1": True,
+        "detail": f"{n_claims} D1 bridge claims carry required tags",
+    }
+    return report
+
+
 def test_all_green_returns_aaa() -> None:
     """Stage-1 perfect + stage-2 empty → AAA."""
     s1 = _stage1_report(p1_pass=True, n_pass=10)
@@ -216,7 +227,7 @@ def test_cert_floor_topic_pack_can_raise_above_default() -> None:
 def test_tiered_inferential_track_can_clear_without_tension_floor() -> None:
     """Inferential geroscience papers can certify from weighted direct
     + mechanistic evidence without pretending they are clinical-grade."""
-    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    s1 = _stage1_report_with_d1_claims(3)
     receipts = [{
         "receipt_id": "direct-adjacent",
         "evidence_tier": "A2",
@@ -248,7 +259,7 @@ def test_tiered_inferential_track_can_clear_without_tension_floor() -> None:
 
 def test_tiered_mechanistic_track_can_clear_as_mech_not_clin() -> None:
     """Mechanism-heavy fields can certify as AAA-MECH, not AAA-CLIN."""
-    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    s1 = _stage1_report_with_d1_claims(3)
     receipts = [{
         "receipt_id": f"mech-{i}",
         "evidence_tier": "C1",
@@ -273,7 +284,7 @@ def test_tiered_mechanistic_track_can_clear_as_mech_not_clin() -> None:
 
 def test_tiered_floor_does_not_override_p1_blocker() -> None:
     """Evidence weight is a substance floor only; P1 safety still wins."""
-    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)
+    s1 = _stage1_report_with_d1_claims(3)
     receipts = [{
         "receipt_id": f"mech-{i}",
         "evidence_tier": "C1",
@@ -292,6 +303,35 @@ def test_tiered_floor_does_not_override_p1_blocker() -> None:
     )
     assert v.verdict == "SHIP-BLOCKED"
     assert v.certification_track == "AAA-MECH"
+
+
+def test_inferential_track_requires_load_bearing_d1_bridge() -> None:
+    """INF/MECH cannot earn AAA from evidence weight alone; the
+    inferential bridge must be present and machine-checkable."""
+    s1 = _stage1_report(p1_pass=True, n_pass=14, n_total=14)
+    receipts = [{
+        "receipt_id": "direct-adjacent",
+        "evidence_tier": "A2",
+        "directness": "direct",
+    }] + [{
+        "receipt_id": f"mech-{i}",
+        "evidence_tier": "C1",
+        "directness": "mechanistic",
+    } for i in range(25)]
+    manifest = {
+        "n_receipts": len(receipts),
+        "n_high_confidence_claims_total": 100,
+        "n_non_orthogonal_tensions": 0,
+        "receipts": receipts,
+    }
+    v = orch._compute_unified_verdict(
+        s1, [], grok_unresolved_p1=0,
+        n_receipts=len(receipts), n_high_conf_claims=100,
+        n_non_orthogonal_tensions=0, manifest=manifest,
+    )
+    assert v.verdict == "Trust-Spine Pass"
+    assert v.certification_track == "AAA-INF"
+    assert "D1 bridge=0/3" in v.reason
 
 
 def test_receipt_candidates_include_background_mechanism(monkeypatch, tmp_path) -> None:

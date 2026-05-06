@@ -186,6 +186,17 @@ def test_alias_match_accepts_phrase_with_punctuation():
     assert c.classification == "core_on_thesis"
 
 
+def test_inhibitor_alias_accepts_inhibition_variant():
+    """Universal target-class aliases such as '<target> inhibitor'
+    also cover '<target> inhibition' papers."""
+    p = _paper(
+        title="Target inhibition improves immune function in older adults",
+        abstract="A randomized controlled trial in elderly participants.",
+    )
+    c = classify_paper(p, topic_aliases=("target inhibitor",))
+    assert c.classification == "core_on_thesis"
+
+
 def test_alias_match_ignores_device_only_context():
     p = _paper(
         title="Ticagrelor after sirolimus-eluting stent implantation",

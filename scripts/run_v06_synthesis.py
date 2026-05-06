@@ -2190,6 +2190,15 @@ def _select_certification_track(
     return "SCOP", False
 
 
+def _d1_bridge_claim_count(stage1_report: dict[str, Any]) -> int:
+    for check in stage1_report.get("checks") or ():
+        if check.get("name") != "Q14_inferential_bridge_contract":
+            continue
+        match = re.search(r"\b(\d+)\s+D1 bridge claims\b", check.get("detail", ""))
+        return int(match.group(1)) if match else 0
+    return 0
+
+
 @dataclass(frozen=True, slots=True)
 class UnifiedVerdict:
     """Worst-of(stage1, stage2, grok-unresolved). Cross-stage object →
@@ -2348,7 +2357,14 @@ def _compute_unified_verdict(
     if not has_corpus_signals and manifest is None:
         certification_track = "UNSCORED"
         tiered_floor_clean = False
-    cert_floor_clean = flat_floor_clean or tiered_floor_clean
+    bridge_claims = _d1_bridge_claim_count(stage1_report)
+    min_d1 = int(floors.get("min_d1_bridge_claims", 3))
+    bridge_clean = (
+        certification_track not in {"AAA-INF", "AAA-MECH"}
+        or bridge_claims >= min_d1
+    )
+    bridge_req = str(min_d1) if certification_track in {"AAA-INF", "AAA-MECH"} else "n/a"
+    cert_floor_clean = (flat_floor_clean or tiered_floor_clean) and bridge_clean
     # AAA requires positive evidence: at least one check ran AND all
     # passed AND zero stage-2 issues AND zero unresolved Grok P1
     # AND corpus floor met.
@@ -2407,8 +2423,10 @@ def _compute_unified_verdict(
             f"high-conf claims={n_high_conf_claims}/{min_claims}, "
             f"non-orthogonal tensions="
             f"{n_non_orthogonal_tensions}/{min_tens}; weighted "
-            f"evidence={evidence_profile['total']:.1f}. AAA requires "
-            f"both clean audits AND a substantive evidence track."
+            f"evidence={evidence_profile['total']:.1f}; "
+            f"D1 bridge={bridge_claims}/{bridge_req}. "
+            f"AAA requires clean audits, substantive evidence, and "
+            f"a load-bearing bridge for INF/MECH tracks."
         )
     else:
         verdict = "Trust-Spine Pass"
