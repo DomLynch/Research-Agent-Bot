@@ -225,6 +225,28 @@ def test_patch_with_ambiguous_before_text_flagged() -> None:
     assert paper == new_md
 
 
+def test_known_cited_artifact_delete_replaces_all_occurrences() -> None:
+    """Generated `_Cited:` metadata is a known render artifact. If
+    Grok proposes deleting it as formatting, replace every identical
+    occurrence instead of blocking on the usual ambiguous-before rule."""
+    p = {
+        "id": "P-CITED", "patch_type": "formatting", "severity": "P1",
+        "location": "Results",
+        "before": "_Cited: `Moel 2025`_", "after": "",
+        "reason": "remove rendered citation marker",
+    }
+    paper = (
+        "## Results\n\n"
+        "_Cited: `Moel 2025`_\nParagraph one.\n"
+        "_Cited: `Moel 2025`_\nParagraph two.\n"
+    )
+    out, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "replace-all formatting cleanup" in results[0].reason_for_decision
+    assert "_Cited:" not in out
+    assert "Paragraph one" in out and "Paragraph two" in out
+
+
 def test_log_includes_per_patch_decision_with_reason() -> None:
     """Log structure must capture the per-patch decision and reason
     for downstream audit replay (per the converged 'audit replay'

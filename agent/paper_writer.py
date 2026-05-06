@@ -47,6 +47,7 @@ from agent.paper_writer_helpers import (
     build_retry_prompt as _build_retry_prompt,
     call_llm_section as _call_llm_section,
     section_word_count as _section_word_count,
+    strip_rendered_citation_markers as _strip_rendered_citation_markers,
 )
 from agent.synthesis_schemas import (
     ReceiptSummary,
@@ -719,6 +720,7 @@ async def render_full_paper(
 
     ordered = tuple(sections[n] for n in _FULL_PAPER_SECTION_ORDER)
     body_md = title_md + "\n".join(s.body_md for s in ordered).rstrip() + "\n"
+    body_md = _strip_rendered_citation_markers(body_md)
     return body_md, ordered
 
 

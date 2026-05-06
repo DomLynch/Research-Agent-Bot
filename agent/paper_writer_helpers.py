@@ -1,19 +1,9 @@
-"""Small writer-loop helpers extracted from agent/paper_writer.py.
-
-Three utilities used by every per-section render path:
-
-  call_llm_section      one timed JSON LLM call (returns parsed dict
-                        or None on timeout/malformed)
-  section_word_count    body word count (excluding heading line)
-  build_retry_prompt    appends an explicit "you under-produced; floor
-                        is N" guidance block when a retry is needed
-
-Extracted to honor the 600 LOC per-file hard cap in agent/. No new
-behaviour — just a relocation."""
+"""Small writer-loop helpers extracted from agent/paper_writer.py."""
 from __future__ import annotations
 
 import asyncio
 import logging
+import re
 from collections.abc import Sequence
 
 import httpx
@@ -29,6 +19,10 @@ logger = logging.getLogger(__name__)
 # and let the retry loop move on. 240s = MiMo full 180s budget plus
 # ~60s headroom for a Ministral fallback round-trip.
 PER_CALL_TIMEOUT_SEC = 240.0
+
+_RENDERED_CITED_RE = re.compile(
+    r"(?m)^[ \t]*_Cited:\s*`[^`\n]+`(?:\s*,\s*`[^`\n]+`)*_[ \t]*\n?"
+)
 
 
 async def call_llm_section(
@@ -80,6 +74,11 @@ def section_word_count(section: SynthesisSection) -> int:
     return len(body.split())
 
 
+def strip_rendered_citation_markers(markdown: str) -> str:
+    """Remove writer metadata that must not appear in body prose."""
+    return _RENDERED_CITED_RE.sub("", markdown)
+
+
 def build_retry_prompt(
     base_user_prompt: str,
     *,
@@ -110,4 +109,5 @@ __all__ = [
     "build_retry_prompt",
     "call_llm_section",
     "section_word_count",
+    "strip_rendered_citation_markers",
 ]

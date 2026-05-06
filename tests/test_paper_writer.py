@@ -6,6 +6,7 @@ LLM should physically not see what it's not allowed to cite.
 """
 from __future__ import annotations
 
+from agent.paper_writer_helpers import strip_rendered_citation_markers
 from agent.paper_writer import _build_user_prompt
 from agent.synthesis_schemas import (
     EffectDirection,
@@ -118,6 +119,17 @@ def test_build_user_prompt_no_rejected_input_still_works() -> None:
     )
     assert "r-A" in prompt
     assert "QUARANTINED" not in prompt
+
+
+def test_strip_rendered_citation_markers_removes_body_metadata() -> None:
+    md = (
+        "## Results\n\n"
+        "_Cited: `Moel 2025`_\n"
+        "Rapamycin evidence remains bounded.\n"
+    )
+    out = strip_rendered_citation_markers(md)
+    assert "_Cited:" not in out
+    assert "Rapamycin evidence remains bounded." in out
 
 
 def test_build_user_prompt_caller_filter_treats_accept_caveated_as_accepted() -> None:

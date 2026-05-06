@@ -98,6 +98,9 @@ _NUMERIC_RE = re.compile(
     r"\b(\d+\.?\d*\s*(?:%|m/s|kg|mg|months?|years?|weeks?))\b|"
     r"\b[Pp]\s*[<=>]\s*0?\.\d+",
 )
+_CITED_ARTIFACT_RE = re.compile(
+    r"_Cited:\s*`[^`\n]+`(?:\s*,\s*`[^`\n]+`)*_"
+)
 
 
 def _numeric_tokens_in(text: str) -> set[str]:
@@ -110,6 +113,14 @@ def _numeric_tokens_in(text: str) -> set[str]:
         if v not in {"0", "1"}:  # skip trivial
             out.add(v)
     return out
+
+
+def _is_cited_artifact_delete(ptype: str, before: str, after: str) -> bool:
+    return (
+        ptype == "formatting"
+        and not after.strip()
+        and _CITED_ARTIFACT_RE.fullmatch(before.strip()) is not None
+    )
 
 
 def _is_safe_simplification(
@@ -479,6 +490,19 @@ def apply_patches(
             ))
             continue
         if n_occurrences > 1:
+            if _is_cited_artifact_delete(ptype, before, after):
+                new_md = new_md.replace(before, after)
+                results.append(PatchResult(
+                    patch_id=pid, patch_type=ptype, severity=sev,
+                    decision="applied",
+                    reason_for_decision=(
+                        f"known generated citation marker appeared "
+                        f"{n_occurrences}x; replace-all formatting "
+                        f"cleanup. {full_reason}"
+                    ),
+                    before=before, after=after,
+                ))
+                continue
             results.append(PatchResult(
                 patch_id=pid, patch_type=ptype, severity=sev,
                 decision="flagged",

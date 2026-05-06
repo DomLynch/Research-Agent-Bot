@@ -18,7 +18,7 @@ from agent.synthesis_schemas import ReceiptSummary, SynthesisSection
 
 _CONFIDENCE = frozenset({"low", "medium", "high"})
 _NUMERIC_RE = re.compile(r"(?<![A-Za-z])(?:\d+(?:\.\d+)?|\d+\s*%)")
-_BENEFIT_RE = re.compile(r"\b(benefit|improv|enhanc|extend|protect|rejuvenat)\w*", re.I)
+_BENEFIT_RE = re.compile(r"\b(benefit|improv|enhanc|extend|protect|rejuvenat|reduc|increas|lower|attenuat|ameliorat|prevent|decreas|mitigat|slow|delay)\w*", re.I)
 
 
 @dataclass(frozen=True, slots=True)
@@ -89,10 +89,10 @@ def validate_inference(
         errors.append("high confidence requires existing_human_signal")
     effects = receipt_effects or {}
     anchor_effects = {effects.get(a, "") for a in claim.mechanism_anchor}
-    if _BENEFIT_RE.search(claim.claim) and anchor_effects <= {"", "null", "negative"}:
+    bridge_prose = " ".join((claim.claim, claim.conservation_argument, claim.testability))
+    if _BENEFIT_RE.search(bridge_prose) and anchor_effects <= {"", "null", "negative"}:
         errors.append("benefit framing requires at least one positive/mixed anchor")
-    prose = " ".join((claim.claim, claim.conservation_argument, claim.testability))
-    if _NUMERIC_RE.search(prose):
+    if _NUMERIC_RE.search(bridge_prose):
         errors.append("D1 inference prose must not introduce new numerics")
     return tuple(errors)
 
