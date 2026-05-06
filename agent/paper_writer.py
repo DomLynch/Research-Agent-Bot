@@ -484,6 +484,7 @@ _FULL_PAPER_SECTION_ORDER: tuple[SectionName, ...] = (
     "abstract",
     "introduction",
     "background",
+    "inferential_bridge",
     "quantitative_results_table",
     "methods",
     "results",
@@ -529,6 +530,7 @@ async def render_full_paper(
     # 'metformin (biguanide)' for non-metformin runs.
     from agent.paper_writer_prompts import format_prompts_for_topic
     drug_class = "drug"
+    pack = None
     try:
         from pathlib import Path as _Path
         from agent.topic_pack import load_topic_pack
@@ -593,6 +595,14 @@ async def render_full_paper(
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("background", sections["background"])
+    from agent.inferential_bridge import build_inferential_bridge_section
+    _bridge_spec = pack.inference if pack and pack.inference.allow else None
+    sections["inferential_bridge"] = await build_inferential_bridge_section(
+        accepted, topic=topic, chain=chain, spec=_bridge_spec,
+        client=client, ledger=ledger, seed=seed,
+    )
+    if sections["inferential_bridge"].body_md:
+        _log_section_done("inferential_bridge", sections["inferential_bridge"])
     # Universal Q9 structural fix (2026-05-04): deterministic
     # Quantitative Evidence Index built from raw corpus
     # quant_claims.json — per-CLAIM rows, not per-receipt, so the

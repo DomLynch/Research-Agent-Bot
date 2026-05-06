@@ -147,6 +147,16 @@ allow = [
   "intermittent dosing rationale",
 ]
 
+[inference]
+allow = true
+accepted_mechanism_tiers = ["C1_preclinical", "B2_observational"]
+canon_references = [
+  "Harrison 2009",
+  "Lamming 2012",
+  "Mannick 2014",
+]
+max_inferences_per_paper = 5
+
 
 # --- Canonical trials (informational; surface-check feeds qa_report) -------
 

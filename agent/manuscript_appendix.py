@@ -340,7 +340,7 @@ def build_ai_use_disclosure(
     role_constraints = {
         "writer": (
             "Output gated by section-word floors, citation "
-            "registry, and Stage-1 audit (Q1-Q13)"
+            "registry, and Stage-1 audit (Q1-Q14)"
         ),
         "extractor": (
             "Output schema-validated; binding_confidence='high' "
@@ -391,7 +391,7 @@ def build_ai_use_disclosure(
         "a registered receipt or background-literature entry.",
         "2. **Numeric registry** — every numeric must trace to a "
         "corpus quant-claim or background-literature entry.",
-        "3. **Stage-1 audit (Q1-Q13)** — quantitative checks: "
+        "3. **Stage-1 audit (Q1-Q14)** — quantitative checks: "
         "numeric integrity, citation coverage, polarity, depth "
         "floors, hedge density, analytical ratio.",
         "4. **Stage-2 consistency audit (C01-C14)** — surface "
@@ -531,7 +531,7 @@ def build_data_code_availability(
         f"**Bundle path:** {bundle_str}\n"
         "\n"
         "The bundle contains: the manuscript itself, the Stage-1 "
-        "audit (Q1-Q13), the Stage-2 consistency audit (C01-C14), "
+        "audit (Q1-Q14), the Stage-2 consistency audit (C01-C14), "
         f"{bundle_verdict_phrase}, "
         "the full Grok review-patch list (raw), the orchestrator's "
         "decision per patch, the deterministic auto-fix log, the "

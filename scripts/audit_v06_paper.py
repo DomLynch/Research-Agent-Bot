@@ -742,6 +742,50 @@ def _check_analytical_ratio(paper: str) -> tuple[bool, str]:
     )
 
 
+_BRIDGE_RE = re.compile(
+    r"^##\s+Inferential Bridge\b(.*?)(?=^##\s+\w|\Z)",
+    re.DOTALL | re.MULTILINE,
+)
+_D1_RE = re.compile(
+    r"\[D1_[^\]]+\|\s*confidence=(low|medium|high)\]",
+    re.IGNORECASE,
+)
+_INLINE_NUMERIC_RE = re.compile(r"(?<![A-Za-z])(?:\d+(?:\.\d+)?|\d+\s*%)")
+
+
+def _check_inferential_bridge_contract(paper: str) -> tuple[bool, str]:
+    """Q14: optional D1 section is allowed only with traceable tags.
+
+    Absence passes. Presence must be machine-checkable and must not
+    introduce new numerics as inferred facts.
+    """
+    match = _BRIDGE_RE.search(paper)
+    if not match:
+        return True, "no Inferential Bridge section"
+    body = match.group(1).strip()
+    if not body:
+        return True, "empty Inferential Bridge section"
+    blocks = [
+        b.strip()
+        for b in re.split(r"\n(?=\d+\.\s+|\-\s+)", body)
+        if "[D1_" in b
+    ]
+    if not blocks:
+        return False, "Inferential Bridge has no D1-tagged claims"
+    for i, block in enumerate(blocks, 1):
+        if not _D1_RE.search(block):
+            return False, f"D1 claim {i} missing tier/confidence tag"
+        for tag in ("[mechanism_anchor:", "[conservation:", "[testability:"):
+            if tag not in block:
+                return False, f"D1 claim {i} missing {tag}"
+        visible = re.sub(r"\[[^\]]+\]", "", block)
+        visible = re.sub(r"^\s*(?:\d+\.|\-)\s+", "", visible)
+        visible = re.sub(r"Existing human signal:.*?(?:\n|$)", "", visible)
+        if _INLINE_NUMERIC_RE.search(visible):
+            return False, f"D1 claim {i} introduces an untraced numeric"
+    return True, f"{len(blocks)} D1 bridge claims carry required tags"
+
+
 _CHECKS = (
     ("Q1_word_count", _check_word_count, True),  # P1
     ("Q2_numeric_integrity", lambda p: _check_numeric_integrity(p, _CORPUS_NUMS), True),
@@ -758,6 +802,7 @@ _CHECKS = (
     ("Q11_discussion_depth", _check_discussion_depth, False),
     ("Q12_cross_domain_depth", _check_cross_domain_depth, False),
     ("Q13_analytical_ratio", _check_analytical_ratio, False),
+    ("Q14_inferential_bridge_contract", _check_inferential_bridge_contract, True),
 )
 # Module-level state so the lambdas above can read corpus + meta.
 _CORPUS_NUMS: set[str] = set()

@@ -150,7 +150,7 @@ def _compose_readme(run_dir: Path, bundle_dir: Path) -> str:
         "| `paper.md` | The manuscript |",
         "| `certification.md` | Researka A2A-AAA cert + dissent log |",
         "| `final_verdict.md` | Unified pipeline verdict |",
-        "| `audit.md` | Stage-1 quantitative audit (Q1-Q13) |",
+        "| `audit.md` | Stage-1 quantitative audit (Q1-Q14) |",
         "| `consistency.md` | Stage-2 consistency check (C01-C14) |",
         "| `no_regression_report.md` | Diff vs prior baseline |",
         "| `patches.json` | Full Grok review patch list (raw) |",
@@ -169,7 +169,7 @@ def _compose_readme(run_dir: Path, bundle_dir: Path) -> str:
         "## How to verify",
         "",
         "1. Read `certification.md` for the A2A-AAA gate result.",
-        "2. Read `audit.md` for Q1-Q13 quantitative checks "
+        "2. Read `audit.md` for Q1-Q14 quantitative checks "
         "(numeric traceability, citation coverage, depth floors, "
         "etc.).",
         "3. Read `consistency.md` for C01-C14 surface integrity "

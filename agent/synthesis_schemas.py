@@ -261,6 +261,8 @@ SectionName = Literal[
     "abstract",             # ~300 words; ANCHORED — every claim cites receipt
     "introduction",         # ~1500-2500; SCOPED — topic-relevant + hedged
     "background",           # ~1000-2000; SCOPED — broader field synthesis
+    "inferential_bridge",   # DETERMINISTIC-VALIDATED D1 bridge claims; never
+                            # counts as core evidence or certification floor
     "quantitative_results_table",  # DETERMINISTIC — per-study n / effect / CI / p
                             # markdown table built from corpus quant_claims;
                             # universal Q9 numeric-density structural fix.

@@ -316,3 +316,11 @@ def test_retrieval_spec_default_empty():
     assert r.scope_terms == ()
     assert r.date_from is None
     assert r.background_allow == ()
+
+
+def test_inference_spec_loads_from_topic_pack() -> None:
+    pack = load_topic_pack(RAPAMYCIN_PATH)
+    assert pack.inference.allow is True
+    assert "C1_preclinical" in pack.inference.accepted_mechanism_tiers
+    assert "Harrison 2009" in pack.inference.canon_references
+    assert pack.inference.max_inferences_per_paper == 5

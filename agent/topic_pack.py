@@ -24,6 +24,7 @@ __all__ = [
     "OverrideRecord",
     "CanonicalTrial",
     "BackgroundLiteratureEntry",
+    "InferenceSpec",
     "TopicPack",
     "TopicPackError",
     "load_topic_pack",
@@ -119,6 +120,20 @@ class BackgroundLiteratureEntry:
 
 
 @dataclass(frozen=True, slots=True)
+class InferenceSpec:
+    """Optional D1 inferential-bridge config.
+
+    This is data, not evidence. It authorizes bridge generation and
+    names the canon references allowed to support conservation logic.
+    """
+
+    allow: bool = False
+    accepted_mechanism_tiers: tuple[str, ...] = ()
+    canon_references: tuple[str, ...] = ()
+    max_inferences_per_paper: int = 5
+
+
+@dataclass(frozen=True, slots=True)
 class TopicPack:
     """Frozen topic pack. All collections are tuples / frozensets / mappingproxies.
 
@@ -169,6 +184,8 @@ class TopicPack:
     # has no [retrieval] block — caller falls back to the legacy
     # corpus_search_queries list.
     retrieval: "RetrievalSpec | None" = None
+    # Optional D1 bridge config. D1 never counts as receipt evidence.
+    inference: InferenceSpec = InferenceSpec()
 
     # --- Lookups (intentionally explicit, not __contains__-style) ----------
 
@@ -384,6 +401,19 @@ def load_topic_pack(path: str | Path) -> TopicPack:
             species=tuple(raw_retrieval.get("species", ())),
             background_allow=tuple(bg_block.get("allow", ())),
         )
+    raw_inference = data.get("inference")
+    inference = InferenceSpec()
+    if isinstance(raw_inference, dict):
+        inference = InferenceSpec(
+            allow=bool(raw_inference.get("allow", False)),
+            accepted_mechanism_tiers=tuple(
+                raw_inference.get("accepted_mechanism_tiers", ())
+            ),
+            canon_references=tuple(raw_inference.get("canon_references", ())),
+            max_inferences_per_paper=int(
+                raw_inference.get("max_inferences_per_paper", 5)
+            ),
+        )
 
     return TopicPack(
         topic=data["topic"],
@@ -408,4 +438,5 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         background_literature=background_literature,
         endpoint_polarity=endpoint_polarity,
         retrieval=retrieval,
+        inference=inference,
     )

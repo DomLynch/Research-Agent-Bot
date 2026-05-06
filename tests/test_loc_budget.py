@@ -150,12 +150,20 @@ blocking visible manuscript residue: endpoint/unit mismatches,
 empty QEI rows, malformed study IDs, and fallback placeholder prose.
 This is the publication-surface certification layer requested after
 reviewers found traceable but non-publishable table rows (2026-05-06).
+
+Wave 9 — Inferential Bridge Layer (16,400 → 16,650):
+agent/inferential_bridge.py (~208 cloc) plus Q14 audit wiring and
+topic-pack [inference] schema. Adds optional D1 bridge claims:
+frontier models may propose cross-domain or translational inferences,
+but code validates anchors, canon references, confidence, testability,
+and no-new-numeric discipline before rendering. D1 never counts as
+receipt evidence or raises certification floors (2026-05-06).
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 16400
+TOTAL_LIMIT = 16650
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
