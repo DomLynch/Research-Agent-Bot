@@ -11,6 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 from numeric_role_guard import (  # noqa: E402
     auto_strip_offending_sentences,
+    repair_source_context_drift_sentences,
     scan_paper,
     _check_arithmetic_violations,
     _check_role_mismatch,
@@ -583,6 +584,35 @@ def test_role_drift_passes_when_prose_role_matches_source(tmp_path):
     )
     drift = [i for i in issues if i.issue_type == "source_context_drift"]
     assert drift == [], "Correct prose role should NOT trigger drift"
+
+
+def test_role_drift_repair_rewrites_to_source_role(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_witham.quant_claims.json").write_text(
+        '{"paper_id":"PMC_witham","claims":[{'
+        '"claim_type":"unit_value","numeric_values":[0.13],'
+        '"binding_confidence":"high","claim_role":"change_score"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_witham",
+        "citation_token": "Witham 2025",
+    }]}
+    paper = (
+        "Baseline gait speed in this cohort was 0.13 m/s "
+        "(Witham 2025), suggesting severely impaired mobility."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    fixed, n = repair_source_context_drift_sentences(
+        paper, issues, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    assert n == 1
+    assert "change of 0.13 m/s" in fixed
+    assert not scan_paper(
+        fixed, manifest=manifest, quant_claims_dir=qc_dir,
+    )
 
 
 def test_role_drift_passes_when_prose_uses_source_dose(tmp_path):

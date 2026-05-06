@@ -527,11 +527,15 @@ def apply_fixes(
     # source-context drift (Slice 7 step 1, 2026-05-05). Universal
     # class-level fix subsuming Fixes #54/#57/#58/#58c.
     try:
-        from numeric_role_guard import (
-            scan_paper as _scan, auto_strip_offending_sentences as _strip,
+        import numeric_role_guard as _nrg
+        _scan = _nrg.scan_paper
+        _strip = _nrg.auto_strip_offending_sentences
+        _repair = getattr(
+            _nrg, "repair_source_context_drift_sentences", None,
         )
     except ImportError:
         _scan = None
+        _repair = None
     if _scan is not None:
         # Slice 7 P2: feed BOTH bg_lit registry AND manifest +
         # quant_claims_dir so the auto-strip path covers VALUE drift
@@ -584,6 +588,34 @@ def apply_fixes(
             bg_lit_registry=bg_lit_registry,
             quant_claims_dir=qcd,
         )
+        if nrg_issues and _repair is not None:
+            new_md, n_repaired = _repair(
+                new_md,
+                nrg_issues,
+                manifest=manifest_obj if isinstance(
+                    manifest_obj, dict,
+                ) else None,
+                bg_lit_registry=bg_lit_registry,
+                quant_claims_dir=qcd,
+            )
+            if n_repaired:
+                log.append({
+                    "fix_type": "numeric_role_guard_repair",
+                    "n_changes": n_repaired,
+                    "description": (
+                        "rewrote source-context ROLE-drift sentences "
+                        "to match the cited source role; every rewrite "
+                        "passed a fresh Numeric Role Guard scan"
+                    ),
+                })
+                nrg_issues = _scan(
+                    new_md,
+                    manifest=manifest_obj if isinstance(
+                        manifest_obj, dict,
+                    ) else None,
+                    bg_lit_registry=bg_lit_registry,
+                    quant_claims_dir=qcd,
+                )
         if nrg_issues:
             new_md, n_stripped = _strip(new_md, nrg_issues)
             if n_stripped < sum(1 for i in nrg_issues if i.severity == "P1"):

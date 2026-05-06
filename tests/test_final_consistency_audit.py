@@ -619,6 +619,38 @@ def test_apply_fixes_fuzzy_strips_numeric_role_drift_snippet(monkeypatch) -> Non
     assert [e for e in log if e["fix_type"] == "numeric_role_guard_strip"]
 
 
+def test_apply_fixes_repairs_role_drift_before_strip(tmp_path) -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_witham.quant_claims.json").write_text(
+        '{"paper_id":"PMC_witham","claims":[{'
+        '"claim_type":"unit_value","numeric_values":[0.13],'
+        '"binding_confidence":"high","claim_role":"change_score"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_witham",
+        "citation_token": "Witham 2025",
+    }]}
+    paper = (
+        "## Results\n\n"
+        "Baseline gait speed in this cohort was 0.13 m/s "
+        "(Witham 2025), suggesting severely impaired mobility.\n"
+    )
+    fixed, log = fixer.apply_fixes(
+        paper, [], manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    assert "Baseline gait speed" not in fixed
+    assert "change of 0.13 m/s" in fixed
+    assert "Witham 2025" in fixed
+    assert [e for e in log if e["fix_type"] == "numeric_role_guard_repair"]
+    assert not [e for e in log if e["fix_type"] == "numeric_role_guard_strip"]
+
+
 # Reviewer-fix LOW: fix_audit_verdict idempotency
 def test_fix_audit_verdict_is_idempotent() -> None:
     """Running fix_audit_verdict twice on the already-renamed text

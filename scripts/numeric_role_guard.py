@@ -872,8 +872,102 @@ def auto_strip_offending_sentences(
     return out, n
 
 
+def repair_source_context_drift_sentences(
+    paper_md: str,
+    issues: Iterable[NumericIssue],
+    *,
+    manifest: dict | None = None,
+    bg_lit_registry: dict | None = None,
+    quant_claims_dir=None,
+) -> tuple[str, int]:
+    """Repair ROLE-drift sentences before deletion.
+
+    The rewrite is intentionally conservative: it preserves only the
+    cited token and offending numeric, restates the source role, and
+    is accepted only if a fresh Numeric Role Guard scan passes.
+    """
+    out = paper_md
+    n = 0
+    for issue in issues:
+        if (
+            issue.severity != "P1"
+            or issue.issue_type != "source_context_drift"
+            or "ROLE drift" not in issue.detail
+            or issue.sentence not in out
+        ):
+            continue
+        repaired = _role_aligned_repair_sentence(issue)
+        if not repaired:
+            continue
+        new_issues = scan_paper(
+            repaired,
+            manifest=manifest,
+            bg_lit_registry=bg_lit_registry,
+            quant_claims_dir=quant_claims_dir,
+        )
+        if any(i.severity == "P1" for i in new_issues):
+            continue
+        out = out.replace(issue.sentence, repaired, 1)
+        n += 1
+    out = re.sub(r"\n{3,}", "\n\n", out)
+    return out, n
+
+
+def _role_aligned_repair_sentence(issue: NumericIssue) -> str:
+    m = re.search(
+        r"prose uses '([^']+)' as '([^']+)'.*?source "
+        r"\(([^)]*)\) tags it as \[([^\]]+)\]",
+        issue.detail,
+    )
+    if not m:
+        return ""
+    num, _prose_role, detail_token, roles_raw = m.groups()
+    roles = re.findall(r"'([^']+)'", roles_raw)
+    source_role = _preferred_repair_role(set(roles))
+    token = detail_token if detail_token and detail_token != "None" else ""
+    if not token:
+        cm = _CITATION_TOKEN_RE.search(issue.sentence)
+        token = f"{cm.group(1)} {cm.group(2)}" if cm else ""
+    if not token or not source_role:
+        return ""
+    display_num = _display_numeric_with_unit(issue.sentence, num)
+    role_phrase = {
+        "change_score": f"a change of {display_num}",
+        "threshold": f"a threshold of {display_num}",
+        "dose": f"a dose of {display_num}",
+        "baseline": f"a baseline value of {display_num}",
+        "population": f"a population descriptor of {display_num}",
+        "effect": f"an effect value of {display_num}",
+        "outcome": f"an outcome value of {display_num}",
+        "unit_value": f"an outcome value of {display_num}",
+    }.get(source_role, f"an outcome value of {display_num}")
+    return (
+        f"{token} reported {role_phrase}; this manuscript treats "
+        "the value according to that source role."
+    )
+
+
+def _preferred_repair_role(roles: set[str]) -> str:
+    for role in (
+        "change_score", "threshold", "dose", "baseline",
+        "population", "effect", "outcome", "unit_value",
+    ):
+        if role in roles:
+            return role
+    return next(iter(roles), "")
+
+
+def _display_numeric_with_unit(sentence: str, num: str) -> str:
+    m = re.search(
+        rf"(?<!\d){re.escape(num)}(?:\s*(?:%|[A-Za-zµ/]+))?",
+        sentence,
+    )
+    return m.group(0).strip() if m else num
+
+
 __all__ = [
     "NumericIssue",
     "scan_paper",
+    "repair_source_context_drift_sentences",
     "auto_strip_offending_sentences",
 ]
