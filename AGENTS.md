@@ -8,9 +8,9 @@ Research Agent Bot — Proof 001 build window. The bot compiles deterministic ev
 | State | What's there | Verify |
 |---|---|---|
 | **GitHub `main`** | Deploy-safe stub (`agent.app dashboard` returns HTTP 503 "service paused"). | `python -m agent.app dashboard --port 8791` → `curl :8791/` returns 503 |
-| **VPS live** (`research-agent.domlynch.com`) | **Still V1.1** — deploy step pending since the Day 0 push. | `curl -s -o /dev/null -w "%{http_code}\n" https://research-agent.domlynch.com/` returns `200` |
+| **Brain VPS live** | Active deployment at `/opt/research-agent-bot`, service `research-agent-bot.service`, dashboard on `127.0.0.1:8791`. | `ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 'cd /opt/research-agent-bot && git rev-parse --short HEAD && systemctl is-active research-agent-bot.service && curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8791/'` |
 
-The stub is on `main` ready to pull whenever VPS parity is wanted. Until then, do not assume the live endpoint reflects the Proof 001 architecture. See PROJECT_STATE.md "Runtime status" for current commit hash and deploy command.
+Brain VPS access: hostname `Brain`, public IP `49.12.7.18`, Tailscale IP `100.96.74.1`, SSH command `ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18` or `ssh -i ~/.ssh/binance_futures_tool root@100.96.74.1`. Do not use the old domain SSH path for deploys.
 
 Read [`docs/DESIGN-001.md`](docs/DESIGN-001.md) (DRAFT v2) for the full architecture before any code change. Read [`FAILURES/research-agent-v1.md`](FAILURES/research-agent-v1.md) before re-architecting any LLM-touching component.
 
