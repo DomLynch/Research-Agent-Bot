@@ -486,6 +486,8 @@ async def render_full_paper(
     ledger: CostLedger | None = None,
     seed: int | None = None,
     background_lit_entries: Sequence[Any] | None = None,
+    qei_citation_tokens_by_paper_id: Mapping[str, str] | None = None,
+    qei_quarantine_path: Any | None = None,
 ) -> tuple[str, tuple[SynthesisSection, ...]]:
     """Render the full paper from accepted-receipt corpus + brief.
 
@@ -608,6 +610,8 @@ async def render_full_paper(
     _table_md, _qei_diag = build_results_table_with_diagnostic(
         _quant_dir, topic=topic,
         accepted_paper_ids=_accepted_paper_ids,
+        citation_tokens_by_paper_id=qei_citation_tokens_by_paper_id,
+        quarantine_path=qei_quarantine_path,
     )
     # Slice 1 closeout (2026-05-05): empty QEI gets a *diagnostic*
     # placeholder so reviewers see whether the corpus had zero

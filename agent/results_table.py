@@ -1,48 +1,10 @@
-"""Deterministic Quantitative Evidence Index — universal Q9 structural fix.
-
-Reviewer's Shot 2 spec (2026-05-04):
-  Table 0: Quantitative Evidence Index. Rows from every topic's
-  quant_claims.json:
-    - Study (Author Year / paper_id)
-    - Endpoint (claim's endpoint binding or claim_role)
-    - Arm / comparator
-    - Numeric value
-    - Unit / type
-    - p-value or CI if present
-    - Citation token
-
-  Rules:
-    - Only high-confidence traced claims.
-    - Max 40 rows.
-    - No LLM.
-    - Insert before Methods.
-    - Same for all topics — no per-topic code paths.
-
-Why per-CLAIM, not per-RECEIPT
-------------------------------
-The earlier per-receipt approach (one row per SPAR-accepted receipt)
-was bottlenecked by SPAR strictness: statins had 35 papers in the
-corpus but SPAR accepted only 2 receipts. The table fell through to
-its empty placeholder, contributing zero numeric density.
-
-A per-claim table reads the raw quant_claims.json files directly
-(skipping SPAR), filters to high-confidence + topic-relevant claims,
-and ranks them by quality (RCT/cohort > mechanistic, with p/CI > raw,
-unique endpoints > duplicates). 40 rows × 3-5 numerics ≈ 120-200
-corpus-traced numerics in ~250 words, structurally lifting Q9
-without prompt fragility or sparse-corpus failure modes.
-
-Universal-by-construction: zero per-topic code paths. The only
-inputs are the quant_claims directory + the topic name (used solely
-in the section title and a citation lookup). Every topic gets the
-same row-selection logic.
-"""
+"""Deterministic Quantitative Evidence Index rendering."""
 from __future__ import annotations
 
 import json
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Iterable, Mapping
 
 # Hard cap per the reviewer's spec: don't build a 1000-row table even
 # if the corpus has that many high-confidence claims. 40 rows × ~3
@@ -103,17 +65,14 @@ _CATEGORY_QUOTAS = {
 def build_results_table(
     quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
     accepted_paper_ids: frozenset[str] | None = None,
+    citation_tokens_by_paper_id: Mapping[str, str] | None = None,
+    quarantine_path: Path | None = None,
 ) -> str:
-    """Back-compat thin wrapper around `build_results_table_with_diagnostic`.
-
-    Returns just the markdown body (empty string when no rows). All
-    selection logic, cross-topic guards, receipt-scope filtering, and
-    counter accounting live in the with-diagnostic variant — see that
-    function's docstring for the full contract.
-    """
     md, _diag = build_results_table_with_diagnostic(
         quant_dir, topic=topic, max_rows=max_rows,
         accepted_paper_ids=accepted_paper_ids,
+        citation_tokens_by_paper_id=citation_tokens_by_paper_id,
+        quarantine_path=quarantine_path,
     )
     return md
 
@@ -121,33 +80,10 @@ def build_results_table(
 def build_results_table_with_diagnostic(
     quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
     accepted_paper_ids: frozenset[str] | None = None,
+    citation_tokens_by_paper_id: Mapping[str, str] | None = None,
+    quarantine_path: Path | None = None,
 ) -> tuple[str, dict[str, int]]:
-    """Same selection contract as build_results_table, but returns
-    `(md, diagnostic)` so callers know WHY the table is empty (or
-    sparse). Slice-1 reviewer fix (2026-05-05): an empty QEI must be
-    diagnostic — operators need to see whether the corpus had zero
-    quant claims, all claims were below admissibility, or all were
-    cross-topic / non-receipt / non-meaningful — so the corpus
-    expansion to-do can target the right gap.
-
-    Returned diagnostic keys:
-      - n_quant_files: parseable *.quant_claims.json files seen
-      - n_total_claims: claims across all files (pre-filter)
-      - n_admissible: passed _confidence_admissible
-      - n_topic_matched: also passed _arm_belongs_to_topic
-      - n_meaningful: also passed _row_is_meaningful (via _claim_to_row)
-      - n_after_quotas: rows that survived per-category / per-study
-        quotas + duplicate-value dedupe
-      - n_rendered: final row count in the markdown table
-      - drop_off_topic_arm: dropped by cross-topic arm filter
-      - drop_non_receipt_paper: skipped because paper_id not in
-        accepted_paper_ids (only counted when the filter is active)
-      - drop_surface_gate: dropped because the final row is not
-        manuscript-surface safe (e.g. endpoint/unit mismatch)
-
-    Cross-topic guard (wave 4), receipt-scope guard (wave 6), and the
-    meaningful-row guard (wave 9) all participate; see comments below.
-    """
+    """Return QEI markdown plus drop counters."""
     diag: dict[str, int] = {
         "n_quant_files": 0,
         "n_total_claims": 0,
@@ -159,9 +95,12 @@ def build_results_table_with_diagnostic(
         "drop_off_topic_arm": 0,
         "drop_non_receipt_paper": 0,
         "drop_surface_gate": 0,
+        "drop_missing_canonical_citation": 0,
     }
     rows: list[EvidenceRow] = []
+    quarantined: list[dict[str, str]] = []
     if not quant_dir.exists():
+        _write_qei_quarantine(quarantine_path, quarantined)
         return "", diag
     topic_arm_terms = _load_topic_arm_terms(topic)
     candidates: list[tuple[int, str, EvidenceRow, str]] = []
@@ -186,12 +125,26 @@ def build_results_table_with_diagnostic(
                 diag["drop_off_topic_arm"] += 1
                 continue
             diag["n_topic_matched"] += 1
-            row = _claim_to_row(claim, paper_id=paper_id)
+            token = _canonical_qei_token(
+                paper_id, citation_tokens_by_paper_id,
+            )
+            if citation_tokens_by_paper_id is not None and not token:
+                diag["drop_missing_canonical_citation"] += 1
+                quarantined.append(_qei_quarantine_entry(
+                    paper_id, claim, "missing_canonical_citation",
+                ))
+                continue
+            row = _claim_to_row(
+                claim, paper_id=paper_id, citation_token=token,
+            )
             if row is None:
                 continue
             diag["n_meaningful"] += 1
             if not _publishable_surface_row(row):
                 diag["drop_surface_gate"] += 1
+                quarantined.append(_qei_quarantine_entry(
+                    paper_id, claim, "journal_surface_gate",
+                ))
                 continue
             score = _quality_score(claim)
             ct = claim.get("claim_type", "")
@@ -221,6 +174,7 @@ def build_results_table_with_diagnostic(
         if len(rows) >= max_rows:
             break
     diag["n_after_quotas"] = len(rows)
+    _write_qei_quarantine(quarantine_path, quarantined)
     if not rows:
         return "", diag
     diag["n_rendered"] = len(rows)
@@ -244,6 +198,7 @@ def format_empty_qei_placeholder(
     drop_arm = diagnostic.get("drop_off_topic_arm", 0)
     drop_nr = diagnostic.get("drop_non_receipt_paper", 0)
     drop_surface = diagnostic.get("drop_surface_gate", 0)
+    drop_cite = diagnostic.get("drop_missing_canonical_citation", 0)
     return (
         f"## Quantitative Evidence Index — {topic}\n\n"
         f"_No qualifying rows. Corpus diagnostic — quant_claims files "
@@ -252,7 +207,8 @@ def format_empty_qei_placeholder(
         f"topic-arm matched: **{n_topic}**; semantically meaningful: "
         f"**{n_meaning}**. Dropped by guards: cross-topic arm = "
         f"{drop_arm}, non-receipt papers = {drop_nr}, journal surface "
-        f"= {drop_surface}. See Corpus "
+        f"= {drop_surface}, missing canonical citation = {drop_cite}. "
+        f"See Corpus "
         f"Expansion To-Do in the final verdict for the actionable "
         f"gap._\n"
     )
@@ -284,7 +240,7 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
 
 
 def _claim_to_row(
-    claim: dict[str, Any], *, paper_id: str,
+    claim: dict[str, Any], *, paper_id: str, citation_token: str | None = None,
 ) -> EvidenceRow | None:
     """Transform one high-confidence claim into a table row.
     Returns None for claims without a usable numeric value or whose
@@ -316,8 +272,7 @@ def _claim_to_row(
     statistic = _format_statistic(claim, primary_value)
     # Endpoint column: bound endpoint > claim_role > short claim_type.
     ep = endpoint or role or claim_type.replace("_", " ") or "—"
-    # Citation token: derive Author Year from paper_id (extract year).
-    citation = _short_citation(paper_id)
+    citation = citation_token or _short_citation(paper_id)
     return EvidenceRow(
         study_label=citation,
         endpoint=_truncate(ep, 30),
@@ -327,6 +282,37 @@ def _claim_to_row(
         statistic=_truncate(statistic, 22),
         citation=citation,
     )
+
+
+def _canonical_qei_token(
+    paper_id: str, tokens_by_paper_id: Mapping[str, str] | None,
+) -> str | None:
+    if tokens_by_paper_id is None:
+        return None
+    token = (tokens_by_paper_id.get(paper_id) or "").strip()
+    return token or None
+
+
+def _qei_quarantine_entry(
+    paper_id: str, claim: dict[str, Any], reason: str,
+) -> dict[str, str]:
+    return {
+        "reason": reason,
+        "paper_id": paper_id,
+        "endpoint": str(claim.get("endpoint") or ""),
+        "arm": str(claim.get("arm") or ""),
+        "claim_type": str(claim.get("claim_type") or ""),
+        "raw_text": str(claim.get("raw_text") or ""),
+    }
+
+
+def _write_qei_quarantine(
+    path: Path | None, rows: list[dict[str, str]],
+) -> None:
+    if path is None:
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(rows, indent=2))
 
 
 def _publishable_surface_row(row: EvidenceRow) -> bool:

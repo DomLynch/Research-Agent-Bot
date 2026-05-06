@@ -364,6 +364,49 @@ def test_surface_gate_drops_unpublishable_qei_rows(tmp_path):
     assert diag["drop_surface_gate"] == 1
 
 
+def test_qei_uses_canonical_citation_token(tmp_path):
+    claims_dir = tmp_path / "qc"
+    claims_dir.mkdir()
+    paper_id = "PMC1_palmer_2021ucos_glp1_trial"
+    (claims_dir / "PMC1.quant_claims.json").write_text(json.dumps({
+        "paper_id": paper_id,
+        "claims": [{"claim_type": "p_value", "raw_text": "p=0.04",
+                    "numeric_values": [0.04],
+                    "binding_confidence": "high",
+                    "endpoint": "body weight", "arm": "pooled"}],
+    }))
+    md, diag = build_results_table_with_diagnostic(
+        claims_dir, topic="glp1",
+        citation_tokens_by_paper_id={paper_id: "Palmer 2021"},
+    )
+    assert diag["n_rendered"] == 1
+    assert "Palmer 2021" in md
+    assert "2021ucos" not in md
+
+
+def test_qei_quarantines_rows_without_canonical_token(tmp_path):
+    claims_dir = tmp_path / "qc"
+    claims_dir.mkdir()
+    paper_id = "PMC1_cameron_2016amma_metformin"
+    (claims_dir / "PMC1.quant_claims.json").write_text(json.dumps({
+        "paper_id": paper_id,
+        "claims": [{"claim_type": "p_value", "raw_text": "p=0.04",
+                    "numeric_values": [0.04],
+                    "binding_confidence": "high",
+                    "endpoint": "inflammation", "arm": "metformin"}],
+    }))
+    quarantine = tmp_path / "qei_quarantined.json"
+    md, diag = build_results_table_with_diagnostic(
+        claims_dir, topic="metformin",
+        citation_tokens_by_paper_id={}, quarantine_path=quarantine,
+    )
+    rows = json.loads(quarantine.read_text())
+    assert md == ""
+    assert diag["drop_missing_canonical_citation"] == 1
+    assert rows[0]["paper_id"] == paper_id
+    assert rows[0]["reason"] == "missing_canonical_citation"
+
+
 def test_diagnostic_empty_dir_returns_zeroed_counts(tmp_path):
     """Missing dir → all counters zero, no crash, empty md."""
     md, diag = build_results_table_with_diagnostic(

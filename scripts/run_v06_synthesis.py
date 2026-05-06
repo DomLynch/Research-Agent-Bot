@@ -1091,6 +1091,11 @@ async def _run(
         rid: dataclasses.asdict(entry)
         for rid, entry in citation_registry.items()
     }, indent=2))
+    qei_citation_tokens = {
+        rid: entry.body_citation
+        for rid, entry in citation_registry.items()
+        if entry.body_citation
+    }
 
     print(
         "\nCalling render_full_paper "
@@ -1110,6 +1115,8 @@ async def _run(
             topic=topic, submission_id=submission_id,
             chain=chain, client=client, ledger=ledger,
             background_lit_entries=bglit_entries,
+            qei_citation_tokens_by_paper_id=qei_citation_tokens,
+            qei_quarantine_path=out_dir / "qei_quarantined.json",
         )
     print(
         "render_full_paper done.",
