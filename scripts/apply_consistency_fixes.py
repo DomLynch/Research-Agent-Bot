@@ -943,6 +943,10 @@ def apply_fixes(
     # short, numeric-free analytical paragraph rather than lowering
     # Q11/Q12 or trusting another LLM pass.
     if manifest is not None:
+        new_md, cross_dup_log = _strip_conclusion_paragraphs_repeated_earlier(
+            new_md,
+        )
+        log.extend(cross_dup_log)
         new_md, depth_log = _ensure_analytical_depth_floors(new_md)
         log.extend(depth_log)
         new_md, hedge_log = _ensure_discussion_hedge_density(new_md)
@@ -986,6 +990,53 @@ def _append_numeric_quarantine(path: Path | None, issues) -> None:
         rows.append(row)
         seen.add(key)
     path.write_text(json.dumps(rows, indent=2))
+
+
+def _strip_conclusion_paragraphs_repeated_earlier(
+    paper_md: str,
+) -> tuple[str, list[dict]]:
+    s, e, conclusion = _extract_section(paper_md, "Conclusion")
+    if s < 0:
+        return paper_md, []
+    earlier = paper_md[:s]
+    earlier_norms = {
+        re.sub(r"\s+", " ", p.strip())
+        for p in re.split(r"\n\s*\n", earlier)
+        if len(re.sub(r"\s+", " ", p.strip()).split()) >= 12
+        and not p.lstrip().startswith(("#", "|", "`", "-"))
+    }
+    if not earlier_norms:
+        return paper_md, []
+    parts = re.split(r"(\n\s*\n)", conclusion)
+    out: list[str] = []
+    n = 0
+    for i in range(0, len(parts), 2):
+        para = parts[i]
+        sep = parts[i + 1] if i + 1 < len(parts) else ""
+        norm = re.sub(r"\s+", " ", para.strip())
+        repeated = (
+            len(norm.split()) >= 12
+            and not para.lstrip().startswith(("#", "|", "`", "-"))
+            and norm in earlier_norms
+        )
+        if repeated:
+            n += 1
+            continue
+        out.append(para)
+        if sep:
+            out.append(sep)
+    if not n:
+        return paper_md, []
+    updated = re.sub(r"\n{3,}", "\n\n", "".join(out)).rstrip() + "\n\n"
+    fixed = paper_md[:s] + updated + paper_md[e:]
+    return fixed, [{
+        "fix_type": "conclusion_cross_section_duplicate",
+        "n_changes": n,
+        "description": (
+            "removed conclusion paragraphs that duplicated earlier "
+            "public-prose paragraphs before final depth backfill"
+        ),
+    }]
 
 
 def _strip_numeric_role_evidence_spans(paper_md: str, issues) -> tuple[str, int]:

@@ -964,6 +964,40 @@ def test_apply_fixes_backfills_public_bookend_sections() -> None:
     ]
 
 
+def test_apply_fixes_removes_conclusion_paragraph_repeated_earlier() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    duplicate = (
+        "The synthesis therefore uses a tiered reading of the evidence. "
+        "Direct clinical evidence carries the highest interpretive "
+        "weight; indirect clinical receipts help define adjacent human "
+        "signals; mechanistic receipts explain plausibility and "
+        "candidate pathways."
+    )
+    paper = (
+        "## Introduction\n\n"
+        + duplicate
+        + "\n\n"
+        + "Intro safe sentence. " * 80
+        + "\n\n## Conclusion\n\n"
+        + "Conclusion-specific safe sentence. " * 40
+        + "\n\n"
+        + duplicate
+    )
+    fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
+    conclusion = fixed.split("## Conclusion", 1)[1]
+    assert duplicate not in conclusion
+    assert duplicate in fixed.split("## Conclusion", 1)[0]
+    assert fixer._section_word_count(fixed, "Conclusion") >= 250
+    assert [
+        e for e in log
+        if e["fix_type"] == "conclusion_cross_section_duplicate"
+    ]
+
+
 def test_apply_fixes_repairs_role_drift_before_strip(tmp_path) -> None:
     import sys as _sys
     from pathlib import Path as _Path
