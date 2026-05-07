@@ -430,7 +430,8 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         ],
         "Conclusion": [
             (
-                f"In conclusion, {topic} has enough accepted evidence to support "
+                f"In conclusion, the evidence base for {topic} has enough "
+                "accepted evidence to support "
                 "a structured, receipt-bound synthesis, but the evidence should "
                 "be read through its tiered profile rather than through a single "
                 "headline claim."

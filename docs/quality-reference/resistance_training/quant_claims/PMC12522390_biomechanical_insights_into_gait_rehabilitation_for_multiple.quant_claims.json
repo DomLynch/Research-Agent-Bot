@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12522390_biomechanical_insights_into_gait_rehabilitation_for_multiple",
   "doi": "10.1186/s13102-025-01339-4",
-  "extracted_at": "2026-05-05T21:59:21+00:00",
+  "extracted_at": "2026-05-07T16:57:28+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 20,
@@ -42,9 +42,9 @@
       "context_window": "f they met the following criteria: 1- Adult participants (\u2265 18 years) diagnosed with multiple sclerosis. 2- Implementation of st",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12522390_biomechanical_insights_into_gait_rehabilitation_for_multiple-u-5431",
@@ -95,7 +95,7 @@
       "sentence": "In the more-affected limb, participants showed more balanced limb timing, increased stride length ( p = 0.017), and improved neuromuscular coordination, contributing to greater gait efficiency, reduced risk of falls, and enhanced functional mobility( [ 13 ].",
       "context_window": "showed more balanced limb timing, increased stride length ( p = 0.017), and improved neuromuscular coordination, contributing to",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -240,7 +240,7 @@
       "context_window": "ST) group showed a significant increase in walking speed by 0.12 m/s, whereas the contralateral strength training (CST) group de",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -276,7 +276,7 @@
       "context_window": "15 ]. Also, the study by Br\u00e6ndvik et al. (2016) found that 8 weeks strength training was less effective than treadmill trainin",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -294,7 +294,7 @@
       "context_window": "s less effective than treadmill training in improving FAP ( p = 0.844) in pwMS. Within-group analyses showed significant or nearl",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -348,7 +348,7 @@
       "context_window": "aca et al. (2022) reported improvements in both gait speed (16.9%) and walking endurance (25.5%) after 10 weeks of high-inten",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -366,7 +366,7 @@
       "context_window": "rovements in both gait speed (16.9%) and walking endurance (25.5%) after 10 weeks of high-intensity concentric resistance tra",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -384,7 +384,7 @@
       "context_window": "both gait speed (16.9%) and walking endurance (25.5%) after 10 weeks of high-intensity concentric resistance training, emphasizi",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -762,7 +762,7 @@
       "context_window": "hat in the exercise group, MSWS-12 improved significantly ( p \u2264 0.01), with large effect sizes [ 21 ]. In the study by Escudero",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1086,9 +1086,9 @@
       "context_window": "showed significant improvements in walking endurance (6MWT: p = 0.002), walking velocity ( p = 0.004), and step length ( p < 0.00",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12522390_biomechanical_insights_into_gait_rehabilitation_for_multiple-p-9516",
@@ -1104,9 +1104,9 @@
       "context_window": "in walking endurance (6MWT: p = 0.002), walking velocity ( p = 0.004), and step length ( p < 0.001) after the interventions. The",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12522390_biomechanical_insights_into_gait_rehabilitation_for_multiple-p-9546",
@@ -1122,9 +1122,9 @@
       "context_window": "= 0.002), walking velocity ( p = 0.004), and step length ( p < 0.001) after the interventions. The average percent changes were",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12522390_biomechanical_insights_into_gait_rehabilitation_for_multiple-pct-9615",
@@ -1231,7 +1231,7 @@
       "context_window": "n Key Outcomes Effect Conroy (2018)[ 19 ] RCT 9:18 PDDS 2-6 52.7 \u00b1 13.2 RR, SP, PP Tele-managed home exercise (6 months, 3x/week, 3",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1249,7 +1249,7 @@
       "context_window": "PDDS 2-6 52.7 \u00b1 13.2 RR, SP, PP Tele-managed home exercise (6 months, 3x/week, 30 min) Routine home exercise (6 months, 3x/week,",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1267,7 +1267,7 @@
       "context_window": "exercise (6 months, 3x/week, 30 min) Routine home exercise (6 months, 3x/week, 30 min) None \u2191 6MWT, MSWS-12 Positive Nilsag\u00e5rd (",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1286,7 +1286,7 @@
       "context_window": "S-12 Positive Nilsag\u00e5rd (2013)[ 21 ] RCT 32:10 Not reported 50.0 \u00b1 11.5 RR, SP, PP Wii Fit Plus \u00ae video game (6-7 weeks, 12 session",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1304,7 +1304,7 @@
       "context_window": "eported 50.0 \u00b1 11.5 RR, SP, PP Wii Fit Plus \u00ae video game (6-7 weeks, 12 sessions, 30 min) None No exercise None \u2191 MSWS-12, DGI,",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1323,7 +1323,7 @@
       "context_window": "W Positive Tramontano (2023)[ 27 ] RCT 0:39 EDSS 0-6.5 CTg: 51.6 \u00b1 9.4, DTg: 50.4 \u00b1 10.3 RR, SP Conventional neuromotor rehab (4 w",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1342,7 +1342,7 @@
       "context_window": "tano (2023)[ 27 ] RCT 0:39 EDSS 0-6.5 CTg: 51.6 \u00b1 9.4, DTg: 50.4 \u00b1 10.3 RR, SP Conventional neuromotor rehab (4 weeks, 3x/week, 50",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1360,7 +1360,7 @@
       "context_window": "9.4, DTg: 50.4 \u00b1 10.3 RR, SP Conventional neuromotor rehab (4 weeks, 3x/week, 50 min) Dual-task motor-cognitive therapy (4 week",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1378,7 +1378,7 @@
       "context_window": "weeks, 3x/week, 50 min) Dual-task motor-cognitive therapy (4 weeks, 3x/week, 50 min) IMUs \u2191 WS, AD step, Freq stride, AD strid",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1397,7 +1397,7 @@
       "context_window": "stride Positive Sepehrifar (2023)[ 2 ] RCT 0:47 EDSS 2-6.5 36.87 \u00b1 6.31 36.55 \u00b1 3.74 RR Mobility, strength, flexibility training (8",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1416,7 +1416,7 @@
       "context_window": "ive Sepehrifar (2023)[ 2 ] RCT 0:47 EDSS 2-6.5 36.87 \u00b1 6.31 36.55 \u00b1 3.74 RR Mobility, strength, flexibility training (8 weeks, 3x/we",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1434,7 +1434,7 @@
       "context_window": "1 36.55 \u00b1 3.74 RR Mobility, strength, flexibility training (8 weeks, 3x/week, 45 min) None Attentional control None \u2191T25FW (Mor",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1453,7 +1453,7 @@
       "context_window": "y) Positive Gutierrez (2005)[ 13 ] Non-RCT 7:1 EDSS 2.5-5.5 46.0 \u00b1 11.5 RR Resistance training (8 weeks, 2x/week, 60 min) None Forc",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1471,7 +1471,7 @@
       "context_window": "on-RCT 7:1 EDSS 2.5-5.5 46.0 \u00b1 11.5 RR Resistance training (8 weeks, 2x/week, 60 min) None Force platform \u2193Knee ROM, \u2191stride ti",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1490,7 +1490,7 @@
       "context_window": "elocity Positive Galperin (2023)[ 24 ] RCT 7:3 EDSS 2-6 TT: 49.1 \u00b1 9.7, TT + VR: 49.0 \u00b1 10.0 RR Treadmill training (6 weeks, 3x/we",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1509,7 +1509,7 @@
       "context_window": "erin (2023)[ 24 ] RCT 7:3 EDSS 2-6 TT: 49.1 \u00b1 9.7, TT + VR: 49.0 \u00b1 10.0 RR Treadmill training (6 weeks, 3x/week, 30-45 min) Treadmi",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1527,7 +1527,7 @@
       "context_window": "TT: 49.1 \u00b1 9.7, TT + VR: 49.0 \u00b1 10.0 RR Treadmill training (6 weeks, 3x/week, 30-45 min) Treadmill + virtual reality (6 weeks,",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1545,7 +1545,7 @@
       "context_window": "(6 weeks, 3x/week, 30-45 min) Treadmill + virtual reality (6 weeks, 3x/week, 30-45 min) wearing sensors accelerometer dual-tas",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1564,7 +1564,7 @@
       "context_window": "itive Alashram (2024)[ 8 ] RCT 9:15 EDSS \u2264 5.5 Telko + CPT: 37.8 \u00b1 10.8, CPT: 35.2 \u00b1 9.3 PP, SP, PR CPT + gait training (4 weeks, 3",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1583,7 +1583,7 @@
       "context_window": "24)[ 8 ] RCT 9:15 EDSS \u2264 5.5 Telko + CPT: 37.8 \u00b1 10.8, CPT: 35.2 \u00b1 9.3 PP, SP, PR CPT + gait training (4 weeks, 3x/week, 20 min) C",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1601,7 +1601,7 @@
       "context_window": "7.8 \u00b1 10.8, CPT: 35.2 \u00b1 9.3 PP, SP, PR CPT + gait training (4 weeks, 3x/week, 20 min) CPT + Telko device (4 weeks, 3x/week, 35",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1619,7 +1619,7 @@
       "context_window": "ait training (4 weeks, 3x/week, 20 min) CPT + Telko device (4 weeks, 3x/week, 35 min) None \u21916MWT, WS Positive Filipi (2010)[ 14",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1638,7 +1638,7 @@
       "context_window": "T, WS Positive Filipi (2010)[ 14 ] Non-RCT 11:22 EDSS 1-6.5 38.8 \u00b1 10.7 RR, SP, PP Resistance exercise, EDSS 1-4 (6 months, 2x/week",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1656,7 +1656,7 @@
       "context_window": "1-6.5 38.8 \u00b1 10.7 RR, SP, PP Resistance exercise, EDSS 1-4 (6 months, 2x/week, 50 min) Resistance exercise, EDSS 4.5-6.5 (6 mont",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1674,7 +1674,7 @@
       "context_window": "months, 2x/week, 50 min) Resistance exercise, EDSS 4.5-6.5 (6 months, 2x/week, 50 min) 3D gait-analysis, force platform \u2191Joint k",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1693,7 +1693,7 @@
       "context_window": "angles Positive Br\u00e6ndvik (2016)[ 16 ] RCT 4:7 EDSS 1-6 TG: 46.6 \u00b1 6.2, SG: 49.1 \u00b1 7.4 RR, PP, SP Treadmill group (8 weeks, 3x/wee",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1712,7 +1712,7 @@
       "context_window": "Br\u00e6ndvik (2016)[ 16 ] RCT 4:7 EDSS 1-6 TG: 46.6 \u00b1 6.2, SG: 49.1 \u00b1 7.4 RR, PP, SP Treadmill group (8 weeks, 3x/week, 30 min) Stren",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1730,7 +1730,7 @@
       "context_window": "TG: 46.6 \u00b1 6.2, SG: 49.1 \u00b1 7.4 RR, PP, SP Treadmill group (8 weeks, 3x/week, 30 min) Strength group (8 weeks, 3x/week, 30 min)",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1748,7 +1748,7 @@
       "context_window": "Treadmill group (8 weeks, 3x/week, 30 min) Strength group (8 weeks, 3x/week, 30 min) GAITRite, Accelerometer \u2191FAP, WWE, APaccR",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1767,7 +1767,7 @@
       "context_window": "MS\u2193 in TT), Positive Motl (2012)[ 17 ] Non-RCT 5:8 EDSS 4-6 51.5 \u00b1 11.3 RR, SP, PP Aerobic + resistance + balance (8 weeks, 3x/week",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1785,7 +1785,7 @@
       "context_window": "4-6 51.5 \u00b1 11.3 RR, SP, PP Aerobic + resistance + balance (8 weeks, 3x/week, 60 min) None GAITRite, \u2191MSWS-12, T25FW, FAP, gait",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1804,7 +1804,7 @@
       "context_window": "ero (2017)[ 22 ] Non-RCT WBV: 6:10, BT: 5:9 EDSS 0-4.5 WBV: 43.1 \u00b1 10.2, BT: 40.3 \u00b1 8.9 RR Whole-body vibration + aerobic/circuit (",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1823,7 +1823,7 @@
       "context_window": "Non-RCT WBV: 6:10, BT: 5:9 EDSS 0-4.5 WBV: 43.1 \u00b1 10.2, BT: 40.3 \u00b1 8.9 RR Whole-body vibration + aerobic/circuit (12 weeks, 2x/wee",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1841,7 +1841,7 @@
       "context_window": ", BT: 40.3 \u00b1 8.9 RR Whole-body vibration + aerobic/circuit (12 weeks, 2x/week, 60 min) Balance trainer + aerobic/circuit (12 wee",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1859,7 +1859,7 @@
       "context_window": "weeks, 2x/week, 60 min) Balance trainer + aerobic/circuit (12 weeks, 2x/week, 60 min) No exercise GAITRite, \u2191FAP, velocity, ste",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1878,7 +1878,7 @@
       "context_window": "support Positive Heine (2019)[ 18 ] Non-RCT 4:6 EDSS 2.5-4 48.8 \u00b1 8.9 PP, SP, RR PRT + treadmill (16 weeks, 3x/week, 30-60 min) N",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1896,7 +1896,7 @@
       "context_window": "n-RCT 4:6 EDSS 2.5-4 48.8 \u00b1 8.9 PP, SP, RR PRT + treadmill (16 weeks, 3x/week, 30-60 min) None No exercise None \u2191Total distance,",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1915,7 +1915,7 @@
       "context_window": "alron (2019)[ 20 ] RCT PT: 8:14, Pilates: 8:15 EDSS 3-6 PT: 44.3 \u00b1 6.6, Pilates: 42.9 \u00b1 7.2 RR Pilates + home exercise (12 weeks,",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1934,7 +1934,7 @@
       "context_window": "T PT: 8:14, Pilates: 8:15 EDSS 3-6 PT: 44.3 \u00b1 6.6, Pilates: 42.9 \u00b1 7.2 RR Pilates + home exercise (12 weeks, 1x/week + daily 15 mi",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1952,7 +1952,7 @@
       "context_window": "44.3 \u00b1 6.6, Pilates: 42.9 \u00b1 7.2 RR Pilates + home exercise (12 weeks, 1x/week + daily 15 min) Physiotherapy + home exercise (12",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1970,7 +1970,7 @@
       "context_window": "eks, 1x/week + daily 15 min) Physiotherapy + home exercise (12 weeks, 1x/week + daily 15 min) Instrumented treadmill \u2191 6MWT, vel",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1989,7 +1989,7 @@
       "context_window": "th Positive Guti\u00e9rrez-Cruz (2020)[ 1 ] RCT 8:9 EDSS 0-6 EX: 40.7 \u00b1 8.2, CG: 47.2 \u00b1 9.8 RR Combined training (24 weeks, 3x/week, 60",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2008,7 +2008,7 @@
       "context_window": "\u00e9rrez-Cruz (2020)[ 1 ] RCT 8:9 EDSS 0-6 EX: 40.7 \u00b1 8.2, CG: 47.2 \u00b1 9.8 RR Combined training (24 weeks, 3x/week, 60 min) None Norma",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2026,7 +2026,7 @@
       "context_window": "SS 0-6 EX: 40.7 \u00b1 8.2, CG: 47.2 \u00b1 9.8 RR Combined training (24 weeks, 3x/week, 60 min) None Normal activity Instrumented walk wa",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2044,7 +2044,7 @@
       "context_window": "1 EDSS 2-6 > 18 RR, PP, SP Progressive resistance training (10 weeks, 2x/week, 60 min) Balance/motor control training (10 weeks,",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2062,7 +2062,7 @@
       "context_window": "(10 weeks, 2x/week, 60 min) Balance/motor control training (10 weeks, 2x/week, 60 min) Usual care None 1.BMCT vs. CG: - T25FW, S",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2379,7 +2379,7 @@
       "context_window": "were standardized for clarity (e.g., \u201c3x/week\u201d instead of \u201c3 days per week\u201d) \u2022Outcomes were grouped to reflect functional (e.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2398,7 +2398,7 @@
       "context_window": "entions and key outcomes in people with multiple sclerosis 36.87 \u00b1 6.31 36.55 \u00b1 3.74 \u2191T25FW (More in moderate disability) weari",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2417,7 +2417,7 @@
       "context_window": "y outcomes in people with multiple sclerosis 36.87 \u00b1 6.31 36.55 \u00b1 3.74 \u2191T25FW (More in moderate disability) wearing sensors ac",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2436,7 +2436,7 @@
       "context_window": "mporal = Positive Kinematic = ineffective 10:2 9:4 CST 42.8 \u00b1 15.3 DST 49.2 \u00b1 9.1 DST: \u2191 velocity, stride length, stride",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2455,7 +2455,7 @@
       "context_window": "Kinematic = ineffective 10:2 9:4 CST 42.8 \u00b1 15.3 DST 49.2 \u00b1 9.1 DST: \u2191 velocity, stride length, stride time, cadence,",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2474,7 +2474,7 @@
       "context_window": "generated power, ankle moment, and ROM 7:8 12:5 MAC 52.6 \u00b1 9 TEC 54.0 \u00b1 9 RR SR \u2191 velocity, step width, step length,",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2493,7 +2493,7 @@
       "context_window": "ower, ankle moment, and ROM 7:8 12:5 MAC 52.6 \u00b1 9 TEC 54.0 \u00b1 9 RR SR \u2191 velocity, step width, step length, Cadence (be",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2529,7 +2529,7 @@
       "context_window": "which produced substantial improvements in both gait speed (16.9%) and walking endurance (25.5%) in patients with mild to mod",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2547,7 +2547,7 @@
       "context_window": "rovements in both gait speed (16.9%) and walking endurance (25.5%) in patients with mild to moderate disability. These findin",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },

@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1345_aph_1r509_intermittent_nondaily_dosing_strategies_in_patients_with_pre",
+  "doi": "10.1345/aph.1r509",
+  "extracted_at": "2026-05-07T19:24:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1345_aph_1r509_intermittent_nondaily_dosing_strategies_in_patients_with_pre-pct-1200",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1200,
+      "sentence": "DATA SYNTHESIS: Although statins have achieved significant reductions in cardiovascular morbidity and mortality, as many as 10% of patients prescribed these therapies experience myopathies.",
+      "context_window": "tions in cardiovascular morbidity and mortality, as many as 10% of patients prescribed these therapies experience myopathie",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1345_aph_1r509_intermittent_nondaily_dosing_strategies_in_patients_with_pre-pct-1577",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1577,
+      "sentence": "The results reported in 10 publications investigating varying regimens with atorvastatin and/or rosuvastatin revealed that at least 70% of patients were able to tolerate an intermittent dosing strategy without a recurrence of previous treatment-limiting adverse effects.",
+      "context_window": "ith atorvastatin and/or rosuvastatin revealed that at least 70% of patients were able to tolerate an intermittent dosing st",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1345_aph_1r509_intermittent_nondaily_dosing_strategies_in_patients_with_pre-pct-1821",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1821,
+      "sentence": "Although the degree of low-density lipoprotein cholesterol-lowering varied appreciably among studies (12-38%), the addition of a nondaily statin regimen facilitated attainment of National Cholesterol Education Program goals for some.",
+      "context_window": "n cholesterol-lowering varied appreciably among studies (12-38%), the addition of a nondaily statin regimen facilitated att",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_",
   "doi": "10.1038/s41598-021-84015-0",
-  "extracted_at": "2026-05-05T22:20:09+00:00",
+  "extracted_at": "2026-05-07T16:57:50+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 27,
@@ -44,7 +44,7 @@
       "context_window": "alence of diabetes in China reached 10.9%. Among them, only 32.2% of the patients received diabetes treatment, and the contro",
       "claim_role": "dose",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -62,7 +62,7 @@
       "context_window": "s treatment, and the control rate of blood glucose was only 49.2% 1 . Since hyperglycemia can cause nephropathy, neuropathy,",
       "claim_role": "dose",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -80,7 +80,7 @@
       "context_window": "lood glucose 4 . Previous study had shown that there was a 49% risk reduction in cardiovascular events in subjects with im",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -97,10 +97,10 @@
       "sentence": "In a meta-analysis, acabose users in Type 2 diabetes (T2DM) were associated with a 35% reduction in cardiovascular events 6 .",
       "context_window": "bose users in Type 2 diabetes (T2DM) were associated with a 35% reduction in cardiovascular events 6 . The mechanisms might",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-u-1376",
@@ -116,7 +116,7 @@
       "context_window": "ensive control of blood glucose in newly diagnosed T2DM for 20 years. After prolonged tracking until 30 years, the results showe",
       "claim_role": "background",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -134,7 +134,7 @@
       "context_window": "diagnosed T2DM for 20 years. After prolonged tracking until 30 years, the results showed that intensive control of blood glucose",
       "claim_role": "background",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -188,7 +188,7 @@
       "context_window": "e for T2DM. The joint target control was defined as HbA1c < 7.0%, systolic blood pressure (SBP) < 130 mmHg, diastolic blood",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -206,7 +206,7 @@
       "context_window": "as defined as HbA1c < 7.0%, systolic blood pressure (SBP) < 130 mmHg, diastolic blood pressure (DBP) < 80 mmHg, and low-density",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -224,7 +224,7 @@
       "context_window": "pressure (SBP) < 130 mmHg, diastolic blood pressure (DBP) < 80 mmHg, and low-density lipoprotein cholesterol (LDL-C) < 2.6 mmol",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -242,7 +242,7 @@
       "context_window": "80 mmHg, and low-density lipoprotein cholesterol (LDL-C) < 2.6 mmol/L (with coronary heart disease < 1.8 mmol/L). Approaches t",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -260,7 +260,7 @@
       "context_window": "esterol (LDL-C) < 2.6 mmol/L (with coronary heart disease < 1.8 mmol/L). Approaches to prevention of diabetic complications in",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -350,9 +350,9 @@
       "context_window": "e hazards ratios (HRs) of cardiovascular risk factors, with 95% confidence interval (CI) for the effects of acarbose on CVD",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-206",
@@ -368,9 +368,9 @@
       "context_window": "oups based on whether receive acarbose therapy (1461 cases, 81.3%) or not (336 cases, 19.7%). Among them, 1461 cases were tre",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-232",
@@ -386,9 +386,9 @@
       "context_window": "ive acarbose therapy (1461 cases, 81.3%) or not (336 cases, 19.7%). Among them, 1461 cases were treated with acarbose, either",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-n-637",
@@ -404,7 +404,7 @@
       "context_window": "rbose therapy free Acarbose therapy Statistical quantity P (n = 1797) (n = 336) (n = 1461) Age (years) 64.36 \u00b1 9.71 64.15 \u00b1 10.4",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -422,7 +422,7 @@
       "context_window": "py free Acarbose therapy Statistical quantity P (n = 1797) (n = 336) (n = 1461) Age (years) 64.36 \u00b1 9.71 64.15 \u00b1 10.48 64.41 \u00b1",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -440,7 +440,7 @@
       "context_window": "arbose therapy Statistical quantity P (n = 1797) (n = 336) (n = 1461) Age (years) 64.36 \u00b1 9.71 64.15 \u00b1 10.48 64.41 \u00b1 9.52 - 0.42",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -459,7 +459,7 @@
       "context_window": "ical quantity P (n = 1797) (n = 336) (n = 1461) Age (years) 64.36 \u00b1 9.71 64.15 \u00b1 10.48 64.41 \u00b1 9.52 - 0.42 (t) 0.674 Gender Male, n",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -478,7 +478,7 @@
       "context_window": "P (n = 1797) (n = 336) (n = 1461) Age (years) 64.36 \u00b1 9.71 64.15 \u00b1 10.48 64.41 \u00b1 9.52 - 0.42 (t) 0.674 Gender Male, n (%) 684 (38.06",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -497,7 +497,7 @@
       "context_window": "(n = 336) (n = 1461) Age (years) 64.36 \u00b1 9.71 64.15 \u00b1 10.48 64.41 \u00b1 9.52 - 0.42 (t) 0.674 Gender Male, n (%) 684 (38.06) 140 (41.67)",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -516,7 +516,7 @@
       "context_window": "61.94) 196 (58.33) 917 (62.77) Duration of diabetes (years) 7.01 \u00b1 6.69 5.0 (1.0, 11.3) 5.3 (1.5, 10.8) 0.72 (Z) 0.470 Educational",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -535,7 +535,7 @@
       "context_window": "51) 4000\u00a5~, n (%) 98 (5.82) 25 (8.14) 73 (5.30) Height (cm) 162.34 \u00b1 7.61 162.84 \u00b1 7.83 162.22 \u00b1 7.55 1.35 (t) 0.178 Weight (kg) 66.6",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -554,7 +554,7 @@
       "context_window": "(%) 98 (5.82) 25 (8.14) 73 (5.30) Height (cm) 162.34 \u00b1 7.61 162.84 \u00b1 7.83 162.22 \u00b1 7.55 1.35 (t) 0.178 Weight (kg) 66.62 \u00b1 10.94 67.4",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -573,7 +573,7 @@
       "context_window": "25 (8.14) 73 (5.30) Height (cm) 162.34 \u00b1 7.61 162.84 \u00b1 7.83 162.22 \u00b1 7.55 1.35 (t) 0.178 Weight (kg) 66.62 \u00b1 10.94 67.49 \u00b1 10.47 66.4",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -592,7 +592,7 @@
       "context_window": "7.61 162.84 \u00b1 7.83 162.22 \u00b1 7.55 1.35 (t) 0.178 Weight (kg) 66.62 \u00b1 10.94 67.49 \u00b1 10.47 66.43 \u00b1 11.04 1.61 (t) 0.109 Body mass index",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -611,7 +611,7 @@
       "context_window": "7.83 162.22 \u00b1 7.55 1.35 (t) 0.178 Weight (kg) 66.62 \u00b1 10.94 67.49 \u00b1 10.47 66.43 \u00b1 11.04 1.61 (t) 0.109 Body mass index (kg/m 2 ) 25.2",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -630,7 +630,7 @@
       "context_window": "7.55 1.35 (t) 0.178 Weight (kg) 66.62 \u00b1 10.94 67.49 \u00b1 10.47 66.43 \u00b1 11.04 1.61 (t) 0.109 Body mass index (kg/m 2 ) 25.23 \u00b1 3.43 25.41",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -649,7 +649,7 @@
       "context_window": "0.47 66.43 \u00b1 11.04 1.61 (t) 0.109 Body mass index (kg/m 2 ) 25.23 \u00b1 3.43 25.41 \u00b1 3.25 25.19 \u00b1 3.47 1.08 (t) 0.280 Waist circumferenc",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -668,7 +668,7 @@
       "context_window": "11.04 1.61 (t) 0.109 Body mass index (kg/m 2 ) 25.23 \u00b1 3.43 25.41 \u00b1 3.25 25.19 \u00b1 3.47 1.08 (t) 0.280 Waist circumference (cm) 88.19",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -687,7 +687,7 @@
       "context_window": ") 0.109 Body mass index (kg/m 2 ) 25.23 \u00b1 3.43 25.41 \u00b1 3.25 25.19 \u00b1 3.47 1.08 (t) 0.280 Waist circumference (cm) 88.19 \u00b1 9.13 88.89",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -706,7 +706,7 @@
       "context_window": "\u00b1 3.25 25.19 \u00b1 3.47 1.08 (t) 0.280 Waist circumference (cm) 88.19 \u00b1 9.13 88.89 \u00b1 8.69 88.02 \u00b1 9.22 1.57 (t) 0.117 Hip circumference",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -725,7 +725,7 @@
       "context_window": "\u00b1 3.47 1.08 (t) 0.280 Waist circumference (cm) 88.19 \u00b1 9.13 88.89 \u00b1 8.69 88.02 \u00b1 9.22 1.57 (t) 0.117 Hip circumference (cm) 99.21 \u00b1",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -744,7 +744,7 @@
       "context_window": "t) 0.280 Waist circumference (cm) 88.19 \u00b1 9.13 88.89 \u00b1 8.69 88.02 \u00b1 9.22 1.57 (t) 0.117 Hip circumference (cm) 99.21 \u00b1 8.93 99.60 \u00b1",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -763,7 +763,7 @@
       "context_window": "9 \u00b1 8.69 88.02 \u00b1 9.22 1.57 (t) 0.117 Hip circumference (cm) 99.21 \u00b1 8.93 99.60 \u00b1 8.84 99.12 \u00b1 8.96 0.88 (t) 0.377 Waist-hip ratio 0.",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -782,7 +782,7 @@
       "context_window": "2 \u00b1 9.22 1.57 (t) 0.117 Hip circumference (cm) 99.21 \u00b1 8.93 99.60 \u00b1 8.84 99.12 \u00b1 8.96 0.88 (t) 0.377 Waist-hip ratio 0.89 \u00b1 0.06 0.8",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -801,7 +801,7 @@
       "context_window": "(t) 0.117 Hip circumference (cm) 99.21 \u00b1 8.93 99.60 \u00b1 8.84 99.12 \u00b1 8.96 0.88 (t) 0.377 Waist-hip ratio 0.89 \u00b1 0.06 0.89 \u00b1 0.06 0.89",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -820,7 +820,7 @@
       "context_window": "93 99.60 \u00b1 8.84 99.12 \u00b1 8.96 0.88 (t) 0.377 Waist-hip ratio 0.89 \u00b1 0.06 0.89 \u00b1 0.06 0.89 \u00b1 0.06 1.28 (t) 0.202 Neck circumference (",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -839,7 +839,7 @@
       "context_window": ".84 99.12 \u00b1 8.96 0.88 (t) 0.377 Waist-hip ratio 0.89 \u00b1 0.06 0.89 \u00b1 0.06 0.89 \u00b1 0.06 1.28 (t) 0.202 Neck circumference (cm) 36.19 \u00b1",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -858,7 +858,7 @@
       "context_window": "8.96 0.88 (t) 0.377 Waist-hip ratio 0.89 \u00b1 0.06 0.89 \u00b1 0.06 0.89 \u00b1 0.06 1.28 (t) 0.202 Neck circumference (cm) 36.19 \u00b1 3.83 36.60 \u00b1",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -877,7 +877,7 @@
       "context_window": "9 \u00b1 0.06 0.89 \u00b1 0.06 1.28 (t) 0.202 Neck circumference (cm) 36.19 \u00b1 3.83 36.60 \u00b1 3.90 36.10 \u00b1 3.81 2.18 (t) 0.029 Systolic blood pre",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -896,7 +896,7 @@
       "context_window": "\u00b1 0.06 1.28 (t) 0.202 Neck circumference (cm) 36.19 \u00b1 3.83 36.60 \u00b1 3.90 36.10 \u00b1 3.81 2.18 (t) 0.029 Systolic blood pressure (mmHg)",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -915,7 +915,7 @@
       "context_window": "(t) 0.202 Neck circumference (cm) 36.19 \u00b1 3.83 36.60 \u00b1 3.90 36.10 \u00b1 3.81 2.18 (t) 0.029 Systolic blood pressure (mmHg) 129.36 \u00b1 13.2",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -934,7 +934,7 @@
       "context_window": "36.10 \u00b1 3.81 2.18 (t) 0.029 Systolic blood pressure (mmHg) 129.36 \u00b1 13.26 129.40 \u00b1 12.94 129.35 \u00b1 13.33 0.06 (t) 0.950 Diastolic bloo",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -953,7 +953,7 @@
       "context_window": ".18 (t) 0.029 Systolic blood pressure (mmHg) 129.36 \u00b1 13.26 129.40 \u00b1 12.94 129.35 \u00b1 13.33 0.06 (t) 0.950 Diastolic blood pressure (mmH",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -972,7 +972,7 @@
       "context_window": "ystolic blood pressure (mmHg) 129.36 \u00b1 13.26 129.40 \u00b1 12.94 129.35 \u00b1 13.33 0.06 (t) 0.950 Diastolic blood pressure (mmHg) 77.29 \u00b1 8.26",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -991,7 +991,7 @@
       "context_window": "9.35 \u00b1 13.33 0.06 (t) 0.950 Diastolic blood pressure (mmHg) 77.29 \u00b1 8.26 77.81 \u00b1 7.81 77.18 \u00b1 8.36 1.27 (t) 0.203 Smoker No, n (%) 1",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1010,7 +1010,7 @@
       "context_window": "0.06 (t) 0.950 Diastolic blood pressure (mmHg) 77.29 \u00b1 8.26 77.81 \u00b1 7.81 77.18 \u00b1 8.36 1.27 (t) 0.203 Smoker No, n (%) 1558 (86.85) 2",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1029,7 +1029,7 @@
       "context_window": "0 Diastolic blood pressure (mmHg) 77.29 \u00b1 8.26 77.81 \u00b1 7.81 77.18 \u00b1 8.36 1.27 (t) 0.203 Smoker No, n (%) 1558 (86.85) 290 (86.31) 12",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1048,7 +1048,7 @@
       "context_window": "Yes, n (%) 236 (13.15) 46 (13.69) 190 (13.03) FPG (mmol/L) 7.24 \u00b1 3.12 7.05 \u00b1 3.37 7.29 \u00b1 3.06 - 1.16 (t) 0.249 Hpg (mmol/L) 10.73",
       "claim_role": "duration",
       "endpoint": "fasting glucose",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1067,7 +1067,7 @@
       "context_window": "236 (13.15) 46 (13.69) 190 (13.03) FPG (mmol/L) 7.24 \u00b1 3.12 7.05 \u00b1 3.37 7.29 \u00b1 3.06 - 1.16 (t) 0.249 Hpg (mmol/L) 10.73 \u00b1 4.24 10.7",
       "claim_role": "duration",
       "endpoint": "fasting glucose",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1086,7 +1086,7 @@
       "context_window": "46 (13.69) 190 (13.03) FPG (mmol/L) 7.24 \u00b1 3.12 7.05 \u00b1 3.37 7.29 \u00b1 3.06 - 1.16 (t) 0.249 Hpg (mmol/L) 10.73 \u00b1 4.24 10.77 \u00b1 4.33 10.",
       "claim_role": "duration",
       "endpoint": "fasting glucose",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1105,7 +1105,7 @@
       "context_window": "3.12 7.05 \u00b1 3.37 7.29 \u00b1 3.06 - 1.16 (t) 0.249 Hpg (mmol/L) 10.73 \u00b1 4.24 10.77 \u00b1 4.33 10.72 \u00b1 4.22 0.19 (t) 0.852 HbA1c (%) 7.34 \u00b1 1",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1124,7 +1124,7 @@
       "context_window": "3.37 7.29 \u00b1 3.06 - 1.16 (t) 0.249 Hpg (mmol/L) 10.73 \u00b1 4.24 10.77 \u00b1 4.33 10.72 \u00b1 4.22 0.19 (t) 0.852 HbA1c (%) 7.34 \u00b1 1.47 7.27 \u00b1 1.",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1143,7 +1143,7 @@
       "context_window": ".06 - 1.16 (t) 0.249 Hpg (mmol/L) 10.73 \u00b1 4.24 10.77 \u00b1 4.33 10.72 \u00b1 4.22 0.19 (t) 0.852 HbA1c (%) 7.34 \u00b1 1.47 7.27 \u00b1 1.44 7.35 \u00b1 1.4",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1162,7 +1162,7 @@
       "context_window": "3 \u00b1 4.24 10.77 \u00b1 4.33 10.72 \u00b1 4.22 0.19 (t) 0.852 HbA1c (%) 7.34 \u00b1 1.47 7.27 \u00b1 1.44 7.35 \u00b1 1.48 - 0.91 (t) 0.365 Triglycerides (mmo",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1181,7 +1181,7 @@
       "context_window": "77 \u00b1 4.33 10.72 \u00b1 4.22 0.19 (t) 0.852 HbA1c (%) 7.34 \u00b1 1.47 7.27 \u00b1 1.44 7.35 \u00b1 1.48 - 0.91 (t) 0.365 Triglycerides (mmol/L) 1.68 \u00b1",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1200,7 +1200,7 @@
       "context_window": ".72 \u00b1 4.22 0.19 (t) 0.852 HbA1c (%) 7.34 \u00b1 1.47 7.27 \u00b1 1.44 7.35 \u00b1 1.48 - 0.91 (t) 0.365 Triglycerides (mmol/L) 1.68 \u00b1 1.35 1.77 \u00b1",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1219,7 +1219,7 @@
       "context_window": "\u00b1 1.44 7.35 \u00b1 1.48 - 0.91 (t) 0.365 Triglycerides (mmol/L) 1.68 \u00b1 1.35 1.77 \u00b1 1.71 1.65 \u00b1 1.26 1.13 (t) 0.259 Total cholesterol (m",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1238,7 +1238,7 @@
       "context_window": "\u00b1 1.48 - 0.91 (t) 0.365 Triglycerides (mmol/L) 1.68 \u00b1 1.35 1.77 \u00b1 1.71 1.65 \u00b1 1.26 1.13 (t) 0.259 Total cholesterol (mmol/L) 4.72",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1257,7 +1257,7 @@
       "context_window": "91 (t) 0.365 Triglycerides (mmol/L) 1.68 \u00b1 1.35 1.77 \u00b1 1.71 1.65 \u00b1 1.26 1.13 (t) 0.259 Total cholesterol (mmol/L) 4.72 \u00b1 1.75 4.67",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1276,7 +1276,7 @@
       "context_window": "1.71 1.65 \u00b1 1.26 1.13 (t) 0.259 Total cholesterol (mmol/L) 4.72 \u00b1 1.75 4.67 \u00b1 1.84 4.73 \u00b1 1.73 - 0.55 (t) 0.584 HDL-cholesterol (m",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1295,7 +1295,7 @@
       "context_window": "1.26 1.13 (t) 0.259 Total cholesterol (mmol/L) 4.72 \u00b1 1.75 4.67 \u00b1 1.84 4.73 \u00b1 1.73 - 0.55 (t) 0.584 HDL-cholesterol (mmol/L) 1.21",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1314,7 +1314,7 @@
       "context_window": "t) 0.259 Total cholesterol (mmol/L) 4.72 \u00b1 1.75 4.67 \u00b1 1.84 4.73 \u00b1 1.73 - 0.55 (t) 0.584 HDL-cholesterol (mmol/L) 1.21 \u00b1 0.60 1.21",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1333,7 +1333,7 @@
       "context_window": "1.84 4.73 \u00b1 1.73 - 0.55 (t) 0.584 HDL-cholesterol (mmol/L) 1.21 \u00b1 0.60 1.21 \u00b1 0.81 1.21 \u00b1 0.54 0.01 (t) 0.993 LDL-cholesterol (mmo",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1352,7 +1352,7 @@
       "context_window": "1.73 - 0.55 (t) 0.584 HDL-cholesterol (mmol/L) 1.21 \u00b1 0.60 1.21 \u00b1 0.81 1.21 \u00b1 0.54 0.01 (t) 0.993 LDL-cholesterol (mmol/L) 2.76 \u00b1",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1371,7 +1371,7 @@
       "context_window": "(t) 0.584 HDL-cholesterol (mmol/L) 1.21 \u00b1 0.60 1.21 \u00b1 0.81 1.21 \u00b1 0.54 0.01 (t) 0.993 LDL-cholesterol (mmol/L) 2.76 \u00b1 1.17 2.74 \u00b1",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1390,7 +1390,7 @@
       "context_window": "\u00b1 0.81 1.21 \u00b1 0.54 0.01 (t) 0.993 LDL-cholesterol (mmol/L) 2.76 \u00b1 1.17 2.74 \u00b1 1.20 2.77 \u00b1 1.16 - 0.42 (t) 0.671 Alanine aminotrans",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1409,7 +1409,7 @@
       "context_window": "\u00b1 0.54 0.01 (t) 0.993 LDL-cholesterol (mmol/L) 2.76 \u00b1 1.17 2.74 \u00b1 1.20 2.77 \u00b1 1.16 - 0.42 (t) 0.671 Alanine aminotransferase (U/L)",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1428,7 +1428,7 @@
       "context_window": "(t) 0.993 LDL-cholesterol (mmol/L) 2.76 \u00b1 1.17 2.74 \u00b1 1.20 2.77 \u00b1 1.16 - 0.42 (t) 0.671 Alanine aminotransferase (U/L) 22.64 \u00b1 14.",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1447,7 +1447,7 @@
       "context_window": "2.77 \u00b1 1.16 - 0.42 (t) 0.671 Alanine aminotransferase (U/L) 22.64 \u00b1 14.08 21.69 \u00b1 11.46 22.85 \u00b1 14.60 - 1.43 (t) 0.154 Blood urea nit",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1466,7 +1466,7 @@
       "context_window": "0.42 (t) 0.671 Alanine aminotransferase (U/L) 22.64 \u00b1 14.08 21.69 \u00b1 11.46 22.85 \u00b1 14.60 - 1.43 (t) 0.154 Blood urea nitrogen (mmol/L)",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1485,7 +1485,7 @@
       "context_window": "Alanine aminotransferase (U/L) 22.64 \u00b1 14.08 21.69 \u00b1 11.46 22.85 \u00b1 14.60 - 1.43 (t) 0.154 Blood urea nitrogen (mmol/L) 5.8 (4.8, 7.2",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1503,7 +1503,7 @@
       "context_window": "rs were well educated, and had more use of insulin therapy (P < 0.01) (Table 1 ). During the follow-up, the fasting blood gluco",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1521,7 +1521,7 @@
       "context_window": "s with acarbose therapy than that of acarbose therapy free (P < 0.05). The postprandial blood glucose was similarly between the",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1558,7 +1558,7 @@
       "context_window": "se therapy Statistical quantity P Body mass index (kg/m 2 ) 25.18 \u00b1 3.16 24.98 \u00b1 3.13 0.72 (t) 0.475 Waist circumference (cm) 88.26",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1577,7 +1577,7 @@
       "context_window": "atistical quantity P Body mass index (kg/m 2 ) 25.18 \u00b1 3.16 24.98 \u00b1 3.13 0.72 (t) 0.475 Waist circumference (cm) 88.26 \u00b1 8.33 87.30",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1596,7 +1596,7 @@
       "context_window": "\u00b1 3.16 24.98 \u00b1 3.13 0.72 (t) 0.475 Waist circumference (cm) 88.26 \u00b1 8.33 87.30 \u00b1 8.49 1.29 (t) 0.196 Hip circumference (cm) 98.11 \u00b1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1615,7 +1615,7 @@
       "context_window": "\u00b1 3.13 0.72 (t) 0.475 Waist circumference (cm) 88.26 \u00b1 8.33 87.30 \u00b1 8.49 1.29 (t) 0.196 Hip circumference (cm) 98.11 \u00b1 7.96 97.40 \u00b1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1634,7 +1634,7 @@
       "context_window": "6 \u00b1 8.33 87.30 \u00b1 8.49 1.29 (t) 0.196 Hip circumference (cm) 98.11 \u00b1 7.96 97.40 \u00b1 8.17 1.00 (t) 0.316 Waist-hip ratio 0.90 \u00b1 0.05 0.9",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1653,7 +1653,7 @@
       "context_window": "0 \u00b1 8.49 1.29 (t) 0.196 Hip circumference (cm) 98.11 \u00b1 7.96 97.40 \u00b1 8.17 1.00 (t) 0.316 Waist-hip ratio 0.90 \u00b1 0.05 0.90 \u00b1 0.05 0.67",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1672,7 +1672,7 @@
       "context_window": "m) 98.11 \u00b1 7.96 97.40 \u00b1 8.17 1.00 (t) 0.316 Waist-hip ratio 0.90 \u00b1 0.05 0.90 \u00b1 0.05 0.67 (t) 0.500 Neck circumference (cm) 36.67 \u00b1",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1691,7 +1691,7 @@
       "context_window": ".96 97.40 \u00b1 8.17 1.00 (t) 0.316 Waist-hip ratio 0.90 \u00b1 0.05 0.90 \u00b1 0.05 0.67 (t) 0.500 Neck circumference (cm) 36.67 \u00b1 3.43 36.31 \u00b1",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1710,7 +1710,7 @@
       "context_window": "0 \u00b1 0.05 0.90 \u00b1 0.05 0.67 (t) 0.500 Neck circumference (cm) 36.67 \u00b1 3.43 36.31 \u00b1 3.93 1.19 (t) 0.236 Systolic blood pressure (mmHg)",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1729,7 +1729,7 @@
       "context_window": "\u00b1 0.05 0.67 (t) 0.500 Neck circumference (cm) 36.67 \u00b1 3.43 36.31 \u00b1 3.93 1.19 (t) 0.236 Systolic blood pressure (mmHg) 125.04 \u00b1 8.50",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1748,7 +1748,7 @@
       "context_window": "36.31 \u00b1 3.93 1.19 (t) 0.236 Systolic blood pressure (mmHg) 125.04 \u00b1 8.50 126.09 \u00b1 8.34 - 1.43 (t) 0.152 Diastolic blood pressure (mm",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1767,7 +1767,7 @@
       "context_window": "1.19 (t) 0.236 Systolic blood pressure (mmHg) 125.04 \u00b1 8.50 126.09 \u00b1 8.34 - 1.43 (t) 0.152 Diastolic blood pressure (mmHg) 73.05 \u00b1 5.",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1786,7 +1786,7 @@
       "context_window": ".09 \u00b1 8.34 - 1.43 (t) 0.152 Diastolic blood pressure (mmHg) 73.05 \u00b1 5.79 73.12 \u00b1 6.47 - 0.11 (t) 0.910 FPG (mmol/L) 7.31 \u00b1 1.62 7.80",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1805,7 +1805,7 @@
       "context_window": "1.43 (t) 0.152 Diastolic blood pressure (mmHg) 73.05 \u00b1 5.79 73.12 \u00b1 6.47 - 0.11 (t) 0.910 FPG (mmol/L) 7.31 \u00b1 1.62 7.80 \u00b1 4.56 - 2.5",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1824,7 +1824,7 @@
       "context_window": "Hg) 73.05 \u00b1 5.79 73.12 \u00b1 6.47 - 0.11 (t) 0.910 FPG (mmol/L) 7.31 \u00b1 1.62 7.80 \u00b1 4.56 - 2.52 (t) 0.012 Hpg (mmol/L) 9.13 \u00b1 2.56 9.06",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1843,7 +1843,7 @@
       "context_window": "5.79 73.12 \u00b1 6.47 - 0.11 (t) 0.910 FPG (mmol/L) 7.31 \u00b1 1.62 7.80 \u00b1 4.56 - 2.52 (t) 0.012 Hpg (mmol/L) 9.13 \u00b1 2.56 9.06 \u00b1 2.09 0.28",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1862,7 +1862,7 @@
       "context_window": "ol/L) 7.31 \u00b1 1.62 7.80 \u00b1 4.56 - 2.52 (t) 0.012 Hpg (mmol/L) 9.13 \u00b1 2.56 9.06 \u00b1 2.09 0.28 (t) 0.776 HbA1c(%) 6.85 \u00b1 1.05 7.08 \u00b1 1.17",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1881,7 +1881,7 @@
       "context_window": "1.62 7.80 \u00b1 4.56 - 2.52 (t) 0.012 Hpg (mmol/L) 9.13 \u00b1 2.56 9.06 \u00b1 2.09 0.28 (t) 0.776 HbA1c(%) 6.85 \u00b1 1.05 7.08 \u00b1 1.17 - 2.17 (t)",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1900,7 +1900,7 @@
       "context_window": "pg (mmol/L) 9.13 \u00b1 2.56 9.06 \u00b1 2.09 0.28 (t) 0.776 HbA1c(%) 6.85 \u00b1 1.05 7.08 \u00b1 1.17 - 2.17 (t) 0.030 Triglycerides (mmol/L) 1.56 \u00b1",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1919,7 +1919,7 @@
       "context_window": "9.13 \u00b1 2.56 9.06 \u00b1 2.09 0.28 (t) 0.776 HbA1c(%) 6.85 \u00b1 1.05 7.08 \u00b1 1.17 - 2.17 (t) 0.030 Triglycerides (mmol/L) 1.56 \u00b1 0.80 1.57 \u00b1",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1938,7 +1938,7 @@
       "context_window": "\u00b1 1.05 7.08 \u00b1 1.17 - 2.17 (t) 0.030 Triglycerides (mmol/L) 1.56 \u00b1 0.80 1.57 \u00b1 0.80 - 0.10 (t) 0.917 Total cholesterol (mmol/L) 4.4",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1957,7 +1957,7 @@
       "context_window": "\u00b1 1.17 - 2.17 (t) 0.030 Triglycerides (mmol/L) 1.56 \u00b1 0.80 1.57 \u00b1 0.80 - 0.10 (t) 0.917 Total cholesterol (mmol/L) 4.46 \u00b1 0.81 4.4",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1976,7 +1976,7 @@
       "context_window": ".80 1.57 \u00b1 0.80 - 0.10 (t) 0.917 Total cholesterol (mmol/L) 4.46 \u00b1 0.81 4.49 \u00b1 0.98 - 0.48 (t) 0.629 HDL-cholesterol (mmol/L) 1.33",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1995,7 +1995,7 @@
       "context_window": ".80 - 0.10 (t) 0.917 Total cholesterol (mmol/L) 4.46 \u00b1 0.81 4.49 \u00b1 0.98 - 0.48 (t) 0.629 HDL-cholesterol (mmol/L) 1.33 \u00b1 0.65 1.28",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2014,7 +2014,7 @@
       "context_window": "0.81 4.49 \u00b1 0.98 - 0.48 (t) 0.629 HDL-cholesterol (mmol/L) 1.33 \u00b1 0.65 1.28 \u00b1 0.31 0.97 (t) 0.332 LDL-cholesterol (mmol/L) 2.38 \u00b1",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2033,7 +2033,7 @@
       "context_window": "0.98 - 0.48 (t) 0.629 HDL-cholesterol (mmol/L) 1.33 \u00b1 0.65 1.28 \u00b1 0.31 0.97 (t) 0.332 LDL-cholesterol (mmol/L) 2.38 \u00b1 0.64 2.48 \u00b1",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2052,7 +2052,7 @@
       "context_window": "\u00b1 0.65 1.28 \u00b1 0.31 0.97 (t) 0.332 LDL-cholesterol (mmol/L) 2.38 \u00b1 0.64 2.48 \u00b1 0.75 - 1.62 (t) 0.108 Alanine aminotransferase (U/L)",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2071,7 +2071,7 @@
       "context_window": "\u00b1 0.31 0.97 (t) 0.332 LDL-cholesterol (mmol/L) 2.38 \u00b1 0.64 2.48 \u00b1 0.75 - 1.62 (t) 0.108 Alanine aminotransferase (U/L) 20.58 \u00b1 10.",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2090,7 +2090,7 @@
       "context_window": "2.48 \u00b1 0.75 - 1.62 (t) 0.108 Alanine aminotransferase (U/L) 20.58 \u00b1 10.68 20.62 \u00b1 10.96 - 0.04 (t) 0.967 Blood urea nitrogen (mmol/L)",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2109,7 +2109,7 @@
       "context_window": "1.62 (t) 0.108 Alanine aminotransferase (U/L) 20.58 \u00b1 10.68 20.62 \u00b1 10.96 - 0.04 (t) 0.967 Blood urea nitrogen (mmol/L) 5.6 (5.1, 6.5",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2127,9 +2127,9 @@
       "context_window": "in patients with acarbose therapy free and acarbose users (1.64 mmol/L vs. 1.66 mmol/L; 0.42% vs. 0.27%), while the fasting bloo",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-u-10740",
@@ -2325,9 +2325,9 @@
       "context_window": "ls also reduced (0.21 mmol/Lvs.0.32 mmol/L; 0.36 mmol/L vs. 0.39 mmol/L) in acarbose therapy free and acarbose treatment. The imp",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-u-11225",
@@ -2343,9 +2343,9 @@
       "context_window": "hat BMI reduced in non-users of acabose and acarbose users (0.23 kg/m 2 vs. 0.21 kg/m 2 ) at the end of follow-up (Table 2 ).",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-u-11241",
@@ -2379,7 +2379,7 @@
       "context_window": "target control ratios than that of acarbose therapy free ( P < 0.01) (Table 3 , Fig. 2 ). Table 3 Comparison of ratios of patie",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2397,9 +2397,9 @@
       "context_window": "rbose therapy free Acarbose therapy Statistical quantity P (n = 1797) (n = 336) (n = 1461) Joint target control in 2008 Yes, n (",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-n-11873",
@@ -2415,9 +2415,9 @@
       "context_window": "py free Acarbose therapy Statistical quantity P (n = 1797) (n = 336) (n = 1461) Joint target control in 2008 Yes, n (%) 276 (15",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-n-11883",
@@ -2433,9 +2433,9 @@
       "context_window": "arbose therapy Statistical quantity P (n = 1797) (n = 336) (n = 1461) Joint target control in 2008 Yes, n (%) 276 (15.36) 56 (16",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-13697",
@@ -2451,9 +2451,9 @@
       "context_window": "lar events, cerebrovascular events and tumor. 199 patients (13.62%) who had received acarbose treatment developed CVD as compa",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-13783",
@@ -2469,9 +2469,9 @@
       "context_window": "carbose treatment developed CVD as compared to 49 patients (14.58%) who never took acarbose therapy. Furthermore, 81 patients",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-13850",
@@ -2487,9 +2487,9 @@
       "context_window": "who never took acarbose therapy. Furthermore, 81 patients (5.54%) with acarbose treatment developed cerebrovascular disease",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-13943",
@@ -2505,9 +2505,9 @@
       "context_window": "veloped cerebrovascular disease as compared to 18 patients (5.36%) without acarbose therapy. Compared with acarbose therapy f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-14083",
@@ -2523,7 +2523,7 @@
       "context_window": "sers had a lower incidence of myocardial infarction events (1.78% vs. 3.57%, P < 0.05) and all-cause death (6.16% vs. 11.61%,",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2631,9 +2631,9 @@
       "context_window": "rbose therapy free Acarbose therapy Statistical quantity P (n = 336) (n = 1461) All-cause death No, n (%) 297 (88.39) 1371 (93.",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-n-14589",
@@ -2649,9 +2649,9 @@
       "context_window": "apy free Acarbose therapy Statistical quantity P (n = 336) (n = 1461) All-cause death No, n (%) 297 (88.39) 1371 (93.84) 12.16 (",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-p-16149",
@@ -2666,8 +2666,8 @@
       "sentence": "In comparison to acarbose therapy free, the cumulative cardiovascular event rate was significantly lower in patients with acarbose therapy ( P < 0.001) (Fig.",
       "context_window": "was significantly lower in patients with acarbose therapy ( P < 0.001) (Fig. 3 ). No first cardiovascular events were diagnosed o",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2685,9 +2685,9 @@
       "context_window": "s reference value, during the 10-year follow-up, the crude (95% CI) hazard ratio (HR) of acarbose users in all-cause death",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-ci-17729",
@@ -2704,9 +2704,9 @@
       "context_window": "d ratio (HR) of acarbose users in all-cause death was 0.53 (95% CI 0.37-0.78, P = 0.001) (Table 6 ). Further analysis indicated that adj",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-p-17747",
@@ -2722,9 +2722,9 @@
       "context_window": "arbose users in all-cause death was 0.53 (95% CI 0.37-0.78, P = 0.001) (Table 6 ). Further analysis indicated that adjusted HR of",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-ci-17867",
@@ -2741,9 +2741,9 @@
       "context_window": "ted HR of acarbose users in myocardial infarction was 0.49 (95% CI 0.25-0.97, P < 0.05) (Table 6 ). Table 6 Cox regression of the effect",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-p-17885",
@@ -2759,9 +2759,9 @@
       "context_window": "users in myocardial infarction was 0.49 (95% CI 0.25-0.97, P < 0.05) (Table 6 ). Table 6 Cox regression of the effect of acarbo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-18022",
@@ -2777,7 +2777,7 @@
       "context_window": "y on various endpoint events in BCDS study. b std Wald P HR 95% CI for HR Lower Upper All-cause death - 0.63 0.19 10.34 0.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2795,9 +2795,9 @@
       "context_window": "the subsequent development of CVD. Specifically, during the 10 years follow-up, the relative risk of myocardial infarction reduc",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-2219",
@@ -2813,9 +2813,9 @@
       "context_window": "tive risk of myocardial infarction reduction was similar at 50% in patients with acarbose therapy. Acarbose therapy has the",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-2408",
@@ -2831,7 +2831,7 @@
       "context_window": "s as cardiovascular and cerebrovascular disease account for 52% of all mortality. Even after adjusting for major risk facto",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2849,9 +2849,9 @@
       "context_window": "ed in both acarbose therapy and acarbose therapy free after 10 years multi-factorial invention when compared with baseline. Thes",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-u-5421",
@@ -2867,7 +2867,7 @@
       "context_window": "ose therapy free than that of acarbose therapy, while after 10 year-follow-up, there were no significant difference between the",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2885,9 +2885,9 @@
       "context_window": "mportant is this article differs from other research is the 10 years\u2019 observation, which explained the relationship between acar",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-6416",
@@ -2903,7 +2903,7 @@
       "context_window": "oint target control rate in patients with acarbose therapy (30.66%) was significantly higher than that of acarbose therapy fre",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2921,7 +2921,7 @@
       "context_window": "as significantly higher than that of acarbose therapy free (20.24%). This trend was maintained in the following years (Fig. 2",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2975,9 +2975,9 @@
       "context_window": "relatively pattern of benefits on developing CVD. After the 10 years\u2019 multifactorial interventions, in patients with acarbose th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-554",
@@ -2993,9 +2993,9 @@
       "context_window": "tive risk of myocardial infarction reduction was similar at 50% and all-cause death reduction was about 52%. The effects of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_-pct-598",
@@ -3011,9 +3011,9 @@
       "context_window": "was similar at 50% and all-cause death reduction was about 52%. The effects of acarbose on improving joint target control",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

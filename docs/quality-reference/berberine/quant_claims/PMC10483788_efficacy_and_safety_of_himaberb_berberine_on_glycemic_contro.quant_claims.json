@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10483788_efficacy_and_safety_of_himaberb_berberine_on_glycemic_contro",
   "doi": "10.1186/s12902-023-01442-y",
-  "extracted_at": "2026-05-05T22:22:53+00:00",
+  "extracted_at": "2026-05-07T16:58:05+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 59,
@@ -411,9 +411,9 @@
       "context_window": "rse effects, kidney or liver toxicity were detected. After 12 weeks, berberine (HIMABERB\u00ae) intervention in individuals with pre",
       "claim_role": "effect",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10483788_efficacy_and_safety_of_himaberb_berberine_on_glycemic_contro-pct-253",
@@ -555,9 +555,9 @@
       "context_window": "then concentrated and dried to achieve a purity of at least 97% berberine hydrochloride, and capsules were made with 500 mg",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine hydrochloride",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10483788_efficacy_and_safety_of_himaberb_berberine_on_glycemic_contro-u-241",
@@ -573,9 +573,9 @@
       "context_window": "st 97% berberine hydrochloride, and capsules were made with 500 mg of HIMABERB\u00ae in each capsule. Microcrystalline cellulose po",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine hydrochloride",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10483788_efficacy_and_safety_of_himaberb_berberine_on_glycemic_contro-u-1033",
@@ -735,7 +735,7 @@
       "context_window": "ry and SAE forms were evaluated and verified. Follow up for 84 days was chosen to allow reliable evaluation of glycemic control",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1077,9 +1077,9 @@
       "context_window": "Sample size was determined to achieve statistical power of 80% and a significance level of < 0.05 using two-factor ANOVA w",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10483788_efficacy_and_safety_of_himaberb_berberine_on_glycemic_contro-pct-10013",
@@ -1907,7 +1907,7 @@
       "context_window": "level ANOVA p value < 10 - 5 ) Parameters Treatment Group (n = 17) Treatment Group (n = 17) Control Group (n = 17) Control Gr",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "treatment",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1925,7 +1925,7 @@
       "context_window": "- 5 ) Parameters Treatment Group (n = 17) Treatment Group (n = 17) Control Group (n = 17) Control Group (n = 17) p value Trea",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "treatment",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1943,7 +1943,7 @@
       "context_window": "ment Group (n = 17) Treatment Group (n = 17) Control Group (n = 17) Control Group (n = 17) p value Treatment vs. Control Day 0",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "treatment",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1961,7 +1961,7 @@
       "context_window": "atment Group (n = 17) Control Group (n = 17) Control Group (n = 17) p value Treatment vs. Control Day 0 Day 84 Day 0 Day 84 Da",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "treatment",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1980,7 +1980,7 @@
       "context_window": "t vs. Control Day 0 Day 84 Day 0 Day 84 Day 84 FPG (mmol/L) 6.75 \u00b1 0.23 5.33 \u00b1 0.28*\u00a5 6.31 \u00b1 0.44 6.16 \u00b1 0.44 p<10 - 5 FI (\u00b5IU/mL)",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1999,7 +1999,7 @@
       "context_window": "l Day 0 Day 84 Day 0 Day 84 Day 84 FPG (mmol/L) 6.75 \u00b1 0.23 5.33 \u00b1 0.28*\u00a5 6.31 \u00b1 0.44 6.16 \u00b1 0.44 p<10 - 5 FI (\u00b5IU/mL) 9.81 \u00b1 0.36",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2018,7 +2018,7 @@
       "context_window": "Day 0 Day 84 Day 84 FPG (mmol/L) 6.75 \u00b1 0.23 5.33 \u00b1 0.28*\u00a5 6.31 \u00b1 0.44 6.16 \u00b1 0.44 p<10 - 5 FI (\u00b5IU/mL) 9.81 \u00b1 0.36 7.88 \u00b1 0.52* 9",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2037,7 +2037,7 @@
       "context_window": "4 Day 84 FPG (mmol/L) 6.75 \u00b1 0.23 5.33 \u00b1 0.28*\u00a5 6.31 \u00b1 0.44 6.16 \u00b1 0.44 p<10 - 5 FI (\u00b5IU/mL) 9.81 \u00b1 0.36 7.88 \u00b1 0.52* 9.85 \u00b1 0.35 9",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2056,7 +2056,7 @@
       "context_window": "5.33 \u00b1 0.28*\u00a5 6.31 \u00b1 0.44 6.16 \u00b1 0.44 p<10 - 5 FI (\u00b5IU/mL) 9.81 \u00b1 0.36 7.88 \u00b1 0.52* 9.85 \u00b1 0.35 9.76 \u00b1 0.37 p < 10 - 5 2 h-OGTT (m",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2075,7 +2075,7 @@
       "context_window": "*\u00a5 6.31 \u00b1 0.44 6.16 \u00b1 0.44 p<10 - 5 FI (\u00b5IU/mL) 9.81 \u00b1 0.36 7.88 \u00b1 0.52* 9.85 \u00b1 0.35 9.76 \u00b1 0.37 p < 10 - 5 2 h-OGTT (mmol/L) 10.44",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2094,7 +2094,7 @@
       "context_window": "4 6.16 \u00b1 0.44 p<10 - 5 FI (\u00b5IU/mL) 9.81 \u00b1 0.36 7.88 \u00b1 0.52* 9.85 \u00b1 0.35 9.76 \u00b1 0.37 p < 10 - 5 2 h-OGTT (mmol/L) 10.44 \u00b1 0.52 8.12",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2113,7 +2113,7 @@
       "context_window": "4 p<10 - 5 FI (\u00b5IU/mL) 9.81 \u00b1 0.36 7.88 \u00b1 0.52* 9.85 \u00b1 0.35 9.76 \u00b1 0.37 p < 10 - 5 2 h-OGTT (mmol/L) 10.44 \u00b1 0.52 8.12 \u00b1 0.40* 9.71",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2132,7 +2132,7 @@
       "context_window": "0.52* 9.85 \u00b1 0.35 9.76 \u00b1 0.37 p < 10 - 5 2 h-OGTT (mmol/L) 10.44 \u00b1 0.52 8.12 \u00b1 0.40* 9.71 \u00b1 0.63 9.68 \u00b1 0.51 p < 10 - 5 HbA1 c (%)",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2151,7 +2151,7 @@
       "context_window": "0.35 9.76 \u00b1 0.37 p < 10 - 5 2 h-OGTT (mmol/L) 10.44 \u00b1 0.52 8.12 \u00b1 0.40* 9.71 \u00b1 0.63 9.68 \u00b1 0.51 p < 10 - 5 HbA1 c (%) 6.40 \u00b1 0.20",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2170,7 +2170,7 @@
       "context_window": "0.37 p < 10 - 5 2 h-OGTT (mmol/L) 10.44 \u00b1 0.52 8.12 \u00b1 0.40* 9.71 \u00b1 0.63 9.68 \u00b1 0.51 p < 10 - 5 HbA1 c (%) 6.40 \u00b1 0.20 5.43 \u00b1 0.21*\u00a5",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2189,7 +2189,7 @@
       "context_window": "- 5 2 h-OGTT (mmol/L) 10.44 \u00b1 0.52 8.12 \u00b1 0.40* 9.71 \u00b1 0.63 9.68 \u00b1 0.51 p < 10 - 5 HbA1 c (%) 6.40 \u00b1 0.20 5.43 \u00b1 0.21*\u00a5 6.15 \u00b1 0.26",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2208,7 +2208,7 @@
       "context_window": "8.12 \u00b1 0.40* 9.71 \u00b1 0.63 9.68 \u00b1 0.51 p < 10 - 5 HbA1 c (%) 6.40 \u00b1 0.20 5.43 \u00b1 0.21*\u00a5 6.15 \u00b1 0.26 6.10 \u00b1 0.24 p < 10 - 5 HOMA-IR (u",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2227,7 +2227,7 @@
       "context_window": "* 9.71 \u00b1 0.63 9.68 \u00b1 0.51 p < 10 - 5 HbA1 c (%) 6.40 \u00b1 0.20 5.43 \u00b1 0.21*\u00a5 6.15 \u00b1 0.26 6.10 \u00b1 0.24 p < 10 - 5 HOMA-IR (units) 3.61 \u00b1",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2246,7 +2246,7 @@
       "context_window": "9.68 \u00b1 0.51 p < 10 - 5 HbA1 c (%) 6.40 \u00b1 0.20 5.43 \u00b1 0.21*\u00a5 6.15 \u00b1 0.26 6.10 \u00b1 0.24 p < 10 - 5 HOMA-IR (units) 3.61 \u00b1 0.31 2.41 \u00b1 0",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2265,7 +2265,7 @@
       "context_window": "p < 10 - 5 HbA1 c (%) 6.40 \u00b1 0.20 5.43 \u00b1 0.21*\u00a5 6.15 \u00b1 0.26 6.10 \u00b1 0.24 p < 10 - 5 HOMA-IR (units) 3.61 \u00b1 0.31 2.41 \u00b1 0.14* 3.45 \u00b1",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2284,7 +2284,7 @@
       "context_window": "\u00b1 0.21*\u00a5 6.15 \u00b1 0.26 6.10 \u00b1 0.24 p < 10 - 5 HOMA-IR (units) 3.61 \u00b1 0.31 2.41 \u00b1 0.14* 3.45 \u00b1 0.26 3.40 \u00b1 0.28 p < 10 - 5 FPG: Fastin",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2303,7 +2303,7 @@
       "context_window": "5 \u00b1 0.26 6.10 \u00b1 0.24 p < 10 - 5 HOMA-IR (units) 3.61 \u00b1 0.31 2.41 \u00b1 0.14* 3.45 \u00b1 0.26 3.40 \u00b1 0.28 p < 10 - 5 FPG: Fasting Plasma Glu",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2322,7 +2322,7 @@
       "context_window": "\u00b1 0.24 p < 10 - 5 HOMA-IR (units) 3.61 \u00b1 0.31 2.41 \u00b1 0.14* 3.45 \u00b1 0.26 3.40 \u00b1 0.28 p < 10 - 5 FPG: Fasting Plasma Glucose; FI: Fas",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2341,7 +2341,7 @@
       "context_window": "10 - 5 HOMA-IR (units) 3.61 \u00b1 0.31 2.41 \u00b1 0.14* 3.45 \u00b1 0.26 3.40 \u00b1 0.28 p < 10 - 5 FPG: Fasting Plasma Glucose; FI: Fasting Insulin",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2694,9 +2694,9 @@
       "context_window": "y parameters outside the normal range. HIMABERB \u00ae Berberine 500 mg administered three times daily for 12 weeks to patients wit",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10483788_efficacy_and_safety_of_himaberb_berberine_on_glycemic_contro-u-2156",
@@ -2712,9 +2712,9 @@
       "context_window": "ABERB \u00ae Berberine 500 mg administered three times daily for 12 weeks to patients with prediabetes was safe and effective in decr",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10483788_efficacy_and_safety_of_himaberb_berberine_on_glycemic_contro-u-4122",
@@ -2766,9 +2766,9 @@
       "context_window": "rvention with HIMABERB\u00ae in individuals with prediabetes for 84 days (12 weeks) significantly affected glycemic control markers,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10483788_efficacy_and_safety_of_himaberb_berberine_on_glycemic_contro-u-73",
@@ -2784,9 +2784,9 @@
       "context_window": "with HIMABERB\u00ae in individuals with prediabetes for 84 days (12 weeks) significantly affected glycemic control markers, supportin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

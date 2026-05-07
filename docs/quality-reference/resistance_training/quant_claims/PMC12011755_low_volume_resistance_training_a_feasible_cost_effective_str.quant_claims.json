@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12011755_low_volume_resistance_training_a_feasible_cost_effective_str",
   "doi": "10.3389/fspor.2025.1542188",
-  "extracted_at": "2026-05-05T21:59:14+00:00",
+  "extracted_at": "2026-05-07T16:57:25+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 14,
@@ -25,7 +25,7 @@
       "context_window": "e period, a decline was observed in handgrip strength (19.2-18.5 kg) and sit-to-stand time (14.5-17.4s) ( p < 0.05). However, t",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "usual care",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "trength (19.2-18.5 kg) and sit-to-stand time (14.5-17.4s) ( p < 0.05). However, these measures were preserved during the interve",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "usual care",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": "ng the usual care but improved with training (4.3-5.2 W/Kg, p < 0.001). While body composition, physical function, gait speed, an",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "usual care",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -223,9 +223,9 @@
       "context_window": "cohort of 44 individuals. Participants were required to be 65 years or older, classified as frail or pre-frail, and physically",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12011755_low_volume_resistance_training_a_feasible_cost_effective_str-u-1099",
@@ -276,10 +276,10 @@
       "sentence": "The caregiving staff also reported the number of falls experienced by each participant over the previous 12 weeks.",
       "context_window": "of falls experienced by each participant over the previous 12 weeks. Frailty was diagnosed using Fried's phenotype ( 1 ), whic",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12011755_low_volume_resistance_training_a_feasible_cost_effective_str-u-3790",
@@ -402,7 +402,7 @@
       "sentence": "Sarcopenia was confirmed if appendicular skeletal muscle mass index (ASMMI), calculated as ASMM divided by height squared, was \u22647 kg/m 2 in men and \u22645, 5 kg/m 2 in women.",
       "context_window": "(ASMMI), calculated as ASMM divided by height squared, was \u22647 kg/m 2 in men and \u22645, 5 kg/m 2 in women. All participants fol",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -420,7 +420,7 @@
       "sentence": "Sarcopenia was confirmed if appendicular skeletal muscle mass index (ASMMI), calculated as ASMM divided by height squared, was \u22647 kg/m 2 in men and \u22645, 5 kg/m 2 in women.",
       "context_window": "SMM divided by height squared, was \u22647 kg/m 2 in men and \u22645, 5 kg/m 2 in women. All participants followed a low-volume resis",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -495,9 +495,9 @@
       "context_window": "rticipants who began the 12-week exercise intervention, 31 (61% females) completed it. Dropouts were primarily due to parti",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12011755_low_volume_resistance_training_a_feasible_cost_effective_str-n-170",
@@ -512,10 +512,10 @@
       "sentence": "Dropouts were primarily due to participants changing daycare centers ( n = 11), falls requiring surgery ( n = 1), and severe pre-existing illness ( n = 1).",
       "context_window": "re primarily due to participants changing daycare centers ( n = 11), falls requiring surgery ( n = 1), and severe pre-existing",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12011755_low_volume_resistance_training_a_feasible_cost_effective_str-n-205",
@@ -530,10 +530,10 @@
       "sentence": "Dropouts were primarily due to participants changing daycare centers ( n = 11), falls requiring surgery ( n = 1), and severe pre-existing illness ( n = 1).",
       "context_window": "anging daycare centers ( n = 11), falls requiring surgery ( n = 1), and severe pre-existing illness ( n = 1). Despite the low",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12011755_low_volume_resistance_training_a_feasible_cost_effective_str-n-247",
@@ -548,10 +548,10 @@
       "sentence": "Dropouts were primarily due to participants changing daycare centers ( n = 11), falls requiring surgery ( n = 1), and severe pre-existing illness ( n = 1).",
       "context_window": "quiring surgery ( n = 1), and severe pre-existing illness ( n = 1). Despite the lower completion rate, those who remained in",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12011755_low_volume_resistance_training_a_feasible_cost_effective_str-pct-404",
@@ -567,7 +567,7 @@
       "context_window": "herence to the exercise sessions, with attendance exceeding 90% across all participants. No participants voluntarily withdr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -585,9 +585,9 @@
       "context_window": "itiated the exercise program continued until the end of the 12 weeks, demonstrating its feasibility and adaptability within inst",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12011755_low_volume_resistance_training_a_feasible_cost_effective_str-u-879",
@@ -800,7 +800,7 @@
       "sentence": "Additionally, the total number of falls ( Figure 1d ), particularly the percentage of fallers ( Figure 2d ), decreased during the intervention, dropping from over 30% at T I and T II to just 9.7% at T III .",
       "context_window": "2d ), decreased during the intervention, dropping from over 30% at T I and T II to just 9.7% at T III . Effect of physical",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -818,7 +818,7 @@
       "sentence": "Additionally, the total number of falls ( Figure 1d ), particularly the percentage of fallers ( Figure 2d ), decreased during the intervention, dropping from over 30% at T I and T II to just 9.7% at T III .",
       "context_window": "ntervention, dropping from over 30% at T I and T II to just 9.7% at T III . Effect of physical exercise intervention in the",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC4555150_protein_requirements_and_recommendations_for_older_people_a_",
   "doi": "10.3390/nu7085311",
-  "extracted_at": "2026-05-05T23:37:07+00:00",
+  "extracted_at": "2026-05-07T16:56:36+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 53,
@@ -21,8 +21,8 @@
       "sentence": "There is good consistent evidence (level III-2 to IV) that consumption of 1.0 to 1.3 g/kg/day dietary protein combined with twice-weekly progressive resistance exercise reduces age-related muscle mass loss.",
       "context_window": "ent evidence (level III-2 to IV) that consumption of 1.0 to 1.3 g/kg/day dietary protein combined with twice-weekly progressive resi",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -39,8 +39,8 @@
       "sentence": "Older people appear to require 1.0 to 1.3 g/kg/day dietary protein to optimize physical function, particularly whilst undertaking resistance exercise recommendations.",
       "context_window": "ted muscle mass loss. Older people appear to require 1.0 to 1.3 g/kg/day dietary protein to optimize physical function, particularly",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "physical function",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -165,7 +165,7 @@
       "sentence": "Up to 50% of total body weight in young adults is lean muscle mass but this declines with aging to 25% when reaching an age of 75-80 years [ 12 ].",
       "context_window": "adults is lean muscle mass but this declines with aging to 25% when reaching an age of 75-80 years [ 12 ]. The loss of mus",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -183,7 +183,7 @@
       "sentence": "Up to 50% of total body weight in young adults is lean muscle mass but this declines with aging to 25% when reaching an age of 75-80 years [ 12 ].",
       "context_window": "this declines with aging to 25% when reaching an age of 75-80 years [ 12 ]. The loss of muscle mass is usually coupled with gai",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -201,7 +201,7 @@
       "sentence": "The greatest loss of muscle mass is seen in the lower limb muscle groups, with the cross-sectional area of the vastus lateralis being reduced by as much as 40% between the age of 20 and 80 years [ 15 ].",
       "context_window": "al area of the vastus lateralis being reduced by as much as 40% between the age of 20 and 80 years [ 15 ]. Changes in the",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -219,7 +219,7 @@
       "sentence": "The greatest loss of muscle mass is seen in the lower limb muscle groups, with the cross-sectional area of the vastus lateralis being reduced by as much as 40% between the age of 20 and 80 years [ 15 ].",
       "context_window": "s being reduced by as much as 40% between the age of 20 and 80 years [ 15 ]. Changes in the relative weights of the different c",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -525,7 +525,7 @@
       "sentence": "There is increasing evidence that the current Recommended Dietary Intakes for older people of around 0.8 g/kg/day are insufficient to optimise retention of muscle mass, strength and function [ 31 , 32 ].",
       "context_window": "rent Recommended Dietary Intakes for older people of around 0.8 g/kg/day are insufficient to optimise retention of muscle mass, stre",
       "claim_role": "dose",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -598,7 +598,7 @@
       "context_window": "ned [ 34 ]. These results indicate that a protein intake of 0.8 g/kg/day is not adequate to completely meet the metabolic and physio",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -832,7 +832,7 @@
       "context_window": "Netherlands indicated that dietary protein intake averaged 1.1 g/kg/day in community-dwelling and 1.0 g/kg/day in frail older peopl",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -850,7 +850,7 @@
       "context_window": "tein intake averaged 1.1 g/kg/day in community-dwelling and 1.0 g/kg/day in frail older people, with protein intakes being particula",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -868,7 +868,7 @@
       "context_window": "n the highest quintile of protein intake lost approximately 40% less lean mass than did those in the lowest quintile of pro",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -958,7 +958,7 @@
       "context_window": "omen\u2019s Health Initiative, with over 24,000 women aged 65 to 79 years followed for 3 years, reported that a 20% increase in prote",
       "claim_role": "population",
       "endpoint": "frailty",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -976,7 +976,7 @@
       "context_window": "ve, with over 24,000 women aged 65 to 79 years followed for 3 years, reported that a 20% increase in protein intake (% kcal) wa",
       "claim_role": "population",
       "endpoint": "frailty",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -994,7 +994,7 @@
       "context_window": "n aged 65 to 79 years followed for 3 years, reported that a 20% increase in protein intake (% kcal) was associated with a 1",
       "claim_role": "population",
       "endpoint": "frailty",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1012,7 +1012,7 @@
       "context_window": "% increase in protein intake (% kcal) was associated with a 12% lower risk of frailty [ 58 ]. One large cross-sectional stu",
       "claim_role": "population",
       "endpoint": "frailty",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1048,7 +1048,7 @@
       "context_window": "g with increased dietary protein indicated that, for those \u226550 years, an average of 42 g protein on training days increased tota",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -1066,7 +1066,7 @@
       "context_window": "tance-type exercise training increased FFM by an additional 38% when compared with the placebo. There was no difference bet",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -1084,7 +1084,7 @@
       "context_window": "muscle fibre. Protein supplementation improved FFM gain by 0.48 kg in older people and 0.81 kg in younger people, although the",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -1102,7 +1102,7 @@
       "context_window": "ementation improved FFM gain by 0.48 kg in older people and 0.81 kg in younger people, although there was no statistical differ",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -1120,7 +1120,7 @@
       "context_window": "M leg press strength in both age-groups (pooled estimate of 14.4 kg in younger people and 13.1 kg in older people). The three s",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1138,7 +1138,7 @@
       "context_window": "ge-groups (pooled estimate of 14.4 kg in younger people and 13.1 kg in older people). The three studies without energy restrict",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1156,7 +1156,7 @@
       "context_window": "combine resistance exercise with a protein intake of up to 1.3 g/kg/day [ 49 , 69 ]. One recent RCT has clearly demonstrated that a",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1174,7 +1174,7 @@
       "context_window": "strated that a modest increase in dietary protein (30 g/day/24 weeks) combined with twice-weekly progressive resistance training",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1192,7 +1192,7 @@
       "context_window": "ing in a frail elderly population [ 64 ] induced an average 1.3 kg increase in lean body mass, although there was no protein e",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1264,7 +1264,7 @@
       "context_window": "[ 72 ]. In contrast, another recent trial in active women 60 years and older used increased red meat consumption to increase p",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1282,7 +1282,7 @@
       "context_window": "lunch and dinner) which took their total protein intake to ~1.29 g/kg/day, compared to the carbohydrate control diet intake of ~1.15",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1300,7 +1300,7 @@
       "context_window": "g/day, compared to the carbohydrate control diet intake of ~1.15 g/kg/day. The protein/meat group experienced greater gains in total",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1354,7 +1354,7 @@
       "context_window": "theless results in an intake significantly above the RDI of 1.0 g/kg/day is effective in increasing lean mass. Protein intakes and",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1372,7 +1372,7 @@
       "context_window": "ns require greater dietary protein intakes: between 1.0 and 1.5 g/kg/day. This is specifically required for an optimal increase in m",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1390,7 +1390,7 @@
       "context_window": "ning the range from inadequate intakes to optimal intakes (<1 g/kg/day to \u22651.2 g/kg/day) over a period of months are required to d",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1408,7 +1408,7 @@
       "context_window": "from inadequate intakes to optimal intakes (<1 g/kg/day to \u22651.2 g/kg/day) over a period of months are required to demonstrate statis",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1426,7 +1426,7 @@
       "context_window": "vidence indicates that a dietary protein intake of at least 1.2 g/kg/day is required to maintain optimal muscle function in older pe",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     }

@@ -1,0 +1,138 @@
+{
+  "paper_id": "DOI_10_1001_jama_2012_366_association_of_ldl_cholesterol_non_hdl_cholesterol_and_apoli",
+  "doi": "10.1001/jama.2012.366",
+  "extracted_at": "2026-05-07T19:24:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_2012_366_association_of_ldl_cholesterol_non_hdl_cholesterol_and_apoli-pct-975",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 975,
+      "sentence": "Data Extraction Hazard ratios (HRs) and corresponding 95% CIs for risk of major cardiovascular events adjusted for established risk factors by 1-SD increase in LDL-C, non-HDL-C, and apoB.",
+      "context_window": "2008. Data Extraction Hazard ratios (HRs) and corresponding 95% CIs for risk of major cardiovascular events adjusted for es",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2012_366_association_of_ldl_cholesterol_non_hdl_cholesterol_and_apoli-pct-1476",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1476,
+      "sentence": "The adjusted HRs for major cardiovascular events per 1-SD increase were 1.13 (95% CI, 1.10-1.17) for LDL-C, 1.16 (95% CI, 1.12-1.19) for non-HDL-C, and 1.14 (95% CI, 1.11-1.18) for apoB.",
+      "context_window": "or major cardiovascular events per 1-SD increase were 1.13 (95% CI, 1.10-1.17) for LDL-C, 1.16 (95% CI, 1.12-1.19) for non-",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2012_366_association_of_ldl_cholesterol_non_hdl_cholesterol_and_apoli-pct-1512",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1512,
+      "sentence": "The adjusted HRs for major cardiovascular events per 1-SD increase were 1.13 (95% CI, 1.10-1.17) for LDL-C, 1.16 (95% CI, 1.12-1.19) for non-HDL-C, and 1.14 (95% CI, 1.11-1.18) for apoB.",
+      "context_window": "-SD increase were 1.13 (95% CI, 1.10-1.17) for LDL-C, 1.16 (95% CI, 1.12-1.19) for non-HDL-C, and 1.14 (95% CI, 1.11-1.18)",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2012_366_association_of_ldl_cholesterol_non_hdl_cholesterol_and_apoli-pct-1556",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1556,
+      "sentence": "The adjusted HRs for major cardiovascular events per 1-SD increase were 1.13 (95% CI, 1.10-1.17) for LDL-C, 1.16 (95% CI, 1.12-1.19) for non-HDL-C, and 1.14 (95% CI, 1.11-1.18) for apoB.",
+      "context_window": "or LDL-C, 1.16 (95% CI, 1.12-1.19) for non-HDL-C, and 1.14 (95% CI, 1.11-1.18) for apoB. These HRs were significantly highe",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2012_366_association_of_ldl_cholesterol_non_hdl_cholesterol_and_apoli-p-1647",
+      "claim_type": "p_value",
+      "raw_text": "P = .002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1647,
+      "sentence": "These HRs were significantly higher for non-HDL-C than LDL-C (P = .002) and apoB (P = .02).",
+      "context_window": "ese HRs were significantly higher for non-HDL-C than LDL-C (P = .002) and apoB (P = .02). There was no significant difference be",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2012_366_association_of_ldl_cholesterol_non_hdl_cholesterol_and_apoli-p-1667",
+      "claim_type": "p_value",
+      "raw_text": "P = .02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1667,
+      "sentence": "These HRs were significantly higher for non-HDL-C than LDL-C (P = .002) and apoB (P = .02).",
+      "context_window": "cantly higher for non-HDL-C than LDL-C (P = .002) and apoB (P = .02). There was no significant difference between apoB and LDL-",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2012_366_association_of_ldl_cholesterol_non_hdl_cholesterol_and_apoli-p-1737",
+      "claim_type": "p_value",
+      "raw_text": "P = .21",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1737,
+      "sentence": "There was no significant difference between apoB and LDL-C (P = .21).",
+      "context_window": "There was no significant difference between apoB and LDL-C (P = .21). Conclusion Among statin-treated patients, on-treatment le",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

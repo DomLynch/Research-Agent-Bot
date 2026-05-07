@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_a_dose_response_investigation_of_docosahexaenoic_acid_dha",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:33:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_dose_response_investigation_of_docosahexaenoic_acid_dha-u-507",
+      "claim_type": "unit_value",
+      "raw_text": "500mg/d",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 507,
+      "sentence": "Currently, research suggests an intake range of dietary DHA to be anywhere from 0 to over 500mg/d.",
+      "context_window": "n intake range of dietary DHA to be anywhere from 0 to over 500mg/d. The aim of our study is to further investigate a feedback",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_dose_response_investigation_of_docosahexaenoic_acid_dha-u-1427",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1427,
+      "sentence": "Method: During an 8-week trial, 72 healthy vegan or vegetarian males and females (18-50 years) will be supplemented with 1 of 6 algal-oil based DHA doses: 0, 100, 200, 400, 800 or 1000 mg/d.",
+      "context_window": "trial, 72 healthy vegan or vegetarian males and females (18-50 years) will be supplemented with 1 of 6 algal-oil based DHA doses",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_dose_response_investigation_of_docosahexaenoic_acid_dha-u-1522",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg/d",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 1522,
+      "sentence": "Method: During an 8-week trial, 72 healthy vegan or vegetarian males and females (18-50 years) will be supplemented with 1 of 6 algal-oil based DHA doses: 0, 100, 200, 400, 800 or 1000 mg/d.",
+      "context_window": "1 of 6 algal-oil based DHA doses: 0, 100, 200, 400, 800 or 1000 mg/d. Blood will be collected at days 0, 3, 7, 14, 28 and 56 and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

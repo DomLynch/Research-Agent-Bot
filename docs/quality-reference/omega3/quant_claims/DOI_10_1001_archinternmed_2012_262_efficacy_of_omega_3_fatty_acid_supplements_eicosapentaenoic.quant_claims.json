@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1001_archinternmed_2012_262_efficacy_of_omega_3_fatty_acid_supplements_eicosapentaenoic",
+  "doi": "10.1001/archinternmed.2012.262",
+  "extracted_at": "2026-05-07T19:32:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_archinternmed_2012_262_efficacy_of_omega_3_fatty_acid_supplements_eicosapentaenoic-pct-833",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 833,
+      "sentence": "Supplementation with omega-3 fatty acids did not reduce the risk of overall cardiovascular events (relative risk, 0.99; 95% CI, 0.89-1.09), all-cause mortality, sudden cardiac death, myocardial infarction, congestive heart failure, or transient ischemic attack and stroke.",
+      "context_window": "risk of overall cardiovascular events (relative risk, 0.99; 95% CI, 0.89-1.09), all-cause mortality, sudden cardiac death,",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "omega-3",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_archinternmed_2012_262_efficacy_of_omega_3_fatty_acid_supplements_eicosapentaenoic-pct-1060",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1060,
+      "sentence": "There was a small reduction in cardiovascular death (relative risk, 0.91; 95% CI, 0.84-0.99), which disappeared when we excluded a study with major methodological problems.",
+      "context_window": "all reduction in cardiovascular death (relative risk, 0.91; 95% CI, 0.84-0.99), which disappeared when we excluded a study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

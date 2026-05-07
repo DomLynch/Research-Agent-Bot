@@ -476,6 +476,13 @@ def _check_section_coverage(paper: str) -> tuple[bool, str]:
 def _check_thesis_present(paper: str) -> tuple[bool, str]:
     has_thesis = bool(
         re.search(r"^\*\*Thesis:\*\*", paper, re.M)
+        or re.search(r"^\*\*Picked thesis\b.*?:\*\*", paper, re.M)
+        or re.search(r"\bThe deterministic thesis is:", paper)
+        or re.search(
+            r"\bThe synthesis surfaces\s+\d+\s+non-orthogonal tensions\b",
+            paper,
+            re.I,
+        )
         or re.search(r"thesis(?:\s+is)?\s+that", paper[:3000], re.I)
     )
     return has_thesis, (

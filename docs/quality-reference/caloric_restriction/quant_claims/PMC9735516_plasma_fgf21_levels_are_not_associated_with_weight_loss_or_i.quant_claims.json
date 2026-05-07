@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9735516_plasma_fgf21_levels_are_not_associated_with_weight_loss_or_i",
   "doi": "10.3390/nu14235061",
-  "extracted_at": "2026-05-05T22:17:49+00:00",
+  "extracted_at": "2026-05-07T16:58:05+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 23,
@@ -858,9 +858,9 @@
       "context_window": "randial FGF21 response). b Values are (adjusted) means with 95% confidence intervals. c Differences between the groups were",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735516_plasma_fgf21_levels_are_not_associated_with_weight_loss_or_i-pct-3077",
@@ -876,7 +876,7 @@
       "context_window": "and postprandial plasma FGF21 levels. ( A ) Geometric mean (95% CI) change in fasting plasma FGF21 upon a 12-week diet, as",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -894,7 +894,7 @@
       "context_window": "nt for baseline fasting FGF21 levels. ( B ) Geometric mean (95% CI) change in postprandial FGF21 response (\u2206120-0 min) to a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1923,7 +1923,7 @@
       "sentence": "In the DIETFITS trial, a trial in which 609 overweight or obese adults were randomized to follow a low-fat or low-carbohydrate weight-loss diet for 3 months, higher baseline FGF21 levels were associated with larger weight loss [ 21 ].",
       "context_window": "o follow a low-fat or low-carbohydrate weight-loss diet for 3 months, higher baseline FGF21 levels were associated with larger w",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

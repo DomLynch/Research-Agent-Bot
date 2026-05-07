@@ -1,0 +1,84 @@
+{
+  "paper_id": "HIT_treating_depression_in_coronary_artery_disease_with_omega_3_",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_treating_depression_in_coronary_artery_disease_with_omega_3_-pct-99",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 99,
+      "sentence": "Depressive disorders are common in patients with Coronary Artery Disease (CAD), occurring in up to 47% of patients.",
+      "context_window": "ents with Coronary Artery Disease (CAD), occurring in up to 47% of patients. Left untreated, these symptoms not only have a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_treating_depression_in_coronary_artery_disease_with_omega_3_-pct-286",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 286,
+      "sentence": "Unfortunately, about 64% of CAD patients do not respond to current antidepressant treatments.",
+      "context_window": "sk of future cardiac events and death. Unfortunately, about 64% of CAD patients do not respond to current antidepressant tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_treating_depression_in_coronary_artery_disease_with_omega_3_-u-1248",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1248,
+      "sentence": "CAROTID (CAD Randomized Omega-3 Trial In Depression) will randomize patients with CAD, with and without depressive symptoms, after 6 months of cardiac rehabilitation and usual care to receive either \u03c9-3 fatty acid supplements or placebo daily during their final 6 months of cardiac rehabilitation.",
+      "context_window": "ients with CAD, with and without depressive symptoms, after 6 months of cardiac rehabilitation and usual care to receive either",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_treating_depression_in_coronary_artery_disease_with_omega_3_-u-1379",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1379,
+      "sentence": "CAROTID (CAD Randomized Omega-3 Trial In Depression) will randomize patients with CAD, with and without depressive symptoms, after 6 months of cardiac rehabilitation and usual care to receive either \u03c9-3 fatty acid supplements or placebo daily during their final 6 months of cardiac rehabilitation.",
+      "context_window": "fatty acid supplements or placebo daily during their final 6 months of cardiac rehabilitation. The investigators hypothesize th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

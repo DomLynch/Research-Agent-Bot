@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7468870_is_caloric_restriction_associated_with_better_healthy_aging_",
   "doi": "10.3390/nu12082290",
-  "extracted_at": "2026-05-05T22:17:47+00:00",
+  "extracted_at": "2026-05-07T16:58:01+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 12,
@@ -23,7 +23,7 @@
       "context_window": "a significant increase in life expectancy by approximately 50% [ 7 , 8 ]. In animal studies, Li et al. reported on the fav",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -41,7 +41,7 @@
       "context_window": "iteria of eligibility: Population: studies on people aged \u226518 years; Intervention: CR with a reduction of daily energy caloric",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -59,7 +59,7 @@
       "context_window": "a reduction of daily energy caloric intake equivalent to 20-30% of energy requirements, expressed as kcal/day; Controls: a",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -221,7 +221,7 @@
       "context_window": "without diseases apart overweight. We showed that CR of 10-25% of the total caloric intake was efficacious on some markers",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -256,8 +256,8 @@
       "sentence": "On the other hand, a period of CR of 10-25% of the total caloric intake for 12-24 months could be suggested in mid-age overweight people to improve weight and related cardiometabolic dysfunctions as an alternative to classical weight-loss programs.",
       "context_window": "ight, any diseases. On the other hand, a period of CR of 10-25% of the total caloric intake for 12-24 months could be sugge",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "weight loss",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -274,8 +274,8 @@
       "sentence": "On the other hand, a period of CR of 10-25% of the total caloric intake for 12-24 months could be suggested in mid-age overweight people to improve weight and related cardiometabolic dysfunctions as an alternative to classical weight-loss programs.",
       "context_window": "a period of CR of 10-25% of the total caloric intake for 12-24 months could be suggested in mid-age overweight people to improve",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "weight loss",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -293,7 +293,7 @@
       "context_window": "Taken together, CR of 10% or more of the total caloric intake can improve many risk f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     }

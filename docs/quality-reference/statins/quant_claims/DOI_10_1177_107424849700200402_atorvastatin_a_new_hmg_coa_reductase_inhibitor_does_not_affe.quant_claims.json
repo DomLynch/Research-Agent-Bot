@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_1177_107424849700200402_atorvastatin_a_new_hmg_coa_reductase_inhibitor_does_not_affe",
+  "doi": "10.1177/107424849700200402",
+  "extracted_at": "2026-05-07T19:24:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1177_107424849700200402_atorvastatin_a_new_hmg_coa_reductase_inhibitor_does_not_affe-u-753",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 753,
+      "sentence": "Maximum doses of all agents were studied: 80 mg atorvastatin once daily, 40 mg simvastatin once daily, and 20 g/day colestipol.",
+      "context_window": "a 1-year period. Maximum doses of all agents were studied: 80 mg atorvastatin once daily, 40 mg simvastatin once daily, and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_107424849700200402_atorvastatin_a_new_hmg_coa_reductase_inhibitor_does_not_affe-u-784",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 784,
+      "sentence": "Maximum doses of all agents were studied: 80 mg atorvastatin once daily, 40 mg simvastatin once daily, and 20 g/day colestipol.",
+      "context_window": "of all agents were studied: 80 mg atorvastatin once daily, 40 mg simvastatin once daily, and 20 g/day colestipol. At the end",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_107424849700200402_atorvastatin_a_new_hmg_coa_reductase_inhibitor_does_not_affe-pct-937",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 937,
+      "sentence": "At the end of the 1-year treatment period, reductions in low-density lipoprotein cholesterol were 57%, 54%, and 49% for the atorvastatin, colestipol + atorvastatin, and colestipol + simvastatin groups, respectively.",
+      "context_window": "iod, reductions in low-density lipoprotein cholesterol were 57%, 54%, and 49% for the atorvastatin, colestipol + atorvastat",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_107424849700200402_atorvastatin_a_new_hmg_coa_reductase_inhibitor_does_not_affe-pct-942",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 942,
+      "sentence": "At the end of the 1-year treatment period, reductions in low-density lipoprotein cholesterol were 57%, 54%, and 49% for the atorvastatin, colestipol + atorvastatin, and colestipol + simvastatin groups, respectively.",
+      "context_window": "reductions in low-density lipoprotein cholesterol were 57%, 54%, and 49% for the atorvastatin, colestipol + atorvastatin, a",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1177_107424849700200402_atorvastatin_a_new_hmg_coa_reductase_inhibitor_does_not_affe-pct-951",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 951,
+      "sentence": "At the end of the 1-year treatment period, reductions in low-density lipoprotein cholesterol were 57%, 54%, and 49% for the atorvastatin, colestipol + atorvastatin, and colestipol + simvastatin groups, respectively.",
+      "context_window": "s in low-density lipoprotein cholesterol were 57%, 54%, and 49% for the atorvastatin, colestipol + atorvastatin, and colest",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

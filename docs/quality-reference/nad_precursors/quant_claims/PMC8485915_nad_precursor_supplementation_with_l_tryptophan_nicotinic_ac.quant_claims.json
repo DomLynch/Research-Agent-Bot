@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac",
   "doi": "10.1093/jn/nxab193",
-  "extracted_at": "2026-05-05T21:28:46+00:00",
+  "extracted_at": "2026-05-07T16:58:30+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 12,
@@ -100,9 +100,9 @@
       "context_window": "I, 25.2 \u00b1 2.3 kg/m 2 ]. Participants were supplemented with 207.5 mg niacin equivalents/day [intervention (INT)] and a control p",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-u-773",
@@ -118,9 +118,9 @@
       "context_window": "uct (CON) that did not contain niacin equivalents, each for 32 days. The primary outcomes tested were mitochondrial oxidative c",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-msd-1064",
@@ -137,7 +137,7 @@
       "context_window": "wing supplementation, skeletal muscle NAD + concentrations [7.5 \u00b1 1.9 compared with 7.9 \u00b1 1.6 AU, respectively] in INT compared w",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -156,7 +156,7 @@
       "context_window": "eletal muscle NAD + concentrations [7.5 \u00b1 1.9 compared with 7.9 \u00b1 1.6 AU, respectively] in INT compared with CON conditions were",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -175,7 +175,7 @@
       "context_window": "icantly higher under NAD + -precursor supplementation [INT, 0.098 \u00b1 0.063 compared with CON, 0.025 \u00b1 0.014; P = 0.001], suggesting an",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -194,7 +194,7 @@
       "context_window": "rsor supplementation [INT, 0.098 \u00b1 0.063 compared with CON, 0.025 \u00b1 0.014; P = 0.001], suggesting an increased NAD + metabolism. Conv",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -212,7 +212,7 @@
       "context_window": "ation [INT, 0.098 \u00b1 0.063 compared with CON, 0.025 \u00b1 0.014; P = 0.001], suggesting an increased NAD + metabolism. Conversely, nei",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -231,9 +231,9 @@
       "context_window": "NAD + metabolism. Conversely, neither ADP-stimulated [INT, 82.1 \u00b1 19.0 compared with CON, 84.0 \u00b1 19.2; P = 0.716] nor maximally un",
       "claim_role": "effect",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-msd-1516",
@@ -250,9 +250,9 @@
       "context_window": "neither ADP-stimulated [INT, 82.1 \u00b1 19.0 compared with CON, 84.0 \u00b1 19.2; P = 0.716] nor maximally uncoupled mitochondrial respirati",
       "claim_role": "effect",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-p-1529",
@@ -268,9 +268,9 @@
       "context_window": "timulated [INT, 82.1 \u00b1 19.0 compared with CON, 84.0 \u00b1 19.2; P = 0.716] nor maximally uncoupled mitochondrial respiration [INT, 10",
       "claim_role": "effect",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-msd-1596",
@@ -287,9 +287,9 @@
       "context_window": "16] nor maximally uncoupled mitochondrial respiration [INT, 103.4 \u00b1 30.7 compared with CON, 108.7 \u00b1 33.4; P = 0.495] improved under",
       "claim_role": "effect",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-msd-1628",
@@ -306,9 +306,9 @@
       "context_window": "chondrial respiration [INT, 103.4 \u00b1 30.7 compared with CON, 108.7 \u00b1 33.4; P = 0.495] improved under NAD + -precursor supplementation",
       "claim_role": "effect",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-p-1642",
@@ -324,9 +324,9 @@
       "context_window": "iration [INT, 103.4 \u00b1 30.7 compared with CON, 108.7 \u00b1 33.4; P = 0.495] improved under NAD + -precursor supplementation, nor did n",
       "claim_role": "effect",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-msd-1775",
@@ -343,9 +343,9 @@
       "context_window": "xercise efficiency during the submaximal cycling test [INT, 20.2 \u00b1 2.77 compared with CON, 20.8 \u00b1 2.88; P = 0.342]. Our findings a",
       "claim_role": "effect",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-msd-1806",
@@ -362,9 +362,9 @@
       "context_window": "ubmaximal cycling test [INT, 20.2 \u00b1 2.77 compared with CON, 20.8 \u00b1 2.88; P = 0.342]. Our findings are consistent with previous fin",
       "claim_role": "effect",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-p-1819",
@@ -380,9 +380,9 @@
       "context_window": "ling test [INT, 20.2 \u00b1 2.77 compared with CON, 20.8 \u00b1 2.88; P = 0.342]. Our findings are consistent with previous findings on NA",
       "claim_role": "effect",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-u-65",
@@ -452,9 +452,9 @@
       "context_window": "e measures were exploratory. Each study period consisted of 32 days of supplementation with either the intervention product (IN",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-u-3295",
@@ -470,9 +470,9 @@
       "context_window": "ntion product (INT) or control (CON), separated by at least 5 weeks of wash-out. We chose this intervention duration based on p",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-u-4167",
@@ -488,9 +488,9 @@
       "context_window": "to which NA and NAM were added. In total, the equivalent of 207.5 mg/day niacin equivalents (NE) of NAD + precursors was supplemente",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-u-4256",
@@ -506,9 +506,9 @@
       "context_window": "ts (NE) of NAD + precursors was supplemented through L-Trp [210 mg/day at a 60:1 conversion rate ( 29 , 30 )], NA (4 mg/day), and",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-u-4311",
@@ -524,9 +524,9 @@
       "context_window": "Trp [210 mg/day at a 60:1 conversion rate ( 29 , 30 )], NA (4 mg/day), and NAM (200 mg/day). The control product (CON) was compo",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-u-4331",
@@ -542,9 +542,9 @@
       "context_window": "60:1 conversion rate ( 29 , 30 )], NA (4 mg/day), and NAM (200 mg/day). The control product (CON) was composed of an amino acid p",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-u-4608",
@@ -848,9 +848,9 @@
       "context_window": "articipants. For the supplementation with precursors (INT), 100% of all sachets were consumed, compared to 99% (range, 97%-1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-pct-241",
@@ -866,9 +866,9 @@
       "context_window": "rsors (INT), 100% of all sachets were consumed, compared to 99% (range, 97%-100%) in the control condition (CON). Overall,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-pct-253",
@@ -884,9 +884,9 @@
       "context_window": "100% of all sachets were consumed, compared to 99% (range, 97%-100%) in the control condition (CON). Overall, the products",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-pct-257",
@@ -902,9 +902,9 @@
       "context_window": "% of all sachets were consumed, compared to 99% (range, 97%-100%) in the control condition (CON). Overall, the products were",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-p-922",
@@ -920,7 +920,7 @@
       "context_window": "showed that NAD + levels were similar between INT and CON ( P = 0.123; Figure 2 ). NAD + metabolome in skeletal muscle tissue ob",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -938,7 +938,7 @@
       "context_window": "tered supplemental niacin equivalents and placebo, each for 32 days. The y-axis defines the AUC (AUC* IS AUC -1 ) per mg of dry",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1028,7 +1028,7 @@
       "context_window": "otide (NAAD), which was not different between INT and CON ( P = 0.262; n = 11; Figure 2 ). NAD + can also be salvaged from NMN, N",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1046,7 +1046,7 @@
       "context_window": "), which was not different between INT and CON ( P = 0.262; n = 11; Figure 2 ). NAD + can also be salvaged from NMN, NAM, and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1064,9 +1064,9 @@
       "context_window": "ween INT and CON were observed in these precursors either ( P \u2265 0.05; n = 11; Figure 2 ). Consumption of NAD yields NAM and ADP",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-n-2078",
@@ -1082,9 +1082,9 @@
       "context_window": "nd CON were observed in these precursors either ( P \u2265 0.05; n = 11; Figure 2 ). Consumption of NAD yields NAM and ADP riboside",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-p-2219",
@@ -1100,9 +1100,9 @@
       "context_window": "o differences observed in ADPr levels between INT and CON ( P = 0.413; n = 11; Figure 2 ). Conversely, the concentration of the p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-n-2230",
@@ -1118,9 +1118,9 @@
       "context_window": "es observed in ADPr levels between INT and CON ( P = 0.413; n = 11; Figure 2 ). Conversely, the concentration of the primary b",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-p-2514",
@@ -1136,7 +1136,7 @@
       "context_window": "cantly higher MeNAM concentrations in INT compared to CON ( P = 0.001; Figure 2 ). Alternatively, NAD + can be phosphorylated int",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1154,7 +1154,7 @@
       "context_window": "d into NAD(P) + , which did not differ between conditions ( P = 0.833; n = 11; Figure 2 ). The respective reduced forms, NAD(H) a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1172,7 +1172,7 @@
       "context_window": "P) + , which did not differ between conditions ( P = 0.833; n = 11; Figure 2 ). The respective reduced forms, NAD(H) and NAD(P",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1190,7 +1190,7 @@
       "context_window": "AD(H) and NAD(P)H, also did not differ between conditions ( P = 0.389 and P = 0.365 respectively; n = 11; Figure 2 ). We previou",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1208,7 +1208,7 @@
       "context_window": "P)H, also did not differ between conditions ( P = 0.389 and P = 0.365 respectively; n = 11; Figure 2 ). We previously showed tha",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1226,7 +1226,7 @@
       "context_window": "between conditions ( P = 0.389 and P = 0.365 respectively; n = 11; Figure 2 ). We previously showed that NR supplementation",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1460,7 +1460,7 @@
       "context_window": "ion, as fat percentages were not different for INT and CON [34.2% (95% CI: 29.3%, 39.2%) and 33.3% (95% CI: 27.6%, 38.9%), re",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1478,7 +1478,7 @@
       "context_window": "fat percentages were not different for INT and CON [34.2% (95% CI: 29.3%, 39.2%) and 33.3% (95% CI: 27.6%, 38.9%), respect",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1496,7 +1496,7 @@
       "context_window": "centages were not different for INT and CON [34.2% (95% CI: 29.3%, 39.2%) and 33.3% (95% CI: 27.6%, 38.9%), respectively; P =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1514,7 +1514,7 @@
       "context_window": "s were not different for INT and CON [34.2% (95% CI: 29.3%, 39.2%) and 33.3% (95% CI: 27.6%, 38.9%), respectively; P = 0.121]",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1532,7 +1532,7 @@
       "context_window": "different for INT and CON [34.2% (95% CI: 29.3%, 39.2%) and 33.3% (95% CI: 27.6%, 38.9%), respectively; P = 0.121]. To deter",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1550,7 +1550,7 @@
       "context_window": "nt for INT and CON [34.2% (95% CI: 29.3%, 39.2%) and 33.3% (95% CI: 27.6%, 38.9%), respectively; P = 0.121]. To determine",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1568,7 +1568,7 @@
       "context_window": "NT and CON [34.2% (95% CI: 29.3%, 39.2%) and 33.3% (95% CI: 27.6%, 38.9%), respectively; P = 0.121]. To determine skeletal m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1586,7 +1586,7 @@
       "context_window": "CON [34.2% (95% CI: 29.3%, 39.2%) and 33.3% (95% CI: 27.6%, 38.9%), respectively; P = 0.121]. To determine skeletal muscle m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1604,7 +1604,7 @@
       "context_window": ".3%, 39.2%) and 33.3% (95% CI: 27.6%, 38.9%), respectively; P = 0.121]. To determine skeletal muscle mitochondrial capacity, we",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3050,7 +3050,7 @@
       "context_window": "0; IQR, 90.0-100) as compared to CON (90.0; IQR, 86.3-93.8; n = 12; P = 0.031; Figure 6 ). However, the other 8 out of 9 domai",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3068,7 +3068,7 @@
       "context_window": "90.0-100) as compared to CON (90.0; IQR, 86.3-93.8; n = 12; P = 0.031; Figure 6 ). However, the other 8 out of 9 domains of the R",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3140,7 +3140,7 @@
       "context_window": "placebo. In accordance, Elhassan et al. ( 22 ) showed that 3 weeks of NR supplementation does not increase handgrip strength i",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3158,7 +3158,7 @@
       "context_window": "BP and DBP in healthy middle-aged to older adults following 6 weeks of NR supplementation, which may be explained by discrepanc",
       "claim_role": "duration",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3176,7 +3176,7 @@
       "context_window": "for IHL content to decline in humans with obesity following 12 weeks of NR supplementation. Although this observation did not re",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3194,7 +3194,7 @@
       "context_window": "(13 out of 20 participants) had an IHL content greater than 5% prior to supplementation, and 9 out of these 13 individuals",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3230,7 +3230,7 @@
       "context_window": "rinen et al. ( 51 ) have shown that a titration protocol of 250 mg/day to 1000 mg/day of niacin over 4 weeks is able to rescue mit",
       "claim_role": "dose",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3248,7 +3248,7 @@
       "context_window": "51 ) have shown that a titration protocol of 250 mg/day to 1000 mg/day of niacin over 4 weeks is able to rescue mitochondrial resp",
       "claim_role": "dose",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3266,7 +3266,7 @@
       "context_window": "ration protocol of 250 mg/day to 1000 mg/day of niacin over 4 weeks is able to rescue mitochondrial respiration in adult-onset",
       "claim_role": "dose",
       "endpoint": "mitochondrial respiration",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3302,9 +3302,9 @@
       "context_window": "thy, middle-aged individuals with obesity supplemented with 1000 mg/day of NR, who demonstrated unresponsive NAD + levels to NR sup",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8485915_nad_precursor_supplementation_with_l_tryptophan_nicotinic_ac-u-11290",
@@ -3338,7 +3338,7 @@
       "context_window": "cycling compared to walking. Secondly, the selected dose of 207.5 mg/day NE, although 12-15 times the RDA for vitamin B-3, may be in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3392,7 +3392,7 @@
       "context_window": "+ precursors in humans ( 23 , 24 ), and found that doses of 100 mg/day, 250 mg/day, and 300 mg/day NE are able to increase plasma",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3410,7 +3410,7 @@
       "context_window": "in humans ( 23 , 24 ), and found that doses of 100 mg/day, 250 mg/day, and 300 mg/day NE are able to increase plasma NAD + metabo",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3428,7 +3428,7 @@
       "context_window": ", 24 ), and found that doses of 100 mg/day, 250 mg/day, and 300 mg/day NE are able to increase plasma NAD + metabolite levels over",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3446,7 +3446,7 @@
       "context_window": "eletal muscle. Here, we have supplemented older adults with 207.5 mg NE per day, a level of supplementation emulating an increas",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },

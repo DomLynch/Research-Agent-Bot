@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk",
   "doi": "10.3390/nu16213700",
-  "extracted_at": "2026-05-05T22:11:16+00:00",
+  "extracted_at": "2026-05-07T16:56:56+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 23,
@@ -24,7 +24,7 @@
       "context_window": "llowed TRE demonstrated reduction in body weight [mean-MD: -1.622 kg, (95% confidence interval (CI -2.302 to -0.941)], body mass",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "demonstrated reduction in body weight [mean-MD: -1.622 kg, (95% confidence interval (CI -2.302 to -0.941)], body mass index",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -60,7 +60,7 @@
       "context_window": "nterval (CI -2.302 to -0.941)], body mass index (BMI) [MD: -0.919 kg/m 2 (95% CI: -1.189 to -0.650)], waist circumference [MD: -",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": ".302 to -0.941)], body mass index (BMI) [MD: -0.919 kg/m 2 (95% CI: -1.189 to -0.650)], waist circumference [MD: -2.015 cm (95% CI: -3.212 to -0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -97,7 +97,7 @@
       "context_window": "/m 2 (95% CI: -1.189 to -0.650)], waist circumference [MD: -2.015 cm (95% CI: -3.212 to -0.819] and whole-body fat mass (WBFM) [",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -116,7 +116,7 @@
       "context_window": "CI: -1.189 to -0.650)], waist circumference [MD: -2.015 cm (95% CI: -3.212 to -0.819] and whole-body fat mass (WBFM) [MD: -0.662 kg (95% CI: -0.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -134,7 +134,7 @@
       "context_window": "CI: -3.212 to -0.819] and whole-body fat mass (WBFM) [MD: -0.662 kg (95% CI: -0.795 to -0.530)]. Improvements in cardiometaboli",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -153,7 +153,7 @@
       "context_window": "2 to -0.819] and whole-body fat mass (WBFM) [MD: -0.662 kg (95% CI: -0.795 to -0.530)]. Improvements in cardiometabolic risk factors such as a d",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -427,9 +427,9 @@
       "context_window": "1a ). BMI also decreased after the TRE intervention [MD of -0.919 kg/m 2 (95% CI: -1.189 to -0.650, p < 0.0001), with high heter",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-ci-2682",
@@ -446,9 +446,9 @@
       "context_window": "decreased after the TRE intervention [MD of -0.919 kg/m 2 (95% CI: -1.189 to -0.650, p < 0.0001), with high heterogeneity among studies ( I 2 =",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-p-2708",
@@ -464,9 +464,9 @@
       "context_window": "ntervention [MD of -0.919 kg/m 2 (95% CI: -1.189 to -0.650, p < 0.0001), with high heterogeneity among studies ( I 2 = 82%, p < 0.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-pct-2767",
@@ -482,9 +482,9 @@
       "context_window": "p < 0.0001), with high heterogeneity among studies ( I 2 = 82%, p < 0.0001)] ( Figure 5 b). The funnel plot was not symmet",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-p-2772",
@@ -500,9 +500,9 @@
       "context_window": "0.0001), with high heterogeneity among studies ( I 2 = 82%, p < 0.0001)] ( Figure 5 b). The funnel plot was not symmetric due to p",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-u-3005",
@@ -518,9 +518,9 @@
       "context_window": "ole-body fat mass (WBFM) after the TRE intervention [MD of -0.662 kg (95% CI: -0.795 to -0.530, p < 0.0001), with low heterogene",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-ci-3015",
@@ -537,9 +537,9 @@
       "context_window": "at mass (WBFM) after the TRE intervention [MD of -0.662 kg (95% CI: -0.795 to -0.530, p < 0.0001), with low heterogeneity among studies ( I 2 =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-p-3041",
@@ -555,9 +555,9 @@
       "context_window": "RE intervention [MD of -0.662 kg (95% CI: -0.795 to -0.530, p < 0.0001), with low heterogeneity among studies ( I 2 = 17.8%, p = 0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-pct-3099",
@@ -573,9 +573,9 @@
       "context_window": ", p < 0.0001), with low heterogeneity among studies ( I 2 = 17.8%, p = 0.246)] ( Figure 5 c). The funnel plot was symmetric (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-p-3106",
@@ -591,9 +591,9 @@
       "context_window": ".0001), with low heterogeneity among studies ( I 2 = 17.8%, p = 0.246)] ( Figure 5 c). The funnel plot was symmetric ( Supplement",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-u-3259",
@@ -700,7 +700,7 @@
       "context_window": "nstrated a slight non-significant increase after TRE [MD of 0.372 kg (95% CI: -0.246 to 0.990, p = 0.238), with low heterogeneit",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -719,7 +719,7 @@
       "context_window": "slight non-significant increase after TRE [MD of 0.372 kg (95% CI: -0.246 to 0.990, p = 0.238), with low heterogeneity among studies ( I 2 = 3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -737,7 +737,7 @@
       "context_window": "ncrease after TRE [MD of 0.372 kg (95% CI: -0.246 to 0.990, p = 0.238), with low heterogeneity among studies ( I 2 = 3.8%, p = 0.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -755,7 +755,7 @@
       "context_window": "0, p = 0.238), with low heterogeneity among studies ( I 2 = 3.8%, p = 0.308)] ( Figure 5 e). The funnel plot was not symmetr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -773,7 +773,7 @@
       "context_window": "0.238), with low heterogeneity among studies ( I 2 = 3.8%, p = 0.308)] ( Figure 5 e). The funnel plot was not symmetric ( Supple",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -791,9 +791,9 @@
       "context_window": "cumference showed a significant reduction after TRE [MD of -2.015 cm (95% CI: -3.212 to -0.819, p = 0.001), with high heterogene",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-ci-3793",
@@ -810,9 +810,9 @@
       "context_window": "showed a significant reduction after TRE [MD of -2.015 cm (95% CI: -3.212 to -0.819, p = 0.001), with high heterogeneity among studies ( I 2 =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-p-3819",
@@ -828,9 +828,9 @@
       "context_window": "ction after TRE [MD of -2.015 cm (95% CI: -3.212 to -0.819, p = 0.001), with high heterogeneity among studies ( I 2 = 68.4%, p =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-pct-3877",
@@ -846,9 +846,9 @@
       "context_window": ", p = 0.001), with high heterogeneity among studies ( I 2 = 68.4%, p = 0.001)] ( Figure 6 a). The funnel plot was not symmetr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-p-3884",
@@ -864,9 +864,9 @@
       "context_window": ".001), with high heterogeneity among studies ( I 2 = 68.4%, p = 0.001)] ( Figure 6 a). The funnel plot was not symmetric due to p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-u-4053",
@@ -973,7 +973,7 @@
       "context_window": "nd showed a slight no significant increase after TRE [MD of 0.006 cm (95% CI: -0.020 to 0.032, p = 0.651)] ( Figure 6 c). The fu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -992,7 +992,7 @@
       "context_window": "a slight no significant increase after TRE [MD of 0.006 cm (95% CI: -0.020 to 0.032, p = 0.651)] ( Figure 6 c). The funnel plot showed no resul",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1010,7 +1010,7 @@
       "context_window": "ncrease after TRE [MD of 0.006 cm (95% CI: -0.020 to 0.032, p = 0.651)] ( Figure 6 c). The funnel plot showed no results ( Supple",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1028,7 +1028,7 @@
       "context_window": "showed no significant change after TRE intervention [MD of -0.212 mmHg (95% CI: -2.721 to 2.298, p = 0.869), with high heterogenei",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1047,7 +1047,7 @@
       "context_window": "gnificant change after TRE intervention [MD of -0.212 mmHg (95% CI: -2.721 to 2.298, p = 0.869), with high heterogeneity among studies ( I 2 =",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1065,7 +1065,7 @@
       "context_window": "E intervention [MD of -0.212 mmHg (95% CI: -2.721 to 2.298, p = 0.869), with high heterogeneity among studies ( I 2 = 71.8%, p <",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1083,7 +1083,7 @@
       "context_window": ", p = 0.869), with high heterogeneity among studies ( I 2 = 71.8%, p < 0.0001)] ( Figure 7 a). Similarly, the diastolic blood",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1101,7 +1101,7 @@
       "context_window": ".869), with high heterogeneity among studies ( I 2 = 71.8%, p < 0.0001)] ( Figure 7 a). Similarly, the diastolic blood pressure de",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1211,7 +1211,7 @@
       "context_window": "lted in reduced insulin concentrations [MD of -0.458 mIU/L (95% CI: -0.843 to -0.073, p = 0.020), with high heterogeneity among studies ( I 2 =",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1229,7 +1229,7 @@
       "context_window": "ncentrations [MD of -0.458 mIU/L (95% CI: -0.843 to -0.073, p = 0.020), with high heterogeneity among studies ( I 2 = 92.1%, p <",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1247,7 +1247,7 @@
       "context_window": ", p = 0.020), with high heterogeneity among studies ( I 2 = 92.1%, p < 0.0001)] ( Figure 8 a). The funnel plot was not symmet",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1265,7 +1265,7 @@
       "context_window": ".020), with high heterogeneity among studies ( I 2 = 92.1%, p < 0.0001)] ( Figure 8 a). The funnel plot was not symmetric due to p",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1283,9 +1283,9 @@
       "context_window": "4a ). Furthermore, TRE lowered HbA1C concentrations [MD of -0.175% (95% CI: -0.569 to 0.219, p = 0.385), with high heterogenei",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-ci-5409",
@@ -1302,9 +1302,9 @@
       "context_window": "rthermore, TRE lowered HbA1C concentrations [MD of -0.175% (95% CI: -0.569 to 0.219, p = 0.385), with high heterogeneity among studies ( I 2 =",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-p-5434",
@@ -1320,9 +1320,9 @@
       "context_window": "A1C concentrations [MD of -0.175% (95% CI: -0.569 to 0.219, p = 0.385), with high heterogeneity among studies ( I 2 = 98.7%, p <",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-pct-5492",
@@ -1338,9 +1338,9 @@
       "context_window": ", p = 0.385), with high heterogeneity among studies ( I 2 = 98.7%, p < 0.0001)] ( Figure 8 b). The funnel plot was not symmet",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-p-5499",
@@ -1356,9 +1356,9 @@
       "context_window": ".385), with high heterogeneity among studies ( I 2 = 98.7%, p < 0.0001)] ( Figure 8 b). The funnel plot was not symmetric due to p",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-u-5694",
@@ -1465,7 +1465,7 @@
       "context_window": "cholesterol concentrations decreased following TRE [MD of -2.889 mg/dL (95% CI: -5.447 to -0.330, p = 0.027), with high heterogene",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1484,7 +1484,7 @@
       "context_window": "concentrations decreased following TRE [MD of -2.889 mg/dL (95% CI: -5.447 to -0.330, p = 0.027), with high heterogeneity among studies ( I 2 =",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1502,7 +1502,7 @@
       "context_window": "ollowing TRE [MD of -2.889 mg/dL (95% CI: -5.447 to -0.330, p = 0.027), with high heterogeneity among studies ( I 2 = 95.5%, p <",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1520,7 +1520,7 @@
       "context_window": ", p = 0.027), with high heterogeneity among studies ( I 2 = 95.5%, p < 0.0001)] ( Figure 9 a). TRE also resulted in decreased",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1538,7 +1538,7 @@
       "context_window": ".027), with high heterogeneity among studies ( I 2 = 95.5%, p < 0.0001)] ( Figure 9 a). TRE also resulted in decreased LDL concent",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1556,7 +1556,7 @@
       "context_window": ". TRE also resulted in decreased LDL concentrations [MD of -2.717 mg/dL (95% CI: -4.412 to -1.021, p = 0.002), with high heterogene",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1575,7 +1575,7 @@
       "context_window": "sulted in decreased LDL concentrations [MD of -2.717 mg/dL (95% CI: -4.412 to -1.021, p = 0.002), with high heterogeneity among studies ( I 2 =",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1593,7 +1593,7 @@
       "context_window": "ncentrations [MD of -2.717 mg/dL (95% CI: -4.412 to -1.021, p = 0.002), with high heterogeneity among studies ( I 2 = 94.7% p < 0",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1611,7 +1611,7 @@
       "context_window": ", p = 0.002), with high heterogeneity among studies ( I 2 = 94.7% p < 0.0001)] ( Figure 9 b). Significant changes were report",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1629,7 +1629,7 @@
       "context_window": "0.002), with high heterogeneity among studies ( I 2 = 94.7% p < 0.0001)] ( Figure 9 b). Significant changes were reported in trigl",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1647,7 +1647,7 @@
       "context_window": "anges were reported in triglycerides concentrations [MD of -3.782 mg/dL (95% CI: -6.180 to 1.384, p = 0.002), with high heterogenei",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1666,7 +1666,7 @@
       "context_window": "ported in triglycerides concentrations [MD of -3.782 mg/dL (95% CI: -6.180 to 1.384, p = 0.002), with high heterogeneity among studies ( I 2 =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1684,7 +1684,7 @@
       "context_window": "oncentrations [MD of -3.782 mg/dL (95% CI: -6.180 to 1.384, p = 0.002), with high heterogeneity among studies ( I 2 = 88.2%, p <",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1702,7 +1702,7 @@
       "context_window": ", p = 0.002), with high heterogeneity among studies ( I 2 = 88.2%, p < 0.0001)] ( Figure 9 c), while HDL showed no significan",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1720,7 +1720,7 @@
       "context_window": ".002), with high heterogeneity among studies ( I 2 = 88.2%, p < 0.0001)] ( Figure 9 c), while HDL showed no significant increase f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1738,7 +1738,7 @@
       "context_window": "ile HDL showed no significant increase following TRE [MD of 0.632 mg/dL (95% CI: -0.636 to 1.899, p = 0.329), with high heterogenei",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1757,7 +1757,7 @@
       "context_window": "d no significant increase following TRE [MD of 0.632 mg/dL (95% CI: -0.636 to 1.899, p = 0.329), with high heterogeneity among studies ( I 2 =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1775,7 +1775,7 @@
       "context_window": "following TRE [MD of 0.632 mg/dL (95% CI: -0.636 to 1.899, p = 0.329), with high heterogeneity among studies ( I 2 = 98.7%, p <",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1793,7 +1793,7 @@
       "context_window": ", p = 0.329), with high heterogeneity among studies ( I 2 = 98.7%, p < 0.0001) ( Figure 9 d). The funnel plots for total chol",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1811,7 +1811,7 @@
       "context_window": ".329), with high heterogeneity among studies ( I 2 = 98.7%, p < 0.0001) ( Figure 9 d). The funnel plots for total cholesterol, LDL",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2309,9 +2309,9 @@
       "context_window": "n 2022, TRE significantly decreased body weight [MD: -1.60 (95% CI: -2.27 to -0.93)], fat mass [MD: -1.48 (95% CI: -1.59 to -1.38)], triglycer",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-ci-5733",
@@ -2328,9 +2328,9 @@
       "context_window": "[MD: -1.60 (95% CI: -2.27 to -0.93)], fat mass [MD: -1.48 (95% CI: -1.59 to -1.38)], triglycerides [MD: -12.71 (95% CI: -24.9 to -0.52)], tot",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-ci-5786",
@@ -2347,9 +2347,9 @@
       "context_window": "-1.48 (95% CI: -1.59 to -1.38)], triglycerides [MD: -12.71 (95% CI: -24.9 to -0.52)], total cholesterol [MD: -6.45 (95% CI: -7.40 to -5.49)] a",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-ci-5842",
@@ -2366,9 +2366,9 @@
       "context_window": "71 (95% CI: -24.9 to -0.52)], total cholesterol [MD: -6.45 (95% CI: -7.40 to -5.49)] and LDL concentrations [MD: -7.0 (95% CI: -9.74 to -4.24)",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11547938_the_effect_of_time_restricted_eating_on_cardiometabolic_risk-ci-5901",
@@ -2385,9 +2385,9 @@
       "context_window": "(95% CI: -7.40 to -5.49)] and LDL concentrations [MD: -7.0 (95% CI: -9.74 to -4.24)]. However, TRE had no significant effects on waist circumf",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

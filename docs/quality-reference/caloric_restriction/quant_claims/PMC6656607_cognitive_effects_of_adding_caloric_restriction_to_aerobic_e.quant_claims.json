@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6656607_cognitive_effects_of_adding_caloric_restriction_to_aerobic_e",
   "doi": "10.1002/oby.22525",
-  "extracted_at": "2026-05-05T22:17:51+00:00",
+  "extracted_at": "2026-05-07T16:58:00+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 4,
@@ -79,7 +79,7 @@
       "context_window": "ercise was associated with a modest increase in MMSE score (p=0.04). In the overall sample, increases from baseline at long-te",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -97,7 +97,7 @@
       "context_window": "executive function more than exercise alone assessed up to 24 months post-randomization.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -151,7 +151,7 @@
       "context_window": "rolled study indicates that combined exercise and CR over 6-12 months may benefit cognition more than CR alone, but not more than",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -423,9 +423,9 @@
       "context_window": "hose assigned to either the EX+Mod-CR (-250 kcal/d deficit, n=30) or the EX+High-CR (-600 kcal/d deficit, n=30) groups were",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6656607_cognitive_effects_of_adding_caloric_restriction_to_aerobic_e-n-3523",
@@ -441,9 +441,9 @@
       "context_window": "al/d deficit, n=30) or the EX+High-CR (-600 kcal/d deficit, n=30) groups were provided with a controlled diet consisting of",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6656607_cognitive_effects_of_adding_caloric_restriction_to_aerobic_e-u-4924",
@@ -548,10 +548,10 @@
       "sentence": "Adherence and compliance in the parent study were excellent (87% retention, >85% exercise attendance, >95% diet compliance).",
       "context_window": "dherence and compliance in the parent study were excellent (87% retention, >85% exercise attendance, >95% diet compliance).",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6656607_cognitive_effects_of_adding_caloric_restriction_to_aerobic_e-pct-77",
@@ -566,10 +566,10 @@
       "sentence": "Adherence and compliance in the parent study were excellent (87% retention, >85% exercise attendance, >95% diet compliance).",
       "context_window": "pliance in the parent study were excellent (87% retention, >85% exercise attendance, >95% diet compliance). 15 No participa",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6656607_cognitive_effects_of_adding_caloric_restriction_to_aerobic_e-pct-103",
@@ -584,10 +584,10 @@
       "sentence": "Adherence and compliance in the parent study were excellent (87% retention, >85% exercise attendance, >95% diet compliance).",
       "context_window": "y were excellent (87% retention, >85% exercise attendance, >95% diet compliance). 15 No participant dropped out due to an i",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6656607_cognitive_effects_of_adding_caloric_restriction_to_aerobic_e-msd-368",
@@ -604,7 +604,7 @@
       "context_window": "As in the parent study, 15 participants in the EX+Mod-CR (-9.45\u00b14.50%) and EX+High-CR (-10.45\u00b13.97%) both lost more body mass th",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -622,7 +622,7 @@
       "context_window": "n the parent study, 15 participants in the EX+Mod-CR (-9.45\u00b14.50%) and EX+High-CR (-10.45\u00b13.97%) both lost more body mass tha",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -641,7 +641,7 @@
       "context_window": "articipants in the EX+Mod-CR (-9.45\u00b14.50%) and EX+High-CR (-10.45\u00b13.97%) both lost more body mass than EX only (-1.13\u00b13.44%), and",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -659,7 +659,7 @@
       "context_window": "pants in the EX+Mod-CR (-9.45\u00b14.50%) and EX+High-CR (-10.45\u00b13.97%) both lost more body mass than EX only (-1.13\u00b13.44%), and d",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -678,7 +678,7 @@
       "context_window": "h-CR (-10.45\u00b13.97%) both lost more body mass than EX only (-1.13\u00b13.44%), and differences in body mass lost between CR groups did",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -696,7 +696,7 @@
       "context_window": "(-10.45\u00b13.97%) both lost more body mass than EX only (-1.13\u00b13.44%), and differences in body mass lost between CR groups did n",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -822,7 +822,7 @@
       "context_window": "n both Model 1 and Model 2, there was a modest association (p = 0.04) between group assignment and MMSE score, with those random",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1272,7 +1272,7 @@
       "context_window": "this study; participants in the CR only condition achieved ~10% weight loss, exercise + CR ~9% weight loss, and exercise on",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1290,7 +1290,7 @@
       "context_window": "CR only condition achieved ~10% weight loss, exercise + CR ~9% weight loss, and exercise only had no significant weight lo",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1344,9 +1344,9 @@
       "context_window": "cognitive score at baseline, 6 months, and 12 months. After 12 months, both the exercise and exercise+CR groups showed cognitive",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6656607_cognitive_effects_of_adding_caloric_restriction_to_aerobic_e-pct-3750",

@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1097_00002826_200209000_00008_colchicine_induced_acute_myopathy_in_a_patient_with_concomit",
+  "doi": "10.1097/00002826-200209000-00008",
+  "extracted_at": "2026-05-07T19:24:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1097_00002826_200209000_00008_colchicine_induced_acute_myopathy_in_a_patient_with_concomit-u-322",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 322,
+      "sentence": "We report the case of a patient with chronic renal failure who had been taking simvastatin for 2 years and developed acute weakness 2 weeks after the start of treatment with colchicines for recurrent gout.",
+      "context_window": "h chronic renal failure who had been taking simvastatin for 2 years and developed acute weakness 2 weeks after the start of tre",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1097_00002826_200209000_00008_colchicine_induced_acute_myopathy_in_a_patient_with_concomit-u-359",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 359,
+      "sentence": "We report the case of a patient with chronic renal failure who had been taking simvastatin for 2 years and developed acute weakness 2 weeks after the start of treatment with colchicines for recurrent gout.",
+      "context_window": "taking simvastatin for 2 years and developed acute weakness 2 weeks after the start of treatment with colchicines for recurrent",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

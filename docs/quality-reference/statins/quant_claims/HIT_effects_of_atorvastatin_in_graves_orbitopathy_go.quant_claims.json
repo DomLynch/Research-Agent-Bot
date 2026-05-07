@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_effects_of_atorvastatin_in_graves_orbitopathy_go",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effects_of_atorvastatin_in_graves_orbitopathy_go-pct-119",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 119,
+      "sentence": "Graves' orbitopathy (GO) is the most common extra-thyroidal manifestation of Graves' disease (GD), being observed in \\~25% of patients.",
+      "context_window": "manifestation of Graves' disease (GD), being observed in \\~25% of patients. Besides genetic and demographical variables, r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effects_of_atorvastatin_in_graves_orbitopathy_go-pct-560",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 560,
+      "sentence": "In a large retrospective study conducted in more than 8,000 individuals with GD it was observed that treatment with 3-hydroxy-3-methylglutaryl-coenzyme reductase inhibitors, better known as statins, is associated with a \\~40% reduced risk of developing GO in GD patients.",
+      "context_window": "inhibitors, better known as statins, is associated with a \\~40% reduced risk of developing GO in GD patients. The findings",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

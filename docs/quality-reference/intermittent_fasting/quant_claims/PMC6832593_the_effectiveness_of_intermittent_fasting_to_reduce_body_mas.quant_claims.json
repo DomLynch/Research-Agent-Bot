@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6832593_the_effectiveness_of_intermittent_fasting_to_reduce_body_mas",
   "doi": "10.3390/jcm8101645",
-  "extracted_at": "2026-05-05T22:11:15+00:00",
+  "extracted_at": "2026-05-07T16:57:04+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 26,
@@ -24,7 +24,7 @@
       "context_window": "IFD was associated with a significant decline in BMI (WMD, -0.75 kg/m 2 ; 95% CI, -1.44 to -0.06), fasting glucose level (WMD,",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "ated with a significant decline in BMI (WMD, -0.75 kg/m 2 ; 95% CI, -1.44 to -0.06), fasting glucose level (WMD, -4.16 mg/d",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -60,7 +60,7 @@
       "context_window": "m 2 ; 95% CI, -1.44 to -0.06), fasting glucose level (WMD, -4.16 mg/dL; 95% CI, -6.92 to -1.40), and homeostatic model assessment",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -78,7 +78,7 @@
       "context_window": ", -1.44 to -0.06), fasting glucose level (WMD, -4.16 mg/dL; 95% CI, -6.92 to -1.40), and homeostatic model assessment of in",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -96,7 +96,7 @@
       "context_window": "ostatic model assessment of insulin resistance (WMD, -0.54; 95% CI, -1.05 to -0.03). Fat mass (WMD, -0.98 kg; 95% CI, -2.32",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -222,9 +222,9 @@
       "context_window": ", alternate-day modified fasting (ADMF, consuming less than 25% of baseline energy needs on fasting days) [ 7 , 8 ], time-r",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6832593_the_effectiveness_of_intermittent_fasting_to_reduce_body_mas-pct-519",

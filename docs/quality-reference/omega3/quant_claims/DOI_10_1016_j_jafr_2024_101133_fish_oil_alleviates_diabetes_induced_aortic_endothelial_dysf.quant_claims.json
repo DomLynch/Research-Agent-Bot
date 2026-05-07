@@ -1,0 +1,84 @@
+{
+  "paper_id": "DOI_10_1016_j_jafr_2024_101133_fish_oil_alleviates_diabetes_induced_aortic_endothelial_dysf",
+  "doi": "10.1016/j.jafr.2024.101133",
+  "extracted_at": "2026-05-07T19:33:02+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_j_jafr_2024_101133_fish_oil_alleviates_diabetes_induced_aortic_endothelial_dysf-n-407",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 407,
+      "sentence": "To this end, C57BL/6 J male mice (n = 8/each group) were intraperitoneally injected with streptozotocin (50 mg/kg/day, 5 days), following feeding with a high-fat diet containing FO for 24 weeks, with fasting blood glucose levels and glucose tolerance monitored.",
+      "context_window": "sing a mouse model of DM. To this end, C57BL/6 J male mice (n = 8/each group) were intraperitoneally injected with streptozot",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_jafr_2024_101133_fish_oil_alleviates_diabetes_induced_aortic_endothelial_dysf-u-478",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg/kg/day",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 478,
+      "sentence": "To this end, C57BL/6 J male mice (n = 8/each group) were intraperitoneally injected with streptozotocin (50 mg/kg/day, 5 days), following feeding with a high-fat diet containing FO for 24 weeks, with fasting blood glucose levels and glucose tolerance monitored.",
+      "context_window": "group) were intraperitoneally injected with streptozotocin (50 mg/kg/day, 5 days), following feeding with a high-fat diet containing",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_jafr_2024_101133_fish_oil_alleviates_diabetes_induced_aortic_endothelial_dysf-u-492",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 492,
+      "sentence": "To this end, C57BL/6 J male mice (n = 8/each group) were intraperitoneally injected with streptozotocin (50 mg/kg/day, 5 days), following feeding with a high-fat diet containing FO for 24 weeks, with fasting blood glucose levels and glucose tolerance monitored.",
+      "context_window": "traperitoneally injected with streptozotocin (50 mg/kg/day, 5 days), following feeding with a high-fat diet containing FO for",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_jafr_2024_101133_fish_oil_alleviates_diabetes_induced_aortic_endothelial_dysf-u-558",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 558,
+      "sentence": "To this end, C57BL/6 J male mice (n = 8/each group) were intraperitoneally injected with streptozotocin (50 mg/kg/day, 5 days), following feeding with a high-fat diet containing FO for 24 weeks, with fasting blood glucose levels and glucose tolerance monitored.",
+      "context_window": "), following feeding with a high-fat diet containing FO for 24 weeks, with fasting blood glucose levels and glucose tolerance mo",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9370806_the_effects_of_intermittent_fasting_and_continuous_energy_re",
   "doi": "10.3390/nu14153071",
-  "extracted_at": "2026-05-05T22:11:15+00:00",
+  "extracted_at": "2026-05-07T16:57:10+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 24,
@@ -25,9 +25,9 @@
       "context_window": "34 healthy participants (17 males and 17 females, mean BMI: 27.0 kg/m 2 , mean age: 23.9 years). Specifically, changes in cardi",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9370806_the_effects_of_intermittent_fasting_and_continuous_energy_re-u-856",
@@ -43,9 +43,9 @@
       "context_window": "(17 males and 17 females, mean BMI: 27.0 kg/m 2 , mean age: 23.9 years). Specifically, changes in cardiometabolic blood markers an",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9370806_the_effects_of_intermittent_fasting_and_continuous_energy_re-pct-1198",
@@ -205,7 +205,7 @@
       "context_window": "intake, intermittent fasting (IF) has emerged over the past 10 years as a potential alternative [ 9 ]. Unlike CER, which consist",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "continuous energy restriction",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -241,7 +241,7 @@
       "context_window": "ionally active but untrained individuals with a BMI of 22.0-35.0 kg/m 2 aged between 18 and 35 years were randomised to underta",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "continuous energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -259,7 +259,7 @@
       "context_window": "ividuals with a BMI of 22.0-35.0 kg/m 2 aged between 18 and 35 years were randomised to undertake 12 weeks of resistance trainin",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "continuous energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -277,7 +277,7 @@
       "context_window": "2 aged between 18 and 35 years were randomised to undertake 12 weeks of resistance training (3 sessions per week; two 45-minute",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "continuous energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -895,9 +895,9 @@
       "context_window": "= Continuous Energy Restriction Diet Group. * No overlap in 95% confidence intervals. Weekly mean reported scores over the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9370806_the_effects_of_intermittent_fasting_and_continuous_energy_re-u-5918",
@@ -1453,7 +1453,7 @@
       "context_window": "ay (although decreased levels after a fasted day) following 8 weeks of alternate-day fasting in individuals who were prescribed",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

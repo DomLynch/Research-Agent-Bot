@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11880040_multi_study_feasibility_analysis_on_a_composite_biomarker_of",
   "doi": "10.1007/s00394-025-03627-8",
-  "extracted_at": "2026-05-05T22:17:54+00:00",
+  "extracted_at": "2026-05-07T16:57:54+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 45,
@@ -348,9 +348,9 @@
       "context_window": "the subjects were randomized to parallel arms consisting of 12 weeks of ER rather than healthy weight maintenance as a control [",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "weight maintenance",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11880040_multi_study_feasibility_analysis_on_a_composite_biomarker_of-u-2620",
@@ -1122,9 +1122,9 @@
       "context_window": "ant shift towards the metabolically healthy reference after 12 weeks of ER (p = 1.73E- 04) and a significant difference between",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11880040_multi_study_feasibility_analysis_on_a_composite_biomarker_of-p-12182",
@@ -1140,9 +1140,9 @@
       "context_window": "nt difference between the ER and control groups at week 12 (p = 0.030). Metabotype B had a significant interaction effect B (p =",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11880040_multi_study_feasibility_analysis_on_a_composite_biomarker_of-p-12247",
@@ -1644,7 +1644,7 @@
       "context_window": "served when energy restriction was maintained for more than 12 weeks [ 25 ]. However, the overall results of an ER diet on circu",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     }

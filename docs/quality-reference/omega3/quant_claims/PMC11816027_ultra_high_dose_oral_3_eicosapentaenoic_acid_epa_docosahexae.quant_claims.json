@@ -1,0 +1,842 @@
+{
+  "paper_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae",
+  "doi": "10.3390/cancers17030362",
+  "extracted_at": "2026-05-07T19:32:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 31,
+    "unit_value": 7,
+    "p_value": 6,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-60",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 60,
+      "sentence": "Pediatric Neuroblastoma has an overall mortality rate above 50%, and the current standard of care consists of highly genotoxic compounds.",
+      "context_window": "Pediatric Neuroblastoma has an overall mortality rate above 50%, and the current standard of care consists of highly genoto",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-509",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 509,
+      "sentence": "Tumors form in about 50% of mice in our pediatric neuroblastoma model.",
+      "context_window": "ic brain injury and is well tolerated. Tumors form in about 50% of mice in our pediatric neuroblastoma model. We show that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-80",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 80,
+      "sentence": "Neuroblastoma (NB) is a highly metastatic pediatric cancer that accounts for 10-15% of childhood cancer deaths [ 1 , 2 ].",
+      "context_window": "s a highly metastatic pediatric cancer that accounts for 10-15% of childhood cancer deaths [ 1 , 2 ]. At diagnosis, about 4",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-142",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 142,
+      "sentence": "At diagnosis, about 40% of patients present with high-risk (HR) disease.",
+      "context_window": "% of childhood cancer deaths [ 1 , 2 ]. At diagnosis, about 40% of patients present with high-risk (HR) disease. Unlike low",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-310",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 310,
+      "sentence": "Unlike low- and intermediate-grade NB, where survival has improved over time, HR and recurrent NB retain less than 50% and 5% survival rates, respectively.",
+      "context_window": "as improved over time, HR and recurrent NB retain less than 50% and 5% survival rates, respectively. The extensive treatmen",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-318",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 318,
+      "sentence": "Unlike low- and intermediate-grade NB, where survival has improved over time, HR and recurrent NB retain less than 50% and 5% survival rates, respectively.",
+      "context_window": "ved over time, HR and recurrent NB retain less than 50% and 5% survival rates, respectively. The extensive treatment regim",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-881",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 881,
+      "sentence": "Approximately 25% of NB cases exhibit the amplification of the proto-oncogenic transcription factor MYCN [ 3 , 4 ].",
+      "context_window": "eded to treat HR and relapsed neuroblastoma. Approximately 25% of NB cases exhibit the amplification of the proto-oncogeni",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-148",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 148,
+      "sentence": "ARA was from a single-cell triglyceride oil with about 44% ARA, with the rest composed of monounsaturated and saturated fatty acids (ARASCO, DSM, Columbia, MD, USA).",
+      "context_window": "1 ]. ARA was from a single-cell triglyceride oil with about 44% ARA, with the rest composed of monounsaturated and saturate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-327",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 327,
+      "sentence": "EPA and DHA were from dietary supplement triglyceride oils of about 88% EPA and 82% DHA, respectively.",
+      "context_window": "DHA were from dietary supplement triglyceride oils of about 88% EPA and 82% DHA, respectively. The EPA and DHA supplements,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-339",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 339,
+      "sentence": "EPA and DHA were from dietary supplement triglyceride oils of about 88% EPA and 82% DHA, respectively.",
+      "context_window": "m dietary supplement triglyceride oils of about 88% EPA and 82% DHA, respectively. The EPA and DHA supplements, in capsule",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-u-699",
+      "claim_type": "unit_value",
+      "raw_text": "42 days",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 699,
+      "sentence": "When the studies started, the mice were all 42 days old, with body weights between 25 g and 30 g, and were males only.",
+      "context_window": "d in Table 1 . When the studies started, the mice were all 42 days old, with body weights between 25 g and 30 g, and were male",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-1087",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1087,
+      "sentence": "Murine neuroblastoma Neuro-2a cells transduced with a human MYCN transgene were initially acquired from American Type Tissue Culture (ATCC CCL-131; details available at ATCC) and were cultured in RPMI-1640 media supplemented with 10% heat-inactivated fetal bovine serum (HI-FBS).",
+      "context_window": "TCC) and were cultured in RPMI-1640 media supplemented with 10% heat-inactivated fetal bovine serum (HI-FBS). Cells were gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-1198",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1198,
+      "sentence": "Cells were grown at 37 \u00b0C in a water-saturated atmosphere of 95% air and 5% CO 2 .",
+      "context_window": "ells were grown at 37 \u00b0C in a water-saturated atmosphere of 95% air and 5% CO 2 . Cells were tested monthly and consistentl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-1210",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1210,
+      "sentence": "Cells were grown at 37 \u00b0C in a water-saturated atmosphere of 95% air and 5% CO 2 .",
+      "context_window": "own at 37 \u00b0C in a water-saturated atmosphere of 95% air and 5% CO 2 . Cells were tested monthly and consistently found to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-u-2555",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2555,
+      "sentence": "At 10 days post-injection, the mice were euthanized, tumors were collected, and tumor weight and dimensions were measured.",
+      "context_window": "administration of ARA and EPA by gavage every other day. At 10 days post-injection, the mice were euthanized, tumors were colle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-u-3181",
+      "claim_type": "unit_value",
+      "raw_text": "20 days",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3181,
+      "sentence": "For 20 days following cell injection, mice received oral ARA, EPA, ARA/EPA, DHA, or D-DHA every other day.",
+      "context_window": "ted cells were subcutaneously injected into each mouse. For 20 days following cell injection, mice received oral ARA, EPA, ARA/",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-u-3384",
+      "claim_type": "unit_value",
+      "raw_text": "20 days",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3384,
+      "sentence": "At 20 days post-injection, mice were euthanized, final tumor measurements were gathered, and tissue/tumor samples were collected for fatty acid analysis; tumor volume was calculated as in experiment 1.",
+      "context_window": "mor growth every other day until the study\u2019s conclusion. At 20 days post-injection, mice were euthanized, final tumor measureme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-3673",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3673,
+      "sentence": "Based on the results from Experiment 1, we estimated that 10 mice per group would provide 80% power (2-tailed type 1 test, error rate of 5%) and powered on tumor appearance.",
+      "context_window": "riment 1, we estimated that 10 mice per group would provide 80% power (2-tailed type 1 test, error rate of 5%) and powered",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-3720",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3720,
+      "sentence": "Based on the results from Experiment 1, we estimated that 10 mice per group would provide 80% power (2-tailed type 1 test, error rate of 5%) and powered on tumor appearance.",
+      "context_window": "ould provide 80% power (2-tailed type 1 test, error rate of 5%) and powered on tumor appearance. Doses and tissues were a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-p-6512",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6512,
+      "sentence": "The differences in tumor latency between groups were analyzed using a t -test, with * p < 0.05 and ** p < 0.01.",
+      "context_window": "atency between groups were analyzed using a t -test, with * p < 0.05 and ** p < 0.01. Fatty acid composition and gene expression",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-p-6528",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6528,
+      "sentence": "The differences in tumor latency between groups were analyzed using a t -test, with * p < 0.05 and ** p < 0.01.",
+      "context_window": "roups were analyzed using a t -test, with * p < 0.05 and ** p < 0.01. Fatty acid composition and gene expression data were analy",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-p-6830",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6830,
+      "sentence": "Statistical significance levels are * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001.",
+      "context_window": "stically significant. Statistical significance levels are * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. Each figure i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-p-6843",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6843,
+      "sentence": "Statistical significance levels are * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001.",
+      "context_window": "ificant. Statistical significance levels are * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. Each figure in the manuscr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-p-6857",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6857,
+      "sentence": "Statistical significance levels are * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001.",
+      "context_window": "stical significance levels are * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. Each figure in the manuscript includes sp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-p-6873",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6873,
+      "sentence": "Statistical significance levels are * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001.",
+      "context_window": "nce levels are * p < 0.05, ** p < 0.01, *** p < 0.001, **** p < 0.0001. Each figure in the manuscript includes specific statistica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-164",
+      "claim_type": "percentage",
+      "raw_text": "44.5%",
+      "numeric_values": [
+        44.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 164,
+      "sentence": "The ARA, EPA, and DHA concentrations were 44.5%, w / w , 87.6%, w / w , and 82.5%, w / w , respectively.",
+      "context_window": "ental Table S1 ). The ARA, EPA, and DHA concentrations were 44.5%, w / w , 87.6%, w / w , and 82.5%, w / w , respectively. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-179",
+      "claim_type": "percentage",
+      "raw_text": "87.6%",
+      "numeric_values": [
+        87.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 179,
+      "sentence": "The ARA, EPA, and DHA concentrations were 44.5%, w / w , 87.6%, w / w , and 82.5%, w / w , respectively.",
+      "context_window": "). The ARA, EPA, and DHA concentrations were 44.5%, w / w , 87.6%, w / w , and 82.5%, w / w , respectively. The base diet had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-198",
+      "claim_type": "percentage",
+      "raw_text": "82.5%",
+      "numeric_values": [
+        82.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 198,
+      "sentence": "The ARA, EPA, and DHA concentrations were 44.5%, w / w , 87.6%, w / w , and 82.5%, w / w , respectively.",
+      "context_window": "d DHA concentrations were 44.5%, w / w , 87.6%, w / w , and 82.5%, w / w , respectively. The base diet had 0.13%, w / w ARA,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-245",
+      "claim_type": "percentage",
+      "raw_text": "0.13%",
+      "numeric_values": [
+        0.13
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 245,
+      "sentence": "The base diet had 0.13%, w / w ARA, 0.61%, w / w EPA, and 1.30%, w / w DHA incidental to the addition of fish meal to an otherwise conventional AIN-93G formula ( Supplemental Table S2 ).",
+      "context_window": "w / w , and 82.5%, w / w , respectively. The base diet had 0.13%, w / w ARA, 0.61%, w / w EPA, and 1.30%, w / w DHA incident",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-263",
+      "claim_type": "percentage",
+      "raw_text": "0.61%",
+      "numeric_values": [
+        0.61
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 263,
+      "sentence": "The base diet had 0.13%, w / w ARA, 0.61%, w / w EPA, and 1.30%, w / w DHA incidental to the addition of fish meal to an otherwise conventional AIN-93G formula ( Supplemental Table S2 ).",
+      "context_window": ", w / w , respectively. The base diet had 0.13%, w / w ARA, 0.61%, w / w EPA, and 1.30%, w / w DHA incidental to the addition",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-285",
+      "claim_type": "percentage",
+      "raw_text": "1.30%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 285,
+      "sentence": "The base diet had 0.13%, w / w ARA, 0.61%, w / w EPA, and 1.30%, w / w DHA incidental to the addition of fish meal to an otherwise conventional AIN-93G formula ( Supplemental Table S2 ).",
+      "context_window": ". The base diet had 0.13%, w / w ARA, 0.61%, w / w EPA, and 1.30%, w / w DHA incidental to the addition of fish meal to an ot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-479",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 479,
+      "sentence": "Cells expressing either the GFP control or MYCN protein revealed 4.2%, w / w ARA, 0.85%, w / w EPA, and 0.6%, w / w DHA levels in Neuro-2a: MYCN cells, none of which were significantly different from the GFP control ( Supplemental Figure S2 ).",
+      "context_window": "expressing either the GFP control or MYCN protein revealed 4.2%, w / w ARA, 0.85%, w / w EPA, and 0.6%, w / w DHA levels in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-496",
+      "claim_type": "percentage",
+      "raw_text": "0.85%",
+      "numeric_values": [
+        0.85
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 496,
+      "sentence": "Cells expressing either the GFP control or MYCN protein revealed 4.2%, w / w ARA, 0.85%, w / w EPA, and 0.6%, w / w DHA levels in Neuro-2a: MYCN cells, none of which were significantly different from the GFP control ( Supplemental Figure S2 ).",
+      "context_window": "r the GFP control or MYCN protein revealed 4.2%, w / w ARA, 0.85%, w / w EPA, and 0.6%, w / w DHA levels in Neuro-2a: MYCN ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-518",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 518,
+      "sentence": "Cells expressing either the GFP control or MYCN protein revealed 4.2%, w / w ARA, 0.85%, w / w EPA, and 0.6%, w / w DHA levels in Neuro-2a: MYCN cells, none of which were significantly different from the GFP control ( Supplemental Figure S2 ).",
+      "context_window": "YCN protein revealed 4.2%, w / w ARA, 0.85%, w / w EPA, and 0.6%, w / w DHA levels in Neuro-2a: MYCN cells, none of which we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-n-1463",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1463,
+      "sentence": "Wildtype strain A/J mice syngeneic with Neuro-2a cells were gavaged every other day for seven days before the subcutaneous injection of 2.5 \u00d7 10 6 Neuro-2a: MYCN cells into the left flank, n = 8 per group.",
+      "context_window": "ion of 2.5 \u00d7 10 6 Neuro-2a: MYCN cells into the left flank, n = 8 per group. Mice gavaged with 75 \u03bcL/day ARA displayed a sign",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-u-1600",
+      "claim_type": "unit_value",
+      "raw_text": "5.25 days",
+      "numeric_values": [
+        5.25
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1600,
+      "sentence": "Mice gavaged with 75 \u03bcL/day ARA displayed a significantly accelerated tumor incidence, with an average tumor latency of 5.25 days ( Figure 1 a), compared to 7 days in sham-gavaged mice.",
+      "context_window": "celerated tumor incidence, with an average tumor latency of 5.25 days ( Figure 1 a), compared to 7 days in sham-gavaged mice. In",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-u-1637",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1637,
+      "sentence": "Mice gavaged with 75 \u03bcL/day ARA displayed a significantly accelerated tumor incidence, with an average tumor latency of 5.25 days ( Figure 1 a), compared to 7 days in sham-gavaged mice.",
+      "context_window": "erage tumor latency of 5.25 days ( Figure 1 a), compared to 7 days in sham-gavaged mice. In contrast, the EPA-gavaged mice gro",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-u-1819",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1819,
+      "sentence": "In contrast, the EPA-gavaged mice group demonstrated significantly reduced tumor incidence, with only three tumors developing with an average latency of 10 days ( Figure 1 a).",
+      "context_window": "ith only three tumors developing with an average latency of 10 days ( Figure 1 a). Comparing tumor volumes across the two group",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-n-2081",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2081,
+      "sentence": "We then performed a second experiment with n = 10 mice in each group.",
+      "context_window": "Figure S3a,c ). We then performed a second experiment with n = 10 mice in each group. Doses were adjusted upward for both ARA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-3487",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3487,
+      "sentence": "Tissue EPA remained very low (below 1%) in tumors, liver, and skeletal muscle, even for EPA-gavaged animals ( Figure 2 a,b, middle panels, Supplemental Table S3 ).",
+      "context_window": "upplemental Table S3 ). Tissue EPA remained very low (below 1%) in tumors, liver, and skeletal muscle, even for EPA-gavage",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-4128",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4128,
+      "sentence": "Surprisingly, D-DHA appeared to support higher skeletal muscle ARA ( Figure 3 a, left panel, Supplemental Table S4 ), and EPA levels in DHA and D-DHA gavaged animals rose to 1-2%, suggesting either retroconversion of DHA to EPA or accumulation of EPA not converted to DHA [ 29 ] ( Figure 3 a, right panel, Supplemental Table S4 ).",
+      "context_window": ", and EPA levels in DHA and D-DHA gavaged animals rose to 1-2%, suggesting either retroconversion of DHA to EPA or accumul",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-4322",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4322,
+      "sentence": "Skeletal muscle EPA increased to about 0.5%, although this increase was not significant ( Figure 3 a, right panel, Supplemental Table S4 ).",
+      "context_window": "lemental Table S4 ). Skeletal muscle EPA increased to about 0.5%, although this increase was not significant ( Figure 3 a, r",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-4468",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4468,
+      "sentence": "In response to DHA gavage, liver DHA rose to 20% from very low levels in controls and about 20% in D-DHA-dosed animals ( Figure 3 b, Supplemental Table S4 ).",
+      "context_window": "al Table S4 ). In response to DHA gavage, liver DHA rose to 20% from very low levels in controls and about 20% in D-DHA-dos",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-4515",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4515,
+      "sentence": "In response to DHA gavage, liver DHA rose to 20% from very low levels in controls and about 20% in D-DHA-dosed animals ( Figure 3 b, Supplemental Table S4 ).",
+      "context_window": "DHA rose to 20% from very low levels in controls and about 20% in D-DHA-dosed animals ( Figure 3 b, Supplemental Table S4",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-656",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 656,
+      "sentence": "They also have a 14% chance of developing a secondary malignancy over the ten years following chemotherapy [ 30 , 31 ].",
+      "context_window": "lacements, and multiple organ dysfunction. They also have a 14% chance of developing a secondary malignancy over the ten ye",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11816027_ultra_high_dose_oral_3_eicosapentaenoic_acid_epa_docosahexae-pct-3359",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3359,
+      "sentence": "HUFAs are indeed sensitive to oxidation, and in 21% atmospheric oxygen of in vitro cell line studies, HUFA oxidation is robust [ 37 , 38 ].",
+      "context_window": "36 , 37 ]. HUFAs are indeed sensitive to oxidation, and in 21% atmospheric oxygen of in vitro cell line studies, HUFA oxid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

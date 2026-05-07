@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_citrulline_efficacy_to_improve_carbohydrate_metabolism_abnor",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_citrulline_efficacy_to_improve_carbohydrate_metabolism_abnor-u-1980",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1980,
+      "sentence": "The objective of the study is therefore to investigate the impact of citrulline supplementation (5g/d) vs. placebo for 4 weeks on glucose tolerance assessed during an oral glucose tolerance test in patients at risk for developing T2D and treated with atorvastatin (40 or 80 mg / day).",
+      "context_window": "impact of citrulline supplementation (5g/d) vs. placebo for 4 weeks on glucose tolerance assessed during an oral glucose tolera",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_citrulline_efficacy_to_improve_carbohydrate_metabolism_abnor-u-2132",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 2132,
+      "sentence": "The objective of the study is therefore to investigate the impact of citrulline supplementation (5g/d) vs. placebo for 4 weeks on glucose tolerance assessed during an oral glucose tolerance test in patients at risk for developing T2D and treated with atorvastatin (40 or 80 mg / day).",
+      "context_window": "isk for developing T2D and treated with atorvastatin (40 or 80 mg / day).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

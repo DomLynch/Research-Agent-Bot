@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_1161_circ_148_suppl_1_16909_abstract_16909_eicosapentaenoic_acid_and_docosahexaenoic_aci",
+  "doi": "10.1161/circ.148.suppl_1.16909",
+  "extracted_at": "2026-05-07T19:33:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_circ_148_suppl_1_16909_abstract_16909_eicosapentaenoic_acid_and_docosahexaenoic_aci-pct-1509",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1509,
+      "sentence": "Membrane width ( <jats:italic>i.e</jats:italic> ., unit cell periodicity) of the samples was determined by small angle x-ray scattering (SAXS). </jats:p> <jats:p> <jats:bold>Results:</jats:bold> DHA alone increased bulk lipid fluidity as indicated by a dose-dependent reduction in apparent rotational correlation time (ARCT); at 10 mol%, there was a ~20% (p<0.05) reduction from ~19 to ~16 nsec compared to control (untreated membranes).",
+      "context_window": "otational correlation time (ARCT); at 10 mol%, there was a ~20% (p<0.05) reduction from ~19 to ~16 nsec compared to control",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_148_suppl_1_16909_abstract_16909_eicosapentaenoic_acid_and_docosahexaenoic_aci-p-1514",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1514,
+      "sentence": "Membrane width ( <jats:italic>i.e</jats:italic> ., unit cell periodicity) of the samples was determined by small angle x-ray scattering (SAXS). </jats:p> <jats:p> <jats:bold>Results:</jats:bold> DHA alone increased bulk lipid fluidity as indicated by a dose-dependent reduction in apparent rotational correlation time (ARCT); at 10 mol%, there was a ~20% (p<0.05) reduction from ~19 to ~16 nsec compared to control (untreated membranes).",
+      "context_window": "onal correlation time (ARCT); at 10 mol%, there was a ~20% (p<0.05) reduction from ~19 to ~16 nsec compared to control (untrea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_148_suppl_1_16909_abstract_16909_eicosapentaenoic_acid_and_docosahexaenoic_aci-p-1802",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1802,
+      "sentence": "By contrast, EPA had no significant disordering effect except when combined at equimolar levels; the EPA/DHA combination showed a reduction in ARCT to ~18 nsec at 10 mol% that was different from EPA alone (p<0.05).",
+      "context_window": "T to ~18 nsec at 10 mol% that was different from EPA alone (p<0.05). Consistent with these findings, SAXS analysis showed DHA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_148_suppl_1_16909_abstract_16909_eicosapentaenoic_acid_and_docosahexaenoic_aci-pct-1928",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1928,
+      "sentence": "Consistent with these findings, SAXS analysis showed DHA containing membranes had a reduced width compared to EPA by 5% or 3 \u00c5 (p<0.05) due to increased <jats:italic>trans-gauche</jats:italic> isomerizations in the phospholipid acyl chains. </jats:p> <jats:p> <jats:bold>Conclusion:</jats:bold> EPA maintained membrane fluidity while DHA increased fluidity and thereby reduced membrane width due to its additional carbons and double bond.",
+      "context_window": "containing membranes had a reduced width compared to EPA by 5% or 3 \u00c5 (p<0.05) due to increased <jats:italic>trans-gauche<",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circ_148_suppl_1_16909_abstract_16909_eicosapentaenoic_acid_and_docosahexaenoic_aci-p-1939",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1939,
+      "sentence": "Consistent with these findings, SAXS analysis showed DHA containing membranes had a reduced width compared to EPA by 5% or 3 \u00c5 (p<0.05) due to increased <jats:italic>trans-gauche</jats:italic> isomerizations in the phospholipid acyl chains. </jats:p> <jats:p> <jats:bold>Conclusion:</jats:bold> EPA maintained membrane fluidity while DHA increased fluidity and thereby reduced membrane width due to its additional carbons and double bond.",
+      "context_window": "membranes had a reduced width compared to EPA by 5% or 3 \u00c5 (p<0.05) due to increased <jats:italic>trans-gauche</jats:italic> i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11369340_fasting_and_calorie_restriction_modulate_age_associated_immu",
   "doi": "10.1002/agm2.12342",
-  "extracted_at": "2026-05-05T22:17:43+00:00",
+  "extracted_at": "2026-05-07T16:57:53+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 22,
@@ -40,9 +40,9 @@
       "context_window": "Calorie restriction is decreasing the intake of calories by 20%-40%, without changing the pattern of meal frequency. Calori",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11369340_fasting_and_calorie_restriction_modulate_age_associated_immu-pct-1076",
@@ -58,9 +58,9 @@
       "context_window": "rie restriction is decreasing the intake of calories by 20%-40%, without changing the pattern of meal frequency. Calorie re",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11369340_fasting_and_calorie_restriction_modulate_age_associated_immu-u-8638",
@@ -94,7 +94,7 @@
       "context_window": "mory CD4 T cells among participants under CR. 40 Similarly, 6 months of 10% and 30% calorie restriction increased T cell prolife",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -112,7 +112,7 @@
       "context_window": "ells among participants under CR. 40 Similarly, 6 months of 10% and 30% calorie restriction increased T cell proliferation",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -130,7 +130,7 @@
       "context_window": "ng participants under CR. 40 Similarly, 6 months of 10% and 30% calorie restriction increased T cell proliferation capacity",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -148,7 +148,7 @@
       "context_window": "r ability to produce IgM decreases with age. 48 Mice under 3 days of fasting and 2 weeks of 30% DR showed a decrease in the t",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -166,7 +166,7 @@
       "context_window": "gM decreases with age. 48 Mice under 3 days of fasting and 2 weeks of 30% DR showed a decrease in the total number of CD19+B22",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -184,7 +184,7 @@
       "context_window": "s with age. 48 Mice under 3 days of fasting and 2 weeks of 30% DR showed a decrease in the total number of CD19+B220+ B ce",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -274,7 +274,7 @@
       "context_window": "t standard antitumor treatment ( NCT03340935 ) Randomized 4 weeks of time\u2010restricted eating (TRE) 8\u2010h feeding window 16 eli",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -292,7 +292,7 @@
       "context_window": "icted eating (TRE) 8\u2010h feeding window 16 elite cyclists (<23 years) ( NCT04320784 ) Randomized 1\u2010year study with CR and CR w",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "high"
     },
@@ -310,7 +310,7 @@
       "context_window": "and obese postmenopausal women FMD or their regular diet (3 days before and during neoadjuvant chemotherapy) Pathological r",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -328,7 +328,7 @@
       "context_window": "uring neoadjuvant chemotherapy) Pathological response 4/5 (90%-100% tumor cell loss) occurred more often in patients using",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -346,7 +346,7 @@
       "context_window": "g neoadjuvant chemotherapy) Pathological response 4/5 (90%-100% tumor cell loss) occurred more often in patients using FMD",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -382,9 +382,9 @@
       "context_window": "ith HER2\u2010negative stage II/III breast cancer, with BMI over 18 kg/ m 2 ( NCT02126449 ) Fasting enhanced autophagy levels th",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11369340_fasting_and_calorie_restriction_modulate_age_associated_immu-u-24781",
@@ -400,9 +400,9 @@
       "context_window": "nd cytokine secretion by neutrophil Eleven individuals (29-60 years) for the multi\u2010omics study, 57 individuals (16-59 years) fo",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11369340_fasting_and_calorie_restriction_modulate_age_associated_immu-u-24837",
@@ -418,9 +418,9 @@
       "context_window": "(29-60 years) for the multi\u2010omics study, 57 individuals (16-59 years) for routine blood test, and 40 participants (aged from 27",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11369340_fasting_and_calorie_restriction_modulate_age_associated_immu-u-24902",
@@ -436,7 +436,7 @@
       "context_window": "ars) for routine blood test, and 40 participants (aged from 27 years to 67 years) for biochemical analysis (ChiCTR1900027451)",
       "claim_role": "protocol",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -454,7 +454,7 @@
       "context_window": "tine blood test, and 40 participants (aged from 27 years to 67 years) for biochemical analysis (ChiCTR1900027451) CR reduced t",
       "claim_role": "protocol",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -472,7 +472,7 @@
       "context_window": "The level of serum CRP and TNF\u2010\u03b1 concentrations were about 40% and 50% lower in the CR group, respectively. CR did not af",
       "claim_role": "background",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -490,7 +490,7 @@
       "context_window": "el of serum CRP and TNF\u2010\u03b1 concentrations were about 40% and 50% lower in the CR group, respectively. CR did not affect the",
       "claim_role": "background",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -508,7 +508,7 @@
       "context_window": "ference in clinically significant infections. CR induced a 10.4% weight loss over the 2 years relative to the AL group. Pha",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -526,7 +526,7 @@
       "context_window": "ficant infections. CR induced a 10.4% weight loss over the 2 years relative to the AL group. Phase 2 Meydani SN et al 87 In",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },

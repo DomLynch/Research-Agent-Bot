@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10253889_effects_of_intermittent_fasting_on_regulation_of_metabolic_h",
   "doi": "10.3390/jcm12113699",
-  "extracted_at": "2026-05-05T22:11:22+00:00",
+  "extracted_at": "2026-05-07T16:56:50+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 81,
@@ -24,9 +24,9 @@
       "context_window": "cludes fasting for entire days (1 to 4 per week), with a 60-100% energy restriction on fasting days (between 300 and 600 kca",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10253889_effects_of_intermittent_fasting_on_regulation_of_metabolic_h-pct-952",
@@ -42,9 +42,9 @@
       "context_window": "te-Day Fasting regimens (mADF) (allows consumption of 20 to 25% of energy requirements on fasting days that are intersperse",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10253889_effects_of_intermittent_fasting_on_regulation_of_metabolic_h-pct-5340",
@@ -186,9 +186,9 @@
       "context_window": "or may not include the possibility of consumption of up to 25% of the caloric needs on fasting days (between 300-600 Kcal)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10253889_effects_of_intermittent_fasting_on_regulation_of_metabolic_h-pct-4435",
@@ -204,7 +204,7 @@
       "context_window": "iction; TRF-Time-restrict eating; IF70-Intermittent fasting 70%; IF100-Intermittent fasting 100%; M-Men; W-Women; HOMA-IR-i",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -222,7 +222,7 @@
       "context_window": "; IF70-Intermittent fasting 70%; IF100-Intermittent fasting 100%; M-Men; W-Women; HOMA-IR-insulin resistance; BMI-Body mass",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },

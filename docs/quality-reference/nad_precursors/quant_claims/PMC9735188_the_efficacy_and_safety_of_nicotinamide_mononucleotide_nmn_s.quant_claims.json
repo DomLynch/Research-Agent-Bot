@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s",
   "doi": "10.1007/s11357-022-00705-1",
-  "extracted_at": "2026-05-04T12:19:02+00:00",
+  "extracted_at": "2026-05-07T16:58:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 108,
@@ -96,7 +96,7 @@
       "context_window": "and day 60 when compared to both placebo and baseline (all p \u2264 0.001). Blood NAD concentrations were highest in the groups takin",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -114,9 +114,9 @@
       "context_window": "Blood NAD concentrations were highest in the groups taking 600 mg and 900 mg NMN. No safety issues, based on monitoring adver",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-1445",
@@ -132,9 +132,9 @@
       "context_window": "concentrations were highest in the groups taking 600 mg and 900 mg NMN. No safety issues, based on monitoring adverse events (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-1714",
@@ -312,9 +312,9 @@
       "context_window": "tions and is safe and well tolerated with oral dosing up to 900 mg NMN daily. Clinical efficacy expressed by blood NAD concent",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-2704",
@@ -330,9 +330,9 @@
       "context_window": "ation and physical performance reaches highest at a dose of 600 mg daily oral intake. This trial was registered with ClinicalT",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-913",
@@ -348,9 +348,9 @@
       "context_window": "ions 2.2 times higher than control and extended lifespan to 19.8 days vs. 13.9 days in control [ 5 ]. NMN intervention to healthy",
       "claim_role": "effect",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-927",
@@ -366,9 +366,9 @@
       "context_window": "higher than control and extended lifespan to 19.8 days vs. 13.9 days in control [ 5 ]. NMN intervention to healthy wild-type 3-4",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-1093",
@@ -384,7 +384,7 @@
       "context_window": "ed liver NAD concentrations over 30 min after a single oral 300 mg/kg dose, and effectively mitigated age-associated physical",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -402,7 +402,7 @@
       "context_window": "e and was well tolerated after a 12-month oral treatment of 100 mg/kg/day or 300 mg/kg/day [ 1 ]. Clinical benefits of NMN supplement",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -420,7 +420,7 @@
       "context_window": "lerated after a 12-month oral treatment of 100 mg/kg/day or 300 mg/kg/day [ 1 ]. Clinical benefits of NMN supplementation in mouse mo",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -438,7 +438,7 @@
       "context_window": "cal trial confirmed that NMN supplementation was safe up to 500 mg/day and plasma concentrations of NAD metabolites were significa",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -456,7 +456,7 @@
       "context_window": "n muscle NAD concentration, and the trial used only a fixed 250 mg/day oral dose with prediabetic and obese female participants [",
       "claim_role": "dose",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "nmn",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -474,7 +474,7 @@
       "context_window": "od NAD concentration was not statistically significant with 300 mg/day oral dose on 62 middle-aged healthy men and women for 60 da",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -492,7 +492,7 @@
       "context_window": "g/day oral dose on 62 middle-aged healthy men and women for 60 days [ 11 ]. A similar RCT reported that oral 300 mg/day NMN sup",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -510,9 +510,9 @@
       "context_window": "women for 60 days [ 11 ]. A similar RCT reported that oral 300 mg/day NMN supplement was safe and significantly improved several",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nicotinamide mononucleotide",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-2803",
@@ -528,9 +528,9 @@
       "context_window": "ts after an 8-week trial [ 12 ]. A 12-week RCT with a fixed 250 mg/day oral NMN dose on 42 healthy older men showed that blood NAD",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-3100",
@@ -546,7 +546,7 @@
       "context_window": "te RCT disclosed that, after intervention also with a fixed 250 mg/day NMN oral dose for 12 weeks on 30 healthy males and females,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -564,7 +564,7 @@
       "context_window": "intervention also with a fixed 250 mg/day NMN oral dose for 12 weeks on 30 healthy males and females, blood NAD concentration in",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -582,7 +582,7 @@
       "context_window": "end of treatment at week 12 and returned to original level 4 weeks after NMN treatment, and the NMN supplementation was safe a",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -600,7 +600,7 @@
       "context_window": "on was safe and well tolerated [ 14 ]. An RCT with 1000 and 2000 mg/day oral doses of MIB-626, a unique microcrystalline NMN formul",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -618,9 +618,9 @@
       "context_window": "6-week RCT with healthy amateur athletes with 300, 600, and 1200 mg/day NMN oral regimens concluded that exercise plus NMN suppleme",
       "claim_role": "effect",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-4220",
@@ -636,9 +636,9 @@
       "context_window": "and physical performance in older adults was conducted with 250 mg/day NMN oral treatment for 12 weeks [ 17 ]. The trial found tha",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-4254",
@@ -654,9 +654,9 @@
       "context_window": "adults was conducted with 250 mg/day NMN oral treatment for 12 weeks [ 17 ]. The trial found that only drowsiness and lower limb",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-4780",
@@ -690,7 +690,7 @@
       "context_window": "females with dose-dependent oral dosing regimens in the 300-900 mg/day range on the effects of NAD concentration, safety and toler",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -780,7 +780,7 @@
       "context_window": "was assessed. Inclusion criteria for participants were 40-65 years and healthy volunteers of both males and females, body mass",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -798,7 +798,7 @@
       "context_window": "h males and females, body mass index (BMI) between 18.5 and 35 kg/m 2 , not taking any supplements containing any form of nia",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -816,7 +816,7 @@
       "context_window": "ot taking any supplements containing any form of niacin for 7 days prior to baseline and for the duration of the trial, being",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -834,7 +834,7 @@
       "context_window": "illing to consume assigned supplements (NMN or placebo) for 60 days. Exclusion criteria included currently using nicotinic acid",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -924,9 +924,9 @@
       "context_window": "l. The NMN bulky powder was packed into capsules containing 150 mg NMN/capsule by Polifarma (Nanjing, China). Placebo was also",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-5842",
@@ -1014,7 +1014,7 @@
       "context_window": "ticipants and instructed participants to take two capsules [300 mg NMN ( n = 20 participants) or 300 mg placebo (7 participant",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1032,7 +1032,7 @@
       "context_window": "instructed participants to take two capsules [300 mg NMN ( n = 20 participants) or 300 mg placebo (7 participants)], four cap",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1050,7 +1050,7 @@
       "context_window": "to take two capsules [300 mg NMN ( n = 20 participants) or 300 mg placebo (7 participants)], four capsules [600 mg NMN ( n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1068,7 +1068,7 @@
       "context_window": "ipants) or 300 mg placebo (7 participants)], four capsules [600 mg NMN ( n = 20 participants) or 600 mg placebo (7 participant",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1086,7 +1086,7 @@
       "context_window": "0 mg placebo (7 participants)], four capsules [600 mg NMN ( n = 20 participants) or 600 mg placebo (7 participants)], or six c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1104,7 +1104,7 @@
       "context_window": "ants)], four capsules [600 mg NMN ( n = 20 participants) or 600 mg placebo (7 participants)], or six capsules [900 mg NMN ( n",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1122,7 +1122,7 @@
       "context_window": "ants) or 600 mg placebo (7 participants)], or six capsules [900 mg NMN ( n = 20 participants) or 900 mg placebo (6 participant",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1140,7 +1140,7 @@
       "context_window": "mg placebo (7 participants)], or six capsules [900 mg NMN ( n = 20 participants) or 900 mg placebo (6 participants)] a day (Fi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1158,7 +1158,7 @@
       "context_window": "ts)], or six capsules [900 mg NMN ( n = 20 participants) or 900 mg placebo (6 participants)] a day (Fig. 1 ). Neither particip",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1482,7 +1482,7 @@
       "context_window": "in all three NMN-treated groups at both days 30 and 60 (all p \u2264 0.001) while there were no significant changes in the placebo gro",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1500,7 +1500,7 @@
       "context_window": "NMN-treated groups at both days 30 and 60 time points (all p < 0.001) (Fig. 2A ). Efficacy of the placebo and three NMN treated",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1662,7 +1662,7 @@
       "context_window": "serum. SEM = standard error of measurement Compared to the 300 mg NMN group, the 600 mg NMN group had statistically significa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1680,7 +1680,7 @@
       "context_window": "error of measurement Compared to the 300 mg NMN group, the 600 mg NMN group had statistically significantly higher NAD concen",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1698,7 +1698,7 @@
       "context_window": "antly higher NAD concentrations at both 30-day and 60-day ( p < 0.05 and 0.01 respectively) (Fig. 2A ). No statistical differenc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1752,9 +1752,9 @@
       "context_window": "three treated groups were not statistically different (all p > 0.05) except the results of MCHC and LDL at 900 mg NMN, and uric",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-4456",
@@ -1770,9 +1770,9 @@
       "context_window": "ferent (all p > 0.05) except the results of MCHC and LDL at 900 mg NMN, and uric acid nitrogen at 600 mg NMN. There was no abn",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-4494",
@@ -1788,9 +1788,9 @@
       "context_window": "ts of MCHC and LDL at 900 mg NMN, and uric acid nitrogen at 600 mg NMN. There was no abnormality observed in clinical lab para",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-p-5316",
@@ -1842,9 +1842,9 @@
       "context_window": "o participants in 300 mg group. No AEs were observed in the 600 mg and 900 mg NMN-treated groups. All AEs were mild or moderat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-5685",
@@ -1860,9 +1860,9 @@
       "context_window": "nts in 300 mg group. No AEs were observed in the 600 mg and 900 mg NMN-treated groups. All AEs were mild or moderate and none",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-6535",
@@ -1878,9 +1878,9 @@
       "context_window": "test is given in Table 2 and Fig. 2B . Participants in the 600 mg and 900 mg NMN-treated group walked a significantly longer",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-6546",
@@ -1896,9 +1896,9 @@
       "context_window": "ven in Table 2 and Fig. 2B . Participants in the 600 mg and 900 mg NMN-treated group walked a significantly longer distance at",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-p-6662",
@@ -1914,9 +1914,9 @@
       "context_window": "istance at both 30-day and 60-day compared to baseline (all p < 0.05), while the 300 mg NMN group showed a trend at day 60 ( p =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-6683",
@@ -1932,9 +1932,9 @@
       "context_window": "y and 60-day compared to baseline (all p < 0.05), while the 300 mg NMN group showed a trend at day 60 ( p = 0.079). The walkin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-p-6727",
@@ -1950,9 +1950,9 @@
       "context_window": ".05), while the 300 mg NMN group showed a trend at day 60 ( p = 0.079). The walking performance in the placebo group did not sign",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-p-6845",
@@ -1986,9 +1986,9 @@
       "context_window": "or all three NMN-treated groups at both days 30 and 60 (all p < 0.01). Participants in the 600 mg NMN-treated group had a stati",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-7049",
@@ -2004,9 +2004,9 @@
       "context_window": "at both days 30 and 60 (all p < 0.01). Participants in the 600 mg NMN-treated group had a statistically longer walking distan",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-7134",
@@ -2022,9 +2022,9 @@
       "context_window": "had a statistically longer walking distance compared to the 300 mg NMN-treated group at days 30 and 60 (both p < 0.01). There",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-p-7183",
@@ -2040,9 +2040,9 @@
       "context_window": "red to the 300 mg NMN-treated group at days 30 and 60 (both p < 0.01). There was no statistical difference in the walking distan",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-7266",
@@ -2058,9 +2058,9 @@
       "context_window": "statistical difference in the walking distance between the 900 mg and 600 mg NMN-treated group (both p > 0.05). Results of t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-7277",
@@ -2076,9 +2076,9 @@
       "context_window": "l difference in the walking distance between the 900 mg and 600 mg NMN-treated group (both p > 0.05). Results of the blood bi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-p-7308",
@@ -2094,9 +2094,9 @@
       "context_window": "tance between the 900 mg and 600 mg NMN-treated group (both p > 0.05). Results of the blood biological age are given in Table 2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-p-7587",
@@ -2130,9 +2130,9 @@
       "context_window": "oups showed statistically significant difference (all three p < 0.05). HOMA-IR results are summarized in Table 2 and Fig. 2D .",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-7930",
@@ -2148,7 +2148,7 @@
       "context_window": "ent did not significantly change HOMA-IR in the placebo and 300 mg NMN-treated group, while HOMA-IR increased significantly in",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -2166,7 +2166,7 @@
       "context_window": "ed group, while HOMA-IR increased significantly in both the 600 mg and 900 mg groups. There was no statistical significance in",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -2184,7 +2184,7 @@
       "context_window": "hile HOMA-IR increased significantly in both the 600 mg and 900 mg groups. There was no statistical significance in HOMA-IR in",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -2202,9 +2202,9 @@
       "context_window": "mpared to placebo, all three NMN-treated groups at day 60 ( p < 0.01) and 600 mg and 900 mg at day 30 ( p < 0.05 and 0.001 respe",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-8308",
@@ -2220,9 +2220,9 @@
       "context_window": "ebo, all three NMN-treated groups at day 60 ( p < 0.01) and 600 mg and 900 mg at day 30 ( p < 0.05 and 0.001 respectively) gav",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-8319",
@@ -2238,9 +2238,9 @@
       "context_window": "ree NMN-treated groups at day 60 ( p < 0.01) and 600 mg and 900 mg at day 30 ( p < 0.05 and 0.001 respectively) gave significa",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-p-8338",
@@ -2256,9 +2256,9 @@
       "context_window": "ups at day 60 ( p < 0.01) and 600 mg and 900 mg at day 30 ( p < 0.05 and 0.001 respectively) gave significantly better SF-36 sco",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-p-8478",
@@ -2274,7 +2274,7 @@
       "context_window": "cores did not differ comparing between NMN-treated groups ( p > 0.05). SF-36 scores did not change within the placebo group whil",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2454,7 +2454,7 @@
       "context_window": "NAD metabolites [ 9 ]. A report in 2021 showed that a fixed 250 mg/day oral dosage of NMN supplementation significantly increased",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2472,7 +2472,7 @@
       "context_window": ". A human clinical trial published in 2022 disclosed that a 300 mg/day oral dosage of NMN on healthy adults elevated blood NAD con",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2490,7 +2490,7 @@
       "context_window": "he total NAD + and NADH in serum by colorimetric method) by 11.3% at day 30 and 14.3% at day 60, but the increases were stati",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2508,7 +2508,7 @@
       "context_window": "ADH in serum by colorimetric method) by 11.3% at day 30 and 14.3% at day 60, but the increases were statistically insignifica",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2526,7 +2526,7 @@
       "context_window": "d in 2022, a human clinical trial with a fixed oral dose of 250 mg/day NMN found that whole blood NAD and NMN concentrations measu",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2544,7 +2544,7 @@
       "context_window": "ipants [ 13 ]. A similar human clinical trial of NMN with a 250 mg/day fixed dosage on both healthy male and female adults was als",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2562,7 +2562,7 @@
       "context_window": "ly, a human clinical trial published in 2022 disclosed that 1000 mg microcrystalline NMN once daily or twice daily regimens on",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2580,7 +2580,7 @@
       "context_window": "nce daily or twice daily regimens on obese participants for 14 days statistically significantly and dose-dependently increased",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2598,9 +2598,9 @@
       "context_window": "hat NMN supplementation is safe and well tolerated at up to 900 mg oral daily doses. There were no NMN treatment-related adver",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-4275",
@@ -2616,9 +2616,9 @@
       "context_window": "for all three NMN doses and the two time points except the 300 mg group at day 30, which is consistent with other published h",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-7815",
@@ -2634,9 +2634,9 @@
       "context_window": "during the NMN treatment. Oral administration of NMN up to 900 mg/day for 60 days was safe and well tolerated. NMN supplementatio",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-7830",
@@ -2652,9 +2652,9 @@
       "context_window": "treatment. Oral administration of NMN up to 900 mg/day for 60 days was safe and well tolerated. NMN supplementation had a posi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9735188_the_efficacy_and_safety_of_nicotinamide_mononucleotide_nmn_s-u-8102",

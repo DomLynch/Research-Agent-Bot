@@ -1,0 +1,162 @@
+{
+  "paper_id": "DOI_10_1161_01_cir_0000143892_84582_60_effect_of_pravastatin_on_cardiovascular_events_in_people_wit",
+  "doi": "10.1161/01.cir.0000143892.84582.60",
+  "extracted_at": "2026-05-07T19:24:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 1,
+    "confidence_interval": 4,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000143892_84582_60_effect_of_pravastatin_on_cardiovascular_events_in_people_wit-u-525",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 525,
+      "sentence": "METHODS AND RESULTS: We analyzed data from the Pravastatin Pooling Project (PPP), a subject-level database combining results from 3 randomized trials of pravastatin (40 mg daily) versus placebo.",
+      "context_window": "combining results from 3 randomized trials of pravastatin (40 mg daily) versus placebo. Of 19 700 subjects, 4491 (22.8%) had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000143892_84582_60_effect_of_pravastatin_on_cardiovascular_events_in_people_wit-pct-580",
+      "claim_type": "percentage",
+      "raw_text": "22.8%",
+      "numeric_values": [
+        22.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 580,
+      "sentence": "Of 19 700 subjects, 4491 (22.8%) had moderate CKD, defined by an estimated glomerular filtration rate of 30 to 59.99 mL/min per 1.73 m2 body surface area.",
+      "context_window": "tin (40 mg daily) versus placebo. Of 19 700 subjects, 4491 (22.8%) had moderate CKD, defined by an estimated glomerular filtr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000143892_84582_60_effect_of_pravastatin_on_cardiovascular_events_in_people_wit-u-665",
+      "claim_type": "unit_value",
+      "raw_text": "59.99 mL/min",
+      "numeric_values": [
+        59.99
+      ],
+      "units": "mL/min",
+      "source_section": "abstract",
+      "source_offset": 665,
+      "sentence": "Of 19 700 subjects, 4491 (22.8%) had moderate CKD, defined by an estimated glomerular filtration rate of 30 to 59.99 mL/min per 1.73 m2 body surface area.",
+      "context_window": "defined by an estimated glomerular filtration rate of 30 to 59.99 mL/min per 1.73 m2 body surface area. The primary outcome was time",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000143892_84582_60_effect_of_pravastatin_on_cardiovascular_events_in_people_wit-ci-940",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.07 to 1.49",
+      "numeric_values": [
+        1.07,
+        1.49
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 940,
+      "sentence": "Moderate CKD was independently associated with an increased risk of the primary outcome (adjusted HR 1.26, 95% CI 1.07 to 1.49) compared with those with normal renal function.",
+      "context_window": "an increased risk of the primary outcome (adjusted HR 1.26, 95% CI 1.07 to 1.49) compared with those with normal renal function. Among the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000143892_84582_60_effect_of_pravastatin_on_cardiovascular_events_in_people_wit-ci-1133",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.68 to 0.86",
+      "numeric_values": [
+        0.68,
+        0.86
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1133,
+      "sentence": "Among the 4491 subjects with moderate CKD, pravastatin significantly reduced the incidence of the primary outcome (HR 0.77, 95% CI 0.68 to 0.86), similar to the effect of pravastatin on the primary outcome in subjects with normal kidney function (HR 0.78, 95% CI 0.65 to 0.94).",
+      "context_window": "ntly reduced the incidence of the primary outcome (HR 0.77, 95% CI 0.68 to 0.86), similar to the effect of pravastatin on the primary outco",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000143892_84582_60_effect_of_pravastatin_on_cardiovascular_events_in_people_wit-ci-1265",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.65 to 0.94",
+      "numeric_values": [
+        0.65,
+        0.94
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1265,
+      "sentence": "Among the 4491 subjects with moderate CKD, pravastatin significantly reduced the incidence of the primary outcome (HR 0.77, 95% CI 0.68 to 0.86), similar to the effect of pravastatin on the primary outcome in subjects with normal kidney function (HR 0.78, 95% CI 0.65 to 0.94).",
+      "context_window": "y outcome in subjects with normal kidney function (HR 0.78, 95% CI 0.65 to 0.94). Pravastatin also appeared to reduce the total mortality r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000143892_84582_60_effect_of_pravastatin_on_cardiovascular_events_in_people_wit-ci-1394",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.74 to 1.00",
+      "numeric_values": [
+        0.74,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1394,
+      "sentence": "Pravastatin also appeared to reduce the total mortality rate in those with moderate CKD (adjusted HR 0.86, 95% CI 0.74 to 1.00, P=0.045).",
+      "context_window": "ortality rate in those with moderate CKD (adjusted HR 0.86, 95% CI 0.74 to 1.00, P=0.045). CONCLUSIONS: Pravastatin reduces cardiovascular",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_0000143892_84582_60_effect_of_pravastatin_on_cardiovascular_events_in_people_wit-p-1415",
+      "claim_type": "p_value",
+      "raw_text": "P=0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1415,
+      "sentence": "Pravastatin also appeared to reduce the total mortality rate in those with moderate CKD (adjusted HR 0.86, 95% CI 0.74 to 1.00, P=0.045).",
+      "context_window": "e with moderate CKD (adjusted HR 0.86, 95% CI 0.74 to 1.00, P=0.045). CONCLUSIONS: Pravastatin reduces cardiovascular event rat",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

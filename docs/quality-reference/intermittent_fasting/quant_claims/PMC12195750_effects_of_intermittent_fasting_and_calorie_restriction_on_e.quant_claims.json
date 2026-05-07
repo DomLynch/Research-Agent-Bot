@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12195750_effects_of_intermittent_fasting_and_calorie_restriction_on_e",
   "doi": "10.3390/nu17121992",
-  "extracted_at": "2026-05-05T22:11:29+00:00",
+  "extracted_at": "2026-05-07T16:56:59+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 135,
@@ -618,7 +618,7 @@
       "context_window": "FM, FM, and body fat percentage [BFP]) in adults aged 18 to 65 years. The process for selecting studies is shown in Figure 1 .",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -762,7 +762,7 @@
       "context_window": "F], or CR), intervention duration (short-term intervention \u22648 weeks, or long-term intervention >8 weeks), diet frequency (\u22643 da",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -780,7 +780,7 @@
       "context_window": "hort-term intervention \u22648 weeks, or long-term intervention >8 weeks), diet frequency (\u22643 days/week, or >3 days/week), type of e",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -798,7 +798,7 @@
       "context_window": "eeks, or long-term intervention >8 weeks), diet frequency (\u22643 days/week, or >3 days/week), type of exercise (aerobic training,",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -816,7 +816,7 @@
       "context_window": "m intervention >8 weeks), diet frequency (\u22643 days/week, or >3 days/week), type of exercise (aerobic training, resistance train",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -834,7 +834,7 @@
       "context_window": "k), intensity of aerobic training (moderate-intensity as 40-80% VO 2max , or high-intensity as >80% VO 2max ), participant",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -852,7 +852,7 @@
       "context_window": "oderate-intensity as 40-80% VO 2max , or high-intensity as >80% VO 2max ), participant characteristics (trained, or untrain",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7742,7 +7742,7 @@
       "sentence": "Over time, as the deficit becomes more chronic, the body shifts toward losing primarily FM and protein, with estimates suggesting that ~85% of the total body weight loss derives from fat and ~15% from protein [ 65 , 66 ].",
       "context_window": "at ~85% of the total body weight loss derives from fat and ~15% from protein [ 65 , 66 ]. Considering glycogen as a compone",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -7761,7 +7761,7 @@
       "context_window": "ith equivalent protein content [ 73 ]. Finally, short-term (10 days) ADF and CR did not impair MPS rates, despite similar losse",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },

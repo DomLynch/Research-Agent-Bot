@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_omega_3_fatty_acids_and_atrial_fibrillation",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:33:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_omega_3_fatty_acids_and_atrial_fibrillation-u-281",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 281,
+      "sentence": "A recently published epidemiological study reported that in elderly patients, consumption of fish was associated with a lower incidence of atrial fibrillation over the 12 years of follow-up.",
+      "context_window": "ated with a lower incidence of atrial fibrillation over the 12 years of follow-up. This observation may be an indirect effect du",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_omega_3_fatty_acids_and_atrial_fibrillation-pct-1006",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1006,
+      "sentence": "The primary aim of this study is to investigate whether dietary supplements of n-3 PUFA concentrates (1g fish oil/day comprising eicosapentaenoic acid, EPA 46% and docosahexaenoic, DHA 38%)) helps maintain sinus rhythm after cardioversion to normal sinus rhythm in patients with persistent atrial fibrillation.",
+      "context_window": "ates (1g fish oil/day comprising eicosapentaenoic acid, EPA 46% and docosahexaenoic, DHA 38%)) helps maintain sinus rhythm",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_omega_3_fatty_acids_and_atrial_fibrillation-pct-1035",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1035,
+      "sentence": "The primary aim of this study is to investigate whether dietary supplements of n-3 PUFA concentrates (1g fish oil/day comprising eicosapentaenoic acid, EPA 46% and docosahexaenoic, DHA 38%)) helps maintain sinus rhythm after cardioversion to normal sinus rhythm in patients with persistent atrial fibrillation.",
+      "context_window": "ing eicosapentaenoic acid, EPA 46% and docosahexaenoic, DHA 38%)) helps maintain sinus rhythm after cardioversion to normal",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

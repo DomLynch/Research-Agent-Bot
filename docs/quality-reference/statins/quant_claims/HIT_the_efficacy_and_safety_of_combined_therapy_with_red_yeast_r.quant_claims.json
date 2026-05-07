@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_the_efficacy_and_safety_of_combined_therapy_with_red_yeast_r",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_efficacy_and_safety_of_combined_therapy_with_red_yeast_r-pct-43",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 43,
+      "sentence": "Double-dose statin regimen achieves merely 6% of decrease in low-density lipoprotein cholesterol (LDL-C) levels, whereas the risk of side effects increased largely.",
+      "context_window": "Double-dose statin regimen achieves merely 6% of decrease in low-density lipoprotein cholesterol (LDL-C)",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

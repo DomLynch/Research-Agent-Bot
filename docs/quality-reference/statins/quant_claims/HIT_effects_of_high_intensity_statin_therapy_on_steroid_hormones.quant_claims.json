@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_effects_of_high_intensity_statin_therapy_on_steroid_hormones",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effects_of_high_intensity_statin_therapy_on_steroid_hormones-u-280",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 280,
+      "sentence": "The aim of the study was to assess the effect of high intensity statin therapy on testicular and adrenal steroids and vitamin D levels in type 2 diabetes males.It is a prospective study, conducted between march 2021 and July 2022, including 60 men with type 2 diabetes, aged 40 - 65 years, statin-free, and in whom a treatment with high intensity statin was indicated.",
+      "context_window": "July 2022, including 60 men with type 2 diabetes, aged 40 - 65 years, statin-free, and in whom a treatment with high intensity s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_high_intensity_statin_therapy_on_steroid_hormones-u-444",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 444,
+      "sentence": "The patients had two visits, before and six months after a daily intake of 40 mg of atorvastatin.",
+      "context_window": "d two visits, before and six months after a daily intake of 40 mg of atorvastatin. During each visit, they underwent a clinic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

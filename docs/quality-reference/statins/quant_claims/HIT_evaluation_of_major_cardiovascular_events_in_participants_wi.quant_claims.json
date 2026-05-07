@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_evaluation_of_major_cardiovascular_events_in_participants_wi",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_evaluation_of_major_cardiovascular_events_in_participants_wi-u-385",
+      "claim_type": "unit_value",
+      "raw_text": "68 months",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 385,
+      "sentence": "Posted outcomes: Number of Participants With First Occurrence of Four Component Major Adverse Cardiovascular Events (MACE). timeframe=Up to 68 months.",
+      "context_window": "Major Adverse Cardiovascular Events (MACE). timeframe=Up to 68 months. Bempedoic Acid 180 mg=819; Placebo Comparator=927. p=0.004",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_evaluation_of_major_cardiovascular_events_in_participants_wi-u-411",
+      "claim_type": "unit_value",
+      "raw_text": "180 mg",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 411,
+      "sentence": "Bempedoic Acid 180 mg=819; Placebo Comparator=927. p=0.004",
+      "context_window": "ar Events (MACE). timeframe=Up to 68 months. Bempedoic Acid 180 mg=819; Placebo Comparator=927. p=0.004",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_evaluation_of_major_cardiovascular_events_in_participants_wi-p-447",
+      "claim_type": "p_value",
+      "raw_text": "p=0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 447,
+      "sentence": "Bempedoic Acid 180 mg=819; Placebo Comparator=927. p=0.004",
+      "context_window": "months. Bempedoic Acid 180 mg=819; Placebo Comparator=927. p=0.004",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

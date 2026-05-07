@@ -1,0 +1,156 @@
+{
+  "paper_id": "HIT_compare_the_efficacy_and_safety_of_rosuvastatin_ezetimibe_co",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 7
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_compare_the_efficacy_and_safety_of_rosuvastatin_ezetimibe_co-pct-53",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 53,
+      "sentence": "preserved left ventricular ejection fraction (LVEF \u2265 50%) and are accompanied by dyslipidemia (LDL \u2265 100 mg / dl) will be enrolled.",
+      "context_window": "preserved left ventricular ejection fraction (LVEF \u2265 50%) and are accompanied by dyslipidemia (LDL \u2265 100 mg / dl) wi",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_compare_the_efficacy_and_safety_of_rosuvastatin_ezetimibe_co-u-101",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 101,
+      "sentence": "preserved left ventricular ejection fraction (LVEF \u2265 50%) and are accompanied by dyslipidemia (LDL \u2265 100 mg / dl) will be enrolled.",
+      "context_window": "ion (LVEF \u2265 50%) and are accompanied by dyslipidemia (LDL \u2265 100 mg / dl) will be enrolled. Only patients who do not meet the e",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_compare_the_efficacy_and_safety_of_rosuvastatin_ezetimibe_co-u-509",
+      "claim_type": "unit_value",
+      "raw_text": "10mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 509,
+      "sentence": "Patients who are eligible for all of the criteria and who do not qualify as exclusion criteria should be enrolled in the study and randomly assigned in a 1: 1 dose of rosuvastatin/ezetimibe 10/10mg once daily or rosuvastatin 20 mg once daily.",
+      "context_window": "ndomly assigned in a 1: 1 dose of rosuvastatin/ezetimibe 10/10mg once daily or rosuvastatin 20 mg once daily. Patients who p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_compare_the_efficacy_and_safety_of_rosuvastatin_ezetimibe_co-u-541",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 541,
+      "sentence": "Patients who are eligible for all of the criteria and who do not qualify as exclusion criteria should be enrolled in the study and randomly assigned in a 1: 1 dose of rosuvastatin/ezetimibe 10/10mg once daily or rosuvastatin 20 mg once daily.",
+      "context_window": "f rosuvastatin/ezetimibe 10/10mg once daily or rosuvastatin 20 mg once daily. Patients who previously used statins have a was",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_compare_the_efficacy_and_safety_of_rosuvastatin_ezetimibe_co-u-622",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 622,
+      "sentence": "Patients who previously used statins have a wash-out period of 4 weeks or more.",
+      "context_window": "ients who previously used statins have a wash-out period of 4 weeks or more. Patients will visit outpatient clinic at 12 weeks",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_compare_the_efficacy_and_safety_of_rosuvastatin_ezetimibe_co-u-680",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 680,
+      "sentence": "Patients will visit outpatient clinic at 12 weeks and 24 weeks after initiation of treatment.",
+      "context_window": "f 4 weeks or more. Patients will visit outpatient clinic at 12 weeks and 24 weeks after initiation of treatment. Physical examin",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_compare_the_efficacy_and_safety_of_rosuvastatin_ezetimibe_co-u-693",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 693,
+      "sentence": "Patients will visit outpatient clinic at 12 weeks and 24 weeks after initiation of treatment.",
+      "context_window": "more. Patients will visit outpatient clinic at 12 weeks and 24 weeks after initiation of treatment. Physical examination, blood",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_compare_the_efficacy_and_safety_of_rosuvastatin_ezetimibe_co-u-958",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 958,
+      "sentence": "After 48 weeks of treatment, the patients will visit outpatient clinic for efficacy evaluation; physical examination, blood test, transthoracic echocardiography, cardiopulmonary exercise test, central blood pressure, and pulse wave velocity.",
+      "context_window": "hanges in vital signs or body weight will be checked. After 48 weeks of treatment, the patients will visit outpatient clinic for",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

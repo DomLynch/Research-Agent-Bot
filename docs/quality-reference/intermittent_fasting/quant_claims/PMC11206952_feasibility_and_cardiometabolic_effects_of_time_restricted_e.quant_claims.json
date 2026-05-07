@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e",
   "doi": "10.3390/nu16121802",
-  "extracted_at": "2026-05-05T22:11:24+00:00",
+  "extracted_at": "2026-05-07T16:56:55+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 26,
@@ -190,9 +190,9 @@
       "context_window": "mmon MetS pattern (50%). TRE intervention (mean duration of 81.6 \u00b1 12.6 days) led to reducing daily EW by 28% ( p < 0.0001). Adhere",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-1338",
@@ -208,9 +208,9 @@
       "context_window": "tS pattern (50%). TRE intervention (mean duration of 81.6 \u00b1 12.6 days) led to reducing daily EW by 28% ( p < 0.0001). Adherence t",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-1377",
@@ -226,9 +226,9 @@
       "context_window": "n duration of 81.6 \u00b1 12.6 days) led to reducing daily EW by 28% ( p < 0.0001). Adherence to TRE was 87 \u00b1 13%. Adherence to",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-p-1383",
@@ -244,9 +244,9 @@
       "context_window": "tion of 81.6 \u00b1 12.6 days) led to reducing daily EW by 28% ( p < 0.0001). Adherence to TRE was 87 \u00b1 13%. Adherence to logging food",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-msd-1417",
@@ -262,10 +262,10 @@
       "sentence": "Adherence to TRE was 87 \u00b1 13%.",
       "context_window": "educing daily EW by 28% ( p < 0.0001). Adherence to TRE was 87 \u00b1 13%. Adherence to logging food intake on mCC app during TRE wa",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-1422",
@@ -280,10 +280,10 @@
       "sentence": "Adherence to TRE was 87 \u00b1 13%.",
       "context_window": "ng daily EW by 28% ( p < 0.0001). Adherence to TRE was 87 \u00b1 13%. Adherence to logging food intake on mCC app during TRE was",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-msd-1486",
@@ -299,10 +299,10 @@
       "sentence": "Adherence to logging food intake on mCC app during TRE was 70 \u00b1 27%.",
       "context_window": "Adherence to logging food intake on mCC app during TRE was 70 \u00b1 27%. Post TRE, a decrease in body weight (2%, 1.7 \u00b1 3.6 kg, p",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-1491",
@@ -317,10 +317,10 @@
       "sentence": "Adherence to logging food intake on mCC app during TRE was 70 \u00b1 27%.",
       "context_window": "rence to logging food intake on mCC app during TRE was 70 \u00b1 27%. Post TRE, a decrease in body weight (2%, 1.7 \u00b1 3.6 kg, p =",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-1533",
@@ -336,7 +336,7 @@
       "context_window": "ring TRE was 70 \u00b1 27%. Post TRE, a decrease in body weight (2%, 1.7 \u00b1 3.6 kg, p = 0.026), body mass index (BMI) (1%, 0.5 \u00b1",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -355,7 +355,7 @@
       "context_window": "TRE was 70 \u00b1 27%. Post TRE, a decrease in body weight (2%, 1.7 \u00b1 3.6 kg, p = 0.026), body mass index (BMI) (1%, 0.5 \u00b1 1.2 kg/m 2",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -373,7 +373,7 @@
       "context_window": "as 70 \u00b1 27%. Post TRE, a decrease in body weight (2%, 1.7 \u00b1 3.6 kg, p = 0.026), body mass index (BMI) (1%, 0.5 \u00b1 1.2 kg/m 2 ,",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -391,7 +391,7 @@
       "context_window": "27%. Post TRE, a decrease in body weight (2%, 1.7 \u00b1 3.6 kg, p = 0.026), body mass index (BMI) (1%, 0.5 \u00b1 1.2 kg/m 2 , p = 0.027),",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -409,7 +409,7 @@
       "context_window": "eight (2%, 1.7 \u00b1 3.6 kg, p = 0.026), body mass index (BMI) (1%, 0.5 \u00b1 1.2 kg/m 2 , p = 0.027), WC (2%, 2.5 \u00b1 3.9 cm, p = 0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -428,7 +428,7 @@
       "context_window": "t (2%, 1.7 \u00b1 3.6 kg, p = 0.026), body mass index (BMI) (1%, 0.5 \u00b1 1.2 kg/m 2 , p = 0.027), WC (2%, 2.5 \u00b1 3.9 cm, p = 0.003), syst",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -446,7 +446,7 @@
       "context_window": "1.7 \u00b1 3.6 kg, p = 0.026), body mass index (BMI) (1%, 0.5 \u00b1 1.2 kg/m 2 , p = 0.027), WC (2%, 2.5 \u00b1 3.9 cm, p = 0.003), systoli",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -464,7 +464,7 @@
       "context_window": ", p = 0.026), body mass index (BMI) (1%, 0.5 \u00b1 1.2 kg/m 2 , p = 0.027), WC (2%, 2.5 \u00b1 3.9 cm, p = 0.003), systolic BP (4%, 4.8 \u00b1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -482,7 +482,7 @@
       "context_window": "dy mass index (BMI) (1%, 0.5 \u00b1 1.2 kg/m 2 , p = 0.027), WC (2%, 2.5 \u00b1 3.9 cm, p = 0.003), systolic BP (4%, 4.8 \u00b1 9.0 mmHg,",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -501,7 +501,7 @@
       "context_window": "ass index (BMI) (1%, 0.5 \u00b1 1.2 kg/m 2 , p = 0.027), WC (2%, 2.5 \u00b1 3.9 cm, p = 0.003), systolic BP (4%, 4.8 \u00b1 9.0 mmHg, p = 0.012)",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -519,7 +519,7 @@
       "context_window": "dex (BMI) (1%, 0.5 \u00b1 1.2 kg/m 2 , p = 0.027), WC (2%, 2.5 \u00b1 3.9 cm, p = 0.003), systolic BP (4%, 4.8 \u00b1 9.0 mmHg, p = 0.012), F",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -537,7 +537,7 @@
       "context_window": ") (1%, 0.5 \u00b1 1.2 kg/m 2 , p = 0.027), WC (2%, 2.5 \u00b1 3.9 cm, p = 0.003), systolic BP (4%, 4.8 \u00b1 9.0 mmHg, p = 0.012), FPG (4%, 3.8",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -555,7 +555,7 @@
       "context_window": "p = 0.027), WC (2%, 2.5 \u00b1 3.9 cm, p = 0.003), systolic BP (4%, 4.8 \u00b1 9.0 mmHg, p = 0.012), FPG (4%, 3.8 \u00b1 6.9 mg/dL, p =",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -574,7 +574,7 @@
       "context_window": "0.027), WC (2%, 2.5 \u00b1 3.9 cm, p = 0.003), systolic BP (4%, 4.8 \u00b1 9.0 mmHg, p = 0.012), FPG (4%, 3.8 \u00b1 6.9 mg/dL, p = 0.037), gly",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -592,7 +592,7 @@
       "context_window": "), WC (2%, 2.5 \u00b1 3.9 cm, p = 0.003), systolic BP (4%, 4.8 \u00b1 9.0 mmHg, p = 0.012), FPG (4%, 3.8 \u00b1 6.9 mg/dL, p = 0.037), glycated",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -610,7 +610,7 @@
       "context_window": "2.5 \u00b1 3.9 cm, p = 0.003), systolic BP (4%, 4.8 \u00b1 9.0 mmHg, p = 0.012), FPG (4%, 3.8 \u00b1 6.9 mg/dL, p = 0.037), glycated hemoglobin",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -628,7 +628,7 @@
       "context_window": "= 0.003), systolic BP (4%, 4.8 \u00b1 9.0 mmHg, p = 0.012), FPG (4%, 3.8 \u00b1 6.9 mg/dL, p = 0.037), glycated hemoglobin (4%, 0.2",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -647,7 +647,7 @@
       "context_window": "003), systolic BP (4%, 4.8 \u00b1 9.0 mmHg, p = 0.012), FPG (4%, 3.8 \u00b1 6.9 mg/dL, p = 0.037), glycated hemoglobin (4%, 0.2 \u00b1 0.4%, p =",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -665,7 +665,7 @@
       "context_window": "systolic BP (4%, 4.8 \u00b1 9.0 mmHg, p = 0.012), FPG (4%, 3.8 \u00b1 6.9 mg/dL, p = 0.037), glycated hemoglobin (4%, 0.2 \u00b1 0.4%, p = 0.011",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -683,7 +683,7 @@
       "context_window": "(4%, 4.8 \u00b1 9.0 mmHg, p = 0.012), FPG (4%, 3.8 \u00b1 6.9 mg/dL, p = 0.037), glycated hemoglobin (4%, 0.2 \u00b1 0.4%, p = 0.011), mean fas",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -701,7 +701,7 @@
       "context_window": "FPG (4%, 3.8 \u00b1 6.9 mg/dL, p = 0.037), glycated hemoglobin (4%, 0.2 \u00b1 0.4%, p = 0.011), mean fasting glucose level from co",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -720,7 +720,7 @@
       "context_window": "(4%, 3.8 \u00b1 6.9 mg/dL, p = 0.037), glycated hemoglobin (4%, 0.2 \u00b1 0.4%, p = 0.011), mean fasting glucose level from continuous gl",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -738,7 +738,7 @@
       "context_window": "3.8 \u00b1 6.9 mg/dL, p = 0.037), glycated hemoglobin (4%, 0.2 \u00b1 0.4%, p = 0.011), mean fasting glucose level from continuous glu",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -756,7 +756,7 @@
       "context_window": "6.9 mg/dL, p = 0.037), glycated hemoglobin (4%, 0.2 \u00b1 0.4%, p = 0.011), mean fasting glucose level from continuous glucose monito",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -774,7 +774,7 @@
       "context_window": "asting glucose level from continuous glucose monitor (CGM) (4%, 4.0 \u00b1 6.1 mg/dL, p = 0.002), and sleepiness score (25%, 1.",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -793,7 +793,7 @@
       "context_window": "ng glucose level from continuous glucose monitor (CGM) (4%, 4.0 \u00b1 6.1 mg/dL, p = 0.002), and sleepiness score (25%, 1.9 \u00b1 3.2 poi",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -811,7 +811,7 @@
       "context_window": "cose level from continuous glucose monitor (CGM) (4%, 4.0 \u00b1 6.1 mg/dL, p = 0.002), and sleepiness score (25%, 1.9 \u00b1 3.2 points, p",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -829,7 +829,7 @@
       "context_window": "from continuous glucose monitor (CGM) (4%, 4.0 \u00b1 6.1 mg/dL, p = 0.002), and sleepiness score (25%, 1.9 \u00b1 3.2 points, p = 0043) we",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -847,7 +847,7 @@
       "context_window": "GM) (4%, 4.0 \u00b1 6.1 mg/dL, p = 0.002), and sleepiness score (25%, 1.9 \u00b1 3.2 points, p = 0043) were observed. A significant d",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -866,7 +866,7 @@
       "context_window": "4%, 4.0 \u00b1 6.1 mg/dL, p = 0.002), and sleepiness score (25%, 1.9 \u00b1 3.2 points, p = 0043) were observed. A significant decrease in",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -884,7 +884,7 @@
       "context_window": "0043) were observed. A significant decrease in body weight (2%), BMI (2%), WC (3%), mean CGM fasting glucose (6%), sleepin",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -902,7 +902,7 @@
       "context_window": "observed. A significant decrease in body weight (2%), BMI (2%), WC (3%), mean CGM fasting glucose (6%), sleepiness score",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -920,7 +920,7 @@
       "context_window": ". A significant decrease in body weight (2%), BMI (2%), WC (3%), mean CGM fasting glucose (6%), sleepiness score (27%), an",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -938,7 +938,7 @@
       "context_window": "y weight (2%), BMI (2%), WC (3%), mean CGM fasting glucose (6%), sleepiness score (27%), and depression score (60%) was fo",
       "claim_role": "dose",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -956,7 +956,7 @@
       "context_window": ", WC (3%), mean CGM fasting glucose (6%), sleepiness score (27%), and depression score (60%) was found in patients with mea",
       "claim_role": "dose",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -974,7 +974,7 @@
       "context_window": "glucose (6%), sleepiness score (27%), and depression score (60%) was found in patients with mean post-TRE EW \u2264 10 h/day (58",
       "claim_role": "dose",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -992,7 +992,7 @@
       "context_window": "0%) was found in patients with mean post-TRE EW \u2264 10 h/day (58% of total), and not in patients with EW > 10 h/day. Adherenc",
       "claim_role": "dose",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1010,8 +1010,8 @@
       "sentence": "Adherence to TRE was higher in patients with post-TRE EW \u2264 10 h/day vs. patients with EW > 10 h/day (94 \u00b1 6% vs.",
       "context_window": "ith post-TRE EW \u2264 10 h/day vs. patients with EW > 10 h/day (94 \u00b1 6% vs. 77 \u00b1 14%, p = 0.003). Our findings indicate that 10-h",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1028,8 +1028,8 @@
       "sentence": "Adherence to TRE was higher in patients with post-TRE EW \u2264 10 h/day vs. patients with EW > 10 h/day (94 \u00b1 6% vs.",
       "context_window": "ost-TRE EW \u2264 10 h/day vs. patients with EW > 10 h/day (94 \u00b1 6% vs. 77 \u00b1 14%, p = 0.003). Our findings indicate that 10-h T",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1264,9 +1264,9 @@
       "context_window": "rders Treatment, Bydgoszcz, Poland. This study consisted of 1 week of screening, 2 weeks of baseline assessment, and 12 weeks",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-640",
@@ -1282,9 +1282,9 @@
       "context_window": "oszcz, Poland. This study consisted of 1 week of screening, 2 weeks of baseline assessment, and 12 weeks of monitored TRE inter",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-676",
@@ -1300,9 +1300,9 @@
       "context_window": "of 1 week of screening, 2 weeks of baseline assessment, and 12 weeks of monitored TRE intervention. During this study, patients",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-2115",
@@ -1678,9 +1678,9 @@
       "context_window": "wo caloric entries > 5 h apart for a given day for at least 5 days a week and having an eating interval of \u226514 h/day) entered",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-5919",
@@ -1749,10 +1749,10 @@
       "sentence": "Adherence to the designated EW implies that ~95% caloric items were contained within a 15 min buffer on each side of the self-selected 10-h EW.",
       "context_window": "r a given day. Adherence to the designated EW implies that ~95% caloric items were contained within a 15 min buffer on each",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-11999",
@@ -1768,9 +1768,9 @@
       "context_window": "aced in the upper arm area. The participant had the CGM for 2 weeks during the baseline period and at the last 2 weeks of 12-we",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-12050",
@@ -1786,9 +1786,9 @@
       "context_window": "CGM for 2 weeks during the baseline period and at the last 2 weeks of 12-week TRE intervention. Participants were fitted with",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-12341",
@@ -1804,7 +1804,7 @@
       "context_window": "obtained by CGM between 2-week baseline period and the last 2 weeks of 12-week TRE intervention were calculated. The anthropom",
       "claim_role": "duration",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1894,9 +1894,9 @@
       "context_window": "ase, one patient was excluded at Visit 5 and four patients (13% of patients undergoing TRE) resigned from the participation",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-1232",
@@ -1912,9 +1912,9 @@
       "context_window": "d were included in this analysis. Out of them, 15 patients (57.7% of total) achieved a goal of mean daily EW duration of \u226410",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-1379",
@@ -1930,9 +1930,9 @@
       "context_window": "vention. The majority of patients (24 of 26 patients, i.e., 92% of total) self-selected a 10-h EW with a start from 8 a.m.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-3117",
@@ -2616,9 +2616,9 @@
       "context_window": "Visit 3 and Visit 5. The mean TRE intervention duration was 81.6 \u00b1 12.6 days ( Table 3 ). The mean adherence to TRE intervention an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-6783",
@@ -2634,9 +2634,9 @@
       "context_window": "and Visit 5. The mean TRE intervention duration was 81.6 \u00b1 12.6 days ( Table 3 ). The mean adherence to TRE intervention and mea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-msd-6918",
@@ -2652,10 +2652,10 @@
       "sentence": "The mean adherence to TRE intervention and mean adherence to logging on the mCC app during TRE intervention was 87 \u00b1 13.2% and 70 \u00b1 27%, respectively ( Table 3 ).",
       "context_window": "rence to logging on the mCC app during TRE intervention was 87 \u00b1 13.2% and 70 \u00b1 27%, respectively ( Table 3 ). Adherence to TRE",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-6923",
@@ -2670,10 +2670,10 @@
       "sentence": "The mean adherence to TRE intervention and mean adherence to logging on the mCC app during TRE intervention was 87 \u00b1 13.2% and 70 \u00b1 27%, respectively ( Table 3 ).",
       "context_window": "to logging on the mCC app during TRE intervention was 87 \u00b1 13.2% and 70 \u00b1 27%, respectively ( Table 3 ). Adherence to TRE a",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-msd-6933",
@@ -2689,10 +2689,10 @@
       "sentence": "The mean adherence to TRE intervention and mean adherence to logging on the mCC app during TRE intervention was 87 \u00b1 13.2% and 70 \u00b1 27%, respectively ( Table 3 ).",
       "context_window": "g on the mCC app during TRE intervention was 87 \u00b1 13.2% and 70 \u00b1 27%, respectively ( Table 3 ). Adherence to TRE and adherence",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-6938",
@@ -2707,10 +2707,10 @@
       "sentence": "The mean adherence to TRE intervention and mean adherence to logging on the mCC app during TRE intervention was 87 \u00b1 13.2% and 70 \u00b1 27%, respectively ( Table 3 ).",
       "context_window": "the mCC app during TRE intervention was 87 \u00b1 13.2% and 70 \u00b1 27%, respectively ( Table 3 ). Adherence to TRE and adherence",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-9625",
@@ -2726,7 +2726,7 @@
       "context_window": "RE intervention was significantly reduced (by an average of 28%, i.e., ~3.9 h), from 14.0 \u00b1 1.5 h to 10.1 \u00b1 0.8 h ( Figure",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2745,7 +2745,7 @@
       "context_window": "ficantly reduced (by an average of 28%, i.e., ~3.9 h), from 14.0 \u00b1 1.5 h to 10.1 \u00b1 0.8 h ( Figure 2 , Figure 3 A left panel). Cha",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2764,7 +2764,7 @@
       "context_window": "(by an average of 28%, i.e., ~3.9 h), from 14.0 \u00b1 1.5 h to 10.1 \u00b1 0.8 h ( Figure 2 , Figure 3 A left panel). Changes in mean dai",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2782,9 +2782,9 @@
       "context_window": "yCircadianClock application; TRE-time-restricted eating; *- p < 0.05; #-0.05 \u2265 p < 0.1. Mean adherence to logging on the mCC ap",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-p-10319",
@@ -2800,9 +2800,9 @@
       "context_window": "lication; TRE-time-restricted eating; *- p < 0.05; #-0.05 \u2265 p < 0.1. Mean adherence to logging on the mCC app decreased signif",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-10447",
@@ -2817,10 +2817,10 @@
       "sentence": "Mean adherence to logging on the mCC app decreased significantly during TRE intervention compared to baseline period (70% vs.",
       "context_window": "cantly during TRE intervention compared to baseline period (70% vs. 88%; Figure 3 B left panel). Post TRE intervention, BW",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-10455",
@@ -2854,9 +2854,9 @@
       "context_window": "t TRE intervention, BW and BMI decreased significantly (by ~2%, i.e., ~1.7 kg and by ~1.4%, i.e., ~0.5 kg/m 2 ; respective",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-10559",
@@ -2872,9 +2872,9 @@
       "context_window": "vention, BW and BMI decreased significantly (by ~2%, i.e., ~1.7 kg and by ~1.4%, i.e., ~0.5 kg/m 2 ; respectively, Figure 4 A)",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-10574",
@@ -2890,9 +2890,9 @@
       "context_window": "BMI decreased significantly (by ~2%, i.e., ~1.7 kg and by ~1.4%, i.e., ~0.5 kg/m 2 ; respectively, Figure 4 A). Also, a sig",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-10587",
@@ -2908,9 +2908,9 @@
       "context_window": "d significantly (by ~2%, i.e., ~1.7 kg and by ~1.4%, i.e., ~0.5 kg/m 2 ; respectively, Figure 4 A). Also, a significant decrea",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-10699",
@@ -3016,9 +3016,9 @@
       "context_window": "on are shown. Abbreviations: TRE-time-restricted eating; *- p < 0.05; #-0.05 \u2265 p < 0.1. A significant decrease in systolic BP (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-p-11337",
@@ -3034,9 +3034,9 @@
       "context_window": "viations: TRE-time-restricted eating; *- p < 0.05; #-0.05 \u2265 p < 0.1. A significant decrease in systolic BP (by ~4%, i.e., ~4.8",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-11390",
@@ -3052,7 +3052,7 @@
       "context_window": "0.05 \u2265 p < 0.1. A significant decrease in systolic BP (by ~4%, i.e., ~4.8 mmHg), and not diastolic BP or HR, was observed",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3070,7 +3070,7 @@
       "context_window": "0.1. A significant decrease in systolic BP (by ~4%, i.e., ~4.8 mmHg), and not diastolic BP or HR, was observed post TRE ( Figur",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3088,7 +3088,7 @@
       "context_window": "ing to the ESC recommendations for individuals with high CV 50 years of age or younger [ 23 ]. Also, the SCORE2 value decreased",
       "claim_role": "protocol",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3106,9 +3106,9 @@
       "context_window": "d HbA1c ( Figure 5 B) decreased significantly post TRE (by ~3.7%, i.e., ~3.8 mg/dL, and by ~3.6%, i.e., ~0.2%, respectively)",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-11808",
@@ -3124,9 +3124,9 @@
       "context_window": "ure 5 B) decreased significantly post TRE (by ~3.7%, i.e., ~3.8 mg/dL, and by ~3.6%, i.e., ~0.2%, respectively). Post TRE, mean F",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-11827",
@@ -3142,9 +3142,9 @@
       "context_window": "significantly post TRE (by ~3.7%, i.e., ~3.8 mg/dL, and by ~3.6%, i.e., ~0.2%, respectively). Post TRE, mean FPG was <100 mg",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-11840",
@@ -3160,9 +3160,9 @@
       "context_window": "post TRE (by ~3.7%, i.e., ~3.8 mg/dL, and by ~3.6%, i.e., ~0.2%, respectively). Post TRE, mean FPG was <100 mg/dL. Also, a",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-11885",
@@ -3178,7 +3178,7 @@
       "context_window": "~3.6%, i.e., ~0.2%, respectively). Post TRE, mean FPG was <100 mg/dL. Also, a significant decrease in mean CGM fasting blood glu",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3196,7 +3196,7 @@
       "context_window": "cose level was recorded at the end of TRE intervention (by ~4.4%, i.e., ~4.0 mg/dL, Figure 5 C). In addition, mean CGM 24 h",
       "claim_role": "unknown",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3214,7 +3214,7 @@
       "context_window": "s recorded at the end of TRE intervention (by ~4.4%, i.e., ~4.0 mg/dL, Figure 5 C). In addition, mean CGM 24 h blood glucose leve",
       "claim_role": "unknown",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3232,7 +3232,7 @@
       "context_window": "s correlated with the mean TRE daily EW duration (r = 0.43, p = 0.045 and r = 0.44, p = 0.038, respectively). Changes in fasting",
       "claim_role": "unknown",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3250,7 +3250,7 @@
       "context_window": "an TRE daily EW duration (r = 0.43, p = 0.045 and r = 0.44, p = 0.038, respectively). Changes in fasting plasma glucose ( A ), g",
       "claim_role": "unknown",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3268,9 +3268,9 @@
       "context_window": "-continuous glucose monitor; TRE-time-restricted eating; *- p < 0.05; #-0.05 \u2265 p < 0.1. Regarding the health questionnaires, th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-p-12916",
@@ -3286,9 +3286,9 @@
       "context_window": "monitor; TRE-time-restricted eating; *- p < 0.05; #-0.05 \u2265 p < 0.1. Regarding the health questionnaires, the ESS score decrea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-13015",
@@ -3304,7 +3304,7 @@
       "context_window": "naires, the ESS score decreased significantly post TRE (by ~24.7%, i.e., ~1.9 points, Figure 6 A) and the BDI-II score showed",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3322,9 +3322,9 @@
       "context_window": "SS-Epworth Sleepiness Scale; TRE-time-restricted eating; *- p < 0.05; #-0.05 \u2265 p < 0.1. No significant changes were observed po",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-p-13667",
@@ -3340,9 +3340,9 @@
       "context_window": "ss Scale; TRE-time-restricted eating; *- p < 0.05; #-0.05 \u2265 p < 0.1. No significant changes were observed post TRE in lipid le",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-13849",
@@ -3358,7 +3358,7 @@
       "context_window": "tion. Mean daily caloric intake decreased significantly by ~16.1% post TRE. Also, mean number of eating occasions per day (ba",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3375,8 +3375,8 @@
       "sentence": "The adherence to TRE was significantly higher in patients from the subgroup \u201cEW \u2264 10\u201d compared to the subgroup \u201cEW > 10\u201d (94% vs.",
       "context_window": "the subgroup \u201cEW \u2264 10\u201d compared to the subgroup \u201cEW > 10\u201d (94% vs. 77%) ( Table 3 ). Mean adherence to logging on the mCC",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3411,10 +3411,10 @@
       "sentence": "Mean adherence to logging on the mCC app decreased significantly during TRE in both subgroups ( Figure 3 B) and was lower post TRE in the subgroup \u201cEW > 10\u201d (62%) than in \u201cEW \u2264 10\u201d (74%).",
       "context_window": "gure 3 B) and was lower post TRE in the subgroup \u201cEW > 10\u201d (62%) than in \u201cEW \u2264 10\u201d (74%). Mean daily EW was reduced signif",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-16009",
@@ -3429,10 +3429,10 @@
       "sentence": "Mean adherence to logging on the mCC app decreased significantly during TRE in both subgroups ( Figure 3 B) and was lower post TRE in the subgroup \u201cEW > 10\u201d (62%) than in \u201cEW \u2264 10\u201d (74%).",
       "context_window": "post TRE in the subgroup \u201cEW > 10\u201d (62%) than in \u201cEW \u2264 10\u201d (74%). Mean daily EW was reduced significantly during TRE in bo",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-16205",
@@ -3448,7 +3448,7 @@
       "context_window": "A right panel). Specifically, mean daily EW was reduced by ~33%, i.e., ~4.7 h (to ~9.6 h) in \u201cEW \u2264 10\u201d and by ~21%, i.e., ~",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3466,7 +3466,7 @@
       "context_window": "uced by ~33%, i.e., ~4.7 h (to ~9.6 h) in \u201cEW \u2264 10\u201d and by ~21%, i.e., ~2.9 h (to 10.7 h) in \u201cEW > 10\u201d, and was significant",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3592,7 +3592,7 @@
       "context_window": "the end of TRE intervention in the subgroup \u201cEW \u2264 10\u201d (by ~6%, i.e., ~5.2 mg/dL), and not in \u201cEW > 10\u201d ( Figure 5 C). Als",
       "claim_role": "unknown",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3610,7 +3610,7 @@
       "context_window": "TRE intervention in the subgroup \u201cEW \u2264 10\u201d (by ~6%, i.e., ~5.2 mg/dL), and not in \u201cEW > 10\u201d ( Figure 5 C). Also, mean CGM 24-h b",
       "claim_role": "unknown",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3628,7 +3628,7 @@
       "context_window": "d significantly post TRE only in the subgroup \u201cEW \u2264 10\u201d (by 27% and 60%, respectively) and post-TRE scores values were sign",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3646,7 +3646,7 @@
       "context_window": "icantly post TRE only in the subgroup \u201cEW \u2264 10\u201d (by 27% and 60%, respectively) and post-TRE scores values were significantl",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3664,10 +3664,10 @@
       "sentence": "The primary outcome-i.e., the adherence to the TRE intervention, defined as the proportion of the total number of days recorded with mCC app during the monitored TRE intervention in which participants satisfied a requirement of a 10 h EW-was 87 \u00b1 13.2% ( Table 3 ).",
       "context_window": "which participants satisfied a requirement of a 10 h EW-was 87 \u00b1 13.2% ( Table 3 ). The main secondary exploratory outcomes inclu",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-18437",
@@ -3682,10 +3682,10 @@
       "sentence": "The primary outcome-i.e., the adherence to the TRE intervention, defined as the proportion of the total number of days recorded with mCC app during the monitored TRE intervention in which participants satisfied a requirement of a 10 h EW-was 87 \u00b1 13.2% ( Table 3 ).",
       "context_window": "participants satisfied a requirement of a 10 h EW-was 87 \u00b1 13.2% ( Table 3 ). The main secondary exploratory outcomes includ",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-18567",
@@ -3701,7 +3701,7 @@
       "context_window": "ost-TRE changes in BW and FPG comprise a decrease in BW (by 1.6%, i.e., 1.7 \u00b1 3.6 kg, p = 0.026) and a decrease in FPG (by 3",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3720,7 +3720,7 @@
       "context_window": "ges in BW and FPG comprise a decrease in BW (by 1.6%, i.e., 1.7 \u00b1 3.6 kg, p = 0.026) and a decrease in FPG (by 3.7%, i.e., 3.8 \u00b1",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3738,7 +3738,7 @@
       "context_window": "BW and FPG comprise a decrease in BW (by 1.6%, i.e., 1.7 \u00b1 3.6 kg, p = 0.026) and a decrease in FPG (by 3.7%, i.e., 3.8 \u00b1 6.9",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3756,7 +3756,7 @@
       "context_window": "FPG comprise a decrease in BW (by 1.6%, i.e., 1.7 \u00b1 3.6 kg, p = 0.026) and a decrease in FPG (by 3.7%, i.e., 3.8 \u00b1 6.9 mg/dL, p =",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3774,7 +3774,7 @@
       "context_window": "%, i.e., 1.7 \u00b1 3.6 kg, p = 0.026) and a decrease in FPG (by 3.7%, i.e., 3.8 \u00b1 6.9 mg/dL, p = 0.037) ( Table 4 ).",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3793,7 +3793,7 @@
       "context_window": "\u00b1 3.6 kg, p = 0.026) and a decrease in FPG (by 3.7%, i.e., 3.8 \u00b1 6.9 mg/dL, p = 0.037) ( Table 4 ).",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3811,7 +3811,7 @@
       "context_window": "kg, p = 0.026) and a decrease in FPG (by 3.7%, i.e., 3.8 \u00b1 6.9 mg/dL, p = 0.037) ( Table 4 ).",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3829,7 +3829,7 @@
       "context_window": "026) and a decrease in FPG (by 3.7%, i.e., 3.8 \u00b1 6.9 mg/dL, p = 0.037) ( Table 4 ).",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3847,7 +3847,7 @@
       "context_window": "ated FPG, and elevated BP was the most common MetS pattern (50% of study group); (ii) the most frequent cardiometabolic dis",
       "claim_role": "background",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3865,7 +3865,7 @@
       "context_window": "MetS population included abdominal obesity with a high WC (96% of study group), obesity with a high BMI (77%), elevated FP",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3883,7 +3883,7 @@
       "context_window": "th a high WC (96% of study group), obesity with a high BMI (77%), elevated FPG (77%), elevated BP (69%), elevated LDL-C (69",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3901,7 +3901,7 @@
       "context_window": "study group), obesity with a high BMI (77%), elevated FPG (77%), elevated BP (69%), elevated LDL-C (69%), elevated TG (54%",
       "claim_role": "background",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3919,7 +3919,7 @@
       "context_window": "ity with a high BMI (77%), elevated FPG (77%), elevated BP (69%), elevated LDL-C (69%), elevated TG (54%), high HbA1c (39%)",
       "claim_role": "background",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3937,7 +3937,7 @@
       "context_window": "7%), elevated FPG (77%), elevated BP (69%), elevated LDL-C (69%), elevated TG (54%), high HbA1c (39%), and reduced HDL-C (3",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3955,7 +3955,7 @@
       "context_window": "77%), elevated BP (69%), elevated LDL-C (69%), elevated TG (54%), high HbA1c (39%), and reduced HDL-C (35%); (iii) the 10-y",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3973,7 +3973,7 @@
       "context_window": "(69%), elevated LDL-C (69%), elevated TG (54%), high HbA1c (39%), and reduced HDL-C (35%); (iii) the 10-year risk of CV eve",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3991,7 +3991,7 @@
       "context_window": "%), elevated TG (54%), high HbA1c (39%), and reduced HDL-C (35%); (iii) the 10-year risk of CV events in the studied MetS p",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4009,7 +4009,7 @@
       "context_window": "n the studied MetS population was high (the mean SCORE2 was 4.7%) despite a low prevalence of established CVD and exclusion",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4026,8 +4026,8 @@
       "sentence": "The main findings of the TREMNIOS pilot clinical trial including the European population of middle-aged individuals with MetS and prolonged daily EW indicate that (i) coexistence of abdominal obesity, elevated FPG, and elevated BP was the most common MetS pattern (50% of study group); (ii) the most frequent cardiometabolic disorders in the studied MetS population included abdominal obesity with a high WC (96% of study group), obesity with a high BMI (77%), elevated FPG (77%), elevated BP (69%), elevated LDL-C (69%), elevated TG (54%), high HbA1c (39%), and reduced HDL-C (35%); (iii) the 10-year risk of CV events in the studied MetS population was high (the mean SCORE2 was 4.7%) despite a low prevalence of established CVD and exclusion of patients with T2D; (iv) 12-week TRE led to a significant reduction in mean daily EW (by ~28%, i.e., ~3.9 h); (v) the feasibility of the 12-week TRE intervention with a self-selected 10-h EW (mostly \u201clate TRE\u201d pattern) was satisfactory as evidenced by the mean adherence to TRE of 87%; (vi) 12-week TRE with a 10-h EW resulted in significant improvements in several cardiometabolic outcomes such as a decrease in BW (by ~2%), BMI (by ~2%), WC (by ~2%), hip circumference (by ~2%), systolic BP (by ~4%), FPG (by ~4%), HbA1c (by ~5%), and mean CGM fasting blood glucose level (~5%), as well as a favorable impact on liver function markers and self-reported sleepiness; (vii) a significant decrease in BW (by ~2%), BMI (by ~2%), WC (by ~3%), and mean CGM fasting blood glucose levels (by ~6%), as well as sleepiness score (by ~27%) and depression score (by ~60%) was observed in individuals who achieved EW \u2264 10 h/day during TRE (58% of patients); however, TRE effects were smaller or not observed in those with TRE EW > 10 h/day; (viii) adherence to TRE intervention was higher in individuals with TRE EW \u2264 10 h/day (94%) than in those with TRE EW > 10 h/day (77%).",
       "context_window": "ek TRE led to a significant reduction in mean daily EW (by ~28%, i.e., ~3.9 h); (v) the feasibility of the 12-week TRE inte",
       "claim_role": "background",
-      "endpoint": "HbA1c",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4044,8 +4044,8 @@
       "sentence": "The main findings of the TREMNIOS pilot clinical trial including the European population of middle-aged individuals with MetS and prolonged daily EW indicate that (i) coexistence of abdominal obesity, elevated FPG, and elevated BP was the most common MetS pattern (50% of study group); (ii) the most frequent cardiometabolic disorders in the studied MetS population included abdominal obesity with a high WC (96% of study group), obesity with a high BMI (77%), elevated FPG (77%), elevated BP (69%), elevated LDL-C (69%), elevated TG (54%), high HbA1c (39%), and reduced HDL-C (35%); (iii) the 10-year risk of CV events in the studied MetS population was high (the mean SCORE2 was 4.7%) despite a low prevalence of established CVD and exclusion of patients with T2D; (iv) 12-week TRE led to a significant reduction in mean daily EW (by ~28%, i.e., ~3.9 h); (v) the feasibility of the 12-week TRE intervention with a self-selected 10-h EW (mostly \u201clate TRE\u201d pattern) was satisfactory as evidenced by the mean adherence to TRE of 87%; (vi) 12-week TRE with a 10-h EW resulted in significant improvements in several cardiometabolic outcomes such as a decrease in BW (by ~2%), BMI (by ~2%), WC (by ~2%), hip circumference (by ~2%), systolic BP (by ~4%), FPG (by ~4%), HbA1c (by ~5%), and mean CGM fasting blood glucose level (~5%), as well as a favorable impact on liver function markers and self-reported sleepiness; (vii) a significant decrease in BW (by ~2%), BMI (by ~2%), WC (by ~3%), and mean CGM fasting blood glucose levels (by ~6%), as well as sleepiness score (by ~27%) and depression score (by ~60%) was observed in individuals who achieved EW \u2264 10 h/day during TRE (58% of patients); however, TRE effects were smaller or not observed in those with TRE EW > 10 h/day; (viii) adherence to TRE intervention was higher in individuals with TRE EW \u2264 10 h/day (94%) than in those with TRE EW > 10 h/day (77%).",
       "context_window": "s satisfactory as evidenced by the mean adherence to TRE of 87%; (vi) 12-week TRE with a 10-h EW resulted in significant im",
       "claim_role": "background",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4063,7 +4063,7 @@
       "context_window": "eral cardiometabolic outcomes such as a decrease in BW (by ~2%), BMI (by ~2%), WC (by ~2%), hip circumference (by ~2%), sy",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4081,7 +4081,7 @@
       "context_window": "abolic outcomes such as a decrease in BW (by ~2%), BMI (by ~2%), WC (by ~2%), hip circumference (by ~2%), systolic BP (by",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4099,7 +4099,7 @@
       "context_window": "es such as a decrease in BW (by ~2%), BMI (by ~2%), WC (by ~2%), hip circumference (by ~2%), systolic BP (by ~4%), FPG (by",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4117,7 +4117,7 @@
       "context_window": "(by ~2%), BMI (by ~2%), WC (by ~2%), hip circumference (by ~2%), systolic BP (by ~4%), FPG (by ~4%), HbA1c (by ~5%), and m",
       "claim_role": "background",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4135,7 +4135,7 @@
       "context_window": ", WC (by ~2%), hip circumference (by ~2%), systolic BP (by ~4%), FPG (by ~4%), HbA1c (by ~5%), and mean CGM fasting blood",
       "claim_role": "background",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4153,7 +4153,7 @@
       "context_window": "hip circumference (by ~2%), systolic BP (by ~4%), FPG (by ~4%), HbA1c (by ~5%), and mean CGM fasting blood glucose level",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4171,7 +4171,7 @@
       "context_window": "ce (by ~2%), systolic BP (by ~4%), FPG (by ~4%), HbA1c (by ~5%), and mean CGM fasting blood glucose level (~5%), as well a",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4189,7 +4189,7 @@
       "context_window": "HbA1c (by ~5%), and mean CGM fasting blood glucose level (~5%), as well as a favorable impact on liver function markers a",
       "claim_role": "background",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4207,7 +4207,7 @@
       "context_window": "eported sleepiness; (vii) a significant decrease in BW (by ~2%), BMI (by ~2%), WC (by ~3%), and mean CGM fasting blood glu",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4225,7 +4225,7 @@
       "context_window": "ness; (vii) a significant decrease in BW (by ~2%), BMI (by ~2%), WC (by ~3%), and mean CGM fasting blood glucose levels (b",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4243,7 +4243,7 @@
       "context_window": "significant decrease in BW (by ~2%), BMI (by ~2%), WC (by ~3%), and mean CGM fasting blood glucose levels (by ~6%), as we",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4261,7 +4261,7 @@
       "context_window": "WC (by ~3%), and mean CGM fasting blood glucose levels (by ~6%), as well as sleepiness score (by ~27%) and depression scor",
       "claim_role": "background",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4279,7 +4279,7 @@
       "context_window": "d glucose levels (by ~6%), as well as sleepiness score (by ~27%) and depression score (by ~60%) was observed in individuals",
       "claim_role": "background",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4297,7 +4297,7 @@
       "context_window": "ell as sleepiness score (by ~27%) and depression score (by ~60%) was observed in individuals who achieved EW \u2264 10 h/day dur",
       "claim_role": "background",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4314,8 +4314,8 @@
       "sentence": "The main findings of the TREMNIOS pilot clinical trial including the European population of middle-aged individuals with MetS and prolonged daily EW indicate that (i) coexistence of abdominal obesity, elevated FPG, and elevated BP was the most common MetS pattern (50% of study group); (ii) the most frequent cardiometabolic disorders in the studied MetS population included abdominal obesity with a high WC (96% of study group), obesity with a high BMI (77%), elevated FPG (77%), elevated BP (69%), elevated LDL-C (69%), elevated TG (54%), high HbA1c (39%), and reduced HDL-C (35%); (iii) the 10-year risk of CV events in the studied MetS population was high (the mean SCORE2 was 4.7%) despite a low prevalence of established CVD and exclusion of patients with T2D; (iv) 12-week TRE led to a significant reduction in mean daily EW (by ~28%, i.e., ~3.9 h); (v) the feasibility of the 12-week TRE intervention with a self-selected 10-h EW (mostly \u201clate TRE\u201d pattern) was satisfactory as evidenced by the mean adherence to TRE of 87%; (vi) 12-week TRE with a 10-h EW resulted in significant improvements in several cardiometabolic outcomes such as a decrease in BW (by ~2%), BMI (by ~2%), WC (by ~2%), hip circumference (by ~2%), systolic BP (by ~4%), FPG (by ~4%), HbA1c (by ~5%), and mean CGM fasting blood glucose level (~5%), as well as a favorable impact on liver function markers and self-reported sleepiness; (vii) a significant decrease in BW (by ~2%), BMI (by ~2%), WC (by ~3%), and mean CGM fasting blood glucose levels (by ~6%), as well as sleepiness score (by ~27%) and depression score (by ~60%) was observed in individuals who achieved EW \u2264 10 h/day during TRE (58% of patients); however, TRE effects were smaller or not observed in those with TRE EW > 10 h/day; (viii) adherence to TRE intervention was higher in individuals with TRE EW \u2264 10 h/day (94%) than in those with TRE EW > 10 h/day (77%).",
       "context_window": "erved in individuals who achieved EW \u2264 10 h/day during TRE (58% of patients); however, TRE effects were smaller or not obse",
       "claim_role": "background",
-      "endpoint": "blood glucose",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4332,8 +4332,8 @@
       "sentence": "The main findings of the TREMNIOS pilot clinical trial including the European population of middle-aged individuals with MetS and prolonged daily EW indicate that (i) coexistence of abdominal obesity, elevated FPG, and elevated BP was the most common MetS pattern (50% of study group); (ii) the most frequent cardiometabolic disorders in the studied MetS population included abdominal obesity with a high WC (96% of study group), obesity with a high BMI (77%), elevated FPG (77%), elevated BP (69%), elevated LDL-C (69%), elevated TG (54%), high HbA1c (39%), and reduced HDL-C (35%); (iii) the 10-year risk of CV events in the studied MetS population was high (the mean SCORE2 was 4.7%) despite a low prevalence of established CVD and exclusion of patients with T2D; (iv) 12-week TRE led to a significant reduction in mean daily EW (by ~28%, i.e., ~3.9 h); (v) the feasibility of the 12-week TRE intervention with a self-selected 10-h EW (mostly \u201clate TRE\u201d pattern) was satisfactory as evidenced by the mean adherence to TRE of 87%; (vi) 12-week TRE with a 10-h EW resulted in significant improvements in several cardiometabolic outcomes such as a decrease in BW (by ~2%), BMI (by ~2%), WC (by ~2%), hip circumference (by ~2%), systolic BP (by ~4%), FPG (by ~4%), HbA1c (by ~5%), and mean CGM fasting blood glucose level (~5%), as well as a favorable impact on liver function markers and self-reported sleepiness; (vii) a significant decrease in BW (by ~2%), BMI (by ~2%), WC (by ~3%), and mean CGM fasting blood glucose levels (by ~6%), as well as sleepiness score (by ~27%) and depression score (by ~60%) was observed in individuals who achieved EW \u2264 10 h/day during TRE (58% of patients); however, TRE effects were smaller or not observed in those with TRE EW > 10 h/day; (viii) adherence to TRE intervention was higher in individuals with TRE EW \u2264 10 h/day (94%) than in those with TRE EW > 10 h/day (77%).",
       "context_window": "ervention was higher in individuals with TRE EW \u2264 10 h/day (94%) than in those with TRE EW > 10 h/day (77%). According to",
       "claim_role": "background",
-      "endpoint": "blood glucose",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4350,8 +4350,8 @@
       "sentence": "The main findings of the TREMNIOS pilot clinical trial including the European population of middle-aged individuals with MetS and prolonged daily EW indicate that (i) coexistence of abdominal obesity, elevated FPG, and elevated BP was the most common MetS pattern (50% of study group); (ii) the most frequent cardiometabolic disorders in the studied MetS population included abdominal obesity with a high WC (96% of study group), obesity with a high BMI (77%), elevated FPG (77%), elevated BP (69%), elevated LDL-C (69%), elevated TG (54%), high HbA1c (39%), and reduced HDL-C (35%); (iii) the 10-year risk of CV events in the studied MetS population was high (the mean SCORE2 was 4.7%) despite a low prevalence of established CVD and exclusion of patients with T2D; (iv) 12-week TRE led to a significant reduction in mean daily EW (by ~28%, i.e., ~3.9 h); (v) the feasibility of the 12-week TRE intervention with a self-selected 10-h EW (mostly \u201clate TRE\u201d pattern) was satisfactory as evidenced by the mean adherence to TRE of 87%; (vi) 12-week TRE with a 10-h EW resulted in significant improvements in several cardiometabolic outcomes such as a decrease in BW (by ~2%), BMI (by ~2%), WC (by ~2%), hip circumference (by ~2%), systolic BP (by ~4%), FPG (by ~4%), HbA1c (by ~5%), and mean CGM fasting blood glucose level (~5%), as well as a favorable impact on liver function markers and self-reported sleepiness; (vii) a significant decrease in BW (by ~2%), BMI (by ~2%), WC (by ~3%), and mean CGM fasting blood glucose levels (by ~6%), as well as sleepiness score (by ~27%) and depression score (by ~60%) was observed in individuals who achieved EW \u2264 10 h/day during TRE (58% of patients); however, TRE effects were smaller or not observed in those with TRE EW > 10 h/day; (viii) adherence to TRE intervention was higher in individuals with TRE EW \u2264 10 h/day (94%) than in those with TRE EW > 10 h/day (77%).",
       "context_window": "E EW \u2264 10 h/day (94%) than in those with TRE EW > 10 h/day (77%). According to the data on national CV mortality rates pub",
       "claim_role": "background",
-      "endpoint": "blood glucose",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4477,9 +4477,9 @@
       "context_window": "ined in our study was characterized by younger age (mean of 45 years vs. 59 years); greater percentage of women (62% vs. 32%) an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-5087",
@@ -4872,10 +4872,10 @@
       "sentence": "Our findings indicate that the feasibility of the 12-week TRE intervention with a self-selected 10-h EW (mostly \u201clate TRE\u201d pattern) in the European MetS population was satisfactory given that the adherence to TRE was 87% in the whole study group and reached 94% in the subgroup of patients who achieved the desirable TRE EW, i.e., EW \u2264 10 h/day (mean EW of 9.6 h).",
       "context_window": "lation was satisfactory given that the adherence to TRE was 87% in the whole study group and reached 94% in the subgroup of",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-6072",
@@ -4890,10 +4890,10 @@
       "sentence": "Our findings indicate that the feasibility of the 12-week TRE intervention with a self-selected 10-h EW (mostly \u201clate TRE\u201d pattern) in the European MetS population was satisfactory given that the adherence to TRE was 87% in the whole study group and reached 94% in the subgroup of patients who achieved the desirable TRE EW, i.e., EW \u2264 10 h/day (mean EW of 9.6 h).",
       "context_window": "herence to TRE was 87% in the whole study group and reached 94% in the subgroup of patients who achieved the desirable TRE",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-6755",
@@ -4908,10 +4908,10 @@
       "sentence": "In that study, the adherence to TRE, defined as an intake of 95% of all calorie-containing ingestion events within a self-designated EW on the days recorded by the mCC app, was 93%.",
       "context_window": "n that study, the adherence to TRE, defined as an intake of 95% of all calorie-containing ingestion events within a self-de",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-6871",
@@ -4926,10 +4926,10 @@
       "sentence": "In that study, the adherence to TRE, defined as an intake of 95% of all calorie-containing ingestion events within a self-designated EW on the days recorded by the mCC app, was 93%.",
       "context_window": "self-designated EW on the days recorded by the mCC app, was 93%. In the study by Keszty\u00fcs et al. [ 50 ] including a Europea",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-7118",
@@ -4944,10 +4944,10 @@
       "sentence": "In the study by Keszty\u00fcs et al. [ 50 ] including a European cohort of patients with MetS components who underwent a 12-week TRE intervention with self-selected 8-9 h EW, adherence to TRE defined as a proportion of days with fasting \u226515 h was 86%.",
       "context_window": "TRE defined as a proportion of days with fasting \u226515 h was 86%. Notably, obese sedentary or moderately active adults were",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-7262",
@@ -4981,9 +4981,9 @@
       "context_window": "ong-term period [ 38 , 50 ]. Notably, in the study [ 38 ], ~63% of MetS patients were still somehow adherent to TRE in a pe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-msd-7627",
@@ -5000,9 +5000,9 @@
       "context_window": "patients were still somehow adherent to TRE in a period of 16 \u00b1 4 months. However, a few TRE studies conducted in overweight",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-7632",
@@ -5018,9 +5018,9 @@
       "context_window": "ents were still somehow adherent to TRE in a period of 16 \u00b1 4 months. However, a few TRE studies conducted in overweight or obes",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-7748",
@@ -5035,8 +5035,8 @@
       "sentence": "However, a few TRE studies conducted in overweight or obese subjects reported lower adherence to TRE (~47-56%) despite self-selecting an 8-10 h EW and using the validated mCC app for recording food intake [ 43 , 52 ].",
       "context_window": "ight or obese subjects reported lower adherence to TRE (~47-56%) despite self-selecting an 8-10 h EW and using the validate",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5053,10 +5053,10 @@
       "sentence": "Specifically, the adherence to logging on the mCC app during TRE intervention was 70% in the whole study group and 74% in the group of patients who achieved the goal of mean TRE daily EW of \u226410 h.",
       "context_window": "rence to logging on the mCC app during TRE intervention was 70% in the whole study group and 74% in the group of patients w",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-8516",
@@ -5071,10 +5071,10 @@
       "sentence": "Specifically, the adherence to logging on the mCC app during TRE intervention was 70% in the whole study group and 74% in the group of patients who achieved the goal of mean TRE daily EW of \u226410 h.",
       "context_window": "uring TRE intervention was 70% in the whole study group and 74% in the group of patients who achieved the goal of mean TRE",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-8827",
@@ -5089,10 +5089,10 @@
       "sentence": "In the study of the US MetS population undergoing TRE [ 38 ], the adherence to logging meals on mCC app also decreased during the 12-week TRE intervention compared to baseline period; however, it was still high during TRE (i.e., 86%).",
       "context_window": "seline period; however, it was still high during TRE (i.e., 86%). Low adherence to logging meals during TRE intervention ma",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-9148",
@@ -5107,10 +5107,10 @@
       "sentence": "In our study, the adherence to logging on the mCC app during TRE intervention in the group of patients who did not achieve the desirable reduction of EW during TRE was relatively low (i.e., 62%).",
       "context_window": "irable reduction of EW during TRE was relatively low (i.e., 62%). In the study of Prasad et al. [ 52 ] of overweight and ob",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-9318",
@@ -5125,8 +5125,8 @@
       "sentence": "In the study of Prasad et al. [ 52 ] of overweight and obese subjects with a prolonged daily eating period, a relatively low adherence to logging on the mCC app of 64% was accompanied by a low adherence to TRE (i.e., 47%).",
       "context_window": "od, a relatively low adherence to logging on the mCC app of 64% was accompanied by a low adherence to TRE (i.e., 47%). Howe",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5143,8 +5143,8 @@
       "sentence": "In the study of Prasad et al. [ 52 ] of overweight and obese subjects with a prolonged daily eating period, a relatively low adherence to logging on the mCC app of 64% was accompanied by a low adherence to TRE (i.e., 47%).",
       "context_window": "app of 64% was accompanied by a low adherence to TRE (i.e., 47%). However, in the study of overweight subjects with daily E",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5161,10 +5161,10 @@
       "sentence": "However, in the study of overweight subjects with daily EW \u2265 14 h [ 43 ], the adherence to TRE was relatively low (i.e., 56%) despite a satisfactory adherence to logging on the mCC app of 83%.",
       "context_window": "14 h [ 43 ], the adherence to TRE was relatively low (i.e., 56%) despite a satisfactory adherence to logging on the mCC app",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-9565",
@@ -5179,10 +5179,10 @@
       "sentence": "However, in the study of overweight subjects with daily EW \u2265 14 h [ 43 ], the adherence to TRE was relatively low (i.e., 56%) despite a satisfactory adherence to logging on the mCC app of 83%.",
       "context_window": "spite a satisfactory adherence to logging on the mCC app of 83%. Notably, a delay of the end time of daily EW during TRE di",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-9951",
@@ -5198,7 +5198,7 @@
       "context_window": "eating period. Specifically, mean daily EW was reduced by ~28% (i.e., by ~3.9 h) in the entire study group and by ~33% (i.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5216,7 +5216,7 @@
       "context_window": "by ~28% (i.e., by ~3.9 h) in the entire study group and by ~33% (i.e., by ~4.7 h) in the subgroup of patients who achieved",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5287,8 +5287,8 @@
       "sentence": "Specifically, a significant decrease in BW, BMI, WC, mean CGM fasting blood glucose level, liver function markers, sleepiness score, and depression score, as well as some improvements in hip circumference, FPG, HbA1c, and mean CGM 24-h blood glucose level were observed in individuals who had the adherence to TRE as high as 94% and achieved a substantial reduction in daily EW (by ~33%; i.e., ~4.7 h) with the mean EW during TRE of 9.6 h.",
       "context_window": "rved in individuals who had the adherence to TRE as high as 94% and achieved a substantial reduction in daily EW (by ~33%;",
       "claim_role": "unknown",
-      "endpoint": "blood glucose",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5305,8 +5305,8 @@
       "sentence": "Specifically, a significant decrease in BW, BMI, WC, mean CGM fasting blood glucose level, liver function markers, sleepiness score, and depression score, as well as some improvements in hip circumference, FPG, HbA1c, and mean CGM 24-h blood glucose level were observed in individuals who had the adherence to TRE as high as 94% and achieved a substantial reduction in daily EW (by ~33%; i.e., ~4.7 h) with the mean EW during TRE of 9.6 h.",
       "context_window": "s 94% and achieved a substantial reduction in daily EW (by ~33%; i.e., ~4.7 h) with the mean EW during TRE of 9.6 h. In add",
       "claim_role": "unknown",
-      "endpoint": "blood glucose",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5323,8 +5323,8 @@
       "sentence": "However, favorable TRE effects were smaller (WC, FPG, and HbA1c) or not observed (BW, BMI, mean CGM blood glucose level, liver function markers, and sleepiness and depression scores) in the subgroup of patients characterized by adherence to TRE of 77%, reduction in daily EW by ~21% (i.e., ~2.9 h), and mean EW during TRE of 10.7 h.",
       "context_window": "e subgroup of patients characterized by adherence to TRE of 77%, reduction in daily EW by ~21% (i.e., ~2.9 h), and mean EW",
       "claim_role": "unknown",
-      "endpoint": "blood glucose",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5341,8 +5341,8 @@
       "sentence": "However, favorable TRE effects were smaller (WC, FPG, and HbA1c) or not observed (BW, BMI, mean CGM blood glucose level, liver function markers, and sleepiness and depression scores) in the subgroup of patients characterized by adherence to TRE of 77%, reduction in daily EW by ~21% (i.e., ~2.9 h), and mean EW during TRE of 10.7 h.",
       "context_window": "rized by adherence to TRE of 77%, reduction in daily EW by ~21% (i.e., ~2.9 h), and mean EW during TRE of 10.7 h. Neverthel",
       "claim_role": "unknown",
-      "endpoint": "blood glucose",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5360,7 +5360,7 @@
       "context_window": "cadian rhythm disruption [ 25 , 57 ]. A decrease in BW of ~2.3% (i.e., by ~2.4 kg), which was observed in our study after t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5378,7 +5378,7 @@
       "context_window": "sruption [ 25 , 57 ]. A decrease in BW of ~2.3% (i.e., by ~2.4 kg), which was observed in our study after the 12-week TRE in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5396,7 +5396,7 @@
       "context_window": "\u2264 10 h during TRE, is consistent with a decrease in BW of 2-4% post-8-10 h TRE reported by other studies of subjects with",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5414,7 +5414,7 @@
       "context_window": "rgoing TRE [ 25 ] including the US MetS population [ 38 ] (~3%, ~3 kg post 10-h TRE) and overweight or obese individuals (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5432,7 +5432,7 @@
       "context_window": "g TRE [ 25 ] including the US MetS population [ 38 ] (~3%, ~3 kg post 10-h TRE) and overweight or obese individuals (e.g., ~",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5450,7 +5450,7 @@
       "context_window": "post 10-h TRE) and overweight or obese individuals (e.g., ~4% post 8-h TRE in [ 43 ]); ~2% post 10-h TRE in [ 52 ]; ~2% p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5468,7 +5468,7 @@
       "context_window": "t or obese individuals (e.g., ~4% post 8-h TRE in [ 43 ]); ~2% post 10-h TRE in [ 52 ]; ~2% post 9-h TRE in [ 50 ]). A sim",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5486,7 +5486,7 @@
       "context_window": "~4% post 8-h TRE in [ 43 ]); ~2% post 10-h TRE in [ 52 ]; ~2% post 9-h TRE in [ 50 ]). A similar extent of BW reduction (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5504,9 +5504,9 @@
       "context_window": "post 9-h TRE in [ 50 ]). A similar extent of BW reduction (~3%) was reported among sedentary or moderately active overweig",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-13119",
@@ -5522,7 +5522,7 @@
       "context_window": "a significant decrease in BW, albeit to smaller extent (~1-1.6%), was observed in some other TRE studies in the TRE group b",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5540,7 +5540,7 @@
       "context_window": "S study of MetS patients who lost weight post TRE [ 38 ], a 9% decrease in mean daily caloric intake was found despite no",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5558,9 +5558,9 @@
       "context_window": "tity, or caloric content of diet during TRE [ 38 ]. Also, a 22% [ 43 ] to 50% [ 52 ] reduction in the number of eating even",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-14597",
@@ -5576,9 +5576,9 @@
       "context_window": "ic content of diet during TRE [ 38 ]. Also, a 22% [ 43 ] to 50% [ 52 ] reduction in the number of eating events per day dur",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-15029",
@@ -5630,7 +5630,7 @@
       "context_window": "lic risk factors [ 61 ]. The post-TRE decrease in BW of ~2-3% could account for beneficial impact on abdominal adiposity",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5648,7 +5648,7 @@
       "context_window": "beneficial impact on abdominal adiposity indices, such as a 3% decrease in WC, which was observed in our study in particip",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5666,7 +5666,7 @@
       "context_window": "ts with a mean TRE daily EW \u2264 10 h. A decrease in WC (by ~2-4%) was also found post TRE in other clinical studies of patie",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5684,9 +5684,9 @@
       "context_window": "al effect of TRE on systolic BP that decreased post TRE by ~5 mmHg (i.e., ~4%) and reached optimal level post TRE [ 23 ]. This",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-16938",
@@ -5702,9 +5702,9 @@
       "context_window": "E on systolic BP that decreased post TRE by ~5 mmHg (i.e., ~4%) and reached optimal level post TRE [ 23 ]. This effect was",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-17361",
@@ -5720,7 +5720,7 @@
       "context_window": "prediabetes, even in the absence of weight loss [ 54 ]. The 4% post-TRE decrease in systolic BP in our study is comparable",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5756,7 +5756,7 @@
       "context_window": "t al. [ 38 ] including the US population with MetS (35% vs. 84%) could contribute to the smaller BP reduction in our study,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5774,9 +5774,9 @@
       "context_window": "on BP are needed [ 40 , 44 , 58 ]. Based on our findings, 12 weeks of TRE with a self-selected 10-h EW resulted in significant",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-18289",
@@ -5900,9 +5900,9 @@
       "context_window": "PG that was elevated at baseline reached the normal level (<100 mg/dL) post TRE. Notably, favorable post-TRE changes in FPG and H",
       "claim_role": "effect",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-pct-18759",
@@ -5918,7 +5918,7 @@
       "context_window": "nts in the CGM blood glucose levels including a significant 6% decrease in mean CGM fasting blood glucose level (by ~5 mg/",
       "claim_role": "dose",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5936,7 +5936,7 @@
       "context_window": "nt 6% decrease in mean CGM fasting blood glucose level (by ~5 mg/dL) as well as a trend toward lowering mean CGM 24-h blood glu",
       "claim_role": "dose",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5954,9 +5954,9 @@
       "context_window": "nefits related to glycemic parameters in a MetS population, 85% of which had elevated baseline FPG and/or HbA1c, also sugge",
       "claim_role": "effect",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11206952_feasibility_and_cardiometabolic_effects_of_time_restricted_e-u-22600",
@@ -5971,10 +5971,10 @@
       "sentence": "We believe that despite some limitations, the main value of our study is associated with targeting exclusively patients with diagnosed MetS and including a long duration of TRE intervention (12 weeks), a validated tool for recording food intake and sleep and monitoring adherence to TRE (mCC app), a comprehensive range of cardiometabolic outcomes, and the application of CGM for evaluating glucose control.",
       "context_window": "sed MetS and including a long duration of TRE intervention (12 weeks), a validated tool for recording food intake and sleep and",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

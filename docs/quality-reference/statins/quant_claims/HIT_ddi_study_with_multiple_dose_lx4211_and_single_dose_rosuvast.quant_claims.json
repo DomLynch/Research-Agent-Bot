@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_ddi_study_with_multiple_dose_lx4211_and_single_dose_rosuvast",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_ddi_study_with_multiple_dose_lx4211_and_single_dose_rosuvast-u-162",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 162,
+      "sentence": "This study will be conducted as a single-center, open-label, 2-period, single-sequence, drug-drug interaction study to assess the effects of multiple-dose LX4211 400 mg (2 \u00d7 200-mg tablets qd \u00d7 7 days) on the PK of single-dose rosuvastatin (1 \u00d7 10-mg tablet) in healthy male and female subjects.",
+      "context_window": "raction study to assess the effects of multiple-dose LX4211 400 mg (2 \u00d7 200-mg tablets qd \u00d7 7 days) on the PK of single-dose r",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_ddi_study_with_multiple_dose_lx4211_and_single_dose_rosuvast-u-194",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 194,
+      "sentence": "This study will be conducted as a single-center, open-label, 2-period, single-sequence, drug-drug interaction study to assess the effects of multiple-dose LX4211 400 mg (2 \u00d7 200-mg tablets qd \u00d7 7 days) on the PK of single-dose rosuvastatin (1 \u00d7 10-mg tablet) in healthy male and female subjects.",
+      "context_window": "cts of multiple-dose LX4211 400 mg (2 \u00d7 200-mg tablets qd \u00d7 7 days) on the PK of single-dose rosuvastatin (1 \u00d7 10-mg tablet) i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1093_eurjpc_zwaf673_higher_eicosapentaenoic_acid_levels_and_eicosapentaenoic_aci",
+  "doi": "10.1093/eurjpc/zwaf673",
+  "extracted_at": "2026-05-07T19:33:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwaf673_higher_eicosapentaenoic_acid_levels_and_eicosapentaenoic_aci-pct-1004",
+      "claim_type": "percentage",
+      "raw_text": "0.47%",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1004,
+      "sentence": "Patients who died had lower relative levels of EPA [0.47% (0.28-0.73) vs.",
+      "context_window": "elated. Patients who died had lower relative levels of EPA [0.47% (0.28-0.73) vs. 0.73% (0.52-1.02), P &lt; 0.001], a lower E",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurjpc_zwaf673_higher_eicosapentaenoic_acid_levels_and_eicosapentaenoic_aci-pct-1026",
+      "claim_type": "percentage",
+      "raw_text": "0.73%",
+      "numeric_values": [
+        0.73
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1026,
+      "sentence": "0.73% (0.52-1.02), P &lt; 0.001], a lower EPA/DHA ratio [0.33 (0.22-0.43) vs.",
+      "context_window": "ied had lower relative levels of EPA [0.47% (0.28-0.73) vs. 0.73% (0.52-1.02), P &lt; 0.001], a lower EPA/DHA ratio [0.33 (0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

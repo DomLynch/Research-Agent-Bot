@@ -1,0 +1,120 @@
+{
+  "paper_id": "HIT_study_to_evaluate_the_efficacy_of_pravastatin_on_survival_an",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_study_to_evaluate_the_efficacy_of_pravastatin_on_survival_an-u-62",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 62,
+      "sentence": "The survival of esophageal cancer and stomach cancer (EGC) at 5 years is less than 30%.",
+      "context_window": "e survival of esophageal cancer and stomach cancer (EGC) at 5 years is less than 30%. Pravastatin is a potent inhibitor of HMG-",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_study_to_evaluate_the_efficacy_of_pravastatin_on_survival_an-pct-83",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 83,
+      "sentence": "The survival of esophageal cancer and stomach cancer (EGC) at 5 years is less than 30%.",
+      "context_window": "eal cancer and stomach cancer (EGC) at 5 years is less than 30%. Pravastatin is a potent inhibitor of HMG-CoA reductase inh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_study_to_evaluate_the_efficacy_of_pravastatin_on_survival_an-u-932",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 932,
+      "sentence": "The experimental group will receive one tablet of 40 mg of pravastatin orally every 24 hours (breakfast) for 2 years.",
+      "context_window": "nditions. The experimental group will receive one tablet of 40 mg of pravastatin orally every 24 hours (breakfast) for 2 year",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_study_to_evaluate_the_efficacy_of_pravastatin_on_survival_an-u-991",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 991,
+      "sentence": "The experimental group will receive one tablet of 40 mg of pravastatin orally every 24 hours (breakfast) for 2 years.",
+      "context_window": "40 mg of pravastatin orally every 24 hours (breakfast) for 2 years. There will be a monthly monitoring of these patients for a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_study_to_evaluate_the_efficacy_of_pravastatin_on_survival_an-u-1066",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1066,
+      "sentence": "There will be a monthly monitoring of these patients for at least 2 years which includes an analytics.",
+      "context_window": "will be a monthly monitoring of these patients for at least 2 years which includes an analytics. Every 2 months there will be a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_study_to_evaluate_the_efficacy_of_pravastatin_on_survival_an-u-1109",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1109,
+      "sentence": "Every 2 months there will be an abdominal-pelvic CT scan to assess progression and treatment response.",
+      "context_window": "nts for at least 2 years which includes an analytics. Every 2 months there will be an abdominal-pelvic CT scan to assess progres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12517715_muscle_preservation_during_hospitalization_energy_balance_pr",
   "doi": "10.1097/MCO.0000000000001154",
-  "extracted_at": "2026-05-05T23:37:04+00:00",
+  "extracted_at": "2026-05-07T16:56:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 8,
@@ -21,10 +21,10 @@
       "sentence": "In otherwise healthy young individuals, short-term bed rest results in a loss of approximately 0.5% of leg muscle mass per day [ 1 ].",
       "context_window": "als, short-term bed rest results in a loss of approximately 0.5% of leg muscle mass per day [ 1 ]. During critical illness,",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12517715_muscle_preservation_during_hospitalization_energy_balance_pr-pct-308",
@@ -39,10 +39,10 @@
       "sentence": "During critical illness, this process accelerates dramatically with reports showing that patients may lose nearly 3% of leg muscle mass per day in the ICU [ 2 ].",
       "context_window": "atically with reports showing that patients may lose nearly 3% of leg muscle mass per day in the ICU [ 2 ]. Earlier work b",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12517715_muscle_preservation_during_hospitalization_energy_balance_pr-pct-444",
@@ -57,7 +57,7 @@
       "sentence": "Earlier work by our laboratory [ 3 ] and others [ 4 ] similarly demonstrated that up to 15% or more of leg muscle mass can be lost within just 1 week in critically ill or comatose patients.",
       "context_window": "ry [ 3 ] and others [ 4 ] similarly demonstrated that up to 15% or more of leg muscle mass can be lost within just 1 week i",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -75,7 +75,7 @@
       "sentence": "Earlier work by our laboratory [ 3 ] and others [ 4 ] similarly demonstrated that up to 15% or more of leg muscle mass can be lost within just 1 week in critically ill or comatose patients.",
       "context_window": "p to 15% or more of leg muscle mass can be lost within just 1 week in critically ill or comatose patients. Collectively, these",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

@@ -1,0 +1,156 @@
+{
+  "paper_id": "DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_elevated_triglycerides_and_purified_eicosapent",
+  "doi": "10.1093/ehjci/ehaa946.3343",
+  "extracted_at": "2026-05-07T19:33:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_elevated_triglycerides_and_purified_eicosapent-u-258",
+      "claim_type": "unit_value",
+      "raw_text": "499 mg/dL",
+      "numeric_values": [
+        499.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 258,
+      "sentence": "Elevated plasma TG (&gt;150 and 200-499 mg/dL) were recently reported to be a predictor of heart failure in patients with coronary heart disease on statin therapy with a respective 19% and 24% risk increase compared to normal TG levels.",
+      "context_window": "vascular events (MACE). Elevated plasma TG (&gt;150 and 200-499 mg/dL) were recently reported to be a predictor of heart failure",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_elevated_triglycerides_and_purified_eicosapent-pct-403",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 403,
+      "sentence": "Elevated plasma TG (&gt;150 and 200-499 mg/dL) were recently reported to be a predictor of heart failure in patients with coronary heart disease on statin therapy with a respective 19% and 24% risk increase compared to normal TG levels.",
+      "context_window": "coronary heart disease on statin therapy with a respective 19% and 24% risk increase compared to normal TG levels. REDUCE-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_elevated_triglycerides_and_purified_eicosapent-pct-411",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 411,
+      "sentence": "Elevated plasma TG (&gt;150 and 200-499 mg/dL) were recently reported to be a predictor of heart failure in patients with coronary heart disease on statin therapy with a respective 19% and 24% risk increase compared to normal TG levels.",
+      "context_window": "y heart disease on statin therapy with a respective 19% and 24% risk increase compared to normal TG levels. REDUCE-IT was a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_elevated_triglycerides_and_purified_eicosapent-pct-732",
+      "claim_type": "percentage",
+      "raw_text": "4.8%",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 732,
+      "sentence": "In the trial, daily 4g of EPA lowered MACE by an absolute rate of 4.8% compared to a placebo over a median 4.9-year follow-up.",
+      "context_window": "trial, daily 4g of EPA lowered MACE by an absolute rate of 4.8% compared to a placebo over a median 4.9-year follow-up. Thi",
+      "claim_role": "effect",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_elevated_triglycerides_and_purified_eicosapent-pct-810",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 810,
+      "sentence": "This reflected a 25% risk reduction in MACE and a number needed to treat of 21.",
+      "context_window": "placebo over a median 4.9-year follow-up. This reflected a 25% risk reduction in MACE and a number needed to treat of 21.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_elevated_triglycerides_and_purified_eicosapent-u-1313",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1313,
+      "sentence": "We aimed to investigate the risk reduction in MACE from using EPA in the UK population.</jats:p> <jats:p>We used the UK BioBank, a panomic resource following 500,000 participants over &gt;10 years, with similar age and sex adjusted rates of CVD as the UK population.",
+      "context_window": "a panomic resource following 500,000 participants over &gt;10 years, with similar age and sex adjusted rates of CVD as the UK p",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_elevated_triglycerides_and_purified_eicosapent-pct-2362",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2362,
+      "sentence": "With the assumption that EPA would have the same effect on the UK Biobank population, we estimate that if the participants were taking EPA, only 29% of the risk group versus actual 37% would have suffered an outcome within the UK Biobank follow-up period.",
+      "context_window": "we estimate that if the participants were taking EPA, only 29% of the risk group versus actual 37% would have suffered an",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_ehjci_ehaa946_3343_the_effect_of_elevated_triglycerides_and_purified_eicosapent-pct-2398",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2398,
+      "sentence": "With the assumption that EPA would have the same effect on the UK Biobank population, we estimate that if the participants were taking EPA, only 29% of the risk group versus actual 37% would have suffered an outcome within the UK Biobank follow-up period.",
+      "context_window": "s were taking EPA, only 29% of the risk group versus actual 37% would have suffered an outcome within the UK Biobank follow",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

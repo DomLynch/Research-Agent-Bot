@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_safety_of_simvastatin_in_lam_and_tsc",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_safety_of_simvastatin_in_lam_and_tsc-u-760",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 760,
+      "sentence": "The primary objective of this study is to determine the safety of simvastatin in the treatment of LAM-S or LAM-TS in patients on a stable (for at least 3 months) dose of sirolimus or everolimus.",
+      "context_window": "nt of LAM-S or LAM-TS in patients on a stable (for at least 3 months) dose of sirolimus or everolimus. Secondary objectives incl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_safety_of_simvastatin_in_lam_and_tsc-u-1421",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1421,
+      "sentence": "Posted outcomes: Safety of Simvastatin in the Treatment of LAM-S and LAM-TS Patients. timeframe=5 months.",
+      "context_window": "in in the Treatment of LAM-S and LAM-TS Patients. timeframe=5 months. Single Simvastatin Treatment Arm=0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

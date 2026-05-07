@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly",
   "doi": "10.1186/1745-6215-14-226",
-  "extracted_at": "2026-05-05T22:22:57+00:00",
+  "extracted_at": "2026-05-07T16:58:07+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 12,
@@ -25,7 +25,7 @@
       "context_window": "o two groups. Berberine or placebo will be taken orally for 12 weeks. The primary outcome is the whole body insulin action asses",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "ee treatment groups: berberine + cyproterone acetate (CPA) (n = 31), metformin + CPA (n = 30), and placebo + CPA (n = 28), for",
       "claim_role": "background",
       "endpoint": "insulin sensitivity",
-      "arm": "metformin",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": "rine + cyproterone acetate (CPA) (n = 31), metformin + CPA (n = 30), and placebo + CPA (n = 28), for three months. Treatment w",
       "claim_role": "background",
       "endpoint": "insulin sensitivity",
-      "arm": "metformin",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": "CPA) (n = 31), metformin + CPA (n = 30), and placebo + CPA (n = 28), for three months. Treatment with berberine + CPA in compa",
       "claim_role": "duration",
       "endpoint": "insulin sensitivity",
-      "arm": "metformin",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -96,10 +96,10 @@
       "sentence": "Treatment with berberine + CPA in comparison to metformin + CPA showed a decreased waist circumference and waist-to-hip ratio ( P <0.01), decreased total cholesterol (TG) and LDL-C ( P <0.05), and increased HDL-C and sex hormone binding globuline (SHBG) ( P <0.05).",
       "context_window": "ed a decreased waist circumference and waist-to-hip ratio ( P <0.01), decreased total cholesterol (TG) and LDL-C ( P <0.05), an",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "metformin",
+      "endpoint": "ldl",
+      "arm": "berberine",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-p-3469",
@@ -114,10 +114,10 @@
       "sentence": "Treatment with berberine + CPA in comparison to metformin + CPA showed a decreased waist circumference and waist-to-hip ratio ( P <0.01), decreased total cholesterol (TG) and LDL-C ( P <0.05), and increased HDL-C and sex hormone binding globuline (SHBG) ( P <0.05).",
       "context_window": "io ( P <0.01), decreased total cholesterol (TG) and LDL-C ( P <0.05), and increased HDL-C and sex hormone binding globuline (SH",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "metformin",
+      "endpoint": "ldl",
+      "arm": "berberine",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-p-3542",
@@ -132,10 +132,10 @@
       "sentence": "Treatment with berberine + CPA in comparison to metformin + CPA showed a decreased waist circumference and waist-to-hip ratio ( P <0.01), decreased total cholesterol (TG) and LDL-C ( P <0.05), and increased HDL-C and sex hormone binding globuline (SHBG) ( P <0.05).",
       "context_window": "increased HDL-C and sex hormone binding globuline (SHBG) ( P <0.05). Similarly, treatment with berberine + CPA in comparison t",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "metformin",
+      "endpoint": "ldl",
+      "arm": "berberine",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3722087_effect_of_berberine_on_insulin_resistance_in_women_with_poly-p-3811",
@@ -150,8 +150,8 @@
       "sentence": "Similarly, treatment with berberine + CPA in comparison to placebo + CPA showed a decrease in wrist-to-hip ratio (WHR), fasting plasma glucose, fasting insulin, homeostasis model assessment for insulin resistance (HOMA-IR), triglyceride (TC), LDL-C, and TG ( P <0.05) as well as an increase in HDL-C and SHBG ( P <0.01).",
       "context_window": "in resistance (HOMA-IR), triglyceride (TC), LDL-C, and TG ( P <0.05) as well as an increase in HDL-C and SHBG ( P <0.01). The a",
       "claim_role": "dose",
-      "endpoint": "insulin sensitivity",
-      "arm": "placebo",
+      "endpoint": "ldl",
+      "arm": "berberine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -168,8 +168,8 @@
       "sentence": "Similarly, treatment with berberine + CPA in comparison to placebo + CPA showed a decrease in wrist-to-hip ratio (WHR), fasting plasma glucose, fasting insulin, homeostasis model assessment for insulin resistance (HOMA-IR), triglyceride (TC), LDL-C, and TG ( P <0.05) as well as an increase in HDL-C and SHBG ( P <0.01).",
       "context_window": "nd TG ( P <0.05) as well as an increase in HDL-C and SHBG ( P <0.01). The author concluded that berberine, in comparison to met",
       "claim_role": "dose",
-      "endpoint": "insulin sensitivity",
-      "arm": "placebo",
+      "endpoint": "ldl",
+      "arm": "berberine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -313,7 +313,7 @@
       "context_window": "cebo. Berberine or placebo will be administrated orally for 12 weeks. Berberine and placebo were produced by the same pharmaceut",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -331,7 +331,7 @@
       "context_window": "ppearance, size, odor and taste. The trial has two phases: 12 weeks treatment with either berberine or placebo and three months",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -387,7 +387,7 @@
       "context_window": "on type 2 diabetes [ 9 ], the GDR (the primary outcome) is 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -405,7 +405,7 @@
       "context_window": "e 2 diabetes [ 9 ], the GDR (the primary outcome) is 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7min)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -424,7 +424,7 @@
       "context_window": "come) is 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7min) in the control group. The sample size was estim",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -442,7 +442,7 @@
       "context_window": "s 7.42 \u00b1 2.37 mg/(kg\u00d7min) in the berberine group and 6.06 \u00b1 2.21 mg/(kg\u00d7min) in the control group. The sample size was estimate",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },

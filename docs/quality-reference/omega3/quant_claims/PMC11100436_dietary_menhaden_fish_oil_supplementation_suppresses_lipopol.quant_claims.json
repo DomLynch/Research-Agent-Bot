@@ -1,0 +1,865 @@
+{
+  "paper_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol",
+  "doi": "10.1080/13880209.2024.2351933",
+  "extracted_at": "2026-05-07T19:32:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 11,
+    "unit_value": 15,
+    "percentage": 7,
+    "p_value": 10,
+    "mean_sd": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-14",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 14,
+      "sentence": "Wistar rats ( n = 30, male, 8 weeks) were purchased from Prima Nexus company, Malaysia and Anilab company (Indonesia).",
+      "context_window": "Wistar rats ( n = 30, male, 8 weeks) were purchased from Prima Nexus company, Ma",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-28",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 28,
+      "sentence": "Wistar rats ( n = 30, male, 8 weeks) were purchased from Prima Nexus company, Malaysia and Anilab company (Indonesia).",
+      "context_window": "Wistar rats ( n = 30, male, 8 weeks) were purchased from Prima Nexus company, Malaysia and Anil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-238",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 238,
+      "sentence": "Rats were maintained in group cages ( n = 3/cage) with ambient temperatures of around 20-26 \u00b0C.",
+      "context_window": "nd water ad libitum . Rats were maintained in group cages ( n = 3/cage) with ambient temperatures of around 20-26 \u00b0C. All ani",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-817",
+      "claim_type": "unit_value",
+      "raw_text": "45 mg/kg/day",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 817,
+      "sentence": "In the fasting condition, the animals were injected with STZ at 45 mg/kg/day (i.p) in 0.5 mL of 10 mM citrate buffer (pH 5.5) for three days continuously.",
+      "context_window": "he fasting condition, the animals were injected with STZ at 45 mg/kg/day (i.p) in 0.5 mL of 10 mM citrate buffer (pH 5.5) for three",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-839",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mL",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 839,
+      "sentence": "In the fasting condition, the animals were injected with STZ at 45 mg/kg/day (i.p) in 0.5 mL of 10 mM citrate buffer (pH 5.5) for three days continuously.",
+      "context_window": "the animals were injected with STZ at 45 mg/kg/day (i.p) in 0.5 mL of 10 mM citrate buffer (pH 5.5) for three days continuousl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-1127",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg/dL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 1127,
+      "sentence": "Animals were considered as hyperglycaemia or diabetic state if the blood glucose level at or more than 250 mg/dL (Gholamhosseinian et al.",
+      "context_window": "r diabetic state if the blood glucose level at or more than 250 mg/dL (Gholamhosseinian et al. 2020 ). Lipopolysaccharide (LPS)",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-1706",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1706,
+      "sentence": "A total of eighteen ( n = 18) adult Wistar rats were injected with STZ to develop hyperglycaemia for three days.",
+      "context_window": "haden fish oil (sigma aldrich, USA). A total of eighteen ( n = 18) adult Wistar rats were injected with STZ to develop hyperg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-1989",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1989,
+      "sentence": "The animals were then randomly divided into three groups; i) diabetic animals with LPS induction ( n = 6; DA-LPS); ii) diabetic animals with LPS induction and treated with 1 g/kg fish oil ( n = 6; DA-LPS-1FO); iii) diabetic animals with LPS induction and treated with 3 g/kg fish oil ( n = 6; DA-LPS-3FO).",
+      "context_window": "into three groups; i) diabetic animals with LPS induction ( n = 6; DA-LPS); ii) diabetic animals with LPS induction and treat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-2080",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2080,
+      "sentence": "The animals were then randomly divided into three groups; i) diabetic animals with LPS induction ( n = 6; DA-LPS); ii) diabetic animals with LPS induction and treated with 1 g/kg fish oil ( n = 6; DA-LPS-1FO); iii) diabetic animals with LPS induction and treated with 3 g/kg fish oil ( n = 6; DA-LPS-3FO).",
+      "context_window": "imals with LPS induction and treated with 1 g/kg fish oil ( n = 6; DA-LPS-1FO); iii) diabetic animals with LPS induction and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-2176",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2176,
+      "sentence": "The animals were then randomly divided into three groups; i) diabetic animals with LPS induction ( n = 6; DA-LPS); ii) diabetic animals with LPS induction and treated with 1 g/kg fish oil ( n = 6; DA-LPS-1FO); iii) diabetic animals with LPS induction and treated with 3 g/kg fish oil ( n = 6; DA-LPS-3FO).",
+      "context_window": "imals with LPS induction and treated with 3 g/kg fish oil ( n = 6; DA-LPS-3FO). Another two groups of animals were selected a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-2316",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2316,
+      "sentence": "Another two groups of animals were selected as control; iv) animals received normal saline and treated with 3 g/kg FO ( n = 6; NS-3FO) and v) control animals received normal saline ( n = 6; CTRL).",
+      "context_window": "animals received normal saline and treated with 3 g/kg FO ( n = 6; NS-3FO) and v) control animals received normal saline ( n",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-2379",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2379,
+      "sentence": "Another two groups of animals were selected as control; iv) animals received normal saline and treated with 3 g/kg FO ( n = 6; NS-3FO) and v) control animals received normal saline ( n = 6; CTRL).",
+      "context_window": "6; NS-3FO) and v) control animals received normal saline ( n = 6; CTRL). After 30 days of fish oil supplementation by oral g",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-2399",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2399,
+      "sentence": "After 30 days of fish oil supplementation by oral gavage, all animals were assessed for cognitive performance using a Y-maze test.",
+      "context_window": "ontrol animals received normal saline ( n = 6; CTRL). After 30 days of fish oil supplementation by oral gavage, all animals wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-2616",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2616,
+      "sentence": "At the end of the test, all animals were euthanized by injection of sodium pentobarbital at 100 mg/kg and brain organs were collected for histological examination and analysis of inflammation markers.",
+      "context_window": "als were euthanized by injection of sodium pentobarbital at 100 mg/kg and brain organs were collected for histological examina",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-2934",
+      "claim_type": "unit_value",
+      "raw_text": "60 cm",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2934,
+      "sentence": "Each arm has a similar measurement: 60 cm in length, 15 cm in width, and 23 cm in heigh.",
+      "context_window": "between each two arms. Each arm has a similar measurement: 60 cm in length, 15 cm in width, and 23 cm in heigh. The Y-maze t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-2951",
+      "claim_type": "unit_value",
+      "raw_text": "15 cm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2951,
+      "sentence": "Each arm has a similar measurement: 60 cm in length, 15 cm in width, and 23 cm in heigh.",
+      "context_window": "arms. Each arm has a similar measurement: 60 cm in length, 15 cm in width, and 23 cm in heigh. The Y-maze test had two trial",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-2971",
+      "claim_type": "unit_value",
+      "raw_text": "23 cm",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2971,
+      "sentence": "Each arm has a similar measurement: 60 cm in length, 15 cm in width, and 23 cm in heigh.",
+      "context_window": "a similar measurement: 60 cm in length, 15 cm in width, and 23 cm in heigh. The Y-maze test had two trials separated by an in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-pct-4209",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4209,
+      "sentence": "The relative organ weights of the animals were calculated as:\n\nThe left hemisphere of the cerebrum was thereafter preserved in a solution of neutral buffered formalin (NBF) at a concentration of 10% for a minimum duration of 24 h.",
+      "context_window": "on of neutral buffered formalin (NBF) at a concentration of 10% for a minimum duration of 24 h. Following fixation, the tis",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-pct-4475",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4475,
+      "sentence": "The samples were further dehydrated by subjecting it to a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol).",
+      "context_window": "d by subjecting it to a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol). Samples were then treat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-pct-4480",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4480,
+      "sentence": "The samples were further dehydrated by subjecting it to a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol).",
+      "context_window": "subjecting it to a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol). Samples were then treated wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-pct-4485",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4485,
+      "sentence": "The samples were further dehydrated by subjecting it to a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol).",
+      "context_window": "cting it to a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol). Samples were then treated with xy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-pct-4490",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4490,
+      "sentence": "The samples were further dehydrated by subjecting it to a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol).",
+      "context_window": "it to a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol). Samples were then treated with xylol t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-pct-4495",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4495,
+      "sentence": "The samples were further dehydrated by subjecting it to a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol).",
+      "context_window": "o a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol). Samples were then treated with xylol to rem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-pct-4500",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4500,
+      "sentence": "The samples were further dehydrated by subjecting it to a sequence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol).",
+      "context_window": "equence of alcohol concentrations (70%, 80%, 85%, 90%, 95%, 100% ethanol). Samples were then treated with xylol to remove an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-5218",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 5218,
+      "sentence": "The right hemisphere of the brain was crushed in 1 mL phosphate-buffered saline (PBS) solution.",
+      "context_window": "mogenates. The right hemisphere of the brain was crushed in 1 mL phosphate-buffered saline (PBS) solution. The specimen mixt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-p-6463",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6463,
+      "sentence": "The P value at p < 0.05 was considered to be a significant difference between groups.",
+      "context_window": "groups, followed by the Tukey post hoc test. The P value at p < 0.05 was considered to be a significant difference between group",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-193",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg/dL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 193,
+      "sentence": "All diabetic rats that were induced with LPS (DA-LPS; DA-LPS-1FO and DA-LPS-3FO) expressed high blood glucose levels (>250 mg/dL) on day 3.",
+      "context_window": "S-1FO and DA-LPS-3FO) expressed high blood glucose levels (>250 mg/dL) on day 3. Further, on the 30 days following the injection",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-230",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 230,
+      "sentence": "Further, on the 30 days following the injection of STZ, all diabetic animals showed a reduction in blood glucose levels.",
+      "context_window": "blood glucose levels (>250 mg/dL) on day 3. Further, on the 30 days following the injection of STZ, all diabetic animals showed",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-402",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg/dL",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 402,
+      "sentence": "Still, the blood glucose levels of the DA-LPS group remained above 250 mg/dL (259 \u00b1 54.40), showing that the animals were still in a diabetic state.",
+      "context_window": "the blood glucose levels of the DA-LPS group remained above 250 mg/dL (259 \u00b1 54.40), showing that the animals were still in a dia",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-msd-413",
+      "claim_type": "mean_sd",
+      "raw_text": "259 \u00b1 54.40",
+      "numeric_values": [
+        259.0,
+        54.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 413,
+      "sentence": "Still, the blood glucose levels of the DA-LPS group remained above 250 mg/dL (259 \u00b1 54.40), showing that the animals were still in a diabetic state.",
+      "context_window": "lucose levels of the DA-LPS group remained above 250 mg/dL (259 \u00b1 54.40), showing that the animals were still in a diabetic state.",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-msd-535",
+      "claim_type": "mean_sd",
+      "raw_text": "88.83 \u00b1 8.73",
+      "numeric_values": [
+        88.83,
+        8.73
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 535,
+      "sentence": "While the blood glucose levels of CTRL and NS-3FO (88.83 \u00b1 8.73 and 68.67 \u00b1 4.29, respectively) are not relatively similar to those of DA-LPS-1FO (135.17 \u00b1 30.91).",
+      "context_window": "c state. While the blood glucose levels of CTRL and NS-3FO (88.83 \u00b1 8.73 and 68.67 \u00b1 4.29, respectively) are not relatively similar",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-msd-552",
+      "claim_type": "mean_sd",
+      "raw_text": "68.67 \u00b1 4.29",
+      "numeric_values": [
+        68.67,
+        4.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 552,
+      "sentence": "While the blood glucose levels of CTRL and NS-3FO (88.83 \u00b1 8.73 and 68.67 \u00b1 4.29, respectively) are not relatively similar to those of DA-LPS-1FO (135.17 \u00b1 30.91).",
+      "context_window": "e blood glucose levels of CTRL and NS-3FO (88.83 \u00b1 8.73 and 68.67 \u00b1 4.29, respectively) are not relatively similar to those of DA-LP",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-msd-631",
+      "claim_type": "mean_sd",
+      "raw_text": "135.17 \u00b1 30.91",
+      "numeric_values": [
+        135.17,
+        30.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 631,
+      "sentence": "While the blood glucose levels of CTRL and NS-3FO (88.83 \u00b1 8.73 and 68.67 \u00b1 4.29, respectively) are not relatively similar to those of DA-LPS-1FO (135.17 \u00b1 30.91).",
+      "context_window": "ctively) are not relatively similar to those of DA-LPS-1FO (135.17 \u00b1 30.91). Nevertheless, both DA-LPS-1FO and DA-LPS-3FO groups showe",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-842",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 842,
+      "sentence": "The blood glucose levels (mg/dL) of different groups of animals after 3 and 30 days.",
+      "context_window": "e levels (mg/dL) of different groups of animals after 3 and 30 days. Values are the mean \u00b1 SEM ( n = 6) for each group. ** Sig",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-880",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 880,
+      "sentence": "Values are the mean \u00b1 SEM ( n = 6) for each group. ** Significant difference ( p < 0.01), *** significant difference ( p < 0.001) compared to the CTRL group, using one-way ANOVA followed by the Tukey test.",
+      "context_window": "f animals after 3 and 30 days. Values are the mean \u00b1 SEM ( n = 6) for each group. ** Significant difference ( p < 0.01), ***",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-p-931",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 931,
+      "sentence": "Values are the mean \u00b1 SEM ( n = 6) for each group. ** Significant difference ( p < 0.01), *** significant difference ( p < 0.001) compared to the CTRL group, using one-way ANOVA followed by the Tukey test.",
+      "context_window": "\u00b1 SEM ( n = 6) for each group. ** Significant difference ( p < 0.01), *** significant difference ( p < 0.001) compared to the C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-p-971",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 971,
+      "sentence": "Values are the mean \u00b1 SEM ( n = 6) for each group. ** Significant difference ( p < 0.01), *** significant difference ( p < 0.001) compared to the CTRL group, using one-way ANOVA followed by the Tukey test.",
+      "context_window": "ficant difference ( p < 0.01), *** significant difference ( p < 0.001) compared to the CTRL group, using one-way ANOVA followed b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-p-1844",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1844,
+      "sentence": "The result is expressed as means \u00b1 SEM. *significant difference ( p < 0.001) compared to the CTRL group, using one-way ANOVA followed by the tukey test.",
+      "context_window": "sult is expressed as means \u00b1 SEM. *significant difference ( p < 0.001) compared to the CTRL group, using one-way ANOVA followed b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-p-2071",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2071,
+      "sentence": "The cerebrum weight did not differ among the treatments, while the relative cerebrum weight of the DA-LPS group was significantly higher ( p < 0.05) compared with the CTRL and NS-3FO groups ( Table 3 ).",
+      "context_window": "ebrum weight of the DA-LPS group was significantly higher ( p < 0.05) compared with the CTRL and NS-3FO groups ( Table 3 ). Like",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-p-2280",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2280,
+      "sentence": "Likewise, the DA-LPS-1FO showed significant differences in relative cerebrum weight when compared to both the normal and fish oil control rats ( p < 0.05).",
+      "context_window": "hen compared to both the normal and fish oil control rats ( p < 0.05). Meanwhile, the DA-LPS-3FO group did not exhibit any stati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-p-2383",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2383,
+      "sentence": "Meanwhile, the DA-LPS-3FO group did not exhibit any statistically significant differences ( p > 0.05) in terms of the relative weight of the cerebrum compared to the NS-3FO and CTRL groups.",
+      "context_window": "did not exhibit any statistically significant differences ( p > 0.05) in terms of the relative weight of the cerebrum compared t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-2584",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2584,
+      "sentence": "Values are the mean \u00b1 SEM ( n = 6) for each group. * Significant difference ( p < 0.05) compared to the CTRL group, using one-way ANOVA followed by the Tukey test.",
+      "context_window": "brum between different groups. Values are the mean \u00b1 SEM ( n = 6) for each group. * Significant difference ( p < 0.05) compa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-p-2634",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2634,
+      "sentence": "Values are the mean \u00b1 SEM ( n = 6) for each group. * Significant difference ( p < 0.05) compared to the CTRL group, using one-way ANOVA followed by the Tukey test.",
+      "context_window": "n \u00b1 SEM ( n = 6) for each group. * Significant difference ( p < 0.05) compared to the CTRL group, using one-way ANOVA followed b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-p-5440",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5440,
+      "sentence": "The result showed that the inflammatory mediators of TNF-\u03b1 and IL-6 in DA-LPS group was significantly higher ( p < 0.001) compared to animals treated with 1 or 3 g/kg of fish oil supplementation (e.g., NS-3FO, DA-LPS-1FO and DA-LPS-3FO) and control group (CTRL).",
+      "context_window": "f TNF-\u03b1 and IL-6 in DA-LPS group was significantly higher ( p < 0.001) compared to animals treated with 1 or 3 g/kg of fish oil s",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "fish oil",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-n-5697",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5697,
+      "sentence": "Values are the mean \u00b1 SEM ( n = 6) for each group. *** Significant difference ( p < 0.001) compared to the CTRL group, using one-way ANOVA followed by the Tukey test.",
+      "context_window": "and IL-6 in different groups. Values are the mean \u00b1 SEM ( n = 6) for each group. *** Significant difference ( p < 0.001) co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-p-5749",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5749,
+      "sentence": "Values are the mean \u00b1 SEM ( n = 6) for each group. *** Significant difference ( p < 0.001) compared to the CTRL group, using one-way ANOVA followed by the Tukey test.",
+      "context_window": "\u00b1 SEM ( n = 6) for each group. *** Significant difference ( p < 0.001) compared to the CTRL group, using one-way ANOVA followed b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11100436_dietary_menhaden_fish_oil_supplementation_suppresses_lipopol-u-263",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 263,
+      "sentence": "Diabetic animals with LPS-induced inflammation and treated with fish oil at either 1 or 3 g/kg for duration of 21 days had notably lower blood glucose levels.",
+      "context_window": "treated with fish oil at either 1 or 3 g/kg for duration of 21 days had notably lower blood glucose levels. It has been establi",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "fish oil",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

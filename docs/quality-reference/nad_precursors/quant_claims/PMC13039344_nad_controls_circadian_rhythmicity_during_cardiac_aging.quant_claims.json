@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging",
   "doi": "10.1038/s42003-026-09818-1",
-  "extracted_at": "2026-05-04T12:19:02+00:00",
+  "extracted_at": "2026-05-07T16:58:29+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 15,
@@ -42,9 +42,9 @@
       "context_window": "backgrounds used in previous NR treatments, at the age of 2-4 months (\u201cyoung\u201d condition) or 12-15 months (\u201cold\u201d condition) were",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-u-178",
@@ -60,9 +60,9 @@
       "context_window": "atments, at the age of 2-4 months (\u201cyoung\u201d condition) or 12-15 months (\u201cold\u201d condition) were used for all experiments unless stat",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-u-663",
@@ -78,9 +78,9 @@
       "context_window": "es that were changed twice per week, starting at the age of 2 months. Animal experiments for RNA-seq were performed in the lab o",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-pct-1215",
@@ -258,9 +258,9 @@
       "context_window": "to recording medium (Powdered DMEM (Corning), 10 mM HEPES, 1% P/S, 5% FBS, 0.035% Sodium bicarbonate, 100 \u03bcM D-Luciferin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-pct-6481",
@@ -276,9 +276,9 @@
       "context_window": "rding medium (Powdered DMEM (Corning), 10 mM HEPES, 1% P/S, 5% FBS, 0.035% Sodium bicarbonate, 100 \u03bcM D-Luciferin Potassiu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-pct-6489",
@@ -294,9 +294,9 @@
       "context_window": "dium (Powdered DMEM (Corning), 10 mM HEPES, 1% P/S, 5% FBS, 0.035% Sodium bicarbonate, 100 \u03bcM D-Luciferin Potassium Salt (Prom",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-u-6763",
@@ -312,9 +312,9 @@
       "context_window": "ed using a LumiCycle32 device (Actimetrics) at 37 \u00b0C. After 4 days, recording medium was refreshed with the addition of fresh",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-u-7249",
@@ -348,9 +348,9 @@
       "context_window": "combined with 95 \u00b5L of cycling mix (0.1 M sodium phosphate, 0.1 mg/mL bovine serum albumin, 10 mM nicotinamide, 2% ethanol, 10",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-pct-7792",
@@ -366,9 +366,9 @@
       "context_window": "sphate, 0.1 mg/mL bovine serum albumin, 10 mM nicotinamide, 2% ethanol, 10 \u00b5M flavin mononucleotide, 20 \u00b5M resazurin, 110",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-pct-8493",
@@ -798,7 +798,7 @@
       "context_window": "ted cardiac NAD + levels during aging. NAD + levels in old (15 months) female mice were lower compared to young (3 months) mice (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -816,7 +816,7 @@
       "context_window": "n old (15 months) female mice were lower compared to young (3 months) mice (Fig. 2A ). mRNA levels of genes involved in biosynth",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -834,7 +834,7 @@
       "context_window": "with nicotinamide riboside (NR) ad libitum for a period of 10 months and harvested animals at the age of 1 year (Fig. 2D ). Fema",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -852,7 +852,7 @@
       "context_window": "r a period of 10 months and harvested animals at the age of 1 year (Fig. 2D ). Female mice specifically were chosen due to pri",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -888,9 +888,9 @@
       "context_window": "g during cardiac aging. A Cardiac NAD + levels from young (3 months(m)) and old (15 months(m)) female mouse hearts ( n = 3 for",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-u-5872",
@@ -906,9 +906,9 @@
       "context_window": ". A Cardiac NAD + levels from young (3 months(m)) and old (15 months(m)) female mouse hearts ( n = 3 for young, n = 4 for old) a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-5908",
@@ -924,9 +924,9 @@
       "context_window": "(3 months(m)) and old (15 months(m)) female mouse hearts ( n = 3 for young, n = 4 for old) at ZT22. B Heatmap depicting z-no",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-5925",
@@ -942,9 +942,9 @@
       "context_window": "d old (15 months(m)) female mouse hearts ( n = 3 for young, n = 4 for old) at ZT22. B Heatmap depicting z-normalized expressi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-u-6032",
@@ -960,9 +960,9 @@
       "context_window": "ormalized expression levels for NAD-related genes in young (2 months) and old (1 year) female hearts at ZT22 and ZT10. Genes ind",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-u-6051",
@@ -978,9 +978,9 @@
       "context_window": "n levels for NAD-related genes in young (2 months) and old (1 year) female hearts at ZT22 and ZT10. Genes indicated in green a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-u-6263",
@@ -1068,7 +1068,7 @@
       "context_window": ") of female mice treated with NR versus H 2 O (control) for 10 months starting at an age of 2 months ( n = 3 control, n = 4 NR-tr",
       "claim_role": "protocol",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1086,7 +1086,7 @@
       "context_window": "versus H 2 O (control) for 10 months starting at an age of 2 months ( n = 3 control, n = 4 NR-treated) at ZT10. G Biventricular",
       "claim_role": "protocol",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1104,7 +1104,7 @@
       "context_window": "O (control) for 10 months starting at an age of 2 months ( n = 3 control, n = 4 NR-treated) at ZT10. G Biventricular heart t",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1122,7 +1122,7 @@
       "context_window": "r 10 months starting at an age of 2 months ( n = 3 control, n = 4 NR-treated) at ZT10. G Biventricular heart to body weight (",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1140,7 +1140,7 @@
       "context_window": "young and old mice treated with NR versus H 2 O (control) ( n = 5 young mice, n = 3 old mice, n = 4 old mice with NR). H Anp",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1158,7 +1158,7 @@
       "context_window": "treated with NR versus H 2 O (control) ( n = 5 young mice, n = 3 old mice, n = 4 old mice with NR). H Anp ( Nppa ) and Bnp (",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1176,7 +1176,7 @@
       "context_window": "versus H 2 O (control) ( n = 5 young mice, n = 3 old mice, n = 4 old mice with NR). H Anp ( Nppa ) and Bnp ( Nppb ) mRNA exp",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1194,9 +1194,9 @@
       "context_window": "malized counts) in hearts from NR vs control treated mice ( n = 3/condition) at ZT10. ns non-significant; * p < 0.05; ** p <",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-p-7012",
@@ -1212,9 +1212,9 @@
       "context_window": "ated mice ( n = 3/condition) at ZT10. ns non-significant; * p < 0.05; ** p < 0.01; *** p < 0.001; by 2-tailed unpaired Student\u2019s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-p-7025",
@@ -1230,9 +1230,9 @@
       "context_window": "= 3/condition) at ZT10. ns non-significant; * p < 0.05; ** p < 0.01; *** p < 0.001; by 2-tailed unpaired Student\u2019s t test for (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-p-7039",
@@ -1248,9 +1248,9 @@
       "context_window": ") at ZT10. ns non-significant; * p < 0.05; ** p < 0.01; *** p < 0.001; by 2-tailed unpaired Student\u2019s t test for ( A ), ( C ), (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-u-7334",
@@ -1266,9 +1266,9 @@
       "context_window": "ssed gene expression at ZT22 (night) and ZT10 (day) in old (1 year) NR-treated mice and compared the old, NR treated condition",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-7600",
@@ -1284,9 +1284,9 @@
       "context_window": "es that were rhythmic in both young and old mice (Fig. 1C , n = 142), the majority ( n = 86/142) were unaffected by NR and stay",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-7625",
@@ -1302,9 +1302,9 @@
       "context_window": "both young and old mice (Fig. 1C , n = 142), the majority ( n = 86/142) were unaffected by NR and stayed rhythmic, while 56/14",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-7790",
@@ -1320,9 +1320,9 @@
       "context_window": "From the genes that lost rhythmicity upon aging (Fig. 1C , n = 1089), most were unaltered and still lost rhythmicity ( n = 979)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-7850",
@@ -1338,9 +1338,9 @@
       "context_window": "n = 1089), most were unaltered and still lost rhythmicity ( n = 979), but 110 remained diurnally expressed upon NR. From the la",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-8083",
@@ -1356,9 +1356,9 @@
       "context_window": "tern. The genes that gained rhythmicity with age (Fig. 1C , n = 160), predominantly lost this pattern upon NR ( n = 111/160). N",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-8135",
@@ -1374,9 +1374,9 @@
       "context_window": "g. 1C , n = 160), predominantly lost this pattern upon NR ( n = 111/160). Next to the previously described genes (Fig. 1C ), we",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-p-8701",
@@ -1392,9 +1392,9 @@
       "context_window": "iptional regulators of these genes (Supplementary Data 02 , p < 0.01). Transcripts that lost rhythmicity with age but remained d",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-p-10067",
@@ -1500,9 +1500,9 @@
       "context_window": "and NADH levels of neonatal mouse cardiomyocytes after 2 or 6 days of treatment with NAMPT inhibitor FK866 (100 nM) with or wi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-12428",
@@ -1518,9 +1518,9 @@
       "context_window": "FK866 (100 nM) with or without NAD precursor NR (500 \u00b5M) ( n = 4/condition, except n = 3 for NR + FK866 NADH, at day 2; n =",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-12452",
@@ -1536,9 +1536,9 @@
       "context_window": "without NAD precursor NR (500 \u00b5M) ( n = 4/condition, except n = 3 for NR + FK866 NADH, at day 2; n = 5/condition, except n =",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-12489",
@@ -1554,9 +1554,9 @@
       "context_window": "= 4/condition, except n = 3 for NR + FK866 NADH, at day 2; n = 5/condition, except n = 4 for NR + FK866 NADH, at day 6). B A",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-12513",
@@ -1572,9 +1572,9 @@
       "context_window": "= 3 for NR + FK866 NADH, at day 2; n = 5/condition, except n = 4 for NR + FK866 NADH, at day 6). B Average background-subtra",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-12772",
@@ -1680,9 +1680,9 @@
       "context_window": "resulted in differential expression of 643 genes (adjusted p < 0.01, log 2 FC > 0.58496) (Fig. 5B and Supplementary Fig. 4A ).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-16026",
@@ -1698,9 +1698,9 @@
       "context_window": "K866 + 100 \u00b5M NR, or 5 nM FK866 + 100 \u00b5M NR + 20 \u00b5M Ex527 ( n = 4/condition). B Venn diagrams of genes differentially express",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-p-16112",
@@ -1716,9 +1716,9 @@
       "context_window": "iagrams of genes differentially expressed (DESeq2, adjusted p < 0.01, log 2 FC > 0.58496) between untreated cells and cells trea",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-n-16291",
@@ -1734,9 +1734,9 @@
       "context_window": "d with FK866 and cells treated with either NR or NR+Ex527 ( n = 3/condition). C Heatmap highlighting NR response genes, organ",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13039344_nad_controls_circadian_rhythmicity_during_cardiac_aging-p-16470",

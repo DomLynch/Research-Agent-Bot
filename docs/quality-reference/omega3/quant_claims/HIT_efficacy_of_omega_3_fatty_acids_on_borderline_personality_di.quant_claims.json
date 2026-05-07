@@ -1,0 +1,102 @@
+{
+  "paper_id": "HIT_efficacy_of_omega_3_fatty_acids_on_borderline_personality_di",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_efficacy_of_omega_3_fatty_acids_on_borderline_personality_di-pct-88",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 88,
+      "sentence": "Borderline Personality Disorder (BDP) is a serious mental disorder that affects about 1-2% of the general population, and it is characterized by severe psychosocial impairment and a high mortality rate due to suicide.",
+      "context_window": "der (BDP) is a serious mental disorder that affects about 1-2% of the general population, and it is characterized by sever",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_efficacy_of_omega_3_fatty_acids_on_borderline_personality_di-u-1035",
+      "claim_type": "unit_value",
+      "raw_text": "1680 mg/d",
+      "numeric_values": [
+        1680.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 1035,
+      "sentence": "Patients with BDP will be randomly allocated to the three arms of the study: 1- CBT+placebo, 2- CBT+Omacor 1680 mg/d, 3- CBT+Omacor 3360 mg/d.",
+      "context_window": "the three arms of the study: 1- CBT+placebo, 2- CBT+Omacor 1680 mg/d, 3- CBT+Omacor 3360 mg/d. Follow up will last for 12 weeks.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_efficacy_of_omega_3_fatty_acids_on_borderline_personality_di-u-1060",
+      "claim_type": "unit_value",
+      "raw_text": "3360 mg/d",
+      "numeric_values": [
+        3360.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 1060,
+      "sentence": "Patients with BDP will be randomly allocated to the three arms of the study: 1- CBT+placebo, 2- CBT+Omacor 1680 mg/d, 3- CBT+Omacor 3360 mg/d.",
+      "context_window": "udy: 1- CBT+placebo, 2- CBT+Omacor 1680 mg/d, 3- CBT+Omacor 3360 mg/d. Follow up will last for 12 weeks. Assessment of affective",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_efficacy_of_omega_3_fatty_acids_on_borderline_personality_di-u-1095",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1095,
+      "sentence": "Follow up will last for 12 weeks.",
+      "context_window": "1680 mg/d, 3- CBT+Omacor 3360 mg/d. Follow up will last for 12 weeks. Assessment of affective symptoms, impulsivity and aggressi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_efficacy_of_omega_3_fatty_acids_on_borderline_personality_di-u-1226",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1226,
+      "sentence": "Assessment of affective symptoms, impulsivity and aggressivity will be carried out at baseline and at 2, 4, 6, 8, 10 and 12 weeks.",
+      "context_window": "y will be carried out at baseline and at 2, 4, 6, 8, 10 and 12 weeks.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

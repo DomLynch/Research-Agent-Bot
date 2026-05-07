@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9678932_differential_effects_of_intermittent_energy_restriction_vs_c",
   "doi": "10.3389/fnut.2022.979618",
-  "extracted_at": "2026-05-05T22:17:50+00:00",
+  "extracted_at": "2026-05-07T16:58:05+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 9,
@@ -260,7 +260,7 @@
       "sentence": "The mean body weight loss was 4.57 kg (95% confidence interval [CI], 4.1-5.0, p < 0.001) in iER and 2.46 kg (95% CI, 4.1-5.0, p < 0.001) in iER.",
       "context_window": "ition and body circumference. The mean body weight loss was 4.57 kg (95% confidence interval [CI], 4.1-5.0, p < 0.001) in iER a",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -278,7 +278,7 @@
       "sentence": "The mean body weight loss was 4.57 kg (95% confidence interval [CI], 4.1-5.0, p < 0.001) in iER and 2.46 kg (95% CI, 4.1-5.0, p < 0.001) in iER.",
       "context_window": "body circumference. The mean body weight loss was 4.57 kg (95% confidence interval [CI], 4.1-5.0, p < 0.001) in iER and 2.",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -296,7 +296,7 @@
       "sentence": "The mean body weight loss was 4.57 kg (95% confidence interval [CI], 4.1-5.0, p < 0.001) in iER and 2.46 kg (95% CI, 4.1-5.0, p < 0.001) in iER.",
       "context_window": "ht loss was 4.57 kg (95% confidence interval [CI], 4.1-5.0, p < 0.001) in iER and 2.46 kg (95% CI, 4.1-5.0, p < 0.001) in iER. Th",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -314,7 +314,7 @@
       "sentence": "The mean body weight loss was 4.57 kg (95% confidence interval [CI], 4.1-5.0, p < 0.001) in iER and 2.46 kg (95% CI, 4.1-5.0, p < 0.001) in iER.",
       "context_window": "5% confidence interval [CI], 4.1-5.0, p < 0.001) in iER and 2.46 kg (95% CI, 4.1-5.0, p < 0.001) in iER. The analyses of BMI, B",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -332,7 +332,7 @@
       "sentence": "The mean body weight loss was 4.57 kg (95% confidence interval [CI], 4.1-5.0, p < 0.001) in iER and 2.46 kg (95% CI, 4.1-5.0, p < 0.001) in iER.",
       "context_window": "ence interval [CI], 4.1-5.0, p < 0.001) in iER and 2.46 kg (95% CI, 4.1-5.0, p < 0.001) in iER. The analyses of BMI, BF%, W",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -350,7 +350,7 @@
       "sentence": "The mean body weight loss was 4.57 kg (95% confidence interval [CI], 4.1-5.0, p < 0.001) in iER and 2.46 kg (95% CI, 4.1-5.0, p < 0.001) in iER.",
       "context_window": "], 4.1-5.0, p < 0.001) in iER and 2.46 kg (95% CI, 4.1-5.0, p < 0.001) in iER. The analyses of BMI, BF%, WC, and HC were consiste",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -387,9 +387,9 @@
       "context_window": "on, which reduces energy intake by a small amount (e.g., 25-30%) each day ( 6 , 7 ). In contrast, the IER diet involves ext",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9678932_differential_effects_of_intermittent_energy_restriction_vs_c-pct-790",
@@ -405,7 +405,7 @@
       "context_window": "alternate day fasting, with little energy intake (e.g., 25-30%) 2 days per week and ad libitum intake for the other 5 days",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -423,7 +423,7 @@
       "context_window": "rnate day fasting, with little energy intake (e.g., 25-30%) 2 days per week and ad libitum intake for the other 5 days ( 8 - 1",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -441,7 +441,7 @@
       "context_window": "25-30%) 2 days per week and ad libitum intake for the other 5 days ( 8 - 10 ). Studies in rodents shown that fasting glucose a",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -675,9 +675,9 @@
       "context_window": "d in the 4-week dietary intervention. iER subjects consumed 30% of their daily recommended energy intake (approximately 500",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9678932_differential_effects_of_intermittent_energy_restriction_vs_c-u-4142",
@@ -693,9 +693,9 @@
       "context_window": "days every week and consumed food ad libitum for the other 5 days by their daily recommended energy intake. The cER subjects",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9678932_differential_effects_of_intermittent_energy_restriction_vs_c-pct-4263",
@@ -747,9 +747,9 @@
       "context_window": "ntervention of three groups. Continuous energy restriction, 30% of their daily recommended energy intake (approximately 500",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9678932_differential_effects_of_intermittent_energy_restriction_vs_c-u-4904",
@@ -765,9 +765,9 @@
       "context_window": "days every week and consumed food ad libitum for the other 5 days to maintain their normal energy intake. Intermittent energy",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9678932_differential_effects_of_intermittent_energy_restriction_vs_c-pct-4984",
@@ -783,9 +783,9 @@
       "context_window": "heir normal energy intake. Intermittent energy restriction, 70% of their estimated energy requirements every day. Normal di",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9678932_differential_effects_of_intermittent_energy_restriction_vs_c-pct-5051",
@@ -2536,7 +2536,7 @@
       "context_window": ", and 1.4, respectively. Other studies demonstrated 2.3 and 2.1 kg body weight reductions in sedentary population in IER only",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "dietary restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     }

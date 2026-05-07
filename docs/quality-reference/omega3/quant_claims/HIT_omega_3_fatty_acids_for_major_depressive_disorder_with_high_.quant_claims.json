@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_omega_3_fatty_acids_for_major_depressive_disorder_with_high_",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_omega_3_fatty_acids_for_major_depressive_disorder_with_high_-u-613",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 613,
+      "sentence": "To address these aims, the project will use a four-arm, randomized, parallel-group, placebo-controlled design comparing placebo versus three doses of EPA (1 gm/day, 2 gm/day, or 4 gm/day) administered over 12 weeks.",
+      "context_window": "of EPA (1 gm/day, 2 gm/day, or 4 gm/day) administered over 12 weeks. The study is to be conducted at two sites: Emory Universit",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_omega_3_fatty_acids_for_major_depressive_disorder_with_high_-u-945",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 945,
+      "sentence": "Eligible participants will be between the ages of 18-80 who have current MDD, are overweight, and who demonstrate peripheral inflammation, defined as an high sensitivity C-reactive protein (hs-CRP) level \u2265 3 mg/L.",
+      "context_window": "as an high sensitivity C-reactive protein (hs-CRP) level \u2265 3 mg/L. The primary outcome will be change in plasma interleukin",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_omega_3_fatty_acids_for_major_depressive_disorder_with_high_-u-1517",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1517,
+      "sentence": "Posted outcomes: Percent Change in Plasma Concentration of Inflammatory Biomarkers IL-6 (pg/mL) and PBMC TNF-\u03b1 (pg/mL). timeframe=12 weeks.",
+      "context_window": "y Biomarkers IL-6 (pg/mL) and PBMC TNF-\u03b1 (pg/mL). timeframe=12 weeks. Placebo=1.92 (\u00b130.24); EPA 1 g/Day=-1.27 (\u00b128.37); EPA 2 g",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

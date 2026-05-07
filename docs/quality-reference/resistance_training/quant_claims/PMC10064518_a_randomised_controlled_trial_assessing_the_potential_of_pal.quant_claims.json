@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10064518_a_randomised_controlled_trial_assessing_the_potential_of_pal",
   "doi": "10.1186/s13063-023-07199-y",
-  "extracted_at": "2026-05-05T21:59:19+00:00",
+  "extracted_at": "2026-05-07T16:57:12+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 17,
@@ -58,7 +58,7 @@
       "context_window": "ute and chronic pain [ 25 , 26 ]. PEA doses of between 300 -1200 mg have been well-tolerated and shown to be effective at reduc",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -148,7 +148,7 @@
       "context_window": "5 or \u2264 28 kg/m. 2 Major musculoskeletal injury in the past 6 months Participation in regular structured resistance training in",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "placebo",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -166,7 +166,7 @@
       "context_window": "ation in regular structured resistance training in the past 6 months (e.g., two or more sessions per week) Allergies to any of",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "placebo",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -184,9 +184,9 @@
       "context_window": ". The intervention groups will be provided capsules of PEA (350 mg/day as 2 \u00d7 175 mg Levagen + \u00ae capsules), or identical matching",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC10064518_a_randomised_controlled_trial_assessing_the_potential_of_pal-u-3489",
@@ -202,9 +202,9 @@
       "context_window": "groups will be provided capsules of PEA (350 mg/day as 2 \u00d7 175 mg Levagen + \u00ae capsules), or identical matching placebo capsul",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC10064518_a_randomised_controlled_trial_assessing_the_potential_of_pal-u-3610",
@@ -220,9 +220,9 @@
       "context_window": "apsules (in colour and weight) containing maltodextrin (2 \u00d7 175 mg capsules), which will be taken orally (swallowed) for 8-wee",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC10064518_a_randomised_controlled_trial_assessing_the_potential_of_pal-u-4310",
@@ -274,7 +274,7 @@
       "context_window": "e 8-week progressive resistance training program 5 AMRAP 80% 1RM 50-60% 4 AMRAP 85% 1RM 50-60% 3 AMRAP 90% 1RM",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -292,7 +292,7 @@
       "context_window": "gressive resistance training program 5 AMRAP 80% 1RM 50-60% 4 AMRAP 85% 1RM 50-60% 3 AMRAP 90% 1RM 50-60% AMRA",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -310,7 +310,7 @@
       "context_window": "ance training program 5 AMRAP 80% 1RM 50-60% 4 AMRAP 85% 1RM 50-60% 3 AMRAP 90% 1RM 50-60% AMRAP as many reps",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -328,7 +328,7 @@
       "context_window": "g program 5 AMRAP 80% 1RM 50-60% 4 AMRAP 85% 1RM 50-60% 3 AMRAP 90% 1RM 50-60% AMRAP as many reps as possible",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -346,7 +346,7 @@
       "context_window": "MRAP 80% 1RM 50-60% 4 AMRAP 85% 1RM 50-60% 3 AMRAP 90% 1RM 50-60% AMRAP as many reps as possible Following each",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -364,7 +364,7 @@
       "context_window": "M 50-60% 4 AMRAP 85% 1RM 50-60% 3 AMRAP 90% 1RM 50-60% AMRAP as many reps as possible Following each resistance",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -598,7 +598,7 @@
       "context_window": "h between participants treated with NSAIDs vs placebo after 8 weeks of resistance training with a participant pool of 35 partic",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     }

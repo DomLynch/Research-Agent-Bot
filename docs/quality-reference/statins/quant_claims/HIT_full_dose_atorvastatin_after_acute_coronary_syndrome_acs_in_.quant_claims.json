@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_full_dose_atorvastatin_after_acute_coronary_syndrome_acs_in_",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_full_dose_atorvastatin_after_acute_coronary_syndrome_acs_in_-u-92",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/day",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 92,
+      "sentence": "This study was designed to test the hypothesis that the addition of full-dose atorvastatin (80 mg/day) to conventional medical treatment could reduce ischaemic recurrences after non-ST-elevation acute myocardial infarction (NSTE-AMI) in patients with severe and diffuse coronary artery disease (CAD) not amenable to any form of mechanical revascularisation.",
+      "context_window": "the hypothesis that the addition of full-dose atorvastatin (80 mg/day) to conventional medical treatment could reduce ischaemic r",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

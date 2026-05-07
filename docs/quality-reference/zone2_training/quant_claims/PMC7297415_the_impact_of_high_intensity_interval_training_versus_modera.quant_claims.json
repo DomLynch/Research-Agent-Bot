@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7297415_the_impact_of_high_intensity_interval_training_versus_modera",
   "doi": "10.4103/ijpvm.IJPVM_524_18",
-  "extracted_at": "2026-05-05T22:43:11+00:00",
+  "extracted_at": "2026-05-07T16:58:24+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 16,
@@ -25,7 +25,7 @@
       "context_window": "rcise. A total of 33 inactive and overweight women aged 40-50 years old and body mass index >27 kg/m 2 were randomized to high-",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "moderate-intensity continuous training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "overweight women aged 40-50 years old and body mass index >27 kg/m 2 were randomized to high-intensity interval training, mo",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "moderate-intensity continuous training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -295,7 +295,7 @@
       "context_window": "a. Subjects were randomly divided into three groups: HIIT ( n = 10), MICT ( n = 11), and control group ( n = 9). Before the e",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "mict",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -313,7 +313,7 @@
       "context_window": "randomly divided into three groups: HIIT ( n = 10), MICT ( n = 11), and control group ( n = 9). Before the experimental peri",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "mict",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -331,7 +331,7 @@
       "context_window": "groups: HIIT ( n = 10), MICT ( n = 11), and control group ( n = 9). Before the experimental period, the pretest was carried",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "mict",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -493,9 +493,9 @@
       "context_window": "od.[ 20 ] The MICT group walked continuously for 47 min at 60%-70% of maximal heart rate to ensure that the training proto",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7297415_the_impact_of_high_intensity_interval_training_versus_modera-pct-5152",
@@ -511,9 +511,9 @@
       "context_window": "20 ] The MICT group walked continuously for 47 min at 60%-70% of maximal heart rate to ensure that the training protocols",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7297415_the_impact_of_high_intensity_interval_training_versus_modera-p-5827",
@@ -547,9 +547,9 @@
       "context_window": "lyceride levels decreased significantly in the MICT group ( P = 0.001). In addition, while cholesterol and triglyceride levels si",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7297415_the_impact_of_high_intensity_interval_training_versus_modera-p-564",
@@ -601,7 +601,7 @@
       "context_window": "ipid profiles of subjects in training and control groups * P <0.05 is significant, For comparison of between-group differences",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -620,7 +620,7 @@
       "context_window": "ur findings [ Table 3 ], while carotid IMT decreased (HIIT: 0.47 \u00b1 0.09 to 0.45 \u00b1 0.08; MICT: 0.49 \u00b1 0.10 to 0.45 \u00b1 0.06), this red",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -639,7 +639,7 @@
       "context_window": "able 3 ], while carotid IMT decreased (HIIT: 0.47 \u00b1 0.09 to 0.45 \u00b1 0.08; MICT: 0.49 \u00b1 0.10 to 0.45 \u00b1 0.06), this reduction was not",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -658,7 +658,7 @@
       "context_window": "otid IMT decreased (HIIT: 0.47 \u00b1 0.09 to 0.45 \u00b1 0.08; MICT: 0.49 \u00b1 0.10 to 0.45 \u00b1 0.06), this reduction was not statistically signi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -677,7 +677,7 @@
       "context_window": "sed (HIIT: 0.47 \u00b1 0.09 to 0.45 \u00b1 0.08; MICT: 0.49 \u00b1 0.10 to 0.45 \u00b1 0.06), this reduction was not statistically significant in HIIT",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -695,7 +695,7 @@
       "context_window": "was not statistically significant in HIIT and MICT groups ( P = 0.524 and P = 0.068, respectively). It was also observed that the",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -713,7 +713,7 @@
       "context_window": "tically significant in HIIT and MICT groups ( P = 0.524 and P = 0.068, respectively). It was also observed that the overall ABI i",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -731,7 +731,7 @@
       "context_window": "T and MICT groups, but these changes were not significant ( P = 0.108 and P = 0.807, respectively). A significant increase was ob",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -749,7 +749,7 @@
       "context_window": "ups, but these changes were not significant ( P = 0.108 and P = 0.807, respectively). A significant increase was observed in the",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -785,9 +785,9 @@
       "context_window": "lar variables in subjects of exercise and control groups * P <0.05 is significant, For comparison of between-group differences",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7297415_the_impact_of_high_intensity_interval_training_versus_modera-p-2176",
@@ -803,7 +803,7 @@
       "context_window": "significantly different in posttest compared with pretest ( P = 0.524 and P = 0.703, respectively). The results of the LSD post h",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "mict",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -821,7 +821,7 @@
       "context_window": "different in posttest compared with pretest ( P = 0.524 and P = 0.703, respectively). The results of the LSD post hoc test showed",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "mict",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -839,9 +839,9 @@
       "context_window": "difference in the right ABI between MICT and HIIT groups ( P = 0.009).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7297415_the_impact_of_high_intensity_interval_training_versus_modera-u-38",
@@ -857,7 +857,7 @@
       "context_window": "The results of this study showed that 12 weeks of HIIT and MICT improved the index of carotid IMT and ABI",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -875,9 +875,9 @@
       "context_window": "r session, three to six sessions per week, and intensity of 60%-75% maximum heart rate, in 18 inactive middle-aged men was",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "endurance training",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7297415_the_impact_of_high_intensity_interval_training_versus_modera-pct-511",
@@ -893,9 +893,9 @@
       "context_window": "ssion, three to six sessions per week, and intensity of 60%-75% maximum heart rate, in 18 inactive middle-aged men was carr",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "endurance training",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7297415_the_impact_of_high_intensity_interval_training_versus_modera-u-1105",
@@ -911,9 +911,9 @@
       "context_window": "not significant. In 2008, the study compared the effect of 6 weeks of HIIT and endurance training on vascular functional param",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "endurance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7297415_the_impact_of_high_intensity_interval_training_versus_modera-u-4146",

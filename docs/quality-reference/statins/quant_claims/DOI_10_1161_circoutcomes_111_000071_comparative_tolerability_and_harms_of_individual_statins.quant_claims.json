@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1161_circoutcomes_111_000071_comparative_tolerability_and_harms_of_individual_statins",
+  "doi": "10.1161/circoutcomes.111.000071",
+  "extracted_at": "2026-05-07T19:24:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_circoutcomes_111_000071_comparative_tolerability_and_harms_of_individual_statins-pct-830",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 830,
+      "sentence": "Statins as a class resulted in significantly higher odds of diabetes mellitus (odds ratio, 1.09; 95% confidence interval, 1.02-1.16) and transaminase elevations (odds ratio, 1.51; 95% confidence interval, 1.24-1.84) compared with control.",
+      "context_window": "icantly higher odds of diabetes mellitus (odds ratio, 1.09; 95% confidence interval, 1.02-1.16) and transaminase elevations",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circoutcomes_111_000071_comparative_tolerability_and_harms_of_individual_statins-pct-913",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 913,
+      "sentence": "Statins as a class resulted in significantly higher odds of diabetes mellitus (odds ratio, 1.09; 95% confidence interval, 1.02-1.16) and transaminase elevations (odds ratio, 1.51; 95% confidence interval, 1.24-1.84) compared with control.",
+      "context_window": ", 1.02-1.16) and transaminase elevations (odds ratio, 1.51; 95% confidence interval, 1.24-1.84) compared with control. When",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circoutcomes_111_000071_comparative_tolerability_and_harms_of_individual_statins-pct-1525",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1525,
+      "sentence": "Simvastatin at its highest doses was associated with creatine kinase elevations (odds ratio, 4.14; 95% credible interval, 1.08-16.24).",
+      "context_window": "sociated with creatine kinase elevations (odds ratio, 4.14; 95% credible interval, 1.08-16.24). Meta-regression analyses ad",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

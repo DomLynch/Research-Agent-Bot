@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12479488_effects_of_exercise_cognitive_dual_task_training_on_cognitiv",
   "doi": "10.3389/fnagi.2025.1639245",
-  "extracted_at": "2026-05-05T21:59:30+00:00",
+  "extracted_at": "2026-05-07T16:57:28+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 49,
@@ -596,9 +596,9 @@
       "context_window": "e, with the appropriate range calculated as (220-age) \u00d7 (60-80%), ensuring participants did not experience significant fati",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12479488_effects_of_exercise_cognitive_dual_task_training_on_cognitiv-u-4642",
@@ -668,9 +668,9 @@
       "context_window": "ity (RPE 12-14). Exercise was paused if heart rate exceeded 85% of age-predicted maximum for >30 s or if RPE exceeded 16. P",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12479488_effects_of_exercise_cognitive_dual_task_training_on_cognitiv-p-13111",
@@ -1717,10 +1717,10 @@
       "sentence": "Comparison of physical function and dual-task indicators between the two groups before and after intervention.\n\n** P < 0.001, n, represents the number of participants included in the specific analysis for each variable.",
       "context_window": "s between the two groups before and after intervention. ** P < 0.001, n, represents the number of participants included in the s",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12479488_effects_of_exercise_cognitive_dual_task_training_on_cognitiv-msd-3477",
@@ -2144,7 +2144,7 @@
       "context_window": "t the exercise group showed improved MoCA scores after 3 or 6 months of intervention ( Ye et al., 2020 ). This cognitive improve",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     }

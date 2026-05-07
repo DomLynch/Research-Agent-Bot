@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10056902_alternate_day_fasting_combined_with_exercise_effect_on_sleep",
   "doi": "10.3390/nu15061398",
-  "extracted_at": "2026-05-05T22:11:29+00:00",
+  "extracted_at": "2026-05-07T16:56:50+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 11,
@@ -25,7 +25,7 @@
       "context_window": "r disease (NAFLD). Methods : Adults with obesity and NAFLD (n = 80) were randomized into one of four groups for 3 months: comb",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "NAFLD (n = 80) were randomized into one of four groups for 3 months: combination of ADF (600 kcal \u201cfast day,\u201d alternated with a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1207,7 +1207,7 @@
       "context_window": "9 ] reported no change in sleep quality or duration after 2-3 months of time-restricted eating, despite 3% weight loss. Moreover",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "time-restricted eating",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1225,7 +1225,7 @@
       "context_window": "uration after 2-3 months of time-restricted eating, despite 3% weight loss. Moreover, Wilkinson et al. [ 20 ] demonstrated",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "time-restricted eating",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1243,9 +1243,9 @@
       "context_window": "et al. [ 20 ] demonstrated no change in sleep quality after 2 months of time-restricted eating, even though their participants r",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "time-restricted eating",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10056902_alternate_day_fasting_combined_with_exercise_effect_on_sleep-pct-1404",
@@ -1261,9 +1261,9 @@
       "context_window": "ting, even though their participants reduced body weight by 4%. In contrast, studies examining the impact of aerobic exerc",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "time-restricted eating",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10056902_alternate_day_fasting_combined_with_exercise_effect_on_sleep-pct-3190",

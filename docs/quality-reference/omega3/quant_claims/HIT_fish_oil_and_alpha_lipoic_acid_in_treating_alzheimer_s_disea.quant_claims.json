@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_fish_oil_and_alpha_lipoic_acid_in_treating_alzheimer_s_disea",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:33:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_fish_oil_and_alpha_lipoic_acid_in_treating_alzheimer_s_disea-u-279",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 279,
+      "sentence": "Posted outcomes: F2-isoprostane Level Urine F2-Isoprostanes. timeframe=baseline, 12 months.",
+      "context_window": "soprostane Level Urine F2-Isoprostanes. timeframe=baseline, 12 months. Placebo=0.40 (\u00b11.10); Fish Oil=-2.02 (\u00b13.30); Fish Oil Plu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_fish_oil_and_alpha_lipoic_acid_in_treating_alzheimer_s_disea-p-376",
+      "claim_type": "p_value",
+      "raw_text": "p=0.83",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 376,
+      "sentence": "Placebo=0.40 (\u00b11.10); Fish Oil=-2.02 (\u00b13.30); Fish Oil Plus Lipoic Acid=0.45 (\u00b10.53). p=0.83",
+      "context_window": "Oil=-2.02 (\u00b13.30); Fish Oil Plus Lipoic Acid=0.45 (\u00b10.53). p=0.83",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

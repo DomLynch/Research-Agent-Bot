@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5541589_the_effect_of_combined_resistance_exercise_training_and_vita",
   "doi": "10.1136/bmjopen-2016-014619",
-  "extracted_at": "2026-05-05T21:59:18+00:00",
+  "extracted_at": "2026-05-07T16:57:34+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 20,
@@ -24,7 +24,7 @@
       "context_window": "randomised controlled trials including men and women (aged \u226565 years or mean age \u226565 years); enlisting resistance exercise train",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "trials including men and women (aged \u226565 years or mean age \u226565 years); enlisting resistance exercise training and vitamin D 3 su",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -115,7 +115,7 @@
       "context_window": "tudies included: (1) male and/or female participants (aged \u226565 years or mean age \u226565 years), (2) enlisted RET and vitamin D 3 su",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -133,7 +133,7 @@
       "context_window": "ale and/or female participants (aged \u226565 years or mean age \u226565 years), (2) enlisted RET and vitamin D 3 supplementation (studies",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -569,9 +569,9 @@
       "context_window": "supplementation and exercise training vs exercise alone. * p < 0.05 CSA, cross-sectional area. Narrative analysis summary of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5541589_the_effect_of_combined_resistance_exercise_training_and_vita-p-12219",
@@ -587,9 +587,9 @@
       "context_window": "exercise training vs vitamin D 3 supplementation alone. * p < 0.05 Narrative analysis summary of findings for group 2 seconda",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5541589_the_effect_of_combined_resistance_exercise_training_and_vita-pct-12587",
@@ -641,7 +641,7 @@
       "context_window": "rol groups (sit-to-stand transfer power intervention group +8.00% vs +2.61%, p=0.017; functional stair climbing muscle power",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -659,7 +659,7 @@
       "context_window": "(sit-to-stand transfer power intervention group +8.00% vs +2.61%, p=0.017; functional stair climbing muscle power interventi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -677,7 +677,7 @@
       "context_window": "o-stand transfer power intervention group +8.00% vs +2.61%, p=0.017; functional stair climbing muscle power intervention group",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -695,7 +695,7 @@
       "context_window": "functional stair climbing muscle power intervention group +10.51% vs +7.32%, p<0.05). The 30 s sit-to-stand test showed sign",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -713,7 +713,7 @@
       "context_window": "stair climbing muscle power intervention group +10.51% vs +7.32%, p<0.05). The 30 s sit-to-stand test showed significant fa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -731,7 +731,7 @@
       "context_window": "climbing muscle power intervention group +10.51% vs +7.32%, p<0.05). The 30 s sit-to-stand test showed significant favourable",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -749,9 +749,9 @@
       "context_window": "for the combined intervention of exercise and vitamin D 3 (+10.40% vs +6.20%, p<0.05). Within study, 21 normal walking speed d",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5541589_the_effect_of_combined_resistance_exercise_training_and_vita-pct-13259",
@@ -767,9 +767,9 @@
       "context_window": "bined intervention of exercise and vitamin D 3 (+10.40% vs +6.20%, p<0.05). Within study, 21 normal walking speed declined in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5541589_the_effect_of_combined_resistance_exercise_training_and_vita-p-13266",
@@ -785,9 +785,9 @@
       "context_window": "ntervention of exercise and vitamin D 3 (+10.40% vs +6.20%, p<0.05). Within study, 21 normal walking speed declined in both gr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5541589_the_effect_of_combined_resistance_exercise_training_and_vita-pct-13863",
@@ -930,9 +930,9 @@
       "context_window": "ining on functional performance in older men and women aged 65 years and over. No significant improvements in function were repo",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5541589_the_effect_of_combined_resistance_exercise_training_and_vita-pct-3113",
@@ -966,9 +966,9 @@
       "context_window": "y have been due to the differing duration of interventions (12 weeks to 24 months), differences between measurement methodologie",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5541589_the_effect_of_combined_resistance_exercise_training_and_vita-u-3225",
@@ -984,9 +984,9 @@
       "context_window": "due to the differing duration of interventions (12 weeks to 24 months), differences between measurement methodologies, difference",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5541589_the_effect_of_combined_resistance_exercise_training_and_vita-pct-5037",
@@ -1002,7 +1002,7 @@
       "context_window": "re was decreased postintervention compared with baseline by 0.30% and 0.50% in the control groups of studies 32 and 33 , resp",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1020,7 +1020,7 @@
       "context_window": "reased postintervention compared with baseline by 0.30% and 0.50% in the control groups of studies 32 and 33 , respectively.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1074,7 +1074,7 @@
       "context_window": "increased in the vitamin D without exercise group in study (p=0.01). 21 Again, participants included in studies 32 and 21 had",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1182,7 +1182,7 @@
       "context_window": "ntions with older adults should be of a minimum duration of 3 months to obtain significant differences in relevant outcomes. 53",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     }

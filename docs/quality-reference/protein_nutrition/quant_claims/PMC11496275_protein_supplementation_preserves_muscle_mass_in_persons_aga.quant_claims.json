@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11496275_protein_supplementation_preserves_muscle_mass_in_persons_aga",
   "doi": "10.3389/fnut.2024.1476258",
-  "extracted_at": "2026-05-05T23:37:02+00:00",
+  "extracted_at": "2026-05-07T16:56:31+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 45,
@@ -131,10 +131,10 @@
       "sentence": "Repeated measures showed significant differences in body muscle mass percentage over time ( F = 202.784; p = 0.000).",
       "context_window": "ces in body muscle mass percentage over time ( F = 202.784; p = 0.000). In individuals who underwent sleeve gastrectomy surgery,",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11496275_protein_supplementation_preserves_muscle_mass_in_persons_aga-u-364",
@@ -1377,7 +1377,7 @@
       "sentence": "It was observed that the mean percentages of muscle mass before surgery decreased at the end of the 7th day (50.4, 53.8%) in BSD + PS (51.7%) and BSD (54.5%), respectively, and the mean percentages of fat mass increased in BSD + PS (45.6%) and BSD (42.7%), respectively, compared to the beginning (46.9, 43.4%).",
       "context_window": "s before surgery decreased at the end of the 7th day (50.4, 53.8%) in BSD + PS (51.7%) and BSD (54.5%), respectively, and the",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1395,7 +1395,7 @@
       "sentence": "It was observed that the mean percentages of muscle mass before surgery decreased at the end of the 7th day (50.4, 53.8%) in BSD + PS (51.7%) and BSD (54.5%), respectively, and the mean percentages of fat mass increased in BSD + PS (45.6%) and BSD (42.7%), respectively, compared to the beginning (46.9, 43.4%).",
       "context_window": "reased at the end of the 7th day (50.4, 53.8%) in BSD + PS (51.7%) and BSD (54.5%), respectively, and the mean percentages of",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1413,7 +1413,7 @@
       "sentence": "It was observed that the mean percentages of muscle mass before surgery decreased at the end of the 7th day (50.4, 53.8%) in BSD + PS (51.7%) and BSD (54.5%), respectively, and the mean percentages of fat mass increased in BSD + PS (45.6%) and BSD (42.7%), respectively, compared to the beginning (46.9, 43.4%).",
       "context_window": "d of the 7th day (50.4, 53.8%) in BSD + PS (51.7%) and BSD (54.5%), respectively, and the mean percentages of fat mass increa",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1431,7 +1431,7 @@
       "sentence": "It was observed that the mean percentages of muscle mass before surgery decreased at the end of the 7th day (50.4, 53.8%) in BSD + PS (51.7%) and BSD (54.5%), respectively, and the mean percentages of fat mass increased in BSD + PS (45.6%) and BSD (42.7%), respectively, compared to the beginning (46.9, 43.4%).",
       "context_window": "and the mean percentages of fat mass increased in BSD + PS (45.6%) and BSD (42.7%), respectively, compared to the beginning (",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1449,7 +1449,7 @@
       "sentence": "It was observed that the mean percentages of muscle mass before surgery decreased at the end of the 7th day (50.4, 53.8%) in BSD + PS (51.7%) and BSD (54.5%), respectively, and the mean percentages of fat mass increased in BSD + PS (45.6%) and BSD (42.7%), respectively, compared to the beginning (46.9, 43.4%).",
       "context_window": "centages of fat mass increased in BSD + PS (45.6%) and BSD (42.7%), respectively, compared to the beginning (46.9, 43.4%). Th",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1467,7 +1467,7 @@
       "sentence": "It was observed that the mean percentages of muscle mass before surgery decreased at the end of the 7th day (50.4, 53.8%) in BSD + PS (51.7%) and BSD (54.5%), respectively, and the mean percentages of fat mass increased in BSD + PS (45.6%) and BSD (42.7%), respectively, compared to the beginning (46.9, 43.4%).",
       "context_window": "BSD (42.7%), respectively, compared to the beginning (46.9, 43.4%). These percentage changes indicate the changing percentage",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1503,7 +1503,7 @@
       "sentence": "The mean percentage of available muscle mass of individuals in BSD + PS (58.2%) was lower than those in BSD (61.4%).",
       "context_window": "entage of available muscle mass of individuals in BSD + PS (58.2%) was lower than those in BSD (61.4%). When women and men we",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1521,7 +1521,7 @@
       "sentence": "The mean percentage of available muscle mass of individuals in BSD + PS (58.2%) was lower than those in BSD (61.4%).",
       "context_window": "ndividuals in BSD + PS (58.2%) was lower than those in BSD (61.4%). When women and men were evaluated, the percentage of fat",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1593,10 +1593,10 @@
       "sentence": "The percentage of fat mass within the average weight lost up to the 90th day was 68.3% and the percentage of muscle mass was 29.9%.",
       "context_window": "mass within the average weight lost up to the 90th day was 68.3% and the percentage of muscle mass was 29.9%. In individuals",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11496275_protein_supplementation_preserves_muscle_mass_in_persons_aga-pct-5319",
@@ -1611,10 +1611,10 @@
       "sentence": "The percentage of fat mass within the average weight lost up to the 90th day was 68.3% and the percentage of muscle mass was 29.9%.",
       "context_window": "he 90th day was 68.3% and the percentage of muscle mass was 29.9%. In individuals in BSD, 22.6% of the current weight was los",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11496275_protein_supplementation_preserves_muscle_mass_in_persons_aga-pct-5349",
@@ -1647,10 +1647,10 @@
       "sentence": "In individuals in BSD, the percentage of fat mass lost within the weight lost at the end of the 90th day was 66.7% and the percentage of muscle mass was 31.5%.",
       "context_window": "lost within the weight lost at the end of the 90th day was 66.7% and the percentage of muscle mass was 31.5%. It was found t",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11496275_protein_supplementation_preserves_muscle_mass_in_persons_aga-pct-5559",
@@ -1665,10 +1665,10 @@
       "sentence": "In individuals in BSD, the percentage of fat mass lost within the weight lost at the end of the 90th day was 66.7% and the percentage of muscle mass was 31.5%.",
       "context_window": "he 90th day was 66.7% and the percentage of muscle mass was 31.5%. It was found that women in BSD + PS (40.2%) lost a higher",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11496275_protein_supplementation_preserves_muscle_mass_in_persons_aga-pct-5603",
@@ -1683,7 +1683,7 @@
       "sentence": "It was found that women in BSD + PS (40.2%) lost a higher percentage of muscle mass within the weight lost in the first month compared to men (31.7%) ( Table 3 ).",
       "context_window": "muscle mass was 31.5%. It was found that women in BSD + PS (40.2%) lost a higher percentage of muscle mass within the weight",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1701,7 +1701,7 @@
       "sentence": "It was found that women in BSD + PS (40.2%) lost a higher percentage of muscle mass within the weight lost in the first month compared to men (31.7%) ( Table 3 ).",
       "context_window": "within the weight lost in the first month compared to men (31.7%) ( Table 3 ). No statistically significant difference was f",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1719,7 +1719,7 @@
       "sentence": "No statistically significant difference was found between the groups in terms of lost body weight, muscle mass and fat mass measurements ( p > 0.05).",
       "context_window": "f lost body weight, muscle mass and fat mass measurements ( p > 0.05). Time-dependent changes and comparisons of body compositio",
       "claim_role": "effect",
-      "endpoint": "body weight",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1827,7 +1827,7 @@
       "sentence": "In short, while the time-dependent changes in Body Fat Mass (%) were significant in both groups, the difference between the groups was not significant. (B) According to the results of the analysis of variance of the body muscle mass (%) variable, the group-time interaction effect was not significant ( F = 0.339; p = 0.754).",
       "context_window": "up-time interaction effect was not significant ( F = 0.339; p = 0.754). Therefore, the time-dependent changes in body muscle mass",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "pooled",
       "direction": "",
       "binding_confidence": "partial"
@@ -1955,7 +1955,7 @@
       "context_window": "he mean daily protein intake of individuals in BSD + PS was 72.8 \u00b1 31.42 grams (g) in the pre-op period, 25.7 \u00b1 8.53 g on post-op da",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1974,7 +1974,7 @@
       "context_window": "n BSD + PS was 72.8 \u00b1 31.42 grams (g) in the pre-op period, 25.7 \u00b1 8.53 g on post-op day 7, 33.1 \u00b1 11.95 g on post-op day 30 and 39",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1993,7 +1993,7 @@
       "context_window": "s (g) in the pre-op period, 25.7 \u00b1 8.53 g on post-op day 7, 33.1 \u00b1 11.95 g on post-op day 30 and 39.5 \u00b1 17.66 g on post-op day 90. T",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2012,7 +2012,7 @@
       "context_window": "53 g on post-op day 7, 33.1 \u00b1 11.95 g on post-op day 30 and 39.5 \u00b1 17.66 g on post-op day 90. Those in BSD were 78.4 \u00b1 34.04 g pre-o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2106,7 +2106,7 @@
       "context_window": "tly higher than the BSD group on post-op day 7, 30 and 90 ( p < 0.05). The mean protein intake of both groups decreased after su",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2195,7 +2195,7 @@
       "sentence": "Our study, which aimed to evaluate the success of protein supplements recommended in addition to postoperative nutrition education and their effect on muscle mass, was conducted with 60 individuals aged 19-60 years who underwent sleeve gastrectomy (SG) surgery and had similar characteristics.",
       "context_window": "t on muscle mass, was conducted with 60 individuals aged 19-60 years who underwent sleeve gastrectomy (SG) surgery and had simil",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -2213,8 +2213,8 @@
       "sentence": "In a study by Andreu et al. examining the effect of protein intake on muscle mass and blood parameters, it was found that supplement use despite recommendations was 63.4, 50.5, and 33.7% at 4th, 8th, and 12th months, respectively.",
       "context_window": "supplement use despite recommendations was 63.4, 50.5, and 33.7% at 4th, 8th, and 12th months, respectively. In addition, 45",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2232,7 +2232,7 @@
       "context_window": "th, and 12th months, respectively. In addition, 45, 35, and 37% of the targeted protein intake was <60 g/day at 4th, 8th, a",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2250,7 +2250,7 @@
       "context_window": "0.0 g/day in the first month and increasing to 34.9 g/day ( p = 0.003) by the third month, both below the recommended 60 g/day. T",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2268,7 +2268,7 @@
       "context_window": "ignificantly increased total protein intake to 42.3 g/day ( p < 0.001) in the first month and 39.6 g/day ( p = 0.002) in the thir",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2286,7 +2286,7 @@
       "context_window": "42.3 g/day ( p < 0.001) in the first month and 39.6 g/day ( p = 0.002) in the third month, but compliance with supplementation wa",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2304,7 +2304,7 @@
       "context_window": "pliance with supplementation was low, dropping from 63.8 to 21.3%. Overall, the study concluded that despite dietary guidance",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2322,7 +2322,7 @@
       "context_window": "increase in the protein intake of both groups at the end of 3 months, but the recommended protein intake was not reached. Litera",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2340,7 +2340,7 @@
       "context_window": "otein supplementation group compared to the control group ( p < 0.001). At the 6-month follow-up, fat mass loss was found to be s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2358,7 +2358,7 @@
       "context_window": "significantly greater in the protein supplementation group (79%) compared to the control group (73%) ( p = 0.02). Additiona",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2376,7 +2376,7 @@
       "context_window": "supplementation group (79%) compared to the control group (73%) ( p = 0.02). Additionally, muscle mass loss was less signi",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2394,7 +2394,7 @@
       "context_window": "mentation group (79%) compared to the control group (73%) ( p = 0.02). Additionally, muscle mass loss was less significant in th",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2411,8 +2411,8 @@
       "sentence": "Additionally, muscle mass loss was less significant in the protein supplementation group (21%) compared to the control group (27%) ( p = 0.05).",
       "context_window": "was less significant in the protein supplementation group (21%) compared to the control group (27%) ( p = 0.05). However,",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2429,8 +2429,8 @@
       "sentence": "Additionally, muscle mass loss was less significant in the protein supplementation group (21%) compared to the control group (27%) ( p = 0.05).",
       "context_window": "supplementation group (21%) compared to the control group (27%) ( p = 0.05). However, when analyzing overall body weight l",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2447,8 +2447,8 @@
       "sentence": "Additionally, muscle mass loss was less significant in the protein supplementation group (21%) compared to the control group (27%) ( p = 0.05).",
       "context_window": "mentation group (21%) compared to the control group (27%) ( p = 0.05). However, when analyzing overall body weight loss, the res",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2466,7 +2466,7 @@
       "context_window": "were similar between the protein supplementation group (25-7.2%) and the control group (20.9-3.9%) ( p > 0.05). In a study",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2484,7 +2484,7 @@
       "context_window": "supplementation group (25-7.2%) and the control group (20.9-3.9%) ( p > 0.05). In a study examining the effects of high pro",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2502,7 +2502,7 @@
       "context_window": "ntation group (25-7.2%) and the control group (20.9-3.9%) ( p > 0.05). In a study examining the effects of high protein (2 g/kg",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2519,7 +2519,7 @@
       "sentence": "In a study examining the effects of high protein (2 g/kg/day) and standard protein (1 g/kg/day) diets on anthropometric measurements after surgery, the high protein group showed a significant decrease in fat mass from the 3rd month ( p < 0.01), while muscle mass and basal metabolic rate were preserved ( p < 0.01).",
       "context_window": "> 0.05). In a study examining the effects of high protein (2 g/kg/day) and standard protein (1 g/kg/day) diets on anthropometric",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2537,7 +2537,7 @@
       "sentence": "In a study examining the effects of high protein (2 g/kg/day) and standard protein (1 g/kg/day) diets on anthropometric measurements after surgery, the high protein group showed a significant decrease in fat mass from the 3rd month ( p < 0.01), while muscle mass and basal metabolic rate were preserved ( p < 0.01).",
       "context_window": "effects of high protein (2 g/kg/day) and standard protein (1 g/kg/day) diets on anthropometric measurements after surgery, the hi",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2555,7 +2555,7 @@
       "sentence": "In a study examining the effects of high protein (2 g/kg/day) and standard protein (1 g/kg/day) diets on anthropometric measurements after surgery, the high protein group showed a significant decrease in fat mass from the 3rd month ( p < 0.01), while muscle mass and basal metabolic rate were preserved ( p < 0.01).",
       "context_window": "wed a significant decrease in fat mass from the 3rd month ( p < 0.01), while muscle mass and basal metabolic rate were preserved",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2573,7 +2573,7 @@
       "sentence": "In a study examining the effects of high protein (2 g/kg/day) and standard protein (1 g/kg/day) diets on anthropometric measurements after surgery, the high protein group showed a significant decrease in fat mass from the 3rd month ( p < 0.01), while muscle mass and basal metabolic rate were preserved ( p < 0.01).",
       "context_window": "while muscle mass and basal metabolic rate were preserved ( p < 0.01). Another study also found that protein supplementation pre",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2591,8 +2591,8 @@
       "sentence": "In the group receiving 1.2 g/kg/day protein supplementation in the 1st month, muscle mass at the end of the 6 th month was similar to the control group ( 46 ).",
       "context_window": "pplementation prevented muscle loss. In the group receiving 1.2 g/kg/day protein supplementation in the 1st month, muscle mass at th",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2610,7 +2610,7 @@
       "context_window": "on, but no difference between the groups (Group: F = 3.297; p = 0.075, time: F = 202.784; p < 0.001, group*time; F = 0.317; p = 0",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2628,7 +2628,7 @@
       "context_window": "the groups (Group: F = 3.297; p = 0.075, time: F = 202.784; p < 0.001, group*time; F = 0.317; p = 0.743). Supplements may be con",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2646,7 +2646,7 @@
       "context_window": "0.075, time: F = 202.784; p < 0.001, group*time; F = 0.317; p = 0.743). Supplements may be considered to have an indirect effect",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2893,7 +2893,7 @@
       "context_window": "ined, it was found to be 93.5 g in the preoperative period, 41.4 \u00b1 18.5 g in the 3rd month, 51.7 \u00b1 18.9 g in the 6th month and 58.1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2912,7 +2912,7 @@
       "context_window": "in the preoperative period, 41.4 \u00b1 18.5 g in the 3rd month, 51.7 \u00b1 18.9 g in the 6th month and 58.1 \u00b1 22.9 g in the 12th month. In",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2931,7 +2931,7 @@
       "context_window": "18.5 g in the 3rd month, 51.7 \u00b1 18.9 g in the 6th month and 58.1 \u00b1 22.9 g in the 12th month. In a study conducted by Giusti et al.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3007,7 +3007,7 @@
       "context_window": "the 36th month. Average daily protein intake declined from 87 \u00b1 4 g preoperatively to 29 \u00b1 2 g in the 1st month, later reachi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3026,7 +3026,7 @@
       "context_window": "ily protein intake declined from 87 \u00b1 4 g preoperatively to 29 \u00b1 2 g in the 1st month, later reaching 57 \u00b1 3 g at 36 months. C",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3045,7 +3045,7 @@
       "context_window": "preoperatively to 29 \u00b1 2 g in the 1st month, later reaching 57 \u00b1 3 g at 36 months. Carbohydrate intake dropped from 231 \u00b1 11 g",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3063,7 +3063,7 @@
       "context_window": "ly to 29 \u00b1 2 g in the 1st month, later reaching 57 \u00b1 3 g at 36 months. Carbohydrate intake dropped from 231 \u00b1 11 g preoperatively",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3270,7 +3270,7 @@
       "context_window": "by the 6th month. Daily protein intake also decreased from 96.2 \u00b1 36.13 g pre-operatively to 47.1 \u00b1 17.70 g at 6 months. The averag",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3289,7 +3289,7 @@
       "context_window": "ntake also decreased from 96.2 \u00b1 36.13 g pre-operatively to 47.1 \u00b1 17.70 g at 6 months. The average daily energy intake was higher a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3307,7 +3307,7 @@
       "context_window": "ed from 96.2 \u00b1 36.13 g pre-operatively to 47.1 \u00b1 17.70 g at 6 months. The average daily energy intake was higher at 2555.7 \u00b1 806",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

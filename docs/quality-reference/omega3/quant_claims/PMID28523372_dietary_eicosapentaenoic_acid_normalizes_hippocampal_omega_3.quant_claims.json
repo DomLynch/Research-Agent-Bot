@@ -1,0 +1,47 @@
+{
+  "paper_id": "PMID28523372_dietary_eicosapentaenoic_acid_normalizes_hippocampal_omega_3",
+  "doi": "10.1007/s00394-017-1462-7",
+  "extracted_at": "2026-05-07T19:32:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID28523372_dietary_eicosapentaenoic_acid_normalizes_hippocampal_omega_3-u-855",
+      "claim_type": "unit_value",
+      "raw_text": "42 days",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 855,
+      "sentence": "Male Long-Evans rats were fed either palm oil supplemented diet or EPA supplemented diet for 42 days.",
+      "context_window": "her palm oil supplemented diet or EPA supplemented diet for 42 days. On day 36 of diet feeding, rats received an intracerebrove",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID28523372_dietary_eicosapentaenoic_acid_normalizes_hippocampal_omega_3-u-965",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 965,
+      "sentence": "On day 36 of diet feeding, rats received an intracerebroventricular injection of IL-1\u03b2 or saline for 7 days.",
+      "context_window": "an intracerebroventricular injection of IL-1\u03b2 or saline for 7 days. The glial activation, the expression of amyloid precursor",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

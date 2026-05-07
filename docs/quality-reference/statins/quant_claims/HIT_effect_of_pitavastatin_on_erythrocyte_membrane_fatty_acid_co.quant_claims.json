@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_effect_of_pitavastatin_on_erythrocyte_membrane_fatty_acid_co",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_pitavastatin_on_erythrocyte_membrane_fatty_acid_co-u-2553",
+      "claim_type": "unit_value",
+      "raw_text": "4mg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 2553,
+      "sentence": "Recent study has reported that those with pitavastatin 4mg were decreased DHA to AA ratio, but those with pravastatin 20 mg were not change the DHA to AA ratio in patient with CAD.",
+      "context_window": "CKD. Recent study has reported that those with pitavastatin 4mg were decreased DHA to AA ratio, but those with pravastatin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_pitavastatin_on_erythrocyte_membrane_fatty_acid_co-u-2616",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 2616,
+      "sentence": "Recent study has reported that those with pitavastatin 4mg were decreased DHA to AA ratio, but those with pravastatin 20 mg were not change the DHA to AA ratio in patient with CAD.",
+      "context_window": "were decreased DHA to AA ratio, but those with pravastatin 20 mg were not change the DHA to AA ratio in patient with CAD. St",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

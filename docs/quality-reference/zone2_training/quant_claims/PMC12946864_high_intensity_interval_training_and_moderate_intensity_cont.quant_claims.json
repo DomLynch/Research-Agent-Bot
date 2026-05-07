@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont",
   "doi": "10.5114/jhk/205427",
-  "extracted_at": "2026-05-05T22:43:06+00:00",
+  "extracted_at": "2026-05-07T16:58:21+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "confidence_interval": 3,
@@ -62,7 +62,7 @@
       "context_window": "0.05). MICT showed a greater effect on VO 2max (MD = 2.48, 95% CI [1.61, 3.34], Z = 5.60, p < 0.05). HIIT was more effective at reducing",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -80,7 +80,7 @@
       "context_window": "ffect on VO 2max (MD = 2.48, 95% CI [1.61, 3.34], Z = 5.60, p < 0.05). HIIT was more effective at reducing blood lactate levels",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -279,9 +279,9 @@
       "context_window": "2 kg), body height (1.82 vs. 1.81 m), and VO 2max (59.6 vs. 59.3 mL\u2022kg -1 \u2022min -1 ) between the control and HIIT groups. Seven",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12946864_high_intensity_interval_training_and_moderate_intensity_cont-u-4282",
@@ -369,7 +369,7 @@
       "context_window": "w the first ventilatory or lactate threshold (approximately 70% VO 2max ), Zone 2 (Z2) included speeds between the first an",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "zone 2",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -387,7 +387,7 @@
       "context_window": "eeds between the first and second thresholds (approximately 75%-85% VO 2max ), and Zone 3 (Z3) encompassed speeds exceeding",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "zone 2",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -405,7 +405,7 @@
       "context_window": "between the first and second thresholds (approximately 75%-85% VO 2max ), and Zone 3 (Z3) encompassed speeds exceeding the",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "zone 2",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -423,7 +423,7 @@
       "context_window": "3) encompassed speeds exceeding the second threshold (above 85% VO 2max ) ( Casado et al., 2022 ; St\u00f6ggl and Sperlich, 2015",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "zone 2",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -639,7 +639,7 @@
       "context_window": "tical significance in training results within Z3 (Z = 0.37, p > 0.05), which indicates that there was no significant difference",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "no_change",
       "binding_confidence": "partial"
     },

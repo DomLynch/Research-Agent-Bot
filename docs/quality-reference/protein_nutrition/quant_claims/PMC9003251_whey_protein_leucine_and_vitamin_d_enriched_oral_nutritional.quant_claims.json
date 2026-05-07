@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9003251_whey_protein_leucine_and_vitamin_d_enriched_oral_nutritional",
   "doi": "10.3390/nu14071524",
-  "extracted_at": "2026-05-05T23:37:19+00:00",
+  "extracted_at": "2026-05-07T16:56:48+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 8,
@@ -129,10 +129,10 @@
       "sentence": "To detect an effect, including the recovery of muscle mass, a minimum duration should be 4-8 weeks, although a continuous maintenance dose could be reasonably hypothesized.",
       "context_window": "the recovery of muscle mass, a minimum duration should be 4-8 weeks, although a continuous maintenance dose could be reasonably",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9003251_whey_protein_leucine_and_vitamin_d_enriched_oral_nutritional-u-3847",
@@ -220,7 +220,7 @@
       "context_window": "of protein intake in patients receiving MT-ONS (mean intake 1.1 g/kg/day) and an increase in energy intake in both study arms, older",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     }

@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_a_bct_intervention_for_medication_adherence_among_individual",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_bct_intervention_for_medication_adherence_among_individual-u-927",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 927,
+      "sentence": "During the intervention period, participants will receive a multi-BCT intervention, the length of which varies between 1 and 10 weeks depending on the assigned dose.",
+      "context_window": "-BCT intervention, the length of which varies between 1 and 10 weeks depending on the assigned dose. Assignment to doses will ut",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_a_bct_intervention_for_medication_adherence_among_individual-pct-1341",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1341,
+      "sentence": "The MED will be defined as the smallest BCT dose (defined by weeks of intervention) associated with 80% of participants having a 20% medication adherence increase between the run-in and the follow-up periods.",
+      "context_window": "BCT dose (defined by weeks of intervention) associated with 80% of participants having a 20% medication adherence increase",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_bct_intervention_for_medication_adherence_among_individual-pct-1370",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1370,
+      "sentence": "The MED will be defined as the smallest BCT dose (defined by weeks of intervention) associated with 80% of participants having a 20% medication adherence increase between the run-in and the follow-up periods.",
+      "context_window": "intervention) associated with 80% of participants having a 20% medication adherence increase between the run-in and the fo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

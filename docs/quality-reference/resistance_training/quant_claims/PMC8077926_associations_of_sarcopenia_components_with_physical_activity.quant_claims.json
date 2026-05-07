@@ -1,12 +1,12 @@
 {
   "paper_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity",
   "doi": "10.1186/s12877-021-02212-y",
-  "extracted_at": "2026-05-05T21:59:11+00:00",
+  "extracted_at": "2026-05-07T16:57:38+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 10,
     "mean_sd": 5,
-    "unit_value": 5,
+    "unit_value": 9,
     "p_value": 19,
     "percentage": 8
   },
@@ -282,9 +282,9 @@
       "context_window": "sing convenience sampling to observe participants (range 61-91 years of age) that were undergoing training exercises under super",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-322",
@@ -335,10 +335,10 @@
       "sentence": "3.1 [ 19 ], with muscle mass as the primary end point and an expected 20% variation around the mean, detecting a 10% difference with alpha of 0.05 and beta 0.2 would require n = 67.",
       "context_window": ", with muscle mass as the primary end point and an expected 20% variation around the mean, detecting a 10% difference with",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-635",
@@ -353,10 +353,10 @@
       "sentence": "3.1 [ 19 ], with muscle mass as the primary end point and an expected 20% variation around the mean, detecting a 10% difference with alpha of 0.05 and beta 0.2 would require n = 67.",
       "context_window": "and an expected 20% variation around the mean, detecting a 10% difference with alpha of 0.05 and beta 0.2 would require n",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-696",
@@ -371,10 +371,10 @@
       "sentence": "3.1 [ 19 ], with muscle mass as the primary end point and an expected 20% variation around the mean, detecting a 10% difference with alpha of 0.05 and beta 0.2 would require n = 67.",
       "context_window": "0% difference with alpha of 0.05 and beta 0.2 would require n = 67. As mass was the slowest measure to change, this number ens",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-5912",
@@ -768,9 +768,9 @@
       "context_window": "]. Thirty percent regarded exercise as a priority; of which 11% mentioned irregular activities (e.g., gardening and walking",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-2237",
@@ -786,9 +786,9 @@
       "context_window": "irregular activities (e.g., gardening and walking), another 11% purposeful exercise (e.g., gym and water aerobics) and 8% r",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-2296",
@@ -804,9 +804,9 @@
       "context_window": "11% purposeful exercise (e.g., gym and water aerobics) and 8% regular exercise (e.g., golf and tennis) [ 35 ]. Boulton-Le",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-3205",
@@ -845,6 +845,42 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-5592",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5592,
+      "sentence": "Nowson and O\u2019Connell [ 46 ] report that 1.0 to 1.2 g/kg/day dietary protein is recommended for older adults or even more for those exercising and physically active to reduce muscle loss with age.",
+      "context_window": "ptimal dose. Nowson and O\u2019Connell [ 46 ] report that 1.0 to 1.2 g/kg/day dietary protein is recommended for older adults or even mor",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-5832",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5832,
+      "sentence": "A recent meta-analysis reports that muscle mass increase required protein intakes of up to 1.6 g/kg/day and was more effective in resistance-trained people but less effective in people over 60 years [ 45 ].",
+      "context_window": "that muscle mass increase required protein intakes of up to 1.6 g/kg/day and was more effective in resistance-trained people but les",
+      "claim_role": "dose",
+      "endpoint": "muscle mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-5931",
       "claim_type": "unit_value",
       "raw_text": "60 years",
@@ -857,9 +893,45 @@
       "sentence": "A recent meta-analysis reports that muscle mass increase required protein intakes of up to 1.6 g/kg/day and was more effective in resistance-trained people but less effective in people over 60 years [ 45 ].",
       "context_window": "resistance-trained people but less effective in people over 60 years [ 45 ]. Protein synthesis is higher with whey protein, whic",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-6368",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 g/kg/day",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6368,
+      "sentence": "It has been reported that community-dwelling and frail older Dutch adults with a dietary intake of 1.1 g/kg/day and 1.0 g/kg/day, respectively, consumed insufficient protein at breakfast and the frail group also consumed insufficient protein at lunch (> 30 g), which was below the intake needed for muscle protein synthesis, thus likely contributing to negative health outcomes and poorer physical activity levels [ 46 ].",
+      "context_window": "lling and frail older Dutch adults with a dietary intake of 1.1 g/kg/day and 1.0 g/kg/day, respectively, consumed insufficient prote",
+      "claim_role": "dose",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-6385",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6385,
+      "sentence": "It has been reported that community-dwelling and frail older Dutch adults with a dietary intake of 1.1 g/kg/day and 1.0 g/kg/day, respectively, consumed insufficient protein at breakfast and the frail group also consumed insufficient protein at lunch (> 30 g), which was below the intake needed for muscle protein synthesis, thus likely contributing to negative health outcomes and poorer physical activity levels [ 46 ].",
+      "context_window": "lder Dutch adults with a dietary intake of 1.1 g/kg/day and 1.0 g/kg/day, respectively, consumed insufficient protein at breakfast a",
+      "claim_role": "dose",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "",
       "binding_confidence": "partial"
     }
   ]

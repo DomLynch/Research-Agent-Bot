@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9655197_effect_of_intake_of_leucine_rich_protein_supplement_in_paral",
   "doi": "10.3390/nu14214501",
-  "extracted_at": "2026-05-05T23:37:20+00:00",
+  "extracted_at": "2026-05-07T16:56:49+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 91,
@@ -24,7 +24,7 @@
       "sentence": "Therefore, this study evaluated the effects of daily resistance exercise and the intake of leucine-rich protein supplements daily for 12 weeks on the body composition and physical function of healthy adults aged >50 years living in Korea.",
       "context_window": "nd the intake of leucine-rich protein supplements daily for 12 weeks on the body composition and physical function of healthy ad",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -42,7 +42,7 @@
       "sentence": "Therefore, this study evaluated the effects of daily resistance exercise and the intake of leucine-rich protein supplements daily for 12 weeks on the body composition and physical function of healthy adults aged >50 years living in Korea.",
       "context_window": "y composition and physical function of healthy adults aged >50 years living in Korea. The study analyzed 50 healthy people witho",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -334,8 +334,8 @@
       "sentence": "In a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended protein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein, the decrease in muscle mass was significantly less than that in older people who consumed 0.7-0.9 g/kg/day of protein [ 5 ].",
       "context_window": "cids [ 4 ]. In a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -352,8 +352,8 @@
       "sentence": "In a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended protein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein, the decrease in muscle mass was significantly less than that in older people who consumed 0.7-0.9 g/kg/day of protein [ 5 ].",
       "context_window": "a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended protein in",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -370,8 +370,8 @@
       "sentence": "In a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended protein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein, the decrease in muscle mass was significantly less than that in older people who consumed 0.7-0.9 g/kg/day of protein [ 5 ].",
       "context_window": "priately ingested more than the recommended protein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein,",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -388,8 +388,8 @@
       "sentence": "In a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended protein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein, the decrease in muscle mass was significantly less than that in older people who consumed 0.7-0.9 g/kg/day of protein [ 5 ].",
       "context_window": "ein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein, the decrease in muscle mass was significantly l",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -406,8 +406,8 @@
       "sentence": "In a study reported in 2008, among people aged >70 years, only 40% appropriately ingested more than the recommended protein intake (0.8 g/kg/day), and in older people who consumed 1.1 g/kg/day of protein, the decrease in muscle mass was significantly less than that in older people who consumed 0.7-0.9 g/kg/day of protein [ 5 ].",
       "context_window": "gnificantly less than that in older people who consumed 0.7-0.9 g/kg/day of protein [ 5 ]. In addition, several studies confirmed a",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -442,7 +442,7 @@
       "sentence": "In another study of healthy adults taking leucine-rich protein supplements for more than 8-16 months, skeletal muscle mass increased by 13-17% in areas including the arms and legs, and muscle strength was also improved [ 15 ].",
       "context_window": "lts taking leucine-rich protein supplements for more than 8-16 months, skeletal muscle mass increased by 13-17% in areas includin",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "high"
@@ -460,7 +460,7 @@
       "sentence": "In another study of healthy adults taking leucine-rich protein supplements for more than 8-16 months, skeletal muscle mass increased by 13-17% in areas including the arms and legs, and muscle strength was also improved [ 15 ].",
       "context_window": "more than 8-16 months, skeletal muscle mass increased by 13-17% in areas including the arms and legs, and muscle strength w",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "high"
@@ -586,7 +586,7 @@
       "sentence": "When resistance exercise was performed with different weights for 8 weeks, resistance exercise with a high weight that could be repeated 2-4 times was more effective in improving muscle mass than resistance exercise with a low weight that could be repeated 8-12 times [ 21 ].",
       "context_window": "esistance exercise was performed with different weights for 8 weeks, resistance exercise with a high weight that could be repea",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -604,7 +604,7 @@
       "sentence": "Therefore, this study aimed to evaluate the effects of daily resistance exercise combined with daily intake of accessible leucine-rich protein supplements for 12 weeks on the body composition and physical function of healthy adults aged >50 years residing in Korea.",
       "context_window": "y intake of accessible leucine-rich protein supplements for 12 weeks on the body composition and physical function of healthy ad",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -622,7 +622,7 @@
       "sentence": "Therefore, this study aimed to evaluate the effects of daily resistance exercise combined with daily intake of accessible leucine-rich protein supplements for 12 weeks on the body composition and physical function of healthy adults aged >50 years residing in Korea.",
       "context_window": "y composition and physical function of healthy adults aged >50 years residing in Korea. Moreover, we would like to review the us",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -1554,7 +1554,7 @@
       "sentence": "The skeletal muscle mass index (SMMI) (kg/m 2 ) measured via BIA increased significantly at 12 weeks compared with that at the baseline (from 9.17 \u00b1 1.54 to 9.28 \u00b1 1.50) (Z = -2.133, p = 0.033).",
       "context_window": "SMMI) (kg/m 2 ) measured via BIA increased significantly at 12 weeks compared with that at the baseline (from 9.17 \u00b1 1.54 to 9.2",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1573,7 +1573,7 @@
       "sentence": "The skeletal muscle mass index (SMMI) (kg/m 2 ) measured via BIA increased significantly at 12 weeks compared with that at the baseline (from 9.17 \u00b1 1.54 to 9.28 \u00b1 1.50) (Z = -2.133, p = 0.033).",
       "context_window": "cantly at 12 weeks compared with that at the baseline (from 9.17 \u00b1 1.54 to 9.28 \u00b1 1.50) (Z = -2.133, p = 0.033). However, no signif",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1592,7 +1592,7 @@
       "sentence": "The skeletal muscle mass index (SMMI) (kg/m 2 ) measured via BIA increased significantly at 12 weeks compared with that at the baseline (from 9.17 \u00b1 1.54 to 9.28 \u00b1 1.50) (Z = -2.133, p = 0.033).",
       "context_window": "eks compared with that at the baseline (from 9.17 \u00b1 1.54 to 9.28 \u00b1 1.50) (Z = -2.133, p = 0.033). However, no significant change wa",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1610,7 +1610,7 @@
       "sentence": "The skeletal muscle mass index (SMMI) (kg/m 2 ) measured via BIA increased significantly at 12 weeks compared with that at the baseline (from 9.17 \u00b1 1.54 to 9.28 \u00b1 1.50) (Z = -2.133, p = 0.033).",
       "context_window": "the baseline (from 9.17 \u00b1 1.54 to 9.28 \u00b1 1.50) (Z = -2.133, p = 0.033). However, no significant change was found in body composit",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -4358,7 +4358,7 @@
       "sentence": "In this study, we investigated the effect of additional leucine-rich protein supplement intake on muscle mass improvement during resistance exercise in healthy adults aged >50 years.",
       "context_window": "rovement during resistance exercise in healthy adults aged >50 years. When resistance exercise was controlled, the intake of leu",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -4376,7 +4376,7 @@
       "sentence": "When resistance exercise was controlled, the intake of leucine-rich protein supplements for 12 weeks helped improve muscle mass without weight loss.",
       "context_window": "trolled, the intake of leucine-rich protein supplements for 12 weeks helped improve muscle mass without weight loss. As suggeste",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"

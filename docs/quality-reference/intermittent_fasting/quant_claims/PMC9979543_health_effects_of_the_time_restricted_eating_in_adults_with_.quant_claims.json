@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_",
   "doi": "10.3389/fnut.2023.1079250",
-  "extracted_at": "2026-05-05T22:11:20+00:00",
+  "extracted_at": "2026-05-07T16:57:12+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 49,
@@ -25,7 +25,7 @@
       "context_window": "indicated that TRE had a greater decrease in body weight (-1.28 kg; 95% CI [-2.05, -0.52], p = 0.001), fat mass (-0.72 kg; 95%",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -44,7 +44,7 @@
       "context_window": "d that TRE had a greater decrease in body weight (-1.28 kg; 95% CI [-2.05, -0.52], p = 0.001), fat mass (-0.72 kg; 95% CI [-1.40, -0.03], p",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -62,7 +62,7 @@
       "context_window": "r decrease in body weight (-1.28 kg; 95% CI [-2.05, -0.52], p = 0.001), fat mass (-0.72 kg; 95% CI [-1.40, -0.03], p = 0.04), bod",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -80,7 +80,7 @@
       "context_window": "ht (-1.28 kg; 95% CI [-2.05, -0.52], p = 0.001), fat mass (-0.72 kg; 95% CI [-1.40, -0.03], p = 0.04), body mass index (-0.34 k",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -99,7 +99,7 @@
       "context_window": "kg; 95% CI [-2.05, -0.52], p = 0.001), fat mass (-0.72 kg; 95% CI [-1.40, -0.03], p = 0.04), body mass index (-0.34 kg/m 2 ; 95% CI [-0.64,",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -117,7 +117,7 @@
       "context_window": "52], p = 0.001), fat mass (-0.72 kg; 95% CI [-1.40, -0.03], p = 0.04), body mass index (-0.34 kg/m 2 ; 95% CI [-0.64, -0.04], p",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -135,7 +135,7 @@
       "context_window": ".72 kg; 95% CI [-1.40, -0.03], p = 0.04), body mass index (-0.34 kg/m 2 ; 95% CI [-0.64, -0.04], p = 0.03) and diastolic blood",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -154,7 +154,7 @@
       "context_window": "[-1.40, -0.03], p = 0.04), body mass index (-0.34 kg/m 2 ; 95% CI [-0.64, -0.04], p = 0.03) and diastolic blood pressure (-2.26 mmHg 95% CI",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -172,7 +172,7 @@
       "context_window": "04), body mass index (-0.34 kg/m 2 ; 95% CI [-0.64, -0.04], p = 0.03) and diastolic blood pressure (-2.26 mmHg 95% CI [-4.02, -0",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -190,7 +190,7 @@
       "context_window": "CI [-0.64, -0.04], p = 0.03) and diastolic blood pressure (-2.26 mmHg 95% CI [-4.02, -0.50], p = 0.01). However, the meta-analysi",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -209,7 +209,7 @@
       "context_window": "-0.04], p = 0.03) and diastolic blood pressure (-2.26 mmHg 95% CI [-4.02, -0.50], p = 0.01). However, the meta-analysis demonstrated that t",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -227,7 +227,7 @@
       "context_window": "diastolic blood pressure (-2.26 mmHg 95% CI [-4.02, -0.50], p = 0.01). However, the meta-analysis demonstrated that there was no",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -389,9 +389,9 @@
       "context_window": "of the eating window (8 vs. >8 h), study duration (<12 vs. \u226512 weeks), and energy intake (with restriction or eat ad libitum ) i",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-u-626",
@@ -569,9 +569,9 @@
       "context_window": "ignificant weight reduction compared to the control group (-1.28 kg; 95% CI [-2.05, -0.52]; p = 0.001; I 2 = 0%) ( Figure 4A ).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-ci-2969",
@@ -588,9 +588,9 @@
       "context_window": "t weight reduction compared to the control group (-1.28 kg; 95% CI [-2.05, -0.52]; p = 0.001; I 2 = 0%) ( Figure 4A ). No significant public",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-2992",
@@ -606,9 +606,9 @@
       "context_window": "ared to the control group (-1.28 kg; 95% CI [-2.05, -0.52]; p = 0.001; I 2 = 0%) ( Figure 4A ). No significant publication bias w",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-3009",
@@ -624,9 +624,9 @@
       "context_window": "ol group (-1.28 kg; 95% CI [-2.05, -0.52]; p = 0.001; I 2 = 0%) ( Figure 4A ). No significant publication bias was detecte",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-3091",
@@ -660,7 +660,7 @@
       "context_window": "ignificant reduction in BMI compared to the control group (-0.34 kg/m 2 ; 95% CI [-0.64, 0.04]; p = 0.03; I 2 = 0%) ( Figure 4B",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -679,7 +679,7 @@
       "context_window": "uction in BMI compared to the control group (-0.34 kg/m 2 ; 95% CI [-0.64, 0.04]; p = 0.03; I 2 = 0%) ( Figure 4B ). Seven studies ( 22 ,",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -697,7 +697,7 @@
       "context_window": "to the control group (-0.34 kg/m 2 ; 95% CI [-0.64, 0.04]; p = 0.03; I 2 = 0%) ( Figure 4B ). Seven studies ( 22 , 25 - 30 ) i",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -715,7 +715,7 @@
       "context_window": "group (-0.34 kg/m 2 ; 95% CI [-0.64, 0.04]; p = 0.03; I 2 = 0%) ( Figure 4B ). Seven studies ( 22 , 25 - 30 ) included fa",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -733,9 +733,9 @@
       "context_window": "ight difference in fat mass compared to the control group (-0.72 kg; 95% CI [1.40, -0.03], p = 0.04, I 2 = 0%) ( Figure 4C ).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-ci-3819",
@@ -752,9 +752,9 @@
       "context_window": "erence in fat mass compared to the control group (-0.72 kg; 95% CI [1.40, -0.03], p = 0.04, I 2 = 0%) ( Figure 4C ). Five studies ( 25 - 2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-3841",
@@ -770,9 +770,9 @@
       "context_window": "pared to the control group (-0.72 kg; 95% CI [1.40, -0.03], p = 0.04, I 2 = 0%) ( Figure 4C ). Five studies ( 25 - 27 , 29 , 30",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-3857",
@@ -788,9 +788,9 @@
       "context_window": "trol group (-0.72 kg; 95% CI [1.40, -0.03], p = 0.04, I 2 = 0%) ( Figure 4C ). Five studies ( 25 - 27 , 29 , 30 ) include",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-u-4101",
@@ -879,7 +879,7 @@
       "context_window": "group showed a statistically significant reduction in DBP (-2.26 mmHg; 95% CI [-4.02, -0.50], p = 0.01, I 2 = 0%) compared to the",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -898,7 +898,7 @@
       "context_window": "d a statistically significant reduction in DBP (-2.26 mmHg; 95% CI [-4.02, -0.50], p = 0.01, I 2 = 0%) compared to the control group, howeve",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -916,7 +916,7 @@
       "context_window": "ficant reduction in DBP (-2.26 mmHg; 95% CI [-4.02, -0.50], p = 0.01, I 2 = 0%) compared to the control group, however, there wa",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -934,7 +934,7 @@
       "context_window": "in DBP (-2.26 mmHg; 95% CI [-4.02, -0.50], p = 0.01, I 2 = 0%) compared to the control group, however, there was no diffe",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -952,7 +952,7 @@
       "context_window": "he control group, however, there was no difference in SBP (-0.75 mmHg; 95% CI [-3.14, 1.63], p = 0.54, I 2 = 0%) ( Figures 5A , B",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -971,7 +971,7 @@
       "context_window": "group, however, there was no difference in SBP (-0.75 mmHg; 95% CI [-3.14, 1.63], p = 0.54, I 2 = 0%) ( Figures 5A , B ). Forest plots of",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -989,7 +989,7 @@
       "context_window": "was no difference in SBP (-0.75 mmHg; 95% CI [-3.14, 1.63], p = 0.54, I 2 = 0%) ( Figures 5A , B ). Forest plots of comparisons",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1007,7 +1007,7 @@
       "context_window": "e in SBP (-0.75 mmHg; 95% CI [-3.14, 1.63], p = 0.54, I 2 = 0%) ( Figures 5A , B ). Forest plots of comparisons between T",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1099,9 +1099,9 @@
       "context_window": "g insulin levels compared to the control group (-0.94 mU/L; 95% CI [-2.98, 1.10], p = 0.37 I 2 = 0%) ( Figure 5D ). Five studies ( 22 , 26",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-5407",
@@ -1117,9 +1117,9 @@
       "context_window": "red to the control group (-0.94 mU/L; 95% CI [-2.98, 1.10], p = 0.37 I 2 = 0%) ( Figure 5D ). Five studies ( 22 , 26 - 28 , 30",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-5422",
@@ -1135,9 +1135,9 @@
       "context_window": "rol group (-0.94 mU/L; 95% CI [-2.98, 1.10], p = 0.37 I 2 = 0%) ( Figure 5D ). Five studies ( 22 , 26 - 28 , 30 ) (347 in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-ci-5654",
@@ -1208,9 +1208,9 @@
       "context_window": "erences in total cholesterol compared to the control group (2.12 mg/dl; 95% CI [-4.46, 8.71], p = 0.53, I 2 = 0%) ( Figure 6A )",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-ci-5968",
@@ -1227,9 +1227,9 @@
       "context_window": "otal cholesterol compared to the control group (2.12 mg/dl; 95% CI [-4.46, 8.71], p = 0.53, I 2 = 0%) ( Figure 6A ). Forest plots of compa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-5990",
@@ -1245,9 +1245,9 @@
       "context_window": "red to the control group (2.12 mg/dl; 95% CI [-4.46, 8.71], p = 0.53, I 2 = 0%) ( Figure 6A ). Forest plots of comparisons betw",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-6006",
@@ -1263,9 +1263,9 @@
       "context_window": "ol group (2.12 mg/dl; 95% CI [-4.46, 8.71], p = 0.53, I 2 = 0%) ( Figure 6A ). Forest plots of comparisons between TRE an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-u-6480",
@@ -1281,9 +1281,9 @@
       "context_window": "nces in triglyceride levels compared to the control group (-3.97 mg/dl; 95% CI [-14.48, 6.55] p = 0.46, I 2 = 46%). In sensitiv",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-ci-6492",
@@ -1300,9 +1300,9 @@
       "context_window": "lyceride levels compared to the control group (-3.97 mg/dl; 95% CI [-14.48, 6.55] p = 0.46, I 2 = 46%). In sensitivity analyses, when removi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-6514",
@@ -1318,9 +1318,9 @@
       "context_window": "ed to the control group (-3.97 mg/dl; 95% CI [-14.48, 6.55] p = 0.46, I 2 = 46%). In sensitivity analyses, when removing the stu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-6530",
@@ -1336,9 +1336,9 @@
       "context_window": "l group (-3.97 mg/dl; 95% CI [-14.48, 6.55] p = 0.46, I 2 = 46%). In sensitivity analyses, when removing the study by Chow",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-6645",
@@ -1445,9 +1445,9 @@
       "context_window": "difference between TRE and control groups in terms of HDL (0.79 mg/dl; 95% CI [-0.86, 2.45], p = 0.35, I 2 = 0%) and LDL (2.98",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-ci-7047",
@@ -1464,9 +1464,9 @@
       "context_window": "between TRE and control groups in terms of HDL (0.79 mg/dl; 95% CI [-0.86, 2.45], p = 0.35, I 2 = 0%) and LDL (2.98 mg/dl; 95% CI [-2.24, 8",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-7069",
@@ -1482,9 +1482,9 @@
       "context_window": "l groups in terms of HDL (0.79 mg/dl; 95% CI [-0.86, 2.45], p = 0.35, I 2 = 0%) and LDL (2.98 mg/dl; 95% CI [-2.24, 8.19], p = 0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-7085",
@@ -1500,9 +1500,9 @@
       "context_window": "s of HDL (0.79 mg/dl; 95% CI [-0.86, 2.45], p = 0.35, I 2 = 0%) and LDL (2.98 mg/dl; 95% CI [-2.24, 8.19], p = 0.26, I 2 =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-u-7098",
@@ -1518,9 +1518,9 @@
       "context_window": "9 mg/dl; 95% CI [-0.86, 2.45], p = 0.35, I 2 = 0%) and LDL (2.98 mg/dl; 95% CI [-2.24, 8.19], p = 0.26, I 2 = 0%) ( Figures 6C,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-ci-7110",
@@ -1537,9 +1537,9 @@
       "context_window": "CI [-0.86, 2.45], p = 0.35, I 2 = 0%) and LDL (2.98 mg/dl; 95% CI [-2.24, 8.19], p = 0.26, I 2 = 0%) ( Figures 6C, D ). Five studies ( 21",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-7132",
@@ -1555,9 +1555,9 @@
       "context_window": "0.35, I 2 = 0%) and LDL (2.98 mg/dl; 95% CI [-2.24, 8.19], p = 0.26, I 2 = 0%) ( Figures 6C, D ). Five studies ( 21 , 26 - 29",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-7148",
@@ -1573,9 +1573,9 @@
       "context_window": "and LDL (2.98 mg/dl; 95% CI [-2.24, 8.19], p = 0.26, I 2 = 0%) ( Figures 6C, D ). Five studies ( 21 , 26 - 29 ) (341 ind",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-u-7414",
@@ -1591,9 +1591,9 @@
       "context_window": "th no statistical difference compared with control groups (-1.46 cm; 95% CI [-3.01, 0.09], p = 0.07, I 2 = 0%) ( Figure 6E ).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-ci-7423",
@@ -1610,9 +1610,9 @@
       "context_window": "tistical difference compared with control groups (-1.46 cm; 95% CI [-3.01, 0.09], p = 0.07, I 2 = 0%) ( Figure 6E ). According to the dura",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-7445",
@@ -1628,9 +1628,9 @@
       "context_window": "mpared with control groups (-1.46 cm; 95% CI [-3.01, 0.09], p = 0.07, I 2 = 0%) ( Figure 6E ). According to the duration of the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-7461",
@@ -1646,9 +1646,9 @@
       "context_window": "rol groups (-1.46 cm; 95% CI [-3.01, 0.09], p = 0.07, I 2 = 0%) ( Figure 6E ). According to the duration of the eating wi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-u-7686",
@@ -1882,7 +1882,7 @@
       "context_window": "ion, we divided the studies into two subgroups. In studies \u226412 weeks ( 22 , 26 , 29 - 31 ), weight change (-0.77 kg; 95% CI [-1.",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1900,7 +1900,7 @@
       "context_window": "In studies \u226412 weeks ( 22 , 26 , 29 - 31 ), weight change (-0.77 kg; 95% CI [-1.76, 0.21], p = 0.12, I 2 = 0%) and fat mass red",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1919,7 +1919,7 @@
       "context_window": "s \u226412 weeks ( 22 , 26 , 29 - 31 ), weight change (-0.77 kg; 95% CI [-1.76, 0.21], p = 0.12, I 2 = 0%) and fat mass reduction (-0.31 kg, 95%",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1937,7 +1937,7 @@
       "context_window": ", 29 - 31 ), weight change (-0.77 kg; 95% CI [-1.76, 0.21], p = 0.12, I 2 = 0%) and fat mass reduction (-0.31 kg, 95% CI [-1.19,",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1955,7 +1955,7 @@
       "context_window": "ght change (-0.77 kg; 95% CI [-1.76, 0.21], p = 0.12, I 2 = 0%) and fat mass reduction (-0.31 kg, 95% CI [-1.19, 0.57], p",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1973,7 +1973,7 @@
       "context_window": "[-1.76, 0.21], p = 0.12, I 2 = 0%) and fat mass reduction (-0.31 kg, 95% CI [-1.19, 0.57], p = 0.48, I 2 = 0%) showed no differ",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1992,7 +1992,7 @@
       "context_window": ".21], p = 0.12, I 2 = 0%) and fat mass reduction (-0.31 kg, 95% CI [-1.19, 0.57], p = 0.48, I 2 = 0%) showed no difference in the TRE group",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2010,7 +2010,7 @@
       "context_window": "0%) and fat mass reduction (-0.31 kg, 95% CI [-1.19, 0.57], p = 0.48, I 2 = 0%) showed no difference in the TRE group compared t",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2028,7 +2028,7 @@
       "context_window": "reduction (-0.31 kg, 95% CI [-1.19, 0.57], p = 0.48, I 2 = 0%) showed no difference in the TRE group compared to the cont",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2210,7 +2210,7 @@
       "context_window": "m ( 26 , 29 , 30 ), and there was no difference in weight (-0.3 kg; 95% CI [-1.77, 1.18], p = 0.70, I 2 = 0%) and fat mass (-0",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2229,7 +2229,7 @@
       "context_window": "29 , 30 ), and there was no difference in weight (-0.3 kg; 95% CI [-1.77, 1.18], p = 0.70, I 2 = 0%) and fat mass (-0.48 kg; 95% CI [-1.69",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2247,7 +2247,7 @@
       "context_window": "was no difference in weight (-0.3 kg; 95% CI [-1.77, 1.18], p = 0.70, I 2 = 0%) and fat mass (-0.48 kg; 95% CI [-1.69, 0.72], p",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2265,7 +2265,7 @@
       "context_window": "e in weight (-0.3 kg; 95% CI [-1.77, 1.18], p = 0.70, I 2 = 0%) and fat mass (-0.48 kg; 95% CI [-1.69, 0.72], p = 0.43, I",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2283,7 +2283,7 @@
       "context_window": "g; 95% CI [-1.77, 1.18], p = 0.70, I 2 = 0%) and fat mass (-0.48 kg; 95% CI [-1.69, 0.72], p = 0.43, I 2 = 0%) between the TRE",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2302,7 +2302,7 @@
       "context_window": "[-1.77, 1.18], p = 0.70, I 2 = 0%) and fat mass (-0.48 kg; 95% CI [-1.69, 0.72], p = 0.43, I 2 = 0%) between the TRE and the control group",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2320,7 +2320,7 @@
       "context_window": "70, I 2 = 0%) and fat mass (-0.48 kg; 95% CI [-1.69, 0.72], p = 0.43, I 2 = 0%) between the TRE and the control group. In the st",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2338,7 +2338,7 @@
       "context_window": "d fat mass (-0.48 kg; 95% CI [-1.69, 0.72], p = 0.43, I 2 = 0%) between the TRE and the control group. In the studies with",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2356,9 +2356,9 @@
       "context_window": "27 , 28 , 31 ), there was a significant weight reduction (-1.64 kg; 95% CI [-2.53, -0.75], p = 0.0003, I 2 = 0%) in the TRE gr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-ci-9345",
@@ -2375,9 +2375,9 @@
       "context_window": ", 31 ), there was a significant weight reduction (-1.64 kg; 95% CI [-2.53, -0.75], p = 0.0003, I 2 = 0%) in the TRE group compared to the co",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-9368",
@@ -2393,9 +2393,9 @@
       "context_window": "nificant weight reduction (-1.64 kg; 95% CI [-2.53, -0.75], p = 0.0003, I 2 = 0%) in the TRE group compared to the control group.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-9386",
@@ -2411,9 +2411,9 @@
       "context_window": "duction (-1.64 kg; 95% CI [-2.53, -0.75], p = 0.0003, I 2 = 0%) in the TRE group compared to the control group. In terms o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-u-9508",
@@ -2429,9 +2429,9 @@
       "context_window": "f fat mass, the TRE group also showed a beneficial effect (-0.83 kg; 95% CI [-1.66, -0.00], p = 0.05, I 2 = 0%) ( Figures 8A ,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-ci-9517",
@@ -2448,9 +2448,9 @@
       "context_window": "s, the TRE group also showed a beneficial effect (-0.83 kg; 95% CI [-1.66, -0.00], p = 0.05, I 2 = 0%) ( Figures 8A , B ). Forest plot of (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-p-9540",
@@ -2466,9 +2466,9 @@
       "context_window": "howed a beneficial effect (-0.83 kg; 95% CI [-1.66, -0.00], p = 0.05, I 2 = 0%) ( Figures 8A , B ). Forest plot of (A) weight c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-9556",
@@ -2484,9 +2484,9 @@
       "context_window": "al effect (-0.83 kg; 95% CI [-1.66, -0.00], p = 0.05, I 2 = 0%) ( Figures 8A , B ). Forest plot of (A) weight change in s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-u-772",
@@ -2502,7 +2502,7 @@
       "context_window": "n weight change as well as fat mass. In studies longer than 12 weeks, weight change (-2.05 kg; 95% CI [-3.26, -0.84], p = 0.0009",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2520,7 +2520,7 @@
       "context_window": "fat mass. In studies longer than 12 weeks, weight change (-2.05 kg; 95% CI [-3.26, -0.84], p = 0.0009, I 2 = 0%) and fat mass",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2539,7 +2539,7 @@
       "context_window": ". In studies longer than 12 weeks, weight change (-2.05 kg; 95% CI [-3.26, -0.84], p = 0.0009, I 2 = 0%) and fat mass reduction (-1.33 kg, 9",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2557,7 +2557,7 @@
       "context_window": "n 12 weeks, weight change (-2.05 kg; 95% CI [-3.26, -0.84], p = 0.0009, I 2 = 0%) and fat mass reduction (-1.33 kg, 95% CI [-2.41,",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2575,7 +2575,7 @@
       "context_window": "change (-2.05 kg; 95% CI [-3.26, -0.84], p = 0.0009, I 2 = 0%) and fat mass reduction (-1.33 kg, 95% CI [-2.41, -0.24], p",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2593,7 +2593,7 @@
       "context_window": ".26, -0.84], p = 0.0009, I 2 = 0%) and fat mass reduction (-1.33 kg, 95% CI [-2.41, -0.24], p = 0.02, I 2 = 0%) were more signi",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2612,7 +2612,7 @@
       "context_window": "4], p = 0.0009, I 2 = 0%) and fat mass reduction (-1.33 kg, 95% CI [-2.41, -0.24], p = 0.02, I 2 = 0%) were more significant in the TRE grou",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2630,7 +2630,7 @@
       "context_window": "%) and fat mass reduction (-1.33 kg, 95% CI [-2.41, -0.24], p = 0.02, I 2 = 0%) were more significant in the TRE group compared",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2648,7 +2648,7 @@
       "context_window": "reduction (-1.33 kg, 95% CI [-2.41, -0.24], p = 0.02, I 2 = 0%) were more significant in the TRE group compared to the con",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2666,7 +2666,7 @@
       "context_window": "oup compared to the control group. And in studies less than 12 weeks, those two outcomes did show no difference in the TRE and c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2756,7 +2756,7 @@
       "context_window": "not statistically different compared to the control group (-1.72 kg; 95% CI [-3.45, 0.02], p = 0.05, I 2 = 0%). This indicates",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2775,7 +2775,7 @@
       "context_window": "stically different compared to the control group (-1.72 kg; 95% CI [-3.45, 0.02], p = 0.05, I 2 = 0%). This indicates that it would be more",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2793,7 +2793,7 @@
       "context_window": "pared to the control group (-1.72 kg; 95% CI [-3.45, 0.02], p = 0.05, I 2 = 0%). This indicates that it would be more useful if",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2811,7 +2811,7 @@
       "context_window": "trol group (-1.72 kg; 95% CI [-3.45, 0.02], p = 0.05, I 2 = 0%). This indicates that it would be more useful if limit the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2829,9 +2829,9 @@
       "context_window": "e to the low proportion of participants who eat ad libitum (26.6% on weight analysis and 23.2% on fat mass analysis), caution",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-2765",
@@ -2847,9 +2847,9 @@
       "context_window": "rticipants who eat ad libitum (26.6% on weight analysis and 23.2% on fat mass analysis), caution is needed when recommending",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-3911",
@@ -2882,10 +2882,10 @@
       "sentence": "In our pool of studies, the adherence rate averages above 70%, but varies relatively widely, which is the main source of bias, from 46.5% ( 40 ) to 90.9% ( 30 ).",
       "context_window": ". In our pool of studies, the adherence rate averages above 70%, but varies relatively widely, which is the main source of",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-5193",
@@ -2900,10 +2900,10 @@
       "sentence": "In our pool of studies, the adherence rate averages above 70%, but varies relatively widely, which is the main source of bias, from 46.5% ( 40 ) to 90.9% ( 30 ).",
       "context_window": "s relatively widely, which is the main source of bias, from 46.5% ( 40 ) to 90.9% ( 30 ). The high dropout rate may be due to",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9979543_health_effects_of_the_time_restricted_eating_in_adults_with_-pct-5209",
@@ -2918,10 +2918,10 @@
       "sentence": "In our pool of studies, the adherence rate averages above 70%, but varies relatively widely, which is the main source of bias, from 46.5% ( 40 ) to 90.9% ( 30 ).",
       "context_window": "ely, which is the main source of bias, from 46.5% ( 40 ) to 90.9% ( 30 ). The high dropout rate may be due to the long durati",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

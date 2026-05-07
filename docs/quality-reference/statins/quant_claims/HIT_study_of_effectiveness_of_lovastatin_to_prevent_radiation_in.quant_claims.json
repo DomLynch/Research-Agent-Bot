@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_study_of_effectiveness_of_lovastatin_to_prevent_radiation_in",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_study_of_effectiveness_of_lovastatin_to_prevent_radiation_in-u-252",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 252,
+      "sentence": "Lovastatin may protect against late effects of radiation therapy in patients with prostate cancer\n\nPosted outcomes: Percentage of Participants With Physician Reported Rectal Toxicity \u2265 Grade 2 During the First 2 Years of Radiation Treatment. timeframe=24 months.",
+      "context_window": "During the First 2 Years of Radiation Treatment. timeframe=24 months. Supportive Care (Lovastatin) (Evaluable)=38. p=0.9138",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_study_of_effectiveness_of_lovastatin_to_prevent_radiation_in-p-308",
+      "claim_type": "p_value",
+      "raw_text": "p=0.9138",
+      "numeric_values": [
+        0.9138
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 308,
+      "sentence": "Supportive Care (Lovastatin) (Evaluable)=38. p=0.9138",
+      "context_window": "ame=24 months. Supportive Care (Lovastatin) (Evaluable)=38. p=0.9138",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

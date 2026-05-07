@@ -1,0 +1,161 @@
+{
+  "paper_id": "DOI_10_1002_14651858_cd004816_pub5_statins_for_the_primary_prevention_of_cardiovascular_disease",
+  "doi": "10.1002/14651858.cd004816.pub5",
+  "extracted_at": "2026-05-07T19:24:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "confidence_interval": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_14651858_cd004816_pub5_statins_for_the_primary_prevention_of_cardiovascular_disease-pct-1311",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1311,
+      "sentence": "SELECTION CRITERIA: We included randomised controlled trials of statins versus placebo or usual care control with minimum treatment duration of one year and follow-up of six months, in adults with no restrictions on total, low density lipoprotein (LDL) or high density lipoprotein (HDL) cholesterol levels, and where 10% or less had a history of CVD.",
+      "context_window": "igh density lipoprotein (HDL) cholesterol levels, and where 10% or less had a history of CVD. DATA COLLECTION AND ANALYSIS:",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_14651858_cd004816_pub5_statins_for_the_primary_prevention_of_cardiovascular_disease-pct-1865",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1865,
+      "sentence": "Odds ratios (OR) and risk ratios (RR) were calculated for dichotomous data, and for continuous data, pooled mean differences (MD) (with 95% confidence intervals (CI)) were calculated.",
+      "context_window": "and for continuous data, pooled mean differences (MD) (with 95% confidence intervals (CI)) were calculated. We contacted tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "mixed",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_14651858_cd004816_pub5_statins_for_the_primary_prevention_of_cardiovascular_disease-ci-2353",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.79 to 0.94",
+      "numeric_values": [
+        0.79,
+        0.94
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2353,
+      "sentence": "All-cause mortality was reduced by statins (OR 0.86, 95% CI 0.79 to 0.94); as was combined fatal and non-fatal CVD RR 0.75 (95% CI 0.70 to 0.81), combined fatal and non-fatal CHD events RR 0.73 (95% CI 0.67 to 0.80) and combined fatal and non-fatal stroke (RR 0.78, 95% CI 0.68 to 0.89).",
+      "context_window": "uria). All-cause mortality was reduced by statins (OR 0.86, 95% CI 0.79 to 0.94); as was combined fatal and non-fatal CVD RR 0.75 (95% CI 0",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1002_14651858_cd004816_pub5_statins_for_the_primary_prevention_of_cardiovascular_disease-ci-2424",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.70 to 0.81",
+      "numeric_values": [
+        0.7,
+        0.81
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2424,
+      "sentence": "All-cause mortality was reduced by statins (OR 0.86, 95% CI 0.79 to 0.94); as was combined fatal and non-fatal CVD RR 0.75 (95% CI 0.70 to 0.81), combined fatal and non-fatal CHD events RR 0.73 (95% CI 0.67 to 0.80) and combined fatal and non-fatal stroke (RR 0.78, 95% CI 0.68 to 0.89).",
+      "context_window": "to 0.94); as was combined fatal and non-fatal CVD RR 0.75 (95% CI 0.70 to 0.81), combined fatal and non-fatal CHD events RR 0.73 (95% CI 0",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1002_14651858_cd004816_pub5_statins_for_the_primary_prevention_of_cardiovascular_disease-ci-2495",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.67 to 0.80",
+      "numeric_values": [
+        0.67,
+        0.8
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2495,
+      "sentence": "All-cause mortality was reduced by statins (OR 0.86, 95% CI 0.79 to 0.94); as was combined fatal and non-fatal CVD RR 0.75 (95% CI 0.70 to 0.81), combined fatal and non-fatal CHD events RR 0.73 (95% CI 0.67 to 0.80) and combined fatal and non-fatal stroke (RR 0.78, 95% CI 0.68 to 0.89).",
+      "context_window": "to 0.81), combined fatal and non-fatal CHD events RR 0.73 (95% CI 0.67 to 0.80) and combined fatal and non-fatal stroke (RR 0.78, 95% CI 0",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1002_14651858_cd004816_pub5_statins_for_the_primary_prevention_of_cardiovascular_disease-ci-2566",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.68 to 0.89",
+      "numeric_values": [
+        0.68,
+        0.89
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2566,
+      "sentence": "All-cause mortality was reduced by statins (OR 0.86, 95% CI 0.79 to 0.94); as was combined fatal and non-fatal CVD RR 0.75 (95% CI 0.70 to 0.81), combined fatal and non-fatal CHD events RR 0.73 (95% CI 0.67 to 0.80) and combined fatal and non-fatal stroke (RR 0.78, 95% CI 0.68 to 0.89).",
+      "context_window": "to 0.80) and combined fatal and non-fatal stroke (RR 0.78, 95% CI 0.68 to 0.89). Reduction of revascularisation rates (RR 0.62, 95% CI 0.5",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1002_14651858_cd004816_pub5_statins_for_the_primary_prevention_of_cardiovascular_disease-ci-2635",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.54 to 0.72",
+      "numeric_values": [
+        0.54,
+        0.72
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2635,
+      "sentence": "Reduction of revascularisation rates (RR 0.62, 95% CI 0.54 to 0.72) was also seen.",
+      "context_window": "68 to 0.89). Reduction of revascularisation rates (RR 0.62, 95% CI 0.54 to 0.72) was also seen. Total cholesterol and LDL cholesterol were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1002_14651858_cd004816_pub5_statins_for_the_primary_prevention_of_cardiovascular_disease-pct-3174",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 3174,
+      "sentence": "Recent findings from the Cholesterol Treatment Trialists study using individual patient data meta-analysis indicate that these benefits are similar in people at lower (< 1% per year) risk of a major cardiovascular event.",
+      "context_window": "icate that these benefits are similar in people at lower (< 1% per year) risk of a major cardiovascular event. AUTHORS' CO",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

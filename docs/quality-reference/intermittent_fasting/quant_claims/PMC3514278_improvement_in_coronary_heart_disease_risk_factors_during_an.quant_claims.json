@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an",
   "doi": "10.1186/1743-7075-9-98",
-  "extracted_at": "2026-05-05T22:11:16+00:00",
+  "extracted_at": "2026-05-07T16:57:04+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 20,
@@ -1240,7 +1240,7 @@
       "sentence": "Adherence to the fast day protocol was similar between groups (P = 0.91) (IFCR-l: 96 \u00b1 4% compliance; IFCR-F: 98 \u00b1 3% compliance).",
       "context_window": "erence to the fast day protocol was similar between groups (P = 0.91) (IFCR-l: 96 \u00b1 4% compliance; IFCR-F: 98 \u00b1 3% compliance).",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1259,7 +1259,7 @@
       "sentence": "Adherence to the fast day protocol was similar between groups (P = 0.91) (IFCR-l: 96 \u00b1 4% compliance; IFCR-F: 98 \u00b1 3% compliance).",
       "context_window": "day protocol was similar between groups (P = 0.91) (IFCR-l: 96 \u00b1 4% compliance; IFCR-F: 98 \u00b1 3% compliance). Compliance with t",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1277,7 +1277,7 @@
       "sentence": "Adherence to the fast day protocol was similar between groups (P = 0.91) (IFCR-l: 96 \u00b1 4% compliance; IFCR-F: 98 \u00b1 3% compliance).",
       "context_window": "rotocol was similar between groups (P = 0.91) (IFCR-l: 96 \u00b1 4% compliance; IFCR-F: 98 \u00b1 3% compliance). Compliance with th",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1296,7 +1296,7 @@
       "sentence": "Adherence to the fast day protocol was similar between groups (P = 0.91) (IFCR-l: 96 \u00b1 4% compliance; IFCR-F: 98 \u00b1 3% compliance).",
       "context_window": "ween groups (P = 0.91) (IFCR-l: 96 \u00b1 4% compliance; IFCR-F: 98 \u00b1 3% compliance). Compliance with the liquid meal protocol was",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1314,7 +1314,7 @@
       "sentence": "Adherence to the fast day protocol was similar between groups (P = 0.91) (IFCR-l: 96 \u00b1 4% compliance; IFCR-F: 98 \u00b1 3% compliance).",
       "context_window": "groups (P = 0.91) (IFCR-l: 96 \u00b1 4% compliance; IFCR-F: 98 \u00b1 3% compliance). Compliance with the liquid meal protocol was 9",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1406,9 +1406,9 @@
       "context_window": "CR-L: Intermittent fasting calorie restriction-liquid diet (n = 28); IFCR-F: Intermittent fasting calorie restriction-food bas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-n-1797",
@@ -1424,9 +1424,9 @@
       "context_window": ": Intermittent fasting calorie restriction-food based diet (n = 26). 2 Change expressed as the difference between week 3 and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-p-1920",
@@ -2384,9 +2384,9 @@
       "context_window": "CR-L: Intermittent fasting calorie restriction-liquid diet (n = 28); IFCR-F: Intermittent fasting calorie restriction-food bas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-n-3848",
@@ -2402,9 +2402,9 @@
       "context_window": ": Intermittent fasting calorie restriction-food based diet (n = 26). 2 Change expressed as the difference between week 3 and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-p-3971",
@@ -2877,9 +2877,9 @@
       "context_window": "CR-L: Intermittent fasting calorie restriction-liquid diet (n = 28); IFCR-F. Intermittent fasting calorie restriction-food bas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-n-5792",
@@ -2895,9 +2895,9 @@
       "context_window": ". Intermittent fasting calorie restriction-food based diet (n = 26). A. Total cholesterol. B. LDL cholesterol. C. HDL choleste",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-p-5976",
@@ -2949,9 +2949,9 @@
       "context_window": "CR-L: Intermittent fasting calorie restriction-liquid diet (n = 28); IFCR-F: Intermittent fasting calorie restriction-food bas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-n-6384",
@@ -2967,9 +2967,9 @@
       "context_window": ": Intermittent fasting calorie restriction-food based diet (n = 26). IL-6: Interleukin-6, TNF-alpha: Tumor necrosis factor-alp",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-p-6605",
@@ -3039,9 +3039,9 @@
       "context_window": "bjects consumed a very-low calorie diet (VLCD; <500 kcal/d) 1 day per week, and ate ad libitum every other day of the week. A",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-u-1138",
@@ -3111,9 +3111,9 @@
       "context_window": "In the trial by Harvie et al. [ 2 ], obese women underwent 2 days of VLCD (600 kcal/d) and ate ad libitum on every other day",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-u-1397",
@@ -3129,9 +3129,9 @@
       "context_window": "l/d) and ate ad libitum on every other day of the week, for 24 weeks. Post-treatment LDL cholesterol and triglyceride levels wer",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an-pct-1478",

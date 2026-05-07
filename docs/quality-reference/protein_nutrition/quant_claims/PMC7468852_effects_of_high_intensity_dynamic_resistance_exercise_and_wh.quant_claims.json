@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh",
   "doi": "10.3390/nu12082341",
-  "extracted_at": "2026-05-05T23:37:15+00:00",
+  "extracted_at": "2026-05-07T16:56:44+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 51,
@@ -114,7 +114,7 @@
       "sentence": "In detail, effect sizes for skeletal muscle mass changes were very pronounced (1.97, p < 0.001), while effects for functional sarcopenia parameters were moderate (0.87, p = 0.008; handgrip strength) or low (0.39, p = 0.209; gait velocity).",
       "context_window": "or skeletal muscle mass changes were very pronounced (1.97, p < 0.001), while effects for functional sarcopenia parameters were m",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -204,10 +204,10 @@
       "sentence": "In essence, 180 cdw men with low muscle mass [ 17 ], 72 years and older, living in the area of Erlangen-N\u00fcrnberg, Germany were willing to participate in the present study and were checked for eligibility.",
       "context_window": "here. In essence, 180 cdw men with low muscle mass [ 17 ], 72 years and older, living in the area of Erlangen-N\u00fcrnberg, Germany",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7468852_effects_of_high_intensity_dynamic_resistance_exercise_and_wh-u-1647",
@@ -222,7 +222,7 @@
       "sentence": "A further inclusion criterion was \u201costeosarcopenia,\u201d i.e., (a) skeletal muscle mass index (SMI) \u2264 7.26 kg/m 2 (i.e., lower than -2 SD T-Score: sarcopenia according to [ 18 , 19 ]) and (b) areal BMD T-Score lower than -1 SD at the lumbar spine (LS) or total hip (TH) region of interest (ROI (osteopenia/osteoporosis according to [ 20 ]).",
       "context_window": "eosarcopenia,\u201d i.e., (a) skeletal muscle mass index (SMI) \u2264 7.26 kg/m 2 (i.e., lower than -2 SD T-Score: sarcopenia according t",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -925,7 +925,7 @@
       "context_window": "tely realize and monitor our intended protein intake of 1.5-1.6 g/kg/d in the HIT-RT and 1.2 g/kg/d body mass in the CG, all the p",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -943,7 +943,7 @@
       "context_window": "intended protein intake of 1.5-1.6 g/kg/d in the HIT-RT and 1.2 g/kg/d body mass in the CG, all the participants took four-day die",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -961,7 +961,7 @@
       "context_window": "our-day diet records at baseline and also after 28, 54, and 78 weeks. We provided all participants with standardized diet record",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1830,7 +1830,7 @@
       "context_window": "her high dietary protein intake of the CG ( Table 1 ), only 30% of the corresponding participants were supplemented with wh",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1848,7 +1848,7 @@
       "context_window": "icipants were supplemented with whey protein powder (versus 95% in the HIT-RT). With respect to total protein intake as det",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1867,7 +1867,7 @@
       "context_window": "fied by personal interviews), protein intake varied between 1.21 \u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1886,7 +1886,7 @@
       "context_window": "interviews), protein intake varied between 1.21 \u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1904,7 +1904,7 @@
       "context_window": "iews), protein intake varied between 1.21 \u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body mass i",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1923,7 +1923,7 @@
       "context_window": "ed between 1.21 \u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body mass in the HIT-RT. Average diff",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1942,7 +1942,7 @@
       "context_window": "\u00b1 0.13 and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body mass in the HIT-RT. Average difference in total",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1960,7 +1960,7 @@
       "context_window": "and 1.24 \u00b1 0.11 g/kg/d in the CG and 1.56 \u00b1 0.14 to 1.61 \u00b1 0.16 g/kg/d body mass in the HIT-RT. Average difference in total whey p",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },

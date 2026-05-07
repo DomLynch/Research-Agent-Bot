@@ -1,0 +1,159 @@
+{
+  "paper_id": "HIT_bempedoic_acid_versus_statins_in_primary_prevention_patients",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4,
+    "unit_value": 2,
+    "hazard_ratio": 1,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_bempedoic_acid_versus_statins_in_primary_prevention_patients-pct-365",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 365,
+      "sentence": "MDPI +1 In patients with hypercholesterolemia who are unable to tolerate statins, or have sub-optimal statin adherence/tolerance, bempedoic acid has been shown to reduce LDL-C by \\~20-30% (monotherapy) and more when added to other therapies (e.g., ezetimibe) (\u224830-40%).",
+      "context_window": "ance, bempedoic acid has been shown to reduce LDL-C by \\~20-30% (monotherapy) and more when added to other therapies (e.g.,",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_bempedoic_acid_versus_statins_in_primary_prevention_patients-pct-445",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 445,
+      "sentence": "MDPI +1 In patients with hypercholesterolemia who are unable to tolerate statins, or have sub-optimal statin adherence/tolerance, bempedoic acid has been shown to reduce LDL-C by \\~20-30% (monotherapy) and more when added to other therapies (e.g., ezetimibe) (\u224830-40%).",
+      "context_window": "d more when added to other therapies (e.g., ezetimibe) (\u224830-40%). PubMed * 2 medicinejournal.in * 2 In the large primary-pr",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_bempedoic_acid_versus_statins_in_primary_prevention_patients-u-635",
+      "claim_type": "unit_value",
+      "raw_text": "180 mg",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 635,
+      "sentence": "PubMed * 2 medicinejournal.in * 2 In the large primary-prevention subgroup of the trial CLEAR Outcomes (statin-intolerant patients without prior cardiovascular event), bempedoic acid (180 mg daily) lowered LDL-C by \\~21.3% and hs-CRP by \\~21.5%.",
+      "context_window": "tients without prior cardiovascular event), bempedoic acid (180 mg daily) lowered LDL-C by \\~21.3% and hs-CRP by \\~21.5%. It a",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "HIT_bempedoic_acid_versus_statins_in_primary_prevention_patients-pct-668",
+      "claim_type": "percentage",
+      "raw_text": "21.3%",
+      "numeric_values": [
+        21.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 668,
+      "sentence": "PubMed * 2 medicinejournal.in * 2 In the large primary-prevention subgroup of the trial CLEAR Outcomes (statin-intolerant patients without prior cardiovascular event), bempedoic acid (180 mg daily) lowered LDL-C by \\~21.3% and hs-CRP by \\~21.5%.",
+      "context_window": "ar event), bempedoic acid (180 mg daily) lowered LDL-C by \\~21.3% and hs-CRP by \\~21.5%. It also was associated with a signif",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "HIT_bempedoic_acid_versus_statins_in_primary_prevention_patients-pct-690",
+      "claim_type": "percentage",
+      "raw_text": "21.5%",
+      "numeric_values": [
+        21.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 690,
+      "sentence": "PubMed * 2 medicinejournal.in * 2 In the large primary-prevention subgroup of the trial CLEAR Outcomes (statin-intolerant patients without prior cardiovascular event), bempedoic acid (180 mg daily) lowered LDL-C by \\~21.3% and hs-CRP by \\~21.5%.",
+      "context_window": "cid (180 mg daily) lowered LDL-C by \\~21.3% and hs-CRP by \\~21.5%. It also was associated with a significant reduction in maj",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "HIT_bempedoic_acid_versus_statins_in_primary_prevention_patients-hr-l-796",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 0.70",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 796,
+      "sentence": "It also was associated with a significant reduction in major adverse cardiovascular events (MACE): hazard ratio 0.70 (95% CI 0.55-0.89) versus placebo over \\~40 months.",
+      "context_window": "nt reduction in major adverse cardiovascular events (MACE): hazard ratio 0.70 (95% CI 0.55-0.89) versus placebo over \\~40 months. PubMed",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_bempedoic_acid_versus_statins_in_primary_prevention_patients-ci-815",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.55-0.89",
+      "numeric_values": [
+        0.55,
+        0.89
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 815,
+      "sentence": "It also was associated with a significant reduction in major adverse cardiovascular events (MACE): hazard ratio 0.70 (95% CI 0.55-0.89) versus placebo over \\~40 months.",
+      "context_window": "or adverse cardiovascular events (MACE): hazard ratio 0.70 (95% CI 0.55-0.89) versus placebo over \\~40 months. PubMed +1 Regarding toler",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_bempedoic_acid_versus_statins_in_primary_prevention_patients-u-855",
+      "claim_type": "unit_value",
+      "raw_text": "40 months",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 855,
+      "sentence": "It also was associated with a significant reduction in major adverse cardiovascular events (MACE): hazard ratio 0.70 (95% CI 0.55-0.89) versus placebo over \\~40 months.",
+      "context_window": "hazard ratio 0.70 (95% CI 0.55-0.89) versus placebo over \\~40 months. PubMed +1 Regarding tolerability: muscle-related adverse e",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

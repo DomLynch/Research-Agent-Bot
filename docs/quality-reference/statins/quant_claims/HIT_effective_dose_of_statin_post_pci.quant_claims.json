@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_effective_dose_of_statin_post_pci",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effective_dose_of_statin_post_pci-u-114",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 114,
+      "sentence": "In this study post coronary stenting patients, were enrolled to receive moderate dose versus high dose statin for 1 year, and the result of major adverse cardiovascular events were recorded",
+      "context_window": "rolled to receive moderate dose versus high dose statin for 1 year, and the result of major adverse cardiovascular events were",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

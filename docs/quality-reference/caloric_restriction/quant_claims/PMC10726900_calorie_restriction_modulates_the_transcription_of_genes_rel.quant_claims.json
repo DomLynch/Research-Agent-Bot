@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel",
   "doi": "10.1111/acel.13963",
-  "extracted_at": "2026-05-05T22:17:51+00:00",
+  "extracted_at": "2026-05-07T16:57:52+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 23,
@@ -24,9 +24,9 @@
       "context_window": "The lifespan extension induced by 40% caloric restriction (CR) in rodents is accompanied by postp",
       "claim_role": "effect",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-pct-301",
@@ -42,7 +42,7 @@
       "context_window": "in humans remains mostly unexplored. In the CALERIE study, 12% CR for 2 years in healthy humans induced minor losses of mu",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -60,7 +60,7 @@
       "context_window": "remains mostly unexplored. In the CALERIE study, 12% CR for 2 years in healthy humans induced minor losses of muscle mass (leg",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -78,7 +78,7 @@
       "context_window": "sought to assess the effects of reducing calorie intake by 25% for 2 years while maintaining a normal intake of essential",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -96,7 +96,7 @@
       "context_window": "to assess the effects of reducing calorie intake by 25% for 2 years while maintaining a normal intake of essential nutrients, i",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "cesco et al., 2018 ). The CALERIE intervention resulted in ~12% CR, which was accompanied by 10.4% sustained weight loss ov",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "intervention resulted in ~12% CR, which was accompanied by 10.4% sustained weight loss over the 2 years. Analysis of a subse",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -150,7 +150,7 @@
       "context_window": "ich was accompanied by 10.4% sustained weight loss over the 2 years. Analysis of a subset of participants who underwent repeate",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -168,7 +168,7 @@
       "context_window": "gned to the CR (calorie restriction) group with a target of 25% below baseline level or to an AL (\u201cad libitum\u201d) control gro",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -186,9 +186,9 @@
       "context_window": "riod (baseline, 12\u2010, 24\u2010month) distributed between the CR ( n = 57) and AL ( n = 33) groups with muscle biopsies were missing",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-1096",
@@ -204,9 +204,9 @@
       "context_window": "2\u2010, 24\u2010month) distributed between the CR ( n = 57) and AL ( n = 33) groups with muscle biopsies were missing two participants",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-u-2459",
@@ -276,7 +276,7 @@
       "context_window": "e excluded. Also excluded were RNAs with read count = 0, in 50% or more samples in any of the study subgroups (baseline, 12",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -294,7 +294,7 @@
       "context_window": "the study subgroups (baseline, 12\u2010, 24\u2010month) of CR or AL ( n = 3450). Then, the raw read count of the remaining 16,450 RNAs was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -438,7 +438,7 @@
       "context_window": "inferred when the pathway inserted in the model reduced by 20% or more the size of the beta coefficient for CR. Regression",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -492,9 +492,9 @@
       "context_window": "tal of 90 individuals (31 men and 59 women) in two groups ( n = 57 for CR, n = 33 for AL) consented to muscle biopsy, for a to",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-79",
@@ -510,9 +510,9 @@
       "context_window": "iduals (31 men and 59 women) in two groups ( n = 57 for CR, n = 33 for AL) consented to muscle biopsy, for a total of 162 musc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-u-659",
@@ -528,9 +528,9 @@
       "context_window": "es between biopsies for both CR and AL completer group were 1.1 years for the 12\u2010month follow\u2010up and 2.1 years for the 24\u2010month f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-u-700",
@@ -546,9 +546,9 @@
       "context_window": "mpleter group were 1.1 years for the 12\u2010month follow\u2010up and 2.1 years for the 24\u2010month follow\u2010up, respectively. The subset of CR",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-pct-815",
@@ -564,9 +564,9 @@
       "context_window": "subset of CR participants included in this study achieved ~15% calorie reduction on average between baseline and 12\u2010month",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-880",
@@ -582,9 +582,9 @@
       "context_window": "alorie reduction on average between baseline and 12\u2010month ( n = 24) and ~12% calorie reduction between baseline and 24\u2010month (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-pct-893",
@@ -600,9 +600,9 @@
       "context_window": "ion on average between baseline and 12\u2010month ( n = 24) and ~12% calorie reduction between baseline and 24\u2010month ( n = 17),",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-947",
@@ -618,9 +618,9 @@
       "context_window": "and ~12% calorie reduction between baseline and 24\u2010month ( n = 17), similar to what was described for the whole CALERIE popul",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-1157",
@@ -636,9 +636,9 @@
       "context_window": "ants who underwent muscle biopsy at both follow\u2010up visits ( n = 19 for CR group, n = 7 for AL group). CR participants experien",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-1178",
@@ -654,9 +654,9 @@
       "context_window": "scle biopsy at both follow\u2010up visits ( n = 19 for CR group, n = 7 for AL group). CR participants experienced significant ( p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-p-1241",
@@ -672,7 +672,7 @@
       "context_window": "7 for AL group). CR participants experienced significant ( p < 0.001) weight loss at 12 months, but there was no further weight",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -690,7 +690,7 @@
       "context_window": "cipants experienced significant ( p < 0.001) weight loss at 12 months, but there was no further weight loss over the subsequent 1",
       "claim_role": "protocol",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -708,7 +708,7 @@
       "context_window": "s, but there was no further weight loss over the subsequent 12 months, whereas AL participants maintained a stable weight (Figure",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -726,9 +726,9 @@
       "context_window": "ge calorie intake reduction between baseline and 12\u2010month ( n = 24 for CR group, n = 13 for AL group) as well as baseline and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-1979",
@@ -744,9 +744,9 @@
       "context_window": "uction between baseline and 12\u2010month ( n = 24 for CR group, n = 13 for AL group) as well as baseline and 24\u2010month ( n = 17 for",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-2035",
@@ -762,9 +762,9 @@
       "context_window": "up, n = 13 for AL group) as well as baseline and 24\u2010month ( n = 17 for CR group, n = 7 for AL group) in CALERIE participants.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-2056",
@@ -780,9 +780,9 @@
       "context_window": "up) as well as baseline and 24\u2010month ( n = 17 for CR group, n = 7 for AL group) in CALERIE participants. (c) Boxplot showing",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-2307",
@@ -798,9 +798,9 @@
       "context_window": "uscle biopsy program at baseline and both follow\u2010up visit ( n = 19 for CR group and n = 7 for AL group). Change of muscle mass",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-2331",
@@ -816,9 +816,9 @@
       "context_window": "baseline and both follow\u2010up visit ( n = 19 for CR group and n = 7 for AL group). Change of muscle mass (leg lean mass) (d) an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-n-2559",
@@ -834,7 +834,7 @@
       "context_window": "line and at least one follow\u2010up visits at 12\u2010 or 24\u2010month ( n = 27 for CR group and n = 15 for AL group). Analysis showed sign",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -852,7 +852,7 @@
       "context_window": "llow\u2010up visits at 12\u2010 or 24\u2010month ( n = 27 for CR group and n = 15 for AL group). Analysis showed significant changes of muscl",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -870,7 +870,7 @@
       "context_window": "ee extension were analyzed for the subset of participants ( n = 28 for CR group and n = 16 for AL group) who underwent muscle",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -888,7 +888,7 @@
       "context_window": "ed for the subset of participants ( n = 28 for CR group and n = 16 for AL group) who underwent muscle biopsy at baseline and a",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -906,7 +906,7 @@
       "context_window": "in the isokinetic task both for average power ( \u03b2 = 1.1033, p = 0.0058 at 60\u00b0s -1 and \u03b2 = 0.7239, p = 0.0702 at 180\u00b0s -1 ) and pea",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -924,7 +924,7 @@
       "context_window": "e power ( \u03b2 = 1.1033, p = 0.0058 at 60\u00b0s -1 and \u03b2 = 0.7239, p = 0.0702 at 180\u00b0s -1 ) and peak torque ( \u03b2 = 0.9865, p = 0.0144 at 6",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -942,7 +942,7 @@
       "context_window": "239, p = 0.0702 at 180\u00b0s -1 ) and peak torque ( \u03b2 = 0.9865, p = 0.0144 at 60\u00b0s -1 and \u03b2 = 0.7844, p = 0.0430 at 180\u00b0s -1 ). A wor",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -960,7 +960,7 @@
       "context_window": "torque ( \u03b2 = 0.9865, p = 0.0144 at 60\u00b0s -1 and \u03b2 = 0.7844, p = 0.0430 at 180\u00b0s -1 ). A workflow diagram of the study is shown in",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1050,9 +1050,9 @@
       "context_window": "ially expressed genes between CR and AL at the threshold of p < 0.05; 797 genes were overexpressed (positive beta) and 206 genes",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-u-5663",
@@ -1140,9 +1140,9 @@
       "context_window": "beled. (c) Linear smooth trajectory (unadjusted) drawn with 95% confidence interval for the 20 top differentially expressed",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-p-7392",
@@ -1230,9 +1230,9 @@
       "context_window": "of the beta coefficient in the model for CR was reduced by 20% or more for strength peak torque and average power in isoki",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-pct-15801",
@@ -1302,9 +1302,9 @@
       "context_window": "hanges from 922 genes (RSEM) at a significance threshold of p < 0.01 (Figure S5 ). We primarily focused on the 349 splicing var",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-p-20463",
@@ -1320,9 +1320,9 @@
       "context_window": "re reported in Table S10 . Significant selected pathways ( p < 0.05) obtained through ingenuity pathway analysis (IPA) utilizin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-p-22204",
@@ -1356,9 +1356,9 @@
       "context_window": "howing significant differential expression changes/usage at p < 0.01 between CR and AL over time (baseline (Ba), 12\u2010month [12 mo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-u-24730",
@@ -1374,7 +1374,7 @@
       "context_window": "R group, junction count value decreases over time at 12 and 24 months compared to baseline whereas as for AL group, value almost",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1392,7 +1392,7 @@
       "context_window": "roup, value almost unchanged or little increasing in 12 and 24 months compared to baseline. Interestingly, our analyses also poi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1410,9 +1410,9 @@
       "context_window": "differential transcript usage for some splicing variants at p < 0.05 in genes showing no changes in global expression between CR",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-p-25142",
@@ -1428,9 +1428,9 @@
       "context_window": "en CR and AL in the differential gene expression analysis ( p > 0.05). For example, these included ENST00000530661 and ENST00000",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-p-3175",
@@ -1446,7 +1446,7 @@
       "context_window": "transcriptional isoform, overexpressed in CR in our study ( p < 0.05). However, studies also found that FOXO3A\u2010short suppresses",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1464,9 +1464,9 @@
       "context_window": "and cellular mechanisms triggered by a moderate reduction (~12%) of caloric intake in human skeletal muscle, and provides c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel-pct-12289",

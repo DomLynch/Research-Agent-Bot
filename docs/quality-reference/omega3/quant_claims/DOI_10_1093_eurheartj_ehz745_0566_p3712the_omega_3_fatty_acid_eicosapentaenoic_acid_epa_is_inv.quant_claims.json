@@ -1,0 +1,143 @@
+{
+  "paper_id": "DOI_10_1093_eurheartj_ehz745_0566_p3712the_omega_3_fatty_acid_eicosapentaenoic_acid_epa_is_inv",
+  "doi": "10.1093/eurheartj/ehz745.0566",
+  "extracted_at": "2026-05-07T19:32:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2,
+    "confidence_interval": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz745_0566_p3712the_omega_3_fatty_acid_eicosapentaenoic_acid_epa_is_inv-u-1164",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1164,
+      "sentence": "In the current study, we examined the association of fish-derived EPA, docosapentaenoic acid (DPA), docosahexaenoic acid (DHA) and the plant-derived alpha-linolenic acid (ALA) with the prevalence of ischemic brain infarcts in elderly patients with atrial fibrillation.</jats:p> </jats:sec> <jats:sec> <jats:title>Methods</jats:title> <jats:p>In this cross-sectional analysis of the Swiss atrial fibrillation (swissAF) cohort study, we determined baseline whole blood n-3 FAs by gas chromatography according to the HS-Omega-3 Index methodology in 1665 patients aged \u226565 years with atrial fibrillation.",
+      "context_window": "to the HS-Omega-3 Index methodology in 1665 patients aged \u226565 years with atrial fibrillation. Large non-cortical and cortical i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz745_0566_p3712the_omega_3_fatty_acid_eicosapentaenoic_acid_epa_is_inv-pct-1818",
+      "claim_type": "percentage",
+      "raw_text": "22.4%",
+      "numeric_values": [
+        22.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1818,
+      "sentence": "Analyses were adjusted for sex, age, body mass index, smoking, alcohol intake, family history of cardiovascular disease and atrial fibrillation, physical activity, hypertension, diabetes, chronic kidney disease, prior stroke, prior transient ischemic attack, aspirin, anticoagulation and type of atrial fibrillation.</jats:p> </jats:sec> <jats:sec> <jats:title>Results</jats:title> <jats:p>A total of 373 patients with LNCCI (22.4%) were identified.",
+      "context_window": "ts</jats:title> <jats:p>A total of 373 patients with LNCCI (22.4%) were identified. After adjustment, lower risk of LNCCI was",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz745_0566_p3712the_omega_3_fatty_acid_eicosapentaenoic_acid_epa_is_inv-pct-1975",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1975,
+      "sentence": "After adjustment, lower risk of LNCCI was associated with higher EPA (odds ratio [OR] 0.50 per increase of one percentage point EPA, 95% confidence interval [CI] 0.28-0.88) and a higher risk was detected with DPA (OR 2.39, 95% CI 1.43-4.01).",
+      "context_window": "s ratio [OR] 0.50 per increase of one percentage point EPA, 95% confidence interval [CI] 0.28-0.88) and a higher risk was d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz745_0566_p3712the_omega_3_fatty_acid_eicosapentaenoic_acid_epa_is_inv-ci-2065",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.43-4.01",
+      "numeric_values": [
+        1.43,
+        4.01
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2065,
+      "sentence": "After adjustment, lower risk of LNCCI was associated with higher EPA (odds ratio [OR] 0.50 per increase of one percentage point EPA, 95% confidence interval [CI] 0.28-0.88) and a higher risk was detected with DPA (OR 2.39, 95% CI 1.43-4.01).",
+      "context_window": ".28-0.88) and a higher risk was detected with DPA (OR 2.39, 95% CI 1.43-4.01). No statistically significant association was detected wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz745_0566_p3712the_omega_3_fatty_acid_eicosapentaenoic_acid_epa_is_inv-ci-2157",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.94-1.35",
+      "numeric_values": [
+        0.94,
+        1.35
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2157,
+      "sentence": "No statistically significant association was detected with DHA (OR 1.13, 95% CI 0.94-1.35), ALA (OR 0.83, 95% CI 0.23-2.95) or total n-3 FAs (OR 1.03, 95% CI 0.92-1.16).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>Higher levels of EPA are associated with a lower prevalence of ischemic infarcts in aged patients with atrial fibrillation.",
+      "context_window": "lly significant association was detected with DHA (OR 1.13, 95% CI 0.94-1.35), ALA (OR 0.83, 95% CI 0.23-2.95) or total n-3 FAs (OR 1.03",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz745_0566_p3712the_omega_3_fatty_acid_eicosapentaenoic_acid_epa_is_inv-ci-2190",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.23-2.95",
+      "numeric_values": [
+        0.23,
+        2.95
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2190,
+      "sentence": "No statistically significant association was detected with DHA (OR 1.13, 95% CI 0.94-1.35), ALA (OR 0.83, 95% CI 0.23-2.95) or total n-3 FAs (OR 1.03, 95% CI 0.92-1.16).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>Higher levels of EPA are associated with a lower prevalence of ischemic infarcts in aged patients with atrial fibrillation.",
+      "context_window": "etected with DHA (OR 1.13, 95% CI 0.94-1.35), ALA (OR 0.83, 95% CI 0.23-2.95) or total n-3 FAs (OR 1.03, 95% CI 0.92-1.16).</jats:p> </j",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_eurheartj_ehz745_0566_p3712the_omega_3_fatty_acid_eicosapentaenoic_acid_epa_is_inv-ci-2235",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.92-1.16",
+      "numeric_values": [
+        0.92,
+        1.16
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2235,
+      "sentence": "No statistically significant association was detected with DHA (OR 1.13, 95% CI 0.94-1.35), ALA (OR 0.83, 95% CI 0.23-2.95) or total n-3 FAs (OR 1.03, 95% CI 0.92-1.16).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</jats:title> <jats:p>Higher levels of EPA are associated with a lower prevalence of ischemic infarcts in aged patients with atrial fibrillation.",
+      "context_window": "ALA (OR 0.83, 95% CI 0.23-2.95) or total n-3 FAs (OR 1.03, 95% CI 0.92-1.16).</jats:p> </jats:sec> <jats:sec> <jats:title>Conclusions</",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

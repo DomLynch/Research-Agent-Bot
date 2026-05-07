@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9346980_caloric_restriction_and_weight_loss_are_primary_factors_in_t",
   "doi": "10.2337/dc22-0069",
-  "extracted_at": "2026-05-05T22:17:44+00:00",
+  "extracted_at": "2026-05-07T16:58:04+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 20,
@@ -25,7 +25,7 @@
       "context_window": "sampling, and 3 ) hepatic fat content with MRI before and 7-10 days after VSG, RYGB, or supervised caloric restriction. Each g",
       "claim_role": "population",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": "urgery. A recent study contrasting outcomes from RYGB after 16 weeks and from caloric restriction at 23 weeks showed that after",
       "claim_role": "protocol",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": "es from RYGB after 16 weeks and from caloric restriction at 23 weeks showed that after an equivalent 18% body weight reduction t",
       "claim_role": "protocol",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -97,9 +97,9 @@
       "context_window": "ric restriction at 23 weeks showed that after an equivalent 18% body weight reduction the rates of glucose disposal and met",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9346980_caloric_restriction_and_weight_loss_are_primary_factors_in_t-u-270",
@@ -370,7 +370,7 @@
       "sentence": "Percent total body weight loss was 5.2 \u00b1 1.5 for RYGB, 5.6 \u00b1 1.7 for VSG, and 3.9 \u00b1 0.9 for diet ( P = 0.007) and only significantly different between the VSG and diet groups ( P = 0.006).",
       "context_window": "ery groups ( P \u2264 0.049). Percent total body weight loss was 5.2 \u00b1 1.5 for RYGB, 5.6 \u00b1 1.7 for VSG, and 3.9 \u00b1 0.9 for diet ( P = 0",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -389,7 +389,7 @@
       "sentence": "Percent total body weight loss was 5.2 \u00b1 1.5 for RYGB, 5.6 \u00b1 1.7 for VSG, and 3.9 \u00b1 0.9 for diet ( P = 0.007) and only significantly different between the VSG and diet groups ( P = 0.006).",
       "context_window": "49). Percent total body weight loss was 5.2 \u00b1 1.5 for RYGB, 5.6 \u00b1 1.7 for VSG, and 3.9 \u00b1 0.9 for diet ( P = 0.007) and only signi",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -408,7 +408,7 @@
       "sentence": "Percent total body weight loss was 5.2 \u00b1 1.5 for RYGB, 5.6 \u00b1 1.7 for VSG, and 3.9 \u00b1 0.9 for diet ( P = 0.007) and only significantly different between the VSG and diet groups ( P = 0.006).",
       "context_window": "weight loss was 5.2 \u00b1 1.5 for RYGB, 5.6 \u00b1 1.7 for VSG, and 3.9 \u00b1 0.9 for diet ( P = 0.007) and only significantly different betw",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -426,7 +426,7 @@
       "sentence": "Percent total body weight loss was 5.2 \u00b1 1.5 for RYGB, 5.6 \u00b1 1.7 for VSG, and 3.9 \u00b1 0.9 for diet ( P = 0.007) and only significantly different between the VSG and diet groups ( P = 0.006).",
       "context_window": "\u00b1 1.5 for RYGB, 5.6 \u00b1 1.7 for VSG, and 3.9 \u00b1 0.9 for diet ( P = 0.007) and only significantly different between the VSG and diet",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -444,7 +444,7 @@
       "sentence": "Percent total body weight loss was 5.2 \u00b1 1.5 for RYGB, 5.6 \u00b1 1.7 for VSG, and 3.9 \u00b1 0.9 for diet ( P = 0.007) and only significantly different between the VSG and diet groups ( P = 0.006).",
       "context_window": "y significantly different between the VSG and diet groups ( P = 0.006). The postintervention study was 8 \u00b1 1 days after diet, 10",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1103,7 +1103,7 @@
       "context_window": "patic fat. Our data suggest that early improvements (within 12 days) in hepatic insulin sensitivity after bariatric surgery or",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     }

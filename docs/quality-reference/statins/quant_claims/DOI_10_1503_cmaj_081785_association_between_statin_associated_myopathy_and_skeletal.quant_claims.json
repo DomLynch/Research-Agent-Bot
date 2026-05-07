@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1503_cmaj_081785_association_between_statin_associated_myopathy_and_skeletal",
+  "doi": "10.1503/cmaj.081785",
+  "extracted_at": "2026-05-07T19:24:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1503_cmaj_081785_association_between_statin_associated_myopathy_and_skeletal-u-439",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 439,
+      "sentence": "Of the 44 patients with clinically diagnosed statin-associated myopathy, 29 were currently taking a statin, and 15 had discontinued statin therapy before the biopsy (minimal duration of discontinuation 3 weeks).",
+      "context_window": "rapy before the biopsy (minimal duration of discontinuation 3 weeks). We also included 19 patients who were taking statins and",
+      "claim_role": "duration",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1503_cmaj_081785_association_between_statin_associated_myopathy_and_skeletal-pct-628",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 628,
+      "sentence": "We classified the muscles as injured if 2% or more of the muscle fibres in a biopsy sample showed damage.",
+      "context_window": "nd had no myopathy. We classified the muscles as injured if 2% or more of the muscle fibres in a biopsy sample showed dama",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

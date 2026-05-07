@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10461448_impact_of_exercise_and_leucine_enriched_protein_supplementat",
   "doi": "10.3389/fmed.2023.1204198",
-  "extracted_at": "2026-05-05T23:36:59+00:00",
+  "extracted_at": "2026-05-07T16:56:29+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 57,
@@ -24,7 +24,7 @@
       "sentence": "This study aimed to evaluate the impact of leucine-enriched protein supplementation with or without exercise over 3 months in pre-frail older adults who consumed \u22641 g/kg/day of protein on improving (i) physical function, (ii) body composition measures, and (iii) inflammatory biomarkers such as interleukin-6 (IL-6) and tumor necrosis factor alpha (TNF-\u03b1).",
       "context_window": "iched protein supplementation with or without exercise over 3 months in pre-frail older adults who consumed \u22641 g/kg/day of prote",
       "claim_role": "dose",
-      "endpoint": "inflammation",
+      "endpoint": "physical function",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -42,7 +42,7 @@
       "sentence": "This study aimed to evaluate the impact of leucine-enriched protein supplementation with or without exercise over 3 months in pre-frail older adults who consumed \u22641 g/kg/day of protein on improving (i) physical function, (ii) body composition measures, and (iii) inflammatory biomarkers such as interleukin-6 (IL-6) and tumor necrosis factor alpha (TNF-\u03b1).",
       "context_window": "rcise over 3 months in pre-frail older adults who consumed \u22641 g/kg/day of protein on improving (i) physical function, (ii) body co",
       "claim_role": "dose",
-      "endpoint": "inflammation",
+      "endpoint": "physical function",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -186,7 +186,7 @@
       "sentence": "This study aimed to evaluate if a diet enriched with an additional 16 g of protein and 3 g of leucine supplementation with or without exercise over 3 months in pre-frail older adults who consume \u2264 1 g/kg of protein a day improves (i) physical function, (ii) fat-free mass (FFM) and appendicular skeletal muscle (ASM) mass, and (iii) systemic inflammation as measured by IL-6 and TNF-\u03b1.",
       "context_window": "g of leucine supplementation with or without exercise over 3 months in pre-frail older adults who consume \u2264 1 g/kg of protein a",
       "claim_role": "population",
-      "endpoint": "lean body mass",
+      "endpoint": "physical function",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -259,7 +259,7 @@
       "context_window": "participants with creatinine clearance < 30 ml/min, HbA1c >8.0%, food allergies or intolerances, nutrition therapy or preca",
       "claim_role": "dose",
       "endpoint": "HbA1c",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -909,10 +909,10 @@
       "sentence": "Mean changes in outcome variables from baseline to 6 months in (A) physical function; (B) cognition, depression, and perceived health; (C) body composition; (D) physical activity and nutritional information.",
       "context_window": "re 2 ). Mean changes in outcome variables from baseline to 6 months in (A) physical function; (B) cognition, depression, and pe",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10461448_impact_of_exercise_and_leucine_enriched_protein_supplementat-pct-2911",
@@ -1968,7 +1968,7 @@
       "sentence": "Our study demonstrated that 3 months of leucine-enriched protein supplementation and exercise intervention in pre-frail older adults who consumed \u2264 1 g/kg of protein were associated with significant improvement in physical function measures such as gait speed, SPPB, and 5\u00d7 STS, depression, perceived health, and body composition measures such as FFMI, ASMI, and body cell mass.",
       "context_window": "many countries ( 4 , 5 , 36 ). Our study demonstrated that 3 months of leucine-enriched protein supplementation and exercise in",
       "claim_role": "protocol",
-      "endpoint": "walk speed",
+      "endpoint": "physical function",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -2005,7 +2005,7 @@
       "context_window": "r day ( 37 ). Studies have shown that in older adults above 70 years old, lower than 0.8 g/kg per day of protein intake was asso",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2023,7 +2023,7 @@
       "context_window": "ended an increase in the RDA of protein for older adults to 1.2 g/kg/day ( 10 , 38 , 39 ). The amount, quality, type, and timing of",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -2040,7 +2040,7 @@
       "sentence": "Participants in the Nu+Ex group improved significantly in physical function and muscle mass indices at 3 months.",
       "context_window": "gnificantly in physical function and muscle mass indices at 3 months. The benefits of exercise are postulated to be mediated th",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2076,7 +2076,7 @@
       "sentence": "A recent study by Oh et al. showed a leucine-rich protein supplement (20 g protein with 2 g of leucine) together with resistance exercise in healthy older adults improved muscle mass at 12 weeks ( 11 ).",
       "context_window": "ce exercise in healthy older adults improved muscle mass at 12 weeks ( 11 ). Recently, a meta-analysis by Negm et al. showed tha",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2130,7 +2130,7 @@
       "sentence": "Studies have shown that both are effective in muscle protein synthesis, with no significant differences in strength or muscle mass gain between leucine-enriched soy or whey protein in combination with resistance exercise intervention after 12 weeks ( 63 - 65 ).",
       "context_window": "in combination with resistance exercise intervention after 12 weeks ( 63 - 65 ). Sixth, we have no comparison with the exercise",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"

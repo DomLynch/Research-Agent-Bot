@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_moderate_intensity_statin_vs_individualized_ldl_c_target_bas",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_moderate_intensity_statin_vs_individualized_ldl_c_target_bas-u-336",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 336,
+      "sentence": "While the benefits of intensive LDL-C lowering are well-established for secondary prevention, evidence remains insufficient for primary prevention in the elderly-specifically for individuals aged 70 years or older with type 2 diabetes who have no prior history of atherosclerotic cardiovascular events.",
+      "context_window": "prevention in the elderly-specifically for individuals aged 70 years or older with type 2 diabetes who have no prior history of",
+      "claim_role": "population",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

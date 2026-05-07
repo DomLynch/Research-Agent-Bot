@@ -1,0 +1,55 @@
+{
+  "paper_id": "DOI_10_1101_2022_04_12_22273802_target_agnostic_drug_prediction_integrated_with_medical_reco",
+  "source_pdf": "https://doi.org/10.1101/2022.04.12.22273802",
+  "title": "Target-agnostic drug prediction integrated with medical record analysis uncovers differential associations of statins with increased survival in COVID-19 patients",
+  "authors": [
+    "MM Sperry",
+    "T Oskotsky",
+    "I Mari\u0107",
+    "S Kaushal",
+    "T Takeda",
+    "V Horvath",
+    "RK Powers",
+    "M Rodas",
+    "B Furlong",
+    "M Soong",
+    "P Prabhala",
+    "G Goyal",
+    "KE Carlson",
+    "RJ Wong",
+    "I Kosti",
+    "BL Le",
+    "J Logue",
+    "H Hammond",
+    "M Frieman",
+    "DK Stevenson"
+  ],
+  "year": 2022,
+  "journal": "medRxiv preprint",
+  "doi": "10.1101/2022.04.12.22273802",
+  "pmid": "",
+  "trial_ids": [],
+  "sections": {
+    "abstract": "Summary Importance Drug repurposing requires distinguishing established drug class targets from novel molecule-specific mechanisms and rapidly derisking their therapeutic potential in a time-critical manner, particularly in a pandemic scenario. In response to the challenge to rapidly identify treatment options for COVID-19, several studies reported that statins, as a drug class, reduce mortality in these patients. However, it is unknown if different statins exhibit consistent function or may have varying therapeutic benefit. Objectives To test if different statins differ in their ability to exert protective effects based on molecular computational predictions and electronic medical record analysis. Main Outcomes and Measures A Bayesian network tool was used to predict drugs that shift the host transcriptomic response to SARS-CoV-2 infection towards a healthy state. Drugs were predicted using 14 RNA-sequencing datasets from 72 autopsy tissues and 465 COVID-19 patient samples or from cultured human cells and organoids infected with SARS-CoV-2, with a total of 2,436 drugs investigated. Top drug predictions included statins, which were then assessed using electronic medical records containing over 4,000 COVID-19 patients on statins to determine mortality risk in patients prescribed specific statins versus untreated matched controls. The same drugs were tested in Vero E6 cells infected with SARS-CoV-2 and human endothelial cells infected with a related OC43 coronavirus. Results Simvastatin was among the most highly predicted compounds (14/14 datasets) and five other statins, including atorvastatin, were predicted to be active in > 50% of analyses. Analysis of the clinical database revealed that reduced mortality risk was only observed in COVID-19 patients prescribed a subset of statins, including simvastatin and atorvastatin. In vitro testing of SARS-CoV-2 infected cells revealed simvastatin to be a potent direct inhibitor whereas most other statins were less effective. Simvastatin also inhibited OC43 infection and reduced cytokine production in endothelial cells. Conclusions and Relevance Different statins may differ in their ability to sustain the lives of COVID-19 patients despite having a shared drug target and lipid-modifying mechanism of action. These findings highlight the value of target-agnostic drug prediction coupled with patient databases to identify and clinically evaluate non-obvious mechanisms and derisk and accelerate drug repurposing opportunities.",
+    "introduction": "",
+    "methods": "",
+    "results": "",
+    "discussion": "",
+    "limitations": "",
+    "conclusion": "",
+    "references": ""
+  },
+  "tables": [],
+  "figures": [],
+  "extraction_quality": {
+    "section_coverage": [
+      "abstract"
+    ],
+    "table_count": 0,
+    "figure_count": 0,
+    "reference_count": 0,
+    "warnings": [
+      "abstract-fallback:no_pmcid"
+    ]
+  }
+}

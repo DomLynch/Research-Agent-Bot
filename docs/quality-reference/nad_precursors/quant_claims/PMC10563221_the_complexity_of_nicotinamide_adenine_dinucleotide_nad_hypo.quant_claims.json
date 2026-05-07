@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10563221_the_complexity_of_nicotinamide_adenine_dinucleotide_nad_hypo",
   "doi": "10.1186/s12967-023-04584-8",
-  "extracted_at": "2026-05-05T21:28:43+00:00",
+  "extracted_at": "2026-05-07T16:58:26+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 10,
@@ -220,9 +220,9 @@
       "context_window": "Subjects were given a basal diet or diets supplemented with 2 mg riboflavin, alone or in combination with either 50 mg L-try",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10563221_the_complexity_of_nicotinamide_adenine_dinucleotide_nad_hypo-u-26597",
@@ -238,9 +238,9 @@
       "context_window": "d with 2 mg riboflavin, alone or in combination with either 50 mg L-tryptophan or 10 mg nicotinamide. After nine weeks, urina",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10563221_the_complexity_of_nicotinamide_adenine_dinucleotide_nad_hypo-u-26619",
@@ -256,9 +256,9 @@
       "context_window": ", alone or in combination with either 50 mg L-tryptophan or 10 mg nicotinamide. After nine weeks, urinary excretion of MNA de",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10563221_the_complexity_of_nicotinamide_adenine_dinucleotide_nad_hypo-u-26747",
@@ -274,7 +274,7 @@
       "context_window": "ased for subjects on diets that were non-supplemented (0.96-2.37 mg/day), or supplemented with riboflavin (0.59-2.54 mg/day) and L-",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -292,7 +292,7 @@
       "context_window": "d (0.96-2.37 mg/day), or supplemented with riboflavin (0.59-2.54 mg/day) and L-tryptophan (1.78-3.43 mg/day) but MNA excretion incr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -310,7 +310,7 @@
       "context_window": "d with riboflavin (0.59-2.54 mg/day) and L-tryptophan (1.78-3.43 mg/day) but MNA excretion increased in subjects on the nicotinamid",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -328,7 +328,7 @@
       "context_window": "sed in subjects on the nicotinamide-supplemented diet (3.08-6.56 mg/day). Comparing values at 16, 24, 36 and 46 weeks on experiment",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -364,9 +364,9 @@
       "context_window": "the formation of NMN. In mice placed in a hypoxic chamber (10.8% O 2 ) for four weeks, NMN (500 mg/kg administered intraperi",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10563221_the_complexity_of_nicotinamide_adenine_dinucleotide_nad_hypo-u-31561",
@@ -382,9 +382,9 @@
       "context_window": "aced in a hypoxic chamber (10.8% O 2 ) for four weeks, NMN (500 mg/kg administered intraperitoneally, every third day) attenua",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10563221_the_complexity_of_nicotinamide_adenine_dinucleotide_nad_hypo-u-31721",
@@ -400,9 +400,9 @@
       "context_window": "ose fibrosis and inflammation [ 86 ]. In an I/R model, NMN (500 mg/kg intraperitoneally) administered 20 min before I/R and da",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10563221_the_complexity_of_nicotinamide_adenine_dinucleotide_nad_hypo-u-31795",
@@ -418,9 +418,9 @@
       "context_window": "aperitoneally) administered 20 min before I/R and daily for 3 days after the procedure or on day 3 and 14 after I/R, NMN also",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10563221_the_complexity_of_nicotinamide_adenine_dinucleotide_nad_hypo-u-32089",
@@ -436,7 +436,7 @@
       "context_window": ") to induce focal segmental glomerulosclerosis (FSGS), NMN (500 mg/kg intraperitoneally) administered daily for 14 days improv",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -454,7 +454,7 @@
       "context_window": "), NMN (500 mg/kg intraperitoneally) administered daily for 14 days improved kidney function and reduced serum cholesterol leve",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -472,7 +472,7 @@
       "context_window": "d kidney tissue NAD and SIRT1 levels were restored with NR (500 kg/mg/day) by gavage administration for two weeks prior to sur",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -490,7 +490,7 @@
       "context_window": "le AP20187 [ 95 ]. In mice given chow supplemented with NR (400 mg/kg/day) for 10 days and subjected to ischemia/reperfusion or cispl",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -508,7 +508,7 @@
       "context_window": "In mice given chow supplemented with NR (400 mg/kg/day) for 10 days and subjected to ischemia/reperfusion or cisplatin AKI, tub",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -526,7 +526,7 @@
       "context_window": "h timepoint. However, mice pretreated with chow containing 800 mg/kg/day NR for seven days and subjected to UUO or POD-ATTAC for 14",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -544,7 +544,7 @@
       "context_window": "day NR for seven days and subjected to UUO or POD-ATTAC for 14 days did not manifest improved kidney function or reduced fibros",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -562,7 +562,7 @@
       "context_window": "proach to slow CKD in mice. In examining the effect of NR (435 mg/kg) or NMN (500 mg/kg) injected intraperitoneally for four",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -580,7 +580,7 @@
       "context_window": "in mice. In examining the effect of NR (435 mg/kg) or NMN (500 mg/kg) injected intraperitoneally for four consecutive days, c",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

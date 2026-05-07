@@ -1,0 +1,391 @@
+{
+  "paper_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin",
+  "doi": "10.1001/jama.279.20.1615",
+  "extracted_at": "2026-05-07T19:24:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "percentage": 8,
+    "p_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-u-1493",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1493,
+      "sentence": "INTERVENTION: Lovastatin (20-40 mg daily) or placebo in addition to a low-saturated fat, low-cholesterol diet.",
+      "context_window": "[76] mg/dL) (63rd percentile). INTERVENTION: Lovastatin (20-40 mg daily) or placebo in addition to a low-saturated fat, low-c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-u-1764",
+      "claim_type": "unit_value",
+      "raw_text": "5.2 years",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1764,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "udden cardiac death. RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coro",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-pct-1898",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1898,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial in",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-p-1939",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1939,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "e risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; R",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-pct-2014",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2014,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "dial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first uns",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-p-2033",
+      "claim_type": "p_value",
+      "raw_text": "P=.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2033,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; R",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-pct-2108",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2108,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "le angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedure",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-p-2127",
+      "claim_type": "p_value",
+      "raw_text": "P=.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2127,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedu",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-pct-2207",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2207,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "ascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronar",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-p-2226",
+      "claim_type": "p_value",
+      "raw_text": "P=.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2226,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "edures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-pct-2290",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2290,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "01), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-p-2309",
+      "claim_type": "p_value",
+      "raw_text": "P =.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2309,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "s (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular even",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-pct-2390",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2390,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "ascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003). Lovastatin (20-40 mg daily) reduc",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-p-2409",
+      "claim_type": "p_value",
+      "raw_text": "P = .003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2409,
+      "sentence": "RESULTS: After an average follow-up of 5.2 years, lovastatin reduced the incidence of first acute major coronary events (1 83 vs 116 first events; relative risk [RR], 0.63; 95% confidence interval [CI], 0.50-0.79; P<.001), myocardial infarction (95 vs 57 myocardial infarctions; RR, 0.60; 95% CI, 0.43-0.83; P=.002), unstable angina (87 vs 60 first unstable angina events; RR, 0.68; 95% CI, 0.49-0.95; P=.02), coronary revascularization procedures (157 vs 106 procedures; RR, 0.67; 95% CI, 0.52-0.85; P=.001), coronary events (215 vs 163 coronary events; RR, 0.75; 95% CI, 0.61-0.92; P =.006), and cardiovascular events (255 vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003).",
+      "context_window": "vs 194 cardiovascular events; RR, 0.75; 95% CI, 0.62-0.91; P = .003). Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-u-2435",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 2435,
+      "sentence": "Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL).",
+      "context_window": "nts; RR, 0.75; 95% CI, 0.62-0.91; P = .003). Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-pct-2465",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2465,
+      "sentence": "Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL).",
+      "context_window": "91; P = .003). Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.0",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-u-2472",
+      "claim_type": "unit_value",
+      "raw_text": "2.96 mmol",
+      "numeric_values": [
+        2.96
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 2472,
+      "sentence": "Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL).",
+      "context_window": ".003). Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-u-2485",
+      "claim_type": "unit_value",
+      "raw_text": "115 mg/dL",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 2485,
+      "sentence": "Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL).",
+      "context_window": "tatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL). There",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-pct-2519",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2519,
+      "sentence": "Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL).",
+      "context_window": "-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL). There were no clinically relevan",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-u-2525",
+      "claim_type": "unit_value",
+      "raw_text": "1.02 mmol",
+      "numeric_values": [
+        1.02
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 2525,
+      "sentence": "Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL).",
+      "context_window": "25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL). There were no clinically relevant differences",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_279_20_1615_primary_prevention_of_acute_coronary_events_with_lovastatin-u-2538",
+      "claim_type": "unit_value",
+      "raw_text": "39 mg/dL",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 2538,
+      "sentence": "Lovastatin (20-40 mg daily) reduced LDL-C by 25% to 2.96 mmol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL).",
+      "context_window": "mol/L (115 mg/dL) and increased HDL-C by 6% to 1.02 mmol/L (39 mg/dL). There were no clinically relevant differences in safety p",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

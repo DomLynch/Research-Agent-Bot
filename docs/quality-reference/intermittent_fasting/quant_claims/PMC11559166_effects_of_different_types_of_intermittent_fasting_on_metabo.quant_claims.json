@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo",
   "doi": "10.1186/s12916-024-03716-1",
-  "extracted_at": "2026-05-05T22:11:15+00:00",
+  "extracted_at": "2026-05-07T16:56:57+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 39,
@@ -22,9 +22,9 @@
       "context_window": "ternate-day fasting (ADF), and 5:2 diet (regular eating for 5 days and energy restriction for 2 days per week)) compared to CE",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "time-restricted eating",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo-u-665",
@@ -40,9 +40,9 @@
       "context_window": "diet (regular eating for 5 days and energy restriction for 2 days per week)) compared to CER and usual diets on metabolic hea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "time-restricted eating",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo-pct-1477",
@@ -148,9 +148,9 @@
       "context_window": ":2 diet, which involves adopting a very low-energy diet for 2 days each week while eating without restrictions for the remaini",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo-u-1328",
@@ -166,9 +166,9 @@
       "context_window": "ch week while eating without restrictions for the remaining 5 days [ 15 ]; (2) alternate-day fasting (ADF), which entails alte",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo-pct-2750",
@@ -220,7 +220,7 @@
       "context_window": "intermittent energy restriction; fasting lasting more than 7 days) [ 33 ]. The duration of the dietary intervention ranged fr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -274,7 +274,7 @@
       "context_window": "ction in body weight (range of mean difference: - 0.38 to - 4.83 kg), but with low or very low certainty. When compared to CER,",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -328,9 +328,9 @@
       "context_window": "ach also reduced body weight compared to usual/CER diets (- 1.60 kg; - 2.27 to - 0.93), with low certainty [ 50 ]. There were",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo-u-4637",
@@ -346,7 +346,7 @@
       "context_window": "nificant reduction in BMI compared to usual diets [ 26 ] (- 0.96 kg/m 2 ; - 1.42 to - 0.50) and TRE (- 0.45 kg/m 2 ; - 0.89 to",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -364,7 +364,7 @@
       "context_window": "diets [ 26 ] (- 0.96 kg/m 2 ; - 1.42 to - 0.50) and TRE (- 0.45 kg/m 2 ; - 0.89 to - 0.01) [ 26 ], with low and very low certa",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -418,7 +418,7 @@
       "context_window": "[ 37 ]. Additionally, TRE also significantly reduced FM (- 1.48 kg; - 1.59 to - 1.38) compared to usual/CER diets with high ce",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -490,7 +490,7 @@
       "context_window": "ly TRE significantly reduced FBG compared to usual diets (- 2.45 mg/dl; - 4.72 to - 0.17) [ 21 ] or usual/CER diets (- 4.08 mg/",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -508,7 +508,7 @@
       "context_window": "2.45 mg/dl; - 4.72 to - 0.17) [ 21 ] or usual/CER diets (- 4.08 mg/dl; - 7.74 to - 0.42) [ 50 ], with low certainty for both c",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -562,7 +562,7 @@
       "context_window": "nificantly reduced TC levels compared to usual/CER diets (- 6.10 mg/dl; - 7.86 to - 4.34) with high certainty [ 50 ]. Additiona",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -778,9 +778,9 @@
       "context_window": "eating; WC, waist circumference When compared to CER, only 8% (4 out of 53) of the comparisons indicated that IF signific",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "continuous energy restriction",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo-pct-11079",
@@ -1011,10 +1011,10 @@
       "sentence": "In the study by Elortegui Pascual et al., adherence percentages ranged from 71.7 to 98% for ADF, 73.5 to 98% for the 5:2 diet, 83 to 89% for TRE, and 80 to 90% for CER [ 53 ].",
       "context_window": "i Pascual et al., adherence percentages ranged from 71.7 to 98% for ADF, 73.5 to 98% for the 5:2 diet, 83 to 89% for TRE, a",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo-pct-2244",
@@ -1029,10 +1029,10 @@
       "sentence": "In the study by Elortegui Pascual et al., adherence percentages ranged from 71.7 to 98% for ADF, 73.5 to 98% for the 5:2 diet, 83 to 89% for TRE, and 80 to 90% for CER [ 53 ].",
       "context_window": "erence percentages ranged from 71.7 to 98% for ADF, 73.5 to 98% for the 5:2 diet, 83 to 89% for TRE, and 80 to 90% for CER",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo-pct-2272",
@@ -1047,10 +1047,10 @@
       "sentence": "In the study by Elortegui Pascual et al., adherence percentages ranged from 71.7 to 98% for ADF, 73.5 to 98% for the 5:2 diet, 83 to 89% for TRE, and 80 to 90% for CER [ 53 ].",
       "context_window": "om 71.7 to 98% for ADF, 73.5 to 98% for the 5:2 diet, 83 to 89% for TRE, and 80 to 90% for CER [ 53 ]. In contrast, Schwing",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo-pct-2295",
@@ -1065,10 +1065,10 @@
       "sentence": "In the study by Elortegui Pascual et al., adherence percentages ranged from 71.7 to 98% for ADF, 73.5 to 98% for the 5:2 diet, 83 to 89% for TRE, and 80 to 90% for CER [ 53 ].",
       "context_window": "73.5 to 98% for the 5:2 diet, 83 to 89% for TRE, and 80 to 90% for CER [ 53 ]. In contrast, Schwingshackl et al. reported",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11559166_effects_of_different_types_of_intermittent_fasting_on_metabo-pct-2382",
@@ -1083,7 +1083,7 @@
       "sentence": "In contrast, Schwingshackl et al. reported an average adherence of 76% (range: 44% to 98%) for 5:2/4:3 diets, while CER had a lower average adherence of 62% (range: 32% to 78%) [ 37 ].",
       "context_window": "rast, Schwingshackl et al. reported an average adherence of 76% (range: 44% to 98%) for 5:2/4:3 diets, while CER had a lowe",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1101,7 +1101,7 @@
       "sentence": "In contrast, Schwingshackl et al. reported an average adherence of 76% (range: 44% to 98%) for 5:2/4:3 diets, while CER had a lower average adherence of 62% (range: 32% to 78%) [ 37 ].",
       "context_window": "gshackl et al. reported an average adherence of 76% (range: 44% to 98%) for 5:2/4:3 diets, while CER had a lower average ad",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1119,7 +1119,7 @@
       "sentence": "In contrast, Schwingshackl et al. reported an average adherence of 76% (range: 44% to 98%) for 5:2/4:3 diets, while CER had a lower average adherence of 62% (range: 32% to 78%) [ 37 ].",
       "context_window": "et al. reported an average adherence of 76% (range: 44% to 98%) for 5:2/4:3 diets, while CER had a lower average adherence",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1137,7 +1137,7 @@
       "sentence": "In contrast, Schwingshackl et al. reported an average adherence of 76% (range: 44% to 98%) for 5:2/4:3 diets, while CER had a lower average adherence of 62% (range: 32% to 78%) [ 37 ].",
       "context_window": "r 5:2/4:3 diets, while CER had a lower average adherence of 62% (range: 32% to 78%) [ 37 ]. In most studies, both IF and C",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1155,7 +1155,7 @@
       "sentence": "In contrast, Schwingshackl et al. reported an average adherence of 76% (range: 44% to 98%) for 5:2/4:3 diets, while CER had a lower average adherence of 62% (range: 32% to 78%) [ 37 ].",
       "context_window": "ets, while CER had a lower average adherence of 62% (range: 32% to 78%) [ 37 ]. In most studies, both IF and CER did not r",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1173,7 +1173,7 @@
       "sentence": "In contrast, Schwingshackl et al. reported an average adherence of 76% (range: 44% to 98%) for 5:2/4:3 diets, while CER had a lower average adherence of 62% (range: 32% to 78%) [ 37 ].",
       "context_window": "ile CER had a lower average adherence of 62% (range: 32% to 78%) [ 37 ]. In most studies, both IF and CER did not result i",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

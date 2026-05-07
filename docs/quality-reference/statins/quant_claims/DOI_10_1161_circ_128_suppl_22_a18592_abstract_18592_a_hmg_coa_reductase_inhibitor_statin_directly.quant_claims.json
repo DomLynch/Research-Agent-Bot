@@ -1,0 +1,29 @@
+{
+  "paper_id": "DOI_10_1161_circ_128_suppl_22_a18592_abstract_18592_a_hmg_coa_reductase_inhibitor_statin_directly",
+  "doi": "10.1161/circ.128.suppl_22.a18592",
+  "extracted_at": "2026-05-07T19:24:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_circ_128_suppl_22_a18592_abstract_18592_a_hmg_coa_reductase_inhibitor_statin_directly-u-2036",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 2036,
+      "sentence": "After 5 days of transplantation, a robust increase in inflammatory gene expression was inhibited by pitavastatin in WT but not in EC-ERK5-EKO hearts. </jats:p> <jats:p> <jats:bold>Conclusion:</jats:bold> These data suggest a crucial role of endothelial ERK5 in the pleiotropic effects of statins on EC dysfunction and allograft rejection. </jats:p>",
+      "context_window": "ft survival in a full allomismatch combination model. After 5 days of transplantation, a robust increase in inflammatory gene",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "pitavastatin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

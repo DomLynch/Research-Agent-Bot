@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic",
   "doi": "10.1186/s12970-021-00442-4",
-  "extracted_at": "2026-05-04T12:19:02+00:00",
+  "extracted_at": "2026-05-07T16:58:30+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 47,
@@ -23,7 +23,7 @@
       "context_window": "nts were randomized into four groups: the low dosage group (300 mg/day NMN), the medium dosage group (600 mg/day NMN), the high do",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -41,7 +41,7 @@
       "context_window": "low dosage group (300 mg/day NMN), the medium dosage group (600 mg/day NMN), the high dosage group (1200 mg/day NMN), and the cont",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -59,7 +59,7 @@
       "context_window": "edium dosage group (600 mg/day NMN), the high dosage group (1200 mg/day NMN), and the control group (placebo). Each group consisted",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -131,7 +131,7 @@
       "context_window": "transferases (ARTs) [ 1 ]. NAD + participates in more than 50% of all physiological processes, including mitochondrial bio",
       "claim_role": "background",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -149,7 +149,7 @@
       "context_window": "of depleted NAD + pools by NR (mainly at the dose of 300 or 400 mg/kg/d in mice or rats) or NMN (mainly at doses of 100-500 mg/kg/d",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -167,7 +167,7 @@
       "context_window": "400 mg/kg/d in mice or rats) or NMN (mainly at doses of 100-500 mg/kg/d in mice) alleviates pathologic states in rodent models of a",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -185,9 +185,9 @@
       "context_window": "cal studies have shown that the effects of NR (dosages from 500 mg/d to 2000 mg/d; durations of 1 day to 3 months) on skeletal m",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-1942",
@@ -203,9 +203,9 @@
       "context_window": "have shown that the effects of NR (dosages from 500 mg/d to 2000 mg/d; durations of 1 day to 3 months) on skeletal muscle, cardio",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-1966",
@@ -221,9 +221,9 @@
       "context_window": "cts of NR (dosages from 500 mg/d to 2000 mg/d; durations of 1 day to 3 months) on skeletal muscle, cardiovascular function, a",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-1975",
@@ -239,9 +239,9 @@
       "context_window": "(dosages from 500 mg/d to 2000 mg/d; durations of 1 day to 3 months) on skeletal muscle, cardiovascular function, and physical",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-3327",
@@ -257,9 +257,9 @@
       "context_window": "ernal obesity [ 22 ] reported that 18-day NMN injection and 9 weeks of exercise had similar benefits for reversing metabolic dy",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-3882",
@@ -275,7 +275,7 @@
       "context_window": "city compared with exercise training alone [ 23 , 26 ]. NR (400 mg/kg/d) and NMN (500 mg/kg/d) with exercise training increased end",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -293,7 +293,7 @@
       "context_window": "rcise training alone [ 23 , 26 ]. NR (400 mg/kg/d) and NMN (500 mg/kg/d) with exercise training increased endurance performance in",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -311,7 +311,7 @@
       "context_window": "Nevertheless, a decrease in endurance performance from NR (300 mg/kg/d) in combination with swimming training was shown in young r",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -365,9 +365,9 @@
       "context_window": "supplementation of powder (with or without NMN) lasted for 6 weeks. The lower dosage group received one bag with 150 mg NMN po",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-1556",
@@ -383,7 +383,7 @@
       "context_window": "d for 6 weeks. The lower dosage group received one bag with 150 mg NMN powder twice daily (Bid), the medium dosage group recei",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -401,7 +401,7 @@
       "context_window": "daily (Bid), the medium dosage group received one bag with 300 mg NMN powder Bid, the high dosage group received one bag with",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -419,7 +419,7 @@
       "context_window": "NMN powder Bid, the high dosage group received one bag with 600 mg NMN powder Bid, and the control group received one bag with",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -725,7 +725,7 @@
       "context_window": "le to increase cellular NAD + content in dosage ranges from 31.25 mg/kg/d to 500 mg/kg/d, and it is shown to be safe [ 2 , 6 , 22 ].",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -743,7 +743,7 @@
       "context_window": "llular NAD + content in dosage ranges from 31.25 mg/kg/d to 500 mg/kg/d, and it is shown to be safe [ 2 , 6 , 22 ]. In humans, only",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -761,9 +761,9 @@
       "context_window": "tudy of this has been reported, which used a single dose of 500 mg NMN. In this study, the NMN increased circulatory NAD + and",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-383",
@@ -779,9 +779,9 @@
       "context_window": "[ 32 ]. Here, we administrated three dosages (300, 600, and 1200 mg/d) of NMN supplementation to healthy amateur runners during a",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-1668",
@@ -797,7 +797,7 @@
       "context_window": "thy young mice [ 17 ]. Our results specifically reveal that 6 weeks of endurance exercise combined with NMN supplementation in",
       "claim_role": "protocol",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -815,7 +815,7 @@
       "context_window": "unners. It was reported in mice that lower dosages of NMN (100 mg/kg/d) were better compared with larger doses (300 mg/kg/d) for b",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -833,7 +833,7 @@
       "context_window": "f NMN (100 mg/kg/d) were better compared with larger doses (300 mg/kg/d) for body weight, body composition, insulin sensitivity, bo",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -851,7 +851,7 @@
       "context_window": "al density, and physical activity [ 7 ], and treatment with 62.5 mg/kg NMN was better than that with 125-500 mg/kg NMN for isch",
       "claim_role": "dose",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -869,7 +869,7 @@
       "context_window": "treatment with 62.5 mg/kg NMN was better than that with 125-500 mg/kg NMN for ischemia-induced brain damage [ 8 ]. Furthermore",
       "claim_role": "dose",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -887,7 +887,7 @@
       "context_window": "ne-tenth of that for a mouse [ 7 ]. Therefore, 50, 100, and 200 mg/kg/d of NMN for mice is approximately 300, 600, 1200 mg/d for hu",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -905,7 +905,7 @@
       "context_window": "and 200 mg/kg/d of NMN for mice is approximately 300, 600, 1200 mg/d for humans of 60 kg body weight. In contrast, our human stu",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -923,7 +923,7 @@
       "context_window": "for mice is approximately 300, 600, 1200 mg/d for humans of 60 kg body weight. In contrast, our human study showed that exerc",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -941,9 +941,9 @@
       "context_window": "push-up, or sit-and-reach compared with exercise only, but 600 mg/d NMN, not 1200 mg/d NMN, significantly improved single leg s",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-4988",
@@ -959,9 +959,9 @@
       "context_window": "nd-reach compared with exercise only, but 600 mg/d NMN, not 1200 mg/d NMN, significantly improved single leg stance test results",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-5621",
@@ -977,9 +977,9 @@
       "context_window": "- 48 ]. In rodent, long-term NMN administration from 100 to 300 mg/kg/d did not result in any obvious side effects [ 7 ]. In human,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-5730",
@@ -995,9 +995,9 @@
       "context_window": "fects [ 7 ]. In human, single oral dose ranging from 100 to 500 mg NMN was safe and had no significant deleterious effects in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8265078_nicotinamide_mononucleotide_supplementation_enhances_aerobic-u-5842",
@@ -1085,7 +1085,7 @@
       "context_window": "at three-week swimming training combined NR administration (300 mg/kg/d) reduced glucose concentration and maximal blood lactate ac",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1139,7 +1139,7 @@
       "context_window": "at three-week swimming training combined NR administration (300 mg/kg/d) reduced glucose concentration and maximal blood lactate ac",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

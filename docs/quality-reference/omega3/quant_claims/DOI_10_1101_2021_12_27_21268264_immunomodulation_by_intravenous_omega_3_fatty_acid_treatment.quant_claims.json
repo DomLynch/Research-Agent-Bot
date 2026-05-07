@@ -1,0 +1,103 @@
+{
+  "paper_id": "DOI_10_1101_2021_12_27_21268264_immunomodulation_by_intravenous_omega_3_fatty_acid_treatment",
+  "doi": "10.1101/2021.12.27.21268264",
+  "extracted_at": "2026-05-07T19:33:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2021_12_27_21268264_immunomodulation_by_intravenous_omega_3_fatty_acid_treatment-u-831",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 831,
+      "sentence": "Randomization was 1:1 to a once daily i.v. infusion (2 mL/kg) of either n-3 PUFA emulsion containing 10g of fish oil per 100 mL or placebo (NaCl) for 5 days.",
+      "context_window": "ation. Randomization was 1:1 to a once daily i.v. infusion (2 mL/kg) of either n-3 PUFA emulsion containing 10g of fish oil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2021_12_27_21268264_immunomodulation_by_intravenous_omega_3_fatty_acid_treatment-u-899",
+      "claim_type": "unit_value",
+      "raw_text": "100 mL",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 899,
+      "sentence": "Randomization was 1:1 to a once daily i.v. infusion (2 mL/kg) of either n-3 PUFA emulsion containing 10g of fish oil per 100 mL or placebo (NaCl) for 5 days.",
+      "context_window": "of either n-3 PUFA emulsion containing 10g of fish oil per 100 mL or placebo (NaCl) for 5 days. Results from 22 older subject",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2021_12_27_21268264_immunomodulation_by_intravenous_omega_3_fatty_acid_treatment-u-928",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 928,
+      "sentence": "Randomization was 1:1 to a once daily i.v. infusion (2 mL/kg) of either n-3 PUFA emulsion containing 10g of fish oil per 100 mL or placebo (NaCl) for 5 days.",
+      "context_window": "containing 10g of fish oil per 100 mL or placebo (NaCl) for 5 days. Results from 22 older subjects (mean age 81\u00b16.1 years) wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2021_12_27_21268264_immunomodulation_by_intravenous_omega_3_fatty_acid_treatment-msd-977",
+      "claim_type": "mean_sd",
+      "raw_text": "81\u00b16.1",
+      "numeric_values": [
+        81.0,
+        6.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 977,
+      "sentence": "Results from 22 older subjects (mean age 81\u00b16.1 years) were analyzed.",
+      "context_window": "(NaCl) for 5 days. Results from 22 older subjects (mean age 81\u00b16.1 years) were analyzed. The neutrophil to lymphocyte ratio wa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2021_12_27_21268264_immunomodulation_by_intravenous_omega_3_fatty_acid_treatment-u-980",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 years",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 980,
+      "sentence": "Results from 22 older subjects (mean age 81\u00b16.1 years) were analyzed.",
+      "context_window": "Cl) for 5 days. Results from 22 older subjects (mean age 81\u00b16.1 years) were analyzed. The neutrophil to lymphocyte ratio was sign",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

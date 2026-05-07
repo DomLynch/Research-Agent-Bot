@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5476889_the_effects_of_6_months_of_progressive_high_effort_resistanc",
   "doi": "10.1155/2017/2541090",
-  "extracted_at": "2026-05-05T21:59:12+00:00",
+  "extracted_at": "2026-05-07T16:57:34+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 44,
@@ -25,7 +25,7 @@
       "context_window": "fort resistance training (RT) approach in older adults over 6 months and through a 6-month follow-up on strength, body compositi",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,9 +61,9 @@
       "context_window": "decades of age-associated strength loss can be regained in ~2 months of resistance exercise\u201d and RT can even enhance cardiorespi",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5476889_the_effects_of_6_months_of_progressive_high_effort_resistanc-u-3595",
@@ -476,9 +476,9 @@
       "context_window": "of the range of motion, and 4 seconds eccentric. The first 2 weeks of the intervention was a familiarisation phase whereby par",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5476889_the_effects_of_6_months_of_progressive_high_effort_resistanc-u-7378",
@@ -494,9 +494,9 @@
       "context_window": "RM. After this period participants progressed for a further 2 weeks to perform each exercise to a set end of point of sdRM defi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5476889_the_effects_of_6_months_of_progressive_high_effort_resistanc-u-7743",
@@ -512,7 +512,7 @@
       "context_window": "tinued training in this manner until week 18. For the final 6 weeks of the intervention participants progressed to perform each",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -530,7 +530,7 @@
       "context_window": "MF followed by a drop set whereby the load was reduced by ~5 kg and an additional set continued to the point of MF was perf",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1015,7 +1015,7 @@
       "sentence": "Repeated measures ANOVA revealed significant effects by time for BMI ( F (2,26) = 3.654, p = 0.040), fat mass ( F (2,26) = 9.752, p = 0.001), fat percentage ( F (2,26) = 10.120, p = 0.001), and muscle percentage ( F (2,26) = 10.543, p < 0.001), but not body mass ( F (2,26) = 3.175, p = 0.058), or muscle mass ( F (2,26) = 3.940, p = 0.086).",
       "context_window": "120, p = 0.001), and muscle percentage ( F (2,26) = 10.543, p < 0.001), but not body mass ( F (2,26) = 3.175, p = 0.058), or musc",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1033,7 +1033,7 @@
       "sentence": "Repeated measures ANOVA revealed significant effects by time for BMI ( F (2,26) = 3.654, p = 0.040), fat mass ( F (2,26) = 9.752, p = 0.001), fat percentage ( F (2,26) = 10.120, p = 0.001), and muscle percentage ( F (2,26) = 10.543, p < 0.001), but not body mass ( F (2,26) = 3.175, p = 0.058), or muscle mass ( F (2,26) = 3.940, p = 0.086).",
       "context_window": "= 10.543, p < 0.001), but not body mass ( F (2,26) = 3.175, p = 0.058), or muscle mass ( F (2,26) = 3.940, p = 0.086). Post hoc p",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1051,7 +1051,7 @@
       "sentence": "Repeated measures ANOVA revealed significant effects by time for BMI ( F (2,26) = 3.654, p = 0.040), fat mass ( F (2,26) = 9.752, p = 0.001), fat percentage ( F (2,26) = 10.120, p = 0.001), and muscle percentage ( F (2,26) = 10.543, p < 0.001), but not body mass ( F (2,26) = 3.175, p = 0.058), or muscle mass ( F (2,26) = 3.940, p = 0.086).",
       "context_window": "26) = 3.175, p = 0.058), or muscle mass ( F (2,26) = 3.940, p = 0.086). Post hoc pairwise comparisons revealed significant differ",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1321,7 +1321,7 @@
       "sentence": "Independent samples t -tests for changes over the follow-up period revealed no significant differences between those who chose to continue with unsupervised training compared with those who did not for change in body mass ( t (21) = 0.791, p = 0.438; 0.65 kg versus 1.22 kg resp.), change in BMI ( t (21) = 1.458, p = 0.160; 0.09 kg.m 2 versus 0.45 kg.m 2 , resp.), change in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.).",
       "context_window": "ge in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.",
       "claim_role": "duration",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1339,7 +1339,7 @@
       "sentence": "Independent samples t -tests for changes over the follow-up period revealed no significant differences between those who chose to continue with unsupervised training compared with those who did not for change in body mass ( t (21) = 0.791, p = 0.438; 0.65 kg versus 1.22 kg resp.), change in BMI ( t (21) = 1.458, p = 0.160; 0.09 kg.m 2 versus 0.45 kg.m 2 , resp.), change in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.).",
       "context_window": ".47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21)",
       "claim_role": "duration",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1357,7 +1357,7 @@
       "sentence": "Independent samples t -tests for changes over the follow-up period revealed no significant differences between those who chose to continue with unsupervised training compared with those who did not for change in body mass ( t (21) = 0.791, p = 0.438; 0.65 kg versus 1.22 kg resp.), change in BMI ( t (21) = 1.458, p = 0.160; 0.09 kg.m 2 versus 0.45 kg.m 2 , resp.), change in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.).",
       "context_window": "p.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.16",
       "claim_role": "duration",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1375,7 +1375,7 @@
       "sentence": "Independent samples t -tests for changes over the follow-up period revealed no significant differences between those who chose to continue with unsupervised training compared with those who did not for change in body mass ( t (21) = 0.791, p = 0.438; 0.65 kg versus 1.22 kg resp.), change in BMI ( t (21) = 1.458, p = 0.160; 0.09 kg.m 2 versus 0.45 kg.m 2 , resp.), change in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.).",
       "context_window": "n fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259;",
       "claim_role": "duration",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1393,7 +1393,7 @@
       "sentence": "Independent samples t -tests for changes over the follow-up period revealed no significant differences between those who chose to continue with unsupervised training compared with those who did not for change in body mass ( t (21) = 0.791, p = 0.438; 0.65 kg versus 1.22 kg resp.), change in BMI ( t (21) = 1.458, p = 0.160; 0.09 kg.m 2 versus 0.45 kg.m 2 , resp.), change in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.).",
       "context_window": "rsus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle per",
       "claim_role": "duration",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1411,7 +1411,7 @@
       "sentence": "Independent samples t -tests for changes over the follow-up period revealed no significant differences between those who chose to continue with unsupervised training compared with those who did not for change in body mass ( t (21) = 0.791, p = 0.438; 0.65 kg versus 1.22 kg resp.), change in BMI ( t (21) = 1.458, p = 0.160; 0.09 kg.m 2 versus 0.45 kg.m 2 , resp.), change in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.).",
       "context_window": "resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage (",
       "claim_role": "duration",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1429,7 +1429,7 @@
       "sentence": "Independent samples t -tests for changes over the follow-up period revealed no significant differences between those who chose to continue with unsupervised training compared with those who did not for change in body mass ( t (21) = 0.791, p = 0.438; 0.65 kg versus 1.22 kg resp.), change in BMI ( t (21) = 1.458, p = 0.160; 0.09 kg.m 2 versus 0.45 kg.m 2 , resp.), change in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.).",
       "context_window": "n muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786,",
       "claim_role": "duration",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1447,7 +1447,7 @@
       "sentence": "Independent samples t -tests for changes over the follow-up period revealed no significant differences between those who chose to continue with unsupervised training compared with those who did not for change in body mass ( t (21) = 0.791, p = 0.438; 0.65 kg versus 1.22 kg resp.), change in BMI ( t (21) = 1.458, p = 0.160; 0.09 kg.m 2 versus 0.45 kg.m 2 , resp.), change in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.).",
       "context_window": ", resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.). Descriptive data for all fu",
       "claim_role": "duration",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1465,7 +1465,7 @@
       "sentence": "Independent samples t -tests for changes over the follow-up period revealed no significant differences between those who chose to continue with unsupervised training compared with those who did not for change in body mass ( t (21) = 0.791, p = 0.438; 0.65 kg versus 1.22 kg resp.), change in BMI ( t (21) = 1.458, p = 0.160; 0.09 kg.m 2 versus 0.45 kg.m 2 , resp.), change in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.).",
       "context_window": "d change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.). Descriptive data for all function o",
       "claim_role": "duration",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1483,7 +1483,7 @@
       "sentence": "Independent samples t -tests for changes over the follow-up period revealed no significant differences between those who chose to continue with unsupervised training compared with those who did not for change in body mass ( t (21) = 0.791, p = 0.438; 0.65 kg versus 1.22 kg resp.), change in BMI ( t (21) = 1.458, p = 0.160; 0.09 kg.m 2 versus 0.45 kg.m 2 , resp.), change in fat mass ( t (21) = -0.931, p = 0.363; 2.13 kg versus 1.47 kg, resp.), change in fat percentage ( t (21) = -0.671, p = 0.510; 2.04% versus 1.54%, resp.), change in muscle mass ( t (21) = 1.161, p = 0.259; -1.02 kg versus -0.24 kg, resp.), and change in muscle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.).",
       "context_window": "scle percentage ( t (21) = 0.786, p = 0.440; -2.03% versus -1.45%, resp.). Descriptive data for all function outcomes and al",
       "claim_role": "duration",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"

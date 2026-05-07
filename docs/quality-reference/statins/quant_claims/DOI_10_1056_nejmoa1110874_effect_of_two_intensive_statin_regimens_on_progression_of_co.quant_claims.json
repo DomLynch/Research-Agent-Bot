@@ -1,0 +1,481 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co",
+  "doi": "10.1056/nejmoa1110874",
+  "extracted_at": "2026-05-07T19:24:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 10,
+    "p_value": 6,
+    "percentage": 10
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-u-501",
+      "claim_type": "unit_value",
+      "raw_text": "104 weeks",
+      "numeric_values": [
+        104.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 501,
+      "sentence": "METHODS: We performed serial intravascular ultrasonography in 1039 patients with coronary disease, at baseline and after 104 weeks of treatment with either atorvastatin, 80 mg daily, or rosuvastatin, 40 mg daily, to compare the effect of these two intensive statin regimens on the progression of coronary atherosclerosis, as well as to assess their safety and side-effect profiles.",
+      "context_window": "1039 patients with coronary disease, at baseline and after 104 weeks of treatment with either atorvastatin, 80 mg daily, or rosu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-u-550",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 550,
+      "sentence": "METHODS: We performed serial intravascular ultrasonography in 1039 patients with coronary disease, at baseline and after 104 weeks of treatment with either atorvastatin, 80 mg daily, or rosuvastatin, 40 mg daily, to compare the effect of these two intensive statin regimens on the progression of coronary atherosclerosis, as well as to assess their safety and side-effect profiles.",
+      "context_window": "and after 104 weeks of treatment with either atorvastatin, 80 mg daily, or rosuvastatin, 40 mg daily, to compare the effect",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-u-580",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 580,
+      "sentence": "METHODS: We performed serial intravascular ultrasonography in 1039 patients with coronary disease, at baseline and after 104 weeks of treatment with either atorvastatin, 80 mg daily, or rosuvastatin, 40 mg daily, to compare the effect of these two intensive statin regimens on the progression of coronary atherosclerosis, as well as to assess their safety and side-effect profiles.",
+      "context_window": "ent with either atorvastatin, 80 mg daily, or rosuvastatin, 40 mg daily, to compare the effect of these two intensive statin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-u-777",
+      "claim_type": "unit_value",
+      "raw_text": "104 weeks",
+      "numeric_values": [
+        104.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 777,
+      "sentence": "RESULTS: After 104 weeks of therapy, the rosuvastatin group had lower levels of LDL cholesterol than the atorvastatin group (62.6 vs.",
+      "context_window": "ssess their safety and side-effect profiles. RESULTS: After 104 weeks of therapy, the rosuvastatin group had lower levels of LDL",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-u-896",
+      "claim_type": "unit_value",
+      "raw_text": "70.2 mg",
+      "numeric_values": [
+        70.2
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 896,
+      "sentence": "70.2 mg per deciliter [1.62 vs.",
+      "context_window": "ls of LDL cholesterol than the atorvastatin group (62.6 vs. 70.2 mg per deciliter [1.62 vs. 1.82 mmol per liter], P<0.001), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-u-928",
+      "claim_type": "unit_value",
+      "raw_text": "1.82 mmol",
+      "numeric_values": [
+        1.82
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 928,
+      "sentence": "1.82 mmol per liter], P<0.001), and higher levels of high-density lipoprotein (HDL) cholesterol (50.4 vs.",
+      "context_window": "torvastatin group (62.6 vs. 70.2 mg per deciliter [1.62 vs. 1.82 mmol per liter], P<0.001), and higher levels of high-density lip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-p-950",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 950,
+      "sentence": "1.82 mmol per liter], P<0.001), and higher levels of high-density lipoprotein (HDL) cholesterol (50.4 vs.",
+      "context_window": "6 vs. 70.2 mg per deciliter [1.62 vs. 1.82 mmol per liter], P<0.001), and higher levels of high-density lipoprotein (HDL) chole",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-u-1034",
+      "claim_type": "unit_value",
+      "raw_text": "48.6 mg",
+      "numeric_values": [
+        48.6
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1034,
+      "sentence": "48.6 mg per deciliter [1.30 vs.",
+      "context_window": "els of high-density lipoprotein (HDL) cholesterol (50.4 vs. 48.6 mg per deciliter [1.30 vs. 1.26 mmol per liter], P=0.01). The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-u-1066",
+      "claim_type": "unit_value",
+      "raw_text": "1.26 mmol",
+      "numeric_values": [
+        1.26
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 1066,
+      "sentence": "1.26 mmol per liter], P=0.01).",
+      "context_window": "(HDL) cholesterol (50.4 vs. 48.6 mg per deciliter [1.30 vs. 1.26 mmol per liter], P=0.01). The primary efficacy end point, percen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-p-1088",
+      "claim_type": "p_value",
+      "raw_text": "P=0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1088,
+      "sentence": "1.26 mmol per liter], P=0.01).",
+      "context_window": "4 vs. 48.6 mg per deciliter [1.30 vs. 1.26 mmol per liter], P=0.01). The primary efficacy end point, percent atheroma volume (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-pct-1173",
+      "claim_type": "percentage",
+      "raw_text": "0.99%",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1173,
+      "sentence": "The primary efficacy end point, percent atheroma volume (PAV), decreased by 0.99% (95% confidence interval [CI], -1.19 to -0.63) with atorvastatin and by 1.22% (95% CI, -1.52 to -0.90) with rosuvastatin (P=0.17).",
+      "context_window": "cacy end point, percent atheroma volume (PAV), decreased by 0.99% (95% confidence interval [CI], -1.19 to -0.63) with atorvas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-pct-1180",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1180,
+      "sentence": "The primary efficacy end point, percent atheroma volume (PAV), decreased by 0.99% (95% confidence interval [CI], -1.19 to -0.63) with atorvastatin and by 1.22% (95% CI, -1.52 to -0.90) with rosuvastatin (P=0.17).",
+      "context_window": "d point, percent atheroma volume (PAV), decreased by 0.99% (95% confidence interval [CI], -1.19 to -0.63) with atorvastatin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-pct-1251",
+      "claim_type": "percentage",
+      "raw_text": "1.22%",
+      "numeric_values": [
+        1.22
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1251,
+      "sentence": "The primary efficacy end point, percent atheroma volume (PAV), decreased by 0.99% (95% confidence interval [CI], -1.19 to -0.63) with atorvastatin and by 1.22% (95% CI, -1.52 to -0.90) with rosuvastatin (P=0.17).",
+      "context_window": "nce interval [CI], -1.19 to -0.63) with atorvastatin and by 1.22% (95% CI, -1.52 to -0.90) with rosuvastatin (P=0.17). The ef",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-pct-1258",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1258,
+      "sentence": "The primary efficacy end point, percent atheroma volume (PAV), decreased by 0.99% (95% confidence interval [CI], -1.19 to -0.63) with atorvastatin and by 1.22% (95% CI, -1.52 to -0.90) with rosuvastatin (P=0.17).",
+      "context_window": "erval [CI], -1.19 to -0.63) with atorvastatin and by 1.22% (95% CI, -1.52 to -0.90) with rosuvastatin (P=0.17). The effect",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-p-1301",
+      "claim_type": "p_value",
+      "raw_text": "P=0.17",
+      "numeric_values": [
+        0.17
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1301,
+      "sentence": "The primary efficacy end point, percent atheroma volume (PAV), decreased by 0.99% (95% confidence interval [CI], -1.19 to -0.63) with atorvastatin and by 1.22% (95% CI, -1.52 to -0.90) with rosuvastatin (P=0.17).",
+      "context_window": "in and by 1.22% (95% CI, -1.52 to -0.90) with rosuvastatin (P=0.17). The effect on the secondary efficacy end point, normalize",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-u-1460",
+      "claim_type": "unit_value",
+      "raw_text": "6.39 mm",
+      "numeric_values": [
+        6.39
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1460,
+      "sentence": "The effect on the secondary efficacy end point, normalized total atheroma volume (TAV), was more favorable with rosuvastatin than with atorvastatin: -6.39 mm(3) (95% CI, -7.52 to -5.12), as compared with -4.42 mm(3) (95% CI, -5.98 to -3.26) (P=0.01).",
+      "context_window": "s more favorable with rosuvastatin than with atorvastatin: -6.39 mm(3) (95% CI, -7.52 to -5.12), as compared with -4.42 mm(3) (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-pct-1472",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1472,
+      "sentence": "The effect on the secondary efficacy end point, normalized total atheroma volume (TAV), was more favorable with rosuvastatin than with atorvastatin: -6.39 mm(3) (95% CI, -7.52 to -5.12), as compared with -4.42 mm(3) (95% CI, -5.98 to -3.26) (P=0.01).",
+      "context_window": "able with rosuvastatin than with atorvastatin: -6.39 mm(3) (95% CI, -7.52 to -5.12), as compared with -4.42 mm(3) (95% CI,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-u-1515",
+      "claim_type": "unit_value",
+      "raw_text": "4.42 mm",
+      "numeric_values": [
+        4.42
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1515,
+      "sentence": "The effect on the secondary efficacy end point, normalized total atheroma volume (TAV), was more favorable with rosuvastatin than with atorvastatin: -6.39 mm(3) (95% CI, -7.52 to -5.12), as compared with -4.42 mm(3) (95% CI, -5.98 to -3.26) (P=0.01).",
+      "context_window": "in: -6.39 mm(3) (95% CI, -7.52 to -5.12), as compared with -4.42 mm(3) (95% CI, -5.98 to -3.26) (P=0.01). Both agents induced r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-pct-1527",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1527,
+      "sentence": "The effect on the secondary efficacy end point, normalized total atheroma volume (TAV), was more favorable with rosuvastatin than with atorvastatin: -6.39 mm(3) (95% CI, -7.52 to -5.12), as compared with -4.42 mm(3) (95% CI, -5.98 to -3.26) (P=0.01).",
+      "context_window": "(3) (95% CI, -7.52 to -5.12), as compared with -4.42 mm(3) (95% CI, -5.98 to -3.26) (P=0.01). Both agents induced regressio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-p-1552",
+      "claim_type": "p_value",
+      "raw_text": "P=0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1552,
+      "sentence": "The effect on the secondary efficacy end point, normalized total atheroma volume (TAV), was more favorable with rosuvastatin than with atorvastatin: -6.39 mm(3) (95% CI, -7.52 to -5.12), as compared with -4.42 mm(3) (95% CI, -5.98 to -3.26) (P=0.01).",
+      "context_window": "12), as compared with -4.42 mm(3) (95% CI, -5.98 to -3.26) (P=0.01). Both agents induced regression in the majority of patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-pct-1621",
+      "claim_type": "percentage",
+      "raw_text": "63.2%",
+      "numeric_values": [
+        63.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1621,
+      "sentence": "Both agents induced regression in the majority of patients: 63.2% with atorvastatin and 68.5% with rosuvastatin for PAV (P=0.07) and 64.7% and 71.3%, respectively, for TAV (P=0.02).",
+      "context_window": "Both agents induced regression in the majority of patients: 63.2% with atorvastatin and 68.5% with rosuvastatin for PAV (P=0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-pct-1649",
+      "claim_type": "percentage",
+      "raw_text": "68.5%",
+      "numeric_values": [
+        68.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1649,
+      "sentence": "Both agents induced regression in the majority of patients: 63.2% with atorvastatin and 68.5% with rosuvastatin for PAV (P=0.07) and 64.7% and 71.3%, respectively, for TAV (P=0.02).",
+      "context_window": "on in the majority of patients: 63.2% with atorvastatin and 68.5% with rosuvastatin for PAV (P=0.07) and 64.7% and 71.3%, res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-p-1682",
+      "claim_type": "p_value",
+      "raw_text": "P=0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1682,
+      "sentence": "Both agents induced regression in the majority of patients: 63.2% with atorvastatin and 68.5% with rosuvastatin for PAV (P=0.07) and 64.7% and 71.3%, respectively, for TAV (P=0.02).",
+      "context_window": "3.2% with atorvastatin and 68.5% with rosuvastatin for PAV (P=0.07) and 64.7% and 71.3%, respectively, for TAV (P=0.02). Both",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-pct-1694",
+      "claim_type": "percentage",
+      "raw_text": "64.7%",
+      "numeric_values": [
+        64.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1694,
+      "sentence": "Both agents induced regression in the majority of patients: 63.2% with atorvastatin and 68.5% with rosuvastatin for PAV (P=0.07) and 64.7% and 71.3%, respectively, for TAV (P=0.02).",
+      "context_window": "orvastatin and 68.5% with rosuvastatin for PAV (P=0.07) and 64.7% and 71.3%, respectively, for TAV (P=0.02). Both agents had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-pct-1704",
+      "claim_type": "percentage",
+      "raw_text": "71.3%",
+      "numeric_values": [
+        71.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1704,
+      "sentence": "Both agents induced regression in the majority of patients: 63.2% with atorvastatin and 68.5% with rosuvastatin for PAV (P=0.07) and 64.7% and 71.3%, respectively, for TAV (P=0.02).",
+      "context_window": "and 68.5% with rosuvastatin for PAV (P=0.07) and 64.7% and 71.3%, respectively, for TAV (P=0.02). Both agents had acceptable",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1110874_effect_of_two_intensive_statin_regimens_on_progression_of_co-p-1734",
+      "claim_type": "p_value",
+      "raw_text": "P=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1734,
+      "sentence": "Both agents induced regression in the majority of patients: 63.2% with atorvastatin and 68.5% with rosuvastatin for PAV (P=0.07) and 64.7% and 71.3%, respectively, for TAV (P=0.02).",
+      "context_window": "or PAV (P=0.07) and 64.7% and 71.3%, respectively, for TAV (P=0.02). Both agents had acceptable side-effect profiles, with a l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

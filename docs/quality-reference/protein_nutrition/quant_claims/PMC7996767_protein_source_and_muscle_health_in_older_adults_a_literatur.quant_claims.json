@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7996767_protein_source_and_muscle_health_in_older_adults_a_literatur",
   "doi": "10.3390/nu13030743",
-  "extracted_at": "2026-05-05T23:37:17+00:00",
+  "extracted_at": "2026-05-07T16:56:45+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 23,
@@ -23,10 +23,10 @@
       "sentence": "However, after the age of 30 year, muscle mass declines at a rate of 0.3 to 0.8% per year [ 5 ].",
       "context_window": "ines associated with aging [ 4 ]. However, after the age of 30 year, muscle mass declines at a rate of 0.3 to 0.8% per year [ 5",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7996767_protein_source_and_muscle_health_in_older_adults_a_literatur-pct-571",
@@ -41,10 +41,10 @@
       "sentence": "However, after the age of 30 year, muscle mass declines at a rate of 0.3 to 0.8% per year [ 5 ].",
       "context_window": "he age of 30 year, muscle mass declines at a rate of 0.3 to 0.8% per year [ 5 ]. The reduction in lean mass is attributed to",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7996767_protein_source_and_muscle_health_in_older_adults_a_literatur-u-1229",
@@ -132,7 +132,7 @@
       "context_window": "his review are to: Review current literature from the past 10 years evaluating whether specific source(s) of dietary protein pr",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -150,7 +150,7 @@
       "context_window": "Table 1 illustrates selected clinical trials from the past 10 years and some notable older studies that examined the effect of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -186,7 +186,7 @@
       "context_window": "ining in healthy omnivorous adults between the age of 18 to 70 years compared to whey protein. However, the authors noted that t",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -242,7 +242,7 @@
       "context_window": "vere kidney disease (estimated Glomerular Filtration Rate < 30 mL/min) and who are not on dialysis, are recommended to limit thei",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -423,7 +423,7 @@
       "sentence": "A 3-month study in healthy older men (71 \u00b1 4 year) [ 67 ] and a 6-month study in diabetic older men (71 \u00b1 1 year) [ 68 ] showed supplementation with 7.5 g leucine per day did not increase skeletal muscle mass or strength.",
       "context_window": "an body mass [ 102 ]. A 3-month study in healthy older men (71 \u00b1 4 year) [ 67 ] and a 6-month study in diabetic older men (71",
       "claim_role": "dose",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -441,7 +441,7 @@
       "sentence": "A 3-month study in healthy older men (71 \u00b1 4 year) [ 67 ] and a 6-month study in diabetic older men (71 \u00b1 1 year) [ 68 ] showed supplementation with 7.5 g leucine per day did not increase skeletal muscle mass or strength.",
       "context_window": "dy mass [ 102 ]. A 3-month study in healthy older men (71 \u00b1 4 year) [ 67 ] and a 6-month study in diabetic older men (71 \u00b1 1 y",
       "claim_role": "dose",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -460,7 +460,7 @@
       "sentence": "A 3-month study in healthy older men (71 \u00b1 4 year) [ 67 ] and a 6-month study in diabetic older men (71 \u00b1 1 year) [ 68 ] showed supplementation with 7.5 g leucine per day did not increase skeletal muscle mass or strength.",
       "context_window": "\u00b1 4 year) [ 67 ] and a 6-month study in diabetic older men (71 \u00b1 1 year) [ 68 ] showed supplementation with 7.5 g leucine per",
       "claim_role": "dose",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -478,7 +478,7 @@
       "sentence": "A 3-month study in healthy older men (71 \u00b1 4 year) [ 67 ] and a 6-month study in diabetic older men (71 \u00b1 1 year) [ 68 ] showed supplementation with 7.5 g leucine per day did not increase skeletal muscle mass or strength.",
       "context_window": "ear) [ 67 ] and a 6-month study in diabetic older men (71 \u00b1 1 year) [ 68 ] showed supplementation with 7.5 g leucine per day d",
       "claim_role": "dose",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -606,7 +606,7 @@
       "context_window": "[ 110 ] showed that quartiles of total protein intake (Q1: 69.2 \u00b1 28.6; Q4 83.3 \u00b1 37.0 total protein g/day) and quartiles of anima",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -625,7 +625,7 @@
       "context_window": "that quartiles of total protein intake (Q1: 69.2 \u00b1 28.6; Q4 83.3 \u00b1 37.0 total protein g/day) and quartiles of animal protein intake",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -644,7 +644,7 @@
       "context_window": "protein g/day) and quartiles of animal protein intake (Q1: 37.1 \u00b1 21.1; Q4: 46.8 \u00b1 29.1 animal protein g/day) were not associated",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -663,7 +663,7 @@
       "context_window": "nd quartiles of animal protein intake (Q1: 37.1 \u00b1 21.1; Q4: 46.8 \u00b1 29.1 animal protein g/day) were not associated with changes in p",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -681,7 +681,7 @@
       "context_window": "ted with changes in physical performance nor lean mass over 4 years. In contrast, the authors noted that a diet low in plant-ba",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1043,7 +1043,7 @@
       "context_window": "ectively [ 71 ]. In another smaller study, omnivorous men ( n = 8) and women ( n = 7) were randomized to whey (24 g) or pea (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1061,7 +1061,7 @@
       "context_window": "another smaller study, omnivorous men ( n = 8) and women ( n = 7) were randomized to whey (24 g) or pea (24 g) (True Nutriti",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

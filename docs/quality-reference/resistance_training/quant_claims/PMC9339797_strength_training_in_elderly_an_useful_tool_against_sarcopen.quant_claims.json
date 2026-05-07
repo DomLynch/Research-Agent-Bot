@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9339797_strength_training_in_elderly_an_useful_tool_against_sarcopen",
   "doi": "10.3389/fspor.2022.950949",
-  "extracted_at": "2026-05-05T21:59:11+00:00",
+  "extracted_at": "2026-05-07T16:57:45+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 2,
@@ -22,7 +22,7 @@
       "context_window": "and sarcopenia (Cannataro et al., 2021a ). After more than 30 years of clinical research, the emphasis has been placed on incre",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -39,10 +39,10 @@
       "sentence": "Muscle mass in subjects between the ages of 50 and 70 decreases by about 8% per year (Lee et al., 2018 ).",
       "context_window": "n subjects between the ages of 50 and 70 decreases by about 8% per year (Lee et al., 2018 ). Although the concept of sarco",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9339797_strength_training_in_elderly_an_useful_tool_against_sarcopen-u-3593",
@@ -58,9 +58,9 @@
       "context_window": ") has suggested a training frequency ranging between 2 and 4 days weekly and a low training volume [60-80% of one-repetition",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9339797_strength_training_in_elderly_an_useful_tool_against_sarcopen-pct-3637",
@@ -76,9 +76,9 @@
       "context_window": "g between 2 and 4 days weekly and a low training volume [60-80% of one-repetition maximum (1RM)] for major muscle groups, t",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

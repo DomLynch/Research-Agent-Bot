@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_outcomes_study_to_assess_statin_residual_risk_reduction_with",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_outcomes_study_to_assess_statin_residual_risk_reduction_with-u-303",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 303,
+      "sentence": "The study is a randomized, double-blind, placebo-controlled (corn oil), parallel group design that will enroll approximately 13,000 patients with hypertriglyceridemia and low HDL and high risk for CVD to be randomized 1:1 to either corn oil + statin or Epanova + statin, once daily, for approximately 3-5 years as determined when the number of MACE outcomes is reached.",
+      "context_window": "statin or Epanova + statin, once daily, for approximately 3-5 years as determined when the number of MACE outcomes is reached.",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_outcomes_study_to_assess_statin_residual_risk_reduction_with-p-567",
+      "claim_type": "p_value",
+      "raw_text": "p=0.837",
+      "numeric_values": [
+        0.837
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 567,
+      "sentence": "Epanova=785; Placebo=795. p=0.837",
+      "context_window": "ion of the end-of-treatment visi. Epanova=785; Placebo=795. p=0.837",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

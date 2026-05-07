@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_",
   "doi": "10.3390/nu10030335",
-  "extracted_at": "2026-05-05T21:59:11+00:00",
+  "extracted_at": "2026-05-07T16:57:35+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 32,
-    "unit_value": 23,
+    "unit_value": 30,
     "p_value": 22,
     "mean_sd": 20,
     "sample_size": 4
@@ -388,9 +388,9 @@
       "context_window": "cebook. Inclusion criteria were males from the age of 18 to 30 years who had previous experience performing resistance exercise.",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-n-1453",
@@ -532,7 +532,7 @@
       "context_window": "min of light aerobic exercise followed by 10 repetitions at 50% of estimated 1 RM load with a 2-min rest and 3-4 repetition",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -550,7 +550,7 @@
       "context_window": "stimated 1 RM load with a 2-min rest and 3-4 repetitions at 80% of 1 RM load with a 3-min rest. The test consisted of three",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1082,6 +1082,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-u-535",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 g/kg/day",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 535,
+      "sentence": "The current study shows that protein supplementation from insects after exercise and pre-sleep on training days does not promote greater gains in FBFM and muscle strength after eight weeks of resistance training in young males compared to a non-protein supplemented group consuming on average 1.7 g/kg/day.",
+      "context_window": "ed to a non-protein supplemented group consuming on average 1.7 g/kg/day. Previous research indicates that protein supplementation c",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "exercise",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-msd-1346",
       "claim_type": "mean_sd",
       "raw_text": "97.6 \u00b1 2.7",
@@ -1242,9 +1260,9 @@
       "context_window": "xamining strength gains following resistance training for 7-16 weeks [ 34 , 35 , 36 , 37 ], the subjects in the present study in",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-pct-2064",
@@ -1260,9 +1278,9 @@
       "context_window": "dy increased leg and bench press 1 RM muscle strength by 10-24% from pre to post. This is in line with most similar studies",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-u-2185",
@@ -1278,7 +1296,7 @@
       "context_window": "es on protein supplementation and resistance training for 8-12 weeks, which report strength gains in 1 RM between 12% and 44% [",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1296,7 +1314,7 @@
       "context_window": "for 8-12 weeks, which report strength gains in 1 RM between 12% and 44% [ 29 , 30 , 32 , 33 , 38 , 39 , 40 ]; however, a fe",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1314,7 +1332,7 @@
       "context_window": "weeks, which report strength gains in 1 RM between 12% and 44% [ 29 , 30 , 32 , 33 , 38 , 39 , 40 ]; however, a few outlie",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1332,7 +1350,7 @@
       "context_window": "w outliers [ 26 , 27 , 41 ] appear with strength gains over 100% in 1 RM. The discrepancy between strength gains in the pres",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1374,6 +1392,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-u-3166",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 g/kg/day",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3166,
+      "sentence": "The dietary analysis revealed significant difference in protein intake between groups on training days (Con: 1.7 \u00b1 0.3 g/kg/day, Pro: 2.3 \u00b1 0.3 g/kg/day; p < 0.05).",
+      "context_window": "protein intake between groups on training days (Con: 1.7 \u00b1 0.3 g/kg/day, Pro: 2.3 \u00b1 0.3 g/kg/day; p < 0.05). Recommendations on opt",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-msd-3185",
       "claim_type": "mean_sd",
       "raw_text": "2.3 \u00b1 0.3",
@@ -1393,6 +1429,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-u-3191",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 g/kg/day",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3191,
+      "sentence": "The dietary analysis revealed significant difference in protein intake between groups on training days (Con: 1.7 \u00b1 0.3 g/kg/day, Pro: 2.3 \u00b1 0.3 g/kg/day; p < 0.05).",
+      "context_window": "roups on training days (Con: 1.7 \u00b1 0.3 g/kg/day, Pro: 2.3 \u00b1 0.3 g/kg/day; p < 0.05). Recommendations on optimal daily protein intake",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-p-3205",
       "claim_type": "p_value",
       "raw_text": "p < 0.05",
@@ -1405,6 +1459,24 @@
       "sentence": "The dietary analysis revealed significant difference in protein intake between groups on training days (Con: 1.7 \u00b1 0.3 g/kg/day, Pro: 2.3 \u00b1 0.3 g/kg/day; p < 0.05).",
       "context_window": "ing days (Con: 1.7 \u00b1 0.3 g/kg/day, Pro: 2.3 \u00b1 0.3 g/kg/day; p < 0.05). Recommendations on optimal daily protein intake vary betw",
       "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-u-3285",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3285,
+      "sentence": "Recommendations on optimal daily protein intake vary between 0.8 and 1.6 g/kg/day depending on physical activity level, gender, and age [ 43 , 44 ].",
+      "context_window": "ations on optimal daily protein intake vary between 0.8 and 1.6 g/kg/day depending on physical activity level, gender, and age [ 43",
+      "claim_role": "dose",
       "endpoint": "",
       "arm": "",
       "direction": "",
@@ -1682,9 +1754,9 @@
       "context_window": "e training may seem short compared to similar studies of 10-14 weeks [ 26 , 41 , 49 ]. According to Tipton and Wolfe [ 50 ], it",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-u-6866",
@@ -1700,7 +1772,7 @@
       "context_window": "-analysis by Cermak et al. [ 8 ] reported an effect size of 0.69 kg FBFM after 12 weeks of resistance training with protein sup",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1718,7 +1790,7 @@
       "context_window": "et al. [ 8 ] reported an effect size of 0.69 kg FBFM after 12 weeks of resistance training with protein supplementation compare",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1772,7 +1844,7 @@
       "context_window": "hat a group of young men performing resistance training for 10 weeks with energy supplementation would not gain FBFM when it is",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1844,6 +1916,60 @@
       "sentence": "However, if adjusted this would cause a ~10% overestimation of total protein supplementation, which, for the average subject of ~80 kg, would account for ~6.4g less protein per training day.",
       "context_window": "protein supplementation, which, for the average subject of ~80 kg, would account for ~6.4g less protein per training day. Thi",
       "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-u-9940",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 g/kg/day",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 9940,
+      "sentence": "This would reflect a depreciation of 0.1 g/kg/day for the Pro group (2.3 g/kg/day to 2.2 g/kg/day), which we do not believe would influence the outcome of the investigation.",
+      "context_window": "tein per training day. This would reflect a depreciation of 0.1 g/kg/day for the Pro group (2.3 g/kg/day to 2.2 g/kg/day), which we",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-u-9972",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 g/kg/day",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 9972,
+      "sentence": "This would reflect a depreciation of 0.1 g/kg/day for the Pro group (2.3 g/kg/day to 2.2 g/kg/day), which we do not believe would influence the outcome of the investigation.",
+      "context_window": "d reflect a depreciation of 0.1 g/kg/day for the Pro group (2.3 g/kg/day to 2.2 g/kg/day), which we do not believe would influence t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5872753_effects_of_insect_protein_supplementation_during_resistance_-u-9988",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/day",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 9988,
+      "sentence": "This would reflect a depreciation of 0.1 g/kg/day for the Pro group (2.3 g/kg/day to 2.2 g/kg/day), which we do not believe would influence the outcome of the investigation.",
+      "context_window": "eciation of 0.1 g/kg/day for the Pro group (2.3 g/kg/day to 2.2 g/kg/day), which we do not believe would influence the outcome of th",
+      "claim_role": "dose",
       "endpoint": "",
       "arm": "",
       "direction": "",

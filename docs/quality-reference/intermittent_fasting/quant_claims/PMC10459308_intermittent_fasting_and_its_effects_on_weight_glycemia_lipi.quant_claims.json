@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10459308_intermittent_fasting_and_its_effects_on_weight_glycemia_lipi",
   "doi": "10.3390/nu15163661",
-  "extracted_at": "2026-05-05T22:11:12+00:00",
+  "extracted_at": "2026-05-07T16:56:52+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 15,
@@ -365,7 +365,7 @@
       "context_window": "oric or ad libitum, resulted in increased levels of HDL-C ( p = 0.005 and p = 0.03, respectively). Conversely, Gabel et al. [ 35",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -383,7 +383,7 @@
       "context_window": "itum, resulted in increased levels of HDL-C ( p = 0.005 and p = 0.03, respectively). Conversely, Gabel et al. [ 35 ] and Sutton",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -617,7 +617,7 @@
       "context_window": "icant reductions in both SBP and DBP compared to baseline ( p = 0.041, p < 0.05, p = 0.02, and p = 0.03, respectively). ADF was",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -635,7 +635,7 @@
       "context_window": "tions in both SBP and DBP compared to baseline ( p = 0.041, p < 0.05, p = 0.02, and p = 0.03, respectively). ADF was also shown",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -653,7 +653,7 @@
       "context_window": "oth SBP and DBP compared to baseline ( p = 0.041, p < 0.05, p = 0.02, and p = 0.03, respectively). ADF was also shown to reduce",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -671,7 +671,7 @@
       "context_window": "P compared to baseline ( p = 0.041, p < 0.05, p = 0.02, and p = 0.03, respectively). ADF was also shown to reduce SBP and DBP c",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -760,10 +760,10 @@
       "sentence": "Compliance with IF has been investigated in multiple studies [ 25 , 31 , 61 ] and has shown a range of adherence rates from 43% to 93%.",
       "context_window": "5 , 31 , 61 ] and has shown a range of adherence rates from 43% to 93%. This lack of food intake restrictions facilitates a",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10459308_intermittent_fasting_and_its_effects_on_weight_glycemia_lipi-pct-3141",
@@ -778,10 +778,10 @@
       "sentence": "Compliance with IF has been investigated in multiple studies [ 25 , 31 , 61 ] and has shown a range of adherence rates from 43% to 93%.",
       "context_window": ", 61 ] and has shown a range of adherence rates from 43% to 93%. This lack of food intake restrictions facilitates adherenc",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

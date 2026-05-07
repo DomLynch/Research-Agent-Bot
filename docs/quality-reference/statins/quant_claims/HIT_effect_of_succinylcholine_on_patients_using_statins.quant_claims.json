@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_effect_of_succinylcholine_on_patients_using_statins",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_succinylcholine_on_patients_using_statins-u-735",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 735,
+      "sentence": "So statin use will not be randomized; confounding factors will be accounted for by stratification (every 10 years of age from 40-80 and gender) and statistical adjustment.",
+      "context_window": "ding factors will be accounted for by stratification (every 10 years of age from 40-80 and gender) and statistical adjustment. T",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_succinylcholine_on_patients_using_statins-p-1179",
+      "claim_type": "p_value",
+      "raw_text": "p=0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1179,
+      "sentence": "Statin Use Group=46; Non Statin Use=39. p=0.018",
+      "context_window": "ours post operativ. Statin Use Group=46; Non Statin Use=39. p=0.018",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

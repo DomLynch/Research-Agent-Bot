@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11906324_dietary_protein_requirements_of_older_adults_with_sarcopenia",
   "doi": "10.3389/fnut.2025.1486482",
-  "extracted_at": "2026-05-05T23:37:03+00:00",
+  "extracted_at": "2026-05-07T16:56:32+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 25,
@@ -98,7 +98,7 @@
       "sentence": "Sarcopenia is defined as an age-associated loss of skeletal muscle function and muscle mass that occurs in ~6%-22% of older adults, according to the International Clinical Practice Guidelines for Sarcopenia (ICFSR) ( 1 ).",
       "context_window": "of skeletal muscle function and muscle mass that occurs in ~6%-22% of older adults, according to the International Clinica",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -116,7 +116,7 @@
       "sentence": "Sarcopenia is defined as an age-associated loss of skeletal muscle function and muscle mass that occurs in ~6%-22% of older adults, according to the International Clinical Practice Guidelines for Sarcopenia (ICFSR) ( 1 ).",
       "context_window": "skeletal muscle function and muscle mass that occurs in ~6%-22% of older adults, according to the International Clinical Pr",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -350,10 +350,10 @@
       "sentence": "The definition of low muscle mass was ASMI < 7.0 kg/m 2 for males and < 5.7 kg/m 2 for females.",
       "context_window": "o measure ASM. The definition of low muscle mass was ASMI < 7.0 kg/m 2 for males and < 5.7 kg/m 2 for females. Muscle strength",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11906324_dietary_protein_requirements_of_older_adults_with_sarcopenia-u-2580",
@@ -368,10 +368,10 @@
       "sentence": "The definition of low muscle mass was ASMI < 7.0 kg/m 2 for males and < 5.7 kg/m 2 for females.",
       "context_window": "on of low muscle mass was ASMI < 7.0 kg/m 2 for males and < 5.7 kg/m 2 for females. Muscle strength was assessed by measuring",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11906324_dietary_protein_requirements_of_older_adults_with_sarcopenia-u-2749",
@@ -748,7 +748,7 @@
       "context_window": "ntakes of the subjects for the 7 dietary protein doses were 1.05 \u00b1 0.09 g/(kg.d) for protein, 0.92 \u00b1 0.10 g/(kg.d) for fat, 5.58 \u00b1",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -767,7 +767,7 @@
       "context_window": "ietary protein doses were 1.05 \u00b1 0.09 g/(kg.d) for protein, 0.92 \u00b1 0.10 g/(kg.d) for fat, 5.58 \u00b1 0.59 g/(kg.d) for carbohydrate, an",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -786,7 +786,7 @@
       "context_window": "\u00b1 0.09 g/(kg.d) for protein, 0.92 \u00b1 0.10 g/(kg.d) for fat, 5.58 \u00b1 0.59 g/(kg.d) for carbohydrate, and 35.09 \u00b1 3.46 kcal/(kg.d) for",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -805,7 +805,7 @@
       "context_window": "/(kg.d) for fat, 5.58 \u00b1 0.59 g/(kg.d) for carbohydrate, and 35.09 \u00b1 3.46 kcal/(kg.d) for energy. The influence of protein intake on",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -861,7 +861,7 @@
       "context_window": "ch is 1.21 g/(kg.d). Phenylalanine flux was not affected ( P = 0.6148) within each individual by differences in protein intake as",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1097,10 +1097,10 @@
       "sentence": "In a cross-sectional examination of 3,213 community-based middle-aged and older persons (mean age: 60.7 years) in China, it was shown that participants who consumed \u2265 1.68 g/(kg.d) had the lowest risk of having low muscle mass ( 37 ).",
       "context_window": "13 community-based middle-aged and older persons (mean age: 60.7 years) in China, it was shown that participants who consumed \u2265 1.",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11906324_dietary_protein_requirements_of_older_adults_with_sarcopenia-u-2503",
@@ -1116,7 +1116,7 @@
       "context_window": "in undernourished prefrail and frail older subjects aged 70-85 years showed that protein intake of 1.5 g/(kg.d) had the most ben",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },

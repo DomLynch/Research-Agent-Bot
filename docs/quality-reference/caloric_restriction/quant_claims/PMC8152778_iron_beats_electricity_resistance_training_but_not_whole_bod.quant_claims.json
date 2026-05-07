@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod",
   "doi": "10.3390/nu13051640",
-  "extracted_at": "2026-05-05T22:17:44+00:00",
+  "extracted_at": "2026-05-07T16:58:02+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 9,
-    "unit_value": 53,
+    "unit_value": 59,
     "percentage": 30,
     "p_value": 89,
     "sample_size": 8,
@@ -27,7 +27,7 @@
       "context_window": "ng CR are still unclear. In total, 118 obese MetS patients (52.7 \u00b1 11.8 years, BMI: 38.1 \u00b1 6.9 kg/m 2 ) undergoing CR over 12 weeks",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -45,7 +45,7 @@
       "context_window": "re still unclear. In total, 118 obese MetS patients (52.7 \u00b1 11.8 years, BMI: 38.1 \u00b1 6.9 kg/m 2 ) undergoing CR over 12 weeks (aim:",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -64,7 +64,7 @@
       "context_window": "In total, 118 obese MetS patients (52.7 \u00b1 11.8 years, BMI: 38.1 \u00b1 6.9 kg/m 2 ) undergoing CR over 12 weeks (aim: -500 kcal defici",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -82,7 +82,7 @@
       "context_window": "al, 118 obese MetS patients (52.7 \u00b1 11.8 years, BMI: 38.1 \u00b1 6.9 kg/m 2 ) undergoing CR over 12 weeks (aim: -500 kcal deficit/d",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -100,7 +100,7 @@
       "context_window": "7 \u00b1 11.8 years, BMI: 38.1 \u00b1 6.9 kg/m 2 ) undergoing CR over 12 weeks (aim: -500 kcal deficit/day) were randomly allocated to eit",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -537,6 +537,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-u-8939",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 8939,
+      "sentence": "As recommended by international guidelines for the treatment of obesity [ 6 ], participants were instructed to reach an energy deficit of 500 kcal per day while maintaining proper protein consumption (i.e., \u22651.0 g/kg/day) to support SMM preservation during CR [ 51 ].",
+      "context_window": "er day while maintaining proper protein consumption (i.e., \u22651.0 g/kg/day) to support SMM preservation during CR [ 51 ]. Additionally",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "cr",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-u-10137",
       "claim_type": "unit_value",
       "raw_text": "12 weeks",
@@ -856,10 +874,10 @@
       "sentence": "The adherence rates (the percentage of the scheduled training sessions that were completed) were high in all exercise protocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no significant differences between the three groups.",
       "context_window": "ere completed) were high in all exercise protocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no signifi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-pct-1223",
@@ -874,10 +892,10 @@
       "sentence": "The adherence rates (the percentage of the scheduled training sessions that were completed) were high in all exercise protocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no significant differences between the three groups.",
       "context_window": "pleted) were high in all exercise protocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no signific",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-msd-1235",
@@ -893,10 +911,10 @@
       "sentence": "The adherence rates (the percentage of the scheduled training sessions that were completed) were high in all exercise protocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no significant differences between the three groups.",
       "context_window": "high in all exercise protocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no significant differences be",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-pct-1242",
@@ -911,10 +929,10 @@
       "sentence": "The adherence rates (the percentage of the scheduled training sessions that were completed) were high in all exercise protocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no significant differences between the three groups.",
       "context_window": "n all exercise protocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no significant differences bet",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-msd-1258",
@@ -930,10 +948,10 @@
       "sentence": "The adherence rates (the percentage of the scheduled training sessions that were completed) were high in all exercise protocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no significant differences between the three groups.",
       "context_window": "rotocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no significant differences between the three groups.",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-pct-1265",
@@ -948,10 +966,10 @@
       "sentence": "The adherence rates (the percentage of the scheduled training sessions that were completed) were high in all exercise protocols (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no significant differences between the three groups.",
       "context_window": "s (WB-EMS: 93.2 \u00b1 7.8%, 1-RT: 93.6 \u00b1 6.5%, and 3-RT: 94.7 \u00b1 6.7%) with no significant differences between the three groups.",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-p-1943",
@@ -3601,9 +3619,9 @@
       "context_window": "e following: (i) A modest average body weight reduction of ~3% from CR resulted in a significant loss of SMM in obese MetS",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-u-1068",
@@ -3619,9 +3637,9 @@
       "context_window": "esult in a significant reduction of lean body mass of up to 1 kg or more [ 10 ]. Although it has been shown that CR per se m",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-u-4274",
@@ -3637,8 +3655,98 @@
       "context_window": "he first time that two weekly 20 min WB-EMS sessions during 12 weeks of CR can improve cardiometabolic risk profile in obese wom",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-u-5143",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5143,
+      "sentence": "More specifically, the overweight premenopausal women in the study of Willert et al. [ 30 ] were supplemented with a multi-component protein powder to achieve a protein intake of 1.2 g/kg/day, and participants in our previous pilot study managed to consume ~1.0 g/kg/day of protein in their calorie-reduced daily diet [ 34 ].",
+      "context_window": "lti-component protein powder to achieve a protein intake of 1.2 g/kg/day, and participants in our previous pilot study managed to co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-u-5222",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5222,
+      "sentence": "More specifically, the overweight premenopausal women in the study of Willert et al. [ 30 ] were supplemented with a multi-component protein powder to achieve a protein intake of 1.2 g/kg/day, and participants in our previous pilot study managed to consume ~1.0 g/kg/day of protein in their calorie-reduced daily diet [ 34 ].",
+      "context_window": "articipants in our previous pilot study managed to consume ~1.0 g/kg/day of protein in their calorie-reduced daily diet [ 34 ]. In c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-u-5531",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5531,
+      "sentence": "In contrast, patients in the present study did not receive any specific protein supplementation in conjunction with WB-EMS exercise, and the majority of participants failed to meet the recommended minimum protein intake during weight loss (\u22651.0 g/kg/day) [ 51 ], despite detailed advice from a dietitian at study entry and the provision of supporting diet plans.",
+      "context_window": "the recommended minimum protein intake during weight loss (\u22651.0 g/kg/day) [ 51 ], despite detailed advice from a dietitian at study",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-u-5806",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5806,
+      "sentence": "Thus, although still within the recommended dietary allowance for the general population [ 63 ], it is conceivable that the amount of ingested protein (~0.8 g/kg/day) was too low to prevent a significant decrease in SMM during CR-despite concomitant WB-EMS exercise.",
+      "context_window": "], it is conceivable that the amount of ingested protein (~0.8 g/kg/day) was too low to prevent a significant decrease in SMM durin",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "cr",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-u-6367",
+      "claim_type": "unit_value",
+      "raw_text": "0.9 g/kg/day",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6367,
+      "sentence": "Interestingly, however, SMM was preserved with 1-RT and 3-RT, although protein intakes were also below recommended levels in these both groups, ranging from 0.7 to 0.9 g/kg/day.",
+      "context_window": "ecommended levels in these both groups, ranging from 0.7 to 0.9 g/kg/day. This observation could indicate that conventional RT elici",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
       "binding_confidence": "partial"
     },
     {
@@ -3780,10 +3888,10 @@
       "sentence": "Furthermore, the high adherence rates (mean value: ~94%) and high ratings of exercise enjoyment (mean value: ~6.1 on a 7-point rating scale) in all three exercise groups indicate that RT and WB-EMS appear to be well tolerated and accepted by obese patients with cardiometabolic disorders.",
       "context_window": "tively. Furthermore, the high adherence rates (mean value: ~94%) and high ratings of exercise enjoyment (mean value: ~6.1 o",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod-u-18275",

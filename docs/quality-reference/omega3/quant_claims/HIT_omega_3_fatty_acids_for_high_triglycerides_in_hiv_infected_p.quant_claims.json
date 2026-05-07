@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_omega_3_fatty_acids_for_high_triglycerides_in_hiv_infected_p",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_omega_3_fatty_acids_for_high_triglycerides_in_hiv_infected_p-u-414",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 414,
+      "sentence": "Posted outcomes: Change in Triglyceride Concentrations From Baseline in the LOVAZA Group Compared to the Placebo Group.. timeframe=8 weeks.",
+      "context_window": "the LOVAZA Group Compared to the Placebo Group.. timeframe=8 weeks. LOVAZA=-34; Placebo=40. p=0.01",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_omega_3_fatty_acids_for_high_triglycerides_in_hiv_infected_p-p-447",
+      "claim_type": "p_value",
+      "raw_text": "p=0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 447,
+      "sentence": "LOVAZA=-34; Placebo=40. p=0.01",
+      "context_window": "Placebo Group.. timeframe=8 weeks. LOVAZA=-34; Placebo=40. p=0.01",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

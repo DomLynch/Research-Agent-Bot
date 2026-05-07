@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_protective_effect_of_epa_on_cardiovascular_events",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:33:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_protective_effect_of_epa_on_cardiovascular_events-pct-89",
+      "claim_type": "percentage",
+      "raw_text": "98%",
+      "numeric_values": [
+        98.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 89,
+      "sentence": "The purpose of this study was to test the hypothesis that the long-term use of highly (\\>98%) purified EPA, in addition to HMG-CoA reductase inhibitor (statin), would be more effective than statin alone in preventing cardiovascular events in Japanese patients with hypercholesterolemia.",
+      "context_window": "to test the hypothesis that the long-term use of highly (\\>98%) purified EPA, in addition to HMG-CoA reductase inhibitor (",
+      "claim_role": "unknown",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

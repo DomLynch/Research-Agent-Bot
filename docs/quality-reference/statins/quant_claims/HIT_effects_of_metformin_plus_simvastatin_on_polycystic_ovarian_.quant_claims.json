@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_effects_of_metformin_plus_simvastatin_on_polycystic_ovarian_",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effects_of_metformin_plus_simvastatin_on_polycystic_ovarian_-pct-70",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 70,
+      "sentence": "Polycystic ovary syndrome (PCOS) is a common endocrinopathy affecting 6.5%-6.7% of women in reproductive age, and is commonly associated with obesity, menstrual irregularity, insulin resistance (IR), infertility, and clinical hyperandrogenism and/or hyperandrogenemia (1,2).",
+      "context_window": "ovary syndrome (PCOS) is a common endocrinopathy affecting 6.5%-6.7% of women in reproductive age, and is commonly associat",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_metformin_plus_simvastatin_on_polycystic_ovarian_-pct-75",
+      "claim_type": "percentage",
+      "raw_text": "6.7%",
+      "numeric_values": [
+        6.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 75,
+      "sentence": "Polycystic ovary syndrome (PCOS) is a common endocrinopathy affecting 6.5%-6.7% of women in reproductive age, and is commonly associated with obesity, menstrual irregularity, insulin resistance (IR), infertility, and clinical hyperandrogenism and/or hyperandrogenemia (1,2).",
+      "context_window": "y syndrome (PCOS) is a common endocrinopathy affecting 6.5%-6.7% of women in reproductive age, and is commonly associated wi",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_metformin_plus_simvastatin_on_polycystic_ovarian_-pct-975",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 975,
+      "sentence": "Insulin resistance in women with PCOS is common (up to 50%), both in obese and nonobese women (5), and disordered insulin action precedes the increase in androgen.",
+      "context_window": "ies. Insulin resistance in women with PCOS is common (up to 50%), both in obese and nonobese women (5), and disordered insu",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

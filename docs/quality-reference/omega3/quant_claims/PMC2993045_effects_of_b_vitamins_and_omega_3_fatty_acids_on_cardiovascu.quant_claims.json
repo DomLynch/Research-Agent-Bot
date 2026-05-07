@@ -1,0 +1,2157 @@
+{
+  "paper_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu",
+  "doi": "10.1136/bmj.c6273",
+  "extracted_at": "2026-05-07T19:33:02+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 34,
+    "percentage": 50,
+    "p_value": 10,
+    "hazard_ratio": 9,
+    "sample_size": 16
+  },
+  "claims": [
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-607",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 607,
+      "sentence": "Intervention Daily dietary supplement containing 5-methyltetrahydrofolate (560 \u03bcg), vitamin B-6 (3 mg), and vitamin B-12 (20 \u03bcg) or placebo; and containing omega 3 fatty acids (600 mg of eicosapentanoic acid and docosahexaenoic acid at a ratio of 2:1) or placebo.",
+      "context_window": "containing 5-methyltetrahydrofolate (560 \u03bcg), vitamin B-6 (3 mg), and vitamin B-12 (20 \u03bcg) or placebo; and containing omega",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-687",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 687,
+      "sentence": "Intervention Daily dietary supplement containing 5-methyltetrahydrofolate (560 \u03bcg), vitamin B-6 (3 mg), and vitamin B-12 (20 \u03bcg) or placebo; and containing omega 3 fatty acids (600 mg of eicosapentanoic acid and docosahexaenoic acid at a ratio of 2:1) or placebo.",
+      "context_window": "-12 (20 \u03bcg) or placebo; and containing omega 3 fatty acids (600 mg of eicosapentanoic acid and docosahexaenoic acid at a ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-813",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 813,
+      "sentence": "Median duration of supplementation was 4.7 years.",
+      "context_window": "of 2:1) or placebo. Median duration of supplementation was 4.7 years. Main outcome measures Major cardiovascular events, define",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1061",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1061,
+      "sentence": "Results Allocation to B vitamins lowered plasma homocysteine concentrations by 19% compared with placebo, but had no significant effects on major vascular events (75 v 82 patients, hazard ratio, 0.90 (95% confidence interval 0.66 to 1.23, P=0.50)).",
+      "context_window": "to B vitamins lowered plasma homocysteine concentrations by 19% compared with placebo, but had no significant effects on ma",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1183",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1183,
+      "sentence": "Results Allocation to B vitamins lowered plasma homocysteine concentrations by 19% compared with placebo, but had no significant effects on major vascular events (75 v 82 patients, hazard ratio, 0.90 (95% confidence interval 0.66 to 1.23, P=0.50)).",
+      "context_window": "ajor vascular events (75 v 82 patients, hazard ratio, 0.90 (95% confidence interval 0.66 to 1.23, P=0.50)). Allocation to o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-p-1221",
+      "claim_type": "p_value",
+      "raw_text": "P=0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1221,
+      "sentence": "Results Allocation to B vitamins lowered plasma homocysteine concentrations by 19% compared with placebo, but had no significant effects on major vascular events (75 v 82 patients, hazard ratio, 0.90 (95% confidence interval 0.66 to 1.23, P=0.50)).",
+      "context_window": ", hazard ratio, 0.90 (95% confidence interval 0.66 to 1.23, P=0.50)). Allocation to omega 3 fatty acids increased plasma conce",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1323",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1323,
+      "sentence": "Allocation to omega 3 fatty acids increased plasma concentrations of omega 3 fatty acids by 37% compared with placebo, but also had no significant effect on major vascular events (81 v 76 patients, hazard ratio 1.08 (0.79 to 1.47, P=0.64)).",
+      "context_window": "s increased plasma concentrations of omega 3 fatty acids by 37% compared with placebo, but also had no significant effect o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-hr-l-1429",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 1.08",
+      "numeric_values": [
+        1.08
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1429,
+      "sentence": "Allocation to omega 3 fatty acids increased plasma concentrations of omega 3 fatty acids by 37% compared with placebo, but also had no significant effect on major vascular events (81 v 76 patients, hazard ratio 1.08 (0.79 to 1.47, P=0.64)).",
+      "context_window": "nificant effect on major vascular events (81 v 76 patients, hazard ratio 1.08 (0.79 to 1.47, P=0.64)). Conclusion This study does not su",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-p-1462",
+      "claim_type": "p_value",
+      "raw_text": "P=0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1462,
+      "sentence": "Allocation to omega 3 fatty acids increased plasma concentrations of omega 3 fatty acids by 37% compared with placebo, but also had no significant effect on major vascular events (81 v 76 patients, hazard ratio 1.08 (0.79 to 1.47, P=0.64)).",
+      "context_window": "events (81 v 76 patients, hazard ratio 1.08 (0.79 to 1.47, P=0.64)). Conclusion This study does not support the routine use",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-506",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 506,
+      "sentence": "1 2 3 4 5 6 Moderately elevated concentrations of plasma total homocysteine have been associated with higher risks of coronary heart disease and stroke, 7 8 9 10 11 12 and dietary supplementation with folic acid and vitamin B-12 typically lowers plasma total homocysteine concentration by about 25-30%, 13 raising the prospect that dietary supplementation with these B vitamins might reduce the risk of coronary heart disease and stroke.",
+      "context_window": "lowers plasma total homocysteine concentration by about 25-30%, 13 raising the prospect that dietary supplementation with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-425",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 425,
+      "sentence": "Using a 2\u00d72 factorial design, we examined the effects of a daily dietary supplement containing 5-methyltetrahydrofolate (560 \u03bcg), vitamin B-6 (3 mg) and B-12 (20 \u03bcg) versus placebo, and a supplement containing omega 3 polyunsaturated fatty acids (600 mg of eicosapentanoic acid and docosahexaenoic acid at a ratio of 2:1) versus placebo.",
+      "context_window": "containing 5-methyltetrahydrofolate (560 \u03bcg), vitamin B-6 (3 mg) and B-12 (20 \u03bcg) versus placebo, and a supplement containi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-529",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 529,
+      "sentence": "Using a 2\u00d72 factorial design, we examined the effects of a daily dietary supplement containing 5-methyltetrahydrofolate (560 \u03bcg), vitamin B-6 (3 mg) and B-12 (20 \u03bcg) versus placebo, and a supplement containing omega 3 polyunsaturated fatty acids (600 mg of eicosapentanoic acid and docosahexaenoic acid at a ratio of 2:1) versus placebo.",
+      "context_window": "supplement containing omega 3 polyunsaturated fatty acids (600 mg of eicosapentanoic acid and docosahexaenoic acid at a ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-1350",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1350,
+      "sentence": "Men and women aged 45-80 years who had had an acute coronary or cerebral ischaemic event within the 12 months before randomisation were eligible to participate.",
+      "context_window": "ans in 257 centres throughout France. Men and women aged 45-80 years who had had an acute coronary or cerebral ischaemic event w",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-1428",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1428,
+      "sentence": "Men and women aged 45-80 years who had had an acute coronary or cerebral ischaemic event within the 12 months before randomisation were eligible to participate.",
+      "context_window": "ad an acute coronary or cerebral ischaemic event within the 12 months before randomisation were eligible to participate. A coron",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-2227",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2227,
+      "sentence": "Acute coronary syndrome without myocardial infarction (ICD-10 codes I20.0-I20.1) was initially defined by the presence of three criteria-typical chest pain, electrocardiographic changes consistent with coronary artery disease without myocardial infarction, and evidence of coronary artery disease (myocardial infarction, angina with angiographic evidence of stenosis >50% in one or more coronary arteries, or angina pectoris corroborated by coronary angiography or exercise testing, or coronary angioplasty or coronary artery bypass graft procedure).",
+      "context_window": "infarction, angina with angiographic evidence of stenosis >50% in one or more coronary arteries, or angina pectoris corrob",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-3000",
+      "claim_type": "unit_value",
+      "raw_text": "45 years",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3000,
+      "sentence": "Exclusion criteria included age (<45 years or >80 years), ill defined diagnosis of cardiovascular disease, inability or unwillingness to comply with study treatment, and disease or treatment that might interfere with metabolism of homocysteine or omega 3 fatty acids, in particular methotrexate for treating cancer or rheumatoid arthritis and chronic renal failure (plasma creatinine concentration >200 \u03bcmol/l or creatinine clearance <40 ml/min).",
+      "context_window": "eligible for inclusion. Exclusion criteria included age (<45 years or >80 years), ill defined diagnosis of cardiovascular dise",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-3013",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3013,
+      "sentence": "Exclusion criteria included age (<45 years or >80 years), ill defined diagnosis of cardiovascular disease, inability or unwillingness to comply with study treatment, and disease or treatment that might interfere with metabolism of homocysteine or omega 3 fatty acids, in particular methotrexate for treating cancer or rheumatoid arthritis and chronic renal failure (plasma creatinine concentration >200 \u03bcmol/l or creatinine clearance <40 ml/min).",
+      "context_window": "inclusion. Exclusion criteria included age (<45 years or >80 years), ill defined diagnosis of cardiovascular disease, inabilit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-3365",
+      "claim_type": "unit_value",
+      "raw_text": "200 \u03bcmol",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 3365,
+      "sentence": "Exclusion criteria included age (<45 years or >80 years), ill defined diagnosis of cardiovascular disease, inability or unwillingness to comply with study treatment, and disease or treatment that might interfere with metabolism of homocysteine or omega 3 fatty acids, in particular methotrexate for treating cancer or rheumatoid arthritis and chronic renal failure (plasma creatinine concentration >200 \u03bcmol/l or creatinine clearance <40 ml/min).",
+      "context_window": "and chronic renal failure (plasma creatinine concentration >200 \u03bcmol/l or creatinine clearance <40 ml/min). Included participan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-3760",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3760,
+      "sentence": "Randomisation was performed by means of a computerised block sequence stratified by three age groups (44-54, 55-64, and 65-80 years), sex, prior disease at enrolment (myocardial infarction, acute coronary syndrome, or ischaemic stroke) and recruitment centre.",
+      "context_window": "quence stratified by three age groups (44-54, 55-64, and 65-80 years), sex, prior disease at enrolment (myocardial infarction, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-5329",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5329,
+      "sentence": "Compliance was defined as taking at least 80% of the allocated treatment.",
+      "context_window": "phone interview). Compliance was defined as taking at least 80% of the allocated treatment. Blood samples were obtained fro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-5497",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5497,
+      "sentence": "Blood samples were obtained from all participants at baseline, and from a sample of participants attending their health centre visit at 12 months (n=2147) and at the end of the trial (n=1160) for assessment of plasma concentrations of total homocysteine and pyridoxal phosphate and serum concentrations of folate and vitamin B-12.",
+      "context_window": "mple of participants attending their health centre visit at 12 months (n=2147) and at the end of the trial (n=1160) for assessmen",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-5508",
+      "claim_type": "sample_size",
+      "raw_text": "n=2147",
+      "numeric_values": [
+        2147.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5508,
+      "sentence": "Blood samples were obtained from all participants at baseline, and from a sample of participants attending their health centre visit at 12 months (n=2147) and at the end of the trial (n=1160) for assessment of plasma concentrations of total homocysteine and pyridoxal phosphate and serum concentrations of folate and vitamin B-12.",
+      "context_window": "ticipants attending their health centre visit at 12 months (n=2147) and at the end of the trial (n=1160) for assessment of pla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-5545",
+      "claim_type": "sample_size",
+      "raw_text": "n=1160",
+      "numeric_values": [
+        1160.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5545,
+      "sentence": "Blood samples were obtained from all participants at baseline, and from a sample of participants attending their health centre visit at 12 months (n=2147) and at the end of the trial (n=1160) for assessment of plasma concentrations of total homocysteine and pyridoxal phosphate and serum concentrations of folate and vitamin B-12.",
+      "context_window": "re visit at 12 months (n=2147) and at the end of the trial (n=1160) for assessment of plasma concentrations of total homocyste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-5794",
+      "claim_type": "sample_size",
+      "raw_text": "n=682",
+      "numeric_values": [
+        682.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5794,
+      "sentence": "Fatty acid composition of plasma lipids was also determined by gas chromatography in a random sample (n=682) at baseline and at 12 months.",
+      "context_window": "s also determined by gas chromatography in a random sample (n=682) at baseline and at 12 months. In addition, all participant",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-5820",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5820,
+      "sentence": "Fatty acid composition of plasma lipids was also determined by gas chromatography in a random sample (n=682) at baseline and at 12 months.",
+      "context_window": "hromatography in a random sample (n=682) at baseline and at 12 months. In addition, all participants had plasma concentrations of",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-7739",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7739,
+      "sentence": "The planned enrolment of 2500 participants with an average follow-up of five years was expected to have more than 90% power to detect a 10% reduction in the relative risk of major vascular events associated with B vitamins or omega 3 fatty acids and a 19% reduction for the combination of omega 3 fatty acids and B vitamins, given a two sided \u03b1 value of 0.05.",
+      "context_window": "rage follow-up of five years was expected to have more than 90% power to detect a 10% reduction in the relative risk of maj",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-7761",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7761,
+      "sentence": "The planned enrolment of 2500 participants with an average follow-up of five years was expected to have more than 90% power to detect a 10% reduction in the relative risk of major vascular events associated with B vitamins or omega 3 fatty acids and a 19% reduction for the combination of omega 3 fatty acids and B vitamins, given a two sided \u03b1 value of 0.05.",
+      "context_window": "years was expected to have more than 90% power to detect a 10% reduction in the relative risk of major vascular events ass",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-7877",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7877,
+      "sentence": "The planned enrolment of 2500 participants with an average follow-up of five years was expected to have more than 90% power to detect a 10% reduction in the relative risk of major vascular events associated with B vitamins or omega 3 fatty acids and a 19% reduction for the combination of omega 3 fatty acids and B vitamins, given a two sided \u03b1 value of 0.05.",
+      "context_window": "nts associated with B vitamins or omega 3 fatty acids and a 19% reduction for the combination of omega 3 fatty acids and B",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-8851",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8851,
+      "sentence": "We estimated the hazard ratios and 95% confidence intervals using Cox proportional hazards models after adjustment for age and sex.",
+      "context_window": "with the placebo group. We estimated the hazard ratios and 95% confidence intervals using Cox proportional hazards models",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-236",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 236,
+      "sentence": "Of the 2501 participants, 1150 (46%) had had a prior myocardial infarction, 713 (28%) an acute coronary syndrome without myocardial infarction, and 638 (26%) an ischaemic stroke.",
+      "context_window": "63.2 (9.7) years for women. Of the 2501 participants, 1150 (46%) had had a prior myocardial infarction, 713 (28%) an acute",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-285",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 285,
+      "sentence": "Of the 2501 participants, 1150 (46%) had had a prior myocardial infarction, 713 (28%) an acute coronary syndrome without myocardial infarction, and 638 (26%) an ischaemic stroke.",
+      "context_window": "nts, 1150 (46%) had had a prior myocardial infarction, 713 (28%) an acute coronary syndrome without myocardial infarction,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-357",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 357,
+      "sentence": "Of the 2501 participants, 1150 (46%) had had a prior myocardial infarction, 713 (28%) an acute coronary syndrome without myocardial infarction, and 638 (26%) an ischaemic stroke.",
+      "context_window": "e coronary syndrome without myocardial infarction, and 638 (26%) an ischaemic stroke. The median time between the acute eve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-458",
+      "claim_type": "unit_value",
+      "raw_text": "101 days",
+      "numeric_values": [
+        101.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 458,
+      "sentence": "The median time between the acute event and randomisation in the trial was 101 days.",
+      "context_window": "between the acute event and randomisation in the trial was 101 days. Participants were randomly assigned to one of four treatme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-543",
+      "claim_type": "sample_size",
+      "raw_text": "n=622",
+      "numeric_values": [
+        622.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 543,
+      "sentence": "Participants were randomly assigned to one of four treatments: B vitamins (n=622), omega 3 fatty acids (n=633), B vitamins and omega 3 fatty acids (n= 620), or double placebo (n=626) (fig 1).",
+      "context_window": "re randomly assigned to one of four treatments: B vitamins (n=622), omega 3 fatty acids (n=633), B vitamins and omega 3 fatty",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-572",
+      "claim_type": "sample_size",
+      "raw_text": "n=633",
+      "numeric_values": [
+        633.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 572,
+      "sentence": "Participants were randomly assigned to one of four treatments: B vitamins (n=622), omega 3 fatty acids (n=633), B vitamins and omega 3 fatty acids (n= 620), or double placebo (n=626) (fig 1).",
+      "context_window": "f four treatments: B vitamins (n=622), omega 3 fatty acids (n=633), B vitamins and omega 3 fatty acids (n= 620), or double pl",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-616",
+      "claim_type": "sample_size",
+      "raw_text": "n= 620",
+      "numeric_values": [
+        620.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 616,
+      "sentence": "Participants were randomly assigned to one of four treatments: B vitamins (n=622), omega 3 fatty acids (n=633), B vitamins and omega 3 fatty acids (n= 620), or double placebo (n=626) (fig 1).",
+      "context_window": "3 fatty acids (n=633), B vitamins and omega 3 fatty acids (n= 620), or double placebo (n=626) (fig 1). The four groups were w",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-644",
+      "claim_type": "sample_size",
+      "raw_text": "n=626",
+      "numeric_values": [
+        626.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 644,
+      "sentence": "Participants were randomly assigned to one of four treatments: B vitamins (n=622), omega 3 fatty acids (n=633), B vitamins and omega 3 fatty acids (n= 620), or double placebo (n=626) (fig 1).",
+      "context_window": "tamins and omega 3 fatty acids (n= 620), or double placebo (n=626) (fig 1). The four groups were well balanced with respect t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-815",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 815,
+      "sentence": "The median follow-up time was 4.7 years (mean 4.2 (SD 1.0) years) with a total of 10 656 person years.",
+      "context_window": "and medication use (table 1). The median follow-up time was 4.7 years (mean 4.2 (SD 1.0) years) with a total of 10 656 person yea",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1504",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1504,
+      "sentence": "The overall response rate for return of completed questionnaires was 99%, 96%, 94%, and 95% at 6, 12, and 24 months and at the end of the trial, respectively.",
+      "context_window": "ll response rate for return of completed questionnaires was 99%, 96%, 94%, and 95% at 6, 12, and 24 months and at the end o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1509",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1509,
+      "sentence": "The overall response rate for return of completed questionnaires was 99%, 96%, 94%, and 95% at 6, 12, and 24 months and at the end of the trial, respectively.",
+      "context_window": "sponse rate for return of completed questionnaires was 99%, 96%, 94%, and 95% at 6, 12, and 24 months and at the end of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1514",
+      "claim_type": "percentage",
+      "raw_text": "94%",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1514,
+      "sentence": "The overall response rate for return of completed questionnaires was 99%, 96%, 94%, and 95% at 6, 12, and 24 months and at the end of the trial, respectively.",
+      "context_window": "e rate for return of completed questionnaires was 99%, 96%, 94%, and 95% at 6, 12, and 24 months and at the end of the tria",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1523",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1523,
+      "sentence": "The overall response rate for return of completed questionnaires was 99%, 96%, 94%, and 95% at 6, 12, and 24 months and at the end of the trial, respectively.",
+      "context_window": "r return of completed questionnaires was 99%, 96%, 94%, and 95% at 6, 12, and 24 months and at the end of the trial, respec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-1541",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1541,
+      "sentence": "The overall response rate for return of completed questionnaires was 99%, 96%, 94%, and 95% at 6, 12, and 24 months and at the end of the trial, respectively.",
+      "context_window": "ted questionnaires was 99%, 96%, 94%, and 95% at 6, 12, and 24 months and at the end of the trial, respectively. About 86% of tho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1600",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1600,
+      "sentence": "About 86% of those who returned a questionnaire reported that they were compliant with the study treatment (defined as taking at least 80% of the allocated treatment), and compliance was similar in all four groups (87%, 86%, 86%, and 86%).",
+      "context_window": "24 months and at the end of the trial, respectively. About 86% of those who returned a questionnaire reported that they we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1729",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1729,
+      "sentence": "About 86% of those who returned a questionnaire reported that they were compliant with the study treatment (defined as taking at least 80% of the allocated treatment), and compliance was similar in all four groups (87%, 86%, 86%, and 86%).",
+      "context_window": "pliant with the study treatment (defined as taking at least 80% of the allocated treatment), and compliance was similar in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1809",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1809,
+      "sentence": "About 86% of those who returned a questionnaire reported that they were compliant with the study treatment (defined as taking at least 80% of the allocated treatment), and compliance was similar in all four groups (87%, 86%, 86%, and 86%).",
+      "context_window": "treatment), and compliance was similar in all four groups (87%, 86%, 86%, and 86%). Side effects (chiefly gastrointestinal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1814",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1814,
+      "sentence": "About 86% of those who returned a questionnaire reported that they were compliant with the study treatment (defined as taking at least 80% of the allocated treatment), and compliance was similar in all four groups (87%, 86%, 86%, and 86%).",
+      "context_window": "tment), and compliance was similar in all four groups (87%, 86%, 86%, and 86%). Side effects (chiefly gastrointestinal dist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1819",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1819,
+      "sentence": "About 86% of those who returned a questionnaire reported that they were compliant with the study treatment (defined as taking at least 80% of the allocated treatment), and compliance was similar in all four groups (87%, 86%, 86%, and 86%).",
+      "context_window": "), and compliance was similar in all four groups (87%, 86%, 86%, and 86%). Side effects (chiefly gastrointestinal disturban",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1828",
+      "claim_type": "percentage",
+      "raw_text": "86%",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1828,
+      "sentence": "About 86% of those who returned a questionnaire reported that they were compliant with the study treatment (defined as taking at least 80% of the allocated treatment), and compliance was similar in all four groups (87%, 86%, 86%, and 86%).",
+      "context_window": "mpliance was similar in all four groups (87%, 86%, 86%, and 86%). Side effects (chiefly gastrointestinal disturbances, naus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1934",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1934,
+      "sentence": "Side effects (chiefly gastrointestinal disturbances, nausea, and cutaneous reactions) accounted for 2.1% of participants stopping treatment (2.6% in the group taking omega 3 fatty acids group, 2.0% in the B vitamins group, and 1.6% in the placebo group).",
+      "context_window": "isturbances, nausea, and cutaneous reactions) accounted for 2.1% of participants stopping treatment (2.6% in the group takin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1975",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1975,
+      "sentence": "Side effects (chiefly gastrointestinal disturbances, nausea, and cutaneous reactions) accounted for 2.1% of participants stopping treatment (2.6% in the group taking omega 3 fatty acids group, 2.0% in the B vitamins group, and 1.6% in the placebo group).",
+      "context_window": "ons) accounted for 2.1% of participants stopping treatment (2.6% in the group taking omega 3 fatty acids group, 2.0% in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-2027",
+      "claim_type": "percentage",
+      "raw_text": "2.0%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2027,
+      "sentence": "Side effects (chiefly gastrointestinal disturbances, nausea, and cutaneous reactions) accounted for 2.1% of participants stopping treatment (2.6% in the group taking omega 3 fatty acids group, 2.0% in the B vitamins group, and 1.6% in the placebo group).",
+      "context_window": "atment (2.6% in the group taking omega 3 fatty acids group, 2.0% in the B vitamins group, and 1.6% in the placebo group). T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-2061",
+      "claim_type": "percentage",
+      "raw_text": "1.6%",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2061,
+      "sentence": "Side effects (chiefly gastrointestinal disturbances, nausea, and cutaneous reactions) accounted for 2.1% of participants stopping treatment (2.6% in the group taking omega 3 fatty acids group, 2.0% in the B vitamins group, and 1.6% in the placebo group).",
+      "context_window": "mega 3 fatty acids group, 2.0% in the B vitamins group, and 1.6% in the placebo group). The median (interquartile range) ba",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-2333",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2333,
+      "sentence": "Allocation to B vitamins was associated with a 20% lower (2.5 \u03bcmol/l) median plasma total homocysteine concentration at 1 year compared with those allocated placebo, and this difference was 19% (2.7 \u03bcmol/l) at the end of the trial (table 2).",
+      "context_window": "5.8) \u03bcmol/l. Allocation to B vitamins was associated with a 20% lower (2.5 \u03bcmol/l) median plasma total homocysteine concent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-2344",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 \u03bcmol",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 2344,
+      "sentence": "Allocation to B vitamins was associated with a 20% lower (2.5 \u03bcmol/l) median plasma total homocysteine concentration at 1 year compared with those allocated placebo, and this difference was 19% (2.7 \u03bcmol/l) at the end of the trial (table 2).",
+      "context_window": ". Allocation to B vitamins was associated with a 20% lower (2.5 \u03bcmol/l) median plasma total homocysteine concentration at 1 year",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-2406",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 2406,
+      "sentence": "Allocation to B vitamins was associated with a 20% lower (2.5 \u03bcmol/l) median plasma total homocysteine concentration at 1 year compared with those allocated placebo, and this difference was 19% (2.7 \u03bcmol/l) at the end of the trial (table 2).",
+      "context_window": "5 \u03bcmol/l) median plasma total homocysteine concentration at 1 year compared with those allocated placebo, and this difference",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-2476",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2476,
+      "sentence": "Allocation to B vitamins was associated with a 20% lower (2.5 \u03bcmol/l) median plasma total homocysteine concentration at 1 year compared with those allocated placebo, and this difference was 19% (2.7 \u03bcmol/l) at the end of the trial (table 2).",
+      "context_window": "pared with those allocated placebo, and this difference was 19% (2.7 \u03bcmol/l) at the end of the trial (table 2). Allocation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-2481",
+      "claim_type": "unit_value",
+      "raw_text": "2.7 \u03bcmol",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 2481,
+      "sentence": "Allocation to B vitamins was associated with a 20% lower (2.5 \u03bcmol/l) median plasma total homocysteine concentration at 1 year compared with those allocated placebo, and this difference was 19% (2.7 \u03bcmol/l) at the end of the trial (table 2).",
+      "context_window": "with those allocated placebo, and this difference was 19% (2.7 \u03bcmol/l) at the end of the trial (table 2). Allocation to B vitam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-2573",
+      "claim_type": "percentage",
+      "raw_text": "146%",
+      "numeric_values": [
+        146.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2573,
+      "sentence": "Allocation to B vitamins was associated with 146% increase in serum folate, 35% increase in serum vitamin B-12, and 116% increase in plasma vitamin B-6.",
+      "context_window": "ial (table 2). Allocation to B vitamins was associated with 146% increase in serum folate, 35% increase in serum vitamin B-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-2604",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2604,
+      "sentence": "Allocation to B vitamins was associated with 146% increase in serum folate, 35% increase in serum vitamin B-12, and 116% increase in plasma vitamin B-6.",
+      "context_window": "vitamins was associated with 146% increase in serum folate, 35% increase in serum vitamin B-12, and 116% increase in plasma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-2644",
+      "claim_type": "percentage",
+      "raw_text": "116%",
+      "numeric_values": [
+        116.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2644,
+      "sentence": "Allocation to B vitamins was associated with 146% increase in serum folate, 35% increase in serum vitamin B-12, and 116% increase in plasma vitamin B-6.",
+      "context_window": "se in serum folate, 35% increase in serum vitamin B-12, and 116% increase in plasma vitamin B-6. Allocation to omega 3 fatty",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-2737",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2737,
+      "sentence": "Allocation to omega 3 fatty acids was associated with a 37% increase in median plasma concentrations of these fatty acids at one year compared with those allocated to placebo.",
+      "context_window": "-6. Allocation to omega 3 fatty acids was associated with a 37% increase in median plasma concentrations of these fatty aci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-3096",
+      "claim_type": "sample_size",
+      "raw_text": "n=2461",
+      "numeric_values": [
+        2461.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3096,
+      "sentence": "Values are medians (interquartile ranges)\n\n*n=2461 (respectively 611, 622, 612, and 616 for the four groups).\n\n\u2020n=2147 (respectively 531, 544, 534, and 538 for the four groups).\n\n\u2021n=1160 (respectively 282, 292, 294, and 292 for the four groups).\n\n\u00a7n=682 (respectively 163, 173, 177, and 169 for the four groups).",
+      "context_window": "acids, or both. Values are medians (interquartile ranges) *n=2461 (respectively 611, 622, 612, and 616 for the four groups).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-3164",
+      "claim_type": "sample_size",
+      "raw_text": "n=2147",
+      "numeric_values": [
+        2147.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3164,
+      "sentence": "Values are medians (interquartile ranges)\n\n*n=2461 (respectively 611, 622, 612, and 616 for the four groups).\n\n\u2020n=2147 (respectively 531, 544, 534, and 538 for the four groups).\n\n\u2021n=1160 (respectively 282, 292, 294, and 292 for the four groups).\n\n\u00a7n=682 (respectively 163, 173, 177, and 169 for the four groups).",
+      "context_window": "respectively 611, 622, 612, and 616 for the four groups). \u2020n=2147 (respectively 531, 544, 534, and 538 for the four groups).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-3232",
+      "claim_type": "sample_size",
+      "raw_text": "n=1160",
+      "numeric_values": [
+        1160.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3232,
+      "sentence": "Values are medians (interquartile ranges)\n\n*n=2461 (respectively 611, 622, 612, and 616 for the four groups).\n\n\u2020n=2147 (respectively 531, 544, 534, and 538 for the four groups).\n\n\u2021n=1160 (respectively 282, 292, 294, and 292 for the four groups).\n\n\u00a7n=682 (respectively 163, 173, 177, and 169 for the four groups).",
+      "context_window": "respectively 531, 544, 534, and 538 for the four groups). \u2021n=1160 (respectively 282, 292, 294, and 292 for the four groups).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-3300",
+      "claim_type": "sample_size",
+      "raw_text": "n=682",
+      "numeric_values": [
+        682.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3300,
+      "sentence": "Values are medians (interquartile ranges)\n\n*n=2461 (respectively 611, 622, 612, and 616 for the four groups).\n\n\u2020n=2147 (respectively 531, 544, 534, and 538 for the four groups).\n\n\u2021n=1160 (respectively 282, 292, 294, and 292 for the four groups).\n\n\u00a7n=682 (respectively 163, 173, 177, and 169 for the four groups).",
+      "context_window": "respectively 282, 292, 294, and 292 for the four groups). \u00a7n=682 (respectively 163, 173, 177, and 169 for the four groups).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-3385",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3385,
+      "sentence": "During a median of 4.7 years of follow-up, 157 participants (6.3%) experienced a major confirmed cardiovascular event, with 20 individuals experiencing more than one cardiovascular event.",
+      "context_window": "173, 177, and 169 for the four groups). During a median of 4.7 years of follow-up, 157 participants (6.3%) experienced a major c",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular events",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-3427",
+      "claim_type": "percentage",
+      "raw_text": "6.3%",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3427,
+      "sentence": "During a median of 4.7 years of follow-up, 157 participants (6.3%) experienced a major confirmed cardiovascular event, with 20 individuals experiencing more than one cardiovascular event.",
+      "context_window": "uring a median of 4.7 years of follow-up, 157 participants (6.3%) experienced a major confirmed cardiovascular event, with 2",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular events",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-hr-l-3673",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 0.90",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3673,
+      "sentence": "Allocation to B vitamins was not associated with any significant effect on major vascular events (75 v 82 individuals, hazard ratio 0.90 (95% confidence interval 0.66 to 1.23), P=0.50; fig 2).",
+      "context_window": "icant effect on major vascular events (75 v 82 individuals, hazard ratio 0.90 (95% confidence interval 0.66 to 1.23), P=0.50; fig 2). B v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-3692",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3692,
+      "sentence": "Allocation to B vitamins was not associated with any significant effect on major vascular events (75 v 82 individuals, hazard ratio 0.90 (95% confidence interval 0.66 to 1.23), P=0.50; fig 2).",
+      "context_window": "or vascular events (75 v 82 individuals, hazard ratio 0.90 (95% confidence interval 0.66 to 1.23), P=0.50; fig 2). B vitami",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-p-3731",
+      "claim_type": "p_value",
+      "raw_text": "P=0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3731,
+      "sentence": "Allocation to B vitamins was not associated with any significant effect on major vascular events (75 v 82 individuals, hazard ratio 0.90 (95% confidence interval 0.66 to 1.23), P=0.50; fig 2).",
+      "context_window": ", hazard ratio 0.90 (95% confidence interval 0.66 to 1.23), P=0.50; fig 2). B vitamins had no significant effect on the cumula",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-4511",
+      "claim_type": "sample_size",
+      "raw_text": "n=174",
+      "numeric_values": [
+        174.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4511,
+      "sentence": "Fig 2 Effect of dietary supplementation with B vitamins on cardiovascular events and mortality (adjusted for age and sex)\n\nFig 3 Kaplan-Meier curves for cumulative incidence of first major cardiovascular event (non-fatal myocardial infarction, ischaemic stroke, or death from cardiovascular disease) associated with dietary supplementation with B vitamins (top) or omega 3 fatty acids (bottom)\n\nAmong the secondary outcomes, there were 60 cases of non-fatal myocardial infarction, 57 cases of stroke, 117 deaths (40 due to cardiovascular causes), and 436 additional cardiovascular events, including coronary angioplasty (n=174), coronary artery bypass surgery (n=38), acute coronary syndrome without myocardial infarction (n=37), supraventricular arrhythmia (n=33), and acute cardiac failure (n=31).",
+      "context_window": "onal cardiovascular events, including coronary angioplasty (n=174), coronary artery bypass surgery (n=38), acute coronary syn",
+      "claim_role": "background",
+      "endpoint": "cardiovascular events",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-4551",
+      "claim_type": "sample_size",
+      "raw_text": "n=38",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4551,
+      "sentence": "Fig 2 Effect of dietary supplementation with B vitamins on cardiovascular events and mortality (adjusted for age and sex)\n\nFig 3 Kaplan-Meier curves for cumulative incidence of first major cardiovascular event (non-fatal myocardial infarction, ischaemic stroke, or death from cardiovascular disease) associated with dietary supplementation with B vitamins (top) or omega 3 fatty acids (bottom)\n\nAmong the secondary outcomes, there were 60 cases of non-fatal myocardial infarction, 57 cases of stroke, 117 deaths (40 due to cardiovascular causes), and 436 additional cardiovascular events, including coronary angioplasty (n=174), coronary artery bypass surgery (n=38), acute coronary syndrome without myocardial infarction (n=37), supraventricular arrhythmia (n=33), and acute cardiac failure (n=31).",
+      "context_window": "ronary angioplasty (n=174), coronary artery bypass surgery (n=38), acute coronary syndrome without myocardial infarction (n=",
+      "claim_role": "background",
+      "endpoint": "cardiovascular events",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-4613",
+      "claim_type": "sample_size",
+      "raw_text": "n=37",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4613,
+      "sentence": "Fig 2 Effect of dietary supplementation with B vitamins on cardiovascular events and mortality (adjusted for age and sex)\n\nFig 3 Kaplan-Meier curves for cumulative incidence of first major cardiovascular event (non-fatal myocardial infarction, ischaemic stroke, or death from cardiovascular disease) associated with dietary supplementation with B vitamins (top) or omega 3 fatty acids (bottom)\n\nAmong the secondary outcomes, there were 60 cases of non-fatal myocardial infarction, 57 cases of stroke, 117 deaths (40 due to cardiovascular causes), and 436 additional cardiovascular events, including coronary angioplasty (n=174), coronary artery bypass surgery (n=38), acute coronary syndrome without myocardial infarction (n=37), supraventricular arrhythmia (n=33), and acute cardiac failure (n=31).",
+      "context_window": "38), acute coronary syndrome without myocardial infarction (n=37), supraventricular arrhythmia (n=33), and acute cardiac fai",
+      "claim_role": "background",
+      "endpoint": "cardiovascular events",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-4649",
+      "claim_type": "sample_size",
+      "raw_text": "n=33",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4649,
+      "sentence": "Fig 2 Effect of dietary supplementation with B vitamins on cardiovascular events and mortality (adjusted for age and sex)\n\nFig 3 Kaplan-Meier curves for cumulative incidence of first major cardiovascular event (non-fatal myocardial infarction, ischaemic stroke, or death from cardiovascular disease) associated with dietary supplementation with B vitamins (top) or omega 3 fatty acids (bottom)\n\nAmong the secondary outcomes, there were 60 cases of non-fatal myocardial infarction, 57 cases of stroke, 117 deaths (40 due to cardiovascular causes), and 436 additional cardiovascular events, including coronary angioplasty (n=174), coronary artery bypass surgery (n=38), acute coronary syndrome without myocardial infarction (n=37), supraventricular arrhythmia (n=33), and acute cardiac failure (n=31).",
+      "context_window": "myocardial infarction (n=37), supraventricular arrhythmia (n=33), and acute cardiac failure (n=31). Allocation to B vitami",
+      "claim_role": "background",
+      "endpoint": "cardiovascular events",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-n-4683",
+      "claim_type": "sample_size",
+      "raw_text": "n=31",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4683,
+      "sentence": "Fig 2 Effect of dietary supplementation with B vitamins on cardiovascular events and mortality (adjusted for age and sex)\n\nFig 3 Kaplan-Meier curves for cumulative incidence of first major cardiovascular event (non-fatal myocardial infarction, ischaemic stroke, or death from cardiovascular disease) associated with dietary supplementation with B vitamins (top) or omega 3 fatty acids (bottom)\n\nAmong the secondary outcomes, there were 60 cases of non-fatal myocardial infarction, 57 cases of stroke, 117 deaths (40 due to cardiovascular causes), and 436 additional cardiovascular events, including coronary angioplasty (n=174), coronary artery bypass surgery (n=38), acute coronary syndrome without myocardial infarction (n=37), supraventricular arrhythmia (n=33), and acute cardiac failure (n=31).",
+      "context_window": "raventricular arrhythmia (n=33), and acute cardiac failure (n=31). Allocation to B vitamins had no significant effect on no",
+      "claim_role": "background",
+      "endpoint": "cardiovascular events",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-hr-l-4796",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 0.88",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4796,
+      "sentence": "Allocation to B vitamins had no significant effect on non-fatal myocardial infarction (28 v 32 patients, hazard ratio 0.88 (0.53 to 1.46), P=0.61; fig 2), but it was associated with fewer stroke events (21 v 36 patients, hazard ratio 0.57 (0.33 to 0.97), P=0.04).",
+      "context_window": "ffect on non-fatal myocardial infarction (28 v 32 patients, hazard ratio 0.88 (0.53 to 1.46), P=0.61; fig 2), but it was associated with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-p-4830",
+      "claim_type": "p_value",
+      "raw_text": "P=0.61",
+      "numeric_values": [
+        0.61
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4830,
+      "sentence": "Allocation to B vitamins had no significant effect on non-fatal myocardial infarction (28 v 32 patients, hazard ratio 0.88 (0.53 to 1.46), P=0.61; fig 2), but it was associated with fewer stroke events (21 v 36 patients, hazard ratio 0.57 (0.33 to 0.97), P=0.04).",
+      "context_window": "rction (28 v 32 patients, hazard ratio 0.88 (0.53 to 1.46), P=0.61; fig 2), but it was associated with fewer stroke events (21",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-hr-l-4912",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4912,
+      "sentence": "Allocation to B vitamins had no significant effect on non-fatal myocardial infarction (28 v 32 patients, hazard ratio 0.88 (0.53 to 1.46), P=0.61; fig 2), but it was associated with fewer stroke events (21 v 36 patients, hazard ratio 0.57 (0.33 to 0.97), P=0.04).",
+      "context_window": "was associated with fewer stroke events (21 v 36 patients, hazard ratio 0.57 (0.33 to 0.97), P=0.04). There were no significant differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-p-4946",
+      "claim_type": "p_value",
+      "raw_text": "P=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4946,
+      "sentence": "Allocation to B vitamins had no significant effect on non-fatal myocardial infarction (28 v 32 patients, hazard ratio 0.88 (0.53 to 1.46), P=0.61; fig 2), but it was associated with fewer stroke events (21 v 36 patients, hazard ratio 0.57 (0.33 to 0.97), P=0.04).",
+      "context_window": "events (21 v 36 patients, hazard ratio 0.57 (0.33 to 0.97), P=0.04). There were no significant differences in the rates of all",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-hr-l-5221",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 1.81",
+      "numeric_values": [
+        1.81
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5221,
+      "sentence": "However, supplementation with B vitamins was associated with a non-significantly higher mortality from cardiovascular causes (26 v 14 patients, hazard ratio 1.81 (0.95 to 3.47), P=0.07) and a significantly higher risk of death from any cause (72 v 45 patients, hazard ratio 1.55 (1.07 to 2.25), P=0.02).",
+      "context_window": "her mortality from cardiovascular causes (26 v 14 patients, hazard ratio 1.81 (0.95 to 3.47), P=0.07) and a significantly higher risk of",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-p-5255",
+      "claim_type": "p_value",
+      "raw_text": "P=0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5255,
+      "sentence": "However, supplementation with B vitamins was associated with a non-significantly higher mortality from cardiovascular causes (26 v 14 patients, hazard ratio 1.81 (0.95 to 3.47), P=0.07) and a significantly higher risk of death from any cause (72 v 45 patients, hazard ratio 1.55 (1.07 to 2.25), P=0.02).",
+      "context_window": "causes (26 v 14 patients, hazard ratio 1.81 (0.95 to 3.47), P=0.07) and a significantly higher risk of death from any cause (7",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-hr-l-5338",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 1.55",
+      "numeric_values": [
+        1.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5338,
+      "sentence": "However, supplementation with B vitamins was associated with a non-significantly higher mortality from cardiovascular causes (26 v 14 patients, hazard ratio 1.81 (0.95 to 3.47), P=0.07) and a significantly higher risk of death from any cause (72 v 45 patients, hazard ratio 1.55 (1.07 to 2.25), P=0.02).",
+      "context_window": "ntly higher risk of death from any cause (72 v 45 patients, hazard ratio 1.55 (1.07 to 2.25), P=0.02). Furthermore, allocation to B vitam",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-p-5372",
+      "claim_type": "p_value",
+      "raw_text": "P=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5372,
+      "sentence": "However, supplementation with B vitamins was associated with a non-significantly higher mortality from cardiovascular causes (26 v 14 patients, hazard ratio 1.81 (0.95 to 3.47), P=0.07) and a significantly higher risk of death from any cause (72 v 45 patients, hazard ratio 1.55 (1.07 to 2.25), P=0.02).",
+      "context_window": "cause (72 v 45 patients, hazard ratio 1.55 (1.07 to 2.25), P=0.02). Furthermore, allocation to B vitamins did not have any si",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-hr-l-5494",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 1.19",
+      "numeric_values": [
+        1.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5494,
+      "sentence": "Furthermore, allocation to B vitamins did not have any significant effects on cancer morbidity (92 v 77patients, hazard ratio 1.19 (0.88 to 1.60), P=0.27).",
+      "context_window": "y significant effects on cancer morbidity (92 v 77patients, hazard ratio 1.19 (0.88 to 1.60), P=0.27). Allocation to omega 3 fatty acids",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-p-5528",
+      "claim_type": "p_value",
+      "raw_text": "P=0.27",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5528,
+      "sentence": "Furthermore, allocation to B vitamins did not have any significant effects on cancer morbidity (92 v 77patients, hazard ratio 1.19 (0.88 to 1.60), P=0.27).",
+      "context_window": "rbidity (92 v 77patients, hazard ratio 1.19 (0.88 to 1.60), P=0.27). Allocation to omega 3 fatty acids was not associated wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-hr-l-5663",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 1.08",
+      "numeric_values": [
+        1.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5663,
+      "sentence": "Allocation to omega 3 fatty acids was not associated with any significant effect on major vascular events (81 v 76 patients, hazard ratio 1.08 (0.79 to 1.47), P=0.64; fig 4).",
+      "context_window": "nificant effect on major vascular events (81 v 76 patients, hazard ratio 1.08 (0.79 to 1.47), P=0.64; fig 4). Moreover, there were no sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-p-5697",
+      "claim_type": "p_value",
+      "raw_text": "P=0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5697,
+      "sentence": "Allocation to omega 3 fatty acids was not associated with any significant effect on major vascular events (81 v 76 patients, hazard ratio 1.08 (0.79 to 1.47), P=0.64; fig 4).",
+      "context_window": "events (81 v 76 patients, hazard ratio 1.08 (0.79 to 1.47), P=0.64; fig 4). Moreover, there were no significant differences in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-hr-l-6245",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 1.10",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6245,
+      "sentence": "Fig 4 Effect of dietary supplementation with omega 3 fatty acids on cardiovascular events and mortality (adjusted for age and sex)\n\nIn addition, allocation to omega 3 fatty acids had no significant effect on any secondary end points, including other cardiovascular events and mortality from all causes (fig 4), nor on cancer morbidity (88 v 81 patients, hazard ratio 1.10 (0.81 to 1.48), P=0.55).",
+      "context_window": "causes (fig 4), nor on cancer morbidity (88 v 81 patients, hazard ratio 1.10 (0.81 to 1.48), P=0.55).",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "icosapent ethyl",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-p-6279",
+      "claim_type": "p_value",
+      "raw_text": "P=0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6279,
+      "sentence": "Fig 4 Effect of dietary supplementation with omega 3 fatty acids on cardiovascular events and mortality (adjusted for age and sex)\n\nIn addition, allocation to omega 3 fatty acids had no significant effect on any secondary end points, including other cardiovascular events and mortality from all causes (fig 4), nor on cancer morbidity (88 v 81 patients, hazard ratio 1.10 (0.81 to 1.48), P=0.55).",
+      "context_window": "bidity (88 v 81 patients, hazard ratio 1.10 (0.81 to 1.48), P=0.55).",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "icosapent ethyl",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-243",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 years",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 243,
+      "sentence": "In this trial we found no significant effects of daily dietary supplementation with B vitamins or with omega 3 fatty acids on risk of major cardiovascular events in patients with established coronary or cerebrovascular disease during a median 4.7 years of follow-up.",
+      "context_window": "blished coronary or cerebrovascular disease during a median 4.7 years of follow-up. Uniquely, the trial tested the separate and c",
+      "claim_role": "duration",
+      "endpoint": "cardiovascular events",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-824",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 824,
+      "sentence": "31 A meta-analysis of trials that assessed the effects of folic acid on blood homocysteine concentrations showed that daily supplementation with 0.5-5 mg of folic acid reduced homocysteine concentrations by about a quarter, and the addition of vitamin B-12 (20 \u03bcg to 1 mg daily) to folic acid reduced blood homocysteine concentration by a further 7%.",
+      "context_window": "e concentrations showed that daily supplementation with 0.5-5 mg of folic acid reduced homocysteine concentrations by about",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-942",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 942,
+      "sentence": "31 A meta-analysis of trials that assessed the effects of folic acid on blood homocysteine concentrations showed that daily supplementation with 0.5-5 mg of folic acid reduced homocysteine concentrations by about a quarter, and the addition of vitamin B-12 (20 \u03bcg to 1 mg daily) to folic acid reduced blood homocysteine concentration by a further 7%.",
+      "context_window": "about a quarter, and the addition of vitamin B-12 (20 \u03bcg to 1 mg daily) to folic acid reduced blood homocysteine concentrati",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1022",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1022,
+      "sentence": "31 A meta-analysis of trials that assessed the effects of folic acid on blood homocysteine concentrations showed that daily supplementation with 0.5-5 mg of folic acid reduced homocysteine concentrations by about a quarter, and the addition of vitamin B-12 (20 \u03bcg to 1 mg daily) to folic acid reduced blood homocysteine concentration by a further 7%.",
+      "context_window": "acid reduced blood homocysteine concentration by a further 7%. 38 Instead of folic acid, we used 5-methyltetrahydrofolat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-2926",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2926,
+      "sentence": "In particular, the observed number of major vascular events was 15% lower than expected, which adversely affected the statistical power to detect a 10% difference in major vascular events.",
+      "context_window": "articular, the observed number of major vascular events was 15% lower than expected, which adversely affected the statistic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-3010",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3010,
+      "sentence": "In particular, the observed number of major vascular events was 15% lower than expected, which adversely affected the statistical power to detect a 10% difference in major vascular events.",
+      "context_window": "which adversely affected the statistical power to detect a 10% difference in major vascular events. Consequently, we canno",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-4338",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4338,
+      "sentence": "40 41\n\nIn our trial, allocation to B vitamins was associated with a 46% reduction in the risk of ischaemic stroke among patients assigned to B vitamins and a trend towards increased cardiovascular mortality, with an unexpected, significant increase in the number of deaths from any cause among patients receiving B vitamins (not specifically linked to cancer).",
+      "context_window": "n our trial, allocation to B vitamins was associated with a 46% reduction in the risk of ischaemic stroke among patients as",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-5008",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5008,
+      "sentence": "However, the HOPE-2 trial, of 5522 patients with prior vascular disease treated with B vitamins for five years, had reported a 24% reduction in the risk of stroke.",
+      "context_window": "ease treated with B vitamins for five years, had reported a 24% reduction in the risk of stroke. 18 Nevertheless, a reducti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-5323",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5323,
+      "sentence": "16\n\nIn the VISP trial, 3680 patients with non-disabling stroke were randomised to receive high dose vitamins (2.5 mg folic acid, 0.4 mg vitamin B-12, and 25 mg vitamin B-6 daily) or low dose vitamins (20 \u03bcg folic acid, 6 \u03bcg vitamin B-12, and 200 \u03bcg vitamin B-6 daily), without a placebo group.",
+      "context_window": "bling stroke were randomised to receive high dose vitamins (2.5 mg folic acid, 0.4 mg vitamin B-12, and 25 mg vitamin B-6 dail",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-5342",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 mg",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5342,
+      "sentence": "16\n\nIn the VISP trial, 3680 patients with non-disabling stroke were randomised to receive high dose vitamins (2.5 mg folic acid, 0.4 mg vitamin B-12, and 25 mg vitamin B-6 daily) or low dose vitamins (20 \u03bcg folic acid, 6 \u03bcg vitamin B-12, and 200 \u03bcg vitamin B-6 daily), without a placebo group.",
+      "context_window": "andomised to receive high dose vitamins (2.5 mg folic acid, 0.4 mg vitamin B-12, and 25 mg vitamin B-6 daily) or low dose vita",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-5367",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5367,
+      "sentence": "16\n\nIn the VISP trial, 3680 patients with non-disabling stroke were randomised to receive high dose vitamins (2.5 mg folic acid, 0.4 mg vitamin B-12, and 25 mg vitamin B-6 daily) or low dose vitamins (20 \u03bcg folic acid, 6 \u03bcg vitamin B-12, and 200 \u03bcg vitamin B-6 daily), without a placebo group.",
+      "context_window": "dose vitamins (2.5 mg folic acid, 0.4 mg vitamin B-12, and 25 mg vitamin B-6 daily) or low dose vitamins (20 \u03bcg folic acid,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-5856",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5856,
+      "sentence": "It has been suggested that the lack of effect observed in the VISP trial could be explained by the relatively small observed difference in plasma total homocysteine concentrations associated with higher dose vitamins (only 15%, 13.1 v 11.0 \u03bcmol/l), which was lower than expected, possibly owing to fortification of foods with folic acid.",
+      "context_window": "e concentrations associated with higher dose vitamins (only 15%, 13.1 v 11.0 \u03bcmol/l), which was lower than expected, possib",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-5868",
+      "claim_type": "unit_value",
+      "raw_text": "11.0 \u03bcmol",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "discussion",
+      "source_offset": 5868,
+      "sentence": "It has been suggested that the lack of effect observed in the VISP trial could be explained by the relatively small observed difference in plasma total homocysteine concentrations associated with higher dose vitamins (only 15%, 13.1 v 11.0 \u03bcmol/l), which was lower than expected, possibly owing to fortification of foods with folic acid.",
+      "context_window": "ions associated with higher dose vitamins (only 15%, 13.1 v 11.0 \u03bcmol/l), which was lower than expected, possibly owing to fortif",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-6287",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6287,
+      "sentence": "A meta-analysis of eight trials, published in 2007, involving 778 first strokes, showed that folic acid supplementation was associated with an 18% reduced risk of stroke.",
+      "context_window": "owed that folic acid supplementation was associated with an 18% reduced risk of stroke. 42 In the stratified analyses, gre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-6527",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6527,
+      "sentence": "42\n\nIn the stratified analyses, greater beneficial effects were observed in trials with a duration of treatment greater than three years, a decrease in the concentration of plasma total homocysteine of more than 20%, absence of folic acid fortification, and in participants without history of stroke.",
+      "context_window": "the concentration of plasma total homocysteine of more than 20%, absence of folic acid fortification, and in participants w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-7035",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 7035,
+      "sentence": "43 The VITATOPS trial, published in 2010, involving 8164 patients with recent stroke or transient ischaemic attack (within the past seven months) treated with B vitamins (2 mg folic acid, 25 mg vitamin B-6, and 0.5 mg vitamin B-12) for a median duration of 3.4 years, found no significant reduction in the risk for non-fatal or fatal stroke.",
+      "context_window": "ack (within the past seven months) treated with B vitamins (2 mg folic acid, 25 mg vitamin B-6, and 0.5 mg vitamin B-12) for",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-7052",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 7052,
+      "sentence": "43 The VITATOPS trial, published in 2010, involving 8164 patients with recent stroke or transient ischaemic attack (within the past seven months) treated with B vitamins (2 mg folic acid, 25 mg vitamin B-6, and 0.5 mg vitamin B-12) for a median duration of 3.4 years, found no significant reduction in the risk for non-fatal or fatal stroke.",
+      "context_window": "ast seven months) treated with B vitamins (2 mg folic acid, 25 mg vitamin B-6, and 0.5 mg vitamin B-12) for a median duration",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-7075",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 7075,
+      "sentence": "43 The VITATOPS trial, published in 2010, involving 8164 patients with recent stroke or transient ischaemic attack (within the past seven months) treated with B vitamins (2 mg folic acid, 25 mg vitamin B-6, and 0.5 mg vitamin B-12) for a median duration of 3.4 years, found no significant reduction in the risk for non-fatal or fatal stroke.",
+      "context_window": "ed with B vitamins (2 mg folic acid, 25 mg vitamin B-6, and 0.5 mg vitamin B-12) for a median duration of 3.4 years, found no",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-7121",
+      "claim_type": "unit_value",
+      "raw_text": "3.4 years",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7121,
+      "sentence": "43 The VITATOPS trial, published in 2010, involving 8164 patients with recent stroke or transient ischaemic attack (within the past seven months) treated with B vitamins (2 mg folic acid, 25 mg vitamin B-6, and 0.5 mg vitamin B-12) for a median duration of 3.4 years, found no significant reduction in the risk for non-fatal or fatal stroke.",
+      "context_window": "amin B-6, and 0.5 mg vitamin B-12) for a median duration of 3.4 years, found no significant reduction in the risk for non-fatal o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-8043",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8043,
+      "sentence": "In the GISSI trial, which included 11 324 patients who had had a myocardial infarction within the previous three months, treatment with 1 g daily of omega 3 fatty acids reduced the risk of death, non-fatal myocardial infarction, and non-fatal stroke by 10%, and the cumulative rate of cardiovascular death, non-fatal myocardial infarction, and non-fatal stroke by 15%.",
+      "context_window": "h, non-fatal myocardial infarction, and non-fatal stroke by 10%, and the cumulative rate of cardiovascular death, non-fatal",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "icosapent ethyl",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-8154",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8154,
+      "sentence": "In the GISSI trial, which included 11 324 patients who had had a myocardial infarction within the previous three months, treatment with 1 g daily of omega 3 fatty acids reduced the risk of death, non-fatal myocardial infarction, and non-fatal stroke by 10%, and the cumulative rate of cardiovascular death, non-fatal myocardial infarction, and non-fatal stroke by 15%.",
+      "context_window": "h, non-fatal myocardial infarction, and non-fatal stroke by 15%. 31 Although the trial did not include a placebo group, res",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "icosapent ethyl",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-8537",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 years",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8537,
+      "sentence": "The JELIS trial of 18 645 Japanese participants with elevated serum cholesterol concentrations and receiving statins but without evidence of coronary artery disease reported that supplementation with 1.8 g daily of eicosapentanoic acid for 4.6 years lowered the incidence of major cardiovascular events by 19% compared with the group receiving statin alone.",
+      "context_window": "upplementation with 1.8 g daily of eicosapentanoic acid for 4.6 years lowered the incidence of major cardiovascular events by 19%",
+      "claim_role": "background",
+      "endpoint": "cardiovascular events",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-8603",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8603,
+      "sentence": "The JELIS trial of 18 645 Japanese participants with elevated serum cholesterol concentrations and receiving statins but without evidence of coronary artery disease reported that supplementation with 1.8 g daily of eicosapentanoic acid for 4.6 years lowered the incidence of major cardiovascular events by 19% compared with the group receiving statin alone.",
+      "context_window": "ars lowered the incidence of major cardiovascular events by 19% compared with the group receiving statin alone. 44 In addi",
+      "claim_role": "background",
+      "endpoint": "cardiovascular events",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-8836",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8836,
+      "sentence": "44\n\nIn addition, the GISSI-HF study reported that long term administration of 1 g a day of omega 3 fatty acids in patients with chronic heart failure reduced all cause mortality by 9% and hospitalisation for cardiovascular reasons by 8%.",
+      "context_window": "s with chronic heart failure reduced all cause mortality by 9% and hospitalisation for cardiovascular reasons by 8%. 45 Ho",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "icosapent ethyl",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-8889",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8889,
+      "sentence": "44\n\nIn addition, the GISSI-HF study reported that long term administration of 1 g a day of omega 3 fatty acids in patients with chronic heart failure reduced all cause mortality by 9% and hospitalisation for cardiovascular reasons by 8%.",
+      "context_window": "ity by 9% and hospitalisation for cardiovascular reasons by 8%. 45 However, the type of patients included in this trial di",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "icosapent ethyl",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-9531",
+      "claim_type": "unit_value",
+      "raw_text": "16 days",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 9531,
+      "sentence": "In the GISSI trial, the median time from the onset of myocardial infarction to randomisation was 16 days, whereas in our trial it was more than six times longer (101 days).",
+      "context_window": "rom the onset of myocardial infarction to randomisation was 16 days, whereas in our trial it was more than six times longer (10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-u-9596",
+      "claim_type": "unit_value",
+      "raw_text": "101 days",
+      "numeric_values": [
+        101.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 9596,
+      "sentence": "In the GISSI trial, the median time from the onset of myocardial infarction to randomisation was 16 days, whereas in our trial it was more than six times longer (101 days).",
+      "context_window": "ys, whereas in our trial it was more than six times longer (101 days). In the GISSI trial, the beneficial effect on mortality (i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1396",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1396,
+      "sentence": "In particular, the observed number of major vascular events was 15% lower than expected, which adversely affected the statistical power to detect a 10% difference in major vascular events.",
+      "context_window": "articular, the observed number of major vascular events was 15% lower than expected, which adversely affected the statistic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC2993045_effects_of_b_vitamins_and_omega_3_fatty_acids_on_cardiovascu-pct-1480",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1480,
+      "sentence": "In particular, the observed number of major vascular events was 15% lower than expected, which adversely affected the statistical power to detect a 10% difference in major vascular events.",
+      "context_window": "which adversely affected the statistical power to detect a 10% difference in major vascular events. Consequently, we canno",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

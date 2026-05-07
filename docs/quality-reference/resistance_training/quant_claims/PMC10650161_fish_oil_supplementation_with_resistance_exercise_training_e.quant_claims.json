@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e",
   "doi": "10.3390/nu15214516",
-  "extracted_at": "2026-05-05T21:59:16+00:00",
+  "extracted_at": "2026-05-07T16:57:14+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "p_value": 29,
@@ -62,7 +62,7 @@
       "context_window": ") had not taken n -3 PUFA or antioxidant supplements in the 12 months preceding the present study; (5) were not using anti-inflam",
       "claim_role": "population",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -80,7 +80,7 @@
       "context_window": "(6) were not engaged in resistance exercise training in the 12 months that preceded the present study; and (7) did not consume ex",
       "claim_role": "population",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -98,7 +98,7 @@
       "context_window": "istance exercise training and a placebo supplement (RET-PL, n = 10) or RET combined with FO supplementation (RET-FO, n = 10) f",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -116,7 +116,7 @@
       "context_window": "L, n = 10) or RET combined with FO supplementation (RET-FO, n = 10) for an 8 wk intervention. Upon completion of the 8 wk inte",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -134,7 +134,7 @@
       "context_window": "e RET sessions. The exercise intensity was initially set at 50% of their one-repetition maximum (1 RM). Subsequently, the t",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -188,7 +188,7 @@
       "context_window": "involving stretching and one set of low-intensity exercise (30% of 1 RM, 10 RM). The details of each training session, incl",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -296,9 +296,9 @@
       "context_window": "ength significantly increased in REF-FO from the baseline (+5.7%, p < 0.001, d = 0.30), while RET-PL exhibited a tendency to",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-809",
@@ -314,9 +314,9 @@
       "context_window": "significantly increased in REF-FO from the baseline (+5.7%, p < 0.001, d = 0.30), while RET-PL exhibited a tendency towards incre",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-pct-917",
@@ -332,9 +332,9 @@
       "context_window": "endency towards increased grip strength from the baseline (+2%, p = 0.060, d = 0.10). In terms of physical function, no di",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-921",
@@ -350,9 +350,9 @@
       "context_window": "ncy towards increased grip strength from the baseline (+2%, p = 0.060, d = 0.10). In terms of physical function, no differences w",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-pct-1149",
@@ -368,7 +368,7 @@
       "context_window": "ete the 5X-STS significantly decreased in both the RET-PL (-8.1%, p < 0.001, d = 0.71) and RET-FO (-9.6%, p < 0.001, d = 1.0",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -386,7 +386,7 @@
       "context_window": "e 5X-STS significantly decreased in both the RET-PL (-8.1%, p < 0.001, d = 0.71) and RET-FO (-9.6%, p < 0.001, d = 1.00) groups.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -404,7 +404,7 @@
       "context_window": "n both the RET-PL (-8.1%, p < 0.001, d = 0.71) and RET-FO (-9.6%, p < 0.001, d = 1.00) groups. Similarly, the time for the T",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -422,7 +422,7 @@
       "context_window": "the RET-PL (-8.1%, p < 0.001, d = 0.71) and RET-FO (-9.6%, p < 0.001, d = 1.00) groups. Similarly, the time for the TUG test was",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -440,7 +440,7 @@
       "context_window": "the TUG test was substantially reduced in both the RET-PL (-7.9%, p < 0.001, d = 1.11) and RET-FO (-11.3%, p < 0.001, d = 1.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -458,7 +458,7 @@
       "context_window": "G test was substantially reduced in both the RET-PL (-7.9%, p < 0.001, d = 1.11) and RET-FO (-11.3%, p < 0.001, d = 1.75) groups.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -476,7 +476,7 @@
       "context_window": "n both the RET-PL (-7.9%, p < 0.001, d = 1.11) and RET-FO (-11.3%, p < 0.001, d = 1.75) groups. The time taken to complete th",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -494,7 +494,7 @@
       "context_window": "the RET-PL (-7.9%, p < 0.001, d = 1.11) and RET-FO (-11.3%, p < 0.001, d = 1.75) groups. The time taken to complete the 6MW test",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -512,7 +512,7 @@
       "context_window": "e the 6MW test decreased significantly in both the RET-PL (-7.9%, p < 0.001, d = 0.86) and RET-FO (-11.1%, p < 0.001, d = 1.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -530,7 +530,7 @@
       "context_window": "6MW test decreased significantly in both the RET-PL (-7.9%, p < 0.001, d = 0.86) and RET-FO (-11.1%, p < 0.001, d = 1.33) groups",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -548,7 +548,7 @@
       "context_window": "n both the RET-PL (-7.9%, p < 0.001, d = 0.86) and RET-FO (-11.1%, p < 0.001, d = 1.33) groups from pre- to post-intervention",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -566,7 +566,7 @@
       "context_window": "the RET-PL (-7.9%, p < 0.001, d = 0.86) and RET-FO (-11.1%, p < 0.001, d = 1.33) groups from pre- to post-intervention. The numbe",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -584,7 +584,7 @@
       "context_window": "in the 30S-STS significantly increased in both the RET-PL (+11%, p < 0.001, d = 1.2) and RET-FO (+12.4%, p < 0.001, d = 1.5",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -602,7 +602,7 @@
       "context_window": "e 30S-STS significantly increased in both the RET-PL (+11%, p < 0.001, d = 1.2) and RET-FO (+12.4%, p < 0.001, d = 1.5) groups.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -620,7 +620,7 @@
       "context_window": "in both the RET-PL (+11%, p < 0.001, d = 1.2) and RET-FO (+12.4%, p < 0.001, d = 1.5) groups. Regarding BP measurements, th",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -638,7 +638,7 @@
       "context_window": "h the RET-PL (+11%, p < 0.001, d = 1.2) and RET-FO (+12.4%, p < 0.001, d = 1.5) groups. Regarding BP measurements, there was a s",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -656,7 +656,7 @@
       "context_window": "The RET-FO group exhibited a substantial decrease in SBP (-4.4%, p = 0.041, d = 0.81), DBP (-4.4%, p = 0.001, d = 0.79), an",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -674,7 +674,7 @@
       "context_window": "ET-FO group exhibited a substantial decrease in SBP (-4.4%, p = 0.041, d = 0.81), DBP (-4.4%, p = 0.001, d = 0.79), and MAP (-4.4",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -692,7 +692,7 @@
       "context_window": "tantial decrease in SBP (-4.4%, p = 0.041, d = 0.81), DBP (-4.4%, p = 0.001, d = 0.79), and MAP (-4.4%, p = 0.004, d = 0.87)",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -710,7 +710,7 @@
       "context_window": "l decrease in SBP (-4.4%, p = 0.041, d = 0.81), DBP (-4.4%, p = 0.001, d = 0.79), and MAP (-4.4%, p = 0.004, d = 0.87) post-inter",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -728,7 +728,7 @@
       "context_window": "041, d = 0.81), DBP (-4.4%, p = 0.001, d = 0.79), and MAP (-4.4%, p = 0.004, d = 0.87) post-intervention while no notable ch",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -746,7 +746,7 @@
       "context_window": "= 0.81), DBP (-4.4%, p = 0.001, d = 0.79), and MAP (-4.4%, p = 0.004, d = 0.87) post-intervention while no notable change was ob",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -764,7 +764,7 @@
       "context_window": "G levels were substantially decreased in the RET-FO group (-13.2%, p < 0.001, d = 0.69), while no significant change was dete",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -782,7 +782,7 @@
       "context_window": "s were substantially decreased in the RET-FO group (-13.2%, p < 0.001, d = 0.69), while no significant change was detected in the",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -800,7 +800,7 @@
       "context_window": "le no significant change was detected in the RET-PL group ( p = 0.179). Values of inflammatory biomarkers in all experimental gro",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -818,9 +818,9 @@
       "context_window": "at baseline. TNF-\u03b1 tended to decrease in the RET-PL group (-7.2%, p = 0.063, d = 0.36) from baseline and markedly decreased",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-2870",
@@ -836,9 +836,9 @@
       "context_window": "eline. TNF-\u03b1 tended to decrease in the RET-PL group (-7.2%, p = 0.063, d = 0.36) from baseline and markedly decreased in the RET-",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-pct-2950",
@@ -854,9 +854,9 @@
       "context_window": "from baseline and markedly decreased in the RET-FO group (-24.6%, p < 0.001, d = 1.28). Moreover, the RET-FO group presented",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-2957",
@@ -872,9 +872,9 @@
       "context_window": "aseline and markedly decreased in the RET-FO group (-24.6%, p < 0.001, d = 1.28). Moreover, the RET-FO group presented significan",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-pct-3047",
@@ -890,9 +890,9 @@
       "context_window": ", the RET-FO group presented significantly decreased IL-6 (-10.9%, p = 0.011, d = 0.32), while the RET-PL group showed no not",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-3054",
@@ -908,9 +908,9 @@
       "context_window": "ET-FO group presented significantly decreased IL-6 (-10.9%, p = 0.011, d = 0.32), while the RET-PL group showed no notable change",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-3127",
@@ -926,9 +926,9 @@
       "context_window": "= 0.32), while the RET-PL group showed no notable changes ( p = 0.668). There was no notable difference in TNF-\u03b1 and IL-6 between",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "ret",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-pct-3506",
@@ -944,9 +944,9 @@
       "context_window": "the RET-FO group exhibited a significant reduction in MDA (-12.8%, p = 0.013, d = 0.47) and 8-OHdG (-23.6%, p < 0.001, d = 0.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-3513",
@@ -962,9 +962,9 @@
       "context_window": "-FO group exhibited a significant reduction in MDA (-12.8%, p = 0.013, d = 0.47) and 8-OHdG (-23.6%, p < 0.001, d = 0.5), with no",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-pct-3547",
@@ -980,9 +980,9 @@
       "context_window": "reduction in MDA (-12.8%, p = 0.013, d = 0.47) and 8-OHdG (-23.6%, p < 0.001, d = 0.5), with no detectable changes observed i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-3554",
@@ -998,9 +998,9 @@
       "context_window": "on in MDA (-12.8%, p = 0.013, d = 0.47) and 8-OHdG (-23.6%, p < 0.001, d = 0.5), with no detectable changes observed in the RET-P",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-3633",
@@ -1016,9 +1016,9 @@
       "context_window": ", with no detectable changes observed in the RET-PL group ( p = 0.811, p = 0.238, respectively). There was no remarkable differen",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-3644",
@@ -1034,9 +1034,9 @@
       "context_window": "etectable changes observed in the RET-PL group ( p = 0.811, p = 0.238, respectively). There was no remarkable difference in MDA a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-pct-689",
@@ -1052,9 +1052,9 @@
       "context_window": "hat the programed RET tended to improve handgrip strength (+2%, p = 0.060, d = 0.10) in postmenopausal women, and this imp",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-693",
@@ -1070,9 +1070,9 @@
       "context_window": "the programed RET tended to improve handgrip strength (+2%, p = 0.060, d = 0.10) in postmenopausal women, and this improvement wa",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-pct-811",
@@ -1088,9 +1088,9 @@
       "context_window": "rovement was significantly enhanced by FO supplementation (+5.7%, p < 0.001, d = 0.30). Similarly, our previous study report",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-p-817",
@@ -1106,9 +1106,9 @@
       "context_window": "nt was significantly enhanced by FO supplementation (+5.7%, p < 0.001, d = 0.30). Similarly, our previous study reported a signif",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-pct-994",
@@ -1124,7 +1124,7 @@
       "context_window": "lder male and female adults after 12 wks of programed RET (+5.7%, p = 0.007, d = 0.21), which was augmented by FO administra",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1142,7 +1142,7 @@
       "context_window": "ale and female adults after 12 wks of programed RET (+5.7%, p = 0.007, d = 0.21), which was augmented by FO administration (+9.4%",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1160,7 +1160,7 @@
       "context_window": ".007, d = 0.21), which was augmented by FO administration (+9.4%, p < 0.001, d = 0.53). While handgrip strength failed to re",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1178,7 +1178,7 @@
       "context_window": "d = 0.21), which was augmented by FO administration (+9.4%, p < 0.001, d = 0.53). While handgrip strength failed to reach a stati",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1232,7 +1232,7 @@
       "context_window": "h has demonstrated that chronic programmed RET (e.g., 23 to 24 weeks) can improve BP in older adults [ 36 , 37 ]. However, other",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1250,9 +1250,9 @@
       "context_window": "ndividuals [ 39 ]. The intervention period of our study was 8 weeks, and we did not find any improvements in BP from the 8 wk R",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10650161_fish_oil_supplementation_with_resistance_exercise_training_e-pct-8567",

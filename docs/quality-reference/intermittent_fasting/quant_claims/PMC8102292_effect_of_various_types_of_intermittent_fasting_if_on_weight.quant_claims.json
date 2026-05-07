@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight",
   "doi": "10.1007/s13668-021-00353-5",
-  "extracted_at": "2026-05-05T22:11:25+00:00",
+  "extracted_at": "2026-05-07T16:57:08+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 182,
@@ -115,9 +115,9 @@
       "context_window": "tum) Alternate day fasting It allows consumption from 20 to 25% of energy demand on scheduled fasting days. This scheme for",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-2006",
@@ -133,9 +133,9 @@
       "context_window": "rrupted days a week and eating ad libitum for the remaining 5 days. Time-restricted feeding Eating meals with a certain energy",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-2569",
@@ -151,9 +151,9 @@
       "context_window": "4 Day 5 Day 6 Day 7 Alternate day fasting (ADF) Ad libitum 25% kcal Ad libitum 25% kcal Ad libitum 25% kcal Ad libitum Tim",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-2589",
@@ -169,9 +169,9 @@
       "context_window": "Alternate day fasting (ADF) Ad libitum 25% kcal Ad libitum 25% kcal Ad libitum 25% kcal Ad libitum Time-restricted feeding",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-2609",
@@ -187,9 +187,9 @@
       "context_window": "ng (ADF) Ad libitum 25% kcal Ad libitum 25% kcal Ad libitum 25% kcal Ad libitum Time-restricted feeding (TRF) 16-20 h of fa",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-5004",
@@ -2865,9 +2865,9 @@
       "context_window": "on and diabetic parameters. Seventy-nine men and women (ADF n=25; CR n=29; control n=25); overweight or obese, aged 18-65 Pa",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-n-9587",
@@ -2883,9 +2883,9 @@
       "context_window": "abetic parameters. Seventy-nine men and women (ADF n=25; CR n=29; control n=25); overweight or obese, aged 18-65 Participant",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-n-9601",
@@ -2901,9 +2901,9 @@
       "context_window": "ers. Seventy-nine men and women (ADF n=25; CR n=29; control n=25); overweight or obese, aged 18-65 Participants were allocat",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-9854",
@@ -2920,7 +2920,7 @@
       "context_window": "t loss; 24-week weight maintenance period Not studied ADF: \u219310\u00b12% CR: \u219315\u00b13% (compared to the control group) p <0.01 ADF: \u21931",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2938,7 +2938,7 @@
       "context_window": "oss; 24-week weight maintenance period Not studied ADF: \u219310\u00b12% CR: \u219315\u00b13% (compared to the control group) p <0.01 ADF: \u21931.",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2957,7 +2957,7 @@
       "context_window": "week weight maintenance period Not studied ADF: \u219310\u00b12% CR: \u219315\u00b13% (compared to the control group) p <0.01 ADF: \u21931.2\u00b10.4kg CR",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2975,7 +2975,7 @@
       "context_window": "k weight maintenance period Not studied ADF: \u219310\u00b12% CR: \u219315\u00b13% (compared to the control group) p <0.01 ADF: \u21931.2\u00b10.4kg CR:",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2993,7 +2993,7 @@
       "context_window": "died ADF: \u219310\u00b12% CR: \u219315\u00b13% (compared to the control group) p <0.01 ADF: \u21931.2\u00b10.4kg CR: \u21931.8\u00b10.8kg Control: \u21930.3\u00b10.4kg p <0.01",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3012,7 +3012,7 @@
       "context_window": "2% CR: \u219315\u00b13% (compared to the control group) p <0.01 ADF: \u21931.2\u00b10.4kg CR: \u21931.8\u00b10.8kg Control: \u21930.3\u00b10.4kg p <0.01 ADF: no change",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3030,7 +3030,7 @@
       "context_window": "R: \u219315\u00b13% (compared to the control group) p <0.01 ADF: \u21931.2\u00b10.4kg CR: \u21931.8\u00b10.8kg Control: \u21930.3\u00b10.4kg p <0.01 ADF: no change C",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3049,7 +3049,7 @@
       "context_window": "compared to the control group) p <0.01 ADF: \u21931.2\u00b10.4kg CR: \u21931.8\u00b10.8kg Control: \u21930.3\u00b10.4kg p <0.01 ADF: no change CR: \u21935.2 \u00b1 0.1",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3067,7 +3067,7 @@
       "context_window": "ared to the control group) p <0.01 ADF: \u21931.2\u00b10.4kg CR: \u21931.8\u00b10.8kg Control: \u21930.3\u00b10.4kg p <0.01 ADF: no change CR: \u21935.2 \u00b1 0.1 m",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3086,7 +3086,7 @@
       "context_window": "rol group) p <0.01 ADF: \u21931.2\u00b10.4kg CR: \u21931.8\u00b10.8kg Control: \u21930.3\u00b10.4kg p <0.01 ADF: no change CR: \u21935.2 \u00b1 0.1 mg/mL Control: \u21935\u00b10",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3104,7 +3104,7 @@
       "context_window": "group) p <0.01 ADF: \u21931.2\u00b10.4kg CR: \u21931.8\u00b10.8kg Control: \u21930.3\u00b10.4kg p <0.01 ADF: no change CR: \u21935.2 \u00b1 0.1 mg/mL Control: \u21935\u00b10.6",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3122,7 +3122,7 @@
       "context_window": "p <0.01 ADF: \u21931.2\u00b10.4kg CR: \u21931.8\u00b10.8kg Control: \u21930.3\u00b10.4kg p <0.01 ADF: no change CR: \u21935.2 \u00b1 0.1 mg/mL Control: \u21935\u00b10.6 mg/mL p",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3141,7 +3141,7 @@
       "context_window": "\u21931.8\u00b10.8kg Control: \u21930.3\u00b10.4kg p <0.01 ADF: no change CR: \u21935.2 \u00b1 0.1 mg/mL Control: \u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3159,7 +3159,7 @@
       "context_window": "0.8kg Control: \u21930.3\u00b10.4kg p <0.01 ADF: no change CR: \u21935.2 \u00b1 0.1 mg/mL Control: \u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3178,7 +3178,7 @@
       "context_window": "0.4kg p <0.01 ADF: no change CR: \u21935.2 \u00b1 0.1 mg/mL Control: \u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113%",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3196,7 +3196,7 @@
       "context_window": "4kg p <0.01 ADF: no change CR: \u21935.2 \u00b1 0.1 mg/mL Control: \u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3214,7 +3214,7 @@
       "context_window": "1 ADF: no change CR: \u21935.2 \u00b1 0.1 mg/mL Control: \u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% C",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3233,7 +3233,7 @@
       "context_window": "ge CR: \u21935.2 \u00b1 0.1 mg/mL Control: \u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b1",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3251,7 +3251,7 @@
       "context_window": "CR: \u21935.2 \u00b1 0.1 mg/mL Control: \u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b11",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3270,7 +3270,7 @@
       "context_window": "\u00b1 0.1 mg/mL Control: \u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b117% p <0.05",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3288,7 +3288,7 @@
       "context_window": ".1 mg/mL Control: \u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b117% p <0.05 N",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3306,7 +3306,7 @@
       "context_window": "g/mL Control: \u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b117% p <0.05 Not studi",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3325,7 +3325,7 @@
       "context_window": "\u21935\u00b10.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b117% p <0.05 Not studied Bhutani e",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3343,7 +3343,7 @@
       "context_window": "0.6 mg/mL p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b117% p <0.05 Not studied Bhutani et",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3362,7 +3362,7 @@
       "context_window": "p <0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b117% p <0.05 Not studied Bhutani et al. [ 17 ]",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3380,7 +3380,7 @@
       "context_window": "<0.01 ADF: \u219342\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b117% p <0.05 Not studied Bhutani et al. [ 17 ]",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3399,7 +3399,7 @@
       "context_window": "\u00b112% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b117% p <0.05 Not studied Bhutani et al. [ 17 ] ADF Compare the",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3417,7 +3417,7 @@
       "context_window": "% CR: \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b117% p <0.05 Not studied Bhutani et al. [ 17 ] ADF Compare the e",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3435,7 +3435,7 @@
       "context_window": ": \u219323\u00b110% p <0.05 ADF: \u219345\u00b113% CR: \u219318\u00b111% Control: \u219114\u00b117% p <0.05 Not studied Bhutani et al. [ 17 ] ADF Compare the effects o",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3453,7 +3453,7 @@
       "context_window": "on and diabetes parameters Eighty-three participants age 25-65 years; BMI between 30 and 39.9 kg/m 2 Participants were randomize",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3471,7 +3471,7 @@
       "context_window": "ghty-three participants age 25-65 years; BMI between 30 and 39.9 kg/m 2 Participants were randomized to 1 of 4 groups for 12 we",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3489,7 +3489,7 @@
       "context_window": ".9 kg/m 2 Participants were randomized to 1 of 4 groups for 12 weeks: (1) combination (ADF plus endurance exercise), (2) ADF, (3",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3508,7 +3508,7 @@
       "context_window": "ise), (2) ADF, (3) exercise, or (4) control ADF + exercise \u21936\u00b14kg ADF: \u21933\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3526,7 +3526,7 @@
       "context_window": "e), (2) ADF, (3) exercise, or (4) control ADF + exercise \u21936\u00b14kg ADF: \u21933\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF +",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3545,7 +3545,7 @@
       "context_window": "F, (3) exercise, or (4) control ADF + exercise \u21936\u00b14kg ADF: \u21933\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u2193",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3563,7 +3563,7 @@
       "context_window": "(3) exercise, or (4) control ADF + exercise \u21936\u00b14kg ADF: \u21933\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b1",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3582,7 +3582,7 @@
       "context_window": "or (4) control ADF + exercise \u21936\u00b14kg ADF: \u21933\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11k",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3600,7 +3600,7 @@
       "context_window": "r (4) control ADF + exercise \u21936\u00b14kg ADF: \u21933\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3619,7 +3619,7 @@
       "context_window": "ADF + exercise \u21936\u00b14kg ADF: \u21933\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10k",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3637,7 +3637,7 @@
       "context_window": "F + exercise \u21936\u00b14kg ADF: \u21933\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3655,7 +3655,7 @@
       "context_window": "exercise \u21936\u00b14kg ADF: \u21933\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg control:",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3674,7 +3674,7 @@
       "context_window": "kg Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3692,7 +3692,7 @@
       "context_window": "Exercise \u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF +",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3711,7 +3711,7 @@
       "context_window": "\u21931\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u2193",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3729,7 +3729,7 @@
       "context_window": "\u00b10kg control: \u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b1",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3748,7 +3748,7 @@
       "context_window": "\u21930\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11k",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3766,7 +3766,7 @@
       "context_window": "\u00b10kg p <0.001 ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3785,7 +3785,7 @@
       "context_window": "ADF + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10k",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3803,7 +3803,7 @@
       "context_window": "F + exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3821,7 +3821,7 @@
       "context_window": "exercise \u21935\u00b11kg ADF: \u21932\u00b11kg Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg control:",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3840,7 +3840,7 @@
       "context_window": "kg Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF +",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3858,7 +3858,7 @@
       "context_window": "Exercise \u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF + e",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3877,7 +3877,7 @@
       "context_window": "\u21931\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3895,7 +3895,7 @@
       "context_window": "\u00b10kg control: \u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932\u00b14",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3914,7 +3914,7 @@
       "context_window": "\u21930\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3932,7 +3932,7 @@
       "context_window": "\u00b11kg p <0.001 ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933\u00b12",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3951,7 +3951,7 @@
       "context_window": "ADF + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercis",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3969,7 +3969,7 @@
       "context_window": "F + exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercise",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3987,7 +3987,7 @@
       "context_window": "exercise \u21930\u00b11kg ADF: \u21931\u00b11kg Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercise \u21931\u00b12 mg/",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4006,7 +4006,7 @@
       "context_window": "1kg Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercise \u21931\u00b12 mg/dL control: \u21912\u00b14 mg/",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4024,7 +4024,7 @@
       "context_window": "g Exercise \u21931\u00b10kg control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercise \u21931\u00b12 mg/dL control: \u21912\u00b14 mg/dL p=0",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4043,7 +4043,7 @@
       "context_window": "0kg control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercise \u21931\u00b12 mg/dL control: \u21912\u00b14 mg/dL p=0.461 ADF +",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4061,7 +4061,7 @@
       "context_window": "g control: \u21931\u00b11kg p=0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercise \u21931\u00b12 mg/dL control: \u21912\u00b14 mg/dL p=0.461 ADF + exerc",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4080,7 +4080,7 @@
       "context_window": "p=0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercise \u21931\u00b12 mg/dL control: \u21912\u00b14 mg/dL p=0.461 ADF + exercise \u219321\u00b115 \u03bcIU",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4098,7 +4098,7 @@
       "context_window": "0.527 ADF + exercise \u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercise \u21931\u00b12 mg/dL control: \u21912\u00b14 mg/dL p=0.461 ADF + exercise \u219321\u00b115 \u03bcIU/mL AD",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4117,7 +4117,7 @@
       "context_window": "se \u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercise \u21931\u00b12 mg/dL control: \u21912\u00b14 mg/dL p=0.461 ADF + exercise \u219321\u00b115 \u03bcIU/mL ADF: \u21937\u00b16 \u03bcIU/mL",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4135,7 +4135,7 @@
       "context_window": "\u21932\u00b14 mg/dL ADF: \u21933\u00b12 mg/dL Exercise \u21931\u00b12 mg/dL control: \u21912\u00b14 mg/dL p=0.461 ADF + exercise \u219321\u00b115 \u03bcIU/mL ADF: \u21937\u00b16 \u03bcIU/mL Exerc",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4153,7 +4153,7 @@
       "context_window": "/dL ADF: \u21933\u00b12 mg/dL Exercise \u21931\u00b12 mg/dL control: \u21912\u00b14 mg/dL p=0.461 ADF + exercise \u219321\u00b115 \u03bcIU/mL ADF: \u21937\u00b16 \u03bcIU/mL Exercise \u21930\u00b18",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4172,7 +4172,7 @@
       "context_window": "cise \u21931\u00b12 mg/dL control: \u21912\u00b14 mg/dL p=0.461 ADF + exercise \u219321\u00b115 \u03bcIU/mL ADF: \u21937\u00b16 \u03bcIU/mL Exercise \u21930\u00b18 \u03bcIU/mL control: \u219316\u00b19",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4191,7 +4191,7 @@
       "context_window": "trol: \u21912\u00b14 mg/dL p=0.461 ADF + exercise \u219321\u00b115 \u03bcIU/mL ADF: \u21937\u00b16 \u03bcIU/mL Exercise \u21930\u00b18 \u03bcIU/mL control: \u219316\u00b19 \u03bcIU/mL p=0.559 A",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4210,7 +4210,7 @@
       "context_window": "461 ADF + exercise \u219321\u00b115 \u03bcIU/mL ADF: \u21937\u00b16 \u03bcIU/mL Exercise \u21930\u00b18 \u03bcIU/mL control: \u219316\u00b19 \u03bcIU/mL p=0.559 ADF + exercise \u21930\u00b117 A",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4229,7 +4229,7 @@
       "context_window": "1\u00b115 \u03bcIU/mL ADF: \u21937\u00b16 \u03bcIU/mL Exercise \u21930\u00b18 \u03bcIU/mL control: \u219316\u00b19 \u03bcIU/mL p=0.559 ADF + exercise \u21930\u00b117 ADF: \u21930\u00b17 Exercise \u21930\u00b11",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4247,7 +4247,7 @@
       "context_window": "ADF: \u21937\u00b16 \u03bcIU/mL Exercise \u21930\u00b18 \u03bcIU/mL control: \u219316\u00b19 \u03bcIU/mL p=0.559 ADF + exercise \u21930\u00b117 ADF: \u21930\u00b17 Exercise \u21930\u00b110 control: \u21930\u00b11",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4266,7 +4266,7 @@
       "context_window": "e \u21930\u00b18 \u03bcIU/mL control: \u219316\u00b19 \u03bcIU/mL p=0.559 ADF + exercise \u21930\u00b117 ADF: \u21930\u00b17 Exercise \u21930\u00b110 control: \u21930\u00b111 p=0.589 Not studied",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4285,7 +4285,7 @@
       "context_window": "mL control: \u219316\u00b19 \u03bcIU/mL p=0.559 ADF + exercise \u21930\u00b117 ADF: \u21930\u00b17 Exercise \u21930\u00b110 control: \u21930\u00b111 p=0.589 Not studied Harvie et",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4304,7 +4304,7 @@
       "context_window": "6\u00b19 \u03bcIU/mL p=0.559 ADF + exercise \u21930\u00b117 ADF: \u21930\u00b17 Exercise \u21930\u00b110 control: \u21930\u00b111 p=0.589 Not studied Harvie et al. [ 18 ] ADF",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4323,7 +4323,7 @@
       "context_window": "559 ADF + exercise \u21930\u00b117 ADF: \u21930\u00b17 Exercise \u21930\u00b110 control: \u21930\u00b111 p=0.589 Not studied Harvie et al. [ 18 ] ADF Compare the ef",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4341,7 +4341,7 @@
       "context_window": "DF + exercise \u21930\u00b117 ADF: \u21930\u00b17 Exercise \u21930\u00b110 control: \u21930\u00b111 p=0.589 Not studied Harvie et al. [ 18 ] ADF Compare the effectiven",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4359,7 +4359,7 @@
       "context_window": "sensitivity One hundred seven pre-menopausal women aged 30-45 years, with overweight and obesity, BMI 24-40 kg/m 2 The women we",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4377,7 +4377,7 @@
       "context_window": "women aged 30-45 years, with overweight and obesity, BMI 24-40 kg/m 2 The women were randomly assigned to the following group",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4395,7 +4395,7 @@
       "context_window": "women were randomly assigned to the following groups: IER (25% energy restriction 2 days a week, ~2710 kJ/day) and CER (da",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4413,7 +4413,7 @@
       "context_window": "signed to the following groups: IER (25% energy restriction 2 days a week, ~2710 kJ/day) and CER (daily calorie restriction ~6",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4431,7 +4431,7 @@
       "context_window": "kJ/day) and CER (daily calorie restriction ~6276 kJ/day for 7 days) IER: \u21936.4 (7.9 to 4.8) kg CER: \u21935.6 (6.9 to 4.4) kg p=0.26",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4449,7 +4449,7 @@
       "context_window": "7 days) IER: \u21936.4 (7.9 to 4.8) kg CER: \u21935.6 (6.9 to 4.4) kg p=0.26 IER: \u21934.5 (4.9 to 4.1) kg CER: \u21933.6 (4 to 3.2) kg p=0.34 IE",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4467,7 +4467,7 @@
       "context_window": "kg p=0.26 IER: \u21934.5 (4.9 to 4.1) kg CER: \u21933.6 (4 to 3.2) kg p=0.34 IER: \u21931.2 (1.4 to 1.1) kg CER: \u21930.8 (1 to 0.6) kg p=0.21 IE",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4485,7 +4485,7 @@
       "context_window": "kg p=0.34 IER: \u21931.2 (1.4 to 1.1) kg CER: \u21930.8 (1 to 0.6) kg p=0.21 IER: \u21930.1 (0.1 to 0.1) mmol/L CER: \u21930.1 (0.1 to 0) mmol/L p",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4503,7 +4503,7 @@
       "context_window": "1 IER: \u21930.1 (0.1 to 0.1) mmol/L CER: \u21930.1 (0.1 to 0) mmol/L p=0.34 IER: \u2193 2 .1 (1.8 to 2.4) \u03bcU/mL CER: \u21931.1 (1 to 1.2) \u03bcU/mL p",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4521,7 +4521,7 @@
       "context_window": "4 IER: \u2193 2 .1 (1.8 to 2.4) \u03bcU/mL CER: \u21931.1 (1 to 1.2) \u03bcU/mL p=0.04 IER: \u21930.4 (0.4 to 0.5) CER: \u21930.3 (0.2 to 0.2) p=0.04 Not st",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4539,7 +4539,7 @@
       "context_window": "\u03bcU/mL p=0.04 IER: \u21930.4 (0.4 to 0.5) CER: \u21930.3 (0.2 to 0.2) p=0.04 Not studied Antoni et al. [ 8 ] CADF, ADF Comparison of an",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4557,7 +4557,7 @@
       "context_window": "t al. [ 8 ] CADF, ADF Comparison of an isocaloric diet with 75% (ADF) and 100% (CADF) caloric restriction for glucose metab",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4575,7 +4575,7 @@
       "context_window": "DF, ADF Comparison of an isocaloric diet with 75% (ADF) and 100% (CADF) caloric restriction for glucose metabolism Fourteen",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4593,7 +4593,7 @@
       "context_window": "tabolism Fourteen overweight or obese participants, aged 18-60 years The study was a three-way, randomi z ed, cross-over study.",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4612,9 +4612,9 @@
       "context_window": "iets Not studied Not studied Not studied Isoenergetic diet: 4.7\u00b10.1 mmol/L CADF: 4.3\u00b10.2 mmol/L ADF: 4.4\u00b10.1 mmol/L Isoenergeti",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12171",
@@ -4630,9 +4630,9 @@
       "context_window": "Not studied Not studied Not studied Isoenergetic diet: 4.7\u00b10.1 mmol/L CADF: 4.3\u00b10.2 mmol/L ADF: 4.4\u00b10.1 mmol/L Isoenergetic die",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-12188",
@@ -4649,9 +4649,9 @@
       "context_window": "studied Not studied Isoenergetic diet: 4.7\u00b10.1 mmol/L CADF: 4.3\u00b10.2 mmol/L ADF: 4.4\u00b10.1 mmol/L Isoenergetic diet: 89.7\u00b19.2 pmol",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12192",
@@ -4667,9 +4667,9 @@
       "context_window": "ied Not studied Isoenergetic diet: 4.7\u00b10.1 mmol/L CADF: 4.3\u00b10.2 mmol/L ADF: 4.4\u00b10.1 mmol/L Isoenergetic diet: 89.7\u00b19.2 pmol/L CA",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-12208",
@@ -4686,9 +4686,9 @@
       "context_window": "Isoenergetic diet: 4.7\u00b10.1 mmol/L CADF: 4.3\u00b10.2 mmol/L ADF: 4.4\u00b10.1 mmol/L Isoenergetic diet: 89.7\u00b19.2 pmol/L CADF: 74.0\u00b112.4 p",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12212",
@@ -4704,9 +4704,9 @@
       "context_window": "nergetic diet: 4.7\u00b10.1 mmol/L CADF: 4.3\u00b10.2 mmol/L ADF: 4.4\u00b10.1 mmol/L Isoenergetic diet: 89.7\u00b19.2 pmol/L CADF: 74.0\u00b112.4 pmol/L",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-12242",
@@ -4723,9 +4723,9 @@
       "context_window": "CADF: 4.3\u00b10.2 mmol/L ADF: 4.4\u00b10.1 mmol/L Isoenergetic diet: 89.7\u00b19.2 pmol/L CADF: 74.0\u00b112.4 pmol/L ADF: 69.1\u00b18.0 pmol/L Not stud",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-12264",
@@ -4742,9 +4742,9 @@
       "context_window": "DF: 4.4\u00b10.1 mmol/L Isoenergetic diet: 89.7\u00b19.2 pmol/L CADF: 74.0\u00b112.4 pmol/L ADF: 69.1\u00b18.0 pmol/L Not studied Not studied Lichtas",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-12286",
@@ -4761,9 +4761,9 @@
       "context_window": "energetic diet: 89.7\u00b19.2 pmol/L CADF: 74.0\u00b112.4 pmol/L ADF: 69.1\u00b18.0 pmol/L Not studied Not studied Lichtash et al. [ 19 \u2022] CADF",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12483",
@@ -4779,9 +4779,9 @@
       "context_window": "in a patient with type II diabetes A 57-year-old woman with 15 years of type II diabetes, HbA1c 9.3%, BMI 23.2 kg/m 2 Use of a k",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-12519",
@@ -4797,9 +4797,9 @@
       "context_window": "57-year-old woman with 15 years of type II diabetes, HbA1c 9.3%, BMI 23.2 kg/m 2 Use of a ketogenic diet combined with IF f",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12529",
@@ -4815,9 +4815,9 @@
       "context_window": "ld woman with 15 years of type II diabetes, HbA1c 9.3%, BMI 23.2 kg/m 2 Use of a ketogenic diet combined with IF for 14 months",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12586",
@@ -4833,9 +4833,9 @@
       "context_window": "MI 23.2 kg/m 2 Use of a ketogenic diet combined with IF for 14 months IF: \u21931.8 kg p <0.05 Not studied Not studied Not studied Not",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12601",
@@ -4851,9 +4851,9 @@
       "context_window": "Use of a ketogenic diet combined with IF for 14 months IF: \u21931.8 kg p <0.05 Not studied Not studied Not studied Not studied Not",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-12608",
@@ -4869,9 +4869,9 @@
       "context_window": "a ketogenic diet combined with IF for 14 months IF: \u21931.8 kg p <0.05 Not studied Not studied Not studied Not studied Not studied",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-12681",
@@ -4887,9 +4887,9 @@
       "context_window": "tudied Not studied Not studied Not studied Not studied IF: \u21933.5% p <0.05 Effect of IF on anthropometric and biochemical cha",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-12686",
@@ -4905,9 +4905,9 @@
       "context_window": "d Not studied Not studied Not studied Not studied IF: \u21933.5% p <0.05 Effect of IF on anthropometric and biochemical characteris",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-12902",
@@ -4924,9 +4924,9 @@
       "context_window": "food period, dinner before 15:00 or 12-h food period TRF: \u21933\u00b13 kg Control: no change; p <0.001 TRF: \u21932\u00b12 kg Control: no",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12904",
@@ -4942,9 +4942,9 @@
       "context_window": "od period, dinner before 15:00 or 12-h food period TRF: \u21933\u00b13 kg Control: no change; p <0.001 TRF: \u21932\u00b12 kg Control: no ch",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-12930",
@@ -4960,9 +4960,9 @@
       "context_window": "5:00 or 12-h food period TRF: \u21933\u00b13 kg Control: no change; p <0.001 TRF: \u21932\u00b12 kg Control: no change (before 37\u00b12 kg; after 37",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-12946",
@@ -4979,9 +4979,9 @@
       "context_window": "d period TRF: \u21933\u00b13 kg Control: no change; p <0.001 TRF: \u21932\u00b12 kg Control: no change (before 37\u00b12 kg; after 37\u00b12 kg); p <",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12948",
@@ -4997,9 +4997,9 @@
       "context_window": "period TRF: \u21933\u00b13 kg Control: no change; p <0.001 TRF: \u21932\u00b12 kg Control: no change (before 37\u00b12 kg; after 37\u00b12 kg); p <0.2",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-12981",
@@ -5016,9 +5016,9 @@
       "context_window": "change; p <0.001 TRF: \u21932\u00b12 kg Control: no change (before 37\u00b12 kg; after 37\u00b12 kg); p <0.23 TRF: no change (before 50\u00b12 kg",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12984",
@@ -5034,9 +5034,9 @@
       "context_window": "ange; p <0.001 TRF: \u21932\u00b12 kg Control: no change (before 37\u00b12 kg; after 37\u00b12 kg); p <0.23 TRF: no change (before 50\u00b12 kg; a",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-12996",
@@ -5053,9 +5053,9 @@
       "context_window": "01 TRF: \u21932\u00b12 kg Control: no change (before 37\u00b12 kg; after 37\u00b12 kg); p <0.23 TRF: no change (before 50\u00b12 kg; after 50\u00b12 kg",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-12999",
@@ -5071,9 +5071,9 @@
       "context_window": "TRF: \u21932\u00b12 kg Control: no change (before 37\u00b12 kg; after 37\u00b12 kg); p <0.23 TRF: no change (before 50\u00b12 kg; after 50\u00b12 kg)",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13006",
@@ -5089,9 +5089,9 @@
       "context_window": "2\u00b12 kg Control: no change (before 37\u00b12 kg; after 37\u00b12 kg); p <0.23 TRF: no change (before 50\u00b12 kg; after 50\u00b12 kg) Control: n",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13038",
@@ -5108,9 +5108,9 @@
       "context_window": "re 37\u00b12 kg; after 37\u00b12 kg); p <0.23 TRF: no change (before 50\u00b12 kg; after 50\u00b12 kg) Control: no change (before 53\u00b12 kg; aft",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13041",
@@ -5126,9 +5126,9 @@
       "context_window": "37\u00b12 kg; after 37\u00b12 kg); p <0.23 TRF: no change (before 50\u00b12 kg; after 50\u00b12 kg) Control: no change (before 53\u00b12 kg; after",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13053",
@@ -5145,9 +5145,9 @@
       "context_window": "er 37\u00b12 kg); p <0.23 TRF: no change (before 50\u00b12 kg; after 50\u00b12 kg) Control: no change (before 53\u00b12 kg; after 53\u00b12 kg); p",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13056",
@@ -5163,9 +5163,9 @@
       "context_window": "37\u00b12 kg); p <0.23 TRF: no change (before 50\u00b12 kg; after 50\u00b12 kg) Control: no change (before 53\u00b12 kg; after 53\u00b12 kg); p <0.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13090",
@@ -5182,9 +5182,9 @@
       "context_window": "(before 50\u00b12 kg; after 50\u00b12 kg) Control: no change (before 53\u00b12 kg; after 53\u00b12 kg); p <0.12 TRF: before: 79\u00b14 mg/dL, after",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13093",
@@ -5200,9 +5200,9 @@
       "context_window": "fore 50\u00b12 kg; after 50\u00b12 kg) Control: no change (before 53\u00b12 kg; after 53\u00b12 kg); p <0.12 TRF: before: 79\u00b14 mg/dL, after: 8",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13105",
@@ -5219,9 +5219,9 @@
       "context_window": "; after 50\u00b12 kg) Control: no change (before 53\u00b12 kg; after 53\u00b12 kg); p <0.12 TRF: before: 79\u00b14 mg/dL, after: 82\u00b12 mg/dL C",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13108",
@@ -5237,9 +5237,9 @@
       "context_window": "fter 50\u00b12 kg) Control: no change (before 53\u00b12 kg; after 53\u00b12 kg); p <0.12 TRF: before: 79\u00b14 mg/dL, after: 82\u00b12 mg/dL Cont",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13115",
@@ -5255,9 +5255,9 @@
       "context_window": "\u00b12 kg) Control: no change (before 53\u00b12 kg; after 53\u00b12 kg); p <0.12 TRF: before: 79\u00b14 mg/dL, after: 82\u00b12 mg/dL Control: no ch",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13137",
@@ -5274,9 +5274,9 @@
       "context_window": "ange (before 53\u00b12 kg; after 53\u00b12 kg); p <0.12 TRF: before: 79\u00b14 mg/dL, after: 82\u00b12 mg/dL Control: no change (before and af",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13140",
@@ -5292,9 +5292,9 @@
       "context_window": "e (before 53\u00b12 kg; after 53\u00b12 kg); p <0.12 TRF: before: 79\u00b14 mg/dL, after: 82\u00b12 mg/dL Control: no change (before and after: 8",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13156",
@@ -5311,9 +5311,9 @@
       "context_window": "g; after 53\u00b12 kg); p <0.12 TRF: before: 79\u00b14 mg/dL, after: 82\u00b12 mg/dL Control: no change (before and after: 87\u00b12 mg/dL); p",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13159",
@@ -5329,9 +5329,9 @@
       "context_window": "after 53\u00b12 kg); p <0.12 TRF: before: 79\u00b14 mg/dL, after: 82\u00b12 mg/dL Control: no change (before and after: 87\u00b12 mg/dL); p <0.77",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13206",
@@ -5348,9 +5348,9 @@
       "context_window": "L, after: 82\u00b12 mg/dL Control: no change (before and after: 87\u00b12 mg/dL); p <0.77 TRF: before: 8.3\u00b11 uIU/mL, after: 5.7\u00b10.7",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13209",
@@ -5366,9 +5366,9 @@
       "context_window": "after: 82\u00b12 mg/dL Control: no change (before and after: 87\u00b12 mg/dL); p <0.77 TRF: before: 8.3\u00b11 uIU/mL, after: 5.7\u00b10.7 uIU/mL",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13219",
@@ -5384,9 +5384,9 @@
       "context_window": "2 mg/dL Control: no change (before and after: 87\u00b12 mg/dL); p <0.77 TRF: before: 8.3\u00b11 uIU/mL, after: 5.7\u00b10.7 uIU/mL Control:",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13241",
@@ -5403,9 +5403,9 @@
       "context_window": "hange (before and after: 87\u00b12 mg/dL); p <0.77 TRF: before: 8.3\u00b11 uIU/mL, after: 5.7\u00b10.7 uIU/mL Control: before: 9.2\u00b11.4 uIU",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13262",
@@ -5422,9 +5422,9 @@
       "context_window": "er: 87\u00b12 mg/dL); p <0.77 TRF: before: 8.3\u00b11 uIU/mL, after: 5.7\u00b10.7 uIU/mL Control: before: 9.2\u00b11.4 uIU/mL; after 10.3\u00b11.9 uIU",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13295",
@@ -5441,9 +5441,9 @@
       "context_window": "fore: 8.3\u00b11 uIU/mL, after: 5.7\u00b10.7 uIU/mL Control: before: 9.2\u00b11.4 uIU/mL; after 10.3\u00b11.9 uIU/mL; p <0.16 TRF: before: 1.6\u00b10.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13317",
@@ -5460,9 +5460,9 @@
       "context_window": "ter: 5.7\u00b10.7 uIU/mL Control: before: 9.2\u00b11.4 uIU/mL; after 10.3\u00b11.9 uIU/mL; p <0.16 TRF: before: 1.6\u00b10.2, after: 1.0\u00b10.2 Cont",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13334",
@@ -5478,9 +5478,9 @@
       "context_window": "mL Control: before: 9.2\u00b11.4 uIU/mL; after 10.3\u00b11.9 uIU/mL; p <0.16 TRF: before: 1.6\u00b10.2, after: 1.0\u00b10.2 Control: before: 2.0",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13356",
@@ -5497,9 +5497,9 @@
       "context_window": ".2\u00b11.4 uIU/mL; after 10.3\u00b11.9 uIU/mL; p <0.16 TRF: before: 1.6\u00b10.2, after: 1.0\u00b10.2 Control: before: 2.0\u00b10.2; after 2.2\u00b10.4; p",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13372",
@@ -5516,9 +5516,9 @@
       "context_window": "fter 10.3\u00b11.9 uIU/mL; p <0.16 TRF: before: 1.6\u00b10.2, after: 1.0\u00b10.2 Control: before: 2.0\u00b10.2; after 2.2\u00b10.4; p <0.21 Mean dif",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13398",
@@ -5535,9 +5535,9 @@
       "context_window": ".16 TRF: before: 1.6\u00b10.2, after: 1.0\u00b10.2 Control: before: 2.0\u00b10.2; after 2.2\u00b10.4; p <0.21 Mean difference phase 1 to 2: \u21931.4",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13413",
@@ -5554,9 +5554,9 @@
       "context_window": "e: 1.6\u00b10.2, after: 1.0\u00b10.2 Control: before: 2.0\u00b10.2; after 2.2\u00b10.4; p <0.21 Mean difference phase 1 to 2: \u21931.4 kg (p=0.009)",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13422",
@@ -5572,9 +5572,9 @@
       "context_window": "2, after: 1.0\u00b10.2 Control: before: 2.0\u00b10.2; after 2.2\u00b10.4; p <0.21 Mean difference phase 1 to 2: \u21931.4 kg (p=0.009) BMI: \u21930.5",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13462",
@@ -5590,9 +5590,9 @@
       "context_window": "0.2; after 2.2\u00b10.4; p <0.21 Mean difference phase 1 to 2: \u21931.4 kg (p=0.009) BMI: \u21930.52 kg/m 2 (p=0.01) Mean difference phas",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13470",
@@ -5608,9 +5608,9 @@
       "context_window": "er 2.2\u00b10.4; p <0.21 Mean difference phase 1 to 2: \u21931.4 kg (p=0.009) BMI: \u21930.52 kg/m 2 (p=0.01) Mean difference phase 2 to 3:",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13486",
@@ -5626,9 +5626,9 @@
       "context_window": ".21 Mean difference phase 1 to 2: \u21931.4 kg (p=0.009) BMI: \u21930.52 kg/m 2 (p=0.01) Mean difference phase 2 to 3: \u21910,28 kg (p=1.0",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13499",
@@ -5644,9 +5644,9 @@
       "context_window": "ference phase 1 to 2: \u21931.4 kg (p=0.009) BMI: \u21930.52 kg/m 2 (p=0.01) Mean difference phase 2 to 3: \u21910,28 kg (p=1.0) BMI: \u21910.1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13541",
@@ -5662,9 +5662,9 @@
       "context_window": "MI: \u21930.52 kg/m 2 (p=0.01) Mean difference phase 2 to 3: \u21910,28 kg (p=1.0) BMI: \u21910.1 kg/m 2 , (p=1.0) % change from phase 1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13562",
@@ -5680,9 +5680,9 @@
       "context_window": ".01) Mean difference phase 2 to 3: \u21910,28 kg (p=1.0) BMI: \u21910.1 kg/m 2 , (p=1.0) % change from phase 1 to 2: \u21936.10% (p=0.002)",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-13613",
@@ -5698,9 +5698,9 @@
       "context_window": ") BMI: \u21910.1 kg/m 2 , (p=1.0) % change from phase 1 to 2: \u21936.10% (p=0.002) % change from phase 2 to 3: \u21915.2% (p=0.003) Mea",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13620",
@@ -5716,9 +5716,9 @@
       "context_window": "\u21910.1 kg/m 2 , (p=1.0) % change from phase 1 to 2: \u21936.10% (p=0.002) % change from phase 2 to 3: \u21915.2% (p=0.003) Mean differe",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-13659",
@@ -5734,9 +5734,9 @@
       "context_window": "hase 1 to 2: \u21936.10% (p=0.002) % change from phase 2 to 3: \u21915.2% (p=0.003) Mean difference phase 1 to 2: \u21930.46 (p=1.0) Mea",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13665",
@@ -5752,9 +5752,9 @@
       "context_window": "to 2: \u21936.10% (p=0.002) % change from phase 2 to 3: \u21915.2% (p=0.003) Mean difference phase 1 to 2: \u21930.46 (p=1.0) Mean differe",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13771",
@@ -5771,9 +5771,9 @@
       "context_window": "(p=1.0) Mean difference phase 2 to 3: \u21910,11 (p=1.0) ADF: \u21938.2\u00b10.9 kg CR: \u21937.1\u00b11.0 kg p <0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13775",
@@ -5789,9 +5789,9 @@
       "context_window": ".0) Mean difference phase 2 to 3: \u21910,11 (p=1.0) ADF: \u21938.2\u00b10.9 kg CR: \u21937.1\u00b11.0 kg p <0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13788",
@@ -5808,9 +5808,9 @@
       "context_window": "ference phase 2 to 3: \u21910,11 (p=1.0) ADF: \u21938.2\u00b10.9 kg CR: \u21937.1\u00b11.0 kg p <0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13792",
@@ -5826,9 +5826,9 @@
       "context_window": "nce phase 2 to 3: \u21910,11 (p=1.0) ADF: \u21938.2\u00b10.9 kg CR: \u21937.1\u00b11.0 kg p <0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13800",
@@ -5844,9 +5844,9 @@
       "context_window": "e 2 to 3: \u21910,11 (p=1.0) ADF: \u21938.2\u00b10.9 kg CR: \u21937.1\u00b11.0 kg p <0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13816",
@@ -5863,9 +5863,9 @@
       "context_window": "(p=1.0) ADF: \u21938.2\u00b10.9 kg CR: \u21937.1\u00b11.0 kg p <0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13820",
@@ -5881,9 +5881,9 @@
       "context_window": ".0) ADF: \u21938.2\u00b10.9 kg CR: \u21937.1\u00b11.0 kg p <0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13833",
@@ -5900,9 +5900,9 @@
       "context_window": "2\u00b10.9 kg CR: \u21937.1\u00b11.0 kg p <0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13837",
@@ -5918,9 +5918,9 @@
       "context_window": "9 kg CR: \u21937.1\u00b11.0 kg p <0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001 ADF",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13845",
@@ -5936,9 +5936,9 @@
       "context_window": ": \u21937.1\u00b11.0 kg p <0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13861",
@@ -5955,9 +5955,9 @@
       "context_window": "<0.001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13865",
@@ -5973,9 +5973,9 @@
       "context_window": "001 ADF: \u21933.7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01 CR",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13878",
@@ -5992,9 +5992,9 @@
       "context_window": "7\u00b10.5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01 CR: \u21933.3\u00b12.3 mg/",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13882",
@@ -6010,9 +6010,9 @@
       "context_window": "5 kg CR: \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01 CR: \u21933.3\u00b12.3 mg/dL,",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13890",
@@ -6028,9 +6028,9 @@
       "context_window": ": \u21933.7\u00b10.5 kg p <0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01 CR: \u21933.3\u00b12.3 mg/dL, p=0.166",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13906",
@@ -6047,9 +6047,9 @@
       "context_window": "<0.001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01 CR: \u21933.3\u00b12.3 mg/dL, p=0.166 ADF: \u21933.0\u00b12.3\u03bcU",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13910",
@@ -6065,9 +6065,9 @@
       "context_window": "001 ADF: \u21933.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01 CR: \u21933.3\u00b12.3 mg/dL, p=0.166 ADF: \u21933.0\u00b12.3\u03bcU/mL, p",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13921",
@@ -6083,9 +6083,9 @@
       "context_window": "3.2\u00b10.6 kg CR: \u21932.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01 CR: \u21933.3\u00b12.3 mg/dL, p=0.166 ADF: \u21933.0\u00b12.3\u03bcU/mL, p=0.207",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13934",
@@ -6102,9 +6102,9 @@
       "context_window": "R: \u21932.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01 CR: \u21933.3\u00b12.3 mg/dL, p=0.166 ADF: \u21933.0\u00b12.3\u03bcU/mL, p=0.207 CR: \u21930.2\u00b12.4 \u03bc",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-13938",
@@ -6120,9 +6120,9 @@
       "context_window": "2.6\u00b10.6 kg p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01 CR: \u21933.3\u00b12.3 mg/dL, p=0.166 ADF: \u21933.0\u00b12.3\u03bcU/mL, p=0.207 CR: \u21930.2\u00b12.4 \u03bcU/mL,",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13949",
@@ -6138,9 +6138,9 @@
       "context_window": "p <0.001 ADF: \u21936.0\u00b12.1 mg/dL, p=0.01 CR: \u21933.3\u00b12.3 mg/dL, p=0.166 ADF: \u21933.0\u00b12.3\u03bcU/mL, p=0.207 CR: \u21930.2\u00b12.4 \u03bcU/mL, p=0.945",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13964",
@@ -6157,9 +6157,9 @@
       "context_window": "\u21936.0\u00b12.1 mg/dL, p=0.01 CR: \u21933.3\u00b12.3 mg/dL, p=0.166 ADF: \u21933.0\u00b12.3\u03bcU/mL, p=0.207 CR: \u21930.2\u00b12.4 \u03bcU/mL, p=0.945 A pragmatic pil",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-13978",
@@ -6175,9 +6175,9 @@
       "context_window": "L, p=0.01 CR: \u21933.3\u00b12.3 mg/dL, p=0.166 ADF: \u21933.0\u00b12.3\u03bcU/mL, p=0.207 CR: \u21930.2\u00b12.4 \u03bcU/mL, p=0.945 A pragmatic pilot trial: Gro",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-13992",
@@ -6194,9 +6194,9 @@
       "context_window": "\u21933.3\u00b12.3 mg/dL, p=0.166 ADF: \u21933.0\u00b12.3\u03bcU/mL, p=0.207 CR: \u21930.2\u00b12.4 \u03bcU/mL, p=0.945 A pragmatic pilot trial: Group 1: 2-day ca",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-14007",
@@ -6212,9 +6212,9 @@
       "context_window": ", p=0.166 ADF: \u21933.0\u00b12.3\u03bcU/mL, p=0.207 CR: \u21930.2\u00b12.4 \u03bcU/mL, p=0.945 A pragmatic pilot trial: Group 1: 2-day calorie restricti",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-14223",
@@ -6230,9 +6230,9 @@
       "context_window": "h normal energy supply (5000-6500 kJ/day) The study lasted 12 weeks IF: 100\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-14237",
@@ -6249,9 +6249,9 @@
       "context_window": "y supply (5000-6500 kJ/day) The study lasted 12 weeks IF: 100\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-14241",
@@ -6267,9 +6267,9 @@
       "context_window": "pply (5000-6500 kJ/day) The study lasted 12 weeks IF: 100\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-14250",
@@ -6286,9 +6286,9 @@
       "context_window": "0-6500 kJ/day) The study lasted 12 weeks IF: 100\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-14253",
@@ -6304,9 +6304,9 @@
       "context_window": "500 kJ/day) The study lasted 12 weeks IF: 100\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u2193",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-14265",
@@ -6323,9 +6323,9 @@
       "context_window": "The study lasted 12 weeks IF: 100\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-14269",
@@ -6341,9 +6341,9 @@
       "context_window": "study lasted 12 weeks IF: 100\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-14278",
@@ -6360,9 +6360,9 @@
       "context_window": "sted 12 weeks IF: 100\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF:",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-14281",
@@ -6378,9 +6378,9 @@
       "context_window": "d 12 weeks IF: 100\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-14288",
@@ -6396,9 +6396,9 @@
       "context_window": "eks IF: 100\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-14300",
@@ -6415,9 +6415,9 @@
       "context_window": "\u00b120 kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-14304",
@@ -6433,9 +6433,9 @@
       "context_window": "kg to 92\u00b114 kg CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-14318",
@@ -6452,9 +6452,9 @@
       "context_window": "CER: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-14322",
@@ -6470,9 +6470,9 @@
       "context_window": "R: 102\u00b117 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF:",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-14330",
@@ -6488,9 +6488,9 @@
       "context_window": "7 kg to 94\u00b113 kg p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0%",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-14345",
@@ -6507,9 +6507,9 @@
       "context_window": "g p=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0% CER: \u21930.6\u00b10.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-14349",
@@ -6525,9 +6525,9 @@
       "context_window": "=0.7 IF: \u21933.8\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0% CER: \u21930.6\u00b10.8%",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-14363",
@@ -6544,9 +6544,9 @@
       "context_window": "\u00b12.7 kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0% CER: \u21930.6\u00b10.8% p=0.3 Randomi",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-14367",
@@ -6562,9 +6562,9 @@
       "context_window": "kg CER: \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0% CER: \u21930.6\u00b10.8% p=0.3 Randomized",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-14375",
@@ -6580,9 +6580,9 @@
       "context_window": ": \u21934.0\u00b13.2 kg p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0% CER: \u21930.6\u00b10.8% p=0.3 Randomized trial, th",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-14390",
@@ -6599,9 +6599,9 @@
       "context_window": "p <0.001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0% CER: \u21930.6\u00b10.8% p=0.3 Randomized trial, those on the IEC",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-14394",
@@ -6617,9 +6617,9 @@
       "context_window": ".001 IF: \u21932.2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0% CER: \u21930.6\u00b10.8% p=0.3 Randomized trial, those on the IECR",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-msd-14406",
@@ -6636,9 +6636,9 @@
       "context_window": ".2\u00b11.9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0% CER: \u21930.6\u00b10.8% p=0.3 Randomized trial, those on the IECR diet consumed",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-14410",
@@ -6654,9 +6654,9 @@
       "context_window": ".9 kg CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0% CER: \u21930.6\u00b10.8% p=0.3 Randomized trial, those on the IECR diet consumed a",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-p-14416",
@@ -6672,9 +6672,9 @@
       "context_window": "CER: \u21931.1\u00b12.1 kg p <0.001 IF: \u21930.8\u00b11.0% CER: \u21930.6\u00b10.8% p=0.3 Randomized trial, those on the IECR diet consumed an avera",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-14517",
@@ -6690,9 +6690,9 @@
       "context_window": "R diet consumed an average of 2500-2717 kJ/day or were on a 25% reduced calorie diet with reduced carbohydrate content (<40",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-14761",
@@ -8748,9 +8748,9 @@
       "context_window": "participants ate meals ad libitum in the eating window for 12 weeks. Another 23 people (randomly selected) constituted the cont",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-2435",
@@ -8838,7 +8838,7 @@
       "context_window": "intermittent fasting resulted in significant weight loss (-1.395 kg), BMI (-0.517), and at-target morning glucose (SMBG). SMBG",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -8874,7 +8874,7 @@
       "context_window": ". Intermittent fasting reduced post-prandial hyperglycemia (39.4% vs 47.4% of the baseline value). The weight loss was due to",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -8892,7 +8892,7 @@
       "context_window": "ttent fasting reduced post-prandial hyperglycemia (39.4% vs 47.4% of the baseline value). The weight loss was due to a reduce",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -8946,9 +8946,9 @@
       "context_window": "riction of 1670-2500 kJ/day and a 5-day ad libitum diet for 12 weeks. There were no significant differences between the two grou",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-pct-5670",
@@ -8964,9 +8964,9 @@
       "context_window": "estricted diet. The intermittent fasting regimen included a 25% calorie reduction 2 days a week. The study involved 115 ove",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-5692",
@@ -8982,9 +8982,9 @@
       "context_window": "termittent fasting regimen included a 25% calorie reduction 2 days a week. The study involved 115 overweight women who reporte",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8102292_effect_of_various_types_of_intermittent_fasting_if_on_weight-u-6042",
@@ -9291,7 +9291,7 @@
       "context_window": "imes a week, then 42 h twice a week, and 16 h a week. After 8 months, the IF was reduced to 16 h a day, with 24 h three times a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

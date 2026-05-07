@@ -1,0 +1,83 @@
+{
+  "paper_id": "HIT_statins_for_venous_event_reduction_in_patients_with_venous_t",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_statins_for_venous_event_reduction_in_patients_with_venous_t-u-548",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg/day",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 548,
+      "sentence": "Eligible consenting patients who developed acute, symptomatic, and objectively confirmed proximal leg deep vein thrombosis (DVT) and/or PE will be randomized and equally allocated to 2 trial arms, either the treatment group (rosuvastatin tablet (20 mg/day) or the control group (usual care).",
+      "context_window": "rial arms, either the treatment group (rosuvastatin tablet (20 mg/day) or the control group (usual care). The pilot trial consist",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_statins_for_venous_event_reduction_in_patients_with_venous_t-u-650",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 650,
+      "sentence": "The pilot trial consists of up to 4 study contacts over 6 months: screening, randomization, telephone follow-up (90 days), and final study visit (180 days).",
+      "context_window": "e). The pilot trial consists of up to 4 study contacts over 6 months: screening, randomization, telephone follow-up (90 days), a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_statins_for_venous_event_reduction_in_patients_with_venous_t-u-707",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 707,
+      "sentence": "The pilot trial consists of up to 4 study contacts over 6 months: screening, randomization, telephone follow-up (90 days), and final study visit (180 days).",
+      "context_window": "er 6 months: screening, randomization, telephone follow-up (90 days), and final study visit (180 days).",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_statins_for_venous_event_reduction_in_patients_with_venous_t-u-740",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 740,
+      "sentence": "The pilot trial consists of up to 4 study contacts over 6 months: screening, randomization, telephone follow-up (90 days), and final study visit (180 days).",
+      "context_window": "tion, telephone follow-up (90 days), and final study visit (180 days).",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

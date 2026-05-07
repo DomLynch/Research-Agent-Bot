@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_the_determining_statin_intolerance_for_rosuvastatin_desifor_",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_determining_statin_intolerance_for_rosuvastatin_desifor_-u-588",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 588,
+      "sentence": "This study is part of a larger effort to: * See how common it is for patients to still be intolerant of statin medication after trying it a second time; and * For those patients who do tolerate being on a statin after trying it a second time, see how common it is for them to still be taking the statin 3 months after completing the main part of the study.",
+      "context_window": "see how common it is for them to still be taking the statin 3 months after completing the main part of the study. Patients who a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_determining_statin_intolerance_for_rosuvastatin_desifor_-u-692",
+      "claim_type": "unit_value",
+      "raw_text": "5 month",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 692,
+      "sentence": "Patients who agree to participate will be given a 5 month randomly allocated supply of statin and placebo and track their symptoms weekly.",
+      "context_window": "he study. Patients who agree to participate will be given a 5 month randomly allocated supply of statin and placebo and track t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

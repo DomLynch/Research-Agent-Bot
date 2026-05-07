@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_atorvastatin_as_gvhd_prophylaxis_for_allogeneic_hematopoieti",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_atorvastatin_as_gvhd_prophylaxis_for_allogeneic_hematopoieti-u-638",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 638,
+      "sentence": "Patients will receive atorvastatin daily by mouth starting 14 days before stem cell transplant.",
+      "context_window": "Patients will receive atorvastatin daily by mouth starting 14 days before stem cell transplant. They will continue to take ato",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_atorvastatin_as_gvhd_prophylaxis_for_allogeneic_hematopoieti-u-721",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 721,
+      "sentence": "They will continue to take atorvastatin until 180 days after transplant.",
+      "context_window": "l transplant. They will continue to take atorvastatin until 180 days after transplant. This medicine may be stopped earlier if t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

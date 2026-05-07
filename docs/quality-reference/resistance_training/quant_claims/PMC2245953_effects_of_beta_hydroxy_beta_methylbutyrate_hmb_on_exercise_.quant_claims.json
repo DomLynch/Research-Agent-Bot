@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_",
   "doi": "10.1186/1743-7075-5-1",
-  "extracted_at": "2026-05-05T21:59:31+00:00",
+  "extracted_at": "2026-05-07T16:57:31+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 59,
@@ -96,9 +96,9 @@
       "context_window": "ent two, with weight training occurring 2-3 hours daily for 7 weeks. Results from experiment 1 found that HMB decreased plasma",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "weight training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-pct-5832",
@@ -168,7 +168,7 @@
       "context_window": "plementation in 37 untrained men on strength and LBM during 8 weeks of resistance training with 10 different resistance exercis",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -186,7 +186,7 @@
       "context_window": "fferent resistance exercises, performed 3 times per week at 80% of the participant's 1-RM. While results found no significa",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -204,7 +204,7 @@
       "context_window": "fferences between conditions in 1-RM or body fat mass after 8 weeks of training, the HMB supplemented conditions lowered plasma",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -240,7 +240,7 @@
       "context_window": "B, creatine, and the combination group gained .39, .92, and 1.54 kg of LBM, respectively, above the placebo. The total amount o",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -258,7 +258,7 @@
       "context_window": "e the placebo on all exercises combined was 37.5, 39.1, and 51.9 kg for HMB, creatine, and the combination group, respectively.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -294,9 +294,9 @@
       "context_window": "MB during resistance training in 36 women and 39 men, 20 to 40 years of age, with varying levels of training experience for 4 we",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-u-9193",
@@ -312,9 +312,9 @@
       "context_window": "ears of age, with varying levels of training experience for 4 weeks. The HMB group decreased body fat to a greater extent (-1.1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-pct-9257",
@@ -366,9 +366,9 @@
       "context_window": "and had greater increases in upper body strength (7.5 vs . 5.2 kg), and LBM (1.4 vs. .9 kg) than the placebo group, independe",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-u-9360",
@@ -384,9 +384,9 @@
       "context_window": "in upper body strength (7.5 vs . 5.2 kg), and LBM (1.4 vs. .9 kg) than the placebo group, independent of training experience",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-pct-9512",
@@ -420,9 +420,9 @@
       "context_window": "rease in leg extension 1-RM relative to placebo (14.7% vs . 4.8%) after 9 weeks of strength training in 34 resistance traine",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-u-9535",
@@ -438,9 +438,9 @@
       "context_window": "extension 1-RM relative to placebo (14.7% vs . 4.8%) after 9 weeks of strength training in 34 resistance trained men, while Ne",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-u-10004",
@@ -456,7 +456,7 @@
       "context_window": "met their strict experimental criteria, including at least 3 weeks of resistance training, 2 or more times per week. Over 250",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -510,7 +510,7 @@
       "context_window": "t indicated that HMB increased the time to reach VO 2 peak (8%), while leucine and the placebo did not. The VO 2 at 2 mM o",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -528,7 +528,7 @@
       "context_window": "not. The VO 2 at 2 mM of lactate (OBLA) increased with HMB (9.1%) and leucine (2.1%), but not with the placebo. Likewise, Vu",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -546,7 +546,7 @@
       "context_window": "mM of lactate (OBLA) increased with HMB (9.1%) and leucine (2.1%), but not with the placebo. Likewise, Vukovich and Adams [",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -564,7 +564,7 @@
       "context_window": "the placebo. Likewise, Vukovich and Adams [ 43 ] found that 2 weeks of HMB supplementation in experienced cyclists increased bo",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -582,7 +582,7 @@
       "context_window": "ementation in 31 untrained, elderly men and women during an 8 week resistance training program resulted in increased body fat",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -600,7 +600,7 @@
       "context_window": "ng program resulted in increased body fat lost (-.66 vs . -.03 %), and greater upper (13% vs . 11%) and lower body strength",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -618,7 +618,7 @@
       "context_window": "reased body fat lost (-.66 vs . -.03 %), and greater upper (13% vs . 11%) and lower body strength (13 % vs . 7 %) in the HM",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -672,9 +672,9 @@
       "context_window": "ter upper (13% vs . 11%) and lower body strength (13 % vs . 7 %) in the HMB condition than the placebo. Flakoll et al. [ 4",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-u-12924",
@@ -690,7 +690,7 @@
       "context_window": ", 5 grams of arginine, and 1.5 grams of lysine daily. After 12 weeks, there was a 17% increase in the \"get-up-and-go\" test in th",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -708,7 +708,7 @@
       "context_window": "and 1.5 grams of lysine daily. After 12 weeks, there was a 17% increase in the \"get-up-and-go\" test in the experimental gr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -852,7 +852,7 @@
       "context_window": "een the HMB and placebo groups. However, GUG significantly (p < .05) improved over the placebo with HMB supplementation. As a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -888,9 +888,9 @@
       "context_window": "hypercholesterolemia, who exercised five times per week for 4 weeks with a combination of endurance and resistance training. Re",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-u-16139",
@@ -996,7 +996,7 @@
       "context_window": "erol levels, but did improve performance in the leg press (+1.3 kg) and rear lat pull-downs (+ 1.8 kg). There is also evidenc",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1014,7 +1014,7 @@
       "context_window": "mance in the leg press (+1.3 kg) and rear lat pull-downs (+ 1.8 kg). There is also evidence to suggest that HMB increases fat",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1050,9 +1050,9 @@
       "context_window": "trained males (M = 2 y) consume 3 g of HMB or a placebo for 6 weeks while performing 2-3 sessions weekly of compound movements",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-u-18573",
@@ -1068,9 +1068,9 @@
       "context_window": "on-resistance trained males, who consumed HMB or a placebo, 6 days prior to and after a bout of 24 maximal isokinetic eccentri",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-u-18925",
@@ -1086,9 +1086,9 @@
       "context_window": "torque was also measured at 15 minutes and 1, 2, 3, 7, and 10 days post exercise. The exercise bout significantly (p < .05) in",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-p-18981",
@@ -1104,9 +1104,9 @@
       "context_window": "and 10 days post exercise. The exercise bout significantly (p < .05) increased muscle soreness, peaking at a score of 7; but th",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-u-19879",
@@ -1446,9 +1446,9 @@
       "context_window": "nd 6 g) on hematology and hepatic and renal function during 8 weeks of resistance training in untrained men. Results found no a",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2245953_effects_of_beta_hydroxy_beta_methylbutyrate_hmb_on_exercise_-pct-37475",
@@ -1716,7 +1716,7 @@
       "context_window": "minant leg in a counter-balanced crossover design. HMB-PRE (N = 8) received 3 grams of HMB before and a placebo after exercis",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1734,7 +1734,7 @@
       "context_window": "exercise, or a placebo before and after exercise. HMB-POST (N = 8) received a placebo before and 3 grams of HMB after exercis",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },

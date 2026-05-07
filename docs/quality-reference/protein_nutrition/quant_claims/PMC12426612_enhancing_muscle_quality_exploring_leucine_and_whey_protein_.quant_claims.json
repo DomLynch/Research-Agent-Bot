@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12426612_enhancing_muscle_quality_exploring_leucine_and_whey_protein_",
   "doi": "10.1002/jcsm.70060",
-  "extracted_at": "2026-05-05T23:37:04+00:00",
+  "extracted_at": "2026-05-07T16:56:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 7,
@@ -58,7 +58,7 @@
       "sentence": "Moreover, sarcopenia causes a rapid decrease in skeletal muscle mass, which is known as dynapenia and is increasing at a rapid rate of 2%-3% per year, and it is estimated to be 20% in older adults above the age of 65 and 50% in adults aged 80 years and above.",
       "context_window": "is known as dynapenia and is increasing at a rapid rate of 2%-3% per year, and it is estimated to be 20% in older adults",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -76,7 +76,7 @@
       "sentence": "Moreover, sarcopenia causes a rapid decrease in skeletal muscle mass, which is known as dynapenia and is increasing at a rapid rate of 2%-3% per year, and it is estimated to be 20% in older adults above the age of 65 and 50% in adults aged 80 years and above.",
       "context_window": "known as dynapenia and is increasing at a rapid rate of 2%-3% per year, and it is estimated to be 20% in older adults abo",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -94,7 +94,7 @@
       "sentence": "Moreover, sarcopenia causes a rapid decrease in skeletal muscle mass, which is known as dynapenia and is increasing at a rapid rate of 2%-3% per year, and it is estimated to be 20% in older adults above the age of 65 and 50% in adults aged 80 years and above.",
       "context_window": "t a rapid rate of 2%-3% per year, and it is estimated to be 20% in older adults above the age of 65 and 50% in adults aged",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -112,7 +112,7 @@
       "sentence": "Moreover, sarcopenia causes a rapid decrease in skeletal muscle mass, which is known as dynapenia and is increasing at a rapid rate of 2%-3% per year, and it is estimated to be 20% in older adults above the age of 65 and 50% in adults aged 80 years and above.",
       "context_window": "estimated to be 20% in older adults above the age of 65 and 50% in adults aged 80 years and above. It is also seen that in",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -130,7 +130,7 @@
       "sentence": "Moreover, sarcopenia causes a rapid decrease in skeletal muscle mass, which is known as dynapenia and is increasing at a rapid rate of 2%-3% per year, and it is estimated to be 20% in older adults above the age of 65 and 50% in adults aged 80 years and above.",
       "context_window": "in older adults above the age of 65 and 50% in adults aged 80 years and above. It is also seen that in some diseases and condit",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -184,7 +184,7 @@
       "sentence": "It was also reported that the prevalence of sarcopenia was higher in non\u2010Asian individuals, with muscle mass of 19% in men and 20% in non\u2010Asian women and 10% in men and 11% in women who were Asians.",
       "context_window": "ia was higher in non\u2010Asian individuals, with muscle mass of 19% in men and 20% in non\u2010Asian women and 10% in men and 11% in",
       "claim_role": "background",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -202,7 +202,7 @@
       "sentence": "It was also reported that the prevalence of sarcopenia was higher in non\u2010Asian individuals, with muscle mass of 19% in men and 20% in non\u2010Asian women and 10% in men and 11% in women who were Asians.",
       "context_window": "n non\u2010Asian individuals, with muscle mass of 19% in men and 20% in non\u2010Asian women and 10% in men and 11% in women who were",
       "claim_role": "background",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -220,7 +220,7 @@
       "sentence": "It was also reported that the prevalence of sarcopenia was higher in non\u2010Asian individuals, with muscle mass of 19% in men and 20% in non\u2010Asian women and 10% in men and 11% in women who were Asians.",
       "context_window": "th muscle mass of 19% in men and 20% in non\u2010Asian women and 10% in men and 11% in women who were Asians. It was also report",
       "claim_role": "background",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -238,7 +238,7 @@
       "sentence": "It was also reported that the prevalence of sarcopenia was higher in non\u2010Asian individuals, with muscle mass of 19% in men and 20% in non\u2010Asian women and 10% in men and 11% in women who were Asians.",
       "context_window": "of 19% in men and 20% in non\u2010Asian women and 10% in men and 11% in women who were Asians. It was also reported that many ol",
       "claim_role": "background",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -275,7 +275,7 @@
       "context_window": "e literature suggests that individuals with sarcopenia need 2% more protein intake per meal than older individuals for pro",
       "claim_role": "background",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -293,7 +293,7 @@
       "context_window": "hesis and functioning. Furthermore, globally, approximately 40% of older individuals do not meet the approved daily protein",
       "claim_role": "background",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -311,7 +311,7 @@
       "context_window": "ls do not meet the approved daily protein intake, and about 10% of women do not meet the daily average requirements for pro",
       "claim_role": "background",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -383,7 +383,7 @@
       "context_window": "d 27 individuals in this study. The study was conducted for 24 weeks, and protein supplementation included 11 g of protein and 2",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -418,7 +418,7 @@
       "sentence": "After 24 weeks, appendicular muscle mass and handgrip strength increased in the resistance training along with the protein group compared to resistance training alone.",
       "context_window": "ein along with resistance training group ( p < 0.01). After 24 weeks, appendicular muscle mass and handgrip strength increased i",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "high"

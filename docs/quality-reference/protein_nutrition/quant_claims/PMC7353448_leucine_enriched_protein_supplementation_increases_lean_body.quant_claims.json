@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7353448_leucine_enriched_protein_supplementation_increases_lean_body",
   "doi": "10.3390/nu12061816",
-  "extracted_at": "2026-05-05T23:37:14+00:00",
+  "extracted_at": "2026-05-07T16:56:43+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 18,
@@ -281,7 +281,7 @@
       "context_window": "creased protein intake. Houston et al. (2009) reported that 40% of elderly people over 70 years of age do not meet the reco",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -299,7 +299,7 @@
       "context_window": "ston et al. (2009) reported that 40% of elderly people over 70 years of age do not meet the recommended protein intake, and a si",
       "claim_role": "protocol",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -317,7 +317,7 @@
       "context_window": "scle protein degradation. If protein intake is increased to 0.8 g/kg/day, muscle synthesis is increased, and muscle strength is impr",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -334,7 +334,7 @@
       "sentence": "Previous studies show that when leucine-added protein was supplied to sarcopenic elderly people for 12 weeks, muscle mass in the limbs and total lean mass were simultaneously increased.",
       "context_window": "added protein was supplied to sarcopenic elderly people for 12 weeks, muscle mass in the limbs and total lean mass were simultan",
       "claim_role": "background",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -371,7 +371,7 @@
       "context_window": "tation interventions usually focused on elderly people over 65 years of age, and research on the pre-elderly is rare [ 6 , 9 , 1",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -532,7 +532,7 @@
       "sentence": "The inclusion criteria for this study were age over 50 and under 80 years, understanding the purpose of this study, voluntarily agreeing to participate in the study, body mass index (BMI) of 18.5 to 27 kg/m\u00b2, appendicular skeletal muscle mass index (ASMI) over 7.0 kg/m\u00b2 for men and 5.4 kg/m\u00b2 for women as measured by dual energy X-ray absorptiometry (DXA; GE Healthcare, Madison, WI, USA).",
       "context_window": "kg/m\u00b2, appendicular skeletal muscle mass index (ASMI) over 7.0 kg/m\u00b2 for men and 5.4 kg/m\u00b2 for women as measured by dual ener",
       "claim_role": "population",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -550,7 +550,7 @@
       "sentence": "The inclusion criteria for this study were age over 50 and under 80 years, understanding the purpose of this study, voluntarily agreeing to participate in the study, body mass index (BMI) of 18.5 to 27 kg/m\u00b2, appendicular skeletal muscle mass index (ASMI) over 7.0 kg/m\u00b2 for men and 5.4 kg/m\u00b2 for women as measured by dual energy X-ray absorptiometry (DXA; GE Healthcare, Madison, WI, USA).",
       "context_window": "keletal muscle mass index (ASMI) over 7.0 kg/m\u00b2 for men and 5.4 kg/m\u00b2 for women as measured by dual energy X-ray absorptiometr",
       "claim_role": "population",
-      "endpoint": "body mass index",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -604,7 +604,7 @@
       "sentence": "The exclusion criteria were (1) eGFR 60 mL/min/1.73 m 2 or less, (2) currently receiving insulin therapy or taking steroids and testosterone-based drugs, (3) having chronic lung disease, (4) taking vitamin D 1000 IU or more per day, (5) consuming a special diet for the purpose of disease management, (6) history of high-intensity strength training in the past 6 months, (7) musculoskeletal disorders that make it difficult to exercise, (8) untreated or unregulated cardiovascular disease that may affect muscle mass or exercise, (9) period of less than 5 years after the treatment of malignant tumors, and (10) presence of cirrhosis, diabetes, and other chronic diseases.",
       "context_window": "may affect muscle mass or exercise, (9) period of less than 5 years after the treatment of malignant tumors, and (10) presence",
       "claim_role": "dose",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2384,7 +2384,7 @@
       "sentence": "Similar results in previous studies that measured muscle, muscle strength, and physical performance showed that in elderly people observed for 12 weeks, muscle mass (ASM, SMI) increased, and walking speed improved [ 13 ].",
       "context_window": "ical performance showed that in elderly people observed for 12 weeks, muscle mass (ASM, SMI) increased, and walking speed improv",
       "claim_role": "background",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2402,7 +2402,7 @@
       "sentence": "In addition, healthy older males who consumed a medical nutrition drink (21 g whey protein, 3 g leucine, 3 g fat, and vitamin D 800IU (20 \u00b5g), 500 mg of calcium) before breakfast for 6 weeks experienced greater improvements in muscle mass (appendicular lean mass, leg lean mass) than the control group, while grip strength and SPPB did not differ between groups [ 28 ].",
       "context_window": "protein, 3 g leucine, 3 g fat, and vitamin D 800IU (20 \u00b5g), 500 mg of calcium) before breakfast for 6 weeks experienced greate",
       "claim_role": "effect",
-      "endpoint": "lean body mass",
+      "endpoint": "muscle mass",
       "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "high"
@@ -2420,7 +2420,7 @@
       "sentence": "In addition, healthy older males who consumed a medical nutrition drink (21 g whey protein, 3 g leucine, 3 g fat, and vitamin D 800IU (20 \u00b5g), 500 mg of calcium) before breakfast for 6 weeks experienced greater improvements in muscle mass (appendicular lean mass, leg lean mass) than the control group, while grip strength and SPPB did not differ between groups [ 28 ].",
       "context_window": "in D 800IU (20 \u00b5g), 500 mg of calcium) before breakfast for 6 weeks experienced greater improvements in muscle mass (appendicul",
       "claim_role": "effect",
-      "endpoint": "lean body mass",
+      "endpoint": "muscle mass",
       "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "high"
@@ -2709,10 +2709,10 @@
       "sentence": "In addition, previous studies have reported that healthy adults over the age of 40 lose about 8% of their muscle mass every 10 years, and healthy adults lose an average of 24% of their muscle between the ages of 40 and 70 years [ 38 , 39 ].",
       "context_window": "reported that healthy adults over the age of 40 lose about 8% of their muscle mass every 10 years, and healthy adults los",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7353448_leucine_enriched_protein_supplementation_increases_lean_body-u-10307",
@@ -2727,10 +2727,10 @@
       "sentence": "In addition, previous studies have reported that healthy adults over the age of 40 lose about 8% of their muscle mass every 10 years, and healthy adults lose an average of 24% of their muscle between the ages of 40 and 70 years [ 38 , 39 ].",
       "context_window": "over the age of 40 lose about 8% of their muscle mass every 10 years, and healthy adults lose an average of 24% of their muscle",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7353448_leucine_enriched_protein_supplementation_increases_lean_body-pct-10355",
@@ -2745,10 +2745,10 @@
       "sentence": "In addition, previous studies have reported that healthy adults over the age of 40 lose about 8% of their muscle mass every 10 years, and healthy adults lose an average of 24% of their muscle between the ages of 40 and 70 years [ 38 , 39 ].",
       "context_window": "mass every 10 years, and healthy adults lose an average of 24% of their muscle between the ages of 40 and 70 years [ 38 ,",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7353448_leucine_enriched_protein_supplementation_increases_lean_body-u-10402",
@@ -2763,10 +2763,10 @@
       "sentence": "In addition, previous studies have reported that healthy adults over the age of 40 lose about 8% of their muscle mass every 10 years, and healthy adults lose an average of 24% of their muscle between the ages of 40 and 70 years [ 38 , 39 ].",
       "context_window": "n average of 24% of their muscle between the ages of 40 and 70 years [ 38 , 39 ]. In this regard, muscle health outcomes in olde",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7353448_leucine_enriched_protein_supplementation_increases_lean_body-u-10488",
@@ -2781,7 +2781,7 @@
       "sentence": "In this regard, muscle health outcomes in older adults over age 65 years of age in this study may be due to a decrease in natural muscle mass.",
       "context_window": "his regard, muscle health outcomes in older adults over age 65 years of age in this study may be due to a decrease in natural mu",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

@@ -1,0 +1,102 @@
+{
+  "paper_id": "PMC8122828_disentangling_the_molecular_mechanisms_of_the_antidepressant",
+  "doi": "10.3390/ijms22094393",
+  "extracted_at": "2026-05-07T19:32:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 3,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8122828_disentangling_the_molecular_mechanisms_of_the_antidepressant-p-1010",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 1010,
+      "sentence": "A meta-analytic review including 684 patients with MDD and 2670 healthy controls [ 15 ] found significantly lower levels of \u03c9-3 PUFAs in the erythrocyte-membranes of MDD patients (Effect Size [ES] = -0.51, p < 0.0001), in particular of EPA (ES = -0.18, p = 0.004) and DHA (ES = -0.35, p = 0.0002).",
+      "context_window": "rocyte-membranes of MDD patients (Effect Size [ES] = -0.51, p < 0.0001), in particular of EPA (ES = -0.18, p = 0.004) and DHA (ES",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8122828_disentangling_the_molecular_mechanisms_of_the_antidepressant-p-1057",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 1057,
+      "sentence": "A meta-analytic review including 684 patients with MDD and 2670 healthy controls [ 15 ] found significantly lower levels of \u03c9-3 PUFAs in the erythrocyte-membranes of MDD patients (Effect Size [ES] = -0.51, p < 0.0001), in particular of EPA (ES = -0.18, p = 0.004) and DHA (ES = -0.35, p = 0.0002).",
+      "context_window": "ES] = -0.51, p < 0.0001), in particular of EPA (ES = -0.18, p = 0.004) and DHA (ES = -0.35, p = 0.0002). Lower levels of \u03c9-3 PUFA",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8122828_disentangling_the_molecular_mechanisms_of_the_antidepressant-p-1089",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0002",
+      "numeric_values": [
+        0.0002
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 1089,
+      "sentence": "A meta-analytic review including 684 patients with MDD and 2670 healthy controls [ 15 ] found significantly lower levels of \u03c9-3 PUFAs in the erythrocyte-membranes of MDD patients (Effect Size [ES] = -0.51, p < 0.0001), in particular of EPA (ES = -0.18, p = 0.004) and DHA (ES = -0.35, p = 0.0002).",
+      "context_window": "ticular of EPA (ES = -0.18, p = 0.004) and DHA (ES = -0.35, p = 0.0002). Lower levels of \u03c9-3 PUFAs lead to increased \u03c9-6/\u03c9-3 ratio",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8122828_disentangling_the_molecular_mechanisms_of_the_antidepressant-pct-3256",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3256,
+      "sentence": "While 21 studies, using supplements containing greater than 50% EPA or pure ethyl-EPA, observed a significant reduction in depressive symptoms [ 23 ], studies using purified DHA or PUFA compositions containing more than 50% DHA showed no beneficial effect [ 32 , 97 , 98 ].",
+      "context_window": "While 21 studies, using supplements containing greater than 50% EPA or pure ethyl-EPA, observed a significant reduction in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8122828_disentangling_the_molecular_mechanisms_of_the_antidepressant-pct-3416",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3416,
+      "sentence": "While 21 studies, using supplements containing greater than 50% EPA or pure ethyl-EPA, observed a significant reduction in depressive symptoms [ 23 ], studies using purified DHA or PUFA compositions containing more than 50% DHA showed no beneficial effect [ 32 , 97 , 98 ].",
+      "context_window": "sing purified DHA or PUFA compositions containing more than 50% DHA showed no beneficial effect [ 32 , 97 , 98 ]. Two more",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

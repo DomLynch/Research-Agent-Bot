@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak",
   "doi": "10.3390/nu12103156",
-  "extracted_at": "2026-05-05T23:37:16+00:00",
+  "extracted_at": "2026-05-07T16:56:44+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "p_value": 17,
@@ -167,10 +167,10 @@
       "sentence": "A growing body of evidence suggests that daily protein intake above the recommended dietary allowance (R.D.A.) of 0.8 g/kg/d is associated with better physical performance, maintenance or even an increase in muscle mass, and decreased risk of physical disability.",
       "context_window": "intake above the recommended dietary allowance (R.D.A.) of 0.8 g/kg/d is associated with better physical performance, maintenance",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7602881_dietary_protein_intake_patterns_and_inadequate_protein_intak-u-903",
@@ -222,7 +222,7 @@
       "context_window": "rs reported protein intake per day and meal in adults aged \u226560 years. Corresponding authors were contacted to gather demographic",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -294,7 +294,7 @@
       "context_window": "ant differences between included and nonincluded subjects ( n = 839) for age ( p = 0.81), body mass ( p = 0.55), height ( p = 0",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -312,7 +312,7 @@
       "context_window": "ween included and nonincluded subjects ( n = 839) for age ( p = 0.81), body mass ( p = 0.55), height ( p = 0.38), BMI ( p = 0.98",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -330,7 +330,7 @@
       "context_window": "cluded subjects ( n = 839) for age ( p = 0.81), body mass ( p = 0.55), height ( p = 0.38), BMI ( p = 0.98), nor total protein in",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -348,7 +348,7 @@
       "context_window": "= 839) for age ( p = 0.81), body mass ( p = 0.55), height ( p = 0.38), BMI ( p = 0.98), nor total protein intake per day ( p = 0",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -366,7 +366,7 @@
       "context_window": "p = 0.81), body mass ( p = 0.55), height ( p = 0.38), BMI ( p = 0.98), nor total protein intake per day ( p = 0.15). This sample",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -384,7 +384,7 @@
       "context_window": "0.38), BMI ( p = 0.98), nor total protein intake per day ( p = 0.15). This sample was not weighted according to the NHANES comp",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -726,7 +726,7 @@
       "context_window": "ge of inadequate protein intake per day; whiskers represent 95% confidence intervals. p -values and \u03c6 statistic are for com",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -870,7 +870,7 @@
       "context_window": "e of inadequate protein intake per meal; whiskers represent 95% confidence intervals. p -values and \u03c6 statistic are for com",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1410,7 +1410,7 @@
       "context_window": "Combined data ( n = 522) from the four samples analyzed. 95% CI: 95% confidence intervals; IPID-0.8: inadequate protein",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1428,7 +1428,7 @@
       "context_window": "ed data ( n = 522) from the four samples analyzed. 95% CI: 95% confidence intervals; IPID-0.8: inadequate protein intake p",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1446,7 +1446,7 @@
       "context_window": "ce intervals; IPID-0.8: inadequate protein intake per day (<0.8 g/kg/d); IPID-1.0: inadequate protein intake per day (<1.0 g/kg/d)",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1464,7 +1464,7 @@
       "context_window": "<0.8 g/kg/d); IPID-1.0: inadequate protein intake per day (<1.0 g/kg/d); IPID-1.2: inadequate protein intake per day (<1.2 g/kg/d)",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1482,7 +1482,7 @@
       "context_window": "<1.0 g/kg/d); IPID-1.2: inadequate protein intake per day (<1.2 g/kg/d); IPIM-30: inadequate protein intake per meal (<30 g/meal);",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1752,7 +1752,7 @@
       "context_window": "/kg of actual body weight/day), the IPI was 29.1, 54.3, and 75.7%, respectively. Nevertheless, when they used the adjusted bo",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1860,7 +1860,7 @@
       "context_window": "ke was reported with the actual body weight for the 1.0 and 1.2 g/kg/d criteria. Nonetheless, the authors suggest using the adjust",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },

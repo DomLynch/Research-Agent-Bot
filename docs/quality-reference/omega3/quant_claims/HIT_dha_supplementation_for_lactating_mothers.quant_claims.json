@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_dha_supplementation_for_lactating_mothers",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_dha_supplementation_for_lactating_mothers-u-1067",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1067,
+      "sentence": "Posted outcomes: Infant Serum Soluble Receptor for AGE (sRAGE) Levels at 4 Weeks From Baseline From Mothers Supplemented With 200 or 1000 mg/kg Per Day of DHA. timeframe=value at week 4.",
+      "context_window": "4 Weeks From Baseline From Mothers Supplemented With 200 or 1000 mg/kg Per Day of DHA. timeframe=value at week 4. Expecta 200 m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_dha_supplementation_for_lactating_mothers-u-1129",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1129,
+      "sentence": "Expecta 200 mg=900; Expecta 1 Gram=1127",
+      "context_window": "00 mg/kg Per Day of DHA. timeframe=value at week 4. Expecta 200 mg=900; Expecta 1 Gram=1127",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

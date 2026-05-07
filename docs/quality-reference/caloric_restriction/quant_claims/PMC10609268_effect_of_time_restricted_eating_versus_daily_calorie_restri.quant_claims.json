@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri",
   "doi": "10.3390/nu15204313",
-  "extracted_at": "2026-05-05T22:17:45+00:00",
+  "extracted_at": "2026-05-07T16:57:52+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 27,
@@ -25,7 +25,7 @@
       "context_window": "ticipants were randomized to one of three interventions for 12 months: 8 h TRE (eating only between 12:00 and 8:00 p.m., with no",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "between 12:00 and 8:00 p.m., with no calorie counting); CR (25% energy restriction daily); or no-intervention control group",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,9 +61,9 @@
       "context_window": "line and month 12. Body weight decreased in the TRE group (-4.87%, 95%CI: -7.61, -2.13) and CR group (-5.30%, 95%CI: -9.06, -",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-ci-699",
@@ -80,9 +80,9 @@
       "context_window": "d month 12. Body weight decreased in the TRE group (-4.87%, 95%CI: -7.61, -2.13) and CR group (-5.30%, 95%CI: -9.06, -1.54) versus controls",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-735",
@@ -98,9 +98,9 @@
       "context_window": "the TRE group (-4.87%, 95%CI: -7.61, -2.13) and CR group (-5.30%, 95%CI: -9.06, -1.54) versus controls, with no difference b",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-ci-742",
@@ -117,9 +117,9 @@
       "context_window": "E group (-4.87%, 95%CI: -7.61, -2.13) and CR group (-5.30%, 95%CI: -9.06, -1.54) versus controls, with no difference between TRE and CR. Th",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-ci-1378",
@@ -172,7 +172,7 @@
       "context_window": "either mood nor quality of life in adults with obesity over 12 months. Future well-powered studies will be needed to confirm thes",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -226,7 +226,7 @@
       "context_window": "tance, in a 2-year study by Martin et al. [ 18 ], daily CR (25% energy restriction daily) produced 10% weight loss, accompa",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -244,7 +244,7 @@
       "context_window": "l. [ 18 ], daily CR (25% energy restriction daily) produced 10% weight loss, accompanied by improvements in mood and genera",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -262,7 +262,7 @@
       "context_window": ". [ 19 ] demonstrated a reduction in depression scores with 10% weight loss after 3 months of 35% CR, relative to controls.",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -280,7 +280,7 @@
       "context_window": "a reduction in depression scores with 10% weight loss after 3 months of 35% CR, relative to controls. In recent years, time-res",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -298,7 +298,7 @@
       "context_window": "in depression scores with 10% weight loss after 3 months of 35% CR, relative to controls. In recent years, time-restricted",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -352,7 +352,7 @@
       "context_window": "showed that both 8 h TRE (12-8 p.m. eating window) and CR (25% energy restriction daily) resulted in similar reductions in",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -370,7 +370,7 @@
       "context_window": "reductions in caloric intake (~400 kcal) and body weight (~5%) over one year. The purpose of this secondary analysis is t",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -478,7 +478,7 @@
       "context_window": "l (by age, sex, and BMI) into one of three groups: 8 h TRE, 25% CR, or a no-intervention control group. The 12-month trial",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -514,7 +514,7 @@
       "context_window": "se, CR subjects were asked to reduce their energy intake by 25% each day. Total energy expenditure was calculated using the",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -532,9 +532,9 @@
       "context_window": "t maintenance phase, CR subjects were instructed to consume 100% of their newly calculated energy needs. CR subjects receive",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "weight maintenance",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-3060",
@@ -550,9 +550,9 @@
       "context_window": "eceived diet counseling (over Zoom) weekly during the first 3 months and then biweekly from months 4 to 12. During the counselin",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-4891",
@@ -604,7 +604,7 @@
       "context_window": "s were screened and 90 were randomized into the TRE group ( n = 30), CR group ( n = 30), or control group ( n = 30). By the en",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -622,7 +622,7 @@
       "context_window": "90 were randomized into the TRE group ( n = 30), CR group ( n = 30), or control group ( n = 30). By the end of the 12-month st",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -640,7 +640,7 @@
       "context_window": "TRE group ( n = 30), CR group ( n = 30), or control group ( n = 30). By the end of the 12-month study, the number of dropouts",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -658,7 +658,7 @@
       "context_window": "th study, the number of dropouts were as follows: TRE group n = 4 subjects, CR group n = 5 subjects, and control group n = 4",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -676,7 +676,7 @@
       "context_window": "ropouts were as follows: TRE group n = 4 subjects, CR group n = 5 subjects, and control group n = 4 subjects. Reasons for dro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -694,7 +694,7 @@
       "context_window": "n = 4 subjects, CR group n = 5 subjects, and control group n = 4 subjects. Reasons for dropping out were scheduling conflict",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -712,9 +712,9 @@
       "context_window": "12, body weight significantly decreased in the TRE group (-4.87% [95% CI: -7.61, -2.13]) and CR group (-5.30% [95% CI: -9.06",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-ci-748",
@@ -731,9 +731,9 @@
       "context_window": "dy weight significantly decreased in the TRE group (-4.87% [95% CI: -7.61, -2.13]) and CR group (-5.30% [95% CI: -9.06, -1.54]) versus contr",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-786",
@@ -749,9 +749,9 @@
       "context_window": "he TRE group (-4.87% [95% CI: -7.61, -2.13]) and CR group (-5.30% [95% CI: -9.06, -1.54]) versus controls, with no difference",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-ci-793",
@@ -768,9 +768,9 @@
       "context_window": "group (-4.87% [95% CI: -7.61, -2.13]) and CR group (-5.30% [95% CI: -9.06, -1.54]) versus controls, with no difference between the TRE and C",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-876",
@@ -786,9 +786,9 @@
       "context_window": "versus controls, with no difference between the TRE and CR (0.43% [95% CI: -3.48, 4.34]). Fat mass was reduced in the TRE gro",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-ci-883",
@@ -805,9 +805,9 @@
       "context_window": "controls, with no difference between the TRE and CR (0.43% [95% CI: -3.48, 4.34]). Fat mass was reduced in the TRE group (-2.77 kg [95% CI:",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-946",
@@ -823,7 +823,7 @@
       "context_window": "CI: -3.48, 4.34]). Fat mass was reduced in the TRE group (-2.77 kg [95% CI: -5.10, -0.43]) versus controls, but not in the CR",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -842,7 +842,7 @@
       "context_window": "8, 4.34]). Fat mass was reduced in the TRE group (-2.77 kg [95% CI: -5.10, -0.43]) versus controls, but not in the CR group versus controls",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -860,7 +860,7 @@
       "context_window": "versus controls, but not in the CR group versus controls (-3.18 kg [95% CI: -6.85, 0.49]). Lean mass decreased in the CR group",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -879,7 +879,7 @@
       "context_window": "ontrols, but not in the CR group versus controls (-3.18 kg [95% CI: -6.85, 0.49]). Lean mass decreased in the CR group versus controls (-1.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -897,9 +897,9 @@
       "context_window": "49]). Lean mass decreased in the CR group versus controls (-1.13 kg [95% CI: -2.24, -0.01]), but not in the TRE group versus co",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-ci-1132",
@@ -916,9 +916,9 @@
       "context_window": "n mass decreased in the CR group versus controls (-1.13 kg [95% CI: -2.24, -0.01]), but not in the TRE group versus controls (-0.81 kg [95%",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-1199",
@@ -934,9 +934,9 @@
       "context_window": "-2.24, -0.01]), but not in the TRE group versus controls (-0.81 kg [95% CI: -1.81, 0.20]). Visceral fat mass did not differ in",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-ci-1208",
@@ -953,9 +953,9 @@
       "context_window": "0.01]), but not in the TRE group versus controls (-0.81 kg [95% CI: -1.81, 0.20]). Visceral fat mass did not differ in the TRE and CR group",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-1395",
@@ -971,7 +971,7 @@
       "context_window": "ce was reduced in TRE group compared to the control group (-4.98 cm [95% CI: -8.09, -1.87]), but not in the CR group versus con",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -990,7 +990,7 @@
       "context_window": "duced in TRE group compared to the control group (-4.98 cm [95% CI: -8.09, -1.87]), but not in the CR group versus controls (-2.30 cm [95% C",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1008,7 +1008,7 @@
       "context_window": ": -8.09, -1.87]), but not in the CR group versus controls (-2.30 cm [95% CI: -6.55, 1.94]). TRE subjects adhered to their eati",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1027,7 +1027,7 @@
       "context_window": "-1.87]), but not in the CR group versus controls (-2.30 cm [95% CI: -6.55, 1.94]). TRE subjects adhered to their eating window on 87% of d",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1063,9 +1063,9 @@
       "context_window": "f days on average over the 12-month trial. In the CR group, 61% of subjects adhered to their prescribed calorie targets ove",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-1680",
@@ -1081,9 +1081,9 @@
       "context_window": "f subjects adhered to their prescribed calorie targets over 12 months. Energy intake decreased by -425 kcal/d (SD 531 kcal/d) in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-1852",
@@ -1099,7 +1099,7 @@
       "context_window": "d) in the CR group, with no difference between groups, over 12 months. As reported previously [ 28 ], percent energy intake from",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1117,9 +1117,9 @@
       "context_window": "of life in all groups at the beginning of the study. After 12 months of intervention, there were no significant changes in menta",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-ci-3536",
@@ -1172,7 +1172,7 @@
       "context_window": "y of life in adults with obesity. Our results indicate that 12 months of TRE and CR have no effect on mood or quality of life in",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1190,9 +1190,9 @@
       "context_window": "measured with the POMS survey) significantly improved after 2 years of CR and 10% weight loss in overweight adults. Moreover, t",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-918",
@@ -1208,9 +1208,9 @@
       "context_window": "POMS survey) significantly improved after 2 years of CR and 10% weight loss in overweight adults. Moreover, the results of",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-1094",
@@ -1226,7 +1226,7 @@
       "context_window": "rate significant improvements in depression symptoms when 6-10% weight loss is attained with CR. While several studies hav",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1262,7 +1262,7 @@
       "context_window": "ly TRE with caloric restriction led to greater weight loss (7%) and improvements in total mood disturbance score (measured",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1280,7 +1280,7 @@
       "context_window": "ured by the POMS survey), versus caloric restriction alone (4% weight loss), after 14 weeks. In view of these previous fi",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1298,7 +1298,7 @@
       "context_window": "), versus caloric restriction alone (4% weight loss), after 14 weeks. In view of these previous findings, it would appear as th",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1334,7 +1334,7 @@
       "context_window": "nce our TRE and CR participants only achieved approximately 5% weight loss, it is possible that the degree of weight reduc",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1370,7 +1370,7 @@
       "context_window": "ts in quality of life with CR interventions that produced 7-10% weight loss [ 50 ]. In line with these findings, Martin et",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1388,7 +1388,7 @@
       "context_window": "eneral health\u201d (measured by the SF-36) in the CR group with 10% weight loss, versus controls. As for TRE, only five studies",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1532,7 +1532,7 @@
       "context_window": "either mood nor quality of life in adults with obesity over 12 months. However, our participants had healthy mood and quality-of-",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },

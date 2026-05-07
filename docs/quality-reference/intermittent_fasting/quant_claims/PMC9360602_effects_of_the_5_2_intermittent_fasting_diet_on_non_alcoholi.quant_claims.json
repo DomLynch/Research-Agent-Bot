@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi",
   "doi": "10.3389/fnut.2022.948655",
-  "extracted_at": "2026-05-05T22:11:29+00:00",
+  "extracted_at": "2026-05-07T16:57:10+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 54,
@@ -25,9 +25,9 @@
       "context_window": "aimed to ascertain the overall effects of the 5:2 IF diet (5 days a week of normal food intake and 2 consecutive fasting days",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "usual diet",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-n-662",
@@ -623,9 +623,9 @@
       "context_window": "emerging type of periodic fasting in which individuals fast 2 days a week and eat freely for 5 days a week ( 18 , 19 ). Time-r",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "periodic fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1354",
@@ -641,9 +641,9 @@
       "context_window": "in which individuals fast 2 days a week and eat freely for 5 days a week ( 18 , 19 ). Time-restricted feeding and the 5:2 die",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "periodic fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-pct-1673",
@@ -658,8 +658,8 @@
       "sentence": "More specifically, regarding the adherence to the 5:2 diet, there is substantial energy restriction on the fasting days, in which it is common to prescribe 0-25% of the estimated total daily energy requirements on 2 non-consecutive days of the week without water restriction, while the habitual intake ( ad libitum ) or 100% of estimated total daily energy requirements are used for the remaining 5 days ( 19 ).",
       "context_window": "n on the fasting days, in which it is common to prescribe 0-25% of the estimated total daily energy requirements on 2 non-c",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "ad libitum",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -676,8 +676,8 @@
       "sentence": "More specifically, regarding the adherence to the 5:2 diet, there is substantial energy restriction on the fasting days, in which it is common to prescribe 0-25% of the estimated total daily energy requirements on 2 non-consecutive days of the week without water restriction, while the habitual intake ( ad libitum ) or 100% of estimated total daily energy requirements are used for the remaining 5 days ( 19 ).",
       "context_window": "er restriction, while the habitual intake ( ad libitum ) or 100% of estimated total daily energy requirements are used for t",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "ad libitum",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -694,8 +694,8 @@
       "sentence": "More specifically, regarding the adherence to the 5:2 diet, there is substantial energy restriction on the fasting days, in which it is common to prescribe 0-25% of the estimated total daily energy requirements on 2 non-consecutive days of the week without water restriction, while the habitual intake ( ad libitum ) or 100% of estimated total daily energy requirements are used for the remaining 5 days ( 19 ).",
       "context_window": "total daily energy requirements are used for the remaining 5 days ( 19 ). Randomized controlled trials (RCTs) have examined",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "ad libitum",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -731,7 +731,7 @@
       "context_window": ", alternate-day fasting, and time-restricted feeding) for 4-12 weeks ( 23 ). More recently, Holmer et al. ( 7 ) found that adher",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -821,7 +821,7 @@
       "context_window": "We applied the following exclusion criteria: weight loss \u2265 10% or weight gain \u2265 5% in the last 6 months, use of pharmacolo",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -839,7 +839,7 @@
       "context_window": "wing exclusion criteria: weight loss \u2265 10% or weight gain \u2265 5% in the last 6 months, use of pharmacological agents that ca",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -857,7 +857,7 @@
       "context_window": "criteria: weight loss \u2265 10% or weight gain \u2265 5% in the last 6 months, use of pharmacological agents that can affect metabolism o",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1430,9 +1430,9 @@
       "context_window": "d of intervention vs. the baseline (the intervention group: 29.48 \u00b1 5.60 vs. 29.99 \u00b1 5.15 MET.hr/day, p > 0.05; the control group: 3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1930",
@@ -2517,7 +2517,7 @@
       "context_window": ", i.e., alternating between an ad libitum feeding day and a 75% energy-restricted fasting day, Cai et al. ( 46 ) found impr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2535,7 +2535,7 @@
       "context_window": "and TG within a relatively short length of intervention (4-12 weeks) in patients with NAFLD, but LDL-C and HDL-C levels did not",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2661,7 +2661,7 @@
       "context_window": "th a significant decline in FBS (weighted mean difference, -4.16 mg/dL; 95% confidence interval, -6.92- -1.40) when compared with",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2679,7 +2679,7 @@
       "context_window": "cant decline in FBS (weighted mean difference, -4.16 mg/dL; 95% confidence interval, -6.92- -1.40) when compared with a con",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

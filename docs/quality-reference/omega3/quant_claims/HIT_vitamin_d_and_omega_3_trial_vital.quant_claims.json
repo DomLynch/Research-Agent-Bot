@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_vitamin_d_and_omega_3_trial_vital",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:33:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_vitamin_d_and_omega_3_trial_vital-u-413",
+      "claim_type": "unit_value",
+      "raw_text": "5.3 years",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 413,
+      "sentence": "The 5-year intervention phase (study pill-taking, median 5.3 years) has ended; post-intervention observational follow-up of study participants is ongoing.",
+      "context_window": "s. The 5-year intervention phase (study pill-taking, median 5.3 years) has ended; post-intervention observational follow-up of st",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_vitamin_d_and_omega_3_trial_vital-u-596",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 596,
+      "sentence": "Posted outcomes: Number of Participants With Invasive Cancer of Any Type. timeframe=5 years.",
+      "context_window": "of Participants With Invasive Cancer of Any Type. timeframe=5 years. Active vitamin D=793; Vitamin D placebo=824; Active omega-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_vitamin_d_and_omega_3_trial_vital-p-682",
+      "claim_type": "p_value",
+      "raw_text": "p=0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 682,
+      "sentence": "Active vitamin D=793; Vitamin D placebo=824; Active omega-3 fatty acids=820. p=0.47",
+      "context_window": "793; Vitamin D placebo=824; Active omega-3 fatty acids=820. p=0.47",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

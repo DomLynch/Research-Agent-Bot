@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass",
   "doi": "10.1186/s12877-022-03019-1",
-  "extracted_at": "2026-05-05T23:37:19+00:00",
+  "extracted_at": "2026-05-07T16:56:47+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 39,
@@ -25,8 +25,8 @@
       "sentence": "Thus, we investigated the association between total protein intake and low muscle mass among Korean adults aged \u226519 years.",
       "context_window": "rotein intake and low muscle mass among Korean adults aged \u226519 years. We included 15,995 adults (6528 male and 9467 female) age",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,8 +61,8 @@
       "sentence": "The odds ratios (ORs) and 95% confidence intervals (CIs) of low muscle mass according to protein intake were analysed via multivariable logistic regression analysis.",
       "context_window": "artile: Q1, Q2, Q3 and Q4 groups. The odds ratios (ORs) and 95% confidence intervals (CIs) of low muscle mass according to",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -79,10 +79,10 @@
       "sentence": "Of the participants, 3.8% had weight-adjusted low muscle mass.",
       "context_window": "nd comorbidities were also performed. Of the participants, 3.8% had weight-adjusted low muscle mass. The prevalence rates o",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-913",
@@ -97,10 +97,10 @@
       "sentence": "The prevalence rates of low muscle mass were 1.5, 3.0, 3.9 and 7.2% in the Q4, Q3, Q2 and Q1 groups, respectively ( p < 0.001).",
       "context_window": "prevalence rates of low muscle mass were 1.5, 3.0, 3.9 and 7.2% in the Q4, Q3, Q2 and Q1 groups, respectively ( p < 0.001).",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-p-966",
@@ -115,10 +115,10 @@
       "sentence": "The prevalence rates of low muscle mass were 1.5, 3.0, 3.9 and 7.2% in the Q4, Q3, Q2 and Q1 groups, respectively ( p < 0.001).",
       "context_window": ".9 and 7.2% in the Q4, Q3, Q2 and Q1 groups, respectively ( p < 0.001). Compared with the Q4 group, the Q1 group had the highest",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-ci-1107",
@@ -134,10 +134,10 @@
       "sentence": "Compared with the Q4 group, the Q1 group had the highest ORs for low muscle mass, followed by the Q2 and Q3 groups (Model 5; OR, 95% CI: 2.03, 1.36-3.02 for Q3; 2.44, 1.64-3.61 for Q2; and 4.32, 2.89-6.45 for Q4) after adjusting for confounding variables (p for trend < 0.001).",
       "context_window": "muscle mass, followed by the Q2 and Q3 groups (Model 5; OR, 95% CI: 2.03, 1.36-3.02 for Q3; 2.44, 1.64-3.61 for Q2; and 4.32, 2.89-6.45 fo",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-437",
@@ -152,10 +152,10 @@
       "sentence": "The prevalence of low muscle mass was 9.7% in men and 11.8% in women among Korean elderly people [ 3 ].",
       "context_window": "times in 2040 [ 2 ]. The prevalence of low muscle mass was 9.7% in men and 11.8% in women among Korean elderly people [ 3 ]",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-453",
@@ -170,10 +170,10 @@
       "sentence": "The prevalence of low muscle mass was 9.7% in men and 11.8% in women among Korean elderly people [ 3 ].",
       "context_window": "2 ]. The prevalence of low muscle mass was 9.7% in men and 11.8% in women among Korean elderly people [ 3 ]. Low muscle mass",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-2523",
@@ -188,8 +188,8 @@
       "sentence": "Therefore, we investigated the association between total protein intake and low muscle mass among Korean adults aged \u226519 years using the data from the Korea National Health and Nutrition Examination Survey (KNHANES), which was collected between 2008 and 2011.",
       "context_window": "rotein intake and low muscle mass among Korean adults aged \u226519 years using the data from the Korea National Health and Nutrition",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -242,10 +242,10 @@
       "sentence": "We excluded individuals who had any missing variables, such as appendicular skeletal muscle mass ( n = 12,382).",
       "context_window": "sing variables, such as appendicular skeletal muscle mass ( n = 12,382). Finally, the data of 15,995 adults (6528 male and 946",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-1664",
@@ -279,7 +279,7 @@
       "context_window": "roups. The cutoff protein intake levels were 0.80, 1.08 and 1.49 g/kg/day in the male participants and 0.67, 0.93 and 1.28 g/kg/day i",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -297,7 +297,7 @@
       "context_window": "d 1.49 g/kg/day in the male participants and 0.67, 0.93 and 1.28 g/kg/day in the female participants. Inadequate protein intake was d",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -315,7 +315,7 @@
       "context_window": "cipants. Inadequate protein intake was defined as less than 0.8 g/kg/day according to the adequacy of the recommended dietary allowa",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -333,7 +333,7 @@
       "context_window": "[ 22 ]. In older adults, protein intake was suggested to be 1.0 g/kg/day or more, and this analysis was also conducted [ 23 ]. In K",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -350,10 +350,10 @@
       "sentence": "Low muscle mass was defined as a muscle mass index of > 2 standard deviations below the sex-specific mean for healthy individuals aged 20-39 years (reference group of the muscle mass index) [ 27 ].",
       "context_window": "below the sex-specific mean for healthy individuals aged 20-39 years (reference group of the muscle mass index) [ 27 ]. The refe",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-3332",
@@ -368,10 +368,10 @@
       "sentence": "The reference group of the muscle mass index included participants aged 20-39 years (2254 male and 3041 female), excluding those with a history of hypertension, dyslipidemia, cerebral infarction (stroke), myocardial infarction, angina, osteoarthritis, rheumatoid arthritis, osteoporosis, tuberculosis, asthma, allergic rhinitis, depression, renal failure, atopic dermatitis, diabetes mellitus, thyroid disease, any cancer, hepatitis and cirrhosis.",
       "context_window": "roup of the muscle mass index included participants aged 20-39 years (2254 male and 3041 female), excluding those with a history",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-3750",
@@ -386,10 +386,10 @@
       "sentence": "The cutoff low muscle mass index levels were 27.28% in the male participants and 21.35% in the female participants for the definition of low muscle mass.",
       "context_window": "and cirrhosis. The cutoff low muscle mass index levels were 27.28% in the male participants and 21.35% in the female participa",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-3786",
@@ -404,10 +404,10 @@
       "sentence": "The cutoff low muscle mass index levels were 27.28% in the male participants and 21.35% in the female participants for the definition of low muscle mass.",
       "context_window": "mass index levels were 27.28% in the male participants and 21.35% in the female participants for the definition of low muscle",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-3914",
@@ -530,8 +530,8 @@
       "sentence": "Furthermore, to determine the association between protein intake as the exposition variable and weight-adjusted low muscle mass as the response variable, we conducted a multivariable logistic regression analysis and calculated the odds ratio (OR) and 95% confidence intervals (CIs).",
       "context_window": "regression analysis and calculated the odds ratio (OR) and 95% confidence intervals (CIs). Variables significantly found i",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -567,10 +567,10 @@
       "sentence": "The mean ages were 49.5 \u00b1 0.5 years for all individuals, 54.9 \u00b1 0.9 years for low muscle mass group and 44.2 \u00b1 0.3 years for normal muscle mass group.",
       "context_window": "95 individuals according to muscle mass. The mean ages were 49.5 \u00b1 0.5 years for all individuals, 54.9 \u00b1 0.9 years for low muscle",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-121",
@@ -585,10 +585,10 @@
       "sentence": "The mean ages were 49.5 \u00b1 0.5 years for all individuals, 54.9 \u00b1 0.9 years for low muscle mass group and 44.2 \u00b1 0.3 years for normal muscle mass group.",
       "context_window": "viduals according to muscle mass. The mean ages were 49.5 \u00b1 0.5 years for all individuals, 54.9 \u00b1 0.9 years for low muscle mass g",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-msd-152",
@@ -604,10 +604,10 @@
       "sentence": "The mean ages were 49.5 \u00b1 0.5 years for all individuals, 54.9 \u00b1 0.9 years for low muscle mass group and 44.2 \u00b1 0.3 years for normal muscle mass group.",
       "context_window": "s. The mean ages were 49.5 \u00b1 0.5 years for all individuals, 54.9 \u00b1 0.9 years for low muscle mass group and 44.2 \u00b1 0.3 years for no",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-159",
@@ -622,10 +622,10 @@
       "sentence": "The mean ages were 49.5 \u00b1 0.5 years for all individuals, 54.9 \u00b1 0.9 years for low muscle mass group and 44.2 \u00b1 0.3 years for normal muscle mass group.",
       "context_window": "mean ages were 49.5 \u00b1 0.5 years for all individuals, 54.9 \u00b1 0.9 years for low muscle mass group and 44.2 \u00b1 0.3 years for normal m",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-msd-199",
@@ -641,10 +641,10 @@
       "sentence": "The mean ages were 49.5 \u00b1 0.5 years for all individuals, 54.9 \u00b1 0.9 years for low muscle mass group and 44.2 \u00b1 0.3 years for normal muscle mass group.",
       "context_window": "individuals, 54.9 \u00b1 0.9 years for low muscle mass group and 44.2 \u00b1 0.3 years for normal muscle mass group. The proportion of low m",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-u-206",
@@ -659,10 +659,10 @@
       "sentence": "The mean ages were 49.5 \u00b1 0.5 years for all individuals, 54.9 \u00b1 0.9 years for low muscle mass group and 44.2 \u00b1 0.3 years for normal muscle mass group.",
       "context_window": "uals, 54.9 \u00b1 0.9 years for low muscle mass group and 44.2 \u00b1 0.3 years for normal muscle mass group. The proportion of low muscle",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-316",
@@ -677,7 +677,7 @@
       "sentence": "The proportion of low muscle mass increased with increasing age, from 1.9% in 19-39 years to 9.5% in \u226565 years.",
       "context_window": "tion of low muscle mass increased with increasing age, from 1.9% in 19-39 years to 9.5% in \u226565 years. The prevalence of low",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -695,7 +695,7 @@
       "sentence": "The proportion of low muscle mass increased with increasing age, from 1.9% in 19-39 years to 9.5% in \u226565 years.",
       "context_window": "muscle mass increased with increasing age, from 1.9% in 19-39 years to 9.5% in \u226565 years. The prevalence of low muscle mass dec",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -713,7 +713,7 @@
       "sentence": "The proportion of low muscle mass increased with increasing age, from 1.9% in 19-39 years to 9.5% in \u226565 years.",
       "context_window": "increased with increasing age, from 1.9% in 19-39 years to 9.5% in \u226565 years. The prevalence of low muscle mass decreased w",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -731,7 +731,7 @@
       "sentence": "The proportion of low muscle mass increased with increasing age, from 1.9% in 19-39 years to 9.5% in \u226565 years.",
       "context_window": "d with increasing age, from 1.9% in 19-39 years to 9.5% in \u226565 years. The prevalence of low muscle mass decreased with higher ed",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -749,10 +749,10 @@
       "sentence": "Approximately 3.8% ( n = 751) of the individuals had weight-adjusted low muscle mass.",
       "context_window": "low muscle mass according to protein intake. Approximately 3.8% ( n = 751) of the individuals had weight-adjusted low muscl",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-n-1171",
@@ -767,10 +767,10 @@
       "sentence": "Approximately 3.8% ( n = 751) of the individuals had weight-adjusted low muscle mass.",
       "context_window": "scle mass according to protein intake. Approximately 3.8% ( n = 751) of the individuals had weight-adjusted low muscle mass. Th",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-1274",
@@ -785,10 +785,10 @@
       "sentence": "The prevalence of low muscle mass was 1.5% in the Q4 group, 3.0% in the Q3 of group, 3.9% in the Q2 group and 7.2% in the Q1 group ( p < 0.001).",
       "context_window": "sted low muscle mass. The prevalence of low muscle mass was 1.5% in the Q4 group, 3.0% in the Q3 of group, 3.9% in the Q2 gr",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-1296",
@@ -803,10 +803,10 @@
       "sentence": "The prevalence of low muscle mass was 1.5% in the Q4 group, 3.0% in the Q3 of group, 3.9% in the Q2 group and 7.2% in the Q1 group ( p < 0.001).",
       "context_window": "The prevalence of low muscle mass was 1.5% in the Q4 group, 3.0% in the Q3 of group, 3.9% in the Q2 group and 7.2% in the Q1",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-1321",
@@ -821,10 +821,10 @@
       "sentence": "The prevalence of low muscle mass was 1.5% in the Q4 group, 3.0% in the Q3 of group, 3.9% in the Q2 group and 7.2% in the Q1 group ( p < 0.001).",
       "context_window": "cle mass was 1.5% in the Q4 group, 3.0% in the Q3 of group, 3.9% in the Q2 group and 7.2% in the Q1 group ( p < 0.001). Pre",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-1346",
@@ -839,10 +839,10 @@
       "sentence": "The prevalence of low muscle mass was 1.5% in the Q4 group, 3.0% in the Q3 of group, 3.9% in the Q2 group and 7.2% in the Q1 group ( p < 0.001).",
       "context_window": "Q4 group, 3.0% in the Q3 of group, 3.9% in the Q2 group and 7.2% in the Q1 group ( p < 0.001). Prevalence of weight-adjuste",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-p-1369",
@@ -857,10 +857,10 @@
       "sentence": "The prevalence of low muscle mass was 1.5% in the Q4 group, 3.0% in the Q3 of group, 3.9% in the Q2 group and 7.2% in the Q1 group ( p < 0.001).",
       "context_window": "3 of group, 3.9% in the Q2 group and 7.2% in the Q1 group ( p < 0.001). Prevalence of weight-adjusted low muscle mass according",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8996477_association_between_total_protein_intake_and_low_muscle_mass-pct-1853",
@@ -875,7 +875,7 @@
       "sentence": "Compared with the Q4 group, the Q1, Q2 and Q3 groups had higher ORs for low muscle mass by 4.3 times (4.32 [95% CI, 2.89-6.45]), 2.4 times (2.44 [95% CI, 1.64-3.61]) and 2.0 times (2.03 [95% CI, 1.36-3.02]) after adjusting for confounding variables (Model 5), respectively (p for trend < 0.001).",
       "context_window": "oups had higher ORs for low muscle mass by 4.3 times (4.32 [95% CI, 2.89-6.45]), 2.4 times (2.44 [95% CI, 1.64-3.61]) and 2",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -893,7 +893,7 @@
       "sentence": "Compared with the Q4 group, the Q1, Q2 and Q3 groups had higher ORs for low muscle mass by 4.3 times (4.32 [95% CI, 2.89-6.45]), 2.4 times (2.44 [95% CI, 1.64-3.61]) and 2.0 times (2.03 [95% CI, 1.36-3.02]) after adjusting for confounding variables (Model 5), respectively (p for trend < 0.001).",
       "context_window": "s by 4.3 times (4.32 [95% CI, 2.89-6.45]), 2.4 times (2.44 [95% CI, 1.64-3.61]) and 2.0 times (2.03 [95% CI, 1.36-3.02]) af",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -911,7 +911,7 @@
       "sentence": "Compared with the Q4 group, the Q1, Q2 and Q3 groups had higher ORs for low muscle mass by 4.3 times (4.32 [95% CI, 2.89-6.45]), 2.4 times (2.44 [95% CI, 1.64-3.61]) and 2.0 times (2.03 [95% CI, 1.36-3.02]) after adjusting for confounding variables (Model 5), respectively (p for trend < 0.001).",
       "context_window": ", 2.4 times (2.44 [95% CI, 1.64-3.61]) and 2.0 times (2.03 [95% CI, 1.36-3.02]) after adjusting for confounding variables (",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -930,8 +930,8 @@
       "sentence": "Compared with the adequate protein intake, the inadequate protein intake had higher ORs for low muscle mass by 1.9 times (Model 5; OR, 95% CI: 1.90, 1.52-2.37).",
       "context_window": "d higher ORs for low muscle mass by 1.9 times (Model 5; OR, 95% CI: 1.90, 1.52-2.37). Association between protein intake and weight-adjus",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -948,8 +948,8 @@
       "sentence": "Association between protein intake and weight-adjusted low muscle mass\n\nAbbreviation : OR Odds ratio, CI Confidence interval\n\nModel 1 was not adjusted\n\nModel 2 was adjusted for age, sex, household income and education\n\nModel 3 was adjusted for age, sex, household income, education, smoking status, and physical activity\n\nModel 4 was adjusted for age, sex, household income, education, smoking status, physical activity, hypertension, diabetes mellitus and dyslipidemia\n\nModel 5 was adjusted for age, sex, household income, education, smoking status, physical activity, hypertension, diabetes mellitus, dyslipidemia, and overconsumption of calories\n\nIn older adults, compared to protein intake of 1.0 g/kg/day or more, protein intake of less than 1.0 g/kg/day had higher ORs for low muscle mass by 1.7 times after adjusting for confounding variables (Model 5; OR, 95% CI: 1.69, 1.15-2.48).",
       "context_window": "of calories In older adults, compared to protein intake of 1.0 g/kg/day or more, protein intake of less than 1.0 g/kg/day had highe",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -966,8 +966,8 @@
       "sentence": "Association between protein intake and weight-adjusted low muscle mass\n\nAbbreviation : OR Odds ratio, CI Confidence interval\n\nModel 1 was not adjusted\n\nModel 2 was adjusted for age, sex, household income and education\n\nModel 3 was adjusted for age, sex, household income, education, smoking status, and physical activity\n\nModel 4 was adjusted for age, sex, household income, education, smoking status, physical activity, hypertension, diabetes mellitus and dyslipidemia\n\nModel 5 was adjusted for age, sex, household income, education, smoking status, physical activity, hypertension, diabetes mellitus, dyslipidemia, and overconsumption of calories\n\nIn older adults, compared to protein intake of 1.0 g/kg/day or more, protein intake of less than 1.0 g/kg/day had higher ORs for low muscle mass by 1.7 times after adjusting for confounding variables (Model 5; OR, 95% CI: 1.69, 1.15-2.48).",
       "context_window": "intake of 1.0 g/kg/day or more, protein intake of less than 1.0 g/kg/day had higher ORs for low muscle mass by 1.7 times after adjus",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -985,8 +985,8 @@
       "sentence": "Association between protein intake and weight-adjusted low muscle mass\n\nAbbreviation : OR Odds ratio, CI Confidence interval\n\nModel 1 was not adjusted\n\nModel 2 was adjusted for age, sex, household income and education\n\nModel 3 was adjusted for age, sex, household income, education, smoking status, and physical activity\n\nModel 4 was adjusted for age, sex, household income, education, smoking status, physical activity, hypertension, diabetes mellitus and dyslipidemia\n\nModel 5 was adjusted for age, sex, household income, education, smoking status, physical activity, hypertension, diabetes mellitus, dyslipidemia, and overconsumption of calories\n\nIn older adults, compared to protein intake of 1.0 g/kg/day or more, protein intake of less than 1.0 g/kg/day had higher ORs for low muscle mass by 1.7 times after adjusting for confounding variables (Model 5; OR, 95% CI: 1.69, 1.15-2.48).",
       "context_window": "mes after adjusting for confounding variables (Model 5; OR, 95% CI: 1.69, 1.15-2.48). Table 3 shows the results of the stratified analyse",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1040,7 +1040,7 @@
       "context_window": "ntake and weight-adjusted protein among Korean adults aged \u226519 years. Compared with the Q4 group, the ORs for low muscle mass si",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1075,8 +1075,8 @@
       "sentence": "Our results suggest that inadequate protein intake may be a risk factor for low muscle mass among adults aged \u226519 years.",
       "context_window": "may be a risk factor for low muscle mass among adults aged \u226519 years. Previous studies showed that protein intake is associated",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1147,8 +1147,8 @@
       "sentence": "The Society on Sarcopenia, Cachexia and Wasting Disease recommends a protein intake level of 1.0-1.5 g/kg/day to prevent and mitigate low muscle mass [ 34 ].",
       "context_window": "nd Wasting Disease recommends a protein intake level of 1.0-1.5 g/kg/day to prevent and mitigate low muscle mass [ 34 ]. Many Korean",
       "claim_role": "dose",
-      "endpoint": "sarcopenia",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1166,7 +1166,7 @@
       "context_window": "d mitigate low muscle mass [ 34 ]. Many Korean adults aged \u226519 years failed to meet this level of protein intake, because the cu",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1184,7 +1184,7 @@
       "context_window": "le of protein intake in the male participants were 1.49 and 1.08 g/kg/day, while those in the female participants were 1.28 and 0.93",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1202,7 +1202,7 @@
       "context_window": "g/day, while those in the female participants were 1.28 and 0.93 g/kg/day. In addition, other studies showed that people with a consu",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1255,8 +1255,8 @@
       "sentence": "Despite these limitations, the results of the present study indicated that inadequate protein intake may be a risk factor for low muscle mass among adults aged \u226519 years using a representative Korean sample.",
       "context_window": "may be a risk factor for low muscle mass among adults aged \u226519 years using a representative Korean sample. Thus, clear and actio",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1273,7 +1273,7 @@
       "sentence": "The low muscle mass in Korean adults aged \u226519 years is associated with a lower intake of protein.",
       "context_window": "The low muscle mass in Korean adults aged \u226519 years is associated with a lower intake of protein. Proper protei",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1292,7 +1292,7 @@
       "context_window": "or proper protein intake is also important for adults aged \u226519 years, especially for individuals without chronic diseases, such",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     }

@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_relative_safety_profiles_of_high_dose_statin_regimens",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_relative_safety_profiles_of_high_dose_statin_regimens-u-211",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 211,
+      "sentence": "Carlos Escobar, Rocio Echarri, Vivencio BarriosDepartment of Cardiology, Hospital Ram\u00f3n y Cajal, Madrid, SpainAbstract: Recent clinical trials recommend achieving a low-density lipoprotein cholesterol level of <100 mg/dl in high-risk and <70 mg/dl in very high risk patients.",
+      "context_window": "d achieving a low-density lipoprotein cholesterol level of <100 mg/dl in high-risk and <70 mg/dl in very high risk patients. T",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_relative_safety_profiles_of_high_dose_statin_regimens-u-239",
+      "claim_type": "unit_value",
+      "raw_text": "70 mg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 239,
+      "sentence": "Carlos Escobar, Rocio Echarri, Vivencio BarriosDepartment of Cardiology, Hospital Ram\u00f3n y Cajal, Madrid, SpainAbstract: Recent clinical trials recommend achieving a low-density lipoprotein cholesterol level of <100 mg/dl in high-risk and <70 mg/dl in very high risk patients.",
+      "context_window": "poprotein cholesterol level of <100 mg/dl in high-risk and <70 mg/dl in very high risk patients. To attain these goals, howev",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

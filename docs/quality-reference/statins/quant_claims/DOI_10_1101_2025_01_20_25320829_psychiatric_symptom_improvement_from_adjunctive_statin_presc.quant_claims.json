@@ -1,0 +1,216 @@
+{
+  "paper_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc",
+  "doi": "10.1101/2025.01.20.25320829",
+  "extracted_at": "2026-05-07T19:24:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "hazard_ratio": 5,
+    "confidence_interval": 5
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-u-1433",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1433,
+      "sentence": "Results In 72,096 patients prescribed statins and antipsychotics/mood stabilisers, we found no reduction in psychiatric admissions at 12 months in patients prescribed: 1) BBB-penetrant vs. non-penetrant statins (HR:1.07; 95%CI:0.88-1.31); 2A) antipsychotics with p-glycoprotein affinity and p-glycoprotein inhibiting statins vs. statins without inhibition (HR:0.77; 95%CI:0.28-2.15); 2B) p-glycoprotein inhibiting statins with antipsychotics having p-glycoprotein affinity vs. antipsychotics without affinity (HR:0.93; 95%CI:0.79-1.09).",
+      "context_window": "ilisers, we found no reduction in psychiatric admissions at 12 months in patients prescribed: 1) BBB-penetrant vs. non-penetrant",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-hr-a-1511",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR:1.07",
+      "numeric_values": [
+        1.07
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1511,
+      "sentence": "Results In 72,096 patients prescribed statins and antipsychotics/mood stabilisers, we found no reduction in psychiatric admissions at 12 months in patients prescribed: 1) BBB-penetrant vs. non-penetrant statins (HR:1.07; 95%CI:0.88-1.31); 2A) antipsychotics with p-glycoprotein affinity and p-glycoprotein inhibiting statins vs. statins without inhibition (HR:0.77; 95%CI:0.28-2.15); 2B) p-glycoprotein inhibiting statins with antipsychotics having p-glycoprotein affinity vs. antipsychotics without affinity (HR:0.93; 95%CI:0.79-1.09).",
+      "context_window": "nts prescribed: 1) BBB-penetrant vs. non-penetrant statins (HR:1.07; 95%CI:0.88-1.31); 2A) antipsychotics with p-glycoprotein a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-ci-1520",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:0.88-1.31",
+      "numeric_values": [
+        0.88,
+        1.31
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1520,
+      "sentence": "Results In 72,096 patients prescribed statins and antipsychotics/mood stabilisers, we found no reduction in psychiatric admissions at 12 months in patients prescribed: 1) BBB-penetrant vs. non-penetrant statins (HR:1.07; 95%CI:0.88-1.31); 2A) antipsychotics with p-glycoprotein affinity and p-glycoprotein inhibiting statins vs. statins without inhibition (HR:0.77; 95%CI:0.28-2.15); 2B) p-glycoprotein inhibiting statins with antipsychotics having p-glycoprotein affinity vs. antipsychotics without affinity (HR:0.93; 95%CI:0.79-1.09).",
+      "context_window": "ribed: 1) BBB-penetrant vs. non-penetrant statins (HR:1.07; 95%CI:0.88-1.31); 2A) antipsychotics with p-glycoprotein affinity and p-gly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-hr-a-1656",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR:0.77",
+      "numeric_values": [
+        0.77
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1656,
+      "sentence": "Results In 72,096 patients prescribed statins and antipsychotics/mood stabilisers, we found no reduction in psychiatric admissions at 12 months in patients prescribed: 1) BBB-penetrant vs. non-penetrant statins (HR:1.07; 95%CI:0.88-1.31); 2A) antipsychotics with p-glycoprotein affinity and p-glycoprotein inhibiting statins vs. statins without inhibition (HR:0.77; 95%CI:0.28-2.15); 2B) p-glycoprotein inhibiting statins with antipsychotics having p-glycoprotein affinity vs. antipsychotics without affinity (HR:0.93; 95%CI:0.79-1.09).",
+      "context_window": "oprotein inhibiting statins vs. statins without inhibition (HR:0.77; 95%CI:0.28-2.15); 2B) p-glycoprotein inhibiting statins wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-ci-1665",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:0.28-2.15",
+      "numeric_values": [
+        0.28,
+        2.15
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1665,
+      "sentence": "Results In 72,096 patients prescribed statins and antipsychotics/mood stabilisers, we found no reduction in psychiatric admissions at 12 months in patients prescribed: 1) BBB-penetrant vs. non-penetrant statins (HR:1.07; 95%CI:0.88-1.31); 2A) antipsychotics with p-glycoprotein affinity and p-glycoprotein inhibiting statins vs. statins without inhibition (HR:0.77; 95%CI:0.28-2.15); 2B) p-glycoprotein inhibiting statins with antipsychotics having p-glycoprotein affinity vs. antipsychotics without affinity (HR:0.93; 95%CI:0.79-1.09).",
+      "context_window": "inhibiting statins vs. statins without inhibition (HR:0.77; 95%CI:0.28-2.15); 2B) p-glycoprotein inhibiting statins with antipsychotics",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-hr-a-1809",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR:0.93",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1809,
+      "sentence": "Results In 72,096 patients prescribed statins and antipsychotics/mood stabilisers, we found no reduction in psychiatric admissions at 12 months in patients prescribed: 1) BBB-penetrant vs. non-penetrant statins (HR:1.07; 95%CI:0.88-1.31); 2A) antipsychotics with p-glycoprotein affinity and p-glycoprotein inhibiting statins vs. statins without inhibition (HR:0.77; 95%CI:0.28-2.15); 2B) p-glycoprotein inhibiting statins with antipsychotics having p-glycoprotein affinity vs. antipsychotics without affinity (HR:0.93; 95%CI:0.79-1.09).",
+      "context_window": "-glycoprotein affinity vs. antipsychotics without affinity (HR:0.93; 95%CI:0.79-1.09). In 2B we observed reduced self-harm (HR:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-ci-1818",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:0.79-1.09",
+      "numeric_values": [
+        0.79,
+        1.09
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1818,
+      "sentence": "Results In 72,096 patients prescribed statins and antipsychotics/mood stabilisers, we found no reduction in psychiatric admissions at 12 months in patients prescribed: 1) BBB-penetrant vs. non-penetrant statins (HR:1.07; 95%CI:0.88-1.31); 2A) antipsychotics with p-glycoprotein affinity and p-glycoprotein inhibiting statins vs. statins without inhibition (HR:0.77; 95%CI:0.28-2.15); 2B) p-glycoprotein inhibiting statins with antipsychotics having p-glycoprotein affinity vs. antipsychotics without affinity (HR:0.93; 95%CI:0.79-1.09).",
+      "context_window": "tein affinity vs. antipsychotics without affinity (HR:0.93; 95%CI:0.79-1.09). In 2B we observed reduced self-harm (HR:0.60; 95%CI:0.38-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-hr-a-1873",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR:0.60",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1873,
+      "sentence": "In 2B we observed reduced self-harm (HR:0.60; 95%CI:0.38-0.97) in per-protocol analysis and reduced psychiatric admissions in the \u2018other\u2019 psychoses subgroup (HR:0.53; 95%CI:0.34-0.85).",
+      "context_window": ".93; 95%CI:0.79-1.09). In 2B we observed reduced self-harm (HR:0.60; 95%CI:0.38-0.97) in per-protocol analysis and reduced psyc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-ci-1882",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:0.38-0.97",
+      "numeric_values": [
+        0.38,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1882,
+      "sentence": "In 2B we observed reduced self-harm (HR:0.60; 95%CI:0.38-0.97) in per-protocol analysis and reduced psychiatric admissions in the \u2018other\u2019 psychoses subgroup (HR:0.53; 95%CI:0.34-0.85).",
+      "context_window": "I:0.79-1.09). In 2B we observed reduced self-harm (HR:0.60; 95%CI:0.38-0.97) in per-protocol analysis and reduced psychiatric admission",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-hr-a-1994",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR:0.53",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1994,
+      "sentence": "In 2B we observed reduced self-harm (HR:0.60; 95%CI:0.38-0.97) in per-protocol analysis and reduced psychiatric admissions in the \u2018other\u2019 psychoses subgroup (HR:0.53; 95%CI:0.34-0.85).",
+      "context_window": "d psychiatric admissions in the \u2018other\u2019 psychoses subgroup (HR:0.53; 95%CI:0.34-0.85). Conclusions BBB permeability is unlikely",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_01_20_25320829_psychiatric_symptom_improvement_from_adjunctive_statin_presc-ci-2003",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:0.34-0.85",
+      "numeric_values": [
+        0.34,
+        0.85
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2003,
+      "sentence": "In 2B we observed reduced self-harm (HR:0.60; 95%CI:0.38-0.97) in per-protocol analysis and reduced psychiatric admissions in the \u2018other\u2019 psychoses subgroup (HR:0.53; 95%CI:0.34-0.85).",
+      "context_window": "tric admissions in the \u2018other\u2019 psychoses subgroup (HR:0.53; 95%CI:0.34-0.85). Conclusions BBB permeability is unlikely to be the mechan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

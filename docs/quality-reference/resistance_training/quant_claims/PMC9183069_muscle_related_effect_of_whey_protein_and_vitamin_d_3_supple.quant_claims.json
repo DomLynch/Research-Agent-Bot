@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9183069_muscle_related_effect_of_whey_protein_and_vitamin_d_3_supple",
   "doi": "10.3390/nu14112289",
-  "extracted_at": "2026-05-05T21:59:19+00:00",
+  "extracted_at": "2026-05-07T16:57:41+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 5,
@@ -25,9 +25,9 @@
       "context_window": "ing on muscle mass and strength. Healthy, untrained males ( N = 42; Age = 18-24 year) were randomly assigned into three groups",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9183069_muscle_related_effect_of_whey_protein_and_vitamin_d_3_supple-u-359",
@@ -43,9 +43,9 @@
       "context_window": "s and strength. Healthy, untrained males ( N = 42; Age = 18-24 year) were randomly assigned into three groups: before bedtime,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9183069_muscle_related_effect_of_whey_protein_and_vitamin_d_3_supple-pct-2632",
@@ -133,7 +133,7 @@
       "context_window": "2) no regular and organized exercise training over the past 6 months; (3) non-smoking status, no alcohol abuse, and no drug abus",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -151,7 +151,7 @@
       "context_window": "; (4) had not taken any nutritional supplements in the past 6 months or longer; (5) lack of long-term outdoor activities or not",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -169,7 +169,7 @@
       "context_window": "vel suggestive of deficiency (serum 25(OH)D concentration < 25 ng/mL). The study protocol was conducted in compliance with the",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -205,9 +205,9 @@
       "context_window": "were assigned to the 3 groups: group 1, before bedtime (BB; n = 14); group 2, after sleeping (AS; n = 14); and group 3, contro",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9183069_muscle_related_effect_of_whey_protein_and_vitamin_d_3_supple-n-2884",
@@ -223,9 +223,9 @@
       "context_window": ", before bedtime (BB; n = 14); group 2, after sleeping (AS; n = 14); and group 3, control (C; n = 14). All subjects were inst",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9183069_muscle_related_effect_of_whey_protein_and_vitamin_d_3_supple-n-2918",
@@ -241,9 +241,9 @@
       "context_window": "up 2, after sleeping (AS; n = 14); and group 3, control (C; n = 14). All subjects were instructed to avoid consuming alcohol,",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9183069_muscle_related_effect_of_whey_protein_and_vitamin_d_3_supple-u-3794",
@@ -420,10 +420,10 @@
       "sentence": "Power analysis was based on a previous study [ 33 ] on the effect of supplementing VD and whey protein at breakfast on muscle mass in the elderly, with a power of 80% and an \u03b1 level (2-tailed) of 5%.",
       "context_window": "at breakfast on muscle mass in the elderly, with a power of 80% and an \u03b1 level (2-tailed) of 5%. We considered an expected",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9183069_muscle_related_effect_of_whey_protein_and_vitamin_d_3_supple-pct-15637",
@@ -438,10 +438,10 @@
       "sentence": "Power analysis was based on a previous study [ 33 ] on the effect of supplementing VD and whey protein at breakfast on muscle mass in the elderly, with a power of 80% and an \u03b1 level (2-tailed) of 5%.",
       "context_window": "e elderly, with a power of 80% and an \u03b1 level (2-tailed) of 5%. We considered an expected mean increase of 0.5 kg in leg l",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9183069_muscle_related_effect_of_whey_protein_and_vitamin_d_3_supple-u-15684",
@@ -1280,7 +1280,7 @@
       "sentence": "As for the serum level of two muscle mass-related myokines, a significant increase was observed in irisin and MSTN in AS and BB groups ( p < 0.05), but no significant changes were found in the C group ( p > 0.05).",
       "context_window": "rease was observed in irisin and MSTN in AS and BB groups ( p < 0.05), but no significant changes were found in the C group ( p",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1298,7 +1298,7 @@
       "sentence": "As for the serum level of two muscle mass-related myokines, a significant increase was observed in irisin and MSTN in AS and BB groups ( p < 0.05), but no significant changes were found in the C group ( p > 0.05).",
       "context_window": "05), but no significant changes were found in the C group ( p > 0.05). At weeks 0 and 2, serum 25(OH)D concentrations did not d",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1933,7 +1933,7 @@
       "sentence": "An 8-week dietary and RT intervention trial conducted by Kim et al. (2018) also showed no significant difference in lean tissue mass, muscle mass, and other functional outcomes between two different PI distribution patterns in mixed meals (Even: 33/33/33%; uneven: 15/20/65%) [ 45 ].",
       "context_window": "ferent PI distribution patterns in mixed meals (Even: 33/33/33%; uneven: 15/20/65%) [ 45 ]. The mixed meals in the Kim et a",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1951,7 +1951,7 @@
       "sentence": "An 8-week dietary and RT intervention trial conducted by Kim et al. (2018) also showed no significant difference in lean tissue mass, muscle mass, and other functional outcomes between two different PI distribution patterns in mixed meals (Even: 33/33/33%; uneven: 15/20/65%) [ 45 ].",
       "context_window": "ion patterns in mixed meals (Even: 33/33/33%; uneven: 15/20/65%) [ 45 ]. The mixed meals in the Kim et al. (2018) study wer",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -2204,7 +2204,7 @@
       "sentence": "After 6 weeks of RT combined with nutritional intervention, subjects of AS and BB group showed significant gains in muscle mass and strength with beneficial changes of anabolic hormones in blood, while subjects who only performed the RT program without protein and vitamin D supplementation only obtained improvement in the leg press.",
       "context_window": "o the changes reported in other studies [ 38 , 67 ]. After 6 weeks of RT combined with nutritional intervention, subjects of A",
       "claim_role": "duration",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -2222,8 +2222,8 @@
       "sentence": "Consuming 6 weeks of whey protein and vitamin D 3 supplements combined with resistance training in healthy young males showed beneficial effects on muscle mass and strength.",
       "context_window": "Consuming 6 weeks of whey protein and vitamin D 3 supplements combined with r",
       "claim_role": "duration",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "muscle mass",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     }

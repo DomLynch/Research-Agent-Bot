@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9690442_effects_of_12_week_progressive_sandbag_exercise_training_on_",
   "doi": "10.3390/ijerph192215009",
-  "extracted_at": "2026-05-05T21:59:10+00:00",
+  "extracted_at": "2026-05-07T16:57:46+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 35,
@@ -23,7 +23,7 @@
       "context_window": "ls. Forty patients with T2DM and possible sarcopenia (age > 50 years) were recruited and randomly divided into resistance traini",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -94,7 +94,7 @@
       "sentence": "After 12 weeks, the training group were significant better than the control group in terms of glycosylated hemoglobin, the five times sit-to-stand test, skeletal muscle mass and calf circumference, and the physiological domain of the World Health Organization Quality of Life Questionnaire.",
       "context_window": "p were asked to maintain their usual daily lifestyle. After 12 weeks, the training group were significant better than the contro",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -167,7 +167,7 @@
       "context_window": "tudies have shown that high-intensity resistance training (~80% one-repetition maximum) increases muscle strength [ 13 , 14",
       "claim_role": "background",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -184,7 +184,7 @@
       "sentence": "Muscle strength, physical performance, HbA1c levels, blood fat parameters, muscle mass, calf circumference, and quality of life of all enrolled patients were examined before and after 12 weeks of intervention.",
       "context_window": "ife of all enrolled patients were examined before and after 12 weeks of intervention. The parameters of HbA1c and blood fat were",
       "claim_role": "duration",
-      "endpoint": "HbA1c",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -293,9 +293,9 @@
       "context_window": "xion/extension) ( Figure 1 ). Initially, a sandbag weighing 0.5 kg was worn, and each exercise was performed 8-15 times, reach",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9690442_effects_of_12_week_progressive_sandbag_exercise_training_on_-u-3650",
@@ -329,7 +329,7 @@
       "context_window": "d reflect the blood sugar control status during a period of 3 months [ 18 ]. The normal levels of HbA1c range between 4% and 5.6",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -706,10 +706,10 @@
       "sentence": "ASM = appendicular skeletal muscle mass; ASMI = appendicular skeletal muscle mass index; HDL = high-density lipoprotein; LDL = low-density lipoprotein; TG = triglycerides; * Significant difference ( p < 0.05).",
       "context_window": "lipoprotein; TG = triglycerides; * Significant difference ( p < 0.05). For the HDL cholesterol, LDL cholesterol, and triglyceri",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9690442_effects_of_12_week_progressive_sandbag_exercise_training_on_-p-2071",
@@ -1283,7 +1283,7 @@
       "context_window": "lity of life. Exercise compliance in the training group was 82% throughout the experimental period and was higher than repo",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1427,9 +1427,9 @@
       "context_window": "ased muscle strength and muscle mass [ 33 ]. In this study, 12 weeks of progressive sandbag resistance training was applied. Alt",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9690442_effects_of_12_week_progressive_sandbag_exercise_training_on_-u-3561",
@@ -1444,7 +1444,7 @@
       "sentence": "Although the load was relatively light, the skeletal muscle mass of the limbs in the training group increased by 0.3 kg, which was also similar to the results of a previous study [ 17 , 19 , 23 , 34 ].",
       "context_window": "muscle mass of the limbs in the training group increased by 0.3 kg, which was also similar to the results of a previous study",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1517,7 +1517,7 @@
       "context_window": "is study, patients with T2DM and possible sarcopenia (age > 50 years) performed 12 weeks of home-based progressive quantitative",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1535,7 +1535,7 @@
       "context_window": "ith T2DM and possible sarcopenia (age > 50 years) performed 12 weeks of home-based progressive quantitative sandbag resistance e",
       "claim_role": "duration",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1553,7 +1553,7 @@
       "context_window": "though all subjects\u2019 medication status did not change after 12 weeks of training, the resistance exercise training improved the",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "high"
     }

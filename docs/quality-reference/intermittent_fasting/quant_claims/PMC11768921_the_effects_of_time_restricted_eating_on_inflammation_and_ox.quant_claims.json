@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11768921_the_effects_of_time_restricted_eating_on_inflammation_and_ox",
   "doi": "10.3390/nu17020322",
-  "extracted_at": "2026-05-05T22:11:22+00:00",
+  "extracted_at": "2026-05-07T16:56:58+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 1,
@@ -24,7 +24,7 @@
       "context_window": "tane) biomarkers in ten overweight older adults (mean age = 77.1 \u00b1 6.1 years; six women and four men), who followed a TRE protocol",
       "claim_role": "dose",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "iomarkers in ten overweight older adults (mean age = 77.1 \u00b1 6.1 years; six women and four men), who followed a TRE protocol of 16",
       "claim_role": "dose",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -60,7 +60,7 @@
       "context_window": "r day and consumed food ad libitum during an 8 h window for 4 weeks. Results: TNF-\u03b1 levels decreased from 43.2 (11.2) pg/mL to",
       "claim_role": "dose",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -168,9 +168,9 @@
       "context_window": "asked to fast for a target of 16 h per day for a period of 4 weeks, and they were allowed to eat ad libitum during the daily 8",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11768921_the_effects_of_time_restricted_eating_on_inflammation_and_ox-u-100",
@@ -186,7 +186,7 @@
       "context_window": "ry and oxidative stress markers from baseline to the end of 4 weeks of time-restricted eating. There were modest reductions in",
       "claim_role": "duration",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "time-restricted eating",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -222,7 +222,7 @@
       "context_window": "lthy non-obese middle-aged and older adults in a RCT. After 6 weeks, there were no significant differences between TRE and norm",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -240,7 +240,7 @@
       "context_window": "d CRP/hs-CRP levels with short-term TRE interventions (5 to 8 weeks) [ 11 , 16 , 17 ]. In contrast, early 16:8 TRE (eating wind",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -258,7 +258,7 @@
       "context_window": "p.m.) resulted in significant reductions in hs-CRP levels (42%) in overweight women with polycystic ovary syndrome over 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -276,7 +276,7 @@
       "context_window": "2%) in overweight women with polycystic ovary syndrome over 5 weeks [ 14 ]. In addition, the biological variability of the infl",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -294,9 +294,9 @@
       "context_window": "dative stress marker 8-isoprostane slightly decreased after 4 weeks of TRE. In contrast, longer daily fasting durations of 18-2",
       "claim_role": "effect",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11768921_the_effects_of_time_restricted_eating_on_inflammation_and_ox-u-4041",
@@ -330,9 +330,9 @@
       "context_window": "ative stress 8-isoprostane in adults with obesity following 8 weeks [ 17 ]. In the secondary analysis of the study [ 27 ], howe",
       "claim_role": "effect",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11768921_the_effects_of_time_restricted_eating_on_inflammation_and_ox-pct-4515",
@@ -366,7 +366,7 @@
       "context_window": "weight loss). Our study [ 21 ] observed lower weight loss (~3% of initial body weight), implemented 16 h TRE, and had a sh",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -383,10 +383,10 @@
       "sentence": "Participants reported an adherence rate of 84% through self-reported diaries [ 28 ].",
       "context_window": "eating windows. Participants reported an adherence rate of 84% through self-reported diaries [ 28 ]. The study has severa",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11768921_the_effects_of_time_restricted_eating_on_inflammation_and_ox-pct-660",
@@ -401,10 +401,10 @@
       "sentence": "Participants reported an adherence rate of 84% through self-reported diaries [ 28 ].",
       "context_window": "eating windows. Participants reported an adherence rate of 84% through self-reported diaries [ 28 ]. The study has severa",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

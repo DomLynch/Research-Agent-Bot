@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1101_2025_03_02_25323194_differential_psychopathology_associations_found_for_docosahe",
+  "doi": "10.1101/2025.03.02.25323194",
+  "extracted_at": "2026-05-07T19:32:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_03_02_25323194_differential_psychopathology_associations_found_for_docosahe-p-1049",
+      "claim_type": "p_value",
+      "raw_text": "p<0.050",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1049,
+      "sentence": "At the fasting timepoint, half of the oxylipins were lower in AN compared to controls (all p<0.050).",
+      "context_window": "of the oxylipins were lower in AN compared to controls (all p<0.050). After eating, all but one EpFAs increased in AN (p=0.091",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_03_02_25323194_differential_psychopathology_associations_found_for_docosahe-p-1108",
+      "claim_type": "p_value",
+      "raw_text": "p=0.091",
+      "numeric_values": [
+        0.091
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1108,
+      "sentence": "After eating, all but one EpFAs increased in AN (p=0.091 to 0.697) whereas all EpFAs decreased in controls (p=0.0008 to 0.462).",
+      "context_window": "p<0.050). After eating, all but one EpFAs increased in AN (p=0.091 to 0.697) whereas all EpFAs decreased in controls (p=0.0008",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_03_02_25323194_differential_psychopathology_associations_found_for_docosahe-p-1167",
+      "claim_type": "p_value",
+      "raw_text": "p=0.0008",
+      "numeric_values": [
+        0.0008
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1167,
+      "sentence": "After eating, all but one EpFAs increased in AN (p=0.091 to 0.697) whereas all EpFAs decreased in controls (p=0.0008 to 0.462).",
+      "context_window": "(p=0.091 to 0.697) whereas all EpFAs decreased in controls (p=0.0008 to 0.462). By contrast, essential PUFA-derived DiHFAs signi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

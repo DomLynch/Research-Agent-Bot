@@ -35,11 +35,11 @@ _DOSE_ENDPOINTS = {
     "dose", "dosing", "dosage", "drug dose", "treatment dose",
     "intervention dose",
 }
+_RATIO_CLAIM_TYPES = {"hazard_ratio", "odds_ratio", "risk_ratio"}
 
 
 @dataclass(frozen=True, slots=True)
 class EvidenceRow:
-    """One row of the Quantitative Evidence Index."""
     study_label: str       # "Author Year" or "<paper_id> (Year)"
     endpoint: str          # bound endpoint or claim_role fallback
     arm: str               # bound arm or "—"
@@ -236,6 +236,7 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
          outcome/effect numerics, not contextual or methods numerics.
       4. percentage extractor captured the "95%" prefix of a CI;
          the confidence_interval claim carries the publishable row.
+      5. partial-confidence ratio rows without a signed direction.
     """
     endpoint = (claim.get("endpoint") or "").strip().lower()
     if endpoint in _UNBOUND_ENDPOINTS:
@@ -244,6 +245,8 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
     if role in {"background", "protocol", "population_descriptor"}:
         return False
     claim_type = (claim.get("claim_type") or "").strip()
+    confidence = (claim.get("binding_confidence") or "").strip().lower()
+    direction = (claim.get("direction") or "").strip().lower()
     units = (claim.get("units") or "").strip().lower()
     raw = (claim.get("raw_text") or "").strip().lower()
     context = " ".join((
@@ -254,6 +257,12 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
         return False
     if claim_type == "p_value" and _ambiguous_multi_stat_binding(
         raw, endpoint, str(claim.get("sentence") or ""),
+    ):
+        return False
+    if (
+        claim_type in _RATIO_CLAIM_TYPES
+        and confidence != "high"
+        and not direction
     ):
         return False
     if claim_type == "unit_value" and units in _TEMPORAL_UNITS:
@@ -270,15 +279,7 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
 def _ambiguous_multi_stat_binding(
     raw: str, endpoint: str, sentence: str,
 ) -> bool:
-    """Drop public QEI p-values from dense result-list sentences when
-    the p-value is not locally tied to its endpoint.
-
-    Multi-endpoint result sentences often contain several p-values;
-    the extractor can bind the right numeric value to the wrong later
-    endpoint. This is a publishability rule only: keep simple p-value
-    rows, but quarantine dense rows unless endpoint wording is close
-    to the emitted p-value.
-    """
+    """Drop dense-list p-values not locally tied to their endpoint."""
     if not raw or not endpoint or not sentence:
         return False
     sent = sentence.lower()
@@ -294,9 +295,6 @@ def _ambiguous_multi_stat_binding(
     ]
     if not tokens:
         return True
-    # Keep only locally bound p-values. In dense result-list prose,
-    # endpoint labels that are a sentence-clause away often belong to
-    # another p-value.
     window = sent[max(0, raw_i - 40): raw_i + len(raw) + 40]
     return not any(t in window for t in tokens)
 

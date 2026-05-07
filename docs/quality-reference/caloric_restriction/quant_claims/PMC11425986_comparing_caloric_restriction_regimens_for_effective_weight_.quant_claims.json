@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11425986_comparing_caloric_restriction_regimens_for_effective_weight_",
   "doi": "10.1186/s12966-024-01657-9",
-  "extracted_at": "2026-05-05T22:17:43+00:00",
+  "extracted_at": "2026-05-07T16:57:53+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 27,
@@ -22,7 +22,7 @@
       "sentence": "ADF showed the most significant body weight loss (Mean difference (MD): -3.42; 95% Confidence interval (CI): -4.28 to -2.55), followed by TRE (MD: -2.25; 95% CI: -2.92 to -1.59).",
       "context_window": "significant body weight loss (Mean difference (MD): -3.42; 95% Confidence interval (CI): -4.28 to -2.55), followed by TRE",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -41,7 +41,7 @@
       "sentence": "ADF showed the most significant body weight loss (Mean difference (MD): -3.42; 95% Confidence interval (CI): -4.28 to -2.55), followed by TRE (MD: -2.25; 95% CI: -2.92 to -1.59).",
       "context_window": "interval (CI): -4.28 to -2.55), followed by TRE (MD: -2.25; 95% CI: -2.92 to -1.59). STF (MD: -1.87; 95% CI: -3.32 to -0.56) and CER (MD: -1.5",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -136,7 +136,7 @@
       "context_window": "triction regimens likely lead to modest weight loss after 1-3 months, with ADF ranked highest, but by 4-6 months, varying degree",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -154,7 +154,7 @@
       "context_window": "ht loss after 1-3 months, with ADF ranked highest, but by 4-6 months, varying degrees of weight regain occur, particularly with",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -172,7 +172,7 @@
       "context_window": "occur, particularly with CER, while interventions lasting 7-12 months may result in effective weight loss, with TRE potentially r",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -190,7 +190,7 @@
       "context_window": "loss, with TRE potentially ranking first during both the 4-6 months and 7-12 months periods. ADF showing fewer and shorter-last",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -208,7 +208,7 @@
       "context_window": "potentially ranking first during both the 4-6 months and 7-12 months periods. ADF showing fewer and shorter-lasting physical sym",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -316,9 +316,9 @@
       "context_window": "ction (CER, entailing a daily energy intake reduction of 20-30% from daily requirements), short-term fasting (STF, involvin",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11425986_comparing_caloric_restriction_regimens_for_effective_weight_-pct-1834",
@@ -334,9 +334,9 @@
       "context_window": "TF, involving limiting daily energy intake to approximately 25% on either 2-3 consecutive or non-consecutive days of the we",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11425986_comparing_caloric_restriction_regimens_for_effective_weight_-pct-1954",
@@ -352,9 +352,9 @@
       "context_window": "week), Alternate Day Fasting (ADF, comprising consuming 20-30% of daily energy needs on fasting days and consuming 100% of",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11425986_comparing_caloric_restriction_regimens_for_effective_weight_-pct-2010",
@@ -370,9 +370,9 @@
       "context_window": "20-30% of daily energy needs on fasting days and consuming 100% of daily energy needs or ad libitum on non-fasting days), a",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11425986_comparing_caloric_restriction_regimens_for_effective_weight_-u-492",
@@ -388,7 +388,7 @@
       "context_window": "to define the inclusion criteria: (1) Population: Adults \u2265 18 years with stable weight (loss or gain < 5 kg in the past 3 month",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -406,7 +406,7 @@
       "context_window": "ation: Adults \u2265 18 years with stable weight (loss or gain < 5 kg in the past 3 months). (2) Interventions: Evaluated CER, ST",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -424,7 +424,7 @@
       "context_window": "8 years with stable weight (loss or gain < 5 kg in the past 3 months). (2) Interventions: Evaluated CER, STF, ADF, and TRE, with",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -442,7 +442,7 @@
       "context_window": "and adverse events. (5) Study design: Published RCTs with \u2265 4 weeks intervention, no language or publication year restrictions.",
       "claim_role": "population",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "calorie restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -459,8 +459,8 @@
       "sentence": "We applied the PICOS model [ 28 ] (Population, Intervention, Comparator, Outcome, and Study Design) to define the inclusion criteria: (1) Population: Adults \u2265 18 years with stable weight (loss or gain < 5 kg in the past 3 months). (2) Interventions: Evaluated CER, STF, ADF, and TRE, with no calorie restriction. (3) Comparisons: General diet without time or calorie restrictions. (4) Outcomes: Primary outcome: changes in body weight (kg); Secondary outcomes: BMI (kg/m 2 ), fat mass (kg), lean mass (kg), waist circumference (cm), fasting glucose (mg/dL), Homeostatic Model Assessment of Insulin Resistance (HOMA-IR), and adverse events. (5) Study design: Published RCTs with \u2265 4 weeks intervention, no language or publication year restrictions.\n\n(1) Use of weight-loss medications/supplements, surgeries, pregnancy, lactation, significant endocrinopathies (e.g., diabetes, thyroid disease), cancer, chronic diseases needing dietary control (e.g., heart, and liver disease, chronic nephrosis, chronic diarrheal disease), steroids, or immunosuppressants within 3 months. (2) Excluded studies < 4 weeks, religious fasts (e.g., Muslim Ramadan fasting and Greek Orthodox fasting), and those limiting dietary components (e.g., low-carbohydrate diets). (3) Excluded inaccessible full-text articles or studies with overlapping data, even after reasonable attempts to contact corresponding authors.",
       "context_window": "diarrheal disease), steroids, or immunosuppressants within 3 months. (2) Excluded studies < 4 weeks, religious fasts (e.g., Mus",
       "claim_role": "population",
-      "endpoint": "insulin sensitivity",
-      "arm": "",
+      "endpoint": "weight loss",
+      "arm": "calorie restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -477,8 +477,8 @@
       "sentence": "We applied the PICOS model [ 28 ] (Population, Intervention, Comparator, Outcome, and Study Design) to define the inclusion criteria: (1) Population: Adults \u2265 18 years with stable weight (loss or gain < 5 kg in the past 3 months). (2) Interventions: Evaluated CER, STF, ADF, and TRE, with no calorie restriction. (3) Comparisons: General diet without time or calorie restrictions. (4) Outcomes: Primary outcome: changes in body weight (kg); Secondary outcomes: BMI (kg/m 2 ), fat mass (kg), lean mass (kg), waist circumference (cm), fasting glucose (mg/dL), Homeostatic Model Assessment of Insulin Resistance (HOMA-IR), and adverse events. (5) Study design: Published RCTs with \u2265 4 weeks intervention, no language or publication year restrictions.\n\n(1) Use of weight-loss medications/supplements, surgeries, pregnancy, lactation, significant endocrinopathies (e.g., diabetes, thyroid disease), cancer, chronic diseases needing dietary control (e.g., heart, and liver disease, chronic nephrosis, chronic diarrheal disease), steroids, or immunosuppressants within 3 months. (2) Excluded studies < 4 weeks, religious fasts (e.g., Muslim Ramadan fasting and Greek Orthodox fasting), and those limiting dietary components (e.g., low-carbohydrate diets). (3) Excluded inaccessible full-text articles or studies with overlapping data, even after reasonable attempts to contact corresponding authors.",
       "context_window": "immunosuppressants within 3 months. (2) Excluded studies < 4 weeks, religious fasts (e.g., Muslim Ramadan fasting and Greek Or",
       "claim_role": "population",
-      "endpoint": "insulin sensitivity",
-      "arm": "",
+      "endpoint": "weight loss",
+      "arm": "calorie restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1072,9 +1072,9 @@
       "context_window": "hs, 4.16 6 months, 4.16 6 months, 21.00 9 months. 31.00 3 months, 14.02 6 months, 16.82 Abbreviations: RCT Randomized cont",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11425986_comparing_caloric_restriction_regimens_for_effective_weight_-u-1770",
@@ -1090,9 +1090,9 @@
       "context_window": "s, 4.16 6 months, 21.00 9 months. 31.00 3 months, 14.02 6 months, 16.82 Abbreviations: RCT Randomized controlled trial, TRE",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11425986_comparing_caloric_restriction_regimens_for_effective_weight_-pct-3792",
@@ -1126,7 +1126,7 @@
       "context_window": "Body Weight Change; Subgroup Network Meta-Analyses for B 1-3 month, C 4-6 month, and D 7-12 month periods. Regimen comparisons",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1144,7 +1144,7 @@
       "context_window": "Change; Subgroup Network Meta-Analyses for B 1-3 month, C 4-6 month, and D 7-12 month periods. Regimen comparisons are sorted b",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1162,7 +1162,7 @@
       "context_window": "Network Meta-Analyses for B 1-3 month, C 4-6 month, and D 7-12 month periods. Regimen comparisons are sorted by efficacy. ADF: A",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1180,7 +1180,7 @@
       "context_window": "n weight loss: A Overall Ranking; Subgroup Analyses for B 1-3 month, C 4-6 month, and D 7-12 month Interventions. Strategies ar",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1198,7 +1198,7 @@
       "context_window": ": A Overall Ranking; Subgroup Analyses for B 1-3 month, C 4-6 month, and D 7-12 month Interventions. Strategies are plotted on",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1216,7 +1216,7 @@
       "context_window": "ng; Subgroup Analyses for B 1-3 month, C 4-6 month, and D 7-12 month Interventions. Strategies are plotted on the X-axis based o",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1234,7 +1234,7 @@
       "context_window": "We present detailed mean changes in body weight along with 95% CIs for subgroup analyses based on different durations in T",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1252,7 +1252,7 @@
       "context_window": "p network meta-analysis conducted caloric restriction for 1-3 months revealed that all caloric restriction regimens significantl",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1378,7 +1378,7 @@
       "context_window": "ic restriction regimens showed weight loss effects at the 1-3 month time point compared to baseline measurements. However, in s",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1432,7 +1432,7 @@
       "context_window": "over different durations Detailed comparative effects with 95% CIs for the overall network meta-analysis are presented in",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1972,7 +1972,7 @@
       "context_window": "r caloric restriction regimens show high certainty of the 1-3 month period evidence for weight reduction, resulting in an avera",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1990,7 +1990,7 @@
       "context_window": "ight reduction, resulting in an average weight loss of 1.71-3.34 kg, consistent with two comprehensive systematic reviews [ 78",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2044,9 +2044,9 @@
       "context_window": "iction strategy for its effectiveness in weight loss over 1-3 months and the improvement of cardiovascular metabolic risk factor",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11425986_comparing_caloric_restriction_regimens_for_effective_weight_-u-2608",
@@ -2242,7 +2242,7 @@
       "context_window": "se, while STF may lead to the most lean mass loss. After 1-3 months of intervention, all four caloric restriction regimens like",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },

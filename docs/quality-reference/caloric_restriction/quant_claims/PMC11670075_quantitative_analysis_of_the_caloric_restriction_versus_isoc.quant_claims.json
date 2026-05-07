@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc",
   "doi": "10.3389/fnut.2024.1493954",
-  "extracted_at": "2026-05-05T22:17:46+00:00",
+  "extracted_at": "2026-05-07T16:57:54+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 166,
+    "unit_value": 170,
     "p_value": 133,
     "percentage": 68,
     "mean_sd": 1,
@@ -534,6 +534,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc-u-8659",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 8659,
+      "sentence": "This risk is associated with the different macronutrient proportions in VLEDs, where the protein intake is higher (ranging from 1.2 to 1.5 g/kg/day) compared to other diets ( 41 ).",
+      "context_window": "Ds, where the protein intake is higher (ranging from 1.2 to 1.5 g/kg/day) compared to other diets ( 41 ). Among individuals with obe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc-pct-9586",
       "claim_type": "percentage",
       "raw_text": "65%",
@@ -696,6 +714,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc-u-12776",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/d",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 12776,
+      "sentence": "In contrast, the US recommended daily allowance (RDA) for protein is set at 0.8 g/kg/d ( 69 ).",
+      "context_window": "US recommended daily allowance (RDA) for protein is set at 0.8 g/kg/d ( 69 ). However, consuming amounts above the RDA may be con",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc-pct-12978",
       "claim_type": "percentage",
       "raw_text": "22%",
@@ -709,9 +745,9 @@
       "context_window": "500-750 kcal/day, combined with a protein intake exceeding 22% of total macronutrients, has been shown to confer benefits",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "energy restriction",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc-pct-13304",
@@ -725,6 +761,42 @@
       "source_offset": 13304,
       "sentence": "Additionally, it has been observed that overweight women following a calorie-restricted diet with a 750 kcal deficit and a protein intake of 30% (1.4 g/kg/d) over a 12-week period experienced a smaller reduction in lean body mass compared to those on isocaloric diets with an optimal protein intake of 0.8 g/kg/day ( 77 ).",
       "context_window": "ricted diet with a 750 kcal deficit and a protein intake of 30% (1.4 g/kg/d) over a 12-week period experienced a smaller re",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc-u-13309",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 g/kg/d",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 13309,
+      "sentence": "Additionally, it has been observed that overweight women following a calorie-restricted diet with a 750 kcal deficit and a protein intake of 30% (1.4 g/kg/d) over a 12-week period experienced a smaller reduction in lean body mass compared to those on isocaloric diets with an optimal protein intake of 0.8 g/kg/day ( 77 ).",
+      "context_window": "d diet with a 750 kcal deficit and a protein intake of 30% (1.4 g/kg/d) over a 12-week period experienced a smaller reduction in l",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc-u-13465",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 13465,
+      "sentence": "Additionally, it has been observed that overweight women following a calorie-restricted diet with a 750 kcal deficit and a protein intake of 30% (1.4 g/kg/d) over a 12-week period experienced a smaller reduction in lean body mass compared to those on isocaloric diets with an optimal protein intake of 0.8 g/kg/day ( 77 ).",
+      "context_window": "those on isocaloric diets with an optimal protein intake of 0.8 g/kg/day ( 77 ). Similar results have been observed in men ( 78 ). H",
       "claim_role": "dose",
       "endpoint": "lean body mass",
       "arm": "",
@@ -1195,10 +1267,10 @@
       "sentence": "To ensure adherence to the study protocol, daily meal monitoring was conducted via an online platform, and nutritional follow-up visits, including bioimpedance body composition analysis, were scheduled at 6 and 12 weeks.",
       "context_window": "mpedance body composition analysis, were scheduled at 6 and 12 weeks. The dietary interventions were selected collaboratively by",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc-pct-12983",
@@ -7507,7 +7579,7 @@
       "context_window": "increasing the percentage of muscle tissue, particularly at 6 weeks ( p < 0.001), and the interaction with time demonstrated th",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -7525,7 +7597,7 @@
       "context_window": "the percentage of muscle tissue, particularly at 6 weeks ( p < 0.001), and the interaction with time demonstrated that LCD was m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -7831,9 +7903,9 @@
       "context_window": "te fasting, while the 5:2 diet involves eating normally for 5 days of the week and restricting caloric intake for the remainin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc-u-22396",
@@ -7849,9 +7921,9 @@
       "context_window": "f the week and restricting caloric intake for the remaining 2 days ( 170 ). These extended fasting periods can lead to greater",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc-u-24415",

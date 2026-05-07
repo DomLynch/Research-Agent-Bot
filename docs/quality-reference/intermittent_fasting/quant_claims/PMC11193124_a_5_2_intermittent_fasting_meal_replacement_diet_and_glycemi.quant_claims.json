@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi",
   "doi": "10.1001/jamanetworkopen.2024.16786",
-  "extracted_at": "2026-05-05T22:11:26+00:00",
+  "extracted_at": "2026-05-07T16:56:54+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 50,
@@ -25,9 +25,9 @@
       "context_window": "asting plan consisting of 2 nonconsecutive fasting days and 5 days of habitual intake per week and meal replacement diet (5:2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-368",
@@ -43,7 +43,7 @@
       "context_window": "ts, the 5:2 MR approach achieved better glycemic control at 16 weeks compared with metformin and empagliflozin. The 5:2 MR appr",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -224,9 +224,9 @@
       "context_window": "ng days (one-fourth the energy intake of habitual diet) and 5 days of habitual intake per week. 16 Individuals with obesity ha",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-2666",
@@ -349,10 +349,10 @@
       "sentence": "We excluded participants who had used weight-loss drugs or products within the past 3 months before enrollment, as well as pregnant or breastfeeding women ( Supplement 1 ).",
       "context_window": "who had used weight-loss drugs or products within the past 3 months before enrollment, as well as pregnant or breastfeeding wom",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-2499",
@@ -692,7 +692,7 @@
       "context_window": "asting plan consisting of 2 nonconsecutive fasting days and 5 days of habitual intake per week and meal replacement diet; BMI,",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -728,9 +728,9 @@
       "context_window": "asting plan consisting of 2 nonconsecutive fasting days and 5 days of habitual intake per week and meal replacement diet. At",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-1578",
@@ -746,7 +746,7 @@
       "context_window": "5:2 MR group required additional metformin for FPG level of 180.2 mg/dL or more and 2-hour plasma glucose of 250.5 mg/dL or more (t",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -764,7 +764,7 @@
       "context_window": "G level of 180.2 mg/dL or more and 2-hour plasma glucose of 250.5 mg/dL or more (to convert glucose to millimoles per liter, multip",
       "claim_role": "unknown",
       "endpoint": "blood glucose",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -782,7 +782,7 @@
       "context_window": "). Only 1 patient in the metformin group had a FPG level of 218.0 mg/dL and consequently received additional empagliflozin. At wee",
       "claim_role": "effect",
       "endpoint": "fasting glucose",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -800,7 +800,7 @@
       "context_window": "group showed the greatest reduction in HbA 1c level (LSM, -1.9% [SE, 0.2%]), significantly greater than patients receiving",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -818,7 +818,7 @@
       "context_window": "wed the greatest reduction in HbA 1c level (LSM, -1.9% [SE, 0.2%]), significantly greater than patients receiving metformin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -836,7 +836,7 @@
       "context_window": ", significantly greater than patients receiving metformin (-1.6% [SE, 0.2%]; adjusted LSM difference, -0.3% [95% CI, -0.5% t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -854,7 +854,7 @@
       "context_window": "antly greater than patients receiving metformin (-1.6% [SE, 0.2%]; adjusted LSM difference, -0.3% [95% CI, -0.5% to -0.1%])",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -872,7 +872,7 @@
       "context_window": "ving metformin (-1.6% [SE, 0.2%]; adjusted LSM difference, -0.3% [95% CI, -0.5% to -0.1%]) and empagliflozin (-1.5% [SE, 0.2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -890,7 +890,7 @@
       "context_window": "etformin (-1.6% [SE, 0.2%]; adjusted LSM difference, -0.3% [95% CI, -0.5% to -0.1%]) and empagliflozin (-1.5% [SE, 0.2%]; a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -908,7 +908,7 @@
       "context_window": "(-1.6% [SE, 0.2%]; adjusted LSM difference, -0.3% [95% CI, -0.5% to -0.1%]) and empagliflozin (-1.5% [SE, 0.2%]; adjusted LS",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -926,7 +926,7 @@
       "context_window": "E, 0.2%]; adjusted LSM difference, -0.3% [95% CI, -0.5% to -0.1%]) and empagliflozin (-1.5% [SE, 0.2%]; adjusted LSM differe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -944,7 +944,7 @@
       "context_window": "erence, -0.3% [95% CI, -0.5% to -0.1%]) and empagliflozin (-1.5% [SE, 0.2%]; adjusted LSM difference, -0.4% [95% CI, -0.6% t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -962,7 +962,7 @@
       "context_window": ".3% [95% CI, -0.5% to -0.1%]) and empagliflozin (-1.5% [SE, 0.2%]; adjusted LSM difference, -0.4% [95% CI, -0.6% to -0.2%])",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -980,7 +980,7 @@
       "context_window": "empagliflozin (-1.5% [SE, 0.2%]; adjusted LSM difference, -0.4% [95% CI, -0.6% to -0.2%]) ( Figure 2 A; eTable 4 in Supplem",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -998,7 +998,7 @@
       "context_window": "liflozin (-1.5% [SE, 0.2%]; adjusted LSM difference, -0.4% [95% CI, -0.6% to -0.2%]) ( Figure 2 A; eTable 4 in Supplement 2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1016,7 +1016,7 @@
       "context_window": "(-1.5% [SE, 0.2%]; adjusted LSM difference, -0.4% [95% CI, -0.6% to -0.2%]) ( Figure 2 A; eTable 4 in Supplement 2 ). Howeve",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1034,7 +1034,7 @@
       "context_window": "E, 0.2%]; adjusted LSM difference, -0.4% [95% CI, -0.6% to -0.2%]) ( Figure 2 A; eTable 4 in Supplement 2 ). However, there",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1160,7 +1160,7 @@
       "context_window": "ly reduced HbA 1c compared with metformin (LSM difference, -0.4% [95% CI, -0.6% to -0.1%]) and empagliflozin (LSM difference",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1178,7 +1178,7 @@
       "context_window": "uced HbA 1c compared with metformin (LSM difference, -0.4% [95% CI, -0.6% to -0.1%]) and empagliflozin (LSM difference, -0.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1196,7 +1196,7 @@
       "context_window": "1c compared with metformin (LSM difference, -0.4% [95% CI, -0.6% to -0.1%]) and empagliflozin (LSM difference, -0.4% [95% CI",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1214,7 +1214,7 @@
       "context_window": "ed with metformin (LSM difference, -0.4% [95% CI, -0.6% to -0.1%]) and empagliflozin (LSM difference, -0.4% [95% CI, -0.7% t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1232,7 +1232,7 @@
       "context_window": "5% CI, -0.6% to -0.1%]) and empagliflozin (LSM difference, -0.4% [95% CI, -0.7% to -0.1%]) ( Figure 2 B). More patients in t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1250,7 +1250,7 @@
       "context_window": "-0.6% to -0.1%]) and empagliflozin (LSM difference, -0.4% [95% CI, -0.7% to -0.1%]) ( Figure 2 B). More patients in the 5:",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1268,7 +1268,7 @@
       "context_window": "-0.1%]) and empagliflozin (LSM difference, -0.4% [95% CI, -0.7% to -0.1%]) ( Figure 2 B). More patients in the 5:2 MR group",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1286,7 +1286,7 @@
       "context_window": "and empagliflozin (LSM difference, -0.4% [95% CI, -0.7% to -0.1%]) ( Figure 2 B). More patients in the 5:2 MR group (88.9% [",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1304,7 +1304,7 @@
       "context_window": "o -0.1%]) ( Figure 2 B). More patients in the 5:2 MR group (88.9% [120 of 135]) achieved an HbA 1c level less than 7% compare",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1322,7 +1322,7 @@
       "context_window": "oup (88.9% [120 of 135]) achieved an HbA 1c level less than 7% compared with the metformin (73.9% [99 of 34]; P = .002) an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1340,7 +1340,7 @@
       "context_window": "d an HbA 1c level less than 7% compared with the metformin (73.9% [99 of 34]; P = .002) and empagliflozin (70.6% [96 of 136];",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1358,7 +1358,7 @@
       "context_window": "less than 7% compared with the metformin (73.9% [99 of 34]; P = .002) and empagliflozin (70.6% [96 of 136]; P < .001) groups ( F",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1376,7 +1376,7 @@
       "context_window": "e metformin (73.9% [99 of 34]; P = .002) and empagliflozin (70.6% [96 of 136]; P < .001) groups ( Figure 2 C). Similarly, in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1394,7 +1394,7 @@
       "context_window": "[99 of 34]; P = .002) and empagliflozin (70.6% [96 of 136]; P < .001) groups ( Figure 2 C). Similarly, in the 5:2 MR group, 80.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1412,9 +1412,9 @@
       "context_window": ".001) groups ( Figure 2 C). Similarly, in the 5:2 MR group, 80.0% of patients (108 of 135) achieved an HbA 1c level of less t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-3299",
@@ -1430,9 +1430,9 @@
       "context_window": "patients (108 of 135) achieved an HbA 1c level of less than 6.5%, surpassing metformin (60.4% [81 of 134]; P < .001) and emp",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-3327",
@@ -1448,9 +1448,9 @@
       "context_window": "ed an HbA 1c level of less than 6.5%, surpassing metformin (60.4% [81 of 134]; P < .001) and empagliflozin (55.1% [75 of 136]",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-p-3346",
@@ -1466,9 +1466,9 @@
       "context_window": "of less than 6.5%, surpassing metformin (60.4% [81 of 134]; P < .001) and empagliflozin (55.1% [75 of 136]; P < .001). Fasting p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-3375",
@@ -1484,9 +1484,9 @@
       "context_window": "metformin (60.4% [81 of 134]; P < .001) and empagliflozin (55.1% [75 of 136]; P < .001). Fasting plasma glucose levels in th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-p-3394",
@@ -1502,9 +1502,9 @@
       "context_window": "81 of 134]; P < .001) and empagliflozin (55.1% [75 of 136]; P < .001). Fasting plasma glucose levels in the 5:2 MR group decreas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-3469",
@@ -1628,7 +1628,7 @@
       "context_window": "asting plan consisting of 2 nonconsecutive fasting days and 5 days of habitual intake per week and meal replacement diet (5:2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1646,7 +1646,7 @@
       "context_window": "bitual intake per week and meal replacement diet (5:2 MR), -1.9% (SE, 0.2%); metformin, -1.6% (SE, 0.2%); and empagliflozin,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1664,7 +1664,7 @@
       "context_window": "ake per week and meal replacement diet (5:2 MR), -1.9% (SE, 0.2%); metformin, -1.6% (SE, 0.2%); and empagliflozin, -1.5% (SE",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1682,7 +1682,7 @@
       "context_window": "al replacement diet (5:2 MR), -1.9% (SE, 0.2%); metformin, -1.6% (SE, 0.2%); and empagliflozin, -1.5% (SE, 0.2%) (to convert",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1700,7 +1700,7 @@
       "context_window": "ment diet (5:2 MR), -1.9% (SE, 0.2%); metformin, -1.6% (SE, 0.2%); and empagliflozin, -1.5% (SE, 0.2%) (to convert to propor",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1718,7 +1718,7 @@
       "context_window": "SE, 0.2%); metformin, -1.6% (SE, 0.2%); and empagliflozin, -1.5% (SE, 0.2%) (to convert to proportion of total hemoglobin, m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1736,7 +1736,7 @@
       "context_window": "metformin, -1.6% (SE, 0.2%); and empagliflozin, -1.5% (SE, 0.2%) (to convert to proportion of total hemoglobin, multiply by",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1754,9 +1754,9 @@
       "context_window": "e adjusted LSM difference between 5:2 MR and metformin was -0.3% (95% CI, -0.5% to 0.1%), and the adjusted LSM difference be",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-4168",
@@ -1772,9 +1772,9 @@
       "context_window": "sted LSM difference between 5:2 MR and metformin was -0.3% (95% CI, -0.5% to 0.1%), and the adjusted LSM difference between",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-4177",
@@ -1790,9 +1790,9 @@
       "context_window": "difference between 5:2 MR and metformin was -0.3% (95% CI, -0.5% to 0.1%), and the adjusted LSM difference between 5:2 MR an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-4185",
@@ -1808,9 +1808,9 @@
       "context_window": "ce between 5:2 MR and metformin was -0.3% (95% CI, -0.5% to 0.1%), and the adjusted LSM difference between 5:2 MR and empagl",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-4262",
@@ -1826,9 +1826,9 @@
       "context_window": "justed LSM difference between 5:2 MR and empagliflozin was -0.4% (95% CI, -0.6% to 0.2%). B, Changes in HbA 1c concentration",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-4268",
@@ -1844,9 +1844,9 @@
       "context_window": "LSM difference between 5:2 MR and empagliflozin was -0.4% (95% CI, -0.6% to 0.2%). B, Changes in HbA 1c concentration from",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-4277",
@@ -1862,9 +1862,9 @@
       "context_window": "erence between 5:2 MR and empagliflozin was -0.4% (95% CI, -0.6% to 0.2%). B, Changes in HbA 1c concentration from baseline",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-4285",
@@ -1880,9 +1880,9 @@
       "context_window": "etween 5:2 MR and empagliflozin was -0.4% (95% CI, -0.6% to 0.2%). B, Changes in HbA 1c concentration from baseline to 16 we",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-4344",
@@ -1970,7 +1970,7 @@
       "context_window": "asting plan consisting of 2 nonconsecutive fasting days and 5 days of habitual intake per week and meal replacement diet (5:2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1988,7 +1988,7 @@
       "context_window": "abitual intake per week and meal replacement diet (5:2 MR) (n = 135), metformin (n = 134), or empagliflozin (n = 136). BMI indi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2006,7 +2006,7 @@
       "context_window": "ek and meal replacement diet (5:2 MR) (n = 135), metformin (n = 134), or empagliflozin (n = 136). BMI indicates body mass index",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2024,7 +2024,7 @@
       "context_window": "(5:2 MR) (n = 135), metformin (n = 134), or empagliflozin (n = 136). BMI indicates body mass index (calculated as weight in ki",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2042,9 +2042,9 @@
       "context_window": "ients in the 5:2 MR group showed greater weight loss (LSM, -9.7 kg [SE, 2.2 kg]) than those in the metformin group (-5.5 kg [S",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-5132",
@@ -2060,9 +2060,9 @@
       "context_window": "5:2 MR group showed greater weight loss (LSM, -9.7 kg [SE, 2.2 kg]) than those in the metformin group (-5.5 kg [SE, 2.3 kg];",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-5177",
@@ -2078,9 +2078,9 @@
       "context_window": ", -9.7 kg [SE, 2.2 kg]) than those in the metformin group (-5.5 kg [SE, 2.3 kg]; adjusted LSM difference, -4.2 kg [95% CI, -6.",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-5189",
@@ -2096,9 +2096,9 @@
       "context_window": "E, 2.2 kg]) than those in the metformin group (-5.5 kg [SE, 2.3 kg]; adjusted LSM difference, -4.2 kg [95% CI, -6.2 to -2.2 kg",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-5224",
@@ -2114,9 +2114,9 @@
       "context_window": "rmin group (-5.5 kg [SE, 2.3 kg]; adjusted LSM difference, -4.2 kg [95% CI, -6.2 to -2.2 kg]) and empagliflozin group (-5.8 kg",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-5232",
@@ -2132,9 +2132,9 @@
       "context_window": "up (-5.5 kg [SE, 2.3 kg]; adjusted LSM difference, -4.2 kg [95% CI, -6.2 to -2.2 kg]) and empagliflozin group (-5.8 kg [SE,",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-5249",
@@ -2150,9 +2150,9 @@
       "context_window": "2.3 kg]; adjusted LSM difference, -4.2 kg [95% CI, -6.2 to -2.2 kg]) and empagliflozin group (-5.8 kg [SE, 2.3 kg]; adjusted L",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-5284",
@@ -2168,9 +2168,9 @@
       "context_window": "4.2 kg [95% CI, -6.2 to -2.2 kg]) and empagliflozin group (-5.8 kg [SE, 2.3 kg]; adjusted LSM difference, -3.9 kg [95% CI, -5.",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-5296",
@@ -2186,9 +2186,9 @@
       "context_window": "CI, -6.2 to -2.2 kg]) and empagliflozin group (-5.8 kg [SE, 2.3 kg]; adjusted LSM difference, -3.9 kg [95% CI, -5.9 to -1.9 kg",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-5331",
@@ -2204,9 +2204,9 @@
       "context_window": "ozin group (-5.8 kg [SE, 2.3 kg]; adjusted LSM difference, -3.9 kg [95% CI, -5.9 to -1.9 kg]; eFigure 3A and eTable 4 in Suppl",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-5339",
@@ -2222,9 +2222,9 @@
       "context_window": "up (-5.8 kg [SE, 2.3 kg]; adjusted LSM difference, -3.9 kg [95% CI, -5.9 to -1.9 kg]; eFigure 3A and eTable 4 in Supplement",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-5356",
@@ -2240,9 +2240,9 @@
       "context_window": "2.3 kg]; adjusted LSM difference, -3.9 kg [95% CI, -5.9 to -1.9 kg]; eFigure 3A and eTable 4 in Supplement 2 ), with a greater",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-n-5926",
@@ -2294,9 +2294,9 @@
       "context_window": "to the low-energy diet ( Table 2 ). In the metformin group (n = 134), 26 individuals (19.4%) had mild gastrointestinal symptoms",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-6125",
@@ -2312,9 +2312,9 @@
       "context_window": "able 2 ). In the metformin group (n = 134), 26 individuals (19.4%) had mild gastrointestinal symptoms, and 8 individuals (6.0",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-6187",
@@ -2330,9 +2330,9 @@
       "context_window": ".4%) had mild gastrointestinal symptoms, and 8 individuals (6.0%) had hypoglycemia. In the empagliflozin group (n = 136), 3",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-n-6239",
@@ -2402,9 +2402,9 @@
       "context_window": "asting plan consisting of 2 nonconsecutive fasting days and 5 days of habitual intake per week and meal replacement diet. Dat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-u-793",
@@ -2420,7 +2420,7 @@
       "context_window": "ese patients. 20 , 24 The 5:2 intermittent fasting diet for 12 months resulted in a reduction of 0.5% in HbA 1c level compared wi",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2438,7 +2438,7 @@
       "context_window": "ttent fasting diet for 12 months resulted in a reduction of 0.5% in HbA 1c level compared with a continuous energy restricti",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2456,7 +2456,7 @@
       "context_window": "n therapy, a 12-week 3:4 intermittent fasting intervention (3 days consuming 25% of recommended calories and 4 days without ca",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2474,7 +2474,7 @@
       "context_window": "eek 3:4 intermittent fasting intervention (3 days consuming 25% of recommended calories and 4 days without calorie restrict",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2492,7 +2492,7 @@
       "context_window": "ervention (3 days consuming 25% of recommended calories and 4 days without calorie restriction) led to a mean (SD) decrease of",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2510,7 +2510,7 @@
       "context_window": "d to a mean (SD) decrease of HbA 1c by 7.3 (12.0) mmol/mol (0.6% [1.1%]) and a mean (SD) weight loss of 4.8 (5.0) kg, with a",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2528,7 +2528,7 @@
       "context_window": "mean (SD) decrease of HbA 1c by 7.3 (12.0) mmol/mol (0.6% [1.1%]) and a mean (SD) weight loss of 4.8 (5.0) kg, with a daily",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2546,9 +2546,9 @@
       "context_window": "HbA 1c after intermittent fasting intervention ranged from -1.5% to -0.3%. 25 Moreover, a meta-analysis of 2112 studies show",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-1453",
@@ -2564,9 +2564,9 @@
       "context_window": "ter intermittent fasting intervention ranged from -1.5% to -0.3%. 25 Moreover, a meta-analysis of 2112 studies showed that p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11193124_a_5_2_intermittent_fasting_meal_replacement_diet_and_glycemi-pct-1619",
@@ -2618,7 +2618,7 @@
       "context_window": "intervention with the 5:2 MR, the mean HbA 1c reduction was 1.9%, greater than those achieved with metformin (0.3%) and empa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2636,7 +2636,7 @@
       "context_window": "ction was 1.9%, greater than those achieved with metformin (0.3%) and empagliflozin (0.4%). According to American Diabetes A",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2654,7 +2654,7 @@
       "context_window": "han those achieved with metformin (0.3%) and empagliflozin (0.4%). According to American Diabetes Association recommendation",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },

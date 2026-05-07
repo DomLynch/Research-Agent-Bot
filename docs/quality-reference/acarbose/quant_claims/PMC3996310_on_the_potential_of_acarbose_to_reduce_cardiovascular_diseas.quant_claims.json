@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas",
   "doi": "10.1186/1475-2840-13-81",
-  "extracted_at": "2026-05-05T22:20:09+00:00",
+  "extracted_at": "2026-05-07T16:57:48+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 14,
@@ -24,7 +24,7 @@
       "context_window": "nly on metformin and/or sulphonylurea therapy and yielded a 0.3% higher mean HbA1c value [ 4 ]. Conversely, the CV benefits",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -42,9 +42,9 @@
       "context_window": "its seen with metformin therapy in a subset of overweight (>120% ideal boody weight) patients in the United Kingdom Prospeci",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-4149",
@@ -60,7 +60,7 @@
       "context_window": "and is excreted in the feces, mostly intact but with up to 30% undergoing metabolism predominantly via fermentation by col",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -207,7 +207,7 @@
       "context_window": "duced 1-h post-load insulin concentrations by -40.8 pmol/l [95% CI: -60.6, -21.0] [ 28 ]. Based on 46 studies, a recent systematic meta-ana",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -333,9 +333,9 @@
       "context_window": "ability of acarbose to reduce HbA1c levels in the Eastern (P = 0.20) and Western (P = 0.10) diet groups was similar to that of",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-7613",
@@ -351,9 +351,9 @@
       "context_window": "reduce HbA1c levels in the Eastern (P = 0.20) and Western (P = 0.10) diet groups was similar to that of sulfonylureas, and HbA1",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-7723",
@@ -369,9 +369,9 @@
       "context_window": "nylureas, and HbA1c levels were reduced significantly more (0.39%; P < 0.001) in the Eastern than in the Western diet group.",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-7730",
@@ -387,9 +387,9 @@
       "context_window": "s, and HbA1c levels were reduced significantly more (0.39%; P < 0.001) in the Eastern than in the Western diet group. It is not s",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-9440",
@@ -423,7 +423,7 @@
       "context_window": "his notion has been recently reinforced by the finding that 24 weeks of acarbose monotherapy in newly diagnosed patients with T2",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -441,9 +441,9 @@
       "context_window": "een shown to associate with a moderate weight loss of about 1 kg, on average, compared to placebo, alongside improved glycem",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-16035",
@@ -459,7 +459,7 @@
       "context_window": "earlier in another randomised controlled trial lasting over 6 months, in comparison with glibenclamide [ 67 ]. Although this eff",
       "claim_role": "background",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -477,7 +477,7 @@
       "context_window": "osed, drug-naive type 2 diabetic patients (baseline HbA1c < 7%), as hyperglycemia is a major contributor to in vivo platel",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -657,9 +657,9 @@
       "context_window": "betes Mellitus (STOP-NIDDM) Trial evaluated the efficacy of 3 years of treatment with acarbose vs. placebo in preventing the tr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-35029",
@@ -675,9 +675,9 @@
       "context_window": "ia with acarbose was not only found to be associated with a 36% reduction in the incidence of new onset diabetes as the pri",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-35203",
@@ -692,10 +692,10 @@
       "sentence": "12, p = 0.0226) and any CV event (15 vs.",
       "context_window": "y significant reduction of myocardial infarction (1 vs. 12, p = 0.0226) and any CV event (15 vs. 32, p = 0.0326), as assessed by a",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-35244",
@@ -729,7 +729,7 @@
       "context_window": "se in 2180 patients with type 2 diabetes and a follow-up of 1 year or longer ([ 66 ], MeRia Study), likewise revealed a signif",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -746,10 +746,10 @@
       "sentence": "19, p = 0.012) and any CV event (76 vs.",
       "context_window": "a significant decrease of myocardial infarction (9 vs. 19, p = 0.012) and any CV event (76 vs. 88, p = 0.006). Although these d",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-35652",
@@ -783,7 +783,7 @@
       "context_window": "angina or current stable angina. Patients are randomized to 50 mg acarbose tid or matching placebo in a 1:1 fashion on top of",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -801,7 +801,7 @@
       "context_window": "on on top of optimized guideline based CV care and at least 3 months out from a prior MI. The primary composite CV outcome is th",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     }

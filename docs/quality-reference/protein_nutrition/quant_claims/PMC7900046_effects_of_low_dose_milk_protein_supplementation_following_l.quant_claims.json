@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7900046_effects_of_low_dose_milk_protein_supplementation_following_l",
   "doi": "10.1007/s00394-020-02302-4",
-  "extracted_at": "2026-05-05T23:37:16+00:00",
+  "extracted_at": "2026-05-07T16:56:45+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 37,
@@ -276,10 +276,10 @@
       "sentence": "Peak muscle mass occurs between the ages of 20 and 40 years, and then naturally declines as one ages, accelerating in older adults [ 1 ].",
       "context_window": "Peak muscle mass occurs between the ages of 20 and 40 years, and then naturally declines as one ages, accelerating in o",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7900046_effects_of_low_dose_milk_protein_supplementation_following_l-u-1711",
@@ -313,7 +313,7 @@
       "context_window": "as the intervention period. Previous studies intervened for 10 weeks or more to detect the positive effects of a large dose of p",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -384,8 +384,8 @@
       "sentence": "We examined whether 6 months of continuous ingestion of low-dose (10 g/day) milk protein supplementation caused a greater increase in muscle mass, strength and function in older adults compared with an isocaloric carbohydrate placebo drink during low-to-moderate intensity exercise training intervention.",
       "context_window": "the intervention in the present study. We examined whether 6 months of continuous ingestion of low-dose (10 g/day) milk protein",
       "claim_role": "duration",
-      "endpoint": "muscle strength",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -817,7 +817,7 @@
       "context_window": "-exercise acidified milk protein supplementation throughout 6 months of low-to-moderate intensity exercise training (body weight",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -835,7 +835,7 @@
       "context_window": "dy was low, the total protein supplementation intake during 6 months was greater (approx. 1800 g) than in other low dose studies",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -943,10 +943,10 @@
       "sentence": "Krause et al. [ 33 ] showed an improvement in muscle mass over 12 weeks of a low-to-moderate intensity exercise intervention.",
       "context_window": "use et al. [ 33 ] showed an improvement in muscle mass over 12 weeks of a low-to-moderate intensity exercise intervention. The p",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

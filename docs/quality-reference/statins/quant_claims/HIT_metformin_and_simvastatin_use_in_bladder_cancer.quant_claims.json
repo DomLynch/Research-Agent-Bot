@@ -1,0 +1,83 @@
+{
+  "paper_id": "HIT_metformin_and_simvastatin_use_in_bladder_cancer",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_metformin_and_simvastatin_use_in_bladder_cancer-u-443",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 443,
+      "sentence": "The goal is to enroll 44 patients within 18 months.",
+      "context_window": "hologic variables. The goal is to enroll 44 patients within 18 months. An interim analysis will be conducted at 12 months, and th",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_metformin_and_simvastatin_use_in_bladder_cancer-u-495",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 495,
+      "sentence": "An interim analysis will be conducted at 12 months, and the study will be prematurely closed if fewer than 10 patients have been enrolled at that time.",
+      "context_window": "within 18 months. An interim analysis will be conducted at 12 months, and the study will be prematurely closed if fewer than 10",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_metformin_and_simvastatin_use_in_bladder_cancer-u-636",
+      "claim_type": "unit_value",
+      "raw_text": "850mg",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 636,
+      "sentence": "Patients will be administered 850mg of metformin twice daily along with 20mg of Simvastatin.",
+      "context_window": "e been enrolled at that time. Patients will be administered 850mg of metformin twice daily along with 20mg of Simvastatin. Pa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_metformin_and_simvastatin_use_in_bladder_cancer-u-678",
+      "claim_type": "unit_value",
+      "raw_text": "20mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 678,
+      "sentence": "Patients will be administered 850mg of metformin twice daily along with 20mg of Simvastatin.",
+      "context_window": "l be administered 850mg of metformin twice daily along with 20mg of Simvastatin. Patients will be enrolled following the for",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

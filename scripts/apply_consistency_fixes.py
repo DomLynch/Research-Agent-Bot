@@ -23,6 +23,7 @@ import argparse
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 __all__ = ["apply_fixes", "main"]
@@ -53,6 +54,14 @@ _ROLE_REPAIR_ARTIFACT_SENT_RE = re.compile(
     r"treats\s+the\s+value\s+according\s+to\s+that\s+source\s+role\."
     r"[ \t]*(?:\n+)?",
     re.IGNORECASE,
+)
+_PIPELINE_META_LINE_RE = re.compile(
+    r"(?m)^[^\n]*\b(?:Explicit-absence audit-trail block|"
+    r"earlier drafts inherited Methods boilerplate)\b[^\n]*(?:\n|$)"
+)
+_ET_AL_PAREN_CITE_RE = re.compile(
+    r"\(([A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+)\s+et\s+al\.\s+"
+    r"((?:19|20)\d{2})\)"
 )
 
 
@@ -212,6 +221,77 @@ def _strip_role_repair_artifacts(paper_md: str) -> tuple[str, int]:
         return paper_md, 0
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned, total
+
+
+def _strip_public_pipeline_meta(paper_md: str) -> tuple[str, int]:
+    cleaned, n = _PIPELINE_META_LINE_RE.subn("", paper_md)
+    if not n:
+        return paper_md, 0
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned, n
+
+
+def _citation_key(author: str, year: str) -> str:
+    folded = unicodedata.normalize("NFKD", author)
+    folded = "".join(ch for ch in folded if not unicodedata.combining(ch))
+    folded = re.sub(r"[^a-z0-9]", "", folded.lower())
+    return f"{folded}:{year}"
+
+
+def _allowed_author_year_keys(
+    paper_md: str, manifest: dict | None,
+) -> set[str]:
+    out: set[str] = set()
+
+    def add_token(token: object) -> None:
+        text = str(token or "").strip()
+        m = re.match(
+            r"([A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+)"
+            r"(?:\s+et\s+al\.)?\s+((?:19|20)\d{2})\b",
+            text,
+        )
+        if m:
+            out.add(_citation_key(m.group(1), m.group(2)))
+
+    if isinstance(manifest, dict):
+        for receipt in manifest.get("receipts") or ():
+            add_token(receipt.get("citation_token"))
+            add_token(receipt.get("body_citation"))
+            add_token(receipt.get("receipt_id"))
+    for m in re.finditer(r"(?m)^-\s+\*\*(.+?)\.\*\*", paper_md):
+        add_token(m.group(1))
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import background_literature as _bg
+        for entry in _bg.load_registry().values():
+            add_token(entry.citation_token)
+    except (ImportError, OSError, ValueError):
+        pass
+    return out
+
+
+def _strip_unreferenced_et_al_parentheticals(
+    paper_md: str, manifest: dict | None,
+) -> tuple[str, int]:
+    allowed = _allowed_author_year_keys(paper_md, manifest)
+    if not allowed:
+        return paper_md, 0
+    n = 0
+
+    def repl(match: re.Match[str]) -> str:
+        nonlocal n
+        key = _citation_key(match.group(1), match.group(2))
+        if key in allowed:
+            return match.group(0)
+        n += 1
+        return ""
+
+    cleaned = _ET_AL_PAREN_CITE_RE.sub(repl, paper_md)
+    if not n:
+        return paper_md, 0
+    cleaned = re.sub(r"\s+([,.;:])", r"\1", cleaned)
+    cleaned = re.sub(r" {2,}", " ", cleaned)
+    return cleaned, n
 
 
 def _strip_orphan_inference_fragments(paper_md: str) -> tuple[str, int]:
@@ -377,6 +457,31 @@ def apply_fixes(
             "description": (
                 "stripped numeric role-repair artifact sentences from "
                 "public prose"
+            ),
+        })
+
+    new_md, n_pipeline_meta = _strip_public_pipeline_meta(new_md)
+    if n_pipeline_meta:
+        log.append({
+            "fix_type": "public_pipeline_meta_strip",
+            "n_changes": n_pipeline_meta,
+            "description": (
+                "stripped public-facing pipeline meta-comments left by "
+                "section repair or absence-audit scaffolding"
+            ),
+        })
+
+    new_md, n_unreferenced_et_al = _strip_unreferenced_et_al_parentheticals(
+        new_md, manifest,
+    )
+    if n_unreferenced_et_al:
+        log.append({
+            "fix_type": "unreferenced_parenthetical_citation_strip",
+            "n_changes": n_unreferenced_et_al,
+            "description": (
+                "removed Author et al. YYYY parenthetical citations that "
+                "were not backed by the manifest, background registry, "
+                "or References block"
             ),
         })
 
@@ -871,6 +976,30 @@ def apply_fixes(
                 "Fix #53 depth-preservation restore re-introduced "
                 "them. Cosmetic strip; safe to re-apply unconditionally "
                 "(Fix #53c)"
+            ),
+        })
+
+    new_md, n_pipeline_meta = _strip_public_pipeline_meta(new_md)
+    if n_pipeline_meta:
+        log.append({
+            "fix_type": "public_pipeline_meta_restrip_post_depth",
+            "n_changes": n_pipeline_meta,
+            "description": (
+                "re-stripped public-facing pipeline meta-comments after "
+                "depth-preservation restore reintroduced them"
+            ),
+        })
+
+    new_md, n_unreferenced_et_al = _strip_unreferenced_et_al_parentheticals(
+        new_md, manifest,
+    )
+    if n_unreferenced_et_al:
+        log.append({
+            "fix_type": "unreferenced_parenthetical_citation_restrip_post_depth",
+            "n_changes": n_unreferenced_et_al,
+            "description": (
+                "re-removed unreferenced Author et al. YYYY parenthetical "
+                "citations after section restoration"
             ),
         })
 

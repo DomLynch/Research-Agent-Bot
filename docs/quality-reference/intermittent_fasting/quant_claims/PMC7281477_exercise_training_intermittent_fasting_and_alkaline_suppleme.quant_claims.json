@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme",
   "doi": "10.3390/life10050074",
-  "extracted_at": "2026-05-05T22:11:18+00:00",
+  "extracted_at": "2026-05-07T16:57:05+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 49,
@@ -25,9 +25,9 @@
       "context_window": "running performance. Methods: 80 overweight subjects of age 45.5 \u00b1 7.8 years were assigned to IF or non-intermittent fasting (nIF)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-402",
@@ -43,9 +43,9 @@
       "context_window": "performance. Methods: 80 overweight subjects of age 45.5 \u00b1 7.8 years were assigned to IF or non-intermittent fasting (nIF). Furt",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-689",
@@ -78,7 +78,7 @@
       "sentence": "There was a significant effect on body weight loss, body fat loss, visceral fat loss and running performance enhancement in all groups ( p < 0.01) for pre and post measurements.",
       "context_window": "at loss and running performance enhancement in all groups ( p < 0.01) for pre and post measurements. Body weight decreased in al",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -518,7 +518,7 @@
       "context_window": "ition. Exercise history was also similar between the verum (1.3 \u00b1 1.1 running hours/week) and placebo groups (1.2 \u00b1 1.4 running h",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -537,7 +537,7 @@
       "context_window": "he verum (1.3 \u00b1 1.1 running hours/week) and placebo groups (1.2 \u00b1 1.4 running hours/week). Changes were calculated between baseli",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1094,7 +1094,7 @@
       "sentence": "IF significantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010).",
       "context_window": "ficantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010). Alkaline mineral",
       "claim_role": "effect",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1112,7 +1112,7 @@
       "sentence": "IF significantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010).",
       "context_window": "y increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010). Alkaline mineral su",
       "claim_role": "effect",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1131,7 +1131,7 @@
       "sentence": "IF significantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010).",
       "context_window": "ght loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010). Alkaline mineral supplementation in additio",
       "claim_role": "effect",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1149,7 +1149,7 @@
       "sentence": "IF significantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010).",
       "context_window": "s compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010). Alkaline mineral supplementation in addition t",
       "claim_role": "effect",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1167,7 +1167,7 @@
       "sentence": "IF significantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010).",
       "context_window": "d to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010). Alkaline mineral supplementation in addition to IF result",
       "claim_role": "effect",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1186,7 +1186,7 @@
       "sentence": "Alkaline mineral supplementation in addition to IF resulted in the highest body weight loss (IF-v: -8.28 \u00b1 0.75 kg).",
       "context_window": "tion to IF resulted in the highest body weight loss (IF-v: -8.28 \u00b1 0.75 kg). Difference to placebo group was significant ( p = 0.01",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1204,7 +1204,7 @@
       "sentence": "Alkaline mineral supplementation in addition to IF resulted in the highest body weight loss (IF-v: -8.28 \u00b1 0.75 kg).",
       "context_window": "IF resulted in the highest body weight loss (IF-v: -8.28 \u00b1 0.75 kg). Difference to placebo group was significant ( p = 0.015).",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1223,9 +1223,9 @@
       "context_window": "8 \u00b1 0.75 kg). Difference to placebo group was significant ( p = 0.015). Furthermore, there was a significant difference between v",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2217",
@@ -1242,9 +1242,9 @@
       "context_window": "ficant difference between verum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ). IF",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2224",
@@ -1260,9 +1260,9 @@
       "context_window": "difference between verum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ). IF le",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2244",
@@ -1279,9 +1279,9 @@
       "context_window": "erum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ). IF led to significantly highe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2251",
@@ -1297,9 +1297,9 @@
       "context_window": "d placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ). IF led to significantly higher f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-2260",
@@ -1315,9 +1315,9 @@
       "context_window": "in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ). IF led to significantly higher fat mass los",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2348",

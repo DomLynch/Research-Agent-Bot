@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC12956928_effect_of_protein_supplementation_on_hip_bone_mineral_densit",
   "doi": "10.1007/s00198-026-07845-6",
-  "extracted_at": "2026-05-05T22:17:42+00:00",
+  "extracted_at": "2026-05-07T16:57:57+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 86,
+    "unit_value": 88,
     "p_value": 32,
     "mean_sd": 42,
     "percentage": 119,
@@ -25,7 +25,7 @@
       "context_window": "n 187 older adults with overweight/obesity participating in 6 months of active WL (caloric restriction + aerobic exercise) follo",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -550,7 +550,7 @@
       "context_window": "l participants received a 6-month WL intervention targeting 10% body weight loss, followed by 12 months of follow-up (weigh",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "weight maintenance",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -567,8 +567,8 @@
       "sentence": "All participants received a 6-month WL intervention targeting 10% body weight loss, followed by 12 months of follow-up (weight maintenance phase).",
       "context_window": "WL intervention targeting 10% body weight loss, followed by 12 months of follow-up (weight maintenance phase). Participants had t",
       "claim_role": "protocol",
-      "endpoint": "body weight",
-      "arm": "",
+      "endpoint": "weight loss",
+      "arm": "weight maintenance",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -586,9 +586,9 @@
       "context_window": "ing metabolic rate (RMR) [ 18 ] measured at baseline and at 6 months for the purpose of estimating each person\u2019s weight maintena",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "weight maintenance",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12956928_effect_of_protein_supplementation_on_hip_bone_mineral_densit-u-1755",
@@ -604,9 +604,9 @@
       "context_window": "calorie level. The WL intervention was designed to elicit ~ 0.5 kg/week WL with moderate caloric restriction (-500 kcal/day su",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12956928_effect_of_protein_supplementation_on_hip_bone_mineral_densit-u-1996",
@@ -622,9 +622,9 @@
       "context_window": "ised moderate-intensity aerobic exercise (treadmill walking 3 days/week), meeting older adult physical activity recommendation",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12956928_effect_of_protein_supplementation_on_hip_bone_mineral_densit-pct-2199",
@@ -748,9 +748,9 @@
       "context_window": "was discontinued for the RecProt and 6-mo HiProt groups at 6 months, while the 18-mo HiProt group continued consuming the prote",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "weight maintenance",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12956928_effect_of_protein_supplementation_on_hip_bone_mineral_densit-u-5290",
@@ -766,9 +766,9 @@
       "context_window": "ht maintenance calorie level based on their RMR measured at 6 months. Fig. 1 Intervention design and scan collection timeline. A",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "weight maintenance",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12956928_effect_of_protein_supplementation_on_hip_bone_mineral_densit-u-6313",
@@ -2731,6 +2731,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC12956928_effect_of_protein_supplementation_on_hip_bone_mineral_densit-u-4072",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 g/kg/day",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 4072,
+      "sentence": "0.8 \u00b1 0.2 g/kg/day; p < 0.01).",
+      "context_window": "lement groups versus the RecProt group (1.3 \u00b1 0.4 vs. 0.8 \u00b1 0.2 g/kg/day; p < 0.01). Dietary protein intake at 18 months was higher",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC12956928_effect_of_protein_supplementation_on_hip_bone_mineral_densit-p-4086",
       "claim_type": "p_value",
       "raw_text": "p < 0.01",
@@ -2798,6 +2816,24 @@
       "source_offset": 4227,
       "sentence": "0.8 \u00b1 0.3 g/kg/day; p < 0.01).",
       "context_window": "up versus the 6-mo HiProt and RecProt groups (1.0 \u00b1 0.4 vs. 0.8 \u00b1 0.3 g/kg/day; p < 0.01). Similar patterns by group were observe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12956928_effect_of_protein_supplementation_on_hip_bone_mineral_densit-u-4233",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 g/kg/day",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 4233,
+      "sentence": "0.8 \u00b1 0.3 g/kg/day; p < 0.01).",
+      "context_window": "sus the 6-mo HiProt and RecProt groups (1.0 \u00b1 0.4 vs. 0.8 \u00b1 0.3 g/kg/day; p < 0.01). Similar patterns by group were observed for est",
       "claim_role": "dose",
       "endpoint": "",
       "arm": "",
@@ -4601,7 +4637,7 @@
       "context_window": "In low-functioning older adults with obesity who achieved ~ 8% WL via moderate caloric restriction and moderate-intensity",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4619,7 +4655,7 @@
       "context_window": "hip trabecular vBMD and femoral cortical thickness at 6 or 18 months. In linear mixed effects analyses, statistically significan",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5051,7 +5087,7 @@
       "context_window": "equired in-person exercise at the center to be reduced to 1-2 days/week after Week 6 of the intervention to comply with infect",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

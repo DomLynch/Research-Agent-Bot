@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i",
   "doi": "10.1038/s41430-025-01693-z",
-  "extracted_at": "2026-05-05T22:11:24+00:00",
+  "extracted_at": "2026-05-07T16:57:03+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 10,
@@ -475,9 +475,9 @@
       "context_window": "1:1 ratio to maintain balanced group sizes [ 14 ]. Group 1 (N = 48) followed a 12-hour night intermittent fasting regimen comb",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-2489",
@@ -493,9 +493,9 @@
       "context_window": "g regimen combined with calorie restriction, while Group 2 (N = 51) followed a calorie-restricted diet only (CR) for 12 weeks.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-2546",
@@ -511,9 +511,9 @@
       "context_window": "2 (N = 51) followed a calorie-restricted diet only (CR) for 12 weeks. Participants in Group 1 (night IF combined with CR) adhere",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-3141",
@@ -583,7 +583,7 @@
       "context_window": "ic control, reflected by fasting blood glucose levels below 130 mg/dL and HbA1c values under 7% at follow-up, accompanied by a re",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -601,7 +601,7 @@
       "context_window": "blood glucose levels below 130 mg/dL and HbA1c values under 7% at follow-up, accompanied by a reduction in body weight. Up",
       "claim_role": "duration",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -708,10 +708,10 @@
       "sentence": "Adherence to both the fasting protocol and dietary restrictions was closely monitored by the research team at the follow-up visits every 2 weeks.",
       "context_window": "onitored by the research team at the follow-up visits every 2 weeks. These visits included regular check-ins where participants",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-7930",
@@ -781,9 +781,9 @@
       "context_window": "randomized to either the intermittent fasting (IF) group ( n = 62) or the calorie restriction (CR) group ( n = 63). Final ana",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-1071",
@@ -799,9 +799,9 @@
       "context_window": "IF) group ( n = 62) or the calorie restriction (CR) group ( n = 63). Final analyses included 48 participants in the IF group a",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-1586",
@@ -1853,7 +1853,7 @@
       "context_window": "e with the findings of Andriessen et al., who reported that 3 weeks of time-restricted eating improved glucose homeostasis but",
       "claim_role": "protocol",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "time-restricted eating",
       "direction": "increase",
       "binding_confidence": "partial"
     }

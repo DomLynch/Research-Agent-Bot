@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC4787218_role_of_docosahexaenoic_acid_in_the_modulation_of_glial_cell",
+  "doi": "10.1186/s12974-016-0525-7",
+  "extracted_at": "2026-05-07T19:33:07+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4787218_role_of_docosahexaenoic_acid_in_the_modulation_of_glial_cell-pct-2622",
+      "claim_type": "percentage",
+      "raw_text": "35 %",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2622,
+      "sentence": "The central nervous system (CNS) has the second greatest amount of lipids of the body and ~35 % are polyunsaturated fatty acids (PUFA), being DHA and arachidonic acid (AA), the two major PUFA [ 16 , 17 ].",
+      "context_window": ") has the second greatest amount of lipids of the body and ~35 % are polyunsaturated fatty acids (PUFA), being DHA and arach",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4787218_role_of_docosahexaenoic_acid_in_the_modulation_of_glial_cell-u-37839",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 37839,
+      "sentence": "Subjects over 60 years old received DHA-enriched fish oil during a year, a treatment that improved memory and attention [ 128 ].",
+      "context_window": "een observed in a double-blind Malayan study. Subjects over 60 years old received DHA-enriched fish oil during a year, a treatme",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

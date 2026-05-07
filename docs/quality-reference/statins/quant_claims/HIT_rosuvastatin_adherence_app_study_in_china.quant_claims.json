@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_rosuvastatin_adherence_app_study_in_china",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_rosuvastatin_adherence_app_study_in_china-u-258",
+      "claim_type": "unit_value",
+      "raw_text": "169 days",
+      "numeric_values": [
+        169.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 258,
+      "sentence": "Posted outcomes: Duration of Treatment. timeframe=limited to 169 days.",
+      "context_window": "osted outcomes: Duration of Treatment. timeframe=limited to 169 days. Active Group=156.7 (\u00b12.24); Control Group=146.0 (\u00b12.69). p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_rosuvastatin_adherence_app_study_in_china-p-325",
+      "claim_type": "p_value",
+      "raw_text": "p=0.0019",
+      "numeric_values": [
+        0.0019
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 325,
+      "sentence": "Active Group=156.7 (\u00b12.24); Control Group=146.0 (\u00b12.69). p=0.0019",
+      "context_window": "s. Active Group=156.7 (\u00b12.24); Control Group=146.0 (\u00b12.69). p=0.0019",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

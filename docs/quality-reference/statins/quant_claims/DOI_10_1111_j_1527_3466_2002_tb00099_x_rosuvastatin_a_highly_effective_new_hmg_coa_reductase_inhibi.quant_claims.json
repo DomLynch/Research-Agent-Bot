@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1111_j_1527_3466_2002_tb00099_x_rosuvastatin_a_highly_effective_new_hmg_coa_reductase_inhibi",
+  "doi": "10.1111/j.1527-3466.2002.tb00099.x",
+  "extracted_at": "2026-05-07T19:24:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_j_1527_3466_2002_tb00099_x_rosuvastatin_a_highly_effective_new_hmg_coa_reductase_inhibi-pct-767",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 767,
+      "sentence": "Dose\u2010ranging studies in hypercholesterolemic patients demonstrated dose\u2010dependent effects in reducing low\u2010density lipoprotein cholesterol (LDL\u2010C) (up to 63%), total cholesterol, and apolipoprotein (apo) B across a 1\u2010 to 40\u2010mg dose range and a significant 8.4% additional reduction in LDL\u2010C, compared with atorvastatin, across the dose ranges of the two agents.",
+      "context_window": "reducing low\u2010density lipoprotein cholesterol (LDL\u2010C) (up to 63%), total cholesterol, and apolipoprotein (apo) B across a 1\u2010",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1527_3466_2002_tb00099_x_rosuvastatin_a_highly_effective_new_hmg_coa_reductase_inhibi-pct-869",
+      "claim_type": "percentage",
+      "raw_text": "8.4%",
+      "numeric_values": [
+        8.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 869,
+      "sentence": "Dose\u2010ranging studies in hypercholesterolemic patients demonstrated dose\u2010dependent effects in reducing low\u2010density lipoprotein cholesterol (LDL\u2010C) (up to 63%), total cholesterol, and apolipoprotein (apo) B across a 1\u2010 to 40\u2010mg dose range and a significant 8.4% additional reduction in LDL\u2010C, compared with atorvastatin, across the dose ranges of the two agents.",
+      "context_window": "n (apo) B across a 1\u2010 to 40\u2010mg dose range and a significant 8.4% additional reduction in LDL\u2010C, compared with atorvastatin,",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

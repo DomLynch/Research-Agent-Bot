@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a",
   "doi": "10.3390/nu12061700",
-  "extracted_at": "2026-05-05T23:37:14+00:00",
+  "extracted_at": "2026-05-07T16:56:43+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 53,
@@ -58,8 +58,8 @@
       "sentence": "Increased protein intake of >0.54 g/kg/day was positively associated with changes in appendicular skeletal muscle mass (ASM)/weight ( B = 0.591, p = 0.026), ASM/body mass index ( B = 0.615, p = 0.023), and ASM:fat ratio ( B = 0.509, p = 0.030) in older men.",
       "context_window": "hysical activity for 12 weeks. Increased protein intake of >0.54 g/kg/day was positively associated with changes in appendicular skel",
       "claim_role": "effect",
-      "endpoint": "body mass index",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -77,7 +77,7 @@
       "context_window": "appendicular skeletal muscle mass (ASM)/weight ( B = 0.591, p = 0.026), ASM/body mass index ( B = 0.615, p = 0.023), and ASM:fat",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -95,7 +95,7 @@
       "context_window": "t ( B = 0.591, p = 0.026), ASM/body mass index ( B = 0.615, p = 0.023), and ASM:fat ratio ( B = 0.509, p = 0.030) in older men. H",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -113,7 +113,7 @@
       "context_window": "dex ( B = 0.615, p = 0.023), and ASM:fat ratio ( B = 0.509, p = 0.030) in older men. However, change in protein intake was not as",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -130,10 +130,10 @@
       "sentence": "The present study suggested that an increased absolute protein amount of >0.54 g/kg/day from habitual protein intake was positively associated with change in muscle mass in older men.",
       "context_window": "udy suggested that an increased absolute protein amount of >0.54 g/kg/day from habitual protein intake was positively associated with",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-351",
@@ -220,10 +220,10 @@
       "sentence": "Previous clinical trials reported that a diet containing 1.5-1.6 g/kg/day of protein improved muscle mass without exercise compared with a diet containing 0.8-1.2 g/kg/day of protein in older adults, with a habitual protein intake of 0.8-1.1 g/kg/day [ 14 , 15 ].",
       "context_window": "revious clinical trials reported that a diet containing 1.5-1.6 g/kg/day of protein improved muscle mass without exercise compared w",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-1793",
@@ -238,10 +238,10 @@
       "sentence": "Previous clinical trials reported that a diet containing 1.5-1.6 g/kg/day of protein improved muscle mass without exercise compared with a diet containing 0.8-1.2 g/kg/day of protein in older adults, with a habitual protein intake of 0.8-1.1 g/kg/day [ 14 , 15 ].",
       "context_window": "e mass without exercise compared with a diet containing 0.8-1.2 g/kg/day of protein in older adults, with a habitual protein intake",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-1872",
@@ -256,10 +256,10 @@
       "sentence": "Previous clinical trials reported that a diet containing 1.5-1.6 g/kg/day of protein improved muscle mass without exercise compared with a diet containing 0.8-1.2 g/kg/day of protein in older adults, with a habitual protein intake of 0.8-1.1 g/kg/day [ 14 , 15 ].",
       "context_window": "tein in older adults, with a habitual protein intake of 0.8-1.1 g/kg/day [ 14 , 15 ]. However, Tieland et al. [ 16 ] showed that pro",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-1968",
@@ -274,10 +274,10 @@
       "sentence": "However, Tieland et al. [ 16 ] showed that protein supplementation of 0.41 g/kg/day did not improve muscle mass without exercise compared with isocaloric placebo in older adults.",
       "context_window": "ieland et al. [ 16 ] showed that protein supplementation of 0.41 g/kg/day did not improve muscle mass without exercise compared with",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-2154",
@@ -292,10 +292,10 @@
       "sentence": "On the other hand, a meta-analysis of clinical trials showed that an average 60% (>0.31 g/kg/day) increased protein intake from habitual protein intake improved resistance training-induced muscle mass in adults [ 17 ].",
       "context_window": ", a meta-analysis of clinical trials showed that an average 60% (>0.31 g/kg/day) increased protein intake from habitual pro",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-2160",
@@ -310,10 +310,10 @@
       "sentence": "On the other hand, a meta-analysis of clinical trials showed that an average 60% (>0.31 g/kg/day) increased protein intake from habitual protein intake improved resistance training-induced muscle mass in adults [ 17 ].",
       "context_window": "ta-analysis of clinical trials showed that an average 60% (>0.31 g/kg/day) increased protein intake from habitual protein intake impr",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-2390",
@@ -328,8 +328,8 @@
       "sentence": "Our previous double-blind randomized controlled trial showed that protein supplementation of 1.5 g/kg/day improved muscle mass and gait speed compared with protein supplementation of 0.8 g/kg/day or 1.2 g/kg/day in undernourished pre-frail and frail older adults [ 14 ].",
       "context_window": "zed controlled trial showed that protein supplementation of 1.5 g/kg/day improved muscle mass and gait speed compared with protein s",
       "claim_role": "effect",
-      "endpoint": "walk speed",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -347,7 +347,7 @@
       "context_window": "ass and gait speed compared with protein supplementation of 0.8 g/kg/day or 1.2 g/kg/day in undernourished pre-frail and frail older",
       "claim_role": "effect",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -365,7 +365,7 @@
       "context_window": "ed compared with protein supplementation of 0.8 g/kg/day or 1.2 g/kg/day in undernourished pre-frail and frail older adults [ 14 ].",
       "claim_role": "effect",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -527,7 +527,7 @@
       "context_window": "ntion value. Changes in protein intake ranged from -0.39 to 1.01 g/kg/day in women and from -0.22 to 1.09 g/kg/day in men. The Stati",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -545,7 +545,7 @@
       "context_window": "nged from -0.39 to 1.01 g/kg/day in women and from -0.22 to 1.09 g/kg/day in men. The Statistical Package for the Social Sciences (S",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -563,7 +563,7 @@
       "context_window": "ht, ASM/BMI, and ASM:fat ratio in total older adults (mean, 0.72 g/kg/day) and men (>0.54 g/kg/day) compared with the lowest sex-spec",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -581,7 +581,7 @@
       "context_window": "ratio in total older adults (mean, 0.72 g/kg/day) and men (>0.54 g/kg/day) compared with the lowest sex-specific tertile of change in",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -599,7 +599,7 @@
       "context_window": "owed that the highest tertile of change in protein intake (>0.56 g/kg/day) was positively associated with changes in ASM/weight, ASM/",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -617,7 +617,7 @@
       "context_window": "pared with the lowest tertile of change in protein intake (\u22640.11 g/kg/day) after adjusting for covariates. Additionally, partial corr",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -635,7 +635,7 @@
       "context_window": "ary data analysis showing that increased protein intake of >0.54 g/kg/day from habitual protein intake was positively associated with",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -670,10 +670,10 @@
       "sentence": "In the clinical study by Mitchell et al. [ 15 ], a diet containing 1.6 g/kg/day of protein improved muscle mass compared with a diet containing 0.8 g/kg/day of protein in older men, with a habitual protein intake of 1.10 g/kg/day, suggesting that additional 0.5 g/kg/day of protein was required to increase muscle mass.",
       "context_window": "clinical study by Mitchell et al. [ 15 ], a diet containing 1.6 g/kg/day of protein improved muscle mass compared with a diet contai",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-596",
@@ -688,10 +688,10 @@
       "sentence": "In the clinical study by Mitchell et al. [ 15 ], a diet containing 1.6 g/kg/day of protein improved muscle mass compared with a diet containing 0.8 g/kg/day of protein in older men, with a habitual protein intake of 1.10 g/kg/day, suggesting that additional 0.5 g/kg/day of protein was required to increase muscle mass.",
       "context_window": "rotein improved muscle mass compared with a diet containing 0.8 g/kg/day of protein in older men, with a habitual protein intake of",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-668",
@@ -706,10 +706,10 @@
       "sentence": "In the clinical study by Mitchell et al. [ 15 ], a diet containing 1.6 g/kg/day of protein improved muscle mass compared with a diet containing 0.8 g/kg/day of protein in older men, with a habitual protein intake of 1.10 g/kg/day, suggesting that additional 0.5 g/kg/day of protein was required to increase muscle mass.",
       "context_window": "of protein in older men, with a habitual protein intake of 1.10 g/kg/day, suggesting that additional 0.5 g/kg/day of protein was req",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-710",
@@ -724,10 +724,10 @@
       "sentence": "In the clinical study by Mitchell et al. [ 15 ], a diet containing 1.6 g/kg/day of protein improved muscle mass compared with a diet containing 0.8 g/kg/day of protein in older men, with a habitual protein intake of 1.10 g/kg/day, suggesting that additional 0.5 g/kg/day of protein was required to increase muscle mass.",
       "context_window": "protein intake of 1.10 g/kg/day, suggesting that additional 0.5 g/kg/day of protein was required to increase muscle mass. However, t",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-785",
@@ -742,8 +742,8 @@
       "sentence": "However, the 0.41 g/kg/day of protein supplementation [ 16 ] and cheese consumption containing 0.23 g/kg/day of protein [ 26 ] had no effect on muscle mass in frail or sarcopenic older adults.",
       "context_window": "protein was required to increase muscle mass. However, the 0.41 g/kg/day of protein supplementation [ 16 ] and cheese consumption co",
       "claim_role": "dose",
-      "endpoint": "sarcopenia",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -760,8 +760,8 @@
       "sentence": "However, the 0.41 g/kg/day of protein supplementation [ 16 ] and cheese consumption containing 0.23 g/kg/day of protein [ 26 ] had no effect on muscle mass in frail or sarcopenic older adults.",
       "context_window": "in supplementation [ 16 ] and cheese consumption containing 0.23 g/kg/day of protein [ 26 ] had no effect on muscle mass in frail or",
       "claim_role": "dose",
-      "endpoint": "sarcopenia",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -778,10 +778,10 @@
       "sentence": "On the other hand, Ten Haaf et al. [ 27 ] showed that protein supplementation of 0.37 g/kg/day improved muscle mass compared with isocaloric placebo in older adults who were training for walking exercise.",
       "context_window": "n Haaf et al. [ 27 ] showed that protein supplementation of 0.37 g/kg/day improved muscle mass compared with isocaloric placebo in ol",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-1275",
@@ -814,7 +814,7 @@
       "sentence": "A combination of exercise and 25 g of protein ingestion increased muscle protein synthesis (MPS) rate by 200%, whereas 25 g of protein ingestion only increased MPS rate by 100% in adults [ 28 ], suggesting that the amount of protein required to improve muscle mass could be lower when combined with exercise.",
       "context_window": "hereas 25 g of protein ingestion only increased MPS rate by 100% in adults [ 28 ], suggesting that the amount of protein req",
       "claim_role": "effect",
-      "endpoint": "protein synthesis",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "high"
@@ -833,7 +833,7 @@
       "context_window": "r adults. In a meta-analysis of clinical trials, an average 60% increase from habitual protein intake improved resistance t",
       "claim_role": "effect",
       "endpoint": "muscle hypertrophy",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -850,10 +850,10 @@
       "sentence": "According to the present study, in older men, an average 97% increase (>0.54 g/kg/day) from habitual protein intake increased muscle mass without exercise, consistently suggesting that exercise and younger age required less protein to increase muscle mass.",
       "context_window": "]. According to the present study, in older men, an average 97% increase (>0.54 g/kg/day) from habitual protein intake incr",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-2202",
@@ -868,10 +868,10 @@
       "sentence": "According to the present study, in older men, an average 97% increase (>0.54 g/kg/day) from habitual protein intake increased muscle mass without exercise, consistently suggesting that exercise and younger age required less protein to increase muscle mass.",
       "context_window": "the present study, in older men, an average 97% increase (>0.54 g/kg/day) from habitual protein intake increased muscle mass without",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-pct-2474",
@@ -940,8 +940,8 @@
       "sentence": "Furthermore, a previous cohort study reported that >1.20 g/kg/day of protein intake was associated with lower prevalence of skeletal muscle mass decline compared with \u22641.20 g/kg/day of protein intake in older men but not in older women during a two-year follow-up period [ 34 ].",
       "context_window": "women. Furthermore, a previous cohort study reported that >1.20 g/kg/day of protein intake was associated with lower prevalence of s",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -958,8 +958,8 @@
       "sentence": "Furthermore, a previous cohort study reported that >1.20 g/kg/day of protein intake was associated with lower prevalence of skeletal muscle mass decline compared with \u22641.20 g/kg/day of protein intake in older men but not in older women during a two-year follow-up period [ 34 ].",
       "context_window": "r prevalence of skeletal muscle mass decline compared with \u22641.20 g/kg/day of protein intake in older men but not in older women durin",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -976,8 +976,8 @@
       "sentence": "On the other hand, Ormsbee et al. [ 35 ] showed that 84 g/day of protein supplementation, accounting for 1.03 g/kg/day of protein for women and 0.95 g/kg/day of protein for men, had a beneficial effect on exercise-induced muscle mass in both young women and men, with a habitual protein intake of 1.0-1.2 g/kg/day.",
       "context_window": "ed that 84 g/day of protein supplementation, accounting for 1.03 g/kg/day of protein for women and 0.95 g/kg/day of protein for men,",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -994,8 +994,8 @@
       "sentence": "On the other hand, Ormsbee et al. [ 35 ] showed that 84 g/day of protein supplementation, accounting for 1.03 g/kg/day of protein for women and 0.95 g/kg/day of protein for men, had a beneficial effect on exercise-induced muscle mass in both young women and men, with a habitual protein intake of 1.0-1.2 g/kg/day.",
       "context_window": "tion, accounting for 1.03 g/kg/day of protein for women and 0.95 g/kg/day of protein for men, had a beneficial effect on exercise-ind",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1012,8 +1012,8 @@
       "sentence": "On the other hand, Ormsbee et al. [ 35 ] showed that 84 g/day of protein supplementation, accounting for 1.03 g/kg/day of protein for women and 0.95 g/kg/day of protein for men, had a beneficial effect on exercise-induced muscle mass in both young women and men, with a habitual protein intake of 1.0-1.2 g/kg/day.",
       "context_window": "young women and men, with a habitual protein intake of 1.0-1.2 g/kg/day. These studies suggested that increased protein amount of 0",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1030,10 +1030,10 @@
       "sentence": "These studies suggested that increased protein amount of 0.57 g/kg/day in the present study was insufficient to improve muscle mass in older women.",
       "context_window": "y. These studies suggested that increased protein amount of 0.57 g/kg/day in the present study was insufficient to improve muscle mas",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-3949",
@@ -1067,7 +1067,7 @@
       "context_window": "us clinical trials reported that protein supplementation of 0.37 g/kg/day [ 27 ] and cheese consumption containing 0.25 g/kg/day of p",
       "claim_role": "dose",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1085,7 +1085,7 @@
       "context_window": "n of 0.37 g/kg/day [ 27 ] and cheese consumption containing 0.25 g/kg/day of protein [ 37 ] had no effect on gait speed in older adul",
       "claim_role": "dose",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1103,7 +1103,7 @@
       "context_window": "ials reported that protein supplementation of approximately 0.26 g/kg/day did not improve resistance training-induced gait speed in c",
       "claim_role": "effect",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "high"
     },
@@ -1121,7 +1121,7 @@
       "context_window": "] showed a beneficial effect of protein supplementation of 0.56 g/kg/day on gait speed compared with control in older adults. This i",
       "claim_role": "dose",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1139,7 +1139,7 @@
       "context_window": "d with gait speed in participants with usual gait speed of >1.0 m/s, but a gait speed <0.6 m/s was associated with protein inta",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1157,7 +1157,7 @@
       "context_window": "ipants with usual gait speed of >1.0 m/s, but a gait speed <0.6 m/s was associated with protein intake based on a previous stud",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1192,10 +1192,10 @@
       "sentence": "The present study suggested that increased protein amount of >0.54 g/kg/day from habitual protein intake was positively associated with changes of muscle mass in older men.",
       "context_window": "e present study suggested that increased protein amount of >0.54 g/kg/day from habitual protein intake was positively associated with",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7352766_amount_of_protein_required_to_improve_muscle_mass_in_older_a-u-337",
@@ -1210,7 +1210,7 @@
       "sentence": "Further study is required to investigate the amount of protein required to improve muscle mass for older women and to confirm whether additional protein intake of >0.54 g/kg/day improves muscle mass in a clinical trial of older men.",
       "context_window": "women and to confirm whether additional protein intake of >0.54 g/kg/day improves muscle mass in a clinical trial of older men.",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"

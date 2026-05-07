@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5873262_muscle_thickness_correlates_to_muscle_cross_sectional_area_i",
   "doi": "10.1111/sms.12961",
-  "extracted_at": "2026-05-05T21:59:20+00:00",
+  "extracted_at": "2026-05-07T16:57:35+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 13,
@@ -425,10 +425,10 @@
       "sentence": "Over the last 20 years, the use of ultrasound has been advocated as a potentially reliable tool for the quantification of skeletal muscle mass in young and older healthy volunteers 4 , 5 , 6 and in clinical populations, such as intensive care patients.",
       "context_window": "c risk posed by repeated radiation exposure. Over the last 20 years, the use of ultrasound has been advocated as a potentially",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5873262_muscle_thickness_correlates_to_muscle_cross_sectional_area_i-msd-56",
@@ -1136,9 +1136,9 @@
       "context_window": "cant positive correlations were found at baseline ( r = .82 P < .001) and 12 weeks ( r = .73 P < .001). Likewise, significant po",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5873262_muscle_thickness_correlates_to_muscle_cross_sectional_area_i-u-987",
@@ -1154,9 +1154,9 @@
       "context_window": "correlations were found at baseline ( r = .82 P < .001) and 12 weeks ( r = .73 P < .001). Likewise, significant positive correla",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5873262_muscle_thickness_correlates_to_muscle_cross_sectional_area_i-p-1006",
@@ -1172,9 +1172,9 @@
       "context_window": "ound at baseline ( r = .82 P < .001) and 12 weeks ( r = .73 P < .001). Likewise, significant positive correlations were found be",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5873262_muscle_thickness_correlates_to_muscle_cross_sectional_area_i-p-1131",
@@ -1190,9 +1190,9 @@
       "context_window": "between VOL and MT at both time points (baseline: r = .76, P < .001, very large; 12 weeks: r = .73, P < .001, very large; Figur",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5873262_muscle_thickness_correlates_to_muscle_cross_sectional_area_i-u-1153",
@@ -1208,9 +1208,9 @@
       "context_window": "both time points (baseline: r = .76, P < .001, very large; 12 weeks: r = .73, P < .001, very large; Figure 3 B). (A) Correlati",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5873262_muscle_thickness_correlates_to_muscle_cross_sectional_area_i-p-1172",
@@ -1226,9 +1226,9 @@
       "context_window": "baseline: r = .76, P < .001, very large; 12 weeks: r = .73, P < .001, very large; Figure 3 B). (A) Correlations between vastus",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5873262_muscle_thickness_correlates_to_muscle_cross_sectional_area_i-n-1677",
@@ -1280,9 +1280,9 @@
       "context_window": "d between the percentage increases in VOL and MT ( r = .33, P = .207, Figure 4 B). (A) Correlations between the percentage chan",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5873262_muscle_thickness_correlates_to_muscle_cross_sectional_area_i-n-2518",
@@ -1334,7 +1334,7 @@
       "context_window": "lations between the increase in lean mass and MT just after 4 weeks of resistance training in young men 23 and the increase/dec",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1352,7 +1352,7 @@
       "context_window": "men 23 and the increase/decrease in lean mass and MT after 31 days of high\u2010intensity interval training in an older population",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

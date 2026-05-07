@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11085115_protein_intake_and_physical_activity_levels_as_determinants_",
   "doi": "10.3390/nu16091380",
-  "extracted_at": "2026-05-05T23:37:01+00:00",
+  "extracted_at": "2026-05-07T16:56:30+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 15,
@@ -24,7 +24,7 @@
       "context_window": "ietary protein intake and physical activity (PA) in adults \u226565 years was assessed relative to sarcopenia risk, as determined by",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "ia in Older People (EWGSOP) definition. Of those screened ( n = 632), 92 participants (77% female) were assessed as being at hi",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -60,7 +60,7 @@
       "context_window": "definition. Of those screened ( n = 632), 92 participants (77% female) were assessed as being at high risk of developing s",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -78,7 +78,7 @@
       "context_window": "ical activity <150 min.week -1 . A further 31 participants (65% female) were defined as being at low risk, with both protei",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "aimed to determine if, in community-dwelling older adults (\u226565 years), identifying those who do not meet dietary protein intake",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -221,7 +221,7 @@
       "sentence": "Sarcopenia was defined by low muscle mass [ASMMI < 7.0 kg/m 2 for males or <6.0 kg/m 2 for females, as determined by DEXA] in addition to meeting low muscle strength cut-points.",
       "context_window": "> 15 s). Sarcopenia was defined by low muscle mass [ASMMI < 7.0 kg/m 2 for males or <6.0 kg/m 2 for females, as determined by",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -239,7 +239,7 @@
       "sentence": "Sarcopenia was defined by low muscle mass [ASMMI < 7.0 kg/m 2 for males or <6.0 kg/m 2 for females, as determined by DEXA] in addition to meeting low muscle strength cut-points.",
       "context_window": "efined by low muscle mass [ASMMI < 7.0 kg/m 2 for males or <6.0 kg/m 2 for females, as determined by DEXA] in addition to meet",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -401,7 +401,7 @@
       "sentence": "The females categorised as high-risk generally had the poorest body composition, strength and function, indicated by a lower muscle mass ( p < 0.001), higher fat mass (and percentage fat mass) ( p < 0.001) and poorer leg strength, shoulder adduction strength and shoulder abduction strength ( p < 0.001).",
       "context_window": ", strength and function, indicated by a lower muscle mass ( p < 0.001), higher fat mass (and percentage fat mass) ( p < 0.001) an",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1086,7 +1086,7 @@
       "context_window": "was moderately inversely correlated with FMI (r s = -0.577, p < 0.001) and weakly correlated with strength and physical function:",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1104,7 +1104,7 @@
       "context_window": "ed with strength and physical function: 30STS (r s = 0.299, p < 0.05), gait speed (r s = 0.266, p < 0.05) and TUG (r s = -0.298,",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1122,7 +1122,7 @@
       "context_window": "on: 30STS (r s = 0.299, p < 0.05), gait speed (r s = 0.266, p < 0.05) and TUG (r s = -0.298, p < 0.05). Energy intake was strong",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1140,7 +1140,7 @@
       "context_window": ", gait speed (r s = 0.266, p < 0.05) and TUG (r s = -0.298, p < 0.05). Energy intake was strongly correlated with protein intake",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1157,8 +1157,8 @@
       "sentence": "Energy intake was strongly correlated with protein intake (r s = -0.758, p < 0.001) and weakly correlated with muscle mass indices, strength and physical function outcomes.",
       "context_window": "was strongly correlated with protein intake (r s = -0.758, p < 0.001) and weakly correlated with muscle mass indices, strength a",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1301,7 +1301,7 @@
       "sentence": "While males generally have more muscle mass than females, both sexes experience a decline in sex hormones during aging; testosterone declines between 2-3% in males each year after 30 years of age [ 55 ], while estrogen declines in females post-menopause [ 56 ].",
       "context_window": "sex hormones during aging; testosterone declines between 2-3% in males each year after 30 years of age [ 55 ], while estr",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1319,7 +1319,7 @@
       "sentence": "While males generally have more muscle mass than females, both sexes experience a decline in sex hormones during aging; testosterone declines between 2-3% in males each year after 30 years of age [ 55 ], while estrogen declines in females post-menopause [ 56 ].",
       "context_window": "testosterone declines between 2-3% in males each year after 30 years of age [ 55 ], while estrogen declines in females post-meno",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1337,7 +1337,7 @@
       "sentence": "When using the functional criteria of severe sarcopenia, independent of muscle mass categorisation, 19% of the high-risk group met these criteria, compared to 0% in the low-risk group and this was reflected with poorer quality of life scores in physical function-related domains.",
       "context_window": "vere sarcopenia, independent of muscle mass categorisation, 19% of the high-risk group met these criteria, compared to 0% i",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1355,7 +1355,7 @@
       "sentence": "When using the functional criteria of severe sarcopenia, independent of muscle mass categorisation, 19% of the high-risk group met these criteria, compared to 0% in the low-risk group and this was reflected with poorer quality of life scores in physical function-related domains.",
       "context_window": "19% of the high-risk group met these criteria, compared to 0% in the low-risk group and this was reflected with poorer qu",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"

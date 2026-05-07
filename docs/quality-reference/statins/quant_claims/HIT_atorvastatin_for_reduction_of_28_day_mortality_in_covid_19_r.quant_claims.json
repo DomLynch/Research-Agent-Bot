@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_atorvastatin_for_reduction_of_28_day_mortality_in_covid_19_r",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_atorvastatin_for_reduction_of_28_day_mortality_in_covid_19_r-u-121",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 121,
+      "sentence": "This randomized placebo-controlled double-blinded clinical trial aims to test the efficacy of administering atorvastatin 40 mg to hospitalized COVID-19 patients for 28 days on the all-cause 28-day mortality.",
+      "context_window": "ial aims to test the efficacy of administering atorvastatin 40 mg to hospitalized COVID-19 patients for 28 days on the all-ca",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_atorvastatin_for_reduction_of_28_day_mortality_in_covid_19_r-u-165",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 165,
+      "sentence": "This randomized placebo-controlled double-blinded clinical trial aims to test the efficacy of administering atorvastatin 40 mg to hospitalized COVID-19 patients for 28 days on the all-cause 28-day mortality.",
+      "context_window": "ng atorvastatin 40 mg to hospitalized COVID-19 patients for 28 days on the all-cause 28-day mortality.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

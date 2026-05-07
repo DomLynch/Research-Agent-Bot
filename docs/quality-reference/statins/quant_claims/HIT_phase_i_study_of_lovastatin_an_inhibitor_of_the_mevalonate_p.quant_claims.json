@@ -1,0 +1,84 @@
+{
+  "paper_id": "HIT_phase_i_study_of_lovastatin_an_inhibitor_of_the_mevalonate_p",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_phase_i_study_of_lovastatin_an_inhibitor_of_the_mevalonate_p-u-452",
+      "claim_type": "unit_value",
+      "raw_text": "14 years",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 452,
+      "sentence": "From January 1992 to July 1994, 88 patients with solid tumors (median age, 57 +/- 14 years) were treated p.o. with 7-day courses of lovastatin given monthly at doses ranging from 2 to 45 mg/kg/day.",
+      "context_window": "uly 1994, 88 patients with solid tumors (median age, 57 +/- 14 years) were treated p.o. with 7-day courses of lovastatin given m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_phase_i_study_of_lovastatin_an_inhibitor_of_the_mevalonate_p-u-554",
+      "claim_type": "unit_value",
+      "raw_text": "45 mg/kg/day",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 554,
+      "sentence": "From January 1992 to July 1994, 88 patients with solid tumors (median age, 57 +/- 14 years) were treated p.o. with 7-day courses of lovastatin given monthly at doses ranging from 2 to 45 mg/kg/day.",
+      "context_window": "rses of lovastatin given monthly at doses ranging from 2 to 45 mg/kg/day. The inhibitory effects of lovastatin were monitored throug",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_phase_i_study_of_lovastatin_an_inhibitor_of_the_mevalonate_p-pct-1019",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1019,
+      "sentence": "Cyclical treatment with lovastatin markedly inhibited the mevalonate pathway, evidenced by reductions in both cholesterol and ubiquinone concentrations, by up to 43 and 49% of pretreatment values, respectively.",
+      "context_window": "cholesterol and ubiquinone concentrations, by up to 43 and 49% of pretreatment values, respectively. The effect was transi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_phase_i_study_of_lovastatin_an_inhibitor_of_the_mevalonate_p-u-1679",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1679,
+      "sentence": "Lovastatin given p.o. at a dose of 25 mg/kg daily for 7 consecutive days is well tolerated.",
+      "context_window": "rrent high-grade glioma. Lovastatin given p.o. at a dose of 25 mg/kg daily for 7 consecutive days is well tolerated. The occu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

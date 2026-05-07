@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10213657_six_month_periodic_fasting_does_not_affect_somatosensory_ner",
   "doi": "10.3389/fendo.2023.1143799",
-  "extracted_at": "2026-05-05T22:11:21+00:00",
+  "extracted_at": "2026-05-07T16:56:50+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 42,
@@ -27,7 +27,7 @@
       "context_window": "unction was assessed in thirty-one patients with T2D (HbA1c 7.8 \u00b1 1.3% [61.4 \u00b1 14.3 mmol/mol]) before and after a six-month fasti",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -45,7 +45,7 @@
       "context_window": "n was assessed in thirty-one patients with T2D (HbA1c 7.8 \u00b1 1.3% [61.4 \u00b1 14.3 mmol/mol]) before and after a six-month fastin",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -64,7 +64,7 @@
       "context_window": "assessed in thirty-one patients with T2D (HbA1c 7.8 \u00b1 1.3% [61.4 \u00b1 14.3 mmol/mol]) before and after a six-month fasting-mimicking d",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -82,7 +82,7 @@
       "context_window": "d in thirty-one patients with T2D (HbA1c 7.8 \u00b1 1.3% [61.4 \u00b1 14.3 mmol/mol]) before and after a six-month fasting-mimicking diet (",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -100,7 +100,7 @@
       "context_window": ") before and after a six-month fasting-mimicking diet (FMD; n=14) or a control Mediterranean diet (M-diet; n=17). Neuropathy",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -118,7 +118,7 @@
       "context_window": "g diet (FMD; n=14) or a control Mediterranean diet (M-diet; n=17). Neuropathy disability score (NDS), neuropathy symptoms sc",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2677,8 +2677,8 @@
       "sentence": "Positive associations between chronic caloric restriction with weight-loss and thermal nociception have been previously described in animal models with mice exhibiting higher hot-plate latencies after tail-amputation on caloric restriction (40% reduction of caloric intake over 100 weeks) in comparison to ad libitum fed controls.",
       "context_window": "ate latencies after tail-amputation on caloric restriction (40% reduction of caloric intake over 100 weeks) in comparison t",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "weight loss",
+      "arm": "ad libitum",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2695,8 +2695,8 @@
       "sentence": "Positive associations between chronic caloric restriction with weight-loss and thermal nociception have been previously described in animal models with mice exhibiting higher hot-plate latencies after tail-amputation on caloric restriction (40% reduction of caloric intake over 100 weeks) in comparison to ad libitum fed controls.",
       "context_window": "n caloric restriction (40% reduction of caloric intake over 100 weeks) in comparison to ad libitum fed controls. Possible mechani",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "weight loss",
+      "arm": "ad libitum",
       "direction": "increase",
       "binding_confidence": "partial"
     },

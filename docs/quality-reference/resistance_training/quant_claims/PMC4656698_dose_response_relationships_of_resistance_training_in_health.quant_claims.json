@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health",
   "doi": "10.1007/s40279-015-0385-9",
-  "extracted_at": "2026-05-05T21:59:22+00:00",
+  "extracted_at": "2026-05-07T16:57:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "p_value": 51,
@@ -134,7 +134,7 @@
       "context_window": "t for the single training variable. A training period of 50-53 weeks, a training frequency of three sessions per week, a trainin",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -152,7 +152,7 @@
       "context_window": "o nine repetitions per set, a training intensity from 51 to 69 % of the 1RM, a total time under tension of 6.0 s, a rest of",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -368,7 +368,7 @@
       "context_window": "selected by (a) population: healthy subjects who were aged \u226560 years, with a study mean age \u226565 years; (b) intervention: machine",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -386,7 +386,7 @@
       "context_window": "hy subjects who were aged \u226560 years, with a study mean age \u226565 years; (b) intervention: machine-based RT containing a descriptio",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -548,7 +548,7 @@
       "context_window": "ontrol means divided by the pooled standard deviation, with 95 % confidence intervals (CIs). If two or more studies reported",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1241,9 +1241,9 @@
       "context_window": "for number of sets and repetitions per exercise were 1.57 (95 % CI 1.20-1.94; I 2 = 80 %, \u03c7 2 = 163.10, df = 32, p < 0.001) and 1.61 (95",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-pct-7799",
@@ -1259,9 +1259,9 @@
       "context_window": "epetitions per exercise were 1.57 (95 % CI 1.20-1.94; I 2 = 80 %, \u03c7 2 = 163.10, df = 32, p < 0.001) and 1.61 (95 % CI 1.22-1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-p-7828",
@@ -1277,9 +1277,9 @@
       "context_window": "1.57 (95 % CI 1.20-1.94; I 2 = 80 %, \u03c7 2 = 163.10, df = 32, p < 0.001) and 1.61 (95 % CI 1.22-1.99; I 2 = 81 %, \u03c7 2 = 161.71, df",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-ci-7849",
@@ -1296,9 +1296,9 @@
       "context_window": "94; I 2 = 80 %, \u03c7 2 = 163.10, df = 32, p < 0.001) and 1.61 (95 % CI 1.22-1.99; I 2 = 81 %, \u03c7 2 = 161.71, df = 31, p < 0.01), indicative o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-pct-7874",
@@ -1314,9 +1314,9 @@
       "context_window": ".10, df = 32, p < 0.001) and 1.61 (95 % CI 1.22-1.99; I 2 = 81 %, \u03c7 2 = 161.71, df = 31, p < 0.01), indicative of large effe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-p-7903",
@@ -1332,9 +1332,9 @@
       "context_window": "1.61 (95 % CI 1.22-1.99; I 2 = 81 %, \u03c7 2 = 161.71, df = 31, p < 0.01), indicative of large effects. Two to three sets per exerci",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-pct-8208",
@@ -2062,9 +2062,9 @@
       "context_window": "umber of sets as well as repetitions per exercise was 0.54 (95 % CI 0.30-0.78; I 2 = 0 %, \u03c7 2 = 7.25, df = 10, p = 0.70) and 0.42 (95 % C",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-pct-13632",
@@ -2080,9 +2080,9 @@
       "context_window": "repetitions per exercise was 0.54 (95 % CI 0.30-0.78; I 2 = 0 %, \u03c7 2 = 7.25, df = 10, p = 0.70) and 0.42 (95 % CI -0.32-0.9",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-p-13658",
@@ -2098,9 +2098,9 @@
       "context_window": "as 0.54 (95 % CI 0.30-0.78; I 2 = 0 %, \u03c7 2 = 7.25, df = 10, p = 0.70) and 0.42 (95 % CI -0.32-0.90; I 2 = 0 %, \u03c7 2 = 0.08, df =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-ci-13678",
@@ -2117,9 +2117,9 @@
       "context_window": "0-0.78; I 2 = 0 %, \u03c7 2 = 7.25, df = 10, p = 0.70) and 0.42 (95 % CI -0.32-0.90; I 2 = 0 %, \u03c7 2 = 0.08, df = 1, p = 0.77), indicative of mo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-pct-13704",
@@ -2135,9 +2135,9 @@
       "context_window": ".25, df = 10, p = 0.70) and 0.42 (95 % CI -0.32-0.90; I 2 = 0 %, \u03c7 2 = 0.08, df = 1, p = 0.77), indicative of moderate and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-p-13729",
@@ -2153,9 +2153,9 @@
       "context_window": "nd 0.42 (95 % CI -0.32-0.90; I 2 = 0 %, \u03c7 2 = 0.08, df = 1, p = 0.77), indicative of moderate and small effects, respectively. T",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4656698_dose_response_relationships_of_resistance_training_in_health-pct-14205",
@@ -2334,7 +2334,7 @@
       "context_window": "p = 0.68). Exercise at a moderate intensity between 51 and 60 % of the 1RM produced the greatest effects on measures of mus",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3168,7 +3168,7 @@
       "context_window": "ercise on measures of muscle strength in old adults aged 60-80 years [ 67 , 68 ]. Only the study examining a longer training per",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3222,7 +3222,7 @@
       "context_window": "rt of the meta-regression results that training intensity ( p < 0.01) predicted the effects of RT on muscle strength, the larges",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3240,7 +3240,7 @@
       "context_window": "gth occurred when strength training intensity was set at 70-79 % of 1RM (range 40-90 % 1RM, Fig. 5 ). Our systematic search",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3258,7 +3258,7 @@
       "context_window": "ngth training intensity was set at 70-79 % of 1RM (range 40-90 % 1RM, Fig. 5 ). Our systematic search identified six studies",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3456,7 +3456,7 @@
       "context_window": "morphology when conducting RT with a training period of 50-53 weeks (mean SMD bs = 0.59), a training frequency of three session",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3474,7 +3474,7 @@
       "context_window": "ns per set (mean SMD bs = 0.49), a training intensity of 51-69 % of the 1RM (mean SMD bs = 0.43), a total time under tension",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3564,8 +3564,8 @@
       "sentence": "These authors recommended the following RT variables to prevent the loss of muscle mass in old age: training period of 8-12 weeks, three training sessions per week, training intensities of 60-80 % of the 1RM, three to four sets and eight to 12 repetitions per exercise.",
       "context_window": "nt the loss of muscle mass in old age: training period of 8-12 weeks, three training sessions per week, training intensities of",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "muscle mass",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3583,7 +3583,7 @@
       "context_window": "hree training sessions per week, training intensities of 60-80 % of the 1RM, three to four sets and eight to 12 repetitions",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3727,7 +3727,7 @@
       "context_window": "firm conclusions. It seems that 60 s of rest between sets ( p = 0.06; two studies), a training frequency of two sessions per wee",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3745,7 +3745,7 @@
       "context_window": "rove measures of muscle morphology: a training period of 50-53 weeks, a training frequency of three sessions per week, a trainin",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3763,7 +3763,7 @@
       "context_window": "o nine repetitions per set, a training intensity from 51 to 69 % of the 1RM, a total time under tension of 6.0 s, a rest of",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     }

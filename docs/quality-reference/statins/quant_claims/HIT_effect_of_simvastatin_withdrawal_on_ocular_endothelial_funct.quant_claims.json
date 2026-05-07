@@ -1,0 +1,102 @@
+{
+  "paper_id": "HIT_effect_of_simvastatin_withdrawal_on_ocular_endothelial_funct",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "hazard_ratio": 2,
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_simvastatin_withdrawal_on_ocular_endothelial_funct-hr-l-275",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 275,
+      "sentence": "In a recently published study, discontinuation of statin therapy in patients after acute myocardial infarction was associated with a higher all-cause mortality (hazard ratio 3,45) and a higher cardiac mortality (hazard ratio 4,65).",
+      "context_window": "nfarction was associated with a higher all-cause mortality (hazard ratio 3,45) and a higher cardiac mortality (hazard ratio 4,65). Inc",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_simvastatin_withdrawal_on_ocular_endothelial_funct-hr-l-326",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 326,
+      "sentence": "In a recently published study, discontinuation of statin therapy in patients after acute myocardial infarction was associated with a higher all-cause mortality (hazard ratio 3,45) and a higher cardiac mortality (hazard ratio 4,65).",
+      "context_window": "rtality (hazard ratio 3,45) and a higher cardiac mortality (hazard ratio 4,65). Increasing evidence suggests that statins also have va",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_simvastatin_withdrawal_on_ocular_endothelial_funct-u-1071",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 1071,
+      "sentence": "For this purpose 20 healthy subjects will be treated with 40 mg/day of simvastatin for a period of 4 weeks.",
+      "context_window": ". For this purpose 20 healthy subjects will be treated with 40 mg/day of simvastatin for a period of 4 weeks. Flicker induced vas",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_simvastatin_withdrawal_on_ocular_endothelial_funct-u-1112",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1112,
+      "sentence": "For this purpose 20 healthy subjects will be treated with 40 mg/day of simvastatin for a period of 4 weeks.",
+      "context_window": "ll be treated with 40 mg/day of simvastatin for a period of 4 weeks. Flicker induced vasodilatation and retinal oxygen saturati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_simvastatin_withdrawal_on_ocular_endothelial_funct-u-1331",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1331,
+      "sentence": "Flicker induced vasodilatation and retinal oxygen saturation will be measured with the Dynamic Vessel Analyzer system by Imedos at baseline, in the 4th week of simvastatin or placebo intake as well as 3, 7 and 14 days after the end of intake.",
+      "context_window": "h week of simvastatin or placebo intake as well as 3, 7 and 14 days after the end of intake.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

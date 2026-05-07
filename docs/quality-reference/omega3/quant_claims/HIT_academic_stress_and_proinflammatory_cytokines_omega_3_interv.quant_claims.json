@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_academic_stress_and_proinflammatory_cytokines_omega_3_interv",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_academic_stress_and_proinflammatory_cytokines_omega_3_interv-u-157",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 157,
+      "sentence": "Posted outcomes: Serum ln(IL-6). timeframe=every 3 weeks for 3 months after initiating supplementation (outcome reported is.",
+      "context_window": "students. Posted outcomes: Serum ln(IL-6). timeframe=every 3 weeks for 3 months after initiating supplementation (outcome repo",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_academic_stress_and_proinflammatory_cytokines_omega_3_interv-u-169",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 169,
+      "sentence": "Posted outcomes: Serum ln(IL-6). timeframe=every 3 weeks for 3 months after initiating supplementation (outcome reported is.",
+      "context_window": "osted outcomes: Serum ln(IL-6). timeframe=every 3 weeks for 3 months after initiating supplementation (outcome reported is. Plac",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_academic_stress_and_proinflammatory_cytokines_omega_3_interv-p-301",
+      "claim_type": "p_value",
+      "raw_text": "p=0.97",
+      "numeric_values": [
+        0.97
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 301,
+      "sentence": "Placebo=0.054 (\u00b10.070); Omega-3 Fish Oil Supplement=0.051 (\u00b10.069). p=0.97",
+      "context_window": "0.054 (\u00b10.070); Omega-3 Fish Oil Supplement=0.051 (\u00b10.069). p=0.97",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

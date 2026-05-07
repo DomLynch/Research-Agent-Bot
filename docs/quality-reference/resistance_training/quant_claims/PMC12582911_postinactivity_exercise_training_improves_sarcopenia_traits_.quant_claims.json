@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_",
   "doi": "10.1002/jcsm.70080",
-  "extracted_at": "2026-05-05T21:59:18+00:00",
+  "extracted_at": "2026-05-07T16:57:29+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 42,
+    "unit_value": 44,
     "mean_sd": 15,
     "p_value": 25,
     "percentage": 20,
@@ -25,7 +25,7 @@
       "context_window": "blind, placebo\u2010controlled randomized trial, females aged 40-60 years were evaluated before and after 2 weeks of reduced activity",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "l, females aged 40-60 years were evaluated before and after 2 weeks of reduced activity monitored through pedometer and after a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -62,7 +62,7 @@
       "context_window": "ll timepoints. Eighty\u2010three self\u2010reported healthy females (50.7 \u00b1 5.3 years; 52 postmenopausal) completed the reduced\u2010activity pe",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -80,7 +80,7 @@
       "context_window": "points. Eighty\u2010three self\u2010reported healthy females (50.7 \u00b1 5.3 years; 52 postmenopausal) completed the reduced\u2010activity period,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -416,9 +416,9 @@
       "context_window": "icantly increased compared to preintervention baseline (all p < 0.05). No training \u00d7 menopause or training \u00d7 supplementation int",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-p-2417",
@@ -542,7 +542,7 @@
       "context_window": "timepoints: before physical activity reduction (T1), after 2 weeks of physical activity reduction (T2) and after a subsequent",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -578,7 +578,7 @@
       "context_window": "Exclusion criteria included body mass index (BMI) < 18 or > 35 kg/m 2 , being engaged in regular exercise training, a previou",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -596,7 +596,7 @@
       "context_window": "upplement\u2010plus\u2010exercise or placebo\u2010plus\u2010exercise groups for 12 weeks, with 67 participants completing the intervention and all s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1390,9 +1390,9 @@
       "context_window": "enopausal. Compliance rates for supplement consumption were 94.7% (FMP) and 90.0% (placebo). Sarcopenia\u2010related variables bef",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-pct-3136",
@@ -1408,9 +1408,9 @@
       "context_window": "iance rates for supplement consumption were 94.7% (FMP) and 90.0% (placebo). Sarcopenia\u2010related variables before and after th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-p-3347",
@@ -1516,9 +1516,9 @@
       "context_window": "vs. 174 g/day; p < 0.05) and protein (94.9 vs. 82.9 g/day; p < 0.05) consumptions, but these differences did not persist when F",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-p-4304",
@@ -1534,7 +1534,7 @@
       "context_window": "gher protein intake in the FMP group (101.4 vs. 89.8 g/day, p = 0.017), which disappeared when FMP or placebo nutritional values",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1587,10 +1587,10 @@
       "sentence": "Muscle mass variables before (T1) and after (T2) 2 weeks of reduced physical activity and after a subsequent 12 weeks of exercise training (T3), according to menopausal status. (A) Whole body nonosseous lean body mass; (B) midthigh muscle cross\u2010sectional area; and (C) shank muscle cross\u2010sectional area.",
       "context_window": "go test. Muscle mass variables before (T1) and after (T2) 2 weeks of reduced physical activity and after a subsequent 12 week",
       "claim_role": "effect",
-      "endpoint": "lean body mass",
-      "arm": "",
+      "endpoint": "muscle mass",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-u-4949",
@@ -1606,9 +1606,9 @@
       "context_window": "2 weeks of reduced physical activity and after a subsequent 12 weeks of exercise training (T3), according to menopausal status.",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-p-5311",
@@ -1642,9 +1642,9 @@
       "context_window": "n T1. Muscle strength variables before (T1) and after (T2) 2 weeks of reduced physical activity and after a subsequent 12 week",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-u-5444",
@@ -1660,9 +1660,9 @@
       "context_window": "2 weeks of reduced physical activity and after a subsequent 12 weeks of exercise training (T3), according to menopausal status.",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-p-5789",
@@ -1695,10 +1695,10 @@
       "sentence": "Physical function variables before (T1) and after (T2) 2 weeks of reduced physical activity and after a subsequent 12 weeks of exercise training (T3), according to menopausal status. (A) Usual gait speed; (B) timed up and go test; (C) stair climb time; and (D) squat jump height.",
       "context_window": "T1. Physical function variables before (T1) and after (T2) 2 weeks of reduced physical activity and after a subsequent 12 week",
       "claim_role": "effect",
-      "endpoint": "walk speed",
-      "arm": "",
+      "endpoint": "physical function",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-u-5924",
@@ -1714,9 +1714,9 @@
       "context_window": "2 weeks of reduced physical activity and after a subsequent 12 weeks of exercise training (T3), according to menopausal status.",
       "claim_role": "effect",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-p-6256",
@@ -1750,7 +1750,7 @@
       "context_window": "amined changes in a variety of sarcopenia traits induced by 2 weeks of step reduction and a subsequent 12\u2010week period of exerci",
       "claim_role": "protocol",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1785,10 +1785,10 @@
       "sentence": "The potential for acute periods of physical inactivity to accelerate age\u2010related losses of muscle mass and function has been labelled a \u2018catabolic crisis\u2019 [ 29 ] and has usually been investigated in individuals aged 60 years and older.",
       "context_window": "29 ] and has usually been investigated in individuals aged 60 years and older. For example, in healthy older adults, Breen et a",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-u-2496",
@@ -1857,7 +1857,7 @@
       "sentence": "Our findings indicate that 2 weeks of reduced physical activity are sufficient to impair several (but not all) measures of muscle mass, strength and function without an additional effect of menopausal status.",
       "context_window": "eraction with menopausal status. Our findings indicate that 2 weeks of reduced physical activity are sufficient to impair sever",
       "claim_role": "protocol",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1876,7 +1876,7 @@
       "context_window": "physical inactivity [ 20 , 23 , 29 ]. In a previous report, 4 weeks of exercise rehabilitation immediately after 2 weeks of ste",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1894,7 +1894,7 @@
       "context_window": "eport, 4 weeks of exercise rehabilitation immediately after 2 weeks of step reduction in older adults not only promoted recover",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1935,6 +1935,42 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-u-6831",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 g/kg/day",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6831,
+      "sentence": "At baseline, daily protein intake was 1.1 g/kg/day, which is above the recommended minimal RDI of 0.8 g/kg/day.",
+      "context_window": "tween the two groups. At baseline, daily protein intake was 1.1 g/kg/day, which is above the recommended minimal RDI of 0.8 g/kg/day",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-u-6891",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6891,
+      "sentence": "At baseline, daily protein intake was 1.1 g/kg/day, which is above the recommended minimal RDI of 0.8 g/kg/day.",
+      "context_window": "1.1 g/kg/day, which is above the recommended minimal RDI of 0.8 g/kg/day. Future studies are needed to clarify the potential additiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC12582911_postinactivity_exercise_training_improves_sarcopenia_traits_-u-8177",
       "claim_type": "unit_value",
       "raw_text": "4 months",
@@ -1966,7 +2002,7 @@
       "context_window": "ommencement, the training duration was longer (4 months vs. 12 weeks), and a greater emphasis was placed on resistance training",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1983,8 +2019,8 @@
       "sentence": "However, Kukuljan et al. [ 27 ] found that the ingestion of 400 mL/day of low\u2010fat fortified milk (836 kJ, 1000\u2010mg calcium, 800 IU vitamin D and 13.2 g of protein) did not amplify the effects of resistance training over an 18\u2010month period on muscle mass, strength or physical function in healthy middle\u2010aged to older men (50-79 years).",
       "context_window": "However, Kukuljan et al. [ 27 ] found that the ingestion of 400 mL/day of low\u2010fat fortified milk (836 kJ, 1000\u2010mg calcium, 800",
       "claim_role": "dose",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "muscle mass",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2001,8 +2037,8 @@
       "sentence": "However, Kukuljan et al. [ 27 ] found that the ingestion of 400 mL/day of low\u2010fat fortified milk (836 kJ, 1000\u2010mg calcium, 800 IU vitamin D and 13.2 g of protein) did not amplify the effects of resistance training over an 18\u2010month period on muscle mass, strength or physical function in healthy middle\u2010aged to older men (50-79 years).",
       "context_window": "r physical function in healthy middle\u2010aged to older men (50-79 years). The present double\u2010blind study is the first to investigat",
       "claim_role": "dose",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "physical function",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     }

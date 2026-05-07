@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6628438_the_effects_of_a_multi_ingredient_performance_supplement_com",
   "doi": "10.3390/sports7060152",
-  "extracted_at": "2026-05-05T21:59:15+00:00",
+  "extracted_at": "2026-05-07T16:57:36+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 7,
@@ -25,9 +25,9 @@
       "context_window": "re assigned to consume either an experimental MIPS (MIPS) ( n = 15) or a placebo (PLA) ( n = 15) concurrently with a six-week",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC6628438_the_effects_of_a_multi_ingredient_performance_supplement_com-n-623",
@@ -43,9 +43,9 @@
       "context_window": "an experimental MIPS (MIPS) ( n = 15) or a placebo (PLA) ( n = 15) concurrently with a six-week periodized RT program. Body c",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC6628438_the_effects_of_a_multi_ingredient_performance_supplement_com-msd-936",
@@ -245,7 +245,7 @@
       "context_window": "weeks with six weeks of RT: experimental MIPS group (MIPS, n = 15) or placebo control group (PLA, n = 15). Baseline descripti",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -263,7 +263,7 @@
       "context_window": "al MIPS group (MIPS, n = 15) or placebo control group (PLA, n = 15). Baseline descriptive measures are presented in Table 1 .",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -335,9 +335,9 @@
       "context_window": "jects met the following inclusion criteria: (1) age = 18 to 32 years, (2) not a competitive athlete in a collegiate or professio",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6628438_the_effects_of_a_multi_ingredient_performance_supplement_com-u-1674",
@@ -353,9 +353,9 @@
       "context_window": "tance-trained as defined by resistance exercise performed 3-4 days/week for six months prior to the start of the study and cou",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6628438_the_effects_of_a_multi_ingredient_performance_supplement_com-u-2145",
@@ -696,7 +696,7 @@
       "context_window": "t 1RM improvement for each exercise for MIPS (back squat = +26.8 \u00b1 23.3%, p < 0.001; bench press = +20.5 \u00b1 13.5%, p < 0.001; deadli",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -714,7 +714,7 @@
       "context_window": "mprovement for each exercise for MIPS (back squat = +26.8 \u00b1 23.3%, p < 0.001; bench press = +20.5 \u00b1 13.5%, p < 0.001; deadlif",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -732,7 +732,7 @@
       "context_window": "ent for each exercise for MIPS (back squat = +26.8 \u00b1 23.3%, p < 0.001; bench press = +20.5 \u00b1 13.5%, p < 0.001; deadlift = +27.6 \u00b1",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -751,7 +751,7 @@
       "context_window": "MIPS (back squat = +26.8 \u00b1 23.3%, p < 0.001; bench press = +20.5 \u00b1 13.5%, p < 0.001; deadlift = +27.6 \u00b1 20.4%, p < 0.001) and PLA (",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -769,7 +769,7 @@
       "context_window": "ack squat = +26.8 \u00b1 23.3%, p < 0.001; bench press = +20.5 \u00b1 13.5%, p < 0.001; deadlift = +27.6 \u00b1 20.4%, p < 0.001) and PLA (b",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -787,7 +787,7 @@
       "context_window": "at = +26.8 \u00b1 23.3%, p < 0.001; bench press = +20.5 \u00b1 13.5%, p < 0.001; deadlift = +27.6 \u00b1 20.4%, p < 0.001) and PLA (back squat =",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -806,7 +806,7 @@
       "context_window": "0.001; bench press = +20.5 \u00b1 13.5%, p < 0.001; deadlift = +27.6 \u00b1 20.4%, p < 0.001) and PLA (back squat = +31.4 \u00b1 24.7%, p < 0.001",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -824,7 +824,7 @@
       "context_window": "bench press = +20.5 \u00b1 13.5%, p < 0.001; deadlift = +27.6 \u00b1 20.4%, p < 0.001) and PLA (back squat = +31.4 \u00b1 24.7%, p < 0.001;",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -842,7 +842,7 @@
       "context_window": "press = +20.5 \u00b1 13.5%, p < 0.001; deadlift = +27.6 \u00b1 20.4%, p < 0.001) and PLA (back squat = +31.4 \u00b1 24.7%, p < 0.001; bench pres",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -861,7 +861,7 @@
       "context_window": "deadlift = +27.6 \u00b1 20.4%, p < 0.001) and PLA (back squat = +31.4 \u00b1 24.7%, p < 0.001; bench press = +14.3 \u00b1 12.0%, p < 0.001; deadli",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -879,7 +879,7 @@
       "context_window": "t = +27.6 \u00b1 20.4%, p < 0.001) and PLA (back squat = +31.4 \u00b1 24.7%, p < 0.001; bench press = +14.3 \u00b1 12.0%, p < 0.001; deadlif",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -897,7 +897,7 @@
       "context_window": ".6 \u00b1 20.4%, p < 0.001) and PLA (back squat = +31.4 \u00b1 24.7%, p < 0.001; bench press = +14.3 \u00b1 12.0%, p < 0.001; deadlift = +20.4 \u00b1",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -916,7 +916,7 @@
       "context_window": "PLA (back squat = +31.4 \u00b1 24.7%, p < 0.001; bench press = +14.3 \u00b1 12.0%, p < 0.001; deadlift = +20.4 \u00b1 14.9%, p < 0.001) ( Figure",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -934,7 +934,7 @@
       "context_window": "ack squat = +31.4 \u00b1 24.7%, p < 0.001; bench press = +14.3 \u00b1 12.0%, p < 0.001; deadlift = +20.4 \u00b1 14.9%, p < 0.001) ( Figure 1",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -952,7 +952,7 @@
       "context_window": "at = +31.4 \u00b1 24.7%, p < 0.001; bench press = +14.3 \u00b1 12.0%, p < 0.001; deadlift = +20.4 \u00b1 14.9%, p < 0.001) ( Figure 1 ). There w",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -971,7 +971,7 @@
       "context_window": "0.001; bench press = +14.3 \u00b1 12.0%, p < 0.001; deadlift = +20.4 \u00b1 14.9%, p < 0.001) ( Figure 1 ). There was no group \u00d7 time intera",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -989,7 +989,7 @@
       "context_window": "bench press = +14.3 \u00b1 12.0%, p < 0.001; deadlift = +20.4 \u00b1 14.9%, p < 0.001) ( Figure 1 ). There was no group \u00d7 time interac",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1007,7 +1007,7 @@
       "context_window": "press = +14.3 \u00b1 12.0%, p < 0.001; deadlift = +20.4 \u00b1 14.9%, p < 0.001) ( Figure 1 ). There was no group \u00d7 time interaction for ba",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },

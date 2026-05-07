@@ -1,0 +1,326 @@
+{
+  "paper_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d",
+  "doi": "10.1093/qjmed/hcp093",
+  "extracted_at": "2026-05-07T19:24:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 4,
+    "confidence_interval": 7
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-u-368",
+      "claim_type": "unit_value",
+      "raw_text": "2.6 years",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 368,
+      "sentence": "DESIGN: A prospective, population-based cohort study with a mean follow-up of 2.6 years.",
+      "context_window": "ive, population-based cohort study with a mean follow-up of 2.6 years. METHODS: Total 774 older adults [48% female; mean (standar",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-pct-412",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 412,
+      "sentence": "METHODS: Total 774 older adults [48% female; mean (standard deviation) age = 62 (7) years] were examined at baseline and follow-up.",
+      "context_window": "an follow-up of 2.6 years. METHODS: Total 774 older adults [48% female; mean (standard deviation) age = 62 (7) years] were",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-pct-709",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 709,
+      "sentence": "RESULTS: There were 147 (19%) statin users at baseline and 179 (23%) at follow-up.",
+      "context_window": "ed for statin users and non-users. RESULTS: There were 147 (19%) statin users at baseline and 179 (23%) at follow-up. Longi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-pct-748",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 748,
+      "sentence": "RESULTS: There were 147 (19%) statin users at baseline and 179 (23%) at follow-up.",
+      "context_window": "LTS: There were 147 (19%) statin users at baseline and 179 (23%) at follow-up. Longitudinal analyses revealed statin use at",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-u-864",
+      "claim_type": "unit_value",
+      "raw_text": "2.6 years",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 864,
+      "sentence": "Longitudinal analyses revealed statin use at baseline predicted increased falls risk scores over 2.6 years (0.14, 95% CI 0.01 to 0.27) and a trend towards increased %ALM (0.45%, 95% CI -0.01 to 0.92).",
+      "context_window": "use at baseline predicted increased falls risk scores over 2.6 years (0.14, 95% CI 0.01 to 0.27) and a trend towards increased %",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-ci-881",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.01 to 0.27",
+      "numeric_values": [
+        0.01,
+        0.27
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 881,
+      "sentence": "Longitudinal analyses revealed statin use at baseline predicted increased falls risk scores over 2.6 years (0.14, 95% CI 0.01 to 0.27) and a trend towards increased %ALM (0.45%, 95% CI -0.01 to 0.92).",
+      "context_window": "predicted increased falls risk scores over 2.6 years (0.14, 95% CI 0.01 to 0.27) and a trend towards increased %ALM (0.45%, 95% CI -0.01 to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-pct-938",
+      "claim_type": "percentage",
+      "raw_text": "0.45%",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 938,
+      "sentence": "Longitudinal analyses revealed statin use at baseline predicted increased falls risk scores over 2.6 years (0.14, 95% CI 0.01 to 0.27) and a trend towards increased %ALM (0.45%, 95% CI -0.01 to 0.92).",
+      "context_window": "4, 95% CI 0.01 to 0.27) and a trend towards increased %ALM (0.45%, 95% CI -0.01 to 0.92). Statin users at both time points de",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-ci-945",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.01 to 0.92",
+      "numeric_values": [
+        -0.01,
+        0.92
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 945,
+      "sentence": "Longitudinal analyses revealed statin use at baseline predicted increased falls risk scores over 2.6 years (0.14, 95% CI 0.01 to 0.27) and a trend towards increased %ALM (0.45%, 95% CI -0.01 to 0.92).",
+      "context_window": "CI 0.01 to 0.27) and a trend towards increased %ALM (0.45%, 95% CI -0.01 to 0.92). Statin users at both time points demonstrated decreased l",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-u-1039",
+      "claim_type": "unit_value",
+      "raw_text": "5.02 kg",
+      "numeric_values": [
+        5.02
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1039,
+      "sentence": "Statin users at both time points demonstrated decreased leg strength (-5.02 kg, 95% CI -9.65 to -0.40) and LMQ (-0.30 kg/kg, 95% CI -0.59 to -0.01), and trended towards increased falls risk (0.13, 95% CI -0.01 to 0.26) compared to controls.",
+      "context_window": "s at both time points demonstrated decreased leg strength (-5.02 kg, 95% CI -9.65 to -0.40) and LMQ (-0.30 kg/kg, 95% CI -0.59",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-ci-1048",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -9.65 to -0.40",
+      "numeric_values": [
+        -9.65,
+        -0.4
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1048,
+      "sentence": "Statin users at both time points demonstrated decreased leg strength (-5.02 kg, 95% CI -9.65 to -0.40) and LMQ (-0.30 kg/kg, 95% CI -0.59 to -0.01), and trended towards increased falls risk (0.13, 95% CI -0.01 to 0.26) compared to controls.",
+      "context_window": "time points demonstrated decreased leg strength (-5.02 kg, 95% CI -9.65 to -0.40) and LMQ (-0.30 kg/kg, 95% CI -0.59 to -0.01), and trended",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-u-1081",
+      "claim_type": "unit_value",
+      "raw_text": "0.30 kg",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1081,
+      "sentence": "Statin users at both time points demonstrated decreased leg strength (-5.02 kg, 95% CI -9.65 to -0.40) and LMQ (-0.30 kg/kg, 95% CI -0.59 to -0.01), and trended towards increased falls risk (0.13, 95% CI -0.01 to 0.26) compared to controls.",
+      "context_window": "ed leg strength (-5.02 kg, 95% CI -9.65 to -0.40) and LMQ (-0.30 kg/kg, 95% CI -0.59 to -0.01), and trended towards increased f",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-ci-1093",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.59 to -0.01",
+      "numeric_values": [
+        -0.59,
+        -0.01
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1093,
+      "sentence": "Statin users at both time points demonstrated decreased leg strength (-5.02 kg, 95% CI -9.65 to -0.40) and LMQ (-0.30 kg/kg, 95% CI -0.59 to -0.01), and trended towards increased falls risk (0.13, 95% CI -0.01 to 0.26) compared to controls.",
+      "context_window": "gth (-5.02 kg, 95% CI -9.65 to -0.40) and LMQ (-0.30 kg/kg, 95% CI -0.59 to -0.01), and trended towards increased falls risk (0.13, 95% CI -0",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-ci-1165",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.01 to 0.26",
+      "numeric_values": [
+        -0.01,
+        0.26
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1165,
+      "sentence": "Statin users at both time points demonstrated decreased leg strength (-5.02 kg, 95% CI -9.65 to -0.40) and LMQ (-0.30 kg/kg, 95% CI -0.59 to -0.01), and trended towards increased falls risk (0.13, 95% CI -0.01 to 0.26) compared to controls.",
+      "context_window": "to -0.01), and trended towards increased falls risk (0.13, 95% CI -0.01 to 0.26) compared to controls. Finally, statin users at both baseli",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-u-1300",
+      "claim_type": "unit_value",
+      "raw_text": "16.17 kg",
+      "numeric_values": [
+        16.17
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1300,
+      "sentence": "Finally, statin users at both baseline and follow-up demonstrated decreased leg strength (-16.17 kg, 95% CI -30.19 to -2.15) and LMQ (-1.13 kg/kg, 95% CI -2.02 to -0.24) compared to those who had ceased statin use at follow-up.",
+      "context_window": "aseline and follow-up demonstrated decreased leg strength (-16.17 kg, 95% CI -30.19 to -2.15) and LMQ (-1.13 kg/kg, 95% CI -2.02",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-ci-1310",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -30.19 to -2.15",
+      "numeric_values": [
+        -30.19,
+        -2.15
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1310,
+      "sentence": "Finally, statin users at both baseline and follow-up demonstrated decreased leg strength (-16.17 kg, 95% CI -30.19 to -2.15) and LMQ (-1.13 kg/kg, 95% CI -2.02 to -0.24) compared to those who had ceased statin use at follow-up.",
+      "context_window": "d follow-up demonstrated decreased leg strength (-16.17 kg, 95% CI -30.19 to -2.15) and LMQ (-1.13 kg/kg, 95% CI -2.02 to -0.24) compared to t",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-u-1344",
+      "claim_type": "unit_value",
+      "raw_text": "1.13 kg",
+      "numeric_values": [
+        1.13
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1344,
+      "sentence": "Finally, statin users at both baseline and follow-up demonstrated decreased leg strength (-16.17 kg, 95% CI -30.19 to -2.15) and LMQ (-1.13 kg/kg, 95% CI -2.02 to -0.24) compared to those who had ceased statin use at follow-up.",
+      "context_window": "leg strength (-16.17 kg, 95% CI -30.19 to -2.15) and LMQ (-1.13 kg/kg, 95% CI -2.02 to -0.24) compared to those who had ceased",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1093_qjmed_hcp093_statin_therapy_muscle_function_and_falls_risk_in_community_d-ci-1356",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -2.02 to -0.24",
+      "numeric_values": [
+        -2.02,
+        -0.24
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1356,
+      "sentence": "Finally, statin users at both baseline and follow-up demonstrated decreased leg strength (-16.17 kg, 95% CI -30.19 to -2.15) and LMQ (-1.13 kg/kg, 95% CI -2.02 to -0.24) compared to those who had ceased statin use at follow-up.",
+      "context_window": "h (-16.17 kg, 95% CI -30.19 to -2.15) and LMQ (-1.13 kg/kg, 95% CI -2.02 to -0.24) compared to those who had ceased statin use at follow-up.",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "statin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

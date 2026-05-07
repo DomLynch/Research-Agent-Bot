@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_vitamin_d_and_fish_oil_for_autoimmune_disease_inflammation_a",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_vitamin_d_and_fish_oil_for_autoimmune_disease_inflammation_a-u-1140",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1140,
+      "sentence": "Posted outcomes: Serum Levels of Biomarkers of Systemic Inflammation: Interleukin-6 (IL-6). timeframe=Baseline and 1 year.",
+      "context_window": "Inflammation: Interleukin-6 (IL-6). timeframe=Baseline and 1 year. Active Vitamin D=1.71; Placebo Vitamin D=1.68; Active n-3",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_vitamin_d_and_fish_oil_for_autoimmune_disease_inflammation_a-p-1215",
+      "claim_type": "p_value",
+      "raw_text": "p=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1215,
+      "sentence": "Active Vitamin D=1.71; Placebo Vitamin D=1.68; Active n-3 FA=1.69. p=0.02",
+      "context_window": "Vitamin D=1.71; Placebo Vitamin D=1.68; Active n-3 FA=1.69. p=0.02",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

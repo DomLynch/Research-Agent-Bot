@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6163522_impact_of_meeting_different_guidelines_for_protein_intake_on",
   "doi": "10.3390/nu10091156",
-  "extracted_at": "2026-05-05T23:37:10+00:00",
+  "extracted_at": "2026-05-07T16:56:39+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 13,
@@ -26,7 +26,7 @@
       "context_window": "objectively assessed physical activity. In 106 women (65 to 70 years old), protein intake was assessed using a 6-day food record",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "sentence": "Women below the 0.8 g.kg -1 BW threshold had a lower muscle mass ( p < 0.05) with no differences in physical function variables.",
       "context_window": "elow the 0.8 g.kg -1 BW threshold had a lower muscle mass ( p < 0.05) with no differences in physical function variables. When b",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -61,7 +61,7 @@
       "sentence": "When based on the higher RDA threshold (1.1 g.kg -1 BW), in addition to significant differences in muscle mass, women below the higher threshold had a significantly ( p < 0.05) higher likelihood of having physical limitations.",
       "context_window": "ass, women below the higher threshold had a significantly ( p < 0.05) higher likelihood of having physical limitations. In concl",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -669,10 +669,10 @@
       "sentence": "A total of 34% of women reported engagement in strengthening activities at least twice a week and there were no significant differences in body composition variables nor physical function measures between those involved and not involved in this type of activities.",
       "context_window": "ps strength (2.8 \u00b1 0.7 vs. 2.5 \u00b1 0.6; p < 0.05). A total of 34% of women reported engagement in strengthening activities at",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6163522_impact_of_meeting_different_guidelines_for_protein_intake_on-msd-1005",
@@ -816,7 +816,7 @@
       "context_window": "The average daily protein intake of the entire sample was 1.03 \u00b1 0.26 g.kg -1 BW. When categorizing participants in high and low",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -944,7 +944,7 @@
       "context_window": "he 1.1 g.kg -1 BW threshold ( Table 1 ) became attenuated ( p = 0.081) after SMI adjustment. No corresponding differences were ob",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "high"
     },

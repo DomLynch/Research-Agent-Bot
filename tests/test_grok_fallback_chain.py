@@ -125,6 +125,20 @@ def test_prompt_uses_body_citations_when_registry_provided() -> None:
     assert "Allowed body citations" in user
 
 
+def test_prompt_keeps_same_background_citation_with_distinct_numerics() -> None:
+    """A single background citation can define multiple canonical
+    thresholds. Grok must see each token+numeric pair; deduping only by
+    citation token hides legitimate values and causes false P1 strips."""
+    _system, user = grok_reviewer._build_grok_prompt(
+        "## Body\n\nCruz-Jentoft 2019 reports 16 kg and 27 kg thresholds.",
+        {"receipts": [], "topic": "caloric_restriction"},
+        {"p1_pass": True, "score_out_of_10": 10},
+        citation_registry={},
+    )
+    assert "- Cruz-Jentoft 2019: 16 kg" in user
+    assert "- Cruz-Jentoft 2019: 27 kg" in user
+
+
 def test_prompt_falls_back_to_receipt_ids_without_registry() -> None:
     """Backward compat: callers that don't pass citation_registry get
     the legacy receipt_id-based prompt (just to keep old call sites

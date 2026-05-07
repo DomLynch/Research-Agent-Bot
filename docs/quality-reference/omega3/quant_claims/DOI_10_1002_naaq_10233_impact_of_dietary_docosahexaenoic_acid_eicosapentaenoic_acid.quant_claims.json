@@ -1,0 +1,67 @@
+{
+  "paper_id": "DOI_10_1002_naaq_10233_impact_of_dietary_docosahexaenoic_acid_eicosapentaenoic_acid",
+  "doi": "10.1002/naaq.10233",
+  "extracted_at": "2026-05-07T19:33:03+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1002_naaq_10233_impact_of_dietary_docosahexaenoic_acid_eicosapentaenoic_acid-msd-354",
+      "claim_type": "mean_sd",
+      "raw_text": "20.8 \u00b1 0.03",
+      "numeric_values": [
+        20.8,
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 354,
+      "sentence": "Fish (initial body weight = 20.8 \u00b1 0.03 g; mean \u00b1 SE) were fed six different isoproteic (53%) and isolipidic (7%) diets containing graded DHA:EPA ratios (D/E) of 0.54, 0.97, 1.51, 2.01, 2.41, and 2.85.",
+      "context_window": "iant Grouper E. lanceolatus \u2640). Fish (initial body weight = 20.8 \u00b1 0.03 g; mean \u00b1 SE) were fed six different isoproteic (53%) and i",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_naaq_10233_impact_of_dietary_docosahexaenoic_acid_eicosapentaenoic_acid-pct-415",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 415,
+      "sentence": "Fish (initial body weight = 20.8 \u00b1 0.03 g; mean \u00b1 SE) were fed six different isoproteic (53%) and isolipidic (7%) diets containing graded DHA:EPA ratios (D/E) of 0.54, 0.97, 1.51, 2.01, 2.41, and 2.85.",
+      "context_window": "0.8 \u00b1 0.03 g; mean \u00b1 SE) were fed six different isoproteic (53%) and isolipidic (7%) diets containing graded DHA:EPA ratios",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1002_naaq_10233_impact_of_dietary_docosahexaenoic_acid_eicosapentaenoic_acid-pct-436",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 436,
+      "sentence": "Fish (initial body weight = 20.8 \u00b1 0.03 g; mean \u00b1 SE) were fed six different isoproteic (53%) and isolipidic (7%) diets containing graded DHA:EPA ratios (D/E) of 0.54, 0.97, 1.51, 2.01, 2.41, and 2.85.",
+      "context_window": "SE) were fed six different isoproteic (53%) and isolipidic (7%) diets containing graded DHA:EPA ratios (D/E) of 0.54, 0.97",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years",
   "doi": "10.1038/s41430-020-0593-8",
-  "extracted_at": "2026-05-05T22:17:54+00:00",
+  "extracted_at": "2026-05-07T16:58:01+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 35,
@@ -23,7 +23,7 @@
       "context_window": "IE study. Overall, 143 participants (body mass index: 21.9-28.0 kg/m 2 ) were randomized to a CR group that aimed to achieve 2",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -41,7 +41,7 @@
       "context_window": "g/m 2 ) were randomized to a CR group that aimed to achieve 25% CR for 2 years. Throughout the intervention, body weight wa",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -59,7 +59,7 @@
       "context_window": "e randomized to a CR group that aimed to achieve 25% CR for 2 years. Throughout the intervention, body weight was measured, and",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -76,7 +76,7 @@
       "sentence": "Polynomials indicated that adherence percentile score increased above 50 after approximately week 20, although adherence remained acceptable (adherence percentile score less than 80) (R 2 = 0.89; P < 0.001).",
       "context_window": "able (adherence percentile score less than 80) (R 2 = 0.89; P < 0.001). Weight loss occurred until approximately week 60 and then",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -148,10 +148,10 @@
       "sentence": "In individuals who are non-obese, adherence to 25% CR declines after 20 weeks, but two years of CR that stimulates a meaningful reduction in weight, promotes aging-related benefits and negligibly affects appetite is viable.",
       "context_window": "tervention. In individuals who are non-obese, adherence to 25% CR declines after 20 weeks, but two years of CR that stimul",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-u-1501",
@@ -166,10 +166,10 @@
       "sentence": "In individuals who are non-obese, adherence to 25% CR declines after 20 weeks, but two years of CR that stimulates a meaningful reduction in weight, promotes aging-related benefits and negligibly affects appetite is viable.",
       "context_window": "duals who are non-obese, adherence to 25% CR declines after 20 weeks, but two years of CR that stimulates a meaningful reduction",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-463",
@@ -185,7 +185,7 @@
       "context_window": "rgy Phase 2 (CALERIE) study showed that prolonged CR causes 10% weight loss during the first year and essentially maintaine",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -203,7 +203,7 @@
       "context_window": "erived from clinical assessment visits conducted once every 6 months, meaning the precise time course changes in body weight dur",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -220,10 +220,10 @@
       "sentence": "Doubly labelled water measurements were used to assess adherence during CR over the two years ( 2 ), but these data were again collected once every 6 months and thus fail to capture fluctuations that may arise between measurement points.",
       "context_window": "years ( 2 ), but these data were again collected once every 6 months and thus fail to capture fluctuations that may arise betwee",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-u-1516",
@@ -239,7 +239,7 @@
       "context_window": "iduals who are non-obese, yet this study was performed over 6 months, meaning the prolonged influence of CR on appetite ratings",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -311,7 +311,7 @@
       "context_window": "cipants in the CR group targeted an immediate and sustained 25% reduction in energy intake from energy requirements determi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -347,7 +347,7 @@
       "context_window": "ing that participants were considered adherent at less than 25% CR ( 11 ). These percentile limits were illustrated, provid",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -419,7 +419,7 @@
       "context_window": "re analyzed. Most participants in the CR group were female (69.2%), and the mean (\u00b1SD) age and BMI of the CR group were 38.0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -437,7 +437,7 @@
       "context_window": "SD) age and BMI of the CR group were 38.0 (7.3) y and 25.2 (1.8 kg/m 2 ), respectively ( Supplementary Table 1 ). These and ad",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -599,9 +599,9 @@
       "context_window": "0.4%), respectively. The CR group achieved an average CR of 11.7% (0.7%) over the two years. Mean (\u00b1SEM) percent CR attained",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-676",
@@ -617,9 +617,9 @@
       "context_window": "respectively. The CR group achieved an average CR of 11.7% (0.7%) over the two years. Mean (\u00b1SEM) percent CR attained at mon",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-782",
@@ -635,9 +635,9 @@
       "context_window": "CR attained at month 6, month 12, month 18 and month 24 was 19.5% (0.8%), 10.8% (0.7%), 8.7% (0.8%) and 8.0% (0.9%), respecti",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-789",
@@ -653,9 +653,9 @@
       "context_window": "ined at month 6, month 12, month 18 and month 24 was 19.5% (0.8%), 10.8% (0.7%), 8.7% (0.8%) and 8.0% (0.9%), respectively.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-796",
@@ -671,9 +671,9 @@
       "context_window": "month 6, month 12, month 18 and month 24 was 19.5% (0.8%), 10.8% (0.7%), 8.7% (0.8%) and 8.0% (0.9%), respectively. Table 1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-803",
@@ -689,9 +689,9 @@
       "context_window": "6, month 12, month 18 and month 24 was 19.5% (0.8%), 10.8% (0.7%), 8.7% (0.8%) and 8.0% (0.9%), respectively. Table 1 shows",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-810",
@@ -707,9 +707,9 @@
       "context_window": "h 12, month 18 and month 24 was 19.5% (0.8%), 10.8% (0.7%), 8.7% (0.8%) and 8.0% (0.9%), respectively. Table 1 shows change",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-816",
@@ -725,9 +725,9 @@
       "context_window": "month 18 and month 24 was 19.5% (0.8%), 10.8% (0.7%), 8.7% (0.8%) and 8.0% (0.9%), respectively. Table 1 shows changes in C",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-826",
@@ -743,9 +743,9 @@
       "context_window": "nd month 24 was 19.5% (0.8%), 10.8% (0.7%), 8.7% (0.8%) and 8.0% (0.9%), respectively. Table 1 shows changes in CTS-derived",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-832",
@@ -761,9 +761,9 @@
       "context_window": "th 24 was 19.5% (0.8%), 10.8% (0.7%), 8.7% (0.8%) and 8.0% (0.9%), respectively. Table 1 shows changes in CTS-derived outco",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-p-1032",
@@ -832,10 +832,10 @@
       "sentence": "The trajectory of the adherence percentile score was best fit with a third-order polynomial (R 2 = 0.89; P < 0.001).",
       "context_window": "ore was best fit with a third-order polynomial (R 2 = 0.89; P < 0.001). This showed that adherence percentile score was increasin",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-p-1991",
@@ -923,7 +923,7 @@
       "context_window": ", with the best-fit regression showing a linear increase of 0.056 mm every 2 weeks (R 2 = 0.30; P < 0.001; Figure 4A ). Likewise",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -941,7 +941,7 @@
       "context_window": "-fit regression showing a linear increase of 0.056 mm every 2 weeks (R 2 = 0.30; P < 0.001; Figure 4A ). Likewise, the best-fit",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -959,7 +959,7 @@
       "context_window": "ng a linear increase of 0.056 mm every 2 weeks (R 2 = 0.30; P < 0.001; Figure 4A ). Likewise, the best-fit regression for ratings",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1048,10 +1048,10 @@
       "sentence": "In the present study, we observed that adherence to a two-year CR intervention decreased within 20 weeks and then continued to fall to week 60.",
       "context_window": "at adherence to a two-year CR intervention decreased within 20 weeks and then continued to fall to week 60. However, an acceptab",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-u-277",
@@ -1067,9 +1067,9 @@
       "context_window": "e, and we showed that body weight declined within the first 60 weeks of the intervention before plateauing. Furthermore, hunger",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-926",
@@ -1085,7 +1085,7 @@
       "context_window": "ll until this point. These results imply that compliance to 25% CR is challenging and are consonant with our energy intake",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1103,7 +1103,7 @@
       "context_window": "ures at clinic visits, which showed percent CR decreased to 10.8% by the end of year 1 and then further lowered to 8.0% CR at",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1121,7 +1121,7 @@
       "context_window": "d to 10.8% by the end of year 1 and then further lowered to 8.0% CR at the end of the intervention ( 2 ). Given greater CR h",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1139,7 +1139,7 @@
       "context_window": "percent CR and age-related improvements, particularly after 20 weeks. However, participants were experiencing CR relative to bas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1157,9 +1157,9 @@
       "context_window": "means of improving longevity, average CR at approximately 8-10% represents an achievable and safe degree of energy restrict",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-2081",
@@ -1193,7 +1193,7 @@
       "context_window": "ur clinic measures which showed that the CR group displayed 8.3 kg of weight loss during the first 52 weeks prior to plateauin",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1211,7 +1211,7 @@
       "context_window": "e CR group displayed 8.3 kg of weight loss during the first 52 weeks prior to plateauing to 7.6 kg weight loss at the end of the",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1229,7 +1229,7 @@
       "context_window": "eight loss during the first 52 weeks prior to plateauing to 7.6 kg weight loss at the end of the trial ( 2 ). Though weight lo",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1319,7 +1319,7 @@
       "context_window": "t increased in the CR group, yet the mean increase was only 0.056 mm and 0.058 mm every 2 weeks, respectively, which equates to",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1337,7 +1337,7 @@
       "context_window": "n the CR group, yet the mean increase was only 0.056 mm and 0.058 mm every 2 weeks, respectively, which equates to an increase o",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1355,7 +1355,7 @@
       "context_window": "yet the mean increase was only 0.056 mm and 0.058 mm every 2 weeks, respectively, which equates to an increase of ~3 mm over t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1373,7 +1373,7 @@
       "context_window": "ery 2 weeks, respectively, which equates to an increase of ~3 mm over the course of the intervention. Researchers have sugge",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1391,9 +1391,9 @@
       "context_window": "e intervention. Researchers have suggested that a change of 10% (10 mm) in VAS scores is meaningful and reasonable in the c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-u-5067",
@@ -1409,9 +1409,9 @@
       "context_window": "ervention. Researchers have suggested that a change of 10% (10 mm) in VAS scores is meaningful and reasonable in the context",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-u-5546",
@@ -1427,9 +1427,9 @@
       "context_window": "appetite VAS ratings were not significantly altered during 6 months of CR in individuals who were non-obese. These also corrobo",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-u-5924",
@@ -1480,10 +1480,10 @@
       "sentence": "Adherence to a 25% CR diet is attainable for approximately 20 weeks, with continued reductions until 8-10% CR.",
       "context_window": "t triggering meaningful changes in appetite. Adherence to a 25% CR diet is attainable for approximately 20 weeks, with cont",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-u-8509",
@@ -1498,10 +1498,10 @@
       "sentence": "Adherence to a 25% CR diet is attainable for approximately 20 weeks, with continued reductions until 8-10% CR.",
       "context_window": "Adherence to a 25% CR diet is attainable for approximately 20 weeks, with continued reductions until 8-10% CR. While these find",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-8553",
@@ -1516,10 +1516,10 @@
       "sentence": "Adherence to a 25% CR diet is attainable for approximately 20 weeks, with continued reductions until 8-10% CR.",
       "context_window": "r approximately 20 weeks, with continued reductions until 8-10% CR. While these findings indicate that 25% CR is challengin",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years-pct-8596",
@@ -1535,7 +1535,7 @@
       "context_window": "ductions until 8-10% CR. While these findings indicate that 25% CR is challenging in obesogenic environments, a tailored CR",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     }

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef",
   "doi": "10.1186/1475-2891-11-98",
-  "extracted_at": "2026-05-05T22:11:27+00:00",
+  "extracted_at": "2026-05-07T16:57:04+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 13,
@@ -989,7 +989,7 @@
       "sentence": "During the weight loss period (weeks 3-10), adherence to the liquid meal protocol was 92 \u00b1 3% in the IFCR-L group over the course of the 8 weeks.",
       "context_window": "iod (weeks 3-10), adherence to the liquid meal protocol was 92 \u00b1 3% in the IFCR-L group over the course of the 8 weeks. IFCR-F",
       "claim_role": "duration",
-      "endpoint": "body weight",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1007,7 +1007,7 @@
       "sentence": "During the weight loss period (weeks 3-10), adherence to the liquid meal protocol was 92 \u00b1 3% in the IFCR-L group over the course of the 8 weeks.",
       "context_window": "weeks 3-10), adherence to the liquid meal protocol was 92 \u00b1 3% in the IFCR-L group over the course of the 8 weeks. IFCR-F",
       "claim_role": "duration",
-      "endpoint": "body weight",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1025,7 +1025,7 @@
       "sentence": "During the weight loss period (weeks 3-10), adherence to the liquid meal protocol was 92 \u00b1 3% in the IFCR-L group over the course of the 8 weeks.",
       "context_window": "ocol was 92 \u00b1 3% in the IFCR-L group over the course of the 8 weeks. IFCR-F subjects achieved their energy restriction goal on",
       "claim_role": "duration",
-      "endpoint": "body weight",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -2226,7 +2226,7 @@
       "context_window": "CR-L: Intermittent fasting calorie restriction-liquid diet (n = 28); IFCR-F: Intermittent fasting calorie restriction-food bas",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2244,7 +2244,7 @@
       "context_window": ": Intermittent fasting calorie restriction-food based diet (n = 26); BW: Body weight; FM: Fat mass; FFM: Fat free mass, VAT: V",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2316,9 +2316,9 @@
       "context_window": "fter the IFCR - L intervention. A . Abdominal visceral fat (58 cm 2 ) and subcutaneous fat (245 cm 2 ) before the intermitten",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef-u-4602",
@@ -2334,9 +2334,9 @@
       "context_window": "A . Abdominal visceral fat (58 cm 2 ) and subcutaneous fat (245 cm 2 ) before the intermittent fasting calorie restriction-liq",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef-u-4747",
@@ -2866,9 +2866,9 @@
       "context_window": "CR-L: Intermittent fasting calorie restriction-liquid diet (n = 28); IFCR-F: Intermittent fasting calorie restriction-food bas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef-n-6193",
@@ -2884,9 +2884,9 @@
       "context_window": ": Intermittent fasting calorie restriction-food based diet (n = 26); TC: Total cholesterol; LDL: Low density lipoprotein chole",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef-p-6400",
@@ -2902,9 +2902,9 @@
       "context_window": "lues significantly different from baseline (week 3) values, P < 0.01 (Repeated-measures ANOVA). IFCR-L group experienced signifi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef-p-6586",
@@ -2938,9 +2938,9 @@
       "context_window": "CR-L: Intermittent fasting calorie restriction-liquid diet (n = 28); IFCR-F: Intermittent fasting calorie restriction-food bas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef-n-6853",
@@ -2956,9 +2956,9 @@
       "context_window": ": Intermittent fasting calorie restriction-food based diet (n = 26). Small LDL particles (<255 \u00c5), medium LDL particles (255-2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef-p-7074",
@@ -3082,7 +3082,7 @@
       "context_window": "CR-L: Intermittent fasting calorie restriction-liquid diet (n = 28); IFCR-F: Intermittent fasting calorie restriction-food bas",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3100,7 +3100,7 @@
       "context_window": ": Intermittent fasting calorie restriction-food based diet (n = 26); BP: Blood pressure. 2 Change expressed as the difference",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3154,9 +3154,9 @@
       "context_window": "bjects consumed a very-low calorie diet (VLCD; <500 kcal/d) 1 day per week, and ate ad libitum every other day of the week. A",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef-u-801",
@@ -3226,9 +3226,9 @@
       "context_window": "y Harvie et al. [ 4 ]. In this study, obese women underwent 2 days of VLCD (600 kcal/d) and ate ad libitum on every other day",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef-u-1095",
@@ -3244,9 +3244,9 @@
       "context_window": "l/d) and ate ad libitum on every other day of the week, for 24 weeks [ 4 ]. Body weight was reduced by 7% (6 kg), fat mass decre",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef-pct-1138",
@@ -3751,7 +3751,7 @@
       "sentence": "For every kg of body weight loss, LDL cholesterol is estimated to decrease by 2 mg/dl [ 16 ].",
       "context_window": "dy weight loss, LDL cholesterol is estimated to decrease by 2 mg/dl [ 16 ]. Since the IFCR-L group lost 1.4 kg more body wei",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

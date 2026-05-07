@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1111_j_1472_8206_2004_00299_x_chemical_pharmacokinetic_and_pharmacodynamic_properties_of_s",
+  "doi": "10.1111/j.1472-8206.2004.00299.x",
+  "extracted_at": "2026-05-07T19:24:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_j_1472_8206_2004_00299_x_chemical_pharmacokinetic_and_pharmacodynamic_properties_of_s-pct-1824",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1824,
+      "sentence": "The bioavailability of the statins differs greatly, from 5% for lovastatin and simvastatin to 60% or greater for cerivastatin and pitavastatin.",
+      "context_window": "s. The bioavailability of the statins differs greatly, from 5% for lovastatin and simvastatin to 60% or greater for ceriva",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1472_8206_2004_00299_x_chemical_pharmacokinetic_and_pharmacodynamic_properties_of_s-pct-1861",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1861,
+      "sentence": "The bioavailability of the statins differs greatly, from 5% for lovastatin and simvastatin to 60% or greater for cerivastatin and pitavastatin.",
+      "context_window": "differs greatly, from 5% for lovastatin and simvastatin to 60% or greater for cerivastatin and pitavastatin. Clinical stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

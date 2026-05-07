@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio",
   "doi": "10.1111/acel.14018",
-  "extracted_at": "2026-05-05T22:17:52+00:00",
+  "extracted_at": "2026-05-07T16:57:52+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 52,
@@ -24,9 +24,9 @@
       "context_window": "al. Adult participants without obesity were randomized to a 25% CR intervention or an ad libitum intake control. Correlatio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-msd-816",
@@ -116,7 +116,7 @@
       "context_window": "nergy intake from protein and carbohydrate and lower fat at 12 months compared to baseline; comparable results were observed at 2",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -134,7 +134,7 @@
       "context_window": "s compared to baseline; comparable results were observed at 24 months. Protein in the background of higher carbohydrate intake wa",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -151,7 +151,7 @@
       "sentence": "Protein in the background of higher carbohydrate intake was associated with greater adherence at 24 months.",
       "context_window": "arbohydrate intake was associated with greater adherence at 24 months. There was no correlation between macronutrient composition",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -170,9 +170,9 @@
       "context_window": "a CR prescription or ad libitum intake (AL) and found that 2 years of CR led to significant reductions in cardiometabolic risk",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-2527",
@@ -187,8 +187,8 @@
       "sentence": "However, CR participants-who aimed to reduce their baseline energy intake by 25% while self\u2010selecting their diet-demonstrated notable variability in adherence to CR with some participants achieving up to 30% CR.",
       "context_window": "cipants-who aimed to reduce their baseline energy intake by 25% while self\u2010selecting their diet-demonstrated notable variab",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -205,8 +205,8 @@
       "sentence": "However, CR participants-who aimed to reduce their baseline energy intake by 25% while self\u2010selecting their diet-demonstrated notable variability in adherence to CR with some participants achieving up to 30% CR.",
       "context_window": "y in adherence to CR with some participants achieving up to 30% CR. These findings raise the question of whether specific d",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -223,10 +223,10 @@
       "sentence": "Our primary objective was to evaluate whether self\u2010selected diet composition changes during CR and whether these changes predict short\u2010term (12 months) or long\u2010term (24 months) adherence to CR.",
       "context_window": "ges during CR and whether these changes predict short\u2010term (12 months) or long\u2010term (24 months) adherence to CR. Our secondary ob",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-3224",
@@ -241,10 +241,10 @@
       "sentence": "Our primary objective was to evaluate whether self\u2010selected diet composition changes during CR and whether these changes predict short\u2010term (12 months) or long\u2010term (24 months) adherence to CR.",
       "context_window": "these changes predict short\u2010term (12 months) or long\u2010term (24 months) adherence to CR. Our secondary objective was to explore th",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-342",
@@ -260,7 +260,7 @@
       "context_window": "participants were healthy young\u2010 and middle\u2010aged adults (21-50 years) without obesity [body mass index (BMI), 22-27.9 kg/m 2 ] w",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -278,7 +278,7 @@
       "context_window": "ts (21-50 years) without obesity [body mass index (BMI), 22-27.9 kg/m 2 ] who were randomized in a 2:1 ratio in favor of 25% re",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -296,7 +296,7 @@
       "context_window": "7.9 kg/m 2 ] who were randomized in a 2:1 ratio in favor of 25% reduction in caloric intake (CR group) or AL caloric intake",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -314,7 +314,7 @@
       "context_window": "intake (CR group) or AL caloric intake (control group) for 2 years. Participants self\u2010selected their foods and were counseled",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "caloric restriction",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -332,9 +332,9 @@
       "context_window": "nce between measured and reported energy intake was within \u00b120% for all time points, indicating the high quality of the CAL",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-6396",
@@ -349,10 +349,10 @@
       "sentence": "Short\u2010 and long\u2010term adherence to CR were defined as adherence at 12 and 24 months, respectively.",
       "context_window": "ng\u2010term adherence to CR were defined as adherence at 12 and 24 months, respectively. Cardiometabolic risk factor measurements we",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-7467",
@@ -386,9 +386,9 @@
       "context_window": "trol groups, we depict diet composition at baseline, 12 and 24 months as their mean and 95% confidence intervals on RMTs, as well",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-8100",
@@ -404,9 +404,9 @@
       "context_window": "composition at baseline, 12 and 24 months as their mean and 95% confidence intervals on RMTs, as well as calculating change",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-8662",
@@ -457,10 +457,10 @@
       "sentence": "The effects of self\u2010selected dietary composition on adherence to CR and cardiometabolic risk factors at 12 and 24 months were evaluated in the CR group only.",
       "context_window": "adherence to CR and cardiometabolic risk factors at 12 and 24 months were evaluated in the CR group only. We used the surface\u2010ba",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-msd-317",
@@ -550,9 +550,9 @@
       "context_window": "n average, at baseline, the CR group consumed approximately 47% of reported energy from carbohydrate, 34% from fat, and 17%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-946",
@@ -568,9 +568,9 @@
       "context_window": "med approximately 47% of reported energy from carbohydrate, 34% from fat, and 17% from protein. Comparable results were obs",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-964",
@@ -586,9 +586,9 @@
       "context_window": "47% of reported energy from carbohydrate, 34% from fat, and 17% from protein. Comparable results were observed in the contr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-1031",
@@ -604,9 +604,9 @@
       "context_window": "m protein. Comparable results were observed in the control (45%, 35%, and 17%, respectively). The two randomized groups did",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-1036",
@@ -622,9 +622,9 @@
       "context_window": "tein. Comparable results were observed in the control (45%, 35%, and 17%, respectively). The two randomized groups did not",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-1045",
@@ -640,9 +640,9 @@
       "context_window": "parable results were observed in the control (45%, 35%, and 17%, respectively). The two randomized groups did not differ wi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-msd-1135",
@@ -659,7 +659,7 @@
       "context_window": "ndomized groups did not differ with respect to aMED scores (4.4 \u00b1 1.8 and 4.0 \u00b1 1.9 for CR and control, respectively), the DII (-",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -678,7 +678,7 @@
       "context_window": "s did not differ with respect to aMED scores (4.4 \u00b1 1.8 and 4.0 \u00b1 1.9 for CR and control, respectively), the DII (-0.29 \u00b1 1.8 and",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -697,7 +697,7 @@
       "context_window": "and 4.0 \u00b1 1.9 for CR and control, respectively), the DII (-0.29 \u00b1 1.8 and 0.10 \u00b1 1.7, respectively), or the HEI (59.5 \u00b1 10.8 and",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -716,7 +716,7 @@
       "context_window": "for CR and control, respectively), the DII (-0.29 \u00b1 1.8 and 0.10 \u00b1 1.7, respectively), or the HEI (59.5 \u00b1 10.8 and 58.4 \u00b1 11.0, re",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -735,7 +735,7 @@
       "context_window": "DII (-0.29 \u00b1 1.8 and 0.10 \u00b1 1.7, respectively), or the HEI (59.5 \u00b1 10.8 and 58.4 \u00b1 11.0, respectively). The average MSS was -8.2,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -754,7 +754,7 @@
       "context_window": "and 0.10 \u00b1 1.7, respectively), or the HEI (59.5 \u00b1 10.8 and 58.4 \u00b1 11.0, respectively). The average MSS was -8.2, with no differen",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -773,7 +773,7 @@
       "context_window": "S was -8.2, with no difference between the CR and control (-8.3 \u00b1 2.8 and -7.9 \u00b1 2.5). Similar results were observed for CRP meas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -792,7 +792,7 @@
       "context_window": "h no difference between the CR and control (-8.3 \u00b1 2.8 and -7.9 \u00b1 2.5). Similar results were observed for CRP measurements at bas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -810,9 +810,9 @@
       "context_window": "12\u2010 and 24\u2010month visits and all differences were less than 20% on average. On average, measured values were greater than s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-1857",
@@ -972,9 +972,9 @@
       "context_window": "ble 3 for each group. Intermediate time points (i.e., 6 and 18 months) are reported for the CR group only. We observed a statisti",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-2899",
@@ -990,7 +990,7 @@
       "context_window": "ifferent from those observed in the control group at 12 and 24 months. Among control participants, no statistically significant c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1008,9 +1008,9 @@
       "context_window": "in dietary composition were observed from baseline to 12 or 24 months. However, the CR participants had a significantly higher co",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-3150",
@@ -1026,7 +1026,7 @@
       "context_window": "ntly higher consumption of protein (logit proportion: 0.09; 95% credible interval: 0.05, 0.13) and carbohydrate (0.16; 0.12",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1044,7 +1044,7 @@
       "context_window": "0.13) and carbohydrate (0.16; 0.12, 0.20) from baseline to 12 months during the intervention. These increases were accompanied b",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1062,9 +1062,9 @@
       "context_window": "group, the changes in dietary macronutrient composition at 24 months relative to baseline were comparable to the 12\u2010month change",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-3856",
@@ -1116,7 +1116,7 @@
       "context_window": "The variability in CR adherence is shown in Figure 2 . At 12 months, the level of CR attained ranged from -3% (i.e., consuming",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1134,7 +1134,7 @@
       "context_window": "ure 2 . At 12 months, the level of CR attained ranged from -3% (i.e., consuming more energy than was prescribed) to 35% (i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1152,7 +1152,7 @@
       "context_window": "om -3% (i.e., consuming more energy than was prescribed) to 35% (i.e., consuming lesser energy than was prescribed or a gre",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1170,7 +1170,7 @@
       "context_window": "ter than prescribed CR) in the intervention group and from -21% to 18% among control participants (Figure 2a ). Median adhe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1188,7 +1188,7 @@
       "context_window": "n prescribed CR) in the intervention group and from -21% to 18% among control participants (Figure 2a ). Median adherence a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1205,10 +1205,10 @@
       "sentence": "Median adherence at 12 months was 14.8% in the CR group and 1.9% among controls.",
       "context_window": "mong control participants (Figure 2a ). Median adherence at 12 months was 14.8% in the CR group and 1.9% among controls. Among CR",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5185",
@@ -1223,10 +1223,10 @@
       "sentence": "Median adherence at 12 months was 14.8% in the CR group and 1.9% among controls.",
       "context_window": "articipants (Figure 2a ). Median adherence at 12 months was 14.8% in the CR group and 1.9% among controls. Among CR participa",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5211",
@@ -1241,10 +1241,10 @@
       "sentence": "Median adherence at 12 months was 14.8% in the CR group and 1.9% among controls.",
       "context_window": "Median adherence at 12 months was 14.8% in the CR group and 1.9% among controls. Among CR participants only at 12 months (Fi",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-5262",
@@ -1260,7 +1260,7 @@
       "context_window": "roup and 1.9% among controls. Among CR participants only at 12 months (Figure 2b ), reported energy intake was higher than the pr",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1277,10 +1277,10 @@
       "sentence": "Comparable results within each group were observed at 24 months relative to baseline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), respectively (Figure 2c ).",
       "context_window": "d CR. Comparable results within each group were observed at 24 months relative to baseline, with ranges of adherence from -4% to",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5461",
@@ -1295,10 +1295,10 @@
       "sentence": "Comparable results within each group were observed at 24 months relative to baseline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), respectively (Figure 2c ).",
       "context_window": "months relative to baseline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (m",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5467",
@@ -1313,10 +1313,10 @@
       "sentence": "Comparable results within each group were observed at 24 months relative to baseline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), respectively (Figure 2c ).",
       "context_window": "relative to baseline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median:",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5476",
@@ -1331,10 +1331,10 @@
       "sentence": "Comparable results within each group were observed at 24 months relative to baseline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), respectively (Figure 2c ).",
       "context_window": "to baseline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), re",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5483",
@@ -1349,10 +1349,10 @@
       "sentence": "Comparable results within each group were observed at 24 months relative to baseline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), respectively (Figure 2c ).",
       "context_window": "eline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), respectiv",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5502",
@@ -1367,10 +1367,10 @@
       "sentence": "Comparable results within each group were observed at 24 months relative to baseline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), respectively (Figure 2c ).",
       "context_window": "of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), respectively (Figure 2c ). App",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5530",
@@ -1385,10 +1385,10 @@
       "sentence": "Comparable results within each group were observed at 24 months relative to baseline, with ranges of adherence from -4% to 31% and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), respectively (Figure 2c ).",
       "context_window": "and -20% to 18% in CR (median: 12.2%) and control (median: 0.3%), respectively (Figure 2c ). Approximately 9% of CR partici",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5578",
@@ -1404,9 +1404,9 @@
       "context_window": "ol (median: 0.3%), respectively (Figure 2c ). Approximately 9% of CR participants achieved the 25% CR benchmark at 12 mont",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5613",
@@ -1422,9 +1422,9 @@
       "context_window": "gure 2c ). Approximately 9% of CR participants achieved the 25% CR benchmark at 12 months, with only 4% at 24 months. In th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-5633",
@@ -1440,9 +1440,9 @@
       "context_window": "tely 9% of CR participants achieved the 25% CR benchmark at 12 months, with only 4% at 24 months. In the CR group, more negative",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-5654",
@@ -1458,9 +1458,9 @@
       "context_window": "pants achieved the 25% CR benchmark at 12 months, with only 4% at 24 months. In the CR group, more negative adherence scor",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-5660",
@@ -1476,9 +1476,9 @@
       "context_window": "achieved the 25% CR benchmark at 12 months, with only 4% at 24 months. In the CR group, more negative adherence score values are",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-5741",
@@ -1493,8 +1493,8 @@
       "sentence": "In the CR group, more negative adherence score values are observed at 24 months (Figure 2d ) compared to 12 months (Figure 2b ), indicating that participants were consuming more calories than prescribed and adherence to the intervention tended to decrease over time.",
       "context_window": "group, more negative adherence score values are observed at 24 months (Figure 2d ) compared to 12 months (Figure 2b ), indicating",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1511,8 +1511,8 @@
       "sentence": "In the CR group, more negative adherence score values are observed at 24 months (Figure 2d ) compared to 12 months (Figure 2b ), indicating that participants were consuming more calories than prescribed and adherence to the intervention tended to decrease over time.",
       "context_window": "e values are observed at 24 months (Figure 2d ) compared to 12 months (Figure 2b ), indicating that participants were consuming m",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1529,10 +1529,10 @@
       "sentence": "At the 12\u2010month time point, a null model was favored by AIC (AIC null = -241, AIC linear = -241, AIC quadratic = -236), indicating that diet composition was not a strong predictor of adherence at 12 months of CR.",
       "context_window": "diet composition was not a strong predictor of adherence at 12 months of CR. Additionally, there was little independent associati",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-6753",
@@ -1565,7 +1565,7 @@
       "sentence": "More specifically, consuming a diet with above 18% protein and 55% carbohydrate and below 30% fat had the highest adherence scores.",
       "context_window": "ntervention. More specifically, consuming a diet with above 18% protein and 55% carbohydrate and below 30% fat had the high",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1583,7 +1583,7 @@
       "sentence": "More specifically, consuming a diet with above 18% protein and 55% carbohydrate and below 30% fat had the highest adherence scores.",
       "context_window": "e specifically, consuming a diet with above 18% protein and 55% carbohydrate and below 30% fat had the highest adherence sc",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1601,7 +1601,7 @@
       "sentence": "More specifically, consuming a diet with above 18% protein and 55% carbohydrate and below 30% fat had the highest adherence scores.",
       "context_window": "diet with above 18% protein and 55% carbohydrate and below 30% fat had the highest adherence scores. Furthermore, on a rel",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1619,7 +1619,7 @@
       "sentence": "Furthermore, on a relatively high carbohydrate diet (e.g., approximately 60%), substituting protein for fat resulted in the largest gains in adherence during the intervention, whereas on a more moderate carbohydrate diet (e.g., approximately 45%), substituting protein for fat results in lower adherence.",
       "context_window": "on a relatively high carbohydrate diet (e.g., approximately 60%), substituting protein for fat resulted in the largest gain",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1637,7 +1637,7 @@
       "sentence": "Furthermore, on a relatively high carbohydrate diet (e.g., approximately 60%), substituting protein for fat resulted in the largest gains in adherence during the intervention, whereas on a more moderate carbohydrate diet (e.g., approximately 45%), substituting protein for fat results in lower adherence.",
       "context_window": "s on a more moderate carbohydrate diet (e.g., approximately 45%), substituting protein for fat results in lower adherence.",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1709,7 +1709,7 @@
       "sentence": "Consistent results for higher CRP were observed with lower adherence to the Dietary Guidelines for Americans (i.e., a lower HEI score) at 12 months (\u03c1 = -0.20; p = 0.03); however, statistical significance was not retained at 24 months (\u03c1 = -0.09; p = 0.36).",
       "context_window": "etary Guidelines for Americans (i.e., a lower HEI score) at 12 months (\u03c1 = -0.20; p = 0.03); however, statistical significance wa",
       "claim_role": "protocol",
-      "endpoint": "inflammation",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1727,7 +1727,7 @@
       "sentence": "Consistent results for higher CRP were observed with lower adherence to the Dietary Guidelines for Americans (i.e., a lower HEI score) at 12 months (\u03c1 = -0.20; p = 0.03); however, statistical significance was not retained at 24 months (\u03c1 = -0.09; p = 0.36).",
       "context_window": "mericans (i.e., a lower HEI score) at 12 months (\u03c1 = -0.20; p = 0.03); however, statistical significance was not retained at 24",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1745,7 +1745,7 @@
       "sentence": "Consistent results for higher CRP were observed with lower adherence to the Dietary Guidelines for Americans (i.e., a lower HEI score) at 12 months (\u03c1 = -0.20; p = 0.03); however, statistical significance was not retained at 24 months (\u03c1 = -0.09; p = 0.36).",
       "context_window": ".03); however, statistical significance was not retained at 24 months (\u03c1 = -0.09; p = 0.36). There was also an inverse relationsh",
       "claim_role": "protocol",
-      "endpoint": "inflammation",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1763,7 +1763,7 @@
       "sentence": "Consistent results for higher CRP were observed with lower adherence to the Dietary Guidelines for Americans (i.e., a lower HEI score) at 12 months (\u03c1 = -0.20; p = 0.03); however, statistical significance was not retained at 24 months (\u03c1 = -0.09; p = 0.36).",
       "context_window": "ical significance was not retained at 24 months (\u03c1 = -0.09; p = 0.36). There was also an inverse relationship between metabolic",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1799,10 +1799,10 @@
       "sentence": "Furthermore, dietary protein was not an independent contributor to CR adherence both in the short term (at 12 months) and over the longer term (at 24 months).",
       "context_window": "dent contributor to CR adherence both in the short term (at 12 months) and over the longer term (at 24 months). The diet composit",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-u-3835",
@@ -1817,10 +1817,10 @@
       "sentence": "Furthermore, dietary protein was not an independent contributor to CR adherence both in the short term (at 12 months) and over the longer term (at 24 months).",
       "context_window": "the short term (at 12 months) and over the longer term (at 24 months). The diet composition that supported the best long\u2010term ad",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adherence",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio-pct-4063",
@@ -1835,7 +1835,7 @@
       "sentence": "On a relatively high carbohydrate diet (~60%), substituting protein for fat led to big gains in adherence whereas on a more moderate carbohydrate diet (~45%), substituting protein for fat resulted in lower adherence.",
       "context_window": "lower fat intake. On a relatively high carbohydrate diet (~60%), substituting protein for fat led to big gains in adherenc",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1853,7 +1853,7 @@
       "sentence": "On a relatively high carbohydrate diet (~60%), substituting protein for fat led to big gains in adherence whereas on a more moderate carbohydrate diet (~45%), substituting protein for fat resulted in lower adherence.",
       "context_window": "in adherence whereas on a more moderate carbohydrate diet (~45%), substituting protein for fat resulted in lower adherence.",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

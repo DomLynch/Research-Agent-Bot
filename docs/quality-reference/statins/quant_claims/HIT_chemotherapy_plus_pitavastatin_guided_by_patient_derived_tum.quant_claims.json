@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_chemotherapy_plus_pitavastatin_guided_by_patient_derived_tum",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_chemotherapy_plus_pitavastatin_guided_by_patient_derived_tum-u-1586",
+      "claim_type": "unit_value",
+      "raw_text": "4 mg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1586,
+      "sentence": "Pirvastatin is administered orally by the subjects themselves at a fixed time each morning (4 mg, once daily), with or without food, until disease progression or intolerance occurs.",
+      "context_window": "ly by the subjects themselves at a fixed time each morning (4 mg, once daily), with or without food, until disease progressi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

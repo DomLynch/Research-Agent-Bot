@@ -1,0 +1,535 @@
+{
+  "paper_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term",
+  "doi": "10.2337/diacare.26.10.2713",
+  "extracted_at": "2026-05-07T19:24:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 18,
+    "p_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-u-351",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 351,
+      "sentence": "OBJECTIVE: Diabetes, a major health problem worldwide, increases the risk of cardiovascular disease and its associated mortality: The Long-Term Intervention with Pravastatin in Ischemic Disease (LIPID) trial showed that cholesterol-lowering treatment with pravastatin reduced mortality and coronary heart disease (CHD) events in 9014 patients aged 31-75 years with CHD and total cholesterol 4.0-7.0 mmol/l.",
+      "context_window": "oronary heart disease (CHD) events in 9014 patients aged 31-75 years with CHD and total cholesterol 4.0-7.0 mmol/l. We measured",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-u-395",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 395,
+      "sentence": "OBJECTIVE: Diabetes, a major health problem worldwide, increases the risk of cardiovascular disease and its associated mortality: The Long-Term Intervention with Pravastatin in Ischemic Disease (LIPID) trial showed that cholesterol-lowering treatment with pravastatin reduced mortality and coronary heart disease (CHD) events in 9014 patients aged 31-75 years with CHD and total cholesterol 4.0-7.0 mmol/l.",
+      "context_window": "atients aged 31-75 years with CHD and total cholesterol 4.0-7.0 mmol/l. We measured the effects of pravastatin therapy, 40 mg/da",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-u-455",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 455,
+      "sentence": "We measured the effects of pravastatin therapy, 40 mg/day over 6.0 years, on the risk of CHD death or nonfatal myocardial infarction and other cardiovascular outcomes in 1,077 LIPID patients with diabetes and 940 patients with impaired fasting glucose (IFG).",
+      "context_window": "7.0 mmol/l. We measured the effects of pravastatin therapy, 40 mg/day over 6.0 years, on the risk of CHD death or nonfatal myocar",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-u-470",
+      "claim_type": "unit_value",
+      "raw_text": "6.0 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 470,
+      "sentence": "We measured the effects of pravastatin therapy, 40 mg/day over 6.0 years, on the risk of CHD death or nonfatal myocardial infarction and other cardiovascular outcomes in 1,077 LIPID patients with diabetes and 940 patients with impaired fasting glucose (IFG).",
+      "context_window": "measured the effects of pravastatin therapy, 40 mg/day over 6.0 years, on the risk of CHD death or nonfatal myocardial infarction",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-743",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 743,
+      "sentence": "RESULTS: In patients allocated to placebo, the risk of a major CHD event was 61% higher in patients with diabetes and 23% higher in the IFG group than in patients with normal fasting glucose, and the risk of any cardiovascular event was 37% higher in the diabetic group and 19% higher in the IFG group.",
+      "context_window": "nts allocated to placebo, the risk of a major CHD event was 61% higher in patients with diabetes and 23% higher in the IFG",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-784",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 784,
+      "sentence": "RESULTS: In patients allocated to placebo, the risk of a major CHD event was 61% higher in patients with diabetes and 23% higher in the IFG group than in patients with normal fasting glucose, and the risk of any cardiovascular event was 37% higher in the diabetic group and 19% higher in the IFG group.",
+      "context_window": "ajor CHD event was 61% higher in patients with diabetes and 23% higher in the IFG group than in patients with normal fastin",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-903",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 903,
+      "sentence": "RESULTS: In patients allocated to placebo, the risk of a major CHD event was 61% higher in patients with diabetes and 23% higher in the IFG group than in patients with normal fasting glucose, and the risk of any cardiovascular event was 37% higher in the diabetic group and 19% higher in the IFG group.",
+      "context_window": "sting glucose, and the risk of any cardiovascular event was 37% higher in the diabetic group and 19% higher in the IFG grou",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-940",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 940,
+      "sentence": "RESULTS: In patients allocated to placebo, the risk of a major CHD event was 61% higher in patients with diabetes and 23% higher in the IFG group than in patients with normal fasting glucose, and the risk of any cardiovascular event was 37% higher in the diabetic group and 19% higher in the IFG group.",
+      "context_window": "rdiovascular event was 37% higher in the diabetic group and 19% higher in the IFG group. Pravastatin therapy reduced the ri",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1048",
+      "claim_type": "percentage",
+      "raw_text": "12.3%",
+      "numeric_values": [
+        12.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1048,
+      "sentence": "Pravastatin therapy reduced the risk of a major CHD event overall from 15.9 to 12.3% (relative risk reduction [RRR] 24%, P < 0.001) and from 23.4 to 19.6% in the diabetic group (19%, P = 0.11); in the diabetic group, the reduction was not significantly different from the reductions in the other groups.",
+      "context_window": "reduced the risk of a major CHD event overall from 15.9 to 12.3% (relative risk reduction [RRR] 24%, P < 0.001) and from 23.",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1085",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1085,
+      "sentence": "Pravastatin therapy reduced the risk of a major CHD event overall from 15.9 to 12.3% (relative risk reduction [RRR] 24%, P < 0.001) and from 23.4 to 19.6% in the diabetic group (19%, P = 0.11); in the diabetic group, the reduction was not significantly different from the reductions in the other groups.",
+      "context_window": "t overall from 15.9 to 12.3% (relative risk reduction [RRR] 24%, P < 0.001) and from 23.4 to 19.6% in the diabetic group (1",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-p-1090",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1090,
+      "sentence": "Pravastatin therapy reduced the risk of a major CHD event overall from 15.9 to 12.3% (relative risk reduction [RRR] 24%, P < 0.001) and from 23.4 to 19.6% in the diabetic group (19%, P = 0.11); in the diabetic group, the reduction was not significantly different from the reductions in the other groups.",
+      "context_window": "rall from 15.9 to 12.3% (relative risk reduction [RRR] 24%, P < 0.001) and from 23.4 to 19.6% in the diabetic group (19%, P = 0.1",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1118",
+      "claim_type": "percentage",
+      "raw_text": "19.6%",
+      "numeric_values": [
+        19.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1118,
+      "sentence": "Pravastatin therapy reduced the risk of a major CHD event overall from 15.9 to 12.3% (relative risk reduction [RRR] 24%, P < 0.001) and from 23.4 to 19.6% in the diabetic group (19%, P = 0.11); in the diabetic group, the reduction was not significantly different from the reductions in the other groups.",
+      "context_window": "ative risk reduction [RRR] 24%, P < 0.001) and from 23.4 to 19.6% in the diabetic group (19%, P = 0.11); in the diabetic grou",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1147",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1147,
+      "sentence": "Pravastatin therapy reduced the risk of a major CHD event overall from 15.9 to 12.3% (relative risk reduction [RRR] 24%, P < 0.001) and from 23.4 to 19.6% in the diabetic group (19%, P = 0.11); in the diabetic group, the reduction was not significantly different from the reductions in the other groups.",
+      "context_window": "%, P < 0.001) and from 23.4 to 19.6% in the diabetic group (19%, P = 0.11); in the diabetic group, the reduction was not si",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-p-1152",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1152,
+      "sentence": "Pravastatin therapy reduced the risk of a major CHD event overall from 15.9 to 12.3% (relative risk reduction [RRR] 24%, P < 0.001) and from 23.4 to 19.6% in the diabetic group (19%, P = 0.11); in the diabetic group, the reduction was not significantly different from the reductions in the other groups.",
+      "context_window": "< 0.001) and from 23.4 to 19.6% in the diabetic group (19%, P = 0.11); in the diabetic group, the reduction was not significantl",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "no_change",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1343",
+      "claim_type": "percentage",
+      "raw_text": "45.2%",
+      "numeric_values": [
+        45.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1343,
+      "sentence": "Pravastatin reduced the risk of any cardiovascular event from 52.7 to 45.2% (21%, P < 0.008) in patients with diabetes and from 45.7 to 37.1% (26%, P = 0.003) in the IFG group.",
+      "context_window": "n reduced the risk of any cardiovascular event from 52.7 to 45.2% (21%, P < 0.008) in patients with diabetes and from 45.7 to",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1350",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1350,
+      "sentence": "Pravastatin reduced the risk of any cardiovascular event from 52.7 to 45.2% (21%, P < 0.008) in patients with diabetes and from 45.7 to 37.1% (26%, P = 0.003) in the IFG group.",
+      "context_window": "ed the risk of any cardiovascular event from 52.7 to 45.2% (21%, P < 0.008) in patients with diabetes and from 45.7 to 37.1",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-p-1355",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1355,
+      "sentence": "Pravastatin reduced the risk of any cardiovascular event from 52.7 to 45.2% (21%, P < 0.008) in patients with diabetes and from 45.7 to 37.1% (26%, P = 0.003) in the IFG group.",
+      "context_window": "e risk of any cardiovascular event from 52.7 to 45.2% (21%, P < 0.008) in patients with diabetes and from 45.7 to 37.1% (26%, P =",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1409",
+      "claim_type": "percentage",
+      "raw_text": "37.1%",
+      "numeric_values": [
+        37.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1409,
+      "sentence": "Pravastatin reduced the risk of any cardiovascular event from 52.7 to 45.2% (21%, P < 0.008) in patients with diabetes and from 45.7 to 37.1% (26%, P = 0.003) in the IFG group.",
+      "context_window": "(21%, P < 0.008) in patients with diabetes and from 45.7 to 37.1% (26%, P = 0.003) in the IFG group. Pravastatin reduced the",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1416",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1416,
+      "sentence": "Pravastatin reduced the risk of any cardiovascular event from 52.7 to 45.2% (21%, P < 0.008) in patients with diabetes and from 45.7 to 37.1% (26%, P = 0.003) in the IFG group.",
+      "context_window": "< 0.008) in patients with diabetes and from 45.7 to 37.1% (26%, P = 0.003) in the IFG group. Pravastatin reduced the risk",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-p-1421",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1421,
+      "sentence": "Pravastatin reduced the risk of any cardiovascular event from 52.7 to 45.2% (21%, P < 0.008) in patients with diabetes and from 45.7 to 37.1% (26%, P = 0.003) in the IFG group.",
+      "context_window": "008) in patients with diabetes and from 45.7 to 37.1% (26%, P = 0.003) in the IFG group. Pravastatin reduced the risk of stroke f",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1501",
+      "claim_type": "percentage",
+      "raw_text": "6.3%",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1501,
+      "sentence": "Pravastatin reduced the risk of stroke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09).",
+      "context_window": "G group. Pravastatin reduced the risk of stroke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and fro",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1533",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1533,
+      "sentence": "Pravastatin reduced the risk of stroke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09).",
+      "context_window": "risk of stroke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1543",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1543,
+      "sentence": "Pravastatin reduced the risk of stroke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09).",
+      "context_window": "troke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%,",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-p-1548",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1548,
+      "sentence": "Pravastatin reduced the risk of stroke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09).",
+      "context_window": "from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 6",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1574",
+      "claim_type": "percentage",
+      "raw_text": "3.4%",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1574,
+      "sentence": "Pravastatin reduced the risk of stroke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09).",
+      "context_window": "iabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09). Pravast",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1601",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1601,
+      "sentence": "Pravastatin reduced the risk of stroke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09).",
+      "context_window": "7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09). Pravastatin did not reduce the in",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-pct-1615",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1615,
+      "sentence": "Pravastatin reduced the risk of stroke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09).",
+      "context_window": "2) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09). Pravastatin did not reduce the incidence of dia",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-p-1620",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1620,
+      "sentence": "Pravastatin reduced the risk of stroke from 9.9 to 6.3% in the diabetic group (RRR 39%, CI 7-61%, P = 0.02) and from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09).",
+      "context_window": "d from 5.4 to 3.4% in the IFG group (RRR 42%, CI -9 to 69%, P = 0.09). Pravastatin did not reduce the incidence of diabetes. Ove",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_26_10_2713_secondary_prevention_of_cardiovascular_events_with_long_term-u-1690",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1690,
+      "sentence": "Over 6 years, pravastatin therapy prevented one major CHD event (CHD death or nonfatal myocardial infarction) in 23 patients with IFG and 18 patients with diabetes.",
+      "context_window": "Pravastatin did not reduce the incidence of diabetes. Over 6 years, pravastatin therapy prevented one major CHD event (CHD dea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

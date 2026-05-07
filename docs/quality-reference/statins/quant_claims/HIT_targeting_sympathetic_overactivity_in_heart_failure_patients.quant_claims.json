@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_targeting_sympathetic_overactivity_in_heart_failure_patients",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_targeting_sympathetic_overactivity_in_heart_failure_patients-u-2173",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 2173,
+      "sentence": "Subjects will come to the research laboratory before and after the administration of Simvastatin at a standard therapeutic dosage of 40 mg. per day or placebo for 1 month\n\nPosted outcomes: Change in Muscle Sympathetic Nerve Activity in Bursts Per 100 Heartbeats. timeframe=Baseline and 30 days.",
+      "context_window": "stration of Simvastatin at a standard therapeutic dosage of 40 mg. per day or placebo for 1 month Posted outcomes: Change in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_targeting_sympathetic_overactivity_in_heart_failure_patients-u-2203",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 2203,
+      "sentence": "Subjects will come to the research laboratory before and after the administration of Simvastatin at a standard therapeutic dosage of 40 mg. per day or placebo for 1 month\n\nPosted outcomes: Change in Muscle Sympathetic Nerve Activity in Bursts Per 100 Heartbeats. timeframe=Baseline and 30 days.",
+      "context_window": "tandard therapeutic dosage of 40 mg. per day or placebo for 1 month Posted outcomes: Change in Muscle Sympathetic Nerve Activi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_targeting_sympathetic_overactivity_in_heart_failure_patients-u-2326",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 2326,
+      "sentence": "Subjects will come to the research laboratory before and after the administration of Simvastatin at a standard therapeutic dosage of 40 mg. per day or placebo for 1 month\n\nPosted outcomes: Change in Muscle Sympathetic Nerve Activity in Bursts Per 100 Heartbeats. timeframe=Baseline and 30 days.",
+      "context_window": "tivity in Bursts Per 100 Heartbeats. timeframe=Baseline and 30 days. Simvastatin=59 (\u00b15); Placebo=45 (\u00b16). p=<0.05",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

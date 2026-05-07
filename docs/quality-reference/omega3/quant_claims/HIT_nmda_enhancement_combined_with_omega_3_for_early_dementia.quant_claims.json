@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_nmda_enhancement_combined_with_omega_3_for_early_dementia",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_nmda_enhancement_combined_with_omega_3_for_early_dementia-u-229",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 229,
+      "sentence": "All patients will be allocated randomly to one of two treatment groups for 24 weeks (n = 70 in each group) in a double-blind manner: \\[1\\] DAOIB + omega-3; \\[2\\] DAOIB + placebo.",
+      "context_window": "ll be allocated randomly to one of two treatment groups for 24 weeks (n = 70 in each group) in a double-blind manner: \\[1\\] DAOI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_nmda_enhancement_combined_with_omega_3_for_early_dementia-n-239",
+      "claim_type": "sample_size",
+      "raw_text": "n = 70",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 239,
+      "sentence": "All patients will be allocated randomly to one of two treatment groups for 24 weeks (n = 70 in each group) in a double-blind manner: \\[1\\] DAOIB + omega-3; \\[2\\] DAOIB + placebo.",
+      "context_window": "cated randomly to one of two treatment groups for 24 weeks (n = 70 in each group) in a double-blind manner: \\[1\\] DAOIB + omeg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_nmda_enhancement_combined_with_omega_3_for_early_dementia-u-367",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 367,
+      "sentence": "We will assess the patients every 8 weeks during the treatment period (weeks 0, 8, 16, and 24).",
+      "context_window": "3; \\[2\\] DAOIB + placebo. We will assess the patients every 8 weeks during the treatment period (weeks 0, 8, 16, and 24). We hy",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

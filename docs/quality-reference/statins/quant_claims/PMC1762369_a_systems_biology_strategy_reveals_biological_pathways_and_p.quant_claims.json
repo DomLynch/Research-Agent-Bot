@@ -1,0 +1,754 @@
+{
+  "paper_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p",
+  "doi": "10.1371/journal.pone.0000097",
+  "extracted_at": "2026-05-07T19:24:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 14,
+    "sample_size": 13,
+    "mean_sd": 1,
+    "percentage": 8,
+    "p_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-526",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 526,
+      "sentence": "We performed bioinformatics analysis of whole genome expression profiling of muscle specimens and UPLC/MS based lipidomics analyses of plasma samples obtained in an earlier randomized trial from patients either on high dose simvastatin (80 mg), atorvastatin (40 mg), or placebo.",
+      "context_window": "omized trial from patients either on high dose simvastatin (80 mg), atorvastatin (40 mg), or placebo. High dose simvastatin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-548",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 548,
+      "sentence": "We performed bioinformatics analysis of whole genome expression profiling of muscle specimens and UPLC/MS based lipidomics analyses of plasma samples obtained in an earlier randomized trial from patients either on high dose simvastatin (80 mg), atorvastatin (40 mg), or placebo.",
+      "context_window": "ents either on high dose simvastatin (80 mg), atorvastatin (40 mg), or placebo. High dose simvastatin treatment resulted in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-2021",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 2021,
+      "sentence": "Later, we confirmed that high dose (80 mg) simvastatin affects muscle mitochondria by assessing a significant decrease in the muscle mitochondrial DNA (mtDNA) content during treatment (Schink et al, submitted).",
+      "context_window": "igns of myopathy [10] . Later, we confirmed that high dose (80 mg) simvastatin affects muscle mitochondria by assessing a sig",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-192",
+      "claim_type": "sample_size",
+      "raw_text": "N = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 192,
+      "sentence": "Plasma samples from 37 subjects of an earlier study [10] , focusing on the effect of high dose statin treatment on skeletal muscle metabolism, were used for plasma lipidome analysis; placebo (N = 11), simvastatin (N = 13), and atorvastatin (N = 14).",
+      "context_window": "etabolism, were used for plasma lipidome analysis; placebo (N = 11), simvastatin (N = 13), and atorvastatin (N = 14). The subj",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-214",
+      "claim_type": "sample_size",
+      "raw_text": "N = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 214,
+      "sentence": "Plasma samples from 37 subjects of an earlier study [10] , focusing on the effect of high dose statin treatment on skeletal muscle metabolism, were used for plasma lipidome analysis; placebo (N = 11), simvastatin (N = 13), and atorvastatin (N = 14).",
+      "context_window": "or plasma lipidome analysis; placebo (N = 11), simvastatin (N = 13), and atorvastatin (N = 14). The subjects aged between 45 a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-241",
+      "claim_type": "sample_size",
+      "raw_text": "N = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 241,
+      "sentence": "Plasma samples from 37 subjects of an earlier study [10] , focusing on the effect of high dose statin treatment on skeletal muscle metabolism, were used for plasma lipidome analysis; placebo (N = 11), simvastatin (N = 13), and atorvastatin (N = 14).",
+      "context_window": "; placebo (N = 11), simvastatin (N = 13), and atorvastatin (N = 14). The subjects aged between 45 and 69 years and their avera",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-283",
+      "claim_type": "unit_value",
+      "raw_text": "69 years",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 283,
+      "sentence": "The subjects aged between 45 and 69 years and their average serum total cholesterol concentration was 5.8\u00b10.9 mmol/L and serum triglycerides below 4.5 mmol/L.",
+      "context_window": "and atorvastatin (N = 14). The subjects aged between 45 and 69 years and their average serum total cholesterol concentration was",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-msd-352",
+      "claim_type": "mean_sd",
+      "raw_text": "5.8\u00b10.9",
+      "numeric_values": [
+        5.8,
+        0.9
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 352,
+      "sentence": "The subjects aged between 45 and 69 years and their average serum total cholesterol concentration was 5.8\u00b10.9 mmol/L and serum triglycerides below 4.5 mmol/L.",
+      "context_window": "and their average serum total cholesterol concentration was 5.8\u00b10.9 mmol/L and serum triglycerides below 4.5 mmol/L. Muscle spe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-356",
+      "claim_type": "unit_value",
+      "raw_text": "0.9 mmol",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 356,
+      "sentence": "The subjects aged between 45 and 69 years and their average serum total cholesterol concentration was 5.8\u00b10.9 mmol/L and serum triglycerides below 4.5 mmol/L.",
+      "context_window": "their average serum total cholesterol concentration was 5.8\u00b10.9 mmol/L and serum triglycerides below 4.5 mmol/L. Muscle specimen",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-397",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 mmol",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 397,
+      "sentence": "The subjects aged between 45 and 69 years and their average serum total cholesterol concentration was 5.8\u00b10.9 mmol/L and serum triglycerides below 4.5 mmol/L.",
+      "context_window": "centration was 5.8\u00b10.9 mmol/L and serum triglycerides below 4.5 mmol/L. Muscle specimens from eighteen age matched men being tre",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-496",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 496,
+      "sentence": "Muscle specimens from eighteen age matched men being treated either with atorvastatin (n = 6), simvastatin (n = 6) or placebo (n = 6) were selected for genome wide expression analysis.",
+      "context_window": "een age matched men being treated either with atorvastatin (n = 6), simvastatin (n = 6) or placebo (n = 6) were selected for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-517",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 517,
+      "sentence": "Muscle specimens from eighteen age matched men being treated either with atorvastatin (n = 6), simvastatin (n = 6) or placebo (n = 6) were selected for genome wide expression analysis.",
+      "context_window": "eing treated either with atorvastatin (n = 6), simvastatin (n = 6) or placebo (n = 6) were selected for genome wide expressio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-536",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 536,
+      "sentence": "Muscle specimens from eighteen age matched men being treated either with atorvastatin (n = 6), simvastatin (n = 6) or placebo (n = 6) were selected for genome wide expression analysis.",
+      "context_window": "with atorvastatin (n = 6), simvastatin (n = 6) or placebo (n = 6) were selected for genome wide expression analysis. Clinica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-900",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 900,
+      "sentence": "Patients with familial hypercholesterolemia and patients with serum total cholesterol>7.0 mmol/L in the initial screening were excluded.",
+      "context_window": "ercholesterolemia and patients with serum total cholesterol>7.0 mmol/L in the initial screening were excluded. Other exclusion c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-1451",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 1451,
+      "sentence": "The original study was a randomized, double blind and placebo-controlled trial with three treatment groups: placebo, atorvastatin 40 mg/day, and simvastatin 80 mg/day.",
+      "context_window": "ed trial with three treatment groups: placebo, atorvastatin 40 mg/day, and simvastatin 80 mg/day. Placebo was simvastatin-matched",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-1478",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/day",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 1478,
+      "sentence": "The original study was a randomized, double blind and placebo-controlled trial with three treatment groups: placebo, atorvastatin 40 mg/day, and simvastatin 80 mg/day.",
+      "context_window": "nt groups: placebo, atorvastatin 40 mg/day, and simvastatin 80 mg/day. Placebo was simvastatin-matched, and to ensure also blindi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-pct-3606",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3606,
+      "sentence": "In vitro transcripiton (IVT) reaction of cDNA to cRNA was performed overnight (14h) including biotin-11-dUTP (PerkinElmer, cat no PC 3435-0402-Biotin-11-dUTP, >95%, NEL539001EA, PerkinElmer Life And Analytical Sciences, Inc., Boston, MA, USA) for labelling the cRNA product.",
+      "context_window": "-11-dUTP (PerkinElmer, cat no PC 3435-0402-Biotin-11-dUTP, >95%, NEL539001EA, PerkinElmer Life And Analytical Sciences, Inc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-5664",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5664,
+      "sentence": "The microarray expression results recorded in the simvastatin group (n = 5, for one case there was not enough muscle RNA for PCR) were verified by Real-Time Quantitative TaqMan PCR.",
+      "context_window": "array expression results recorded in the simvastatin group (n = 5, for one case there was not enough muscle RNA for PCR) were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-7678",
+      "claim_type": "unit_value",
+      "raw_text": "50 mm",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 7678,
+      "sentence": "The column, which was kept at 50\u00b0C, was an Acquity UPLC\u2122 BEH C18 10\u00d750 mm with 1.7 \u00b5m particles.",
+      "context_window": "mn, which was kept at 50\u00b0C, was an Acquity UPLC\u2122 BEH C18 10\u00d750 mm with 1.7 \u00b5m particles. The binary solvent system included A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-pct-7752",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7752,
+      "sentence": "The binary solvent system included A. water (1% 1 M NH 4 Ac, 0.1% HCOOH) and B.",
+      "context_window": "\u00b5m particles. The binary solvent system included A. water (1% 1 M NH 4 Ac, 0.1% HCOOH) and B. LC/MS grade (Rathburn) acet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-pct-7768",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7768,
+      "sentence": "The binary solvent system included A. water (1% 1 M NH 4 Ac, 0.1% HCOOH) and B.",
+      "context_window": "he binary solvent system included A. water (1% 1 M NH 4 Ac, 0.1% HCOOH) and B. LC/MS grade (Rathburn) acetonitrile/isopropan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-pct-7841",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7841,
+      "sentence": "LC/MS grade (Rathburn) acetonitrile/isopropanol (5 2, 1% 1 M NH 4 Ac, 0.1% HCOOH).",
+      "context_window": "nd B. LC/MS grade (Rathburn) acetonitrile/isopropanol (5 2, 1% 1 M NH 4 Ac, 0.1% HCOOH). The gradient started from 65% A/3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-pct-7857",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7857,
+      "sentence": "LC/MS grade (Rathburn) acetonitrile/isopropanol (5 2, 1% 1 M NH 4 Ac, 0.1% HCOOH).",
+      "context_window": "e (Rathburn) acetonitrile/isopropanol (5 2, 1% 1 M NH 4 Ac, 0.1% HCOOH). The gradient started from 65% A/35% B, reached 100%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-pct-7896",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7896,
+      "sentence": "The gradient started from 65% A/35% B, reached 100% B in 6 min and remained there for the next 7 min.",
+      "context_window": "5 2, 1% 1 M NH 4 Ac, 0.1% HCOOH). The gradient started from 65% A/35% B, reached 100% B in 6 min and remained there for the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-pct-7902",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7902,
+      "sentence": "The gradient started from 65% A/35% B, reached 100% B in 6 min and remained there for the next 7 min.",
+      "context_window": "% 1 M NH 4 Ac, 0.1% HCOOH). The gradient started from 65% A/35% B, reached 100% B in 6 min and remained there for the next",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-pct-7917",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7917,
+      "sentence": "The gradient started from 65% A/35% B, reached 100% B in 6 min and remained there for the next 7 min.",
+      "context_window": "0.1% HCOOH). The gradient started from 65% A/35% B, reached 100% B in 6 min and remained there for the next 7 min. The total",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-p-1076",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1076,
+      "sentence": "The following 5 genes were significantly upregulated: ALOX5AP (+3.6-fold, p = 0.041), CCL5 (+11.9-fold, p = 0.011), COL3A1 (+27.1-fold, p = 0.026), MYL5 (+8.0-fold, p = 0.021), MYBPH (+49.0-fold, p = 0.027).",
+      "context_window": "5 genes were significantly upregulated: ALOX5AP (+3.6-fold, p = 0.041), CCL5 (+11.9-fold, p = 0.011), COL3A1 (+27.1-fold, p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-p-1106",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1106,
+      "sentence": "The following 5 genes were significantly upregulated: ALOX5AP (+3.6-fold, p = 0.041), CCL5 (+11.9-fold, p = 0.011), COL3A1 (+27.1-fold, p = 0.026), MYL5 (+8.0-fold, p = 0.021), MYBPH (+49.0-fold, p = 0.027).",
+      "context_window": "egulated: ALOX5AP (+3.6-fold, p = 0.041), CCL5 (+11.9-fold, p = 0.011), COL3A1 (+27.1-fold, p = 0.026), MYL5 (+8.0-fold, p = 0.02",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-p-1138",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1138,
+      "sentence": "The following 5 genes were significantly upregulated: ALOX5AP (+3.6-fold, p = 0.041), CCL5 (+11.9-fold, p = 0.011), COL3A1 (+27.1-fold, p = 0.026), MYL5 (+8.0-fold, p = 0.021), MYBPH (+49.0-fold, p = 0.027).",
+      "context_window": "= 0.041), CCL5 (+11.9-fold, p = 0.011), COL3A1 (+27.1-fold, p = 0.026), MYL5 (+8.0-fold, p = 0.021), MYBPH (+49.0-fold, p = 0.027",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-p-1167",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.021",
+      "numeric_values": [
+        0.021
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1167,
+      "sentence": "The following 5 genes were significantly upregulated: ALOX5AP (+3.6-fold, p = 0.041), CCL5 (+11.9-fold, p = 0.011), COL3A1 (+27.1-fold, p = 0.026), MYL5 (+8.0-fold, p = 0.021), MYBPH (+49.0-fold, p = 0.027).",
+      "context_window": "= 0.011), COL3A1 (+27.1-fold, p = 0.026), MYL5 (+8.0-fold, p = 0.021), MYBPH (+49.0-fold, p = 0.027). As the recorded differenc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-p-1198",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1198,
+      "sentence": "The following 5 genes were significantly upregulated: ALOX5AP (+3.6-fold, p = 0.041), CCL5 (+11.9-fold, p = 0.011), COL3A1 (+27.1-fold, p = 0.026), MYL5 (+8.0-fold, p = 0.021), MYBPH (+49.0-fold, p = 0.027).",
+      "context_window": "p = 0.026), MYL5 (+8.0-fold, p = 0.021), MYBPH (+49.0-fold, p = 0.027). As the recorded differences in single gene expressions w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-3482",
+      "claim_type": "unit_value",
+      "raw_text": "8 week",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 3482,
+      "sentence": "Results after 8 week treatment from placebo (N = 11), atorvastatin (N = 14), and simvastatin (N = 12) groups, with 132 identified lipid species included in analysis as variables.",
+      "context_window": "in group compared to the atorvastatin group. Results after 8 week treatment from placebo (N = 11), atorvastatin (N = 14), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-3513",
+      "claim_type": "sample_size",
+      "raw_text": "N = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3513,
+      "sentence": "Results after 8 week treatment from placebo (N = 11), atorvastatin (N = 14), and simvastatin (N = 12) groups, with 132 identified lipid species included in analysis as variables.",
+      "context_window": "statin group. Results after 8 week treatment from placebo (N = 11), atorvastatin (N = 14), and simvastatin (N = 12) groups, w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-3536",
+      "claim_type": "sample_size",
+      "raw_text": "N = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3536,
+      "sentence": "Results after 8 week treatment from placebo (N = 11), atorvastatin (N = 14), and simvastatin (N = 12) groups, with 132 identified lipid species included in analysis as variables.",
+      "context_window": "after 8 week treatment from placebo (N = 11), atorvastatin (N = 14), and simvastatin (N = 12) groups, with 132 identified lipi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-3562",
+      "claim_type": "sample_size",
+      "raw_text": "N = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3562,
+      "sentence": "Results after 8 week treatment from placebo (N = 11), atorvastatin (N = 14), and simvastatin (N = 12) groups, with 132 identified lipid species included in analysis as variables.",
+      "context_window": "m placebo (N = 11), atorvastatin (N = 14), and simvastatin (N = 12) groups, with 132 identified lipid species included in anal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-3712",
+      "claim_type": "unit_value",
+      "raw_text": "8 week",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 3712,
+      "sentence": "For each molecular species and each subject, its level after the 8 week treatment period was scaled by subtracting its median level across all subjects prior to treatment and divided by corresponding standard deviation.",
+      "context_window": "ach molecular species and each subject, its level after the 8 week treatment period was scaled by subtracting its median level",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-6045",
+      "claim_type": "sample_size",
+      "raw_text": "N = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6045,
+      "sentence": "Results after intervention for the subjects from placebo (N = 5), atorvastatin (N = 6), and simvastatin (N = 6) groups.",
+      "context_window": "Results after intervention for the subjects from placebo (N = 5), atorvastatin (N = 6), and simvastatin (N = 6) groups. Tot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-6067",
+      "claim_type": "sample_size",
+      "raw_text": "N = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6067,
+      "sentence": "Results after intervention for the subjects from placebo (N = 5), atorvastatin (N = 6), and simvastatin (N = 6) groups.",
+      "context_window": "ention for the subjects from placebo (N = 5), atorvastatin (N = 6), and simvastatin (N = 6) groups. Total 38 genes from four",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-n-6092",
+      "claim_type": "sample_size",
+      "raw_text": "N = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6092,
+      "sentence": "Results after intervention for the subjects from placebo (N = 5), atorvastatin (N = 6), and simvastatin (N = 6) groups.",
+      "context_window": "rom placebo (N = 5), atorvastatin (N = 6), and simvastatin (N = 6) groups. Total 38 genes from four enriched pathways and 132",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-381",
+      "claim_type": "unit_value",
+      "raw_text": "40mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 381,
+      "sentence": "This observation markedly contrast with the minimum gene expression changes observed in skeletal muscle with atorvastin 40mg.",
+      "context_window": "ression changes observed in skeletal muscle with atorvastin 40mg. Our studies also revealed novel plasma biomarker candidate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC1762369_a_systems_biology_strategy_reveals_biological_pathways_and_p-u-5036",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5036,
+      "sentence": "In conclusion, the combined analyses of gene expression and lipidomics profiles in asymptomatic statin treated individuals revealed that: a) simvastatin 80 mg induces specific gene expression and lipid changes compared to equally efficient atorvastatin treatments and b) that our combined transcriptomic lipidomic analysis provides bona fide sensitive biomarkers of statin induced metabolic changes in muscle potentially useful to identify patients at risk early enough to prevent actual muscle damage.",
+      "context_window": "ic statin treated individuals revealed that: a) simvastatin 80 mg induces specific gene expression and lipid changes compared",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

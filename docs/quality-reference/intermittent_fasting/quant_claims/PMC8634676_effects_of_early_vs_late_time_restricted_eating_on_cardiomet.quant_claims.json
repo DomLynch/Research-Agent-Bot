@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8634676_effects_of_early_vs_late_time_restricted_eating_on_cardiomet",
   "doi": "10.3389/fnut.2021.765543",
-  "extracted_at": "2026-05-05T22:11:16+00:00",
+  "extracted_at": "2026-05-07T16:57:09+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 30,
@@ -112,9 +112,9 @@
       "context_window": "s with overweight or obesity. The study will consist of two 2 week dietary intervention periods: (1) early TRE and (2) late TR",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8634676_effects_of_early_vs_late_time_restricted_eating_on_cardiomet-u-291",
@@ -184,9 +184,9 @@
       "context_window": "ion. The first phase of intervention will be separated by a 2 week washout period from the second phase of TRE intervention th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8634676_effects_of_early_vs_late_time_restricted_eating_on_cardiomet-u-934",
@@ -220,7 +220,7 @@
       "context_window": "in metabolic state ( 55 , 58 , 66 ). Furthermore, the short 2 week duration of TRE interventions will make the rigorous monito",
       "claim_role": "duration",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -417,10 +417,10 @@
       "sentence": "Telephone calls in the middle of each intervention and the run-in phase (7 days after visiting the examination center) were conducted in order to promote adherence to the assigned program and answer questions.",
       "context_window": "ls in the middle of each intervention and the run-in phase (7 days after visiting the examination center) were conducted in or",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8634676_effects_of_early_vs_late_time_restricted_eating_on_cardiomet-u-10121",
@@ -472,9 +472,9 @@
       "context_window": "he accelerometer on the wrist of their non-dominant arm for 14 days during the run-in phase and during both TRE interventions s",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8634676_effects_of_early_vs_late_time_restricted_eating_on_cardiomet-u-18185",
@@ -562,7 +562,7 @@
       "context_window": "). Nevertheless, four carefully controlled or short-term (4-5 days) TRE trials revealed beneficial metabolic effects without c",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -579,7 +579,7 @@
       "sentence": "The dietician will contact study participants by telephone calls in the middle of each intervention and the run-in phase (7 days after visiting the examination center) to increase adherence to the assigned program and answer questions.",
       "context_window": "ls in the middle of each intervention and the run-in phase (7 days after visiting the examination center) to increase adherenc",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1093_cercor_bht163_long_chain_omega_3_fatty_acids_improve_brain_function_and_st",
+  "doi": "10.1093/cercor/bht163",
+  "extracted_at": "2026-05-07T19:32:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_cercor_bht163_long_chain_omega_3_fatty_acids_improve_brain_function_and_st-u-348",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 348,
+      "sentence": "Sixty-five healthy subjects (50-75 years, 30 females) successfully completed 26 weeks of either fish oil (2.2 g/day LC-n3-FA) or placebo intake.",
+      "context_window": "sms underlying the effects. Sixty-five healthy subjects (50-75 years, 30 females) successfully completed 26 weeks of either fish",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_cercor_bht163_long_chain_omega_3_fatty_acids_improve_brain_function_and_st-u-393",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 393,
+      "sentence": "Sixty-five healthy subjects (50-75 years, 30 females) successfully completed 26 weeks of either fish oil (2.2 g/day LC-n3-FA) or placebo intake.",
+      "context_window": "y subjects (50-75 years, 30 females) successfully completed 26 weeks of either fish oil (2.2 g/day LC-n3-FA) or placebo intake.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_cercor_bht163_long_chain_omega_3_fatty_acids_improve_brain_function_and_st-p-697",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.023",
+      "numeric_values": [
+        0.023
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 697,
+      "sentence": "We found a significant increase in executive functions after LC-n3-FA compared with placebo (P = 0.023).",
+      "context_window": "n executive functions after LC-n3-FA compared with placebo (P = 0.023). In parallel, LC-n3-FA exerted beneficial effects on white",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

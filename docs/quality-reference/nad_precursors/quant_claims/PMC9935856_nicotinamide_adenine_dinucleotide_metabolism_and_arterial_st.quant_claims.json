@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9935856_nicotinamide_adenine_dinucleotide_metabolism_and_arterial_st",
   "doi": "10.1038/s41598-023-29787-3",
-  "extracted_at": "2026-05-05T21:28:47+00:00",
+  "extracted_at": "2026-05-07T16:58:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 29,
@@ -25,7 +25,7 @@
       "context_window": "thy middle-aged participants received one capsule of either 125 mg NMN or placebo twice a day. Among the NAD + metabolites, th",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,9 +43,9 @@
       "context_window": "nd between the two groups. Long-term NMN supplementation at 250 mg/day was well tolerated and did not cause adverse events. NMN sa",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9935856_nicotinamide_adenine_dinucleotide_metabolism_and_arterial_st-u-517",
@@ -61,7 +61,7 @@
       "context_window": "wed by a physician. Subjects were provided with either NMN (125 mg/capsule) or placebo capsules in batches for 12 weeks, and o",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": "her NMN (125 mg/capsule) or placebo capsules in batches for 12 weeks, and one capsule was ingested twice a day after meals for 1",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -97,7 +97,7 @@
       "context_window": "s, and one capsule was ingested twice a day after meals for 12 weeks. NMN capsules contained NMN, cellulose, silicon dioxide, an",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -151,9 +151,9 @@
       "context_window": "d SIRT1 expression levels in middle-aged participants after 12 weeks. The study\u2019s secondary objectives were to assess the safety",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9935856_nicotinamide_adenine_dinucleotide_metabolism_and_arterial_st-p-8091",
@@ -205,7 +205,7 @@
       "context_window": ". Subjects were randomly assigned to either the NMN intake (250 mg/day) or placebo group. The baseline characteristics of particip",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -223,9 +223,9 @@
       "context_window": "ts indicate that long-term NMN supplementation at a dose of 250 mg/day is safe and well-tolerated in healthy middle-aged adults. F",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9935856_nicotinamide_adenine_dinucleotide_metabolism_and_arterial_st-n-1167",
@@ -2187,7 +2187,7 @@
       "context_window": "ased after the intervention compared to the placebo group ( p = 0.037). In addition, an intra-group comparison before and after t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2205,7 +2205,7 @@
       "context_window": "at serum NAM in the NMN group significantly increased after 12 weeks ( p = 0.006), while that in the placebo group significantly",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2223,7 +2223,7 @@
       "context_window": "M in the NMN group significantly increased after 12 weeks ( p = 0.006), while that in the placebo group significantly decreased a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2241,7 +2241,7 @@
       "context_window": "placebo group significantly decreased after intervention ( p = 0.014). On the other hand, NAD + and NMN in the serum were detect",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2444,7 +2444,7 @@
       "context_window": "baPWV values in the NMN intake group tended to decrease by 25.1 \u00b1 14.5 cm/s (Fig. 2 ). However, no significant difference was obse",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2462,7 +2462,7 @@
       "context_window": "values in the NMN intake group tended to decrease by 25.1 \u00b1 14.5 cm/s (Fig. 2 ). However, no significant difference was observe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3452,7 +3452,7 @@
       "context_window": "ndividuals. We also found that 12-week supplementation with 250 mg NMN tended to reduce baPWV values. A previous meta-analysis",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nmn",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3470,7 +3470,7 @@
       "context_window": "cursor NR 13 . In that study, a 6-week supplementation with 1000 mg/day of NR tended to reduce carotid-femoral PWV in healthy middl",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9939707_advances_of_berberine_against_metabolic_syndrome_associated_",
   "doi": "10.3389/fphar.2023.1112088",
-  "extracted_at": "2026-05-05T22:22:57+00:00",
+  "extracted_at": "2026-05-07T16:58:13+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 11,
@@ -205,9 +205,9 @@
       "context_window": "P) pathway in the rat kidney ( Ni et al., 2015 ). BBR (100, 200 mg/kg) alleviated DN histopathology, which may be related to t",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9939707_advances_of_berberine_against_metabolic_syndrome_associated_-rr-a-19873",
@@ -332,7 +332,7 @@
       "sentence": "Patients who received BBR also showed statistically significant improvements in total cholesterol (MD, -0.58; 95% CI, -0.74 to -0.41) and low-density lipoprotein (LDL) (MD, 0.52; 95% CI, -0.68 to -0.35) in antipsychotic-associated weight gain and MetS in patients with schizophrenia ( Chan et al., 2022 ).",
       "context_window": "y significant improvements in total cholesterol (MD, -0.58; 95% CI, -0.74 to -0.41) and low-density lipoprotein (LDL) (MD,",
       "claim_role": "dose",
-      "endpoint": "body weight",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -350,7 +350,7 @@
       "sentence": "Patients who received BBR also showed statistically significant improvements in total cholesterol (MD, -0.58; 95% CI, -0.74 to -0.41) and low-density lipoprotein (LDL) (MD, 0.52; 95% CI, -0.68 to -0.35) in antipsychotic-associated weight gain and MetS in patients with schizophrenia ( Chan et al., 2022 ).",
       "context_window": "0.74 to -0.41) and low-density lipoprotein (LDL) (MD, 0.52; 95% CI, -0.68 to -0.35) in antipsychotic-associated weight gain",
       "claim_role": "dose",
-      "endpoint": "body weight",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"

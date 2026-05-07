@@ -1,0 +1,120 @@
+{
+  "paper_id": "HIT_the_effects_of_melatonin_on_elevated_liver_enzymes_during_st",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_effects_of_melatonin_on_elevated_liver_enzymes_during_st-u-488",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 488,
+      "sentence": "The research program included 60 patients(aged 47-65 years, 41 women and 23 men)with hyperlipidemia taking atorvastatin or rosuvastatin in dose 20-40 mg daily.",
+      "context_window": "Methods. The research program included 60 patients(aged 47-65 years, 41 women and 23 men)with hyperlipidemia taking atorvastati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_effects_of_melatonin_on_elevated_liver_enzymes_during_st-u-585",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 585,
+      "sentence": "The research program included 60 patients(aged 47-65 years, 41 women and 23 men)with hyperlipidemia taking atorvastatin or rosuvastatin in dose 20-40 mg daily.",
+      "context_window": "perlipidemia taking atorvastatin or rosuvastatin in dose 20-40 mg daily. The patients were randomly allocated in two groups.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_effects_of_melatonin_on_elevated_liver_enzymes_during_st-n-659",
+      "claim_type": "sample_size",
+      "raw_text": "n=30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 659,
+      "sentence": "Group I (n=30) was recommended to take the same statin at a standardized daily dose of 20 mg together with melatonin at a dose 2 x 5 mg, at 7:00 and 21:00.",
+      "context_window": "he patients were randomly allocated in two groups. Group I (n=30) was recommended to take the same statin at a standardized",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_effects_of_melatonin_on_elevated_liver_enzymes_during_st-u-737",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 737,
+      "sentence": "Group I (n=30) was recommended to take the same statin at a standardized daily dose of 20 mg together with melatonin at a dose 2 x 5 mg, at 7:00 and 21:00.",
+      "context_window": "ded to take the same statin at a standardized daily dose of 20 mg together with melatonin at a dose 2 x 5 mg, at 7:00 and 21:",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_effects_of_melatonin_on_elevated_liver_enzymes_during_st-u-781",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 781,
+      "sentence": "Group I (n=30) was recommended to take the same statin at a standardized daily dose of 20 mg together with melatonin at a dose 2 x 5 mg, at 7:00 and 21:00.",
+      "context_window": "d daily dose of 20 mg together with melatonin at a dose 2 x 5 mg, at 7:00 and 21:00. In group II (n=30) patients took statin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_effects_of_melatonin_on_elevated_liver_enzymes_during_st-n-819",
+      "claim_type": "sample_size",
+      "raw_text": "n=30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 819,
+      "sentence": "In group II (n=30) patients took statins with placebo at the same time of the day.",
+      "context_window": "latonin at a dose 2 x 5 mg, at 7:00 and 21:00. In group II (n=30) patients took statins with placebo at the same time of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

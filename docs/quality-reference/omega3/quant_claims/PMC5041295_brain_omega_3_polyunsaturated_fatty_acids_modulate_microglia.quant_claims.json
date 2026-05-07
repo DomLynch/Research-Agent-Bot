@@ -1,0 +1,2965 @@
+{
+  "paper_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia",
+  "doi": "10.1186/s12974-016-0721-5",
+  "extracted_at": "2026-05-07T19:32:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 82,
+    "percentage": 66,
+    "p_value": 16
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-806",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 806,
+      "sentence": "At 12 weeks of age, mice underwent intracerebroventricular (icv) infusion of amyloid-\u03b2 1-40.",
+      "context_window": "gene that enables it to convert omega-6 to omega-3 PUFA. At 12 weeks of age, mice underwent intracerebroventricular (icv) infusi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-932",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 932,
+      "sentence": "Brains were collected between 1 and 28 days post-icv, and hippocampal microglia, astrocytes, and degenerating neurons were quantified by immunohistochemistry with epifluorescence microscopy, while microglia morphology was assessed with confocal microscopy and skeleton analysis.",
+      "context_window": "sion of amyloid-\u03b2 1-40. Brains were collected between 1 and 28 days post-icv, and hippocampal microglia, astrocytes, and degene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-1615",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1615,
+      "sentence": "Relative to the wild type mice fed with the safflower oil diet, fat-1 mice exhibited a lower peak in the number of labelled microglia, wild type mice fed with fish oil had fewer degenerating neurons, and both exhibited alterations in microglia morphology at 10 days post-surgery.",
+      "context_window": ", and both exhibited alterations in microglia morphology at 10 days post-surgery. There were no differences in astrocyte number",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-5340",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 5340,
+      "sentence": "Two studies fed rats with EPA for 4 weeks and noted reductions in hippocampal protein levels of interferon (IFN)-\u03b3 and IL-1\u03b2 and increases in peroxisome proliferator-activated receptor (PPAR)\u03b3 compared to control-fed animals 3 h following icv infusion of amyloid-\u03b2 1-40 [ 42 , 43 ].",
+      "context_window": ", (updated from [ 41 ]). Two studies fed rats with EPA for 4 weeks and noted reductions in hippocampal protein levels of inter",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-5670",
+      "claim_type": "unit_value",
+      "raw_text": "27 days",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 5670,
+      "sentence": "Another two studies used the same icv model but fed EPA [ 44 ] or DHA [ 45 ] for 27 days and identified dose-dependent reductions in the hippocampal mRNA and protein for CD11b, GFAP, IL-1\u03b2, and TNF-\u03b1 7 days following icv infusion of amyloid-\u03b2 relative to rats consuming the control chow.",
+      "context_window": "sed the same icv model but fed EPA [ 44 ] or DHA [ 45 ] for 27 days and identified dose-dependent reductions in the hippocampal",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-5789",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 5789,
+      "sentence": "Another two studies used the same icv model but fed EPA [ 44 ] or DHA [ 45 ] for 27 days and identified dose-dependent reductions in the hippocampal mRNA and protein for CD11b, GFAP, IL-1\u03b2, and TNF-\u03b1 7 days following icv infusion of amyloid-\u03b2 relative to rats consuming the control chow.",
+      "context_window": "pocampal mRNA and protein for CD11b, GFAP, IL-1\u03b2, and TNF-\u03b1 7 days following icv infusion of amyloid-\u03b2 relative to rats consum",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-6163",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 6163,
+      "sentence": "One study crossed triple transgenic 3xTg-AD mice with fat-1 mice, a transgenic animal expressing an omega-3 desaturase gene that allows it to convert omega-6 to omega-3 fatty acids, and detected lower levels of GFAP protein in the cortex of 3xTg-AD mice expressing the fat-1 gene after 18 months [ 46 ].",
+      "context_window": "the cortex of 3xTg-AD mice expressing the fat-1 gene after 18 months [ 46 ]. In contrast, Parrott et al. noted a deterioration i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-6832",
+      "claim_type": "unit_value",
+      "raw_text": "125 mg/day",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 6832,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 prote",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-6857",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 6857,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "ogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ]",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-6941",
+      "claim_type": "unit_value",
+      "raw_text": "125 mg/day",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "mg/day",
+      "source_section": "introduction",
+      "source_offset": 6941,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "\u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebb",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-6966",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 6966,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "ynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7061",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 7061,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "otein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] T",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7200",
+      "claim_type": "unit_value",
+      "raw_text": "2.46 mg",
+      "numeric_values": [
+        2.46
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 7200,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "se Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7225",
+      "claim_type": "unit_value",
+      "raw_text": "7 months",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 7225,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "ning salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7296",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/kg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "introduction",
+      "source_offset": 7296,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "eding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7316",
+      "claim_type": "unit_value",
+      "raw_text": "27 days",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 7316,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "en (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and p",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7324",
+      "claim_type": "unit_value",
+      "raw_text": "13 days",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 7324,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": ") [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein W",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7424",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/kg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "introduction",
+      "source_offset": 7424,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GF",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7457",
+      "claim_type": "unit_value",
+      "raw_text": "27 days",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 7457,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "16) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and p",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7465",
+      "claim_type": "unit_value",
+      "raw_text": "27 days",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 7465,
+      "sentence": "Table 1 Studies examining neuroinflammatory markers in AD models following omega-3 interventions Author (year) AD model Species Omega-3 PUFA treatment Timing of inflammation measurement Inflammatory outcome Minogue (2007) [ 43 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IFN-\u03b3, IL-1\u03b2 protein Lynch (2007) [ 42 ] icv a\u03b2 1-40 Rat 125 mg/day EPA vs MUFA \u00d7 4 weeks 3 h post-surgery \u2193 IL-1\u03b2 protein Lebbadi (2014) [ 46 ] 3xTg-AD Mouse Fat-1 cross 12 or 20 months old \u2193 GFAP,\u2194iPLA 2 , cPLA 2 protein Parrott (2015) [ 47 ] TgCRND8 Mouse Whole food diet containing salmon, fruits and vegetables 2.46 mg DHA/g diet After 7 months feeding \u2191 TNF-\u03b1 mRNA Wen (2016) [ 44 ] icv a\u03b2 1-40 Rat 150 or 300 mg/kg/day EPA \u00d7 27 days 13 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein Wen (2016) [ 45 ] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nStudies examining neuroinflammatory markers in AD models following omega-3 interventions\n\nA\u03b2 amyloid-\u03b2 , CD cluster of differentiation, DHA docosahexaenoic acid, EPA eicosapentaenoic acid, GFAP glial fibrillary acidic protein, icv intracerebroventricular, IFN interferon, IL interleukin, MUFA monounsaturated fatty acid, PC phosphatidylcholine, PLA phospholipase A, PS phosphatidylserine, TNF tumor necrosis factor\n\nAs markers of inflammation are produced dynamically in response to an insult, with an initial increase in levels followed by resolution (a return to homeostasis), examining neuroinflammatory markers over time can be useful to understand how inflammation and its resolution are affected by omega-3 PUFA.",
+      "context_window": "] icv a\u03b2 1-40 Rat 300 mg/kg/day DHA-PS or DHA-PC \u00d7 27 days 27 days post-surgery \u2193 CD11b, GFAP, TNF-\u03b1, IL-1\u03b2 mRNA and protein A",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-651",
+      "claim_type": "unit_value",
+      "raw_text": "2 week",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 651,
+      "sentence": "In the first study, 10-week-old male C57BL/6 mice were obtained from Charles River Laboratories (Saint Constant, Quebec, Canada) and were maintained on standard laboratory chow both during a 2 week acclimatization period prior to surgery and following surgery until death.",
+      "context_window": "d were maintained on standard laboratory chow both during a 2 week acclimatization period prior to surgery and following surge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-1198",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1198,
+      "sentence": "C57BL/6 dams were ordered from Charles River Laboratories at 5-6 weeks of age and maintained on the low omega-3, 10 % safflower oil (SO) diet for 2 weeks prior to breeding with fat-1 males.",
+      "context_window": "BL/6 dams were ordered from Charles River Laboratories at 5-6 weeks of age and maintained on the low omega-3, 10 % safflower oi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-1248",
+      "claim_type": "percentage",
+      "raw_text": "10 %",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1248,
+      "sentence": "C57BL/6 dams were ordered from Charles River Laboratories at 5-6 weeks of age and maintained on the low omega-3, 10 % safflower oil (SO) diet for 2 weeks prior to breeding with fat-1 males.",
+      "context_window": "ries at 5-6 weeks of age and maintained on the low omega-3, 10 % safflower oil (SO) diet for 2 weeks prior to breeding with",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-1281",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1281,
+      "sentence": "C57BL/6 dams were ordered from Charles River Laboratories at 5-6 weeks of age and maintained on the low omega-3, 10 % safflower oil (SO) diet for 2 weeks prior to breeding with fat-1 males.",
+      "context_window": "tained on the low omega-3, 10 % safflower oil (SO) diet for 2 weeks prior to breeding with fat-1 males. Dams were maintained on",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-1582",
+      "claim_type": "percentage",
+      "raw_text": "8 %",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1582,
+      "sentence": "Fat-1 mice were weaned onto the SO diet, while the wild type (WT) offspring were weaned onto either the SO diet or a diet that contained 8 % safflower oil and 2 % fish oil (FO).",
+      "context_window": "ere weaned onto either the SO diet or a diet that contained 8 % safflower oil and 2 % fish oil (FO). Offspring were maintai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-1604",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1604,
+      "sentence": "Fat-1 mice were weaned onto the SO diet, while the wild type (WT) offspring were weaned onto either the SO diet or a diet that contained 8 % safflower oil and 2 % fish oil (FO).",
+      "context_window": "the SO diet or a diet that contained 8 % safflower oil and 2 % fish oil (FO). Offspring were maintained on these diets unt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-1670",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1670,
+      "sentence": "Offspring were maintained on these diets until 12 weeks of age, at which point they underwent icv surgery and were returned to the same diets after surgery until death.",
+      "context_window": "sh oil (FO). Offspring were maintained on these diets until 12 weeks of age, at which point they underwent icv surgery and were",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2027",
+      "claim_type": "percentage",
+      "raw_text": "10 %",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2027,
+      "sentence": "Animals were fed one of the three experimental diets depending on the study: standard laboratory chow (Teklad 2018, Envigo, Indianapolis, IN, USA) or one of two diets modified from the AIN-93G rodent diet: the SO diet, which contains 10 % safflower oil by weight (SO; D04092701; Research Diets Inc., New Brunswick, NJ, USA), or the FO diet which contains 2 % menhaden oil and 8 % safflower oil (FO; D04092702; Research Diets Inc.).",
+      "context_window": "d from the AIN-93G rodent diet: the SO diet, which contains 10 % safflower oil by weight (SO; D04092701; Research Diets Inc.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2148",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2148,
+      "sentence": "Animals were fed one of the three experimental diets depending on the study: standard laboratory chow (Teklad 2018, Envigo, Indianapolis, IN, USA) or one of two diets modified from the AIN-93G rodent diet: the SO diet, which contains 10 % safflower oil by weight (SO; D04092701; Research Diets Inc., New Brunswick, NJ, USA), or the FO diet which contains 2 % menhaden oil and 8 % safflower oil (FO; D04092702; Research Diets Inc.).",
+      "context_window": "nc., New Brunswick, NJ, USA), or the FO diet which contains 2 % menhaden oil and 8 % safflower oil (FO; D04092702; Research",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2169",
+      "claim_type": "percentage",
+      "raw_text": "8 %",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2169,
+      "sentence": "Animals were fed one of the three experimental diets depending on the study: standard laboratory chow (Teklad 2018, Envigo, Indianapolis, IN, USA) or one of two diets modified from the AIN-93G rodent diet: the SO diet, which contains 10 % safflower oil by weight (SO; D04092701; Research Diets Inc., New Brunswick, NJ, USA), or the FO diet which contains 2 % menhaden oil and 8 % safflower oil (FO; D04092702; Research Diets Inc.).",
+      "context_window": "J, USA), or the FO diet which contains 2 % menhaden oil and 8 % safflower oil (FO; D04092702; Research Diets Inc.). The fat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2339",
+      "claim_type": "percentage",
+      "raw_text": "53 %",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2339,
+      "sentence": "The fatty acid composition of the chow diet used in our facility has been reported previously [ 49 ] and contains 53 % linoleic acid, 19 % oleic acid, 15 % palmitic acid, 6 % alpha linolenic acid (ALA), and trace amounts (<0.5 %) of other fatty acids.",
+      "context_window": "r facility has been reported previously [ 49 ] and contains 53 % linoleic acid, 19 % oleic acid, 15 % palmitic acid, 6 % alp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2359",
+      "claim_type": "percentage",
+      "raw_text": "19 %",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2359,
+      "sentence": "The fatty acid composition of the chow diet used in our facility has been reported previously [ 49 ] and contains 53 % linoleic acid, 19 % oleic acid, 15 % palmitic acid, 6 % alpha linolenic acid (ALA), and trace amounts (<0.5 %) of other fatty acids.",
+      "context_window": "reported previously [ 49 ] and contains 53 % linoleic acid, 19 % oleic acid, 15 % palmitic acid, 6 % alpha linolenic acid (A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2376",
+      "claim_type": "percentage",
+      "raw_text": "15 %",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2376,
+      "sentence": "The fatty acid composition of the chow diet used in our facility has been reported previously [ 49 ] and contains 53 % linoleic acid, 19 % oleic acid, 15 % palmitic acid, 6 % alpha linolenic acid (ALA), and trace amounts (<0.5 %) of other fatty acids.",
+      "context_window": "ly [ 49 ] and contains 53 % linoleic acid, 19 % oleic acid, 15 % palmitic acid, 6 % alpha linolenic acid (ALA), and trace am",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2396",
+      "claim_type": "percentage",
+      "raw_text": "6 %",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2396,
+      "sentence": "The fatty acid composition of the chow diet used in our facility has been reported previously [ 49 ] and contains 53 % linoleic acid, 19 % oleic acid, 15 % palmitic acid, 6 % alpha linolenic acid (ALA), and trace amounts (<0.5 %) of other fatty acids.",
+      "context_window": "ns 53 % linoleic acid, 19 % oleic acid, 15 % palmitic acid, 6 % alpha linolenic acid (ALA), and trace amounts (<0.5 %) of o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2448",
+      "claim_type": "percentage",
+      "raw_text": "0.5 %",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2448,
+      "sentence": "The fatty acid composition of the chow diet used in our facility has been reported previously [ 49 ] and contains 53 % linoleic acid, 19 % oleic acid, 15 % palmitic acid, 6 % alpha linolenic acid (ALA), and trace amounts (<0.5 %) of other fatty acids.",
+      "context_window": "c acid, 6 % alpha linolenic acid (ALA), and trace amounts (<0.5 %) of other fatty acids. Fatty acid composition of the FO and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-2680",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 2680,
+      "sentence": "Fatty acid composition of the FO and SO diets was confirmed in triplicate on both fresh (sampled from a sealed box stored at 4 \u00b0C) or week-old (sampled from hoppers in the animal facility after at least 1 week at room temperature) pellets.",
+      "context_window": "(sampled from hoppers in the animal facility after at least 1 week at room temperature) pellets. The main fatty acid species i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2904",
+      "claim_type": "percentage",
+      "raw_text": "70.7 %",
+      "numeric_values": [
+        70.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2904,
+      "sentence": "As a percent of fatty acids, the most abundant fatty acids in the SO diet are linoleic acid (18:2n-6, 70.7 %), oleic acid (18:1n-9, 15.5 %), palmitic acid (16:0, 8.0 %), and stearic acid (18:0, 2.9 %).",
+      "context_window": "dant fatty acids in the SO diet are linoleic acid (18:2n-6, 70.7 %), oleic acid (18:1n-9, 15.5 %), palmitic acid (16:0, 8.0 %)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2934",
+      "claim_type": "percentage",
+      "raw_text": "15.5 %",
+      "numeric_values": [
+        15.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2934,
+      "sentence": "As a percent of fatty acids, the most abundant fatty acids in the SO diet are linoleic acid (18:2n-6, 70.7 %), oleic acid (18:1n-9, 15.5 %), palmitic acid (16:0, 8.0 %), and stearic acid (18:0, 2.9 %).",
+      "context_window": "t are linoleic acid (18:2n-6, 70.7 %), oleic acid (18:1n-9, 15.5 %), palmitic acid (16:0, 8.0 %), and stearic acid (18:0, 2.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2964",
+      "claim_type": "percentage",
+      "raw_text": "8.0 %",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2964,
+      "sentence": "As a percent of fatty acids, the most abundant fatty acids in the SO diet are linoleic acid (18:2n-6, 70.7 %), oleic acid (18:1n-9, 15.5 %), palmitic acid (16:0, 8.0 %), and stearic acid (18:0, 2.9 %).",
+      "context_window": "70.7 %), oleic acid (18:1n-9, 15.5 %), palmitic acid (16:0, 8.0 %), and stearic acid (18:0, 2.9 %). The main fatty acid speci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-2996",
+      "claim_type": "percentage",
+      "raw_text": "2.9 %",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2996,
+      "sentence": "As a percent of fatty acids, the most abundant fatty acids in the SO diet are linoleic acid (18:2n-6, 70.7 %), oleic acid (18:1n-9, 15.5 %), palmitic acid (16:0, 8.0 %), and stearic acid (18:0, 2.9 %).",
+      "context_window": ".5 %), palmitic acid (16:0, 8.0 %), and stearic acid (18:0, 2.9 %). The main fatty acid species of the FO diet are linoleic a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3066",
+      "claim_type": "percentage",
+      "raw_text": "59.9 %",
+      "numeric_values": [
+        59.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3066,
+      "sentence": "The main fatty acid species of the FO diet are linoleic acid (59.9 %), oleic acid (13.6 %), palmitic acid (10.3 %), myristic acid (14:0, 2.7 %), EPA (20:5n-3, 2.6 %), and DHA (22:6n-3, 1.5 %).",
+      "context_window": "e main fatty acid species of the FO diet are linoleic acid (59.9 %), oleic acid (13.6 %), palmitic acid (10.3 %), myristic aci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3087",
+      "claim_type": "percentage",
+      "raw_text": "13.6 %",
+      "numeric_values": [
+        13.6
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3087,
+      "sentence": "The main fatty acid species of the FO diet are linoleic acid (59.9 %), oleic acid (13.6 %), palmitic acid (10.3 %), myristic acid (14:0, 2.7 %), EPA (20:5n-3, 2.6 %), and DHA (22:6n-3, 1.5 %).",
+      "context_window": "cies of the FO diet are linoleic acid (59.9 %), oleic acid (13.6 %), palmitic acid (10.3 %), myristic acid (14:0, 2.7 %), EPA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3111",
+      "claim_type": "percentage",
+      "raw_text": "10.3 %",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3111,
+      "sentence": "The main fatty acid species of the FO diet are linoleic acid (59.9 %), oleic acid (13.6 %), palmitic acid (10.3 %), myristic acid (14:0, 2.7 %), EPA (20:5n-3, 2.6 %), and DHA (22:6n-3, 1.5 %).",
+      "context_window": "linoleic acid (59.9 %), oleic acid (13.6 %), palmitic acid (10.3 %), myristic acid (14:0, 2.7 %), EPA (20:5n-3, 2.6 %), and DH",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3141",
+      "claim_type": "percentage",
+      "raw_text": "2.7 %",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3141,
+      "sentence": "The main fatty acid species of the FO diet are linoleic acid (59.9 %), oleic acid (13.6 %), palmitic acid (10.3 %), myristic acid (14:0, 2.7 %), EPA (20:5n-3, 2.6 %), and DHA (22:6n-3, 1.5 %).",
+      "context_window": "acid (13.6 %), palmitic acid (10.3 %), myristic acid (14:0, 2.7 %), EPA (20:5n-3, 2.6 %), and DHA (22:6n-3, 1.5 %). Neither d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3163",
+      "claim_type": "percentage",
+      "raw_text": "2.6 %",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3163,
+      "sentence": "The main fatty acid species of the FO diet are linoleic acid (59.9 %), oleic acid (13.6 %), palmitic acid (10.3 %), myristic acid (14:0, 2.7 %), EPA (20:5n-3, 2.6 %), and DHA (22:6n-3, 1.5 %).",
+      "context_window": "c acid (10.3 %), myristic acid (14:0, 2.7 %), EPA (20:5n-3, 2.6 %), and DHA (22:6n-3, 1.5 %). Neither diet contained >0.5 % o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3189",
+      "claim_type": "percentage",
+      "raw_text": "1.5 %",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3189,
+      "sentence": "The main fatty acid species of the FO diet are linoleic acid (59.9 %), oleic acid (13.6 %), palmitic acid (10.3 %), myristic acid (14:0, 2.7 %), EPA (20:5n-3, 2.6 %), and DHA (22:6n-3, 1.5 %).",
+      "context_window": "acid (14:0, 2.7 %), EPA (20:5n-3, 2.6 %), and DHA (22:6n-3, 1.5 %). Neither diet contained >0.5 % of any other fatty acid not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3221",
+      "claim_type": "percentage",
+      "raw_text": "0.5 %",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3221,
+      "sentence": "Neither diet contained >0.5 % of any other fatty acid not listed in Table 2 , and neither diet\u2019s measured composition differed from the manufacturer\u2019s product specifications or what has been measured in our lab previously [ 50 ].",
+      "context_window": ", 2.6 %), and DHA (22:6n-3, 1.5 %). Neither diet contained >0.5 % of any other fatty acid not listed in Table 2 , and neither",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3541",
+      "claim_type": "percentage",
+      "raw_text": "10 %",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3541,
+      "sentence": "Table 2 Fatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets 10 % Safflower oil 2 % Fish oil, 8 % safflower oil Fatty acid composition 14:0 n.d 2.7 16:0 8.0 10.3 16:1n-7 n.d 3.1 18:0 2.9 2.8 18:1n-9 15.5 13.6 18:1n-7 0.7 1.1 18:2n-6 70.7 59.9 18:3n-3 0.5 0.8 EPA n.d 2.6 DHA n.d 1.5 Fatty acid percent compositions are calculated as the percentage of the total identified fatty acids and are means of triplicate analysis.",
+      "context_window": "iets also did not differ. Table 2 Fatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets 10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3564",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3564,
+      "sentence": "Table 2 Fatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets 10 % Safflower oil 2 % Fish oil, 8 % safflower oil Fatty acid composition 14:0 n.d 2.7 16:0 8.0 10.3 16:1n-7 n.d 3.1 18:0 2.9 2.8 18:1n-9 15.5 13.6 18:1n-7 0.7 1.1 18:2n-6 70.7 59.9 18:3n-3 0.5 0.8 EPA n.d 2.6 DHA n.d 1.5 Fatty acid percent compositions are calculated as the percentage of the total identified fatty acids and are means of triplicate analysis.",
+      "context_window": "r. Table 2 Fatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets 10 % Safflower oil 2 % Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3578",
+      "claim_type": "percentage",
+      "raw_text": "8 %",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3578,
+      "sentence": "Table 2 Fatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets 10 % Safflower oil 2 % Fish oil, 8 % safflower oil Fatty acid composition 14:0 n.d 2.7 16:0 8.0 10.3 16:1n-7 n.d 3.1 18:0 2.9 2.8 18:1n-9 15.5 13.6 18:1n-7 0.7 1.1 18:2n-6 70.7 59.9 18:3n-3 0.5 0.8 EPA n.d 2.6 DHA n.d 1.5 Fatty acid percent compositions are calculated as the percentage of the total identified fatty acids and are means of triplicate analysis.",
+      "context_window": "ty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets 10 % Safflower oil 2 % Fish oil, 8 % sa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3602",
+      "claim_type": "percentage",
+      "raw_text": "10 %",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3602,
+      "sentence": "Table 2 Fatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets 10 % Safflower oil 2 % Fish oil, 8 % safflower oil Fatty acid composition 14:0 n.d 2.7 16:0 8.0 10.3 16:1n-7 n.d 3.1 18:0 2.9 2.8 18:1n-9 15.5 13.6 18:1n-7 0.7 1.1 18:2n-6 70.7 59.9 18:3n-3 0.5 0.8 EPA n.d 2.6 DHA n.d 1.5 Fatty acid percent compositions are calculated as the percentage of the total identified fatty acids and are means of triplicate analysis.",
+      "context_window": "0 % safflower oil and 2 % fish oil, 8 % safflower oil diets 10 % Safflower oil 2 % Fish oil, 8 % safflower oil Fatty acid co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3621",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3621,
+      "sentence": "Table 2 Fatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets 10 % Safflower oil 2 % Fish oil, 8 % safflower oil Fatty acid composition 14:0 n.d 2.7 16:0 8.0 10.3 16:1n-7 n.d 3.1 18:0 2.9 2.8 18:1n-9 15.5 13.6 18:1n-7 0.7 1.1 18:2n-6 70.7 59.9 18:3n-3 0.5 0.8 EPA n.d 2.6 DHA n.d 1.5 Fatty acid percent compositions are calculated as the percentage of the total identified fatty acids and are means of triplicate analysis.",
+      "context_window": "nd 2 % fish oil, 8 % safflower oil diets 10 % Safflower oil 2 % Fish oil, 8 % safflower oil Fatty acid composition 14:0 n.d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-3635",
+      "claim_type": "percentage",
+      "raw_text": "8 %",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3635,
+      "sentence": "Table 2 Fatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets 10 % Safflower oil 2 % Fish oil, 8 % safflower oil Fatty acid composition 14:0 n.d 2.7 16:0 8.0 10.3 16:1n-7 n.d 3.1 18:0 2.9 2.8 18:1n-9 15.5 13.6 18:1n-7 0.7 1.1 18:2n-6 70.7 59.9 18:3n-3 0.5 0.8 EPA n.d 2.6 DHA n.d 1.5 Fatty acid percent compositions are calculated as the percentage of the total identified fatty acids and are means of triplicate analysis.",
+      "context_window": "l, 8 % safflower oil diets 10 % Safflower oil 2 % Fish oil, 8 % safflower oil Fatty acid composition 14:0 n.d 2.7 16:0 8.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-4004",
+      "claim_type": "percentage",
+      "raw_text": "0.5 %",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4004,
+      "sentence": "Other fatty acids are present at levels <0.5 % of total fatty acids not shown n.d. not detected\n\nFatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets\n\nFatty acid percent compositions are calculated as the percentage of the total identified fatty acids and are means of triplicate analysis.",
+      "context_window": "iplicate analysis. Other fatty acids are present at levels <0.5 % of total fatty acids not shown n.d. not detected Fatty aci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-4086",
+      "claim_type": "percentage",
+      "raw_text": "10 %",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4086,
+      "sentence": "Other fatty acids are present at levels <0.5 % of total fatty acids not shown n.d. not detected\n\nFatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets\n\nFatty acid percent compositions are calculated as the percentage of the total identified fatty acids and are means of triplicate analysis.",
+      "context_window": "cids not shown n.d. not detected Fatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets Fa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-4109",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4109,
+      "sentence": "Other fatty acids are present at levels <0.5 % of total fatty acids not shown n.d. not detected\n\nFatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets\n\nFatty acid percent compositions are calculated as the percentage of the total identified fatty acids and are means of triplicate analysis.",
+      "context_window": "detected Fatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets Fatty acid percent compo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-4123",
+      "claim_type": "percentage",
+      "raw_text": "8 %",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4123,
+      "sentence": "Other fatty acids are present at levels <0.5 % of total fatty acids not shown n.d. not detected\n\nFatty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets\n\nFatty acid percent compositions are calculated as the percentage of the total identified fatty acids and are means of triplicate analysis.",
+      "context_window": "ty acid composition of 10 % safflower oil and 2 % fish oil, 8 % safflower oil diets Fatty acid percent compositions are ca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-4328",
+      "claim_type": "percentage",
+      "raw_text": "0.5 %",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4328,
+      "sentence": "Other fatty acids are present at levels <0.5 % of total fatty acids not shown\n\nn.d. not detected\n\nGenotyping was carried out using a method adapted from Orr et al . [ 50 ].",
+      "context_window": "iplicate analysis. Other fatty acids are present at levels <0.5 % of total fatty acids not shown n.d. not detected Genotypi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-4575",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4575,
+      "sentence": "Tails of 2-3-week-old mice were coated with EMLA analgesic cream (AstraZeneca, Mississauga, Canada), after which 2-3 mm of the tip of the tail was removed and the wound cauterized.",
+      "context_window": "sic cream (AstraZeneca, Mississauga, Canada), after which 2-3 mm of the tip of the tail was removed and the wound cauterized",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-4730",
+      "claim_type": "percentage",
+      "raw_text": "0.2 %",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4730,
+      "sentence": "Tails were digested overnight in a cell lysis buffer (100 mM Tris HCl pH 8.5, 5 mM EDTA, 0.2 % sodium dodecyl sulfate, 200 mM NaCl) with 0.8 mg/ml proteinase K.",
+      "context_window": "in a cell lysis buffer (100 mM Tris HCl pH 8.5, 5 mM EDTA, 0.2 % sodium dodecyl sulfate, 200 mM NaCl) with 0.8 mg/ml protein",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-4778",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 mg",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4778,
+      "sentence": "Tails were digested overnight in a cell lysis buffer (100 mM Tris HCl pH 8.5, 5 mM EDTA, 0.2 % sodium dodecyl sulfate, 200 mM NaCl) with 0.8 mg/ml proteinase K.",
+      "context_window": "5 mM EDTA, 0.2 % sodium dodecyl sulfate, 200 mM NaCl) with 0.8 mg/ml proteinase K. Tail debris was pelleted (20 min \u00d7 15,700",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-5468",
+      "claim_type": "percentage",
+      "raw_text": "1.5 %",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5468,
+      "sentence": "Resultant 250 base pair bands were visualized on a 1.5 % agarose gel containing SYBR Safe DNA Gel Stain (Life Technologies, ThermoScientific, Waltham, MA, USA) using a UV light box.",
+      "context_window": "t 72 \u00b0C. Resultant 250 base pair bands were visualized on a 1.5 % agarose gel containing SYBR Safe DNA Gel Stain (Life Techno",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-5673",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5673,
+      "sentence": "A separate group of non-surgery mice were killed by CO 2 asphyxiation at 12 weeks of age, and total lipids were extracted from whole brains using a method adapted from Folch et al . [ 51 ] .",
+      "context_window": "oup of non-surgery mice were killed by CO 2 asphyxiation at 12 weeks of age, and total lipids were extracted from whole brains u",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-6924",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6924,
+      "sentence": "1 a TEM image of aggregated amyloid-\u03b2 1-40, length of 100-500 nm and smooth appearance characteristic of fibers. b Mean \u00b1 SEM of iba1-labelled microglia counts in the CA1, CA2, CA3, and DG of the hippocampus following intracerebroventricular infusion of amyloid-\u03b2 1-40, normalized for the counts following infusion of control peptide (amyloid-\u03b2 40-1). c Sample images of the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloid-\u03b2 1-40 ( right ) or the control peptide amyloid-\u03b2 40-1 ( left ). d Mean \u00b1 SEM of GFAP-labelled astrocyte counts in the CA1, CA2, CA3, and DG of the hippocampus following intracerebroventricular infusion of amyloid-\u03b2 1-40, normalized for the counts following infusion of control peptide. e Sample images from the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloid-\u03b2 1-40 ( right ) or the control peptide amyloid-\u03b2 40-1 ( left ).",
+      "context_window": "40-1). c Sample images of the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7335",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7335,
+      "sentence": "1 a TEM image of aggregated amyloid-\u03b2 1-40, length of 100-500 nm and smooth appearance characteristic of fibers. b Mean \u00b1 SEM of iba1-labelled microglia counts in the CA1, CA2, CA3, and DG of the hippocampus following intracerebroventricular infusion of amyloid-\u03b2 1-40, normalized for the counts following infusion of control peptide (amyloid-\u03b2 40-1). c Sample images of the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloid-\u03b2 1-40 ( right ) or the control peptide amyloid-\u03b2 40-1 ( left ). d Mean \u00b1 SEM of GFAP-labelled astrocyte counts in the CA1, CA2, CA3, and DG of the hippocampus following intracerebroventricular infusion of amyloid-\u03b2 1-40, normalized for the counts following infusion of control peptide. e Sample images from the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloid-\u03b2 1-40 ( right ) or the control peptide amyloid-\u03b2 40-1 ( left ).",
+      "context_window": "ide. e Sample images from the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-7688",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7688,
+      "sentence": "Different letters denote significant differences ( p < 0.05) by one-way ANOVA followed by Bonferroni post hoc test.",
+      "context_window": "d cells. Different letters denote significant differences ( p < 0.05) by one-way ANOVA followed by Bonferroni post hoc test. CA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-8348",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 8348,
+      "sentence": "SEM standard error of the mean TEM transmission electron microscopy\n\na TEM image of aggregated amyloid-\u03b2 1-40, length of 100-500 nm and smooth appearance characteristic of fibers. b Mean \u00b1 SEM of iba1-labelled microglia counts in the CA1, CA2, CA3, and DG of the hippocampus following intracerebroventricular infusion of amyloid-\u03b2 1-40, normalized for the counts following infusion of control peptide (amyloid-\u03b2 40-1). c Sample images of the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloid-\u03b2 1-40 ( right ) or the control peptide amyloid-\u03b2 40-1 ( left ). d Mean \u00b1 SEM of GFAP-labelled astrocyte counts in the CA1, CA2, CA3, and DG of the hippocampus following intracerebroventricular infusion of amyloid-\u03b2 1-40, normalized for the counts following infusion of control peptide. e Sample images from the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloid-\u03b2 1-40 ( right ) or the control peptide amyloid-\u03b2 40-1 ( left ).",
+      "context_window": "40-1). c Sample images of the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-8759",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 8759,
+      "sentence": "SEM standard error of the mean TEM transmission electron microscopy\n\na TEM image of aggregated amyloid-\u03b2 1-40, length of 100-500 nm and smooth appearance characteristic of fibers. b Mean \u00b1 SEM of iba1-labelled microglia counts in the CA1, CA2, CA3, and DG of the hippocampus following intracerebroventricular infusion of amyloid-\u03b2 1-40, normalized for the counts following infusion of control peptide (amyloid-\u03b2 40-1). c Sample images of the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloid-\u03b2 1-40 ( right ) or the control peptide amyloid-\u03b2 40-1 ( left ). d Mean \u00b1 SEM of GFAP-labelled astrocyte counts in the CA1, CA2, CA3, and DG of the hippocampus following intracerebroventricular infusion of amyloid-\u03b2 1-40, normalized for the counts following infusion of control peptide. e Sample images from the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloid-\u03b2 1-40 ( right ) or the control peptide amyloid-\u03b2 40-1 ( left ).",
+      "context_window": "ide. e Sample images from the CA3 region of the hippocampus 15 days following intracerebroventricular infusion of either amyloi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-9112",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9112,
+      "sentence": "Different letters denote significant differences ( p < 0.05) by one-way ANOVA followed by Bonferroni post hoc test.",
+      "context_window": "d cells. Different letters denote significant differences ( p < 0.05) by one-way ANOVA followed by Bonferroni post hoc test. CA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-9451",
+      "claim_type": "percentage",
+      "raw_text": "1 %",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9451,
+      "sentence": "Briefly, 1 % Pioloform-coated copper grids (Canemco #G300HEX, Canada) were charged using a glow discharge apparatus (Quorum Technologies, Laughton, East Sussex, UK) at 0.15 Torr \u00d7 15 s, 5 mA, and 2 \u03bcl of 1 \u03bcg/\u03bcl amyloid-\u03b2 1-40 in PBS was loaded for 1 min, wicked to remove large solvent droplets and allowed to air dry.",
+      "context_window": "s conducted according to published methods [ 56 ]. Briefly, 1 % Pioloform-coated copper grids (Canemco #G300HEX, Canada) we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-9780",
+      "claim_type": "percentage",
+      "raw_text": "1 %",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9780,
+      "sentence": "Two microliter of 1 % phosphotungstic acid were then loaded for 45 s to stain the grids, then wicked and allowed to air dry under an incandescent light bulb.",
+      "context_window": "solvent droplets and allowed to air dry. Two microliter of 1 % phosphotungstic acid were then loaded for 45 s to stain the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-10158",
+      "claim_type": "percentage",
+      "raw_text": "3 %",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10158,
+      "sentence": "Mice were anesthetized by isoflurane (induction 3 %, maintenance 2 %) and the top of head shaved.",
+      "context_window": "sly [ 49 ]. Mice were anesthetized by isoflurane (induction 3 %, maintenance 2 %) and the top of head shaved. The head was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-10175",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10175,
+      "sentence": "Mice were anesthetized by isoflurane (induction 3 %, maintenance 2 %) and the top of head shaved.",
+      "context_window": "were anesthetized by isoflurane (induction 3 %, maintenance 2 %) and the top of head shaved. The head was secured via ear a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-10428",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mg",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 10428,
+      "sentence": "The analgesic Marcaine (Hospira Healthcare Corporation, Montreal, Qu\u00e9bec, Canada) was injected at 1.5 mg/kg subcutaneously at the incision site.",
+      "context_window": "care Corporation, Montreal, Qu\u00e9bec, Canada) was injected at 1.5 mg/kg subcutaneously at the incision site. After 5 min, the sk",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-10633",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 10633,
+      "sentence": "The head was gently raised or lowered to ensure the skull was level (<0.1 mm difference in height between bregma and lambda).",
+      "context_window": "as gently raised or lowered to ensure the skull was level (<0.1 mm difference in height between bregma and lambda). A small ho",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-10720",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 10720,
+      "sentence": "A small hole was then drilled -1.0 mm medial/lateral and -0.5 mm anterior/posterior to bregma, and a 33-gauge needle was lowered -2.4 mm dorsal/ventral into the left lateral ventricle.",
+      "context_window": "between bregma and lambda). A small hole was then drilled -1.0 mm medial/lateral and -0.5 mm anterior/posterior to bregma, an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-10747",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 10747,
+      "sentence": "A small hole was then drilled -1.0 mm medial/lateral and -0.5 mm anterior/posterior to bregma, and a 33-gauge needle was lowered -2.4 mm dorsal/ventral into the left lateral ventricle.",
+      "context_window": ". A small hole was then drilled -1.0 mm medial/lateral and -0.5 mm anterior/posterior to bregma, and a 33-gauge needle was low",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-10819",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 mm",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 10819,
+      "sentence": "A small hole was then drilled -1.0 mm medial/lateral and -0.5 mm anterior/posterior to bregma, and a 33-gauge needle was lowered -2.4 mm dorsal/ventral into the left lateral ventricle.",
+      "context_window": "ior/posterior to bregma, and a 33-gauge needle was lowered -2.4 mm dorsal/ventral into the left lateral ventricle. Five microl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-11584",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 11584,
+      "sentence": "Mice were euthanized at various time points between 24 h and 28 days post-surgery.",
+      "context_window": "ice were euthanized at various time points between 24 h and 28 days post-surgery. Time points were selected based on previous w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-11874",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 11874,
+      "sentence": "Mice were anesthetized with 250 mg/kg intraperitoneal avertin and euthanized via transcardiac perfusion with cold PBS for 3 min, followed by 7 min of 4 % paraformaldehyde, infused at a rate of 4 ml/min using a peristaltic pump (GE Healthcare, Mississauga, ON, Canada).",
+      "context_window": "ry experiments described here. Mice were anesthetized with 250 mg/kg intraperitoneal avertin and euthanized via transcardiac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-11996",
+      "claim_type": "percentage",
+      "raw_text": "4 %",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11996,
+      "sentence": "Mice were anesthetized with 250 mg/kg intraperitoneal avertin and euthanized via transcardiac perfusion with cold PBS for 3 min, followed by 7 min of 4 % paraformaldehyde, infused at a rate of 4 ml/min using a peristaltic pump (GE Healthcare, Mississauga, ON, Canada).",
+      "context_window": "iac perfusion with cold PBS for 3 min, followed by 7 min of 4 % paraformaldehyde, infused at a rate of 4 ml/min using a per",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-12164",
+      "claim_type": "percentage",
+      "raw_text": "4 %",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12164,
+      "sentence": "Brains were extracted and post-fixed for 24 h in 4 % paraformaldehyde, followed by dehydration and storage in a 30 % sucrose solution until sectioning.",
+      "context_window": ", Canada). Brains were extracted and post-fixed for 24 h in 4 % paraformaldehyde, followed by dehydration and storage in a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-12227",
+      "claim_type": "percentage",
+      "raw_text": "30 %",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12227,
+      "sentence": "Brains were extracted and post-fixed for 24 h in 4 % paraformaldehyde, followed by dehydration and storage in a 30 % sucrose solution until sectioning.",
+      "context_window": "paraformaldehyde, followed by dehydration and storage in a 30 % sucrose solution until sectioning. Brains were frozen in Cr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-12458",
+      "claim_type": "percentage",
+      "raw_text": "0.05 %",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12458,
+      "sentence": "Slices were stored in 0.05 % sodium azide until analysis.",
+      "context_window": "ostat (Leica, CM 1510S, Concord, ON). Slices were stored in 0.05 % sodium azide until analysis. For immunohistochemistry to v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-12640",
+      "claim_type": "percentage",
+      "raw_text": "0.5 %",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12640,
+      "sentence": "For immunohistochemistry to visualize astrocytes and microglia, slices were washed three times for 10 min each in PBS and quenched for 10 min in 0.5 % sodium borohydride, followed by another three PBS washes.",
+      "context_window": "ree times for 10 min each in PBS and quenched for 10 min in 0.5 % sodium borohydride, followed by another three PBS washes. S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-12751",
+      "claim_type": "percentage",
+      "raw_text": "10 %",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12751,
+      "sentence": "Sections were blocked for 2 h in a solution of 10 % normal goat serum, 0.75 % bovine serum albumin, and 0.1 % Triton-X in PBS and incubated overnight in antibody solution (2 % normal goat serum, 0.01 % Triton-X in PBS), with rabbit anti-ionized calcium-binding adapter molecule 1 (iba1) (Wako Chemicals, Richmond VA, USA) and mouse anti-GFAP (Antibodies Inc., Davis, CA, USA) antibodies.",
+      "context_window": "PBS washes. Sections were blocked for 2 h in a solution of 10 % normal goat serum, 0.75 % bovine serum albumin, and 0.1 % T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-12775",
+      "claim_type": "percentage",
+      "raw_text": "0.75 %",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12775,
+      "sentence": "Sections were blocked for 2 h in a solution of 10 % normal goat serum, 0.75 % bovine serum albumin, and 0.1 % Triton-X in PBS and incubated overnight in antibody solution (2 % normal goat serum, 0.01 % Triton-X in PBS), with rabbit anti-ionized calcium-binding adapter molecule 1 (iba1) (Wako Chemicals, Richmond VA, USA) and mouse anti-GFAP (Antibodies Inc., Davis, CA, USA) antibodies.",
+      "context_window": "re blocked for 2 h in a solution of 10 % normal goat serum, 0.75 % bovine serum albumin, and 0.1 % Triton-X in PBS and incubat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-12808",
+      "claim_type": "percentage",
+      "raw_text": "0.1 %",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12808,
+      "sentence": "Sections were blocked for 2 h in a solution of 10 % normal goat serum, 0.75 % bovine serum albumin, and 0.1 % Triton-X in PBS and incubated overnight in antibody solution (2 % normal goat serum, 0.01 % Triton-X in PBS), with rabbit anti-ionized calcium-binding adapter molecule 1 (iba1) (Wako Chemicals, Richmond VA, USA) and mouse anti-GFAP (Antibodies Inc., Davis, CA, USA) antibodies.",
+      "context_window": "of 10 % normal goat serum, 0.75 % bovine serum albumin, and 0.1 % Triton-X in PBS and incubated overnight in antibody solutio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-12876",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12876,
+      "sentence": "Sections were blocked for 2 h in a solution of 10 % normal goat serum, 0.75 % bovine serum albumin, and 0.1 % Triton-X in PBS and incubated overnight in antibody solution (2 % normal goat serum, 0.01 % Triton-X in PBS), with rabbit anti-ionized calcium-binding adapter molecule 1 (iba1) (Wako Chemicals, Richmond VA, USA) and mouse anti-GFAP (Antibodies Inc., Davis, CA, USA) antibodies.",
+      "context_window": "iton-X in PBS and incubated overnight in antibody solution (2 % normal goat serum, 0.01 % Triton-X in PBS), with rabbit ant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-12899",
+      "claim_type": "percentage",
+      "raw_text": "0.01 %",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12899,
+      "sentence": "Sections were blocked for 2 h in a solution of 10 % normal goat serum, 0.75 % bovine serum albumin, and 0.1 % Triton-X in PBS and incubated overnight in antibody solution (2 % normal goat serum, 0.01 % Triton-X in PBS), with rabbit anti-ionized calcium-binding adapter molecule 1 (iba1) (Wako Chemicals, Richmond VA, USA) and mouse anti-GFAP (Antibodies Inc., Davis, CA, USA) antibodies.",
+      "context_window": "ated overnight in antibody solution (2 % normal goat serum, 0.01 % Triton-X in PBS), with rabbit anti-ionized calcium-binding",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-14263",
+      "claim_type": "percentage",
+      "raw_text": "100 %",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14263,
+      "sentence": "Slides were then placed in a staining rack and moved sequentially through the following solutions: dH 2 O \u00d7 1 min, 100 % ethanol \u00d7 3 min, 70 % ethanol \u00d7 1 min, dH 2 O \u00d7 1 min, 0.06 % potassium permanganate \u00d7 15 min on a shaker, dH 2 O \u00d7 1 min, and then avoiding light: 0.001 % FJC + 0.2 % Hoescht stain in 0.1 % acetic acid \u00d7 30 min followed by 3 \u00d7 1 min washes in dH 2 O prior to drying overnight in the dark.",
+      "context_window": "quentially through the following solutions: dH 2 O \u00d7 1 min, 100 % ethanol \u00d7 3 min, 70 % ethanol \u00d7 1 min, dH 2 O \u00d7 1 min, 0.06",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-14286",
+      "claim_type": "percentage",
+      "raw_text": "70 %",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14286,
+      "sentence": "Slides were then placed in a staining rack and moved sequentially through the following solutions: dH 2 O \u00d7 1 min, 100 % ethanol \u00d7 3 min, 70 % ethanol \u00d7 1 min, dH 2 O \u00d7 1 min, 0.06 % potassium permanganate \u00d7 15 min on a shaker, dH 2 O \u00d7 1 min, and then avoiding light: 0.001 % FJC + 0.2 % Hoescht stain in 0.1 % acetic acid \u00d7 30 min followed by 3 \u00d7 1 min washes in dH 2 O prior to drying overnight in the dark.",
+      "context_window": "following solutions: dH 2 O \u00d7 1 min, 100 % ethanol \u00d7 3 min, 70 % ethanol \u00d7 1 min, dH 2 O \u00d7 1 min, 0.06 % potassium permangan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-14324",
+      "claim_type": "percentage",
+      "raw_text": "0.06 %",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14324,
+      "sentence": "Slides were then placed in a staining rack and moved sequentially through the following solutions: dH 2 O \u00d7 1 min, 100 % ethanol \u00d7 3 min, 70 % ethanol \u00d7 1 min, dH 2 O \u00d7 1 min, 0.06 % potassium permanganate \u00d7 15 min on a shaker, dH 2 O \u00d7 1 min, and then avoiding light: 0.001 % FJC + 0.2 % Hoescht stain in 0.1 % acetic acid \u00d7 30 min followed by 3 \u00d7 1 min washes in dH 2 O prior to drying overnight in the dark.",
+      "context_window": "00 % ethanol \u00d7 3 min, 70 % ethanol \u00d7 1 min, dH 2 O \u00d7 1 min, 0.06 % potassium permanganate \u00d7 15 min on a shaker, dH 2 O \u00d7 1 min",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-14417",
+      "claim_type": "percentage",
+      "raw_text": "0.001 %",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14417,
+      "sentence": "Slides were then placed in a staining rack and moved sequentially through the following solutions: dH 2 O \u00d7 1 min, 100 % ethanol \u00d7 3 min, 70 % ethanol \u00d7 1 min, dH 2 O \u00d7 1 min, 0.06 % potassium permanganate \u00d7 15 min on a shaker, dH 2 O \u00d7 1 min, and then avoiding light: 0.001 % FJC + 0.2 % Hoescht stain in 0.1 % acetic acid \u00d7 30 min followed by 3 \u00d7 1 min washes in dH 2 O prior to drying overnight in the dark.",
+      "context_window": "5 min on a shaker, dH 2 O \u00d7 1 min, and then avoiding light: 0.001 % FJC + 0.2 % Hoescht stain in 0.1 % acetic acid \u00d7 30 min fol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-14431",
+      "claim_type": "percentage",
+      "raw_text": "0.2 %",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14431,
+      "sentence": "Slides were then placed in a staining rack and moved sequentially through the following solutions: dH 2 O \u00d7 1 min, 100 % ethanol \u00d7 3 min, 70 % ethanol \u00d7 1 min, dH 2 O \u00d7 1 min, 0.06 % potassium permanganate \u00d7 15 min on a shaker, dH 2 O \u00d7 1 min, and then avoiding light: 0.001 % FJC + 0.2 % Hoescht stain in 0.1 % acetic acid \u00d7 30 min followed by 3 \u00d7 1 min washes in dH 2 O prior to drying overnight in the dark.",
+      "context_window": "ker, dH 2 O \u00d7 1 min, and then avoiding light: 0.001 % FJC + 0.2 % Hoescht stain in 0.1 % acetic acid \u00d7 30 min followed by 3 \u00d7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-14454",
+      "claim_type": "percentage",
+      "raw_text": "0.1 %",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14454,
+      "sentence": "Slides were then placed in a staining rack and moved sequentially through the following solutions: dH 2 O \u00d7 1 min, 100 % ethanol \u00d7 3 min, 70 % ethanol \u00d7 1 min, dH 2 O \u00d7 1 min, 0.06 % potassium permanganate \u00d7 15 min on a shaker, dH 2 O \u00d7 1 min, and then avoiding light: 0.001 % FJC + 0.2 % Hoescht stain in 0.1 % acetic acid \u00d7 30 min followed by 3 \u00d7 1 min washes in dH 2 O prior to drying overnight in the dark.",
+      "context_window": "d then avoiding light: 0.001 % FJC + 0.2 % Hoescht stain in 0.1 % acetic acid \u00d7 30 min followed by 3 \u00d7 1 min washes in dH 2 O",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-14987",
+      "claim_type": "unit_value",
+      "raw_text": "0.83 mm",
+      "numeric_values": [
+        0.83
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 14987,
+      "sentence": "Cells were visualized (0.83 mm \u00d7 0.66 mm field of view) using epifluorescent microscopy.",
+      "context_window": "contralateral to the injection site. Cells were visualized (0.83 mm \u00d7 0.66 mm field of view) using epifluorescent microscopy. I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-14997",
+      "claim_type": "unit_value",
+      "raw_text": "0.66 mm",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 14997,
+      "sentence": "Cells were visualized (0.83 mm \u00d7 0.66 mm field of view) using epifluorescent microscopy.",
+      "context_window": "ral to the injection site. Cells were visualized (0.83 mm \u00d7 0.66 mm field of view) using epifluorescent microscopy. Iba1-labell",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-16361",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 16361,
+      "sentence": "As microglia are thought to take on an amoeboid morphology, characterized by fewer, less complex branches and a larger cell body upon activation, brain sections at baseline and 10 days post-surgery (a peak point in microglia activation, Fig.",
+      "context_window": "r cell body upon activation, brain sections at baseline and 10 days post-surgery (a peak point in microglia activation, Fig. 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-16794",
+      "claim_type": "unit_value",
+      "raw_text": "0.44 mm",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 16794,
+      "sentence": "Microglia morphology was measured in all cells (0.44 mm \u00d7 0.25 mm field of view) in each region using a method adapted from Morrison et al. [ 58 ].",
+      "context_window": "objective. Microglia morphology was measured in all cells (0.44 mm \u00d7 0.25 mm field of view) in each region using a method adap",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-16804",
+      "claim_type": "unit_value",
+      "raw_text": "0.25 mm",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 16804,
+      "sentence": "Microglia morphology was measured in all cells (0.44 mm \u00d7 0.25 mm field of view) in each region using a method adapted from Morrison et al. [ 58 ].",
+      "context_window": ". Microglia morphology was measured in all cells (0.44 mm \u00d7 0.25 mm field of view) in each region using a method adapted from M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-18217",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 18217,
+      "sentence": "2 a - d Iba1-labelled microglia cell counts (\u00b1SEM) normalized to non-surgery counts in the hippocampus regions CA1 ( a ), CA2 ( b ), CA3 ( c ), and dentate gyrus ( d ). e Representative images of the CA1 region of wild type mice fed safflower oil (WTSO), fat-1 transgenic mice fed safflower oil (fat-1), and wild type mice fed fish oil (WTFO) prior to surgery (baseline, top two rows ) and at 10 days post intracerebroventricular infusion of amyloid-\u03b2 peptide ( bottom two rows ).",
+      "context_window": "il (WTFO) prior to surgery (baseline, top two rows ) and at 10 days post intracerebroventricular infusion of amyloid-\u03b2 peptide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-18676",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 18676,
+      "sentence": "Different letters denote significantly different bars within a time point (e.g., 10 days post-surgery), while lines and asterisks indicate overall differences between time points. * p < 0.05, ** p < 0.01.",
+      "context_window": "ote significantly different bars within a time point (e.g., 10 days post-surgery), while lines and asterisks indicate overall d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-18777",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 18777,
+      "sentence": "Different letters denote significantly different bars within a time point (e.g., 10 days post-surgery), while lines and asterisks indicate overall differences between time points. * p < 0.05, ** p < 0.01.",
+      "context_window": "terisks indicate overall differences between time points. * p < 0.05, ** p < 0.01. CA cornu ammonis, DG dentate gyrus, iba1 ioni",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-18790",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 18790,
+      "sentence": "Different letters denote significantly different bars within a time point (e.g., 10 days post-surgery), while lines and asterisks indicate overall differences between time points. * p < 0.05, ** p < 0.01.",
+      "context_window": "ate overall differences between time points. * p < 0.05, ** p < 0.01. CA cornu ammonis, DG dentate gyrus, iba1 ionized calcium-b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-19833",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 19833,
+      "sentence": "All graphs represent values at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 1-40 normalized for non-surgery values, \u00b1SEM.",
+      "context_window": "j ) in the CA1, CA3, and DG. All graphs represent values at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 1-40 nor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-19994",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 19994,
+      "sentence": "Different letters denote significantly different bars ( p < 0.05) as determined by one-way ANOVA with Bonferroni post-test.",
+      "context_window": "EM. Different letters denote significantly different bars ( p < 0.05) as determined by one-way ANOVA with Bonferroni post-test.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-20630",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 20630,
+      "sentence": "SEM standard error of the mean\n\na - d Iba1-labelled microglia cell counts (\u00b1SEM) normalized to non-surgery counts in the hippocampus regions CA1 ( a ), CA2 ( b ), CA3 ( c ), and dentate gyrus ( d ). e Representative images of the CA1 region of wild type mice fed safflower oil (WTSO), fat-1 transgenic mice fed safflower oil (fat-1), and wild type mice fed fish oil (WTFO) prior to surgery (baseline, top two rows ) and at 10 days post intracerebroventricular infusion of amyloid-\u03b2 peptide ( bottom two rows ).",
+      "context_window": "il (WTFO) prior to surgery (baseline, top two rows ) and at 10 days post intracerebroventricular infusion of amyloid-\u03b2 peptide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-21089",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 21089,
+      "sentence": "Different letters denote significantly different bars within a time point (e.g., 10 days post-surgery), while lines and asterisks indicate overall differences between time points. * p < 0.05, ** p < 0.01.",
+      "context_window": "ote significantly different bars within a time point (e.g., 10 days post-surgery), while lines and asterisks indicate overall d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-21190",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 21190,
+      "sentence": "Different letters denote significantly different bars within a time point (e.g., 10 days post-surgery), while lines and asterisks indicate overall differences between time points. * p < 0.05, ** p < 0.01.",
+      "context_window": "terisks indicate overall differences between time points. * p < 0.05, ** p < 0.01. CA cornu ammonis, DG dentate gyrus, iba1 ioni",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-21203",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 21203,
+      "sentence": "Different letters denote significantly different bars within a time point (e.g., 10 days post-surgery), while lines and asterisks indicate overall differences between time points. * p < 0.05, ** p < 0.01.",
+      "context_window": "ate overall differences between time points. * p < 0.05, ** p < 0.01. CA cornu ammonis, DG dentate gyrus, iba1 ionized calcium-b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-22240",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 22240,
+      "sentence": "All graphs represent values at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 1-40 normalized for non-surgery values, \u00b1SEM.",
+      "context_window": "j ) in the CA1, CA3, and DG. All graphs represent values at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 1-40 nor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-22401",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 22401,
+      "sentence": "Different letters denote significantly different bars ( p < 0.05) as determined by one-way ANOVA with Bonferroni post-test.",
+      "context_window": "EM. Different letters denote significantly different bars ( p < 0.05) as determined by one-way ANOVA with Bonferroni post-test.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-23372",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 23372,
+      "sentence": "One-way analysis of variance (ANOVA) with a Bonferroni post-test was applied to evaluate differences by genotype/treatment group in brain fatty acid composition, FJC counts, and microglia morphology at 10 days post-icv, while a two-way ANOVA was used to examine main and interactive effects of genotype/treatment groups and time, with a Bonferroni post hoc test applied where there was a significant interaction.",
+      "context_window": "y acid composition, FJC counts, and microglia morphology at 10 days post-icv, while a two-way ANOVA was used to examine main an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-23982",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 23982,
+      "sentence": "4 a - d GFAP-labelled astrocyte cell counts (\u00b1SEM) normalized to non-surgery counts in the hippocampus regions CA1 ( a ), CA2 ( b ), CA3 ( c ), and dentate gyrus (DG) ( d ). e Representative images of the CA1 region of wild type mice fed safflower oil (WTSO), fat-1 transgenic mice fed safflower (fat-1), and wild type mice fed fish oil (WTFO) prior to surgery (baseline, top two rows ) and at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 peptide ( bottom two rows ).",
+      "context_window": "il (WTFO) prior to surgery (baseline, top two rows ) and at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 peptide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-24843",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 24843,
+      "sentence": "SEM standard error of the mean\n\na - d GFAP-labelled astrocyte cell counts (\u00b1SEM) normalized to non-surgery counts in the hippocampus regions CA1 ( a ), CA2 ( b ), CA3 ( c ), and dentate gyrus (DG) ( d ). e Representative images of the CA1 region of wild type mice fed safflower oil (WTSO), fat-1 transgenic mice fed safflower (fat-1), and wild type mice fed fish oil (WTFO) prior to surgery (baseline, top two rows ) and at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 peptide ( bottom two rows ).",
+      "context_window": "il (WTFO) prior to surgery (baseline, top two rows ) and at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 peptide",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-565",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 565,
+      "sentence": "1b , graph shown for the mean of four fields), and counts were significantly different from 24 h at 15 days (CA2, CA3, and DG) and 21 days (CA1, CA2, and CA3) post-icv.",
+      "context_window": "elds), and counts were significantly different from 24 h at 15 days (CA2, CA3, and DG) and 21 days (CA1, CA2, and CA3) post-icv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-596",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 596,
+      "sentence": "1b , graph shown for the mean of four fields), and counts were significantly different from 24 h at 15 days (CA2, CA3, and DG) and 21 days (CA1, CA2, and CA3) post-icv.",
+      "context_window": "antly different from 24 h at 15 days (CA2, CA3, and DG) and 21 days (CA1, CA2, and CA3) post-icv. Peak levels of microglia were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-678",
+      "claim_type": "percentage",
+      "raw_text": "50 %",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 678,
+      "sentence": "Peak levels of microglia were approximately 50 % greater in the animals injected with amyloid-\u03b2 1-40 as opposed to the control peptide injected animals at 15 days post-icv.",
+      "context_window": "CA3) post-icv. Peak levels of microglia were approximately 50 % greater in the animals injected with amyloid-\u03b2 1-40 as oppo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-789",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 789,
+      "sentence": "Peak levels of microglia were approximately 50 % greater in the animals injected with amyloid-\u03b2 1-40 as opposed to the control peptide injected animals at 15 days post-icv.",
+      "context_window": "1-40 as opposed to the control peptide injected animals at 15 days post-icv. In all regions, counts were no longer different f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-880",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 880,
+      "sentence": "In all regions, counts were no longer different from 24 h or the peak by 28 days following surgery.",
+      "context_window": "s, counts were no longer different from 24 h or the peak by 28 days following surgery. Increases in GFAP-labelled astrocytes (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-1061",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1061,
+      "sentence": "1d , graph shown for the mean of four fields) were detected in the CA1, CA2, and CA3 regions, with a peak at 15 days post-surgery that was significantly different from 24 h.",
+      "context_window": "e detected in the CA1, CA2, and CA3 regions, with a peak at 15 days post-surgery that was significantly different from 24 h. In",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-1252",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1252,
+      "sentence": "In all three regions where this pattern was detected, no significant difference between the peak and its baseline was seen by 28 days post-surgery.",
+      "context_window": "nt difference between the peak and its baseline was seen by 28 days post-surgery. No significant differences were detected betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-1530",
+      "claim_type": "percentage",
+      "raw_text": "10 %",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1530,
+      "sentence": "The effect of brain omega-3 PUFA composition on the neuroinflammatory response to amyloid-\u03b2 was assessed in fat-1 mice and their wild type littermates weaned onto either a 10 % safflower oil diet, containing very low levels of omega-3 PUFA, or a diet in which 2 % of the safflower oil was replaced with fish oil.",
+      "context_window": "1 mice and their wild type littermates weaned onto either a 10 % safflower oil diet, containing very low levels of omega-3 P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-1618",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1618,
+      "sentence": "The effect of brain omega-3 PUFA composition on the neuroinflammatory response to amyloid-\u03b2 was assessed in fat-1 mice and their wild type littermates weaned onto either a 10 % safflower oil diet, containing very low levels of omega-3 PUFA, or a diet in which 2 % of the safflower oil was replaced with fish oil.",
+      "context_window": "taining very low levels of omega-3 PUFA, or a diet in which 2 % of the safflower oil was replaced with fish oil. A dietary",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-1960",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1960,
+      "sentence": "A dietary and a transgenic approach to increasing brain omega-3 PUFA was used to account for potential confounding arising from either off-target effects of the transgene, in the case of the fat-1 mice, or from changes in other elements of the diet in the case of the WTFO mice, as adding 2 % fish oil involves the removal of 2 % safflower oil.",
+      "context_window": "lements of the diet in the case of the WTFO mice, as adding 2 % fish oil involves the removal of 2 % safflower oil. Fat-1 a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-1997",
+      "claim_type": "percentage",
+      "raw_text": "2 %",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1997,
+      "sentence": "A dietary and a transgenic approach to increasing brain omega-3 PUFA was used to account for potential confounding arising from either off-target effects of the transgene, in the case of the fat-1 mice, or from changes in other elements of the diet in the case of the WTFO mice, as adding 2 % fish oil involves the removal of 2 % safflower oil.",
+      "context_window": "e WTFO mice, as adding 2 % fish oil involves the removal of 2 % safflower oil. Fat-1 and WTFO mice had approximately twofol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-2078",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2078,
+      "sentence": "Fat-1 and WTFO mice had approximately twofold higher levels ( p < 0.05) of brain DHA as a nanomolar percent of fatty acids relative to wild type safflower fed (WTSO) mice (Fig.",
+      "context_window": "t-1 and WTFO mice had approximately twofold higher levels ( p < 0.05) of brain DHA as a nanomolar percent of fatty acids relativ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-2867",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2867,
+      "sentence": "Different letters denote significantly different means, p < 0.05.",
+      "context_window": "st. Different letters denote significantly different means, p < 0.05. ALA alpha-linolenic acid, LNA linoleic acid, ARA arachidon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-3410",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3410,
+      "sentence": "Different letters denote significantly different means, p < 0.05.",
+      "context_window": "st. Different letters denote significantly different means, p < 0.05. ALA alpha-linolenic acid, LNA linoleic acid, ARA arachidon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-4023",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4023,
+      "sentence": "Microglia activation of the mean of both left and right hippocampus regions CA1, CA2, CA3, and DG peaked at 10 days post-surgery, and for CA2, CA3, and DG, were no longer significantly different from baseline levels by 28 days (Fig.",
+      "context_window": "d right hippocampus regions CA1, CA2, CA3, and DG peaked at 10 days post-surgery, and for CA2, CA3, and DG, were no longer sign",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-4134",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4134,
+      "sentence": "Microglia activation of the mean of both left and right hippocampus regions CA1, CA2, CA3, and DG peaked at 10 days post-surgery, and for CA2, CA3, and DG, were no longer significantly different from baseline levels by 28 days (Fig.",
+      "context_window": "e no longer significantly different from baseline levels by 28 days (Fig. 2a - d ). A two-way ANOVA (genotype/diet \u00d7 time) retu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-4242",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4242,
+      "sentence": "A two-way ANOVA (genotype/diet \u00d7 time) returned a significant main effect of time ( p < 0.001) in all four regions with a significant interaction ( p < 0.05).",
+      "context_window": "e/diet \u00d7 time) returned a significant main effect of time ( p < 0.001) in all four regions with a significant interaction ( p < 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-4306",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4306,
+      "sentence": "A two-way ANOVA (genotype/diet \u00d7 time) returned a significant main effect of time ( p < 0.001) in all four regions with a significant interaction ( p < 0.05).",
+      "context_window": "0.001) in all four regions with a significant interaction ( p < 0.05). Post hoc analysis of the treatment effect within each tim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-4459",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4459,
+      "sentence": "Post hoc analysis of the treatment effect within each time point showed that fat-1 mice had a lower peak in iba1-labelled microglia number at 10 days post-surgery than the WTSO mice, while WTFO mice were not different from either group at any time in any region.",
+      "context_window": "mice had a lower peak in iba1-labelled microglia number at 10 days post-surgery than the WTSO mice, while WTFO mice were not d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-4717",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4717,
+      "sentence": "Post hoc analysis of the time effect showed that microglia counts for the three groups were significantly higher than baseline levels at 10 days (CA1, CA2, CA3, and DG) and 15 days (CA1 and DG) post-icv.",
+      "context_window": "ee groups were significantly higher than baseline levels at 10 days (CA1, CA2, CA3, and DG) and 15 days (CA1 and DG) post-icv.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-4753",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4753,
+      "sentence": "Post hoc analysis of the time effect showed that microglia counts for the three groups were significantly higher than baseline levels at 10 days (CA1, CA2, CA3, and DG) and 15 days (CA1 and DG) post-icv.",
+      "context_window": "than baseline levels at 10 days (CA1, CA2, CA3, and DG) and 15 days (CA1 and DG) post-icv. Counts remained elevated from baseli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-4826",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4826,
+      "sentence": "Counts remained elevated from baseline at 28 days in the CA1 and elevated compared to 3 days in the DG.",
+      "context_window": "and DG) post-icv. Counts remained elevated from baseline at 28 days in the CA1 and elevated compared to 3 days in the DG. When",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-4870",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4870,
+      "sentence": "Counts remained elevated from baseline at 28 days in the CA1 and elevated compared to 3 days in the DG.",
+      "context_window": "rom baseline at 28 days in the CA1 and elevated compared to 3 days in the DG. When the highest count rather than the average o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-5327",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5327,
+      "sentence": "4 ), no significant main effects of genotype/diet, time, or interactions were found in CA1, CA2, or DG, while a significant main effect of time was identified in CA3 ( p < 0.05).",
+      "context_window": "e a significant main effect of time was identified in CA3 ( p < 0.05). When the side with the highest counts was used for analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-5573",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5573,
+      "sentence": "The highest levels of astrocyte counts occurred at 10 and 15 days post-icv, with counts up to 50 % above baseline levels.",
+      "context_window": ". The highest levels of astrocyte counts occurred at 10 and 15 days post-icv, with counts up to 50 % above baseline levels. De",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-5609",
+      "claim_type": "percentage",
+      "raw_text": "50 %",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5609,
+      "sentence": "The highest levels of astrocyte counts occurred at 10 and 15 days post-icv, with counts up to 50 % above baseline levels.",
+      "context_window": "unts occurred at 10 and 15 days post-icv, with counts up to 50 % above baseline levels. Degenerating neurons were visualize",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-5708",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5708,
+      "sentence": "Degenerating neurons were visualized with FJC immunohistochemistry at 10 days post-icv; the time point at which a difference between the genotype/treatment groups in microglia counts was observed.",
+      "context_window": "ng neurons were visualized with FJC immunohistochemistry at 10 days post-icv; the time point at which a difference between the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-6215",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6215,
+      "sentence": "Graphs represent counts (mean of three boxes per image) at 10 days post-icv amyloid-\u03b2 1-40.",
+      "context_window": "Graphs represent counts (mean of three boxes per image) at 10 days post-icv amyloid-\u03b2 1-40. Representative images of the CA1 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-6692",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6692,
+      "sentence": "All graphs represent values at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 1-40 normalized for non-surgery values \u00b1SEM.",
+      "context_window": "d sharpness for publication. All graphs represent values at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 1-40 nor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-6847",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6847,
+      "sentence": "Different letters denote significant differences ( p < 0.05) as determined by one-way ANOVA with Bonferroni post hoc test.",
+      "context_window": "es \u00b1SEM. Different letters denote significant differences ( p < 0.05) as determined by one-way ANOVA with Bonferroni post hoc te",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7217",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7217,
+      "sentence": "Graphs represent counts (mean of three boxes per image) at 10 days post-icv amyloid-\u03b2 1-40.",
+      "context_window": "Graphs represent counts (mean of three boxes per image) at 10 days post-icv amyloid-\u03b2 1-40. Representative images of the CA1 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-7694",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7694,
+      "sentence": "All graphs represent values at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 1-40 normalized for non-surgery values \u00b1SEM.",
+      "context_window": "d sharpness for publication. All graphs represent values at 10 days post-intracerebroventricular infusion of amyloid-\u03b2 1-40 nor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-p-7849",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7849,
+      "sentence": "Different letters denote significant differences ( p < 0.05) as determined by one-way ANOVA with Bonferroni post hoc test.",
+      "context_window": "es \u00b1SEM. Different letters denote significant differences ( p < 0.05) as determined by one-way ANOVA with Bonferroni post hoc te",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-8203",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8203,
+      "sentence": "CA cornu ammonis, DG dentate gyrus, WTSO wild type mice fed safflower oil, fat-1 fat-1 mice fed safflower oil, WTFO wild type mice fed fish oil\n\nMicroglia morphology was investigated to determine whether the differences in cell counts between the diet/genotype groups identified at 10 days post-icv were related to microglia activation.",
+      "context_window": "cell counts between the diet/genotype groups identified at 10 days post-icv were related to microglia activation. No significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-177",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 177,
+      "sentence": "Here, we show that the numbers of iba1-labelled microglia and GFAP-labelled astrocytes increase following icv infusion of amyloid-\u03b2 1-40, peaking in C57BL/6 mice between 15 and 21 days post-surgery, and in fat-1 and wild type mice at 10 days post-surgery.",
+      "context_window": "n of amyloid-\u03b2 1-40, peaking in C57BL/6 mice between 15 and 21 days post-surgery, and in fat-1 and wild type mice at 10 days po",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-234",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 234,
+      "sentence": "Here, we show that the numbers of iba1-labelled microglia and GFAP-labelled astrocytes increase following icv infusion of amyloid-\u03b2 1-40, peaking in C57BL/6 mice between 15 and 21 days post-surgery, and in fat-1 and wild type mice at 10 days post-surgery.",
+      "context_window": "nd 21 days post-surgery, and in fat-1 and wild type mice at 10 days post-surgery. The inflammatory response resolves in most re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-319",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 319,
+      "sentence": "The inflammatory response resolves in most regions examined by 28 days post-surgery, with cell counts no longer significantly different from baseline levels.",
+      "context_window": "inflammatory response resolves in most regions examined by 28 days post-surgery, with cell counts no longer significantly diff",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-651",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 651,
+      "sentence": "There was no effect of the twofold increase in the brain DHA in the fat-1 or WTFO mice compared to WTSO mice on astrocyte counts in the four areas of the hippocampus measured; however, a reduction in the peak in microglia cell number at 10 days post-surgery was noted in fat-1, but not the WTFO mice, compared to the WTSO mice.",
+      "context_window": "owever, a reduction in the peak in microglia cell number at 10 days post-surgery was noted in fat-1, but not the WTFO mice, com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-855",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 855,
+      "sentence": "There was no effect of this change in omega-3 PUFA on the time course of microglia or astrocyte activation up to 28 days following surgery.",
+      "context_window": "the time course of microglia or astrocyte activation up to 28 days following surgery. There are some indications that microgl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-9191",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 9191,
+      "sentence": "Counts for both astrocytes and microglia were generally lower and peaked later in the C57BL/6 mice, at 15 and 21 days post-icv, respectively, compared to at 10 days in the fat-1 study.",
+      "context_window": "rally lower and peaked later in the C57BL/6 mice, at 15 and 21 days post-icv, respectively, compared to at 10 days in the fat-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-9238",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 9238,
+      "sentence": "Counts for both astrocytes and microglia were generally lower and peaked later in the C57BL/6 mice, at 15 and 21 days post-icv, respectively, compared to at 10 days in the fat-1 study.",
+      "context_window": "e, at 15 and 21 days post-icv, respectively, compared to at 10 days in the fat-1 study. In addition, there was a main effect of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-9635",
+      "claim_type": "percentage",
+      "raw_text": "76 %",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9635,
+      "sentence": "Fat-1 mice have a C57BL/6 and C3H strain background, and previous work in our lab found that fat-1 progeny are 76 % genetically similar to C57Bl/6 mice [ 49 ].",
+      "context_window": ", and previous work in our lab found that fat-1 progeny are 76 % genetically similar to C57Bl/6 mice [ 49 ]. Therefore, gene",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-9920",
+      "claim_type": "percentage",
+      "raw_text": "6 %",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9920,
+      "sentence": "The C57BL/6 mice were maintained on a chow diet containing 6 % ALA, the precursor to DHA, for the duration of the experiment while the fat-1 study used a safflower oil diet containing <1 % ALA.",
+      "context_window": "The C57BL/6 mice were maintained on a chow diet containing 6 % ALA, the precursor to DHA, for the duration of the experime",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-10046",
+      "claim_type": "percentage",
+      "raw_text": "1 %",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10046,
+      "sentence": "The C57BL/6 mice were maintained on a chow diet containing 6 % ALA, the precursor to DHA, for the duration of the experiment while the fat-1 study used a safflower oil diet containing <1 % ALA.",
+      "context_window": "while the fat-1 study used a safflower oil diet containing <1 % ALA. A diet containing 200 mg/100 g diet of ALA (2-2.5 % of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-10073",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 10073,
+      "sentence": "A diet containing 200 mg/100 g diet of ALA (2-2.5 % of fatty acids on a 10 % fat diet) is thought to be sufficient to maintain brain DHA levels [ 74 ], so these two studies differ not only in the DHA content of the diets but also in the sufficiency of the ALA content to maintain brain DHA levels.",
+      "context_window": "a safflower oil diet containing <1 % ALA. A diet containing 200 mg/100 g diet of ALA (2-2.5 % of fatty acids on a 10 % fat die",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-10101",
+      "claim_type": "percentage",
+      "raw_text": "2.5 %",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10101,
+      "sentence": "A diet containing 200 mg/100 g diet of ALA (2-2.5 % of fatty acids on a 10 % fat diet) is thought to be sufficient to maintain brain DHA levels [ 74 ], so these two studies differ not only in the DHA content of the diets but also in the sufficiency of the ALA content to maintain brain DHA levels.",
+      "context_window": "ing <1 % ALA. A diet containing 200 mg/100 g diet of ALA (2-2.5 % of fatty acids on a 10 % fat diet) is thought to be suffici",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-pct-10127",
+      "claim_type": "percentage",
+      "raw_text": "10 %",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10127,
+      "sentence": "A diet containing 200 mg/100 g diet of ALA (2-2.5 % of fatty acids on a 10 % fat diet) is thought to be sufficient to maintain brain DHA levels [ 74 ], so these two studies differ not only in the DHA content of the diets but also in the sufficiency of the ALA content to maintain brain DHA levels.",
+      "context_window": "ining 200 mg/100 g diet of ALA (2-2.5 % of fatty acids on a 10 % fat diet) is thought to be sufficient to maintain brain DHA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5041295_brain_omega_3_polyunsaturated_fatty_acids_modulate_microglia-u-11056",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 11056,
+      "sentence": "Fat-1 mice had significantly lower numbers of iba1-labelled microglia 10 days post-surgery than the WTSO mice, while the WTFO mice were not significantly different from either group.",
+      "context_window": "had significantly lower numbers of iba1-labelled microglia 10 days post-surgery than the WTSO mice, while the WTFO mice were n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

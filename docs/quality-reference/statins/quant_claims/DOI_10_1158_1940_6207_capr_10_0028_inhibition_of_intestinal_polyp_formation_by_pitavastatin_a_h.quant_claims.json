@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1158_1940_6207_capr_10_0028_inhibition_of_intestinal_polyp_formation_by_pitavastatin_a_h",
+  "doi": "10.1158/1940-6207.capr-10-0028",
+  "extracted_at": "2026-05-07T19:24:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_10_0028_inhibition_of_intestinal_polyp_formation_by_pitavastatin_a_h-pct-626",
+      "claim_type": "percentage",
+      "raw_text": "85.2%",
+      "numeric_values": [
+        85.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 626,
+      "sentence": "Treatment with pitavastatin at doses of 20 and 40 ppm decreased the total number of polyps dose-dependently to 85.2% and 65.8% (P &lt; 0.05) of the untreated value, respectively.",
+      "context_window": "pm decreased the total number of polyps dose-dependently to 85.2% and 65.8% (P &lt; 0.05) of the untreated value, respectivel",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1158_1940_6207_capr_10_0028_inhibition_of_intestinal_polyp_formation_by_pitavastatin_a_h-pct-636",
+      "claim_type": "percentage",
+      "raw_text": "65.8%",
+      "numeric_values": [
+        65.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 636,
+      "sentence": "Treatment with pitavastatin at doses of 20 and 40 ppm decreased the total number of polyps dose-dependently to 85.2% and 65.8% (P &lt; 0.05) of the untreated value, respectively.",
+      "context_window": "ed the total number of polyps dose-dependently to 85.2% and 65.8% (P &lt; 0.05) of the untreated value, respectively. Serum l",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

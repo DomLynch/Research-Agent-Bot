@@ -1,0 +1,84 @@
+{
+  "paper_id": "HIT_fish_oil_supplementation_resting_energy_expenditure_skeletal",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_fish_oil_supplementation_resting_energy_expenditure_skeletal-pct-43",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 43,
+      "sentence": "Resting metabolic rate (RMR) declines by 1-2% per decade after 20 years of age.",
+      "context_window": "Resting metabolic rate (RMR) declines by 1-2% per decade after 20 years of age. This reduction is linked",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_fish_oil_supplementation_resting_energy_expenditure_skeletal-u-63",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 63,
+      "sentence": "Resting metabolic rate (RMR) declines by 1-2% per decade after 20 years of age.",
+      "context_window": "ting metabolic rate (RMR) declines by 1-2% per decade after 20 years of age. This reduction is linked to a decrease in fat free",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_fish_oil_supplementation_resting_energy_expenditure_skeletal-pct-146",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 146,
+      "sentence": "This reduction is linked to a decrease in fat free mass (FFM) (10-20%) and the rate of energy expenditure of tissues (Manini 2010).",
+      "context_window": "eduction is linked to a decrease in fat free mass (FFM) (10-20%) and the rate of energy expenditure of tissues (Manini 2010",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_fish_oil_supplementation_resting_energy_expenditure_skeletal-pct-1442",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1442,
+      "sentence": "Skeletal muscle (SM) accounts for 20-30% of RMR (Zurlo et al 1990, Manini 2010), therefore it is tempting to speculate that these changes may occur by some of the mechanisms described earlier, with skeletal muscle being an important contributor.",
+      "context_window": "an et al unplubished). Skeletal muscle (SM) accounts for 20-30% of RMR (Zurlo et al 1990, Manini 2010), therefore it is tem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1101_2024_09_09_24313018_decomposed_interaction_testing_improves_detection_of_genetic",
+  "doi": "10.1101/2024.09.09.24313018",
+  "extracted_at": "2026-05-07T19:32:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2024_09_09_24313018_decomposed_interaction_testing_improves_detection_of_genetic-n-965",
+      "claim_type": "sample_size",
+      "raw_text": "N = 188",
+      "numeric_values": [
+        188.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 965,
+      "sentence": "The approach was applied in the UK Biobank (N = 188,700) with regression models that used measures of dN3FA (based on fish and fish oil intake), pN3FA (% of total fatty acids measured by nuclear magnetic resonance), and hsCRP.",
+      "context_window": "ible scenarios. The approach was applied in the UK Biobank (N = 188,700) with regression models that used measures of dN3FA (ba",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_09_24313018_decomposed_interaction_testing_improves_detection_of_genetic-p-1530",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.94",
+      "numeric_values": [
+        0.94
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1530,
+      "sentence": "The known FADS1-3 locus variant rs174535 reached p = 1.6x10 -12 in the upstream discovery analysis, with no signal in the downstream analysis ( p = 0.94).",
+      "context_window": "overy analysis, with no signal in the downstream analysis ( p = 0.94). It would not have been prioritized based on a na\u00efve analy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_09_24313018_decomposed_interaction_testing_improves_detection_of_genetic-p-1642",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.097",
+      "numeric_values": [
+        0.097
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1642,
+      "sentence": "It would not have been prioritized based on a na\u00efve analysis with dN3FA exposure and hsCRP outcome ( p = 0.097), indicating the value of the decomposition approach.",
+      "context_window": "on a na\u00efve analysis with dN3FA exposure and hsCRP outcome ( p = 0.097), indicating the value of the decomposition approach. Gene-",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

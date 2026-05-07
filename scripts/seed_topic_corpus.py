@@ -138,10 +138,12 @@ def _write_abstract_fallback(
     hit, parsed_dir: Path, *, reason: str,
     resolved_meta: dict[str, Any] | None = None,
 ) -> str | None:
-    abstract = (hit.abstract or "").strip()
+    resolved_meta = resolved_meta or {}
+    abstract = (
+        hit.abstract or resolved_meta.get("abstract") or ""
+    ).strip()
     if not abstract:
         return None
-    resolved_meta = resolved_meta or {}
     paper_id = _paper_id_from_hit(hit)
     sections = {
         "abstract": abstract,
@@ -210,6 +212,7 @@ async def _resolve_pmcid(
     hit = hits[0]
     meta = {
         "authors": _authors_from_europepmc_result(hit),
+        "abstract": hit.get("abstractText") or "",
         "doi": hit.get("doi") or aggregated_hit.doi,
         "pmid": hit.get("pmid") or aggregated_hit.pmid,
         "journal": hit.get("journalTitle")

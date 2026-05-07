@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_",
   "doi": "10.1186/s12933-019-0933-y",
-  "extracted_at": "2026-05-05T22:20:08+00:00",
+  "extracted_at": "2026-05-07T16:57:50+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 35,
@@ -26,10 +26,10 @@
       "sentence": "Meta-analyses of available trial data were performed using random effects models to calculate hazard ratios (HRs) and 95% confidence intervals (CIs) for incident type 2 diabetes and CV outcomes.",
       "context_window": "random effects models to calculate hazard ratios (HRs) and 95% confidence intervals (CIs) for incident type 2 diabetes and",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-pct-1040",
@@ -44,7 +44,7 @@
       "sentence": "The overall HR (95% CI) comparing AGI with placebo for incident type 2 diabetes was 0.77 (0.67-0.88), p < 0.0001, and for CV outcomes was 0.98 (0.89-1.10), p = 0.85.",
       "context_window": "tes and four were eligible for CV outcomes. The overall HR (95% CI) comparing AGI with placebo for incident type 2 diabetes",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -62,7 +62,7 @@
       "sentence": "The overall HR (95% CI) comparing AGI with placebo for incident type 2 diabetes was 0.77 (0.67-0.88), p < 0.0001, and for CV outcomes was 0.98 (0.89-1.10), p = 0.85.",
       "context_window": "placebo for incident type 2 diabetes was 0.77 (0.67-0.88), p < 0.0001, and for CV outcomes was 0.98 (0.89-1.10), p = 0.85. There",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -80,7 +80,7 @@
       "sentence": "The overall HR (95% CI) comparing AGI with placebo for incident type 2 diabetes was 0.77 (0.67-0.88), p < 0.0001, and for CV outcomes was 0.98 (0.89-1.10), p = 0.85.",
       "context_window": ".88), p < 0.0001, and for CV outcomes was 0.98 (0.89-1.10), p = 0.85. There was little to no heterogeneity between studies, with",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -170,7 +170,7 @@
       "sentence": "Allocation of people with IGT to an AGI significantly reduced their risk of incident type 2 diabetes by 23%, whereas in those with IGT or type 2 diabetes the impact on CV outcomes was neutral.",
       "context_window": "ificantly reduced their risk of incident type 2 diabetes by 23%, whereas in those with IGT or type 2 diabetes the impact on",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -207,7 +207,7 @@
       "context_window": "bose or placebo three times daily [ 3 ]. The trial showed a 25% reduction in the incidence of type 2 diabetes with acarbose",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -225,7 +225,7 @@
       "context_window": "th acarbose, compared with placebo (hazard ratio (HR) 0.75, 95% confidence interval (CI) 0.63-0.90, p = 0.001) over a mean",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -243,7 +243,7 @@
       "context_window": "rd ratio (HR) 0.75, 95% confidence interval (CI) 0.63-0.90, p = 0.001) over a mean follow-up of 3.3 years. A pre-specified second",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -261,7 +261,7 @@
       "context_window": "nterval (CI) 0.63-0.90, p = 0.001) over a mean follow-up of 3.3 years. A pre-specified secondary analysis, also showed that there",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -278,10 +278,10 @@
       "sentence": "A pre-specified secondary analysis, also showed that there was a 49% reduction in cardiovascular outcomes over the same time period (HR 0.51 [0.28-0.95], p = 0.03) suggesting that acarbose might confer cardio protection, although this finding was based on only 47 CV events in total.",
       "context_window": "-specified secondary analysis, also showed that there was a 49% reduction in cardiovascular outcomes over the same time per",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-p-1181",
@@ -296,10 +296,10 @@
       "sentence": "A pre-specified secondary analysis, also showed that there was a 49% reduction in cardiovascular outcomes over the same time period (HR 0.51 [0.28-0.95], p = 0.03) suggesting that acarbose might confer cardio protection, although this finding was based on only 47 CV events in total.",
       "context_window": "ar outcomes over the same time period (HR 0.51 [0.28-0.95], p = 0.03) suggesting that acarbose might confer cardio protection, a",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-pct-1638",
@@ -314,10 +314,10 @@
       "sentence": "When a composite CV outcome (MI, stroke, CV death, angina or coronary revascularization) was examined, a 35% reduction in events was demonstrated based on 167 events in total [ 4 ].",
       "context_window": "eath, angina or coronary revascularization) was examined, a 35% reduction in events was demonstrated based on 167 events in",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-u-1988",
@@ -333,7 +333,7 @@
       "context_window": "and IGT. Participants were randomly allocated to acarbose (50 mg three times daily) or placebo, given in addition to fully-o",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -350,10 +350,10 @@
       "sentence": "The ACE trial showed that acarbose delayed progression to type 2 diabetes by 18% (odds ratio 0.82 (95% CI 0.71-0.94, p = 0.005) but was neutral with respect to major adverse cardiovascular events (HR 0.98, 0.86-1.11, p = 0.73).",
       "context_window": "wed that acarbose delayed progression to type 2 diabetes by 18% (odds ratio 0.82 (95% CI 0.71-0.94, p = 0.005) but was neut",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-or-l-2177",
@@ -368,10 +368,10 @@
       "sentence": "The ACE trial showed that acarbose delayed progression to type 2 diabetes by 18% (odds ratio 0.82 (95% CI 0.71-0.94, p = 0.005) but was neutral with respect to major adverse cardiovascular events (HR 0.98, 0.86-1.11, p = 0.73).",
       "context_window": "hat acarbose delayed progression to type 2 diabetes by 18% (odds ratio 0.82 (95% CI 0.71-0.94, p = 0.005) but was neutral with respect",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-ci-2194",
@@ -387,10 +387,10 @@
       "sentence": "The ACE trial showed that acarbose delayed progression to type 2 diabetes by 18% (odds ratio 0.82 (95% CI 0.71-0.94, p = 0.005) but was neutral with respect to major adverse cardiovascular events (HR 0.98, 0.86-1.11, p = 0.73).",
       "context_window": "yed progression to type 2 diabetes by 18% (odds ratio 0.82 (95% CI 0.71-0.94, p = 0.005) but was neutral with respect to major adverse c",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-p-2212",
@@ -405,10 +405,10 @@
       "sentence": "The ACE trial showed that acarbose delayed progression to type 2 diabetes by 18% (odds ratio 0.82 (95% CI 0.71-0.94, p = 0.005) but was neutral with respect to major adverse cardiovascular events (HR 0.98, 0.86-1.11, p = 0.73).",
       "context_window": "type 2 diabetes by 18% (odds ratio 0.82 (95% CI 0.71-0.94, p = 0.005) but was neutral with respect to major adverse cardiovascul",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-p-2312",
@@ -423,10 +423,10 @@
       "sentence": "The ACE trial showed that acarbose delayed progression to type 2 diabetes by 18% (odds ratio 0.82 (95% CI 0.71-0.94, p = 0.005) but was neutral with respect to major adverse cardiovascular events (HR 0.98, 0.86-1.11, p = 0.73).",
       "context_window": "to major adverse cardiovascular events (HR 0.98, 0.86-1.11, p = 0.73). The aim of this analysis was to identify the overall imp",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-u-2243",
@@ -495,10 +495,10 @@
       "sentence": "HRs and 95% CIs were calculated for both incident diabetes and CV outcomes.",
       "context_window": "weighted according to the inverse variance method. HRs and 95% CIs were calculated for both incident diabetes and CV outco",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident diabetes",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-pct-3410",
@@ -567,10 +567,10 @@
       "sentence": "Participants in these trials were at high risk of developing type 2 diabetes, but people experiencing a CV event in the pre-screening period (3 months for ACE, 6 months for the other 2 studies) were excluded.",
       "context_window": "people experiencing a CV event in the pre-screening period (3 months for ACE, 6 months for the other 2 studies) were excluded. A",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-u-550",
@@ -585,10 +585,10 @@
       "sentence": "Participants in these trials were at high risk of developing type 2 diabetes, but people experiencing a CV event in the pre-screening period (3 months for ACE, 6 months for the other 2 studies) were excluded.",
       "context_window": "g a CV event in the pre-screening period (3 months for ACE, 6 months for the other 2 studies) were excluded. All three trials re",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-pct-758",
@@ -603,7 +603,7 @@
       "sentence": "All three trials reported statistically significant relative risk reductions for incident diabetes in the treatment group, compared with the placebo group, of 25%, 40% and 18% for STOP-NIDDM, voglibose Ph-3 and ACE respectively.",
       "context_window": "in the treatment group, compared with the placebo group, of 25%, 40% and 18% for STOP-NIDDM, voglibose Ph-3 and ACE respect",
       "claim_role": "effect",
-      "endpoint": "mortality",
+      "endpoint": "incident diabetes",
       "arm": "treatment",
       "direction": "",
       "binding_confidence": "partial"
@@ -621,7 +621,7 @@
       "sentence": "All three trials reported statistically significant relative risk reductions for incident diabetes in the treatment group, compared with the placebo group, of 25%, 40% and 18% for STOP-NIDDM, voglibose Ph-3 and ACE respectively.",
       "context_window": "e treatment group, compared with the placebo group, of 25%, 40% and 18% for STOP-NIDDM, voglibose Ph-3 and ACE respectively",
       "claim_role": "effect",
-      "endpoint": "mortality",
+      "endpoint": "incident diabetes",
       "arm": "treatment",
       "direction": "",
       "binding_confidence": "partial"
@@ -639,7 +639,7 @@
       "sentence": "All three trials reported statistically significant relative risk reductions for incident diabetes in the treatment group, compared with the placebo group, of 25%, 40% and 18% for STOP-NIDDM, voglibose Ph-3 and ACE respectively.",
       "context_window": "ent group, compared with the placebo group, of 25%, 40% and 18% for STOP-NIDDM, voglibose Ph-3 and ACE respectively. This e",
       "claim_role": "effect",
-      "endpoint": "mortality",
+      "endpoint": "incident diabetes",
       "arm": "treatment",
       "direction": "",
       "binding_confidence": "partial"
@@ -748,8 +748,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "acteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKP",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -766,8 +766,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "uded in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year publish",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -784,8 +784,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "alyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -802,8 +802,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "DDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 R",
       "claim_role": "duration",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -820,8 +820,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "glibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates",
       "claim_role": "duration",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -838,8 +838,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "e 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three tim",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -856,8 +856,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three time",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -874,8 +874,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three time",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -892,8 +892,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "mes daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criter",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -910,8 +910,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "imes daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose toler",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -928,8 +928,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "tes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Vo",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -946,8 +946,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "etes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424)",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -964,8 +964,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "iabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Ac",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -982,8 +982,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "se (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272)",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1000,8 +1000,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "(n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) A",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1018,8 +1018,8 @@
       "sentence": "1 Selection of eligible trials Table 1 Characteristics of trials included in meta-analyses STOP-NIDDM (n = 1429) Voglibose Ph-3 (n = 1778) ABC (n = 859) ACE (n = 6522) UKPDS (n = 1946) Year published 2002 2009 2017 2017 1998 Recruitment dates December 1995-July 1998 October 2003-March 2007 May 2005-June 2012 March 2009-October 2015 May 1994-September 1994 Dose 100 mg three times daily 0.2 mg three times daily 0.2 mg three times daily 50 mg three times daily 100 mg three times daily Inclusion criteria Impaired glucose tolerance Impaired glucose tolerance Impaired glucose tolerance and previous MI Impaired glucose tolerance and established coronary heart disease N/A Cardiovascular outcome Coronary heart disease a , CVD death, congestive heart failure, cerebrovascular events and peripheral vascular disease N/A CVD composite endpoint b MACE- 5 c MACE-5 c Diabetes outcome New-onset diabetes New-onset diabetes N/A New-onset diabetes N/A Acarbose (n = 714) Placebo (n = 715) Voglibose (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarction, new angina, revascularization procedures b CV death, non-fatal MI, Non-fatal unstable angina, non-fatal stroke, coronary revascularization procedure c CV-death, non-fatal stroke, non-fatal MI, hospitalization for unstable angina and hospitalization for heart failure NB: Diabetes was diagnosed when two successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig.",
       "context_window": "se (n = 897) Placebo (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973)",
       "claim_role": "dose",
-      "endpoint": "body mass index",
-      "arm": "placebo",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1037,7 +1037,7 @@
       "context_window": "o (n = 881) Voglibose (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Ag",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1055,7 +1055,7 @@
       "context_window": "se (n = 424) Placebo (n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1073,7 +1073,7 @@
       "context_window": "(n = 435) Acarbose (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1091,7 +1091,7 @@
       "context_window": "e (n = 3272) Placebo (n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1110,7 +1110,7 @@
       "context_window": "(n = 3250) Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1129,7 +1129,7 @@
       "context_window": "Acarbose (n = 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1148,7 +1148,7 @@
       "context_window": "= 973) Placebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1167,7 +1167,7 @@
       "context_window": "cebo (n = 973) Age (years) 54.3 \u00b1 7.9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1186,7 +1186,7 @@
       "context_window": ".9 54.6 \u00b1 7.9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1205,7 +1205,7 @@
       "context_window": ".9 55.7 \u00b1 9.1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1224,7 +1224,7 @@
       "context_window": ".1 55.7 \u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1243,7 +1243,7 @@
       "context_window": "\u00b1 9.2 67 (57, 73) 65 (58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 2",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1262,7 +1262,7 @@
       "context_window": "(58, 73) 64.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1281,7 +1281,7 @@
       "context_window": "4.4 \u00b1 8.2 64.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1300,7 +1300,7 @@
       "context_window": "4.3 \u00b1 8.0 60 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1319,7 +1319,7 @@
       "context_window": "0 \u00b1 9 60 \u00b1 9 BMI (Kg/m 2 ) 31.0 \u00b1 4.3 30.9 \u00b1 4.2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1338,7 +1338,7 @@
       "context_window": ".2 25.8 \u00b1 3.7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%)",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1357,7 +1357,7 @@
       "context_window": ".7 25.9 \u00b1 3.8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%)",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1376,7 +1376,7 @@
       "context_window": ".8 24.2 (22.5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 6",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1395,7 +1395,7 @@
       "context_window": ".5, 26.0) 24.3 (22.5,26.3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 5",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1413,7 +1413,7 @@
       "context_window": ".3) 25.3 \u00b1 3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (2",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1431,7 +1431,7 @@
       "context_window": "3.1 25.5 \u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (2",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1449,7 +1449,7 @@
       "context_window": "\u00b1 3.1 29.8 \u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (3",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1467,7 +1467,7 @@
       "context_window": "\u00b1 5.6 29.6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1485,7 +1485,7 @@
       "context_window": ".6 \u00b1 5.7 Female 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Dat",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1503,7 +1503,7 @@
       "context_window": "male 353 (52%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1521,7 +1521,7 @@
       "context_window": "%) 342 (50%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1539,7 +1539,7 @@
       "context_window": "%) 356 (40%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQ",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1557,7 +1557,7 @@
       "context_window": "%) 351 (40%) 60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocard",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1575,7 +1575,7 @@
       "context_window": "60 (14.2%) 58 (13.3%) 877 (27%) 885 (27%) 369 (37.9%) 344 (35.4%) Data are mean \u00b1 1 SD or median (IQR) a Myocardial infarcti",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1593,7 +1593,7 @@
       "context_window": "successive diagnostic plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig. 2 Forest plot of",
       "claim_role": "dose",
       "endpoint": "fasting glucose",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1611,7 +1611,7 @@
       "context_window": "plasma glucose values of either FPG \u2265 7.0 mmol/L or 2hrPG \u2265 11.1 mmol/L was obtained Fig. 2 Forest plot of incident diabetes resu",
       "claim_role": "dose",
       "endpoint": "fasting glucose",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1664,10 +1664,10 @@
       "sentence": "STOP-NIDDM, however, showed a 49% reduction (HR 0.51, 95% CI 0.28-0.95, p = 0.03) but with only 47 composite CV events in total, compared with 100 in UKPDS and 949 in ACE.",
       "context_window": "r AGI compared with placebo). STOP-NIDDM, however, showed a 49% reduction (HR 0.51, 95% CI 0.28-0.95, p = 0.03) but with on",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-ci-4829",
@@ -1683,10 +1683,10 @@
       "sentence": "STOP-NIDDM, however, showed a 49% reduction (HR 0.51, 95% CI 0.28-0.95, p = 0.03) but with only 47 composite CV events in total, compared with 100 in UKPDS and 949 in ACE.",
       "context_window": "ebo). STOP-NIDDM, however, showed a 49% reduction (HR 0.51, 95% CI 0.28-0.95, p = 0.03) but with only 47 composite CV events in total, c",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-p-4847",
@@ -1701,10 +1701,10 @@
       "sentence": "STOP-NIDDM, however, showed a 49% reduction (HR 0.51, 95% CI 0.28-0.95, p = 0.03) but with only 47 composite CV events in total, compared with 100 in UKPDS and 949 in ACE.",
       "context_window": "however, showed a 49% reduction (HR 0.51, 95% CI 0.28-0.95, p = 0.03) but with only 47 composite CV events in total, compared wi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-ci-5048",
@@ -1720,7 +1720,7 @@
       "sentence": "Overall, our meta-analysis showed no reduction in CV events for AGIs compared with placebo (HR 0.98, 95% CI 0.89-1.10, p = 0.85), with an I 2 value of 0% (p = 0.79) showing no heterogeneity between studies (Fig.",
       "context_window": "ction in CV events for AGIs compared with placebo (HR 0.98, 95% CI 0.89-1.10, p = 0.85), with an I 2 value of 0% (p = 0.79) showing no h",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -1738,7 +1738,7 @@
       "sentence": "Overall, our meta-analysis showed no reduction in CV events for AGIs compared with placebo (HR 0.98, 95% CI 0.89-1.10, p = 0.85), with an I 2 value of 0% (p = 0.79) showing no heterogeneity between studies (Fig.",
       "context_window": "for AGIs compared with placebo (HR 0.98, 95% CI 0.89-1.10, p = 0.85), with an I 2 value of 0% (p = 0.79) showing no heterogenei",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -1756,7 +1756,7 @@
       "sentence": "Overall, our meta-analysis showed no reduction in CV events for AGIs compared with placebo (HR 0.98, 95% CI 0.89-1.10, p = 0.85), with an I 2 value of 0% (p = 0.79) showing no heterogeneity between studies (Fig.",
       "context_window": "(HR 0.98, 95% CI 0.89-1.10, p = 0.85), with an I 2 value of 0% (p = 0.79) showing no heterogeneity between studies (Fig. 3",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -1774,7 +1774,7 @@
       "sentence": "Overall, our meta-analysis showed no reduction in CV events for AGIs compared with placebo (HR 0.98, 95% CI 0.89-1.10, p = 0.85), with an I 2 value of 0% (p = 0.79) showing no heterogeneity between studies (Fig.",
       "context_window": "0.98, 95% CI 0.89-1.10, p = 0.85), with an I 2 value of 0% (p = 0.79) showing no heterogeneity between studies (Fig. 3 ), and th",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -1846,7 +1846,7 @@
       "sentence": "Our analysis was driven by the neutral outcome results reported by ACE [ 5 ] and UKPDS [ 11 ], with 949 and 200 events respectively, suggests that AGIs neither increase nor decrease the risk of major adverse cardiovascular events in people with IGT or diabetes, although given the mean follow-up for this analysis is 4.0 years the possibility that AGI use might reduce CV risk in the longer term cannot be excluded.",
       "context_window": "tes, although given the mean follow-up for this analysis is 4.0 years the possibility that AGI use might reduce CV risk in the lo",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1919,7 +1919,7 @@
       "context_window": "2 events of progression to type 2 diabetes defined as FPG \u2265 7.8 mmol/l in 196 subjects followed for 5 years, [ 22 ] and the Dutc",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1937,7 +1937,7 @@
       "context_window": "es defined as FPG \u2265 7.8 mmol/l in 196 subjects followed for 5 years, [ 22 ] and the Dutch acarbose intervention study in person",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1955,7 +1955,7 @@
       "context_window": "of progression to diabetes in 118 individuals followed for 3 years based on a single glucose measurement [ 23 ]. Although thes",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1973,10 +1973,10 @@
       "sentence": "Although these trials did not meet our inclusion criteria, we conducted a sensitivity analysis for incident diabetes which yielded a similar result (HR 0.74 [95% CI 0.67-0.82], p < 0.0001).",
       "context_window": "incident diabetes which yielded a similar result (HR 0.74 [95% CI 0.67-0.82], p < 0.0001). In addition, the Cochrane collaboration rece",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "incident diabetes",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-p-4068",
@@ -1991,10 +1991,10 @@
       "sentence": "Although these trials did not meet our inclusion criteria, we conducted a sensitivity analysis for incident diabetes which yielded a similar result (HR 0.74 [95% CI 0.67-0.82], p < 0.0001).",
       "context_window": "which yielded a similar result (HR 0.74 [95% CI 0.67-0.82], p < 0.0001). In addition, the Cochrane collaboration recently publishe",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "incident diabetes",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_-ci-4480",
@@ -2010,7 +2010,7 @@
       "sentence": "In addition, the Cochrane collaboration recently published the results of trials reporting the incidence of type 2 diabetes, and separately CV mortality, non-fatal MI and non-fatal stroke in all populations without normal glucose levels (impaired fasting glucose, IGT or elevated HbA 1c ) [ 24 ], which yielded similar results to our analysis showing a type 2 diabetes incidence risk ratio of 0.73 (95% CI 0.59-0.90), but the combined MACE-3 endpoint was not reported.",
       "context_window": "sis showing a type 2 diabetes incidence risk ratio of 0.73 (95% CI 0.59-0.90), but the combined MACE-3 endpoint was not reported.",
       "claim_role": "background",
-      "endpoint": "fasting glucose",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

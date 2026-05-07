@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_living_with_statins_interventional_exercise_study",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_living_with_statins_interventional_exercise_study-pct-308",
+      "claim_type": "percentage",
+      "raw_text": "40 %",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 308,
+      "sentence": "More than 600,000 people in Denmark are taking statins on a daily basis, approximately 40 % of these are taking the medication without having any other risk factors for cardio-vascular diseases than elevated blood-cholesterol i.e. they are in primary prevention.",
+      "context_window": "Denmark are taking statins on a daily basis, approximately 40 % of these are taking the medication without having any other",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_living_with_statins_interventional_exercise_study-u-843",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 843,
+      "sentence": "Furthermore a large meta-analysis has shown that to prevent one event of cardio-vascular disease, it is necessary to treat 200 people for 3-5 years.",
+      "context_window": "vascular disease, it is necessary to treat 200 people for 3-5 years. These data suggest that more conservative use of statins t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

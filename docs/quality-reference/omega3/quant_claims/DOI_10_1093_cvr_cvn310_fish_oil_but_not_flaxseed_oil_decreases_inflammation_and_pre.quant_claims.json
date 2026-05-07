@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1093_cvr_cvn310_fish_oil_but_not_flaxseed_oil_decreases_inflammation_and_pre",
+  "doi": "10.1093/cvr/cvn310",
+  "extracted_at": "2026-05-07T19:32:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "correlation": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1093_cvr_cvn310_fish_oil_but_not_flaxseed_oil_decreases_inflammation_and_pre-pct-852",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 852,
+      "sentence": "Rats were fed a standard food or diets supplemented with EPA+DHA or ALA at 0.7, 2.3, or 7% of energy intake.",
+      "context_window": "d or diets supplemented with EPA+DHA or ALA at 0.7, 2.3, or 7% of energy intake. Without supplementation, aortic banding i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1093_cvr_cvn310_fish_oil_but_not_flaxseed_oil_decreases_inflammation_and_pre-corr-1449",
+      "claim_type": "correlation",
+      "raw_text": "(r = -0.78)",
+      "numeric_values": [
+        -0.78
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1449,
+      "sentence": "EPA+DHA resulted in a dose-dependent increase in the anti-inflammatory adipokine adiponectin, and there was a strong correlation between the prevention of LV chamber enlargement and plasma levels of adiponectin (r = -0.78).",
+      "context_window": "of LV chamber enlargement and plasma levels of adiponectin (r = -0.78). Supplementation with EPA+DHA had anti-aggregatory and anti",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

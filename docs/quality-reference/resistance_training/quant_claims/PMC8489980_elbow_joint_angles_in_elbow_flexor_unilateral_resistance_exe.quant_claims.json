@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8489980_elbow_joint_angles_in_elbow_flexor_unilateral_resistance_exe",
   "doi": "10.3389/fphys.2021.734509",
-  "extracted_at": "2026-05-05T21:59:16+00:00",
+  "extracted_at": "2026-05-07T16:57:39+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 6,
@@ -25,7 +25,7 @@
       "context_window": "of the three groups: extended joint training (0\u00b0-50\u00b0; EXT, n = 12); flexed joint training (80\u00b0-130\u00b0; FLE, n = 12); and non-tr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "0\u00b0-50\u00b0; EXT, n = 12); flexed joint training (80\u00b0-130\u00b0; FLE, n = 12); and non-training control ( n = 8). The exercise training",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": "raining (80\u00b0-130\u00b0; FLE, n = 12); and non-training control ( n = 8). The exercise training was performed by the dominant arms",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -79,9 +79,9 @@
       "context_window": "raining was performed by the dominant arms twice a week for 5 weeks with gradual increases in the training volume over 10 train",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8489980_elbow_joint_angles_in_elbow_flexor_unilateral_resistance_exe-u-964",
@@ -482,7 +482,7 @@
       "context_window": "performed by resistance-trained men three times a week for 8 weeks. They showed that the partial ROM group had significantly g",
       "claim_role": "background",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -554,9 +554,9 @@
       "context_window": "), performed 5 times of 5 s per session, 3 times a week for 6 weeks. They showed that maximal voluntary concentric contraction",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8489980_elbow_joint_angles_in_elbow_flexor_unilateral_resistance_exe-pct-2416",
@@ -608,7 +608,7 @@
       "context_window": "ue at long muscle lengths, performed three times a week for 10 weeks for changes in muscle strength and thickness of the elbow f",
       "claim_role": "background",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -734,9 +734,9 @@
       "context_window": "ek with a rest period of at least 48 h between sessions for 5 weeks ( Sato et al., 2021 ). All participants were instructed to",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8489980_elbow_joint_angles_in_elbow_flexor_unilateral_resistance_exe-u-1706",
@@ -752,9 +752,9 @@
       "context_window": "not performed a structured resistance training in the past 6 months, participated in the present study. They were allocated to",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8489980_elbow_joint_angles_in_elbow_flexor_unilateral_resistance_exe-n-1830",
@@ -2319,9 +2319,9 @@
       "context_window": "y the dominant (non-immobilized) arm 3 times a week with 80-120% of one concentric 1-RM load increased MVC-ISO strength (20.",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8489980_elbow_joint_angles_in_elbow_flexor_unilateral_resistance_exe-pct-1793",
@@ -2337,9 +2337,9 @@
       "context_window": "20% of one concentric 1-RM load increased MVC-ISO strength (20.9%) greater than concentric-eccentric coupled resistance train",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8489980_elbow_joint_angles_in_elbow_flexor_unilateral_resistance_exe-pct-1863",
@@ -2355,9 +2355,9 @@
       "context_window": "ater than concentric-eccentric coupled resistance training (13.7%) in which 60-90% of 1-RM load was used for the same total t",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8489980_elbow_joint_angles_in_elbow_flexor_unilateral_resistance_exe-pct-1882",
@@ -2373,9 +2373,9 @@
       "context_window": "c-eccentric coupled resistance training (13.7%) in which 60-90% of 1-RM load was used for the same total training volume. I",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8489980_elbow_joint_angles_in_elbow_flexor_unilateral_resistance_exe-msd-3944",
@@ -2753,7 +2753,7 @@
       "context_window": "idgell et al., 2015 ). Kidgell et al. (2015) reported that 4 weeks of maximal eccentric training of the wrist flexors resulted",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2771,7 +2771,7 @@
       "context_window": "er reductions in both ipsilateral intracortical inhibition (32%) and silent period duration (15-27%) when compared with max",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2789,7 +2789,7 @@
       "context_window": "tracortical inhibition (32%) and silent period duration (15-27%) when compared with maximal concentric resistance training",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2807,7 +2807,7 @@
       "context_window": "mpared with maximal concentric resistance training (2 and 4-8%, respectively). Moreover, Tseng et al. (2020) showed that M",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12209347_investigating_muscle_protein_synthesis_using_deuterium_oxide",
   "doi": "10.1113/EP092016",
-  "extracted_at": "2026-05-05T23:37:04+00:00",
+  "extracted_at": "2026-05-07T16:56:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 3,
@@ -57,7 +57,7 @@
       "sentence": "Sarcopenia results in muscle mass loss of 0.64%-0.7%/year in women and 0.8%-0.98%/year in men aged 75 years (Mitchell et al., 2012 ).",
       "context_window": "wn as sarcopenia. Sarcopenia results in muscle mass loss of 0.64%-0.7%/year in women and 0.8%-0.98%/year in men aged 75 years",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -75,7 +75,7 @@
       "sentence": "Sarcopenia results in muscle mass loss of 0.64%-0.7%/year in women and 0.8%-0.98%/year in men aged 75 years (Mitchell et al., 2012 ).",
       "context_window": "sarcopenia. Sarcopenia results in muscle mass loss of 0.64%-0.7%/year in women and 0.8%-0.98%/year in men aged 75 years (Mit",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -93,7 +93,7 @@
       "sentence": "Sarcopenia results in muscle mass loss of 0.64%-0.7%/year in women and 0.8%-0.98%/year in men aged 75 years (Mitchell et al., 2012 ).",
       "context_window": "results in muscle mass loss of 0.64%-0.7%/year in women and 0.8%-0.98%/year in men aged 75 years (Mitchell et al., 2012 ). O",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -111,7 +111,7 @@
       "sentence": "Sarcopenia results in muscle mass loss of 0.64%-0.7%/year in women and 0.8%-0.98%/year in men aged 75 years (Mitchell et al., 2012 ).",
       "context_window": "ts in muscle mass loss of 0.64%-0.7%/year in women and 0.8%-0.98%/year in men aged 75 years (Mitchell et al., 2012 ). Overall",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -129,7 +129,7 @@
       "sentence": "Sarcopenia results in muscle mass loss of 0.64%-0.7%/year in women and 0.8%-0.98%/year in men aged 75 years (Mitchell et al., 2012 ).",
       "context_window": "of 0.64%-0.7%/year in women and 0.8%-0.98%/year in men aged 75 years (Mitchell et al., 2012 ). Overall, sarcopenia is a major co",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -148,7 +148,7 @@
       "context_window": "in older adults. Evidence suggests that protein intake of >1.2 g/kg/day is generally effective for stimulating MPS, although intake",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     }

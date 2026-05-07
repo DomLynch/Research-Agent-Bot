@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera",
   "doi": "10.1186/1475-2840-6-20",
-  "extracted_at": "2026-05-05T22:20:09+00:00",
+  "extracted_at": "2026-05-07T16:57:47+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 34,
@@ -60,9 +60,9 @@
       "context_window": "t with acarbose reduces the incidence of type 2 diabetes by 36% [ 7 ]. In the DPP, treatment with metformin reduced the inc",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-pct-1691",
@@ -78,7 +78,7 @@
       "context_window": "eatment with metformin reduced the incidence of diabetes by 31%, although this effect was less marked in older patients, pe",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "treatment reduces 1-hour postload plasma glucose levels by 2.3 mmol/L with a clear dose-response relationship, as well as fasti",
       "claim_role": "dose",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "haemoglobin (HbA 1c ) were seen for acarbose and metformin (1.1% and 1.0%, respectively) [ 32 ], and for acarbose and gliben",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -150,7 +150,7 @@
       "context_window": "in (HbA 1c ) were seen for acarbose and metformin (1.1% and 1.0%, respectively) [ 32 ], and for acarbose and glibenclamide (",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -168,7 +168,7 @@
       "context_window": ", respectively) [ 32 ], and for acarbose and glibenclamide (1.1% and 0.9%, respectively) [ 33 ]. The Cochrane review also fo",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -186,7 +186,7 @@
       "context_window": "ively) [ 32 ], and for acarbose and glibenclamide (1.1% and 0.9%, respectively) [ 33 ]. The Cochrane review also found that",
       "claim_role": "background",
       "endpoint": "HbA1c",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -204,9 +204,9 @@
       "context_window": "reduced 2-hour postprandial blood glucose (2 hPG) levels by 3.4 mmol/L and HbA 1c levels by 1.8% from baseline [ 18 , 34 ]. By c",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-pct-7920",
@@ -222,9 +222,9 @@
       "context_window": "d glucose (2 hPG) levels by 3.4 mmol/L and HbA 1c levels by 1.8% from baseline [ 18 , 34 ]. By contrast, the effectiveness o",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-pct-8818",
@@ -240,7 +240,7 @@
       "context_window": "caemia with acarbose therapy was not only associated with a 36% reduction in newly diagnosed diabetes, but also with a 34%",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -258,7 +258,7 @@
       "context_window": "36% reduction in newly diagnosed diabetes, but also with a 34% relative risk reduction in the incidence of new cases of hy",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -276,7 +276,7 @@
       "context_window": "k reduction in the incidence of new cases of hypertension ( P = 0.006) and a 49% relative risk reduction in the development of ca",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -294,7 +294,7 @@
       "context_window": "e incidence of new cases of hypertension ( P = 0.006) and a 49% relative risk reduction in the development of cardiovascula",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -311,8 +311,8 @@
       "sentence": "The study found that the reduction in postprandial hyperglycaemia with acarbose therapy was not only associated with a 36% reduction in newly diagnosed diabetes, but also with a 34% relative risk reduction in the incidence of new cases of hypertension ( P = 0.006) and a 49% relative risk reduction in the development of cardiovascular events ( P = 0.03) over a mean follow-up of 3.3 years (Table 1 ) [ 20 ].",
       "context_window": "isk reduction in the development of cardiovascular events ( P = 0.03) over a mean follow-up of 3.3 years (Table 1 ) [ 20 ]. More",
       "claim_role": "background",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -329,8 +329,8 @@
       "sentence": "The study found that the reduction in postprandial hyperglycaemia with acarbose therapy was not only associated with a 36% reduction in newly diagnosed diabetes, but also with a 34% relative risk reduction in the incidence of new cases of hypertension ( P = 0.006) and a 49% relative risk reduction in the development of cardiovascular events ( P = 0.03) over a mean follow-up of 3.3 years (Table 1 ) [ 20 ].",
       "context_window": "cardiovascular events ( P = 0.03) over a mean follow-up of 3.3 years (Table 1 ) [ 20 ]. Moreover, the risk of MI specifically wa",
       "claim_role": "background",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -348,7 +348,7 @@
       "context_window": "20 ]. Moreover, the risk of MI specifically was reduced by 91% ( P = 0.02), a result that remained significant even when a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -366,7 +366,7 @@
       "context_window": "Moreover, the risk of MI specifically was reduced by 91% ( P = 0.02), a result that remained significant even when an additiona",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -384,7 +384,7 @@
       "context_window": "the acarbose group, compared with 19 in the placebo group; P = 0.001)[ 43 ]. Other oral antidiabetes agents used for the preven",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -437,10 +437,10 @@
       "sentence": "However, despite the fact that the study was carried out in a population at low risk for cardiovascular events, significantly more participants developed congestive heart failure in the rosiglitazone group than in the placebo group (14 vs 2 participants, respectively; HR, 7.03; 95% CI, 1.60-30.9; P = 0.01)[ 45 ].",
       "context_window": "lacebo group (14 vs 2 participants, respectively; HR, 7.03; 95% CI, 1.60-30.9; P = 0.01)[ 45 ]. The MEta-analysis of Risk I",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-p-10315",
@@ -455,10 +455,10 @@
       "sentence": "However, despite the fact that the study was carried out in a population at low risk for cardiovascular events, significantly more participants developed congestive heart failure in the rosiglitazone group than in the placebo group (14 vs 2 participants, respectively; HR, 7.03; 95% CI, 1.60-30.9; P = 0.01)[ 45 ].",
       "context_window": "2 participants, respectively; HR, 7.03; 95% CI, 1.60-30.9; P = 0.01)[ 45 ]. The MEta-analysis of Risk Improvement under Acarbos",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "placebo",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-pct-10774",
@@ -473,10 +473,10 @@
       "sentence": "Treatment with acarbose reduced the risk of any cardiovascular event by 35% ( P = 0.0061), and the risk of MI specifically by 64% ( P = 0.0120; Figure 2 ) [ 21 ].",
       "context_window": "th acarbose reduced the risk of any cardiovascular event by 35% ( P = 0.0061), and the risk of MI specifically by 64% ( P =",
       "claim_role": "effect",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-p-10780",
@@ -491,10 +491,10 @@
       "sentence": "Treatment with acarbose reduced the risk of any cardiovascular event by 35% ( P = 0.0061), and the risk of MI specifically by 64% ( P = 0.0120; Figure 2 ) [ 21 ].",
       "context_window": "rbose reduced the risk of any cardiovascular event by 35% ( P = 0.0061), and the risk of MI specifically by 64% ( P = 0.0120; Figu",
       "claim_role": "effect",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-pct-10828",
@@ -509,10 +509,10 @@
       "sentence": "Treatment with acarbose reduced the risk of any cardiovascular event by 35% ( P = 0.0061), and the risk of MI specifically by 64% ( P = 0.0120; Figure 2 ) [ 21 ].",
       "context_window": "nt by 35% ( P = 0.0061), and the risk of MI specifically by 64% ( P = 0.0120; Figure 2 ) [ 21 ]. Trends towards risk reduct",
       "claim_role": "effect",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-p-10834",
@@ -527,10 +527,10 @@
       "sentence": "Treatment with acarbose reduced the risk of any cardiovascular event by 35% ( P = 0.0061), and the risk of MI specifically by 64% ( P = 0.0120; Figure 2 ) [ 21 ].",
       "context_window": "35% ( P = 0.0061), and the risk of MI specifically by 64% ( P = 0.0120; Figure 2 ) [ 21 ]. Trends towards risk reduction were obse",
       "claim_role": "effect",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-p-11510",
@@ -546,7 +546,7 @@
       "context_window": "as shown to reduce the incidence of myocardial infarction ( P = 0.010) and all-cause mortality ( P = 0.011) in obese type 2 diabe",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -564,7 +564,7 @@
       "context_window": "yocardial infarction ( P = 0.010) and all-cause mortality ( P = 0.011) in obese type 2 diabetes patients [ 47 ]. However, in the",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -581,8 +581,8 @@
       "sentence": "However, in the Diabetes Prevention Programme, which randomised 3,234 individuals with IGT to intensive lifestyle modification, metformin or placebo, there was no difference in the incidence of cardiovascular events between the treatment groups over 3 years [ 48 ].",
       "context_window": "of cardiovascular events between the treatment groups over 3 years [ 48 ]. The rapid rise in postprandial blood glucose level",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "metformin",
+      "endpoint": "cardiovascular events",
+      "arm": "placebo",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -600,7 +600,7 @@
       "context_window": "reduced the annual increase in carotid IMT by approximately 50% ( P = 0.027)[ 22 ]. This result is supported by the results",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -618,7 +618,7 @@
       "context_window": "d the annual increase in carotid IMT by approximately 50% ( P = 0.027)[ 22 ]. This result is supported by the results of a subseq",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -636,7 +636,7 @@
       "context_window": "pe 2 diabetes is associated with a typical weight gain of 2-5 kg [ 52 ], but a randomised controlled comparison of acarbose",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -654,7 +654,7 @@
       "context_window": "d a significant reduction in weight compared with placebo ( P < 0.01)[ 53 ], a result confirmed by the MeRIA analysis [ 21 ]. No",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -672,7 +672,7 @@
       "context_window": "ght gain in patients with prediabetes: in STOP-NIDDM, after 3.2 years, individuals receiving acarbose had lost a mean of 1.2 kg,",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -690,7 +690,7 @@
       "context_window": ".2 years, individuals receiving acarbose had lost a mean of 1.2 kg, compared with individuals receiving placebo [ 7 ]. These b",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -762,9 +762,9 @@
       "context_window": "duced the mean 24-hour systolic blood pressure by a mean of 5.2 mmHg, compared with only 1.6 mmHg with glibenclamide ( P = 0.000",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-14817",
@@ -780,9 +780,9 @@
       "context_window": "ic blood pressure by a mean of 5.2 mmHg, compared with only 1.6 mmHg with glibenclamide ( P = 0.0001, Figure 4 ) [ 57 ]. Again,",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-p-14847",
@@ -798,9 +798,9 @@
       "context_window": "5.2 mmHg, compared with only 1.6 mmHg with glibenclamide ( P = 0.0001, Figure 4 ) [ 57 ]. Again, these results were confirmed by",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-p-15021",
@@ -816,7 +816,7 @@
       "context_window": "e treatment significantly reduces systolic blood pressure ( P = 0.024)[ 21 , 58 ]. Mean systolic and diastolic blood pressure in",
       "claim_role": "background",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -834,7 +834,7 @@
       "context_window": "type 2 diabetes treated with acarbose or glibenclamide for 6 months. Adapted with permission from Rosenthal & Mausersberger. [5",
       "claim_role": "dose",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -852,9 +852,9 @@
       "context_window": "with acarbose have also been shown to reduce the activity ( P = 0.045) and nuclear localisation ( P = 0.02) of the proinflammator",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-p-15451",
@@ -870,9 +870,9 @@
       "context_window": "reduce the activity ( P = 0.045) and nuclear localisation ( P = 0.02) of the proinflammatory transcription factor NF\u03baB [ 59 ], s",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-p-15833",
@@ -888,7 +888,7 @@
       "context_window": "the level of fibrinogen in patients with type 2 diabetes ( P = 0.013 vs placebo)[ 60 ], and to reduce serum C-reactive protein l",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -906,7 +906,7 @@
       "context_window": "e serum C-reactive protein levels in individuals with IGT ( P < 0.01 vs placebo)[ 61 ]. However, unlike acarbose, most treatment",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -924,7 +924,7 @@
       "context_window": "arbose significantly reduced diurnal levels of proinsulin ( P < 0.05)[ 63 ]. Improvement of insulin sensitivity by acarbose has",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -942,9 +942,9 @@
       "context_window": "and abdominal distension. In phase 3 trials in the USA, 56-76% of patients receiving acarbose reported side-effects, of wh",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-pct-17524",
@@ -978,9 +978,9 @@
       "context_window": "received acarbose and reported flatulence during the first 2 weeks of therapy, only about half reported flatulence during the",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-17819",
@@ -996,9 +996,9 @@
       "context_window": "herapy, only about half reported flatulence during the last 4 weeks [ 18 , 67 ]. Most GI sideeffects, therefore, become less co",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-pct-18012",
@@ -1068,9 +1068,9 @@
       "context_window": "side-effects associated with acarbose were reported by only 3.9% of patients (Table 2 )[ 18 , 69 ]. Safety profile of acarb",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-n-18369",
@@ -1086,9 +1086,9 @@
       "context_window": "]. Safety profile of acarbose, 5-year surveillance study (n = 1,954) [34]. The GI side-effect profile of acarbose is linke",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-19405",
@@ -1158,9 +1158,9 @@
       "context_window": "reasing regimen, in which acarbose therapy was initiated at 50 mg twice daily and progressed to 100 mg three-times daily, was",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-20425",
@@ -1176,9 +1176,9 @@
       "context_window": "herapy was initiated at 50 mg twice daily and progressed to 100 mg three-times daily, was found to be as effective at reducing",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-20573",
@@ -1194,9 +1194,9 @@
       "context_window": "levels as a flat-dosing regimen, in which patients received 100 mg three-times daily from the outset. Both regimens significan",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-p-20686",
@@ -1410,9 +1410,9 @@
       "context_window": "In STOP-NIDDM, administration of acarbose was initiated at 50 mg/day and titrated by 50 mg/day every 2 weeks to a maximum of 100",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-21804",
@@ -1428,9 +1428,9 @@
       "context_window": "tion of acarbose was initiated at 50 mg/day and titrated by 50 mg/day every 2 weeks to a maximum of 100 mg three-times daily (or",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-21820",
@@ -1446,9 +1446,9 @@
       "context_window": "was initiated at 50 mg/day and titrated by 50 mg/day every 2 weeks to a maximum of 100 mg three-times daily (or the maximum to",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-21844",
@@ -1464,9 +1464,9 @@
       "context_window": "day and titrated by 50 mg/day every 2 weeks to a maximum of 100 mg three-times daily (or the maximum tolerated dose)[ 76 ]. Th",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-22068",
@@ -1482,9 +1482,9 @@
       "context_window": "], whereas in the PROTECT trial acarbose was titrated from 25 mg three-times daily to 50 mg three-times daily, and finally t",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-22095",
@@ -1500,9 +1500,9 @@
       "context_window": "trial acarbose was titrated from 25 mg three-times daily to 50 mg three-times daily, and finally to 100 mg three-times daily",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-22135",
@@ -1518,9 +1518,9 @@
       "context_window": "hree-times daily to 50 mg three-times daily, and finally to 100 mg three-times daily based on efficacy and tolerability [ 65 ]",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-p-22385",
@@ -1536,7 +1536,7 @@
       "context_window": "ly increased reversion of IGT to normal glucose tolerance ( P < 0.0001)[ 7 ]. Furthermore, these trials demonstrated that the full",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1644,9 +1644,9 @@
       "context_window": "oodstream, and has a low systemic availability of less than 2% [ 84 ]. As a result, the risk of any toxic reaction is very",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-pct-26335",
@@ -1662,7 +1662,7 @@
       "context_window": "acarbose significantly decreased the level of HbA 1c , from 7.2% at entry to 6.3% ( P < 0.05) after 8 weeks [ 88 ]. More rec",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1680,7 +1680,7 @@
       "context_window": "antly decreased the level of HbA 1c , from 7.2% at entry to 6.3% ( P < 0.05) after 8 weeks [ 88 ]. More recently, a larger t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1698,7 +1698,7 @@
       "context_window": "ecreased the level of HbA 1c , from 7.2% at entry to 6.3% ( P < 0.05) after 8 weeks [ 88 ]. More recently, a larger trial of 107",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1716,7 +1716,7 @@
       "context_window": "el of HbA 1c , from 7.2% at entry to 6.3% ( P < 0.05) after 8 weeks [ 88 ]. More recently, a larger trial of 107 cirrhotic pati",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1734,7 +1734,7 @@
       "context_window": "al of 107 cirrhotic patients with diabetes found that, over 8 weeks, acarbose reduced postprandial glucose levels by about 50%,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1752,7 +1752,7 @@
       "context_window": "eeks, acarbose reduced postprandial glucose levels by about 50%, with no changes in liver function [ 89 ]. By contrast, sul",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1770,9 +1770,9 @@
       "context_window": "ontrolled trial of 192 patients with type 2 diabetes aged \u2265 65 years found that acarbose monotherapy controlled blood-glucose le",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-pct-27530",
@@ -1806,9 +1806,9 @@
       "context_window": "tidiabetes therapies, maintained a good safety profile over 3 years [ 71 ]. A 2-year, more-closely monitored trial in 74 patien",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera-u-28701",

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7151458_inadequacy_of_protein_intake_in_older_uk_adults",
   "doi": "10.3390/geriatrics5010006",
-  "extracted_at": "2026-05-05T23:37:12+00:00",
+  "extracted_at": "2026-05-07T16:56:41+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 12,
@@ -24,7 +24,7 @@
       "context_window": "rent dietary recommendation for protein intake in the UK is 0.75 g/kg/day, however, this population-wide recommendation does not nece",
       "claim_role": "dose",
       "endpoint": "protein synthesis",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -168,7 +168,7 @@
       "sentence": "However, recent research shows higher intakes are more beneficial in the elderly to maintain muscle mass and muscle function (summarized in Table 2 of reference [ 7 ]) which has led international bodies to recommend an increased RNI of 1.2 g/kg/d for optimal MPS in healthy older adults [ 7 ].",
       "context_window": "s led international bodies to recommend an increased RNI of 1.2 g/kg/d for optimal MPS in healthy older adults [ 7 ]. The suggeste",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -476,7 +476,7 @@
       "context_window": "e correlation between BMI and protein intake (r = -0.35 and p < 0.01) ( Figure 1 C). There was no correlation between age and pr",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -530,7 +530,7 @@
       "context_window": "With respect to the ESPEN recommended protein intake [ 7 ], 85% of the population failed to consume the 1.2 g/kg/day guidel",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -548,7 +548,7 @@
       "context_window": "n intake [ 7 ], 85% of the population failed to consume the 1.2 g/kg/day guideline (higher value than the 75% identified in other Eu",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -566,7 +566,7 @@
       "context_window": "o consume the 1.2 g/kg/day guideline (higher value than the 75% identified in other European countries [ 13 ]). With respec",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },

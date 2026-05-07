@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10620490_improved_muscle_mass_and_function_with_protein_supplementati",
   "doi": "10.5535/arm.23076",
-  "extracted_at": "2026-05-05T23:37:00+00:00",
+  "extracted_at": "2026-05-07T16:56:29+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 16,
@@ -23,7 +23,7 @@
       "sentence": "The nutritional supplementation group exhibited significant improvement in appendicular skeletal muscle mass (standardized mean difference [SMD]=0.41; 95% confidence interval [CI], 0.24-0.58; p<0.001; I 2 =1%), while handgrip strength (SMD=0.37; 95% CI, -0.32-1.07; p=0.29; I 2 =94%) and Short Physical Performance Battery (SPPB) (SMD=0.35; 95% CI, -0.47-1.18; p=0.40; I 2 =94%) showed a tendency for improvement.",
       "context_window": "letal muscle mass (standardized mean difference [SMD]=0.41; 95% confidence interval [CI], 0.24-0.58; p<0.001; I 2 =1%), whi",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -239,10 +239,10 @@
       "sentence": "Cut-offs for height-adjusted muscle mass through dual-energy X-ray absorptiometry were <7.0 kg/m 2 in male and <5.4 kg/m 2 in female and that through bioimpedance were <7.0 kg/m 2 in male and <5.7 kg/m 2 in female.",
       "context_window": "muscle mass through dual-energy X-ray absorptiometry were <7.0 kg/m 2 in male and <5.4 kg/m 2 in female and that through bioi",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10620490_improved_muscle_mass_and_function_with_protein_supplementati-u-981",
@@ -257,10 +257,10 @@
       "sentence": "Cut-offs for height-adjusted muscle mass through dual-energy X-ray absorptiometry were <7.0 kg/m 2 in male and <5.4 kg/m 2 in female and that through bioimpedance were <7.0 kg/m 2 in male and <5.7 kg/m 2 in female.",
       "context_window": "l-energy X-ray absorptiometry were <7.0 kg/m 2 in male and <5.4 kg/m 2 in female and that through bioimpedance were <7.0 kg/m",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10620490_improved_muscle_mass_and_function_with_protein_supplementati-u-1038",
@@ -275,10 +275,10 @@
       "sentence": "Cut-offs for height-adjusted muscle mass through dual-energy X-ray absorptiometry were <7.0 kg/m 2 in male and <5.4 kg/m 2 in female and that through bioimpedance were <7.0 kg/m 2 in male and <5.7 kg/m 2 in female.",
       "context_window": "d <5.4 kg/m 2 in female and that through bioimpedance were <7.0 kg/m 2 in male and <5.7 kg/m 2 in female. Sarcopenia in older",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10620490_improved_muscle_mass_and_function_with_protein_supplementati-u-1062",
@@ -293,10 +293,10 @@
       "sentence": "Cut-offs for height-adjusted muscle mass through dual-energy X-ray absorptiometry were <7.0 kg/m 2 in male and <5.4 kg/m 2 in female and that through bioimpedance were <7.0 kg/m 2 in male and <5.7 kg/m 2 in female.",
       "context_window": "and that through bioimpedance were <7.0 kg/m 2 in male and <5.7 kg/m 2 in female. Sarcopenia in older adults can be devastatin",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10620490_improved_muscle_mass_and_function_with_protein_supplementati-u-2188",
@@ -311,7 +311,7 @@
       "sentence": "The PROT-AGE study group recommended at least 1.0-1.2 g protein/kg/day to maintain and increase muscle mass and function in individuals aged older than 65 years.",
       "context_window": "ase muscle mass and function in individuals aged older than 65 years. A higher protein intake (>1.2 g/kg/day) is advised for tho",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -330,7 +330,7 @@
       "context_window": "viduals aged older than 65 years. A higher protein intake (>1.2 g/kg/day) is advised for those who regularly exercise and for commun",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -690,7 +690,7 @@
       "context_window": "trength to improve after protein supplementation (SMD=0.29; p<0.001). Protein supplementation could increase muscle mass and im",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -708,7 +708,7 @@
       "context_window": "would increase SPPB scores in fixed-effect model (SMD=0.32; p<0.001). Improvements in SPPB scores are expected to prevent frail",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },

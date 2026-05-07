@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11078354_e_proof_e_intervention_for_protein_intake_and_resistance_tra",
   "doi": "10.1371/journal.pone.0302727",
-  "extracted_at": "2026-05-05T21:59:31+00:00",
+  "extracted_at": "2026-05-07T16:57:19+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 6,
@@ -22,7 +22,7 @@
       "sentence": "Accounting for more than 60% of cancer survivors, older (\u226565 years) cancer survivors have a 2- to 5-fold risk of physical function impairment, compared to cancer-free peers.",
       "context_window": "Accounting for more than 60% of cancer survivors, older (\u226565 years) cancer survivors hav",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -40,7 +40,7 @@
       "sentence": "Accounting for more than 60% of cancer survivors, older (\u226565 years) cancer survivors have a 2- to 5-fold risk of physical function impairment, compared to cancer-free peers.",
       "context_window": "Accounting for more than 60% of cancer survivors, older (\u226565 years) cancer survivors have a 2- to 5-fold risk of physical func",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -94,7 +94,7 @@
       "sentence": "Considering the influx of telehealth due to COVID-19, increased technology use among older adults (84% own a cellphone, computer, or tablet and know how to use it [ 53 ]), and the positive impact of online behavior change interventions for cancer survivors [ 49 , 54 - 58 ], online-based interventions to improve physical function need to be tested within OCS, a vulnerable and growing population.",
       "context_window": "e to COVID-19, increased technology use among older adults (84% own a cellphone, computer, or tablet and know how to use it",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -113,7 +113,7 @@
       "context_window": "). In this pilot randomized controlled trial, participants (n = 70) will be randomized to one of two groups: experimental (onl",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -184,10 +184,10 @@
       "sentence": "Eligibility criteria are: \u226565 years of age, a primary diagnosis of stage I-III breast, colorectal, or prostate cancer, completion of primary curative treatment, reported at least 1 physical function limitation on the 10-question RAND-36 Physical Function Subscale (PFSS) [ 61 ] (\u201climited a little\u201d, \u201climited a lot\u201d), no evidence of progressive disease or second cancers, community-dwelling, and able to provide written informed consent.",
       "context_window": "allow for a 22% attrition rate. Eligibility criteria are: \u226565 years of age, a primary diagnosis of stage I-III breast, colorect",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11078354_e_proof_e_intervention_for_protein_intake_and_resistance_tra-u-6201",
@@ -221,9 +221,9 @@
       "context_window": "y based on 1,600-2,600 calories/day) [ 66 ]. For the first 6 weeks, the exercise scientist (ES) will host weekly, one-on-one,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11078354_e_proof_e_intervention_for_protein_intake_and_resistance_tra-u-11386",
@@ -239,7 +239,7 @@
       "context_window": "uld do exercises to make your body stronger for 15 minutes, 3 days a week?\u201d and \u201cHow sure are you that you could improve your",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },

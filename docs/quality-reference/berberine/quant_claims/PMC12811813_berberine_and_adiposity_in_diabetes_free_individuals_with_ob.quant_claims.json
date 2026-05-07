@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12811813_berberine_and_adiposity_in_diabetes_free_individuals_with_ob",
   "doi": "10.1001/jamanetworkopen.2025.54152",
-  "extracted_at": "2026-05-05T22:22:56+00:00",
+  "extracted_at": "2026-05-07T16:58:07+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 54,
@@ -41,9 +41,9 @@
       "context_window": "dividuals with obesity and MASLD over a treatment period of 6 months. All investigators are listed in eMethods 1 in Supplement 1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12811813_berberine_and_adiposity_in_diabetes_free_individuals_with_ob-u-811",
@@ -113,7 +113,7 @@
       "context_window": "erine hydrochloride, or had medication adherence lower than 80% were excluded. Those who remained eligible were randomly al",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine hydrochloride",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -131,7 +131,7 @@
       "context_window": "hydrochloride (0.5 g) twice daily or a matching placebo for 6 months. All eligible participants also received tailored lifestyle",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine hydrochloride",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -310,10 +310,10 @@
       "sentence": "Prespecified subgroups analyses for the primary outcomes included age (<40, \u226540 years), sex (female, male), LDL-C (\u2264131.3, >131.3 mg/dL; to convert to mmol/L, multiply by 0.0259), prediabetic status (yes, no), and abnormal liver function (yes, no).",
       "context_window": "roups analyses for the primary outcomes included age (<40, \u226540 years), sex (female, male), LDL-C (\u2264131.3, >131.3 mg/dL; to conve",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12811813_berberine_and_adiposity_in_diabetes_free_individuals_with_ob-u-6467",
@@ -328,10 +328,10 @@
       "sentence": "Prespecified subgroups analyses for the primary outcomes included age (<40, \u226540 years), sex (female, male), LDL-C (\u2264131.3, >131.3 mg/dL; to convert to mmol/L, multiply by 0.0259), prediabetic status (yes, no), and abnormal liver function (yes, no).",
       "context_window": "d age (<40, \u226540 years), sex (female, male), LDL-C (\u2264131.3, >131.3 mg/dL; to convert to mmol/L, multiply by 0.0259), prediabetic sta",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12811813_berberine_and_adiposity_in_diabetes_free_individuals_with_ob-u-6814",
@@ -671,7 +671,7 @@
       "context_window": "he percentage of medication consumed across all visits) was 90.5% (16.1%) (90.3% [14.7%] for berberine and 90.7% [17.4%] for",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -689,7 +689,7 @@
       "context_window": "entage of medication consumed across all visits) was 90.5% (16.1%) (90.3% [14.7%] for berberine and 90.7% [17.4%] for placebo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -707,7 +707,7 @@
       "context_window": "f medication consumed across all visits) was 90.5% (16.1%) (90.3% [14.7%] for berberine and 90.7% [17.4%] for placebo). Parti",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -725,7 +725,7 @@
       "context_window": "ation consumed across all visits) was 90.5% (16.1%) (90.3% [14.7%] for berberine and 90.7% [17.4%] for placebo). Participant-",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -743,7 +743,7 @@
       "context_window": "visits) was 90.5% (16.1%) (90.3% [14.7%] for berberine and 90.7% [17.4%] for placebo). Participant-level VAT area relative c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -761,7 +761,7 @@
       "context_window": ") was 90.5% (16.1%) (90.3% [14.7%] for berberine and 90.7% [17.4%] for placebo). Participant-level VAT area relative changes",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1102,8 +1102,8 @@
       "sentence": "For secondary and exploratory outcomes, berberine was associated with larger reductions in LDL-C (-7.72 [95% CI, -13.13 to -1.93] mg/dL; P = .008) , apoB (-3.42 [95% CI, -6.33 to -0.51] mg/dL; P = .02; to convert to g/L, multiply by 0.01) and hs-CRP (-0.072 [95% CI, -0.140 to -0.004] mg/dL; P = .04) compared with placebo (eTable 6 in Supplement 1 ).",
       "context_window": "rine was associated with larger reductions in LDL-C (-7.72 [95% CI, -13.13 to -1.93] mg/dL; P = .008) , apoB (-3.42 [95% CI",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "placebo",
+      "endpoint": "ldl",
+      "arm": "berberine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1120,8 +1120,8 @@
       "sentence": "For secondary and exploratory outcomes, berberine was associated with larger reductions in LDL-C (-7.72 [95% CI, -13.13 to -1.93] mg/dL; P = .008) , apoB (-3.42 [95% CI, -6.33 to -0.51] mg/dL; P = .02; to convert to g/L, multiply by 0.01) and hs-CRP (-0.072 [95% CI, -0.140 to -0.004] mg/dL; P = .04) compared with placebo (eTable 6 in Supplement 1 ).",
       "context_window": "reductions in LDL-C (-7.72 [95% CI, -13.13 to -1.93] mg/dL; P = .008) , apoB (-3.42 [95% CI, -6.33 to -0.51] mg/dL; P = .02; to",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "placebo",
+      "endpoint": "ldl",
+      "arm": "berberine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1138,8 +1138,8 @@
       "sentence": "For secondary and exploratory outcomes, berberine was associated with larger reductions in LDL-C (-7.72 [95% CI, -13.13 to -1.93] mg/dL; P = .008) , apoB (-3.42 [95% CI, -6.33 to -0.51] mg/dL; P = .02; to convert to g/L, multiply by 0.01) and hs-CRP (-0.072 [95% CI, -0.140 to -0.004] mg/dL; P = .04) compared with placebo (eTable 6 in Supplement 1 ).",
       "context_window": "2 [95% CI, -13.13 to -1.93] mg/dL; P = .008) , apoB (-3.42 [95% CI, -6.33 to -0.51] mg/dL; P = .02; to convert to g/L, mult",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
-      "arm": "placebo",
+      "endpoint": "ldl",
+      "arm": "berberine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1157,7 +1157,7 @@
       "context_window": "dL; P = .008) , apoB (-3.42 [95% CI, -6.33 to -0.51] mg/dL; P = .02; to convert to g/L, multiply by 0.01) and hs-CRP (-0.072 [9",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1175,7 +1175,7 @@
       "context_window": "2; to convert to g/L, multiply by 0.01) and hs-CRP (-0.072 [95% CI, -0.140 to -0.004] mg/dL; P = .04) compared with placebo",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1193,7 +1193,7 @@
       "context_window": "0.01) and hs-CRP (-0.072 [95% CI, -0.140 to -0.004] mg/dL; P = .04) compared with placebo (eTable 6 in Supplement 1 ). Berberi",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1300,8 +1300,8 @@
       "sentence": "Serious adverse events were reported in 6 participants (3.6%) in the berberine arm and 2 participants (1.2%) in the placebo arm.",
       "context_window": "). Serious adverse events were reported in 6 participants (3.6%) in the berberine arm and 2 participants (1.2%) in the plac",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1318,8 +1318,8 @@
       "sentence": "Serious adverse events were reported in 6 participants (3.6%) in the berberine arm and 2 participants (1.2%) in the placebo arm.",
       "context_window": "articipants (3.6%) in the berberine arm and 2 participants (1.2%) in the placebo arm. Nonserious adverse events of interest",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1336,8 +1336,8 @@
       "sentence": "Nonserious adverse events of interest were reported in 17 participants (10.1%) in the berberine arm and 13 participants (7.7%) in the placebo arm.",
       "context_window": "dverse events of interest were reported in 17 participants (10.1%) in the berberine arm and 13 participants (7.7%) in the pla",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1354,8 +1354,8 @@
       "sentence": "Nonserious adverse events of interest were reported in 17 participants (10.1%) in the berberine arm and 13 participants (7.7%) in the placebo arm.",
       "context_window": "ticipants (10.1%) in the berberine arm and 13 participants (7.7%) in the placebo arm. There were 5 participants (3.0%) who d",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1373,7 +1373,7 @@
       "context_window": "pants (7.7%) in the placebo arm. There were 5 participants (3.0%) who discontinued berberine and 6 participants (3.6%) who d",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1391,7 +1391,7 @@
       "context_window": "pants (3.0%) who discontinued berberine and 6 participants (3.6%) who discontinued placebo. In the post hoc analysis, we fo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1409,7 +1409,7 @@
       "context_window": "on alone) found that berberine at a daily dose of 1.5 g for 16 weeks reduced liver fat content. Another trial 23 including 89 pa",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1427,7 +1427,7 @@
       "context_window": "e (comparable dose of berberine component in our trial) for 18 weeks reduced liver fat content. Compared with our study populati",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

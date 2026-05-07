@@ -299,6 +299,48 @@ def test_validate_body_citation_catches_bare_handles() -> None:
     year) ARE leaks. Pre-fix the patterns required trailing keywords."""
     assert cr.validate_body_citation("Walton_2019")
     assert cr.validate_body_citation("PMC12978362")
+    assert cr.validate_body_citation("DOI_10_1097_01_ogx_0000344393")
+    assert cr.validate_body_citation("HIT_bempedoic_acid_versus_statins")
+
+
+def test_registry_uses_title_year_for_abstract_fallback_without_authors() -> None:
+    receipts = [
+        _FakeReceipt(
+            receipt_id=(
+                "DOI_10_1097_01_ogx_0000344393_60303_0a_"
+                "rosuvastatin_to_prevent_vascular_events"
+            ),
+            source_year=2009,
+        ),
+        _FakeReceipt(
+            receipt_id=(
+                "HIT_bempedoic_acid_versus_statins_in_primary_"
+                "prevention_patients"
+            ),
+            source_year=2026,
+        ),
+    ]
+    registry = cr.build_registry(
+        receipts,
+        paper_meta_by_id={
+            receipts[0].receipt_id: {
+                "title": (
+                    "Rosuvastatin to Prevent Vascular Events in Men and Women"
+                ),
+                "year": 2009,
+                "authors": [],
+            },
+            receipts[1].receipt_id: {
+                "title": (
+                    "Bempedoic Acid Versus Statins in Primary-Prevention Patients"
+                ),
+                "year": 2026,
+                "authors": [],
+            },
+        },
+    )
+    assert registry[receipts[0].receipt_id].body_citation == "Rosuvastatin 2009"
+    assert registry[receipts[1].receipt_id].body_citation == "Bempedoic 2026"
 
 
 def test_build_registry_raises_on_empty_receipt_id() -> None:

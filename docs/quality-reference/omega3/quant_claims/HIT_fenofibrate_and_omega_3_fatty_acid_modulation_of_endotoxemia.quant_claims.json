@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_fenofibrate_and_omega_3_fatty_acid_modulation_of_endotoxemia",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:33:07+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_fenofibrate_and_omega_3_fatty_acid_modulation_of_endotoxemia-u-1915",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1915,
+      "sentence": "Posted outcomes: The Effect of Omega-3 Fatty Acid Supplementation on Cytokine Production (Plasma Levels of TNF\u03b1) During an in Vivo Inflammatory Challenge (LPS).. timeframe=randomization and 8 weeks post.",
+      "context_window": "Inflammatory Challenge (LPS).. timeframe=randomization and 8 weeks post. Placebo=0.95; Lovaza (900 mg/Day)=1.26; Lovaza (3,600",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_fenofibrate_and_omega_3_fatty_acid_modulation_of_endotoxemia-u-1951",
+      "claim_type": "unit_value",
+      "raw_text": "900 mg",
+      "numeric_values": [
+        900.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1951,
+      "sentence": "Placebo=0.95; Lovaza (900 mg/Day)=1.26; Lovaza (3,600 mg/Day)=1.14",
+      "context_window": "frame=randomization and 8 weeks post. Placebo=0.95; Lovaza (900 mg/Day)=1.26; Lovaza (3,600 mg/Day)=1.14",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_fenofibrate_and_omega_3_fatty_acid_modulation_of_endotoxemia-u-1979",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1979,
+      "sentence": "Placebo=0.95; Lovaza (900 mg/Day)=1.26; Lovaza (3,600 mg/Day)=1.14",
+      "context_window": "eks post. Placebo=0.95; Lovaza (900 mg/Day)=1.26; Lovaza (3,600 mg/Day)=1.14",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

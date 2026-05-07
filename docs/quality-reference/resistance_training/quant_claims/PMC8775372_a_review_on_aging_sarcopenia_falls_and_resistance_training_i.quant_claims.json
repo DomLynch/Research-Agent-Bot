@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8775372_a_review_on_aging_sarcopenia_falls_and_resistance_training_i",
   "doi": "10.3390/ijerph19020874",
-  "extracted_at": "2026-05-05T21:59:12+00:00",
+  "extracted_at": "2026-05-07T16:57:41+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 9,
@@ -22,7 +22,7 @@
       "context_window": ", performing 5-8 repetitions or achieving intensities of 50-80% of 1RM, 2-3 times per week should be recommended, followed",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -93,10 +93,10 @@
       "sentence": "A 5-10% loss of muscle mass per decade after 50 years is estimated [ 13 ].",
       "context_window": "cal disability, poor quality of life, and death [ 12 ]. A 5-10% loss of muscle mass per decade after 50 years is estimated",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8775372_a_review_on_aging_sarcopenia_falls_and_resistance_training_i-u-4217",
@@ -111,10 +111,10 @@
       "sentence": "A 5-10% loss of muscle mass per decade after 50 years is estimated [ 13 ].",
       "context_window": "death [ 12 ]. A 5-10% loss of muscle mass per decade after 50 years is estimated [ 13 ]. Given that muscle mass accounts for up",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8775372_a_review_on_aging_sarcopenia_falls_and_resistance_training_i-pct-4289",
@@ -129,10 +129,10 @@
       "sentence": "Given that muscle mass accounts for up to 60% of body mass, pathological changes to this physiological tissue can profoundly affect the older adult.",
       "context_window": "estimated [ 13 ]. Given that muscle mass accounts for up to 60% of body mass, pathological changes to this physiological ti",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8775372_a_review_on_aging_sarcopenia_falls_and_resistance_training_i-pct-7772",
@@ -201,10 +201,10 @@
       "sentence": "Several studies have reported that one-third of the elderly over 65 years of age fall each year, and the ratio of injuries caused by falls increases with age [ 11 , 25 ].",
       "context_window": "al studies have reported that one-third of the elderly over 65 years of age fall each year, and the ratio of injuries caused by",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8775372_a_review_on_aging_sarcopenia_falls_and_resistance_training_i-pct-10692",
@@ -273,7 +273,7 @@
       "sentence": "About 15% of falls result in dislocations, bruises, and muscle trauma [ 31 ], and more than 10% of falls result in bone fractures [ 32 ].",
       "context_window": "s of falls is the fracture of the femur proximal end. About 15% of falls result in dislocations, bruises, and muscle trauma",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -291,7 +291,7 @@
       "sentence": "About 15% of falls result in dislocations, bruises, and muscle trauma [ 31 ], and more than 10% of falls result in bone fractures [ 32 ].",
       "context_window": "locations, bruises, and muscle trauma [ 31 ], and more than 10% of falls result in bone fractures [ 32 ]. Fractures associa",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -309,7 +309,7 @@
       "sentence": "Several authors agree that falls in the elderly have increased in the last 10 years [ 25 , 34 , 35 ].",
       "context_window": "agree that falls in the elderly have increased in the last 10 years [ 25 , 34 , 35 ]. Implementing efficient strategies can red",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

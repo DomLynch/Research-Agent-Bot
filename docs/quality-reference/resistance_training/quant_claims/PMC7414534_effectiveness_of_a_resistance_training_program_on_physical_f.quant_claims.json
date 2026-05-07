@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f",
   "doi": "10.1186/s11556-020-00243-9",
-  "extracted_at": "2026-05-05T21:59:17+00:00",
+  "extracted_at": "2026-05-07T16:57:37+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 46,
@@ -23,8 +23,8 @@
       "sentence": "We evaluated the effectiveness of 8 months resistance training using easily available, low cost equipment compared to physical activity counselling on physical function, muscle strength, and body composition in community-dwelling older adults receiving home care.",
       "context_window": "counteract these changes. We evaluated the effectiveness of 8 months resistance training using easily available, low cost equipm",
       "claim_role": "population",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "physical function",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -59,7 +59,7 @@
       "sentence": "Outcomes were assessed at participant level at baseline, after four, and 8 months and included tests of physical function (chair rise, 8 ft-up-and-go, preferred- and maximal gait speed, and stair climb), maximal strength, rate of force development, and body composition.",
       "context_window": "assessed at participant level at baseline, after four, and 8 months and included tests of physical function (chair rise, 8 ft-u",
       "claim_role": "unknown",
-      "endpoint": "walk speed",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -77,7 +77,7 @@
       "sentence": "After 8 months, multilevel linear mixed models showed that RTG improved in all tests of physical function and maximal leg strength (9-24%, p = 0.01-0.03) compared to CG.",
       "context_window": "4 (6-7 clusters) in RTG and 20-42 (5 clusters) in CG. After 8 months, multilevel linear mixed models showed that RTG improved in",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -149,7 +149,7 @@
       "sentence": "The oldest old (> 80 years) still living at home while receiving home care services remains understudied [ 15 , 23 ], Effective interventions for this population could provide a golden window of opportunity to promote independent living by improving physical function and muscle strength.",
       "context_window": "[ 7 , 10 - 12 , 14 , 17 , 18 , 20 - 22 ]. The oldest old (> 80 years) still living at home while receiving home care services re",
       "claim_role": "background",
-      "endpoint": "muscle strength",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -167,8 +167,8 @@
       "sentence": "Thus, this cluster randomized trial examined the effectiveness of an 8 months resistance training program using easily available, low cost equipment, compared to a control group receiving physical activity counselling, on physical function, muscle strength, and body composition in community-dwelling older adults receiving home care.",
       "context_window": "s cluster randomized trial examined the effectiveness of an 8 months resistance training program using easily available, low cos",
       "claim_role": "population",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "physical function",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -276,9 +276,9 @@
       "context_window": "as offered a resistance training program twice per week for 8 months, from end of September 2016 to the end of May 2017. The int",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-u-3148",
@@ -510,9 +510,9 @@
       "context_window": "ints. A per-protocol analysis including participants with \u226560% attendance to exercise sessions was conducted. In addition,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-u-10963",
@@ -762,7 +762,7 @@
       "context_window": "eline characteristics of participants Characteristics RTG ( n = 64) CG ( n = 43) ICC Age (years) median (IQR) 86.5 (80-90) 86.",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -780,7 +780,7 @@
       "context_window": "eristics of participants Characteristics RTG ( n = 64) CG ( n = 43) ICC Age (years) median (IQR) 86.5 (80-90) 86.0 (80-90) Sex",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -798,7 +798,7 @@
       "context_window": "lker or crutches. One participant in CG with missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -816,7 +816,7 @@
       "context_window": "rutches. One participant in CG with missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -834,7 +834,7 @@
       "context_window": "One participant in CG with missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -852,7 +852,7 @@
       "context_window": "cipant in CG with missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -870,7 +870,7 @@
       "context_window": "CG with missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -888,7 +888,7 @@
       "context_window": "missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -906,7 +906,7 @@
       "context_window": "ata a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Base",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -924,7 +924,7 @@
       "context_window": "63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Baseline char",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -942,7 +942,7 @@
       "context_window": "40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Baseline characteristi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -960,7 +960,7 @@
       "context_window": "59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Baseline characteristics of par",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -978,7 +978,7 @@
       "context_window": "36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Baseline characteristics of participants",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -996,7 +996,7 @@
       "context_window": "58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Baseline characteristics of participants RTG Res",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1014,7 +1014,7 @@
       "context_window": "31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Baseline characteristics of participants RTG Resistance t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1031,10 +1031,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "ker or crutches. One participant in CG with missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n =",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3022",
@@ -1049,10 +1049,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "utches. One participant in CG with missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n =",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3031",
@@ -1067,10 +1067,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "ne participant in CG with missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n =",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3040",
@@ -1085,10 +1085,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "ipant in CG with missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n =",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3049",
@@ -1103,10 +1103,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "CG with missing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n =",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3058",
@@ -1121,10 +1121,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "issing data a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n =",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3067",
@@ -1139,10 +1139,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "ta a n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Figu",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3076",
@@ -1157,10 +1157,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Figure 2 show",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3085",
@@ -1175,10 +1175,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Figure 2 show changes",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3094",
@@ -1193,10 +1193,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Figure 2 show changes in physic",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3103",
@@ -1211,10 +1211,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Figure 2 show changes in physical functi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3112",
@@ -1229,10 +1229,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Figure 2 show changes in physical function from b",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-n-3121",
@@ -1247,10 +1247,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39 Figure 2 show changes in physical function from baseline t",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-u-3198",
@@ -1265,10 +1265,10 @@
       "sentence": "One participant in CG with missing data\n\na n = 63 b n = 40 c n = 59 d n = 36 e n = 58 f n = 31 g n = 42 h n = 62 i n = 41 j n = 55 k n = 20 l n = 41 m n = 39\n\nFigure 2 show changes in physical function from baseline to four and 8 months.",
       "context_window": "show changes in physical function from baseline to four and 8 months. After 4 months, RTG improved in stair climb (18%, p = 0.03",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-u-3214",
@@ -1391,7 +1391,7 @@
       "sentence": "After 8 months, RTG improved in all physical function tests (9-24%, p = 0.01-0.03) compared to CG (Table 3 , Fig.",
       "context_window": "between-group differences were found after 4 months. After 8 months, RTG improved in all physical function tests (9-24%, p = 0.",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1409,7 +1409,7 @@
       "sentence": "After 8 months, RTG improved in all physical function tests (9-24%, p = 0.01-0.03) compared to CG (Table 3 , Fig.",
       "context_window": "er 8 months, RTG improved in all physical function tests (9-24%, p = 0.01-0.03) compared to CG (Table 3 , Fig. 2 ). Supplem",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1427,7 +1427,7 @@
       "sentence": "After 8 months, RTG improved in all physical function tests (9-24%, p = 0.01-0.03) compared to CG (Table 3 , Fig.",
       "context_window": "months, RTG improved in all physical function tests (9-24%, p = 0.01-0.03) compared to CG (Table 3 , Fig. 2 ). Supplementary Tab",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1445,8 +1445,8 @@
       "sentence": "Values are estimated means and 95% confidence intervals Table 3 Physical function, strength and body composition from baseline to four and eight months Outcome Analyzed Baseline Mean (95% CI) 4 months Between-group difference 8 months Between-group difference RTG n CG n RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p Chair rise (s) a 63 42 18.6 (17.0-20.2) 16.7 (15.1-18.6) 16.0 (14.0-18.2) 1.05 (0.91-1.20) 0.500 15.2 (13.5-17.2) 18.6 (16.2-21.3) 0.81 (0.70-0.96) 0.010 8 ft-up-and-go (s) a 63 41 14.1 (12.3-16.1) 13.2 (11.5-15.0) 13.8 (11.9-16.0) 0.96 (0.87-1.05) 0.350 13.0 (11.2-15.0) 14.6 (12.5-16.9) 0.89 (0.80-0.99) 0.030 Stair climb (s) a 56 20 26.2 (22.2-30.9) 23.8 (20.0-28.4) 29.0 (23.3-36.2) 0.82 (0.69-0.98) 0.030 23.2 (19.3-27.9) 30.5 (24.2-38.5) 0.76 (0.62-0.93) 0.007 Preferred gait speed (m/s) a 63 41 0.73 (0.67-0.79) 0.75 (0.69-0.82) 0.74 (0.66-0.81) 0.01 (-0.04-0.07) 0.600 0.77 (0.70-0.85) 0.68 (0.60-0.76) 0.09 (0.03-0.16) 0.006 Maximal gait speed (m/s) a 63 41 1.01 (0.92-1.10) 1.06 (0.96-1.15) 0.97 (0.86-1.07) 0.09 (0.02-0.16) 0.010 1.04 (0.94-1.15) 0.95 (0.85-1.06) 0.09 (0.00-0.17) 0.030 Grip strength (kg) 64 42 26.4 (24.7-28.0) 26.5 (24.6-28.4) 24.9 (22.7-27.0) 1.2 (-0.5-3.7) 0.134 22.7 (20.5-24.9) 23.3 (21.0-25.5) -0.6 (-3.0-1.9) 0.639 Leg MVC (N) 64 42 181 (166-195) 195 (179-212) 179 (160-198) 16 (-2-34) 0.074 201 (182-219) 175 (155-194) 26 (6-46) 0.010 Leg MVC relative (N/kg) 63 42 2.6 (2.4-2.8) 2.8 (2.6-3.0) 2.6 (2.3-2.8) 0.2 (-0.02-0.5) 0.073 2.9 (2.7-3.1) 2.5 (2.3-2.8) 0.4 (0.1-0.7) 0.005 Leg RFD (N/s) 64 42 431 (365-497) 436 (356-517) 337 (241-434) 99 (-8-205) 0.069 384 (292-476) 383 (282-483) 1 (- 118-120) 0.982 BMI (kg/m 2 ) a 63 43 26.4 (25.4-27.5) 26.6 (25.5-27.7) 26.5 (25.4-27.7) 1.00 (0.98-1.02) 0.890 26.3 (25.2-27.4) 26.5 (25.3-27.6) 0.99 (0.97-1.02) 0.600 Fat mass (%) a 59 37 28.9 (26.6-31.4) 28.9 (26.4-31.7) 27.8 (25.0-30.9) 1.04 (0.95-1.14) 0.380 28.2 (25.5-31.2) 29.7 (26.7-33.0) 0.95 (0.86-1.05) 0.310 Fat free mass (kg) a 59 35 47.2 (44.6-49.9) 47.5 (44.9-50.3) 47.1 (44.4-49.9) 1.01 (0.99-1.03) 0.390 46.8 (44.2-49.6) 47.1 (44.4-49.9) 0.99 (0.97-1.02) 0.670 Estimated means and 95% confidence intervals (95% CI) using linear mixed models (unadjusted model). a Between-group differences for transformed variables are presented as ratio of the geometric mean for RTG to the geometric mean for CG with corresponding 95% CI RTG Resistance training group, CG Control group, MVC Maximal voluntary contraction, RFD Rate of force development, N Newton\n\nChanges in physical function from baseline through four and eight months.",
       "context_window": "rough four and eight months. Values are estimated means and 95% confidence intervals Table 3 Physical function, strength an",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
-      "arm": "control",
+      "endpoint": "physical function",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1464,7 +1464,7 @@
       "context_window": "ne to four and eight months Outcome Analyzed Baseline Mean (95% CI) 4 months Between-group difference 8 months Between-grou",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1482,7 +1482,7 @@
       "context_window": "ur and eight months Outcome Analyzed Baseline Mean (95% CI) 4 months Between-group difference 8 months Between-group difference",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1500,7 +1500,7 @@
       "context_window": "ed Baseline Mean (95% CI) 4 months Between-group difference 8 months Between-group difference RTG n CG n RTG Mean (95% CI) CG Me",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1518,7 +1518,7 @@
       "context_window": "ence 8 months Between-group difference RTG n CG n RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p RTG Mean (95% CI) CG M",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1536,7 +1536,7 @@
       "context_window": "ween-group difference RTG n CG n RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p RTG Mean (95% CI) CG Mean (95% CI) Mean",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1554,7 +1554,7 @@
       "context_window": "ference RTG n CG n RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p Ch",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1572,7 +1572,7 @@
       "context_window": "TG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p Chair rise (s) a 63 42",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1590,7 +1590,7 @@
       "context_window": "CG Mean (95% CI) Mean (95% CI) p RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p Chair rise (s) a 63 42 18.6 (17.0-20.2)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1608,7 +1608,7 @@
       "context_window": "I) Mean (95% CI) p RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p Chair rise (s) a 63 42 18.6 (17.0-20.2) 16.7 (15.1-18",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1625,8 +1625,8 @@
       "sentence": "Values are estimated means and 95% confidence intervals Table 3 Physical function, strength and body composition from baseline to four and eight months Outcome Analyzed Baseline Mean (95% CI) 4 months Between-group difference 8 months Between-group difference RTG n CG n RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p Chair rise (s) a 63 42 18.6 (17.0-20.2) 16.7 (15.1-18.6) 16.0 (14.0-18.2) 1.05 (0.91-1.20) 0.500 15.2 (13.5-17.2) 18.6 (16.2-21.3) 0.81 (0.70-0.96) 0.010 8 ft-up-and-go (s) a 63 41 14.1 (12.3-16.1) 13.2 (11.5-15.0) 13.8 (11.9-16.0) 0.96 (0.87-1.05) 0.350 13.0 (11.2-15.0) 14.6 (12.5-16.9) 0.89 (0.80-0.99) 0.030 Stair climb (s) a 56 20 26.2 (22.2-30.9) 23.8 (20.0-28.4) 29.0 (23.3-36.2) 0.82 (0.69-0.98) 0.030 23.2 (19.3-27.9) 30.5 (24.2-38.5) 0.76 (0.62-0.93) 0.007 Preferred gait speed (m/s) a 63 41 0.73 (0.67-0.79) 0.75 (0.69-0.82) 0.74 (0.66-0.81) 0.01 (-0.04-0.07) 0.600 0.77 (0.70-0.85) 0.68 (0.60-0.76) 0.09 (0.03-0.16) 0.006 Maximal gait speed (m/s) a 63 41 1.01 (0.92-1.10) 1.06 (0.96-1.15) 0.97 (0.86-1.07) 0.09 (0.02-0.16) 0.010 1.04 (0.94-1.15) 0.95 (0.85-1.06) 0.09 (0.00-0.17) 0.030 Grip strength (kg) 64 42 26.4 (24.7-28.0) 26.5 (24.6-28.4) 24.9 (22.7-27.0) 1.2 (-0.5-3.7) 0.134 22.7 (20.5-24.9) 23.3 (21.0-25.5) -0.6 (-3.0-1.9) 0.639 Leg MVC (N) 64 42 181 (166-195) 195 (179-212) 179 (160-198) 16 (-2-34) 0.074 201 (182-219) 175 (155-194) 26 (6-46) 0.010 Leg MVC relative (N/kg) 63 42 2.6 (2.4-2.8) 2.8 (2.6-3.0) 2.6 (2.3-2.8) 0.2 (-0.02-0.5) 0.073 2.9 (2.7-3.1) 2.5 (2.3-2.8) 0.4 (0.1-0.7) 0.005 Leg RFD (N/s) 64 42 431 (365-497) 436 (356-517) 337 (241-434) 99 (-8-205) 0.069 384 (292-476) 383 (282-483) 1 (- 118-120) 0.982 BMI (kg/m 2 ) a 63 43 26.4 (25.4-27.5) 26.6 (25.5-27.7) 26.5 (25.4-27.7) 1.00 (0.98-1.02) 0.890 26.3 (25.2-27.4) 26.5 (25.3-27.6) 0.99 (0.97-1.02) 0.600 Fat mass (%) a 59 37 28.9 (26.6-31.4) 28.9 (26.4-31.7) 27.8 (25.0-30.9) 1.04 (0.95-1.14) 0.380 28.2 (25.5-31.2) 29.7 (26.7-33.0) 0.95 (0.86-1.05) 0.310 Fat free mass (kg) a 59 35 47.2 (44.6-49.9) 47.5 (44.9-50.3) 47.1 (44.4-49.9) 1.01 (0.99-1.03) 0.390 46.8 (44.2-49.6) 47.1 (44.4-49.9) 0.99 (0.97-1.02) 0.670 Estimated means and 95% confidence intervals (95% CI) using linear mixed models (unadjusted model). a Between-group differences for transformed variables are presented as ratio of the geometric mean for RTG to the geometric mean for CG with corresponding 95% CI RTG Resistance training group, CG Control group, MVC Maximal voluntary contraction, RFD Rate of force development, N Newton\n\nChanges in physical function from baseline through four and eight months.",
       "context_window": "47.1 (44.4-49.9) 0.99 (0.97-1.02) 0.670 Estimated means and 95% confidence intervals (95% CI) using linear mixed models (un",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
-      "arm": "control",
+      "endpoint": "physical function",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1643,8 +1643,8 @@
       "sentence": "Values are estimated means and 95% confidence intervals Table 3 Physical function, strength and body composition from baseline to four and eight months Outcome Analyzed Baseline Mean (95% CI) 4 months Between-group difference 8 months Between-group difference RTG n CG n RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p Chair rise (s) a 63 42 18.6 (17.0-20.2) 16.7 (15.1-18.6) 16.0 (14.0-18.2) 1.05 (0.91-1.20) 0.500 15.2 (13.5-17.2) 18.6 (16.2-21.3) 0.81 (0.70-0.96) 0.010 8 ft-up-and-go (s) a 63 41 14.1 (12.3-16.1) 13.2 (11.5-15.0) 13.8 (11.9-16.0) 0.96 (0.87-1.05) 0.350 13.0 (11.2-15.0) 14.6 (12.5-16.9) 0.89 (0.80-0.99) 0.030 Stair climb (s) a 56 20 26.2 (22.2-30.9) 23.8 (20.0-28.4) 29.0 (23.3-36.2) 0.82 (0.69-0.98) 0.030 23.2 (19.3-27.9) 30.5 (24.2-38.5) 0.76 (0.62-0.93) 0.007 Preferred gait speed (m/s) a 63 41 0.73 (0.67-0.79) 0.75 (0.69-0.82) 0.74 (0.66-0.81) 0.01 (-0.04-0.07) 0.600 0.77 (0.70-0.85) 0.68 (0.60-0.76) 0.09 (0.03-0.16) 0.006 Maximal gait speed (m/s) a 63 41 1.01 (0.92-1.10) 1.06 (0.96-1.15) 0.97 (0.86-1.07) 0.09 (0.02-0.16) 0.010 1.04 (0.94-1.15) 0.95 (0.85-1.06) 0.09 (0.00-0.17) 0.030 Grip strength (kg) 64 42 26.4 (24.7-28.0) 26.5 (24.6-28.4) 24.9 (22.7-27.0) 1.2 (-0.5-3.7) 0.134 22.7 (20.5-24.9) 23.3 (21.0-25.5) -0.6 (-3.0-1.9) 0.639 Leg MVC (N) 64 42 181 (166-195) 195 (179-212) 179 (160-198) 16 (-2-34) 0.074 201 (182-219) 175 (155-194) 26 (6-46) 0.010 Leg MVC relative (N/kg) 63 42 2.6 (2.4-2.8) 2.8 (2.6-3.0) 2.6 (2.3-2.8) 0.2 (-0.02-0.5) 0.073 2.9 (2.7-3.1) 2.5 (2.3-2.8) 0.4 (0.1-0.7) 0.005 Leg RFD (N/s) 64 42 431 (365-497) 436 (356-517) 337 (241-434) 99 (-8-205) 0.069 384 (292-476) 383 (282-483) 1 (- 118-120) 0.982 BMI (kg/m 2 ) a 63 43 26.4 (25.4-27.5) 26.6 (25.5-27.7) 26.5 (25.4-27.7) 1.00 (0.98-1.02) 0.890 26.3 (25.2-27.4) 26.5 (25.3-27.6) 0.99 (0.97-1.02) 0.600 Fat mass (%) a 59 37 28.9 (26.6-31.4) 28.9 (26.4-31.7) 27.8 (25.0-30.9) 1.04 (0.95-1.14) 0.380 28.2 (25.5-31.2) 29.7 (26.7-33.0) 0.95 (0.86-1.05) 0.310 Fat free mass (kg) a 59 35 47.2 (44.6-49.9) 47.5 (44.9-50.3) 47.1 (44.4-49.9) 1.01 (0.99-1.03) 0.390 46.8 (44.2-49.6) 47.1 (44.4-49.9) 0.99 (0.97-1.02) 0.670 Estimated means and 95% confidence intervals (95% CI) using linear mixed models (unadjusted model). a Between-group differences for transformed variables are presented as ratio of the geometric mean for RTG to the geometric mean for CG with corresponding 95% CI RTG Resistance training group, CG Control group, MVC Maximal voluntary contraction, RFD Rate of force development, N Newton\n\nChanges in physical function from baseline through four and eight months.",
       "context_window": "7-1.02) 0.670 Estimated means and 95% confidence intervals (95% CI) using linear mixed models (unadjusted model). a Between",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
-      "arm": "control",
+      "endpoint": "physical function",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1661,8 +1661,8 @@
       "sentence": "Values are estimated means and 95% confidence intervals Table 3 Physical function, strength and body composition from baseline to four and eight months Outcome Analyzed Baseline Mean (95% CI) 4 months Between-group difference 8 months Between-group difference RTG n CG n RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p RTG Mean (95% CI) CG Mean (95% CI) Mean (95% CI) p Chair rise (s) a 63 42 18.6 (17.0-20.2) 16.7 (15.1-18.6) 16.0 (14.0-18.2) 1.05 (0.91-1.20) 0.500 15.2 (13.5-17.2) 18.6 (16.2-21.3) 0.81 (0.70-0.96) 0.010 8 ft-up-and-go (s) a 63 41 14.1 (12.3-16.1) 13.2 (11.5-15.0) 13.8 (11.9-16.0) 0.96 (0.87-1.05) 0.350 13.0 (11.2-15.0) 14.6 (12.5-16.9) 0.89 (0.80-0.99) 0.030 Stair climb (s) a 56 20 26.2 (22.2-30.9) 23.8 (20.0-28.4) 29.0 (23.3-36.2) 0.82 (0.69-0.98) 0.030 23.2 (19.3-27.9) 30.5 (24.2-38.5) 0.76 (0.62-0.93) 0.007 Preferred gait speed (m/s) a 63 41 0.73 (0.67-0.79) 0.75 (0.69-0.82) 0.74 (0.66-0.81) 0.01 (-0.04-0.07) 0.600 0.77 (0.70-0.85) 0.68 (0.60-0.76) 0.09 (0.03-0.16) 0.006 Maximal gait speed (m/s) a 63 41 1.01 (0.92-1.10) 1.06 (0.96-1.15) 0.97 (0.86-1.07) 0.09 (0.02-0.16) 0.010 1.04 (0.94-1.15) 0.95 (0.85-1.06) 0.09 (0.00-0.17) 0.030 Grip strength (kg) 64 42 26.4 (24.7-28.0) 26.5 (24.6-28.4) 24.9 (22.7-27.0) 1.2 (-0.5-3.7) 0.134 22.7 (20.5-24.9) 23.3 (21.0-25.5) -0.6 (-3.0-1.9) 0.639 Leg MVC (N) 64 42 181 (166-195) 195 (179-212) 179 (160-198) 16 (-2-34) 0.074 201 (182-219) 175 (155-194) 26 (6-46) 0.010 Leg MVC relative (N/kg) 63 42 2.6 (2.4-2.8) 2.8 (2.6-3.0) 2.6 (2.3-2.8) 0.2 (-0.02-0.5) 0.073 2.9 (2.7-3.1) 2.5 (2.3-2.8) 0.4 (0.1-0.7) 0.005 Leg RFD (N/s) 64 42 431 (365-497) 436 (356-517) 337 (241-434) 99 (-8-205) 0.069 384 (292-476) 383 (282-483) 1 (- 118-120) 0.982 BMI (kg/m 2 ) a 63 43 26.4 (25.4-27.5) 26.6 (25.5-27.7) 26.5 (25.4-27.7) 1.00 (0.98-1.02) 0.890 26.3 (25.2-27.4) 26.5 (25.3-27.6) 0.99 (0.97-1.02) 0.600 Fat mass (%) a 59 37 28.9 (26.6-31.4) 28.9 (26.4-31.7) 27.8 (25.0-30.9) 1.04 (0.95-1.14) 0.380 28.2 (25.5-31.2) 29.7 (26.7-33.0) 0.95 (0.86-1.05) 0.310 Fat free mass (kg) a 59 35 47.2 (44.6-49.9) 47.5 (44.9-50.3) 47.1 (44.4-49.9) 1.01 (0.99-1.03) 0.390 46.8 (44.2-49.6) 47.1 (44.4-49.9) 0.99 (0.97-1.02) 0.670 Estimated means and 95% confidence intervals (95% CI) using linear mixed models (unadjusted model). a Between-group differences for transformed variables are presented as ratio of the geometric mean for RTG to the geometric mean for CG with corresponding 95% CI RTG Resistance training group, CG Control group, MVC Maximal voluntary contraction, RFD Rate of force development, N Newton\n\nChanges in physical function from baseline through four and eight months.",
       "context_window": "ean for RTG to the geometric mean for CG with corresponding 95% CI RTG Resistance training group, CG Control group, MVC Max",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
-      "arm": "control",
+      "endpoint": "physical function",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1679,8 +1679,8 @@
       "sentence": "Values are estimated means and 95% confidence intervals\n\nPhysical function, strength and body composition from baseline to four and eight months\n\n18.6\n\n(17.0-20.2)\n\n16.7\n\n(15.1-18.6)\n\n16.0\n\n(14.0-18.2)\n\n1.05\n\n(0.91-1.20)\n\n15.2\n\n(13.5-17.2)\n\n18.6\n\n(16.2-21.3)\n\n0.81\n\n(0.70-0.96)\n\n14.1\n\n(12.3-16.1)\n\n13.2\n\n(11.5-15.0)\n\n13.8\n\n(11.9-16.0)\n\n0.96\n\n(0.87-1.05)\n\n13.0\n\n(11.2-15.0)\n\n14.6\n\n(12.5-16.9)\n\n0.89\n\n(0.80-0.99)\n\n26.2\n\n(22.2-30.9)\n\n23.8\n\n(20.0-28.4)\n\n29.0\n\n(23.3-36.2)\n\n0.82\n\n(0.69-0.98)\n\n23.2\n\n(19.3-27.9)\n\n30.5\n\n(24.2-38.5)\n\n0.76\n\n(0.62-0.93)\n\n0.73\n\n(0.67-0.79)\n\n0.75\n\n(0.69-0.82)\n\n0.74\n\n(0.66-0.81)\n\n0.01\n\n(-0.04-0.07)\n\n0.77\n\n(0.70-0.85)\n\n0.68\n\n(0.60-0.76)\n\n0.09\n\n(0.03-0.16)\n\n1.01\n\n(0.92-1.10)\n\n1.06\n\n(0.96-1.15)\n\n0.97\n\n(0.86-1.07)\n\n0.09\n\n(0.02-0.16)\n\n1.04\n\n(0.94-1.15)\n\n0.95\n\n(0.85-1.06)\n\n0.09\n\n(0.00-0.17)\n\n26.4\n\n(24.7-28.0)\n\n26.5\n\n(24.6-28.4)\n\n24.9\n\n(22.7-27.0)\n\n1.2\n\n(-0.5-3.7)\n\n22.7\n\n(20.5-24.9)\n\n23.3\n\n(21.0-25.5)\n\n-0.6\n\n(-3.0-1.9)\n\n181\n\n(166-195)\n\n195\n\n(179-212)\n\n179\n\n(160-198)\n\n201\n\n(182-219)\n\n175\n\n(155-194)\n\n2.6\n\n(2.4-2.8)\n\n2.8\n\n(2.6-3.0)\n\n2.6\n\n(2.3-2.8)\n\n0.2\n\n(-0.02-0.5)\n\n2.9\n\n(2.7-3.1)\n\n2.5\n\n(2.3-2.8)\n\n0.4\n\n(0.1-0.7)\n\n431\n\n(365-497)\n\n436\n\n(356-517)\n\n337\n\n(241-434)\n\n99\n\n(-8-205)\n\n384\n\n(292-476)\n\n383\n\n(282-483)\n\n1\n\n(- 118-120)\n\n26.4\n\n(25.4-27.5)\n\n26.6\n\n(25.5-27.7)\n\n26.5\n\n(25.4-27.7)\n\n1.00\n\n(0.98-1.02)\n\n26.3\n\n(25.2-27.4)\n\n26.5\n\n(25.3-27.6)\n\n0.99\n\n(0.97-1.02)\n\n28.9\n\n(26.6-31.4)\n\n28.9\n\n(26.4-31.7)\n\n27.8\n\n(25.0-30.9)\n\n1.04\n\n(0.95-1.14)\n\n28.2\n\n(25.5-31.2)\n\n29.7\n\n(26.7-33.0)\n\n0.95\n\n(0.86-1.05)\n\n47.2\n\n(44.6-49.9)\n\n47.5\n\n(44.9-50.3)\n\n47.1\n\n(44.4-49.9)\n\n1.01\n\n(0.99-1.03)\n\n46.8\n\n(44.2-49.6)\n\n47.1\n\n(44.4-49.9)\n\n0.99\n\n(0.97-1.02)\n\nEstimated means and 95% confidence intervals (95% CI) using linear mixed models (unadjusted model). a Between-group differences for transformed variables are presented as ratio of the geometric mean for RTG to the geometric mean for CG with corresponding 95% CI\n\nRTG Resistance training group, CG Control group, MVC Maximal voluntary contraction, RFD Rate of force development, N Newton\n\nThere were no statistically significant between-group differences after 4 months (Table 3 ).",
       "context_window": "rough four and eight months. Values are estimated means and 95% confidence intervals Physical function, strength and body",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
-      "arm": "control",
+      "endpoint": "physical function",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1698,7 +1698,7 @@
       "context_window": "47.1 (44.4-49.9) 0.99 (0.97-1.02) Estimated means and 95% confidence intervals (95% CI) using linear mixed models (un",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1716,7 +1716,7 @@
       "context_window": "(0.97-1.02) Estimated means and 95% confidence intervals (95% CI) using linear mixed models (unadjusted model). a Between",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1734,7 +1734,7 @@
       "context_window": "ean for RTG to the geometric mean for CG with corresponding 95% CI RTG Resistance training group, CG Control group, MVC Ma",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1752,7 +1752,7 @@
       "context_window": "o statistically significant between-group differences after 4 months (Table 3 ). After 8 months, RTG improved in leg- (18%, p =",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2112,9 +2112,9 @@
       "context_window": "red- and maximal gait speed) and maximal leg strength after 8 months compared to physical activity counselling. Smaller and fewe",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-u-370",
@@ -2148,9 +2148,9 @@
       "context_window": "previous study on institutionalized older adults (mean age 83 years), no effects were found for maximal leg strength, however,",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-u-961",
@@ -2166,9 +2166,9 @@
       "context_window": "resistance training group compared to a control group after 6 months of training [ 13 ]. Another study including older adults in",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7414534_effectiveness_of_a_resistance_training_program_on_physical_f-u-1133",
@@ -2184,7 +2184,7 @@
       "context_window": "no effects on physical function nor maximal strength after 10 weeks of resistance training using elastic bands, body weight, an",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2291,7 +2291,7 @@
       "sentence": "Importantly, the decreased performance seen in CG from baseline to 8 months, but not in RTG, could indicate that reductions in physical function and muscle strength can be counteracted in the oldest old (> 80 years).",
       "context_window": "ntly, the decreased performance seen in CG from baseline to 8 months, but not in RTG, could indicate that reductions in physical",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2327,7 +2327,7 @@
       "sentence": "However, after training, RTG still demonstrated a preferred gait speed below what has been recommended to represent good health and physical function in older adults (\u22651.0 m/s) [ 34 ].",
       "context_window": "present good health and physical function in older adults (\u22651.0 m/s) [ 34 ]. Furthermore, RTG did not reach normative age-thres",
       "claim_role": "population",
-      "endpoint": "walk speed",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -2382,9 +2382,9 @@
       "context_window": "easures of physical function and maximal leg strength after 8 months compared to physical activity counselling. No effects were",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

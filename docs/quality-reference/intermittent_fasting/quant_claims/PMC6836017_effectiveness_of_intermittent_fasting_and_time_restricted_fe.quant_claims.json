@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe",
   "doi": "10.3390/nu11102442",
-  "extracted_at": "2026-05-05T22:11:30+00:00",
+  "extracted_at": "2026-05-07T16:57:04+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 15,
@@ -22,9 +22,9 @@
       "context_window": "IER). These strategies include intermittent fasting (IMF; >60% energy restriction on 2-3 days per week, or on alternate da",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-u-656",
@@ -40,9 +40,9 @@
       "context_window": "ude intermittent fasting (IMF; >60% energy restriction on 2-3 days per week, or on alternate days) and time-restricted feeding",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-u-960",
@@ -112,9 +112,9 @@
       "context_window": "ion (CER; a daily energy deficit of ~500 or 750 kcals, or a 30% restriction from baseline energy requirements), along with",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "continuous energy restriction",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-pct-800",
@@ -165,10 +165,10 @@
       "sentence": "Regardless of diet and macronutrient content, adherence to CER typically declines within 1-4 months [ 11 ].",
       "context_window": "rient content, adherence to CER typically declines within 1-4 months [ 11 ]. As a result, the majority of individuals who lose w",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-u-1214",
@@ -202,9 +202,9 @@
       "context_window": "ted that IER strategies such as intermittent fasting (IMF; \u226560% energy restriction on 2-3 days per week, or on alternate da",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-u-2416",
@@ -220,9 +220,9 @@
       "context_window": "as intermittent fasting (IMF; \u226560% energy restriction on 2-3 days per week, or on alternate days) and time-restricted feeding",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-u-3171",
@@ -309,10 +309,10 @@
       "sentence": "In other studies, self-reported adherence to the fast days was variable, with the percent of potential restricted days ranging from 43% in Harvie et al. [ 40 ] to 97% in Carter et al. [ 43 ] at 3 months.",
       "context_window": "with the percent of potential restricted days ranging from 43% in Harvie et al. [ 40 ] to 97% in Carter et al. [ 43 ] at 3",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-pct-2688",
@@ -327,10 +327,10 @@
       "sentence": "In other studies, self-reported adherence to the fast days was variable, with the percent of potential restricted days ranging from 43% in Harvie et al. [ 40 ] to 97% in Carter et al. [ 43 ] at 3 months.",
       "context_window": "restricted days ranging from 43% in Harvie et al. [ 40 ] to 97% in Carter et al. [ 43 ] at 3 months. Studies with longer-te",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-u-2719",
@@ -345,10 +345,10 @@
       "sentence": "In other studies, self-reported adherence to the fast days was variable, with the percent of potential restricted days ranging from 43% in Harvie et al. [ 40 ] to 97% in Carter et al. [ 43 ] at 3 months.",
       "context_window": "% in Harvie et al. [ 40 ] to 97% in Carter et al. [ 43 ] at 3 months. Studies with longer-term follow up data showed that self-r",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-pct-2841",
@@ -363,7 +363,7 @@
       "sentence": "Studies with longer-term follow up data showed that self-reported adherence to the fast days dropped to between 21% [ 44 ] and 44% [ 43 ] at one year.",
       "context_window": "self-reported adherence to the fast days dropped to between 21% [ 44 ] and 44% [ 43 ] at one year. Two studies provided no",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -381,7 +381,7 @@
       "sentence": "Studies with longer-term follow up data showed that self-reported adherence to the fast days dropped to between 21% [ 44 ] and 44% [ 43 ] at one year.",
       "context_window": "dherence to the fast days dropped to between 21% [ 44 ] and 44% [ 43 ] at one year. Two studies provided no data regarding",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -471,10 +471,10 @@
       "sentence": "In the TRF studies, self-reported adherence (number of days adherent to the eating window based on diet diaries) was 62.5% and 80% in studies by Antoni et al. [ 61 ] and Gabel et al. [ 60 ], respectively.",
       "context_window": "ys adherent to the eating window based on diet diaries) was 62.5% and 80% in studies by Antoni et al. [ 61 ] and Gabel et al.",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-pct-3947",
@@ -489,10 +489,10 @@
       "sentence": "In the TRF studies, self-reported adherence (number of days adherent to the eating window based on diet diaries) was 62.5% and 80% in studies by Antoni et al. [ 61 ] and Gabel et al. [ 60 ], respectively.",
       "context_window": "t to the eating window based on diet diaries) was 62.5% and 80% in studies by Antoni et al. [ 61 ] and Gabel et al. [ 60 ],",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836017_effectiveness_of_intermittent_fasting_and_time_restricted_fe-pct-4641",

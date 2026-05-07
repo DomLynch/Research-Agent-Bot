@@ -1,0 +1,65 @@
+{
+  "paper_id": "DOI_10_1001_archneur_62_5_753_atorvastatin_for_the_treatment_of_mild_to_moderate_alzheimer",
+  "doi": "10.1001/archneur.62.5.753",
+  "extracted_at": "2026-05-07T19:24:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_archneur_62_5_753_atorvastatin_for_the_treatment_of_mild_to_moderate_alzheimer-u-614",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 614,
+      "sentence": "DESIGN: Pilot intention-to-treat, proof-of-concept, double-blind, placebo-controlled, randomized (1:1) trial with a 1-year exposure to once-daily atorvastatin calcium (80 mg; two 40-mg tablets) or placebo using last observation carried forward analysis of covariance as the primary method of statistical assessment.",
+      "context_window": "with a 1-year exposure to once-daily atorvastatin calcium (80 mg; two 40-mg tablets) or placebo using last observation carri",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_archneur_62_5_753_atorvastatin_for_the_treatment_of_mild_to_moderate_alzheimer-u-1940",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1940,
+      "sentence": "This beneficial effect reached significance for the Geriatric Depression Scale and the Alzheimer's Disease Assessment Scale-cognitive subscale at 6 months and was significant at the level of a trend for the Alzheimer's Disease Assessment Scale-cognitive subscale, Clinical Global Impression of Change Scale, and Neuropsychiatric Inventory Scale at 12 months assessed by analysis of covariance with last observation carried forward.",
+      "context_window": "Alzheimer's Disease Assessment Scale-cognitive subscale at 6 months and was significant at the level of a trend for the Alzheim",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_archneur_62_5_753_atorvastatin_for_the_treatment_of_mild_to_moderate_alzheimer-u-2142",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 2142,
+      "sentence": "This beneficial effect reached significance for the Geriatric Depression Scale and the Alzheimer's Disease Assessment Scale-cognitive subscale at 6 months and was significant at the level of a trend for the Alzheimer's Disease Assessment Scale-cognitive subscale, Clinical Global Impression of Change Scale, and Neuropsychiatric Inventory Scale at 12 months assessed by analysis of covariance with last observation carried forward.",
+      "context_window": "on of Change Scale, and Neuropsychiatric Inventory Scale at 12 months assessed by analysis of covariance with last observation ca",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

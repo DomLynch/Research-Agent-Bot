@@ -1,0 +1,1220 @@
+{
+  "paper_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t",
+  "doi": "10.1016/j.toxrep.2019.10.016",
+  "extracted_at": "2026-05-07T19:24:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 39,
+    "unit_value": 21,
+    "p_value": 6,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-132",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 132,
+      "sentence": "Estrogen receptor (ER+) positive breast cancer represents more than 70% of all breast cancer patients.",
+      "context_window": "receptor (ER+) positive breast cancer represents more than 70% of all breast cancer patients. Tamoxifen (TAM) is the mains",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-338",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 338,
+      "sentence": "It reduces breast cancer recurrence by 50% and the annual mortality rate by 31%.",
+      "context_window": "ausal females [ 2 ]. It reduces breast cancer recurrence by 50% and the annual mortality rate by 31%. Despite this success,",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-375",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 375,
+      "sentence": "It reduces breast cancer recurrence by 50% and the annual mortality rate by 31%.",
+      "context_window": "t cancer recurrence by 50% and the annual mortality rate by 31%. Despite this success, 20-30% of tumors develop resistant t",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-405",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 405,
+      "sentence": "Despite this success, 20-30% of tumors develop resistant to TAM therapy after 3-5 years of its intake, in addition to its side effects [ 3 ].",
+      "context_window": "the annual mortality rate by 31%. Despite this success, 20-30% of tumors develop resistant to TAM therapy after 3-5 years",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-460",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 460,
+      "sentence": "Despite this success, 20-30% of tumors develop resistant to TAM therapy after 3-5 years of its intake, in addition to its side effects [ 3 ].",
+      "context_window": ", 20-30% of tumors develop resistant to TAM therapy after 3-5 years of its intake, in addition to its side effects [ 3 ]. Obes",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-385",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 385,
+      "sentence": "It was dissolved in dimethyl sulfoxide (DMSO) to yield stock solution1mM and serially diluted in RPMI-1640 supplemented medium immediately before use to yield a concentration range of 2.5-40 \u03bcM for TAM and 1-16 \u03bcM for SIM, the final concentration of DMSO never exceeded 0.1% (v/v) in both control and treated samples\n\nDimethyl sulfoxide DMSO), RPMI-1640 medium, fetal bovine serum (FBS), Penicillin/ Streptomycin antibiotic, trypsin-EDTA, Ellman's reagent [5,5-Dithio-bis-(2-nitrobenzoic acid)], reduced glutathione,1,1.3,3-tetramethoxypropane, trichloroacetic acid (TCA), thiobarbituric acid, \u03b2-mercaptoethanol, sodium dodecyl sulfate (SDS),sodium bicarbonate and methanol were all purchased from Sigma-Aldrich Chemical Co. (St.",
+      "context_window": "\u03bcM for SIM, the final concentration of DMSO never exceeded 0.1% (v/v) in both control and treated samples Dimethyl sulfoxi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-1243",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1243,
+      "sentence": "The tumor cell line was maintained as monolayer cultures in RPMI-1640 supplemented with 10% FBS and 1% penicillin-streptomycin.",
+      "context_window": "tained as monolayer cultures in RPMI-1640 supplemented with 10% FBS and 1% penicillin-streptomycin. Female Swiss albino mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-1255",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1255,
+      "sentence": "The tumor cell line was maintained as monolayer cultures in RPMI-1640 supplemented with 10% FBS and 1% penicillin-streptomycin.",
+      "context_window": "nolayer cultures in RPMI-1640 supplemented with 10% FBS and 1% penicillin-streptomycin. Female Swiss albino mice weighing",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-2410",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2410,
+      "sentence": "The IC50 value (the concentration that produces 50% inhibition of cell growth) of each drug was calculated using dose-response curve-fitting models (Graph-Pad Prism software, version 5).",
+      "context_window": "lls) \u00d7 100. The IC50 value (the concentration that produces 50% inhibition of cell growth) of each drug was calculated usin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-9019",
+      "claim_type": "unit_value",
+      "raw_text": "50 mm",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 9019,
+      "sentence": "The analytical column used was Agilent Poroshell 120-C18 (50 mm \u00d7 3 mm \u00d72.7 \u03bcm, Agilent, Germany) at 25 \u2218 C.",
+      "context_window": ". The analytical column used was Agilent Poroshell 120-C18 (50 mm \u00d7 3 mm \u00d72.7 \u03bcm, Agilent, Germany) at 25 \u2218 C. The mobile pha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-9027",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 9027,
+      "sentence": "The analytical column used was Agilent Poroshell 120-C18 (50 mm \u00d7 3 mm \u00d72.7 \u03bcm, Agilent, Germany) at 25 \u2218 C.",
+      "context_window": "alytical column used was Agilent Poroshell 120-C18 (50 mm \u00d7 3 mm \u00d72.7 \u03bcm, Agilent, Germany) at 25 \u2218 C. The mobile phase cons",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-9099",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9099,
+      "sentence": "The mobile phase consists of 0.1% formic acid/water (solvent A) and 0.1% formic acid/acetonitrile (solvent B), delivered at a flow rate of 0.5 mL/min and the analysis was performed using the positive ion mode.",
+      "context_window": ", Agilent, Germany) at 25 \u2218 C. The mobile phase consists of 0.1% formic acid/water (solvent A) and 0.1% formic acid/acetonit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-9138",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9138,
+      "sentence": "The mobile phase consists of 0.1% formic acid/water (solvent A) and 0.1% formic acid/acetonitrile (solvent B), delivered at a flow rate of 0.5 mL/min and the analysis was performed using the positive ion mode.",
+      "context_window": "le phase consists of 0.1% formic acid/water (solvent A) and 0.1% formic acid/acetonitrile (solvent B), delivered at a flow r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-9209",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mL/min",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 9209,
+      "sentence": "The mobile phase consists of 0.1% formic acid/water (solvent A) and 0.1% formic acid/acetonitrile (solvent B), delivered at a flow rate of 0.5 mL/min and the analysis was performed using the positive ion mode.",
+      "context_window": "acid/acetonitrile (solvent B), delivered at a flow rate of 0.5 mL/min and the analysis was performed using the positive ion mode.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-9533",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9533,
+      "sentence": "The gel was incubated for 15 min in renaturation buffer containing 2.5% Triton X-100 at room temperature then it incubated for 1 h.",
+      "context_window": "was incubated for 15 min in renaturation buffer containing 2.5% Triton X-100 at room temperature then it incubated for 1 h.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-9842",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9842,
+      "sentence": "The gel was stained with Coomassie brilliant blue R1 250 for 1 h and de-stained in a 10% methanol and 5% acetic acid solution.",
+      "context_window": "Coomassie brilliant blue R1 250 for 1 h and de-stained in a 10% methanol and 5% acetic acid solution. Enzyme digested regio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-9859",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9859,
+      "sentence": "The gel was stained with Coomassie brilliant blue R1 250 for 1 h and de-stained in a 10% methanol and 5% acetic acid solution.",
+      "context_window": "nt blue R1 250 for 1 h and de-stained in a 10% methanol and 5% acetic acid solution. Enzyme digested regions were observed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-11744",
+      "claim_type": "unit_value",
+      "raw_text": "100 mm",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 11744,
+      "sentence": "Twenty-four mice with a palpable tumor mass (100 mm 3 ) that developed within 7 days after implantation were divided into 4 groups each 6 animals.",
+      "context_window": "limb of mice. Twenty-four mice with a palpable tumor mass (100 mm 3 ) that developed within 7 days after implantation were di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-11777",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 11777,
+      "sentence": "Twenty-four mice with a palpable tumor mass (100 mm 3 ) that developed within 7 days after implantation were divided into 4 groups each 6 animals.",
+      "context_window": "ith a palpable tumor mass (100 mm 3 ) that developed within 7 days after implantation were divided into 4 groups each 6 animal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-12140",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 12140,
+      "sentence": "Group II animals received TAM (2.5 mg/kg) [ 27 ] by oral gavage.",
+      "context_window": "e served as a control group. Group II animals received TAM (2.5 mg/kg) [ 27 ] by oral gavage. Group III, mice were given SIM (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-12206",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 12206,
+      "sentence": "Group III, mice were given SIM (2 mg/kg) [ 28 ] by oral gavage.",
+      "context_window": "/kg) [ 27 ] by oral gavage. Group III, mice were given SIM (2 mg/kg) [ 28 ] by oral gavage. Group IV, mice were treated by t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-12348",
+      "claim_type": "unit_value",
+      "raw_text": "8 days",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 12348,
+      "sentence": "Group IV, mice were treated by the combination of both TAM and SIM at the pre-mentioned doses for a period of 8 days.",
+      "context_window": "both TAM and SIM at the pre-mentioned doses for a period of 8 days. The change in tumor volume was measured every other day, u",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-12649",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 12649,
+      "sentence": "Animals were anesthetized by ketamine, (100 mg/kg) (EIMC Pharmaceuticals Co., Cairo, Egypt), then sacrificed by decapitation and the tumor was excised, weighed.",
+      "context_window": "xis, respectively. Animals were anesthetized by ketamine, (100 mg/kg) (EIMC Pharmaceuticals Co., Cairo, Egypt), then sacrific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-13241",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13241,
+      "sentence": "The samples were fixed in 10% neutral buffered formalin, dehydrated through alcohols, cleared in xylene and then embedded in paraffin wax.",
+      "context_window": "ermined as previously described. The samples were fixed in 10% neutral buffered formalin, dehydrated through alcohols, cle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-13364",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 13364,
+      "sentence": "Sections (5 mm thick) were stained with hematoxylin and eosin.",
+      "context_window": "ared in xylene and then embedded in paraffin wax. Sections (5 mm thick) were stained with hematoxylin and eosin. Paraffin-em",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-1243",
+      "claim_type": "percentage",
+      "raw_text": "6.25%",
+      "numeric_values": [
+        6.25
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1243,
+      "sentence": "The combination of SIM and TAM produced a significant inhibition in the MDA and NOx level by 6.25% and 11.2% respectively compared to TAM-treated cells, while it is still significantly higher than the normal untreated cells ( Fig.",
+      "context_window": "oduced a significant inhibition in the MDA and NOx level by 6.25% and 11.2% respectively compared to TAM-treated cells, while",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-1253",
+      "claim_type": "percentage",
+      "raw_text": "11.2%",
+      "numeric_values": [
+        11.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1253,
+      "sentence": "The combination of SIM and TAM produced a significant inhibition in the MDA and NOx level by 6.25% and 11.2% respectively compared to TAM-treated cells, while it is still significantly higher than the normal untreated cells ( Fig.",
+      "context_window": "ignificant inhibition in the MDA and NOx level by 6.25% and 11.2% respectively compared to TAM-treated cells, while it is sti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-1457",
+      "claim_type": "percentage",
+      "raw_text": "44.6%",
+      "numeric_values": [
+        44.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1457,
+      "sentence": "Besides, SIM and TAM increased significantly the GSH content by 44.6% and SOD activity by 22.2% compared to TAM treated cells ( Fig.",
+      "context_window": "des, SIM and TAM increased significantly the GSH content by 44.6% and SOD activity by 22.2% compared to TAM treated cells ( F",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-1483",
+      "claim_type": "percentage",
+      "raw_text": "22.2%",
+      "numeric_values": [
+        22.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1483,
+      "sentence": "Besides, SIM and TAM increased significantly the GSH content by 44.6% and SOD activity by 22.2% compared to TAM treated cells ( Fig.",
+      "context_window": "significantly the GSH content by 44.6% and SOD activity by 22.2% compared to TAM treated cells ( Fig. 2 C and D). However, t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-3032",
+      "claim_type": "percentage",
+      "raw_text": "38.3%",
+      "numeric_values": [
+        38.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3032,
+      "sentence": "The combination of TAM and SIM significantly decreased the LDH level by 38.3% in T47D cells when compared to the TAM-treated group ( Fig.",
+      "context_window": "ion of TAM and SIM significantly decreased the LDH level by 38.3% in T47D cells when compared to the TAM-treated group ( Fig.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-3304",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3304,
+      "sentence": "Treatment of T47D cells with TAM produced a significant increase in caspase-3 activity by 68% compared to control.",
+      "context_window": "AM produced a significant increase in caspase-3 activity by 68% compared to control. Furthermore, SIM significantly increas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-3392",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3392,
+      "sentence": "Furthermore, SIM significantly increased caspase-3 activity by 58% compared to non-treated cells.",
+      "context_window": "thermore, SIM significantly increased caspase-3 activity by 58% compared to non-treated cells. The combination regimen indu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-3513",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3513,
+      "sentence": "The combination regimen induced a significant increase in caspase-3 activity reaching 7.1% as compared to TAM treated cell and 79.8% as compared to non-treated cells ( Fig.",
+      "context_window": "duced a significant increase in caspase-3 activity reaching 7.1% as compared to TAM treated cell and 79.8% as compared to no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-3554",
+      "claim_type": "percentage",
+      "raw_text": "79.8%",
+      "numeric_values": [
+        79.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3554,
+      "sentence": "The combination regimen induced a significant increase in caspase-3 activity reaching 7.1% as compared to TAM treated cell and 79.8% as compared to non-treated cells ( Fig.",
+      "context_window": "activity reaching 7.1% as compared to TAM treated cell and 79.8% as compared to non-treated cells ( Fig. 3 C). TAM treatmen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-4355",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4355,
+      "sentence": "Results are expressed as means \u00b1 SD of 2 independent experiments performed in duplicates. a: significantly different from the control group, b: significantly different from the TAM and c: significantly different from SIM at P value < 0.05. negative staining (0-25%) consider negative; (25-50%) mild; (50-75%) moderate; (75-100%) severe.",
+      "context_window": "different from SIM at P value < 0.05. negative staining (0-25%) consider negative; (25-50%) mild; (50-75%) moderate; (75-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-4383",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4383,
+      "sentence": "Results are expressed as means \u00b1 SD of 2 independent experiments performed in duplicates. a: significantly different from the control group, b: significantly different from the TAM and c: significantly different from SIM at P value < 0.05. negative staining (0-25%) consider negative; (25-50%) mild; (50-75%) moderate; (75-100%) severe.",
+      "context_window": "ue < 0.05. negative staining (0-25%) consider negative; (25-50%) mild; (50-75%) moderate; (75-100%) severe. Incubation of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-4398",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4398,
+      "sentence": "Results are expressed as means \u00b1 SD of 2 independent experiments performed in duplicates. a: significantly different from the control group, b: significantly different from the TAM and c: significantly different from SIM at P value < 0.05. negative staining (0-25%) consider negative; (25-50%) mild; (50-75%) moderate; (75-100%) severe.",
+      "context_window": "tive staining (0-25%) consider negative; (25-50%) mild; (50-75%) moderate; (75-100%) severe. Incubation of T47D cells with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-4417",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4417,
+      "sentence": "Results are expressed as means \u00b1 SD of 2 independent experiments performed in duplicates. a: significantly different from the control group, b: significantly different from the TAM and c: significantly different from SIM at P value < 0.05. negative staining (0-25%) consider negative; (25-50%) mild; (50-75%) moderate; (75-100%) severe.",
+      "context_window": "%) consider negative; (25-50%) mild; (50-75%) moderate; (75-100%) severe. Incubation of T47D cells with TAM significantly d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-4514",
+      "claim_type": "percentage",
+      "raw_text": "37.9%",
+      "numeric_values": [
+        37.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4514,
+      "sentence": "Incubation of T47D cells with TAM significantly decreased in the level of VEGF by 37.9% compared to the control-treated group.",
+      "context_window": "ls with TAM significantly decreased in the level of VEGF by 37.9% compared to the control-treated group. SIM alone caused a s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-4610",
+      "claim_type": "percentage",
+      "raw_text": "50.4%",
+      "numeric_values": [
+        50.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4610,
+      "sentence": "SIM alone caused a significant decrease in VEGF by 50.4%, compared to non-treated cells.",
+      "context_window": "d group. SIM alone caused a significant decrease in VEGF by 50.4%, compared to non-treated cells. The combination of SIM with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-5181",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5181,
+      "sentence": "T47D cells showed weak staining for NF-kB in either TAM or SIM treated cells (0-25%), while, the combination regimen presented with moderate (++) staining (50-75%) Fig.",
+      "context_window": "ak staining for NF-kB in either TAM or SIM treated cells (0-25%), while, the combination regimen presented with moderate (+",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-5260",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5260,
+      "sentence": "T47D cells showed weak staining for NF-kB in either TAM or SIM treated cells (0-25%), while, the combination regimen presented with moderate (++) staining (50-75%) Fig.",
+      "context_window": "mbination regimen presented with moderate (++) staining (50-75%) Fig. 5 (E-G). Photomicrographs and NF-??B immunohistochem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-5823",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5823,
+      "sentence": "Both treatedT47 D cells with SIM and the combined regimen showed mild positive staining for BCL-2 by (+) (25-50%), while TAM decreases its expression (0-25%).",
+      "context_window": "regimen showed mild positive staining for BCL-2 by (+) (25-50%), while TAM decreases its expression (0-25%). Cells treated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-5867",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5867,
+      "sentence": "Both treatedT47 D cells with SIM and the combined regimen showed mild positive staining for BCL-2 by (+) (25-50%), while TAM decreases its expression (0-25%).",
+      "context_window": "CL-2 by (+) (25-50%), while TAM decreases its expression (0-25%). Cells treated with SIM and combination showed positive st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-p-6611",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6611,
+      "sentence": "By studying the effect of time, a significant increase in TAM uptake was shown in both TAM & TAM + SIM groups up to 6 h followed by a significant drop at 24 h (p = 0.043).",
+      "context_window": "IM groups up to 6 h followed by a significant drop at 24 h (p = 0.043). The addition of SIM did not significantly affect the con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-p-6846",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6846,
+      "sentence": "Studying group interaction, although T47D showed a higher level in TAM group from 2 h up to 48 h, (significant only at 2 (p = 0.041), 24 (p = 0.025), 48 h (p = 0.013), but p-value for interaction was non-significant (p = 0.563) ( Fig.",
+      "context_window": "l in TAM group from 2 h up to 48 h, (significant only at 2 (p = 0.041), 24 (p = 0.025), 48 h (p = 0.013), but p-value for interac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-p-6862",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6862,
+      "sentence": "Studying group interaction, although T47D showed a higher level in TAM group from 2 h up to 48 h, (significant only at 2 (p = 0.041), 24 (p = 0.025), 48 h (p = 0.013), but p-value for interaction was non-significant (p = 0.563) ( Fig.",
+      "context_window": "rom 2 h up to 48 h, (significant only at 2 (p = 0.041), 24 (p = 0.025), 48 h (p = 0.013), but p-value for interaction was non-sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-p-6880",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6880,
+      "sentence": "Studying group interaction, although T47D showed a higher level in TAM group from 2 h up to 48 h, (significant only at 2 (p = 0.041), 24 (p = 0.025), 48 h (p = 0.013), but p-value for interaction was non-significant (p = 0.563) ( Fig.",
+      "context_window": ", (significant only at 2 (p = 0.041), 24 (p = 0.025), 48 h (p = 0.013), but p-value for interaction was non-significant (p = 0.56",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-p-6941",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.563",
+      "numeric_values": [
+        0.563
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6941,
+      "sentence": "Studying group interaction, although T47D showed a higher level in TAM group from 2 h up to 48 h, (significant only at 2 (p = 0.041), 24 (p = 0.025), 48 h (p = 0.013), but p-value for interaction was non-significant (p = 0.563) ( Fig.",
+      "context_window": "= 0.013), but p-value for interaction was non-significant (p = 0.563) ( Fig. 7 ). Effect of SIM on cellular uptake of TAM at di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-7210",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7210,
+      "sentence": "In vivo result:\n\nThe volume of the solid tumor was decreased by 59% in TAM treated group compared to the control group; however, SIM treated group & the combination regimen treated group did not significantly different from the effect of the TAM treated group ( Fig.",
+      "context_window": "ivo result: The volume of the solid tumor was decreased by 59% in TAM treated group compared to the control group; however",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-7539",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 7539,
+      "sentence": "Effect of TAM (2.5 mg/kg), SIM (2 mg/kg) and their combination on tumor volume of EAC-bearing mice (A) and tumor weight (B).",
+      "context_window": ") and tumor weight (B) of solid EAC of mice. Effect of TAM (2.5 mg/kg), SIM (2 mg/kg) and their combination on tumor volume of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-7556",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 7556,
+      "sentence": "Effect of TAM (2.5 mg/kg), SIM (2 mg/kg) and their combination on tumor volume of EAC-bearing mice (A) and tumor weight (B).",
+      "context_window": "t (B) of solid EAC of mice. Effect of TAM (2.5 mg/kg), SIM (2 mg/kg) and their combination on tumor volume of EAC-bearing mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-n-7681",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7681,
+      "sentence": "Values were given as mean \u00b1 SD (n = 6). a Significantly different from the control group at P < 0.05.",
+      "context_window": "e (A) and tumor weight (B). Values were given as mean \u00b1 SD (n = 6). a Significantly different from the control group at P < 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-p-7741",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7741,
+      "sentence": "Values were given as mean \u00b1 SD (n = 6). a Significantly different from the control group at P < 0.05.",
+      "context_window": "n = 6). a Significantly different from the control group at P < 0.05. TAM increased significantly MDA and NO accompanied by a s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-7968",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7968,
+      "sentence": "Compared to the TAM treated group, the combination treatment caused a significant decrease in the level of MDA by 30%, and NOx by 11.9% while, an increase in SOD activity by15.6% ( Fig.",
+      "context_window": "atment caused a significant decrease in the level of MDA by 30%, and NOx by 11.9% while, an increase in SOD activity by15.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-7984",
+      "claim_type": "percentage",
+      "raw_text": "11.9%",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7984,
+      "sentence": "Compared to the TAM treated group, the combination treatment caused a significant decrease in the level of MDA by 30%, and NOx by 11.9% while, an increase in SOD activity by15.6% ( Fig.",
+      "context_window": "significant decrease in the level of MDA by 30%, and NOx by 11.9% while, an increase in SOD activity by15.6% ( Fig. 9 ) Effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-8027",
+      "claim_type": "percentage",
+      "raw_text": "15.6%",
+      "numeric_values": [
+        15.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8027,
+      "sentence": "Compared to the TAM treated group, the combination treatment caused a significant decrease in the level of MDA by 30%, and NOx by 11.9% while, an increase in SOD activity by15.6% ( Fig.",
+      "context_window": "30%, and NOx by 11.9% while, an increase in SOD activity by15.6% ( Fig. 9 ) Effect of TAM, SIM and their combinations on ox",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-8566",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 8566,
+      "sentence": "EAC tumor-bearing mice treated with TAM (2.5 mg/kg) showing severe necrosis and apoptosis (B), SIM (2 mg/kg) (C), and combinations treated group (TAM + SIM) showing moderate necrosis and apoptosis (D) ( Fig.",
+      "context_window": "control mice (A). EAC tumor-bearing mice treated with TAM (2.5 mg/kg) showing severe necrosis and apoptosis (B), SIM (2 mg/kg",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-8625",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 8625,
+      "sentence": "EAC tumor-bearing mice treated with TAM (2.5 mg/kg) showing severe necrosis and apoptosis (B), SIM (2 mg/kg) (C), and combinations treated group (TAM + SIM) showing moderate necrosis and apoptosis (D) ( Fig.",
+      "context_window": "(2.5 mg/kg) showing severe necrosis and apoptosis (B), SIM (2 mg/kg) (C), and combinations treated group (TAM + SIM) showing",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-8791",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8791,
+      "sentence": "The untreated tumor showed severe immunostaining(75-100%) of TNF-\u03b1 and NF-kB expression, while the TAM-treated, SIM-treated and the combination regimen had lower expression compared to the control group, moderate staining level, (50-75%) expression of TNF-\u03b1 and NF-kB was detected ( Fig.",
+      "context_window": ". 10 ). The untreated tumor showed severe immunostaining(75-100%) of TNF-\u03b1 and NF-kB expression, while the TAM-treated, SIM-",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-pct-8972",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8972,
+      "sentence": "The untreated tumor showed severe immunostaining(75-100%) of TNF-\u03b1 and NF-kB expression, while the TAM-treated, SIM-treated and the combination regimen had lower expression compared to the control group, moderate staining level, (50-75%) expression of TNF-\u03b1 and NF-kB was detected ( Fig.",
+      "context_window": "compared to the control group, moderate staining level, (50-75%) expression of TNF-\u03b1 and NF-kB was detected ( Fig. 11 ). P",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-9263",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9263,
+      "sentence": "Sections taken from solid EAC tumor of control mice showing mild necrosis and apoptosis(A), sections taken from solid EAC tumor-bearing mice treated with TAM (2.5 mg/kg) showing sever necrosis and apoptosis (B), SIM (2 mg/kg) (C) and combinations (TAM + SIM) showing moderate necrosis and apoptosis (D).",
+      "context_window": "s taken from solid EAC tumor-bearing mice treated with TAM (2.5 mg/kg) showing sever necrosis and apoptosis (B), SIM (2 mg/kg)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-9321",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9321,
+      "sentence": "Sections taken from solid EAC tumor of control mice showing mild necrosis and apoptosis(A), sections taken from solid EAC tumor-bearing mice treated with TAM (2.5 mg/kg) showing sever necrosis and apoptosis (B), SIM (2 mg/kg) (C) and combinations (TAM + SIM) showing moderate necrosis and apoptosis (D).",
+      "context_window": "(2.5 mg/kg) showing sever necrosis and apoptosis (B), SIM (2 mg/kg) (C) and combinations (TAM + SIM) showing moderate necro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-9696",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9696,
+      "sentence": "Immunohistochemical staining of TNF-\u03b1 in EAC solid tumor sections (X40) control (A), TAM (2.5 mg/kg) (B), SIM (2 mg/kg) (C) and combination(D).",
+      "context_window": "f TNF-\u03b1 in EAC solid tumor sections (X40) control (A), TAM (2.5 mg/kg) (B), SIM (2 mg/kg) (C) and combination(D). Immunohistoc",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-9717",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9717,
+      "sentence": "Immunohistochemical staining of TNF-\u03b1 in EAC solid tumor sections (X40) control (A), TAM (2.5 mg/kg) (B), SIM (2 mg/kg) (C) and combination(D).",
+      "context_window": "tumor sections (X40) control (A), TAM (2.5 mg/kg) (B), SIM (2 mg/kg) (C) and combination(D). Immunohistochemical staining of",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-9840",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9840,
+      "sentence": "Immunohistochemical staining of NF-??B in EAC solid tumor sections(X40).Control (E), TAM (2.5 mg/kg) (F), SIM (2 mg/kg) (G)and combination (H).",
+      "context_window": "f NF-??B in EAC solid tumor sections(X40).Control (E), TAM (2.5 mg/kg) (F), SIM (2 mg/kg) (G)and combination (H).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6880098_evaluation_of_tamoxifen_and_simvastatin_as_the_combination_t-u-9861",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 9861,
+      "sentence": "Immunohistochemical staining of NF-??B in EAC solid tumor sections(X40).Control (E), TAM (2.5 mg/kg) (F), SIM (2 mg/kg) (G)and combination (H).",
+      "context_window": "tumor sections(X40).Control (E), TAM (2.5 mg/kg) (F), SIM (2 mg/kg) (G)and combination (H).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin",
   "doi": "10.1186/s40798-023-00613-4",
-  "extracted_at": "2026-05-05T21:59:17+00:00",
+  "extracted_at": "2026-05-07T16:57:13+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 149,
@@ -43,7 +43,7 @@
       "context_window": "besity or sarcopenic obesity were the most studied groups ( n = 13), followed by healthy community-dwelling older adults ( n =",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": "13), followed by healthy community-dwelling older adults ( n = 11) and studies involving older adults and some aspect of eith",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": "of either dietary control or pharmaceutical intervention ( n = 8). Significant between-study heterogeneity was observed in t",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -96,7 +96,7 @@
       "sentence": "Age-related loss of skeletal muscle mass and function, termed sarcopenia, is associated with physical frailty and increased risk of disability and morbidity. [ 1 ] Muscle mass losses typically begin in middle age at approximately - 1% per year, [ 1 ] and in severe instances, can accelerate to a total reduction of - 50% by the eighth decade of life. [ 2 ] Additionally, the rapidly aging population in most Western countries has increased risk factors for chronic disease, [ 3 ] in particular obesity, the rates of which have doubled in older adults since 1980 and continue to increase worldwide. [ 4 ] Obesity represents a clear and present danger to an individual's ability to grow healthfully into their later years.",
       "context_window": "ass losses typically begin in middle age at approximately - 1% per year, [ 1 ] and in severe instances, can accelerate to",
       "claim_role": "background",
-      "endpoint": "frailty",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -114,7 +114,7 @@
       "sentence": "Age-related loss of skeletal muscle mass and function, termed sarcopenia, is associated with physical frailty and increased risk of disability and morbidity. [ 1 ] Muscle mass losses typically begin in middle age at approximately - 1% per year, [ 1 ] and in severe instances, can accelerate to a total reduction of - 50% by the eighth decade of life. [ 2 ] Additionally, the rapidly aging population in most Western countries has increased risk factors for chronic disease, [ 3 ] in particular obesity, the rates of which have doubled in older adults since 1980 and continue to increase worldwide. [ 4 ] Obesity represents a clear and present danger to an individual's ability to grow healthfully into their later years.",
       "context_window": "severe instances, can accelerate to a total reduction of - 50% by the eighth decade of life. [ 2 ] Additionally, the rapid",
       "claim_role": "background",
-      "endpoint": "frailty",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -133,9 +133,9 @@
       "context_window": "nclusion in the analysis. Lack of orientation to exercise ( n = 764) was one of the most common reasons for exclusion in the fi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-n-325",
@@ -151,9 +151,9 @@
       "context_window": "first screening phase, and a publication date before 2009 ( n = 169) was one of the most common reasons for exclusion in the se",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-n-756",
@@ -169,7 +169,7 @@
       "context_window": "tudies involving healthy, community-dwelling older adults ( n = 11), studies involving healthy, community-dwelling older women",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -187,7 +187,7 @@
       "context_window": "studies involving healthy, community-dwelling older women ( n = 13), studies involving overweight, obese, or sarcopenic older",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -205,7 +205,7 @@
       "context_window": "s involving overweight, obese, or sarcopenic older adults ( n = 13), and studies involving either dietary control or supplemen",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -223,7 +223,7 @@
       "context_window": "control or supplementation with a novel therapeutic drug ( n = 8). We placed no limitations on the number of sub-groups to w",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -277,7 +277,7 @@
       "context_window": "hich was commonly reported and included values ranging from 52% dropout rate and 51% adherence [ 13 ] to 0 dropouts [ 18 ]",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -295,7 +295,7 @@
       "context_window": "orted and included values ranging from 52% dropout rate and 51% adherence [ 13 ] to 0 dropouts [ 18 ] and 94% adherence rat",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -313,7 +313,7 @@
       "context_window": "pout rate and 51% adherence [ 13 ] to 0 dropouts [ 18 ] and 94% adherence rate [ 14 ]. Table 2 RT studies in healthy, commu",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -331,9 +331,9 @@
       "context_window": "lity/tolerability Aguiar et al. [ 18 ] Frequency: 3x/wk for 12 weeks Modality: Eight whole-body exercises primarily using select",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-8425",
@@ -349,9 +349,9 @@
       "context_window": "relative to baseline. CRP group gained significantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo gro",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-8442",
@@ -367,9 +367,9 @@
       "context_window": "ine. CRP group gained significantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo group over the c",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-8467",
@@ -384,10 +384,10 @@
       "sentence": "CRP group gained significantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo group over the course of the intervention.",
       "context_window": "nificantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo group over the course of the intervention",
       "claim_role": "effect",
-      "endpoint": "lean body mass",
-      "arm": "placebo",
+      "endpoint": "muscle mass",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-8782",
@@ -403,7 +403,7 @@
       "context_window": "Feasibility: NR Bardstu et al. [ 13 ] Frequency: 2x/wk for 8 months Modality: Easily available, low-cost equipment such as elas",
       "claim_role": "population",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -421,7 +421,7 @@
       "context_window": "rvention group and the non-exercising control Dropouts: 31 (52%) Adherence to intervention: 51% AEs: 0 Tolerability: medium",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -439,7 +439,7 @@
       "context_window": "ising control Dropouts: 31 (52%) Adherence to intervention: 51% AEs: 0 Tolerability: medium-to-low based on high dropout ra",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -457,7 +457,7 @@
       "context_window": "of older adults\" Coelho et al. [ 36 ] Frequency: 2x/wk for 22 weeks Modality: Nine selectorized resistance exercise machines ta",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -475,9 +475,9 @@
       "context_window": "WL on healthy, community-dwelling older adults Dropouts: 6 (20%) Adherence to intervention: 89% AEs: 0 Tolerability: NR Fea",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-10053",
@@ -493,9 +493,9 @@
       "context_window": "g older adults Dropouts: 6 (20%) Adherence to intervention: 89% AEs: 0 Tolerability: NR Feasibility: NR de Oliviera Silva e",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-10150",
@@ -511,9 +511,9 @@
       "context_window": "ty: NR de Oliviera Silva et al. [ 19 ] Frequency: 2x/wk for 16 weeks Modality: Ten selectorized resistance exercise machines tar",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-10402",
@@ -529,9 +529,9 @@
       "context_window": "eeks 13-16) Significant changes in post-intervention %BF (- 2.2%, p = 0.006; via DEXA) and FM (F = 5.22, p = 0.03) observed",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-10408",
@@ -547,9 +547,9 @@
       "context_window": "3-16) Significant changes in post-intervention %BF (- 2.2%, p = 0.006; via DEXA) and FM (F = 5.22, p = 0.03) observed in non-SO g",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-10447",
@@ -565,9 +565,9 @@
       "context_window": "vention %BF (- 2.2%, p = 0.006; via DEXA) and FM (F = 5.22, p = 0.03) observed in non-SO group but not SO-group. Results suggest",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-10544",
@@ -583,7 +583,7 @@
       "context_window": "t not SO-group. Results suggest that adaptations induced by 16 weeks of RT are attenuated in elderly woman with SO, compromising",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -601,7 +601,7 @@
       "context_window": ": NR Feasibility: NR Dib et al. [ 12 ] Frequency: 3x/wk for 24 weeks Modality: Eight selectorized resistance exercise machines t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -619,7 +619,7 @@
       "context_window": "t reduction in BF across all subjects in Weeks 1-12 (26.4 + 8.1 kg to 25.1 + 8.2 kg, p < 0.001; via DEXA). No significant chan",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -637,7 +637,7 @@
       "context_window": "across all subjects in Weeks 1-12 (26.4 + 8.1 kg to 25.1 + 8.2 kg, p < 0.001; via DEXA). No significant change in BF across W",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -655,7 +655,7 @@
       "context_window": "all subjects in Weeks 1-12 (26.4 + 8.1 kg to 25.1 + 8.2 kg, p < 0.001; via DEXA). No significant change in BF across Weeks 13-24",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -673,9 +673,9 @@
       "context_window": "asibility: NR dos Santos et al. [ 14 ] Frequency: 3x/wk for 8 weeks Modality: Combination of free weights and machines targetin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-11502",
@@ -691,9 +691,9 @@
       "context_window": "per exercise at either 12/10/8RM or 15/10/5RM Significant ( p < 0.05) improvements in body composition (total BF, android BF, gy",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-11753",
@@ -709,7 +709,7 @@
       "context_window": "ant of RT program effectiveness in older women Dropouts: 4 (7%) Adherence to intervention: 94% of participants completed >",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -727,7 +727,7 @@
       "context_window": "in older women Dropouts: 4 (7%) Adherence to intervention: 94% of participants completed > 85% of all exercise sessions AE",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -745,7 +745,7 @@
       "context_window": "Adherence to intervention: 94% of participants completed > 85% of all exercise sessions AEs: 0 Tolerability: NR Feasibilit",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -763,7 +763,7 @@
       "context_window": "Feasibility: NR Gambassi et al. [ 8 ] Frequency: 2x/wk for 12 weeks Modality: Eight selectorized resistance exercise machines t",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -781,7 +781,7 @@
       "context_window": "ailure at ~ 8 repetitions) RT protocol led to significant ( p < 0.05) improvements in FM (pre: 23.0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -800,7 +800,7 @@
       "context_window": "col led to significant ( p < 0.05) improvements in FM (pre: 23.0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -818,7 +818,7 @@
       "context_window": "to significant ( p < 0.05) improvements in FM (pre: 23.0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -837,7 +837,7 @@
       "context_window": "p < 0.05) improvements in FM (pre: 23.0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -855,7 +855,7 @@
       "context_window": "05) improvements in FM (pre: 23.0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1.4",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -874,7 +874,7 @@
       "context_window": ".0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1.4 kg; via BIA); relative to baseline.",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -892,7 +892,7 @@
       "context_window": "2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1.4 kg; via BIA); relative to baseline. Re",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -911,7 +911,7 @@
       "context_window": ".0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1.4 kg; via BIA); relative to baseline. Results support existin",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -929,7 +929,7 @@
       "context_window": "1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1.4 kg; via BIA); relative to baseline. Results support existing l",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -947,7 +947,7 @@
       "context_window": "Feasibility: NR Gylling et al. [ 11 ] Frequency: 3x/wk for 52 weeks Modality: Whole-body strength training program using either",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -983,7 +983,7 @@
       "context_window": "three sets of 10-18 repetitions per exercise at approx. 50-60% 1RM The HRT cohort demonstrated significant improvements in",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1001,7 +1001,7 @@
       "context_window": "improvements in %BF and visceral FM relative to baseline ( p < .0001; via DEXA), as well as to 12-month values in the MRT group",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1019,7 +1019,7 @@
       "context_window": "via DEXA), as well as to 12-month values in the MRT group ( p < .01, ES: 0.41) and non-exercising control ( p < .0001, ES: 0.53",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1037,7 +1037,7 @@
       "context_window": "MRT group ( p < .01, ES: 0.41) and non-exercising control ( p < .0001, ES: 0.53). Authors highlight the main finding that HRT app",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1055,7 +1055,7 @@
       "context_window": "ting improvements in LM and FM in older adults Dropouts: 6 (1.9%) Adherence to intervention: 83% of participants completed t",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1073,7 +1073,7 @@
       "context_window": "older adults Dropouts: 6 (1.9%) Adherence to intervention: 83% of participants completed training > 2x/wk AEs: NR Tolerabi",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1091,7 +1091,7 @@
       "context_window": "ility: NR Hanson et al. [ 37 ] Phase 1 Frequency: 3x/wk for 10 weeks Modality: Unilateral training of the dominant leg knee exte",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1109,7 +1109,7 @@
       "context_window": "pneumatic resistance machine) Phase 2 Frequency: 3x/wk for 12 weeks Modality: Six pneumatic resistance exercise machines target",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1127,7 +1127,7 @@
       "context_window": "hole-body muscle groups (one warm up set of 5 repetitions @ 50%1RM followed by 15 repetitions at 5RM load for each exercise",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1181,7 +1181,7 @@
       "context_window": "r adults to attenuate concomitant loss of LBM Dropouts: 31 (38.8%) Adherence to intervention: 93.3 \u00b1 1.3% (Phase 1), 87.6 \u00b1 1",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1200,7 +1200,7 @@
       "context_window": "loss of LBM Dropouts: 31 (38.8%) Adherence to intervention: 93.3 \u00b1 1.3% (Phase 1), 87.6 \u00b1 1.1% (Phase 2) AEs: pain and discomfort",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1218,7 +1218,7 @@
       "context_window": "LBM Dropouts: 31 (38.8%) Adherence to intervention: 93.3 \u00b1 1.3% (Phase 1), 87.6 \u00b1 1.1% (Phase 2) AEs: pain and discomfort f",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1237,7 +1237,7 @@
       "context_window": "1 (38.8%) Adherence to intervention: 93.3 \u00b1 1.3% (Phase 1), 87.6 \u00b1 1.1% (Phase 2) AEs: pain and discomfort from pre-existing condi",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1255,7 +1255,7 @@
       "context_window": "%) Adherence to intervention: 93.3 \u00b1 1.3% (Phase 1), 87.6 \u00b1 1.1% (Phase 2) AEs: pain and discomfort from pre-existing condit",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1273,7 +1273,7 @@
       "context_window": "se 2) AEs: pain and discomfort from pre-existing condition (n = 9) Tolerability: NR Feasibility: NR Leenders et al. [ 24 ] Fr",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1291,7 +1291,7 @@
       "context_window": "Feasibility: NR Leenders et al. [ 24 ] Frequency: 3x/wk for 6 months Modality: Selectorized resistance exercise machines. Leg-pr",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1527,7 +1527,7 @@
       "context_window": "muscle mass and strength that occurs with age Dropouts: 7 (11.6%) AEs: 2 cardiac events experienced away from study facility",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1545,7 +1545,7 @@
       "context_window": "R Feasibility: NR Vieira et al. [ 38 ] Frequency: 2x/wk for 16 weeks Modality: Eight selectorized resistance exercise machines t",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1563,7 +1563,7 @@
       "context_window": "12-14 RM, 10-12 RM, 8-10 RM, and 6-8 RM Reduced BF and %BF (p < 0.05; via DEXA) were observed in the high-supervision group only",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1581,9 +1581,9 @@
       "context_window": "lity/tolerability Aguiar et al. [ 18 ] Frequency: 3x/wk for 12 weeks Modality: Eight whole-body exercises primarily using exerci",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-16878",
@@ -1599,9 +1599,9 @@
       "context_window": "relative to baseline. CRP group gained significantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo gro",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-16895",
@@ -1617,9 +1617,9 @@
       "context_window": "ine. CRP group gained significantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo group over the c",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-16920",
@@ -1634,10 +1634,10 @@
       "sentence": "CRP group gained significantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo group over the course of the study.",
       "context_window": "nificantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo group over the course of the study. Resul",
       "claim_role": "effect",
-      "endpoint": "lean body mass",
-      "arm": "placebo",
+      "endpoint": "muscle mass",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-17229",
@@ -1929,7 +1929,7 @@
       "context_window": "; arm curls, triceps extensions). 2-3 sets (15 repetitions, 65% 1RM) per exercise in Phase 1 progressing to 3-4 sets (10-12",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1947,7 +1947,7 @@
       "context_window": "cise in Phase 1 progressing to 3-4 sets (10-12 repetitions, 75% 1RM) per exercise in Phase 4 Both CR and CR + RT were found",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1965,7 +1965,7 @@
       "context_window": "limit of RT-alone to effect body composition Dropouts: 30 (21.9%) AEs: 3 Tolerability: NR Feasibility: NR Adherence to inter",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1983,7 +1983,7 @@
       "context_window": "Tolerability: NR Feasibility: NR Adherence to intervention: 100%: n = 2, > 90% or more of the training sessions: n = 6 Campb",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2001,7 +2001,7 @@
       "context_window": "bility: NR Feasibility: NR Adherence to intervention: 100%: n = 2, > 90% or more of the training sessions: n = 6 Campbell et",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2019,7 +2019,7 @@
       "context_window": "R Feasibility: NR Adherence to intervention: 100%: n = 2, > 90% or more of the training sessions: n = 6 Campbell et al. [ 1",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2037,7 +2037,7 @@
       "context_window": "ntion: 100%: n = 2, > 90% or more of the training sessions: n = 6 Campbell et al. [ 10 ] Frequency: 3x/wk for 16 weeks Modali",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2055,7 +2055,7 @@
       "context_window": "sessions: n = 6 Campbell et al. [ 10 ] Frequency: 3x/wk for 16 weeks Modality: Pneumatic resistance exercise machines targeting",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2073,7 +2073,7 @@
       "context_window": "e body (2-3 sets of 8-12 repetitions per exercise @ approx. 80% 1RM) RT did not lead to any additional in weight loss or %B",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2091,9 +2091,9 @@
       "context_window": "NR Cavalcante et al. [ 26 ] Frequency: 2x/wk vs. 3x/wk for 12 weeks Modality: Combination of machines and free weights targetin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-19300",
@@ -2109,9 +2109,9 @@
       "context_window": "e frequencies (2 \u00d7 weekly, 3 \u00d7 weekly) led to significant ( p < 0.05) reductions in %BF (-1.7%, -2.7%, respectively; via DEXA) o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-19330",
@@ -2127,9 +2127,9 @@
       "context_window": "weekly) led to significant ( p < 0.05) reductions in %BF (-1.7%, -2.7%, respectively; via DEXA) over the course of the stud",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-19337",
@@ -2145,9 +2145,9 @@
       "context_window": ") led to significant ( p < 0.05) reductions in %BF (-1.7%, -2.7%, respectively; via DEXA) over the course of the study. No s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-19506",
@@ -2163,9 +2163,9 @@
       "context_window": "her RT group or the non-exercising control. Results suggest 2 days per week may be the optimal RT frequency for obese older wo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-19589",
@@ -2181,9 +2181,9 @@
       "context_window": "the optimal RT frequency for obese older women Dropouts: 4 (9.5%) AEs: NR Tolerability: NR Feasibility: NR Coelho et al. [ 3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-19678",
@@ -2199,9 +2199,9 @@
       "context_window": "R Feasibility: NR Coelho et al. [ 36 ] Frequency: 2x/wk for 22 weeks Modality: Nine selectorized resistance exercise machines ta",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-20177",
@@ -2217,9 +2217,9 @@
       "context_window": "WL on healthy, community-dwelling older adults Dropouts: 6 (20%) Adherence to intervention: 89% AEs: 0 Tolerability: NR Fea",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-20209",
@@ -2235,9 +2235,9 @@
       "context_window": "g older adults Dropouts: 6 (20%) Adherence to intervention: 89% AEs: 0 Tolerability: NR Feasibility: NR Cunha et al. [ 27 ]",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-20294",
@@ -2253,9 +2253,9 @@
       "context_window": "NR Feasibility: NR Cunha et al. [ 27 ] Frequency: 3x/wk for 12 weeks Modality: Eight selectorized resistance exercise machines t",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-20521",
@@ -2271,9 +2271,9 @@
       "context_window": "ing on intervention group) Significant reductions in %BF (- 6.3%, p < 0.05; via DEXA) were observed in the 3 sets/exercise g",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-20527",
@@ -2289,9 +2289,9 @@
       "context_window": "intervention group) Significant reductions in %BF (- 6.3%, p < 0.05; via DEXA) were observed in the 3 sets/exercise group but n",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-20766",
@@ -2307,7 +2307,7 @@
       "context_window": "to greater improvements in body composition Dropouts: 5 (10/8%) Adherence to intervention: \u2265 85% of the total sessions for",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2325,7 +2325,7 @@
       "context_window": "omposition Dropouts: 5 (10/8%) Adherence to intervention: \u2265 85% of the total sessions for all participants AEs: NR Tolerabi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2343,7 +2343,7 @@
       "context_window": "ty: NR de Oliviera Silva et al. [ 19 ] Frequency: 2x/wk for 16 weeks Modality: Ten selectorized resistance exercise machines tar",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2361,7 +2361,7 @@
       "context_window": "eeks 13-16) Significant changes in post-intervention %BF (- 2.2%, p = 0.006; via DEXA) and FM (F = 5.22, p = 0.03) were obse",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2379,7 +2379,7 @@
       "context_window": "3-16) Significant changes in post-intervention %BF (- 2.2%, p = 0.006; via DEXA) and FM (F = 5.22, p = 0.03) were observed in non",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2397,7 +2397,7 @@
       "context_window": "vention %BF (- 2.2%, p = 0.006; via DEXA) and FM (F = 5.22, p = 0.03) were observed in non-SO group but not SO-group. Results su",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2415,7 +2415,7 @@
       "context_window": "t not SO-group. Results suggest that adaptations induced by 16 weeks of RT are attenuated in elderly woman with SO, compromising",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2433,7 +2433,7 @@
       "context_window": ": NR Feasibility: NR Dib et al. [ 12 ] Frequency: 3x/wk for 24 weeks Modality: Eight selectorized resistance exercise machines t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2451,7 +2451,7 @@
       "context_window": "t reduction in BF across all subjects in Weeks 1-12 (26.4 + 8.1 kg to 25.1 + 8.2 kg, p < 0.001; via DEXA). No significant chan",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2469,7 +2469,7 @@
       "context_window": "across all subjects in Weeks 1-12 (26.4 + 8.1 kg to 25.1 + 8.2 kg, p < 0.001; via DEXA). No significant change in BF across W",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2487,7 +2487,7 @@
       "context_window": "all subjects in Weeks 1-12 (26.4 + 8.1 kg to 25.1 + 8.2 kg, p < 0.001; via DEXA). No significant change in BF across Weeks 13-24",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2505,9 +2505,9 @@
       "context_window": "asibility: NR dos Santos et al. [ 14 ] Frequency: 3x/wk for 8 weeks Modality: Combination of free weights and machines targetin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-22297",
@@ -2523,9 +2523,9 @@
       "context_window": "per exercise at either 12/10/8RM or 15/10/5RM Significant ( p < 0.05) improvements in body composition (total BF, android BF, gy",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-22548",
@@ -2541,7 +2541,7 @@
       "context_window": "ant of RT program effectiveness in older women Dropouts: 4 (7%) Adherence to intervention: 94% of participants completed >",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2559,7 +2559,7 @@
       "context_window": "in older women Dropouts: 4 (7%) Adherence to intervention: 94% of participants completed > 85% of all exercise sessions AE",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2577,7 +2577,7 @@
       "context_window": "Adherence to intervention: 94% of participants completed > 85% of all exercise sessions AEs: 0 Tolerability: NR Feasibilit",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2595,7 +2595,7 @@
       "context_window": "Feasibility: NR Gadelha et al. [ 17 ] Frequency: 3x/wk for 24 weeks Modality: Eight selectorized resistance exercise machines t",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2613,7 +2613,7 @@
       "context_window": "dy muscle groups (3 sets progressing from 12 repetitions at 60% 1RM in Weeks 1-4 to 8 repetitions at 80% 1RM in weeks 9-12)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2631,7 +2631,7 @@
       "context_window": "12 repetitions at 60% 1RM in Weeks 1-4 to 8 repetitions at 80% 1RM in weeks 9-12) Significant increase in fat-free mass (0",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2649,7 +2649,7 @@
       "context_window": "in weeks 9-12) Significant increase in fat-free mass (0.6 + 0.15 kg, p < 0.01), but no change in BM or %BF (all via DEXA). Auth",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2667,7 +2667,7 @@
       "context_window": "9-12) Significant increase in fat-free mass (0.6 + 0.15 kg, p < 0.01), but no change in BM or %BF (all via DEXA). Authors conclu",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2685,7 +2685,7 @@
       "context_window": "Feasibility: NR Gambassi et al. [ 8 ] Frequency: 2x/wk for 12 weeks Modality: Eight selectorized resistance exercise machines t",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2703,7 +2703,7 @@
       "context_window": "ailure at ~ 8 repetitions) RT protocol led to significant ( p < 0.05) improvements in FM (pre: 23.0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2722,7 +2722,7 @@
       "context_window": "col led to significant ( p < 0.05) improvements in FM (pre: 23.0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2740,7 +2740,7 @@
       "context_window": "to significant ( p < 0.05) improvements in FM (pre: 23.0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2759,7 +2759,7 @@
       "context_window": "p < 0.05) improvements in FM (pre: 23.0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2777,7 +2777,7 @@
       "context_window": "05) improvements in FM (pre: 23.0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1.4",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2796,7 +2796,7 @@
       "context_window": ".0 \u00b1 1.2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1.4 kg; via BIA); relative to baseline.",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2814,7 +2814,7 @@
       "context_window": "2 kg vs. post: 20.0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1.4 kg; via BIA); relative to baseline. Re",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2833,7 +2833,7 @@
       "context_window": ".0 \u00b1 1.1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1.4 kg; via BIA); relative to baseline. Results support existin",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2851,7 +2851,7 @@
       "context_window": "1 kg; via BIA) and FFM (pre: 38.0 \u00b1 1.5 kg vs. post: 42.0 \u00b1 1.4 kg; via BIA); relative to baseline. Results support existing l",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2869,7 +2869,7 @@
       "context_window": "R Feasibility: NR Vieira et al. [ 38 ] Frequency: 2x/wk for 16 weeks Modality: Eight selectorized resistance exercise machines t",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2887,7 +2887,7 @@
       "context_window": "12-14 RM, 10-12 RM, 8-10 RM, and 6-8 RM Reduced BF and %BF (p < 0.05; via DEXA) were observed in the high-supervision group only",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2905,7 +2905,7 @@
       "context_window": "ility/tolerability Avila et al. [ 28 ] Frequency: 3x/wk for 10 weeks Modality: selectorized resistance exercise machines (six up",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2923,7 +2923,7 @@
       "context_window": "eductions relative to baseline were observed in BM (- 3.3 + 0.8 kg, p < 0.001) and FM (- 4.1 + 0.9 kg, p < 0.001) in the DASH",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2941,7 +2941,7 @@
       "context_window": "s relative to baseline were observed in BM (- 3.3 + 0.8 kg, p < 0.001) and FM (- 4.1 + 0.9 kg, p < 0.001) in the DASH + RT group,",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2959,7 +2959,7 @@
       "context_window": "observed in BM (- 3.3 + 0.8 kg, p < 0.001) and FM (- 4.1 + 0.9 kg, p < 0.001) in the DASH + RT group, while significant reduc",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2977,7 +2977,7 @@
       "context_window": "d in BM (- 3.3 + 0.8 kg, p < 0.001) and FM (- 4.1 + 0.9 kg, p < 0.001) in the DASH + RT group, while significant reductions in BM",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2995,7 +2995,7 @@
       "context_window": "uctions in BM were observed in the DASH-only group (- 1.7 + 0.9 kg, p = 0.044). Results support existing knowledge that exerci",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3013,7 +3013,7 @@
       "context_window": "in BM were observed in the DASH-only group (- 1.7 + 0.9 kg, p = 0.044). Results support existing knowledge that exercise + diet a",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3031,7 +3031,7 @@
       "context_window": "rally more effective than diet-only approaches Dropouts: 1 (96% adherence) AEs: 1 \u00d7 minor hip extensor strain Tolerability:",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3049,7 +3049,7 @@
       "context_window": "ibility: NR Balachandran et al. [ 32 ] Frequency: 2x/wk for 15 weeks Modality: 5 lower body and 6 upper body pneumatic exercise",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3067,7 +3067,7 @@
       "context_window": "umatic exercise machines (3 sets of 10-12 repetitions using 70% of their 1RM) No significant between or within-group differ",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3085,7 +3085,7 @@
       "context_window": "tion outcome measure Dropouts: 1 Adherence to intervention: 85% AEs: 1 \u00d7 shoulder pain due to pre-existing injury Tolerabil",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3103,7 +3103,7 @@
       "context_window": "29 ] Frequency: 4x/wk (2 \u00d7 upper body, 2 \u00d7 lower body) for 18 months Modality: eight selectorized resistance exercise machines (",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3121,7 +3121,7 @@
       "context_window": "as greatest when WL was combined with exercise (WL: - 5.7 + 0.7 kg, WL + AT: - 8.5 + 0.7 kg, WL + RT: - 8.7 + 0.7 kg; p < 0.01",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3139,7 +3139,7 @@
       "context_window": "ombined with exercise (WL: - 5.7 + 0.7 kg, WL + AT: - 8.5 + 0.7 kg, WL + RT: - 8.7 + 0.7 kg; p < 0.01). LM loss was greatest i",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3157,7 +3157,7 @@
       "context_window": ": - 5.7 + 0.7 kg, WL + AT: - 8.5 + 0.7 kg, WL + RT: - 8.7 + 0.7 kg; p < 0.01). LM loss was greatest in WL + AT (- 1.6 + 0.3 kg",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3175,7 +3175,7 @@
       "context_window": "+ 0.7 kg, WL + AT: - 8.5 + 0.7 kg, WL + RT: - 8.7 + 0.7 kg; p < 0.01). LM loss was greatest in WL + AT (- 1.6 + 0.3 kg, - 3.1%)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3319,9 +3319,9 @@
       "context_window": "position in obese and overweight older adults Dropouts: 14 (17%) AEs: 2 \u00d7 dropout due to medical complication Tolerability:",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-27182",
@@ -3337,9 +3337,9 @@
       "context_window": "Feasibility: NR Bocalini et al. [ 30 ] Frequency: 3x/wk for 12 weeks Modality: whole body RT using elastic bands and free weight",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-27328",
@@ -3356,9 +3356,9 @@
       "context_window": "-intervention reductions were observed in BM (overweight: - 4.5 \u00b1 1.0%, obese: - 8.0 \u00b1 0.8%), %BF (via skinfold analysis; overwei",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-27334",
@@ -3374,9 +3374,9 @@
       "context_window": "vention reductions were observed in BM (overweight: - 4.5 \u00b1 1.0%, obese: - 8.0 \u00b1 0.8%), %BF (via skinfold analysis; overweig",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-27349",
@@ -3393,9 +3393,9 @@
       "context_window": "ons were observed in BM (overweight: - 4.5 \u00b1 1.0%, obese: - 8.0 \u00b1 0.8%), %BF (via skinfold analysis; overweight: - 11.0 \u00b1 2.2%, o",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-27355",
@@ -3411,9 +3411,9 @@
       "context_window": "re observed in BM (overweight: - 4.5 \u00b1 1.0%, obese: - 8.0 \u00b1 0.8%), %BF (via skinfold analysis; overweight: - 11.0 \u00b1 2.2%, ob",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-27404",
@@ -3430,9 +3430,9 @@
       "context_window": "e: - 8.0 \u00b1 0.8%), %BF (via skinfold analysis; overweight: - 11.0 \u00b1 2.2%, obese: - 21.4 \u00b1 2.1%) and FM (overweight: - 16.1 \u00b1 3.2%,",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-27411",
@@ -3448,9 +3448,9 @@
       "context_window": "0 \u00b1 0.8%), %BF (via skinfold analysis; overweight: - 11.0 \u00b1 2.2%, obese: - 21.4 \u00b1 2.1%) and FM (overweight: - 16.1 \u00b1 3.2%, o",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-27426",
@@ -3467,9 +3467,9 @@
       "context_window": "(via skinfold analysis; overweight: - 11.0 \u00b1 2.2%, obese: - 21.4 \u00b1 2.1%) and FM (overweight: - 16.1 \u00b1 3.2%, obese: - 31.2 \u00b1 3.0%).",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-27433",
@@ -3485,9 +3485,9 @@
       "context_window": "infold analysis; overweight: - 11.0 \u00b1 2.2%, obese: - 21.4 \u00b1 2.1%) and FM (overweight: - 16.1 \u00b1 3.2%, obese: - 31.2 \u00b1 3.0%).",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-27461",
@@ -3504,9 +3504,9 @@
       "context_window": "- 11.0 \u00b1 2.2%, obese: - 21.4 \u00b1 2.1%) and FM (overweight: - 16.1 \u00b1 3.2%, obese: - 31.2 \u00b1 3.0%). No significant body composition ch",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-27468",
@@ -3522,9 +3522,9 @@
       "context_window": "\u00b1 2.2%, obese: - 21.4 \u00b1 2.1%) and FM (overweight: - 16.1 \u00b1 3.2%, obese: - 31.2 \u00b1 3.0%). No significant body composition cha",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-27483",
@@ -3541,9 +3541,9 @@
       "context_window": "- 21.4 \u00b1 2.1%) and FM (overweight: - 16.1 \u00b1 3.2%, obese: - 31.2 \u00b1 3.0%). No significant body composition changes were observed in",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-27490",
@@ -3559,9 +3559,9 @@
       "context_window": "\u00b1 2.1%) and FM (overweight: - 16.1 \u00b1 3.2%, obese: - 31.2 \u00b1 3.0%). No significant body composition changes were observed in",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-27601",
@@ -3613,7 +3613,7 @@
       "context_window": "; arm curls, triceps extensions). 2-3 sets (15 repetitions, 65% 1RM) per exercise in Phase 1 progressing to 3-4 sets (10-12",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3631,7 +3631,7 @@
       "context_window": "cise in Phase 1 progressing to 3-4 sets (10-12 repetitions, 75% 1RM) per exercise in Phase 4 Both CR and CR + RT were found",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3649,7 +3649,7 @@
       "context_window": "limit of RT-alone to effect body composition Dropouts: 30 (21.9%) AEs: 3 Tolerability: NR Feasibility: NR Adherence to inter",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3667,7 +3667,7 @@
       "context_window": "on: see Table 3 Campbell et al. [ 10 ] Frequency: 3x/wk for 16 weeks Modality: Pneumatic resistance exercise machines targeting",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3685,7 +3685,7 @@
       "context_window": "e body (2-3 sets of 8-12 repetitions per exercise @ approx. 80% 1RM) RT did not lead to any additional in weight loss or %B",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3703,9 +3703,9 @@
       "context_window": "NR Cavalcante et al. [ 26 ] Frequency: 2x/wk vs. 3x/wk for 12 weeks Modality: Combination of machines and free weights targetin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-29206",
@@ -3721,9 +3721,9 @@
       "context_window": "e frequencies (2 \u00d7 weekly, 3 \u00d7 weekly) led to significant ( p < 0.05) reductions in %BF (-1.7%, -2.7%, respectively; via DEXA) o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-29236",
@@ -3739,9 +3739,9 @@
       "context_window": "weekly) led to significant ( p < 0.05) reductions in %BF (-1.7%, -2.7%, respectively; via DEXA) over the course of the stud",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-29243",
@@ -3757,9 +3757,9 @@
       "context_window": ") led to significant ( p < 0.05) reductions in %BF (-1.7%, -2.7%, respectively; via DEXA) over the course of the study. No s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-29412",
@@ -3775,7 +3775,7 @@
       "context_window": "her RT group or the non-exercising control. Results suggest 2 days per week may be the optimal RT frequency for obese older wo",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "weight training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3793,7 +3793,7 @@
       "context_window": "the optimal RT frequency for obese older women Dropouts: 4 (9.5%) AEs: NR Tolerability: NR Feasibility: NR Chen et al. [ 33",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "weight training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3811,7 +3811,7 @@
       "context_window": "standing row, unilateral row, and split front squat) at 60-70% 1RM (three sets of 8-12 repetitions) Total body weight and",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "weight training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3829,7 +3829,7 @@
       "context_window": "antly lower than non-exercising control at Weeks 8 and 12 ( p < 0.05). No significant differences in any body composition measur",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "weight training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3919,7 +3919,7 @@
       "context_window": "to greater improvements in body composition Dropouts: 5 (10/8%) Adherence to intervention: \u2265 85% of the total sessions for",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3937,7 +3937,7 @@
       "context_window": "omposition Dropouts: 5 (10/8%) Adherence to intervention: \u2265 85% of the total sessions for all participants AEs: NR Tolerabi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3955,7 +3955,7 @@
       "context_window": "ty: NR de Oliviera Silva et al. [ 19 ] Frequency: 2x/wk for 16 weeks Modality: Ten selectorized resistance exercise machines tar",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3973,7 +3973,7 @@
       "context_window": "eeks 13-16) Significant changes in post-intervention %BF (- 2.2%, p = 0.006; via DEXA) and FM (F = 5.22, p = 0.03) observed",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3991,7 +3991,7 @@
       "context_window": "3-16) Significant changes in post-intervention %BF (- 2.2%, p = 0.006; via DEXA) and FM (F = 5.22, p = 0.03) observed in non-SO g",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4009,7 +4009,7 @@
       "context_window": "vention %BF (- 2.2%, p = 0.006; via DEXA) and FM (F = 5.22, p = 0.03) observed in non-SO group but not SO-group. Results suggest",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4027,7 +4027,7 @@
       "context_window": "t not SO-group. Results suggest that adaptations induced by 16 weeks of RT are attenuated in elderly woman with SO, compromising",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4045,9 +4045,9 @@
       "context_window": "Feasibility: NR Gadelha et al. [ 17 ] Frequency: 3x/wk for 24 weeks Modality: Eight selectorized resistance exercise machines t",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-31625",
@@ -4063,9 +4063,9 @@
       "context_window": "dy muscle groups (3 sets progressing from 12 repetitions at 60% 1RM in Weeks 1-4 to 8 repetitions at 80% 1RM in weeks 9-12)",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-31666",
@@ -4081,9 +4081,9 @@
       "context_window": "12 repetitions at 60% 1RM in Weeks 1-4 to 8 repetitions at 80% 1RM in weeks 9-12) Significant increase in fat-free mass (0",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-31734",
@@ -4099,9 +4099,9 @@
       "context_window": "in weeks 9-12) Significant increase in fat-free mass (0.6 + 0.15 kg, p < 0.01), but no change in BM or %BF (all via DEXA). Auth",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-31743",
@@ -4117,9 +4117,9 @@
       "context_window": "9-12) Significant increase in fat-free mass (0.6 + 0.15 kg, p < 0.01), but no change in BM or %BF (all via DEXA). Authors conclu",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-32022",
@@ -4135,9 +4135,9 @@
       "context_window": "Feasibility: NR Straight et al. [ 28 ] Frequency: 2x/wk for 8 weeks Modality: Combination of free weights, elastic tubing and a",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-32250",
@@ -4154,9 +4154,9 @@
       "context_window": "e intervention facilitated significant improvements in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-32256",
@@ -4172,9 +4172,9 @@
       "context_window": "rvention facilitated significant improvements in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA),",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-32264",
@@ -4190,9 +4190,9 @@
       "context_window": "facilitated significant improvements in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-32282",
@@ -4209,9 +4209,9 @@
       "context_window": "ficant improvements in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001;",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-32288",
@@ -4227,9 +4227,9 @@
       "context_window": "improvements in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-32301",
@@ -4245,9 +4245,9 @@
       "context_window": "in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-32328",
@@ -4264,9 +4264,9 @@
       "context_window": "0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; vi",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-32334",
@@ -4282,9 +4282,9 @@
       "context_window": ", BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-32340",
@@ -4300,9 +4300,9 @@
       "context_window": "(-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via BIA) relat",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-32370",
@@ -4319,9 +4319,9 @@
       "context_window": "; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via BIA) relative to baseline Dropouts: 14 (",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-32376",
@@ -4337,9 +4337,9 @@
       "context_window": "BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via BIA) relative to baseline Dropouts: 14 (12.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-32384",
@@ -4355,9 +4355,9 @@
       "context_window": "M (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via BIA) relative to baseline Dropouts: 14 (12.8%) AEs: 1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-32439",
@@ -4373,9 +4373,9 @@
       "context_window": "kg, p < 0.001; via BIA) relative to baseline Dropouts: 14 (12.8%) AEs: 1 (strained muscle leading to dropout Tolerability: p",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-32723",
@@ -4391,9 +4391,9 @@
       "context_window": "elastic tubing Verreijin et al. [ 31 ] Frequency: 3x/wk for 10 weeks Modality: Squats, lunges, chest press, shoulder press, bice",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-32956",
@@ -4409,9 +4409,9 @@
       "context_window": "sets) Significant decrease in BM and FM across all groups ( p < 0.05; both via ADP), highest in exercise cohorts although the be",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-33210",
@@ -4427,9 +4427,9 @@
       "context_window": "FM, but RT significantly decreased body fat percentage with 0.8% ( p = 0.048) Dropouts: 32 (32%) Adherence to intervention:",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-33217",
@@ -4445,9 +4445,9 @@
       "context_window": "RT significantly decreased body fat percentage with 0.8% ( p = 0.048) Dropouts: 32 (32%) Adherence to intervention: mean adheren",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-33242",
@@ -4463,9 +4463,9 @@
       "context_window": "ed body fat percentage with 0.8% ( p = 0.048) Dropouts: 32 (32%) Adherence to intervention: mean adherence = 2.8 \u00b1 0.3 time",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-33291",
@@ -4482,9 +4482,9 @@
       "context_window": "pouts: 32 (32%) Adherence to intervention: mean adherence = 2.8 \u00b1 0.3 times/week AEs: 1 Tolerability: low considering high dropou",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-34451",
@@ -4500,9 +4500,9 @@
       "context_window": "ility/tolerability Avila et al. [ 28 ] Frequency: 3x/wk for 10 weeks Modality: selectorized resistance exercise machines (six up",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-34652",
@@ -4518,9 +4518,9 @@
       "context_window": "eductions relative to baseline were observed in BM (- 3.3 + 0.8 kg, p < 0.001) and FM (- 4.1 + 0.9 kg, p < 0.001) in the DASH",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-34660",
@@ -4536,9 +4536,9 @@
       "context_window": "s relative to baseline were observed in BM (- 3.3 + 0.8 kg, p < 0.001) and FM (- 4.1 + 0.9 kg, p < 0.001) in the DASH + RT group,",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-34687",
@@ -4554,9 +4554,9 @@
       "context_window": "observed in BM (- 3.3 + 0.8 kg, p < 0.001) and FM (- 4.1 + 0.9 kg, p < 0.001) in the DASH + RT group, while significant reduc",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-34695",
@@ -4572,9 +4572,9 @@
       "context_window": "d in BM (- 3.3 + 0.8 kg, p < 0.001) and FM (- 4.1 + 0.9 kg, p < 0.001) in the DASH + RT group, while significant reductions in BM",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-34811",
@@ -4590,9 +4590,9 @@
       "context_window": "uctions in BM were observed in the DASH-only group (- 1.7 + 0.9 kg, p = 0.044). Results support existing knowledge that exerci",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-34819",
@@ -4608,9 +4608,9 @@
       "context_window": "in BM were observed in the DASH-only group (- 1.7 + 0.9 kg, p = 0.044). Results support existing knowledge that exercise + diet a",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-34972",
@@ -4626,9 +4626,9 @@
       "context_window": "rally more effective than diet-only approaches Dropouts: 1 (96% adherence) AEs: 1 \u00d7 minor hip extensor strain Tolerability:",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-35097",
@@ -4644,9 +4644,9 @@
       "context_window": "R Feasibility: NR Aguiar et al. [ 18 ] Frequency: 3x/wk for 12 weeks Medication: Creatine monohydrate (5.0 g/day vs. placebo) WL",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-35350",
@@ -4662,9 +4662,9 @@
       "context_window": "relative to baseline. CRP group gained significantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo gro",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-35367",
@@ -4680,9 +4680,9 @@
       "context_window": "ine. CRP group gained significantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo group over the c",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-35392",
@@ -4697,10 +4697,10 @@
       "sentence": "CRP group gained significantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo group over the course of the study.",
       "context_window": "nificantly more ( p < 0.05) FFM (+ 3.2%) and muscle mass (+ 2.8%) than the placebo group over the course of the study. Resul",
       "claim_role": "effect",
-      "endpoint": "lean body mass",
-      "arm": "placebo",
+      "endpoint": "muscle mass",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-35800",
@@ -4716,7 +4716,7 @@
       "context_window": "29 ] Frequency: 4x/wk (2 \u00d7 upper body, 2 \u00d7 lower body) for 18 months Modality: eight selectorized resistance exercise machines (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4734,7 +4734,7 @@
       "context_window": "as greatest when WL was combined with exercise (WL: - 5.7 + 0.7 kg, WL + AT: - 8.5 + 0.7 kg, WL + RT: - 8.7 + 0.7 kg; p < 0.01",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4752,7 +4752,7 @@
       "context_window": "ombined with exercise (WL: - 5.7 + 0.7 kg, WL + AT: - 8.5 + 0.7 kg, WL + RT: - 8.7 + 0.7 kg; p < 0.01). LM loss was greatest i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4770,7 +4770,7 @@
       "context_window": ": - 5.7 + 0.7 kg, WL + AT: - 8.5 + 0.7 kg, WL + RT: - 8.7 + 0.7 kg; p < 0.01). LM loss was greatest in WL + AT (- 1.6 + 0.3 kg",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4788,7 +4788,7 @@
       "context_window": "+ 0.7 kg, WL + AT: - 8.5 + 0.7 kg, WL + RT: - 8.7 + 0.7 kg; p < 0.01). LM loss was greatest in WL + AT (- 1.6 + 0.3 kg, - 3.1%)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4932,9 +4932,9 @@
       "context_window": "position in obese and overweight older adults Dropouts: 14 (17%) AEs: 2 \u00d7 dropout due to medical complication Tolerability:",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-36503",
@@ -4950,9 +4950,9 @@
       "context_window": "R Feasibility: NR Brochu et al. [ 15 ] Frequency: 3x/wk for 6 months Modality: Seven exercises targeting the whole body (leg pre",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-36682",
@@ -4968,7 +4968,7 @@
       "context_window": "; arm curls, triceps extensions). 2-3 sets (15 repetitions, 65% 1RM) per exercise in Phase 1 progressing to 3-4 sets (10-12",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4986,7 +4986,7 @@
       "context_window": "cise in Phase 1 progressing to 3-4 sets (10-12 repetitions, 75% 1RM) per exercise in Phase 4 Both CR and CR + RT were found",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5004,7 +5004,7 @@
       "context_window": "limit of RT-alone to effect body composition Dropouts: 30 (21.9%) AEs: 3 Tolerability: NR Feasibility: NR Adherence to inter",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5022,7 +5022,7 @@
       "context_window": "on: see Table 3 Campbell et al. [ 10 ] Frequency: 3x/wk for 16 weeks Modality: Pneumatic resistance exercise machines targeting",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5040,7 +5040,7 @@
       "context_window": "e body (2-3 sets of 8-12 repetitions per exercise @ approx. 80% 1RM) RT did not lead to any additional in weight loss or %B",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5058,7 +5058,7 @@
       "context_window": "NR Feasibility: NR Shea et al. [ 34 ] Frequency: 3x/wk for 16 weeks Modality: 2 \u00d7 pneumatic resistance exercise machines (lower",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5202,9 +5202,9 @@
       "context_window": "l fat loss and RT reduced skeletal muscle loss Dropouts: 7 (8%) AEs: 0 Tolerability: Feasibility Straight et al. [ 28 ] Fr",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-38541",
@@ -5220,9 +5220,9 @@
       "context_window": "ty: Feasibility Straight et al. [ 28 ] Frequency: 2x/wk for 8 weeks Modality: Combination of free weights, elastic tubing and a",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-38742",
@@ -5239,9 +5239,9 @@
       "context_window": "tions per exercise) Significant reductions observed in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-38748",
@@ -5257,9 +5257,9 @@
       "context_window": "per exercise) Significant reductions observed in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA),",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-38756",
@@ -5275,9 +5275,9 @@
       "context_window": "cise) Significant reductions observed in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-38774",
@@ -5294,9 +5294,9 @@
       "context_window": "reductions observed in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001;",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-38780",
@@ -5312,9 +5312,9 @@
       "context_window": "ions observed in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-38793",
@@ -5330,9 +5330,9 @@
       "context_window": "in BM (-1.0 \u00b1 1.8 kg, p < 0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-38820",
@@ -5349,9 +5349,9 @@
       "context_window": "0.001), BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; vi",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-38826",
@@ -5367,9 +5367,9 @@
       "context_window": ", BMI (-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-38832",
@@ -5385,9 +5385,9 @@
       "context_window": "(-0.4 \u00b1 0.8 kg/m 2 , p < 0.001; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via BIA) Dropo",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-38862",
@@ -5404,9 +5404,9 @@
       "context_window": "; via BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via BIA) Dropouts: 14 (12.8%) AEs: 1 (strain",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-38868",
@@ -5422,9 +5422,9 @@
       "context_window": "BIA), %FM (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via BIA) Dropouts: 14 (12.8%) AEs: 1 (strained",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-38876",
@@ -5440,9 +5440,9 @@
       "context_window": "M (-0.5 \u00b1 1.4%, p < 0.001; via BIA), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via BIA) Dropouts: 14 (12.8%) AEs: 1 (strained muscle lead",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-38910",
@@ -5458,9 +5458,9 @@
       "context_window": "), and FM (-0.8 \u00b1 1.6 kg, p < 0.001; via BIA) Dropouts: 14 (12.8%) AEs: 1 (strained muscle leading to dropout Tolerability: p",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-39194",
@@ -5476,9 +5476,9 @@
       "context_window": "elastic tubing Verreijin et al. [ 31 ] Frequency: 3x/wk for 10 weeks Modality: Squats, lunges, chest press, shoulder press, bice",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-39427",
@@ -5494,9 +5494,9 @@
       "context_window": "sets) Significant decrease in BM and FM across all groups ( p < 0.05; both via ADP), highest in exercise cohorts although the be",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-39681",
@@ -5512,9 +5512,9 @@
       "context_window": "FM, but RT significantly decreased body fat percentage with 0.8% ( p = 0.048) Dropouts: 32 (32%) Adherence to intervention:",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-p-39688",
@@ -5530,9 +5530,9 @@
       "context_window": "RT significantly decreased body fat percentage with 0.8% ( p = 0.048) Dropouts: 32 (32%) Adherence to intervention: mean adheren",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-39713",
@@ -5548,9 +5548,9 @@
       "context_window": "ed body fat percentage with 0.8% ( p = 0.048) Dropouts: 32 (32%) Adherence to intervention: mean adherence = 2.8 \u00b1 0.3 time",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-39762",
@@ -5567,9 +5567,9 @@
       "context_window": "pouts: 32 (32%) Adherence to intervention: mean adherence = 2.8 \u00b1 0.3 times/week AEs: 1 Tolerability: low considering high dropou",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-40837",
@@ -5585,9 +5585,9 @@
       "context_window": "lthy, community-dwelling older adults Frequency: 3x/wk for 12 weeks Modality: Eight whole-body exercises primarily using selec",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-41074",
@@ -5603,9 +5603,9 @@
       "context_window": "ability: see Table 5 Feasibility: NR Frequency: 2x/wk for 8 months Modality: Easily available, low-cost equipment such as ela",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-41374",
@@ -5621,9 +5621,9 @@
       "context_window": "g to 4 sets of 8-10 repetitions per exercise Dropouts: 31 (52%) Adherence to intervention: 51% AEs: 0 Tolerability: med",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-41407",
@@ -5639,9 +5639,9 @@
       "context_window": "er exercise Dropouts: 31 (52%) Adherence to intervention: 51% AEs: 0 Tolerability: medium-to-low based on high dropout",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-41644",
@@ -5657,9 +5657,9 @@
       "context_window": "n real-life settings of older adults\" Frequency: 2x/wk for 22 weeks Modality: Nine selectorized resistance exercise machines t",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-41890",
@@ -5675,9 +5675,9 @@
       "context_window": "ing to a perceived exertion of 5-6 out of 10) Dropouts: 6 (20%) Adherence to intervention: 89% AEs: 0 Tolerability: NR",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-41923",
@@ -5693,9 +5693,9 @@
       "context_window": "6 out of 10) Dropouts: 6 (20%) Adherence to intervention: 89% AEs: 0 Tolerability: NR Feasibility: NR Frequency: 2x/w",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-41992",
@@ -5711,9 +5711,9 @@
       "context_window": "0 Tolerability: NR Feasibility: NR Frequency: 2x/wk for 16 weeks Modality: Ten selectorized resistance exercise machines ta",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-42276",
@@ -5729,9 +5729,9 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 3x/wk for 24 weeks Modality: Eight selectorized resistance exercise machines",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-42554",
@@ -5747,9 +5747,9 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 3x/wk for 8 weeks Modality: Combination of free weights and machines targeti",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-42715",
@@ -5765,9 +5765,9 @@
       "context_window": "per exercise at either 12/10/8RM or 15/10/5RM Dropouts: 4 (7%) Adherence to intervention: 94% of participants completed",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-42747",
@@ -5783,9 +5783,9 @@
       "context_window": "or 15/10/5RM Dropouts: 4 (7%) Adherence to intervention: 94% of participants completed > 85% of all exercise sessions A",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-42779",
@@ -5801,9 +5801,9 @@
       "context_window": "Adherence to intervention: 94% of participants completed > 85% of all exercise sessions AEs: 0 Tolerability: NR Feasibi",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-42873",
@@ -5819,9 +5819,9 @@
       "context_window": "0 Tolerability: NR Feasibility: NR Frequency: 2x/wk for 12 weeks Modality: Eight selectorized resistance exercise machines",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-43162",
@@ -5837,9 +5837,9 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 3x/wk for 52 weeks Modality: Whole-body strength training program using eithe",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-43361",
@@ -5873,7 +5873,7 @@
       "context_window": "three sets of 10-18 repetitions per exercise at approx. 50-60% 1RM Dropouts: 6 (1.9%) Adherence to intervention: 83% of",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5891,7 +5891,7 @@
       "context_window": "epetitions per exercise at approx. 50-60% 1RM Dropouts: 6 (1.9%) Adherence to intervention: 83% of participants completed",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5909,7 +5909,7 @@
       "context_window": "50-60% 1RM Dropouts: 6 (1.9%) Adherence to intervention: 83% of participants completed training > 2x/wk AEs: NR Tolera",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5927,7 +5927,7 @@
       "context_window": "ability: NR Feasibility: NR Phase 1 Frequency: 3x/wk for 10 weeks Modality: Unilateral training of the dominant leg knee ext",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5945,7 +5945,7 @@
       "context_window": "neumatic resistance machine) Phase 2 Frequency: 3x/wk for 12 weeks Modality: Six pneumatic resistance exercise machines targe",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5963,7 +5963,7 @@
       "context_window": "hole-body muscle groups (one warm up set of 5 repetitions @ 50%1RM followed by 15 repetitions at 5RM load for each exercise",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5981,9 +5981,9 @@
       "context_window": "etitions by reducing the load on the machine Dropouts: 31 (38.8%) Adherence to intervention: 93.3 \u00b1 1.3% (Phase 1), 87.6 \u00b1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-44144",
@@ -6000,9 +6000,9 @@
       "context_window": "e machine Dropouts: 31 (38.8%) Adherence to intervention: 93.3 \u00b1 1.3% (Phase 1), 87.6 \u00b1 1.1% (Phase 2) AEs: pain and discomfort",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-44151",
@@ -6018,9 +6018,9 @@
       "context_window": "ne Dropouts: 31 (38.8%) Adherence to intervention: 93.3 \u00b1 1.3% (Phase 1), 87.6 \u00b1 1.1% (Phase 2) AEs: pain and discomfort",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-44167",
@@ -6037,9 +6037,9 @@
       "context_window": "(38.8%) Adherence to intervention: 93.3 \u00b1 1.3% (Phase 1), 87.6 \u00b1 1.1% (Phase 2) AEs: pain and discomfort from pre-existing cond",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-44174",
@@ -6055,9 +6055,9 @@
       "context_window": ") Adherence to intervention: 93.3 \u00b1 1.3% (Phase 1), 87.6 \u00b1 1.1% (Phase 2) AEs: pain and discomfort from pre-existing condi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-n-44244",
@@ -6073,9 +6073,9 @@
       "context_window": "e 2) AEs: pain and discomfort from pre-existing condition (n = 9) Tolerability: NR Feasibility: NR Frequency: 3x/wk for 6",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-44308",
@@ -6091,9 +6091,9 @@
       "context_window": "9) Tolerability: NR Feasibility: NR Frequency: 3x/wk for 6 months Modality: Selectorized resistance exercise machines. Leg-p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-44431",
@@ -6145,9 +6145,9 @@
       "context_window": "xercises: as above except always one less set Dropouts: 7 (11.6%) AEs: 2 cardiac events experienced away from study facilit",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-44706",
@@ -6163,9 +6163,9 @@
       "context_window": "ty Tolerability: NR Feasibility: NR Frequency: 2x/wk for 16 weeks Modality: Eight selectorized resistance exercise machines",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-45846",
@@ -6181,7 +6181,7 @@
       "context_window": "mid system RT studies in older women Frequency: 3x/wk for 12 weeks Modality: Eight whole-body exercises primarily using exerc",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6199,7 +6199,7 @@
       "context_window": "ability: see Table 5 Feasibility: NR Frequency: 3x/wk for 12 weeks Modality: Whole body RT using elastic bands and free weigh",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6217,7 +6217,7 @@
       "context_window": "0 Tolerability: NR Feasibility: NR Frequency: 3x/wk for 6 months Modality: Seven exercises targeting the whole body (leg pr",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6235,7 +6235,7 @@
       "context_window": "; arm curls, triceps extensions). 2-3 sets (15 repetitions, 65% 1RM) per exercise in Phase 1 progressing to 3-4 sets (10-12",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6253,7 +6253,7 @@
       "context_window": "cise in Phase 1 progressing to 3-4 sets (10-12 repetitions, 75% 1RM) per exercise in Phase 4 Dropouts: 30 (21.9%) AEs: 3",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6271,7 +6271,7 @@
       "context_window": "epetitions, 75% 1RM) per exercise in Phase 4 Dropouts: 30 (21.9%) AEs: 3 Tolerability: NR Feasibility: NR Adherence to i",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6289,7 +6289,7 @@
       "context_window": "lerability: NR Feasibility: NR Adherence to intervention: 100%: n = 2, > 90% or more of the training sessions: n = 6 Freq",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6307,7 +6307,7 @@
       "context_window": "lity: NR Feasibility: NR Adherence to intervention: 100%: n = 2, > 90% or more of the training sessions: n = 6 Frequency:",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6325,7 +6325,7 @@
       "context_window": "Feasibility: NR Adherence to intervention: 100%: n = 2, > 90% or more of the training sessions: n = 6 Frequency: 3x/wk f",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6343,7 +6343,7 @@
       "context_window": "ntion: 100%: n = 2, > 90% or more of the training sessions: n = 6 Frequency: 3x/wk for 16 weeks Modality: Pneumatic resista",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6361,7 +6361,7 @@
       "context_window": "more of the training sessions: n = 6 Frequency: 3x/wk for 16 weeks Modality: Pneumatic resistance exercise machines targeting",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6397,7 +6397,7 @@
       "context_window": "bility: NR Feasibility: NR Frequency: 2x/wk vs. 3x/wk for 12 weeks Modality: Combination of machines and free weights targeti",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6415,7 +6415,7 @@
       "context_window": "s (one set of 10-15 repetitions per exercise) Dropouts: 4 (9.5%) AEs: NR Tolerability: NR Feasibility: NR Frequency: 2x",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6433,7 +6433,7 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 2x/wk for 22 weeks Modality: Nine selectorized resistance exercise machines t",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6451,7 +6451,7 @@
       "context_window": "ing to a perceived exertion of 5-6 out of 10) Dropouts: 6 (20%) Adherence to intervention: 89% AEs: 0 Tolerability: NR",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6469,7 +6469,7 @@
       "context_window": "6 out of 10) Dropouts: 6 (20%) Adherence to intervention: 89% AEs: 0 Tolerability: NR Feasibility: NR Frequency: 3x/w",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6487,7 +6487,7 @@
       "context_window": "0 Tolerability: NR Feasibility: NR Frequency: 3x/wk for 12 weeks Modality: Eight selectorized resistance exercise machines",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6505,7 +6505,7 @@
       "context_window": "exercise, depending on intervention group) Dropouts: 5 (10/8%) Adherence to intervention: \u2265 85% of the total sessions fo",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6523,7 +6523,7 @@
       "context_window": "n group) Dropouts: 5 (10/8%) Adherence to intervention: \u2265 85% of the total sessions for all participants AEs: NR Tolera",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6541,7 +6541,7 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 2x/wk for 16 weeks Modality: Ten selectorized resistance exercise machines ta",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6559,7 +6559,7 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 3x/wk for 24 weeks Modality: Eight selectorized resistance exercise machines",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6577,7 +6577,7 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 3x/wk for 8 weeks Modality: Combination of free weights and machines targeti",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6595,7 +6595,7 @@
       "context_window": "per exercise at either 12/10/8RM or 15/10/5RM Dropouts: 4 (7%) Adherence to intervention: 94% of participants completed",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6613,7 +6613,7 @@
       "context_window": "or 15/10/5RM Dropouts: 4 (7%) Adherence to intervention: 94% of participants completed > 85% of all exercise sessions A",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6631,7 +6631,7 @@
       "context_window": "Adherence to intervention: 94% of participants completed > 85% of all exercise sessions AEs: 0 Tolerability: NR Feasibi",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6649,7 +6649,7 @@
       "context_window": "0 Tolerability: NR Feasibility: NR Frequency: 3x/wk for 24 weeks Modality: Eight selectorized resistance exercise machines",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6667,7 +6667,7 @@
       "context_window": "dy muscle groups (3 sets progressing from 12 repetitions at 60% 1RM in Weeks 1-4 to 8 repetitions at 80% 1RM in weeks 9-12)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6685,7 +6685,7 @@
       "context_window": "12 repetitions at 60% 1RM in Weeks 1-4 to 8 repetitions at 80% 1RM in weeks 9-12) Dropouts: 0 AEs: NR Tolerability: NR",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6703,7 +6703,7 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 2x/wk for 12 weeks Modality: Eight selectorized resistance exercise machines",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6721,7 +6721,7 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 2x/wk for 16 weeks Modality: Eight selectorized resistance exercise machines",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6739,7 +6739,7 @@
       "context_window": "studies in obesity/sarcopenic obesity Frequency: 3x/wk for 10 weeks Modality: selectorized resistance exercise machines (six u",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -6757,7 +6757,7 @@
       "context_window": "body; 4 sets \u00d7 8-12 repetitions) + stretching Dropouts: 1 (96% adherence) AEs: 1 \u00d7 minor hip extensor strain Tolerabilit",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -6775,7 +6775,7 @@
       "context_window": "in Tolerability: NR Feasibility: NR Frequency: 2x/wk for 15 weeks Modality: 5 lower body and 6 upper body pneumatic exercise",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -6793,7 +6793,7 @@
       "context_window": "umatic exercise machines (3 sets of 10-12 repetitions using 70% of their 1RM) Dropouts: 1 Adherence to intervention: 85%",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -6811,7 +6811,7 @@
       "context_window": "70% of their 1RM) Dropouts: 1 Adherence to intervention: 85% AEs: 1 \u00d7 shoulder pain due to pre-existing injury Tolerab",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -6829,7 +6829,7 @@
       "context_window": ": NR Frequency: 4x/wk (2 \u00d7 upper body, 2 \u00d7 lower body) for 18 months Modality: eight selectorized resistance exercise machines",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -6847,7 +6847,7 @@
       "context_window": "rcise machines (3 sets of 10-12 repetitions) Dropouts: 14 (17%) AEs: 2 \u00d7 dropout due to medical complication Tolerabilit",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -6865,7 +6865,7 @@
       "context_window": "on Tolerability: NR Feasibility: NR Frequency: 3x/wk for 12 weeks Modality: whole body RT using elastic bands and free weigh",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -6883,7 +6883,7 @@
       "context_window": "0 Tolerability: NR Feasibility: NR Frequency: 3x/wk for 6 months Modality: Seven exercises targeting the whole body (leg pr",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -6901,7 +6901,7 @@
       "context_window": "; arm curls, triceps extensions). 2-3 sets (15 repetitions, 65% 1RM) per exercise in Phase 1 progressing to 3-4 sets (10-12",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6919,7 +6919,7 @@
       "context_window": "cise in Phase 1 progressing to 3-4 sets (10-12 repetitions, 75% 1RM) per exercise in Phase 4 Dropouts: 30 (21.9%) AEs: 3",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6937,7 +6937,7 @@
       "context_window": "epetitions, 75% 1RM) per exercise in Phase 4 Dropouts: 30 (21.9%) AEs: 3 Tolerability: NR Feasibility: NR Adherence to i",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6955,7 +6955,7 @@
       "context_window": "dherence to intervention: see Table 3 Frequency: 3x/wk for 16 weeks Modality: Pneumatic resistance exercise machines targeting",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6991,9 +6991,9 @@
       "context_window": "bility: NR Feasibility: NR Frequency: 2x/wk vs. 3x/wk for 12 weeks Modality: Combination of machines and free weights targeti",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-52211",
@@ -7009,9 +7009,9 @@
       "context_window": "s (one set of 10-15 repetitions per exercise) Dropouts: 4 (9.5%) AEs: NR Tolerability: NR Feasibility: NR Frequency: 2x",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-52540",
@@ -7027,9 +7027,9 @@
       "context_window": "standing row, unilateral row, and split front squat) at 60-70% 1RM (three sets of 8-12 repetitions) Dropouts: 7 (31.8%)",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-52595",
@@ -7045,9 +7045,9 @@
       "context_window": "t 60-70% 1RM (three sets of 8-12 repetitions) Dropouts: 7 (31.8%) AEs: NR Tolerability: NR Feasibility: NR Frequency: 3x",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-52668",
@@ -7063,9 +7063,9 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 3x/wk for 12 weeks Modality: Eight selectorized resistance exercise machines",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-52880",
@@ -7081,9 +7081,9 @@
       "context_window": "exercise, depending on intervention group) Dropouts: 5 (10/8%) Adherence to intervention: \u2265 85% of the total sessions fo",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-52914",
@@ -7099,9 +7099,9 @@
       "context_window": "n group) Dropouts: 5 (10/8%) Adherence to intervention: \u2265 85% of the total sessions for all participants AEs: NR Tolera",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-53027",
@@ -7117,9 +7117,9 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 2x/wk for 16 weeks Modality: Ten selectorized resistance exercise machines ta",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-53311",
@@ -7135,9 +7135,9 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 3x/wk for 24 weeks Modality: Eight selectorized resistance exercise machines",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-53457",
@@ -7153,9 +7153,9 @@
       "context_window": "dy muscle groups (3 sets progressing from 12 repetitions at 60% 1RM in Weeks 1-4 to 8 repetitions at 80% 1RM in weeks 9-12)",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-53498",
@@ -7171,9 +7171,9 @@
       "context_window": "12 repetitions at 60% 1RM in Weeks 1-4 to 8 repetitions at 80% 1RM in weeks 9-12) Dropouts: 0 AEs: NR Tolerability: NR",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-53600",
@@ -7189,9 +7189,9 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 2x/wk for 8 weeks Modality: Combination of free weights, elastic tubing and",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-53777",
@@ -7207,9 +7207,9 @@
       "context_window": "three sets of 8-12 repetitions per exercise) Dropouts: 14 (12.8%) AEs: 1 (strained muscle leading to dropout Tolerability:",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-54041",
@@ -7225,9 +7225,9 @@
       "context_window": "such as ankle weights, elastic tubing Frequency: 3x/wk for 10 weeks Modality: Squats, lunges, chest press, shoulder press, bic",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-54236",
@@ -7243,9 +7243,9 @@
       "context_window": "(2 sets per exercise progressing to 3 sets) Dropouts: 32 (32%) Adherence to intervention: mean adherence = 2.8 \u00b1 0.3 tim",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-54286",
@@ -7262,9 +7262,9 @@
       "context_window": "outs: 32 (32%) Adherence to intervention: mean adherence = 2.8 \u00b1 0.3 times/week AEs: 1 Tolerability: low considering high drop",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-55353",
@@ -7280,9 +7280,9 @@
       "context_window": "supplement or dietary control studies Frequency: 3x/wk for 10 weeks Modality: selectorized resistance exercise machines (six u",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-55496",
@@ -7298,9 +7298,9 @@
       "context_window": "body; 4 sets \u00d7 8-12 repetitions) + stretching Dropouts: 1 (96% adherence) AEs: 1 \u00d7 minor hip extensor strain Tolerabilit",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-55604",
@@ -7316,9 +7316,9 @@
       "context_window": "in Tolerability: NR Feasibility: NR Frequency: 3x/wk for 12 weeks Medication: Creatine monohydrate (5.0 g/day vs. placebo)",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-55909",
@@ -7334,9 +7334,9 @@
       "context_window": "le 2 Frequency: 4x/wk (2 \u00d7 upper body, 2 \u00d7 lower body) for 18 months Modality: eight selectorized resistance exercise machines",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-56023",
@@ -7352,9 +7352,9 @@
       "context_window": "rcise machines (3 sets of 10-12 repetitions) Dropouts: 14 (17%) AEs: 2 \u00d7 dropout due to medical complication Tolerabilit",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-56131",
@@ -7370,9 +7370,9 @@
       "context_window": "on Tolerability: NR Feasibility: NR Frequency: 3x/wk for 6 months Modality: Seven exercises targeting the whole body (leg pr",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-56311",
@@ -7388,7 +7388,7 @@
       "context_window": "; arm curls, triceps extensions). 2-3 sets (15 repetitions, 65% 1RM) per exercise in Phase 1 progressing to 3-4 sets (10-12",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7406,7 +7406,7 @@
       "context_window": "cise in Phase 1 progressing to 3-4 sets (10-12 repetitions, 75% 1RM) per exercise in Phase 4 Dropouts: 30 (21.9%) AEs: 3",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7424,7 +7424,7 @@
       "context_window": "epetitions, 75% 1RM) per exercise in Phase 4 Dropouts: 30 (21.9%) AEs: 3 Tolerability: NR Feasibility: NR Adherence to i",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7442,7 +7442,7 @@
       "context_window": "dherence to intervention: see Table 3 Frequency: 3x/wk for 16 weeks Modality: Pneumatic resistance exercise machines targeting",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7460,7 +7460,7 @@
       "context_window": "e body (2-3 sets of 8-12 repetitions per exercise @ approx. 80% 1RM) Dropouts: 0 AEs: NR Tolerability: NR Feasibility:",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -7478,7 +7478,7 @@
       "context_window": "NR Tolerability: NR Feasibility: NR Frequency: 3x/wk for 16 weeks Modality: 2 \u00d7 pneumatic resistance exercise machines (lowe",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -7496,9 +7496,9 @@
       "context_window": "ercises was as follows. Week 1: two sets of 8-10 reps at 40-50% of 1RM; Week 2: three sets of 8-10 reps at 50-60% of 1RM; W",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-57055",
@@ -7514,9 +7514,9 @@
       "context_window": "eps at 40-50% of 1RM; Week 2: three sets of 8-10 reps at 50-60% of 1RM; Weeks 3-16: three sets of 8-10 reps at 70% of 1RM",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-57106",
@@ -7532,9 +7532,9 @@
       "context_window": "ps at 50-60% of 1RM; Weeks 3-16: three sets of 8-10 reps at 70% of 1RM Dropouts: 7 (8%) AEs: 0 Tolerability: Feasibilit",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-57131",
@@ -7550,9 +7550,9 @@
       "context_window": "s 3-16: three sets of 8-10 reps at 70% of 1RM Dropouts: 7 (8%) AEs: 0 Tolerability: Feasibility Frequency: 2x/wk for",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-57193",
@@ -7568,9 +7568,9 @@
       "context_window": ") AEs: 0 Tolerability: Feasibility Frequency: 2x/wk for 8 weeks Modality: Combination of free weights, elastic tubing and",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-57370",
@@ -7586,9 +7586,9 @@
       "context_window": "three sets of 8-12 repetitions per exercise) Dropouts: 14 (12.8%) AEs: 1 (strained muscle leading to dropout Tolerability:",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-u-57634",
@@ -7604,9 +7604,9 @@
       "context_window": "such as ankle weights, elastic tubing Frequency: 3x/wk for 10 weeks Modality: Squats, lunges, chest press, shoulder press, bic",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-pct-57829",
@@ -7622,9 +7622,9 @@
       "context_window": "(2 sets per exercise progressing to 3 sets) Dropouts: 32 (32%) Adherence to intervention: mean adherence = 2.8 \u00b1 0.3 tim",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-57879",
@@ -7641,9 +7641,9 @@
       "context_window": "outs: 32 (32%) Adherence to intervention: mean adherence = 2.8 \u00b1 0.3 times/week AEs: 1 Tolerability: low considering high drop",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-n-58918",
@@ -7659,9 +7659,9 @@
       "context_window": "S wide pyramid system Studies included in this sub-group ( n = 11) investigated various RT approaches to WL and, more importa",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-msd-59911",
@@ -7861,9 +7861,9 @@
       "context_window": "ary muscular failure and a high overall exercise intensity (80% maximum load) at this population's upper recommended [ 19 ]",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10393929_resistance_training_and_weight_loss_in_older_adults_a_scopin-n-60642",
@@ -7897,7 +7897,7 @@
       "context_window": "on RT modality employed, and study durations lasted between 8 weeks [ 16 ] and 18 months. [ 29 ] None of the RT protocols studi",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7915,7 +7915,7 @@
       "context_window": "oyed, and study durations lasted between 8 weeks [ 16 ] and 18 months. [ 29 ] None of the RT protocols studied in obese and sarco",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -8077,7 +8077,7 @@
       "context_window": "rtially due to the higher median age of their participants (86.0 years) relative to the vast majority of exercise studies in older",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -8095,7 +8095,7 @@
       "context_window": "vast majority of exercise studies in older adults, where > 65 years is used as the standard minimum enrollment age. The authors",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     }

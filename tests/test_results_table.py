@@ -202,6 +202,41 @@ def test_claim_to_row_drops_dose_unit_bound_to_outcome_endpoint():
     assert row is None
 
 
+def test_claim_to_row_drops_partial_ratio_without_direction():
+    row = _claim_to_row(
+        {
+            "claim_type": "hazard_ratio",
+            "raw_text": "HR=2.45",
+            "numeric_values": [2.45],
+            "endpoint": "incident cv event",
+            "arm": "statin",
+            "claim_role": "dose",
+            "binding_confidence": "partial",
+            "direction": "",
+        },
+        paper_id="x",
+    )
+    assert row is None
+
+
+def test_claim_to_row_keeps_high_confidence_ratio_without_direction():
+    row = _claim_to_row(
+        {
+            "claim_type": "hazard_ratio",
+            "raw_text": "HR=0.72",
+            "numeric_values": [0.72],
+            "endpoint": "mortality",
+            "arm": "statin",
+            "claim_role": "effect",
+            "binding_confidence": "high",
+            "direction": "",
+        },
+        paper_id="x",
+    )
+    assert row is not None
+    assert row.value == "HR=0.72"
+
+
 def test_claim_to_row_assembles_full_row():
     claim = {
         "claim_type": "sample_size",

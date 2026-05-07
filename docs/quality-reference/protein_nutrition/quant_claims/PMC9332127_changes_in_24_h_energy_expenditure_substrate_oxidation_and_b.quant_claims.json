@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9332127_changes_in_24_h_energy_expenditure_substrate_oxidation_and_b",
   "doi": "10.14814/phy2.15268",
-  "extracted_at": "2026-05-05T23:37:20+00:00",
+  "extracted_at": "2026-05-07T16:56:48+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 28,
@@ -648,7 +648,7 @@
       "sentence": "Contrary to skeletal muscle mass (SMM), FM has been shown to increase by ~0.2% per annum from 20 years of age (Imboden et al., 2017 ; Westerterp, 2018a ).",
       "context_window": "eletal muscle mass (SMM), FM has been shown to increase by ~0.2% per annum from 20 years of age (Imboden et al., 2017 ; West",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -666,7 +666,7 @@
       "sentence": "Contrary to skeletal muscle mass (SMM), FM has been shown to increase by ~0.2% per annum from 20 years of age (Imboden et al., 2017 ; Westerterp, 2018a ).",
       "context_window": "SMM), FM has been shown to increase by ~0.2% per annum from 20 years of age (Imboden et al., 2017 ; Westerterp, 2018a ). The coe",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -865,7 +865,7 @@
       "context_window": "otein towards the higher end of these recommendations (~1.4-1.6 g/kg/d) have been shown to increase FFM in older adults (Bauer et",
       "claim_role": "population",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -919,7 +919,7 @@
       "context_window": "in dietary protein intake during the intervention period (\u22640.1 g/kg/d). Nonetheless, although Drummen et al. ( 2020 ) reported pr",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -973,7 +973,7 @@
       "context_window": "fficient increase in dietary protein intake from baseline (<0.4 g/kg/d) and a total dietary protein intake of <1.6 g/kg/d during t",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -991,7 +991,7 @@
       "context_window": "seline (<0.4 g/kg/d) and a total dietary protein intake of <1.6 g/kg/d during the intervention period (Amamou et al., 2017 ; Malta",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1861,7 +1861,7 @@
       "context_window": "he PRO group greater than the CON group at weeks 6 and 12 ( p < 0.001; Table 2 ). Similarly, protein intake (g/d, g/kg/d, and % e",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1879,7 +1879,7 @@
       "context_window": "PRO group greater than the RE+CON group at weeks 6 and 12 ( p < 0.001; Table S4 ). Carbohydrate intake increased in the CON group",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4191,7 +4191,7 @@
       "context_window": "\u2010individual variability was observed (range -3.1-12.5%). At 12 weeks when protein intake was returned to the baseline chamber di",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4444,7 +4444,7 @@
       "context_window": "habitually consuming ample amounts of dietary protein (~1.0-1.2 g/kg/d). In contrast, studies conducted in older adults who were e",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -4462,7 +4462,7 @@
       "context_window": "ail or reported lower habitual intakes of dietary protein (<1.0 g/kg/d) have observed both individual (Bauer et al., 2015 ; Bo et",
       "claim_role": "population",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4571,7 +4571,7 @@
       "context_window": "rawback of older adults habitually consuming high intakes (~1.6 g/kg/d) of dietary protein and suggest that older individuals shou",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

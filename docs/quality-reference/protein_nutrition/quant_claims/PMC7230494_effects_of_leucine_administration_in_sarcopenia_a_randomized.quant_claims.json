@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized",
   "doi": "10.3390/nu12040932",
-  "extracted_at": "2026-05-05T23:37:13+00:00",
+  "extracted_at": "2026-05-07T16:56:41+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 23,
@@ -150,7 +150,7 @@
       "context_window": "this, metabolic studies showed that older individuals aged 65 years and over require approximately 2% more protein intake per m",
       "claim_role": "population",
       "endpoint": "protein synthesis",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -168,7 +168,7 @@
       "context_window": "er individuals aged 65 years and over require approximately 2% more protein intake per meal to maximize muscle protein syn",
       "claim_role": "population",
       "endpoint": "protein synthesis",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -186,7 +186,7 @@
       "context_window": "uscle protein synthesis [ 13 ]. Furthermore, globally, only 40% of older adults meet the recommended daily protein intake a",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -204,7 +204,7 @@
       "context_window": "older adults meet the recommended daily protein intake and 10% of older women do not even meet the estimated minimal avera",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -239,7 +239,7 @@
       "sentence": "The sample size was estimated as a function of the differences in the measurements between the groups that should be detected (=1 sarcopenia criterion among the six parameters of sarcopenia muscle strength, muscle mass, walking time, maximum static inspiratory (MIP) or expiratory (MEP) pressures at the mouth, and peak expiratory flow (PEF)), the standard deviation of those values, the p-value (0.05) and the power (90%).",
       "context_window": "eviation of those values, the p-value (0.05) and the power (90%). In such old institutionalized individuals like those enro",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1171,10 +1171,10 @@
       "sentence": "The only differences were in in the muscle mass index, with greater muscle mass in the control group compared to the leucine group (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77, effect size r = 0.36).",
       "context_window": "control group compared to the leucine group (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77,",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4554",
@@ -1190,10 +1190,10 @@
       "sentence": "The only differences were in in the muscle mass index, with greater muscle mass in the control group compared to the leucine group (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77, effect size r = 0.36).",
       "context_window": "leucine group (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77, effect size r = 0.36). Followi",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-p-4566",
@@ -1208,10 +1208,10 @@
       "sentence": "The only differences were in in the muscle mass index, with greater muscle mass in the control group compared to the leucine group (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77, effect size r = 0.36).",
       "context_window": "up (leucine group: 8.3 \u00b1 1.8 vs. placebo group: 10.4 \u00b1 3.4; p = 0.02, Cohen\u2019s d = 0.77, effect size r = 0.36). Following the int",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC7230494_effects_of_leucine_administration_in_sarcopenia_a_randomized-msd-4726",
@@ -1227,7 +1227,7 @@
       "sentence": "Following the intervention, there was no difference between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip strength values: leucine group: 16.4 \u00b1 10.7 vs. placebo group: 18.3 \u00b1 8.8; p = 0.55 and walking time values were: leucine group: 8.27 \u00b1 1.10 vs. placebo group: 9.92 \u00b1 1.05; p = 0.285.",
       "context_window": "ce between groups for the muscle mass index: leucine group: 8.3 \u00b1 1.7 and placebo group: 9.9 \u00b1 3.4; p = 0.08, and in the handgrip",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "no_change",
       "binding_confidence": "high"
@@ -1468,7 +1468,7 @@
       "sentence": "There were no significant differences between the groups in skeletal muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.29; p = 0.168) or for handgrip strength (leucine group: 94.44 \u00b1 2.88 vs. placebo group: 101.33 \u00b1 8.22; p = 0.437).",
       "context_window": "muscle mass index compared to baseline levels, expressed as 100% (leucine group: 97.09 \u00b1 3.24 vs. placebo group: 102.75 \u00b1 2.",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -2466,7 +2466,7 @@
       "sentence": "In addition, the beneficial effect of keeping the muscle mass stable over time may be also related to the improvement of nutritional status achieved among the individuals in the leucine-treated group because at the baseline, 38% of the individuals in this group had a risk of malnutrition (as assessed by the MNA test) and supplementation with leucine could have afforded some benefit in this subgroup of malnourished patients.",
       "context_window": "duals in the leucine-treated group because at the baseline, 38% of the individuals in this group had a risk of malnutrition",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -2484,7 +2484,7 @@
       "sentence": "In contrast, in the placebo group the risk of malnutrition occurred in 23% of the sample and this difference is unlikely to have accounted for the loss of muscle mass observed in the placebo group over time.",
       "context_window": ", in the placebo group the risk of malnutrition occurred in 23% of the sample and this difference is unlikely to have accou",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"

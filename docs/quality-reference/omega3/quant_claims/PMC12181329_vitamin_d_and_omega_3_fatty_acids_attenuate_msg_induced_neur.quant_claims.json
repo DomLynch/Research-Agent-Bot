@@ -1,0 +1,3256 @@
+{
+  "paper_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur",
+  "doi": "10.1038/s41598-025-06109-3",
+  "extracted_at": "2026-05-07T19:32:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 26,
+    "percentage": 8,
+    "mean_sd": 1,
+    "sample_size": 9,
+    "p_value": 136
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-900",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 900,
+      "sentence": "Fifty male Sprague Dawley rats were randomly allocated to a control, an MSG, and three treatment groups that received MSG and either Vit D or N-3 PUFA supplements in combinations or alone for 4 weeks.",
+      "context_window": "Vit D or N-3 PUFA supplements in combinations or alone for 4 weeks. At the end of the study, five behavioral tests were conduc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-1266",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1266,
+      "sentence": "The results demonstrated that supplementation with Vit D (1 mcg/kg) and N-3 PUFAs (300 mg/kg EPA + DHA) profoundly attenuated MSG-induced neurodegeneration.",
+      "context_window": "d that supplementation with Vit D (1 mcg/kg) and N-3 PUFAs (300 mg/kg EPA + DHA) profoundly attenuated MSG-induced neurodegene",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-pct-1404",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1404,
+      "sentence": "The combined therapy decreased neuronal damage caused by MSG by 87% and tau pathology by 83%.",
+      "context_window": "combined therapy decreased neuronal damage caused by MSG by 87% and tau pathology by 83%. The combined treatment further su",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-pct-1429",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1429,
+      "sentence": "The combined therapy decreased neuronal damage caused by MSG by 87% and tau pathology by 83%.",
+      "context_window": "d neuronal damage caused by MSG by 87% and tau pathology by 83%. The combined treatment further suppressed pro-inflammatory",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-pct-1511",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1511,
+      "sentence": "The combined treatment further suppressed pro-inflammatory cytokines (TNF-\u03b1: 52%; IL-6: 65%) and elevated anti-inflammatory IL-10 by 2.8-fold, demonstrating a dual anti-inflammatory action.",
+      "context_window": "tment further suppressed pro-inflammatory cytokines (TNF-\u03b1: 52%; IL-6: 65%) and elevated anti-inflammatory IL-10 by 2.8-fol",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-pct-1522",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1522,
+      "sentence": "The combined treatment further suppressed pro-inflammatory cytokines (TNF-\u03b1: 52%; IL-6: 65%) and elevated anti-inflammatory IL-10 by 2.8-fold, demonstrating a dual anti-inflammatory action.",
+      "context_window": "er suppressed pro-inflammatory cytokines (TNF-\u03b1: 52%; IL-6: 65%) and elevated anti-inflammatory IL-10 by 2.8-fold, demonstr",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-pct-5913",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5913,
+      "sentence": "Structurally, DHA exists as about 30% of the phospholipids within synaptic membranes, where it enhances membrane fluidity and thereby facilitates neurotransmission, receptor clustering, and synaptic vesicle fusion 32 .",
+      "context_window": "y signaling pathways 31 . Structurally, DHA exists as about 30% of the phospholipids within synaptic membranes, where it en",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-437",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 437,
+      "sentence": "This study was conducted with 50 male Sprague-Dawley rats aged 4-5 weeks and weighing 40-60 g.",
+      "context_window": "study was conducted with 50 male Sprague-Dawley rats aged 4-5 weeks and weighing 40-60 g. Rats were purchased from the animal h",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-msd-845",
+      "claim_type": "mean_sd",
+      "raw_text": "24 \u00b1 2",
+      "numeric_values": [
+        24.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 845,
+      "sentence": "The housing facility was kept under constant laboratory conditions (24 \u00b1 2 \u00b0C), with a 12-hour light, 12-hour dark cycle under a controlled humidity environment.",
+      "context_window": "ing facility was kept under constant laboratory conditions (24 \u00b1 2 \u00b0C), with a 12-hour light, 12-hour dark cycle under a contr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-n-1142",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1142,
+      "sentence": "The rats were randomly allocated to one of five groups ( n = 10 each).",
+      "context_window": ". The rats were randomly allocated to one of five groups ( n = 10 each). The control group received a single daily oral dose",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-1245",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1245,
+      "sentence": "The control group received a single daily oral dose of saline as a negative control for 4 weeks.",
+      "context_window": "single daily oral dose of saline as a negative control for 4 weeks. MSG- group (MSG): Rats received a series of oral doses of",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-pct-1388",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1388,
+      "sentence": "Cairo, Egypt) and 2 g/kg body weight 10% aqueous solution once every other day for 10 days 41 .",
+      "context_window": "from El-Goumhouria Co. Cairo, Egypt) and 2 g/kg body weight 10% aqueous solution once every other day for 10 days 41 . Vit",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-1434",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1434,
+      "sentence": "Cairo, Egypt) and 2 g/kg body weight 10% aqueous solution once every other day for 10 days 41 .",
+      "context_window": "g body weight 10% aqueous solution once every other day for 10 days 41 . Vitamin D-treated group (MSG + Vit D): Rats received",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-1546",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1546,
+      "sentence": "Vitamin D-treated group (MSG + Vit D): Rats received an oral dose of MSG once every other day for 10 days, accompanied by supplementation with Vit D (calcitriol; purchased from Medical Union Pharmaceuticals (MUP) Co.",
+      "context_window": "Rats received an oral dose of MSG once every other day for 10 days, accompanied by supplementation with Vit D (calcitriol; pur",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-1707",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1707,
+      "sentence": "Cairo, Egypt) at 1 mcg/kg BW once/day for 4 weeks 42 , 43 .",
+      "context_window": "uticals (MUP) Co. Cairo, Egypt) at 1 mcg/kg BW once/day for 4 weeks 42 , 43 . Omega-3 PUFA-treated group (MSG + N-3): Rats rec",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-1825",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1825,
+      "sentence": "Omega-3 PUFA-treated group (MSG + N-3): Rats received an oral dose of MSG once every other day for 10 days accompanied by supplementation with long-chain N-3 PUFAs (eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA) purchased from NOW Foods Egypt Co.",
+      "context_window": "Rats received an oral dose of MSG once every other day for 10 days accompanied by supplementation with long-chain N-3 PUFAs (e",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-1999",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1999,
+      "sentence": "Cairo, Egypt, 300 mg/kg BW (once/day) for 4 weeks 44 .",
+      "context_window": "acid (DHA) purchased from NOW Foods Egypt Co. Cairo, Egypt, 300 mg/kg BW (once/day) for 4 weeks 44 . In the combination thera",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-2027",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2027,
+      "sentence": "Cairo, Egypt, 300 mg/kg BW (once/day) for 4 weeks 44 .",
+      "context_window": "W Foods Egypt Co. Cairo, Egypt, 300 mg/kg BW (once/day) for 4 weeks 44 . In the combination therapy group (MSG + Vit D + N-3),",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-2158",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2158,
+      "sentence": "In the combination therapy group (MSG + Vit D + N-3), the rats received an oral dose of MSG once every other day for 10 days, followed by supplementation with 300 mg/kg BW N-3 PUFAs (EPA and DHA) 44 + Vit D (calcitriol (1 mcg/kg BW)) once/day for 4 weeks 42 .",
+      "context_window": "rats received an oral dose of MSG once every other day for 10 days, followed by supplementation with 300 mg/kg BW N-3 PUFAs (E",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-2200",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2200,
+      "sentence": "In the combination therapy group (MSG + Vit D + N-3), the rats received an oral dose of MSG once every other day for 10 days, followed by supplementation with 300 mg/kg BW N-3 PUFAs (EPA and DHA) 44 + Vit D (calcitriol (1 mcg/kg BW)) once/day for 4 weeks 42 .",
+      "context_window": "ery other day for 10 days, followed by supplementation with 300 mg/kg BW N-3 PUFAs (EPA and DHA) 44 + Vit D (calcitriol (1 mcg",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-2288",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2288,
+      "sentence": "In the combination therapy group (MSG + Vit D + N-3), the rats received an oral dose of MSG once every other day for 10 days, followed by supplementation with 300 mg/kg BW N-3 PUFAs (EPA and DHA) 44 + Vit D (calcitriol (1 mcg/kg BW)) once/day for 4 weeks 42 .",
+      "context_window": "and DHA) 44 + Vit D (calcitriol (1 mcg/kg BW)) once/day for 4 weeks 42 . Behavioral tests were conducted to evaluate various a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-3467",
+      "claim_type": "unit_value",
+      "raw_text": "100 cm",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3467,
+      "sentence": "After acclimatization to the environment, the rats were placed in an open field consisting of a 100 \u00d7 100 cm box with 21 cm high walls around it.",
+      "context_window": "the rats were placed in an open field consisting of a 100 \u00d7 100 cm box with 21 cm high walls around it. The floor was divided",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-3483",
+      "claim_type": "unit_value",
+      "raw_text": "21 cm",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3483,
+      "sentence": "After acclimatization to the environment, the rats were placed in an open field consisting of a 100 \u00d7 100 cm box with 21 cm high walls around it.",
+      "context_window": "aced in an open field consisting of a 100 \u00d7 100 cm box with 21 cm high walls around it. The floor was divided into 4 \u00d7 4 area",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-4565",
+      "claim_type": "unit_value",
+      "raw_text": "15 cm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 4565,
+      "sentence": "In the training phase, the rats were allowed to recognize two identical cuboid objects located 15 cm from the wall and 60 cm apart.",
+      "context_window": "e allowed to recognize two identical cuboid objects located 15 cm from the wall and 60 cm apart. In the test phase, a novel c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-4589",
+      "claim_type": "unit_value",
+      "raw_text": "60 cm",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 4589,
+      "sentence": "In the training phase, the rats were allowed to recognize two identical cuboid objects located 15 cm from the wall and 60 cm apart.",
+      "context_window": "wo identical cuboid objects located 15 cm from the wall and 60 cm apart. In the test phase, a novel cone-shaped object replac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-8530",
+      "claim_type": "unit_value",
+      "raw_text": "50 cm",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 8530,
+      "sentence": "The apparatus consists of a simple chamber (50 cm \u00d7 100 cm \u00d7 40 cm) divided equally into a dark and a light compartment and the two compartments are connected by a small opening (7.5 cm \u00d7 8.5 cm) 51 .",
+      "context_window": "essing anxiety. The apparatus consists of a simple chamber (50 cm \u00d7 100 cm \u00d7 40 cm) divided equally into a dark and a light c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-8538",
+      "claim_type": "unit_value",
+      "raw_text": "100 cm",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 8538,
+      "sentence": "The apparatus consists of a simple chamber (50 cm \u00d7 100 cm \u00d7 40 cm) divided equally into a dark and a light compartment and the two compartments are connected by a small opening (7.5 cm \u00d7 8.5 cm) 51 .",
+      "context_window": "nxiety. The apparatus consists of a simple chamber (50 cm \u00d7 100 cm \u00d7 40 cm) divided equally into a dark and a light compartmen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-8547",
+      "claim_type": "unit_value",
+      "raw_text": "40 cm",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 8547,
+      "sentence": "The apparatus consists of a simple chamber (50 cm \u00d7 100 cm \u00d7 40 cm) divided equally into a dark and a light compartment and the two compartments are connected by a small opening (7.5 cm \u00d7 8.5 cm) 51 .",
+      "context_window": "he apparatus consists of a simple chamber (50 cm \u00d7 100 cm \u00d7 40 cm) divided equally into a dark and a light compartment and th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-8665",
+      "claim_type": "unit_value",
+      "raw_text": "7.5 cm",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 8665,
+      "sentence": "The apparatus consists of a simple chamber (50 cm \u00d7 100 cm \u00d7 40 cm) divided equally into a dark and a light compartment and the two compartments are connected by a small opening (7.5 cm \u00d7 8.5 cm) 51 .",
+      "context_window": "and the two compartments are connected by a small opening (7.5 cm \u00d7 8.5 cm) 51 . Rodents prefer darker areas over light areas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-8674",
+      "claim_type": "unit_value",
+      "raw_text": "8.5 cm",
+      "numeric_values": [
+        8.5
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 8674,
+      "sentence": "The apparatus consists of a simple chamber (50 cm \u00d7 100 cm \u00d7 40 cm) divided equally into a dark and a light compartment and the two compartments are connected by a small opening (7.5 cm \u00d7 8.5 cm) 51 .",
+      "context_window": "two compartments are connected by a small opening (7.5 cm \u00d7 8.5 cm) 51 . Rodents prefer darker areas over light areas; however",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-9336",
+      "claim_type": "unit_value",
+      "raw_text": "120 mg",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 9336,
+      "sentence": "For sample collection, rats were humanely euthanized via intraperitoneal injection of an overdose of thiopental sodium (120 mg/kg body weight).",
+      "context_window": "raperitoneal injection of an overdose of thiopental sodium (120 mg/kg body weight). Death was confirmed by absence of pedal re",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-pct-9753",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9753,
+      "sentence": "The brains from the rats allocated for the histological study were preserved in 10% formalin overnight at 4 \u00b0C to ensure proper fixation of the brain tissue, which was then processed into paraffin blocks and stored at room temperature until the examination of the hippocampal tissues.",
+      "context_window": "rats allocated for the histological study were preserved in 10% formalin overnight at 4 \u00b0C to ensure proper fixation of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-pct-13411",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13411,
+      "sentence": "These sections were then treated with 0.3% H2O2 and blocked with protein.",
+      "context_window": "or antigen retrieval. These sections were then treated with 0.3% H2O2 and blocked with protein. Then, the sections were incu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-67",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 67,
+      "sentence": "Statistical analyses of rats\u2019 behaviors in the open field arena at 4 weeks post-treatment have demonstrated robust treatment effects across all behavioral parameters.",
+      "context_window": "ical analyses of rats\u2019 behaviors in the open field arena at 4 weeks post-treatment have demonstrated robust treatment effects a",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-279",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 279,
+      "sentence": "Parametric one-way ANOVA revealed significant group differences in number of line crossings ( F (4,45) = 39.20, P < 0.001), total distance traveled ( F (4,45) = 27.00, P < 0.001), and number of entries to the central zone ( F (4,45) = 28.18, P < 0.001).",
+      "context_window": "differences in number of line crossings ( F (4,45) = 39.20, P < 0.001), total distance traveled ( F (4,45) = 27.00, P < 0.001), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-335",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 335,
+      "sentence": "Parametric one-way ANOVA revealed significant group differences in number of line crossings ( F (4,45) = 39.20, P < 0.001), total distance traveled ( F (4,45) = 27.00, P < 0.001), and number of entries to the central zone ( F (4,45) = 28.18, P < 0.001).",
+      "context_window": "20, P < 0.001), total distance traveled ( F (4,45) = 27.00, P < 0.001), and number of entries to the central zone ( F (4,45) = 28",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-409",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 409,
+      "sentence": "Parametric one-way ANOVA revealed significant group differences in number of line crossings ( F (4,45) = 39.20, P < 0.001), total distance traveled ( F (4,45) = 27.00, P < 0.001), and number of entries to the central zone ( F (4,45) = 28.18, P < 0.001).",
+      "context_window": "d number of entries to the central zone ( F (4,45) = 28.18, P < 0.001). Non-parametric Kruskal-Wallis tests further corroborated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-527",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 527,
+      "sentence": "Non-parametric Kruskal-Wallis tests further corroborated these effects for average speed ( H (4) = 30.41, P < 0.001), time spent in the central zone ( H (4) = 30.68, P < 0.001), grooming frequency ( H (4) = 24.62, P < 0.001), and rearing activity ( H (4) = 23.94, P < 0.001).",
+      "context_window": "rroborated these effects for average speed ( H (4) = 30.41, P < 0.001), time spent in the central zone ( H (4) = 30.68, P < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-587",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 587,
+      "sentence": "Non-parametric Kruskal-Wallis tests further corroborated these effects for average speed ( H (4) = 30.41, P < 0.001), time spent in the central zone ( H (4) = 30.68, P < 0.001), grooming frequency ( H (4) = 24.62, P < 0.001), and rearing activity ( H (4) = 23.94, P < 0.001).",
+      "context_window": "P < 0.001), time spent in the central zone ( H (4) = 30.68, P < 0.001), grooming frequency ( H (4) = 24.62, P < 0.001), and reari",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-635",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 635,
+      "sentence": "Non-parametric Kruskal-Wallis tests further corroborated these effects for average speed ( H (4) = 30.41, P < 0.001), time spent in the central zone ( H (4) = 30.68, P < 0.001), grooming frequency ( H (4) = 24.62, P < 0.001), and rearing activity ( H (4) = 23.94, P < 0.001).",
+      "context_window": "4) = 30.68, P < 0.001), grooming frequency ( H (4) = 24.62, P < 0.001), and rearing activity ( H (4) = 23.94, P < 0.001). Post-ho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-685",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 685,
+      "sentence": "Non-parametric Kruskal-Wallis tests further corroborated these effects for average speed ( H (4) = 30.41, P < 0.001), time spent in the central zone ( H (4) = 30.68, P < 0.001), grooming frequency ( H (4) = 24.62, P < 0.001), and rearing activity ( H (4) = 23.94, P < 0.001).",
+      "context_window": "= 24.62, P < 0.001), and rearing activity ( H (4) = 23.94, P < 0.001). Post-hoc pairwise comparisons confirmed that the MSG grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-866",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 866,
+      "sentence": "Post-hoc pairwise comparisons confirmed that the MSG group moved significantly less and slower than the control group did, as indicated by the total distance traveled ( P < 0.001) and the average speed in the open field arena ( P < 0.01).",
+      "context_window": "ol group did, as indicated by the total distance traveled ( P < 0.001) and the average speed in the open field arena ( P < 0.01).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-925",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 925,
+      "sentence": "Post-hoc pairwise comparisons confirmed that the MSG group moved significantly less and slower than the control group did, as indicated by the total distance traveled ( P < 0.001) and the average speed in the open field arena ( P < 0.01).",
+      "context_window": "P < 0.001) and the average speed in the open field arena ( P < 0.01). On the other hand, the distance traveled by the Vit D- an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-1091",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1091,
+      "sentence": "On the other hand, the distance traveled by the Vit D- and/or N-3 PUFA-treated rats was significantly greater than that traveled by the MSG-treated rats ( P < 0.001, P < 0.01) for the individual treatments respectively, and ( P < 0.001) for the combination therapy.",
+      "context_window": "cantly greater than that traveled by the MSG-treated rats ( P < 0.001, P < 0.01) for the individual treatments respectively, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-1102",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1102,
+      "sentence": "On the other hand, the distance traveled by the Vit D- and/or N-3 PUFA-treated rats was significantly greater than that traveled by the MSG-treated rats ( P < 0.001, P < 0.01) for the individual treatments respectively, and ( P < 0.001) for the combination therapy.",
+      "context_window": "ter than that traveled by the MSG-treated rats ( P < 0.001, P < 0.01) for the individual treatments respectively, and ( P < 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-1162",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1162,
+      "sentence": "On the other hand, the distance traveled by the Vit D- and/or N-3 PUFA-treated rats was significantly greater than that traveled by the MSG-treated rats ( P < 0.001, P < 0.01) for the individual treatments respectively, and ( P < 0.001) for the combination therapy.",
+      "context_window": "P < 0.01) for the individual treatments respectively, and ( P < 0.001) for the combination therapy. Notably, the rats treated wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-1297",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1297,
+      "sentence": "Notably, the rats treated with Vit D traveled much farther than those treated with N-3 PUFAs ( P < 0.01).",
+      "context_window": "D traveled much farther than those treated with N-3 PUFAs ( P < 0.01). Additionally, the rats treated with Vit D or combination",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-1423",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1423,
+      "sentence": "Additionally, the rats treated with Vit D or combination treatment scored longer distances than the control rats ( P < 0.001), but there was no significant difference between the individual treatment with N-3 PUFAs or Vit D and the combination therapy ( P > 0.05).",
+      "context_window": "n treatment scored longer distances than the control rats ( P < 0.001), but there was no significant difference between the indiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-1562",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1562,
+      "sentence": "Additionally, the rats treated with Vit D or combination treatment scored longer distances than the control rats ( P < 0.001), but there was no significant difference between the individual treatment with N-3 PUFAs or Vit D and the combination therapy ( P > 0.05).",
+      "context_window": "tment with N-3 PUFAs or Vit D and the combination therapy ( P > 0.05). Similarly, compared with those in the MSG group, the rats",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-1706",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1706,
+      "sentence": "Similarly, compared with those in the MSG group, the rats gained significantly faster speeds of movement upon treatment with Vit D ( P < 0.001), N-3 PUFAs ( P < 0.01), or the combined treatment ( P < 0.001).",
+      "context_window": "antly faster speeds of movement upon treatment with Vit D ( P < 0.001), N-3 PUFAs ( P < 0.01), or the combined treatment ( P < 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-1730",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1730,
+      "sentence": "Similarly, compared with those in the MSG group, the rats gained significantly faster speeds of movement upon treatment with Vit D ( P < 0.001), N-3 PUFAs ( P < 0.01), or the combined treatment ( P < 0.001).",
+      "context_window": "ovement upon treatment with Vit D ( P < 0.001), N-3 PUFAs ( P < 0.01), or the combined treatment ( P < 0.001). Compared with tho",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-1769",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1769,
+      "sentence": "Similarly, compared with those in the MSG group, the rats gained significantly faster speeds of movement upon treatment with Vit D ( P < 0.001), N-3 PUFAs ( P < 0.01), or the combined treatment ( P < 0.001).",
+      "context_window": "0.001), N-3 PUFAs ( P < 0.01), or the combined treatment ( P < 0.001). Compared with those in the N-3 PUFA group, significantly",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-1896",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1896,
+      "sentence": "Compared with those in the N-3 PUFA group, significantly greater speeds were achieved in the Vit-D-treated group ( P < 0.05), whereas there was no significant speed difference between the individual treatments with N-3 PUFAs or Vit D and the combination therapy group or the control group ( P > 0.05) (Fig.",
+      "context_window": "y greater speeds were achieved in the Vit-D-treated group ( P < 0.05), whereas there was no significant speed difference between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-2072",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2072,
+      "sentence": "Compared with those in the N-3 PUFA group, significantly greater speeds were achieved in the Vit-D-treated group ( P < 0.05), whereas there was no significant speed difference between the individual treatments with N-3 PUFAs or Vit D and the combination therapy group or the control group ( P > 0.05) (Fig.",
+      "context_window": "D and the combination therapy group or the control group ( P > 0.05) (Fig. 1 B, C). Rats\u2019 performances in the open field test.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-n-2871",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2871,
+      "sentence": "The data are expressed as the means \u00b1 SEMs or medians (IQRs) ( n = 10 per group).",
+      "context_window": "data are expressed as the means \u00b1 SEMs or medians (IQRs) ( n = 10 per group). Symbols above individual bars indicate a signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-3345",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3345,
+      "sentence": "Compared with normal control rats, the number of crossed fields was significantly lower following MSG administration ( P < 0.01).",
+      "context_window": "elds was significantly lower following MSG administration ( P < 0.01). Compared with the MSG group ( P < 0.001), the Vit D- and/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-3386",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3386,
+      "sentence": "Compared with the MSG group ( P < 0.001), the Vit D- and/or N-3 PUFA-treated group presented a significant increase in crossings in the open field.",
+      "context_window": "G administration ( P < 0.01). Compared with the MSG group ( P < 0.001), the Vit D- and/or N-3 PUFA-treated group presented a sign",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-3668",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3668,
+      "sentence": "Notably, rats treated with Vit D or combination therapy presented a greater number of crossings than did those treated with N-3 PUFAs or even normal control rats ( P < 0.001) for both (Fig.",
+      "context_window": "those treated with N-3 PUFAs or even normal control rats ( P < 0.001) for both (Fig. 1 D). The number of grooming activities in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-3866",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3866,
+      "sentence": "The number of grooming activities in the open field was significantly lower after MSG administration during the observation period compared to intact control rats ( P < 0.001), whereas rats treated with Vit D and/or N-3 PUFAs presented significantly greater grooming activities and reached the normal scores recorded in the control groups ( P < 0.01, P < 0.001) for individual treatments and ( P < 0.001) for combined treatments compared with those in the MSG group.",
+      "context_window": "ng the observation period compared to intact control rats ( P < 0.001), whereas rats treated with Vit D and/or N-3 PUFAs presente",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-4042",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4042,
+      "sentence": "The number of grooming activities in the open field was significantly lower after MSG administration during the observation period compared to intact control rats ( P < 0.001), whereas rats treated with Vit D and/or N-3 PUFAs presented significantly greater grooming activities and reached the normal scores recorded in the control groups ( P < 0.01, P < 0.001) for individual treatments and ( P < 0.001) for combined treatments compared with those in the MSG group.",
+      "context_window": "reached the normal scores recorded in the control groups ( P < 0.01, P < 0.001) for individual treatments and ( P < 0.001) for",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-4052",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4052,
+      "sentence": "The number of grooming activities in the open field was significantly lower after MSG administration during the observation period compared to intact control rats ( P < 0.001), whereas rats treated with Vit D and/or N-3 PUFAs presented significantly greater grooming activities and reached the normal scores recorded in the control groups ( P < 0.01, P < 0.001) for individual treatments and ( P < 0.001) for combined treatments compared with those in the MSG group.",
+      "context_window": "he normal scores recorded in the control groups ( P < 0.01, P < 0.001) for individual treatments and ( P < 0.001) for combined tr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-4095",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4095,
+      "sentence": "The number of grooming activities in the open field was significantly lower after MSG administration during the observation period compared to intact control rats ( P < 0.001), whereas rats treated with Vit D and/or N-3 PUFAs presented significantly greater grooming activities and reached the normal scores recorded in the control groups ( P < 0.01, P < 0.001) for individual treatments and ( P < 0.001) for combined treatments compared with those in the MSG group.",
+      "context_window": "oups ( P < 0.01, P < 0.001) for individual treatments and ( P < 0.001) for combined treatments compared with those in the MSG gro",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-4262",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4262,
+      "sentence": "Vit D) ( P > 0.05) or between the separate treatments and the combination therapy ( P > 0.05) (Fig.",
+      "context_window": "e between the individual treatments (N-3 PUFAs vs. Vit D) ( P > 0.05) or between the separate treatments and the combination the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-4337",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4337,
+      "sentence": "Vit D) ( P > 0.05) or between the separate treatments and the combination therapy ( P > 0.05) (Fig.",
+      "context_window": "tween the separate treatments and the combination therapy ( P > 0.05) (Fig. 1 E). Similarly, fewer rearing behaviors were recor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-4452",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4452,
+      "sentence": "Similarly, fewer rearing behaviors were recorded in the MSG rats than in the control rats ( P < 0.001).",
+      "context_window": "rs were recorded in the MSG rats than in the control rats ( P < 0.001). Unlike MSG-treated rats, the rearing behavior of rats tha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-4619",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4619,
+      "sentence": "Unlike MSG-treated rats, the rearing behavior of rats that received Vit D and/or N-3 PUFAs was significantly greater, matching that of the control group ( P < 0.001) for both the individual and combined treatments.",
+      "context_window": "significantly greater, matching that of the control group ( P < 0.001) for both the individual and combined treatments. There was",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-4773",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4773,
+      "sentence": "Vit D) ( P > 0.05) or between the separate treatments and the combination therapy ( P > 0.05) (Fig.",
+      "context_window": "e between the individual treatments (N-3 PUFAs vs. Vit D) ( P > 0.05) or between the separate treatments and the combination the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-4848",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4848,
+      "sentence": "Vit D) ( P > 0.05) or between the separate treatments and the combination therapy ( P > 0.05) (Fig.",
+      "context_window": "tween the separate treatments and the combination therapy ( P > 0.05) (Fig. 1 F). The observation of other anxiety-like behavio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-5094",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5094,
+      "sentence": "The observation of other anxiety-like behavioral activity in the open field test revealed that the MSG group tended to visit the central zone less often than the control group did, as indicated by the number of crossings ( P < 0.001) and time spent there ( P < 0.05).",
+      "context_window": "ontrol group did, as indicated by the number of crossings ( P < 0.001) and time spent there ( P < 0.05). Vit D- and/or N-3 PUFA-t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-5128",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5128,
+      "sentence": "The observation of other anxiety-like behavioral activity in the open field test revealed that the MSG group tended to visit the central zone less often than the control group did, as indicated by the number of crossings ( P < 0.001) and time spent there ( P < 0.05).",
+      "context_window": "the number of crossings ( P < 0.001) and time spent there ( P < 0.05). Vit D- and/or N-3 PUFA-treated animals entered more time",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-5246",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5246,
+      "sentence": "Vit D- and/or N-3 PUFA-treated animals entered more time into the central zone than MSG-treated rats did ( P < 0.001) for the individual and combined treatments.",
+      "context_window": "more time into the central zone than MSG-treated rats did ( P < 0.001) for the individual and combined treatments. Additionally,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-5422",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5422,
+      "sentence": "Additionally, the zone entry scores of the treatment groups were significantly greater than those of the control group ( P < 0.001) for Vit D, ( P < 0.05) for N-3 PUFAs, and ( P < 0.001) for the combined treatment.",
+      "context_window": "ere significantly greater than those of the control group ( P < 0.001) for Vit D, ( P < 0.05) for N-3 PUFAs, and ( P < 0.001) for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-5446",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5446,
+      "sentence": "Additionally, the zone entry scores of the treatment groups were significantly greater than those of the control group ( P < 0.001) for Vit D, ( P < 0.05) for N-3 PUFAs, and ( P < 0.001) for the combined treatment.",
+      "context_window": "r than those of the control group ( P < 0.001) for Vit D, ( P < 0.05) for N-3 PUFAs, and ( P < 0.001) for the combined treatment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-5477",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5477,
+      "sentence": "Additionally, the zone entry scores of the treatment groups were significantly greater than those of the control group ( P < 0.001) for Vit D, ( P < 0.05) for N-3 PUFAs, and ( P < 0.001) for the combined treatment.",
+      "context_window": "up ( P < 0.001) for Vit D, ( P < 0.05) for N-3 PUFAs, and ( P < 0.001) for the combined treatment. There was no significant diffe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-5673",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5673,
+      "sentence": "Vit D) or between the separate treatments and the combination therapy ( P > 0.05).",
+      "context_window": "tween the separate treatments and the combination therapy ( P > 0.05). Moreover, Vit D- and/or N-3 PUFA-treated rats had scored",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-5885",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5885,
+      "sentence": "Moreover, Vit D- and/or N-3 PUFA-treated rats had scored the normal time recorded by the control rats in the central zone, as they spent much more time in the central zone than MSG-treated rats did; ( P < 0.001) and ( P < 0.05) for individual treatments, respectively, and ( P < 0.001) for combined treatment.",
+      "context_window": "more time in the central zone than MSG-treated rats did; ( P < 0.001) and ( P < 0.05) for individual treatments, respectively, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-5902",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5902,
+      "sentence": "Moreover, Vit D- and/or N-3 PUFA-treated rats had scored the normal time recorded by the control rats in the central zone, as they spent much more time in the central zone than MSG-treated rats did; ( P < 0.001) and ( P < 0.05) for individual treatments, respectively, and ( P < 0.001) for combined treatment.",
+      "context_window": "central zone than MSG-treated rats did; ( P < 0.001) and ( P < 0.05) for individual treatments, respectively, and ( P < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-5959",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5959,
+      "sentence": "Moreover, Vit D- and/or N-3 PUFA-treated rats had scored the normal time recorded by the control rats in the central zone, as they spent much more time in the central zone than MSG-treated rats did; ( P < 0.001) and ( P < 0.05) for individual treatments, respectively, and ( P < 0.001) for combined treatment.",
+      "context_window": "( P < 0.05) for individual treatments, respectively, and ( P < 0.001) for combined treatment. Notably, rats that received the co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-6121",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6121,
+      "sentence": "Notably, rats that received the combination therapy stayed in the central zone longer than those treated with N-3 PUFAs only ( P < 0.01), but there was no significant difference between the individual treatments (N-3 PUFAs vs.",
+      "context_window": "entral zone longer than those treated with N-3 PUFAs only ( P < 0.01), but there was no significant difference between the indiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-6230",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6230,
+      "sentence": "Vit D) ( P > 0.05) (Fig.",
+      "context_window": "e between the individual treatments (N-3 PUFAs vs. Vit D) ( P > 0.05) (Fig. 1 G, H). For NOR performance, significant dispariti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-6405",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6405,
+      "sentence": "For NOR performance, significant disparities between groups in exploratory preference were identified using Kruskal-Wallis analysis ( H(4) = 17.13 , P < 0.01).",
+      "context_window": "e identified using Kruskal-Wallis analysis ( H(4) = 17.13 , P < 0.01). Rats treated with MSG tended to huddle in the corners of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-6584",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6584,
+      "sentence": "Rats treated with MSG tended to huddle in the corners of the arena and spent much less time investigating the familiar and novel objects than intact control rats did ( P < 0.01) according to the post-hoc tests, whereas Vit D and/or N-3 PUFA-treated rats spent the same amount of time investigating the familiar and novel objects as normal rats did in the control group, showing greatly prolonged exploration time for both objects and increased exploratory preference for the novel objects compared with those of rats treated with MSG ( P < 0.01, P < 0.05) for individual treatments and ( P < 0.01) for combined treatment.",
+      "context_window": "e familiar and novel objects than intact control rats did ( P < 0.01) according to the post-hoc tests, whereas Vit D and/or N-3",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-6952",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6952,
+      "sentence": "Rats treated with MSG tended to huddle in the corners of the arena and spent much less time investigating the familiar and novel objects than intact control rats did ( P < 0.01) according to the post-hoc tests, whereas Vit D and/or N-3 PUFA-treated rats spent the same amount of time investigating the familiar and novel objects as normal rats did in the control group, showing greatly prolonged exploration time for both objects and increased exploratory preference for the novel objects compared with those of rats treated with MSG ( P < 0.01, P < 0.05) for individual treatments and ( P < 0.01) for combined treatment.",
+      "context_window": "ovel objects compared with those of rats treated with MSG ( P < 0.01, P < 0.05) for individual treatments and ( P < 0.01) for co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-6962",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6962,
+      "sentence": "Rats treated with MSG tended to huddle in the corners of the arena and spent much less time investigating the familiar and novel objects than intact control rats did ( P < 0.01) according to the post-hoc tests, whereas Vit D and/or N-3 PUFA-treated rats spent the same amount of time investigating the familiar and novel objects as normal rats did in the control group, showing greatly prolonged exploration time for both objects and increased exploratory preference for the novel objects compared with those of rats treated with MSG ( P < 0.01, P < 0.05) for individual treatments and ( P < 0.01) for combined treatment.",
+      "context_window": "ts compared with those of rats treated with MSG ( P < 0.01, P < 0.05) for individual treatments and ( P < 0.01) for combined tre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-7004",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7004,
+      "sentence": "Rats treated with MSG tended to huddle in the corners of the arena and spent much less time investigating the familiar and novel objects than intact control rats did ( P < 0.01) according to the post-hoc tests, whereas Vit D and/or N-3 PUFA-treated rats spent the same amount of time investigating the familiar and novel objects as normal rats did in the control group, showing greatly prolonged exploration time for both objects and increased exploratory preference for the novel objects compared with those of rats treated with MSG ( P < 0.01, P < 0.05) for individual treatments and ( P < 0.01) for combined treatment.",
+      "context_window": "h MSG ( P < 0.01, P < 0.05) for individual treatments and ( P < 0.01) for combined treatment. There was no significant differenc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-7195",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7195,
+      "sentence": "Vit D) or between the separate treatments and the combination therapy ( P > 0.05) (Fig.",
+      "context_window": "tween the separate treatments and the combination therapy ( P > 0.05) (Fig. 2 ). Rats\u2019 exploratory performances in the novel ob",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-n-7814",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7814,
+      "sentence": "Data are expressed as the median (IQR) ( n = 10 per group).",
+      "context_window": "SG + Vit D + N-3). Data are expressed as the median (IQR) ( n = 10 per group). Symbols above individual bars indicate a signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-8245",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8245,
+      "sentence": "The performance in the T-maze revealed that both the percentage of correct alternations ( H(4) = 25.77 , P < 0.001) and the latencies to enter cross arms ( H(4) = 19.69 , P < 0.001) had significant differences across groups, according to Kruskal-Wallis analysis.",
+      "context_window": "oth the percentage of correct alternations ( H(4) = 25.77 , P < 0.001) and the latencies to enter cross arms ( H(4) = 19.69 , P <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-8311",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8311,
+      "sentence": "The performance in the T-maze revealed that both the percentage of correct alternations ( H(4) = 25.77 , P < 0.001) and the latencies to enter cross arms ( H(4) = 19.69 , P < 0.001) had significant differences across groups, according to Kruskal-Wallis analysis.",
+      "context_window": "001) and the latencies to enter cross arms ( H(4) = 19.69 , P < 0.001) had significant differences across groups, according to Kr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-8518",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8518,
+      "sentence": "Post-hoc analysis demonstrated a significantly greater delay of the MSG-treated rats before entering a cross arm ( P < 0.001), in addition to a decreased tendency toward the correct alternations ( P < 0.01) compared to the control group.",
+      "context_window": "delay of the MSG-treated rats before entering a cross arm ( P < 0.001), in addition to a decreased tendency toward the correct al",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-8600",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8600,
+      "sentence": "Post-hoc analysis demonstrated a significantly greater delay of the MSG-treated rats before entering a cross arm ( P < 0.001), in addition to a decreased tendency toward the correct alternations ( P < 0.01) compared to the control group.",
+      "context_window": "n to a decreased tendency toward the correct alternations ( P < 0.01) compared to the control group. Upon treatment, the perform",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-8875",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8875,
+      "sentence": "Upon treatment, the performance of rats in the T-maze almost matched that of control rats; that is, a significantly shorter latency to enter the arms was observed in response to Vit D and/or N-3 PUFA treatment than in the MSG group ( P < 0.01) for individual treatments and ( P < 0.001) for combined treatment.",
+      "context_window": "to Vit D and/or N-3 PUFA treatment than in the MSG group ( P < 0.01) for individual treatments and ( P < 0.001) for combined tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-8917",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8917,
+      "sentence": "Upon treatment, the performance of rats in the T-maze almost matched that of control rats; that is, a significantly shorter latency to enter the arms was observed in response to Vit D and/or N-3 PUFA treatment than in the MSG group ( P < 0.01) for individual treatments and ( P < 0.001) for combined treatment.",
+      "context_window": "n the MSG group ( P < 0.01) for individual treatments and ( P < 0.001) for combined treatment. Additionally, significantly greate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-9086",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9086,
+      "sentence": "Additionally, significantly greater percentages of correct alternations were recorded in the treatment groups than in the MSG group ( P < 0.01) for Vit D, ( P < 0.001) for N-3 PUFAs, and ( P < 0.001) in the combined treatment group.",
+      "context_window": "re recorded in the treatment groups than in the MSG group ( P < 0.01) for Vit D, ( P < 0.001) for N-3 PUFAs, and ( P < 0.001) in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-9109",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9109,
+      "sentence": "Additionally, significantly greater percentages of correct alternations were recorded in the treatment groups than in the MSG group ( P < 0.01) for Vit D, ( P < 0.001) for N-3 PUFAs, and ( P < 0.001) in the combined treatment group.",
+      "context_window": "tment groups than in the MSG group ( P < 0.01) for Vit D, ( P < 0.001) for N-3 PUFAs, and ( P < 0.001) in the combined treatment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-9141",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9141,
+      "sentence": "Additionally, significantly greater percentages of correct alternations were recorded in the treatment groups than in the MSG group ( P < 0.01) for Vit D, ( P < 0.001) for N-3 PUFAs, and ( P < 0.001) in the combined treatment group.",
+      "context_window": "up ( P < 0.01) for Vit D, ( P < 0.001) for N-3 PUFAs, and ( P < 0.001) in the combined treatment group. There was no significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-9321",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9321,
+      "sentence": "Vit D) on the T-maze measurements ( P > 0.05).",
+      "context_window": "eatments (N-3 PUFAs vs. Vit D) on the T-maze measurements ( P > 0.05). Similarly, there was no significant difference between th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-9485",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9485,
+      "sentence": "Similarly, there was no significant difference between the individual treatment with N-3 PUFAs or Vit D and the combined treatment in terms of latency ( P > 0.05) or percentage of correct alternations ( P > 0.05) (Fig.",
+      "context_window": "s or Vit D and the combined treatment in terms of latency ( P > 0.05) or percentage of correct alternations ( P > 0.05) (Fig. 3",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-9535",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9535,
+      "sentence": "Similarly, there was no significant difference between the individual treatment with N-3 PUFAs or Vit D and the combined treatment in terms of latency ( P > 0.05) or percentage of correct alternations ( P > 0.05) (Fig.",
+      "context_window": "latency ( P > 0.05) or percentage of correct alternations ( P > 0.05) (Fig. 3 ). Spatial working memory performance in the T-ma",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-n-9952",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9952,
+      "sentence": "Data are expressed as the median (IQR) ( n = 10 per group).",
+      "context_window": "SG + Vit D + N-3). Data are expressed as the median (IQR) ( n = 10 per group). Symbols above individual bars indicate a signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-10422",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10422,
+      "sentence": "According to Kruskal-Wallis analysis, there were notable variations between the groups in both latencies to reach the platform ( H(4) = 31.92 , P < 0.001) during the training trials and the time spent in the target zone during the probe trial ( H(4) = 12.34 , P < 0.05).",
+      "context_window": "ps in both latencies to reach the platform ( H(4) = 31.92 , P < 0.001) during the training trials and the time spent in the targe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-10538",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10538,
+      "sentence": "According to Kruskal-Wallis analysis, there were notable variations between the groups in both latencies to reach the platform ( H(4) = 31.92 , P < 0.001) during the training trials and the time spent in the target zone during the probe trial ( H(4) = 12.34 , P < 0.05).",
+      "context_window": "in the target zone during the probe trial ( H(4) = 12.34 , P < 0.05). Post-hoc tests demonstrated that MSG group rats presented",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-10791",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10791,
+      "sentence": "Post-hoc tests demonstrated that MSG group rats presented impaired learning performance in the MWM in all training trials compared with normal control rats, as demonstrated by a significantly longer latency time to find the hidden platform ( P < 0.001) and failure to achieve the normal learning curve.",
+      "context_window": "ificantly longer latency time to find the hidden platform ( P < 0.001) and failure to achieve the normal learning curve. On the o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-11011",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11011,
+      "sentence": "On the other hand, rats treated with either N-3 PUFAs, Vit D, or combination therapy were able to locate the hidden platform more rapidly than MSG rats were ( P < 0.001, P < 0.01,) for separate treatment respectively and ( P < 0.001) for the combined therapy.",
+      "context_window": "ocate the hidden platform more rapidly than MSG rats were ( P < 0.001, P < 0.01,) for separate treatment respectively and ( P < 0",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-11022",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11022,
+      "sentence": "On the other hand, rats treated with either N-3 PUFAs, Vit D, or combination therapy were able to locate the hidden platform more rapidly than MSG rats were ( P < 0.001, P < 0.01,) for separate treatment respectively and ( P < 0.001) for the combined therapy.",
+      "context_window": "idden platform more rapidly than MSG rats were ( P < 0.001, P < 0.01,) for separate treatment respectively and ( P < 0.001) for",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-11075",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11075,
+      "sentence": "On the other hand, rats treated with either N-3 PUFAs, Vit D, or combination therapy were able to locate the hidden platform more rapidly than MSG rats were ( P < 0.001, P < 0.01,) for separate treatment respectively and ( P < 0.001) for the combined therapy.",
+      "context_window": "0.001, P < 0.01,) for separate treatment respectively and ( P < 0.001) for the combined therapy. In addition, latencies declined",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-11350",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11350,
+      "sentence": "Vit D) ( P > 0.05) or between the separate treatments and the combination therapy ( P > 0.05) (Fig.",
+      "context_window": "e between the individual treatments (N-3 PUFAs vs. Vit D) ( P > 0.05) or between the separate treatments and the combination the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-11425",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11425,
+      "sentence": "Vit D) ( P > 0.05) or between the separate treatments and the combination therapy ( P > 0.05) (Fig.",
+      "context_window": "tween the separate treatments and the combination therapy ( P > 0.05) (Fig. 4 A). Learning performances and spatial working mem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-n-12210",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12210,
+      "sentence": "Data are expressed as the median (IQR) ( n = 10 per group).",
+      "context_window": "SG + Vit D + N-3). Data are expressed as the median (IQR) ( n = 10 per group). Symbols above individual bars indicate a signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-12777",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12777,
+      "sentence": "Spatial reference memory analysis in the probe test of the MWM revealed that the group was significantly confused in all the maze quadrants and spent less time in the target (platform) zone than the control group did; the memory retention ( P < 0.01) was decreased, whereas the memory functions were significantly improved after Vit D and/or N-3 PUFA treatment, which was almost comparable to the results observed in the normal control group and was evidenced by the significantly longer swimming time in that target quadrant than in the MSG group ( P < 0.01) for both the individual and combined treatments.",
+      "context_window": "rm) zone than the control group did; the memory retention ( P < 0.01) was decreased, whereas the memory functions were significa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-13086",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13086,
+      "sentence": "Spatial reference memory analysis in the probe test of the MWM revealed that the group was significantly confused in all the maze quadrants and spent less time in the target (platform) zone than the control group did; the memory retention ( P < 0.01) was decreased, whereas the memory functions were significantly improved after Vit D and/or N-3 PUFA treatment, which was almost comparable to the results observed in the normal control group and was evidenced by the significantly longer swimming time in that target quadrant than in the MSG group ( P < 0.01) for both the individual and combined treatments.",
+      "context_window": "imming time in that target quadrant than in the MSG group ( P < 0.01) for both the individual and combined treatments. There was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-13302",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13302,
+      "sentence": "Vit D) or between the separate treatments and the combination therapy ( P > 0.05) (Fig.",
+      "context_window": "tween the separate treatments and the combination therapy ( P > 0.05) (Fig. 4 B, C). During the dark/light test, significant di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-13443",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13443,
+      "sentence": "During the dark/light test, significant differences in both latencies to enter light across groups (H(4) = 26.18 , P < 0.001) and % of time spent in the light chamber (H(4) = 30.05 , P < 0.001) as revealed by the Kruskal-Wallis test.",
+      "context_window": "both latencies to enter light across groups (H(4) = 26.18 , P < 0.001) and % of time spent in the light chamber (H(4) = 30.05 , P",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-13511",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13511,
+      "sentence": "During the dark/light test, significant differences in both latencies to enter light across groups (H(4) = 26.18 , P < 0.001) and % of time spent in the light chamber (H(4) = 30.05 , P < 0.001) as revealed by the Kruskal-Wallis test.",
+      "context_window": "1) and % of time spent in the light chamber (H(4) = 30.05 , P < 0.001) as revealed by the Kruskal-Wallis test. Post-hoc analysis",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-13736",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13736,
+      "sentence": "Post-hoc analysis demonstrated that the MSG-exposed group exhibited a significantly greater latency before crossing to the light chamber in comparison to the control group ( P < 0.01).",
+      "context_window": "g to the light chamber in comparison to the control group ( P < 0.01). Likewise, rats in the MSG-treated group spent much less t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-13854",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13854,
+      "sentence": "Likewise, rats in the MSG-treated group spent much less time on the light side than did the control rats ( P < 0.001).",
+      "context_window": "uch less time on the light side than did the control rats ( P < 0.001). Compared with MSG alone, treatment with Vit D and/or N-3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-14106",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14106,
+      "sentence": "Compared with MSG alone, treatment with Vit D and/or N-3 PUFAs appeared to decrease these anxiety-related behaviors, consistent with normal performance, as evidenced by markedly decreased latency before the rats crossed the light chamber ( P < 0.01) for Vit D, ( P < 0.001) for N-3 PUFAs and the combined treatment.",
+      "context_window": "creased latency before the rats crossed the light chamber ( P < 0.01) for Vit D, ( P < 0.001) for N-3 PUFAs and the combined tre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-14129",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14129,
+      "sentence": "Compared with MSG alone, treatment with Vit D and/or N-3 PUFAs appeared to decrease these anxiety-related behaviors, consistent with normal performance, as evidenced by markedly decreased latency before the rats crossed the light chamber ( P < 0.01) for Vit D, ( P < 0.001) for N-3 PUFAs and the combined treatment.",
+      "context_window": "the rats crossed the light chamber ( P < 0.01) for Vit D, ( P < 0.001) for N-3 PUFAs and the combined treatment. Similarly, the t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-14309",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14309,
+      "sentence": "Similarly, the treated rats spent a significantly greater percentage of time on the light side than the MSG-treated rats did ( P < 0.001) for individual and the combined treatment.",
+      "context_window": "e of time on the light side than the MSG-treated rats did ( P < 0.001) for individual and the combined treatment. There was no si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-14490",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14490,
+      "sentence": "Vit D) for both the dark/light measurements ( P > 0.05) or between the separate treatments and the combination therapy in terms of latencies to enter ( P > 0.05) or the time spent on the bright side ( P > 0.05) (Fig.",
+      "context_window": "N-3 PUFAs vs. Vit D) for both the dark/light measurements ( P > 0.05) or between the separate treatments and the combination the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-14596",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14596,
+      "sentence": "Vit D) for both the dark/light measurements ( P > 0.05) or between the separate treatments and the combination therapy in terms of latencies to enter ( P > 0.05) or the time spent on the bright side ( P > 0.05) (Fig.",
+      "context_window": "nd the combination therapy in terms of latencies to enter ( P > 0.05) or the time spent on the bright side ( P > 0.05) (Fig. 5 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-14645",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14645,
+      "sentence": "Vit D) for both the dark/light measurements ( P > 0.05) or between the separate treatments and the combination therapy in terms of latencies to enter ( P > 0.05) or the time spent on the bright side ( P > 0.05) (Fig.",
+      "context_window": "to enter ( P > 0.05) or the time spent on the bright side ( P > 0.05) (Fig. 5 ). Rats\u2019 performances in the dark\u2012light box. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-n-15078",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15078,
+      "sentence": "Data are expressed as the median (IQR) ( n = 10 per group).",
+      "context_window": "SG + Vit D + N-3). Data are expressed as the median (IQR) ( n = 10 per group). Data are expressed as the median (IQR). Symbols",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-16457",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16457,
+      "sentence": "These findings were confirmed via statistical analysis of the percentage of degenerated neurons per 500 cells within the hippocampus, where one-way ANOVA demonstrated a highly significant effect on apoptotic cell counts across experimental groups ( F(4 , 10) = 380.1, P < 0.001), This exceptionally large F-statistic underscores the pronounced treatment-induced modulation of apoptotic mechanisms between groups.",
+      "context_window": "cell counts across experimental groups ( F(4 , 10) = 380.1, P < 0.001), This exceptionally large F-statistic underscores the pron",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-16767",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16767,
+      "sentence": "In line with that, there was a significant increase in the mean number of degenerated cells in all areas in the MSG group compared with those in the control group ( P < 0.001).",
+      "context_window": "in the MSG group compared with those in the control group ( P < 0.001). Conversely, rats treated with Vit D and/or N-3 PUFAs pres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-16952",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16952,
+      "sentence": "Conversely, rats treated with Vit D and/or N-3 PUFAs presented a considerable decrease in the mean number of degenerated neural cells compared with those in the MSG group ( P < 0.001) for both the individual and combined treatments.",
+      "context_window": "nerated neural cells compared with those in the MSG group ( P < 0.001) for both the individual and combined treatments. Notably,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-17155",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17155,
+      "sentence": "Notably, rats treated with N-3 PUFAs had significantly fewer degenerated neural cells in their hippocampi than rats treated with Vit D alone ( P < 0.01).",
+      "context_window": "ls in their hippocampi than rats treated with Vit D alone ( P < 0.01). Compared with the separate N-3 PUFA or Vit D treatments,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-17310",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17310,
+      "sentence": "Compared with the separate N-3 PUFA or Vit D treatments, the combination therapy resulted in fewer degenerated neurons within the hippocampus ( P < 0.001).",
+      "context_window": "ulted in fewer degenerated neurons within the hippocampus ( P < 0.001). However, the neural damage shown in all three treatment g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-17450",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17450,
+      "sentence": "However, the neural damage shown in all three treatment groups was still significantly greater than that in the control group ( P < 0.001) for both the individual treatments and the combined therapy ( P < 0.05) (Fig.",
+      "context_window": "till significantly greater than that in the control group ( P < 0.001) for both the individual treatments and the combined therap",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-17523",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17523,
+      "sentence": "However, the neural damage shown in all three treatment groups was still significantly greater than that in the control group ( P < 0.001) for both the individual treatments and the combined therapy ( P < 0.05) (Fig.",
+      "context_window": "r both the individual treatments and the combined therapy ( P < 0.05) (Fig. 6 ). Histological findings in the hippocampal tissu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-n-18215",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18215,
+      "sentence": "The data are expressed as the means \u00b1 SEMs ( n = 3 per group).",
+      "context_window": "Vit D + N-3)). The data are expressed as the means \u00b1 SEMs ( n = 3 per group). Symbols above individual bars indicate a signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-19230",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19230,
+      "sentence": "One-way ANOVA identified a profound intergroup difference in tau accumulation ( F(4 , 20) = 493.8, P < 0.001).",
+      "context_window": "ergroup difference in tau accumulation ( F(4 , 20) = 493.8, P < 0.001). This robust statistical outcome underscores the substanti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-19532",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19532,
+      "sentence": "In addition, compared with that in control rats, the percentage of hippocampal tau-positive neurons in MSG-treated rats was significantly greater ( P < 0.001).",
+      "context_window": "ive neurons in MSG-treated rats was significantly greater ( P < 0.001). Compared with the MSG-treated group, the Vit D- and/or N-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-19697",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19697,
+      "sentence": "Compared with the MSG-treated group, the Vit D- and/or N-3 PUFA-treated groups presented a significant reduction in the number of tau-positive neurons ( P < 0.001); however, there was no significant difference between the effects of either individual treatment (N-3 PUFAs vs.",
+      "context_window": "gnificant reduction in the number of tau-positive neurons ( P < 0.001); however, there was no significant difference between the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-19829",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19829,
+      "sentence": "Vit D) ( P > 0.05).",
+      "context_window": "ects of either individual treatment (N-3 PUFAs vs. Vit D) ( P > 0.05). Notably, rats that received the combined treatment presen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-20012",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20012,
+      "sentence": "Notably, rats that received the combined treatment presented a greater reduction in tau staining in their hippocampi than did those treated with Vit D or N-3 PUFAs alone ( P < 0.001).",
+      "context_window": "ampi than did those treated with Vit D or N-3 PUFAs alone ( P < 0.001). However, tau deposition in all three treatment groups was",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-20137",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20137,
+      "sentence": "However, tau deposition in all three treatment groups was significantly greater than that in the control group ( P < 0.001) for both separate treatments and ( P < 0.001) for the combined therapy (Fig.",
+      "context_window": "was significantly greater than that in the control group ( P < 0.001) for both separate treatments and ( P < 0.001) for the comb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-20183",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20183,
+      "sentence": "However, tau deposition in all three treatment groups was significantly greater than that in the control group ( P < 0.001) for both separate treatments and ( P < 0.001) for the combined therapy (Fig.",
+      "context_window": "ntrol group ( P < 0.001) for both separate treatments and ( P < 0.001) for the combined therapy (Fig. 7 ). Tau immunostaining re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-n-20712",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20712,
+      "sentence": "The data are expressed as the means \u00b1 SEMs ( n = 5 per group).",
+      "context_window": "Vit D + N-3)). The data are expressed as the means \u00b1 SEMs ( n = 5 per group). Symbols above individual bars indicate a signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-21275",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21275,
+      "sentence": "One-way ANOVA revealed profound effect of the treatments on TNF-\u03b1 ( F (4 , 10) = 112.3 , P < 0.001) and IL-6 ( F (4 , 10) = 226.5 , P < 0.001) levels across groups.",
+      "context_window": "nd effect of the treatments on TNF-\u03b1 ( F (4 , 10) = 112.3 , P < 0.001) and IL-6 ( F (4 , 10) = 226.5 , P < 0.001) levels across g",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-21318",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21318,
+      "sentence": "One-way ANOVA revealed profound effect of the treatments on TNF-\u03b1 ( F (4 , 10) = 112.3 , P < 0.001) and IL-6 ( F (4 , 10) = 226.5 , P < 0.001) levels across groups.",
+      "context_window": ", 10) = 112.3 , P < 0.001) and IL-6 ( F (4 , 10) = 226.5 , P < 0.001) levels across groups. Post-hoc analysis showed that the le",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-21533",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21533,
+      "sentence": "Post-hoc analysis showed that the levels of TNF-\u03b1 and IL-6 were significantly greater in the hippocampal tissues of the MSG-treated group than in those of the normal control group ( P < 0.001).",
+      "context_window": "G-treated group than in those of the normal control group ( P < 0.001). Compared with the MSG-treated group, the N-3 PUFA and/or",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-21673",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21673,
+      "sentence": "Compared with the MSG-treated group, the N-3 PUFA and/or Vit D treatment groups presented significantly lower cytokine levels ( P < 0.001) in the individual and combined treatment groups.",
+      "context_window": "ment groups presented significantly lower cytokine levels ( P < 0.001) in the individual and combined treatment groups. There was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-21856",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21856,
+      "sentence": "Vit D) on the IL-6 level ( P > 0.05); however, the TNF-\u03b1 level was significantly lower in the rats treated with Vit D or the combination therapy than in those treated with individual N-3 PUFAs ( P < 0.001) in both groups; nevertheless, the levels of these inflammatory cytokines in the different treatment groups were significantly greater than those in the control group ( P < 0.001).",
+      "context_window": "ividual treatment (N-3 PUFAs vs. Vit D) on the IL-6 level ( P > 0.05); however, the TNF-\u03b1 level was significantly lower in the r",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-22024",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22024,
+      "sentence": "Vit D) on the IL-6 level ( P > 0.05); however, the TNF-\u03b1 level was significantly lower in the rats treated with Vit D or the combination therapy than in those treated with individual N-3 PUFAs ( P < 0.001) in both groups; nevertheless, the levels of these inflammatory cytokines in the different treatment groups were significantly greater than those in the control group ( P < 0.001).",
+      "context_window": "n therapy than in those treated with individual N-3 PUFAs ( P < 0.001) in both groups; nevertheless, the levels of these inflamma",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-22203",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22203,
+      "sentence": "Vit D) on the IL-6 level ( P > 0.05); however, the TNF-\u03b1 level was significantly lower in the rats treated with Vit D or the combination therapy than in those treated with individual N-3 PUFAs ( P < 0.001) in both groups; nevertheless, the levels of these inflammatory cytokines in the different treatment groups were significantly greater than those in the control group ( P < 0.001).",
+      "context_window": "ere significantly greater than those in the control group ( P < 0.001). Notably, the hippocampi of the rats treated with the comb",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-22338",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22338,
+      "sentence": "Notably, the hippocampi of the rats treated with the combination therapy showed a more considerable attenuation of TNF-\u03b1 ( P < 0.001) and IL-6 levels ( P < 0.001) compared with those of the separate treatments with Vit D or N-3 PUFAs.",
+      "context_window": "n therapy showed a more considerable attenuation of TNF-\u03b1 ( P < 0.001) and IL-6 levels ( P < 0.001) compared with those of the se",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-22367",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22367,
+      "sentence": "Notably, the hippocampi of the rats treated with the combination therapy showed a more considerable attenuation of TNF-\u03b1 ( P < 0.001) and IL-6 levels ( P < 0.001) compared with those of the separate treatments with Vit D or N-3 PUFAs.",
+      "context_window": "derable attenuation of TNF-\u03b1 ( P < 0.001) and IL-6 levels ( P < 0.001) compared with those of the separate treatments with Vit D",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-22562",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22562,
+      "sentence": "Although combined treatment was able to decrease TNF-\u03b1 back to its normal level recorded in the control group ( P < 0.05), the rats that received combined therapy still had significantly greater IL-6 levels than the control rats did ( P < 0.01) (Fig.",
+      "context_window": "-\u03b1 back to its normal level recorded in the control group ( P < 0.05), the rats that received combined therapy still had signifi",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-22685",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22685,
+      "sentence": "Although combined treatment was able to decrease TNF-\u03b1 back to its normal level recorded in the control group ( P < 0.05), the rats that received combined therapy still had significantly greater IL-6 levels than the control rats did ( P < 0.01) (Fig.",
+      "context_window": "gnificantly greater IL-6 levels than the control rats did ( P < 0.01) (Fig. 8 A, B). Hippocampal concentrations of inflammation",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-23705",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23705,
+      "sentence": "On the other hand, IL-10 concentrations exhibited statistically significant variation across experimental groups, as determined by one-way ANOVA (F(4, 10) = 121.7, P < 0.001).",
+      "context_window": "l groups, as determined by one-way ANOVA (F(4, 10) = 121.7, P < 0.001). The administration of MSG significantly depleted the IL-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-23856",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23856,
+      "sentence": "The administration of MSG significantly depleted the IL-10 levels in the MSG-treated rats compared with those in the normal control rats ( P < 0.001).",
+      "context_window": "eated rats compared with those in the normal control rats ( P < 0.001). In contrast to those in the MSG group, the IL-10 levels s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-23971",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23971,
+      "sentence": "In contrast to those in the MSG group, the IL-10 levels significantly increased in both the N-3 PUFA ( P < 0.01) and Vit D treatment and combination therapy ( P < 0.001) groups; however, the high IL-10 levels recorded in all three treatment groups were still significantly lower than those recorded in the control group ( P < 0.001) for both individual treatments and ( P < 0.01) for the combined treatment.",
+      "context_window": "IL-10 levels significantly increased in both the N-3 PUFA ( P < 0.01) and Vit D treatment and combination therapy ( P < 0.001) g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-24027",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24027,
+      "sentence": "In contrast to those in the MSG group, the IL-10 levels significantly increased in both the N-3 PUFA ( P < 0.01) and Vit D treatment and combination therapy ( P < 0.001) groups; however, the high IL-10 levels recorded in all three treatment groups were still significantly lower than those recorded in the control group ( P < 0.001) for both individual treatments and ( P < 0.01) for the combined treatment.",
+      "context_window": "A ( P < 0.01) and Vit D treatment and combination therapy ( P < 0.001) groups; however, the high IL-10 levels recorded in all thr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-24190",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24190,
+      "sentence": "In contrast to those in the MSG group, the IL-10 levels significantly increased in both the N-3 PUFA ( P < 0.01) and Vit D treatment and combination therapy ( P < 0.001) groups; however, the high IL-10 levels recorded in all three treatment groups were still significantly lower than those recorded in the control group ( P < 0.001) for both individual treatments and ( P < 0.01) for the combined treatment.",
+      "context_window": "nificantly lower than those recorded in the control group ( P < 0.001) for both individual treatments and ( P < 0.01) for the com",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-24238",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24238,
+      "sentence": "In contrast to those in the MSG group, the IL-10 levels significantly increased in both the N-3 PUFA ( P < 0.01) and Vit D treatment and combination therapy ( P < 0.001) groups; however, the high IL-10 levels recorded in all three treatment groups were still significantly lower than those recorded in the control group ( P < 0.001) for both individual treatments and ( P < 0.01) for the combined treatment.",
+      "context_window": "rol group ( P < 0.001) for both individual treatments and ( P < 0.01) for the combined treatment. Notably, the increase in Vit D",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-24370",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24370,
+      "sentence": "Notably, the increase in Vit D-associated IL-10 was significantly greater than in N-3 PUFAs ( P < 0.05).",
+      "context_window": "ociated IL-10 was significantly greater than in N-3 PUFAs ( P < 0.05). Similarly, rats treated with the combination therapy pres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-24550",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24550,
+      "sentence": "Similarly, rats treated with the combination therapy presented significantly greater IL-10 levels in their hippocampi than those treated with Vit D or N-3 PUFAs alone ( P < 0.001) for both (Fig.",
+      "context_window": "ppocampi than those treated with Vit D or N-3 PUFAs alone ( P < 0.001) for both (Fig. 8 C). As shown in Fig. 9 B-D, at 4 weeks p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-24610",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 24610,
+      "sentence": "9 B-D, at 4 weeks post-treatment, Vit D and/or N-3 PUFAs were able to alter hippocampal gene expression substantially.",
+      "context_window": "P < 0.001) for both (Fig. 8 C). As shown in Fig. 9 B-D, at 4 weeks post-treatment, Vit D and/or N-3 PUFAs were able to alter h",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-24833",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24833,
+      "sentence": "One-way ANOVA revealed statistically significant differences in the expression of caspase-3 ( F(4 , 10) = 32.97 , P < 0.001), \u03b1-synuclein ( F(4 ,10) = 13.45, P < 0.001), and CaM-1( F(4 ,10) = 16.16, P < 0.001) across experimental groups, indicating distinct treatment-driven alterations in apoptotic activity, neurodegenerative pathology, and calcium homeostasis, respectively.",
+      "context_window": "rences in the expression of caspase-3 ( F(4 , 10) = 32.97 , P < 0.001), \u03b1-synuclein ( F(4 ,10) = 13.45, P < 0.001), and CaM-1( F(",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-24877",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24877,
+      "sentence": "One-way ANOVA revealed statistically significant differences in the expression of caspase-3 ( F(4 , 10) = 32.97 , P < 0.001), \u03b1-synuclein ( F(4 ,10) = 13.45, P < 0.001), and CaM-1( F(4 ,10) = 16.16, P < 0.001) across experimental groups, indicating distinct treatment-driven alterations in apoptotic activity, neurodegenerative pathology, and calcium homeostasis, respectively.",
+      "context_window": ", 10) = 32.97 , P < 0.001), \u03b1-synuclein ( F(4 ,10) = 13.45, P < 0.001), and CaM-1( F(4 ,10) = 16.16, P < 0.001) across experiment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-24918",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24918,
+      "sentence": "One-way ANOVA revealed statistically significant differences in the expression of caspase-3 ( F(4 , 10) = 32.97 , P < 0.001), \u03b1-synuclein ( F(4 ,10) = 13.45, P < 0.001), and CaM-1( F(4 ,10) = 16.16, P < 0.001) across experimental groups, indicating distinct treatment-driven alterations in apoptotic activity, neurodegenerative pathology, and calcium homeostasis, respectively.",
+      "context_window": "F(4 ,10) = 13.45, P < 0.001), and CaM-1( F(4 ,10) = 16.16, P < 0.001) across experimental groups, indicating distinct treatment-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-25148",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25148,
+      "sentence": "The expression of mRNA was doubled for caspase-3 ( P < 0.001) and \u03b1-synuclein ( P < 0.01) and tripled for CaM-1 ( P < 0.001) in the MSG-treated group compared with the control group.",
+      "context_window": "ctively. The expression of mRNA was doubled for caspase-3 ( P < 0.001) and \u03b1-synuclein ( P < 0.01) and tripled for CaM-1 ( P < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-25177",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25177,
+      "sentence": "The expression of mRNA was doubled for caspase-3 ( P < 0.001) and \u03b1-synuclein ( P < 0.01) and tripled for CaM-1 ( P < 0.001) in the MSG-treated group compared with the control group.",
+      "context_window": "NA was doubled for caspase-3 ( P < 0.001) and \u03b1-synuclein ( P < 0.01) and tripled for CaM-1 ( P < 0.001) in the MSG-treated grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-25211",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25211,
+      "sentence": "The expression of mRNA was doubled for caspase-3 ( P < 0.001) and \u03b1-synuclein ( P < 0.01) and tripled for CaM-1 ( P < 0.001) in the MSG-treated group compared with the control group.",
+      "context_window": "0.001) and \u03b1-synuclein ( P < 0.01) and tripled for CaM-1 ( P < 0.001) in the MSG-treated group compared with the control group.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-25593",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25593,
+      "sentence": "Specifically, Vit D and/or N-3 PUFAs treatment significantly decreased caspase-3 expression ( P < 0.001) and \u03b1-synuclein expression ( P < 0.001) for both groups when compared to the MSG group.",
+      "context_window": "As treatment significantly decreased caspase-3 expression ( P < 0.001) and \u03b1-synuclein expression ( P < 0.001) for both groups wh",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-25633",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25633,
+      "sentence": "Specifically, Vit D and/or N-3 PUFAs treatment significantly decreased caspase-3 expression ( P < 0.001) and \u03b1-synuclein expression ( P < 0.001) for both groups when compared to the MSG group.",
+      "context_window": "pase-3 expression ( P < 0.001) and \u03b1-synuclein expression ( P < 0.001) for both groups when compared to the MSG group. For CaM-1,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-25775",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25775,
+      "sentence": "For CaM-1, the reduction was significant with both Vit D and combination therapy ( P < 0.001), as well as with N-3 PUFAs alone ( P < 0.05).",
+      "context_window": "n was significant with both Vit D and combination therapy ( P < 0.001), as well as with N-3 PUFAs alone ( P < 0.05). Notably, N-3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-25821",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25821,
+      "sentence": "For CaM-1, the reduction was significant with both Vit D and combination therapy ( P < 0.001), as well as with N-3 PUFAs alone ( P < 0.05).",
+      "context_window": "ion therapy ( P < 0.001), as well as with N-3 PUFAs alone ( P < 0.05). Notably, N-3 PUFA-treated rats exhibited a significantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-25936",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25936,
+      "sentence": "Notably, N-3 PUFA-treated rats exhibited a significantly higher level of CaM-1than Vit D-treated rats ( P < 0.05).",
+      "context_window": "ignificantly higher level of CaM-1than Vit D-treated rats ( P < 0.05). However, there was no significant difference in the effec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-26095",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26095,
+      "sentence": "Vit D) on either caspase-3 or \u03b1-synuclein ( P > 0.05).",
+      "context_window": "(N-3 PUFAs vs. Vit D) on either caspase-3 or \u03b1-synuclein ( P > 0.05). Similarly, compared with that of combination therapy, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-26311",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26311,
+      "sentence": "Similarly, compared with that of combination therapy, there was no significant difference in the impact of individual Vit D or N-3 PUFA treatments on the hippocampal mRNA expression of these three genes ( P > 0.05) for all.",
+      "context_window": "s on the hippocampal mRNA expression of these three genes ( P > 0.05) for all. Representation of changes in rat hippocampus mRN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-n-26831",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26831,
+      "sentence": "The data are expressed as the means \u00b1 SEMs ( n = 10 per group).",
+      "context_window": "in D and N-3). The data are expressed as the means \u00b1 SEMs ( n = 10 per group). Symbols above individual bars indicate a signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-27299",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27299,
+      "sentence": "On the other hand, one-way ANOVA revealed statistically significant differences in VDR expression across experimental groups ( F (4, 11) = 35.91, P < 0.001).",
+      "context_window": "expression across experimental groups ( F (4, 11) = 35.91, P < 0.001). Although MSG administration did not significantly alter h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-27444",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27444,
+      "sentence": "Although MSG administration did not significantly alter hippocampal VDR expression levels compared with those in the control group ( P > 0.05), the Vit D treatment and combination therapy groups presented substantial increases in VDR expression compared with the MSG group and the control group (fold change = 4.3 and 4.6 for treatments respectively, P < 0.001 for both).",
+      "context_window": "xpression levels compared with those in the control group ( P > 0.05), the Vit D treatment and combination therapy groups presen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-27662",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27662,
+      "sentence": "Although MSG administration did not significantly alter hippocampal VDR expression levels compared with those in the control group ( P > 0.05), the Vit D treatment and combination therapy groups presented substantial increases in VDR expression compared with the MSG group and the control group (fold change = 4.3 and 4.6 for treatments respectively, P < 0.001 for both).",
+      "context_window": "oup (fold change = 4.3 and 4.6 for treatments respectively, P < 0.001 for both). Interestingly, treatment with N-3 PUFAs alone al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-27803",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27803,
+      "sentence": "Interestingly, treatment with N-3 PUFAs alone also increased VDR expression prominently, showing a fold change of 2.9 ( P < 0.01) compared with MSG and the control groups.",
+      "context_window": "VDR expression prominently, showing a fold change of 2.9 ( P < 0.01) compared with MSG and the control groups. Furthermore, rat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-27985",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27985,
+      "sentence": "Furthermore, rats treated with Vit D or combination therapy presented higher VDR levels than those treated with N-3 PUFAs alone ( P < 0.05, P < 0.01) (Fig.",
+      "context_window": "higher VDR levels than those treated with N-3 PUFAs alone ( P < 0.05, P < 0.01) (Fig. 9 A).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-p-27995",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27995,
+      "sentence": "Furthermore, rats treated with Vit D or combination therapy presented higher VDR levels than those treated with N-3 PUFAs alone ( P < 0.05, P < 0.01) (Fig.",
+      "context_window": "levels than those treated with N-3 PUFAs alone ( P < 0.05, P < 0.01) (Fig. 9 A).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181329_vitamin_d_and_omega_3_fatty_acids_attenuate_msg_induced_neur-u-9318",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 9318,
+      "sentence": "For example, a DHA-rich diet reduced abnormal \u03b1-synuclein accumulation and its associated negative outcomes 97 , while another study reported that DHA supplementation for 10 months had no significant effect on \u03b1-synuclein levels 98 .",
+      "context_window": ", while another study reported that DHA supplementation for 10 months had no significant effect on \u03b1-synuclein levels 98 . The in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

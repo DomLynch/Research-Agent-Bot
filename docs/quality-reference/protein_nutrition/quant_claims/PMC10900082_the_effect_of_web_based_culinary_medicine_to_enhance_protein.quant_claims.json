@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10900082_the_effect_of_web_based_culinary_medicine_to_enhance_protein",
   "doi": "10.2196/49322",
-  "extracted_at": "2026-05-05T23:37:00+00:00",
+  "extracted_at": "2026-05-07T16:56:30+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 115,
@@ -42,7 +42,7 @@
       "sentence": "No between-group difference in muscle mass ( P =.88) and strength (dominant P =.92 and nondominant P =.72) change from the prestudy visit was detected.",
       "context_window": "23 in the CG. No between-group difference in muscle mass ( P =.88) and strength (dominant P =.92 and nondominant P =.72) chan",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -97,7 +97,7 @@
       "context_window": "difference in protein intake was seen between the groups ( P =.50). A nonsignificant time-by-intervention interaction was obs",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -115,7 +115,7 @@
       "context_window": "vention interaction was observed for daily protein intake ( P =.08). However, a statistically significant time effect was obse",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -151,7 +151,7 @@
       "context_window": "e was significantly higher at weeks 1 to 16 versus week 0 ( P <.05). At week 16, the intake was 16.9 (95% CI 5.77-27.97) g hig",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -368,7 +368,7 @@
       "context_window": "on Examination Survey (NHANES) [ 26 ], revealing that up to 46% are not meeting the protein intake recommendation. Physica",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -800,7 +800,7 @@
       "context_window": "n body composition, physical activity, and diet components (n=47). a Randomized controlled trial (June 2022 to August 2022;",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -817,8 +817,8 @@
       "sentence": "Prestudy participant characteristics in body composition, physical activity, and diet components (n=47).\n\na Randomized controlled trial (June 2022 to August 2022; Texas Tech University Nutrition and Metabolic Health Initiative) evaluating the effect of a web-based culinary medicine intervention on protein intake, cooking effectiveness, muscle strength, muscle mass, and physical activity in an older adult population aged 65 years and older.\n\nb CMG: culinary medicine intervention group.\n\nc CG: control group.\n\nd N/A: not applicable.",
       "context_window": "ss, and physical activity in an older adult population aged 65 years and older. b CMG: culinary medicine intervention group. c",
       "claim_role": "population",
-      "endpoint": "muscle strength",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -835,10 +835,10 @@
       "sentence": "There was no between-group difference in the muscle mass change from the prestudy visit ( P =.88; Table 2 ).",
       "context_window": "ference in the muscle mass change from the prestudy visit ( P =.88; Table 2 ). Using the EWGSOP sarcopenia diagnosis [ 61 ], 2",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10900082_the_effect_of_web_based_culinary_medicine_to_enhance_protein-pct-2656",
@@ -871,7 +871,7 @@
       "sentence": "Using the EWGSOP sarcopenia diagnosis [ 61 ], 21% (5/24) of the CMG and 26% (6/23) of the CG had low muscle mass at the prestudy visit.",
       "context_window": "GSOP sarcopenia diagnosis [ 61 ], 21% (5/24) of the CMG and 26% (6/23) of the CG had low muscle mass at the prestudy visit.",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -889,10 +889,10 @@
       "sentence": "At the poststudy visit, 21% (5/24) of the CMG and 22% (5/23) of the CG had low muscle mass.",
       "context_window": "muscle mass at the prestudy visit. At the poststudy visit, 21% (5/24) of the CMG and 22% (5/23) of the CG had low muscle m",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10900082_the_effect_of_web_based_culinary_medicine_to_enhance_protein-pct-2796",
@@ -907,10 +907,10 @@
       "sentence": "At the poststudy visit, 21% (5/24) of the CMG and 22% (5/23) of the CG had low muscle mass.",
       "context_window": "dy visit. At the poststudy visit, 21% (5/24) of the CMG and 22% (5/23) of the CG had low muscle mass. Mean muscle mass and",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10900082_the_effect_of_web_based_culinary_medicine_to_enhance_protein-n-2919",
@@ -1556,7 +1556,7 @@
       "context_window": "observed for daily protein intake ( Figure 2 and Table 3 ; P =.08). There was also no statistically significant difference in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1574,7 +1574,7 @@
       "context_window": "nt difference in protein intake between the interventions ( P =.50). However, a statistically significant time effect was obse",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1610,7 +1610,7 @@
       "context_window": "e was significantly higher at weeks 1 to 16 versus week 0 ( P <.05) in the cohort. At week 16, protein intake was 16.9 (95% CI",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1629,7 +1629,7 @@
       "context_window": "P <.05) in the cohort. At week 16, protein intake was 16.9 (95% CI 5.77-27.97) g higher than that at the prestudy visit. Mean (SD) daily",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1971,7 +1971,7 @@
       "context_window": "e was significantly higher at weeks 1 to 16 versus week 0 ( P <.05). At week 16, protein intake was 16.9 (95% CI 5.77-27.97) g",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1990,7 +1990,7 @@
       "context_window": "rsus week 0 ( P <.05). At week 16, protein intake was 16.9 (95% CI 5.77-27.97) g higher than that at the prestudy visit. This result indi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2007,7 +2007,7 @@
       "sentence": "The CMG and the CG had blank answers for 15.4% (63/408) and 12.5% (49/391) of their questions, respectively, suggesting that their intake could have been higher and explained how their muscle mass was overall maintained.",
       "context_window": "onresponse [ 62 ]. The CMG and the CG had blank answers for 15.4% (63/408) and 12.5% (49/391) of their questions, respectivel",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2025,7 +2025,7 @@
       "sentence": "The CMG and the CG had blank answers for 15.4% (63/408) and 12.5% (49/391) of their questions, respectively, suggesting that their intake could have been higher and explained how their muscle mass was overall maintained.",
       "context_window": "The CMG and the CG had blank answers for 15.4% (63/408) and 12.5% (49/391) of their questions, respectively, suggesting that",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2368,7 +2368,7 @@
       "context_window": "ledge, awareness, and attitude toward protein intake within 4 months. In addition, the feedback from the participants can be app",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2566,7 +2566,7 @@
       "context_window": "ledge, awareness, and attitude toward protein intake within 4 months. In addition, the feedback from the participants can be app",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },

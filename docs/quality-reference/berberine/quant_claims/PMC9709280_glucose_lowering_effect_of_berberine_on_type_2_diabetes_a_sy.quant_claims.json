@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9709280_glucose_lowering_effect_of_berberine_on_type_2_diabetes_a_sy",
   "doi": "10.3389/fphar.2022.1015045",
-  "extracted_at": "2026-05-05T22:22:53+00:00",
+  "extracted_at": "2026-05-07T16:58:13+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 47,
@@ -24,7 +24,7 @@
       "context_window": "(2hPBG), by calculating weighted mean differences (WMD) and 95% confidence interval (CI). To assess the safety of berberine",
       "claim_role": "unknown",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -41,10 +41,10 @@
       "sentence": "To assess the safety of berberine, we analyzed the incidence of total adverse events and hypoglycemia by calculating relative risk (RR) and 95% CI.",
       "context_window": "ents and hypoglycemia by calculating relative risk (RR) and 95% CI. Results: Thirty-seven studies involving 3,048 patients",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9709280_glucose_lowering_effect_of_berberine_on_type_2_diabetes_a_sy-u-1692",
@@ -60,7 +60,7 @@
       "context_window": "The results showed that berberine could reduce FPG (WMD = -0.82 mmol/L, 95% CI (-0.95, -0.70)), HbA1c (WMD = -0.63%, 95% CI (-0.",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -78,7 +78,7 @@
       "context_window": "showed that berberine could reduce FPG (WMD = -0.82 mmol/L, 95% CI (-0.95, -0.70)), HbA1c (WMD = -0.63%, 95% CI (-0.72, -0.",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -96,7 +96,7 @@
       "context_window": "(WMD = -0.82 mmol/L, 95% CI (-0.95, -0.70)), HbA1c (WMD = -0.63%, 95% CI (-0.72, -0.53)), and 2hPBG (WMD = -1.16 mmol/L, 95%",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "-0.82 mmol/L, 95% CI (-0.95, -0.70)), HbA1c (WMD = -0.63%, 95% CI (-0.72, -0.53)), and 2hPBG (WMD = -1.16 mmol/L, 95% CI (",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "1c (WMD = -0.63%, 95% CI (-0.72, -0.53)), and 2hPBG (WMD = -1.16 mmol/L, 95% CI (-1.36, -0.96)), with all results being statistic",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -150,7 +150,7 @@
       "context_window": "63%, 95% CI (-0.72, -0.53)), and 2hPBG (WMD = -1.16 mmol/L, 95% CI (-1.36, -0.96)), with all results being statistically si",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -167,8 +167,8 @@
       "sentence": "In addition, berberine alone or in combination with oral hypoglycemic agents (OHAs) in the treatment of T2DM did not significantly increase the incidence of total adverse events (RR = 0.73, 95% CI (0.55, 0.97), p = 0.03) and the risk of hypoglycemia (RR = 0.48, 95% CI (0.21, 1.08), p = 0.08).",
       "context_window": "gnificantly increase the incidence of total adverse events (RR = 0.73, 95% CI (0.55, 0.97), p = 0.03) and the risk of hypoglycemi",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -185,8 +185,8 @@
       "sentence": "In addition, berberine alone or in combination with oral hypoglycemic agents (OHAs) in the treatment of T2DM did not significantly increase the incidence of total adverse events (RR = 0.73, 95% CI (0.55, 0.97), p = 0.03) and the risk of hypoglycemia (RR = 0.48, 95% CI (0.21, 1.08), p = 0.08).",
       "context_window": "increase the incidence of total adverse events (RR = 0.73, 95% CI (0.55, 0.97), p = 0.03) and the risk of hypoglycemia (RR",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -203,8 +203,8 @@
       "sentence": "In addition, berberine alone or in combination with oral hypoglycemic agents (OHAs) in the treatment of T2DM did not significantly increase the incidence of total adverse events (RR = 0.73, 95% CI (0.55, 0.97), p = 0.03) and the risk of hypoglycemia (RR = 0.48, 95% CI (0.21, 1.08), p = 0.08).",
       "context_window": "ce of total adverse events (RR = 0.73, 95% CI (0.55, 0.97), p = 0.03) and the risk of hypoglycemia (RR = 0.48, 95% CI (0.21, 1.0",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -221,8 +221,8 @@
       "sentence": "In addition, berberine alone or in combination with oral hypoglycemic agents (OHAs) in the treatment of T2DM did not significantly increase the incidence of total adverse events (RR = 0.73, 95% CI (0.55, 0.97), p = 0.03) and the risk of hypoglycemia (RR = 0.48, 95% CI (0.21, 1.08), p = 0.08).",
       "context_window": "5% CI (0.55, 0.97), p = 0.03) and the risk of hypoglycemia (RR = 0.48, 95% CI (0.21, 1.08), p = 0.08). Conclusion: Berberine has",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -239,8 +239,8 @@
       "sentence": "In addition, berberine alone or in combination with oral hypoglycemic agents (OHAs) in the treatment of T2DM did not significantly increase the incidence of total adverse events (RR = 0.73, 95% CI (0.55, 0.97), p = 0.03) and the risk of hypoglycemia (RR = 0.48, 95% CI (0.21, 1.08), p = 0.08).",
       "context_window": ", 0.97), p = 0.03) and the risk of hypoglycemia (RR = 0.48, 95% CI (0.21, 1.08), p = 0.08). Conclusion: Berberine has a gl",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -257,8 +257,8 @@
       "sentence": "In addition, berberine alone or in combination with oral hypoglycemic agents (OHAs) in the treatment of T2DM did not significantly increase the incidence of total adverse events (RR = 0.73, 95% CI (0.55, 0.97), p = 0.03) and the risk of hypoglycemia (RR = 0.48, 95% CI (0.21, 1.08), p = 0.08).",
       "context_window": "d the risk of hypoglycemia (RR = 0.48, 95% CI (0.21, 1.08), p = 0.08). Conclusion: Berberine has a glucose-lowering effect, whi",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1481,8 +1481,8 @@
       "sentence": "Data revealed that berberine alone or in combination with OHAs in the treatment of T2DM had a lower incidence of total adverse events and appeared to have better safety compared to the control group (fixed effects model, RR = 0.73, 95% CI (0.55, 0.97), p = 0.03).",
       "context_window": "safety compared to the control group (fixed effects model, RR = 0.73, 95% CI (0.55, 0.97), p = 0.03). The result was of statisti",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1499,8 +1499,8 @@
       "sentence": "Data revealed that berberine alone or in combination with OHAs in the treatment of T2DM had a lower incidence of total adverse events and appeared to have better safety compared to the control group (fixed effects model, RR = 0.73, 95% CI (0.55, 0.97), p = 0.03).",
       "context_window": "pared to the control group (fixed effects model, RR = 0.73, 95% CI (0.55, 0.97), p = 0.03). The result was of statistically",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1517,8 +1517,8 @@
       "sentence": "Data revealed that berberine alone or in combination with OHAs in the treatment of T2DM had a lower incidence of total adverse events and appeared to have better safety compared to the control group (fixed effects model, RR = 0.73, 95% CI (0.55, 0.97), p = 0.03).",
       "context_window": "group (fixed effects model, RR = 0.73, 95% CI (0.55, 0.97), p = 0.03). The result was of statistically significance without sign",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "adverse events",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1572,9 +1572,9 @@
       "context_window": "n the experimental and control groups (fixed effects model, RR = 0.48, 95% CI (0.21, 1.08), p = 0.08). There was no significant h",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9709280_glucose_lowering_effect_of_berberine_on_type_2_diabetes_a_sy-pct-14669",
@@ -1590,9 +1590,9 @@
       "context_window": "imental and control groups (fixed effects model, RR = 0.48, 95% CI (0.21, 1.08), p = 0.08). There was no significant hetero",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9709280_glucose_lowering_effect_of_berberine_on_type_2_diabetes_a_sy-p-14690",
@@ -1608,9 +1608,9 @@
       "context_window": "roups (fixed effects model, RR = 0.48, 95% CI (0.21, 1.08), p = 0.08). There was no significant heterogeneity (I 2 = 23% < 50%,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9709280_glucose_lowering_effect_of_berberine_on_type_2_diabetes_a_sy-pct-14747",

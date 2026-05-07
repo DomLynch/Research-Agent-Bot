@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_1161_circulationaha_111_062653_association_of_plasma_phospholipid_long_chain_omega_3_fatty",
+  "doi": "10.1161/circulationaha.111.062653",
+  "extracted_at": "2026-05-07T19:33:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_circulationaha_111_062653_association_of_plasma_phospholipid_long_chain_omega_3_fatty-u-399",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 399,
+      "sentence": "METHODS AND RESULTS: Among 3326 US men and women \u226565 years of age and free of AF or heart failure at baseline, plasma phospholipid levels of eicosapentaenoic acid, docosapentaenoic acid, and docosahexaenoic acid were measured at baseline by use of standardized methods.",
+      "context_window": "exposure. METHODS AND RESULTS: Among 3326 US men and women \u226565 years of age and free of AF or heart failure at baseline, plasma",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_111_062653_association_of_plasma_phospholipid_long_chain_omega_3_fatty-pct-994",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 994,
+      "sentence": "In multivariable Cox models adjusted for other risk factors, the relative risk in the top versus lowest quartile of total n-3 PUFAs (eicosapentaenoic acid+docosapentaenoic acid+docosahexaenoic acid) levels was 0.71 (95% confidence interval, 0.57-0.89; P for trend=0.004) and of DHA levels was 0.77 (95% confidence interval, 0.62-0.96; P for trend=0.01).",
+      "context_window": "ocosapentaenoic acid+docosahexaenoic acid) levels was 0.71 (95% confidence interval, 0.57-0.89; P for trend=0.004) and of D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_circulationaha_111_062653_association_of_plasma_phospholipid_long_chain_omega_3_fatty-pct-1077",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1077,
+      "sentence": "In multivariable Cox models adjusted for other risk factors, the relative risk in the top versus lowest quartile of total n-3 PUFAs (eicosapentaenoic acid+docosapentaenoic acid+docosahexaenoic acid) levels was 0.71 (95% confidence interval, 0.57-0.89; P for trend=0.004) and of DHA levels was 0.77 (95% confidence interval, 0.62-0.96; P for trend=0.01).",
+      "context_window": ", 0.57-0.89; P for trend=0.004) and of DHA levels was 0.77 (95% confidence interval, 0.62-0.96; P for trend=0.01). Eicosape",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

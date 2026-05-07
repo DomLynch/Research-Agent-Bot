@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life",
   "doi": "10.1136/bmj.e4547",
-  "extracted_at": "2026-05-05T21:59:10+00:00",
+  "extracted_at": "2026-05-07T16:57:32+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 25,
@@ -41,7 +41,7 @@
       "sentence": "Participants Participants aged 70 years or older who had two or more falls or one injurious fall in past 12 months, recruited from Veteran\u2019s Affairs databases and general practice databases.",
       "context_window": "opolitan Sydney, Australia. Participants Participants aged 70 years or older who had two or more falls or one injurious fall in",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -59,7 +59,7 @@
       "sentence": "Participants Participants aged 70 years or older who had two or more falls or one injurious fall in past 12 months, recruited from Veteran\u2019s Affairs databases and general practice databases.",
       "context_window": "der who had two or more falls or one injurious fall in past 12 months, recruited from Veteran\u2019s Affairs databases and general pra",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -78,7 +78,7 @@
       "context_window": ": Lifestyle integrated Functional Exercise (LiFE) approach (n=107; taught principles of balance and strength training and int",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -96,7 +96,7 @@
       "context_window": "d activities into everyday routines), structured programme (n=105; exercises for balance and lower limb strength, done three",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "strength, done three times a week), sham control programme (n=105; gentle exercise). LiFE and structured groups received five",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -149,10 +149,10 @@
       "sentence": "Main outcome measures Primary measure: rate of falls over 12 months, collected by self report.",
       "context_window": "Main outcome measures Primary measure: rate of falls over 12 months, collected by self report. Secondary measures: static and d",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-u-1889",
@@ -167,10 +167,10 @@
       "sentence": "Results After 12 months\u2019 follow-up, we recorded 172, 193, and 224 falls in the LiFE, structured exercise, and control groups, respectively.",
       "context_window": "nditure; body mass index; and fat free mass. Results After 12 months\u2019 follow-up, we recorded 172, 193, and 224 falls in the LiFE",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-2207",
@@ -185,10 +185,10 @@
       "sentence": "We saw a significant reduction of 31% in the rate of falls for the LiFE programme compared with controls (incidence rate ratio 0.69 (95% confidence interval 0.48 to 0.99)); the corresponding difference between the structured group and controls was non-significant (0.81 (0.56 to 1.17)).",
       "context_window": ".28 in the control group. We saw a significant reduction of 31% in the rate of falls for the LiFE programme compared with c",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-2306",
@@ -203,10 +203,10 @@
       "sentence": "We saw a significant reduction of 31% in the rate of falls for the LiFE programme compared with controls (incidence rate ratio 0.69 (95% confidence interval 0.48 to 0.99)); the corresponding difference between the structured group and controls was non-significant (0.81 (0.56 to 1.17)).",
       "context_window": "rogramme compared with controls (incidence rate ratio 0.69 (95% confidence interval 0.48 to 0.99)); the corresponding diffe",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-719",
@@ -222,7 +222,7 @@
       "context_window": "tinely engage in strength training remains low at less than 10% 5 and possibly much lower for activities that challenge bal",
       "claim_role": "background",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -240,7 +240,7 @@
       "context_window": "activities that challenge balance. Those people older than 70 years who do engage in balance and resistance training are much m",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -257,8 +257,8 @@
       "sentence": "In a small pilot study, 9 this alternate approach to traditional exercise had high potential to reduce falls (incidence rate ratio 0.23, 95% confidence interval 0.07 to 0.83), and a larger trial was needed to confirm the new approach\u2019s effectiveness compared with placebo and to determine mechanisms of benefit.",
       "context_window": "high potential to reduce falls (incidence rate ratio 0.23, 95% confidence interval 0.07 to 0.83), and a larger trial was n",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "falls",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -275,8 +275,8 @@
       "sentence": "We hypothesised that a lifestyle integrated approach (using the LiFE programme) to balance and strength training would be more effective than a sham control programme (comprising of gentle exercise) in reducing falls in high risk people aged 70 years and over and living at home over one year.",
       "context_window": "gentle exercise) in reducing falls in high risk people aged 70 years and over and living at home over one year. We further hypot",
       "claim_role": "population",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "strength training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -311,7 +311,7 @@
       "sentence": "Inclusion criteria were men and women aged 70 years or older and who had two or more falls or one injurious fall in the past 12 months, which was determined by self report.",
       "context_window": "and war widows. Inclusion criteria were men and women aged 70 years or older and who had two or more falls or one injurious fal",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -329,7 +329,7 @@
       "sentence": "Inclusion criteria were men and women aged 70 years or older and who had two or more falls or one injurious fall in the past 12 months, which was determined by self report.",
       "context_window": "who had two or more falls or one injurious fall in the past 12 months, which was determined by self report. Exclusion criteria we",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -438,9 +438,9 @@
       "context_window": "the control group (\u03b2=0.20, \u03b1=0.05). We estimated that about 60% of control participants would have at least one fall during",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-9005",
@@ -455,10 +455,10 @@
       "sentence": "This estimate did not include dropout rates, which was 10% for falls data in our study, indicating a sample of 363 participants.",
       "context_window": "ted. This estimate did not include dropout rates, which was 10% for falls data in our study, indicating a sample of 363 par",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-9103",
@@ -510,9 +510,9 @@
       "context_window": "rmine any differences. To establish exercise maintenance at 12 months, we examined adherence in the final (12th) month of follow-",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-226",
@@ -527,10 +527,10 @@
       "sentence": "The major reason for not including people in the trial was that they did not meet the inclusion criteria for previous multiple falls in the past year or an injurious fall (62.2%, n=370).",
       "context_window": "vious multiple falls in the past year or an injurious fall (62.2%, n=370). Other reasons were that participants were unable t",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-n-233",
@@ -545,10 +545,10 @@
       "sentence": "The major reason for not including people in the trial was that they did not meet the inclusion criteria for previous multiple falls in the past year or an injurious fall (62.2%, n=370).",
       "context_window": "ultiple falls in the past year or an injurious fall (62.2%, n=370). Other reasons were that participants were unable to indep",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-317",
@@ -564,7 +564,7 @@
       "context_window": "re that participants were unable to independently ambulate (8.7%, n=52), had an illness or condition precluding exercise (7.",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -582,7 +582,7 @@
       "context_window": "t participants were unable to independently ambulate (8.7%, n=52), had an illness or condition precluding exercise (7.6%, n=",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -600,7 +600,7 @@
       "context_window": "7%, n=52), had an illness or condition precluding exercise (7.6%, n=45), were in a hostel or nursing home (6.4%, n=38), had",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -618,7 +618,7 @@
       "context_window": "52), had an illness or condition precluding exercise (7.6%, n=45), were in a hostel or nursing home (6.4%, n=38), had a neur",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -636,7 +636,7 @@
       "context_window": "ng exercise (7.6%, n=45), were in a hostel or nursing home (6.4%, n=38), had a neurological condition influencing gait or mo",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -654,7 +654,7 @@
       "context_window": "rcise (7.6%, n=45), were in a hostel or nursing home (6.4%, n=38), had a neurological condition influencing gait or mobility",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -672,7 +672,7 @@
       "context_window": "had a neurological condition influencing gait or mobility (6.4%, n=38), were cognitively impaired (3.9%, n=23), were vision",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -690,7 +690,7 @@
       "context_window": "neurological condition influencing gait or mobility (6.4%, n=38), were cognitively impaired (3.9%, n=23), were vision impai",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -708,7 +708,7 @@
       "context_window": "g gait or mobility (6.4%, n=38), were cognitively impaired (3.9%, n=23), were vision impaired or deaf (2.7%, n=16), were alr",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -726,7 +726,7 @@
       "context_window": "or mobility (6.4%, n=38), were cognitively impaired (3.9%, n=23), were vision impaired or deaf (2.7%, n=16), were already i",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -744,7 +744,7 @@
       "context_window": "tively impaired (3.9%, n=23), were vision impaired or deaf (2.7%, n=16), were already involved in fall prevention programmes",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -762,7 +762,7 @@
       "context_window": "impaired (3.9%, n=23), were vision impaired or deaf (2.7%, n=16), were already involved in fall prevention programmes (2.0%",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -780,7 +780,7 @@
       "context_window": "n=16), were already involved in fall prevention programmes (2.0%, n=12), or lived outside the metropolitan area (0.2%, n=1).",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -798,7 +798,7 @@
       "context_window": "were already involved in fall prevention programmes (2.0%, n=12), or lived outside the metropolitan area (0.2%, n=1). The s",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -816,7 +816,7 @@
       "context_window": "ammes (2.0%, n=12), or lived outside the metropolitan area (0.2%, n=1). The sample recruited (mean age 83.4 years) was a hig",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -834,7 +834,7 @@
       "context_window": "(2.0%, n=12), or lived outside the metropolitan area (0.2%, n=1). The sample recruited (mean age 83.4 years) was a high ris",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -851,10 +851,10 @@
       "sentence": "The sample recruited (mean age 83.4 years) was a high risk group, with 60% (n=191) reporting a history of recurrent falls and just over 90% (n=290) having had an injurious fall in the past year.",
       "context_window": "tropolitan area (0.2%, n=1). The sample recruited (mean age 83.4 years) was a high risk group, with 60% (n=191) reporting a histor",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-783",
@@ -869,10 +869,10 @@
       "sentence": "The sample recruited (mean age 83.4 years) was a high risk group, with 60% (n=191) reporting a history of recurrent falls and just over 90% (n=290) having had an injurious fall in the past year.",
       "context_window": "recruited (mean age 83.4 years) was a high risk group, with 60% (n=191) reporting a history of recurrent falls and just ove",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-n-788",
@@ -887,10 +887,10 @@
       "sentence": "The sample recruited (mean age 83.4 years) was a high risk group, with 60% (n=191) reporting a history of recurrent falls and just over 90% (n=290) having had an injurious fall in the past year.",
       "context_window": "ited (mean age 83.4 years) was a high risk group, with 60% (n=191) reporting a history of recurrent falls and just over 90% (",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-848",
@@ -905,10 +905,10 @@
       "sentence": "The sample recruited (mean age 83.4 years) was a high risk group, with 60% (n=191) reporting a history of recurrent falls and just over 90% (n=290) having had an injurious fall in the past year.",
       "context_window": "n=191) reporting a history of recurrent falls and just over 90% (n=290) having had an injurious fall in the past year. Flo",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-n-853",
@@ -923,10 +923,10 @@
       "sentence": "The sample recruited (mean age 83.4 years) was a high risk group, with 60% (n=191) reporting a history of recurrent falls and just over 90% (n=290) having had an injurious fall in the past year.",
       "context_window": ") reporting a history of recurrent falls and just over 90% (n=290) having had an injurious fall in the past year. Flow chart",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-n-1077",
@@ -942,9 +942,9 @@
       "context_window": "ticipants who were not exercising in the final month (LiFE, n=10; structured, n=18; control, n=19) We recruited and randomi",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-n-1095",
@@ -960,9 +960,9 @@
       "context_window": "not exercising in the final month (LiFE, n=10; structured, n=18; control, n=19) We recruited and randomised 317 people fro",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-n-1110",
@@ -978,9 +978,9 @@
       "context_window": "in the final month (LiFE, n=10; structured, n=18; control, n=19) We recruited and randomised 317 people from February 2006",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-1341",
@@ -1049,8 +1049,8 @@
       "sentence": "After 12 months of follow-up, we recorded 172 falls in the LiFE group, 193 in the structured exercise group, and 224 falls in the control group.",
       "context_window": "ants unless stated otherwise SD=standard deviation. After 12 months of follow-up, we recorded 172 falls in the LiFE group, 193",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "control",
+      "endpoint": "falls",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1085,10 +1085,10 @@
       "sentence": "We recorded a clinically important reduction of 31% in the rate of falls for participants in the LiFE programme compared with the control programme (incidence rate ratio 0.69 (95% confidence interval 0.48 to 0.99), n=212).",
       "context_window": "trol group. We recorded a clinically important reduction of 31% in the rate of falls for participants in the LiFE programme",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-2500",
@@ -1103,10 +1103,10 @@
       "sentence": "We recorded a clinically important reduction of 31% in the rate of falls for participants in the LiFE programme compared with the control programme (incidence rate ratio 0.69 (95% confidence interval 0.48 to 0.99), n=212).",
       "context_window": "ared with the control programme (incidence rate ratio 0.69 (95% confidence interval 0.48 to 0.99), n=212). We did not see a",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-n-2539",
@@ -1121,10 +1121,10 @@
       "sentence": "We recorded a clinically important reduction of 31% in the rate of falls for participants in the LiFE programme compared with the control programme (incidence rate ratio 0.69 (95% confidence interval 0.48 to 0.99), n=212).",
       "context_window": "nce rate ratio 0.69 (95% confidence interval 0.48 to 0.99), n=212). We did not see a significant reduction in the fall rate f",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-n-2706",
@@ -1140,9 +1140,9 @@
       "context_window": "e compared with the control programme (0.81 (0.56 to 1.17), n=210). Tables 2 to 5 present the secondary measures summarising",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-p-4106",
@@ -1158,9 +1158,9 @@
       "context_window": "trospective Tukey analysis between LiFE and control groups, P=0.02. \u00b6Skewed data transformed before analysis. Outcomes for o",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-u-4692",
@@ -1212,9 +1212,9 @@
       "context_window": "he structured programmed showed a significant group effect (P=0.01) with the lowest adherence. Retrospective analysis confirme",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-p-7569",
@@ -1230,7 +1230,7 @@
       "context_window": "n either the LiFE programme (mean difference 0.12, t =2.82, P<0.01) or the control programme (0.13, 2.66, P<0.01). Although ea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1248,7 +1248,7 @@
       "context_window": ".12, t =2.82, P<0.01) or the control programme (0.13, 2.66, P<0.01). Although each programme had similar numbers of participan",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1284,9 +1284,9 @@
       "context_window": "six months. Data are no (%) of participants There were 68 (64%) participants exercising at 12 months in the LiFE programme",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-u-8015",
@@ -1302,9 +1302,9 @@
       "context_window": "articipants There were 68 (64%) participants exercising at 12 months in the LiFE programme (seven (6.5%) did not return records",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-8055",
@@ -1320,9 +1320,9 @@
       "context_window": "pants exercising at 12 months in the LiFE programme (seven (6.5%) did not return records but provided self reports), 56 (53%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-8116",
@@ -1338,9 +1338,9 @@
       "context_window": ".5%) did not return records but provided self reports), 56 (53%, including 12 (11.4%) self reports) in the structured progr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-8135",
@@ -1356,9 +1356,9 @@
       "context_window": "records but provided self reports), 56 (53%, including 12 (11.4%) self reports) in the structured programme, and 56 (53%, in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-8193",
@@ -1374,9 +1374,9 @@
       "context_window": "(11.4%) self reports) in the structured programme, and 56 (53%, including seven (6.7%) self reports) in the control progra",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-8215",
@@ -1392,9 +1392,9 @@
       "context_window": "in the structured programme, and 56 (53%, including seven (6.7%) self reports) in the control programme. Of 61 LiFE partici",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-u-8594",
@@ -1410,7 +1410,7 @@
       "context_window": "gramme who returned exercise records and were exercising at 12 months, 43 (98%) were still doing the balance exercises, 26 (59%)",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1428,7 +1428,7 @@
       "context_window": "rned exercise records and were exercising at 12 months, 43 (98%) were still doing the balance exercises, 26 (59%) were doin",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1446,7 +1446,7 @@
       "context_window": "onths, 43 (98%) were still doing the balance exercises, 26 (59%) were doing strength exercises with rod weights (weight ran",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1464,7 +1464,7 @@
       "context_window": "e doing strength exercises with rod weights (weight range 1-6.5 kg, median 5 kg), and four (9%) were doing isometric strength",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1482,7 +1482,7 @@
       "context_window": "h exercises with rod weights (weight range 1-6.5 kg, median 5 kg), and four (9%) were doing isometric strength exercises.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1500,7 +1500,7 @@
       "context_window": "rod weights (weight range 1-6.5 kg, median 5 kg), and four (9%) were doing isometric strength exercises.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1517,8 +1517,8 @@
       "sentence": "It was designed to reduce fall risk and resulted in a clinically important 31% reduction in the rate of falls compared with the control programme, which involved gentle sham exercise.",
       "context_window": "to reduce fall risk and resulted in a clinically important 31% reduction in the rate of falls compared with the control pr",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1535,10 +1535,10 @@
       "sentence": "A 30% reduction in falls is similar to most interventions currently recommended for fall prevention in clinical guidelines.",
       "context_window": "e control programme, which involved gentle sham exercise. A 30% reduction in falls is similar to most interventions current",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-603",
@@ -1553,7 +1553,7 @@
       "sentence": "The structured lower limb strength and balance exercises, taught over a similar time frame and prescribed three times a week, did not show significant results, with a 19% reduction in the rate of falls compared with the controls.",
       "context_window": "hree times a week, did not show significant results, with a 19% reduction in the rate of falls compared with the controls.",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
+      "endpoint": "falls",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1590,9 +1590,9 @@
       "context_window": "FE programme remained superior. All programmes exceeded the 42% adherence reported in the New Zealand Otago trial, which te",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3413733_integration_of_balance_and_strength_training_into_daily_life-pct-8291",
@@ -1625,8 +1625,8 @@
       "sentence": "Balance and strength training is known to reduce falls in older adults\n\nHowever, less than 10% of older people routinely engage in strength training and is probably lower for activities that challenge balance\n\nThe Lifestyle integrated Functional Exercise (LiFE) programme provides an alternative to traditional exercise for older people to reduce falls, to improve function in doing activities and to enhance participation in daily life\n\nThe LiFE programme demonstrates that having an environment that offers some stressors and complexity is beneficial",
       "context_window": "s known to reduce falls in older adults However, less than 10% of older people routinely engage in strength training and i",
       "claim_role": "population",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "strength training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1661,8 +1661,8 @@
       "sentence": "Balance and strength training is known to reduce falls in older adults\n\nHowever, less than 10% of older people routinely engage in strength training and is probably lower for activities that challenge balance\n\nThe Lifestyle integrated Functional Exercise (LiFE) programme provides an alternative to traditional exercise for older people to reduce falls, to improve function in doing activities and to enhance participation in daily life\n\nThe LiFE programme demonstrates that having an environment that offers some stressors and complexity is beneficial",
       "context_window": "s known to reduce falls in older adults However, less than 10% of older people routinely engage in strength training and i",
       "claim_role": "population",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "strength training",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

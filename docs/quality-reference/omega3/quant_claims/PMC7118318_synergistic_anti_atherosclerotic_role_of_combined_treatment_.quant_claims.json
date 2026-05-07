@@ -1,0 +1,1924 @@
+{
+  "paper_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_",
+  "doi": "10.1016/j.heliyon.2020.e03659",
+  "extracted_at": "2026-05-07T19:33:07+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 34,
+    "mean_sd": 37,
+    "sample_size": 14,
+    "unit_value": 8,
+    "p_value": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-732",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 732,
+      "sentence": "CVDs is the leading cause of mortality and morbidity worldwide, more than 80% of all CVD-related deaths occur in low- and middle-income countries [ 7 ].",
+      "context_window": "ading cause of mortality and morbidity worldwide, more than 80% of all CVD-related deaths occur in low- and middle-income c",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-892",
+      "claim_type": "mean_sd",
+      "raw_text": "23 \u00b1 1",
+      "numeric_values": [
+        23.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 892,
+      "sentence": "Rats were housed under controlled room temperature of 23 \u00b1 1 \u00b0C and humidity with 12 h light and dark cycles.",
+      "context_window": "gypt. Rats were housed under controlled room temperature of 23 \u00b1 1 \u00b0C and humidity with 12 h light and dark cycles. The animal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-1418",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1418,
+      "sentence": "After a week of acclimatization, five groups of rats were selected for this study (n = 8 per group).",
+      "context_window": "tization, five groups of rats were selected for this study (n = 8 per group). Group (1): Negative control rats were fed the s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-u-1680",
+      "claim_type": "unit_value",
+      "raw_text": "30mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1680,
+      "sentence": "Rats were administrated a daily oral dose of cholesterol (30mg/0.3 ml olive oil/1 kg animal) and were fed a high fat (lard-based) diet according to the method of Adaramoye et al. [ 39 ] for six consecutive weeks.",
+      "context_window": ". Rats were administrated a daily oral dose of cholesterol (30mg/0.3 ml olive oil/1 kg animal) and were fed a high fat (lard",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "olive oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-u-1702",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1702,
+      "sentence": "Rats were administrated a daily oral dose of cholesterol (30mg/0.3 ml olive oil/1 kg animal) and were fed a high fat (lard-based) diet according to the method of Adaramoye et al. [ 39 ] for six consecutive weeks.",
+      "context_window": "ted a daily oral dose of cholesterol (30mg/0.3 ml olive oil/1 kg animal) and were fed a high fat (lard-based) diet according",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "olive oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-u-1909",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1909,
+      "sentence": "Group (3): atherogenic HC-rats administered a daily oral dose of omega-3 (500 mg/kg body weight) for six consecutive weeks [ 40 ], after stopping HC-induction.",
+      "context_window": "erogenic HC-rats administered a daily oral dose of omega-3 (500 mg/kg body weight) for six consecutive weeks [ 40 ], after sto",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-u-2067",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2067,
+      "sentence": "Group (4): atherogenic HC-rats administered a daily oral dose of CoQ10 (10 mg/kg body weight) for six consecutive weeks [ 41 ], after stopping HC-induction.",
+      "context_window": "therogenic HC-rats administered a daily oral dose of CoQ10 (10 mg/kg body weight) for six consecutive weeks [ 41 ], after sto",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-u-2613",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2613,
+      "sentence": "At the end of the experimental period (12 weeks), all rats were fasted for 12 h.; weighted and anesthetized, 4 mL of blood samples were collected from abdominal aorta, the blood samples were left to clot in clean, dry test tubes for 30 min. at room temperature and then centrifuged at 4000 RPM for 10 min.",
+      "context_window": "c weighing balance. At the end of the experimental period (12 weeks), all rats were fasted for 12 h.; weighted and anesthetized",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-u-2683",
+      "claim_type": "unit_value",
+      "raw_text": "4 mL",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2683,
+      "sentence": "At the end of the experimental period (12 weeks), all rats were fasted for 12 h.; weighted and anesthetized, 4 mL of blood samples were collected from abdominal aorta, the blood samples were left to clot in clean, dry test tubes for 30 min. at room temperature and then centrifuged at 4000 RPM for 10 min.",
+      "context_window": "all rats were fasted for 12 h.; weighted and anesthetized, 4 mL of blood samples were collected from abdominal aorta, the b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-3468",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3468,
+      "sentence": "The left portion of the heart was homogenized for biochemical assay, while the right portion of the heart and aorta were fixed in 10% neutral formalin for histological examination.",
+      "context_window": "hile the right portion of the heart and aorta were fixed in 10% neutral formalin for histological examination. The heart s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-5328",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5328,
+      "sentence": "For light microscopy, the isolated hearts and aortae were cleaned, dried, and fixed in a buffer solution of 10% neutral buffered formalin, the fixed tissues were processed using analytical grade ethanol and xylene treatment and were embedded in paraffin, sectioned to about 5\u03bcm thickness and stained with hematoxylin and eosin (H&E) for general histopathological evaluation [ 54 ].",
+      "context_window": "rtae were cleaned, dried, and fixed in a buffer solution of 10% neutral buffered formalin, the fixed tissues were processed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-6110",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6110,
+      "sentence": "All data were expressed as Mean \u00b1 SE (Standard Error), for n = 8 rats of each group.",
+      "context_window": "All data were expressed as Mean \u00b1 SE (Standard Error), for n = 8 rats of each group. A p -value of less than 0.05 was consid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-u-217",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 217,
+      "sentence": "There seems to be a parabolic rise in body weight from 5-6 weeks, followed by a rapid decline at 7 weeks.",
+      "context_window": "p. There seems to be a parabolic rise in body weight from 5-6 weeks, followed by a rapid decline at 7 weeks. Treatment of HC-ra",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-u-257",
+      "claim_type": "unit_value",
+      "raw_text": "7 weeks",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 257,
+      "sentence": "There seems to be a parabolic rise in body weight from 5-6 weeks, followed by a rapid decline at 7 weeks.",
+      "context_window": "body weight from 5-6 weeks, followed by a rapid decline at 7 weeks. Treatment of HC-rats with omega-3 and/or CoQ10 for six wee",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-661",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 661,
+      "sentence": "Data are presented as mean \u00b1 SE, (n = 8).",
+      "context_window": "erent therapeutic groups. Data are presented as mean \u00b1 SE, (n = 8). Figure 1 The hypocholesterolemic effect of omega-3, CoQ1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-856",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 856,
+      "sentence": "Data are presented as mean \u00b1 SE, (n = 8).",
+      "context_window": "erent therapeutic groups. Data are presented as mean \u00b1 SE, (n = 8). The serum levels of TC, TAG, LDL-C, VLDL-C in HC-rats we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-994",
+      "claim_type": "percentage",
+      "raw_text": "33.6%",
+      "numeric_values": [
+        33.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 994,
+      "sentence": "The serum levels of TC, TAG, LDL-C, VLDL-C in HC-rats were significantly higher than those of control group (113.4, 33.6, 272.8, 33.6%), denoting that high-fat diet feeding for 6-weeks caused hypercholesterolemia in rats.",
+      "context_window": "tly higher than those of control group (113.4, 33.6, 272.8, 33.6%), denoting that high-fat diet feeding for 6-weeks caused hy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-1211",
+      "claim_type": "percentage",
+      "raw_text": "43.3%",
+      "numeric_values": [
+        43.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1211,
+      "sentence": "Treatment of HC-rats with omega-3, CoQ10, and a combination of both significantly decreased these changes for TC (40, 44.5, 43.3%), for TAG (23.3, 10.7, 30.3%), for LDL-C (62.8, 69.8, 65.3%) and for VLDL-C (23.3, 10.8, 30.3%).",
+      "context_window": "oth significantly decreased these changes for TC (40, 44.5, 43.3%), for TAG (23.3, 10.7, 30.3%), for LDL-C (62.8, 69.8, 65.3%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-1240",
+      "claim_type": "percentage",
+      "raw_text": "30.3%",
+      "numeric_values": [
+        30.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1240,
+      "sentence": "Treatment of HC-rats with omega-3, CoQ10, and a combination of both significantly decreased these changes for TC (40, 44.5, 43.3%), for TAG (23.3, 10.7, 30.3%), for LDL-C (62.8, 69.8, 65.3%) and for VLDL-C (23.3, 10.8, 30.3%).",
+      "context_window": "hese changes for TC (40, 44.5, 43.3%), for TAG (23.3, 10.7, 30.3%), for LDL-C (62.8, 69.8, 65.3%) and for VLDL-C (23.3, 10.8,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-1271",
+      "claim_type": "percentage",
+      "raw_text": "65.3%",
+      "numeric_values": [
+        65.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1271,
+      "sentence": "Treatment of HC-rats with omega-3, CoQ10, and a combination of both significantly decreased these changes for TC (40, 44.5, 43.3%), for TAG (23.3, 10.7, 30.3%), for LDL-C (62.8, 69.8, 65.3%) and for VLDL-C (23.3, 10.8, 30.3%).",
+      "context_window": "43.3%), for TAG (23.3, 10.7, 30.3%), for LDL-C (62.8, 69.8, 65.3%) and for VLDL-C (23.3, 10.8, 30.3%). On the other hand, HDL",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-1306",
+      "claim_type": "percentage",
+      "raw_text": "30.3%",
+      "numeric_values": [
+        30.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1306,
+      "sentence": "Treatment of HC-rats with omega-3, CoQ10, and a combination of both significantly decreased these changes for TC (40, 44.5, 43.3%), for TAG (23.3, 10.7, 30.3%), for LDL-C (62.8, 69.8, 65.3%) and for VLDL-C (23.3, 10.8, 30.3%).",
+      "context_window": ", for LDL-C (62.8, 69.8, 65.3%) and for VLDL-C (23.3, 10.8, 30.3%). On the other hand, HDL-C level was significantly decrease",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-1387",
+      "claim_type": "percentage",
+      "raw_text": "68.6%",
+      "numeric_values": [
+        68.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1387,
+      "sentence": "On the other hand, HDL-C level was significantly decreased in HC-rats by 68.6% as compared to control rats, by treatment HDL-C was increased significantly in treated HC-rats by omega-3 (309.9%), CoQ10 (300.1%), and a combination of both (303.6%), as compared to HC-rats ( Figure 2 A, B).",
+      "context_window": "hand, HDL-C level was significantly decreased in HC-rats by 68.6% as compared to control rats, by treatment HDL-C was increas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-1500",
+      "claim_type": "percentage",
+      "raw_text": "309.9%",
+      "numeric_values": [
+        309.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1500,
+      "sentence": "On the other hand, HDL-C level was significantly decreased in HC-rats by 68.6% as compared to control rats, by treatment HDL-C was increased significantly in treated HC-rats by omega-3 (309.9%), CoQ10 (300.1%), and a combination of both (303.6%), as compared to HC-rats ( Figure 2 A, B).",
+      "context_window": "was increased significantly in treated HC-rats by omega-3 (309.9%), CoQ10 (300.1%), and a combination of both (303.6%), as co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-1516",
+      "claim_type": "percentage",
+      "raw_text": "300.1%",
+      "numeric_values": [
+        300.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1516,
+      "sentence": "On the other hand, HDL-C level was significantly decreased in HC-rats by 68.6% as compared to control rats, by treatment HDL-C was increased significantly in treated HC-rats by omega-3 (309.9%), CoQ10 (300.1%), and a combination of both (303.6%), as compared to HC-rats ( Figure 2 A, B).",
+      "context_window": "ignificantly in treated HC-rats by omega-3 (309.9%), CoQ10 (300.1%), and a combination of both (303.6%), as compared to HC-rat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-1552",
+      "claim_type": "percentage",
+      "raw_text": "303.6%",
+      "numeric_values": [
+        303.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1552,
+      "sentence": "On the other hand, HDL-C level was significantly decreased in HC-rats by 68.6% as compared to control rats, by treatment HDL-C was increased significantly in treated HC-rats by omega-3 (309.9%), CoQ10 (300.1%), and a combination of both (303.6%), as compared to HC-rats ( Figure 2 A, B).",
+      "context_window": "mega-3 (309.9%), CoQ10 (300.1%), and a combination of both (303.6%), as compared to HC-rats ( Figure 2 A, B). Figure 2 (A, B,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-2039",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2039,
+      "sentence": "Data are presented as mean \u00b1 SE, (n = 8).",
+      "context_window": "= TC-HDL/HDL) in HC-rats. Data are presented as mean \u00b1 SE, (n = 8). Mean with different superscripts (a-c) are significant at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-2105",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2105,
+      "sentence": "Mean with different superscripts (a-c) are significant at p \u2264 0.05.",
+      "context_window": ". Mean with different superscripts (a-c) are significant at p \u2264 0.05. Figure 2 (A, B, and C). The hypocholesterolemic effect of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-2553",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2553,
+      "sentence": "Data are presented as mean \u00b1 SE, (n = 8).",
+      "context_window": "= TC-HDL/HDL) in HC-rats. Data are presented as mean \u00b1 SE, (n = 8). Mean with different superscripts (a-c) are significant at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-2619",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2619,
+      "sentence": "Mean with different superscripts (a-c) are significant at p \u2264 0.05.",
+      "context_window": ". Mean with different superscripts (a-c) are significant at p \u2264 0.05. The ARIs of atherogenic HC-group were significantly (p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-2683",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2683,
+      "sentence": "The ARIs of atherogenic HC-group were significantly (p < 0.05) higher than that of the three treated groups, the ratios of LDL/HDL, TC/HDL and AI were 1108.2, 588.2, and 863.1% as compared to control group.",
+      "context_window": "0.05. The ARIs of atherogenic HC-group were significantly (p < 0.05) higher than that of the three treated groups, the ratios o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-2800",
+      "claim_type": "percentage",
+      "raw_text": "863.1%",
+      "numeric_values": [
+        863.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2800,
+      "sentence": "The ARIs of atherogenic HC-group were significantly (p < 0.05) higher than that of the three treated groups, the ratios of LDL/HDL, TC/HDL and AI were 1108.2, 588.2, and 863.1% as compared to control group.",
+      "context_window": "he ratios of LDL/HDL, TC/HDL and AI were 1108.2, 588.2, and 863.1% as compared to control group. By treatment, the values were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-2908",
+      "claim_type": "percentage",
+      "raw_text": "89.8%",
+      "numeric_values": [
+        89.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2908,
+      "sentence": "By treatment, the values were significantly decreased by (91, 85.6 and 89.8%) for omega 3, (92.6, 86.3 and 90.5%) for CoQ10, and (91.5, 86.1, and 90.3%) for the combination treatment, as compared to atherogenic HC-rats ( Figure 2 C).",
+      "context_window": "t, the values were significantly decreased by (91, 85.6 and 89.8%) for omega 3, (92.6, 86.3 and 90.5%) for CoQ10, and (91.5,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-2944",
+      "claim_type": "percentage",
+      "raw_text": "90.5%",
+      "numeric_values": [
+        90.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2944,
+      "sentence": "By treatment, the values were significantly decreased by (91, 85.6 and 89.8%) for omega 3, (92.6, 86.3 and 90.5%) for CoQ10, and (91.5, 86.1, and 90.3%) for the combination treatment, as compared to atherogenic HC-rats ( Figure 2 C).",
+      "context_window": "reased by (91, 85.6 and 89.8%) for omega 3, (92.6, 86.3 and 90.5%) for CoQ10, and (91.5, 86.1, and 90.3%) for the combination",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-2983",
+      "claim_type": "percentage",
+      "raw_text": "90.3%",
+      "numeric_values": [
+        90.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2983,
+      "sentence": "By treatment, the values were significantly decreased by (91, 85.6 and 89.8%) for omega 3, (92.6, 86.3 and 90.5%) for CoQ10, and (91.5, 86.1, and 90.3%) for the combination treatment, as compared to atherogenic HC-rats ( Figure 2 C).",
+      "context_window": "a 3, (92.6, 86.3 and 90.5%) for CoQ10, and (91.5, 86.1, and 90.3%) for the combination treatment, as compared to atherogenic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "icosapent ethyl",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-3165",
+      "claim_type": "percentage",
+      "raw_text": "53.5%",
+      "numeric_values": [
+        53.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3165,
+      "sentence": "In comparison with control rats, HC-rats demonstrated a reduced level of APN that reached to 53.5% and an elevated CK-MB activity that reached to 201.2%.",
+      "context_window": "HC-rats demonstrated a reduced level of APN that reached to 53.5% and an elevated CK-MB activity that reached to 201.2%. On t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-3218",
+      "claim_type": "percentage",
+      "raw_text": "201.2%",
+      "numeric_values": [
+        201.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3218,
+      "sentence": "In comparison with control rats, HC-rats demonstrated a reduced level of APN that reached to 53.5% and an elevated CK-MB activity that reached to 201.2%.",
+      "context_window": "hed to 53.5% and an elevated CK-MB activity that reached to 201.2%. On the other hand, treatment of HC-rats with omega-3, CoQ1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-3414",
+      "claim_type": "percentage",
+      "raw_text": "79.1%",
+      "numeric_values": [
+        79.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3414,
+      "sentence": "On the other hand, treatment of HC-rats with omega-3, CoQ10, and combination treatment showed a significant elevation in the serum APN with percentages increase reached to 91.4, 92.2, and 79.1%, respectively.",
+      "context_window": "um APN with percentages increase reached to 91.4, 92.2, and 79.1%, respectively. On the other side, the cardiac enzyme CK-MB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-3528",
+      "claim_type": "percentage",
+      "raw_text": "10.6%",
+      "numeric_values": [
+        10.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3528,
+      "sentence": "On the other side, the cardiac enzyme CK-MB activity was improved by treatment with omega-3 (10.6%), CoQ10 (10.3%), and combination treatment (17.7%) in comparison with HC-rats, but the levels were also significantly higher than control rats (Figures 3 and 4 ).",
+      "context_window": "zyme CK-MB activity was improved by treatment with omega-3 (10.6%), CoQ10 (10.3%), and combination treatment (17.7%) in compa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-3543",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3543,
+      "sentence": "On the other side, the cardiac enzyme CK-MB activity was improved by treatment with omega-3 (10.6%), CoQ10 (10.3%), and combination treatment (17.7%) in comparison with HC-rats, but the levels were also significantly higher than control rats (Figures 3 and 4 ).",
+      "context_window": "vity was improved by treatment with omega-3 (10.6%), CoQ10 (10.3%), and combination treatment (17.7%) in comparison with HC-r",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-3578",
+      "claim_type": "percentage",
+      "raw_text": "17.7%",
+      "numeric_values": [
+        17.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3578,
+      "sentence": "On the other side, the cardiac enzyme CK-MB activity was improved by treatment with omega-3 (10.6%), CoQ10 (10.3%), and combination treatment (17.7%) in comparison with HC-rats, but the levels were also significantly higher than control rats (Figures 3 and 4 ).",
+      "context_window": "omega-3 (10.6%), CoQ10 (10.3%), and combination treatment (17.7%) in comparison with HC-rats, but the levels were also signi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-3849",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3849,
+      "sentence": "Data are presented as mean \u00b1 SE, (n = 8).",
+      "context_window": "(APN) levels in HC-rats. Data are presented as mean \u00b1 SE, (n = 8). Mean with different superscripts (a, b) are significant a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-3916",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3916,
+      "sentence": "Mean with different superscripts (a, b) are significant at p \u2264 0.05.",
+      "context_window": "Mean with different superscripts (a, b) are significant at p \u2264 0.05. Figure 3 Figure 4 The effect of omega-3, CoQ 10, and combi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-4094",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4094,
+      "sentence": "Data are presented as mean \u00b1 SE, (n = 8).",
+      "context_window": "CK-MB) levels in HC-rats. Data are presented as mean \u00b1 SE, (n = 8). Mean with different superscripts (a-d) are significant at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-4160",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4160,
+      "sentence": "Mean with different superscripts (a-d) are significant at p \u2264 0.05.",
+      "context_window": ". Mean with different superscripts (a-d) are significant at p \u2264 0.05. Figure 4 The effect of omega-3, CoQ10, and combination (o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-4323",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4323,
+      "sentence": "Data are presented as mean \u00b1 SE, (n = 8).",
+      "context_window": "(APN) levels in HC-rats. Data are presented as mean \u00b1 SE, (n = 8). Mean with different superscripts (a, b) are significant a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-4390",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4390,
+      "sentence": "Mean with different superscripts (a, b) are significant at p \u2264 0.05.",
+      "context_window": "Mean with different superscripts (a, b) are significant at p \u2264 0.05. The effect of omega-3, CoQ 10, and combination (omega-3+",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-4551",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4551,
+      "sentence": "Data are presented as mean \u00b1 SE, (n = 8).",
+      "context_window": "CK-MB) levels in HC-rats. Data are presented as mean \u00b1 SE, (n = 8). Mean with different superscripts (a-d) are significant at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-4617",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4617,
+      "sentence": "Mean with different superscripts (a-d) are significant at p \u2264 0.05.",
+      "context_window": ". Mean with different superscripts (a-d) are significant at p \u2264 0.05. Concerning lipid peroxidation, atherogenic HC-rats showed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-4779",
+      "claim_type": "percentage",
+      "raw_text": "145 %",
+      "numeric_values": [
+        145.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4779,
+      "sentence": "Concerning lipid peroxidation, atherogenic HC-rats showed a significant increase in the production of malondialdehyde (MDA) in the heart homogenate by 145 %, as compared to control rats.",
+      "context_window": "duction of malondialdehyde (MDA) in the heart homogenate by 145 %, as compared to control rats. Treatment of HC-rats showed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-4878",
+      "claim_type": "percentage",
+      "raw_text": "42.1%",
+      "numeric_values": [
+        42.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4878,
+      "sentence": "Treatment of HC-rats showed a significant reduction in MDA by (42.1%) for omega-3, (59.9%) for CoQ10 and (49.2%) for the combination treatment, as compared to HC-rats ( Figure 5 A).",
+      "context_window": "atment of HC-rats showed a significant reduction in MDA by (42.1%) for omega-3, (59.9%) for CoQ10 and (49.2%) for the combina",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-4899",
+      "claim_type": "percentage",
+      "raw_text": "59.9%",
+      "numeric_values": [
+        59.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4899,
+      "sentence": "Treatment of HC-rats showed a significant reduction in MDA by (42.1%) for omega-3, (59.9%) for CoQ10 and (49.2%) for the combination treatment, as compared to HC-rats ( Figure 5 A).",
+      "context_window": "wed a significant reduction in MDA by (42.1%) for omega-3, (59.9%) for CoQ10 and (49.2%) for the combination treatment, as co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-4921",
+      "claim_type": "percentage",
+      "raw_text": "49.2%",
+      "numeric_values": [
+        49.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4921,
+      "sentence": "Treatment of HC-rats showed a significant reduction in MDA by (42.1%) for omega-3, (59.9%) for CoQ10 and (49.2%) for the combination treatment, as compared to HC-rats ( Figure 5 A).",
+      "context_window": "ction in MDA by (42.1%) for omega-3, (59.9%) for CoQ10 and (49.2%) for the combination treatment, as compared to HC-rats ( Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-5231",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5231,
+      "sentence": "Data are presented as mean \u00b1 SE, (n = 8).",
+      "context_window": "rdiac tissues of HC-rats. Data are presented as mean \u00b1 SE, (n = 8). Mean with different superscripts (a-d) are significant at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-5297",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5297,
+      "sentence": "Mean with different superscripts (a-d) are significant at p \u2264 0.05.",
+      "context_window": ". Mean with different superscripts (a-d) are significant at p \u2264 0.05. Figure 5 (A, B, and C). The effect of omega-3, CoQ10, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-5542",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5542,
+      "sentence": "Data are presented as mean \u00b1 SE, (n = 8).",
+      "context_window": "rdiac tissues of HC-rats. Data are presented as mean \u00b1 SE, (n = 8). Mean with different superscripts (a-d) are significant at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-5608",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5608,
+      "sentence": "Mean with different superscripts (a-d) are significant at p \u2264 0.05.",
+      "context_window": ". Mean with different superscripts (a-d) are significant at p \u2264 0.05. Regarding cardiac NO production, atherogenic HC-rats show",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-5776",
+      "claim_type": "percentage",
+      "raw_text": "40.1%",
+      "numeric_values": [
+        40.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5776,
+      "sentence": "Regarding cardiac NO production, atherogenic HC-rats showed a significant decrease in NO, as a marker of endothelial dysfunction, in the heart homogenate by 40.1%, as compared to control rats.",
+      "context_window": "rker of endothelial dysfunction, in the heart homogenate by 40.1%, as compared to control rats. Treatment of HC-rats showed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-5897",
+      "claim_type": "percentage",
+      "raw_text": "402.7%",
+      "numeric_values": [
+        402.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5897,
+      "sentence": "Treatment of HC-rats showed a significant elevation in HC-rats treated with omega-3 (402.7%), CoQ10 (211.3%) and combination treatment (526.2%), as compared to HC-rats ( Figure 5 B).",
+      "context_window": "ed a significant elevation in HC-rats treated with omega-3 (402.7%), CoQ10 (211.3%) and combination treatment (526.2%), as com",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-5913",
+      "claim_type": "percentage",
+      "raw_text": "211.3%",
+      "numeric_values": [
+        211.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5913,
+      "sentence": "Treatment of HC-rats showed a significant elevation in HC-rats treated with omega-3 (402.7%), CoQ10 (211.3%) and combination treatment (526.2%), as compared to HC-rats ( Figure 5 B).",
+      "context_window": "elevation in HC-rats treated with omega-3 (402.7%), CoQ10 (211.3%) and combination treatment (526.2%), as compared to HC-rats",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-5948",
+      "claim_type": "percentage",
+      "raw_text": "526.2%",
+      "numeric_values": [
+        526.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5948,
+      "sentence": "Treatment of HC-rats showed a significant elevation in HC-rats treated with omega-3 (402.7%), CoQ10 (211.3%) and combination treatment (526.2%), as compared to HC-rats ( Figure 5 B).",
+      "context_window": "omega-3 (402.7%), CoQ10 (211.3%) and combination treatment (526.2%), as compared to HC-rats ( Figure 5 B). Regarding anti-oxi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-6095",
+      "claim_type": "percentage",
+      "raw_text": "47.4%",
+      "numeric_values": [
+        47.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6095,
+      "sentence": "Regarding anti-oxidant defense, HC-rats showed a significant decrease in cardiac GSH production by 47.4%, as compared to control rats.",
+      "context_window": "showed a significant decrease in cardiac GSH production by 47.4%, as compared to control rats. Treatment of HC-rats showed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-6215",
+      "claim_type": "percentage",
+      "raw_text": "79.8%",
+      "numeric_values": [
+        79.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6215,
+      "sentence": "Treatment of HC-rats showed a significant increase in HC-rats treated with omega-3 (79.8%), CoQ10 (34.8%), and combination treatment (77.9%), as compared to HC-rats ( Figure 5 C).",
+      "context_window": "wed a significant increase in HC-rats treated with omega-3 (79.8%), CoQ10 (34.8%), and combination treatment (77.9%), as comp",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-6230",
+      "claim_type": "percentage",
+      "raw_text": "34.8%",
+      "numeric_values": [
+        34.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6230,
+      "sentence": "Treatment of HC-rats showed a significant increase in HC-rats treated with omega-3 (79.8%), CoQ10 (34.8%), and combination treatment (77.9%), as compared to HC-rats ( Figure 5 C).",
+      "context_window": "nt increase in HC-rats treated with omega-3 (79.8%), CoQ10 (34.8%), and combination treatment (77.9%), as compared to HC-rats",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-pct-6265",
+      "claim_type": "percentage",
+      "raw_text": "77.9%",
+      "numeric_values": [
+        77.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6265,
+      "sentence": "Treatment of HC-rats showed a significant increase in HC-rats treated with omega-3 (79.8%), CoQ10 (34.8%), and combination treatment (77.9%), as compared to HC-rats ( Figure 5 C).",
+      "context_window": "omega-3 (79.8%), CoQ10 (34.8%), and combination treatment (77.9%), as compared to HC-rats ( Figure 5 C). The thickness of t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-6517",
+      "claim_type": "mean_sd",
+      "raw_text": "596.8 \u00b1 27.6",
+      "numeric_values": [
+        596.8,
+        27.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6517,
+      "sentence": "The thickness area of the arterial walls in the atherosclerotic HC-group (596.8 \u00b1 27.6 \u03bcm) was about two times thicker than that in the control group (314.4 \u00b1 19.7 \u03bcm).",
+      "context_window": "area of the arterial walls in the atherosclerotic HC-group (596.8 \u00b1 27.6 \u03bcm) was about two times thicker than that in the control gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-6594",
+      "claim_type": "mean_sd",
+      "raw_text": "314.4 \u00b1 19.7",
+      "numeric_values": [
+        314.4,
+        19.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6594,
+      "sentence": "The thickness area of the arterial walls in the atherosclerotic HC-group (596.8 \u00b1 27.6 \u03bcm) was about two times thicker than that in the control group (314.4 \u00b1 19.7 \u03bcm).",
+      "context_window": "was about two times thicker than that in the control group (314.4 \u00b1 19.7 \u03bcm). By treatment, HC-group demonstrated significant decrem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-6719",
+      "claim_type": "mean_sd",
+      "raw_text": "444.8 \u00b1 49.5",
+      "numeric_values": [
+        444.8,
+        49.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6719,
+      "sentence": "By treatment, HC-group demonstrated significant decrements in the thickness area of the arterial walls by (444.8 \u00b1 49.5\u03bcm) for omega-3, (376.0 \u00b1 30.7 \u03bcm) for CoQ10, and (351.8 \u00b1 33.3 \u03bcm) for the combination treatment.",
+      "context_window": "decrements in the thickness area of the arterial walls by (444.8 \u00b1 49.5\u03bcm) for omega-3, (376.0 \u00b1 30.7 \u03bcm) for CoQ10, and (351.8 \u00b1 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-6749",
+      "claim_type": "mean_sd",
+      "raw_text": "376.0 \u00b1 30.7",
+      "numeric_values": [
+        376.0,
+        30.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6749,
+      "sentence": "By treatment, HC-group demonstrated significant decrements in the thickness area of the arterial walls by (444.8 \u00b1 49.5\u03bcm) for omega-3, (376.0 \u00b1 30.7 \u03bcm) for CoQ10, and (351.8 \u00b1 33.3 \u03bcm) for the combination treatment.",
+      "context_window": "rea of the arterial walls by (444.8 \u00b1 49.5\u03bcm) for omega-3, (376.0 \u00b1 30.7 \u03bcm) for CoQ10, and (351.8 \u00b1 33.3 \u03bcm) for the combination tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-6782",
+      "claim_type": "mean_sd",
+      "raw_text": "351.8 \u00b1 33.3",
+      "numeric_values": [
+        351.8,
+        33.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6782,
+      "sentence": "By treatment, HC-group demonstrated significant decrements in the thickness area of the arterial walls by (444.8 \u00b1 49.5\u03bcm) for omega-3, (376.0 \u00b1 30.7 \u03bcm) for CoQ10, and (351.8 \u00b1 33.3 \u03bcm) for the combination treatment.",
+      "context_window": ".8 \u00b1 49.5\u03bcm) for omega-3, (376.0 \u00b1 30.7 \u03bcm) for CoQ10, and (351.8 \u00b1 33.3 \u03bcm) for the combination treatment. On the other hand, the l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7127",
+      "claim_type": "mean_sd",
+      "raw_text": "314.4 \u00b1 19.7",
+      "numeric_values": [
+        314.4,
+        19.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7127,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "m) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7142",
+      "claim_type": "mean_sd",
+      "raw_text": "199.6 \u00b1 1.3",
+      "numeric_values": [
+        199.6,
+        1.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7142,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7156",
+      "claim_type": "mean_sd",
+      "raw_text": "164.2 \u00b1 1.4",
+      "numeric_values": [
+        164.2,
+        1.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7156,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7170",
+      "claim_type": "mean_sd",
+      "raw_text": "238.0 \u00b1 2.5",
+      "numeric_values": [
+        238.0,
+        2.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7170,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "ve Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7184",
+      "claim_type": "mean_sd",
+      "raw_text": "43.6 \u00b1 30.1",
+      "numeric_values": [
+        43.6,
+        30.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7184,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "up 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7198",
+      "claim_type": "mean_sd",
+      "raw_text": "75.9 \u00b1 6.2",
+      "numeric_values": [
+        75.9,
+        6.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7198,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7228",
+      "claim_type": "mean_sd",
+      "raw_text": "596.8 \u00b1 27.6",
+      "numeric_values": [
+        596.8,
+        27.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7228,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7243",
+      "claim_type": "mean_sd",
+      "raw_text": "178.42 \u00b1 4.9",
+      "numeric_values": [
+        178.42,
+        4.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7243,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7258",
+      "claim_type": "mean_sd",
+      "raw_text": "138.4 \u00b1 10.6",
+      "numeric_values": [
+        138.4,
+        10.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7258,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7273",
+      "claim_type": "mean_sd",
+      "raw_text": "219.4 \u00b1 3.1",
+      "numeric_values": [
+        219.4,
+        3.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7273,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7288",
+      "claim_type": "mean_sd",
+      "raw_text": "40.7 \u00b1 23.6",
+      "numeric_values": [
+        40.7,
+        23.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7288,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7302",
+      "claim_type": "mean_sd",
+      "raw_text": "147.8 \u00b1 9.4",
+      "numeric_values": [
+        147.8,
+        9.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7302,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7335",
+      "claim_type": "mean_sd",
+      "raw_text": "444.8 \u00b1 49.5",
+      "numeric_values": [
+        444.8,
+        49.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7335,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "9.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7350",
+      "claim_type": "mean_sd",
+      "raw_text": "187.9 \u00b1 4.5",
+      "numeric_values": [
+        187.9,
+        4.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7350,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": ".7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7365",
+      "claim_type": "mean_sd",
+      "raw_text": "158.2 \u00b1 3.6",
+      "numeric_values": [
+        158.2,
+        3.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7365,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": ".8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7380",
+      "claim_type": "mean_sd",
+      "raw_text": "220.0 \u00b1 9.1",
+      "numeric_values": [
+        220.0,
+        9.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7380,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7395",
+      "claim_type": "mean_sd",
+      "raw_text": "32.26 \u00b1 20.5",
+      "numeric_values": [
+        32.26,
+        20.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7395,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7410",
+      "claim_type": "mean_sd",
+      "raw_text": "109.6 \u00b1 11.4",
+      "numeric_values": [
+        109.6,
+        11.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7410,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7442",
+      "claim_type": "mean_sd",
+      "raw_text": "376.0 \u00b1 30.7",
+      "numeric_values": [
+        376.0,
+        30.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7442,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "0.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7458",
+      "claim_type": "mean_sd",
+      "raw_text": "193.5 \u00b1 2.9",
+      "numeric_values": [
+        193.5,
+        2.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7458,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7473",
+      "claim_type": "mean_sd",
+      "raw_text": "158.0 \u00b1 2.9",
+      "numeric_values": [
+        158.0,
+        2.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7473,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": ".6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7488",
+      "claim_type": "mean_sd",
+      "raw_text": "242.2 \u00b1 5.6",
+      "numeric_values": [
+        242.2,
+        5.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7488,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "+ CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 35",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7503",
+      "claim_type": "mean_sd",
+      "raw_text": "44.9 \u00b1 11.8",
+      "numeric_values": [
+        44.9,
+        11.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7503,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "76.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7517",
+      "claim_type": "mean_sd",
+      "raw_text": "89.6 \u00b1 8.6",
+      "numeric_values": [
+        89.6,
+        8.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7517,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7557",
+      "claim_type": "mean_sd",
+      "raw_text": "351.8 \u00b1 33.3",
+      "numeric_values": [
+        351.8,
+        33.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7557,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": ".6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7573",
+      "claim_type": "mean_sd",
+      "raw_text": "211.8 \u00b1 2.4",
+      "numeric_values": [
+        211.8,
+        2.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7573,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7587",
+      "claim_type": "mean_sd",
+      "raw_text": "178.40 \u00b1 8.9",
+      "numeric_values": [
+        178.4,
+        8.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7587,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7602",
+      "claim_type": "mean_sd",
+      "raw_text": "252.8 \u00b1 1.5",
+      "numeric_values": [
+        252.8,
+        1.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7602,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7616",
+      "claim_type": "mean_sd",
+      "raw_text": "3.9 \u00b1 11.1",
+      "numeric_values": [
+        3.9,
+        11.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7616,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-7630",
+      "claim_type": "mean_sd",
+      "raw_text": "83.1 \u00b1 8.5",
+      "numeric_values": [
+        83.1,
+        8.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7630,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-7747",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7747,
+      "sentence": "Table 1 Area (\u03bcm) Mean Minimum Maximum Angle Length Negative Control group 314.4 \u00b1 19.7 a 199.6 \u00b1 1.3 c 164.2 \u00b1 1.4 b 238.0 \u00b1 2.5 b 43.6 \u00b1 30.1 b 75.9 \u00b1 6.2 a HC-control group 596.8 \u00b1 27.6 c 178.42 \u00b1 4.9 a 138.4 \u00b1 10.6 a 219.4 \u00b1 3.1 a -40.7 \u00b1 23.6 a 147.8 \u00b1 9.4 c HC + omega 3 group 444.8 \u00b1 49.5 b 187.9 \u00b1 4.5 ab 158.2 \u00b1 3.6 ab 220.0 \u00b1 9.1 a -32.26 \u00b1 20.5 a 109.6 \u00b1 11.4 b HC + CoQ10 group 376.0 \u00b1 30.7 ab 193.5 \u00b1 2.9 bc 158.0 \u00b1 2.9 ab 242.2 \u00b1 5.6 b -44.9 \u00b1 11.8 a 89.6 \u00b1 8.6 ab HC + omega 3 +CoQ10 group 351.8 \u00b1 33.3 ab 211.8 \u00b1 2.4 d 178.40 \u00b1 8.9 b 252.8 \u00b1 1.5 b 3.9 \u00b1 11.1 ab 83.1 \u00b1 8.5 ab The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "a in different rat groups, data are presented as mean \u00b1 SE (n = 8 ). Mean with different superscripts (a, b, c, d) are signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-7821",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7821,
+      "sentence": "Mean with different superscripts (a, b, c, d) are significant at p \u2264 0.05.",
+      "context_window": "with different superscripts (a, b, c, d) are significant at p \u2264 0.05. Morphometric analysis of aortae of HC-rats and different",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-n-8013",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8013,
+      "sentence": "The morphometric investigations of the aorta in different rat groups, data are presented as mean \u00b1 SE (n = 8 ).",
+      "context_window": "a in different rat groups, data are presented as mean \u00b1 SE (n = 8 ). Mean with different superscripts (a, b, c, d) are signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-p-8087",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8087,
+      "sentence": "Mean with different superscripts (a, b, c, d) are significant at p \u2264 0.05.",
+      "context_window": "with different superscripts (a, b, c, d) are significant at p \u2264 0.05. The negative control group ( Figure 6 a) exhibited normal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7118318_synergistic_anti_atherosclerotic_role_of_combined_treatment_-msd-14898",
+      "claim_type": "mean_sd",
+      "raw_text": "596.8 \u00b1 27.6",
+      "numeric_values": [
+        596.8,
+        27.6
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 14898,
+      "sentence": "This was evidenced by the morphometric parameters of atherosclerotic HC-aortae that revealed the highest thickness area of the arterial walls in the HC-group (596.8 \u00b1 27.6 \u03bcm).",
+      "context_window": "ghest thickness area of the arterial walls in the HC-group (596.8 \u00b1 27.6 \u03bcm). On the other hand, treatment of HC-rats improved the a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

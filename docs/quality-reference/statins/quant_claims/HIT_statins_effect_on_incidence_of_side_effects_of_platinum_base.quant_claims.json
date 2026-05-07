@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_statins_effect_on_incidence_of_side_effects_of_platinum_base",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_statins_effect_on_incidence_of_side_effects_of_platinum_base-pct-178",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 178,
+      "sentence": "Ototoxicity is estimated to affect about 36% of adult patients treated with cisplatin, many therapeutic interventions have been studied to reduce the risk of developing ototoxicity from Cisplatin treatment, Statins have been studied in animals and have shown promising results, this study is aimed to explore the effect of statins on the incidence of ototoxicity in humans.",
+      "context_window": "nd nephrotoxicity. Ototoxicity is estimated to affect about 36% of adult patients treated with cisplatin, many therapeutic",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

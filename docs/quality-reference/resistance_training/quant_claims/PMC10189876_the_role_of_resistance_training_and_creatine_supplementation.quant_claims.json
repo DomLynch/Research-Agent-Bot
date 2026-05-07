@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation",
   "doi": "10.3389/fpubh.2023.1062832",
-  "extracted_at": "2026-05-05T21:59:10+00:00",
+  "extracted_at": "2026-05-07T16:57:12+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 5,
-    "unit_value": 24,
+    "unit_value": 25,
     "p_value": 37,
     "percentage": 8
   },
@@ -25,7 +25,7 @@
       "context_window": "xamined 45 non-athlete volunteer older men and women (mean, 68.1 \u00b1 7.2 years old), were randomly selected and divided into three g",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "45 non-athlete volunteer older men and women (mean, 68.1 \u00b1 7.2 years old), were randomly selected and divided into three groups",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -187,9 +187,9 @@
       "context_window": ", Rahimi stated that consuming 20 g of creatine per day for 7 days reduces MDA and 8-hydroxy-20 -deoxyguanosine (8-OHdG) after",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-msd-685",
@@ -353,9 +353,9 @@
       "context_window": "of taking dietary supplements or regular exercise training 3 months prior to the start of the study. Exclusion criteria include",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-1898",
@@ -371,9 +371,9 @@
       "context_window": "Figure 1 ). Resistance training program was performed for 10 weeks, three sessions per week (1 day in between). Each workout l",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-1933",
@@ -389,9 +389,9 @@
       "context_window": "rogram was performed for 10 weeks, three sessions per week (1 day in between). Each workout lasted approximately 70 mins and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-2372",
@@ -428,6 +428,24 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-2749",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 g/kg/d",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "g/kg/d",
+      "source_section": "methods",
+      "source_offset": 2749,
+      "sentence": "Creatine monohydrate supplementation consisted of 0.1 g/kg/d which was consumed daily in a single dose and dissolved in a glass of water immediately after the end of the exercise session by the subjects in the RT + CS group ( 27 , 28 ).",
+      "context_window": "( 26 ). Creatine monohydrate supplementation consisted of 0.1 g/kg/d which was consumed daily in a single dose and dissolved in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "exercise",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-5191",
@@ -1163,9 +1181,9 @@
       "context_window": "mprovement in MDA and TAC in older and younger people after 12 weeks of RT. ( 30 ) Consistent with the current findings, two oth",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-1491",
@@ -1181,9 +1199,9 @@
       "context_window": "onstrated a reduction in 8-OHdG levels in older women after 8 weeks of exercise training ( 34 ). In another study by Padilha, t",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-1733",
@@ -1271,9 +1289,9 @@
       "context_window": "tudy regarding changes in muscle strength showed that after 10 weeks of RT and creatine supplementation, the average increase in",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-4077",
@@ -1289,9 +1307,9 @@
       "context_window": "en muscle groups studied) in the training-placebo group was 35.9% and in the training-creatine group was equal to 57%. These",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-4131",
@@ -1307,9 +1325,9 @@
       "context_window": "p was 35.9% and in the training-creatine group was equal to 57%. These findings generally indicate the positive effect of R",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-4803",
@@ -1325,9 +1343,9 @@
       "context_window": "dults ( 27 ). The present results showed an improvement of 79.9% and 89.2% of quality of life index in the training-placebo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-4813",
@@ -1343,9 +1361,9 @@
       "context_window": "). The present results showed an improvement of 79.9% and 89.2% of quality of life index in the training-placebo and traini",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     }
   ]
 }

@@ -1,0 +1,83 @@
+{
+  "paper_id": "HIT_statin_monotherapy_for_treatment_of_endocrine_metabolic_dise",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_statin_monotherapy_for_treatment_of_endocrine_metabolic_dise-u-1125",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1125,
+      "sentence": "Study subjects and research staff will not know whether they are taking the study drug or a sugar pill until after the study Subjects: Fifty-four adults (age 18-60 years) with a long-term SCI and no movement below their level of injury.",
+      "context_window": "l until after the study Subjects: Fifty-four adults (age 18-60 years) with a long-term SCI and no movement below their level of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_statin_monotherapy_for_treatment_of_endocrine_metabolic_dise-u-1253",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1253,
+      "sentence": "Treatment: Subjects will be prescribed Rosuvastatin 10 mg daily or a sugar pill.",
+      "context_window": "injury. Treatment: Subjects will be prescribed Rosuvastatin 10 mg daily or a sugar pill. In addition, all subjects will recei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_statin_monotherapy_for_treatment_of_endocrine_metabolic_dise-u-1321",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1321,
+      "sentence": "In addition, all subjects will receive 100 mg of Co-Q10 daily, calcium carbonate 1250 mg and, vitamin D 2,000 IU once a day.",
+      "context_window": "ily or a sugar pill. In addition, all subjects will receive 100 mg of Co-Q10 daily, calcium carbonate 1250 mg and, vitamin D 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_statin_monotherapy_for_treatment_of_endocrine_metabolic_dise-u-1363",
+      "claim_type": "unit_value",
+      "raw_text": "1250 mg",
+      "numeric_values": [
+        1250.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1363,
+      "sentence": "In addition, all subjects will receive 100 mg of Co-Q10 daily, calcium carbonate 1250 mg and, vitamin D 2,000 IU once a day.",
+      "context_window": "ects will receive 100 mg of Co-Q10 daily, calcium carbonate 1250 mg and, vitamin D 2,000 IU once a day. Data Collected: Subject",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

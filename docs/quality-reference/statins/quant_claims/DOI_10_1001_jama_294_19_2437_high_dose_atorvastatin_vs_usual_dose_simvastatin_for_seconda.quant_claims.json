@@ -1,0 +1,536 @@
+{
+  "paper_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda",
+  "doi": "10.1001/jama.294.19.2437",
+  "extracted_at": "2026-05-07T19:24:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "sample_size": 2,
+    "percentage": 16,
+    "p_value": 7
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-u-643",
+      "claim_type": "unit_value",
+      "raw_text": "4.8 years",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 643,
+      "sentence": "DESIGN, SETTING, AND PARTICIPANTS: The IDEAL study, a prospective, randomized, open-label, blinded end-point evaluation trial conducted at 190 ambulatory cardiology care and specialist practices in northern Europe between March 1999 and March 2005 with a median follow-up of 4.8 years, which enrolled 8888 patients aged 80 years or younger with a history of acute MI.",
+      "context_window": "etween March 1999 and March 2005 with a median follow-up of 4.8 years, which enrolled 8888 patients aged 80 years or younger with",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-u-688",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 688,
+      "sentence": "DESIGN, SETTING, AND PARTICIPANTS: The IDEAL study, a prospective, randomized, open-label, blinded end-point evaluation trial conducted at 190 ambulatory cardiology care and specialist practices in northern Europe between March 1999 and March 2005 with a median follow-up of 4.8 years, which enrolled 8888 patients aged 80 years or younger with a history of acute MI.",
+      "context_window": "n follow-up of 4.8 years, which enrolled 8888 patients aged 80 years or younger with a history of acute MI. INTERVENTIONS: Patie",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-u-823",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/d",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 823,
+      "sentence": "INTERVENTIONS: Patients were randomly assigned to receive a high dose of atorvastatin (80 mg/d; n = 4439), or usual-dose simvastatin (20 mg/d; n = 4449).",
+      "context_window": "e randomly assigned to receive a high dose of atorvastatin (80 mg/d; n = 4439), or usual-dose simvastatin (20 mg/d; n = 4449).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-n-832",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4439",
+      "numeric_values": [
+        4439.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 832,
+      "sentence": "INTERVENTIONS: Patients were randomly assigned to receive a high dose of atorvastatin (80 mg/d; n = 4439), or usual-dose simvastatin (20 mg/d; n = 4449).",
+      "context_window": "y assigned to receive a high dose of atorvastatin (80 mg/d; n = 4439), or usual-dose simvastatin (20 mg/d; n = 4449). MAIN OUTCO",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-u-870",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg/d",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 870,
+      "sentence": "INTERVENTIONS: Patients were randomly assigned to receive a high dose of atorvastatin (80 mg/d; n = 4439), or usual-dose simvastatin (20 mg/d; n = 4449).",
+      "context_window": "torvastatin (80 mg/d; n = 4439), or usual-dose simvastatin (20 mg/d; n = 4449). MAIN OUTCOME MEASURE: Occurrence of a major cor",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-n-879",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4449",
+      "numeric_values": [
+        4449.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 879,
+      "sentence": "INTERVENTIONS: Patients were randomly assigned to receive a high dose of atorvastatin (80 mg/d; n = 4439), or usual-dose simvastatin (20 mg/d; n = 4449).",
+      "context_window": "in (80 mg/d; n = 4439), or usual-dose simvastatin (20 mg/d; n = 4449). MAIN OUTCOME MEASURE: Occurrence of a major coronary even",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1250",
+      "claim_type": "percentage",
+      "raw_text": "10.4%",
+      "numeric_values": [
+        10.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1250,
+      "sentence": "A major coronary event occurred in 463 simvastatin patients (10.4%) and in 411 atorvastatin patients (9.3%) (hazard ratio [HR], 0.89; 95% CI, 0.78-1.01; P = .07).",
+      "context_window": "major coronary event occurred in 463 simvastatin patients (10.4%) and in 411 atorvastatin patients (9.3%) (hazard ratio [HR]",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1291",
+      "claim_type": "percentage",
+      "raw_text": "9.3%",
+      "numeric_values": [
+        9.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1291,
+      "sentence": "A major coronary event occurred in 463 simvastatin patients (10.4%) and in 411 atorvastatin patients (9.3%) (hazard ratio [HR], 0.89; 95% CI, 0.78-1.01; P = .07).",
+      "context_window": "vastatin patients (10.4%) and in 411 atorvastatin patients (9.3%) (hazard ratio [HR], 0.89; 95% CI, 0.78-1.01; P = .07). Non",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1323",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1323,
+      "sentence": "A major coronary event occurred in 463 simvastatin patients (10.4%) and in 411 atorvastatin patients (9.3%) (hazard ratio [HR], 0.89; 95% CI, 0.78-1.01; P = .07).",
+      "context_window": "411 atorvastatin patients (9.3%) (hazard ratio [HR], 0.89; 95% CI, 0.78-1.01; P = .07). Nonfatal acute MI occurred in 321",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-p-1342",
+      "claim_type": "p_value",
+      "raw_text": "P = .07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1342,
+      "sentence": "A major coronary event occurred in 463 simvastatin patients (10.4%) and in 411 atorvastatin patients (9.3%) (hazard ratio [HR], 0.89; 95% CI, 0.78-1.01; P = .07).",
+      "context_window": "atients (9.3%) (hazard ratio [HR], 0.89; 95% CI, 0.78-1.01; P = .07). Nonfatal acute MI occurred in 321 (7.2%) and 267 (6.0%) i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1387",
+      "claim_type": "percentage",
+      "raw_text": "7.2%",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1387,
+      "sentence": "Nonfatal acute MI occurred in 321 (7.2%) and 267 (6.0%) in the 2 groups (HR, 0.83; 95% CI, 0.71-0.98; P = .02), but no differences were seen in the 2 other components of the primary end point.",
+      "context_window": "CI, 0.78-1.01; P = .07). Nonfatal acute MI occurred in 321 (7.2%) and 267 (6.0%) in the 2 groups (HR, 0.83; 95% CI, 0.71-0.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1402",
+      "claim_type": "percentage",
+      "raw_text": "6.0%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1402,
+      "sentence": "Nonfatal acute MI occurred in 321 (7.2%) and 267 (6.0%) in the 2 groups (HR, 0.83; 95% CI, 0.71-0.98; P = .02), but no differences were seen in the 2 other components of the primary end point.",
+      "context_window": "P = .07). Nonfatal acute MI occurred in 321 (7.2%) and 267 (6.0%) in the 2 groups (HR, 0.83; 95% CI, 0.71-0.98; P = .02), bu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1435",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1435,
+      "sentence": "Nonfatal acute MI occurred in 321 (7.2%) and 267 (6.0%) in the 2 groups (HR, 0.83; 95% CI, 0.71-0.98; P = .02), but no differences were seen in the 2 other components of the primary end point.",
+      "context_window": "red in 321 (7.2%) and 267 (6.0%) in the 2 groups (HR, 0.83; 95% CI, 0.71-0.98; P = .02), but no differences were seen in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-p-1454",
+      "claim_type": "p_value",
+      "raw_text": "P = .02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1454,
+      "sentence": "Nonfatal acute MI occurred in 321 (7.2%) and 267 (6.0%) in the 2 groups (HR, 0.83; 95% CI, 0.71-0.98; P = .02), but no differences were seen in the 2 other components of the primary end point.",
+      "context_window": "nd 267 (6.0%) in the 2 groups (HR, 0.83; 95% CI, 0.71-0.98; P = .02), but no differences were seen in the 2 other components of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1638",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1638,
+      "sentence": "Major cardiovascular events occurred in 608 and 533 in the 2 groups, respectively (HR, 0.87; 95% CI, 0.77-0.98; P = .02).",
+      "context_window": "red in 608 and 533 in the 2 groups, respectively (HR, 0.87; 95% CI, 0.77-0.98; P = .02). Occurrence of any coronary event w",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-p-1657",
+      "claim_type": "p_value",
+      "raw_text": "P = .02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1657,
+      "sentence": "Major cardiovascular events occurred in 608 and 533 in the 2 groups, respectively (HR, 0.87; 95% CI, 0.77-0.98; P = .02).",
+      "context_window": "in the 2 groups, respectively (HR, 0.87; 95% CI, 0.77-0.98; P = .02). Occurrence of any coronary event was reported in 1059 sim",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1774",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1774,
+      "sentence": "Occurrence of any coronary event was reported in 1059 simvastatin and 898 atorvastatin patients (HR, 0.84; 95% CI, 0.76-0.91; P<.001).",
+      "context_window": "n 1059 simvastatin and 898 atorvastatin patients (HR, 0.84; 95% CI, 0.76-0.91; P<.001). Noncardiovascular death occurred in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-p-1793",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1793,
+      "sentence": "Occurrence of any coronary event was reported in 1059 simvastatin and 898 atorvastatin patients (HR, 0.84; 95% CI, 0.76-0.91; P<.001).",
+      "context_window": "and 898 atorvastatin patients (HR, 0.84; 95% CI, 0.76-0.91; P<.001). Noncardiovascular death occurred in 156 (3.5%) and 143 (3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1843",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1843,
+      "sentence": "Noncardiovascular death occurred in 156 (3.5%) and 143 (3.2%) in the 2 groups (HR, 0.92; 95% CI, 0.73-1.15; P = .47).",
+      "context_window": ".76-0.91; P<.001). Noncardiovascular death occurred in 156 (3.5%) and 143 (3.2%) in the 2 groups (HR, 0.92; 95% CI, 0.73-1.1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1858",
+      "claim_type": "percentage",
+      "raw_text": "3.2%",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1858,
+      "sentence": "Noncardiovascular death occurred in 156 (3.5%) and 143 (3.2%) in the 2 groups (HR, 0.92; 95% CI, 0.73-1.15; P = .47).",
+      "context_window": "1). Noncardiovascular death occurred in 156 (3.5%) and 143 (3.2%) in the 2 groups (HR, 0.92; 95% CI, 0.73-1.15; P = .47). De",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1891",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1891,
+      "sentence": "Noncardiovascular death occurred in 156 (3.5%) and 143 (3.2%) in the 2 groups (HR, 0.92; 95% CI, 0.73-1.15; P = .47).",
+      "context_window": "red in 156 (3.5%) and 143 (3.2%) in the 2 groups (HR, 0.92; 95% CI, 0.73-1.15; P = .47). Death from any cause occurred in 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-p-1910",
+      "claim_type": "p_value",
+      "raw_text": "P = .47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1910,
+      "sentence": "Noncardiovascular death occurred in 156 (3.5%) and 143 (3.2%) in the 2 groups (HR, 0.92; 95% CI, 0.73-1.15; P = .47).",
+      "context_window": "nd 143 (3.2%) in the 2 groups (HR, 0.92; 95% CI, 0.73-1.15; P = .47). Death from any cause occurred in 374 (8.4%) in the simvas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1958",
+      "claim_type": "percentage",
+      "raw_text": "8.4%",
+      "numeric_values": [
+        8.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1958,
+      "sentence": "Death from any cause occurred in 374 (8.4%) in the simvastatin group and 366 (8.2%) in the atorvastatin group (HR, 0.98; 95% CI, 0.85-1.13; P = .81).",
+      "context_window": "0.73-1.15; P = .47). Death from any cause occurred in 374 (8.4%) in the simvastatin group and 366 (8.2%) in the atorvastati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-1998",
+      "claim_type": "percentage",
+      "raw_text": "8.2%",
+      "numeric_values": [
+        8.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1998,
+      "sentence": "Death from any cause occurred in 374 (8.4%) in the simvastatin group and 366 (8.2%) in the atorvastatin group (HR, 0.98; 95% CI, 0.85-1.13; P = .81).",
+      "context_window": "se occurred in 374 (8.4%) in the simvastatin group and 366 (8.2%) in the atorvastatin group (HR, 0.98; 95% CI, 0.85-1.13; P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-2041",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2041,
+      "sentence": "Death from any cause occurred in 374 (8.4%) in the simvastatin group and 366 (8.2%) in the atorvastatin group (HR, 0.98; 95% CI, 0.85-1.13; P = .81).",
+      "context_window": "n group and 366 (8.2%) in the atorvastatin group (HR, 0.98; 95% CI, 0.85-1.13; P = .81). Patients in the atorvastatin group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-p-2060",
+      "claim_type": "p_value",
+      "raw_text": "P = .81",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2060,
+      "sentence": "Death from any cause occurred in 374 (8.4%) in the simvastatin group and 366 (8.2%) in the atorvastatin group (HR, 0.98; 95% CI, 0.85-1.13; P = .81).",
+      "context_window": "2%) in the atorvastatin group (HR, 0.98; 95% CI, 0.85-1.13; P = .81). Patients in the atorvastatin group had higher rates of dr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-2219",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2219,
+      "sentence": "Patients in the atorvastatin group had higher rates of drug discontinuation due to nonserious adverse events; transaminase elevation resulted in 43 (1.0%) vs 5 (0.1%) withdrawals (P<.001).",
+      "context_window": "ious adverse events; transaminase elevation resulted in 43 (1.0%) vs 5 (0.1%) withdrawals (P<.001). Serious myopathy and rha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-pct-2231",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2231,
+      "sentence": "Patients in the atorvastatin group had higher rates of drug discontinuation due to nonserious adverse events; transaminase elevation resulted in 43 (1.0%) vs 5 (0.1%) withdrawals (P<.001).",
+      "context_window": "events; transaminase elevation resulted in 43 (1.0%) vs 5 (0.1%) withdrawals (P<.001). Serious myopathy and rhabdomyolysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_294_19_2437_high_dose_atorvastatin_vs_usual_dose_simvastatin_for_seconda-p-2250",
+      "claim_type": "p_value",
+      "raw_text": "P<.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2250,
+      "sentence": "Patients in the atorvastatin group had higher rates of drug discontinuation due to nonserious adverse events; transaminase elevation resulted in 43 (1.0%) vs 5 (0.1%) withdrawals (P<.001).",
+      "context_window": "se elevation resulted in 43 (1.0%) vs 5 (0.1%) withdrawals (P<.001). Serious myopathy and rhabdomyolysis were rare in both gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

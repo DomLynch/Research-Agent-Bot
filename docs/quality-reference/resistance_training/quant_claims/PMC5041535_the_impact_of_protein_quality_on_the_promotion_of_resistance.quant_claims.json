@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance",
   "doi": "10.1186/s12986-016-0124-8",
-  "extracted_at": "2026-05-05T21:59:26+00:00",
+  "extracted_at": "2026-05-07T16:57:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 11,
@@ -24,9 +24,9 @@
       "context_window": "BM [lean body mass] (WGMD [weighted group mean difference]: 2.24 kg, 95 % CI, 0.66, 3.81) among studies that included a resista",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-pct-12962",
@@ -42,9 +42,9 @@
       "context_window": "body mass] (WGMD [weighted group mean difference]: 2.24 kg, 95 % CI, 0.66, 3.81) among studies that included a resistance ex",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-pct-14701",
@@ -78,9 +78,9 @@
       "context_window": "ing group. Joy et al. [ 64 ] studied the influence of only 8weeks of resistance training in groups of young men consuming eit",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-n-17329",
@@ -96,9 +96,9 @@
       "context_window": "le trial in which 137 subjects were included for analysis ( n = 47, 46, and 44, respectively for the placebo, pea protein, and",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-u-18102",
@@ -114,9 +114,9 @@
       "context_window": "d bench press, which they engaged in three times weekly for 12 weeks [ 63 ]. The results measured as biceps brachii muscle thick",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-u-19496",
@@ -168,7 +168,7 @@
       "context_window": "y partitioning subjects by strength lead to groups that had n = 17 for pea (36 % of the total sample for that group), n = 31 f",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -186,7 +186,7 @@
       "context_window": "ubjects by strength lead to groups that had n = 17 for pea (36 % of the total sample for that group), n = 31 for whey (67 %",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -204,7 +204,7 @@
       "context_window": "d n = 17 for pea (36 % of the total sample for that group), n = 31 for whey (67 % of the total sample for that group), and n =",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -222,7 +222,7 @@
       "context_window": "(36 % of the total sample for that group), n = 31 for whey (67 % of the total sample for that group), and n = 20 for placebo",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -240,7 +240,7 @@
       "context_window": "31 for whey (67 % of the total sample for that group), and n = 20 for placebo (45 % of the total sample for that group) parti",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -258,7 +258,7 @@
       "context_window": "f the total sample for that group), and n = 20 for placebo (45 % of the total sample for that group) participants for the pe",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -277,9 +277,9 @@
       "context_window": "stated that, \u201cThickness increases between D0 and D84 were +20.2 \u00b1 12.3 %, +15.6 \u00b1 13.5 %, and +8.6 \u00b1 7.3 % for Pea, Whey and Place",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-pct-20661",
@@ -295,9 +295,9 @@
       "context_window": "that, \u201cThickness increases between D0 and D84 were +20.2 \u00b1 12.3 %, +15.6 \u00b1 13.5 %, and +8.6 \u00b1 7.3 % for Pea, Whey and Placebo",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-msd-20670",
@@ -314,9 +314,9 @@
       "context_window": "hickness increases between D0 and D84 were +20.2 \u00b1 12.3 %, +15.6 \u00b1 13.5 %, and +8.6 \u00b1 7.3 % for Pea, Whey and Placebo, respectively",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-pct-20677",
@@ -332,9 +332,9 @@
       "context_window": "s increases between D0 and D84 were +20.2 \u00b1 12.3 %, +15.6 \u00b1 13.5 %, and +8.6 \u00b1 7.3 % for Pea, Whey and Placebo, respectively.",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-msd-20690",
@@ -351,9 +351,9 @@
       "context_window": "etween D0 and D84 were +20.2 \u00b1 12.3 %, +15.6 \u00b1 13.5 %, and +8.6 \u00b1 7.3 % for Pea, Whey and Placebo, respectively. A Scheff\u00e9 test s",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-pct-20696",
@@ -369,9 +369,9 @@
       "context_window": "D0 and D84 were +20.2 \u00b1 12.3 %, +15.6 \u00b1 13.5 %, and +8.6 \u00b1 7.3 % for Pea, Whey and Placebo, respectively. A Scheff\u00e9 test sho",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC5041535_the_impact_of_protein_quality_on_the_promotion_of_resistance-u-20829",
@@ -387,7 +387,7 @@
       "context_window": "atistically significant difference between Pea and Placebo [2.51 mm] whereas there was no significant difference between Whey a",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -405,7 +405,7 @@
       "context_window": "s there was no significant difference between Whey and Pea [1.21 mm]\u2026 nor between Whey and Placebo [1.29 mm].\u201d (p. 5) [ 63 ]. A",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -423,7 +423,7 @@
       "context_window": "tween Whey and Pea [1.21 mm]\u2026 nor between Whey and Placebo [1.29 mm].\u201d (p. 5) [ 63 ]. A number of the findings and claims that",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -495,7 +495,7 @@
       "context_window": "e time course of muscle hypertrophy is not known exactly an 8weeks intervention would be considered the minimum as true hypert",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -513,7 +513,7 @@
       "context_window": "psies or by MRI and/or CT) is detectable/measurable after 6-8 weeks of resistance training [ 73 - 76 ]. Study power is often no",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },

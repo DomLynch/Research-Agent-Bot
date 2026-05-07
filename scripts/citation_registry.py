@@ -153,6 +153,10 @@ def _extract_year_from_id(receipt_id: str) -> int | None:
 # bare PMCID without year) — those are still leaks the user would
 # notice.
 _BLOCKED_BODY_CITATION_PATTERNS: tuple[re.Pattern[str], ...] = (
+    # Abstract-fallback/source handles from closed-access records.
+    re.compile(r"^DOI_[A-Za-z0-9_]+"),
+    re.compile(r"^HIT_[A-Za-z0-9_]+"),
+    re.compile(r"^PMID\d+_[A-Za-z0-9_]+"),
     # Long descriptive PMCID slug like "PMC12978362_molecular_mechanisms_..."
     re.compile(r"PMC\d{6,9}_[a-zA-Z_]{10,}"),
     # Author_YYYY_TRAIL_KEYWORDS
@@ -251,21 +255,45 @@ def _body_citation_from_metadata(meta: dict) -> str | None:
     suffix handles collisions."""
     if not meta:
         return None
-    authors = meta.get("authors") or []
     year = meta.get("year")
-    if not authors or not year:
+    if not year:
         return None
-    first_author = (authors[0] or "").strip()
-    if not first_author:
-        return None
-    surname = first_author.split()[-1]
-    if not surname:
-        return None
+    authors = meta.get("authors") or []
     try:
         year_str = str(int(year))
     except (ValueError, TypeError):
         return None
+    if not authors:
+        return _title_citation_from_metadata(meta, year_str)
+    first_author = (authors[0] or "").strip()
+    if not first_author:
+        return _title_citation_from_metadata(meta, year_str)
+    surname = first_author.split()[-1]
+    if not surname:
+        return _title_citation_from_metadata(meta, year_str)
     return f"{surname} {year_str}"
+
+
+_TITLE_CITATION_SKIP: frozenset[str] = frozenset({
+    "a", "an", "the", "study", "effect", "effects", "role",
+    "association", "associations", "comparison", "comparative",
+})
+
+
+def _title_citation_from_metadata(meta: dict, year_str: str) -> str | None:
+    """Fallback for abstract-only hits with no author metadata.
+
+    Closed-access DOI/HIT records often have title+year but no parsed
+    authors. A conservative title-derived token is better than leaking
+    internal handles into public prose.
+    """
+    title = str(meta.get("title") or "").strip()
+    for token in re.findall(r"[A-Za-z][A-Za-z\-]{2,}", title):
+        cleaned = token.strip("-")
+        if cleaned.lower() in _TITLE_CITATION_SKIP:
+            continue
+        return f"{_smart_title(cleaned)} {year_str}"
+    return None
 
 
 def _safe_variants_across_registry(

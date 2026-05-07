@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_does_incorporation_of_epa_and_dha_in_lipoproteins_differ_acc",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_does_incorporation_of_epa_and_dha_in_lipoproteins_differ_acc-pct-192",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 192,
+      "sentence": "Apolipoprotein E (APOE4) is the most important known genetic risk for AD and is prevalent in 20-25% of Canadians, but at present, knowing an individual's ApoE genotype does not help the diagnosis, treatment or prevention of AD.",
+      "context_window": "important known genetic risk for AD and is prevalent in 20-25% of Canadians, but at present, knowing an individual's ApoE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_does_incorporation_of_epa_and_dha_in_lipoproteins_differ_acc-u-811",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 811,
+      "sentence": "The investigators recently reported that after 3g/d of EPA+DHA for 6 weeks, increases in the two fatty acids was less for carriers resulting in a significant gene-by-diet interaction.",
+      "context_window": "estigators recently reported that after 3g/d of EPA+DHA for 6 weeks, increases in the two fatty acids was less for carriers res",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

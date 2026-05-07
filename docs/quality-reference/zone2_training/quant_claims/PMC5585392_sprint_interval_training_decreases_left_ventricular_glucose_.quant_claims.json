@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_",
   "doi": "10.1038/s41598-017-10931-9",
-  "extracted_at": "2026-05-05T22:43:10+00:00",
+  "extracted_at": "2026-05-07T16:58:22+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 4,
@@ -25,9 +25,9 @@
       "context_window": "T2DM or prediabetes were randomized into two-week-long SIT (n = 13) and MICT (n = 13) interventions. Insulin-stimulated myocar",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-n-665",
@@ -43,9 +43,9 @@
       "context_window": "s were randomized into two-week-long SIT (n = 13) and MICT (n = 13) interventions. Insulin-stimulated myocardial GU and fasted",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-pct-730",
@@ -223,9 +223,9 @@
       "context_window": "ks of four subjects with 1:1 allocation ratio, resulting in n = 13 in SIT and n = 13 in MICT group. Subjects were informed abo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-n-2947",
@@ -241,9 +241,9 @@
       "context_window": "s with 1:1 allocation ratio, resulting in n = 13 in SIT and n = 13 in MICT group. Subjects were informed about the groups they",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-pct-4157",
@@ -277,9 +277,9 @@
       "context_window": "Almere, The Netherlands) for 40-60 min at the intensity of 60% of peak workload. The duration of cycling was increased fro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-u-10550",
@@ -367,7 +367,7 @@
       "context_window": "he response of VO 2peak was different between SIT and MICT (p = 0.0495, group*time; Table 2 ), and only SIT improved VO 2peak (p =",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -385,7 +385,7 @@
       "context_window": "495, group*time; Table 2 ), and only SIT improved VO 2peak (p = 0.013 for time effect in SIT). Table 2 Subject characteristics an",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -403,7 +403,7 @@
       "context_window": "8920) 0.810 0.849 0.937 The results are presented as means (95% CI) for age and height. For all other parameters the result",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "metformin",
+      "arm": "mict",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -439,7 +439,7 @@
       "context_window": "sher\u2019s exact test at baseline; \u2020 T-test; \u2021 SIT time effect, p = 0.013; \u00a7 MICT time effect, p = 0.75. Significant differences are",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -457,7 +457,7 @@
       "context_window": "\u2020 T-test; \u2021 SIT time effect, p = 0.013; \u00a7 MICT time effect, p = 0.75. Significant differences are printed in boldface. Subject",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -511,7 +511,7 @@
       "context_window": "sher\u2019s exact test at baseline; \u2020 T-test; \u2021 SIT time effect, p = 0.013; \u00a7 MICT time effect, p = 0.75. Significant differences are",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -529,7 +529,7 @@
       "context_window": "\u2020 T-test; \u2021 SIT time effect, p = 0.013; \u00a7 MICT time effect, p = 0.75. Significant differences are printed in boldface. In contr",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -547,7 +547,7 @@
       "context_window": "to our hypothesis, SIT lowered insulin-stimulated LV GU by -6.0 \u03bcmol\u2219100 g -1 \u2219min -1 (95% CI -12.0 to 0.1 \u03bcmol\u2219100 g -1 \u2219min -1",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -566,7 +566,7 @@
       "context_window": "red insulin-stimulated LV GU by -6.0 \u03bcmol\u2219100 g -1 \u2219min -1 (95% CI -12.0 to 0.1 \u03bcmol\u2219100 g -1 \u2219min -1 ) whereas MICT increased it by 3.4 \u03bcm",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -584,7 +584,7 @@
       "context_window": "ulated LV GU by -6.0 \u03bcmol\u2219100 g -1 \u2219min -1 (95% CI -12.0 to 0.1 \u03bcmol\u2219100 g -1 \u2219min -1 ) whereas MICT increased it by 3.4 \u03bcmol\u221910",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -602,7 +602,7 @@
       "context_window": "to 0.1 \u03bcmol\u2219100 g -1 \u2219min -1 ) whereas MICT increased it by 3.4 \u03bcmol\u2219100 g -1 \u2219min -1 (95% CI -2.5 to 9.3 \u03bcmol\u2219100 g -1 \u2219min -1",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -621,7 +621,7 @@
       "context_window": "1 ) whereas MICT increased it by 3.4 \u03bcmol\u2219100 g -1 \u2219min -1 (95% CI -2.5 to 9.3 \u03bcmol\u2219100 g -1 \u2219min -1 ). The difference between SIT and MIC",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -639,7 +639,7 @@
       "context_window": "T increased it by 3.4 \u03bcmol\u2219100 g -1 \u2219min -1 (95% CI -2.5 to 9.3 \u03bcmol\u2219100 g -1 \u2219min -1 ). The difference between SIT and MICT was",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -657,9 +657,9 @@
       "context_window": "ference between SIT and MICT was statistically significant (p = 0.030, group*time; Table 3 ), and the effect of SIT on LV GU tend",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-p-4946",
@@ -675,9 +675,9 @@
       "context_window": "ect of SIT on LV GU tended to be statistically significant (p = 0.054; Table 3 ). While a similar pattern was observed for RV GU,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-p-5083",
@@ -711,9 +711,9 @@
       "context_window": "0.055 0.775 The results are presented as model-based means (95% CI). Group p -value indicates whether there is a level diff",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-pct-8211",
@@ -891,9 +891,9 @@
       "context_window": "4 ). However, RV EDV responded differently to SIT and MICT (p = 0.022, group*time; Table 4 ), increasing only in MICT by 15 ml (9",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-pct-10387",
@@ -909,9 +909,9 @@
       "context_window": "2, group*time; Table 4 ), increasing only in MICT by 15 ml (95% CI 4 ml to 25 ml, p = 0.001 for time effect in MICT). Simil",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-p-10409",
@@ -927,9 +927,9 @@
       "context_window": "), increasing only in MICT by 15 ml (95% CI 4 ml to 25 ml, p = 0.001 for time effect in MICT). Similarly, only MICT increased RV",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-pct-10494",
@@ -945,7 +945,7 @@
       "context_window": "in MICT). Similarly, only MICT increased RV mass by 1.8 g (95% CI 0.2 g to 3.4 g, p = 0.036 group*time, p = 0.005 for time",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -963,7 +963,7 @@
       "context_window": "nly MICT increased RV mass by 1.8 g (95% CI 0.2 g to 3.4 g, p = 0.036 group*time, p = 0.005 for time effect in MICT). LV mass sli",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -981,7 +981,7 @@
       "context_window": "mass by 1.8 g (95% CI 0.2 g to 3.4 g, p = 0.036 group*time, p = 0.005 for time effect in MICT). LV mass slightly increased but no",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1089,9 +1089,9 @@
       "context_window": "0.005 0.941 The results are presented as model-based means (95% CI). Group p -value indicates whether there is a level diff",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5585392_sprint_interval_training_decreases_left_ventricular_glucose_-pct-15308",
@@ -1125,7 +1125,7 @@
       "context_window": "ients compared to healthy subjects 41 . In an animal study, 7 weeks of endurance training increased the expression of mitochond",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "endurance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1143,7 +1143,7 @@
       "context_window": "d MICT, the reduction of GU seemed to be larger after SIT (-23% in LV and -22% in RV) compared to MICT (-6% in LV and -12%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1161,7 +1161,7 @@
       "context_window": "uction of GU seemed to be larger after SIT (-23% in LV and -22% in RV) compared to MICT (-6% in LV and -12% in RV) also in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1179,7 +1179,7 @@
       "context_window": "er after SIT (-23% in LV and -22% in RV) compared to MICT (-6% in LV and -12% in RV) also in the healthy subjects 31 , 32",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1197,7 +1197,7 @@
       "context_window": "-23% in LV and -22% in RV) compared to MICT (-6% in LV and -12% in RV) also in the healthy subjects 31 , 32 . While both in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },

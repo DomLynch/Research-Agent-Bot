@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8681675_resistance_training_improves_mobility_disability_in_communit",
   "doi": "10.1093/geroni/igab046.3258",
-  "extracted_at": "2026-05-05T21:59:19+00:00",
+  "extracted_at": "2026-05-07T16:57:40+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 4,
@@ -23,10 +23,10 @@
       "sentence": "This study was a systematic review of evidence related to resistance training on physical function for adults over 65 years of age with mobility disability.",
       "context_window": "to resistance training on physical function for adults over 65 years of age with mobility disability. Four databases (PEDro, Med",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "physical function",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8681675_resistance_training_improves_mobility_disability_in_communit-u-802",
@@ -42,9 +42,9 @@
       "context_window": "included in the review. Mean participant age ranged from 63-87 years and exercise interventions ranged from 10 weeks to 12 month",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8681675_resistance_training_improves_mobility_disability_in_communit-u-850",
@@ -60,9 +60,9 @@
       "context_window": "ged from 63-87 years and exercise interventions ranged from 10 weeks to 12 months in duration. Greater changes in 6-minute Walk",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8681675_resistance_training_improves_mobility_disability_in_communit-u-862",
@@ -78,9 +78,9 @@
       "context_window": "87 years and exercise interventions ranged from 10 weeks to 12 months in duration. Greater changes in 6-minute Walk Test (6MWT) d",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8681675_resistance_training_improves_mobility_disability_in_communit-n-940",
@@ -96,7 +96,7 @@
       "context_window": "ion. Greater changes in 6-minute Walk Test (6MWT) distance (n=638, p<0.0001; mean difference (MD) 16.1 metres; 95%CI 12.3-19.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "eater changes in 6-minute Walk Test (6MWT) distance (n=638, p<0.0001; mean difference (MD) 16.1 metres; 95%CI 12.3-19.9), lower",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -133,7 +133,7 @@
       "context_window": "istance (n=638, p<0.0001; mean difference (MD) 16.1 metres; 95%CI 12.3-19.9), lower extremity strength (n=785, p<0.0001; standard MD 2.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -151,7 +151,7 @@
       "context_window": "D) 16.1 metres; 95%CI 12.3-19.9), lower extremity strength (n=785, p<0.0001; standard MD 2.01; 95%CI 1.27-2.75) and usual gai",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -169,7 +169,7 @@
       "context_window": "metres; 95%CI 12.3-19.9), lower extremity strength (n=785, p<0.0001; standard MD 2.01; 95%CI 1.27-2.75) and usual gait speed (n",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -188,7 +188,7 @@
       "context_window": "ower extremity strength (n=785, p<0.0001; standard MD 2.01; 95%CI 1.27-2.75) and usual gait speed (n=2,106, p<0.001; MD 0.05 metres/sec",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -206,7 +206,7 @@
       "context_window": "1; standard MD 2.01; 95%CI 1.27-2.75) and usual gait speed (n=2,106, p<0.001; MD 0.05 metres/second, 95%CI 0.03-0.07) were",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -224,7 +224,7 @@
       "context_window": "rd MD 2.01; 95%CI 1.27-2.75) and usual gait speed (n=2,106, p<0.001; MD 0.05 metres/second, 95%CI 0.03-0.07) were seen with res",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -243,7 +243,7 @@
       "context_window": "usual gait speed (n=2,106, p<0.001; MD 0.05 metres/second, 95%CI 0.03-0.07) were seen with resistance training as compared to control.",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio",
   "doi": "10.3390/nu15030521",
-  "extracted_at": "2026-05-05T23:37:21+00:00",
+  "extracted_at": "2026-05-07T16:56:49+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 17,
@@ -78,10 +78,10 @@
       "sentence": "The nutritional supplement was consumed twice daily for 12 weeks, and the physical function of the supplement intake group improved by 5.9%, but no change was observed in the control group.",
       "context_window": "nt. The nutritional supplement was consumed twice daily for 12 weeks, and the physical function of the supplement intake group i",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-pct-2747",
@@ -96,10 +96,10 @@
       "sentence": "The nutritional supplement was consumed twice daily for 12 weeks, and the physical function of the supplement intake group improved by 5.9%, but no change was observed in the control group.",
       "context_window": "hysical function of the supplement intake group improved by 5.9%, but no change was observed in the control group. In additi",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9920795_effects_of_whey_protein_leucine_and_vitamin_d_supplementatio-u-3032",
@@ -151,7 +151,7 @@
       "context_window": "or the elderly is to increase their daily protein intake (1-1.2 g/kg/day) with large amounts of essential amino acids such as leucin",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -456,7 +456,7 @@
       "sentence": "When analyzed without considering the involvement of a physical exercise program combined with nutritional supplementation, there was a significant difference between the experimental group and the control group regarding changes in appendicular muscle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%].",
       "context_window": "p regarding changes in appendicular muscle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%]. Subgroup analysis",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -474,7 +474,7 @@
       "sentence": "When analyzed without considering the involvement of a physical exercise program combined with nutritional supplementation, there was a significant difference between the experimental group and the control group regarding changes in appendicular muscle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%].",
       "context_window": "appendicular muscle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%]. Subgroup analysis was conducted, and the combi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -492,7 +492,7 @@
       "sentence": "When analyzed without considering the involvement of a physical exercise program combined with nutritional supplementation, there was a significant difference between the experimental group and the control group regarding changes in appendicular muscle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%].",
       "context_window": "cle mass [SMD, 0.27; 95% CI, 0.09 to 0.44; p = 0.003; I 2 = 26%]. Subgroup analysis was conducted, and the combination of n",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"

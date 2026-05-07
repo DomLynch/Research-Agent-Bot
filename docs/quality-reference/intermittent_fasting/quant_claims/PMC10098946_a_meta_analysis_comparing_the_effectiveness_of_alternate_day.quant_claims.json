@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10098946_a_meta_analysis_comparing_the_effectiveness_of_alternate_day",
   "doi": "10.1002/oby.23568",
-  "extracted_at": "2026-05-05T22:11:21+00:00",
+  "extracted_at": "2026-05-07T16:56:50+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 1,
@@ -25,9 +25,9 @@
       "context_window": "he exploratory random effects network analysis of 24 RCTs ( n = 1768) ranked ADF as the most effective, followed by CER and TRE.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10098946_a_meta_analysis_comparing_the_effectiveness_of_alternate_day-u-859",
@@ -188,7 +188,7 @@
       "context_window": "the following PICO criteria: 1) population (P): adults over 18 years of age with normal weight, participants with overweight and",
       "claim_role": "protocol",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -350,7 +350,7 @@
       "context_window": "er regimens. The 5:2 diet produced weight loss ranging from 1.7% to 7.97%, whereas TRE ranged from 0.95% to 8.60% body weigh",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -368,7 +368,7 @@
       "context_window": "ens. The 5:2 diet produced weight loss ranging from 1.7% to 7.97%, whereas TRE ranged from 0.95% to 8.60% body weight loss. T",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -386,7 +386,7 @@
       "context_window": "ht loss ranging from 1.7% to 7.97%, whereas TRE ranged from 0.95% to 8.60% body weight loss. The high heterogeneity I 2 > 70%",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -404,7 +404,7 @@
       "context_window": "anging from 1.7% to 7.97%, whereas TRE ranged from 0.95% to 8.60% body weight loss. The high heterogeneity I 2 > 70% between",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -493,10 +493,10 @@
       "sentence": "Study duration has been raised as a determining factor for compliance to IF as adherence starts declining after 3 months [ 5 ].",
       "context_window": "or for compliance to IF as adherence starts declining after 3 months [ 5 ]. The reviewed studies here show a tendency for better",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10098946_a_meta_analysis_comparing_the_effectiveness_of_alternate_day-u-6383",
@@ -511,10 +511,10 @@
       "sentence": "The reviewed studies here show a tendency for better dietary adherence in studies shorter than 3 months compared with longer\u2010term studies (Table 2 ).",
       "context_window": "ndency for better dietary adherence in studies shorter than 3 months compared with longer\u2010term studies (Table 2 ). This observat",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10098946_a_meta_analysis_comparing_the_effectiveness_of_alternate_day-u-6752",
@@ -547,10 +547,10 @@
       "sentence": "Adherence and retention data from Chow et al. illustrate this discrepancy well, with a 90% retention rate on one hand and an adherence rate of 55% to 65% on the other [ 33 ].",
       "context_window": "a from Chow et al. illustrate this discrepancy well, with a 90% retention rate on one hand and an adherence rate of 55% to",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10098946_a_meta_analysis_comparing_the_effectiveness_of_alternate_day-pct-7427",
@@ -565,10 +565,10 @@
       "sentence": "Adherence and retention data from Chow et al. illustrate this discrepancy well, with a 90% retention rate on one hand and an adherence rate of 55% to 65% on the other [ 33 ].",
       "context_window": "h a 90% retention rate on one hand and an adherence rate of 55% to 65% on the other [ 33 ]. For these reasons, we based our",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10098946_a_meta_analysis_comparing_the_effectiveness_of_alternate_day-pct-7434",
@@ -583,10 +583,10 @@
       "sentence": "Adherence and retention data from Chow et al. illustrate this discrepancy well, with a 90% retention rate on one hand and an adherence rate of 55% to 65% on the other [ 33 ].",
       "context_window": "retention rate on one hand and an adherence rate of 55% to 65% on the other [ 33 ]. For these reasons, we based our conclu",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10098946_a_meta_analysis_comparing_the_effectiveness_of_alternate_day-u-8052",
@@ -709,7 +709,7 @@
       "sentence": "We found that adherence to each of the protocols was moderately high at the onset of treatment (80%), but it diminished over time.",
       "context_window": "he protocols was moderately high at the onset of treatment (80%), but it diminished over time. Compliance was similar for A",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

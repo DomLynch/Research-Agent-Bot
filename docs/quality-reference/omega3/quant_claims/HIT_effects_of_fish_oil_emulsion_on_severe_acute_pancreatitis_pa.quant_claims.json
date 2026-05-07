@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_effects_of_fish_oil_emulsion_on_severe_acute_pancreatitis_pa",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effects_of_fish_oil_emulsion_on_severe_acute_pancreatitis_pa-u-74",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 74,
+      "sentence": "The incidence of acute pancreatitis in UK has risen sharply over the past 40 years.",
+      "context_window": "of acute pancreatitis in UK has risen sharply over the past 40 years. Recent reports suggest that 56.5 per 100 000 of the popula",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_fish_oil_emulsion_on_severe_acute_pancreatitis_pa-pct-312",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 312,
+      "sentence": "In the majority of patients the condition is mild, but about 25% of patients suffer a severe attack and between 30 and 50% of these patients dies.",
+      "context_window": "n the majority of patients the condition is mild, but about 25% of patients suffer a severe attack and between 30 and 50% o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effects_of_fish_oil_emulsion_on_severe_acute_pancreatitis_pa-pct-370",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 370,
+      "sentence": "In the majority of patients the condition is mild, but about 25% of patients suffer a severe attack and between 30 and 50% of these patients dies.",
+      "context_window": "t 25% of patients suffer a severe attack and between 30 and 50% of these patients dies. The usual cause of death is multipl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

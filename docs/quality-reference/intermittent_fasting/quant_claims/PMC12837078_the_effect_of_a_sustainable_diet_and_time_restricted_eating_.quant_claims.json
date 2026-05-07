@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12837078_the_effect_of_a_sustainable_diet_and_time_restricted_eating_",
   "doi": "10.1186/s12937-025-01270-x",
-  "extracted_at": "2026-05-05T22:11:23+00:00",
+  "extracted_at": "2026-05-07T16:57:03+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 32,
@@ -24,9 +24,9 @@
       "context_window": "le-blind, placebo-controlled, three-arm clinical trial over 60 days. Participants will be randomly assigned in a 1:1:1 ratio to",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC12837078_the_effect_of_a_sustainable_diet_and_time_restricted_eating_-u-972",
@@ -42,7 +42,7 @@
       "context_window": "ndomly assigned in a 1:1:1 ratio to one of three groups for 60 days: (A) co-administration of SD and TRE with probiotic supplem",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -60,7 +60,7 @@
       "context_window": "ministration of SD and TRE with probiotic supplementation ( n = 25); (B) co-administration of SD and TRE with placebo suppleme",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -78,7 +78,7 @@
       "context_window": "administration of SD and TRE with placebo supplementation ( n = 25); and (C) control group with placebo supplementation ( n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -96,7 +96,7 @@
       "context_window": "= 25); and (C) control group with placebo supplementation ( n = 25), serving as the control group. The primary outcomes will b",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -168,7 +168,7 @@
       "context_window": ", including periodic prolonged fasting (e.g., fasting for 2-7 days), alternate-day fasting (ADF) (fasting day alternated with",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -186,7 +186,7 @@
       "context_window": "itum consumption day), the 5:2 fasting regimen (fasting for 2 days per week), religious fasting (e.g., Ramadan), and TRE (whic",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -293,7 +293,7 @@
       "sentence": "Post-randomization discontinuation criteria will be: starting antibiotics during the intervention; protocol-defined poor adherence (i.e., consuming less than 80% of the supplements during the study period); adverse reaction to the supplement; systolic blood pressure < 90 mmHg [ 42 ]; or disturbances in serum electrolyte levels.",
       "context_window": "protocol-defined poor adherence (i.e., consuming less than 80% of the supplements during the study period); adverse reacti",
       "claim_role": "duration",
-      "endpoint": "blood pressure",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -564,7 +564,7 @@
       "context_window": "ated to one of three groups, with stratification by BMI (25-30 kg/m\u00b2 and 30-35 kg/m\u00b2): SD + TRE with a probiotic supplement,",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -582,7 +582,7 @@
       "context_window": "hree groups, with stratification by BMI (25-30 kg/m\u00b2 and 30-35 kg/m\u00b2): SD + TRE with a probiotic supplement, SD + TRE with a",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -781,9 +781,9 @@
       "context_window": "David Chu, which reported mean \u00b1 SD values for NT-proBNP of 1537 \u00b1 377 (pg/ml) and 1853 \u00b1 354 (pg/ml) in the intervention (Calorie",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12837078_the_effect_of_a_sustainable_diet_and_time_restricted_eating_-msd-41375",
@@ -800,9 +800,9 @@
       "context_window": "ed mean \u00b1 SD values for NT-proBNP of 1537 \u00b1 377 (pg/ml) and 1853 \u00b1 354 (pg/ml) in the intervention (Calorie-restricted diet) and c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12837078_the_effect_of_a_sustainable_diet_and_time_restricted_eating_-pct-41607",
@@ -926,7 +926,7 @@
       "context_window": ") was safe and improved left ventricular (LV) function over 4 weeks, with further improvements observed up to 6 months post-myo",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -944,7 +944,7 @@
       "context_window": "tion over 4 weeks, with further improvements observed up to 6 months post-myocardial infarction (MI) [ 42 ]. Compared with a die",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },

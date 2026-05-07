@@ -1,0 +1,119 @@
+{
+  "paper_id": "HIT_effect_of_epa_and_hmb_on_strength_in_icu_patients",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:33:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_epa_and_hmb_on_strength_in_icu_patients-u-669",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 669,
+      "sentence": "Patients will then be randomized to receive either placebo (saline 30 ml every 12 hours via the GI tract, EPA (1000 mg given every 12 hours via the GI tract), HMB (1500 mg given every 12 hours via the GI tract), or the combination of EPA (1000 mg given every 12 hours via the GI tract) and HMB (1500 mg given every 12 hours via the GI tract).",
+      "context_window": "placebo (saline 30 ml every 12 hours via the GI tract, EPA (1000 mg given every 12 hours via the GI tract), HMB (1500 mg given",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_epa_and_hmb_on_strength_in_icu_patients-u-722",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 722,
+      "sentence": "Patients will then be randomized to receive either placebo (saline 30 ml every 12 hours via the GI tract, EPA (1000 mg given every 12 hours via the GI tract), HMB (1500 mg given every 12 hours via the GI tract), or the combination of EPA (1000 mg given every 12 hours via the GI tract) and HMB (1500 mg given every 12 hours via the GI tract).",
+      "context_window": ", EPA (1000 mg given every 12 hours via the GI tract), HMB (1500 mg given every 12 hours via the GI tract), or the combination",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_epa_and_hmb_on_strength_in_icu_patients-u-797",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 797,
+      "sentence": "Patients will then be randomized to receive either placebo (saline 30 ml every 12 hours via the GI tract, EPA (1000 mg given every 12 hours via the GI tract), HMB (1500 mg given every 12 hours via the GI tract), or the combination of EPA (1000 mg given every 12 hours via the GI tract) and HMB (1500 mg given every 12 hours via the GI tract).",
+      "context_window": "very 12 hours via the GI tract), or the combination of EPA (1000 mg given every 12 hours via the GI tract) and HMB (1500 mg giv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_epa_and_hmb_on_strength_in_icu_patients-u-853",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 853,
+      "sentence": "Patients will then be randomized to receive either placebo (saline 30 ml every 12 hours via the GI tract, EPA (1000 mg given every 12 hours via the GI tract), HMB (1500 mg given every 12 hours via the GI tract), or the combination of EPA (1000 mg given every 12 hours via the GI tract) and HMB (1500 mg given every 12 hours via the GI tract).",
+      "context_window": "PA (1000 mg given every 12 hours via the GI tract) and HMB (1500 mg given every 12 hours via the GI tract). Drugs will be given",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_epa_and_hmb_on_strength_in_icu_patients-u-925",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 925,
+      "sentence": "Drugs will be given for 10 days; at the end of this time (on day 11), strength measurements, ultrasound muscle size measurements, and the vastus lateralis biopsy will be repeated.",
+      "context_window": "n every 12 hours via the GI tract). Drugs will be given for 10 days; at the end of this time (on day 11), strength measurements",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_epa_and_hmb_on_strength_in_icu_patients-u-1542",
+      "claim_type": "unit_value",
+      "raw_text": "11 days",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1542,
+      "sentence": "Posted outcomes: Change of Skeletal Muscle Strength for One of the Drugs Compared to Placebo. timeframe=By the second strength measurement (11 days).",
+      "context_window": "d to Placebo. timeframe=By the second strength measurement (11 days). Control, to be Given Saline Solution=1.3; EPA, Eicosapent",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

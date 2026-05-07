@@ -1,0 +1,103 @@
+{
+  "paper_id": "DOI_10_1161_atvb_36_suppl_1_243_abstract_243_regression_of_carotid_intima_media_thickness_an",
+  "doi": "10.1161/atvb.36.suppl_1.243",
+  "extracted_at": "2026-05-07T19:32:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "p_value": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_atvb_36_suppl_1_243_abstract_243_regression_of_carotid_intima_media_thickness_an-pct-584",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 584,
+      "sentence": "The 2013 ACC/AHA cholesterol guideline evidence statements also describe the JELIS trial, in which 1.8 g/day of EPA added to statin therapy led to a 19% relative risk reduction in major coronary events in Japanese patients with hypercholesterolemia.",
+      "context_window": "in which 1.8 g/day of EPA added to statin therapy led to a 19% relative risk reduction in major coronary events in Japanes",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_36_suppl_1_243_abstract_243_regression_of_carotid_intima_media_thickness_an-pct-948",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 948,
+      "sentence": "Additionally, in the CHERRY trial of high-risk cardiac patients treated with moderate- to high-intensity statin therapy, the addition of 1.8 g/day of EPA resulted in significantly greater prevalence of coronary plaque regression compared to statin therapy alone (50% vs 24%; p<0.001).",
+      "context_window": "oronary plaque regression compared to statin therapy alone (50% vs 24%; p<0.001). Further, in patients with DM, ASCVD is th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_36_suppl_1_243_abstract_243_regression_of_carotid_intima_media_thickness_an-pct-955",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 955,
+      "sentence": "Additionally, in the CHERRY trial of high-risk cardiac patients treated with moderate- to high-intensity statin therapy, the addition of 1.8 g/day of EPA resulted in significantly greater prevalence of coronary plaque regression compared to statin therapy alone (50% vs 24%; p<0.001).",
+      "context_window": "plaque regression compared to statin therapy alone (50% vs 24%; p<0.001). Further, in patients with DM, ASCVD is the prima",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_36_suppl_1_243_abstract_243_regression_of_carotid_intima_media_thickness_an-p-960",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 960,
+      "sentence": "Additionally, in the CHERRY trial of high-risk cardiac patients treated with moderate- to high-intensity statin therapy, the addition of 1.8 g/day of EPA resulted in significantly greater prevalence of coronary plaque regression compared to statin therapy alone (50% vs 24%; p<0.001).",
+      "context_window": "ue regression compared to statin therapy alone (50% vs 24%; p<0.001). Further, in patients with DM, ASCVD is the primary cause",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_36_suppl_1_243_abstract_243_regression_of_carotid_intima_media_thickness_an-u-1497",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1497,
+      "sentence": "Lipids, A1C, HOMA-IR, and CIMT were evaluated before and 4 months after initiating icosapent ethyl. </jats:p> <jats:p> <jats:bold>Results:</jats:bold> See table. </jats:p> <jats:p> <jats:bold>Conclusions:</jats:bold> Adding high-purity prescription EPA treatment (icosapent ethyl) to a maximally tolerated statin dose in a morbidly obese African-American patient with DM led to substantial regression of carotid intima-media thickness and to improvements in measured lipid parameters and two laboratory measures of DM.",
+      "context_window": "t. Lipids, A1C, HOMA-IR, and CIMT were evaluated before and 4 months after initiating icosapent ethyl. </jats:p> <jats:p> <jats:",
+      "claim_role": "dose",
+      "endpoint": "insulin sensitivity",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

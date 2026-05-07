@@ -1,0 +1,120 @@
+{
+  "paper_id": "HIT_influence_of_pravastatin_on_carotid_artery_structure_and_fun",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_influence_of_pravastatin_on_carotid_artery_structure_and_fun-u-1402",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1402,
+      "sentence": "Patients in the pravastatin group were consecutively recruited in four department of infectious diseases if they fulfilled the following criteria : (1) HIV-infected treated with HAART for \\> 12 months 2) with dyslipidemia, defined as fasting serum LDL cholesterol \\> 160 mg/dL before initiation of pravastatin, (3) treated with pravastatin \\> 12 months and one more coronary risk factor.",
+      "context_window": "owing criteria : (1) HIV-infected treated with HAART for \\> 12 months 2) with dyslipidemia, defined as fasting serum LDL choleste",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_influence_of_pravastatin_on_carotid_artery_structure_and_fun-u-1478",
+      "claim_type": "unit_value",
+      "raw_text": "160 mg/dL",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1478,
+      "sentence": "Patients in the pravastatin group were consecutively recruited in four department of infectious diseases if they fulfilled the following criteria : (1) HIV-infected treated with HAART for \\> 12 months 2) with dyslipidemia, defined as fasting serum LDL cholesterol \\> 160 mg/dL before initiation of pravastatin, (3) treated with pravastatin \\> 12 months and one more coronary risk factor.",
+      "context_window": "h dyslipidemia, defined as fasting serum LDL cholesterol \\> 160 mg/dL before initiation of pravastatin, (3) treated with pravasta",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_influence_of_pravastatin_on_carotid_artery_structure_and_fun-u-1554",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1554,
+      "sentence": "Patients in the pravastatin group were consecutively recruited in four department of infectious diseases if they fulfilled the following criteria : (1) HIV-infected treated with HAART for \\> 12 months 2) with dyslipidemia, defined as fasting serum LDL cholesterol \\> 160 mg/dL before initiation of pravastatin, (3) treated with pravastatin \\> 12 months and one more coronary risk factor.",
+      "context_window": "initiation of pravastatin, (3) treated with pravastatin \\> 12 months and one more coronary risk factor. The patients in the cont",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_influence_of_pravastatin_on_carotid_artery_structure_and_fun-u-1738",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1738,
+      "sentence": "The patients in the control group were selected consecutively in the same departments among 1) HIV-infected patients treated with HAART \\> 12 months 2) fasting serum LDL cholesterol \\> 160 mg/dL 3) without lipid-lowering drugs and one more coronary risk factor.",
+      "context_window": "tments among 1) HIV-infected patients treated with HAART \\> 12 months 2) fasting serum LDL cholesterol \\> 160 mg/dL 3) without li",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_influence_of_pravastatin_on_carotid_artery_structure_and_fun-u-1784",
+      "claim_type": "unit_value",
+      "raw_text": "160 mg/dL",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1784,
+      "sentence": "The patients in the control group were selected consecutively in the same departments among 1) HIV-infected patients treated with HAART \\> 12 months 2) fasting serum LDL cholesterol \\> 160 mg/dL 3) without lipid-lowering drugs and one more coronary risk factor.",
+      "context_window": "with HAART \\> 12 months 2) fasting serum LDL cholesterol \\> 160 mg/dL 3) without lipid-lowering drugs and one more coronary risk",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_influence_of_pravastatin_on_carotid_artery_structure_and_fun-pct-2086",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2086,
+      "sentence": "Using data from Mercie et al., inclusion of 42 patients in pravastatin and control groups was the minimum sample size needed for detection of a 6.5% difference in CCA-IMT, in a two-sided test (a = 0.05, b = 0.20).",
+      "context_window": "roups was the minimum sample size needed for detection of a 6.5% difference in CCA-IMT, in a two-sided test (a = 0.05, b = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

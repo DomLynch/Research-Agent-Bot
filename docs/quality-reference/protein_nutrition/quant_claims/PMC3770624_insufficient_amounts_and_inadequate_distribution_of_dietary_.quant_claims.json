@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3770624_insufficient_amounts_and_inadequate_distribution_of_dietary_",
   "doi": "10.2147/CIA.S49810",
-  "extracted_at": "2026-05-05T23:37:06+00:00",
+  "extracted_at": "2026-05-07T16:56:36+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 21,
@@ -60,7 +60,7 @@
       "context_window": "< 0.05). The estimated value of dietary protein intake was 0.9 g/kg/day. In this sample, 28% of subjects did not cover 100% of the",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "innertime compared with the recommended amount of 25-30 g ( P < 0.05). Also, the study observed that appendicular skeletal muscl",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -131,7 +131,7 @@
       "sentence": "3 , 4 These studies, as well as other research, have concluded that the amount of protein recommended by the Food and Agriculture Organization of the United Nations/World Health Organization/United Nations University (FAO/WHO/UNU) in 1985 5 (0.60-0.75 g/kg/day) and the requirements reanalyzed recently 6 (0.66-0.80 g/kg/day) seem insufficient to maintain a positive balance and, therefore, a muscle mass that is compatible with good long-term health and functionality.",
       "context_window": "ion/United Nations University (FAO/WHO/UNU) in 1985 5 (0.60-0.75 g/kg/day) and the requirements reanalyzed recently 6 (0.66-0.80 g/kg",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -149,7 +149,7 @@
       "sentence": "3 , 4 These studies, as well as other research, have concluded that the amount of protein recommended by the Food and Agriculture Organization of the United Nations/World Health Organization/United Nations University (FAO/WHO/UNU) in 1985 5 (0.60-0.75 g/kg/day) and the requirements reanalyzed recently 6 (0.66-0.80 g/kg/day) seem insufficient to maintain a positive balance and, therefore, a muscle mass that is compatible with good long-term health and functionality.",
       "context_window": "g/kg/day) and the requirements reanalyzed recently 6 (0.66-0.80 g/kg/day) seem insufficient to maintain a positive balance and, ther",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -203,8 +203,8 @@
       "sentence": "4 This latter amount is associated significantly with 40% lower muscle mass loss compared with that associated with a protein intake of 0.8 g/kg/day.",
       "context_window": "/day. 4 This latter amount is associated significantly with 40% lower muscle mass loss compared with that associated with a",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -221,8 +221,8 @@
       "sentence": "4 This latter amount is associated significantly with 40% lower muscle mass loss compared with that associated with a protein intake of 0.8 g/kg/day.",
       "context_window": "loss compared with that associated with a protein intake of 0.8 g/kg/day. It is well recognized that older adults require not only",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -257,7 +257,7 @@
       "sentence": "17 Appendicular skeletal muscle mass represents the sum of nonfat and nonbone tissue in both arms and legs, and is based on two assumptions, ie, lean tissue in the arms and legs represents limb skeletal muscle mass 18 and limb skeletal muscle mass represents 75% of total body skeletal muscle.",
       "context_window": "tal muscle mass 18 and limb skeletal muscle mass represents 75% of total body skeletal muscle. 19 All statistical analyses",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "pooled",
       "direction": "",
       "binding_confidence": "partial"
@@ -383,8 +383,8 @@
       "sentence": "With respect to protein intake, men consumed 13.4 g of protein/day more than women ( P < 0.05), and protein consumption per kg of bodyweight, the study found that the estimated average consumption in men and women was above the recommended daily allowance and the FAO/WHO/UNU norms for proteins (0.99 versus 0.8 g/kg/day, P < 0.001), but below the value associated with lower muscle mass loss and that suggested as being necessary to prevent sarcopenia in older adults (0.99 versus 1.2 g/kg/day, P < 0.001, Table 2 ).",
       "context_window": "ntake, men consumed 13.4 g of protein/day more than women ( P < 0.05), and protein consumption per kg of bodyweight, the study f",
       "claim_role": "dose",
-      "endpoint": "sarcopenia",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -401,8 +401,8 @@
       "sentence": "With respect to protein intake, men consumed 13.4 g of protein/day more than women ( P < 0.05), and protein consumption per kg of bodyweight, the study found that the estimated average consumption in men and women was above the recommended daily allowance and the FAO/WHO/UNU norms for proteins (0.99 versus 0.8 g/kg/day, P < 0.001), but below the value associated with lower muscle mass loss and that suggested as being necessary to prevent sarcopenia in older adults (0.99 versus 1.2 g/kg/day, P < 0.001, Table 2 ).",
       "context_window": "lowance and the FAO/WHO/UNU norms for proteins (0.99 versus 0.8 g/kg/day, P < 0.001), but below the value associated with lower musc",
       "claim_role": "dose",
-      "endpoint": "sarcopenia",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -419,8 +419,8 @@
       "sentence": "With respect to protein intake, men consumed 13.4 g of protein/day more than women ( P < 0.05), and protein consumption per kg of bodyweight, the study found that the estimated average consumption in men and women was above the recommended daily allowance and the FAO/WHO/UNU norms for proteins (0.99 versus 0.8 g/kg/day, P < 0.001), but below the value associated with lower muscle mass loss and that suggested as being necessary to prevent sarcopenia in older adults (0.99 versus 1.2 g/kg/day, P < 0.001, Table 2 ).",
       "context_window": "e FAO/WHO/UNU norms for proteins (0.99 versus 0.8 g/kg/day, P < 0.001), but below the value associated with lower muscle mass los",
       "claim_role": "dose",
-      "endpoint": "sarcopenia",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -438,7 +438,7 @@
       "context_window": "ecessary to prevent sarcopenia in older adults (0.99 versus 1.2 g/kg/day, P < 0.001, Table 2 ). Although the average protein intake",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -456,7 +456,7 @@
       "context_window": "event sarcopenia in older adults (0.99 versus 1.2 g/kg/day, P < 0.001, Table 2 ). Although the average protein intake was 0.99 g/",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -474,7 +474,7 @@
       "context_window": "< 0.001, Table 2 ). Although the average protein intake was 0.99 g/kg/day, 37% of subjects did not cover the recommended amount of pr",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -492,7 +492,7 @@
       "context_window": "2 ). Although the average protein intake was 0.99 g/kg/day, 37% of subjects did not cover the recommended amount of protein",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -510,7 +510,7 @@
       "context_window": "t cover the recommended amount of protein/kg of bodyweight (0.8 g/kg/day). Dietary protein intake and caloric consumption by sex a",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -528,7 +528,7 @@
       "context_window": "rd deviation. Adequacy of protein intake was approximately 51%-315% of the dietary reference intake. However, 28% of the o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -546,7 +546,7 @@
       "context_window": "eviation. Adequacy of protein intake was approximately 51%-315% of the dietary reference intake. However, 28% of the older",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -618,7 +618,7 @@
       "context_window": "consumption of 30 g at each meal, our findings showed that 81% of these older adults consumed quantities below the recomme",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -671,7 +671,7 @@
       "sentence": "In relation to protein ingestion and its association with muscle mass, the study found a modest and positive association between dietary protein intake and appendicular skeletal muscle mass ( P < 0.05, Figure 1 ).",
       "context_window": "tary protein intake and appendicular skeletal muscle mass ( P < 0.05, Figure 1 ). In addition, it found a significant effect of",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -690,8 +690,8 @@
       "sentence": "Appendicular skeletal muscle mass (kg) for group A differed from that of group B for men and women who consumed >25 g of dietary protein (15.9 \u00b1 0.9 kg versus 19.1 \u00b1 0.6 kg, P < 0.01).",
       "context_window": "B for men and women who consumed >25 g of dietary protein (15.9 \u00b1 0.9 kg versus 19.1 \u00b1 0.6 kg, P < 0.01). However, on adjusting f",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -708,8 +708,8 @@
       "sentence": "Appendicular skeletal muscle mass (kg) for group A differed from that of group B for men and women who consumed >25 g of dietary protein (15.9 \u00b1 0.9 kg versus 19.1 \u00b1 0.6 kg, P < 0.01).",
       "context_window": "men and women who consumed >25 g of dietary protein (15.9 \u00b1 0.9 kg versus 19.1 \u00b1 0.6 kg, P < 0.01). However, on adjusting for",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -727,8 +727,8 @@
       "sentence": "Appendicular skeletal muscle mass (kg) for group A differed from that of group B for men and women who consumed >25 g of dietary protein (15.9 \u00b1 0.9 kg versus 19.1 \u00b1 0.6 kg, P < 0.01).",
       "context_window": "who consumed >25 g of dietary protein (15.9 \u00b1 0.9 kg versus 19.1 \u00b1 0.6 kg, P < 0.01). However, on adjusting for bodyweight, sex, a",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -745,8 +745,8 @@
       "sentence": "Appendicular skeletal muscle mass (kg) for group A differed from that of group B for men and women who consumed >25 g of dietary protein (15.9 \u00b1 0.9 kg versus 19.1 \u00b1 0.6 kg, P < 0.01).",
       "context_window": "sumed >25 g of dietary protein (15.9 \u00b1 0.9 kg versus 19.1 \u00b1 0.6 kg, P < 0.01). However, on adjusting for bodyweight, sex, and",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -763,8 +763,8 @@
       "sentence": "Appendicular skeletal muscle mass (kg) for group A differed from that of group B for men and women who consumed >25 g of dietary protein (15.9 \u00b1 0.9 kg versus 19.1 \u00b1 0.6 kg, P < 0.01).",
       "context_window": "5 g of dietary protein (15.9 \u00b1 0.9 kg versus 19.1 \u00b1 0.6 kg, P < 0.01). However, on adjusting for bodyweight, sex, and height, th",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -782,10 +782,10 @@
       "sentence": "However, on adjusting for bodyweight, sex, and height, the appendicular skeletal muscle mass did not prove to be significantly different between the two groups (18.1 \u00b1 0.4 kg versus 18.1 \u00b1 0.2 kg, P = 0.87).",
       "context_window": "prove to be significantly different between the two groups (18.1 \u00b1 0.4 kg versus 18.1 \u00b1 0.2 kg, P = 0.87). Positive association b",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3770624_insufficient_amounts_and_inadequate_distribution_of_dietary_-u-3902",
@@ -800,10 +800,10 @@
       "sentence": "However, on adjusting for bodyweight, sex, and height, the appendicular skeletal muscle mass did not prove to be significantly different between the two groups (18.1 \u00b1 0.4 kg versus 18.1 \u00b1 0.2 kg, P = 0.87).",
       "context_window": "o be significantly different between the two groups (18.1 \u00b1 0.4 kg versus 18.1 \u00b1 0.2 kg, P = 0.87). Positive association betw",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3770624_insufficient_amounts_and_inadequate_distribution_of_dietary_-msd-3916",
@@ -819,10 +819,10 @@
       "sentence": "However, on adjusting for bodyweight, sex, and height, the appendicular skeletal muscle mass did not prove to be significantly different between the two groups (18.1 \u00b1 0.4 kg versus 18.1 \u00b1 0.2 kg, P = 0.87).",
       "context_window": "ntly different between the two groups (18.1 \u00b1 0.4 kg versus 18.1 \u00b1 0.2 kg, P = 0.87). Positive association between dietary protei",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3770624_insufficient_amounts_and_inadequate_distribution_of_dietary_-u-3923",
@@ -837,10 +837,10 @@
       "sentence": "However, on adjusting for bodyweight, sex, and height, the appendicular skeletal muscle mass did not prove to be significantly different between the two groups (18.1 \u00b1 0.4 kg versus 18.1 \u00b1 0.2 kg, P = 0.87).",
       "context_window": "fferent between the two groups (18.1 \u00b1 0.4 kg versus 18.1 \u00b1 0.2 kg, P = 0.87). Positive association between dietary protein i",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3770624_insufficient_amounts_and_inadequate_distribution_of_dietary_-p-3931",
@@ -855,10 +855,10 @@
       "sentence": "However, on adjusting for bodyweight, sex, and height, the appendicular skeletal muscle mass did not prove to be significantly different between the two groups (18.1 \u00b1 0.4 kg versus 18.1 \u00b1 0.2 kg, P = 0.87).",
       "context_window": "between the two groups (18.1 \u00b1 0.4 kg versus 18.1 \u00b1 0.2 kg, P = 0.87). Positive association between dietary protein intake and",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3770624_insufficient_amounts_and_inadequate_distribution_of_dietary_-pct-862",
@@ -873,10 +873,10 @@
       "sentence": "8 , 16 The loss of appendicular skeletal muscle mass is a common problem in older adults in northwestern Mexico, with data from previous studies showing a prevalence and incidence of this condition of 21% and 13%, respectively, in persons over 60 years.",
       "context_window": "ies showing a prevalence and incidence of this condition of 21% and 13%, respectively, in persons over 60 years. 21 The re",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3770624_insufficient_amounts_and_inadequate_distribution_of_dietary_-pct-870",
@@ -891,10 +891,10 @@
       "sentence": "8 , 16 The loss of appendicular skeletal muscle mass is a common problem in older adults in northwestern Mexico, with data from previous studies showing a prevalence and incidence of this condition of 21% and 13%, respectively, in persons over 60 years.",
       "context_window": "ing a prevalence and incidence of this condition of 21% and 13%, respectively, in persons over 60 years. 21 The results of",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3770624_insufficient_amounts_and_inadequate_distribution_of_dietary_-u-905",
@@ -909,10 +909,10 @@
       "sentence": "8 , 16 The loss of appendicular skeletal muscle mass is a common problem in older adults in northwestern Mexico, with data from previous studies showing a prevalence and incidence of this condition of 21% and 13%, respectively, in persons over 60 years.",
       "context_window": "his condition of 21% and 13%, respectively, in persons over 60 years. 21 The results of this pilot study also show an effect of",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3770624_insufficient_amounts_and_inadequate_distribution_of_dietary_-p-1158",
@@ -928,7 +928,7 @@
       "context_window": "tal protein consumption and protein consumption at dinner ( P < 0.05). Also, important is that a proportion of the total sample",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -946,7 +946,7 @@
       "context_window": "is that a proportion of the total sample did not cover the 0.8 g/kg/day protein intake. Once again, women were affected in this res",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },

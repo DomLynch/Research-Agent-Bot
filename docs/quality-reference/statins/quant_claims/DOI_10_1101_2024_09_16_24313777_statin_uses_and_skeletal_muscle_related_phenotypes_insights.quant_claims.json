@@ -1,0 +1,327 @@
+{
+  "paper_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights",
+  "doi": "10.1101/2024.09.16.24313777",
+  "extracted_at": "2026-05-07T19:24:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 2,
+    "sample_size": 1,
+    "confidence_interval": 6,
+    "p_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-u-528",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 528,
+      "sentence": "Methods This cross-sectional study included 22,549 patients aged \u226520 years with cardiovascular disease, diabetes, or hyperlipidemia.",
+      "context_window": "s This cross-sectional study included 22,549 patients aged \u226520 years with cardiovascular disease, diabetes, or hyperlipidemia. W",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-u-1005",
+      "claim_type": "unit_value",
+      "raw_text": "59 years",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1005,
+      "sentence": "Results The weighted mean age was 59 years, 50.3% were male, and 37.6% (n=8,481) received statin treatment.",
+      "context_window": "uscle-related phenotypes. Results The weighted mean age was 59 years, 50.3% were male, and 37.6% (n=8,481) received statin treat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-pct-1015",
+      "claim_type": "percentage",
+      "raw_text": "50.3%",
+      "numeric_values": [
+        50.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1015,
+      "sentence": "Results The weighted mean age was 59 years, 50.3% were male, and 37.6% (n=8,481) received statin treatment.",
+      "context_window": "ted phenotypes. Results The weighted mean age was 59 years, 50.3% were male, and 37.6% (n=8,481) received statin treatment. I",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-pct-1036",
+      "claim_type": "percentage",
+      "raw_text": "37.6%",
+      "numeric_values": [
+        37.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1036,
+      "sentence": "Results The weighted mean age was 59 years, 50.3% were male, and 37.6% (n=8,481) received statin treatment.",
+      "context_window": "ts The weighted mean age was 59 years, 50.3% were male, and 37.6% (n=8,481) received statin treatment. In the unadjusted mode",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-n-1043",
+      "claim_type": "sample_size",
+      "raw_text": "n=8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1043,
+      "sentence": "Results The weighted mean age was 59 years, 50.3% were male, and 37.6% (n=8,481) received statin treatment.",
+      "context_window": "weighted mean age was 59 years, 50.3% were male, and 37.6% (n=8,481) received statin treatment. In the unadjusted model, co",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-ci-1296",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.12 to 1.62",
+      "numeric_values": [
+        1.12,
+        1.62
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1296,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "r skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-p-1316",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1316,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "ss [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001),",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-ci-1353",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.62 to 2.13",
+      "numeric_values": [
+        1.62,
+        2.13
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1353,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "5 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-p-1373",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1373,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "2, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relat",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-ci-1402",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -3.97 to -2.06",
+      "numeric_values": [
+        -3.97,
+        -2.06
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1402,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-p-1425",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1425,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "o 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) a",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-ci-1459",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.30 to -0.17",
+      "numeric_values": [
+        -0.3,
+        -0.17
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1459,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "1 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-p-1482",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1482,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "6, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-ci-1519",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -7.86 to -3.93",
+      "numeric_values": [
+        -7.86,
+        -3.93
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1519,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-p-1542",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1542,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-ci-1647",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.13 to 1.63",
+      "numeric_values": [
+        1.13,
+        1.63
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1647,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "quared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]). After multivariable adjustment or propensity",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313777_statin_uses_and_skeletal_muscle_related_phenotypes_insights-p-1668",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1668,
+      "sentence": "In the unadjusted model, compared with adults without any lipid-lowering drugs, statin use was associated with a higher likelihood of sarcopenia (appendicular skeletal muscle mass [ASM]/Body mass index [BMI] OR 1.35 (95%CI 1.12 to 1.62, p < 0.001), ASM/weight [Wt] OR 1.86 (95%CI 1.62 to 2.13, p < 0.001), max HGS \u03b2 -3.01 (95% CI -3.97 to -2.06, p < 0.001), relative HGS \u03b2 -0.23 (95% CI -0.30 to -0.17, p < 0.001) and combined HGS \u03b2 -5.90 (95% CI -7.86 to -3.93, p < 0.001)), sarcopenic obesity (ASM/height squared [Ht 2 ] and body fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]).",
+      "context_window": "dy fat percentage definition [OR 1.36 (95% CI 1.13 to 1.63, p < 0.001]). After multivariable adjustment or propensity score match",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

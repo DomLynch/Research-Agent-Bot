@@ -1,0 +1,84 @@
+{
+  "paper_id": "HIT_evaluate_the_efficacy_and_safety_of_atorvastatin_combined_wi",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_evaluate_the_efficacy_and_safety_of_atorvastatin_combined_wi-pct-147",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 147,
+      "sentence": "Glioblastoma (GBM) is the primary intracranial malignant tumor with the highest morbidity and mortality, and the 5-year survival rate is less than 10%.",
+      "context_window": "ty and mortality, and the 5-year survival rate is less than 10%. The number of primary diagnostic patients and deaths of GB",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_evaluate_the_efficacy_and_safety_of_atorvastatin_combined_wi-u-532",
+      "claim_type": "unit_value",
+      "raw_text": "14.4 months",
+      "numeric_values": [
+        14.4
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 532,
+      "sentence": "At present, the clinical treatment strategy of maximum surgical resection combined with concurrent chemo- and radio-therapy and TTF treatment is still not satisfactory, and the median survival time of GBM patients is only 14.4 months.",
+      "context_window": "ctory, and the median survival time of GBM patients is only 14.4 months. Statins inhibit cholesterol production with few side effec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_evaluate_the_efficacy_and_safety_of_atorvastatin_combined_wi-u-1449",
+      "claim_type": "unit_value",
+      "raw_text": "20mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1449,
+      "sentence": "After informed consent was signed by the patient or authorized family members, the patients were treated with the current STUPP regimen and ATO (20mg, qn) orally.",
+      "context_window": "tients were treated with the current STUPP regimen and ATO (20mg, qn) orally. The patients were regularly followed up for 52",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_evaluate_the_efficacy_and_safety_of_atorvastatin_combined_wi-u-1511",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1511,
+      "sentence": "The patients were regularly followed up for 52 weeks after treatment.",
+      "context_window": "mg, qn) orally. The patients were regularly followed up for 52 weeks after treatment. The primary endpoint was progression-free",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

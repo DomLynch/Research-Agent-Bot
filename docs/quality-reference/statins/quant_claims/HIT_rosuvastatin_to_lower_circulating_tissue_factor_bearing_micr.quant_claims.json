@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_rosuvastatin_to_lower_circulating_tissue_factor_bearing_micr",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_rosuvastatin_to_lower_circulating_tissue_factor_bearing_micr-u-826",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 826,
+      "sentence": "Posted outcomes: Mean Change of Tissue Factor Bearing Microparticles. timeframe=4 weeks.",
+      "context_window": "n Change of Tissue Factor Bearing Microparticles. timeframe=4 weeks. Rosuvastatin 20mg=102 (\u00b1586); Rosuvastatin 40mg=-618 (\u00b1624",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_rosuvastatin_to_lower_circulating_tissue_factor_bearing_micr-u-848",
+      "claim_type": "unit_value",
+      "raw_text": "20mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 848,
+      "sentence": "Rosuvastatin 20mg=102 (\u00b1586); Rosuvastatin 40mg=-618 (\u00b1624)",
+      "context_window": "tor Bearing Microparticles. timeframe=4 weeks. Rosuvastatin 20mg=102 (\u00b1586); Rosuvastatin 40mg=-618 (\u00b1624)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_rosuvastatin_to_lower_circulating_tissue_factor_bearing_micr-u-878",
+      "claim_type": "unit_value",
+      "raw_text": "40mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 878,
+      "sentence": "Rosuvastatin 20mg=102 (\u00b1586); Rosuvastatin 40mg=-618 (\u00b1624)",
+      "context_window": "meframe=4 weeks. Rosuvastatin 20mg=102 (\u00b1586); Rosuvastatin 40mg=-618 (\u00b1624)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

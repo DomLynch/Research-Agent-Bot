@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12370268_effectiveness_of_iso_inertial_resistance_training_on_muscle_",
   "doi": "10.2196/66414",
-  "extracted_at": "2026-05-05T21:59:17+00:00",
+  "extracted_at": "2026-05-07T16:57:27+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 8,
@@ -333,7 +333,7 @@
       "sentence": "Recent evidence shows that PA can reduce the fall rate in older adults by up to 23%, significantly decreasing the risk of fall-related injuries, including serious falls resulting in bone fractures, head trauma, open wounds, soft tissue injuries, or other injuries requiring medical attention or hospitalization [ 4 ].",
       "context_window": "s that PA can reduce the fall rate in older adults by up to 23%, significantly decreasing the risk of fall-related injuries",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -388,7 +388,7 @@
       "context_window": "e-older adults (aged 57 y or older) who engaged in at least 2 days of moderate-intensity aerobic PA or strength training per w",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1419,7 +1419,7 @@
       "context_window": "ay enhance performance during eccentric actions. In fact, a 21.6% higher functional reserve of eccentric strength compared to",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },

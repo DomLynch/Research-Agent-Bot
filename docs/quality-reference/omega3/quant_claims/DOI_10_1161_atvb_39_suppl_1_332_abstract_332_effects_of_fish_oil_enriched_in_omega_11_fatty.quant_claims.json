@@ -1,0 +1,235 @@
+{
+  "paper_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty",
+  "doi": "10.1161/atvb.39.suppl_1.332",
+  "extracted_at": "2026-05-07T19:33:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 1,
+    "percentage": 3,
+    "mean_sd": 4,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-n-766",
+      "claim_type": "sample_size",
+      "raw_text": "n=30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 766,
+      "sentence": "Extensive cardiometabolic parameters have been analyzed at each 4 visits (n=30).",
+      "context_window": "iometabolic parameters have been analyzed at each 4 visits (n=30). Vascular function was estimated with ABI and cardio-ankle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-u-949",
+      "claim_type": "unit_value",
+      "raw_text": "34.8 years",
+      "numeric_values": [
+        34.8
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 949,
+      "sentence": "Vascular function was estimated with ABI and cardio-ankle vascular index (CAVI). </jats:p> <jats:p> <jats:bold>Results:</jats:bold> Enrolled healthy subjects had a mean age of 34.8 years and BMI of 24.3 and no significant changes in other screening laboratory values.",
+      "context_window": "ts:</jats:bold> Enrolled healthy subjects had a mean age of 34.8 years and BMI of 24.3 and no significant changes in other screeni",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-pct-1171",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1171,
+      "sentence": "Treatment with 12g/day of saury (LCMUFA: 3.5g; omega-3: 2.1g) or control oil (MUFA: 4.5g; omega-3: 2.4g) on average increased TC (4.3%) and HDL-C (6.2%) compared to the baseline, whereas LDL-C, sdLDL, oxLDL, TG-rich LDL (LDL-TG) and TG did not change significantly.",
+      "context_window": "ol oil (MUFA: 4.5g; omega-3: 2.4g) on average increased TC (4.3%) and HDL-C (6.2%) compared to the baseline, whereas LDL-C,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-pct-1188",
+      "claim_type": "percentage",
+      "raw_text": "6.2%",
+      "numeric_values": [
+        6.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1188,
+      "sentence": "Treatment with 12g/day of saury (LCMUFA: 3.5g; omega-3: 2.1g) or control oil (MUFA: 4.5g; omega-3: 2.4g) on average increased TC (4.3%) and HDL-C (6.2%) compared to the baseline, whereas LDL-C, sdLDL, oxLDL, TG-rich LDL (LDL-TG) and TG did not change significantly.",
+      "context_window": "g; omega-3: 2.4g) on average increased TC (4.3%) and HDL-C (6.2%) compared to the baseline, whereas LDL-C, sdLDL, oxLDL, TG-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-msd-1430",
+      "claim_type": "mean_sd",
+      "raw_text": "1537.2 \u00b1 557.7",
+      "numeric_values": [
+        1537.2,
+        557.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1430,
+      "sentence": "However, NMR lipid analyses for control oil supplementation detected more robust LDLp increase in comparison to saury oil (1537.2 \u00b1 557.7 vs.",
+      "context_window": "ected more robust LDLp increase in comparison to saury oil (1537.2 \u00b1 557.7 vs. 1423.2 \u00b1 639.5, respectively) (p=0.004). TG-rich lipopr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-msd-1449",
+      "claim_type": "mean_sd",
+      "raw_text": "1423.2 \u00b1 639.5",
+      "numeric_values": [
+        1423.2,
+        639.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1449,
+      "sentence": "1423.2 \u00b1 639.5, respectively) (p=0.004).",
+      "context_window": "DLp increase in comparison to saury oil (1537.2 \u00b1 557.7 vs. 1423.2 \u00b1 639.5, respectively) (p=0.004). TG-rich lipoproteins, specificall",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-p-1480",
+      "claim_type": "p_value",
+      "raw_text": "p=0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1480,
+      "sentence": "1423.2 \u00b1 639.5, respectively) (p=0.004).",
+      "context_window": "aury oil (1537.2 \u00b1 557.7 vs. 1423.2 \u00b1 639.5, respectively) (p=0.004). TG-rich lipoproteins, specifically small and medium, were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-msd-1753",
+      "claim_type": "mean_sd",
+      "raw_text": "76.7 \u00b1 35.1",
+      "numeric_values": [
+        76.7,
+        35.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1753,
+      "sentence": "VLDLp was significantly lowered with both interventions, whereas saury oil decreased ApoB more significantly as compared to control oil (76.7 \u00b1 35.1 vs.",
+      "context_window": "creased ApoB more significantly as compared to control oil (76.7 \u00b1 35.1 vs. 81.8 \u00b1 30.6, respectively) (p=0.01). Although, saury oi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-msd-1769",
+      "claim_type": "mean_sd",
+      "raw_text": "81.8 \u00b1 30.6",
+      "numeric_values": [
+        81.8,
+        30.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1769,
+      "sentence": "81.8 \u00b1 30.6, respectively) (p=0.01).",
+      "context_window": "e significantly as compared to control oil (76.7 \u00b1 35.1 vs. 81.8 \u00b1 30.6, respectively) (p=0.01). Although, saury oil supplementatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-p-1797",
+      "claim_type": "p_value",
+      "raw_text": "p=0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1797,
+      "sentence": "81.8 \u00b1 30.6, respectively) (p=0.01).",
+      "context_window": "to control oil (76.7 \u00b1 35.1 vs. 81.8 \u00b1 30.6, respectively) (p=0.01). Although, saury oil supplementation increased cholesterol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-pct-1889",
+      "claim_type": "percentage",
+      "raw_text": "8.5%",
+      "numeric_values": [
+        8.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1889,
+      "sentence": "Although, saury oil supplementation increased cholesterol efflux capacity (CEC) by 8.5%, HDLp was significantly decreased compared to baseline (p=0.014) mostly by large HDLp.",
+      "context_window": "plementation increased cholesterol efflux capacity (CEC) by 8.5%, HDLp was significantly decreased compared to baseline (p=0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_atvb_39_suppl_1_332_abstract_332_effects_of_fish_oil_enriched_in_omega_11_fatty-p-1950",
+      "claim_type": "p_value",
+      "raw_text": "p=0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1950,
+      "sentence": "Although, saury oil supplementation increased cholesterol efflux capacity (CEC) by 8.5%, HDLp was significantly decreased compared to baseline (p=0.014) mostly by large HDLp.",
+      "context_window": ".5%, HDLp was significantly decreased compared to baseline (p=0.014) mostly by large HDLp. There was no change in CAVI but sign",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

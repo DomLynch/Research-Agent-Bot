@@ -1,0 +1,29 @@
+{
+  "paper_id": "HIT_polygenic_risk_driven_pragmatic_statin_trial_for_heart_disea",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_polygenic_risk_driven_pragmatic_statin_trial_for_heart_disea-pct-251",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 251,
+      "sentence": "By specifically targeting the top 20% of individuals with elevated CAD polygenic risk scores (PRS), the study seeks to find out whether this tailored approach can notably decrease the occurrence of cardiovascular disease and mortality over a five-year period when compared with usual care.",
+      "context_window": "ary artery disease (CAD). By specifically targeting the top 20% of individuals with elevated CAD polygenic risk scores (PRS",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

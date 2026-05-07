@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6835698_effects_of_leucine_enriched_whey_protein_supplementation_on_",
   "doi": "10.3390/nu11102337",
-  "extracted_at": "2026-05-05T23:37:12+00:00",
+  "extracted_at": "2026-05-07T16:56:41+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 23,
@@ -24,7 +24,7 @@
       "context_window": "r placebo supplementation following resistance training for 12 weeks (2 days/week). Physical function (lower and upper body stre",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "supplementation following resistance training for 12 weeks (2 days/week). Physical function (lower and upper body strength, ae",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -77,7 +77,7 @@
       "sentence": "Both groups showed improvements in physical function after the intervention ( p < 0.01), but there were no further effects for the protein group ( p > 0.05).",
       "context_window": "improvements in physical function after the intervention ( p < 0.01), but there were no further effects for the protein group (",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "pooled",
       "direction": "",
       "binding_confidence": "partial"
@@ -95,7 +95,7 @@
       "sentence": "Both groups showed improvements in physical function after the intervention ( p < 0.01), but there were no further effects for the protein group ( p > 0.05).",
       "context_window": ", but there were no further effects for the protein group ( p > 0.05). Muscle mass did not improve after resistance training in",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "pooled",
       "direction": "",
       "binding_confidence": "partial"
@@ -113,7 +113,7 @@
       "sentence": "Muscle mass did not improve after resistance training in either group ( p > 0.05).",
       "context_window": "did not improve after resistance training in either group ( p > 0.05). In conclusion, 12 weeks of resistance training are enough",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -131,7 +131,7 @@
       "sentence": "In conclusion, 12 weeks of resistance training are enough to improve physical function in a post-hospitalized elderly population with no further benefits for the protein-supplemented group.",
       "context_window": "stance training in either group ( p > 0.05). In conclusion, 12 weeks of resistance training are enough to improve physical funct",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -149,10 +149,10 @@
       "sentence": "In healthy aging, muscle mass loss ranges from 3% to 8% per decade [ 5 ].",
       "context_window": "ality [ 4 ]. In healthy aging, muscle mass loss ranges from 3% to 8% per decade [ 5 ]. However, this decline is further em",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6835698_effects_of_leucine_enriched_whey_protein_supplementation_on_-pct-292",
@@ -167,10 +167,10 @@
       "sentence": "In healthy aging, muscle mass loss ranges from 3% to 8% per decade [ 5 ].",
       "context_window": "[ 4 ]. In healthy aging, muscle mass loss ranges from 3% to 8% per decade [ 5 ]. However, this decline is further emphasiz",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6835698_effects_of_leucine_enriched_whey_protein_supplementation_on_-u-2761",
@@ -419,10 +419,10 @@
       "sentence": "With a population size of 35 on each group, a significant alpha level of 0.05, and power >80%, the range for a statistically detectable change in muscle mass will be 1.5-2kg with a standard deviation of 1.5-1.7 kg.",
       "context_window": "n each group, a significant alpha level of 0.05, and power >80%, the range for a statistically detectable change in muscle",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6835698_effects_of_leucine_enriched_whey_protein_supplementation_on_-u-10101",
@@ -437,10 +437,10 @@
       "sentence": "With a population size of 35 on each group, a significant alpha level of 0.05, and power >80%, the range for a statistically detectable change in muscle mass will be 1.5-2kg with a standard deviation of 1.5-1.7 kg.",
       "context_window": "statistically detectable change in muscle mass will be 1.5-2kg with a standard deviation of 1.5-1.7 kg. Data analysis was",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6835698_effects_of_leucine_enriched_whey_protein_supplementation_on_-u-10138",
@@ -455,10 +455,10 @@
       "sentence": "With a population size of 35 on each group, a significant alpha level of 0.05, and power >80%, the range for a statistically detectable change in muscle mass will be 1.5-2kg with a standard deviation of 1.5-1.7 kg.",
       "context_window": "uscle mass will be 1.5-2kg with a standard deviation of 1.5-1.7 kg. Data analysis was performed following the per-protocol pr",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6835698_effects_of_leucine_enriched_whey_protein_supplementation_on_-pct-144",
@@ -671,7 +671,7 @@
       "sentence": "However, within the physical function parameters, the protein-group walked significantly more meters in the 6MWT at baseline ( p < 0.05).",
       "context_window": "walked significantly more meters in the 6MWT at baseline ( p < 0.05). In contrast, the Protein-group showed significantly great",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -707,7 +707,7 @@
       "sentence": "Both groups showed improvements over time in all the physical function tests ( p < 0.01), except for the handgrip strength test ( Table 3 ).",
       "context_window": "improvements over time in all the physical function tests ( p < 0.01), except for the handgrip strength test ( Table 3 ). Howeve",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
+      "endpoint": "physical function",
       "arm": "pooled",
       "direction": "",
       "binding_confidence": "partial"
@@ -907,10 +907,10 @@
       "sentence": "Thus, it is unlikely to observe significant changes in muscle mass after only 12 weeks of twice per week supervised intervention.",
       "context_window": "ly to observe significant changes in muscle mass after only 12 weeks of twice per week supervised intervention. For muscle mass",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6835698_effects_of_leucine_enriched_whey_protein_supplementation_on_-u-9891",

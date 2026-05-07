@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_effect_of_fish_oil_omega_3_fatty_acids_on_arteries",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_fish_oil_omega_3_fatty_acids_on_arteries-u-949",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 949,
+      "sentence": "Placebo-treated Patients.. timeframe=Baseline, 3 months.",
+      "context_window": "n Active vs. Placebo-treated Patients.. timeframe=Baseline, 3 months. Placebo=-33 (\u00b1306); Omega 3=-97 (\u00b1182). p=0.36",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_fish_oil_omega_3_fatty_acids_on_arteries-p-999",
+      "claim_type": "p_value",
+      "raw_text": "p=0.36",
+      "numeric_values": [
+        0.36
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 999,
+      "sentence": "Placebo=-33 (\u00b1306); Omega 3=-97 (\u00b1182). p=0.36",
+      "context_window": "Baseline, 3 months. Placebo=-33 (\u00b1306); Omega 3=-97 (\u00b1182). p=0.36",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

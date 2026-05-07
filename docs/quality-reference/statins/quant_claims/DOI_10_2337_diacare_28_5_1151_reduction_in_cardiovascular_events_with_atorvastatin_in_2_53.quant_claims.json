@@ -1,0 +1,214 @@
+{
+  "paper_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53",
+  "doi": "10.2337/diacare.28.5.1151",
+  "extracted_at": "2026-05-07T19:24:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 2,
+    "hazard_ratio": 1,
+    "confidence_interval": 1,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-u-503",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 503,
+      "sentence": "RESEARCH DESIGN AND METHODS: In the lipid-lowering arm of the Anglo-Scandinavian Cardiac Outcomes Trial (ASCOT-LLA), 10,305 hypertensive patients with no history of coronary heart disease (CHD) but at least three cardiovascular risk factors were randomly assigned to receive 10 mg atorvastatin or placebo.",
+      "context_window": "rdiovascular risk factors were randomly assigned to receive 10 mg atorvastatin or placebo. Effects on total cardiovascular ou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-u-687",
+      "claim_type": "unit_value",
+      "raw_text": "3.3 years",
+      "numeric_values": [
+        3.3
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 687,
+      "sentence": "RESULTS: During a median follow-up of 3.3 years, concentrations of total and LDL cholesterol among diabetic participants included in ASCOT-LLA were approximately 1 mmol/l lower in those allocated atorvastatin compared with placebo.",
+      "context_window": "zation were compared. RESULTS: During a median follow-up of 3.3 years, concentrations of total and LDL cholesterol among diabetic",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-u-811",
+      "claim_type": "unit_value",
+      "raw_text": "1 mmol",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 811,
+      "sentence": "RESULTS: During a median follow-up of 3.3 years, concentrations of total and LDL cholesterol among diabetic participants included in ASCOT-LLA were approximately 1 mmol/l lower in those allocated atorvastatin compared with placebo.",
+      "context_window": "betic participants included in ASCOT-LLA were approximately 1 mmol/l lower in those allocated atorvastatin compared with place",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-pct-897",
+      "claim_type": "percentage",
+      "raw_text": "9.2%",
+      "numeric_values": [
+        9.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 897,
+      "sentence": "There were 116 (9.2%) major cardiovascular events or procedures in the atorvastatin group and 151 (11.9%) events in the placebo group (hazard ratio 0.77, 95% CI 0.61-0.98; P = 0.036).",
+      "context_window": "located atorvastatin compared with placebo. There were 116 (9.2%) major cardiovascular events or procedures in the atorvasta",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-pct-980",
+      "claim_type": "percentage",
+      "raw_text": "11.9%",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 980,
+      "sentence": "There were 116 (9.2%) major cardiovascular events or procedures in the atorvastatin group and 151 (11.9%) events in the placebo group (hazard ratio 0.77, 95% CI 0.61-0.98; P = 0.036).",
+      "context_window": "lar events or procedures in the atorvastatin group and 151 (11.9%) events in the placebo group (hazard ratio 0.77, 95% CI 0.6",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-hr-l-1016",
+      "claim_type": "hazard_ratio",
+      "raw_text": "hazard ratio 0.77",
+      "numeric_values": [
+        0.77
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1016,
+      "sentence": "There were 116 (9.2%) major cardiovascular events or procedures in the atorvastatin group and 151 (11.9%) events in the placebo group (hazard ratio 0.77, 95% CI 0.61-0.98; P = 0.036).",
+      "context_window": "vastatin group and 151 (11.9%) events in the placebo group (hazard ratio 0.77, 95% CI 0.61-0.98; P = 0.036). For the individual component",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-ci-1035",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.61-0.98",
+      "numeric_values": [
+        0.61,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1035,
+      "sentence": "There were 116 (9.2%) major cardiovascular events or procedures in the atorvastatin group and 151 (11.9%) events in the placebo group (hazard ratio 0.77, 95% CI 0.61-0.98; P = 0.036).",
+      "context_window": "151 (11.9%) events in the placebo group (hazard ratio 0.77, 95% CI 0.61-0.98; P = 0.036). For the individual components of this composit",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-p-1053",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.036",
+      "numeric_values": [
+        0.036
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1053,
+      "sentence": "There were 116 (9.2%) major cardiovascular events or procedures in the atorvastatin group and 151 (11.9%) events in the placebo group (hazard ratio 0.77, 95% CI 0.61-0.98; P = 0.036).",
+      "context_window": "in the placebo group (hazard ratio 0.77, 95% CI 0.61-0.98; P = 0.036). For the individual components of this composite end point",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-p-1251",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.14",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1251,
+      "sentence": "Therefore, although fewer coronary events (0.84, 0.55-1.29; P = 0.14) and strokes (0.67, 0.41-1.09; P = 0.66) were observed among the patients allocated atorvastatin, these reductions were not statistically significant.",
+      "context_window": "Therefore, although fewer coronary events (0.84, 0.55-1.29; P = 0.14) and strokes (0.67, 0.41-1.09; P = 0.66) were observed amon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-p-1291",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.66",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1291,
+      "sentence": "Therefore, although fewer coronary events (0.84, 0.55-1.29; P = 0.14) and strokes (0.67, 0.41-1.09; P = 0.66) were observed among the patients allocated atorvastatin, these reductions were not statistically significant.",
+      "context_window": "s (0.84, 0.55-1.29; P = 0.14) and strokes (0.67, 0.41-1.09; P = 0.66) were observed among the patients allocated atorvastatin, t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2337_diacare_28_5_1151_reduction_in_cardiovascular_events_with_atorvastatin_in_2_53-u-1927",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1927,
+      "sentence": "Allocation to atorvastatin prevented approximately 9 diabetic participants from suffering a first major cardiovascular event or procedure for every 1,000 treated for 1 year.",
+      "context_window": "rdiovascular event or procedure for every 1,000 treated for 1 year.",
+      "claim_role": "unknown",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11877176_berberine_ursodeoxycholate_for_the_treatment_of_type_2_diabe",
   "doi": "10.1001/jamanetworkopen.2024.62185",
-  "extracted_at": "2026-05-05T22:22:59+00:00",
+  "extracted_at": "2026-05-07T16:58:06+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 25,
@@ -78,9 +78,9 @@
       "context_window": "eness in the control of T2D remains insufficient, with only 49.4% of individuals achieving a hemoglobin A 1c (HbA 1c ) level",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11877176_berberine_ursodeoxycholate_for_the_treatment_of_type_2_diabe-pct-1217",
@@ -96,9 +96,9 @@
       "context_window": "duals achieving a hemoglobin A 1c (HbA 1c ) level less than 7.0%. 3 Hence, there is a significant demand for antidiabetic me",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11877176_berberine_ursodeoxycholate_for_the_treatment_of_type_2_diabe-u-2681",
@@ -1463,7 +1463,7 @@
       "sentence": "Treatment-emergent adverse events, generally mild in severity, occurred in 15 patients (39.5%) in the placebo group, 17 (46.0%) in the 500-mg group, and 27 (71.1%) in the 1000-mg group, totaling 59 patients (52.2%) overall.",
       "context_window": "vents, generally mild in severity, occurred in 15 patients (39.5%) in the placebo group, 17 (46.0%) in the 500-mg group, and",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adverse events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -1481,7 +1481,7 @@
       "sentence": "Treatment-emergent adverse events, generally mild in severity, occurred in 15 patients (39.5%) in the placebo group, 17 (46.0%) in the 500-mg group, and 27 (71.1%) in the 1000-mg group, totaling 59 patients (52.2%) overall.",
       "context_window": ", occurred in 15 patients (39.5%) in the placebo group, 17 (46.0%) in the 500-mg group, and 27 (71.1%) in the 1000-mg group,",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adverse events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -1499,7 +1499,7 @@
       "sentence": "Treatment-emergent adverse events, generally mild in severity, occurred in 15 patients (39.5%) in the placebo group, 17 (46.0%) in the 500-mg group, and 27 (71.1%) in the 1000-mg group, totaling 59 patients (52.2%) overall.",
       "context_window": "the placebo group, 17 (46.0%) in the 500-mg group, and 27 (71.1%) in the 1000-mg group, totaling 59 patients (52.2%) overall",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adverse events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -1517,7 +1517,7 @@
       "sentence": "Treatment-emergent adverse events, generally mild in severity, occurred in 15 patients (39.5%) in the placebo group, 17 (46.0%) in the 500-mg group, and 27 (71.1%) in the 1000-mg group, totaling 59 patients (52.2%) overall.",
       "context_window": "and 27 (71.1%) in the 1000-mg group, totaling 59 patients (52.2%) overall. The most common treatment-emergent adverse event",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "adverse events",
       "arm": "placebo",
       "direction": "",
       "binding_confidence": "partial"
@@ -1535,7 +1535,7 @@
       "sentence": "The incidence of treatment-related treatment-emergent adverse events was similar across groups, all mild to moderate in severity (placebo group, n = 5; 500-mg group, n = 2; and 1000-mg group: n = 6).",
       "context_window": "ss groups, all mild to moderate in severity (placebo group, n = 5; 500-mg group, n = 2; and 1000-mg group: n = 6). One place",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adverse events",
       "arm": "pooled",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1553,7 +1553,7 @@
       "sentence": "The incidence of treatment-related treatment-emergent adverse events was similar across groups, all mild to moderate in severity (placebo group, n = 5; 500-mg group, n = 2; and 1000-mg group: n = 6).",
       "context_window": "o moderate in severity (placebo group, n = 5; 500-mg group, n = 2; and 1000-mg group: n = 6). One placebo-treated patient re",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adverse events",
       "arm": "pooled",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1571,7 +1571,7 @@
       "sentence": "The incidence of treatment-related treatment-emergent adverse events was similar across groups, all mild to moderate in severity (placebo group, n = 5; 500-mg group, n = 2; and 1000-mg group: n = 6).",
       "context_window": "acebo group, n = 5; 500-mg group, n = 2; and 1000-mg group: n = 6). One placebo-treated patient required rescue therapy duri",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adverse events",
       "arm": "pooled",
       "direction": "no_change",
       "binding_confidence": "partial"

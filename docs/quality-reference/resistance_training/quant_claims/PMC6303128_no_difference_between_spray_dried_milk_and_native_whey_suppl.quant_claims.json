@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl",
   "doi": "10.1249/MSS.0000000000001758",
-  "extracted_at": "2026-05-05T21:59:21+00:00",
+  "extracted_at": "2026-05-07T16:57:35+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 61,
@@ -25,9 +25,9 @@
       "context_window": "uscle mass and strength increased, by all measures applied (5%-16%, P < 0.001), with no differences between groups ( P > 0",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-1139",
@@ -43,9 +43,9 @@
       "context_window": "le mass and strength increased, by all measures applied (5%-16%, P < 0.001), with no differences between groups ( P > 0.25)",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-p-1144",
@@ -61,9 +61,9 @@
       "context_window": "ss and strength increased, by all measures applied (5%-16%, P < 0.001), with no differences between groups ( P > 0.25). p70S6K ph",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-p-1193",
@@ -79,9 +79,9 @@
       "context_window": "d (5%-16%, P < 0.001), with no differences between groups ( P > 0.25). p70S6K phosphorylation increased (~1000%, P < 0.02) 2 h a",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-1239",
@@ -97,9 +97,9 @@
       "context_window": "ween groups ( P > 0.25). p70S6K phosphorylation increased (~1000%, P < 0.02) 2 h after exercise in the untrained and trained",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-p-1246",
@@ -115,9 +115,9 @@
       "context_window": "oups ( P > 0.25). p70S6K phosphorylation increased (~1000%, P < 0.02) 2 h after exercise in the untrained and trained state, but",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-p-1388",
@@ -133,9 +133,9 @@
       "context_window": "s in anabolic signaling were observed between supplements ( P > 0.40). No correlation between these acute measures and changes i",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-msd-21",
@@ -511,10 +511,10 @@
       "sentence": "A sample size calculation was conducted with a power of 80% based on lean muscle mass results from an earlier study comparing whey and soy protein supplementation in young men (( 15 ); StatMate, Graphpad Software, San Diego, CA).",
       "context_window": "st. A sample size calculation was conducted with a power of 80% based on lean muscle mass results from an earlier study com",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-12233",
@@ -858,7 +858,7 @@
       "context_window": "city 15 min after the session in both groups (native whey, -21.1% \u00b1 10.1% vs -16.5% \u00b1 2.6%, and milk, -20.2% \u00b1 3.0%, vs -18.3",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -876,7 +876,7 @@
       "context_window": "min after the session in both groups (native whey, -21.1% \u00b1 10.1% vs -16.5% \u00b1 2.6%, and milk, -20.2% \u00b1 3.0%, vs -18.3% \u00b1 5.3%",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -894,7 +894,7 @@
       "context_window": "the session in both groups (native whey, -21.1% \u00b1 10.1% vs -16.5% \u00b1 2.6%, and milk, -20.2% \u00b1 3.0%, vs -18.3% \u00b1 5.3%, in the u",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -912,7 +912,7 @@
       "context_window": "ion in both groups (native whey, -21.1% \u00b1 10.1% vs -16.5% \u00b1 2.6%, and milk, -20.2% \u00b1 3.0%, vs -18.3% \u00b1 5.3%, in the untraine",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -930,7 +930,7 @@
       "context_window": "s (native whey, -21.1% \u00b1 10.1% vs -16.5% \u00b1 2.6%, and milk, -20.2% \u00b1 3.0%, vs -18.3% \u00b1 5.3%, in the untrained and trained stat",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -948,7 +948,7 @@
       "context_window": "e whey, -21.1% \u00b1 10.1% vs -16.5% \u00b1 2.6%, and milk, -20.2% \u00b1 3.0%, vs -18.3% \u00b1 5.3%, in the untrained and trained state, resp",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -966,7 +966,7 @@
       "context_window": "1.1% \u00b1 10.1% vs -16.5% \u00b1 2.6%, and milk, -20.2% \u00b1 3.0%, vs -18.3% \u00b1 5.3%, in the untrained and trained state, respectively, P",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -984,7 +984,7 @@
       "context_window": "0.1% vs -16.5% \u00b1 2.6%, and milk, -20.2% \u00b1 3.0%, vs -18.3% \u00b1 5.3%, in the untrained and trained state, respectively, P < 0.00",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1002,7 +1002,7 @@
       "context_window": "% \u00b1 5.3%, in the untrained and trained state, respectively, P < 0.001 for all, data not shown). Force-generating capacity was sig",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1290,7 +1290,7 @@
       "context_window": "utely after exercise glucose and insulin increased to about 6 mg.dL -1 and 400 to 600 mIU.L -1 , respectively, and returned",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1650,9 +1650,9 @@
       "context_window": "osphorylation of p70S6K increased 2 h after exercise (milk, 370% \u00b1 400%, P < 0.001; native whey, 380% \u00b1 180%; P < 0.001) in",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-5169",
@@ -1668,9 +1668,9 @@
       "context_window": "lation of p70S6K increased 2 h after exercise (milk, 370% \u00b1 400%, P < 0.001; native whey, 380% \u00b1 180%; P < 0.001) in the unt",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-p-5175",
@@ -1686,9 +1686,9 @@
       "context_window": "of p70S6K increased 2 h after exercise (milk, 370% \u00b1 400%, P < 0.001; native whey, 380% \u00b1 180%; P < 0.001) in the untrained stat",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-5199",
@@ -1704,9 +1704,9 @@
       "context_window": "after exercise (milk, 370% \u00b1 400%, P < 0.001; native whey, 380% \u00b1 180%; P < 0.001) in the untrained state and in the traine",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-5206",
@@ -1722,9 +1722,9 @@
       "context_window": "exercise (milk, 370% \u00b1 400%, P < 0.001; native whey, 380% \u00b1 180%; P < 0.001) in the untrained state and in the trained state",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-p-5212",
@@ -1740,9 +1740,9 @@
       "context_window": "se (milk, 370% \u00b1 400%, P < 0.001; native whey, 380% \u00b1 180%; P < 0.001) in the untrained state and in the trained state (milk, 390",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-5278",
@@ -1758,9 +1758,9 @@
       "context_window": "001) in the untrained state and in the trained state (milk, 390% \u00b1 380%; P < 0.001; native whey, 300% \u00b1 180%; P = 0.016), wi",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-5285",
@@ -1776,9 +1776,9 @@
       "context_window": "the untrained state and in the trained state (milk, 390% \u00b1 380%; P < 0.001; native whey, 300% \u00b1 180%; P = 0.016), with both",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-p-5291",
@@ -1794,9 +1794,9 @@
       "context_window": "ntrained state and in the trained state (milk, 390% \u00b1 380%; P < 0.001; native whey, 300% \u00b1 180%; P = 0.016), with both supplement",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-5315",
@@ -1812,9 +1812,9 @@
       "context_window": "e trained state (milk, 390% \u00b1 380%; P < 0.001; native whey, 300% \u00b1 180%; P = 0.016), with both supplements. There were no si",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-5322",
@@ -1830,9 +1830,9 @@
       "context_window": "ed state (milk, 390% \u00b1 380%; P < 0.001; native whey, 300% \u00b1 180%; P = 0.016), with both supplements. There were no significa",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-p-5328",
@@ -1848,9 +1848,9 @@
       "context_window": "te (milk, 390% \u00b1 380%; P < 0.001; native whey, 300% \u00b1 180%; P = 0.016), with both supplements. There were no significant differen",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-p-5566",
@@ -2028,9 +2028,9 @@
       "context_window": "outcomes may easily be missed. Participants experienced a 10% to 40% reduction in muscle force-generating capacity 10 min",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-5666",
@@ -2046,9 +2046,9 @@
       "context_window": "es may easily be missed. Participants experienced a 10% to 40% reduction in muscle force-generating capacity 10 min after",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-u-8365",
@@ -2064,7 +2064,7 @@
       "context_window": "nd colleagues ( 39 ) showed greater increases in lean mass (0.81 kg) and 1RM in leg press (14.4 kg) with protein supplementatio",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2082,7 +2082,7 @@
       "context_window": "ater increases in lean mass (0.81 kg) and 1RM in leg press (14.4 kg) with protein supplementation compared with placebo, in you",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2118,9 +2118,9 @@
       "context_window": "after exercise, the postexercise intake had a compliance of 100%. For all other supplement intakes, we relied on the partici",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6303128_no_difference_between_spray_dried_milk_and_native_whey_suppl-pct-885",
@@ -2136,9 +2136,9 @@
       "context_window": "after exercise, the postexercise intake had a compliance of 100%. For all other supplement intakes, we relied on the partici",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

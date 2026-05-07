@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm",
   "doi": "10.1186/s12970-018-0242-y",
-  "extracted_at": "2026-05-05T21:59:13+00:00",
+  "extracted_at": "2026-05-07T16:57:35+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 127,
+    "unit_value": 147,
     "percentage": 41,
     "sample_size": 1,
     "p_value": 7
@@ -96,9 +96,9 @@
       "context_window": "strength, and composition of dietary supplements. Further, 18.47% of those inspected were cited for failing to establish and/",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-22416",
@@ -114,9 +114,9 @@
       "context_window": "f DSHEA and FDA regulations. For this reason, over the last 20 years, many established supplement companies have employed resear",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-39284",
@@ -150,9 +150,9 @@
       "context_window": "., 1800-2400 kcals/day or about 25-35 kcals/kg/day for a 50-80 kg individual) because their caloric demands from exercise are",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-46911",
@@ -168,7 +168,7 @@
       "context_window": "g., 3-6 h per day of intense training in 1-2 workouts for 5-6 days per week) may expend 600-1200 kcals or more per hour during",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -245,6 +245,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-52079",
+      "claim_type": "unit_value",
+      "raw_text": "5 g/kg/day",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 52079,
+      "sentence": "As such, individuals engaged in a general fitness program and are not necessarily training to meet any type of performance goal can typically meet daily carbohydrate needs by consuming a normal diet (i.e., 45-55% CHO [3-5 g/kg/day], 15-20% PRO [0.8-1.2 g/kg/day], and 25-35% fat [0.5-1.5 g/kg/day]).",
+      "context_window": "drate needs by consuming a normal diet (i.e., 45-55% CHO [3-5 g/kg/day], 15-20% PRO [0.8-1.2 g/kg/day], and 25-35% fat [0.5-1.5 g/",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-pct-52095",
       "claim_type": "percentage",
       "raw_text": "20%",
@@ -256,6 +274,24 @@
       "source_offset": 52095,
       "sentence": "As such, individuals engaged in a general fitness program and are not necessarily training to meet any type of performance goal can typically meet daily carbohydrate needs by consuming a normal diet (i.e., 45-55% CHO [3-5 g/kg/day], 15-20% PRO [0.8-1.2 g/kg/day], and 25-35% fat [0.5-1.5 g/kg/day]).",
       "context_window": "onsuming a normal diet (i.e., 45-55% CHO [3-5 g/kg/day], 15-20% PRO [0.8-1.2 g/kg/day], and 25-35% fat [0.5-1.5 g/kg/day]).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-52108",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 52108,
+      "sentence": "As such, individuals engaged in a general fitness program and are not necessarily training to meet any type of performance goal can typically meet daily carbohydrate needs by consuming a normal diet (i.e., 45-55% CHO [3-5 g/kg/day], 15-20% PRO [0.8-1.2 g/kg/day], and 25-35% fat [0.5-1.5 g/kg/day]).",
+      "context_window": "rmal diet (i.e., 45-55% CHO [3-5 g/kg/day], 15-20% PRO [0.8-1.2 g/kg/day], and 25-35% fat [0.5-1.5 g/kg/day]). However, athletes inv",
       "claim_role": "dose",
       "endpoint": "",
       "arm": "",
@@ -281,6 +317,42 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-52143",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 g/kg/day",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 52143,
+      "sentence": "As such, individuals engaged in a general fitness program and are not necessarily training to meet any type of performance goal can typically meet daily carbohydrate needs by consuming a normal diet (i.e., 45-55% CHO [3-5 g/kg/day], 15-20% PRO [0.8-1.2 g/kg/day], and 25-35% fat [0.5-1.5 g/kg/day]).",
+      "context_window": "kg/day], 15-20% PRO [0.8-1.2 g/kg/day], and 25-35% fat [0.5-1.5 g/kg/day]). However, athletes involved in moderate and high-volume t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-52550",
+      "claim_type": "unit_value",
+      "raw_text": "8 g/kg/day",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 52550,
+      "sentence": "In terms of carbohydrate needs, athletes involved in moderate amounts of intense training (e.g., 2-3 h per day of intense exercise performed 5-6 times per week) typically need to consume a diet consisting of 5-8 g/kg/day or 250-1200 g/day for 50-150 kg athletes of carbohydrate to maintain liver and muscle glycogen stores [ 23 , 24 , 50 ].",
+      "context_window": "per week) typically need to consume a diet consisting of 5-8 g/kg/day or 250-1200 g/day for 50-150 kg athletes of carbohydrate to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "exercise",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-52586",
       "claim_type": "unit_value",
       "raw_text": "150 kg",
@@ -294,9 +366,9 @@
       "context_window": "a diet consisting of 5-8 g/kg/day or 250-1200 g/day for 50-150 kg athletes of carbohydrate to maintain liver and muscle glyco",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-52829",
@@ -348,9 +420,27 @@
       "context_window": "tion of 0.7 g of carbohydrate/kg/hr. during exercise in a 6-8% solution (i.e., 6-8 g per 100 ml of fluid) [ 41 , 42 , 50 ,",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-57463",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 g/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 57463,
+      "sentence": "Initially, it was recommended that athletes do not need to ingest more than the RDA for protein (i.e., 0.8 to 1.0 g/kg/d for children, adolescents and adults).",
+      "context_window": "need to ingest more than the RDA for protein (i.e., 0.8 to 1.0 g/kg/d for children, adolescents and adults). However, research sp",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-57549",
@@ -371,6 +461,60 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-57695",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 g/kg/d",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 57695,
+      "sentence": "However, research spanning the past 30 years has indicated that athletes engaged in intense training may benefit from ingesting about two times the RDA of protein in their diet (1.4-1.8 g/kg/d) to maintain protein balance [ 11 , 70 , 71 , 73 , 75 - 80 ].",
+      "context_window": "sting about two times the RDA of protein in their diet (1.4-1.8 g/kg/d) to maintain protein balance [ 11 , 70 , 71 , 73 , 75 - 80",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-58386",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 g/kg/day",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 58386,
+      "sentence": "Phillips and colleagues [ 76 ], Witard et al. [ 82 ], Jager et al. [ 11 ] and Tipton et al. [ 79 ] report that current evidence indicates optimal protein intakes in the range of 1.2-2.0 g/kg/day should be considered.",
+      "context_window": "dence indicates optimal protein intakes in the range of 1.2-2.0 g/kg/day should be considered. In this respect, Morton and investiga",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-58602",
+      "claim_type": "unit_value",
+      "raw_text": "1.62 g/kg/day",
+      "numeric_values": [
+        1.62
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 58602,
+      "sentence": "In this respect, Morton and investigators [ 83 ] performed a meta-review and meta-regression involving 49 studies and 1863 participants and concluded that a daily protein intake of 1.62 g/kg/day may be an ideal place to start, with intakes beyond that providing no further contribution to increases in fat-free mass.",
+      "context_window": "3 participants and concluded that a daily protein intake of 1.62 g/kg/day may be an ideal place to start, with intakes beyond that pr",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-58818",
       "claim_type": "unit_value",
       "raw_text": "71 years",
@@ -389,6 +533,42 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-58891",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 58891,
+      "sentence": "In addition and in comparison to the RDA, non-exercising, older individuals (53-71 years) may also benefit from a higher daily protein intake (e.g., 1.0-1.2 g/kg/day of protein).",
+      "context_window": "also benefit from a higher daily protein intake (e.g., 1.0-1.2 g/kg/day of protein). Recent reports suggest that older muscle may b",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-59518",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 g/kg/day",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 59518,
+      "sentence": "Consequently, it is recommended that athletes involved in moderate amounts of intense training consume 1.2-2.0 g/kg/day of protein (60-300 g/day for a 50-150 kg athlete) while athletes involved in high volume, intense training consume 1.7-2.2 g/kg/day of protein (85-330 g/day for a 50-150 kg athlete) [ 78 , 90 ].",
+      "context_window": "nvolved in moderate amounts of intense training consume 1.2-2.0 g/kg/day of protein (60-300 g/day for a 50-150 kg athlete) while ath",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-59565",
       "claim_type": "unit_value",
       "raw_text": "150 kg",
@@ -400,6 +580,24 @@
       "source_offset": 59565,
       "sentence": "Consequently, it is recommended that athletes involved in moderate amounts of intense training consume 1.2-2.0 g/kg/day of protein (60-300 g/day for a 50-150 kg athlete) while athletes involved in high volume, intense training consume 1.7-2.2 g/kg/day of protein (85-330 g/day for a 50-150 kg athlete) [ 78 , 90 ].",
       "context_window": "consume 1.2-2.0 g/kg/day of protein (60-300 g/day for a 50-150 kg athlete) while athletes involved in high volume, intense tr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-59650",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/day",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 59650,
+      "sentence": "Consequently, it is recommended that athletes involved in moderate amounts of intense training consume 1.2-2.0 g/kg/day of protein (60-300 g/day for a 50-150 kg athlete) while athletes involved in high volume, intense training consume 1.7-2.2 g/kg/day of protein (85-330 g/day for a 50-150 kg athlete) [ 78 , 90 ].",
+      "context_window": "letes involved in high volume, intense training consume 1.7-2.2 g/kg/day of protein (85-330 g/day for a 50-150 kg athlete) [ 78 , 90",
       "claim_role": "dose",
       "endpoint": "",
       "arm": "",
@@ -443,6 +641,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-63987",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 g/kg/d",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "g/kg/d",
+      "source_section": "introduction",
+      "source_offset": 63987,
+      "sentence": "Jager and colleagues [ 11 ] published an updated position statement of the International Society of Sports Nutrition that is summarized by the following points:\n\nAn acute exercise stimulus, particularly resistance exercise and protein ingestion both stimulate muscle protein synthesis (MPS) and are synergistic when protein consumption occurs before or after resistance exercise\n\nFor building and maintaining muscle mass, an overall daily protein intake of 1.4-2.0 g/kg/d is sufficient for most exercising individuals\n\nHigher protein intakes (2.3-3.1 g/kg fat-free mass/d) may be needed to maximize the retention of lean body weight in resistance trained subjects during hypocaloric periods\n\nHigher protein intakes (> 3.0 g protein/kg body weight/day) when combined with resistance exercise may have positive effects on body composition in resistance trained individuals (i.e., promote loss of fat mass)\n\nOptimal doses for athletes to maximize MPS are mixed and are dependent upon age and recent resistance exercise stimuli.",
+      "context_window": "taining muscle mass, an overall daily protein intake of 1.4-2.0 g/kg/d is sufficient for most exercising individuals Higher prote",
+      "claim_role": "dose",
+      "endpoint": "muscle mass",
+      "arm": "exercise",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-64712",
       "claim_type": "unit_value",
       "raw_text": "3000 mg",
@@ -456,7 +672,7 @@
       "context_window": "te dose of 20-40 g. Acute protein doses should contain 700-3000 mg of leucine and/or a higher relative leucine content, in add",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -491,6 +707,24 @@
       "sentence": "Generally, it is recommended that athletes consume a moderate amount of fat (approximately 30% of their daily caloric intake), while proportions up to 50% of daily calories can be safely ingested by athletes during regular high-volume training [ 104 ].",
       "context_window": "30% of their daily caloric intake), while proportions up to 50% of daily calories can be safely ingested by athletes during",
       "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-66637",
+      "claim_type": "unit_value",
+      "raw_text": "1 g/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 66637,
+      "sentence": "In situations where an athlete may be interested in reducing their body fat, dietary fat intakes ranging from 0.5 to 1 g/kg/day have been recommended results in situations where daily fat intake might comprise as little as 20% of total calories in the diet [ 2 ].",
+      "context_window": "ing their body fat, dietary fat intakes ranging from 0.5 to 1 g/kg/day have been recommended results in situations where daily fat",
+      "claim_role": "dose",
       "endpoint": "",
       "arm": "",
       "direction": "",
@@ -569,6 +803,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-68275",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 g/kg/day",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 68275,
+      "sentence": "While no exact prescription exists, nearly all ketogenic diet prescriptions derive at least 70-80% of their daily calories from dietary fat, prescribe a moderate amount of protein (20-25% total calories or 2.0-2.5 g/kg/day) and are largely devoid of carbohydrate (10-40 g per day).",
+      "context_window": "a moderate amount of protein (20-25% total calories or 2.0-2.5 g/kg/day) and are largely devoid of carbohydrate (10-40 g per day).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-68933",
       "claim_type": "unit_value",
       "raw_text": "10 weeks",
@@ -584,6 +836,24 @@
       "endpoint": "lean body mass",
       "arm": "",
       "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-71540",
+      "claim_type": "unit_value",
+      "raw_text": "6 g/kg/day",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 71540,
+      "sentence": "This nutritional strategy has been found to accelerate glycogen resynthesis as well as promote a more anabolic hormonal profile that may hasten recovery [ 120 , 130 , 131 ], but as mentioned above only when rapid glycogen restoration is needed or if the carbohydrate intake in the diet is adequate (< 6 g/kg/day) [ 53 , 132 ].",
+      "context_window": "ed or if the carbohydrate intake in the diet is adequate (< 6 g/kg/day) [ 53 , 132 ]. In other words, the total carbohydrate consu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
       "binding_confidence": "partial"
     },
     {
@@ -623,6 +893,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-72613",
+      "claim_type": "unit_value",
+      "raw_text": "12 g/kg/day",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 72613,
+      "sentence": "The ISSN has adopted a position stand on nutrient timing in 2008 [ 133 ] that has been subsequently revised [ 13 ] and can be summarized with the following points:\n\nIntramuscular and hepatic glycogen stores are best maximized by consumption of a high-carbohydrate diet (8-12 g/kg/day).",
+      "context_window": "est maximized by consumption of a high-carbohydrate diet (8-12 g/kg/day). Strategies such as aggressive carbohydrate feedings (~ 1.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-72768",
       "claim_type": "unit_value",
       "raw_text": "8 mg",
@@ -654,7 +942,7 @@
       "context_window": "te rapid restoration of glycogen stores. High intensity (> 70% VO 2 Max) exercise bouts that extend beyond 90 min challeng",
       "claim_role": "background",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -671,6 +959,24 @@
       "sentence": "In these situations, it is advisable to consume carbohydrate at a rate of 30-60 g of carbohydrate/hour in a 6-8% carbohydrate-electrolyte solution (6-12 fluid ounces) every 10-15 min throughout the entire exercise bout.",
       "context_window": "rbohydrate at a rate of 30-60 g of carbohydrate/hour in a 6-8% carbohydrate-electrolyte solution (6-12 fluid ounces) every",
       "claim_role": "background",
+      "endpoint": "",
+      "arm": "exercise",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-73674",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 g/kg/day",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 73674,
+      "sentence": "Consuming a diet that delivers adequate energy (minimum of 27-30 kcal/kg) and protein (1.6-1.8 g/kg/day), preferably with evenly spaced (every 3-4 h) protein feedings (0.25-0.40 g/kg/dose) during the day, should be considered for all exercising individuals.",
+      "context_window": "adequate energy (minimum of 27-30 kcal/kg) and protein (1.6-1.8 g/kg/day), preferably with evenly spaced (every 3-4 h) protein feedi",
+      "claim_role": "duration",
       "endpoint": "",
       "arm": "",
       "direction": "",
@@ -726,7 +1032,7 @@
       "context_window": "threshold, and improve endurance exercise capacity by 8 to 10% [ 157 ]. Increasing dietary availability of salt (sodium ch",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -744,7 +1050,7 @@
       "context_window": "f Sports Medicine (ACSM) recommendations for sodium levels (340 mg) represent the amount of sodium in less than 1/8 teaspoon o",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -762,7 +1068,7 @@
       "context_window": "mended guidelines for sodium ingestion during exercise (300-600 mg per hour or 1.7-2.9 g of salt during a prolonged exercise b",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -780,7 +1086,7 @@
       "context_window": "]. Exercise performance can be significantly impaired when 2% or more of body weight is lost through sweat (i.e., a 1.4 k",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -798,7 +1104,7 @@
       "context_window": "en 2% or more of body weight is lost through sweat (i.e., a 1.4 kg body weight loss from a 70-kg athlete). When one considers",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -816,7 +1122,7 @@
       "context_window": "st 60-90 min of exercise. Further, weight loss of more than 4% of body weight during exercise may lead to heat illness, he",
       "claim_role": "background",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -834,9 +1140,9 @@
       "context_window": "tes can promote optimal pre-exercise hydration by ingesting 500 mL of water or sports drinks the night before a competition, a",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-82662",
@@ -852,9 +1158,9 @@
       "context_window": "er or sports drinks the night before a competition, another 500 mL upon waking and then another 400-600 mL of cool water or sp",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-82702",
@@ -870,9 +1176,9 @@
       "context_window": "ompetition, another 500 mL upon waking and then another 400-600 mL of cool water or sports drink 20-30 min before the onset of",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-84442",
@@ -905,10 +1211,10 @@
       "sentence": "It is well-documented that supplementing with 1.5 to 3 g/day of calcium HMB during resistance training can increase muscle mass (+ 0.5-1 kg greater than controls during 3-6 weeks of training) and strength particularly among untrained subjects initiating training [ 168 - 173 ] and the elderly [ 174 ].",
       "context_window": "during resistance training can increase muscle mass (+ 0.5-1 kg greater than controls during 3-6 weeks of training) and str",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "muscle mass",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-90221",
@@ -924,9 +1230,9 @@
       "context_window": "ease muscle mass (+ 0.5-1 kg greater than controls during 3-6 weeks of training) and strength particularly among untrained subj",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-91201",
@@ -942,9 +1248,9 @@
       "context_window": "raining models) and duration of supplementation (minimum of 6 weeks) likely operate as key factors. In 2015, Durkalec-Michalski",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-n-91332",
@@ -960,9 +1266,9 @@
       "context_window": "investigators [ 178 ] supplemented highly trained rowers ( n = 16) in a randomized, double-blind, crossover fashion with eith",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-91807",
@@ -978,9 +1284,9 @@
       "context_window": "supplemented with either 3 g of calcium-HMB or placebo for 12 weeks in a randomized, double-blind, crossover fashion [ 179 ]. I",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-92097",
@@ -996,9 +1302,9 @@
       "context_window": "] supplemented 42 highly-trained combat sport athletes for 12 weeks with either a placebo or 3 g of calcium-HMB in a randomized",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-p-92261",
@@ -1014,9 +1320,9 @@
       "context_window": "hen HMB was provided, fat-free mass was shown to increase ( p = 0.049) while fat mass was significantly reduced in comparison to",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-92527",
@@ -1032,7 +1338,7 @@
       "context_window": "on at dosages of 1.5-3 g for durations as short as three to 4 weeks in untrained populations and longer durations (12 weeks) in",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1050,7 +1356,7 @@
       "context_window": "e to 4 weeks in untrained populations and longer durations (12 weeks) in trained populations can lead to improvements in fat mas",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1109,6 +1415,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-96246",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 g/kg/day",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 96246,
+      "sentence": "The quickest method of increasing muscle creatine stores appears to be to consume ~ 0.3 g/kg/day of creatine monohydrate for 5-7 days followed by 3-5 g/day thereafter to maintain elevated stores.",
+      "context_window": "ncreasing muscle creatine stores appears to be to consume ~ 0.3 g/kg/day of creatine monohydrate for 5-7 days followed by 3-5 g/day",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-96289",
       "claim_type": "unit_value",
       "raw_text": "7 days",
@@ -1145,6 +1469,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-96691",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 96691,
+      "sentence": "Clinical populations have been supplemented with high levels of creatine monohydrate (0.3-0.8 g/kg/day equivalent to 21-56 g/day for a 70-kg individual) for years with no clinically significant or serious adverse events.",
+      "context_window": "supplemented with high levels of creatine monohydrate (0.3-0.8 g/kg/day equivalent to 21-56 g/day for a 70-kg individual) for years",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-99817",
       "claim_type": "unit_value",
       "raw_text": "100 mg",
@@ -1158,7 +1500,7 @@
       "context_window": "ale participants after ingesting a BCAA solution containing 100 mg/kg BCAA when compared to ingesting a placebo. Interestingly",
       "claim_role": "background",
       "endpoint": "mTOR signaling",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1176,9 +1518,9 @@
       "context_window": "cle protein synthesis rates were increased significantly (~ 20%, p < 0.05) in comparison to a placebo. While significant, t",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-p-100521",
@@ -1194,9 +1536,9 @@
       "context_window": "rotein synthesis rates were increased significantly (~ 20%, p < 0.05) in comparison to a placebo. While significant, this magnit",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-pct-107804",
@@ -1211,8 +1553,8 @@
       "sentence": "For example, Schena and colleagues [ 254 ] reported that BCAA supplementation (~ 10 g/d) during 21-days of trekking at altitude increased fat free mass (1.5%) while subjects ingesting a placebo had no change in muscle mass.",
       "context_window": "ng 21-days of trekking at altitude increased fat free mass (1.5%) while subjects ingesting a placebo had no change in muscle",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "muscle mass",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1229,10 +1571,10 @@
       "sentence": "Bigard and associates [ 255 ] reported that BCAA supplementation appeared to minimize loss of muscle mass in subjects training at altitude for 6 weeks.",
       "context_window": "ze loss of muscle mass in subjects training at altitude for 6 weeks. Finally, Candeloro and coworkers [ 256 ] reported that 30",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-108082",
@@ -1247,7 +1589,7 @@
       "sentence": "Finally, Candeloro and coworkers [ 256 ] reported that 30 days of BCAA supplementation (14 g/day) promoted a significant increase in muscle mass (1.3%) and grip strength (+ 8.1%) in untrained subjects.",
       "context_window": "eks. Finally, Candeloro and coworkers [ 256 ] reported that 30 days of BCAA supplementation (14 g/day) promoted a significant i",
       "claim_role": "dose",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1265,7 +1607,7 @@
       "sentence": "Finally, Candeloro and coworkers [ 256 ] reported that 30 days of BCAA supplementation (14 g/day) promoted a significant increase in muscle mass (1.3%) and grip strength (+ 8.1%) in untrained subjects.",
       "context_window": "(14 g/day) promoted a significant increase in muscle mass (1.3%) and grip strength (+ 8.1%) in untrained subjects. Alternat",
       "claim_role": "dose",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1302,7 +1644,7 @@
       "context_window": "lternatively, Spillane and colleagues [ 257 ] reported that 8 weeks of resistance training while supplementing with either 9 g",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1356,9 +1698,9 @@
       "context_window": "ion studies have been performed whereby PA supplementation (750 mg/day) occurred in subjects engaged in resistance training. Hoffm",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-110227",
@@ -1374,9 +1716,9 @@
       "context_window": "upplementation increased whole-body lean body mass (LBM) by 1.7 kg, whereas the placebo group demonstrated no relative change",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-110301",
@@ -1392,9 +1734,9 @@
       "context_window": "s the placebo group demonstrated no relative change in LBM (0.1 kg; p = 0.065 between groups). Joy et al. [ 262 ] performed a",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-p-110309",
@@ -1410,9 +1752,9 @@
       "context_window": "acebo group demonstrated no relative change in LBM (0.1 kg; p = 0.065 between groups). Joy et al. [ 262 ] performed a similar eig",
       "claim_role": "effect",
       "endpoint": "lean body mass",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-110517",
@@ -1428,7 +1770,7 @@
       "context_window": "rted that PA supplementation significantly increased LBM by 2.4 kg, whereas the placebo group demonstrated marginal increases",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1446,7 +1788,7 @@
       "context_window": "s the placebo group demonstrated marginal increases in LBM (1.2 kg; p < 0.05 between groups). A third study confirmed the bene",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1464,7 +1806,7 @@
       "context_window": "acebo group demonstrated marginal increases in LBM (1.2 kg; p < 0.05 between groups). A third study confirmed the beneficial eff",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1518,7 +1860,7 @@
       "context_window": "cebo in a double-blind manner while resistance training for 8 weeks. Supplementation with arginine + \u03b1-KG increased bench press",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1536,7 +1878,7 @@
       "context_window": ", 278 ]. Campbell and colleagues published outcomes from an 8 week resistance training study that supplemented healthy men in",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1553,7 +1895,7 @@
       "sentence": "However, these studies (conducted on male bodybuilders) indicate that boron supplementation (2.5 mg/d) had no significant impact on muscle mass or strength [ 280 , 281 ].",
       "context_window": "on male bodybuilders) indicate that boron supplementation (2.5 mg/d) had no significant impact on muscle mass or strength [ 280",
       "claim_role": "background",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1608,7 +1950,7 @@
       "context_window": "ther a placebo or 6 g of D-aspartic acid and concluded that 12 weeks of supplementation exerted no impact on resting levels of f",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1662,9 +2004,9 @@
       "context_window": "men in a randomized, double-blind fashion with a placebo or 500 mg of Fenugreek extract. After 8 weeks of supplementing and re",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-122306",
@@ -1680,7 +2022,7 @@
       "context_window": "ashion with a placebo or 500 mg of Fenugreek extract. After 8 weeks of supplementing and resistance training, significantly gre",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1698,7 +2040,7 @@
       "context_window": "lure using the bench press and a reduction in body fat when 600 mg Fenugreek extract was consumed while following a resistance",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1715,7 +2057,7 @@
       "sentence": "Although data are limited, one study reported no effect of 0.5 g/d of gamma oryzanol supplementation on strength, muscle mass, or anabolic hormonal profiles during 9 weeks of training [ 324 ].",
       "context_window": "strength, muscle mass, or anabolic hormonal profiles during 9 weeks of training [ 324 ]. Most recently, Eslami and colleagues [",
       "claim_role": "duration",
-      "endpoint": "muscle strength",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1734,7 +2076,7 @@
       "context_window": "y male volunteers with either gamma oryzanol or placebo for 9 weeks while resistance training. In this study, changes in body c",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1770,7 +2112,7 @@
       "context_window": "maltodextrin placebo (0.9 g/kg of lean tissue mass) during 6 weeks of total body resistance training. The authors concluded gl",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1788,7 +2130,7 @@
       "context_window": "348 ] and in combination with exercise over the course of 6-12 months to improve various body composition parameters [ 349 - 351",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1806,7 +2148,7 @@
       "context_window": ". For example, Wilborn and colleagues [ 318 ] reported that 8 weeks of supplementing with isoflavones with resistance training",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1824,9 +2166,9 @@
       "context_window": "[ 354 ] reported that OKG supplementation (10 g/day) during 6 weeks of resistance training significantly increased upper body s",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-134697",
@@ -1860,7 +2202,7 @@
       "context_window": "placebo in a double-blind fashion and resistance train for 8 weeks and found no change in free or total testosterone, strength",
       "claim_role": "background",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1878,7 +2220,7 @@
       "context_window": "429 ]. Studies indicate that ingestion of caffeine (e.g., 3-9 mg/kg taken 30-90 min before exercise) can spare carbohydrate",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1968,7 +2310,7 @@
       "context_window": "of muscle pain [ 439 , 441 ] when acute doses of caffeine (5 mg/kg) were provided before maximal resistance exercise. As il",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2009,6 +2351,24 @@
       "binding_confidence": "none"
     },
     {
+      "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-145016",
+      "claim_type": "unit_value",
+      "raw_text": "8 g/kg/day",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 145016,
+      "sentence": "In this respect, athletes and active individuals should consume a diet high in carbohydrate (e.g., 55-65% of calories or 5-8 g/kg/day) to maintain muscle and liver carbohydrate stores [ 41 , 50 , 54 ].",
+      "context_window": "a diet high in carbohydrate (e.g., 55-65% of calories or 5-8 g/kg/day) to maintain muscle and liver carbohydrate stores [ 41 , 50",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-149058",
       "claim_type": "unit_value",
       "raw_text": "5 days",
@@ -2040,9 +2400,9 @@
       "context_window": "90 min prior to exercise or 5 g taken two times per day for 5 days) as sodium bicarbonate has been shown to be an effective wa",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-pct-151313",
@@ -2166,9 +2526,9 @@
       "context_window": "] supplemented rats with L-alanyl-L-glutamine for the final 21 days of a six-week exercise training program. Supplementation di",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-pct-158329",
@@ -2238,7 +2598,7 @@
       "context_window": "g/d vs. placebo) in strength-trained college-aged males for 8 weeks with concomitant resistance training and without protein su",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2364,7 +2724,7 @@
       "context_window": ", placebo-controlled fashion, with 1.5 g per day of ARA for 4 weeks and found that ARA supplementation did not impact acute cha",
       "claim_role": "dose",
       "endpoint": "protein synthesis",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2400,7 +2760,7 @@
       "context_window": "e spectroscopy, Bailey and colleagues [ 547 ] reported that 7 days of citrulline (6 g/day) significantly increased plasma argi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2454,7 +2814,7 @@
       "context_window": "under both placebo and glycerol hyperhydration (1.2 g/kg) + 25 mL/kg fluid solution) 2 h before completion of each triathlon",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2598,7 +2958,7 @@
       "context_window": ", in a double-blind fashion, with either HMB or placebo for 9 weeks and concluded that HMB was responsible for a significant in",
       "claim_role": "background",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2616,7 +2976,7 @@
       "context_window": "s in individuals experienced with resistance exercise after 4 weeks of supplementation and resistance training. Similarly, Hoff",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2652,7 +3012,7 @@
       "context_window": "rison to a placebo. Most recently, HMB supplementation over 12 weeks in highly-trained combat sport athletes significantly incre",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2670,9 +3030,9 @@
       "context_window": "d in both absolute and relative amounts ranging from 300 to 600 mg [ 585 ] or 0.1 mmol per kilogram of body mass per day, resp",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-174492",
@@ -2688,9 +3048,9 @@
       "context_window": "and relative amounts ranging from 300 to 600 mg [ 585 ] or 0.1 mmol per kilogram of body mass per day, respectively [ 583 , 586",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-174874",
@@ -2796,7 +3156,7 @@
       "context_window": "500 m). In well-trained runners, nitrate supplementation (~ 430 mg nitrate) did not improve performance during an incremental",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2850,7 +3210,7 @@
       "context_window": "pproximately 6 mmHg [ 599 , 600 ]. Nitrate supplementation (560 mg - 700 mg nitrate) significantly increased blood flow to wor",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2868,7 +3228,7 @@
       "context_window": "ely 6 mmHg [ 599 , 600 ]. Nitrate supplementation (560 mg - 700 mg nitrate) significantly increased blood flow to working musc",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2922,7 +3282,7 @@
       "context_window": "ast, a 2017 study by Warnock et al. [ 630 ] reported that a 50 mg/kg dose of taurine outperformed caffeine, placebo and caffe",
       "claim_role": "dose",
       "endpoint": "VO2max",
-      "arm": "placebo",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2940,7 +3300,7 @@
       "context_window": "that single daily dosages ranging from one to 6 g for up to 2 weeks can significantly improve endurance exercise performance in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3102,9 +3462,9 @@
       "context_window": "ffects of supplementing with either ribose or dextrose over 8 weeks on rowing performance and concluded that ribose was outperf",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-192763",
@@ -3120,9 +3480,9 @@
       "context_window": "pplement with either 10 g of ribose or 10 g of dextrose for 5 days while completing a single bout of interval exercise and a t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6090881_issn_exercise_sports_nutrition_review_update_research_recomm-u-195973",

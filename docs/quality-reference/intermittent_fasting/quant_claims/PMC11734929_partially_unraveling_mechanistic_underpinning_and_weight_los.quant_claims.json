@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11734929_partially_unraveling_mechanistic_underpinning_and_weight_los",
   "doi": "10.1371/journal.pone.0314685",
-  "extracted_at": "2026-05-05T22:11:22+00:00",
+  "extracted_at": "2026-05-07T16:56:58+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "confidence_interval": 28,
@@ -26,7 +26,7 @@
       "context_window": "served in healthy individuals (pooled effect size -1.04 Kg, 95% CI: -1.42 to -0.65) and more significant weight reduction seen in participants",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "pooled",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -45,7 +45,7 @@
       "context_window": "cipants with chronic diseases (pooled effect size -3.33 Kg, 95% CI: -5.05 to -1.62) and overweight/obesity (pooled effect size -4.21 Kg, 95% C",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "pooled",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -64,7 +64,7 @@
       "context_window": "-1.62) and overweight/obesity (pooled effect size -4.21 Kg, 95% CI: -5.23 to -3.10). The observed decrease in body weight could be partially a",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "pooled",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -119,8 +119,8 @@
       "sentence": "This included the following details: (1) general study characteristics (first author, publication year, geographical location, trial registration, and funding details), (2) study population characteristics (sample size at the end of intervention, mean age, participant type), (3) TRE intervention characteristics (study design, type of TRE intervention, duration, overnight fasting, pre-post intervention data on calorie intakes and macronutrient compositions), and (4) intervention effects (mean body weight loss with corresponding 95% CIs between pre- and post-intervention, as well as any reported side effects).",
       "context_window": "ervention effects (mean body weight loss with corresponding 95% CIs between pre- and post-intervention, as well as any repo",
       "claim_role": "population",
-      "endpoint": "body weight",
-      "arm": "",
+      "endpoint": "weight loss",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -228,7 +228,7 @@
       "context_window": "taking into account the pre-post intervention mean values, 95% CIs, and sample sizes reported in each individual trial. Da",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -557,7 +557,7 @@
       "context_window": "of daily fasting, with both groups observing an average of 15.9 \u00b1 1.50 and 15.6 \u00b1 2.01 hours, respectively. Notably, these fasting",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -576,7 +576,7 @@
       "context_window": "g, with both groups observing an average of 15.9 \u00b1 1.50 and 15.6 \u00b1 2.01 hours, respectively. Notably, these fasting periods primari",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -669,9 +669,9 @@
       "context_window": "ntion group of the TRE, with a mean difference of -3.28 Kg (95% CI: -4.08, -2.49; I 2 = 99.56%, P < 0.001; Fig 2 ) observed across diverse p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11734929_partially_unraveling_mechanistic_underpinning_and_weight_los-pct-2545",
@@ -687,9 +687,9 @@
       "context_window": "a mean difference of -3.28 Kg (95% CI: -4.08, -2.49; I 2 = 99.56%, P < 0.001; Fig 2 ) observed across diverse participant coh",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11734929_partially_unraveling_mechanistic_underpinning_and_weight_los-p-2553",
@@ -705,9 +705,9 @@
       "context_window": "difference of -3.28 Kg (95% CI: -4.08, -2.49; I 2 = 99.56%, P < 0.001; Fig 2 ) observed across diverse participant cohorts. Remar",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11734929_partially_unraveling_mechanistic_underpinning_and_weight_los-p-3002",
@@ -741,7 +741,7 @@
       "context_window": "of potential bias through the utilization of Egger\u2019s test (p = 0.1274) and Begg\u2019s test (p = 0.8634) yielded outcomes supporting t",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -759,7 +759,7 @@
       "context_window": "e utilization of Egger\u2019s test (p = 0.1274) and Begg\u2019s test (p = 0.8634) yielded outcomes supporting the absence of publication bia",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1966,9 +1966,9 @@
       "context_window": "tion, a corresponding increase in weight loss was observed (P<0.05 and P<0.01, respectively). Additionally, we found a signifi",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11734929_partially_unraveling_mechanistic_underpinning_and_weight_los-p-9292",
@@ -1984,9 +1984,9 @@
       "context_window": "responding increase in weight loss was observed (P<0.05 and P<0.01, respectively). Additionally, we found a significant statis",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11734929_partially_unraveling_mechanistic_underpinning_and_weight_los-p-9504",
@@ -2002,7 +2002,7 @@
       "context_window": "ffects with the TRE compared to their younger counterparts (P<0.05) ( refer to S9 Fig ). Our analysis revealed a substantial",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2223,7 +2223,7 @@
       "context_window": "that the TRE led to greater weight loss in the short term (<12 weeks) at -1.91 Kg (95% CI: -3.47 to -0.36) compared to the long",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2242,7 +2242,7 @@
       "context_window": "ater weight loss in the short term (<12 weeks) at -1.91 Kg (95% CI: -3.47 to -0.36) compared to the long term (\u226512 weeks) at -1.29 Kg (95% CI:",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2260,7 +2260,7 @@
       "context_window": ".91 Kg (95% CI: -3.47 to -0.36) compared to the long term (\u226512 weeks) at -1.29 Kg (95% CI: -1.96 to -0.61) [ 57 ]. Conversely, J",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2279,7 +2279,7 @@
       "context_window": "o -0.36) compared to the long term (\u226512 weeks) at -1.29 Kg (95% CI: -1.96 to -0.61) [ 57 ]. Conversely, Jing-Chao Sun (2023) found that follow",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2297,7 +2297,7 @@
       "context_window": "long-term period resulted in more significant weight loss (-1.46 kg, 95% CI: -1.89 to -1.03) compared to a short-term period (-",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2316,7 +2316,7 @@
       "context_window": "period resulted in more significant weight loss (-1.46 kg, 95% CI: -1.89 to -1.03) compared to a short-term period (-0.88 kg, 95% CI: -2.19 t",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2334,7 +2334,7 @@
       "context_window": ", 95% CI: -1.89 to -1.03) compared to a short-term period (-0.88 kg, 95% CI: -2.19 to 0.42) [ 59 ]. In terms of fasting windows",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2353,7 +2353,7 @@
       "context_window": "-1.89 to -1.03) compared to a short-term period (-0.88 kg, 95% CI: -2.19 to 0.42) [ 59 ]. In terms of fasting windows, our findings indicate",
       "claim_role": "unknown",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },

@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_1101_2021_11_23_469790_evaluation_of_the_efficacy_of_omega_3_fatty_acids_formulatio",
+  "doi": "10.1101/2021.11.23.469790",
+  "extracted_at": "2026-05-07T19:32:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2021_11_23_469790_evaluation_of_the_efficacy_of_omega_3_fatty_acids_formulatio-u-530",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 530,
+      "sentence": "Inflammation was triggered by intraperitoneal injection of LPS once a day for 14 days.",
+      "context_window": "riggered by intraperitoneal injection of LPS once a day for 14 days. One hour later, rats received nebulized treatments consist",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2021_11_23_469790_evaluation_of_the_efficacy_of_omega_3_fatty_acids_formulatio-n-860",
+      "claim_type": "sample_size",
+      "raw_text": "n=3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 860,
+      "sentence": "Lung histology and cytokines were determined in n=3 rats per group at day 8 and day 15.",
+      "context_window": "hyl esters. Lung histology and cytokines were determined in n=3 rats per group at day 8 and day 15. All groups had alveolar",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

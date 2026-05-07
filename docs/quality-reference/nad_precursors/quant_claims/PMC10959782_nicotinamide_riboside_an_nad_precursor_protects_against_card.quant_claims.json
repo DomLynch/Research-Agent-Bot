@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card",
   "doi": "10.1007/s43032-023-01387-6",
-  "extracted_at": "2026-05-05T21:28:43+00:00",
+  "extracted_at": "2026-05-07T16:58:26+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 10,
@@ -24,9 +24,9 @@
       "context_window": "used in room air (normoxia) or placed in a hypoxic chamber (10.5%O 2 ) for the last 14 days of gestation (term = 65 days) and",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-533",
@@ -42,9 +42,9 @@
       "context_window": "ia) or placed in a hypoxic chamber (10.5%O 2 ) for the last 14 days of gestation (term = 65 days) and administered either water",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-562",
@@ -60,9 +60,9 @@
       "context_window": "amber (10.5%O 2 ) for the last 14 days of gestation (term = 65 days) and administered either water or NR (1.6 mg/ml) in the dri",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-608",
@@ -78,9 +78,9 @@
       "context_window": "ation (term = 65 days) and administered either water or NR (1.6 mg/ml) in the drinking bottle. Fetuses were excised at term, a",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-p-1020",
@@ -96,9 +96,9 @@
       "context_window": "animals. Hypoxia reduced fetal body weight in both sexes ( p = 0.01), which was prevented by NR. Hypoxia had no effect on mater",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-p-1127",
@@ -114,7 +114,7 @@
       "context_window": "ad no effect on maternal liver NAD + levels but decreased ( p = 0.04) placenta NAD + levels, the latter normalized with NR treat",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "Hypoxia had no effect on fetal heart NAD + but decreased ( p < 0.05) mitochondrial complex IV and sirtuin 3 activities, ATP con",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -240,9 +240,9 @@
       "context_window": "namide riboside (NR) in their drinking bottles for the last 14 days of pregnancy (50- to 64-day gestation). Food (g/day/kg) and",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide riboside",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-1476",
@@ -258,9 +258,9 @@
       "context_window": "other day. NR was administered at a single concentration of 1.6 mg/ml in the water bottle, and achieved a dose range of 117-15",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-1540",
@@ -276,9 +276,9 @@
       "context_window": "mg/ml in the water bottle, and achieved a dose range of 117-151 mg/kg/day determined by the animal\u2019s water intake rate. This dose was",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-1758",
@@ -474,7 +474,7 @@
       "context_window": "ar in all but HPX + NR, which was significantly decreased ( p = 0.01). The decrease in volume intake in HPX animals compared to",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -492,9 +492,9 @@
       "context_window": "atments using one-way ANOVA with statistical significance ( P < 0.05) indicated by an asterisk from their respective NMX control",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide riboside",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-p-691",
@@ -654,7 +654,7 @@
       "context_window": "ed hepatic NAD + levels under conditions of both normoxia ( p = 0.03) and hypoxia ( p = 0.04). Hypoxia significantly ( p = 0.04)",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -672,7 +672,7 @@
       "context_window": "under conditions of both normoxia ( p = 0.03) and hypoxia ( p = 0.04). Hypoxia significantly ( p = 0.04) reduced NAD + levels in",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -690,7 +690,7 @@
       "context_window": "p = 0.03) and hypoxia ( p = 0.04). Hypoxia significantly ( p = 0.04) reduced NAD + levels in placentas by 27% compared to NMX c",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -708,7 +708,7 @@
       "context_window": "nificantly ( p = 0.04) reduced NAD + levels in placentas by 27% compared to NMX controls. NR treatment normalized NAD + lev",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -726,9 +726,9 @@
       "context_window": "in response to 4 treatments (normoxia (NMX), hypoxia (HPX, 10.5%O 2 , 14 days), NMX plus NR (nicotinamide riboside, 14 days)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-2862",
@@ -744,9 +744,9 @@
       "context_window": "e to 4 treatments (normoxia (NMX), hypoxia (HPX, 10.5%O 2 , 14 days), NMX plus NR (nicotinamide riboside, 14 days) or HPX plus",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-2908",
@@ -762,9 +762,9 @@
       "context_window": "X, 10.5%O 2 , 14 days), NMX plus NR (nicotinamide riboside, 14 days) or HPX plus NR (14 days)). * p < 0.05. n = 6 in each group",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-2933",
@@ -780,9 +780,9 @@
       "context_window": "MX plus NR (nicotinamide riboside, 14 days) or HPX plus NR (14 days)). * p < 0.05. n = 6 in each group To determine the effect",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-p-2946",
@@ -798,9 +798,9 @@
       "context_window": "icotinamide riboside, 14 days) or HPX plus NR (14 days)). * p < 0.05. n = 6 in each group To determine the effectiveness of NR",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-n-2956",
@@ -816,9 +816,9 @@
       "context_window": "e riboside, 14 days) or HPX plus NR (14 days)). * p < 0.05. n = 6 in each group To determine the effectiveness of NR adminis",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-p-3200",
@@ -852,7 +852,7 @@
       "context_window": "mpared to their NMX controls. NR administration increased ( p = 0.006) SIRT3 activity in HPX males compared to the HPX untreated",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -870,7 +870,7 @@
       "context_window": "effect on SIRT3 activity although NR treatment increased ( p = 0.004) SIRT3 activity in HPX hearts compared to untreated control",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -960,7 +960,7 @@
       "context_window": "ment of NR reduced mitochondrial acetylation in both male ( p = 0.002) and female ( p = 0.01) HPX hearts compared to their untrea",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -978,7 +978,7 @@
       "context_window": "hondrial acetylation in both male ( p = 0.002) and female ( p = 0.01) HPX hearts compared to their untreated HPX controls. Mater",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -996,7 +996,7 @@
       "context_window": "o their untreated HPX controls. Maternal NR significantly ( p = 0.005) reduced mitochondrial acetylation levels in NMX hearts of",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1014,9 +1014,9 @@
       "context_window": "e (bottom) animals exposed to NMX (normoxia), HPX (hypoxia, 10.5%O2, 14 days) or HPX plus NR (14 days). Western immunoblots (",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide riboside",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-4874",
@@ -1032,9 +1032,9 @@
       "context_window": ") animals exposed to NMX (normoxia), HPX (hypoxia, 10.5%O2, 14 days) or HPX plus NR (14 days). Western immunoblots (top) identi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide riboside",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-4899",
@@ -1050,9 +1050,9 @@
       "context_window": "(normoxia), HPX (hypoxia, 10.5%O2, 14 days) or HPX plus NR (14 days). Western immunoblots (top) identify acetylated mitochondri",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide riboside",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-p-5304",
@@ -1122,7 +1122,7 @@
       "context_window": "y rates were compared between normoxia (NMX), hypoxia (HPX, 10.5%O 2 , 14 days), NMX plus NR (nicotinamide riboside, 14 days)",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1140,7 +1140,7 @@
       "context_window": "e compared between normoxia (NMX), hypoxia (HPX, 10.5%O 2 , 14 days), NMX plus NR (nicotinamide riboside, 14 days), and HPX plu",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1158,7 +1158,7 @@
       "context_window": "X, 10.5%O 2 , 14 days), NMX plus NR (nicotinamide riboside, 14 days), and HPX plus NR (14 days). * p < 0.05. n = 8 in each grou",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1176,7 +1176,7 @@
       "context_window": "plus NR (nicotinamide riboside, 14 days), and HPX plus NR (14 days). * p < 0.05. n = 8 in each group Chronic hypoxia signific",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1194,7 +1194,7 @@
       "context_window": "cotinamide riboside, 14 days), and HPX plus NR (14 days). * p < 0.05. n = 8 in each group Chronic hypoxia significantly reduced",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1212,7 +1212,7 @@
       "context_window": "riboside, 14 days), and HPX plus NR (14 days). * p < 0.05. n = 8 in each group Chronic hypoxia significantly reduced ( p =",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1230,7 +1230,7 @@
       "context_window": "= 8 in each group Chronic hypoxia significantly reduced ( p = 0.034) ATP content in male but not female heart ventricles (Fig.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1248,7 +1248,7 @@
       "context_window": "ATP levels were increased but did not reach significance ( p = 0.07) compared to its untreated HPX controls. Hypoxia had no eff",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1266,9 +1266,9 @@
       "context_window": "protein) was compared between normoxia (NMX), hypoxia (HPX, 10.5%O 2 , 14 days), NMX plus NR (nicotinamide riboside, 14 days)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-6591",
@@ -1284,9 +1284,9 @@
       "context_window": "s compared between normoxia (NMX), hypoxia (HPX, 10.5%O 2 , 14 days), NMX plus NR (nicotinamide riboside, 14 days), and HPX plu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-6637",
@@ -1302,9 +1302,9 @@
       "context_window": "X, 10.5%O 2 , 14 days), NMX plus NR (nicotinamide riboside, 14 days), and HPX plus NR (14 days). * p < 0.05. n = 8 in each grou",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-u-6664",
@@ -1320,9 +1320,9 @@
       "context_window": "plus NR (nicotinamide riboside, 14 days), and HPX plus NR (14 days). * p < 0.05. n = 8 in each group",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-p-6676",
@@ -1338,9 +1338,9 @@
       "context_window": "cotinamide riboside, 14 days), and HPX plus NR (14 days). * p < 0.05. n = 8 in each group",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10959782_nicotinamide_riboside_an_nad_precursor_protects_against_card-n-6686",
@@ -1356,9 +1356,9 @@
       "context_window": "riboside, 14 days), and HPX plus NR (14 days). * p < 0.05. n = 8 in each group",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training",
   "doi": "10.3390/ijerph192114554",
-  "extracted_at": "2026-05-05T21:59:15+00:00",
+  "extracted_at": "2026-05-07T16:57:46+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 19,
@@ -99,9 +99,9 @@
       "context_window": "pants were randomly assigned into two groups: the RT group (n = 15) and the control (CON) group (n = 15). The RT group partici",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-n-596",
@@ -117,9 +117,9 @@
       "context_window": "groups: the RT group (n = 15) and the control (CON) group (n = 15). The RT group participated in the exercise for 60 min per",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-700",
@@ -135,9 +135,9 @@
       "context_window": "ercise for 60 min per session and two sessions per week for 24 weeks. Pre-test and post-test body composition, BMD, functional f",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-903",
@@ -602,10 +602,10 @@
       "sentence": "In addition, muscle mass decreases by approximately 1-2% annually after the age of 50 years [ 11 ].",
       "context_window": "10 ]. In addition, muscle mass decreases by approximately 1-2% annually after the age of 50 years [ 11 ]. A decrease in mu",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-1192",
@@ -620,10 +620,10 @@
       "sentence": "In addition, muscle mass decreases by approximately 1-2% annually after the age of 50 years [ 11 ].",
       "context_window": "s decreases by approximately 1-2% annually after the age of 50 years [ 11 ]. A decrease in muscle mass reduces muscle strength,",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-pct-1771",
@@ -729,9 +729,9 @@
       "context_window": "ion criteria were participants with a body fat percentage > 30% and participants with low levels of physical activity accor",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-392",
@@ -747,9 +747,9 @@
       "context_window": "ire-short form (<600 MET min/week/no exercise over the last 6 months) [ 23 , 24 ]. The exclusion criteria were any uncontrolled",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-601",
@@ -837,7 +837,7 @@
       "context_window": "ing the number of repetitions increased progressively every 4 weeks. The training intensity was set at three sets of 10-15 repe",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -855,9 +855,9 @@
       "context_window": "was set at three sets of 10-15 repetitions (yellow band: 1-4 weeks 10 rep, 5-8 weeks 12 rep, 9-12 weeks 15 rep; red band: 13-1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-2340",
@@ -873,9 +873,9 @@
       "context_window": "sets of 10-15 repetitions (yellow band: 1-4 weeks 10 rep, 5-8 weeks 12 rep, 9-12 weeks 15 rep; red band: 13-16 weeks 10 rep, 17",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-2358",
@@ -891,9 +891,9 @@
       "context_window": "titions (yellow band: 1-4 weeks 10 rep, 5-8 weeks 12 rep, 9-12 weeks 15 rep; red band: 13-16 weeks 10 rep, 17-20 weeks 12 rep, 2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-2388",
@@ -909,9 +909,9 @@
       "context_window": "s 10 rep, 5-8 weeks 12 rep, 9-12 weeks 15 rep; red band: 13-16 weeks 10 rep, 17-20 weeks 12 rep, 21-24 weeks 15 rep) at a percei",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-2408",
@@ -927,9 +927,9 @@
       "context_window": "12 rep, 9-12 weeks 15 rep; red band: 13-16 weeks 10 rep, 17-20 weeks 12 rep, 21-24 weeks 15 rep) at a perceived exertion value o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-2428",
@@ -945,9 +945,9 @@
       "context_window": "5 rep; red band: 13-16 weeks 10 rep, 17-20 weeks 12 rep, 21-24 weeks 15 rep) at a perceived exertion value of 7 or 8 on the OMNI",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-pct-2678",
@@ -963,7 +963,7 @@
       "context_window": "n reported to correspond to exercise intensity levels of 70-80% of the one-repetition maximum (1RM) with a rest period of 9",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2815,7 +2815,7 @@
       "context_window": "der women, power resistance training with elastic bands for 20 weeks led to significant negative changes in fat mass, fat-free m",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2833,7 +2833,7 @@
       "context_window": "ommended weight-bearing or resistance exercise for at least 6 months to improve bone health in older adults [ 35 ]. Our study sh",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2851,7 +2851,7 @@
       "context_window": "antly in participants who underwent resistance training for 24 weeks, but it decreased significantly in the control group [ 36 ]",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2869,7 +2869,7 @@
       "context_window": "erobic exercise program significantly increased lumbar BMD (2%) and femoral neck BMD (6.8%) in the exercise group, while B",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2887,7 +2887,7 @@
       "context_window": "gnificantly increased lumbar BMD (2%) and femoral neck BMD (6.8%) in the exercise group, while BMD was decreased in the cont",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2905,7 +2905,7 @@
       "context_window": "onal fitness was significantly improved or maintained after 6 months of resistance exercise training in the RT group. In contras",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2923,7 +2923,7 @@
       "context_window": "at among older adults, elastic band resistance training for 24 weeks (twice per week) resulted in a significant increase in lowe",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2941,7 +2941,7 @@
       "context_window": "found that older adults who underwent strength training for 22 weeks exhibited significant improvements in lower body strength,",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "strength training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2995,9 +2995,9 @@
       "context_window": "45 , 46 ]. Beneke et al. reported that resistance training (90% of 1RM) at 60\u00b0/s for 16 weeks increased isokinetic muscle s",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-3700",
@@ -3013,9 +3013,9 @@
       "context_window": "reported that resistance training (90% of 1RM) at 60\u00b0/s for 16 weeks increased isokinetic muscle strength (15.2%) in older adult",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-pct-3747",
@@ -3031,9 +3031,9 @@
       "context_window": "at 60\u00b0/s for 16 weeks increased isokinetic muscle strength (15.2%) in older adults [ 45 ]. Rabelo et al. found that progressi",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9656451_effects_of_twenty_four_weeks_of_resistance_exercise_training-u-3839",
@@ -3049,7 +3049,7 @@
       "context_window": "abelo et al. found that progressive resistance training for 24 weeks significantly increased knee extensor peak torque (15.6%) i",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3067,7 +3067,7 @@
       "context_window": "24 weeks significantly increased knee extensor peak torque (15.6%) in older women [ 46 ]. A recent meta-analysis reported tha",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },

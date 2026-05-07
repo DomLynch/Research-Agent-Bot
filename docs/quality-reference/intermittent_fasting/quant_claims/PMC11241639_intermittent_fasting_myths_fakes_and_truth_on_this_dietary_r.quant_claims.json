@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r",
   "doi": "10.3390/foods13131960",
-  "extracted_at": "2026-05-05T22:11:23+00:00",
+  "extracted_at": "2026-05-07T16:56:55+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 41,
@@ -24,10 +24,10 @@
       "sentence": "In fact, it has been established that adherence to CR, in which a reduction of 20-40% of caloric intake occurs, sharply declines over a long period of time, and many people acquire noticeable weight by the year\u2019s end [ 7 , 8 ].",
       "context_window": "stablished that adherence to CR, in which a reduction of 20-40% of caloric intake occurs, sharply declines over a long peri",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-pct-1845",
@@ -204,7 +204,7 @@
       "sentence": "Accordingly, it has been observed that adherence to continuous CR declines after approximately 1 month of intervention and continues to decrease afterward [ 7 , 60 , 61 ].",
       "context_window": "hat adherence to continuous CR declines after approximately 1 month of intervention and continues to decrease afterward [ 7 , 6",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -259,9 +259,9 @@
       "context_window": "ndividuals, and the IF dietary regimen applied for at least 3 weeks in the intervention groups (different types of intervention",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-u-21501",
@@ -475,7 +475,7 @@
       "context_window": "l group; -5.94 mg/dL compared with CR). In contrast, WC (-2-12 cm over both controls), total cholesterol levels (-1.43 mg/dL",
       "claim_role": "background",
       "endpoint": "blood pressure",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -493,7 +493,7 @@
       "context_window": "C (-2-12 cm over both controls), total cholesterol levels (-1.43 mg/dL compared with ad libitum control group; +2.69 compared with",
       "claim_role": "background",
       "endpoint": "blood pressure",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -511,7 +511,7 @@
       "context_window": "th ad libitum control group; +2.69 compared with CR group; -0.63 mg/dL considering both controls), blood pressure (systolic and di",
       "claim_role": "background",
       "endpoint": "blood pressure",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -529,7 +529,7 @@
       "context_window": "s), blood pressure (systolic and diastolic pressure values -1.99 mmHg and -1.84 mmHg, respectively), fasting glucose and insulin",
       "claim_role": "background",
       "endpoint": "fasting glucose",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -547,7 +547,7 @@
       "context_window": "ure (systolic and diastolic pressure values -1.99 mmHg and -1.84 mmHg, respectively), fasting glucose and insulin resistance (hom",
       "claim_role": "background",
       "endpoint": "fasting glucose",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -565,7 +565,7 @@
       "context_window": "assessment of insulin resistance, HOMA-IR) (glucose levels -8.42 mg/dL with respect to the ad libitum control group; but no positi",
       "claim_role": "background",
       "endpoint": "insulin sensitivity",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -583,7 +583,7 @@
       "context_window": "e ad libitum control group; but no positive results vs. CR +1.65 mg/dL; HOMA-IR -0.48 with respect to control groups), HDL-C (-0.9",
       "claim_role": "background",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -601,7 +601,7 @@
       "context_window": "/dL; HOMA-IR -0.48 with respect to control groups), HDL-C (-0.92 mg/dL compared with ad libitum group; +0.88 mg/dL compared with C",
       "claim_role": "background",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -619,7 +619,7 @@
       "context_window": "roups), HDL-C (-0.92 mg/dL compared with ad libitum group; +0.88 mg/dL compared with CR) were not significantly affected by the IF",
       "claim_role": "background",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -636,10 +636,10 @@
       "sentence": "Adherence to the nutritional intervention was high, ranging from 84% to 97.5%.",
       "context_window": "ence to the nutritional intervention was high, ranging from 84% to 97.5%. No serious adverse effects were reported globally",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-pct-22796",
@@ -654,10 +654,10 @@
       "sentence": "Adherence to the nutritional intervention was high, ranging from 84% to 97.5%.",
       "context_window": "the nutritional intervention was high, ranging from 84% to 97.5%. No serious adverse effects were reported globally. In conc",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-u-23254",
@@ -924,7 +924,7 @@
       "sentence": "Results indicated that adherence was significant during the first 6 weeks (74%), whereas a dramatic decline after six months (31%) and one year was observed (22%).",
       "context_window": "s indicated that adherence was significant during the first 6 weeks (74%), whereas a dramatic decline after six months (31%) an",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -942,7 +942,7 @@
       "sentence": "Results indicated that adherence was significant during the first 6 weeks (74%), whereas a dramatic decline after six months (31%) and one year was observed (22%).",
       "context_window": "ed that adherence was significant during the first 6 weeks (74%), whereas a dramatic decline after six months (31%) and one",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -960,7 +960,7 @@
       "sentence": "Results indicated that adherence was significant during the first 6 weeks (74%), whereas a dramatic decline after six months (31%) and one year was observed (22%).",
       "context_window": "6 weeks (74%), whereas a dramatic decline after six months (31%) and one year was observed (22%). Furthermore, after 6 mont",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -978,7 +978,7 @@
       "sentence": "Results indicated that adherence was significant during the first 6 weeks (74%), whereas a dramatic decline after six months (31%) and one year was observed (22%).",
       "context_window": "c decline after six months (31%) and one year was observed (22%). Furthermore, after 6 months, 5:2SH and SBA achieved simil",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1087,7 +1087,7 @@
       "context_window": "n different body parameters in 50 subjects presenting BMI \u2265 25 kg/m 2 , a WC of 90 cm, and fasting blood glucose < 125 mg/dL",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1105,7 +1105,7 @@
       "context_window": "ameters in 50 subjects presenting BMI \u2265 25 kg/m 2 , a WC of 90 cm, and fasting blood glucose < 125 mg/dL (at each group, cont",
       "claim_role": "background",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1123,7 +1123,7 @@
       "context_window": "MI \u2265 25 kg/m 2 , a WC of 90 cm, and fasting blood glucose < 125 mg/dL (at each group, control (no fasting without restriction) an",
       "claim_role": "background",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1177,9 +1177,9 @@
       "context_window": "ividuals were randomly assigned to the intervention group ( n = 20) and control ( n = 20). The control group continued to eat",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-n-33804",
@@ -1195,9 +1195,9 @@
       "context_window": "assigned to the intervention group ( n = 20) and control ( n = 20). The control group continued to eat as usual and recorded",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-u-34267",
@@ -1429,7 +1429,7 @@
       "context_window": "eks of treatment. Individuals with a BMI ranging from 30 to 45 kg/m 2 and aged between 25 and 65 years were selected and rand",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1447,7 +1447,7 @@
       "context_window": "a BMI ranging from 30 to 45 kg/m 2 and aged between 25 and 65 years were selected and randomized into an intervention group ( n",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1465,7 +1465,7 @@
       "context_window": "s were selected and randomized into an intervention group ( n = 23; TRF 8 h eating window; ad libitum 10:00 a.m.-06:00 p.m., f",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1483,7 +1483,7 @@
       "context_window": "-06:00 p.m., fast 06:00 p.m.-10:00 a.m.) or control group ( n = 23; usual habits and diet). Results indicated that the TRF reg",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "control",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1825,9 +1825,9 @@
       "context_window": "58 obese patients (BMI 30-50 kg/m 2 ). The 4 h TRF group ( n = 19) was given instructions to fast from 07:00 a.m. to 03:00 p.",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-n-42869",
@@ -2005,10 +2005,10 @@
       "sentence": "Results showed that adherence to the trial was relatively high (84.0 \u00b1 16.1% and 83.8 \u00b1 12.6% considering TRF and CR groups, respectively).",
       "context_window": "lts showed that adherence to the trial was relatively high (84.0 \u00b1 16.1% and 83.8 \u00b1 12.6% considering TRF and CR groups, respective",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-pct-44459",
@@ -2023,10 +2023,10 @@
       "sentence": "Results showed that adherence to the trial was relatively high (84.0 \u00b1 16.1% and 83.8 \u00b1 12.6% considering TRF and CR groups, respectively).",
       "context_window": "wed that adherence to the trial was relatively high (84.0 \u00b1 16.1% and 83.8 \u00b1 12.6% considering TRF and CR groups, respectivel",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-msd-44469",
@@ -2042,10 +2042,10 @@
       "sentence": "Results showed that adherence to the trial was relatively high (84.0 \u00b1 16.1% and 83.8 \u00b1 12.6% considering TRF and CR groups, respectively).",
       "context_window": "dherence to the trial was relatively high (84.0 \u00b1 16.1% and 83.8 \u00b1 12.6% considering TRF and CR groups, respectively). Notably, con",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-pct-44476",
@@ -2060,10 +2060,10 @@
       "sentence": "Results showed that adherence to the trial was relatively high (84.0 \u00b1 16.1% and 83.8 \u00b1 12.6% considering TRF and CR groups, respectively).",
       "context_window": "e to the trial was relatively high (84.0 \u00b1 16.1% and 83.8 \u00b1 12.6% considering TRF and CR groups, respectively). Notably, cons",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-u-44578",
@@ -2583,9 +2583,9 @@
       "context_window": "dering the different racial populations between TRF and CR (0.81 kg, 0.43%). However, the study has some limitations: it was no",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-pct-47023",
@@ -2601,9 +2601,9 @@
       "context_window": "e different racial populations between TRF and CR (0.81 kg, 0.43%). However, the study has some limitations: it was not power",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-pct-47738",
@@ -2619,7 +2619,7 @@
       "context_window": "d clinical trial involving 75 individuals (HbA1c levels 6.5-11.0%, age 18-80 years old, and BMI 30-50 kg/m 2 ) suffering from",
       "claim_role": "population",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2637,7 +2637,7 @@
       "context_window": "al involving 75 individuals (HbA1c levels 6.5-11.0%, age 18-80 years old, and BMI 30-50 kg/m 2 ) suffering from T2DM, they were",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2655,7 +2655,7 @@
       "context_window": "ls (HbA1c levels 6.5-11.0%, age 18-80 years old, and BMI 30-50 kg/m 2 ) suffering from T2DM, they were randomly divided 1:1:1",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2673,7 +2673,7 @@
       "context_window": "nergy-drink consumption), CR (reduction in energy intake by 25%), and control (usual habits and eating. In comparison with",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2799,9 +2799,9 @@
       "context_window": "o control groups (ad libitum high-fat diet or low-fat diet, n = 24) vs. animals treated with eTRF ( n = 24) and lTRF ( n = 24)",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-n-49395",
@@ -2817,9 +2817,9 @@
       "context_window": "et or low-fat diet, n = 24) vs. animals treated with eTRF ( n = 24) and lTRF ( n = 24). Results showed that, in comparison to",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-n-49414",
@@ -2835,9 +2835,9 @@
       "context_window": "n = 24) vs. animals treated with eTRF ( n = 24) and lTRF ( n = 24). Results showed that, in comparison to mice fed the lTRF d",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-u-50757",
@@ -3166,9 +3166,9 @@
       "context_window": "rator, 90 participants were randomized to either the eTRF ( n = 30), mild-TRF (mTRF) ( n = 30), or control groups ( n = 30). A",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-n-54140",
@@ -3184,9 +3184,9 @@
       "context_window": "randomized to either the eTRF ( n = 30), mild-TRF (mTRF) ( n = 30), or control groups ( n = 30). After completing the five-we",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-n-54169",
@@ -3202,9 +3202,9 @@
       "context_window": "F ( n = 30), mild-TRF (mTRF) ( n = 30), or control groups ( n = 30). After completing the five-week experiment, eighty-two par",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-u-55668",
@@ -3345,10 +3345,10 @@
       "sentence": "Adherence to IF regimens could be superior with respect to CR intervention; however, it usually decreases when the duration of intervention reaches 12 weeks or longer [ 194 ].",
       "context_window": "usually decreases when the duration of intervention reaches 12 weeks or longer [ 194 ]. Furthermore, most physicians are not tra",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-pct-5712",
@@ -3363,10 +3363,10 @@
       "sentence": "The effect of diet on mood may also influence adherence: some trials showed that IF had a positive effect on mood over CR, with bad temper being reported only in 3% of the participants; however, in a trial with lean participants, an overall worsening of mood was reported [ 195 ].",
       "context_window": "ect on mood over CR, with bad temper being reported only in 3% of the participants; however, in a trial with lean particip",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-u-11513",
@@ -3381,10 +3381,10 @@
       "sentence": "Adherence to IF regimens could be superior with respect to CR intervention; however, it usually decreases when the duration of intervention reaches 12 weeks or longer [ 194 ].",
       "context_window": "usually decreases when the duration of intervention reaches 12 weeks or longer [ 194 ]. Furthermore, most physicians are not tra",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11241639_intermittent_fasting_myths_fakes_and_truth_on_this_dietary_r-pct-11869",
@@ -3399,10 +3399,10 @@
       "sentence": "The effect of diet on mood may also influence adherence: some trials showed that IF had a positive effect on mood over CR, with bad temper being reported only in 3% of the participants; however, in a trial with lean participants, an overall worsening of mood was reported [ 195 ].",
       "context_window": "ect on mood over CR, with bad temper being reported only in 3% of the participants; however, in a trial with lean particip",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

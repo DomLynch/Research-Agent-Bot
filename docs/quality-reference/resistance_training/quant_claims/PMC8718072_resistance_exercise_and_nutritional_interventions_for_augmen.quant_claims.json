@@ -1,11 +1,11 @@
 {
   "paper_id": "PMC8718072_resistance_exercise_and_nutritional_interventions_for_augmen",
   "doi": "10.1002/jcsm.12791",
-  "extracted_at": "2026-05-05T21:59:09+00:00",
+  "extracted_at": "2026-05-07T16:57:41+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 5,
-    "unit_value": 2
+    "unit_value": 4
   },
   "claims": [
     {
@@ -115,6 +115,42 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718072_resistance_exercise_and_nutritional_interventions_for_augmen-u-4423",
+      "claim_type": "unit_value",
+      "raw_text": "0.60 g/kg/day",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 4423,
+      "sentence": "31 CKD 3-5 patients are prescribed low DPI (0.55 to 0.60 g/kg/day) aiming to postpone dialysis by reducing uremic clinical symptoms associated with protein metabolism.",
+      "context_window": "stage. 31 CKD 3-5 patients are prescribed low DPI (0.55 to 0.60 g/kg/day) aiming to postpone dialysis by reducing uremic clinical sy",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718072_resistance_exercise_and_nutritional_interventions_for_augmen-u-4702",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 g/kg/day",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "introduction",
+      "source_offset": 4702,
+      "sentence": "31 Because the dialysis treatment is characterized by loss of protein and increased muscle catabolism, patients treated with dialysis are prescribed high DPI (1.0-1.2 g/kg/day) to prevent PEW.",
+      "context_window": "patients treated with dialysis are prescribed high DPI (1.0-1.2 g/kg/day) to prevent PEW. 31 Therefore, anabolic interventions using",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8718072_resistance_exercise_and_nutritional_interventions_for_augmen-u-1869",

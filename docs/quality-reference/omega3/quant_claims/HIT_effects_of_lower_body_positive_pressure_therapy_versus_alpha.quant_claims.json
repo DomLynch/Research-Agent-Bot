@@ -1,0 +1,174 @@
+{
+  "paper_id": "HIT_effects_of_lower_body_positive_pressure_therapy_versus_alpha",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 6,
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effects_of_lower_body_positive_pressure_therapy_versus_alpha-pct-223",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 223,
+      "sentence": "Here is a \\*\\*concise, clear summary (\\~250 words / well under 5000 characters)\\*\\* while preserving the key scientific points: \\--- Knee osteoarthritis (KOA) is highly prevalent among overweight women, affecting more than 30% of those with BMI \u226525 kg/m\u00b2.",
+      "context_window": "ighly prevalent among overweight women, affecting more than 30% of those with BMI \u226525 kg/m\u00b2. Excess body weight increases k",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_lower_body_positive_pressure_therapy_versus_alpha-u-246",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 246,
+      "sentence": "Here is a \\*\\*concise, clear summary (\\~250 words / well under 5000 characters)\\*\\* while preserving the key scientific points: \\--- Knee osteoarthritis (KOA) is highly prevalent among overweight women, affecting more than 30% of those with BMI \u226525 kg/m\u00b2.",
+      "context_window": "verweight women, affecting more than 30% of those with BMI \u226525 kg/m\u00b2. Excess body weight increases knee joint loading by 4-6",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_lower_body_positive_pressure_therapy_versus_alpha-pct-743",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 743,
+      "sentence": "Standard physical therapy (PT) remains first-line treatment, yet provides only modest benefits, achieving approximately 15-20% WOMAC improvement at 12 weeks, while up to half of overweight patients continue to experience significant symptoms.",
+      "context_window": "t provides only modest benefits, achieving approximately 15-20% WOMAC improvement at 12 weeks, while up to half of overweig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effects_of_lower_body_positive_pressure_therapy_versus_alpha-u-768",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 768,
+      "sentence": "Standard physical therapy (PT) remains first-line treatment, yet provides only modest benefits, achieving approximately 15-20% WOMAC improvement at 12 weeks, while up to half of overweight patients continue to experience significant symptoms.",
+      "context_window": "nefits, achieving approximately 15-20% WOMAC improvement at 12 weeks, while up to half of overweight patients continue to experi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effects_of_lower_body_positive_pressure_therapy_versus_alpha-pct-984",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 984,
+      "sentence": "Lower body positive pressure therapy (LBPP) via antigravity treadmill offers a biomechanical enhancement by unloading 40-80% of body weight, enabling pain-free gait training and reducing joint impact forces by up to 80%.",
+      "context_window": "readmill offers a biomechanical enhancement by unloading 40-80% of body weight, enabling pain-free gait training and reduci",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_lower_body_positive_pressure_therapy_versus_alpha-pct-1079",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1079,
+      "sentence": "Lower body positive pressure therapy (LBPP) via antigravity treadmill offers a biomechanical enhancement by unloading 40-80% of body weight, enabling pain-free gait training and reducing joint impact forces by up to 80%.",
+      "context_window": "ree gait training and reducing joint impact forces by up to 80%. Studies report 30-40% WOMAC improvement and better walking",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_lower_body_positive_pressure_therapy_versus_alpha-pct-1102",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1102,
+      "sentence": "Studies report 30-40% WOMAC improvement and better walking capacity compared with conventional PT.",
+      "context_window": "educing joint impact forces by up to 80%. Studies report 30-40% WOMAC improvement and better walking capacity compared with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_effects_of_lower_body_positive_pressure_therapy_versus_alpha-u-1317",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg/day",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 1317,
+      "sentence": "Alpha-lipoic acid (600 mg/day) and omega-3 fatty acids (1.5-2 g/day) provide targeted biochemical modulation, reducing pro-inflammatory cytokines, oxidative stress, and cartilage-degrading enzymes, with reported 25-35% functional improvement in clinical trials.",
+      "context_window": "ry and oxidative mechanisms driving KOA. Alpha-lipoic acid (600 mg/day) and omega-3 fatty acids (1.5-2 g/day) provide targeted bio",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_lower_body_positive_pressure_therapy_versus_alpha-pct-1513",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1513,
+      "sentence": "Alpha-lipoic acid (600 mg/day) and omega-3 fatty acids (1.5-2 g/day) provide targeted biochemical modulation, reducing pro-inflammatory cytokines, oxidative stress, and cartilage-degrading enzymes, with reported 25-35% functional improvement in clinical trials.",
+      "context_window": "e stress, and cartilage-degrading enzymes, with reported 25-35% functional improvement in clinical trials. Despite the prom",
+      "claim_role": "dose",
+      "endpoint": "oxidative stress",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

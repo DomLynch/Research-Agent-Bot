@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_",
   "doi": "10.1186/1476-511X-11-123",
-  "extracted_at": "2026-05-05T22:22:57+00:00",
+  "extracted_at": "2026-05-07T16:58:07+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 73,
@@ -23,7 +23,7 @@
       "sentence": "In HCH subjects the nutraceutical pill resulted more effective than EZE in lowering LDL cholesterol (-31.7% vs -25.4%, P < 0.001) and better tolerated.",
       "context_window": "ulted more effective than EZE in lowering LDL cholesterol (-31.7% vs -25.4%, P < 0.001) and better tolerated. On treatment, L",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -41,7 +41,7 @@
       "sentence": "In HCH subjects the nutraceutical pill resulted more effective than EZE in lowering LDL cholesterol (-31.7% vs -25.4%, P < 0.001) and better tolerated.",
       "context_window": "effective than EZE in lowering LDL cholesterol (-31.7% vs -25.4%, P < 0.001) and better tolerated. On treatment, LDL-C level",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -59,7 +59,7 @@
       "sentence": "In HCH subjects the nutraceutical pill resulted more effective than EZE in lowering LDL cholesterol (-31.7% vs -25.4%, P < 0.001) and better tolerated.",
       "context_window": "ive than EZE in lowering LDL cholesterol (-31.7% vs -25.4%, P < 0.001) and better tolerated. On treatment, LDL-C level below 3.36",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -77,10 +77,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with the nutraceutical pill and 11.8% of those treated with EZE (P <0.007).",
       "context_window": ".001) and better tolerated. On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated wi",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-1152",
@@ -95,10 +95,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with the nutraceutical pill and 11.8% of those treated with EZE (P <0.007).",
       "context_window": "er tolerated. On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with the nutr",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-pct-1179",
@@ -113,10 +113,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with the nutraceutical pill and 11.8% of those treated with EZE (P <0.007).",
       "context_window": "LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with the nutraceutical pill and 11.8% o",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-pct-1237",
@@ -131,10 +131,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with the nutraceutical pill and 11.8% of those treated with EZE (P <0.007).",
       "context_window": "n 28.9% of subjects treated with the nutraceutical pill and 11.8% of those treated with EZE (P <0.007). In the group treated",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-p-1270",
@@ -149,10 +149,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with the nutraceutical pill and 11.8% of those treated with EZE (P <0.007).",
       "context_window": "the nutraceutical pill and 11.8% of those treated with EZE (P <0.007). In the group treated with EZE the subjects carrying the G",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-msd-1488",
@@ -168,7 +168,7 @@
       "sentence": "In the group treated with EZE the subjects carrying the G allele of the g.1679 C > G silent polymorphism of NPC1L1 gene showed a higher response to EZE than homozygous for the common allele (GG + CG: LDL-C -29.4\u00b15.0%, CC -23.6\u00b16.5%, P <0.001).",
       "context_window": "EZE than homozygous for the common allele (GG + CG: LDL-C -29.4\u00b15.0%, CC -23.6\u00b16.5%, P <0.001). Combined treatment with these d",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -186,7 +186,7 @@
       "sentence": "In the group treated with EZE the subjects carrying the G allele of the g.1679 C > G silent polymorphism of NPC1L1 gene showed a higher response to EZE than homozygous for the common allele (GG + CG: LDL-C -29.4\u00b15.0%, CC -23.6\u00b16.5%, P <0.001).",
       "context_window": "than homozygous for the common allele (GG + CG: LDL-C -29.4\u00b15.0%, CC -23.6\u00b16.5%, P <0.001). Combined treatment with these dr",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -205,7 +205,7 @@
       "sentence": "In the group treated with EZE the subjects carrying the G allele of the g.1679 C > G silent polymorphism of NPC1L1 gene showed a higher response to EZE than homozygous for the common allele (GG + CG: LDL-C -29.4\u00b15.0%, CC -23.6\u00b16.5%, P <0.001).",
       "context_window": "ygous for the common allele (GG + CG: LDL-C -29.4\u00b15.0%, CC -23.6\u00b16.5%, P <0.001). Combined treatment with these drugs was as eff",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -223,7 +223,7 @@
       "sentence": "In the group treated with EZE the subjects carrying the G allele of the g.1679 C > G silent polymorphism of NPC1L1 gene showed a higher response to EZE than homozygous for the common allele (GG + CG: LDL-C -29.4\u00b15.0%, CC -23.6\u00b16.5%, P <0.001).",
       "context_window": "for the common allele (GG + CG: LDL-C -29.4\u00b15.0%, CC -23.6\u00b16.5%, P <0.001). Combined treatment with these drugs was as effe",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -241,7 +241,7 @@
       "sentence": "In the group treated with EZE the subjects carrying the G allele of the g.1679 C > G silent polymorphism of NPC1L1 gene showed a higher response to EZE than homozygous for the common allele (GG + CG: LDL-C -29.4\u00b15.0%, CC -23.6\u00b16.5%, P <0.001).",
       "context_window": "he common allele (GG + CG: LDL-C -29.4\u00b15.0%, CC -23.6\u00b16.5%, P <0.001). Combined treatment with these drugs was as effective as S",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -259,10 +259,10 @@
       "sentence": "Combined treatment with these drugs was as effective as STs in moderate doses (LDL cholesterol -37%, triglycerides -23%).",
       "context_window": "was as effective as STs in moderate doses (LDL cholesterol -37%, triglycerides -23%). In HeFH patients the addition of BBR",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-pct-1641",
@@ -277,10 +277,10 @@
       "sentence": "Combined treatment with these drugs was as effective as STs in moderate doses (LDL cholesterol -37%, triglycerides -23%).",
       "context_window": "STs in moderate doses (LDL cholesterol -37%, triglycerides -23%). In HeFH patients the addition of BBR resulted in LDL chol",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-p-1793",
@@ -295,7 +295,7 @@
       "sentence": "In HeFH patients the addition of BBR resulted in LDL cholesterol reductions inversely related to those induced by the stable therapy (r = -0.617, P <0.0001), with mean 10.5% further decrease.",
       "context_window": "related to those induced by the stable therapy (r = -0.617, P <0.0001), with mean 10.5% further decrease. The alternative treatm",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -313,7 +313,7 @@
       "sentence": "In HeFH patients the addition of BBR resulted in LDL cholesterol reductions inversely related to those induced by the stable therapy (r = -0.617, P <0.0001), with mean 10.5% further decrease.",
       "context_window": "ed by the stable therapy (r = -0.617, P <0.0001), with mean 10.5% further decrease. The alternative treatments tested in our",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -386,9 +386,9 @@
       "context_window": "nt with a nutraceutical-combined pill (containing berberine 500 mg, policosanol 10 mg and red yeast rice 200 mg; BBR/P/RR) or",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-1009",
@@ -404,9 +404,9 @@
       "context_window": "cal-combined pill (containing berberine 500 mg, policosanol 10 mg and red yeast rice 200 mg; BBR/P/RR) or ezetimibe 10 mg/day",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-1034",
@@ -422,9 +422,9 @@
       "context_window": "ning berberine 500 mg, policosanol 10 mg and red yeast rice 200 mg; BBR/P/RR) or ezetimibe 10 mg/day (EZE) for six months. Pl",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-1065",
@@ -440,9 +440,9 @@
       "context_window": "nol 10 mg and red yeast rice 200 mg; BBR/P/RR) or ezetimibe 10 mg/day (EZE) for six months. Plasma lipid concentrations were ass",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-pct-2242",
@@ -567,7 +567,7 @@
       "sentence": "These subjects were selected from those who, during monotherapy, had a percent decrease of LDL-C below the median level (-29%) of the distribution of the values obtained in the whole group of subjects on mono-therapy (n.",
       "context_window": "y, had a percent decrease of LDL-C below the median level (-29%) of the distribution of the values obtained in the whole gr",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -640,7 +640,7 @@
       "sentence": "The percentage of subjects with more than 30% decrease of LDL-C and non-HDL-C resulted to be higher in the group treated with BBR/P/RR than in the group treated with EZE (P <0.0001) (Figure 1 ).",
       "context_window": "TG more than EZE. The percentage of subjects with more than 30% decrease of LDL-C and non-HDL-C resulted to be higher in th",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -658,7 +658,7 @@
       "sentence": "The percentage of subjects with more than 30% decrease of LDL-C and non-HDL-C resulted to be higher in the group treated with BBR/P/RR than in the group treated with EZE (P <0.0001) (Figure 1 ).",
       "context_window": "p treated with BBR/P/RR than in the group treated with EZE (P <0.0001) (Figure 1 ). No significant effect on HDL-C level was reco",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -676,10 +676,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002).",
       "context_window": "patients treated with EZE. On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated wi",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-759",
@@ -694,10 +694,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002).",
       "context_window": "ted with EZE. On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-pct-786",
@@ -712,10 +712,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002).",
       "context_window": "LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treate",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-pct-830",
@@ -730,10 +730,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002).",
       "context_window": "was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-p-863",
@@ -748,10 +748,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002).",
       "context_window": "treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observ",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-896",
@@ -766,10 +766,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002).",
       "context_window": "of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated wi",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-910",
@@ -784,10 +784,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002).",
       "context_window": "ed with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-pct-937",
@@ -802,10 +802,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002).",
       "context_window": "-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those tre",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-pct-984",
@@ -820,10 +820,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002).",
       "context_window": "observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002). A DNA sample was avai",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-p-1017",
@@ -838,10 +838,10 @@
       "sentence": "On treatment, LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) was observed in 28.9% of subjects treated with BBR/P/RR and 11.8% of those treated with EZE (P <0.007); non-HDL-C level below 4.14 mmol/L (\u2264160 mg/dl) was observed in 44.0% of subjects treated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002).",
       "context_window": "eated with BBR/P/RR and in 21.0% of those treated with EZE (P <0.002). A DNA sample was available for 70 out of 76 subjects trea",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-msd-1427",
@@ -857,7 +857,7 @@
       "sentence": "Indeed, the carriers of the G allele (3 GG and 23 CG) showed a higher response to EZE than homozygous for the common allele (44 CC) (LDL-C -29.4\u00b15.0% vs -23.6\u00b16.5%, P <0.001).",
       "context_window": "o EZE than homozygous for the common allele (44 CC) (LDL-C -29.4\u00b15.0% vs -23.6\u00b16.5%, P <0.001). Comparison between treatments w",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -875,7 +875,7 @@
       "sentence": "Indeed, the carriers of the G allele (3 GG and 23 CG) showed a higher response to EZE than homozygous for the common allele (44 CC) (LDL-C -29.4\u00b15.0% vs -23.6\u00b16.5%, P <0.001).",
       "context_window": "than homozygous for the common allele (44 CC) (LDL-C -29.4\u00b15.0% vs -23.6\u00b16.5%, P <0.001). Comparison between treatments wi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -894,7 +894,7 @@
       "sentence": "Indeed, the carriers of the G allele (3 GG and 23 CG) showed a higher response to EZE than homozygous for the common allele (44 CC) (LDL-C -29.4\u00b15.0% vs -23.6\u00b16.5%, P <0.001).",
       "context_window": "ozygous for the common allele (44 CC) (LDL-C -29.4\u00b15.0% vs -23.6\u00b16.5%, P <0.001). Comparison between treatments with BBR/P/RR a",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -912,7 +912,7 @@
       "sentence": "Indeed, the carriers of the G allele (3 GG and 23 CG) showed a higher response to EZE than homozygous for the common allele (44 CC) (LDL-C -29.4\u00b15.0% vs -23.6\u00b16.5%, P <0.001).",
       "context_window": "us for the common allele (44 CC) (LDL-C -29.4\u00b15.0% vs -23.6\u00b16.5%, P <0.001). Comparison between treatments with BBR/P/RR an",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -930,7 +930,7 @@
       "sentence": "Indeed, the carriers of the G allele (3 GG and 23 CG) showed a higher response to EZE than homozygous for the common allele (44 CC) (LDL-C -29.4\u00b15.0% vs -23.6\u00b16.5%, P <0.001).",
       "context_window": "the common allele (44 CC) (LDL-C -29.4\u00b15.0% vs -23.6\u00b16.5%, P <0.001). Comparison between treatments with BBR/P/RR and EZE on p",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -966,7 +966,7 @@
       "sentence": "In comparison to monotherapy, the combined treatment caused a further mean decrease of TC, LDL-C, non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively.",
       "context_window": "a further mean decrease of TC, LDL-C, non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respective",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -984,7 +984,7 @@
       "sentence": "In comparison to monotherapy, the combined treatment caused a further mean decrease of TC, LDL-C, non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively.",
       "context_window": "her mean decrease of TC, LDL-C, non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively. Duri",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1002,7 +1002,7 @@
       "sentence": "In comparison to monotherapy, the combined treatment caused a further mean decrease of TC, LDL-C, non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively.",
       "context_window": "decrease of TC, LDL-C, non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively. During combi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1020,7 +1020,7 @@
       "sentence": "In comparison to monotherapy, the combined treatment caused a further mean decrease of TC, LDL-C, non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively.",
       "context_window": "se of TC, LDL-C, non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively. During combined treatm",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1038,7 +1038,7 @@
       "sentence": "In comparison to monotherapy, the combined treatment caused a further mean decrease of TC, LDL-C, non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively.",
       "context_window": ", non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively. During combined treatment 50% of",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1056,7 +1056,7 @@
       "sentence": "In comparison to monotherapy, the combined treatment caused a further mean decrease of TC, LDL-C, non-HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively.",
       "context_window": "HDL-C and TG of -9.7%, -13.6%, -12.5% (P <0.001) and -4.5% (P <0.005), respectively. During combined treatment 50% of the subjec",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1074,10 +1074,10 @@
       "sentence": "During combined treatment 50% of the subjects reached an LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl).",
       "context_window": "d -4.5% (P <0.005), respectively. During combined treatment 50% of the subjects reached an LDL-C level below 3.36 mmol/L (\u2264",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-2422",
@@ -1092,10 +1092,10 @@
       "sentence": "During combined treatment 50% of the subjects reached an LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl).",
       "context_window": "treatment 50% of the subjects reached an LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u226416",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-2436",
@@ -1110,10 +1110,10 @@
       "sentence": "During combined treatment 50% of the subjects reached an LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl).",
       "context_window": "of the subjects reached an LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl). T",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-pct-2451",
@@ -1128,10 +1128,10 @@
       "sentence": "During combined treatment 50% of the subjects reached an LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl).",
       "context_window": "s reached an LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl). This combinatio",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-2475",
@@ -1146,10 +1146,10 @@
       "sentence": "During combined treatment 50% of the subjects reached an LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl).",
       "context_window": "below 3.36 mmol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl). This combination was well tolerated and did",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-2489",
@@ -1164,10 +1164,10 @@
       "sentence": "During combined treatment 50% of the subjects reached an LDL-C level below 3.36 mmol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl).",
       "context_window": "ol/L (\u2264130 mg/dl) and 65.4% a non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl). This combination was well tolerated and did not induce",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-p-2809",
@@ -1398,7 +1398,7 @@
       "sentence": "On average BBR/P/RR significantly further decreased TC, LDL-C, non-HDL-C and TG levels by 8.1%, 10.5%, 9.7% and 5.4%, respectively.",
       "context_window": "tly further decreased TC, LDL-C, non-HDL-C and TG levels by 8.1%, 10.5%, 9.7% and 5.4%, respectively. These effects were not",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1416,7 +1416,7 @@
       "sentence": "On average BBR/P/RR significantly further decreased TC, LDL-C, non-HDL-C and TG levels by 8.1%, 10.5%, 9.7% and 5.4%, respectively.",
       "context_window": "rther decreased TC, LDL-C, non-HDL-C and TG levels by 8.1%, 10.5%, 9.7% and 5.4%, respectively. These effects were not signif",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1434,7 +1434,7 @@
       "sentence": "On average BBR/P/RR significantly further decreased TC, LDL-C, non-HDL-C and TG levels by 8.1%, 10.5%, 9.7% and 5.4%, respectively.",
       "context_window": "ecreased TC, LDL-C, non-HDL-C and TG levels by 8.1%, 10.5%, 9.7% and 5.4%, respectively. These effects were not significantl",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1452,7 +1452,7 @@
       "sentence": "On average BBR/P/RR significantly further decreased TC, LDL-C, non-HDL-C and TG levels by 8.1%, 10.5%, 9.7% and 5.4%, respectively.",
       "context_window": "TC, LDL-C, non-HDL-C and TG levels by 8.1%, 10.5%, 9.7% and 5.4%, respectively. These effects were not significantly differe",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1470,7 +1470,7 @@
       "sentence": "The additional percent decrease of plasma LDL-C induced by BBR/P/RR (calculated as the difference between percent decrease induced by treatment with STs or STs + EZE supplemented with BBR/P/RR minus that induced by STs or STs + EZE) showed a wide inter-individual variability (from -22.5% to -2.0%).",
       "context_window": "Ts + EZE) showed a wide inter-individual variability (from -22.5% to -2.0%). Fifteen patients, showing more than 10% decrease",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1488,7 +1488,7 @@
       "sentence": "The additional percent decrease of plasma LDL-C induced by BBR/P/RR (calculated as the difference between percent decrease induced by treatment with STs or STs + EZE supplemented with BBR/P/RR minus that induced by STs or STs + EZE) showed a wide inter-individual variability (from -22.5% to -2.0%).",
       "context_window": "showed a wide inter-individual variability (from -22.5% to -2.0%). Fifteen patients, showing more than 10% decrease of LDL-C",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1506,7 +1506,7 @@
       "sentence": "Fifteen patients, showing more than 10% decrease of LDL-C level with respect to percent decrease observed during STs or STs + EZE therapy, were considered good-responders to BBR/P/RR treatment, while two patients, showing less than 5% decrease, were considered non-responders.",
       "context_window": "(from -22.5% to -2.0%). Fifteen patients, showing more than 10% decrease of LDL-C level with respect to percent decrease ob",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1524,7 +1524,7 @@
       "sentence": "Fifteen patients, showing more than 10% decrease of LDL-C level with respect to percent decrease observed during STs or STs + EZE therapy, were considered good-responders to BBR/P/RR treatment, while two patients, showing less than 5% decrease, were considered non-responders.",
       "context_window": "o BBR/P/RR treatment, while two patients, showing less than 5% decrease, were considered non-responders. During therapy wi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1542,10 +1542,10 @@
       "sentence": "During therapy with STs or STs + EZE an LDL-C value below 3.36 mmol/L (\u2264130 mg/dl) and non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl) was reached only in 3 and 6 patients, respectively; after the addition of BBR/P/RR the patients reaching these levels were 11 and 14, respectively.",
       "context_window": ". During therapy with STs or STs + EZE an LDL-C value below 3.36 mmol/L (\u2264130 mg/dl) and non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl)",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-4956",
@@ -1560,10 +1560,10 @@
       "sentence": "During therapy with STs or STs + EZE an LDL-C value below 3.36 mmol/L (\u2264130 mg/dl) and non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl) was reached only in 3 and 6 patients, respectively; after the addition of BBR/P/RR the patients reaching these levels were 11 and 14, respectively.",
       "context_window": "py with STs or STs + EZE an LDL-C value below 3.36 mmol/L (\u2264130 mg/dl) and non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl) was reache",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-4987",
@@ -1578,10 +1578,10 @@
       "sentence": "During therapy with STs or STs + EZE an LDL-C value below 3.36 mmol/L (\u2264130 mg/dl) and non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl) was reached only in 3 and 6 patients, respectively; after the addition of BBR/P/RR the patients reaching these levels were 11 and 14, respectively.",
       "context_window": "-C value below 3.36 mmol/L (\u2264130 mg/dl) and non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl) was reached only in 3 and 6 patients, respec",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-u-5001",
@@ -1596,10 +1596,10 @@
       "sentence": "During therapy with STs or STs + EZE an LDL-C value below 3.36 mmol/L (\u2264130 mg/dl) and non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl) was reached only in 3 and 6 patients, respectively; after the addition of BBR/P/RR the patients reaching these levels were 11 and 14, respectively.",
       "context_window": "3.36 mmol/L (\u2264130 mg/dl) and non-HDL-C below 4.14 mmol/L (\u2264160 mg/dl) was reached only in 3 and 6 patients, respectively; aft",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3477057_nutraceutical_pill_containing_berberine_versus_ezetimibe_on_-p-5593",
@@ -1632,7 +1632,7 @@
       "sentence": "Previous studies, placebo or dietary regimen controlled, which evaluated the plasma lipid-lowering effects of this nutraceutical pill in groups of various sizes of middle-aged or elderly subjects, with moderate forms of mixed hyperlipidemia, had given variable results (decrease of LDL-C from -10.8% to -31% and TG from -9.5% to 26%) [ 15 - 18 ].",
       "context_window": "idemia, had given variable results (decrease of LDL-C from -10.8% to -31% and TG from -9.5% to 26%) [ 15 - 18 ]. In our group",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "placebo",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1650,7 +1650,7 @@
       "sentence": "Previous studies, placebo or dietary regimen controlled, which evaluated the plasma lipid-lowering effects of this nutraceutical pill in groups of various sizes of middle-aged or elderly subjects, with moderate forms of mixed hyperlipidemia, had given variable results (decrease of LDL-C from -10.8% to -31% and TG from -9.5% to 26%) [ 15 - 18 ].",
       "context_window": "d given variable results (decrease of LDL-C from -10.8% to -31% and TG from -9.5% to 26%) [ 15 - 18 ]. In our group of subj",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "placebo",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1668,7 +1668,7 @@
       "sentence": "Previous studies, placebo or dietary regimen controlled, which evaluated the plasma lipid-lowering effects of this nutraceutical pill in groups of various sizes of middle-aged or elderly subjects, with moderate forms of mixed hyperlipidemia, had given variable results (decrease of LDL-C from -10.8% to -31% and TG from -9.5% to 26%) [ 15 - 18 ].",
       "context_window": "results (decrease of LDL-C from -10.8% to -31% and TG from -9.5% to 26%) [ 15 - 18 ]. In our group of subjects with a more s",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "placebo",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1686,7 +1686,7 @@
       "sentence": "Previous studies, placebo or dietary regimen controlled, which evaluated the plasma lipid-lowering effects of this nutraceutical pill in groups of various sizes of middle-aged or elderly subjects, with moderate forms of mixed hyperlipidemia, had given variable results (decrease of LDL-C from -10.8% to -31% and TG from -9.5% to 26%) [ 15 - 18 ].",
       "context_window": "(decrease of LDL-C from -10.8% to -31% and TG from -9.5% to 26%) [ 15 - 18 ]. In our group of subjects with a more severe f",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "placebo",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1704,7 +1704,7 @@
       "sentence": "In our group of subjects with a more severe form of primary HCH treated with BBR/P/RR for six months, LDL-C, non-HDL-C and TG were reduced by 32%, 30% and 19.5%, respectively.",
       "context_window": "/RR for six months, LDL-C, non-HDL-C and TG were reduced by 32%, 30% and 19.5%, respectively. Discrepancy with some of the",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1722,7 +1722,7 @@
       "sentence": "In our group of subjects with a more severe form of primary HCH treated with BBR/P/RR for six months, LDL-C, non-HDL-C and TG were reduced by 32%, 30% and 19.5%, respectively.",
       "context_window": "or six months, LDL-C, non-HDL-C and TG were reduced by 32%, 30% and 19.5%, respectively. Discrepancy with some of the previ",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1740,7 +1740,7 @@
       "sentence": "In our group of subjects with a more severe form of primary HCH treated with BBR/P/RR for six months, LDL-C, non-HDL-C and TG were reduced by 32%, 30% and 19.5%, respectively.",
       "context_window": "onths, LDL-C, non-HDL-C and TG were reduced by 32%, 30% and 19.5%, respectively. Discrepancy with some of the previous findin",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1758,7 +1758,7 @@
       "sentence": "Several studies, including one meta-analysis, all support the beneficial effect of red yeast rice on blood lipid profile in hyperlipidemic subjects [ 19 ] and this effect was confirmed in patients intolerant to STs, where red yeast rice preparations induced a dose-dependent decrease of LDL-C, from 21% to 30%, without serious adverse effects in most of the cases [ 20 , 21 ].",
       "context_window": "eparations induced a dose-dependent decrease of LDL-C, from 21% to 30%, without serious adverse effects in most of the case",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1776,7 +1776,7 @@
       "sentence": "Several studies, including one meta-analysis, all support the beneficial effect of red yeast rice on blood lipid profile in hyperlipidemic subjects [ 19 ] and this effect was confirmed in patients intolerant to STs, where red yeast rice preparations induced a dose-dependent decrease of LDL-C, from 21% to 30%, without serious adverse effects in most of the cases [ 20 , 21 ].",
       "context_window": "ons induced a dose-dependent decrease of LDL-C, from 21% to 30%, without serious adverse effects in most of the cases [ 20",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1884,7 +1884,7 @@
       "sentence": "In that study BBR decreased TC, LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, respectively [ 25 ].",
       "context_window": "e per day). In that study BBR decreased TC, LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type I",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1902,7 +1902,7 @@
       "sentence": "In that study BBR decreased TC, LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, respectively [ 25 ].",
       "context_window": "day). In that study BBR decreased TC, LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, r",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1920,7 +1920,7 @@
       "sentence": "In that study BBR decreased TC, LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, respectively [ 25 ].",
       "context_window": "n that study BBR decreased TC, LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, respecti",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1938,7 +1938,7 @@
       "sentence": "In that study BBR decreased TC, LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, respectively [ 25 ].",
       "context_window": "ased TC, LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, respectively [ 25 ]. Studies in a",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1956,7 +1956,7 @@
       "sentence": "In that study BBR decreased TC, LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, respectively [ 25 ].",
       "context_window": ", LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, respectively [ 25 ]. Studies in animal",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1974,7 +1974,7 @@
       "sentence": "In that study BBR decreased TC, LDL-C and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, respectively [ 25 ].",
       "context_window": "and TG by 20%, 25% and 8% in type IIa and by 29.5%, 11% and 48% in type IIb, respectively [ 25 ]. Studies in animals and cu",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1992,7 +1992,7 @@
       "sentence": "In the original study of hypercholesterolemic type IIa patients, the 25% decrease of LDL-C levels was obtained with a dose of BBR two-fold that present in our nutraceutical pill [ 25 ].",
       "context_window": "iginal study of hypercholesterolemic type IIa patients, the 25% decrease of LDL-C levels was obtained with a dose of BBR tw",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2010,7 +2010,7 @@
       "sentence": "Moreover, Cicero et al. [ 15 ] in their hyperlipidemic patients, using 500 mg/day of BBR alone, observed only a 20% decrease in LDL-C.",
       "context_window": "icero et al. [ 15 ] in their hyperlipidemic patients, using 500 mg/day of BBR alone, observed only a 20% decrease in LDL-C. In vie",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2028,7 +2028,7 @@
       "sentence": "Moreover, Cicero et al. [ 15 ] in their hyperlipidemic patients, using 500 mg/day of BBR alone, observed only a 20% decrease in LDL-C.",
       "context_window": "ic patients, using 500 mg/day of BBR alone, observed only a 20% decrease in LDL-C. In view of these findings and of the res",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2047,7 +2047,7 @@
       "sentence": "From a meta-analysis of eight randomized controlled trials [ 33 ] and from 14 more recent studies, which as a whole investigated 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%.",
       "context_window": "as a whole investigated 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results t",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2066,7 +2066,7 @@
       "sentence": "From a meta-analysis of eight randomized controlled trials [ 33 ] and from 14 more recent studies, which as a whole investigated 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%.",
       "context_window": "igated 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy w",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2084,7 +2084,7 @@
       "sentence": "From a meta-analysis of eight randomized controlled trials [ 33 ] and from 14 more recent studies, which as a whole investigated 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%.",
       "context_window": "d 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy with 1",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2102,7 +2102,7 @@
       "sentence": "From a meta-analysis of eight randomized controlled trials [ 33 ] and from 14 more recent studies, which as a whole investigated 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%.",
       "context_window": "jects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy with 10 mg/day of EZE decrease",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2120,7 +2120,7 @@
       "sentence": "From a meta-analysis of eight randomized controlled trials [ 33 ] and from 14 more recent studies, which as a whole investigated 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%.",
       "context_window": "l/L) treated for 12 weeks, it results that monotherapy with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respective",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2138,7 +2138,7 @@
       "sentence": "From a meta-analysis of eight randomized controlled trials [ 33 ] and from 14 more recent studies, which as a whole investigated 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%.",
       "context_window": "monotherapy with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%. In subjec",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2156,7 +2156,7 @@
       "sentence": "From a meta-analysis of eight randomized controlled trials [ 33 ] and from 14 more recent studies, which as a whole investigated 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%.",
       "context_window": "with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%. In subjects we tre",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2174,7 +2174,7 @@
       "sentence": "From a meta-analysis of eight randomized controlled trials [ 33 ] and from 14 more recent studies, which as a whole investigated 4110 hyperlipidemic subjects (LDL-C 4.32\u00b10.49 and TG 1.90\u00b10.75 mmol/L) treated for 12 weeks, it results that monotherapy with 10 mg/day of EZE decreases LDL-C and TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%.",
       "context_window": "d TG by 20.4% and 8,9%, respectively, and increase HDL-C by 3%. In subjects we treated with EZE, although in a context of",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2192,7 +2192,7 @@
       "sentence": "In subjects we treated with EZE, although in a context of a large inter-individual variability (decrease in LDL-C from -9.2% to -38.8%), we unexpectedly observed a higher mean percent reduction of plasma LDL-C (-25.4%).",
       "context_window": "large inter-individual variability (decrease in LDL-C from -9.2% to -38.8%), we unexpectedly observed a higher mean percent",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2210,7 +2210,7 @@
       "sentence": "In subjects we treated with EZE, although in a context of a large inter-individual variability (decrease in LDL-C from -9.2% to -38.8%), we unexpectedly observed a higher mean percent reduction of plasma LDL-C (-25.4%).",
       "context_window": "er-individual variability (decrease in LDL-C from -9.2% to -38.8%), we unexpectedly observed a higher mean percent reduction",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2228,7 +2228,7 @@
       "sentence": "In subjects we treated with EZE, although in a context of a large inter-individual variability (decrease in LDL-C from -9.2% to -38.8%), we unexpectedly observed a higher mean percent reduction of plasma LDL-C (-25.4%).",
       "context_window": "observed a higher mean percent reduction of plasma LDL-C (-25.4%). Possible explanations for these results, in comparison wi",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2246,7 +2246,7 @@
       "sentence": "In the small subgroup of our subjects, who were considered relatively low responders to monotherapy, the combined treatment with BBR/P/RR and EZE decreased LDL-C by 37%, non-HDL-C by 35% and TG by 23% (Table 3 ), owing to the inhibition of cholesterol absorption associated with a suppression of hepatic lipid synthesis, causing a more sustained expression of LDLRs.",
       "context_window": "combined treatment with BBR/P/RR and EZE decreased LDL-C by 37%, non-HDL-C by 35% and TG by 23% (Table 3 ), owing to the in",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2264,7 +2264,7 @@
       "sentence": "In the small subgroup of our subjects, who were considered relatively low responders to monotherapy, the combined treatment with BBR/P/RR and EZE decreased LDL-C by 37%, non-HDL-C by 35% and TG by 23% (Table 3 ), owing to the inhibition of cholesterol absorption associated with a suppression of hepatic lipid synthesis, causing a more sustained expression of LDLRs.",
       "context_window": "with BBR/P/RR and EZE decreased LDL-C by 37%, non-HDL-C by 35% and TG by 23% (Table 3 ), owing to the inhibition of choles",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2282,7 +2282,7 @@
       "sentence": "In the small subgroup of our subjects, who were considered relatively low responders to monotherapy, the combined treatment with BBR/P/RR and EZE decreased LDL-C by 37%, non-HDL-C by 35% and TG by 23% (Table 3 ), owing to the inhibition of cholesterol absorption associated with a suppression of hepatic lipid synthesis, causing a more sustained expression of LDLRs.",
       "context_window": "and EZE decreased LDL-C by 37%, non-HDL-C by 35% and TG by 23% (Table 3 ), owing to the inhibition of cholesterol absorpti",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2372,7 +2372,7 @@
       "sentence": "In our group of genotype-confirmed HeFH patients, who were on stable treatment with STs or STs/EZE combination (see Additional file 1 : Table S1), the supplementation of the treatment with the nutraceutical pill containing BBR, although in the context of a large inter-individual variability, induced a mean 10.5% further decrease of plasma LDL-C level [Table 4 .",
       "context_window": "ext of a large inter-individual variability, induced a mean 10.5% further decrease of plasma LDL-C level [Table 4 . The mecha",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2426,7 +2426,7 @@
       "sentence": "These results provide one possible explanation why increasing doses of STs fail to achieve a proportional LDL-C reduction (only about 6% with each doubling of the dose), in view of the dose-dependent increase of PCSK9 expression induced by STs and the consequent PCSK9-mediated degradation of LDLRs [ 40 ].",
       "context_window": "fail to achieve a proportional LDL-C reduction (only about 6% with each doubling of the dose), in view of the dose-depend",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2444,7 +2444,7 @@
       "sentence": "These results were confirmed in Chinese patients with moderate HCH treated with simvastatin 20 mg/day plus BBR 1 g/day or with either of these drugs alone; in these patients the combination lowered LDL-C and TG to extents much higher than monotherapy [ 45 ].",
       "context_window": "Chinese patients with moderate HCH treated with simvastatin 20 mg/day plus BBR 1 g/day or with either of these drugs alone; in th",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

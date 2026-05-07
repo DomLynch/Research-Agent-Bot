@@ -1,0 +1,47 @@
+{
+  "paper_id": "PMID37640824_fish_oil_omega_3_fatty_acids_alleviate_postoperative_deliriu",
+  "doi": "10.1007/s11064-023-04020-9",
+  "extracted_at": "2026-05-07T19:32:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMID37640824_fish_oil_omega_3_fatty_acids_alleviate_postoperative_deliriu-u-690",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 690,
+      "sentence": "Oral gavage with omega-3 fatty acids (300 mg/kg) for 3 weeks before surgery significantly attenuated anesthesia/surgery-induced POD-like behavior and the accumulation of proinflammatory cytokines from the peripheral blood in aged mice.",
+      "context_window": "points in aged mice. Oral gavage with omega-3 fatty acids (300 mg/kg) for 3 weeks before surgery significantly attenuated ane",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID37640824_fish_oil_omega_3_fatty_acids_alleviate_postoperative_deliriu-u-705",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 705,
+      "sentence": "Oral gavage with omega-3 fatty acids (300 mg/kg) for 3 weeks before surgery significantly attenuated anesthesia/surgery-induced POD-like behavior and the accumulation of proinflammatory cytokines from the peripheral blood in aged mice.",
+      "context_window": "mice. Oral gavage with omega-3 fatty acids (300 mg/kg) for 3 weeks before surgery significantly attenuated anesthesia/surgery-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

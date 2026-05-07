@@ -1,0 +1,250 @@
+{
+  "paper_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa",
+  "doi": "10.1161/strokeaha.108.516450",
+  "extracted_at": "2026-05-07T19:24:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 4,
+    "p_value": 3,
+    "confidence_interval": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-u-146",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 146,
+      "sentence": "BACKGROUND AND PURPOSE: The Stroke Prevention by Aggressive Reduction in Cholesterol Levels (SPARCL) trial found that treatment with atorvastatin 80 mg per day reduced the risk of stroke and cardiovascular events in patients with a recent transient ischemic attack (TIA) or stroke.",
+      "context_window": "evels (SPARCL) trial found that treatment with atorvastatin 80 mg per day reduced the risk of stroke and cardiovascular event",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-u-457",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 457,
+      "sentence": "METHODS: The SPARCL trial randomized patients with TIA or stroke within 1 to 6 months without known coronary heart disease (CHD) and low-density lipoprotein cholesterol 100 to 190 mg/dL to treatment with atorvastatin 80 mg per day or placebo.",
+      "context_window": "CL trial randomized patients with TIA or stroke within 1 to 6 months without known coronary heart disease (CHD) and low-density",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-u-556",
+      "claim_type": "unit_value",
+      "raw_text": "190 mg/dL",
+      "numeric_values": [
+        190.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 556,
+      "sentence": "METHODS: The SPARCL trial randomized patients with TIA or stroke within 1 to 6 months without known coronary heart disease (CHD) and low-density lipoprotein cholesterol 100 to 190 mg/dL to treatment with atorvastatin 80 mg per day or placebo.",
+      "context_window": "isease (CHD) and low-density lipoprotein cholesterol 100 to 190 mg/dL to treatment with atorvastatin 80 mg per day or placebo. In",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-u-597",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 597,
+      "sentence": "METHODS: The SPARCL trial randomized patients with TIA or stroke within 1 to 6 months without known coronary heart disease (CHD) and low-density lipoprotein cholesterol 100 to 190 mg/dL to treatment with atorvastatin 80 mg per day or placebo.",
+      "context_window": "cholesterol 100 to 190 mg/dL to treatment with atorvastatin 80 mg per day or placebo. Investigators identified subjects as ha",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-pct-1287",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1287,
+      "sentence": "In the group with carotid artery stenosis, treatment with atorvastatin was associated with a 33% reduction in the risk of any stroke (hazard ratio [HR] 0.67, 95% confidence interval [CI] 0.47, 0.94; P=0.02), and a 43% reduction in risk of major coronary events (HR 0.57, 95% CI 0.32, 1.00; P=0.05).",
+      "context_window": "stenosis, treatment with atorvastatin was associated with a 33% reduction in the risk of any stroke (hazard ratio [HR] 0.67",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-pct-1352",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1352,
+      "sentence": "In the group with carotid artery stenosis, treatment with atorvastatin was associated with a 33% reduction in the risk of any stroke (hazard ratio [HR] 0.67, 95% confidence interval [CI] 0.47, 0.94; P=0.02), and a 43% reduction in risk of major coronary events (HR 0.57, 95% CI 0.32, 1.00; P=0.05).",
+      "context_window": "eduction in the risk of any stroke (hazard ratio [HR] 0.67, 95% confidence interval [CI] 0.47, 0.94; P=0.02), and a 43% red",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-p-1393",
+      "claim_type": "p_value",
+      "raw_text": "P=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1393,
+      "sentence": "In the group with carotid artery stenosis, treatment with atorvastatin was associated with a 33% reduction in the risk of any stroke (hazard ratio [HR] 0.67, 95% confidence interval [CI] 0.47, 0.94; P=0.02), and a 43% reduction in risk of major coronary events (HR 0.57, 95% CI 0.32, 1.00; P=0.05).",
+      "context_window": "d ratio [HR] 0.67, 95% confidence interval [CI] 0.47, 0.94; P=0.02), and a 43% reduction in risk of major coronary events (HR",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-pct-1408",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1408,
+      "sentence": "In the group with carotid artery stenosis, treatment with atorvastatin was associated with a 33% reduction in the risk of any stroke (hazard ratio [HR] 0.67, 95% confidence interval [CI] 0.47, 0.94; P=0.02), and a 43% reduction in risk of major coronary events (HR 0.57, 95% CI 0.32, 1.00; P=0.05).",
+      "context_window": "67, 95% confidence interval [CI] 0.47, 0.94; P=0.02), and a 43% reduction in risk of major coronary events (HR 0.57, 95% CI",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-ci-1465",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.32, 1.00",
+      "numeric_values": [
+        0.32,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1465,
+      "sentence": "In the group with carotid artery stenosis, treatment with atorvastatin was associated with a 33% reduction in the risk of any stroke (hazard ratio [HR] 0.67, 95% confidence interval [CI] 0.47, 0.94; P=0.02), and a 43% reduction in risk of major coronary events (HR 0.57, 95% CI 0.32, 1.00; P=0.05).",
+      "context_window": "a 43% reduction in risk of major coronary events (HR 0.57, 95% CI 0.32, 1.00; P=0.05). Later carotid revascularization was reduced by 56",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-p-1484",
+      "claim_type": "p_value",
+      "raw_text": "P=0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1484,
+      "sentence": "In the group with carotid artery stenosis, treatment with atorvastatin was associated with a 33% reduction in the risk of any stroke (hazard ratio [HR] 0.67, 95% confidence interval [CI] 0.47, 0.94; P=0.02), and a 43% reduction in risk of major coronary events (HR 0.57, 95% CI 0.32, 1.00; P=0.05).",
+      "context_window": "risk of major coronary events (HR 0.57, 95% CI 0.32, 1.00; P=0.05). Later carotid revascularization was reduced by 56% (HR 0.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-pct-1540",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1540,
+      "sentence": "Later carotid revascularization was reduced by 56% (HR 0.44, 95% CI 0.24, 0.79; P=0.006) in the group randomized to atorvastatin.",
+      "context_window": "00; P=0.05). Later carotid revascularization was reduced by 56% (HR 0.44, 95% CI 0.24, 0.79; P=0.006) in the group randomiz",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-ci-1554",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.24, 0.79",
+      "numeric_values": [
+        0.24,
+        0.79
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1554,
+      "sentence": "Later carotid revascularization was reduced by 56% (HR 0.44, 95% CI 0.24, 0.79; P=0.006) in the group randomized to atorvastatin.",
+      "context_window": "ater carotid revascularization was reduced by 56% (HR 0.44, 95% CI 0.24, 0.79; P=0.006) in the group randomized to atorvastatin. CONCLUSI",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_strokeaha_108_516450_atorvastatin_reduces_the_risk_of_cardiovascular_events_in_pa-p-1573",
+      "claim_type": "p_value",
+      "raw_text": "P=0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1573,
+      "sentence": "Later carotid revascularization was reduced by 56% (HR 0.44, 95% CI 0.24, 0.79; P=0.006) in the group randomized to atorvastatin.",
+      "context_window": "ularization was reduced by 56% (HR 0.44, 95% CI 0.24, 0.79; P=0.006) in the group randomized to atorvastatin. CONCLUSIONS: Cons",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

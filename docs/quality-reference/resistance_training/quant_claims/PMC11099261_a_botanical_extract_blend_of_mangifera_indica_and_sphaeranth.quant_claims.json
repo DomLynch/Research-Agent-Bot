@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth",
   "doi": "10.3389/fnut.2024.1393917",
-  "extracted_at": "2026-05-05T21:59:30+00:00",
+  "extracted_at": "2026-05-07T16:57:19+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 31,
@@ -27,7 +27,7 @@
       "context_window": "o failure (RTF) compared to RET alone. Ninety-nine men (age 22 \u00b1 3) completed the trial after randomization into one of four g",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -45,7 +45,7 @@
       "context_window": "the trial after randomization into one of four groups: (A1) 425 mg SMI plus one RET set; (A2) 850 mg SMI plus one RET set; (P1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -63,7 +63,7 @@
       "context_window": "one of four groups: (A1) 425 mg SMI plus one RET set; (A2) 850 mg SMI plus one RET set; (P1) placebo plus one RET set; and (P",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -81,9 +81,9 @@
       "context_window": "us two RET sets. RET sets were 6-8 BP and LE repetitions at 80% of a progressive one repetition maximum (1-RM), performed 3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-u-692",
@@ -99,9 +99,9 @@
       "context_window": "essive one repetition maximum (1-RM), performed 3x/week for 8 weeks. Strength and RTF were evaluated at baseline and days 14, 2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-p-923",
@@ -117,7 +117,7 @@
       "context_window": "were evaluated at baseline and day 56. RET significantly ( p < 0.05) increased 1-RM, RTF, and T measures above baselines regard",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -541,7 +541,7 @@
       "context_window": ", TT, and FT values over those measured in exercise alone ( p < 0.05), while C levels in A2 (9.3 \u00b1 3.8 \u03bcg/dL) were lower than P2",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -560,7 +560,7 @@
       "context_window": "asured in exercise alone ( p < 0.05), while C levels in A2 (9.3 \u00b1 3.8 \u03bcg/dL) were lower than P2 (11.7 \u00b1 3.8 \u03bcg/dL, p < 0.05). Dai",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -579,7 +579,7 @@
       "context_window": "while C levels in A2 (9.3 \u00b1 3.8 \u03bcg/dL) were lower than P2 (11.7 \u00b1 3.8 \u03bcg/dL, p < 0.05). Daily supplementation with SMI was well t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -597,7 +597,7 @@
       "context_window": "A2 (9.3 \u00b1 3.8 \u03bcg/dL) were lower than P2 (11.7 \u00b1 3.8 \u03bcg/dL, p < 0.05). Daily supplementation with SMI was well tolerated and may",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -651,7 +651,7 @@
       "context_window": "ive responses to RET ( 21 ). It is unknown if a comparable (850 mg) or half-dose (425 mg) of a water-soluble version of this s",
       "claim_role": "dose",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -669,7 +669,7 @@
       "context_window": "21 ). It is unknown if a comparable (850 mg) or half-dose (425 mg) of a water-soluble version of this same 2:1 extract combin",
       "claim_role": "dose",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -687,7 +687,7 @@
       "context_window": "ynthesis post-RET. In the present study, two doses (850 and 425 mg) of SMI are investigated for their ability to augment muscl",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -705,7 +705,7 @@
       "context_window": "ia (Registration no. CTRI/2018/12/016641). Healthy men, 19-29 years, with a body mass index (BMI) of 18.5-29.9 kg/m 2 , with a",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -723,7 +723,7 @@
       "context_window": "lthy men, 19-29 years, with a body mass index (BMI) of 18.5-29.9 kg/m 2 , with a normal electrocardiogram, and who were previou",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -741,7 +741,7 @@
       "context_window": "usly untrained in resistance or power exercise for at least 6 months, were recruited for the study. Men with a history of alcoho",
       "claim_role": "population",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -759,7 +759,7 @@
       "context_window": "ere enrolled and randomized into one of four equal groups ( n = 30) by following the randomization codes as generated by SAS p",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -777,7 +777,7 @@
       "context_window": "nerated by SAS procedure PROC PLAN using block design: (A1) 425 mg SMI plus one RET set; (A2) 850 mg SMI plus one RET set; (P1",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -795,7 +795,7 @@
       "context_window": "using block design: (A1) 425 mg SMI plus one RET set; (A2) 850 mg SMI plus one RET set; (P1) placebo plus one RET set; and (P",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1011,9 +1011,9 @@
       "context_window": "rs completed RET on three non-consecutive days per week for 8 weeks under the supervision of a certified trainer and spotter. A",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-pct-5396",
@@ -1683,7 +1683,7 @@
       "context_window": "ence of group adjusted means compared with P2. A1 (SMI-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1701,7 +1701,7 @@
       "context_window": "means compared with P2. A1 (SMI-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1719,7 +1719,7 @@
       "context_window": "-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n = 23). Analysis of BP strength",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1737,7 +1737,7 @@
       "context_window": "5), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n = 23). Analysis of BP strength as measured by 1-RM is presented",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2381,7 +2381,7 @@
       "context_window": "n specified groups is significant at p < 0.05. A1 (SMI-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2399,7 +2399,7 @@
       "context_window": "significant at p < 0.05. A1 (SMI-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2417,7 +2417,7 @@
       "context_window": "-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n = 23). Analysis of LE strength",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2435,7 +2435,7 @@
       "context_window": "5), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n = 23). Analysis of LE strength demonstrated a significant main",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2507,9 +2507,9 @@
       "context_window": "sons are shown in Tables 2 , 3 . All groups significantly ( p < 0.05) improved over time in LE strength from their baseline valu",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-msd-4760",
@@ -2765,9 +2765,9 @@
       "context_window": "with the higher amount of SMI, demonstrated significantly ( p < 0.05) more strength compared to P1 at all time points and compar",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-msd-5273",
@@ -2784,9 +2784,9 @@
       "context_window": "double RET sets, P2, on days 28 and 56 (mean difference of 6.9 \u00b1 1.9 kg, 95% CI 1.6-12.1, p = 0.004 and 7.9 \u00b1 2.2 kg, 95% CI 1.9",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-u-5279",
@@ -2802,9 +2802,9 @@
       "context_window": "e RET sets, P2, on days 28 and 56 (mean difference of 6.9 \u00b1 1.9 kg, 95% CI 1.6-12.1, p = 0.004 and 7.9 \u00b1 2.2 kg, 95% CI 1.9-13",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-ci-5287",
@@ -2821,9 +2821,9 @@
       "context_window": "ts, P2, on days 28 and 56 (mean difference of 6.9 \u00b1 1.9 kg, 95% CI 1.6-12.1, p = 0.004 and 7.9 \u00b1 2.2 kg, 95% CI 1.9-13.9, p = 0.003, re",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-p-5304",
@@ -2839,9 +2839,9 @@
       "context_window": "8 and 56 (mean difference of 6.9 \u00b1 1.9 kg, 95% CI 1.6-12.1, p = 0.004 and 7.9 \u00b1 2.2 kg, 95% CI 1.9-13.9, p = 0.003, respectively;",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-msd-5318",
@@ -2858,9 +2858,9 @@
       "context_window": "difference of 6.9 \u00b1 1.9 kg, 95% CI 1.6-12.1, p = 0.004 and 7.9 \u00b1 2.2 kg, 95% CI 1.9-13.9, p = 0.003, respectively; Table 3 ). Me",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-u-5324",
@@ -2876,9 +2876,9 @@
       "context_window": "rence of 6.9 \u00b1 1.9 kg, 95% CI 1.6-12.1, p = 0.004 and 7.9 \u00b1 2.2 kg, 95% CI 1.9-13.9, p = 0.003, respectively; Table 3 ). Measu",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-ci-5332",
@@ -2895,9 +2895,9 @@
       "context_window": "6.9 \u00b1 1.9 kg, 95% CI 1.6-12.1, p = 0.004 and 7.9 \u00b1 2.2 kg, 95% CI 1.9-13.9, p = 0.003, respectively; Table 3 ). Measures of LE strengt",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-p-5349",
@@ -2913,9 +2913,9 @@
       "context_window": "% CI 1.6-12.1, p = 0.004 and 7.9 \u00b1 2.2 kg, 95% CI 1.9-13.9, p = 0.003, respectively; Table 3 ). Measures of LE strength were not",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11099261_a_botanical_extract_blend_of_mangifera_indica_and_sphaeranth-p-5549",
@@ -3295,7 +3295,7 @@
       "context_window": "eviation (SD) and median values. Significance is considered p < 0.05 after Friedman repeated measure ANOVA by ranks analysis (fo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3313,7 +3313,7 @@
       "context_window": "P1; ^indicates significance compared with P2; A1 (SMI-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3331,7 +3331,7 @@
       "context_window": "icance compared with P2; A1 (SMI-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3349,7 +3349,7 @@
       "context_window": "-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n = 23). The baseline and day 56",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3367,7 +3367,7 @@
       "context_window": "5), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n = 23). The baseline and day 56 values of serum hormones are pre",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3457,7 +3457,7 @@
       "context_window": "f the exercise-only placebo groups (P1, P2) significantly ( p < 0.05) increased mean FT and TT values from baseline to day 56 (",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3529,7 +3529,7 @@
       "context_window": "and ^indicates significance compared with P2. A1 (SMI-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3547,7 +3547,7 @@
       "context_window": "icance compared with P2. A1 (SMI-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3565,7 +3565,7 @@
       "context_window": "-425, n = 26), A2 (SMI-850, n = 25), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n = 23). Analysis of mean C valu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3583,7 +3583,7 @@
       "context_window": "5), P1 (Placebo-1 set RET, n = 25), P2 (Placebo-2 sets RET, n = 23). Analysis of mean C values demonstrated a significant tim",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3637,7 +3637,7 @@
       "context_window": "tigated the ability of two doses of SMI in conjunction with 8 weeks of RET to augment changes in muscle strength and endurance",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "placebo",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3655,7 +3655,7 @@
       "context_window": "rovement in their measured muscular strength in as early as 14 days. However, subjects randomized to receive daily supplementat",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3709,9 +3709,9 @@
       "context_window": "sults suggest that daily supplementation with either 425 or 850 mg of SMI was well-tolerated and accentuated muscle adaptation",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ret",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

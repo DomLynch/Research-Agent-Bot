@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_a_trial_of_lipitor_atorvastatin_for_the_treatment_of_polycys",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_trial_of_lipitor_atorvastatin_for_the_treatment_of_polycys-u-225",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 225,
+      "sentence": "Posted outcomes: Brachial Artery Flow-mediated Dilation (FMD). timeframe=baseline and 6 weeks.",
+      "context_window": "Artery Flow-mediated Dilation (FMD). timeframe=baseline and 6 weeks. Atorvastatin=12.0 (\u00b17.3); Placebo=9.8 (\u00b15.8). p=0.58",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_a_trial_of_lipitor_atorvastatin_for_the_treatment_of_polycys-p-280",
+      "claim_type": "p_value",
+      "raw_text": "p=0.58",
+      "numeric_values": [
+        0.58
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 280,
+      "sentence": "Atorvastatin=12.0 (\u00b17.3); Placebo=9.8 (\u00b15.8). p=0.58",
+      "context_window": "and 6 weeks. Atorvastatin=12.0 (\u00b17.3); Placebo=9.8 (\u00b15.8). p=0.58",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

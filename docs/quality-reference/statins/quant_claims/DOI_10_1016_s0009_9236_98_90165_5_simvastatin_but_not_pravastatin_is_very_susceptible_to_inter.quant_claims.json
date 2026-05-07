@@ -1,0 +1,229 @@
+{
+  "paper_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter",
+  "doi": "10.1016/s0009-9236(98)90165-5",
+  "extracted_at": "2026-05-07T19:24:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "p_value": 8,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-u-513",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 513,
+      "sentence": "In both studies, 10 healthy volunteers received either 200 mg itraconazole or placebo orally once a day for 4 days.",
+      "context_window": "II). In both studies, 10 healthy volunteers received either 200 mg itraconazole or placebo orally once a day for 4 days. On da",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-u-566",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 566,
+      "sentence": "In both studies, 10 healthy volunteers received either 200 mg itraconazole or placebo orally once a day for 4 days.",
+      "context_window": "either 200 mg itraconazole or placebo orally once a day for 4 days. On day 4, each subject ingested a single 40 mg dose of sim",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-u-615",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 615,
+      "sentence": "On day 4, each subject ingested a single 40 mg dose of simvastatin (study I) or pravastatin (study II).",
+      "context_window": "a day for 4 days. On day 4, each subject ingested a single 40 mg dose of simvastatin (study I) or pravastatin (study II). Se",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-p-1039",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1039,
+      "sentence": "RESULTS: In study I, itraconazole increased the peak serum concentrations (Cmax) and the areas under the serum concentration-time curve [AUC(0-infinity)] of simvastatin and simvastatin acid at least tenfold (p < 0.001).",
+      "context_window": "ity)] of simvastatin and simvastatin acid at least tenfold (p < 0.001). The Cmax and AUC(0-infinity) of total simvastatin acid (n",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-p-1214",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1214,
+      "sentence": "The Cmax and AUC(0-infinity) of total simvastatin acid (naive simvastatin acid plus that derived by hydrolysis of the lactone) were increased 17-fold and 19-fold (p < 0.001), respectively, and the half-life (t1/2) was increased by 25% (p < 0.05).",
+      "context_window": "rolysis of the lactone) were increased 17-fold and 19-fold (p < 0.001), respectively, and the half-life (t1/2) was increased by 2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-pct-1282",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1282,
+      "sentence": "The Cmax and AUC(0-infinity) of total simvastatin acid (naive simvastatin acid plus that derived by hydrolysis of the lactone) were increased 17-fold and 19-fold (p < 0.001), respectively, and the half-life (t1/2) was increased by 25% (p < 0.05).",
+      "context_window": "1), respectively, and the half-life (t1/2) was increased by 25% (p < 0.05). The AUC(0-infinity) of HMG-CoA reductase inhibi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-p-1287",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1287,
+      "sentence": "The Cmax and AUC(0-infinity) of total simvastatin acid (naive simvastatin acid plus that derived by hydrolysis of the lactone) were increased 17-fold and 19-fold (p < 0.001), respectively, and the half-life (t1/2) was increased by 25% (p < 0.05).",
+      "context_window": "espectively, and the half-life (t1/2) was increased by 25% (p < 0.05). The AUC(0-infinity) of HMG-CoA reductase inhibitors was i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-p-1374",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1374,
+      "sentence": "The AUC(0-infinity) of HMG-CoA reductase inhibitors was increased fivefold (p < 0.001) and the Cmax and t1/2 were increased threefold (p < 0.001).",
+      "context_window": "ty) of HMG-CoA reductase inhibitors was increased fivefold (p < 0.001) and the Cmax and t1/2 were increased threefold (p < 0.001)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-p-1433",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1433,
+      "sentence": "The AUC(0-infinity) of HMG-CoA reductase inhibitors was increased fivefold (p < 0.001) and the Cmax and t1/2 were increased threefold (p < 0.001).",
+      "context_window": "(p < 0.001) and the Cmax and t1/2 were increased threefold (p < 0.001). In study II, itraconazole slightly increased the AUC(0-in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-p-1586",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.052",
+      "numeric_values": [
+        0.052
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1586,
+      "sentence": "In study II, itraconazole slightly increased the AUC(0-infinity) and Cmax of pravastatin, but the changes were statistically nonsignificant (p = 0.052 and 0.172, respectively).",
+      "context_window": "astatin, but the changes were statistically nonsignificant (p = 0.052 and 0.172, respectively). The t1/2 was not altered. The AUC",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-p-1743",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1743,
+      "sentence": "The AUC(0-infinity) and Cmax of HMG-CoA reductase inhibitors were increased less than twofold (p < 0.05 and p = 0.063, respectively) by itraconazole.",
+      "context_window": "-CoA reductase inhibitors were increased less than twofold (p < 0.05 and p = 0.063, respectively) by itraconazole. There were no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_s0009_9236_98_90165_5_simvastatin_but_not_pravastatin_is_very_susceptible_to_inter-p-1756",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.063",
+      "numeric_values": [
+        0.063
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1756,
+      "sentence": "The AUC(0-infinity) and Cmax of HMG-CoA reductase inhibitors were increased less than twofold (p < 0.05 and p = 0.063, respectively) by itraconazole.",
+      "context_window": "e inhibitors were increased less than twofold (p < 0.05 and p = 0.063, respectively) by itraconazole. There were no differences i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

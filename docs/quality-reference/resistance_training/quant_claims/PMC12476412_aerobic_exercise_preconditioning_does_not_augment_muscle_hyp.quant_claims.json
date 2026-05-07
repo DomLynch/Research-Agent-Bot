@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp",
   "doi": "10.1007/s40279-025-02229-y",
-  "extracted_at": "2026-05-05T21:59:11+00:00",
+  "extracted_at": "2026-05-07T16:57:28+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 116,
@@ -24,8 +24,8 @@
       "sentence": "We assessed whether 8 weeks of aerobic exercise preconditioning, to improve muscle fiber capillarization and perfusion capacity, augments the gains in muscle mass and strength during subsequent resistance exercise training in older adults.",
       "context_window": "nce exercise training in older adults. We assessed whether 8 weeks of aerobic exercise preconditioning, to improve muscle fibe",
       "claim_role": "duration",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "muscle mass",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -43,9 +43,9 @@
       "context_window": "lder adults. In total, 34 healthy older males and females (71 years standard deviation (SD) \u00b1 5 years) participated in 12 weeks",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-777",
@@ -61,9 +61,9 @@
       "context_window": "older males and females (71 years standard deviation (SD) \u00b1 5 years) participated in 12 weeks of progressive resistance exercis",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-802",
@@ -79,9 +79,9 @@
       "context_window": "71 years standard deviation (SD) \u00b1 5 years) participated in 12 weeks of progressive resistance exercise training, preceded by ei",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-875",
@@ -97,9 +97,9 @@
       "context_window": "rogressive resistance exercise training, preceded by either 8 weeks of aerobic preconditioning (AER, n = 17) through cycle-ergo",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-n-916",
@@ -115,9 +115,9 @@
       "context_window": "preceded by either 8 weeks of aerobic preconditioning (AER, n = 17) through cycle-ergometer endurance training, or a no exerci",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-n-1009",
@@ -133,9 +133,9 @@
       "context_window": "ndurance training, or a no exercise control condition (CON, n = 17). Muscle strength (one repetition maximum (1RM)) and muscle",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-1152",
@@ -151,7 +151,7 @@
       "context_window": "stics (histochemistry) were assessed at baseline, following 8 weeks of AER or CON, and after 12 weeks of resistance exercise tr",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -169,7 +169,7 @@
       "context_window": "sed at baseline, following 8 weeks of AER or CON, and after 12 weeks of resistance exercise training. Femoral artery blood flow",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -205,7 +205,7 @@
       "context_window": "c resonance imaging scan) was assessed before and after the 12 weeks of resistance exercise training. Aerobic exercise precondi",
       "claim_role": "duration",
       "endpoint": "thigh muscle mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -224,7 +224,7 @@
       "context_window": "ning. Aerobic exercise preconditioning increased type I (+ 19 \u00b1 19%, P < 0.05) and type II (+ 35 \u00b1 37%, P < 0.05) muscle capil",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -242,7 +242,7 @@
       "context_window": "Aerobic exercise preconditioning increased type I (+ 19 \u00b1 19%, P < 0.05) and type II (+ 35 \u00b1 37%, P < 0.05) muscle capill",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -260,7 +260,7 @@
       "context_window": "obic exercise preconditioning increased type I (+ 19 \u00b1 19%, P < 0.05) and type II (+ 35 \u00b1 37%, P < 0.05) muscle capillary-to-fib",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -279,7 +279,7 @@
       "context_window": "ning increased type I (+ 19 \u00b1 19%, P < 0.05) and type II (+ 35 \u00b1 37%, P < 0.05) muscle capillary-to-fiber ratio, with no change",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -297,7 +297,7 @@
       "context_window": "increased type I (+ 19 \u00b1 19%, P < 0.05) and type II (+ 35 \u00b1 37%, P < 0.05) muscle capillary-to-fiber ratio, with no changes",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -315,7 +315,7 @@
       "context_window": "ased type I (+ 19 \u00b1 19%, P < 0.05) and type II (+ 35 \u00b1 37%, P < 0.05) muscle capillary-to-fiber ratio, with no changes in the CO",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -334,7 +334,7 @@
       "context_window": "to-fiber ratio, with no changes in the CON group (type I: + 0 \u00b1 17%; type II: - 3 \u00b1 26%). Muscle microvascular perfusion follo",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -352,7 +352,7 @@
       "context_window": "iber ratio, with no changes in the CON group (type I: + 0 \u00b1 17%; type II: - 3 \u00b1 26%). Muscle microvascular perfusion follow",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -371,7 +371,7 @@
       "context_window": "no changes in the CON group (type I: + 0 \u00b1 17%; type II: - 3 \u00b1 26%). Muscle microvascular perfusion following a submaximal re",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -389,7 +389,7 @@
       "context_window": "changes in the CON group (type I: + 0 \u00b1 17%; type II: - 3 \u00b1 26%). Muscle microvascular perfusion following a submaximal res",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -407,7 +407,7 @@
       "context_window": "changes were observed in the CON group (interaction effect, P = 0.051). Resistance exercise training increased leg press 1RM (+ 1",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -426,9 +426,9 @@
       "context_window": "1). Resistance exercise training increased leg press 1RM (+ 16 \u00b1 10% versus + 12 \u00b1 8%, respectively, P < 0.001) and thigh muscl",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-pct-2019",
@@ -444,9 +444,9 @@
       "context_window": "esistance exercise training increased leg press 1RM (+ 16 \u00b1 10% versus + 12 \u00b1 8%, respectively, P < 0.001) and thigh muscle",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-msd-2032",
@@ -463,9 +463,9 @@
       "context_window": "rcise training increased leg press 1RM (+ 16 \u00b1 10% versus + 12 \u00b1 8%, respectively, P < 0.001) and thigh muscle volume (+ 0.42",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-pct-2037",
@@ -481,9 +481,9 @@
       "context_window": "training increased leg press 1RM (+ 16 \u00b1 10% versus + 12 \u00b1 8%, respectively, P < 0.001) and thigh muscle volume (+ 0.42 \u00b1",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-p-2055",
@@ -499,9 +499,9 @@
       "context_window": "d leg press 1RM (+ 16 \u00b1 10% versus + 12 \u00b1 8%, respectively, P < 0.001) and thigh muscle volume (+ 0.42 \u00b1 0.69 versus + 0.31 \u00b1 0.6",
       "claim_role": "effect",
       "endpoint": "thigh muscle mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-msd-2093",
@@ -518,9 +518,9 @@
       "context_window": "2 \u00b1 8%, respectively, P < 0.001) and thigh muscle volume (+ 0.42 \u00b1 0.69 versus + 0.31 \u00b1 0.62 L, respectively, P < 0.001) in both th",
       "claim_role": "effect",
       "endpoint": "thigh muscle mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-msd-2114",
@@ -537,9 +537,9 @@
       "context_window": "P < 0.001) and thigh muscle volume (+ 0.42 \u00b1 0.69 versus + 0.31 \u00b1 0.62 L, respectively, P < 0.001) in both the AER and CON groups,",
       "claim_role": "effect",
       "endpoint": "thigh muscle mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-p-2143",
@@ -555,9 +555,9 @@
       "context_window": "volume (+ 0.42 \u00b1 0.69 versus + 0.31 \u00b1 0.62 L, respectively, P < 0.001) in both the AER and CON groups, with no differences betwee",
       "claim_role": "effect",
       "endpoint": "thigh muscle mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-p-2385",
@@ -591,7 +591,7 @@
       "context_window": "ining in older adults. Therefore, we assessed the impact of 8 weeks of aerobic exercise preconditioning on muscle fiber hypertr",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -609,7 +609,7 @@
       "context_window": "onditioning on muscle fiber hypertrophy during a subsequent 12 weeks of resistance exercise training in healthy older adults. We",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -627,7 +627,7 @@
       "context_window": "In total, 34 healthy older men and women aged 65-85 years with a body mass index between 18.5 and 30 kg.m -2 were rec",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -645,7 +645,7 @@
       "context_window": "en aged 65-85 years with a body mass index between 18.5 and 30 kg.m -2 were recruited to participate in 12 weeks of progressi",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -663,7 +663,7 @@
       "context_window": "etween 18.5 and 30 kg.m -2 were recruited to participate in 12 weeks of progressive resistance exercise training, preceded by ei",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -681,7 +681,7 @@
       "context_window": "rogressive resistance exercise training, preceded by either 8 weeks of aerobic exercise preconditioning (AER) or no exercise co",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -699,9 +699,9 @@
       "context_window": "in any structured exercise training program within the last 5 years. Participants were informed of the nature and possible risk",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-msd-1706",
@@ -718,7 +718,7 @@
       "context_window": "culated on the basis of a clinically relevant difference of 24 \u00b1 20% [ 7 ] increase in type II muscle fiber size during the 12",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -736,7 +736,7 @@
       "context_window": "ed on the basis of a clinically relevant difference of 24 \u00b1 20% [ 7 ] increase in type II muscle fiber size during the 12 w",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -754,7 +754,7 @@
       "context_window": "20% [ 7 ] increase in type II muscle fiber size during the 12 week resistance exercise training program between the aerobic ex",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -844,7 +844,7 @@
       "context_window": "g inclusion, participants were randomized to perform either 8 weeks of aerobic preconditioning (AER) or no exercise control (CO",
       "claim_role": "duration",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -862,9 +862,9 @@
       "context_window": "ise control (CON). Subsequently, all participants performed 12 weeks of resistance exercise training. Experimental testing was p",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-2566",
@@ -880,9 +880,9 @@
       "context_window": "rimental testing was performed at baseline (pre), following 8 weeks of AER or CON (mid), and following 12 weeks of resistance e",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-2609",
@@ -898,9 +898,9 @@
       "context_window": "(pre), following 8 weeks of AER or CON (mid), and following 12 weeks of resistance exercise training (post) (Supplemental Fig. 1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-2739",
@@ -934,7 +934,7 @@
       "context_window": "Aerobic capacity was assessed at baseline (pre), following 8 weeks of aerobic preconditioning or no exercise control (mid), an",
       "claim_role": "duration",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -952,7 +952,7 @@
       "context_window": "preconditioning or no exercise control (mid), and following 12 weeks of resistance exercise training (post). Participants alloc",
       "claim_role": "duration",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -970,9 +970,9 @@
       "context_window": "formed supervised aerobic exercise three times per week for 8 weeks at the Maastricht University sports center. Exercise sessio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-pct-4279",
@@ -988,7 +988,7 @@
       "context_window": "warm-up followed by 45 min at a heart rate corresponding to 65% peak oxygen consumption (VO 2peak ) and a 5 min cool-down.",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1006,7 +1006,7 @@
       "context_window": "n the cross-trainer, the target heart rate was increased by 5% of the maximal heart rate. The exercise workload (i.e., wat",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1024,7 +1024,7 @@
       "context_window": "e target heart rate, the target heart rate was increased by 2.5% of the maximal heart rate for the next training session to",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1042,9 +1042,9 @@
       "context_window": "CON group performed no exercise training during the initial 8 weeks of the study and kept their habitual physical activities as",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-5171",
@@ -1060,9 +1060,9 @@
       "context_window": "ual physical activities as constant as possible. Following 8 weeks of aerobic preconditioning or no exercise control, all part",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-5257",
@@ -1078,9 +1078,9 @@
       "context_window": "itioning or no exercise control, all participants performed 12 weeks of supervised resistance exercise training at the Maastrich",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-pct-6093",
@@ -1150,7 +1150,7 @@
       "context_window": "ously [ 28 ]. 1RM was assessed at baseline (pre), following 8 weeks of aerobic preconditioning or no exercise control (mid), an",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1168,7 +1168,7 @@
       "context_window": "preconditioning or no exercise control (mid), and following 12 weeks of resistance exercise training (post). A magnetic resonan",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1276,9 +1276,9 @@
       "context_window": "anthropometrics were assessed at baseline (pre), following 8 weeks of aerobic preconditioning or no exercise control (mid), an",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-9714",
@@ -1294,9 +1294,9 @@
       "context_window": "preconditioning or no exercise control (mid), and following 12 weeks of resistance exercise training (post). Physical functioni",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-10329",
@@ -1330,9 +1330,9 @@
       "context_window": "unctioning tests were assessed at baseline (pre), following 8 weeks of aerobic preconditioning or no exercise control (mid), an",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-10561",
@@ -1348,9 +1348,9 @@
       "context_window": "preconditioning or no exercise control (mid), and following 12 weeks of resistance exercise training (post). Before and after t",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-10632",
@@ -1366,9 +1366,9 @@
       "context_window": "resistance exercise training (post). Before and after the 8 weeks of no exercise control or aerobic preconditioning, the mean",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-n-10962",
@@ -1474,7 +1474,7 @@
       "context_window": "exercise consisting of four sets of eight repetitions with 80% of 1RM (the value from the test from the week before, i.e.,",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1546,9 +1546,9 @@
       "context_window": "tion, all (maximal) exercise testing was performed at least 5 days before the muscle biopsies were taken. Muscle biopsy sample",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-15209",
@@ -1564,9 +1564,9 @@
       "context_window": "e biopsy samples were obtained at baseline (pre), following 8 weeks of aerobic preconditioning or no exercise control (mid), an",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-15288",
@@ -1582,9 +1582,9 @@
       "context_window": "preconditioning or no exercise control (mid), and following 12 weeks of resistance exercise training (post). Frozen muscle biop",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-msd-16784",
@@ -1657,9 +1657,9 @@
       "context_window": "d capillary density (CD, K-L ) at baseline (pre), following 8 weeks of aerobic exercise preconditioning (AER, mid) or no exerci",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-18084",
@@ -1675,9 +1675,9 @@
       "context_window": "AER, mid) or no exercise training (CON, mid), and following 12 weeks of subsequent resistance exercise training (post) in health",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-p-18212",
@@ -1693,9 +1693,9 @@
       "context_window": "y older adults. *Significantly different compared with pre, P < 0.05; **significantly different compared with CON group, P < 0.0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-p-18273",
@@ -1711,9 +1711,9 @@
       "context_window": "< 0.05; **significantly different compared with CON group, P < 0.05; ***significantly different compared with pre and mid, P <",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-p-18337",
@@ -1729,9 +1729,9 @@
       "context_window": "0.05; ***significantly different compared with pre and mid, P < 0.05; data are expressed as mean \u00b1 SD All data are expressed as",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-p-20296",
@@ -1963,7 +1963,7 @@
       "context_window": "nt increase in type I and type II muscle fiber CC following 8 weeks of exercise preconditioning ( P < 0.05 for both type I and",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1981,7 +1981,7 @@
       "context_window": "le fiber CC following 8 weeks of exercise preconditioning ( P < 0.05 for both type I and type II muscle fibers in the AER group)",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1999,7 +1999,7 @@
       "context_window": "e AER group), with no further changes during the subsequent 12 weeks of resistance exercise training. In contrast, the CON group",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2017,7 +2017,7 @@
       "context_window": "hanges in type I and type II muscle fiber CC in the initial 8 weeks (no exercise control condition), followed by a significant",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2035,7 +2035,7 @@
       "context_window": "), followed by a significant increase during the subsequent 12 weeks of resistance exercise training ( P < 0.05 for both type I",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2053,7 +2053,7 @@
       "context_window": "g the subsequent 12 weeks of resistance exercise training ( P < 0.05 for both type I and type II muscle fibers, Fig. 1 E, F). Fo",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2089,7 +2089,7 @@
       "context_window": "F i and CFPE-index increased significantly during the first 8 weeks of exercise preconditioning in the AER group (Fig. 1 G-J, P",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2107,9 +2107,9 @@
       "context_window": "s of exercise preconditioning in the AER group (Fig. 1 G-J, P < 0.05), with no further changes during the subsequent 12 weeks of",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-2115",
@@ -2125,9 +2125,9 @@
       "context_window": "J, P < 0.05), with no further changes during the subsequent 12 weeks of resistance exercise training. In the CON group, type II",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-2253",
@@ -2143,7 +2143,7 @@
       "context_window": "er C/F i and CFPE-index remained unchanged during the first 8 weeks of no exercise control intervention but increased significa",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2161,7 +2161,7 @@
       "context_window": "ervention but increased significantly during the subsequent 12 weeks of resistance exercise training (Fig. 1 G-J, P < 0.05). In",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2197,7 +2197,7 @@
       "context_window": "i and CFPE-index increased significantly during the initial 8 weeks of exercise preconditioning ( P < 0.05), with no further ch",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2215,7 +2215,7 @@
       "context_window": "ly during the initial 8 weeks of exercise preconditioning ( P < 0.05), with no further changes during the subsequent 12 weeks of",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2233,7 +2233,7 @@
       "context_window": "( P < 0.05), with no further changes during the subsequent 12 weeks of resistance exercise training (Fig. 1 G-J). For type I an",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2269,7 +2269,7 @@
       "context_window": "< 0.05). Whereas no changes were observed during the first 8 weeks of the intervention program, type I muscle fiber CD tended",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2287,7 +2287,7 @@
       "context_window": "ogram, type I muscle fiber CD tended to increase during the 12 weeks of resistance exercise training in both the CON ( P = 0.050",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2305,7 +2305,7 @@
       "context_window": "12 weeks of resistance exercise training in both the CON ( P = 0.050) and AER ( P = 0.081) groups (Fig. 1 K, L). For type II mus",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2323,7 +2323,7 @@
       "context_window": "ce exercise training in both the CON ( P = 0.050) and AER ( P = 0.081) groups (Fig. 1 K, L). For type II muscle fibers, a tendenc",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2341,7 +2341,7 @@
       "context_window": "oups (Fig. 1 K, L). For type II muscle fibers, a tendency ( P = 0.069) was observed for a decline in CD in the CON group during t",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2359,7 +2359,7 @@
       "context_window": "erved for a decline in CD in the CON group during the first 8 weeks of no exercise control condition, with no further changes d",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2377,7 +2377,7 @@
       "context_window": "ol condition, with no further changes during the subsequent 12 weeks of resistance exercise training. In the AER group, type II",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2395,7 +2395,7 @@
       "context_window": "resistance exercise remained unchanged following the first 8 weeks of the intervention program in both the CON and AER groups",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2413,7 +2413,7 @@
       "context_window": "resistance exercise remained unchanged following the first 8 weeks of the intervention program in both the CON and AER groups",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2449,7 +2449,7 @@
       "context_window": "bout of resistance exercise at baseline (pre) and following 8 weeks (mid) of aerobic exercise preconditioning (AER) or no exerc",
       "claim_role": "population",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2467,7 +2467,7 @@
       "context_window": "te significant within-group difference between time points, P < 0.05. No between-group differences were observed. Femoral artery",
       "claim_role": "population",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2485,7 +2485,7 @@
       "context_window": "es were observed. Femoral artery blood flow measurements of n = 4 participants (CON n = 2, AER n = 2) were lost owing to equi",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2503,7 +2503,7 @@
       "context_window": "l artery blood flow measurements of n = 4 participants (CON n = 2, AER n = 2) were lost owing to equipment failure VC, vascu",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2521,7 +2521,7 @@
       "context_window": "ood flow measurements of n = 4 participants (CON n = 2, AER n = 2) were lost owing to equipment failure VC, vascular conduct",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2539,7 +2539,7 @@
       "context_window": "ing a single bout of resistance exercise at an intensity of 80% of 1RM are shown in Fig. 2 . Microvascular blood volume inc",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2558,7 +2558,7 @@
       "context_window": "n, and remained elevated until t = 40 min, in both the CON (6.2 \u00b1 3.3-fold and 2.8 \u00b1 1.6-fold, respectively) and AER (5.8 \u00b1 3.6-f",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2577,7 +2577,7 @@
       "context_window": "vated until t = 40 min, in both the CON (6.2 \u00b1 3.3-fold and 2.8 \u00b1 1.6-fold, respectively) and AER (5.8 \u00b1 3.6-fold and 2.2 \u00b1 1.4-f",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2596,7 +2596,7 @@
       "context_window": "(6.2 \u00b1 3.3-fold and 2.8 \u00b1 1.6-fold, respectively) and AER (5.8 \u00b1 3.6-fold and 2.2 \u00b1 1.4-fold, respectively) groups at baseline.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2615,7 +2615,7 @@
       "context_window": "d 2.8 \u00b1 1.6-fold, respectively) and AER (5.8 \u00b1 3.6-fold and 2.2 \u00b1 1.4-fold, respectively) groups at baseline. Following the initi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2633,7 +2633,7 @@
       "context_window": "ld, respectively) groups at baseline. Following the initial 8 weeks of the intervention program, the microvascular blood volume",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2651,7 +2651,7 @@
       "context_window": "ume response following the single bout of exercise tended ( P = 0.051 interaction effect) to be lower in the AER group ( t = 10 m",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2670,7 +2670,7 @@
       "context_window": "eraction effect) to be lower in the AER group ( t = 10 min: 4.5 \u00b1 3.6-fold and t = 40 min: 1.4 \u00b1 1.1-fold increase from rest), wh",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2689,7 +2689,7 @@
       "context_window": "the AER group ( t = 10 min: 4.5 \u00b1 3.6-fold and t = 40 min: 1.4 \u00b1 1.1-fold increase from rest), whereas the CON group showed no d",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2708,7 +2708,7 @@
       "context_window": "ON group showed no difference in its response ( t = 10 min: 5.8 \u00b1 4.7-fold and t = 40 min: 2.9 \u00b1 2.4-fold increase from rest; Fig",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -2727,7 +2727,7 @@
       "context_window": "n its response ( t = 10 min: 5.8 \u00b1 4.7-fold and t = 40 min: 2.9 \u00b1 2.4-fold increase from rest; Fig. 2 B). Microvascular blood vel",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2746,7 +2746,7 @@
       "context_window": "aseline at t = 40 min, with no differences between the CON (2.4 \u00b1 1.6-fold and 1.2 \u00b1 0.6-fold, respectively) and AER (2.6 \u00b1 1.1-f",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2765,7 +2765,7 @@
       "context_window": "in, with no differences between the CON (2.4 \u00b1 1.6-fold and 1.2 \u00b1 0.6-fold, respectively) and AER (2.6 \u00b1 1.1-fold and 1.1 \u00b1 0.6-f",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2784,7 +2784,7 @@
       "context_window": "(2.4 \u00b1 1.6-fold and 1.2 \u00b1 0.6-fold, respectively) and AER (2.6 \u00b1 1.1-fold and 1.1 \u00b1 0.6-fold, respectively) groups at baseline (",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2803,7 +2803,7 @@
       "context_window": "d 1.2 \u00b1 0.6-fold, respectively) and AER (2.6 \u00b1 1.1-fold and 1.1 \u00b1 0.6-fold, respectively) groups at baseline (Fig. 2 C). Followin",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2821,9 +2821,9 @@
       "context_window": "ctively) groups at baseline (Fig. 2 C). Following the first 8 weeks of the intervention program, no significant changes were ob",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-msd-7146",
@@ -2840,7 +2840,7 @@
       "context_window": "on, and remained elevated until t = 40 min in both the CON (21.8 \u00b1 19.3-fold and 3.3 \u00b1 2.3-fold, respectively) and AER (17.9 \u00b1 10.6",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2859,7 +2859,7 @@
       "context_window": "ated until t = 40 min in both the CON (21.8 \u00b1 19.3-fold and 3.3 \u00b1 2.3-fold, respectively) and AER (17.9 \u00b1 10.6-fold and 2.7 \u00b1 1.6",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2878,7 +2878,7 @@
       "context_window": "21.8 \u00b1 19.3-fold and 3.3 \u00b1 2.3-fold, respectively) and AER (17.9 \u00b1 10.6-fold and 2.7 \u00b1 1.6-fold, respectively) groups at baseline (",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2897,7 +2897,7 @@
       "context_window": "3.3 \u00b1 2.3-fold, respectively) and AER (17.9 \u00b1 10.6-fold and 2.7 \u00b1 1.6-fold, respectively) groups at baseline (Fig. 2 E). Followin",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2915,7 +2915,7 @@
       "context_window": "ively) groups at baseline (Fig. 2 E). Following the initial 8 weeks of the intervention program, the microvascular blood flow r",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2933,7 +2933,7 @@
       "context_window": "flow response following a single bout of exercise tended ( P = 0.061 interaction effect) to be lower in the AER group ( t = 10 m",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2952,7 +2952,7 @@
       "context_window": "eraction effect) to be lower in the AER group ( t = 10 min: 8.1 \u00b1 6.9-fold and t = 40 min: 1.4 \u00b1 1.0-fold increase from rest), wh",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2971,7 +2971,7 @@
       "context_window": "the AER group ( t = 10 min: 8.1 \u00b1 6.9-fold and t = 40 min: 1.4 \u00b1 1.0-fold increase from rest), whereas the CON group showed no d",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2990,7 +2990,7 @@
       "context_window": "ON group showed no difference in its response ( t = 10 min: 18.5 \u00b1 15.3-fold and t = 40 min: 3.1 \u00b1 3.1-fold increase from rest; Fig",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3009,7 +3009,7 @@
       "context_window": "its response ( t = 10 min: 18.5 \u00b1 15.3-fold and t = 40 min: 3.1 \u00b1 3.1-fold increase from rest; Fig. 2 E, F ). Microvascular bloo",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3027,7 +3027,7 @@
       "context_window": "e bout of resistance exercise, before (pre) and after (mid) 8 weeks of aerobic exercise preconditioning (AER, n = 7) or no exer",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3045,7 +3045,7 @@
       "context_window": "ter (mid) 8 weeks of aerobic exercise preconditioning (AER, n = 7) or no exercise training (CON, n = 8), in healthy older adu",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3063,7 +3063,7 @@
       "context_window": "preconditioning (AER, n = 7) or no exercise training (CON, n = 8), in healthy older adults. Data are expressed as fold chang",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3171,7 +3171,7 @@
       "context_window": "ct a significant change in leg lean mass during the initial 8 weeks of the intervention program or in response to the subsequen",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3189,7 +3189,7 @@
       "context_window": "f the intervention program or in response to the subsequent 12 weeks of resistance exercise training (Fig. 3 C). Thigh muscle vo",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3245,9 +3245,9 @@
       "context_window": "Thigh muscle volume increased significantly in response to 12 weeks of resistance exercise training, with no difference between",
       "claim_role": "effect",
       "endpoint": "thigh muscle mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-9693",
@@ -3263,7 +3263,7 @@
       "context_window": "RI scanning ( D ) performed at baseline (pre) and following 8 weeks of aerobic exercise preconditioning (AER, mid) or no exerci",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3281,7 +3281,7 @@
       "context_window": "(AER, mid) or no exercise training (CON, mid) and following 12 weeks of subsequent resistance exercise training (post) in health",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3299,7 +3299,7 @@
       "context_window": "y older adults. *Significantly different compared with pre, P < 0.05; **significantly different compared with mid, P < 0.05; ***",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3317,7 +3317,7 @@
       "context_window": "pre, P < 0.05; **significantly different compared with mid, P < 0.05; ***significantly different compared with CON group, P < 0.",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3335,7 +3335,7 @@
       "context_window": "< 0.05; ***significantly different compared with CON group, P < 0.05; data are expressed as mean \u00b1 SD. NM, no measurement Muscl",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3371,9 +3371,9 @@
       "context_window": "Muscle fiber characteristics at baseline (pre), following 8 weeks of aerobic exercise preconditioning (AER, mid) or no exerci",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-10793",
@@ -3389,9 +3389,9 @@
       "context_window": "AER, mid) or no exercise training (CON, mid), and following 12 weeks of subsequent resistance exercise training (post) in health",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-n-10959",
@@ -3497,7 +3497,7 @@
       "context_window": "s observed. Whole body fat mass declined during the initial 8 weeks of the intervention program, with no further change during",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3515,7 +3515,7 @@
       "context_window": "ntion program, with no further change during the subsequent 12 weeks of resistance exercise training. We did not detect changes",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3569,9 +3569,9 @@
       "context_window": "(Table 4 ). Body composition at baseline (pre), following 8 weeks of aerobic exercise preconditioning (AER, mid) or no exerci",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-11789",
@@ -3587,9 +3587,9 @@
       "context_window": "AER, mid) or no exercise training (CON, mid), and following 12 weeks of subsequent resistance exercise training (post) in health",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-p-11939",
@@ -3605,9 +3605,9 @@
       "context_window": "are mean \u00b1 SD *Significantly different compared with pre, P < 0.05. Body composition measurements of n = 2 participants (CON n",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-n-11982",
@@ -3623,7 +3623,7 @@
       "context_window": "mpared with pre, P < 0.05. Body composition measurements of n = 2 participants (CON n = 1, AER n = 1) were lost owing to equi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3641,7 +3641,7 @@
       "context_window": "5. Body composition measurements of n = 2 participants (CON n = 1, AER n = 1) were lost owing to equipment failure Weekly re",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3659,7 +3659,7 @@
       "context_window": "position measurements of n = 2 participants (CON n = 1, AER n = 1) were lost owing to equipment failure Weekly resistance ex",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3677,7 +3677,7 @@
       "context_window": "y resistance exercise training volume increased over time ( P < 0.001), with no difference between the CON and AER groups (data n",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3713,9 +3713,9 @@
       "context_window": "eas 1RM muscle strength remained unchanged during the first 8 weeks of the intervention program, 1RM increased significantly du",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-12526",
@@ -3731,9 +3731,9 @@
       "context_window": "he intervention program, 1RM increased significantly during 12 weeks of resistance exercise training for all exercises (all P <",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-p-12590",
@@ -3749,9 +3749,9 @@
       "context_window": "eeks of resistance exercise training for all exercises (all P < 0.05, Table 5 ). Muscle strength, aerobic capacity, and physica",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-12698",
@@ -3766,8 +3766,8 @@
       "sentence": "Muscle strength, aerobic capacity, and physical function at baseline (pre), following 8 weeks of aerobic exercise preconditioning (AER, mid) or no exercise training (CON, mid), and following 12 weeks of subsequent resistance exercise training (post) in healthy older adults\n\nValues are mean \u00b1 SD\n\n*Significantly different compared with pre, P < 0.05; ** significantly different compared with mid, P < 0.05\n\n1RM, one-repetition maximum; VO 2peak , peak oxygen consumption; SPPB, short physical performance battery (max score is 12 points); TUG, time up-and-go test\n\nFor peak aerobic power output, a tendency was observed for a main effect of time ( P = 0.054) and time \u00d7 group interaction ( P = 0.078).",
       "context_window": "apacity, and physical function at baseline (pre), following 8 weeks of aerobic exercise preconditioning (AER, mid) or no exerci",
       "claim_role": "duration",
-      "endpoint": "VO2max",
-      "arm": "",
+      "endpoint": "physical function",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3784,8 +3784,8 @@
       "sentence": "Muscle strength, aerobic capacity, and physical function at baseline (pre), following 8 weeks of aerobic exercise preconditioning (AER, mid) or no exercise training (CON, mid), and following 12 weeks of subsequent resistance exercise training (post) in healthy older adults\n\nValues are mean \u00b1 SD\n\n*Significantly different compared with pre, P < 0.05; ** significantly different compared with mid, P < 0.05\n\n1RM, one-repetition maximum; VO 2peak , peak oxygen consumption; SPPB, short physical performance battery (max score is 12 points); TUG, time up-and-go test\n\nFor peak aerobic power output, a tendency was observed for a main effect of time ( P = 0.054) and time \u00d7 group interaction ( P = 0.078).",
       "context_window": "AER, mid) or no exercise training (CON, mid), and following 12 weeks of subsequent resistance exercise training (post) in health",
       "claim_role": "duration",
-      "endpoint": "VO2max",
-      "arm": "",
+      "endpoint": "physical function",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3803,7 +3803,7 @@
       "context_window": "are mean \u00b1 SD *Significantly different compared with pre, P < 0.05; ** significantly different compared with mid, P < 0.05 1R",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3821,7 +3821,7 @@
       "context_window": "re, P < 0.05; ** significantly different compared with mid, P < 0.05 1RM, one-repetition maximum; VO 2peak , peak oxygen consum",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3839,7 +3839,7 @@
       "context_window": "output, a tendency was observed for a main effect of time ( P = 0.054) and time \u00d7 group interaction ( P = 0.078). Both absolute a",
       "claim_role": "duration",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3857,7 +3857,7 @@
       "context_window": "effect of time ( P = 0.054) and time \u00d7 group interaction ( P = 0.078). Both absolute and relative VO 2peak (relative to bodyweig",
       "claim_role": "duration",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3911,7 +3911,7 @@
       "context_window": "ing in the AER group (both P < 0.05). During the subsequent 12 weeks of resistance exercise training, absolute and relative VO 2",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3929,7 +3929,7 @@
       "context_window": "ive VO 2peak increased significantly in the CON group (both P < 0.05), whereas no further change was observed in the AER group (",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3965,7 +3965,7 @@
       "context_window": "between the two groups. A significant main effect of time ( P < 0.05) was observed for handgrip strength, with a significant inc",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3983,7 +3983,7 @@
       "context_window": "ndgrip strength, with a significant increase observed after 12 weeks of resistance exercise training compared with baseline in b",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4019,7 +4019,7 @@
       "context_window": "al energy expenditure remained unchanged during the initial 8 weeks of the intervention program, it tended ( P = 0.096) to decl",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4037,7 +4037,7 @@
       "context_window": "he initial 8 weeks of the intervention program, it tended ( P = 0.096) to decline during 12 weeks of resistance exercise training",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4055,7 +4055,7 @@
       "context_window": "ervention program, it tended ( P = 0.096) to decline during 12 weeks of resistance exercise training, with no difference between",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4091,9 +4091,9 @@
       "context_window": "el and dietary intake assessed at baseline (pre), following 8 weeks of aerobic exercise preconditioning (AER, mid) or no exerci",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-15428",
@@ -4109,9 +4109,9 @@
       "context_window": "ng (AER, mid) or no exercise training (CON, mid), and after 12 weeks of subsequent resistance exercise training (post) in health",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-29",
@@ -4127,7 +4127,7 @@
       "context_window": "The present study shows that 8 weeks of aerobic exercise preconditioning increases type I and ty",
       "claim_role": "protocol",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4145,7 +4145,7 @@
       "context_window": "in response to the standardized bout of exercise following 8 weeks of exercise preconditioning, with no changes in the control",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4163,7 +4163,7 @@
       "context_window": "ize between the AER and CON groups following the subsequent 12 weeks of resistance exercise training. Although resistance exerc",
       "claim_role": "duration",
       "endpoint": "thigh muscle mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4181,9 +4181,9 @@
       "context_window": "rved improvements in various indices of type I (range: + 17-34%) and type II (range: + 19-36%) muscle fiber capillarization",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-pct-1509",
@@ -4199,9 +4199,9 @@
       "context_window": "ndices of type I (range: + 17-34%) and type II (range: + 19-36%) muscle fiber capillarization following the 8 weeks of aero",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-1557",
@@ -4217,9 +4217,9 @@
       "context_window": "range: + 19-36%) muscle fiber capillarization following the 8 weeks of aerobic exercise preconditioning. This is in line with o",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-3666",
@@ -4235,7 +4235,7 @@
       "context_window": "istance exercise tended to be less pronounced following the 8 weeks of aerobic exercise preconditioning. This lower post-exerci",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4253,9 +4253,9 @@
       "context_window": "ise preconditioning in older adults. Following the initial 8 weeks of aerobic exercise preconditioning, or no exercise control",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-4569",
@@ -4271,9 +4271,9 @@
       "context_window": "r no exercise control condition, all participants performed 12 weeks of resistance exercise training. In contrast to our hypothe",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12476412_aerobic_exercise_preconditioning_does_not_augment_muscle_hyp-u-4767",
@@ -4289,7 +4289,7 @@
       "context_window": "lower limb, thigh, and/or muscle fiber level following the 12 weeks of resistance exercise training between the AER and CON gro",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4307,7 +4307,7 @@
       "context_window": "(data not shown). Notably, the AER group already showed a ~ 24% increase in type II muscle fiber size following the initial",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4325,7 +4325,7 @@
       "context_window": "increase in type II muscle fiber size following the initial 8 weeks of aerobic exercise preconditioning, which is not uncommon",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4343,7 +4343,7 @@
       "context_window": "(as well as type I) muscle fiber size remained unchanged ( P = 0.359) following the first 8 weeks of the no exercise control per",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4361,7 +4361,7 @@
       "context_window": "er size remained unchanged ( P = 0.359) following the first 8 weeks of the no exercise control period, followed by a significan",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4380,7 +4380,7 @@
       "context_window": "f the no exercise control period, followed by a significant 25 \u00b1 39% increase after 12 weeks of resistance exercise training, c",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4398,7 +4398,7 @@
       "context_window": "no exercise control period, followed by a significant 25 \u00b1 39% increase after 12 weeks of resistance exercise training, co",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4416,7 +4416,7 @@
       "context_window": "l period, followed by a significant 25 \u00b1 39% increase after 12 weeks of resistance exercise training, compared with baseline. Th",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4434,7 +4434,7 @@
       "context_window": "may have limited muscle fiber growth during the subsequent 12 weeks of resistance exercise training in the AER group. Furthermo",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4452,7 +4452,7 @@
       "context_window": "d a similar increase in muscle fiber capillarization during 12 weeks of resistance exercise training compared with the 8 weeks o",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4470,7 +4470,7 @@
       "context_window": "12 weeks of resistance exercise training compared with the 8 weeks of aerobic exercise preconditioning in the AER group. Any l",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },

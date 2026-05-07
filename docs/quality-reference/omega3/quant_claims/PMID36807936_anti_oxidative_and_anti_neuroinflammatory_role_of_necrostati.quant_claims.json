@@ -1,0 +1,83 @@
+{
+  "paper_id": "PMID36807936_anti_oxidative_and_anti_neuroinflammatory_role_of_necrostati",
+  "doi": "10.1111/fcp.12881",
+  "extracted_at": "2026-05-07T19:32:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMID36807936_anti_oxidative_and_anti_neuroinflammatory_role_of_necrostati-u-643",
+      "claim_type": "unit_value",
+      "raw_text": "15 mg",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 643,
+      "sentence": "BALB/c mice were given acute MPTP therapy (4 injections of 15 mg/kg i.p. at 2-h intervals) on day 1.",
+      "context_window": "BALB/c mice were given acute MPTP therapy (4 injections of 15 mg/kg i.p. at 2-h intervals) on day 1. After MPTP intoxication",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID36807936_anti_oxidative_and_anti_neuroinflammatory_role_of_necrostati-u-734",
+      "claim_type": "unit_value",
+      "raw_text": "8 mg/kg/day",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 734,
+      "sentence": "After MPTP intoxication, Necrostatin-1s (Nec-1s; 8 mg/kg/day, i.p.) and DHA (300 mg/kg/day, p.o.) treatments were given once daily for 7 days.",
+      "context_window": "on day 1. After MPTP intoxication, Necrostatin-1s (Nec-1s; 8 mg/kg/day, i.p.) and DHA (300 mg/kg/day, p.o.) treatments were given",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID36807936_anti_oxidative_and_anti_neuroinflammatory_role_of_necrostati-u-762",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/kg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 762,
+      "sentence": "After MPTP intoxication, Necrostatin-1s (Nec-1s; 8 mg/kg/day, i.p.) and DHA (300 mg/kg/day, p.o.) treatments were given once daily for 7 days.",
+      "context_window": "cation, Necrostatin-1s (Nec-1s; 8 mg/kg/day, i.p.) and DHA (300 mg/kg/day, p.o.) treatments were given once daily for 7 days. The Nec",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID36807936_anti_oxidative_and_anti_neuroinflammatory_role_of_necrostati-u-820",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 820,
+      "sentence": "After MPTP intoxication, Necrostatin-1s (Nec-1s; 8 mg/kg/day, i.p.) and DHA (300 mg/kg/day, p.o.) treatments were given once daily for 7 days.",
+      "context_window": "(300 mg/kg/day, p.o.) treatments were given once daily for 7 days. The Nec-1s treatment prevented MPTP-induced behavioural, b",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

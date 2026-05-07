@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC4924214_the_association_between_total_protein_and_vegetable_protein_",
   "doi": "10.3390/nu8060373",
-  "extracted_at": "2026-05-05T23:37:08+00:00",
+  "extracted_at": "2026-05-07T16:56:37+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 74,
@@ -26,7 +26,7 @@
       "sentence": "Participants with diets in the lowest quartile of total protein density (<13.2%) were at a higher risk for low muscle mass (odds ratio (OR) 3.03, 95% confidence interval (CI) 1.37-6.72) than those with diets in the highest quartile (\u226517.2%).",
       "context_window": "ith diets in the lowest quartile of total protein density (<13.2%) were at a higher risk for low muscle mass (odds ratio (OR)",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -44,7 +44,7 @@
       "sentence": "Participants with diets in the lowest quartile of total protein density (<13.2%) were at a higher risk for low muscle mass (odds ratio (OR) 3.03, 95% confidence interval (CI) 1.37-6.72) than those with diets in the highest quartile (\u226517.2%).",
       "context_window": "at a higher risk for low muscle mass (odds ratio (OR) 3.03, 95% confidence interval (CI) 1.37-6.72) than those with diets i",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -62,7 +62,7 @@
       "sentence": "Participants with diets in the lowest quartile of total protein density (<13.2%) were at a higher risk for low muscle mass (odds ratio (OR) 3.03, 95% confidence interval (CI) 1.37-6.72) than those with diets in the highest quartile (\u226517.2%).",
       "context_window": "1.37-6.72) than those with diets in the highest quartile (\u226517.2%). Similarly, participants with diets in the lowest quartile",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -80,7 +80,7 @@
       "sentence": "Similarly, participants with diets in the lowest quartile of vegetable protein density (<5.8%) were at a higher risk for low muscle mass (OR 2.34, 95% CI 1.14-4.83) than those with diets in the highest quartile (\u22659.4%).",
       "context_window": "diets in the lowest quartile of vegetable protein density (<5.8%) were at a higher risk for low muscle mass (OR 2.34, 95% CI",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -99,7 +99,7 @@
       "sentence": "Similarly, participants with diets in the lowest quartile of vegetable protein density (<5.8%) were at a higher risk for low muscle mass (OR 2.34, 95% CI 1.14-4.83) than those with diets in the highest quartile (\u22659.4%).",
       "context_window": "(<5.8%) were at a higher risk for low muscle mass (OR 2.34, 95% CI 1.14-4.83) than those with diets in the highest quartile (\u22659.4%). Fur",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -117,7 +117,7 @@
       "sentence": "Similarly, participants with diets in the lowest quartile of vegetable protein density (<5.8%) were at a higher risk for low muscle mass (OR 2.34, 95% CI 1.14-4.83) than those with diets in the highest quartile (\u22659.4%).",
       "context_window": "1.14-4.83) than those with diets in the highest quartile (\u22659.4%). Furthermore, the estimated skeletal muscle mass index inc",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -135,10 +135,10 @@
       "sentence": "Furthermore, the estimated skeletal muscle mass index increased significantly across the quartiles of total protein density ( p = 0.023) and vegetable protein density ( p = 0.025).",
       "context_window": "gnificantly across the quartiles of total protein density ( p = 0.023) and vegetable protein density ( p = 0.025). Increasing dai",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4924214_the_association_between_total_protein_and_vegetable_protein_-p-1293",
@@ -153,10 +153,10 @@
       "sentence": "Furthermore, the estimated skeletal muscle mass index increased significantly across the quartiles of total protein density ( p = 0.023) and vegetable protein density ( p = 0.025).",
       "context_window": "rotein density ( p = 0.023) and vegetable protein density ( p = 0.025). Increasing daily intakes of total protein and vegetable p",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4924214_the_association_between_total_protein_and_vegetable_protein_-pct-143",
@@ -171,10 +171,10 @@
       "sentence": "Muscle mass decreases at a rate of 3% to 8% per decade after the age of thirty, and this loss accelerates further in older age [ 2 ].",
       "context_window": "Rosenberg in 1989 [ 1 ]. Muscle mass decreases at a rate of 3% to 8% per decade after the age of thirty, and this loss acc",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4924214_the_association_between_total_protein_and_vegetable_protein_-pct-149",
@@ -189,10 +189,10 @@
       "sentence": "Muscle mass decreases at a rate of 3% to 8% per decade after the age of thirty, and this loss accelerates further in older age [ 2 ].",
       "context_window": "erg in 1989 [ 1 ]. Muscle mass decreases at a rate of 3% to 8% per decade after the age of thirty, and this loss accelerat",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4924214_the_association_between_total_protein_and_vegetable_protein_-pct-368",
@@ -225,7 +225,7 @@
       "sentence": "Low muscle mass (LMM) was defined as an SMI of two standard deviations or more below the gender-specific mean for the 18-40 years old Taiwanese population (SMI < 8.87 kg/m 2 in men and SMI < 6.42 kg/m 2 in women) [ 26 , 27 ].",
       "context_window": "eviations or more below the gender-specific mean for the 18-40 years old Taiwanese population (SMI < 8.87 kg/m 2 in men and SMI",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -243,7 +243,7 @@
       "sentence": "Low muscle mass (LMM) was defined as an SMI of two standard deviations or more below the gender-specific mean for the 18-40 years old Taiwanese population (SMI < 8.87 kg/m 2 in men and SMI < 6.42 kg/m 2 in women) [ 26 , 27 ].",
       "context_window": "ic mean for the 18-40 years old Taiwanese population (SMI < 8.87 kg/m 2 in men and SMI < 6.42 kg/m 2 in women) [ 26 , 27 ]. Pa",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -261,7 +261,7 @@
       "sentence": "Low muscle mass (LMM) was defined as an SMI of two standard deviations or more below the gender-specific mean for the 18-40 years old Taiwanese population (SMI < 8.87 kg/m 2 in men and SMI < 6.42 kg/m 2 in women) [ 26 , 27 ].",
       "context_window": "ld Taiwanese population (SMI < 8.87 kg/m 2 in men and SMI < 6.42 kg/m 2 in women) [ 26 , 27 ]. Participants completed a food f",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -441,10 +441,10 @@
       "sentence": "General characteristics of the low muscle mass (LMM) and normal groups ( N = 327).",
       "context_window": "cteristics of the low muscle mass (LMM) and normal groups ( N = 327). Abbreviations: BMI: body mass index; SMI: Skeletal muscl",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4924214_the_association_between_total_protein_and_vegetable_protein_-p-684",
@@ -693,10 +693,10 @@
       "sentence": "Dietary intake of total energy, carbohydrates, proteins, fats, and vitamin supplements between the low muscle mass (LMM) and normal groups.\n\n* p < 0.05, ** p < 0.01.",
       "context_window": "nts between the low muscle mass (LMM) and normal groups. * p < 0.05, ** p < 0.01. Odds ratios (OR) for LMM among the different",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4924214_the_association_between_total_protein_and_vegetable_protein_-p-1595",
@@ -711,10 +711,10 @@
       "sentence": "Dietary intake of total energy, carbohydrates, proteins, fats, and vitamin supplements between the low muscle mass (LMM) and normal groups.\n\n* p < 0.05, ** p < 0.01.",
       "context_window": "he low muscle mass (LMM) and normal groups. * p < 0.05, ** p < 0.01. Odds ratios (OR) for LMM among the different total protei",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4924214_the_association_between_total_protein_and_vegetable_protein_-pct-1825",
@@ -875,7 +875,7 @@
       "sentence": "Odds ratios (and 95%CI) for total protein and vegetable protein density for low muscle mass (LMM) compared to the highest quartile a .\n\n* p < 0.05, ** p < 0.01. a.",
       "context_window": "ensity was not statistically significant. Odds ratios (and 95%CI) for total protein and vegetable protein density for low",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -893,7 +893,7 @@
       "sentence": "Odds ratios (and 95%CI) for total protein and vegetable protein density for low muscle mass (LMM) compared to the highest quartile a .\n\n* p < 0.05, ** p < 0.01. a.",
       "context_window": "w muscle mass (LMM) compared to the highest quartile a . * p < 0.05, ** p < 0.01. a. Quartiles of total protein density: Quarti",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -911,7 +911,7 @@
       "sentence": "Odds ratios (and 95%CI) for total protein and vegetable protein density for low muscle mass (LMM) compared to the highest quartile a .\n\n* p < 0.05, ** p < 0.01. a.",
       "context_window": "(LMM) compared to the highest quartile a . * p < 0.05, ** p < 0.01. a. Quartiles of total protein density: Quartile 1: <13.2%,",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -1253,7 +1253,7 @@
       "sentence": "The adjusted least square (LS) means with 95% CI of total protein density and vegetable protein density the between low muscle mass (LMM) and normal groups.",
       "context_window": "ounding factors. The adjusted least square (LS) means with 95% CI of total protein density and vegetable protein density t",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -1271,7 +1271,7 @@
       "sentence": "The adjusted least square (LS) means with 95% CI for skeletal muscle mass index (SMI) among the different quartiles of total protein density ( A ) and vegetable protein density ( B ).",
       "context_window": "d normal groups. The adjusted least square (LS) means with 95% CI for skeletal muscle mass index (SMI) among the different",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -1614,7 +1614,7 @@
       "context_window": "on. Participants with the lowest mean total protein intake (11.7%) had an almost threefold risk for LMM compared to those wit",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1632,7 +1632,7 @@
       "context_window": "LMM compared to those with the highest mean protein intake (18.3%). Participants with the lowest mean vegetable protein intak",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1650,7 +1650,7 @@
       "context_window": "Participants with the lowest mean vegetable protein intake (4.9%) also had an over twofold risk for LMM compared with those",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1668,7 +1668,7 @@
       "context_window": "with those with the highest mean vegetable protein intake (10.9%). Furthermore, the SMI increased along with increments in t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1686,7 +1686,7 @@
       "context_window": "our study was compatible with the median protein intake of 15% in the United States. This exceeded the Recommended Dietary",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1776,7 +1776,7 @@
       "context_window": "recommendations for increasing dietary protein intake from 0.8 g/kg/day (11%) to a range of at least 1.0-1.2 g/kg/day (14%-16.8%) [",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1794,7 +1794,7 @@
       "context_window": "ns for increasing dietary protein intake from 0.8 g/kg/day (11%) to a range of at least 1.0-1.2 g/kg/day (14%-16.8%) [ 38 ]",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1812,7 +1812,7 @@
       "context_window": "n intake from 0.8 g/kg/day (11%) to a range of at least 1.0-1.2 g/kg/day (14%-16.8%) [ 38 ]. Furthermore, the Society for Sarcopenia",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1830,7 +1830,7 @@
       "context_window": "0.8 g/kg/day (11%) to a range of at least 1.0-1.2 g/kg/day (14%-16.8%) [ 38 ]. Furthermore, the Society for Sarcopenia, Cac",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1848,7 +1848,7 @@
       "context_window": "g/kg/day (11%) to a range of at least 1.0-1.2 g/kg/day (14%-16.8%) [ 38 ]. Furthermore, the Society for Sarcopenia, Cachexia,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1866,7 +1866,7 @@
       "context_window": "e also recommended that the level of protein intake be 1 to 1.5 g/kg/day (14%-21%) to prevent and mitigate sarcopenia [ 39 ]. Parti",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1884,7 +1884,7 @@
       "context_window": "nded that the level of protein intake be 1 to 1.5 g/kg/day (14%-21%) to prevent and mitigate sarcopenia [ 39 ]. Participan",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1902,7 +1902,7 @@
       "context_window": "that the level of protein intake be 1 to 1.5 g/kg/day (14%-21%) to prevent and mitigate sarcopenia [ 39 ]. Participants w",
       "claim_role": "dose",
       "endpoint": "sarcopenia",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },

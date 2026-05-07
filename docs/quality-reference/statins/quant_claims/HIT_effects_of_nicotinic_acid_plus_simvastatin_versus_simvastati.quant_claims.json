@@ -1,0 +1,156 @@
+{
+  "paper_id": "HIT_effects_of_nicotinic_acid_plus_simvastatin_versus_simvastati",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4,
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effects_of_nicotinic_acid_plus_simvastatin_versus_simvastati-pct-415",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 415,
+      "sentence": "While statins are effective in reducing plasma levels of LDL-c, these drugs have only modest effects on raising HDL-c (typically by less than 10%), even with aggressive statin therapy.",
+      "context_window": "nly modest effects on raising HDL-c (typically by less than 10%), even with aggressive statin therapy. However, increasing",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_nicotinic_acid_plus_simvastatin_versus_simvastati-pct-823",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 823,
+      "sentence": "Nicotinic acid is the most potent agent available for raising plasma levels of HDL-c by up to 29% at clinically recommended doses, and substantially lowers triglycerides and LDL-c.",
+      "context_window": "agent available for raising plasma levels of HDL-c by up to 29% at clinically recommended doses, and substantially lowers t",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_nicotinic_acid_plus_simvastatin_versus_simvastati-pct-1121",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1121,
+      "sentence": "In a recent study patients with coronary artery disease had a 21% increase in HDL-c and a 13% decrease in triglycerides, and these beneficial effects on lipid status may have contributed to a stabilization or regression of carotid intima-media-thickness (IMT).The impact in patients with advanced atherosclerosis like peripheral artery disease (PAD) in unknown.",
+      "context_window": "a recent study patients with coronary artery disease had a 21% increase in HDL-c and a 13% decrease in triglycerides, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_nicotinic_acid_plus_simvastatin_versus_simvastati-pct-1149",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1149,
+      "sentence": "In a recent study patients with coronary artery disease had a 21% increase in HDL-c and a 13% decrease in triglycerides, and these beneficial effects on lipid status may have contributed to a stabilization or regression of carotid intima-media-thickness (IMT).The impact in patients with advanced atherosclerosis like peripheral artery disease (PAD) in unknown.",
+      "context_window": "h coronary artery disease had a 21% increase in HDL-c and a 13% decrease in triglycerides, and these beneficial effects on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_nicotinic_acid_plus_simvastatin_versus_simvastati-u-1702",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1702,
+      "sentence": "Therefore, the aim of the present randomized controlled trial is to investigate the effects of nicotinic acid (daily dose starting with 500 mg, up to 2000mg) in addition to simvastatin (40 mg daily) versus simvastatin (40mg daily) monotherapy in patients with low serum HDL-C levels and PAD with respect to changes of carotid and femoral IMT, changes of patients\u00b4 lipid status and occurrence of major adverse cardiovascular events (MACE).",
+      "context_window": "ate the effects of nicotinic acid (daily dose starting with 500 mg, up to 2000mg) in addition to simvastatin (40 mg daily) ver",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_nicotinic_acid_plus_simvastatin_versus_simvastati-u-1716",
+      "claim_type": "unit_value",
+      "raw_text": "2000mg",
+      "numeric_values": [
+        2000.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1716,
+      "sentence": "Therefore, the aim of the present randomized controlled trial is to investigate the effects of nicotinic acid (daily dose starting with 500 mg, up to 2000mg) in addition to simvastatin (40 mg daily) versus simvastatin (40mg daily) monotherapy in patients with low serum HDL-C levels and PAD with respect to changes of carotid and femoral IMT, changes of patients\u00b4 lipid status and occurrence of major adverse cardiovascular events (MACE).",
+      "context_window": "s of nicotinic acid (daily dose starting with 500 mg, up to 2000mg) in addition to simvastatin (40 mg daily) versus simvastati",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_nicotinic_acid_plus_simvastatin_versus_simvastati-u-1752",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1752,
+      "sentence": "Therefore, the aim of the present randomized controlled trial is to investigate the effects of nicotinic acid (daily dose starting with 500 mg, up to 2000mg) in addition to simvastatin (40 mg daily) versus simvastatin (40mg daily) monotherapy in patients with low serum HDL-C levels and PAD with respect to changes of carotid and femoral IMT, changes of patients\u00b4 lipid status and occurrence of major adverse cardiovascular events (MACE).",
+      "context_window": "ting with 500 mg, up to 2000mg) in addition to simvastatin (40 mg daily) versus simvastatin (40mg daily) monotherapy in patie",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effects_of_nicotinic_acid_plus_simvastatin_versus_simvastati-u-1785",
+      "claim_type": "unit_value",
+      "raw_text": "40mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1785,
+      "sentence": "Therefore, the aim of the present randomized controlled trial is to investigate the effects of nicotinic acid (daily dose starting with 500 mg, up to 2000mg) in addition to simvastatin (40 mg daily) versus simvastatin (40mg daily) monotherapy in patients with low serum HDL-C levels and PAD with respect to changes of carotid and femoral IMT, changes of patients\u00b4 lipid status and occurrence of major adverse cardiovascular events (MACE).",
+      "context_window": "n addition to simvastatin (40 mg daily) versus simvastatin (40mg daily) monotherapy in patients with low serum HDL-C levels",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

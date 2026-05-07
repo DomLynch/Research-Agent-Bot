@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12879307_biological_sex_as_a_tailoring_variable_for_exercise_prescrip",
   "doi": "10.1016/j.jnha.2024.100377",
-  "extracted_at": "2026-05-05T21:59:31+00:00",
+  "extracted_at": "2026-05-07T16:57:31+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 13,
@@ -25,9 +25,9 @@
       "context_window": "y of life in acute care admissions. 570 patients (mean age 87 years, 298 females [52.3%]) admitted to acute care for elderly un",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12879307_biological_sex_as_a_tailoring_variable_for_exercise_prescrip-pct-338",
@@ -43,9 +43,9 @@
       "context_window": "admissions. 570 patients (mean age 87 years, 298 females [52.3%]) admitted to acute care for elderly units were randomized",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12879307_biological_sex_as_a_tailoring_variable_for_exercise_prescrip-p-774",
@@ -79,9 +79,9 @@
       "context_window": "ter in-hospital exercise compared to the control group (all p < 0.001), no sex differences occurred. Females demonstrate more ex",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12879307_biological_sex_as_a_tailoring_variable_for_exercise_prescrip-u-1131",
@@ -187,7 +187,7 @@
       "context_window": "t during hospitalization: 1 point for the SPPB test [ 23 ], 0.1 m/s for the GVT [ 23 ], 1 kg for the handgrip strength [ 24 ],",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "usual care",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -205,7 +205,7 @@
       "context_window": "point for the SPPB test [ 23 ], 0.1 m/s for the GVT [ 23 ], 1 kg for the handgrip strength [ 24 ], 3 points for the MMSE tes",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "control",
+      "arm": "usual care",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -403,9 +403,9 @@
       "context_window": "over hospital usual care on all SPPB and GVT endpoints (all p < 0.001). SPPB score increased by 1.87 points (95%CI, 0.90-2.88) in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12879307_biological_sex_as_a_tailoring_variable_for_exercise_prescrip-pct-3857",
@@ -658,7 +658,7 @@
       "context_window": "cant grip strength increases with exercise versus controls (p < 0.001), but no between-sex difference (1.05 kg, 95%CI -0.62-2.71)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -676,7 +676,7 @@
       "context_window": "versus controls (p < 0.001), but no between-sex difference (1.05 kg, 95%CI -0.62-2.71) ( Table 2 ). Male exercisers had signifi",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -695,7 +695,7 @@
       "context_window": "ntrols (p < 0.001), but no between-sex difference (1.05 kg, 95%CI -0.62-2.71) ( Table 2 ). Male exercisers had significantly more signif",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -823,9 +823,9 @@
       "context_window": "exercise. However, female patients showed non-significant (p = 0.06) quality of life improvements after exercise versus control",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12879307_biological_sex_as_a_tailoring_variable_for_exercise_prescrip-pct-4951",
@@ -841,9 +841,9 @@
       "context_window": "bution differed slightly between groups (intervention: 141 [50%] female, control: 157 [54%]) and biological sex factor was",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12879307_biological_sex_as_a_tailoring_variable_for_exercise_prescrip-pct-4978",
@@ -859,9 +859,9 @@
       "context_window": "tween groups (intervention: 141 [50%] female, control: 157 [54%]) and biological sex factor was not considered in the rando",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12879307_biological_sex_as_a_tailoring_variable_for_exercise_prescrip-u-5814",
@@ -913,9 +913,9 @@
       "context_window": "bution differed slightly between groups (intervention: 141 [50%] female, control: 157 [54%]) and biological sex factor was",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12879307_biological_sex_as_a_tailoring_variable_for_exercise_prescrip-pct-392",
@@ -931,9 +931,9 @@
       "context_window": "tween groups (intervention: 141 [50%] female, control: 157 [54%]) and biological sex factor was not considered in the rando",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12879307_biological_sex_as_a_tailoring_variable_for_exercise_prescrip-u-1228",

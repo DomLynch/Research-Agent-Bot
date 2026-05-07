@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10859317_comparison_of_medical_resources_and_costs_among_patients_wit",
   "doi": "10.1111/1753-0407.13473",
-  "extracted_at": "2026-05-05T22:20:08+00:00",
+  "extracted_at": "2026-05-07T16:57:47+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 31,
@@ -42,7 +42,7 @@
       "context_window": "QALYs were discounted at 3% yearly. Hospitalizations were 6% higher in the acarbose arm during the trial (rate ratio 1.0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -60,7 +60,7 @@
       "context_window": "gher in the acarbose arm during the trial (rate ratio 1.06, p = .009), but there were no significant differences in total inpati",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -78,7 +78,7 @@
       "context_window": "icant differences in total inpatient days (rate ratio 1.04, p = .30). Total costs per participant, including study drug, were s",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -96,7 +96,7 @@
       "context_window": "3), compared with placebo (\u00a548 079, \u00a35289; mean ratio 1.18, p < 0.001). QALYs reported by participants in the acarbose arm (3.96",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "e difference was not statistically significant (0.01 QALYs; p = .58). Acarbose, compared with placebo, participants cost more",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -149,8 +149,8 @@
       "sentence": "Acarbose did not reduce the risk of major adverse cardiovascular events but did reduce diabetes incidence by 18% ( p = .005).",
       "context_window": "cardiovascular events but did reduce diabetes incidence by 18% ( p = .005). 8 , 9 The aim of this study was to compare wi",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -167,8 +167,8 @@
       "sentence": "Acarbose did not reduce the risk of major adverse cardiovascular events but did reduce diabetes incidence by 18% ( p = .005).",
       "context_window": "ovascular events but did reduce diabetes incidence by 18% ( p = .005). 8 , 9 The aim of this study was to compare within\u2010trial",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -258,7 +258,7 @@
       "context_window": "located randomly 1:1 to double\u2010blind therapy with acarbose (50 mg) or matching placebo taken three times a day with meals. Pr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -312,9 +312,9 @@
       "context_window": "umed not to take the active study drug. An acarbose dose of 50 mg three times daily, as stated in study protocol, 9 was used",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10859317_comparison_of_medical_resources_and_costs_among_patients_wit-u-4121",
@@ -330,9 +330,9 @@
       "context_window": "ot receive acarbose and, therefore, did not take it for the 4 months following the study visit. We applied a discount rate of 3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10859317_comparison_of_medical_resources_and_costs_among_patients_wit-pct-4188",
@@ -366,7 +366,7 @@
       "context_window": "se value set. 18 The difference in EQ\u20105D utility was 0.002 (95% confidence interval [CI], -0.002 to 0.007, p = .278) betwee",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -384,7 +384,7 @@
       "context_window": "y was 0.002 (95% confidence interval [CI], -0.002 to 0.007, p = .278) between the acarbose and placebo groups during their follo",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -492,7 +492,7 @@
       "context_window": "and 3250 to the placebo arm and followed up for a median of 5.0 years (interquartile range 3.4-6.0) in both groups. The character",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -600,7 +600,7 @@
       "context_window": "D utility were imputed using multiple imputation. Over the 6 years of follow\u2010up, the mean number of hospitalizations (0.5, SD",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -618,7 +618,7 @@
       "context_window": "her than in the placebo arm (0.4, SD 1.0) (rate ratio 1.06, p = .009), albeit the magnitude of the difference was small. There w",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -744,7 +744,7 @@
       "context_window": "tes drug days were significantly lower in the acarbose arm (73 days) compared with the placebo arm (95 days) with a rate ratio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -762,7 +762,7 @@
       "context_window": "n the acarbose arm (73 days) compared with the placebo arm (95 days) with a rate ratio of 0.80 ( p = .043). Descriptive results",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -780,7 +780,7 @@
       "context_window": "with the placebo arm (95 days) with a rate ratio of 0.80 ( p = .043). Descriptive results of medical resource use are presented",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -816,7 +816,7 @@
       "context_window": "e observed (acarbose: \u00a5257, placebo: \u00a5307, mean ratio 0.84, p = .23). On average, study drug costs were \u00a58512 (\u20ac1107; \u00a3936; $13",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -834,7 +834,7 @@
       "context_window": "up (\u00a539 062) at \u00a58512 (\u20ac1107, \u00a3936, $1362, mean ratio 1.23, p < .001). Descriptive results of costs by year are presented in Tab",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -924,7 +924,7 @@
       "context_window": "mber of participants diagnosed with diabetes over the first 6 years of the trial was significantly lower in the acarbose arm (",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -942,7 +942,7 @@
       "context_window": "of the trial was significantly lower in the acarbose arm ( n = 380) compared with the placebo arm ( n = 467) ( p = .005). 8 He",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -960,7 +960,7 @@
       "context_window": "the acarbose arm ( n = 380) compared with the placebo arm ( n = 467) ( p = .005). 8 Hence, over 6 years of follow\u2010up, 2.8% (95%",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -978,7 +978,7 @@
       "context_window": "e arm ( n = 380) compared with the placebo arm ( n = 467) ( p = .005). 8 Hence, over 6 years of follow\u2010up, 2.8% (95% CI, 1.1%-4.",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -996,7 +996,7 @@
       "context_window": "with the placebo arm ( n = 467) ( p = .005). 8 Hence, over 6 years of follow\u2010up, 2.8% (95% CI, 1.1%-4.4%) of diabetes cases we",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1014,7 +1014,7 @@
       "context_window": "( n = 467) ( p = .005). 8 Hence, over 6 years of follow\u2010up, 2.8% (95% CI, 1.1%-4.4%) of diabetes cases were averted in the a",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1032,7 +1032,7 @@
       "context_window": "467) ( p = .005). 8 Hence, over 6 years of follow\u2010up, 2.8% (95% CI, 1.1%-4.4%) of diabetes cases were averted in the acarbo",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1050,7 +1050,7 @@
       "context_window": "= .005). 8 Hence, over 6 years of follow\u2010up, 2.8% (95% CI, 1.1%-4.4%) of diabetes cases were averted in the acarbose arm co",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1068,7 +1068,7 @@
       "context_window": "05). 8 Hence, over 6 years of follow\u2010up, 2.8% (95% CI, 1.1%-4.4%) of diabetes cases were averted in the acarbose arm compare",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1086,7 +1086,7 @@
       "context_window": "difference was not statistically significant (0.014 QALYs; p = .58). Within\u2010trial costs and QALYs by treatment arm (following",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1140,9 +1140,9 @@
       "context_window": "derable uncertainty concerning the gains in QALYs. Over the 6 years of follow\u2010up, the probability that acarbose treatment is co",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10859317_comparison_of_medical_resources_and_costs_among_patients_wit-pct-6765",
@@ -1158,9 +1158,9 @@
       "context_window": "he probability that acarbose treatment is cost effective is 14% at a threshold value of \u00a5178 980 per QALY (three times the",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10859317_comparison_of_medical_resources_and_costs_among_patients_wit-pct-313",
@@ -1175,8 +1175,8 @@
       "sentence": "Acarbose, given in addition to optimized cardiovascular therapy, did not reduce the risk of major adverse cardiovascular event but did reduce the incidence of diabetes by 18%.",
       "context_window": "ovascular event but did reduce the incidence of diabetes by 18%. 8 Our health economic findings are consistent with the AC",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1212,7 +1212,7 @@
       "context_window": "in turn reduce health\u2010related quality of life. 25 Over the 6 years of follow\u2010up in the ACE trial, we found acarbose resulting",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1230,7 +1230,7 @@
       "context_window": "insulin Dependent Diabetes Mellitus (STOP\u2010NIDDM) trial over 3.3 years, with the costs of acarbose being offset due to the reduced",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1248,7 +1248,7 @@
       "context_window": "gram (DPP) showed metformin to reduce diabetes incidence by 31% relative to placebo, compared with the 18% reduction seen w",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1266,7 +1266,7 @@
       "context_window": "tes incidence by 31% relative to placebo, compared with the 18% reduction seen with acarbose in ACE, and to accrue 0.02 mor",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },

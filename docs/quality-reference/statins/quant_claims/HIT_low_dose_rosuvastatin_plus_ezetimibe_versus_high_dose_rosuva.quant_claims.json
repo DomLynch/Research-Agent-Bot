@@ -1,0 +1,84 @@
+{
+  "paper_id": "HIT_low_dose_rosuvastatin_plus_ezetimibe_versus_high_dose_rosuva",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_low_dose_rosuvastatin_plus_ezetimibe_versus_high_dose_rosuva-u-36",
+      "claim_type": "unit_value",
+      "raw_text": "5mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 36,
+      "sentence": "Combination therapy of rosuvastatin 5mg and ezetimibe 10 mg showed similar achievement rate in decreasing LDL cholesterol level by 50% as single use of rosuvastatin 20 mg.",
+      "context_window": "Combination therapy of rosuvastatin 5mg and ezetimibe 10 mg showed similar achievement rate in decr",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_low_dose_rosuvastatin_plus_ezetimibe_versus_high_dose_rosuva-u-54",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 54,
+      "sentence": "Combination therapy of rosuvastatin 5mg and ezetimibe 10 mg showed similar achievement rate in decreasing LDL cholesterol level by 50% as single use of rosuvastatin 20 mg.",
+      "context_window": "Combination therapy of rosuvastatin 5mg and ezetimibe 10 mg showed similar achievement rate in decreasing LDL cholester",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_low_dose_rosuvastatin_plus_ezetimibe_versus_high_dose_rosuva-pct-131",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 131,
+      "sentence": "Combination therapy of rosuvastatin 5mg and ezetimibe 10 mg showed similar achievement rate in decreasing LDL cholesterol level by 50% as single use of rosuvastatin 20 mg.",
+      "context_window": "lar achievement rate in decreasing LDL cholesterol level by 50% as single use of rosuvastatin 20 mg. This trial aims to pro",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_low_dose_rosuvastatin_plus_ezetimibe_versus_high_dose_rosuva-u-165",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 165,
+      "sentence": "Combination therapy of rosuvastatin 5mg and ezetimibe 10 mg showed similar achievement rate in decreasing LDL cholesterol level by 50% as single use of rosuvastatin 20 mg.",
+      "context_window": "LDL cholesterol level by 50% as single use of rosuvastatin 20 mg. This trial aims to prove non-inferiority of concomitant us",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

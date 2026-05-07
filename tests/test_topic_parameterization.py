@@ -307,3 +307,29 @@ def test_thesis_template_handles_plural_topic_names() -> None:
     )
     assert "the evidence base for" in thesis.text
     assert "curated reference papers, statins shows" not in thesis.text
+
+
+def test_section_backstop_handles_plural_topic_names() -> None:
+    old_manifest = orch._ACTIVE_MANIFEST
+    old_topic = orch._ACTIVE_TOPIC
+    try:
+        orch._ACTIVE_TOPIC = "nad_precursors"
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 15,
+            "n_high_confidence_claims_total": 85,
+            "n_non_orthogonal_tensions": 49,
+            "thesis": "The evidence profile is mixed.",
+            "receipts": [{
+                "directness": "direct",
+                "effect_direction": "positive",
+                "outcome_class": "cardiometabolic",
+                "citation_token": "Example 2025",
+            }],
+        }
+        backstop = orch._compile_public_section_backstop("Conclusion", 250)
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+        orch._ACTIVE_TOPIC = old_topic
+
+    assert "the evidence base for nad precursors has enough" in backstop
+    assert "In conclusion, nad precursors has enough" not in backstop

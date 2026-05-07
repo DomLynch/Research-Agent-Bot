@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8543646_total_hip_arthroplasty_versus_progressive_resistance_trainin",
   "doi": "10.1136/bmjopen-2021-051392",
-  "extracted_at": "2026-05-05T21:59:15+00:00",
+  "extracted_at": "2026-05-07T16:57:39+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 17,
@@ -22,7 +22,7 @@
       "sentence": "Although, being considered as the surgery of the century up to 23% of the patients report long-term pain, and deficits in physical function and muscle strength may persist after THA.",
       "context_window": "hough, being considered as the surgery of the century up to 23% of the patients report long-term pain, and deficits in phys",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -148,7 +148,7 @@
       "sentence": "12-17 However, up to 23% of the patients report long-term pain, and deficits in physical function and muscle strength may persist after THA.",
       "context_window": "ction, and increasing quality of life. 12-17 However, up to 23% of the patients report long-term pain, and deficits in phys",
       "claim_role": "background",
-      "endpoint": "muscle strength",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -491,9 +491,9 @@
       "context_window": "stsurgical control to postsurgical assessment of the hip at 6 weeks or 3 months. Discharge criteria and postoperative procedur",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8543646_total_hip_arthroplasty_versus_progressive_resistance_trainin-u-8243",
@@ -509,9 +509,9 @@
       "context_window": "control to postsurgical assessment of the hip at 6 weeks or 3 months. Discharge criteria and postoperative procedures at Vejle",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8543646_total_hip_arthroplasty_versus_progressive_resistance_trainin-u-8490",
@@ -581,7 +581,7 @@
       "context_window": "rage patients in the PRT group to continue and complete the 12 weeks of supervised PRT and continue to exercise until the 6 mont",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -599,7 +599,7 @@
       "context_window": "weeks of supervised PRT and continue to exercise until the 6 months follow-up to reduce crossover and withdrawals from the tria",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1193,9 +1193,9 @@
       "context_window": "tients allocated to the exercise group underwent TKA within 2 years of follow-up. 92 The current trial has some limitations. F",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8543646_total_hip_arthroplasty_versus_progressive_resistance_trainin-pct-1070",

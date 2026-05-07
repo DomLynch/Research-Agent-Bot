@@ -1,10 +1,10 @@
 {
   "paper_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho",
   "doi": "10.3390/nu17233691",
-  "extracted_at": "2026-05-05T22:11:21+00:00",
+  "extracted_at": "2026-05-07T16:57:02+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 34,
+    "unit_value": 42,
     "p_value": 55,
     "percentage": 21,
     "sample_size": 9
@@ -276,9 +276,9 @@
       "context_window": "intake) and fasting days (a small meal of ~400-600 kcal or 25% of daily caloric needs) every 24 h, has been one of the mos",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "alternate-day fasting",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-1708",
@@ -528,9 +528,9 @@
       "context_window": "r each recorded day. In this two-arm RCT, 26 young men (21-35 years) with increased CVD risks (BMI \u2265 23.0 kg/m 2 ) were recruit",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-4823",
@@ -546,9 +546,9 @@
       "context_window": "26 young men (21-35 years) with increased CVD risks (BMI \u2265 23.0 kg/m 2 ) were recruited to undergo four weeks (28 days) of ADF",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-4875",
@@ -564,9 +564,9 @@
       "context_window": "(BMI \u2265 23.0 kg/m 2 ) were recruited to undergo four weeks (28 days) of ADF and randomly assigned to one of two groups, namely,",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-p-7037",
@@ -2099,6 +2099,96 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-3462",
+      "claim_type": "unit_value",
+      "raw_text": "0.57 g/kg/day",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3462,
+      "sentence": "One possible reason for the absence of a significant effect could be that the difference in body-mass-adjusted protein consumption between groups P (0.55-0.57 g/kg/day) and C (0.38-0.39 g/kg/day) was too small (0.16-0.19 g/kg/day) to result in any meaningful difference.",
+      "context_window": "dy-mass-adjusted protein consumption between groups P (0.55-0.57 g/kg/day) and C (0.38-0.39 g/kg/day) was too small (0.16-0.19 g/kg/d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-3489",
+      "claim_type": "unit_value",
+      "raw_text": "0.39 g/kg/day",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3489,
+      "sentence": "One possible reason for the absence of a significant effect could be that the difference in body-mass-adjusted protein consumption between groups P (0.55-0.57 g/kg/day) and C (0.38-0.39 g/kg/day) was too small (0.16-0.19 g/kg/day) to result in any meaningful difference.",
+      "context_window": "nsumption between groups P (0.55-0.57 g/kg/day) and C (0.38-0.39 g/kg/day) was too small (0.16-0.19 g/kg/day) to result in any meanin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-3524",
+      "claim_type": "unit_value",
+      "raw_text": "0.19 g/kg/day",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3524,
+      "sentence": "One possible reason for the absence of a significant effect could be that the difference in body-mass-adjusted protein consumption between groups P (0.55-0.57 g/kg/day) and C (0.38-0.39 g/kg/day) was too small (0.16-0.19 g/kg/day) to result in any meaningful difference.",
+      "context_window": "57 g/kg/day) and C (0.38-0.39 g/kg/day) was too small (0.16-0.19 g/kg/day) to result in any meaningful difference. Notably, fasting-d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-3637",
+      "claim_type": "unit_value",
+      "raw_text": "0.57 g/kg/day",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3637,
+      "sentence": "Notably, fasting-day protein intake for both groups (0.38-0.57 g/kg/day) was below the recommended dietary allowance of 0.8 g/kg (body mass)/day, an amount typically recommended to prevent protein deficiency [ 39 ].",
+      "context_window": ". Notably, fasting-day protein intake for both groups (0.38-0.57 g/kg/day) was below the recommended dietary allowance of 0.8 g/kg (b",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-3873",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 g/kg/day",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3873,
+      "sentence": "Nonetheless, it is hardly feasible to enforce a fasting-day protein intake of 0.8 g/kg/day, as that would represent an average protein intake of ~71.5 g (286 kcal) for the P group, which equates to 47.7-71.5% of total fasting-day calories (400-600 kcal) coming from protein alone.",
+      "context_window": "hardly feasible to enforce a fasting-day protein intake of 0.8 g/kg/day, as that would represent an average protein intake of ~71.5",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
       "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-pct-3998",
       "claim_type": "percentage",
       "raw_text": "71.5%",
@@ -2115,6 +2205,60 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-4854",
+      "claim_type": "unit_value",
+      "raw_text": "1.25 g/kg/day",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 4854,
+      "sentence": "Indeed, a previous meta-analysis found that when individuals adhered to a weight loss diet, high protein intakes averaging 1.25 g/kg/day resulted in greater reductions in body mass and fat mass, relative to a standard protein intake of 0.72 g/kg/day, while preserving FFM [ 23 ].",
+      "context_window": "hered to a weight loss diet, high protein intakes averaging 1.25 g/kg/day resulted in greater reductions in body mass and fat mass, r",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-4967",
+      "claim_type": "unit_value",
+      "raw_text": "0.72 g/kg/day",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 4967,
+      "sentence": "Indeed, a previous meta-analysis found that when individuals adhered to a weight loss diet, high protein intakes averaging 1.25 g/kg/day resulted in greater reductions in body mass and fat mass, relative to a standard protein intake of 0.72 g/kg/day, while preserving FFM [ 23 ].",
+      "context_window": "mass and fat mass, relative to a standard protein intake of 0.72 g/kg/day, while preserving FFM [ 23 ]. Future ADF studies could expl",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-u-5256",
+      "claim_type": "unit_value",
+      "raw_text": "1.25 g/kg/day",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5256,
+      "sentence": "Future ADF studies could explore the effect of increasing protein intake on both the feeding and fasting days in order to bring the total daily and/or weekly protein intake, averaged across both feeding and fasting days, closer to the amount of 1.25 g/kg/day or higher.",
+      "context_window": "ross both feeding and fasting days, closer to the amount of 1.25 g/kg/day or higher. Importantly, recent studies have demonstrated t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12693598_effects_of_four_weeks_of_alternate_day_fasting_with_or_witho-p-5946",

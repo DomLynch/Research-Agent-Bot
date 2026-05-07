@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6583678_thirteen_weeks_of_supplementation_of_vitamin_d_and_leucine_e",
   "doi": "10.1007/s40520-019-01208-4",
-  "extracted_at": "2026-05-05T23:37:11+00:00",
+  "extracted_at": "2026-05-07T16:56:40+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 43,
@@ -42,7 +42,7 @@
       "sentence": "Sarcopenic adults (low skeletal muscle mass) aged \u2265 65 years with mobility limitations (Short Physical Performance Battery 4-9) and a body mass index of 20-30 kg/m 2 were randomly allocated to two daily servings of active ( n = 137, including 20 g of whey protein, 3 g of leucine and 800 IU VitD) or isocaloric control product ( n = 151) for a double-blind period of 13 weeks.",
       "context_window": "lysis. Sarcopenic adults (low skeletal muscle mass) aged \u2265 65 years with mobility limitations (Short Physical Performance Batte",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "whey protein",
       "direction": "",
       "binding_confidence": "partial"
@@ -312,7 +312,7 @@
       "sentence": "In the PROVIDE study, 13 weeks of VitD and leucine-enriched whey protein supplementation improved muscle mass and lower extremity function among sarcopenic older adults [ 21 ].",
       "context_window": "ow contradicting results [ 18 - 20 ]. In the PROVIDE study, 13 weeks of VitD and leucine-enriched whey protein supplementation i",
       "claim_role": "effect",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "increase",
       "binding_confidence": "high"
@@ -330,8 +330,8 @@
       "sentence": "In addition, this study showed that sarcopenic participants with higher baseline circulating VitD concentrations and higher dietary protein intake obtained greater gains in muscle mass after 13 weeks intervention [ 22 ].",
       "context_window": "protein intake obtained greater gains in muscle mass after 13 weeks intervention [ 22 ]. In the present sub-study, we investiga",
       "claim_role": "background",
-      "endpoint": "sarcopenia",
-      "arm": "protein",
+      "endpoint": "muscle mass",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -384,7 +384,7 @@
       "sentence": "Subjects aged \u2265 65 years, with mild to moderate limitations in physical functioning (Short Physical Performance Battery (SPPB) score 4-9), with class I or II sarcopenia (skeletal muscle mass/BW \u00d7 100) < 37% in men and < 28% in women using bio-impedance analyses) [ 23 ], a body mass index (BMI) of 20-30 kg/m 2 and providing written informed consent were eligible for participation [ 21 ].",
       "context_window": "class I or II sarcopenia (skeletal muscle mass/BW \u00d7 100) < 37% in men and < 28% in women using bio-impedance analyses) [ 2",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -402,7 +402,7 @@
       "sentence": "Subjects aged \u2265 65 years, with mild to moderate limitations in physical functioning (Short Physical Performance Battery (SPPB) score 4-9), with class I or II sarcopenia (skeletal muscle mass/BW \u00d7 100) < 37% in men and < 28% in women using bio-impedance analyses) [ 23 ], a body mass index (BMI) of 20-30 kg/m 2 and providing written informed consent were eligible for participation [ 21 ].",
       "context_window": "rcopenia (skeletal muscle mass/BW \u00d7 100) < 37% in men and < 28% in women using bio-impedance analyses) [ 23 ], a body mass",
       "claim_role": "population",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -2691,7 +2691,7 @@
       "context_window": "on analysis for changes in IL-6 after 13-weeks R \u00b2 = 0.049, p = 0.015 B coefficients p value 95.0% Confidence interval for B Lowe",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2709,7 +2709,7 @@
       "context_window": "fter 13-weeks R \u00b2 = 0.049, p = 0.015 B coefficients p value 95.0% Confidence interval for B Lower bound Upper bound Change in",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

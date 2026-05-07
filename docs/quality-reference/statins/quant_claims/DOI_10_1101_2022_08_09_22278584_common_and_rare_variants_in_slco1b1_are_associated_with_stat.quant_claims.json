@@ -1,0 +1,289 @@
+{
+  "paper_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat",
+  "doi": "10.1101/2022.08.09.22278584",
+  "extracted_at": "2026-05-07T19:24:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "confidence_interval": 7,
+    "p_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-ci-1038",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:1.29, 4.31",
+      "numeric_values": [
+        1.29,
+        4.31
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1038,
+      "sentence": "In statin users from Tayside Scotland, UK, those with high-risk haplotypes had increased odds across three phenotypes of statin intolerance (general statin intolerance: OR GSI 2.42[95%CI:1.29, 4.31], p=0.003; statin-related myopathy OR SRM 2.51[95%CI:1.28, 4.53],p=0.004; statin-related suspected rhabdomyolysis: OR SRSR 2.85[95%CI:1.03, 6.65],p=0.02).",
+      "context_window": "statin intolerance (general statin intolerance: OR GSI 2.42[95%CI:1.29, 4.31], p=0.003; statin-related myopathy OR SRM 2.51[95%CI:1.28,",
+      "claim_role": "effect",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-p-1057",
+      "claim_type": "p_value",
+      "raw_text": "p=0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1057,
+      "sentence": "In statin users from Tayside Scotland, UK, those with high-risk haplotypes had increased odds across three phenotypes of statin intolerance (general statin intolerance: OR GSI 2.42[95%CI:1.29, 4.31], p=0.003; statin-related myopathy OR SRM 2.51[95%CI:1.28, 4.53],p=0.004; statin-related suspected rhabdomyolysis: OR SRSR 2.85[95%CI:1.03, 6.65],p=0.02).",
+      "context_window": "(general statin intolerance: OR GSI 2.42[95%CI:1.29, 4.31], p=0.003; statin-related myopathy OR SRM 2.51[95%CI:1.28, 4.53],p=0.",
+      "claim_role": "effect",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-ci-1102",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:1.28, 4.53",
+      "numeric_values": [
+        1.28,
+        4.53
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1102,
+      "sentence": "In statin users from Tayside Scotland, UK, those with high-risk haplotypes had increased odds across three phenotypes of statin intolerance (general statin intolerance: OR GSI 2.42[95%CI:1.29, 4.31], p=0.003; statin-related myopathy OR SRM 2.51[95%CI:1.28, 4.53],p=0.004; statin-related suspected rhabdomyolysis: OR SRSR 2.85[95%CI:1.03, 6.65],p=0.02).",
+      "context_window": "I:1.29, 4.31], p=0.003; statin-related myopathy OR SRM 2.51[95%CI:1.28, 4.53],p=0.004; statin-related suspected rhabdomyolysis: OR SRSR",
+      "claim_role": "effect",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-p-1120",
+      "claim_type": "p_value",
+      "raw_text": "p=0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1120,
+      "sentence": "In statin users from Tayside Scotland, UK, those with high-risk haplotypes had increased odds across three phenotypes of statin intolerance (general statin intolerance: OR GSI 2.42[95%CI:1.29, 4.31], p=0.003; statin-related myopathy OR SRM 2.51[95%CI:1.28, 4.53],p=0.004; statin-related suspected rhabdomyolysis: OR SRSR 2.85[95%CI:1.03, 6.65],p=0.02).",
+      "context_window": ".003; statin-related myopathy OR SRM 2.51[95%CI:1.28, 4.53],p=0.004; statin-related suspected rhabdomyolysis: OR SRSR 2.85[95%C",
+      "claim_role": "effect",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-ci-1183",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:1.03, 6.65",
+      "numeric_values": [
+        1.03,
+        6.65
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1183,
+      "sentence": "In statin users from Tayside Scotland, UK, those with high-risk haplotypes had increased odds across three phenotypes of statin intolerance (general statin intolerance: OR GSI 2.42[95%CI:1.29, 4.31], p=0.003; statin-related myopathy OR SRM 2.51[95%CI:1.28, 4.53],p=0.004; statin-related suspected rhabdomyolysis: OR SRSR 2.85[95%CI:1.03, 6.65],p=0.02).",
+      "context_window": ".004; statin-related suspected rhabdomyolysis: OR SRSR 2.85[95%CI:1.03, 6.65],p=0.02). In contrast, using the Val174Ala genotype alone p",
+      "claim_role": "effect",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-p-1201",
+      "claim_type": "p_value",
+      "raw_text": "p=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1201,
+      "sentence": "In statin users from Tayside Scotland, UK, those with high-risk haplotypes had increased odds across three phenotypes of statin intolerance (general statin intolerance: OR GSI 2.42[95%CI:1.29, 4.31], p=0.003; statin-related myopathy OR SRM 2.51[95%CI:1.28, 4.53],p=0.004; statin-related suspected rhabdomyolysis: OR SRSR 2.85[95%CI:1.03, 6.65],p=0.02).",
+      "context_window": "ed suspected rhabdomyolysis: OR SRSR 2.85[95%CI:1.03, 6.65],p=0.02). In contrast, using the Val174Ala genotype alone produced",
+      "claim_role": "effect",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-ci-1440",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:1.01, 3.95",
+      "numeric_values": [
+        1.01,
+        3.95
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1440,
+      "sentence": "A meta-analysis with results from adjudicated cases of statin-induced myopathy in the PREDICTION-ADR Consortium confirmed these findings (OR Val174Ala 1.99 [95%CI:1.01, 3.95],p=0.048; OR risk-haplotypes 1.76 [95%CI:1.16, 2.69],p=0.008).",
+      "context_window": "ADR Consortium confirmed these findings (OR Val174Ala 1.99 [95%CI:1.01, 3.95],p=0.048; OR risk-haplotypes 1.76 [95%CI:1.16, 2.69],p=0.00",
+      "claim_role": "unknown",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-p-1458",
+      "claim_type": "p_value",
+      "raw_text": "p=0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1458,
+      "sentence": "A meta-analysis with results from adjudicated cases of statin-induced myopathy in the PREDICTION-ADR Consortium confirmed these findings (OR Val174Ala 1.99 [95%CI:1.01, 3.95],p=0.048; OR risk-haplotypes 1.76 [95%CI:1.16, 2.69],p=0.008).",
+      "context_window": "firmed these findings (OR Val174Ala 1.99 [95%CI:1.01, 3.95],p=0.048; OR risk-haplotypes 1.76 [95%CI:1.16, 2.69],p=0.008). For t",
+      "claim_role": "unknown",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-ci-1492",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:1.16, 2.69",
+      "numeric_values": [
+        1.16,
+        2.69
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1492,
+      "sentence": "A meta-analysis with results from adjudicated cases of statin-induced myopathy in the PREDICTION-ADR Consortium confirmed these findings (OR Val174Ala 1.99 [95%CI:1.01, 3.95],p=0.048; OR risk-haplotypes 1.76 [95%CI:1.16, 2.69],p=0.008).",
+      "context_window": "a 1.99 [95%CI:1.01, 3.95],p=0.048; OR risk-haplotypes 1.76 [95%CI:1.16, 2.69],p=0.008). For those requiring high-dose statin therapy, hi",
+      "claim_role": "unknown",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-p-1510",
+      "claim_type": "p_value",
+      "raw_text": "p=0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1510,
+      "sentence": "A meta-analysis with results from adjudicated cases of statin-induced myopathy in the PREDICTION-ADR Consortium confirmed these findings (OR Val174Ala 1.99 [95%CI:1.01, 3.95],p=0.048; OR risk-haplotypes 1.76 [95%CI:1.16, 2.69],p=0.008).",
+      "context_window": ", 3.95],p=0.048; OR risk-haplotypes 1.76 [95%CI:1.16, 2.69],p=0.008). For those requiring high-dose statin therapy, high-risk h",
+      "claim_role": "unknown",
+      "endpoint": "myopathy",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-ci-1765",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:1.09, 5.68",
+      "numeric_values": [
+        1.09,
+        5.68
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1765,
+      "sentence": "For those requiring high-dose statin therapy, high-risk haplotypes were more consistently associated with the time to onset of statin intolerance amongst the three phenotypes compared to Val174Ala (general statin intolerance: HR Val174Ala 2.49 [95%CI:1.09, 5.68],p=0.03; HR risk-haplotypes 2.44 [95%CI:1.46, 4.08],p<0.001).",
+      "context_window": "o Val174Ala (general statin intolerance: HR Val174Ala 2.49 [95%CI:1.09, 5.68],p=0.03; HR risk-haplotypes 2.44 [95%CI:1.46, 4.08],p<0.001",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-p-1783",
+      "claim_type": "p_value",
+      "raw_text": "p=0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1783,
+      "sentence": "For those requiring high-dose statin therapy, high-risk haplotypes were more consistently associated with the time to onset of statin intolerance amongst the three phenotypes compared to Val174Ala (general statin intolerance: HR Val174Ala 2.49 [95%CI:1.09, 5.68],p=0.03; HR risk-haplotypes 2.44 [95%CI:1.46, 4.08],p<0.001).",
+      "context_window": "al statin intolerance: HR Val174Ala 2.49 [95%CI:1.09, 5.68],p=0.03; HR risk-haplotypes 2.44 [95%CI:1.46, 4.08],p<0.001). Exome",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-ci-1816",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI:1.46, 4.08",
+      "numeric_values": [
+        1.46,
+        4.08
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1816,
+      "sentence": "For those requiring high-dose statin therapy, high-risk haplotypes were more consistently associated with the time to onset of statin intolerance amongst the three phenotypes compared to Val174Ala (general statin intolerance: HR Val174Ala 2.49 [95%CI:1.09, 5.68],p=0.03; HR risk-haplotypes 2.44 [95%CI:1.46, 4.08],p<0.001).",
+      "context_window": "la 2.49 [95%CI:1.09, 5.68],p=0.03; HR risk-haplotypes 2.44 [95%CI:1.46, 4.08],p<0.001). Exome-sequenced rare variants were found to be a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-p-1834",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1834,
+      "sentence": "For those requiring high-dose statin therapy, high-risk haplotypes were more consistently associated with the time to onset of statin intolerance amongst the three phenotypes compared to Val174Ala (general statin intolerance: HR Val174Ala 2.49 [95%CI:1.09, 5.68],p=0.03; HR risk-haplotypes 2.44 [95%CI:1.46, 4.08],p<0.001).",
+      "context_window": "9, 5.68],p=0.03; HR risk-haplotypes 2.44 [95%CI:1.46, 4.08],p<0.001). Exome-sequenced rare variants were found to be associated",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_08_09_22278584_common_and_rare_variants_in_slco1b1_are_associated_with_stat-p-1932",
+      "claim_type": "p_value",
+      "raw_text": "p=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1932,
+      "sentence": "Exome-sequenced rare variants were found to be associated with the risk of intolerance (p=0.02).",
+      "context_window": "s were found to be associated with the risk of intolerance (p=0.02). Conclusions We demonstrate that accounting for gain-of-fu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -534,10 +534,8 @@ async def render_full_paper(
     # flagged this as 'too much internal pipeline language' and
     # Fix #56 was already stripping it; now we don't emit it in the
     # first place.
-    title_md = (
-        f"# Researka Synthesis: {topic.title()} — full paper\n\n"
-        f"**Thesis:** {thesis.text}\n\n"
-    )
+    topic_title = topic.replace("_", " ").replace("-", " ").title()
+    title_md = f"# Research Synthesis: {topic_title} — full paper\n\n"
     sections: dict[SectionName, SynthesisSection] = {}
 
     def _log_section_done(name: str, sect: SynthesisSection) -> None:

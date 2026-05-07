@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8701016_effect_of_cycle_based_high_intensity_interval_training_and_m",
   "doi": "10.3390/healthcare9121628",
-  "extracted_at": "2026-05-05T22:43:06+00:00",
+  "extracted_at": "2026-05-07T16:58:24+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 9,
@@ -59,7 +59,7 @@
       "context_window": "d that a 12-week MICT running program improved VO 2 peak by 21.5% [ 4 , 5 ]. Meanwhile, because soccer involves repeated int",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -275,7 +275,7 @@
       "context_window": "howed a statistically significant increase after training ( p = 0.012 and p = 0.028), while the anaerobic threshold showed a stat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -293,7 +293,7 @@
       "context_window": "tically significant increase after training ( p = 0.012 and p = 0.028), while the anaerobic threshold showed a statistically sign",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -311,7 +311,7 @@
       "context_window": "ignificant increase after training only in the HIIT group ( p = 0.025). In the heart rate recovery rate 1 min ( p = 0.029) and 3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -419,9 +419,9 @@
       "context_window": "ntly after training for both the HIIT and the MICT groups ( p = 0.024 and p = 0.016). However, in comparison between groups, the",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8701016_effect_of_cycle_based_high_intensity_interval_training_and_m-p-1835",
@@ -437,9 +437,9 @@
       "context_window": "ining for both the HIIT and the MICT groups ( p = 0.024 and p = 0.016). However, in comparison between groups, the HIIT group aft",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8701016_effect_of_cycle_based_high_intensity_interval_training_and_m-p-1943",
@@ -473,7 +473,7 @@
       "context_window": "s, muscle power significantly increased in the HIIT group ( p = 0.039), but at an angular velocity of 240\u00b0/s, muscle endurance si",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -491,7 +491,7 @@
       "context_window": "uscle endurance significantly increased in the MICT group ( p = 0.033) ( Table 5 ). Comparing the difference in body composition",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -509,7 +509,7 @@
       "context_window": "ycle ergometers were used to train youth soccer players for 4 weeks. Cardiorespiratory fitness and muscle strength improved in",
       "claim_role": "unknown",
       "endpoint": "VO2max",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -545,7 +545,7 @@
       "context_window": "method for improving CRF in children and adolescents aged 6-17 years than MICT. In addition, various studies have shown that HII",
       "claim_role": "population",
       "endpoint": "cardiorespiratory fitness",
-      "arm": "",
+      "arm": "mict",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -563,7 +563,7 @@
       "context_window": "icipants who performed high-intensity endurance training at 90% VO 2 peak using a cycle ergometer, but for 30, 60 s. This i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "endurance training",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -581,9 +581,9 @@
       "context_window": "erence in all variables. In both HIIT and MICT, a period of 4 weeks is insufficient to affect body composition such as muscle a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mict",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8701016_effect_of_cycle_based_high_intensity_interval_training_and_m-u-6096",
@@ -599,7 +599,7 @@
       "context_window": "erence in body composition change between HIIT and MICT for 3 weeks; Nybo et al. [ 44 ] also reported that short-term HIIT was",
       "claim_role": "unknown",
       "endpoint": "cardiorespiratory fitness",
-      "arm": "",
+      "arm": "mict",
       "direction": "no_change",
       "binding_confidence": "partial"
     }

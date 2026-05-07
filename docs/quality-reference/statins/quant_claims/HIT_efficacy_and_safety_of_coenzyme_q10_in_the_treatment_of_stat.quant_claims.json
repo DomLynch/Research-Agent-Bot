@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_efficacy_and_safety_of_coenzyme_q10_in_the_treatment_of_stat",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_efficacy_and_safety_of_coenzyme_q10_in_the_treatment_of_stat-pct-155",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 155,
+      "sentence": "Approximately 10% to 15% of patients report muscle aches/pain while taking statins.",
+      "context_window": "e liver. Overall, statins are well tolerated. Approximately 10% to 15% of patients report muscle aches/pain while taking st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_efficacy_and_safety_of_coenzyme_q10_in_the_treatment_of_stat-pct-162",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 162,
+      "sentence": "Approximately 10% to 15% of patients report muscle aches/pain while taking statins.",
+      "context_window": ". Overall, statins are well tolerated. Approximately 10% to 15% of patients report muscle aches/pain while taking statins.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_efficacy_and_safety_of_coenzyme_q10_in_the_treatment_of_stat-pct-267",
+      "claim_type": "percentage",
+      "raw_text": "0.01%",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 267,
+      "sentence": "In a very small percentage of patients (\\<0.01%; less than one in 10,000 people), muscle aches/pains may be accompanied by more serious muscle damage.",
+      "context_window": "e taking statins. In a very small percentage of patients (\\<0.01%; less than one in 10,000 people), muscle aches/pains may be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

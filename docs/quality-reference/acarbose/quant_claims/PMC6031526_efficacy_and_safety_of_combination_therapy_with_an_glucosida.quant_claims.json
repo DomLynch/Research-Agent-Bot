@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6031526_efficacy_and_safety_of_combination_therapy_with_an_glucosida",
   "doi": "10.1111/jdi.12754",
-  "extracted_at": "2026-05-05T22:20:10+00:00",
+  "extracted_at": "2026-05-07T16:57:49+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 16,
@@ -60,7 +60,7 @@
       "context_window": "lderly type 2 diabetes patients treated with acarbose, just 20% of the patients showed increased GLP\u20101 secretion, and no si",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -78,7 +78,7 @@
       "context_window": "prandial GLP\u20101 levels in individuals with visceral obesity (50% of the participants had impaired glucose tolerance or diabe",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "acarbose",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -641,10 +641,10 @@
       "sentence": "23 , 24 , 25 The risk for GI adverse events was not significant between the DPP4i/AGI group and the PCB/AGI group (RR 1.2, 95% CI: 0.3 to 4.4).",
       "context_window": "between the DPP4i/AGI group and the PCB/AGI group (RR 1.2, 95% CI: 0.3 to 4.4). There was no significant heterogeneity ( P = 0.659).",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "gi adverse events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6031526_efficacy_and_safety_of_combination_therapy_with_an_glucosida-p-5896",

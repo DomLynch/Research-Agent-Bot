@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_the_prognosis_of_lipid_reprogramming_with_rosuvastatin_in_ca",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:27+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_the_prognosis_of_lipid_reprogramming_with_rosuvastatin_in_ca-u-475",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg/day",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 475,
+      "sentence": "Methods: A total of 70 newly diagnosed castrated mPC patients treated with castration were recruited and divided into two groups: Group I included 30 patients and served as control (statin non-users) while group II included 40 patients treated with Rosuvastatin (20 mg/day) for 6 months and served as statin users.",
+      "context_window": "le group II included 40 patients treated with Rosuvastatin (20 mg/day) for 6 months and served as statin users. Prostate specific",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_prognosis_of_lipid_reprogramming_with_rosuvastatin_in_ca-u-490",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 490,
+      "sentence": "Methods: A total of 70 newly diagnosed castrated mPC patients treated with castration were recruited and divided into two groups: Group I included 30 patients and served as control (statin non-users) while group II included 40 patients treated with Rosuvastatin (20 mg/day) for 6 months and served as statin users.",
+      "context_window": "luded 40 patients treated with Rosuvastatin (20 mg/day) for 6 months and served as statin users. Prostate specific antigen (PSA)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_the_prognosis_of_lipid_reprogramming_with_rosuvastatin_in_ca-u-813",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 813,
+      "sentence": "Prostate specific antigen (PSA), epidermal growth factor receptor (EGFR), Caveolin-1, lipid profile (LDL, HDL, triglycerides and cholesterol) and lipid metabolism related markers (aldoketoreductase (AKR1C4), HMGCoA reductase, ABCA1, and SLDL RP1) were measured at baseline, after 3 and 6 months.",
+      "context_window": "ABCA1, and SLDL RP1) were measured at baseline, after 3 and 6 months. Overall survival (OS) were analyzed by Kaplan-Meier and CO",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,662 @@
+{
+  "paper_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi",
+  "doi": "10.1001/jama.288.23.2998",
+  "extracted_at": "2026-05-07T19:24:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "unit_value": 12,
+    "percentage": 19,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-n-790",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 790,
+      "sentence": "PARTICIPANTS: Ambulatory persons (n = 10 355), aged 55 years or older, with low-density lipoprotein cholesterol (LDL-C) of 120 to 189 mg/dL (100 to 129 mg/dL if known CHD) and triglycerides lower than 350 mg/dL, were randomized to pravastatin (n = 5170) or to usual care (n = 5185).",
+      "context_window": "rt Attack Trial (ALLHAT). PARTICIPANTS: Ambulatory persons (n = 10 355), aged 55 years or older, with low-density lipoprotein",
+      "claim_role": "duration",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-808",
+      "claim_type": "unit_value",
+      "raw_text": "55 years",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 808,
+      "sentence": "PARTICIPANTS: Ambulatory persons (n = 10 355), aged 55 years or older, with low-density lipoprotein cholesterol (LDL-C) of 120 to 189 mg/dL (100 to 129 mg/dL if known CHD) and triglycerides lower than 350 mg/dL, were randomized to pravastatin (n = 5170) or to usual care (n = 5185).",
+      "context_window": "LLHAT). PARTICIPANTS: Ambulatory persons (n = 10 355), aged 55 years or older, with low-density lipoprotein cholesterol (LDL-C)",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-886",
+      "claim_type": "unit_value",
+      "raw_text": "189 mg/dL",
+      "numeric_values": [
+        189.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 886,
+      "sentence": "PARTICIPANTS: Ambulatory persons (n = 10 355), aged 55 years or older, with low-density lipoprotein cholesterol (LDL-C) of 120 to 189 mg/dL (100 to 129 mg/dL if known CHD) and triglycerides lower than 350 mg/dL, were randomized to pravastatin (n = 5170) or to usual care (n = 5185).",
+      "context_window": "with low-density lipoprotein cholesterol (LDL-C) of 120 to 189 mg/dL (100 to 129 mg/dL if known CHD) and triglycerides lower tha",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-904",
+      "claim_type": "unit_value",
+      "raw_text": "129 mg/dL",
+      "numeric_values": [
+        129.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 904,
+      "sentence": "PARTICIPANTS: Ambulatory persons (n = 10 355), aged 55 years or older, with low-density lipoprotein cholesterol (LDL-C) of 120 to 189 mg/dL (100 to 129 mg/dL if known CHD) and triglycerides lower than 350 mg/dL, were randomized to pravastatin (n = 5170) or to usual care (n = 5185).",
+      "context_window": "lipoprotein cholesterol (LDL-C) of 120 to 189 mg/dL (100 to 129 mg/dL if known CHD) and triglycerides lower than 350 mg/dL, were",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-957",
+      "claim_type": "unit_value",
+      "raw_text": "350 mg/dL",
+      "numeric_values": [
+        350.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 957,
+      "sentence": "PARTICIPANTS: Ambulatory persons (n = 10 355), aged 55 years or older, with low-density lipoprotein cholesterol (LDL-C) of 120 to 189 mg/dL (100 to 129 mg/dL if known CHD) and triglycerides lower than 350 mg/dL, were randomized to pravastatin (n = 5170) or to usual care (n = 5185).",
+      "context_window": "100 to 129 mg/dL if known CHD) and triglycerides lower than 350 mg/dL, were randomized to pravastatin (n = 5170) or to usual care",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-n-1000",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5170",
+      "numeric_values": [
+        5170.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1000,
+      "sentence": "PARTICIPANTS: Ambulatory persons (n = 10 355), aged 55 years or older, with low-density lipoprotein cholesterol (LDL-C) of 120 to 189 mg/dL (100 to 129 mg/dL if known CHD) and triglycerides lower than 350 mg/dL, were randomized to pravastatin (n = 5170) or to usual care (n = 5185).",
+      "context_window": "rides lower than 350 mg/dL, were randomized to pravastatin (n = 5170) or to usual care (n = 5185). Baseline mean total cholester",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-n-1028",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5185",
+      "numeric_values": [
+        5185.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1028,
+      "sentence": "PARTICIPANTS: Ambulatory persons (n = 10 355), aged 55 years or older, with low-density lipoprotein cholesterol (LDL-C) of 120 to 189 mg/dL (100 to 129 mg/dL if known CHD) and triglycerides lower than 350 mg/dL, were randomized to pravastatin (n = 5170) or to usual care (n = 5185).",
+      "context_window": "were randomized to pravastatin (n = 5170) or to usual care (n = 5185). Baseline mean total cholesterol was 224 mg/dL; LDL-C, 146",
+      "claim_role": "population",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-1075",
+      "claim_type": "unit_value",
+      "raw_text": "224 mg/dL",
+      "numeric_values": [
+        224.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1075,
+      "sentence": "Baseline mean total cholesterol was 224 mg/dL; LDL-C, 146 mg/dL; high-density lipoprotein cholesterol, 48 mg/dL; and triglycerides, 152 mg/dL.",
+      "context_window": "usual care (n = 5185). Baseline mean total cholesterol was 224 mg/dL; LDL-C, 146 mg/dL; high-density lipoprotein cholesterol, 48",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-1093",
+      "claim_type": "unit_value",
+      "raw_text": "146 mg/dL",
+      "numeric_values": [
+        146.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1093,
+      "sentence": "Baseline mean total cholesterol was 224 mg/dL; LDL-C, 146 mg/dL; high-density lipoprotein cholesterol, 48 mg/dL; and triglycerides, 152 mg/dL.",
+      "context_window": "185). Baseline mean total cholesterol was 224 mg/dL; LDL-C, 146 mg/dL; high-density lipoprotein cholesterol, 48 mg/dL; and trigly",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-1142",
+      "claim_type": "unit_value",
+      "raw_text": "48 mg/dL",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1142,
+      "sentence": "Baseline mean total cholesterol was 224 mg/dL; LDL-C, 146 mg/dL; high-density lipoprotein cholesterol, 48 mg/dL; and triglycerides, 152 mg/dL.",
+      "context_window": "dL; LDL-C, 146 mg/dL; high-density lipoprotein cholesterol, 48 mg/dL; and triglycerides, 152 mg/dL. Mean age was 66 years, 49% w",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-1171",
+      "claim_type": "unit_value",
+      "raw_text": "152 mg/dL",
+      "numeric_values": [
+        152.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1171,
+      "sentence": "Baseline mean total cholesterol was 224 mg/dL; LDL-C, 146 mg/dL; high-density lipoprotein cholesterol, 48 mg/dL; and triglycerides, 152 mg/dL.",
+      "context_window": "nsity lipoprotein cholesterol, 48 mg/dL; and triglycerides, 152 mg/dL. Mean age was 66 years, 49% were women, 38% black and 23% H",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-1195",
+      "claim_type": "unit_value",
+      "raw_text": "66 years",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1195,
+      "sentence": "Mean age was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a history of CHD, and 35% had type 2 diabetes.",
+      "context_window": "terol, 48 mg/dL; and triglycerides, 152 mg/dL. Mean age was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a hist",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1205",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1205,
+      "sentence": "Mean age was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a history of CHD, and 35% had type 2 diabetes.",
+      "context_window": "mg/dL; and triglycerides, 152 mg/dL. Mean age was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a history o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1221",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1221,
+      "sentence": "Mean age was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a history of CHD, and 35% had type 2 diabetes.",
+      "context_window": "ycerides, 152 mg/dL. Mean age was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a history of CHD, and 35% h",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1235",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1235,
+      "sentence": "Mean age was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a history of CHD, and 35% had type 2 diabetes.",
+      "context_window": "mg/dL. Mean age was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a history of CHD, and 35% had type 2 diab",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1249",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1249,
+      "sentence": "Mean age was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a history of CHD, and 35% had type 2 diabetes.",
+      "context_window": "e was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a history of CHD, and 35% had type 2 diabetes. INTERVEN",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1279",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1279,
+      "sentence": "Mean age was 66 years, 49% were women, 38% black and 23% Hispanic, 14% had a history of CHD, and 35% had type 2 diabetes.",
+      "context_window": ", 38% black and 23% Hispanic, 14% had a history of CHD, and 35% had type 2 diabetes. INTERVENTION: Pravastatin, 40 mg/d, vs",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-1331",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/d",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 1331,
+      "sentence": "INTERVENTION: Pravastatin, 40 mg/d, vs usual care.",
+      "context_window": "HD, and 35% had type 2 diabetes. INTERVENTION: Pravastatin, 40 mg/d, vs usual care. MAIN OUTCOME MEASURES: The primary outcome",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-1448",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1448,
+      "sentence": "MAIN OUTCOME MEASURES: The primary outcome was all-cause mortality, with follow-up for up to 8 years.",
+      "context_window": "y outcome was all-cause mortality, with follow-up for up to 8 years. Secondary outcomes included nonfatal myocardial infarction",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-u-1618",
+      "claim_type": "unit_value",
+      "raw_text": "4.8 years",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1618,
+      "sentence": "RESULTS: Mean follow-up was 4.8 years.",
+      "context_window": "specific mortality, and cancer. RESULTS: Mean follow-up was 4.8 years. During the trial, 32% of usual care participants with and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1647",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1647,
+      "sentence": "During the trial, 32% of usual care participants with and 29% without CHD started taking lipid-lowering drugs.",
+      "context_window": "r. RESULTS: Mean follow-up was 4.8 years. During the trial, 32% of usual care participants with and 29% without CHD started",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1687",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1687,
+      "sentence": "During the trial, 32% of usual care participants with and 29% without CHD started taking lipid-lowering drugs.",
+      "context_window": ". During the trial, 32% of usual care participants with and 29% without CHD started taking lipid-lowering drugs. At year 4,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1792",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1792,
+      "sentence": "At year 4, total cholesterol levels were reduced by 17% with pravastatin vs 8% with usual care; among the random sample who had LDL-C levels assessed, levels were reduced by 28% with pravastatin vs 11% with usual care.",
+      "context_window": "drugs. At year 4, total cholesterol levels were reduced by 17% with pravastatin vs 8% with usual care; among the random sa",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1816",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1816,
+      "sentence": "At year 4, total cholesterol levels were reduced by 17% with pravastatin vs 8% with usual care; among the random sample who had LDL-C levels assessed, levels were reduced by 28% with pravastatin vs 11% with usual care.",
+      "context_window": "cholesterol levels were reduced by 17% with pravastatin vs 8% with usual care; among the random sample who had LDL-C leve",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1914",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1914,
+      "sentence": "At year 4, total cholesterol levels were reduced by 17% with pravastatin vs 8% with usual care; among the random sample who had LDL-C levels assessed, levels were reduced by 28% with pravastatin vs 11% with usual care.",
+      "context_window": "ample who had LDL-C levels assessed, levels were reduced by 28% with pravastatin vs 11% with usual care. All-cause mortalit",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-1938",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1938,
+      "sentence": "At year 4, total cholesterol levels were reduced by 17% with pravastatin vs 8% with usual care; among the random sample who had LDL-C levels assessed, levels were reduced by 28% with pravastatin vs 11% with usual care.",
+      "context_window": "ls assessed, levels were reduced by 28% with pravastatin vs 11% with usual care. All-cause mortality was similar for the 2",
+      "claim_role": "effect",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-2035",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2035,
+      "sentence": "All-cause mortality was similar for the 2 groups (relative risk [RR], 0.99; 95% confidence interval [CI], 0.89-1.11; P =.88), with 6-year mortality rates of 14.9% for pravastatin vs 15.3% with usual care.",
+      "context_window": "ity was similar for the 2 groups (relative risk [RR], 0.99; 95% confidence interval [CI], 0.89-1.11; P =.88), with 6-year m",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-p-2076",
+      "claim_type": "p_value",
+      "raw_text": "P =.88",
+      "numeric_values": [
+        0.88
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2076,
+      "sentence": "All-cause mortality was similar for the 2 groups (relative risk [RR], 0.99; 95% confidence interval [CI], 0.89-1.11; P =.88), with 6-year mortality rates of 14.9% for pravastatin vs 15.3% with usual care.",
+      "context_window": "e risk [RR], 0.99; 95% confidence interval [CI], 0.89-1.11; P =.88), with 6-year mortality rates of 14.9% for pravastatin vs 1",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-2116",
+      "claim_type": "percentage",
+      "raw_text": "14.9%",
+      "numeric_values": [
+        14.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2116,
+      "sentence": "All-cause mortality was similar for the 2 groups (relative risk [RR], 0.99; 95% confidence interval [CI], 0.89-1.11; P =.88), with 6-year mortality rates of 14.9% for pravastatin vs 15.3% with usual care.",
+      "context_window": "al [CI], 0.89-1.11; P =.88), with 6-year mortality rates of 14.9% for pravastatin vs 15.3% with usual care. CHD event rates w",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-2141",
+      "claim_type": "percentage",
+      "raw_text": "15.3%",
+      "numeric_values": [
+        15.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2141,
+      "sentence": "All-cause mortality was similar for the 2 groups (relative risk [RR], 0.99; 95% confidence interval [CI], 0.89-1.11; P =.88), with 6-year mortality rates of 14.9% for pravastatin vs 15.3% with usual care.",
+      "context_window": "8), with 6-year mortality rates of 14.9% for pravastatin vs 15.3% with usual care. CHD event rates were not significantly dif",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-2243",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2243,
+      "sentence": "CHD event rates were not significantly different between the groups (RR, 0.91; 95% CI, 0.79-1.04; P =.16), with 6-year CHD event rates of 9.3% for pravastatin and 10.4% for usual care.",
+      "context_window": "e not significantly different between the groups (RR, 0.91; 95% CI, 0.79-1.04; P =.16), with 6-year CHD event rates of 9.3%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-p-2262",
+      "claim_type": "p_value",
+      "raw_text": "P =.16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2262,
+      "sentence": "CHD event rates were not significantly different between the groups (RR, 0.91; 95% CI, 0.79-1.04; P =.16), with 6-year CHD event rates of 9.3% for pravastatin and 10.4% for usual care.",
+      "context_window": "different between the groups (RR, 0.91; 95% CI, 0.79-1.04; P =.16), with 6-year CHD event rates of 9.3% for pravastatin and 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-2302",
+      "claim_type": "percentage",
+      "raw_text": "9.3%",
+      "numeric_values": [
+        9.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2302,
+      "sentence": "CHD event rates were not significantly different between the groups (RR, 0.91; 95% CI, 0.79-1.04; P =.16), with 6-year CHD event rates of 9.3% for pravastatin and 10.4% for usual care.",
+      "context_window": "95% CI, 0.79-1.04; P =.16), with 6-year CHD event rates of 9.3% for pravastatin and 10.4% for usual care. CONCLUSIONS: Prav",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-2327",
+      "claim_type": "percentage",
+      "raw_text": "10.4%",
+      "numeric_values": [
+        10.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2327,
+      "sentence": "CHD event rates were not significantly different between the groups (RR, 0.91; 95% CI, 0.79-1.04; P =.16), with 6-year CHD event rates of 9.3% for pravastatin and 10.4% for usual care.",
+      "context_window": "6), with 6-year CHD event rates of 9.3% for pravastatin and 10.4% for usual care. CONCLUSIONS: Pravastatin did not reduce eit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-2626",
+      "claim_type": "percentage",
+      "raw_text": "9.6%",
+      "numeric_values": [
+        9.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2626,
+      "sentence": "The results may be due to the modest differential in total cholesterol (9.6%) and LDL-C (16.7%) between pravastatin and usual care compared with prior statin trials supporting cardiovascular disease prevention.",
+      "context_window": "may be due to the modest differential in total cholesterol (9.6%) and LDL-C (16.7%) between pravastatin and usual care compa",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_288_23_2998_major_outcomes_in_moderately_hypercholesterolemic_hypertensi-pct-2643",
+      "claim_type": "percentage",
+      "raw_text": "16.7%",
+      "numeric_values": [
+        16.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2643,
+      "sentence": "The results may be due to the modest differential in total cholesterol (9.6%) and LDL-C (16.7%) between pravastatin and usual care compared with prior statin trials supporting cardiovascular disease prevention.",
+      "context_window": "modest differential in total cholesterol (9.6%) and LDL-C (16.7%) between pravastatin and usual care compared with prior sta",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -61,6 +61,33 @@ def test_abstract_fallback_preserves_resolved_authors_for_citations(tmp_path):
     assert doc["journal"] == "Science Translational Medicine"
 
 
+def test_abstract_fallback_uses_resolved_abstract_when_hit_is_title_only(
+    tmp_path,
+):
+    hit = SimpleNamespace(
+        title="Closed-access landmark cardiovascular outcomes trial",
+        abstract="",
+        url="",
+        year=2016,
+        venue="",
+        doi="10.1056/example",
+        pmid="12345678",
+    )
+    paper_id = seed._write_abstract_fallback(
+        hit, tmp_path, reason="no_pmcid",
+        resolved_meta={
+            "abstract": "Statin therapy reduced cardiovascular events in older adults.",
+            "authors": ["A Trialist"],
+            "journal": "Example Journal",
+            "year": 2016,
+        },
+    )
+    assert paper_id is not None
+    doc = json.loads((tmp_path / f"{paper_id}.paper_sections.json").read_text())
+    assert doc["sections"]["abstract"].startswith("Statin therapy reduced")
+    assert "abstract-fallback:no_pmcid" in doc["extraction_quality"]["warnings"]
+
+
 def test_europepmc_author_string_normalizes_surname_last_shape():
     authors = seed._authors_from_europepmc_result({
         "authorString": "Mannick JB, Del Giudice G, Lattanzi M",

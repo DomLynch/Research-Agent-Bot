@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin",
   "doi": "10.1038/s41598-023-41290-3",
-  "extracted_at": "2026-05-05T21:59:20+00:00",
+  "extracted_at": "2026-05-07T16:57:13+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 93,
@@ -80,7 +80,7 @@
       "context_window": "Balance parameters included reductions in center of mass ( p = 0.004), ankle ( p < 0.001), and hip ( p = 0.010) sways during sem",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -98,7 +98,7 @@
       "context_window": "included reductions in center of mass ( p = 0.004), ankle ( p < 0.001), and hip ( p = 0.010) sways during semi-tandem stance, par",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -116,7 +116,7 @@
       "context_window": "center of mass ( p = 0.004), ankle ( p < 0.001), and hip ( p = 0.010) sways during semi-tandem stance, particularly in users of",
       "claim_role": "unknown",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -296,9 +296,9 @@
       "context_window": "ed the exercise regimen due to various reasons: relocation (n = 3), passing away (n = 1), or hospital admission due to health",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-n-954",
@@ -314,9 +314,9 @@
       "context_window": "n due to various reasons: relocation (n = 3), passing away (n = 1), or hospital admission due to health complications unrelat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-n-1045",
@@ -332,9 +332,9 @@
       "context_window": "ue to health complications unrelated to the study protocol (n = 1). No adverse events related to the iExergame training or co",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-p-1257",
@@ -386,7 +386,7 @@
       "context_window": "(mean \u00b1 standard deviation) in the CG and IG. Control (CG) (n = 33) Intervention (IG) (n = 37) p -value Demographic characteri",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -404,7 +404,7 @@
       "context_window": "in the CG and IG. Control (CG) (n = 33) Intervention (IG) (n = 37) p -value Demographic characteristics Age, years 66.8 \u00b1 10.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -423,7 +423,7 @@
       "context_window": "G) (n = 37) p -value Demographic characteristics Age, years 66.8 \u00b1 10.3 61.8 \u00b1 7.0 0.021 Females 19 (58%) 18 (49%) 0.455 Height, m",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -442,7 +442,7 @@
       "context_window": "p -value Demographic characteristics Age, years 66.8 \u00b1 10.3 61.8 \u00b1 7.0 0.021 Females 19 (58%) 18 (49%) 0.455 Height, m 157.8 \u00b1 10.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -460,7 +460,7 @@
       "context_window": "ristics Age, years 66.8 \u00b1 10.3 61.8 \u00b1 7.0 0.021 Females 19 (58%) 18 (49%) 0.455 Height, m 157.8 \u00b1 10.6 157.1 \u00b1 25.3 0.882 M",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -478,7 +478,7 @@
       "context_window": "ge, years 66.8 \u00b1 10.3 61.8 \u00b1 7.0 0.021 Females 19 (58%) 18 (49%) 0.455 Height, m 157.8 \u00b1 10.6 157.1 \u00b1 25.3 0.882 Mass, kg 8",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -497,7 +497,7 @@
       "context_window": "61.8 \u00b1 7.0 0.021 Females 19 (58%) 18 (49%) 0.455 Height, m 157.8 \u00b1 10.6 157.1 \u00b1 25.3 0.882 Mass, kg 82.4 \u00b1 22.8 79.9 \u00b1 16.4 0.593 B",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -516,7 +516,7 @@
       "context_window": ".021 Females 19 (58%) 18 (49%) 0.455 Height, m 157.8 \u00b1 10.6 157.1 \u00b1 25.3 0.882 Mass, kg 82.4 \u00b1 22.8 79.9 \u00b1 16.4 0.593 BMI, kg/m 2 33",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -535,7 +535,7 @@
       "context_window": "%) 0.455 Height, m 157.8 \u00b1 10.6 157.1 \u00b1 25.3 0.882 Mass, kg 82.4 \u00b1 22.8 79.9 \u00b1 16.4 0.593 BMI, kg/m 2 33.1 \u00b1 8.4 30.9 \u00b1 6.4 0.213 D",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -554,7 +554,7 @@
       "context_window": "ght, m 157.8 \u00b1 10.6 157.1 \u00b1 25.3 0.882 Mass, kg 82.4 \u00b1 22.8 79.9 \u00b1 16.4 0.593 BMI, kg/m 2 33.1 \u00b1 8.4 30.9 \u00b1 6.4 0.213 Duration of h",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -573,7 +573,7 @@
       "context_window": ".3 0.882 Mass, kg 82.4 \u00b1 22.8 79.9 \u00b1 16.4 0.593 BMI, kg/m 2 33.1 \u00b1 8.4 30.9 \u00b1 6.4 0.213 Duration of hemodialysis, years 4.1 \u00b1 4.0",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -592,7 +592,7 @@
       "context_window": "ss, kg 82.4 \u00b1 22.8 79.9 \u00b1 16.4 0.593 BMI, kg/m 2 33.1 \u00b1 8.4 30.9 \u00b1 6.4 0.213 Duration of hemodialysis, years 4.1 \u00b1 4.0 4.7 \u00b1 5.0 0",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -611,7 +611,7 @@
       "context_window": "33.1 \u00b1 8.4 30.9 \u00b1 6.4 0.213 Duration of hemodialysis, years 4.1 \u00b1 4.0 4.7 \u00b1 5.0 0.576 Using assistive device 23 (70%) 11 (30%) 0.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -630,7 +630,7 @@
       "context_window": "30.9 \u00b1 6.4 0.213 Duration of hemodialysis, years 4.1 \u00b1 4.0 4.7 \u00b1 5.0 0.576 Using assistive device 23 (70%) 11 (30%) 0.001 Daily",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -648,7 +648,7 @@
       "context_window": "years 4.1 \u00b1 4.0 4.7 \u00b1 5.0 0.576 Using assistive device 23 (70%) 11 (30%) 0.001 Daily number of prescription medications 7",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -666,7 +666,7 @@
       "context_window": "1 \u00b1 4.0 4.7 \u00b1 5.0 0.576 Using assistive device 23 (70%) 11 (30%) 0.001 Daily number of prescription medications 7 \u00b1 3 8 \u00b1 3",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -685,7 +685,7 @@
       "context_window": "0%) 11 (30%) 0.001 Daily number of prescription medications 7 \u00b1 3 8 \u00b1 3 0.677 BMI, Body-mass-index; Significant difference be",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -704,7 +704,7 @@
       "context_window": "(30%) 0.001 Daily number of prescription medications 7 \u00b1 3 8 \u00b1 3 0.677 BMI, Body-mass-index; Significant difference between",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -722,7 +722,7 @@
       "context_window": "n) at baseline and follow-up in the CG and IG. Control (CG, n = 33) Intervention (IG, n = 37) CG versus IG p -value CG versus",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -740,7 +740,7 @@
       "context_window": "up in the CG and IG. Control (CG, n = 33) Intervention (IG, n = 37) CG versus IG p -value CG versus IG \u03b7p 2 Baseline Follow-up",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -759,7 +759,7 @@
       "context_window": "ow-up % change p -value Single Task Walking Gait speed, m/s 0.41 \u00b1 0.20 0.40 \u00b1 0.23 - 2.0 0.643 0.53 \u00b1 0.19 0.56 \u00b1 0.19 6.5 0.142 0",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -778,7 +778,7 @@
       "context_window": "ge p -value Single Task Walking Gait speed, m/s 0.41 \u00b1 0.20 0.40 \u00b1 0.23 - 2.0 0.643 0.53 \u00b1 0.19 0.56 \u00b1 0.19 6.5 0.142 0.052 0.030 S",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -797,7 +797,7 @@
       "context_window": "Walking Gait speed, m/s 0.41 \u00b1 0.20 0.40 \u00b1 0.23 - 2.0 0.643 0.53 \u00b1 0.19 0.56 \u00b1 0.19 6.5 0.142 0.052 0.030 Stride length, m 0.61 \u00b1 0",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -816,7 +816,7 @@
       "context_window": "speed, m/s 0.41 \u00b1 0.20 0.40 \u00b1 0.23 - 2.0 0.643 0.53 \u00b1 0.19 0.56 \u00b1 0.19 6.5 0.142 0.052 0.030 Stride length, m 0.61 \u00b1 0.24 0.58 \u00b1 0",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -835,7 +835,7 @@
       "context_window": "3 \u00b1 0.19 0.56 \u00b1 0.19 6.5 0.142 0.052 0.030 Stride length, m 0.61 \u00b1 0.24 0.58 \u00b1 0.27 - 5.2 0.180 0.75 \u00b1 0.23 0.78 \u00b1 0.20 3.5 0.333 0",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -854,7 +854,7 @@
       "context_window": "6 \u00b1 0.19 6.5 0.142 0.052 0.030 Stride length, m 0.61 \u00b1 0.24 0.58 \u00b1 0.27 - 5.2 0.180 0.75 \u00b1 0.23 0.78 \u00b1 0.20 3.5 0.333 0.027 0.038 S",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -873,7 +873,7 @@
       "context_window": "0.030 Stride length, m 0.61 \u00b1 0.24 0.58 \u00b1 0.27 - 5.2 0.180 0.75 \u00b1 0.23 0.78 \u00b1 0.20 3.5 0.333 0.027 0.038 Stride time, s 1.61 \u00b1 0.3",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -892,7 +892,7 @@
       "context_window": "e length, m 0.61 \u00b1 0.24 0.58 \u00b1 0.27 - 5.2 0.180 0.75 \u00b1 0.23 0.78 \u00b1 0.20 3.5 0.333 0.027 0.038 Stride time, s 1.61 \u00b1 0.33 1.63 \u00b1 0.2",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -911,7 +911,7 @@
       "context_window": ".75 \u00b1 0.23 0.78 \u00b1 0.20 3.5 0.333 0.027 0.038 Stride time, s 1.61 \u00b1 0.33 1.63 \u00b1 0.27 1.2 0.770 1.54 \u00b1 0.32 1.44 \u00b1 0.22 - 7.1 0.035 0",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -930,7 +930,7 @@
       "context_window": ".78 \u00b1 0.20 3.5 0.333 0.027 0.038 Stride time, s 1.61 \u00b1 0.33 1.63 \u00b1 0.27 1.2 0.770 1.54 \u00b1 0.32 1.44 \u00b1 0.22 - 7.1 0.035 0.119 0.035 D",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -949,7 +949,7 @@
       "context_window": ".027 0.038 Stride time, s 1.61 \u00b1 0.33 1.63 \u00b1 0.27 1.2 0.770 1.54 \u00b1 0.32 1.44 \u00b1 0.22 - 7.1 0.035 0.119 0.035 Double-limb support, %",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -968,7 +968,7 @@
       "context_window": "tride time, s 1.61 \u00b1 0.33 1.63 \u00b1 0.27 1.2 0.770 1.54 \u00b1 0.32 1.44 \u00b1 0.22 - 7.1 0.035 0.119 0.035 Double-limb support, % 44.0 \u00b1 13.9",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -987,7 +987,7 @@
       "context_window": "1.44 \u00b1 0.22 - 7.1 0.035 0.119 0.035 Double-limb support, % 44.0 \u00b1 13.9 43.2 \u00b1 12.6 - 1.7 0.572 34.2 \u00b1 6.8 33.1 \u00b1 6.0 - 3.1 0.250 0",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1006,7 +1006,7 @@
       "context_window": "- 7.1 0.035 0.119 0.035 Double-limb support, % 44.0 \u00b1 13.9 43.2 \u00b1 12.6 - 1.7 0.572 34.2 \u00b1 6.8 33.1 \u00b1 6.0 - 3.1 0.250 0.248 0.000 D",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1025,7 +1025,7 @@
       "context_window": "Double-limb support, % 44.0 \u00b1 13.9 43.2 \u00b1 12.6 - 1.7 0.572 34.2 \u00b1 6.8 33.1 \u00b1 6.0 - 3.1 0.250 0.248 0.000 Dual Task Walking Gait s",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1044,7 +1044,7 @@
       "context_window": "b support, % 44.0 \u00b1 13.9 43.2 \u00b1 12.6 - 1.7 0.572 34.2 \u00b1 6.8 33.1 \u00b1 6.0 - 3.1 0.250 0.248 0.000 Dual Task Walking Gait speed, m/s 0",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1063,7 +1063,7 @@
       "context_window": "0 - 3.1 0.250 0.248 0.000 Dual Task Walking Gait speed, m/s 0.41 \u00b1 0.20 0.40 \u00b1 0.20 - 3.7 0.612 0.50 \u00b1 0.19 0.56 \u00b1 0.18 13.1 0.008",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1082,7 +1082,7 @@
       "context_window": "0 0.248 0.000 Dual Task Walking Gait speed, m/s 0.41 \u00b1 0.20 0.40 \u00b1 0.20 - 3.7 0.612 0.50 \u00b1 0.19 0.56 \u00b1 0.18 13.1 0.008 0.039 0.071",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1101,7 +1101,7 @@
       "context_window": "Walking Gait speed, m/s 0.41 \u00b1 0.20 0.40 \u00b1 0.20 - 3.7 0.612 0.50 \u00b1 0.19 0.56 \u00b1 0.18 13.1 0.008 0.039 0.071 Stride length, m 0.62 \u00b1",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1120,7 +1120,7 @@
       "context_window": "speed, m/s 0.41 \u00b1 0.20 0.40 \u00b1 0.20 - 3.7 0.612 0.50 \u00b1 0.19 0.56 \u00b1 0.18 13.1 0.008 0.039 0.071 Stride length, m 0.62 \u00b1 0.24 0.58 \u00b1",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1139,7 +1139,7 @@
       "context_window": "\u00b1 0.19 0.56 \u00b1 0.18 13.1 0.008 0.039 0.071 Stride length, m 0.62 \u00b1 0.24 0.58 \u00b1 0.24 - 6.0 0.229 0.74 \u00b1 0.25 0.79 \u00b1 0.21 6.5 0.104 0",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1158,7 +1158,7 @@
       "context_window": "\u00b1 0.18 13.1 0.008 0.039 0.071 Stride length, m 0.62 \u00b1 0.24 0.58 \u00b1 0.24 - 6.0 0.229 0.74 \u00b1 0.25 0.79 \u00b1 0.21 6.5 0.104 0.037 0.062 S",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1177,7 +1177,7 @@
       "context_window": "0.071 Stride length, m 0.62 \u00b1 0.24 0.58 \u00b1 0.24 - 6.0 0.229 0.74 \u00b1 0.25 0.79 \u00b1 0.21 6.5 0.104 0.037 0.062 Stride time, s 1.65 \u00b1 0.4",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1196,7 +1196,7 @@
       "context_window": "e length, m 0.62 \u00b1 0.24 0.58 \u00b1 0.24 - 6.0 0.229 0.74 \u00b1 0.25 0.79 \u00b1 0.21 6.5 0.104 0.037 0.062 Stride time, s 1.65 \u00b1 0.48 1.58 \u00b1 0.2",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1215,7 +1215,7 @@
       "context_window": ".74 \u00b1 0.25 0.79 \u00b1 0.21 6.5 0.104 0.037 0.062 Stride time, s 1.65 \u00b1 0.48 1.58 \u00b1 0.27 - 4.1 0.359 1.56 \u00b1 0.30 1.47 \u00b1 0.24 - 5.5 0.069",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1234,7 +1234,7 @@
       "context_window": ".79 \u00b1 0.21 6.5 0.104 0.037 0.062 Stride time, s 1.65 \u00b1 0.48 1.58 \u00b1 0.27 - 4.1 0.359 1.56 \u00b1 0.30 1.47 \u00b1 0.24 - 5.5 0.069 0.759 0.001",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1253,7 +1253,7 @@
       "context_window": "37 0.062 Stride time, s 1.65 \u00b1 0.48 1.58 \u00b1 0.27 - 4.1 0.359 1.56 \u00b1 0.30 1.47 \u00b1 0.24 - 5.5 0.069 0.759 0.001 Double-limb support, %",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1272,7 +1272,7 @@
       "context_window": "ide time, s 1.65 \u00b1 0.48 1.58 \u00b1 0.27 - 4.1 0.359 1.56 \u00b1 0.30 1.47 \u00b1 0.24 - 5.5 0.069 0.759 0.001 Double-limb support, % 41.1 \u00b1 12.2",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1291,7 +1291,7 @@
       "context_window": "1.47 \u00b1 0.24 - 5.5 0.069 0.759 0.001 Double-limb support, % 41.1 \u00b1 12.2 39.9 \u00b1 12.2 - 2.9 0.339 34.7 \u00b1 8.7 33.6 \u00b1 6.0 - 3.1 0.465 0",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1310,7 +1310,7 @@
       "context_window": "- 5.5 0.069 0.759 0.001 Double-limb support, % 41.1 \u00b1 12.2 39.9 \u00b1 12.2 - 2.9 0.339 34.7 \u00b1 8.7 33.6 \u00b1 6.0 - 3.1 0.465 0.479 0.000 R",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1329,7 +1329,7 @@
       "context_window": "Double-limb support, % 41.1 \u00b1 12.2 39.9 \u00b1 12.2 - 2.9 0.339 34.7 \u00b1 8.7 33.6 \u00b1 6.0 - 3.1 0.465 0.479 0.000 Results were adjusted by",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1348,7 +1348,7 @@
       "context_window": "b support, % 41.1 \u00b1 12.2 39.9 \u00b1 12.2 - 2.9 0.339 34.7 \u00b1 8.7 33.6 \u00b1 6.0 - 3.1 0.465 0.479 0.000 Results were adjusted by age. Perce",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1366,9 +1366,9 @@
       "context_window": "n) at baseline and follow-up in the CG and IG. Control (CG, n = 33) Intervention (IG, n = 37) CG vs IG p -value CG vs IG \u03b7p 2",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-n-3545",
@@ -1384,9 +1384,9 @@
       "context_window": "up in the CG and IG. Control (CG, n = 33) Intervention (IG, n = 37) CG vs IG p -value CG vs IG \u03b7p 2 Baseline Follow-up % chang",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3698",
@@ -1403,9 +1403,9 @@
       "context_window": "up % change p -value Double stance-eyes open COM sway, cm 2 0.24 \u00b1 0.19 0.37 \u00b1 0.43 - 35.14 0.024 0.27 \u00b1 0.28 0.27 \u00b1 0.27 0.00 0.55",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3710",
@@ -1422,9 +1422,9 @@
       "context_window": "p -value Double stance-eyes open COM sway, cm 2 0.24 \u00b1 0.19 0.37 \u00b1 0.43 - 35.14 0.024 0.27 \u00b1 0.28 0.27 \u00b1 0.27 0.00 0.557 0.010 0.04",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3736",
@@ -1441,9 +1441,9 @@
       "context_window": "s open COM sway, cm 2 0.24 \u00b1 0.19 0.37 \u00b1 0.43 - 35.14 0.024 0.27 \u00b1 0.28 0.27 \u00b1 0.27 0.00 0.557 0.010 0.040 Ankle sway, deg 2 3.27 \u00b1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3748",
@@ -1460,9 +1460,9 @@
       "context_window": "way, cm 2 0.24 \u00b1 0.19 0.37 \u00b1 0.43 - 35.14 0.024 0.27 \u00b1 0.28 0.27 \u00b1 0.27 0.00 0.557 0.010 0.040 Ankle sway, deg 2 3.27 \u00b1 3.12 2.98 \u00b1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3801",
@@ -1479,9 +1479,9 @@
       "context_window": "\u00b1 0.28 0.27 \u00b1 0.27 0.00 0.557 0.010 0.040 Ankle sway, deg 2 3.27 \u00b1 3.12 2.98 \u00b1 2.08 9.73 0.518 3.06 \u00b1 2.17 3.06 \u00b1 2.25 0.00 0.197 0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3813",
@@ -1498,9 +1498,9 @@
       "context_window": "\u00b1 0.27 0.00 0.557 0.010 0.040 Ankle sway, deg 2 3.27 \u00b1 3.12 2.98 \u00b1 2.08 9.73 0.518 3.06 \u00b1 2.17 3.06 \u00b1 2.25 0.00 0.197 0.694 0.003 H",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3836",
@@ -1517,9 +1517,9 @@
       "context_window": "0.040 Ankle sway, deg 2 3.27 \u00b1 3.12 2.98 \u00b1 2.08 9.73 0.518 3.06 \u00b1 2.17 3.06 \u00b1 2.25 0.00 0.197 0.694 0.003 Hip sway, deg 2 3.39 \u00b1 3",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3848",
@@ -1536,9 +1536,9 @@
       "context_window": "sway, deg 2 3.27 \u00b1 3.12 2.98 \u00b1 2.08 9.73 0.518 3.06 \u00b1 2.17 3.06 \u00b1 2.25 0.00 0.197 0.694 0.003 Hip sway, deg 2 3.39 \u00b1 3.44 4.19 \u00b1 4",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3899",
@@ -1555,9 +1555,9 @@
       "context_window": "6 \u00b1 2.17 3.06 \u00b1 2.25 0.00 0.197 0.694 0.003 Hip sway, deg 2 3.39 \u00b1 3.44 4.19 \u00b1 4.29 - 19.09 0.982 3.15 \u00b1 2.40 3.68 \u00b1 3.34 - 14.40 0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3911",
@@ -1574,9 +1574,9 @@
       "context_window": "6 \u00b1 2.25 0.00 0.197 0.694 0.003 Hip sway, deg 2 3.39 \u00b1 3.44 4.19 \u00b1 4.29 - 19.09 0.982 3.15 \u00b1 2.40 3.68 \u00b1 3.34 - 14.40 0.052 0.364 0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3937",
@@ -1593,9 +1593,9 @@
       "context_window": "0.003 Hip sway, deg 2 3.39 \u00b1 3.44 4.19 \u00b1 4.29 - 19.09 0.982 3.15 \u00b1 2.40 3.68 \u00b1 3.34 - 14.40 0.052 0.364 0.001 Double stance-eyes cl",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-3949",
@@ -1612,9 +1612,9 @@
       "context_window": "ay, deg 2 3.39 \u00b1 3.44 4.19 \u00b1 4.29 - 19.09 0.982 3.15 \u00b1 2.40 3.68 \u00b1 3.34 - 14.40 0.052 0.364 0.001 Double stance-eyes closed COM swa",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4028",
@@ -1631,9 +1631,9 @@
       "context_window": "0.052 0.364 0.001 Double stance-eyes closed COM sway, cm 2 0.12 \u00b1 0.11 0.17 \u00b1 0.16 - 29.41 0.422 0.22 \u00b1 0.23 0.20 \u00b1 0.19 10.00 0.3",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4040",
@@ -1650,9 +1650,9 @@
       "context_window": "0.001 Double stance-eyes closed COM sway, cm 2 0.12 \u00b1 0.11 0.17 \u00b1 0.16 - 29.41 0.422 0.22 \u00b1 0.23 0.20 \u00b1 0.19 10.00 0.362 0.040 0.0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4066",
@@ -1669,9 +1669,9 @@
       "context_window": "closed COM sway, cm 2 0.12 \u00b1 0.11 0.17 \u00b1 0.16 - 29.41 0.422 0.22 \u00b1 0.23 0.20 \u00b1 0.19 10.00 0.362 0.040 0.033 Ankle sway, deg 2 2.06",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4078",
@@ -1688,9 +1688,9 @@
       "context_window": "way, cm 2 0.12 \u00b1 0.11 0.17 \u00b1 0.16 - 29.41 0.422 0.22 \u00b1 0.23 0.20 \u00b1 0.19 10.00 0.362 0.040 0.033 Ankle sway, deg 2 2.06 \u00b1 2.04 2.82",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4132",
@@ -1707,9 +1707,9 @@
       "context_window": "0.23 0.20 \u00b1 0.19 10.00 0.362 0.040 0.033 Ankle sway, deg 2 2.06 \u00b1 2.04 2.82 \u00b1 2.31 - 26.95 0.612 2.52 \u00b1 2.12 3.09 \u00b1 2.98 - 18.44 0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4144",
@@ -1726,9 +1726,9 @@
       "context_window": "0.19 10.00 0.362 0.040 0.033 Ankle sway, deg 2 2.06 \u00b1 2.04 2.82 \u00b1 2.31 - 26.95 0.612 2.52 \u00b1 2.12 3.09 \u00b1 2.98 - 18.44 0.267 0.597 0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4170",
@@ -1745,9 +1745,9 @@
       "context_window": "033 Ankle sway, deg 2 2.06 \u00b1 2.04 2.82 \u00b1 2.31 - 26.95 0.612 2.52 \u00b1 2.12 3.09 \u00b1 2.98 - 18.44 0.267 0.597 0.001 Hip sway, deg 2 2.04",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4182",
@@ -1764,9 +1764,9 @@
       "context_window": "ay, deg 2 2.06 \u00b1 2.04 2.82 \u00b1 2.31 - 26.95 0.612 2.52 \u00b1 2.12 3.09 \u00b1 2.98 - 18.44 0.267 0.597 0.001 Hip sway, deg 2 2.04 \u00b1 2.31 3.08",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4236",
@@ -1783,9 +1783,9 @@
       "context_window": "2.12 3.09 \u00b1 2.98 - 18.44 0.267 0.597 0.001 Hip sway, deg 2 2.04 \u00b1 2.31 3.08 \u00b1 3.52 - 33.77 0.025 2.66 \u00b1 2.26 3.07 \u00b1 3.04 - 13.36 0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4248",
@@ -1802,9 +1802,9 @@
       "context_window": "2.98 - 18.44 0.267 0.597 0.001 Hip sway, deg 2 2.04 \u00b1 2.31 3.08 \u00b1 3.52 - 33.77 0.025 2.66 \u00b1 2.26 3.07 \u00b1 3.04 - 13.36 0.354 0.111 0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4274",
@@ -1821,9 +1821,9 @@
       "context_window": "0.001 Hip sway, deg 2 2.04 \u00b1 2.31 3.08 \u00b1 3.52 - 33.77 0.025 2.66 \u00b1 2.26 3.07 \u00b1 3.04 - 13.36 0.354 0.111 0.009 Semi-tandem-eyes open",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4286",
@@ -1840,9 +1840,9 @@
       "context_window": "ay, deg 2 2.04 \u00b1 2.31 3.08 \u00b1 3.52 - 33.77 0.025 2.66 \u00b1 2.26 3.07 \u00b1 3.04 - 13.36 0.354 0.111 0.009 Semi-tandem-eyes open COM sway, c",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4361",
@@ -1859,9 +1859,9 @@
       "context_window": "3.36 0.354 0.111 0.009 Semi-tandem-eyes open COM sway, cm 2 0.20 \u00b1 0.17 0.45 \u00b1 0.70 - 55.56 0.244 0.31 \u00b1 0.33 0.22 \u00b1 0.20 40.91 0.1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4373",
@@ -1878,9 +1878,9 @@
       "context_window": ".111 0.009 Semi-tandem-eyes open COM sway, cm 2 0.20 \u00b1 0.17 0.45 \u00b1 0.70 - 55.56 0.244 0.31 \u00b1 0.33 0.22 \u00b1 0.20 40.91 0.134 0.003 0.1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4399",
@@ -1897,9 +1897,9 @@
       "context_window": "s open COM sway, cm 2 0.20 \u00b1 0.17 0.45 \u00b1 0.70 - 55.56 0.244 0.31 \u00b1 0.33 0.22 \u00b1 0.20 40.91 0.134 0.003 0.109 Ankle sway, deg 2 3.26",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4411",
@@ -1916,9 +1916,9 @@
       "context_window": "way, cm 2 0.20 \u00b1 0.17 0.45 \u00b1 0.70 - 55.56 0.244 0.31 \u00b1 0.33 0.22 \u00b1 0.20 40.91 0.134 0.003 0.109 Ankle sway, deg 2 3.26 \u00b1 3.22 4.53",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4465",
@@ -1935,9 +1935,9 @@
       "context_window": "0.33 0.22 \u00b1 0.20 40.91 0.134 0.003 0.109 Ankle sway, deg 2 3.26 \u00b1 3.22 4.53 \u00b1 4.47 - 28.04 0.074 3.45 \u00b1 3.15 2.85 \u00b1 2.38 21.05 0.0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4477",
@@ -1954,9 +1954,9 @@
       "context_window": "0.20 40.91 0.134 0.003 0.109 Ankle sway, deg 2 3.26 \u00b1 3.22 4.53 \u00b1 4.47 - 28.04 0.074 3.45 \u00b1 3.15 2.85 \u00b1 2.38 21.05 0.086 0.008 0.0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4503",
@@ -1973,9 +1973,9 @@
       "context_window": "109 Ankle sway, deg 2 3.26 \u00b1 3.22 4.53 \u00b1 4.47 - 28.04 0.074 3.45 \u00b1 3.15 2.85 \u00b1 2.38 21.05 0.086 0.008 0.050 Hip sway, deg 2 2.93 \u00b1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4515",
@@ -1992,9 +1992,9 @@
       "context_window": "ay, deg 2 3.26 \u00b1 3.22 4.53 \u00b1 4.47 - 28.04 0.074 3.45 \u00b1 3.15 2.85 \u00b1 2.38 21.05 0.086 0.008 0.050 Hip sway, deg 2 2.93 \u00b1 2.56 3.75 \u00b1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4567",
@@ -2011,9 +2011,9 @@
       "context_window": "\u00b1 3.15 2.85 \u00b1 2.38 21.05 0.086 0.008 0.050 Hip sway, deg 2 2.93 \u00b1 2.56 3.75 \u00b1 3.18 - 21.87 0.873 4.21 \u00b1 3.81 3.14 \u00b1 2.76 34.08 0.4",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4579",
@@ -2030,9 +2030,9 @@
       "context_window": "\u00b1 2.38 21.05 0.086 0.008 0.050 Hip sway, deg 2 2.93 \u00b1 2.56 3.75 \u00b1 3.18 - 21.87 0.873 4.21 \u00b1 3.81 3.14 \u00b1 2.76 34.08 0.427 0.038 0.0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4605",
@@ -2049,9 +2049,9 @@
       "context_window": "0.050 Hip sway, deg 2 2.93 \u00b1 2.56 3.75 \u00b1 3.18 - 21.87 0.873 4.21 \u00b1 3.81 3.14 \u00b1 2.76 34.08 0.427 0.038 0.061 Semi-tandem-eyes closed",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4617",
@@ -2068,9 +2068,9 @@
       "context_window": "ay, deg 2 2.93 \u00b1 2.56 3.75 \u00b1 3.18 - 21.87 0.873 4.21 \u00b1 3.81 3.14 \u00b1 2.76 34.08 0.427 0.038 0.061 Semi-tandem-eyes closed COM sway, c",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4692",
@@ -2087,9 +2087,9 @@
       "context_window": "08 0.427 0.038 0.061 Semi-tandem-eyes closed COM sway, cm 2 0.17 \u00b1 0.16 0.41 \u00b1 0.51 - 58.56 0.792 0.24 \u00b1 0.16 0.30 \u00b1 0.29 - 20.00 0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4704",
@@ -2106,9 +2106,9 @@
       "context_window": "38 0.061 Semi-tandem-eyes closed COM sway, cm 2 0.17 \u00b1 0.16 0.41 \u00b1 0.51 - 58.56 0.792 0.24 \u00b1 0.16 0.30 \u00b1 0.29 - 20.00 0.909 0.074 0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4730",
@@ -2125,9 +2125,9 @@
       "context_window": "closed COM sway, cm 2 0.17 \u00b1 0.16 0.41 \u00b1 0.51 - 58.56 0.792 0.24 \u00b1 0.16 0.30 \u00b1 0.29 - 20.00 0.909 0.074 0.044 Ankle sway, deg 2 3.3",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4742",
@@ -2144,9 +2144,9 @@
       "context_window": "way, cm 2 0.17 \u00b1 0.16 0.41 \u00b1 0.51 - 58.56 0.792 0.24 \u00b1 0.16 0.30 \u00b1 0.29 - 20.00 0.909 0.074 0.044 Ankle sway, deg 2 3.35 \u00b1 3.60 5.2",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4798",
@@ -2163,9 +2163,9 @@
       "context_window": ".16 0.30 \u00b1 0.29 - 20.00 0.909 0.074 0.044 Ankle sway, deg 2 3.35 \u00b1 3.60 5.28 \u00b1 4.27 - 36.56 0.127 4.04 \u00b1 2.86 3.16 \u00b1 2.29 27.85 0.6",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4810",
@@ -2182,9 +2182,9 @@
       "context_window": ".29 - 20.00 0.909 0.074 0.044 Ankle sway, deg 2 3.35 \u00b1 3.60 5.28 \u00b1 4.27 - 36.56 0.127 4.04 \u00b1 2.86 3.16 \u00b1 2.29 27.85 0.685 0.002 0.0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4836",
@@ -2201,9 +2201,9 @@
       "context_window": "044 Ankle sway, deg 2 3.35 \u00b1 3.60 5.28 \u00b1 4.27 - 36.56 0.127 4.04 \u00b1 2.86 3.16 \u00b1 2.29 27.85 0.685 0.002 0.098 Hip sway, deg 2 2.83 \u00b1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4848",
@@ -2220,9 +2220,9 @@
       "context_window": "ay, deg 2 3.35 \u00b1 3.60 5.28 \u00b1 4.27 - 36.56 0.127 4.04 \u00b1 2.86 3.16 \u00b1 2.29 27.85 0.685 0.002 0.098 Hip sway, deg 2 2.83 \u00b1 2.93 4.94 \u00b1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4900",
@@ -2239,9 +2239,9 @@
       "context_window": "\u00b1 2.86 3.16 \u00b1 2.29 27.85 0.685 0.002 0.098 Hip sway, deg 2 2.83 \u00b1 2.93 4.94 \u00b1 5.38 - 42.71 0.409 3.52 \u00b1 2.42 3.56 \u00b1 2.75 - 1.12 0.",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4912",
@@ -2258,9 +2258,9 @@
       "context_window": "\u00b1 2.29 27.85 0.685 0.002 0.098 Hip sway, deg 2 2.83 \u00b1 2.93 4.94 \u00b1 5.38 - 42.71 0.409 3.52 \u00b1 2.42 3.56 \u00b1 2.75 - 1.12 0.925 0.050 0.",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4938",
@@ -2277,9 +2277,9 @@
       "context_window": "0.098 Hip sway, deg 2 2.83 \u00b1 2.93 4.94 \u00b1 5.38 - 42.71 0.409 3.52 \u00b1 2.42 3.56 \u00b1 2.75 - 1.12 0.925 0.050 0.061 COM, center of mass; R",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-msd-4950",
@@ -2296,9 +2296,9 @@
       "context_window": "ay, deg 2 2.83 \u00b1 2.93 4.94 \u00b1 5.38 - 42.71 0.409 3.52 \u00b1 2.42 3.56 \u00b1 2.75 - 1.12 0.925 0.050 0.061 COM, center of mass; Results were",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-pct-6097",
@@ -2529,10 +2529,10 @@
       "sentence": "However, during dual task walking, the IG had longer stride lengths ( p = 0.037), as well as faster gait speeds ( p = 0.039) compared to the CG.",
       "context_window": "uring dual task walking, the IG had longer stride lengths ( p = 0.037), as well as faster gait speeds ( p = 0.039) compared to th",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "gait speed",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-p-8788",
@@ -2547,10 +2547,10 @@
       "sentence": "However, during dual task walking, the IG had longer stride lengths ( p = 0.037), as well as faster gait speeds ( p = 0.039) compared to the CG.",
       "context_window": "tride lengths ( p = 0.037), as well as faster gait speeds ( p = 0.039) compared to the CG. The IG also had significantly less COM",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "gait speed",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-p-8908",
@@ -2818,7 +2818,7 @@
       "context_window": "king speed 12 . However, our results demonstrated that with 4 weeks of iExergame training, older individuals receiving HD showe",
       "claim_role": "duration",
       "endpoint": "walk speed",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2853,10 +2853,10 @@
       "sentence": "In contrast, this study of only older adults had mean gait speeds of 0.41-0.53 m/s at baseline.",
       "context_window": "his study of only older adults had mean gait speeds of 0.41-0.53 m/s at baseline. Therefore, individuals who are older adults or",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "gait speed",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10469197_game_based_intradialytic_non_weight_bearing_exercise_trainin-p-4469",
@@ -2908,7 +2908,7 @@
       "context_window": "iExergame training typically showed less postural sway over 4 weeks, while those who received conventional exercise training ty",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2926,7 +2926,7 @@
       "context_window": "exercise training typically showed more postural sway over 4 weeks. For between-group comparisons, individuals who received iE",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },

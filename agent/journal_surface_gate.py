@@ -207,6 +207,8 @@ def _unit_class(unit: str, value: str) -> str:
         return "bmi_unit"
     if "mg/dl" in hay or "mmol/l" in hay or "ng/ml" in hay:
         return "concentration"
+    if unit in {"ml", "l"}:
+        return "volume"
     if unit in {"mg", "g", "mcg", "µg", "μg", "ng"}:
         return "dose"
     if "mmhg" in hay:

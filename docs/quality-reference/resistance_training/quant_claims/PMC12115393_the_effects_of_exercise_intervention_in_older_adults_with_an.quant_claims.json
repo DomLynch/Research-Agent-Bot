@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an",
   "doi": "10.3390/sports13050152",
-  "extracted_at": "2026-05-05T21:59:20+00:00",
+  "extracted_at": "2026-05-07T16:57:26+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 30,
@@ -188,9 +188,9 @@
       "context_window": "rcopenia. Intervention (I): Physical exercise programs of \u22658 weeks duration. Comparator (C): Alternative interventions or con",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-u-3383",
@@ -333,7 +333,7 @@
       "context_window": "ndicator) and changes in neuromuscular response times after 12 weeks ( p < 0.05): Rectus femoris: r = 0.682 ( p < 0.001), Semit",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -351,7 +351,7 @@
       "context_window": "nd changes in neuromuscular response times after 12 weeks ( p < 0.05): Rectus femoris: r = 0.682 ( p < 0.001), Semitendinosus:",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -369,7 +369,7 @@
       "context_window": "es after 12 weeks ( p < 0.05): Rectus femoris: r = 0.682 ( p < 0.001), Semitendinosus: r = 0.488 ( p = 0.007), Anterior tibialis",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -387,7 +387,7 @@
       "context_window": "emoris: r = 0.682 ( p < 0.001), Semitendinosus: r = 0.488 ( p = 0.007), Anterior tibialis: r = 0.757 ( p < 0.001), Gastrocnemius:",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -405,7 +405,7 @@
       "context_window": "sus: r = 0.488 ( p = 0.007), Anterior tibialis: r = 0.757 ( p < 0.001), Gastrocnemius: r = 0.767 ( p < 0.001) OSI (Postural Cont",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -423,7 +423,7 @@
       "context_window": "ibialis: r = 0.757 ( p < 0.001), Gastrocnemius: r = 0.767 ( p < 0.001) OSI (Postural Control Indicator): decreased significantly",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -441,7 +441,7 @@
       "context_window": "p, indicating better postural control and lower fall risk ( p < 0.05). Control Group: No significant correlations were observed",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1089,7 +1089,7 @@
       "context_window": "68). Compliance and Adherence: The exercise group (EG) had 95% compliance with high adherence to protein, calcium, and vit",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1142,10 +1142,10 @@
       "sentence": "No group differences ( p = 0.160)\n\nFalls : 239 days without falls (RENEW) vs.",
       "context_window": "(RENEW and TRAD (*)): +6.39 points. No group differences ( p = 0.160) Falls : 239 days without falls (RENEW) vs. 250 days (TRAD",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-u-4351",
@@ -1160,10 +1160,10 @@
       "sentence": "No group differences ( p = 0.160)\n\nFalls : 239 days without falls (RENEW) vs.",
       "context_window": "): +6.39 points. No group differences ( p = 0.160) Falls : 239 days without falls (RENEW) vs. 250 days (TRAD). No differences.",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-u-4386",
@@ -1520,10 +1520,10 @@
       "sentence": "Muscle Mass: Increased in both groups, ( p < 0.0300 to p < 0.0001) .",
       "context_window": ", ( p < 0.0001) . Muscle Mass: Increased in both groups, ( p < 0.0300 to p < 0.0001) . Fat Mass: Decreased in both groups ( p <",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "pooled",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-p-6028",
@@ -1538,10 +1538,10 @@
       "sentence": "Muscle Mass: Increased in both groups, ( p < 0.0300 to p < 0.0001) .",
       "context_window": ") . Muscle Mass: Increased in both groups, ( p < 0.0300 to p < 0.0001) . Fat Mass: Decreased in both groups ( p < 0.0012 to p <",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "pooled",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-p-6080",
@@ -1665,7 +1665,7 @@
       "context_window": "sing test, with no significant differences between groups ( p < 0.05). Force Plate Mechanography: The WALK + EX group showed a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2552,9 +2552,9 @@
       "context_window": "trol: Significant differences between groups (F1,25 = 6.44, p = 0.018 ) and across moments and conditions (F3,375 = 9.16, p < 0.0",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-p-10251",
@@ -2570,9 +2570,9 @@
       "context_window": "= 0.018 ) and across moments and conditions (F3,375 = 9.16, p < 0.001), especially in eyes closed conditions (CSEC, NSEC). Postu",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-pct-10752",
@@ -2587,10 +2587,10 @@
       "sentence": "Postural Stability and Fall Risk Assessment\n\nFall Risk test with Specialized force platform (Physio-sensing \u00ae v.19002)\n\nBody Composition: Dual-energy X-ray absorptiometry (DXA)\n\nFunctional Fitness: Senior Fitness Test (SFT)\n\nStatic Postural Control: Single Leg Stance (SLS) Test\n\nConditions: Eyes open, hands-on hips\n\nFear of Falling: Short Falls Efficacy Scale-International (FES-I) questionnaire\n\nControl of Effort During Training: SpO2%, Heart Rate (HR), Rating of Perceived Exertion (RPE)\n\nFunctional Fitness\n\nChair Stand Test : NT: 12.3 \u00b1 2.2, HT: 12.1 \u00b1 1.5, CON: Not significant.",
       "context_window": "FES-I) questionnaire Control of Effort During Training: SpO2%, Heart Rate (HR), Rating of Perceived Exertion (RPE) Funct",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-msd-10852",
@@ -2606,10 +2606,10 @@
       "sentence": "Postural Stability and Fall Risk Assessment\n\nFall Risk test with Specialized force platform (Physio-sensing \u00ae v.19002)\n\nBody Composition: Dual-energy X-ray absorptiometry (DXA)\n\nFunctional Fitness: Senior Fitness Test (SFT)\n\nStatic Postural Control: Single Leg Stance (SLS) Test\n\nConditions: Eyes open, hands-on hips\n\nFear of Falling: Short Falls Efficacy Scale-International (FES-I) questionnaire\n\nControl of Effort During Training: SpO2%, Heart Rate (HR), Rating of Perceived Exertion (RPE)\n\nFunctional Fitness\n\nChair Stand Test : NT: 12.3 \u00b1 2.2, HT: 12.1 \u00b1 1.5, CON: Not significant.",
       "context_window": "Exertion (RPE) Functional Fitness Chair Stand Test : NT: 12.3 \u00b1 2.2, HT: 12.1 \u00b1 1.5, CON: Not significant. Significant Differen",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-msd-10868",
@@ -2625,10 +2625,10 @@
       "sentence": "Postural Stability and Fall Risk Assessment\n\nFall Risk test with Specialized force platform (Physio-sensing \u00ae v.19002)\n\nBody Composition: Dual-energy X-ray absorptiometry (DXA)\n\nFunctional Fitness: Senior Fitness Test (SFT)\n\nStatic Postural Control: Single Leg Stance (SLS) Test\n\nConditions: Eyes open, hands-on hips\n\nFear of Falling: Short Falls Efficacy Scale-International (FES-I) questionnaire\n\nControl of Effort During Training: SpO2%, Heart Rate (HR), Rating of Perceived Exertion (RPE)\n\nFunctional Fitness\n\nChair Stand Test : NT: 12.3 \u00b1 2.2, HT: 12.1 \u00b1 1.5, CON: Not significant.",
       "context_window": "Functional Fitness Chair Stand Test : NT: 12.3 \u00b1 2.2, HT: 12.1 \u00b1 1.5, CON: Not significant. Significant Difference : HT vs. CON",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "falls",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-p-10940",
@@ -2959,10 +2959,10 @@
       "sentence": "12-Month Intervention: o PTCT: 132 falls (0.8 falls/person-year) o PT: 172 falls (1.1 falls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152)\n\nPTCT: 132 falls (0.8 falls/person-year)\n\nPT: 172 falls (1.1 falls/person-year)\n\nDifference: Not significant (IRR = 0.78, p = 0.152)\n\n12-Month Postintervention Follow-Up: o PTCT: 117 falls (0.8 falls/person-year) o PT: 148 falls (0.97 falls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263)\n\nPTCT: 117 falls (0.8 falls/person-year)\n\nPT: 148 falls (0.97 falls/person-year)\n\nDifference: Not significant (IRR = 0.83, p = 0.263)\n\nFalls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not significant ( p = 0.688)\n\nPTCT: 3% reduction in concern about falling\n\nPT: 4% reduction in concern about falling\n\nDifference: Not significant ( p = 0.688)\n\n(*) Gait Velocity Test measures how fast a person walks over a set distance, indicating mobility and balance; Slower speeds can signal mobility issues or fall risk.",
       "context_window": "lls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152) PTCT: 132 falls (0.8 falls/person-year) PT: 172 falls (1",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-p-12154",
@@ -2977,10 +2977,10 @@
       "sentence": "12-Month Intervention: o PTCT: 132 falls (0.8 falls/person-year) o PT: 172 falls (1.1 falls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152)\n\nPTCT: 132 falls (0.8 falls/person-year)\n\nPT: 172 falls (1.1 falls/person-year)\n\nDifference: Not significant (IRR = 0.78, p = 0.152)\n\n12-Month Postintervention Follow-Up: o PTCT: 117 falls (0.8 falls/person-year) o PT: 148 falls (0.97 falls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263)\n\nPTCT: 117 falls (0.8 falls/person-year)\n\nPT: 148 falls (0.97 falls/person-year)\n\nDifference: Not significant (IRR = 0.83, p = 0.263)\n\nFalls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not significant ( p = 0.688)\n\nPTCT: 3% reduction in concern about falling\n\nPT: 4% reduction in concern about falling\n\nDifference: Not significant ( p = 0.688)\n\n(*) Gait Velocity Test measures how fast a person walks over a set distance, indicating mobility and balance; Slower speeds can signal mobility issues or fall risk.",
       "context_window": "alls/person-year) Difference: Not significant (IRR = 0.78, p = 0.152) 12-Month Postintervention Follow-Up: o PTCT: 117 falls (0",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-p-12329",
@@ -2995,10 +2995,10 @@
       "sentence": "12-Month Intervention: o PTCT: 132 falls (0.8 falls/person-year) o PT: 172 falls (1.1 falls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152)\n\nPTCT: 132 falls (0.8 falls/person-year)\n\nPT: 172 falls (1.1 falls/person-year)\n\nDifference: Not significant (IRR = 0.78, p = 0.152)\n\n12-Month Postintervention Follow-Up: o PTCT: 117 falls (0.8 falls/person-year) o PT: 148 falls (0.97 falls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263)\n\nPTCT: 117 falls (0.8 falls/person-year)\n\nPT: 148 falls (0.97 falls/person-year)\n\nDifference: Not significant (IRR = 0.83, p = 0.263)\n\nFalls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not significant ( p = 0.688)\n\nPTCT: 3% reduction in concern about falling\n\nPT: 4% reduction in concern about falling\n\nDifference: Not significant ( p = 0.688)\n\n(*) Gait Velocity Test measures how fast a person walks over a set distance, indicating mobility and balance; Slower speeds can signal mobility issues or fall risk.",
       "context_window": "lls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263) PTCT: 117 falls (0.8 falls/person-year) PT: 148 falls (0",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-p-12463",
@@ -3013,10 +3013,10 @@
       "sentence": "12-Month Intervention: o PTCT: 132 falls (0.8 falls/person-year) o PT: 172 falls (1.1 falls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152)\n\nPTCT: 132 falls (0.8 falls/person-year)\n\nPT: 172 falls (1.1 falls/person-year)\n\nDifference: Not significant (IRR = 0.78, p = 0.152)\n\n12-Month Postintervention Follow-Up: o PTCT: 117 falls (0.8 falls/person-year) o PT: 148 falls (0.97 falls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263)\n\nPTCT: 117 falls (0.8 falls/person-year)\n\nPT: 148 falls (0.97 falls/person-year)\n\nDifference: Not significant (IRR = 0.83, p = 0.263)\n\nFalls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not significant ( p = 0.688)\n\nPTCT: 3% reduction in concern about falling\n\nPT: 4% reduction in concern about falling\n\nDifference: Not significant ( p = 0.688)\n\n(*) Gait Velocity Test measures how fast a person walks over a set distance, indicating mobility and balance; Slower speeds can signal mobility issues or fall risk.",
       "context_window": "alls/person-year) Difference: Not significant (IRR = 0.83, p = 0.263) Falls Efficacy Scale: o PTCT: 3% reduction in concern abo",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-pct-12505",
@@ -3031,10 +3031,10 @@
       "sentence": "12-Month Intervention: o PTCT: 132 falls (0.8 falls/person-year) o PT: 172 falls (1.1 falls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152)\n\nPTCT: 132 falls (0.8 falls/person-year)\n\nPT: 172 falls (1.1 falls/person-year)\n\nDifference: Not significant (IRR = 0.78, p = 0.152)\n\n12-Month Postintervention Follow-Up: o PTCT: 117 falls (0.8 falls/person-year) o PT: 148 falls (0.97 falls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263)\n\nPTCT: 117 falls (0.8 falls/person-year)\n\nPT: 148 falls (0.97 falls/person-year)\n\nDifference: Not significant (IRR = 0.83, p = 0.263)\n\nFalls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not significant ( p = 0.688)\n\nPTCT: 3% reduction in concern about falling\n\nPT: 4% reduction in concern about falling\n\nDifference: Not significant ( p = 0.688)\n\n(*) Gait Velocity Test measures how fast a person walks over a set distance, indicating mobility and balance; Slower speeds can signal mobility issues or fall risk.",
       "context_window": "cant (IRR = 0.83, p = 0.263) Falls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in co",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-pct-12549",
@@ -3049,10 +3049,10 @@
       "sentence": "12-Month Intervention: o PTCT: 132 falls (0.8 falls/person-year) o PT: 172 falls (1.1 falls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152)\n\nPTCT: 132 falls (0.8 falls/person-year)\n\nPT: 172 falls (1.1 falls/person-year)\n\nDifference: Not significant (IRR = 0.78, p = 0.152)\n\n12-Month Postintervention Follow-Up: o PTCT: 117 falls (0.8 falls/person-year) o PT: 148 falls (0.97 falls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263)\n\nPTCT: 117 falls (0.8 falls/person-year)\n\nPT: 148 falls (0.97 falls/person-year)\n\nDifference: Not significant (IRR = 0.83, p = 0.263)\n\nFalls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not significant ( p = 0.688)\n\nPTCT: 3% reduction in concern about falling\n\nPT: 4% reduction in concern about falling\n\nDifference: Not significant ( p = 0.688)\n\n(*) Gait Velocity Test measures how fast a person walks over a set distance, indicating mobility and balance; Slower speeds can signal mobility issues or fall risk.",
       "context_window": "Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not signif",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-p-12619",
@@ -3067,10 +3067,10 @@
       "sentence": "12-Month Intervention: o PTCT: 132 falls (0.8 falls/person-year) o PT: 172 falls (1.1 falls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152)\n\nPTCT: 132 falls (0.8 falls/person-year)\n\nPT: 172 falls (1.1 falls/person-year)\n\nDifference: Not significant (IRR = 0.78, p = 0.152)\n\n12-Month Postintervention Follow-Up: o PTCT: 117 falls (0.8 falls/person-year) o PT: 148 falls (0.97 falls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263)\n\nPTCT: 117 falls (0.8 falls/person-year)\n\nPT: 148 falls (0.97 falls/person-year)\n\nDifference: Not significant (IRR = 0.83, p = 0.263)\n\nFalls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not significant ( p = 0.688)\n\nPTCT: 3% reduction in concern about falling\n\nPT: 4% reduction in concern about falling\n\nDifference: Not significant ( p = 0.688)\n\n(*) Gait Velocity Test measures how fast a person walks over a set distance, indicating mobility and balance; Slower speeds can signal mobility issues or fall risk.",
       "context_window": "on in concern about falling o Difference: Not significant ( p = 0.688) PTCT: 3% reduction in concern about falling PT: 4% reduc",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-pct-12637",
@@ -3085,10 +3085,10 @@
       "sentence": "12-Month Intervention: o PTCT: 132 falls (0.8 falls/person-year) o PT: 172 falls (1.1 falls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152)\n\nPTCT: 132 falls (0.8 falls/person-year)\n\nPT: 172 falls (1.1 falls/person-year)\n\nDifference: Not significant (IRR = 0.78, p = 0.152)\n\n12-Month Postintervention Follow-Up: o PTCT: 117 falls (0.8 falls/person-year) o PT: 148 falls (0.97 falls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263)\n\nPTCT: 117 falls (0.8 falls/person-year)\n\nPT: 148 falls (0.97 falls/person-year)\n\nDifference: Not significant (IRR = 0.83, p = 0.263)\n\nFalls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not significant ( p = 0.688)\n\nPTCT: 3% reduction in concern about falling\n\nPT: 4% reduction in concern about falling\n\nDifference: Not significant ( p = 0.688)\n\n(*) Gait Velocity Test measures how fast a person walks over a set distance, indicating mobility and balance; Slower speeds can signal mobility issues or fall risk.",
       "context_window": "t falling o Difference: Not significant ( p = 0.688) PTCT: 3% reduction in concern about falling PT: 4% reduction in con",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-pct-12680",
@@ -3103,10 +3103,10 @@
       "sentence": "12-Month Intervention: o PTCT: 132 falls (0.8 falls/person-year) o PT: 172 falls (1.1 falls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152)\n\nPTCT: 132 falls (0.8 falls/person-year)\n\nPT: 172 falls (1.1 falls/person-year)\n\nDifference: Not significant (IRR = 0.78, p = 0.152)\n\n12-Month Postintervention Follow-Up: o PTCT: 117 falls (0.8 falls/person-year) o PT: 148 falls (0.97 falls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263)\n\nPTCT: 117 falls (0.8 falls/person-year)\n\nPT: 148 falls (0.97 falls/person-year)\n\nDifference: Not significant (IRR = 0.83, p = 0.263)\n\nFalls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not significant ( p = 0.688)\n\nPTCT: 3% reduction in concern about falling\n\nPT: 4% reduction in concern about falling\n\nDifference: Not significant ( p = 0.688)\n\n(*) Gait Velocity Test measures how fast a person walks over a set distance, indicating mobility and balance; Slower speeds can signal mobility issues or fall risk.",
       "context_window": "= 0.688) PTCT: 3% reduction in concern about falling PT: 4% reduction in concern about falling Difference: Not signifi",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-p-12749",
@@ -3121,10 +3121,10 @@
       "sentence": "12-Month Intervention: o PTCT: 132 falls (0.8 falls/person-year) o PT: 172 falls (1.1 falls/person-year) o Difference: Not significant (IRR = 0.78, p = 0.152)\n\nPTCT: 132 falls (0.8 falls/person-year)\n\nPT: 172 falls (1.1 falls/person-year)\n\nDifference: Not significant (IRR = 0.78, p = 0.152)\n\n12-Month Postintervention Follow-Up: o PTCT: 117 falls (0.8 falls/person-year) o PT: 148 falls (0.97 falls/person-year) o Difference: Not significant (IRR = 0.83, p = 0.263)\n\nPTCT: 117 falls (0.8 falls/person-year)\n\nPT: 148 falls (0.97 falls/person-year)\n\nDifference: Not significant (IRR = 0.83, p = 0.263)\n\nFalls Efficacy Scale: o PTCT: 3% reduction in concern about falling o PT: 4% reduction in concern about falling o Difference: Not significant ( p = 0.688)\n\nPTCT: 3% reduction in concern about falling\n\nPT: 4% reduction in concern about falling\n\nDifference: Not significant ( p = 0.688)\n\n(*) Gait Velocity Test measures how fast a person walks over a set distance, indicating mobility and balance; Slower speeds can signal mobility issues or fall risk.",
       "context_window": "ion in concern about falling Difference: Not significant ( p = 0.688) (*) Gait Velocity Test measures how fast a person walks o",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12115393_the_effects_of_exercise_intervention_in_older_adults_with_an-pct-6572",

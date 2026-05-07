@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec",
   "doi": "10.1111/acel.12575",
-  "extracted_at": "2026-05-05T22:17:44+00:00",
+  "extracted_at": "2026-05-07T16:57:59+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 14,
@@ -24,7 +24,7 @@
       "context_window": "rived peptide hormone adiponectin with long\u2010term stringent (40%) CR (Combs et al ., 2003 ; Zhu et al ., 2004 ). Adiponectin",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -42,9 +42,9 @@
       "context_window": "aged C3B6F1 hybrid mice. Parallel groups of mice on modest (16%) CR taken at each age served to uncover aspects of adipose",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-u-253",
@@ -60,9 +60,9 @@
       "context_window": ". Mice were randomized into control or restricted groups at 2 months of age and fed 87 kcal week -1 (Bio\u2010Serv diet # F05312 ), w",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-pct-330",
@@ -78,9 +78,9 @@
       "context_window": "nd fed 87 kcal week -1 (Bio\u2010Serv diet # F05312 ), which is ~95% of ad libitum intake, or 73 kcal week -1 , which is a 23% r",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-pct-388",
@@ -96,9 +96,9 @@
       "context_window": "~95% of ad libitum intake, or 73 kcal week -1 , which is a 23% reduction in calorie intake from ad libitum levels and 16%",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-pct-447",
@@ -114,9 +114,9 @@
       "context_window": "23% reduction in calorie intake from ad libitum levels and 16% reduction from controls (Bio\u2010Serv diet # F05314 ). Total da",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-pct-591",
@@ -132,7 +132,7 @@
       "context_window": "e was proportionately lower in carbohydrates than controls (20% lower) with the difference made up in equivalent proportion",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -222,9 +222,9 @@
       "context_window": "diet of 87 kcal week -1 . This level of calorie intake is ~95% of ad libitum for this strain, where all the mice eat all t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "ad libitum",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-pct-734",
@@ -240,9 +240,9 @@
       "context_window": "cohort of mice were placed on a CR diet of 73 kcal week -1 (16% restriction from control) from 2 months of age and harveste",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-u-769",
@@ -258,9 +258,9 @@
       "context_window": "diet of 73 kcal week -1 (16% restriction from control) from 2 months of age and harvested at the same time points indicated abov",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-pct-870",
@@ -276,7 +276,7 @@
       "context_window": "time points indicated above. Survival of the controls was ~45% at 30 months (5/11 mice remaining), consistent with the exp",
       "claim_role": "unknown",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -294,7 +294,7 @@
       "context_window": "oints indicated above. Survival of the controls was ~45% at 30 months (5/11 mice remaining), consistent with the expected lifespa",
       "claim_role": "protocol",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -312,7 +312,7 @@
       "context_window": "consistent with the expected lifespan for this strain, and ~73% for the mice on CR (8/11 mice remaining). Two\u2010way ANOVA rev",
       "claim_role": "unknown",
       "endpoint": "lifespan",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -420,9 +420,9 @@
       "context_window": "cted using data from all control and CR mice of 10, 20, and 30 months of age. Levels of total adiponectin were not correlated wit",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-u-3762",
@@ -474,9 +474,9 @@
       "context_window": "matoxylin and eosin\u2010stained adipose sections (grayscaled) ( n = 4-7 per group). (B) Median adipocyte size ( n = 4-7 per group",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-n-5429",
@@ -492,9 +492,9 @@
       "context_window": "ayscaled) ( n = 4-7 per group). (B) Median adipocyte size ( n = 4-7 per group). (C) Linear regression of HMW adiponectin and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-n-5558",
@@ -510,9 +510,9 @@
       "context_window": "an adipocyte size, combining control and restricted diets ( n = 7-10 per group). Data are shown as means \u00b1 SEM, or means \u00b1 95",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-pct-5621",
@@ -546,7 +546,7 @@
       "context_window": "s were significantly higher in CR adipose tissues at 10 and 20 months of age (Fig. 3 A), and a significant increase in levels of",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -564,7 +564,7 @@
       "context_window": "ere significantly higher in CR mice compared to controls at 20 months of age, and there was an overall significant increase in NA",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -582,9 +582,9 @@
       "context_window": "ose tissue. (A) Detection of levels of indicated proteins ( n = 4-5 per group). (B) Quantitation of protein levels across all",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-n-7840",
@@ -600,9 +600,9 @@
       "context_window": "(B) Quantitation of protein levels across all age groups ( n = 13-15 per group). Data are shown as means \u00b1 SEM; asterisk (*)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-p-7916",
@@ -636,7 +636,7 @@
       "context_window": "in control animals did not result in a main effect of age ( P = 0.08), but a significant impact of CR and an age by diet interac",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -654,7 +654,7 @@
       "context_window": "ipose tissue from 30\u2010month\u2010old CR mice than from controls ( P < 0.05). Next we used biochemical approach to detect free NAD + an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -690,9 +690,9 @@
       "context_window": "elength of excitation \u03bb ex = 780 nm) and (B) quantitation ( n = 4-5 per group). (C) Quantitation of free NAD by biochemical a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-n-11591",
@@ -708,9 +708,9 @@
       "context_window": "group). (C) Quantitation of free NAD by biochemical assay ( n = 4-6 per group). (D) Representative images of NAD(P)H mean flu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-n-11768",
@@ -726,9 +726,9 @@
       "context_window": "istributions, (F) quantitation of \u03c4 1 , (G) \u03c4 2 , (H) a 1 , n = 4-5 per group. Data are shown as means \u00b1 95% CI. Significance",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-pct-11813",
@@ -762,9 +762,9 @@
       "context_window": "d as difference in percent abundance (restricted - control) n = 5 per diet per age group. Statistical significance determined",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec-n-18152",

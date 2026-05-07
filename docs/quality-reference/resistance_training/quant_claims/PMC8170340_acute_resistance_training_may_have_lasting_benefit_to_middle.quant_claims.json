@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8170340_acute_resistance_training_may_have_lasting_benefit_to_middle",
   "doi": "10.1177/23337214211022592",
-  "extracted_at": "2026-05-05T21:59:17+00:00",
+  "extracted_at": "2026-05-07T16:57:39+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 4,
@@ -242,9 +242,9 @@
       "context_window": "ragala et al., 2019 ) but despite this evidence, only about 20% of adults aged 55 to 64 years are meeting weekly national g",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8170340_acute_resistance_training_may_have_lasting_benefit_to_middle-u-367",
@@ -260,9 +260,9 @@
       "context_window": "despite this evidence, only about 20% of adults aged 55 to 64 years are meeting weekly national guidelines for aerobic and resi",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8170340_acute_resistance_training_may_have_lasting_benefit_to_middle-u-1152",
@@ -349,7 +349,7 @@
       "sentence": "We hypothesized that SSSH participation would improve older adults\u2019 perceived health and physical function in 8 weeks and the positive benefits would be maintained 10 months later.",
       "context_window": "ove older adults\u2019 perceived health and physical function in 8 weeks and the positive benefits would be maintained 10 months lat",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -367,7 +367,7 @@
       "sentence": "We hypothesized that SSSH participation would improve older adults\u2019 perceived health and physical function in 8 weeks and the positive benefits would be maintained 10 months later.",
       "context_window": "on in 8 weeks and the positive benefits would be maintained 10 months later.",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -836,7 +836,7 @@
       "sentence": "Participation in the 8-week summer SSSH program improved dynamic movement tasks and lower body flexibility that are associated with falls and these improvements were maintained 10 months later.",
       "context_window": "ssociated with falls and these improvements were maintained 10 months later. Comparing 30STS data from this study to the CDC\u2019s ST",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -962,7 +962,7 @@
       "sentence": "Our program now includes a more comprehensive falls assessment and collects these data at 3, 6, 9, and 12 months following SSSH program participation, regardless of if the participant continues in the program or not.",
       "context_window": "ve falls assessment and collects these data at 3, 6, 9, and 12 months following SSSH program participation, regardless of if the",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "falls",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

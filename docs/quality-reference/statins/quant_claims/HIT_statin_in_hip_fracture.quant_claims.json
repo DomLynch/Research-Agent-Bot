@@ -1,0 +1,138 @@
+{
+  "paper_id": "HIT_statin_in_hip_fracture",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_statin_in_hip_fracture-u-583",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 583,
+      "sentence": "Subjects aged 60 years or over who are scheduled to undergo surgery for fracture of the upper portion of the femur (hip fracture) are eligible to participate to this multicentre, randomized, double-blind placebo controlled trial.",
+      "context_window": "vents and the global mortality at six months. Subjects aged 60 years or over who are scheduled to undergo surgery for fracture o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_statin_in_hip_fracture-u-843",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 843,
+      "sentence": "They will receive either rosuvastatin (5 or 20 mg) or placebo for 6 months.",
+      "context_window": "ntrolled trial. They will receive either rosuvastatin (5 or 20 mg) or placebo for 6 months. The primary efficacy outcome is t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_statin_in_hip_fracture-u-865",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 865,
+      "sentence": "They will receive either rosuvastatin (5 or 20 mg) or placebo for 6 months.",
+      "context_window": "ill receive either rosuvastatin (5 or 20 mg) or placebo for 6 months. The primary efficacy outcome is the incidence of an adjudi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_statin_in_hip_fracture-pct-1100",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1100,
+      "sentence": "Assuming a endpoint frequency of 20% in the control group, we calculated that 1200 patients will be required for the study to have 80% power to detect a 30% reduction in the relative risk with rosuvastatin (with a two-sided alpha level of 5%).",
+      "context_window": "event, or all-cause death. Assuming a endpoint frequency of 20% in the control group, we calculated that 1200 patients will",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_statin_in_hip_fracture-pct-1198",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1198,
+      "sentence": "Assuming a endpoint frequency of 20% in the control group, we calculated that 1200 patients will be required for the study to have 80% power to detect a 30% reduction in the relative risk with rosuvastatin (with a two-sided alpha level of 5%).",
+      "context_window": "d that 1200 patients will be required for the study to have 80% power to detect a 30% reduction in the relative risk with r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_statin_in_hip_fracture-pct-1220",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1220,
+      "sentence": "Assuming a endpoint frequency of 20% in the control group, we calculated that 1200 patients will be required for the study to have 80% power to detect a 30% reduction in the relative risk with rosuvastatin (with a two-sided alpha level of 5%).",
+      "context_window": "ill be required for the study to have 80% power to detect a 30% reduction in the relative risk with rosuvastatin (with a tw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_statin_in_hip_fracture-pct-1306",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1306,
+      "sentence": "Assuming a endpoint frequency of 20% in the control group, we calculated that 1200 patients will be required for the study to have 80% power to detect a 30% reduction in the relative risk with rosuvastatin (with a two-sided alpha level of 5%).",
+      "context_window": "ive risk with rosuvastatin (with a two-sided alpha level of 5%). The investigators assumed that rosuvastatin could have a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

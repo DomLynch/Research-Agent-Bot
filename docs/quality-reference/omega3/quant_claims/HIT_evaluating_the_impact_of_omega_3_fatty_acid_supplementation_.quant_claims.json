@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_evaluating_the_impact_of_omega_3_fatty_acid_supplementation_",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:32:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_evaluating_the_impact_of_omega_3_fatty_acid_supplementation_-u-322",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 322,
+      "sentence": "Each participant will take two capsules daily for a duration of 90 days, with the active group receiving capsules containing 1000 mg of fish oil each.",
+      "context_window": "participant will take two capsules daily for a duration of 90 days, with the active group receiving capsules containing 1000 m",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_evaluating_the_impact_of_omega_3_fatty_acid_supplementation_-u-383",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 383,
+      "sentence": "Each participant will take two capsules daily for a duration of 90 days, with the active group receiving capsules containing 1000 mg of fish oil each.",
+      "context_window": "0 days, with the active group receiving capsules containing 1000 mg of fish oil each. All participants will be instructed to ma",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "paper_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta",
+  "doi": "10.1200/jco.2013.49.4757",
+  "extracted_at": "2026-05-07T19:24:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 7,
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta-pct-621",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 621,
+      "sentence": "Time-dependent Cox proportional hazards models were used to estimate adjusted hazard ratios (HRs) with 95% CIs of mortality outcomes associated with postdiagnostic use of statins, lagged by 1 year to account for latency considerations and to minimize reverse causality, and considering effect modification by prediagnostic use of statins.",
+      "context_window": "els were used to estimate adjusted hazard ratios (HRs) with 95% CIs of mortality outcomes associated with postdiagnostic us",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "pitavastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta-u-708",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 708,
+      "sentence": "Time-dependent Cox proportional hazards models were used to estimate adjusted hazard ratios (HRs) with 95% CIs of mortality outcomes associated with postdiagnostic use of statins, lagged by 1 year to account for latency considerations and to minimize reverse causality, and considering effect modification by prediagnostic use of statins.",
+      "context_window": "es associated with postdiagnostic use of statins, lagged by 1 year to account for latency considerations and to minimize rever",
+      "claim_role": "protocol",
+      "endpoint": "mortality",
+      "arm": "pitavastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta-u-898",
+      "claim_type": "unit_value",
+      "raw_text": "4.4 years",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 898,
+      "sentence": "RESULTS: During a mean follow-up time of 4.4 years (standard deviation, 2.9 years), 3,499 deaths occurred, including 1,791 from prostate cancer.",
+      "context_window": "ic use of statins. RESULTS: During a mean follow-up time of 4.4 years (standard deviation, 2.9 years), 3,499 deaths occurred, inc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta-u-929",
+      "claim_type": "unit_value",
+      "raw_text": "2.9 years",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 929,
+      "sentence": "RESULTS: During a mean follow-up time of 4.4 years (standard deviation, 2.9 years), 3,499 deaths occurred, including 1,791 from prostate cancer.",
+      "context_window": "ing a mean follow-up time of 4.4 years (standard deviation, 2.9 years), 3,499 deaths occurred, including 1,791 from prostate canc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta-pct-1109",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1109,
+      "sentence": "Postdiagnostic use of statins was associated with a decreased risk of prostate cancer mortality (HR, 0.76; 95% CI, 0.66 to 0.88) and all-cause mortality (HR, 0.86; 95% CI, 0.78 to 0.95).",
+      "context_window": "th a decreased risk of prostate cancer mortality (HR, 0.76; 95% CI, 0.66 to 0.88) and all-cause mortality (HR, 0.86; 95% CI",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pitavastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta-pct-1166",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1166,
+      "sentence": "Postdiagnostic use of statins was associated with a decreased risk of prostate cancer mortality (HR, 0.76; 95% CI, 0.66 to 0.88) and all-cause mortality (HR, 0.86; 95% CI, 0.78 to 0.95).",
+      "context_window": "6; 95% CI, 0.66 to 0.88) and all-cause mortality (HR, 0.86; 95% CI, 0.78 to 0.95). These decreased risks of prostate cancer",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pitavastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta-pct-1347",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1347,
+      "sentence": "These decreased risks of prostate cancer mortality and all-cause mortality were more pronounced in patients who also used statins before diagnosis (HR, 0.55; 95% CI, 0.41 to 0.74; and HR, 0.66; 95% CI, 0.53 to 0.81, respectively), with weaker effects in patients who initiated the treatment only after diagnosis (HR, 0.82; 95% CI, 0.71 to 0.96; and HR, 0.91; 95% CI, 0.82 to 1.01, respectively).",
+      "context_window": "patients who also used statins before diagnosis (HR, 0.55; 95% CI, 0.41 to 0.74; and HR, 0.66; 95% CI, 0.53 to 0.81, respe",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pitavastatin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta-pct-1383",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1383,
+      "sentence": "These decreased risks of prostate cancer mortality and all-cause mortality were more pronounced in patients who also used statins before diagnosis (HR, 0.55; 95% CI, 0.41 to 0.74; and HR, 0.66; 95% CI, 0.53 to 0.81, respectively), with weaker effects in patients who initiated the treatment only after diagnosis (HR, 0.82; 95% CI, 0.71 to 0.96; and HR, 0.91; 95% CI, 0.82 to 1.01, respectively).",
+      "context_window": "re diagnosis (HR, 0.55; 95% CI, 0.41 to 0.74; and HR, 0.66; 95% CI, 0.53 to 0.81, respectively), with weaker effects in pat",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pitavastatin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta-pct-1512",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1512,
+      "sentence": "These decreased risks of prostate cancer mortality and all-cause mortality were more pronounced in patients who also used statins before diagnosis (HR, 0.55; 95% CI, 0.41 to 0.74; and HR, 0.66; 95% CI, 0.53 to 0.81, respectively), with weaker effects in patients who initiated the treatment only after diagnosis (HR, 0.82; 95% CI, 0.71 to 0.96; and HR, 0.91; 95% CI, 0.82 to 1.01, respectively).",
+      "context_window": "who initiated the treatment only after diagnosis (HR, 0.82; 95% CI, 0.71 to 0.96; and HR, 0.91; 95% CI, 0.82 to 1.01, respe",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pitavastatin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1200_jco_2013_49_4757_use_of_statins_and_the_risk_of_death_in_patients_with_prosta-pct-1548",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1548,
+      "sentence": "These decreased risks of prostate cancer mortality and all-cause mortality were more pronounced in patients who also used statins before diagnosis (HR, 0.55; 95% CI, 0.41 to 0.74; and HR, 0.66; 95% CI, 0.53 to 0.81, respectively), with weaker effects in patients who initiated the treatment only after diagnosis (HR, 0.82; 95% CI, 0.71 to 0.96; and HR, 0.91; 95% CI, 0.82 to 1.01, respectively).",
+      "context_window": "er diagnosis (HR, 0.82; 95% CI, 0.71 to 0.96; and HR, 0.91; 95% CI, 0.82 to 1.01, respectively). CONCLUSION: Overall, the u",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pitavastatin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    }
+  ]
+}

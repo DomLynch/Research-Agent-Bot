@@ -1,0 +1,120 @@
+{
+  "paper_id": "DOI_10_1101_2025_06_27_25330450_cardiovascular_risk_estimation_and_statin_adherencean_histor",
+  "doi": "10.1101/2025.06.27.25330450",
+  "extracted_at": "2026-05-07T19:24:28+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_06_27_25330450_cardiovascular_risk_estimation_and_statin_adherencean_histor-u-686",
+      "claim_type": "unit_value",
+      "raw_text": "84 years",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 686,
+      "sentence": "Method A cohort of statin na\u00efve patients aged 40-84 years initiated on statins for primary prevention between 2017 and 2020 was identified and categorised by the presence or absence of a CVD risk score at statin initiation.",
+      "context_window": "outcomes. Method A cohort of statin na\u00efve patients aged 40-84 years initiated on statins for primary prevention between 2017 an",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_06_27_25330450_cardiovascular_risk_estimation_and_statin_adherencean_histor-u-1263",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 years",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1263,
+      "sentence": "Results 255,730 patients were included with a mean follow up of 4.6 years.",
+      "context_window": "lts 255,730 patients were included with a mean follow up of 4.6 years. 67.7% had a CVD risk score coded. The presence of a CVD ri",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_06_27_25330450_cardiovascular_risk_estimation_and_statin_adherencean_histor-pct-1274",
+      "claim_type": "percentage",
+      "raw_text": "67.7%",
+      "numeric_values": [
+        67.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1274,
+      "sentence": "67.7% had a CVD risk score coded.",
+      "context_window": "patients were included with a mean follow up of 4.6 years. 67.7% had a CVD risk score coded. The presence of a CVD risk scor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_06_27_25330450_cardiovascular_risk_estimation_and_statin_adherencean_histor-pct-1395",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1395,
+      "sentence": "The presence of a CVD risk score increased odds of adherence at the end of year one by 7% and reduced the chances of discontinuation by 8%.",
+      "context_window": "score increased odds of adherence at the end of year one by 7% and reduced the chances of discontinuation by 8%. The compo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_06_27_25330450_cardiovascular_risk_estimation_and_statin_adherencean_histor-pct-1444",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1444,
+      "sentence": "The presence of a CVD risk score increased odds of adherence at the end of year one by 7% and reduced the chances of discontinuation by 8%.",
+      "context_window": "ear one by 7% and reduced the chances of discontinuation by 8%. The composite outcome of CVD and all-cause mortality was d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_06_27_25330450_cardiovascular_risk_estimation_and_statin_adherencean_histor-pct-1518",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1518,
+      "sentence": "The composite outcome of CVD and all-cause mortality was decreased by 21% when a CVD risk score was present.",
+      "context_window": "ite outcome of CVD and all-cause mortality was decreased by 21% when a CVD risk score was present. Conclusion When a statin",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

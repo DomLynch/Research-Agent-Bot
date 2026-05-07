@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu",
   "doi": "10.1007/s11357-021-00386-2",
-  "extracted_at": "2026-05-05T23:37:18+00:00",
+  "extracted_at": "2026-05-07T16:56:46+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 7,
@@ -225,10 +225,10 @@
       "sentence": "Using this approach, Clark et al. (2014) established a strong correlation (r = 0.868) with whole-body muscle mass assessement using MRI.",
       "context_window": "roach, Clark et al. (2014) established a strong correlation (r = 0.868) with whole-body muscle mass assessement using MRI. MPS in",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-4788",
@@ -875,10 +875,10 @@
       "sentence": "Linear regression and two-tailed Pearson r correlation analysis were used to identify any relationship between muscle mass estimates by D 3 -creatine and DXA, with confidence interval set at 95%.",
       "context_window": "s by D 3 -creatine and DXA, with confidence interval set at 95%. All statistical analysis was performed using Graphpad Pris",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-65",
@@ -1201,7 +1201,7 @@
       "sentence": "There was no significant correlation between DXA-derived FFM and muscle mass measured by D 3 -Cr (r = 0.55, p = 0.098).",
       "context_window": "-derived FFM and muscle mass measured by D 3 -Cr (r = 0.55, p = 0.098). However, DXA-derived AFFM was significantly positively co",
       "claim_role": "unknown",
-      "endpoint": "lean body mass",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1219,10 +1219,10 @@
       "sentence": "However, DXA-derived AFFM was significantly positively correlated with muscle mass measured by D 3 -Cr (r = 0.69, p = 0.027; Fig.",
       "context_window": "correlated with muscle mass measured by D 3 -Cr (r = 0.69, p = 0.027; Fig. 6D ). Fig. 5 A Creatine concentration curve ranging f",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-3505",
@@ -1237,7 +1237,7 @@
       "sentence": "Values displayed are mean \u00b1 95% CI; ( D ) Correlation between muscle mass measured by D 3 -Creatine method with fat free mass (FFM) and appendicular fat free mass (AFFM i.e. total arms and legs) measured by DXA.",
       "context_window": "24, 48 and 72 h urine samples. Values displayed are mean \u00b1 95% CI; ( D ) Correlation between muscle mass measured by D 3 -",
       "claim_role": "unknown",
-      "endpoint": "lean body mass",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1273,7 +1273,7 @@
       "sentence": "Values displayed are mean \u00b1 95% CI; ( D ) Correlation between muscle mass measured by D 3 -Creatine method with fat free mass (FFM) and appendicular fat free mass (AFFM i.e. total arms and legs) measured by DXA.",
       "context_window": "24, 48 and 72 h urine samples. Values displayed are mean \u00b1 95% CI; ( D ) Correlation between muscle mass measured by D 3 -",
       "claim_role": "unknown",
-      "endpoint": "lean body mass",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1309,10 +1309,10 @@
       "sentence": "The use of 30 mg D 3 -Cr tracer was based upon the dosing validation by Clark and colleagues in 2014 where 30 mg was identified as adequate for quantification of muscle mass, a finding that we support.",
       "context_window": "creatine tracer method to quantify muscle mass. The use of 30 mg D 3 -Cr tracer was based upon the dosing validation by Clar",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-u-749",
@@ -1327,10 +1327,10 @@
       "sentence": "The use of 30 mg D 3 -Cr tracer was based upon the dosing validation by Clark and colleagues in 2014 where 30 mg was identified as adequate for quantification of muscle mass, a finding that we support.",
       "context_window": "the dosing validation by Clark and colleagues in 2014 where 30 mg was identified as adequate for quantification of muscle mas",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-1482",
@@ -1345,7 +1345,7 @@
       "sentence": "In addition, FFM as measured by DXA is considerably higher (~ 60%) than the muscle mass determined using D 3 -creatine.",
       "context_window": "addition, FFM as measured by DXA is considerably higher (~ 60%) than the muscle mass determined using D 3 -creatine. There",
       "claim_role": "unknown",
-      "endpoint": "lean body mass",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1435,10 +1435,10 @@
       "sentence": "Given the precision of the D 3 -Cr measurement in our hands, we calculate it would be possible to detect a change in muscle mass of 1 kg, equal to ~ 0.03 APE, and therefore has the sensitivity to identify clinically meaningful changes [ 46 ].",
       "context_window": "e it would be possible to detect a change in muscle mass of 1 kg, equal to ~ 0.03 APE, and therefore has the sensitivity to",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8602438_combined_in_vivo_muscle_mass_muscle_protein_synthesis_and_mu-pct-3456",
@@ -1453,7 +1453,7 @@
       "sentence": "Future applications of this approach could also look to minimise the urine sampling to a single spot urine, given that the spillover is less than 0.4% in our participants, perhaps due to the lower dose given, and this would lead to < 0.4% error in muscle mass calculation.",
       "context_window": "a single spot urine, given that the spillover is less than 0.4% in our participants, perhaps due to the lower dose given, a",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1471,7 +1471,7 @@
       "sentence": "Future applications of this approach could also look to minimise the urine sampling to a single spot urine, given that the spillover is less than 0.4% in our participants, perhaps due to the lower dose given, and this would lead to < 0.4% error in muscle mass calculation.",
       "context_window": "rhaps due to the lower dose given, and this would lead to < 0.4% error in muscle mass calculation. We speculate that the per",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

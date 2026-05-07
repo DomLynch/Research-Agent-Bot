@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i",
   "doi": "10.1007/s13539-013-0120-z",
-  "extracted_at": "2026-05-05T21:59:25+00:00",
+  "extracted_at": "2026-05-07T16:57:32+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 45,
@@ -25,7 +25,7 @@
       "context_window": "ion in older adults. Twenty-three older adults (aged 61 to 85 years) were randomized into an intervention (6-week resistance tr",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "control",
+      "arm": "resistance training",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "e intervention was effective at improving muscle quality by 28 % ( p < 0.001) despite no significant changes in lean body ma",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": "vention was effective at improving muscle quality by 28 % ( p < 0.001) despite no significant changes in lean body mass. Baseline",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -154,7 +154,7 @@
       "context_window": "ntervention tended to increase circulating P3NP (baseline = 4.53 \u00b1 1.80 to post = 4.88 \u00b1 1.86) and was significantly correlated wit",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -173,7 +173,7 @@
       "context_window": "increase circulating P3NP (baseline = 4.53 \u00b1 1.80 to post = 4.88 \u00b1 1.86) and was significantly correlated with changes in LBM ( r =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -191,7 +191,7 @@
       "context_window": "s significantly correlated with changes in LBM ( r = 0.422, p = 0.045). At baseline, women (3.91 \u00b1 1.12 pg/mL) had somewhat highe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -247,7 +247,7 @@
       "context_window": "than men (3.47 \u00b1 1.37 pg/mL). Circulating CAF increased by 10.4 % (3.59 to 4.00 pg/ml) in older adults following 6 weeks of r",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -265,7 +265,7 @@
       "context_window": "ed by 10.4 % (3.59 to 4.00 pg/ml) in older adults following 6 weeks of resistance exercise training. Changes in circulating CAF",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -319,9 +319,9 @@
       "context_window": "of collagen (and other proteins), and collagen synthesis 1-3 days after exercise [ 7 - 9 ]. The rate of collagen synthesis in",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-u-4478",
@@ -521,9 +521,9 @@
       "context_window": "Participants randomized to the intervention group completed 6 weeks of supervised resistance exercise training. Participants ra",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-u-610",
@@ -593,9 +593,9 @@
       "context_window": "risk stratification criteria. Participants over the age of 69 years or who were considered moderate risk based on screening cri",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-u-2135",
@@ -718,10 +718,10 @@
       "sentence": "Reliability coefficients (ICC) for lean quadriceps muscle mass were 0.98 (SEM = 0.261 kg).",
       "context_window": "ents (ICC) for lean quadriceps muscle mass were 0.98 (SEM = 0.261 kg). Participants having any procedure with iodine, barium, or",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-u-6871",
@@ -1007,9 +1007,9 @@
       "context_window": "omen (Table 3 ). Leg extension muscle strength increased by 29 % from 39.7 \u00b1 16.5 to 51.1 \u00b1 18.3 kg in the exercise training",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-msd-238",
@@ -1026,9 +1026,9 @@
       "context_window": "e 3 ). Leg extension muscle strength increased by 29 % from 39.7 \u00b1 16.5 to 51.1 \u00b1 18.3 kg in the exercise training group ( p < 0.00",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-msd-253",
@@ -1045,9 +1045,9 @@
       "context_window": "nsion muscle strength increased by 29 % from 39.7 \u00b1 16.5 to 51.1 \u00b1 18.3 kg in the exercise training group ( p < 0.001). Similarly,",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-u-260",
@@ -1063,9 +1063,9 @@
       "context_window": "uscle strength increased by 29 % from 39.7 \u00b1 16.5 to 51.1 \u00b1 18.3 kg in the exercise training group ( p < 0.001). Similarly, mus",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-p-301",
@@ -1081,9 +1081,9 @@
       "context_window": "7 \u00b1 16.5 to 51.1 \u00b1 18.3 kg in the exercise training group ( p < 0.001). Similarly, muscle quality (as relative strength) increase",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-pct-375",
@@ -1099,9 +1099,9 @@
       "context_window": "milarly, muscle quality (as relative strength) increased by 28 % ( p < 0.001) from 3.64 \u00b1 0.85 to 4.67 \u00b1 0.81 in the exercis",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-p-382",
@@ -1117,9 +1117,9 @@
       "context_window": ", muscle quality (as relative strength) increased by 28 % ( p < 0.001) from 3.64 \u00b1 0.85 to 4.67 \u00b1 0.81 in the exercise training g",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-msd-398",
@@ -1136,9 +1136,9 @@
       "context_window": "(as relative strength) increased by 28 % ( p < 0.001) from 3.64 \u00b1 0.85 to 4.67 \u00b1 0.81 in the exercise training group. No significa",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-msd-413",
@@ -1155,9 +1155,9 @@
       "context_window": "trength) increased by 28 % ( p < 0.001) from 3.64 \u00b1 0.85 to 4.67 \u00b1 0.81 in the exercise training group. No significant changes in m",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-u-695",
@@ -1228,7 +1228,7 @@
       "context_window": "cle significantly increased in the exercise training group (14.5 \u00b1 4.1 to 15.7 \u00b1 4.8 cm 2 ). No significant changes in cross-secti",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1247,7 +1247,7 @@
       "context_window": "tly increased in the exercise training group (14.5 \u00b1 4.1 to 15.7 \u00b1 4.8 cm 2 ). No significant changes in cross-sectional area of t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1265,7 +1265,7 @@
       "context_window": "reased in the exercise training group (14.5 \u00b1 4.1 to 15.7 \u00b1 4.8 cm 2 ). No significant changes in cross-sectional area of the",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1283,7 +1283,7 @@
       "context_window": "Muscular strength, functional, and structural changes from 6 weeks resistance exercise training in older adults Data are pres",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1301,7 +1301,7 @@
       "context_window": "raining in older adults Data are presented as mean \u00b1 SD * p < 0.05 is indicated from pre-exercise Muscular strength, function",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1319,7 +1319,7 @@
       "context_window": "Muscular strength, functional, and structural changes from 6 weeks resistance exercise training in older men and women Data a",
       "claim_role": "protocol",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1337,7 +1337,7 @@
       "context_window": "omen Data are presented as mean \u00b1 SD and percent change * p < 0.05 is indicated from pre-exercise Baseline circulating P3NP w",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1356,7 +1356,7 @@
       "context_window": "s somewhat, albeit not significantly, lower in older women (4.15 \u00b1 1.9 ng/mL) compared with older men (4.81 \u00b1 2.1 ng/mL). While ci",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1374,7 +1374,7 @@
       "context_window": "hat, albeit not significantly, lower in older women (4.15 \u00b1 1.9 ng/mL) compared with older men (4.81 \u00b1 2.1 ng/mL). While circulat",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1393,7 +1393,7 @@
       "context_window": "in older women (4.15 \u00b1 1.9 ng/mL) compared with older men (4.81 \u00b1 2.1 ng/mL). While circulating P3NP concentrations increased by",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1411,7 +1411,7 @@
       "context_window": "er women (4.15 \u00b1 1.9 ng/mL) compared with older men (4.81 \u00b1 2.1 ng/mL). While circulating P3NP concentrations increased by 7.9 %",
       "claim_role": "population",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1429,7 +1429,7 @@
       "context_window": "ng/mL). While circulating P3NP concentrations increased by 7.9 % in the exercise group (baseline = 4.53 \u00b1 1.80 to post = 4.8",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1448,7 +1448,7 @@
       "context_window": "ations increased by 7.9 % in the exercise group (baseline = 4.53 \u00b1 1.80 to post = 4.88 \u00b1 1.86) compared with a 1.9 % observed mean",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1467,7 +1467,7 @@
       "context_window": "9 % in the exercise group (baseline = 4.53 \u00b1 1.80 to post = 4.88 \u00b1 1.86) compared with a 1.9 % observed mean change in the control",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1485,7 +1485,7 @@
       "context_window": "seline = 4.53 \u00b1 1.80 to post = 4.88 \u00b1 1.86) compared with a 1.9 % observed mean change in the control group, the change as a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1577,7 +1577,7 @@
       "context_window": "7 pg/mL). While circulating CAF concentrations increased by 10.4 % (3.59 \u00b1 1.45 to 4.00 \u00b1 1.20 pg/ml) in older adults followin",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1596,7 +1596,7 @@
       "context_window": ". While circulating CAF concentrations increased by 10.4 % (3.59 \u00b1 1.45 to 4.00 \u00b1 1.20 pg/ml) in older adults following 6 weeks of",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1615,7 +1615,7 @@
       "context_window": "ting CAF concentrations increased by 10.4 % (3.59 \u00b1 1.45 to 4.00 \u00b1 1.20 pg/ml) in older adults following 6 weeks of resistance exer",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1633,7 +1633,7 @@
       "context_window": "3.59 \u00b1 1.45 to 4.00 \u00b1 1.20 pg/ml) in older adults following 6 weeks of resistance exercise training compared with a 0.3 % obser",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1651,7 +1651,7 @@
       "context_window": "ing 6 weeks of resistance exercise training compared with a 0.3 % observed mean change in the control group, the change as a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1777,7 +1777,7 @@
       "context_window": "n was effective at improving muscle strength and quality by 29 % and 28 %, respectively. The observed strength gains are in",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1795,7 +1795,7 @@
       "context_window": "ective at improving muscle strength and quality by 29 % and 28 %, respectively. The observed strength gains are in agreement",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1813,7 +1813,7 @@
       "context_window": "s observed in response to resistance exercise training over 6 weeks occurred despite no significant changes in total lean body",
       "claim_role": "unknown",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1831,7 +1831,7 @@
       "context_window": "studies show that longer duration training of at least 4 to 5 weeks is required before muscle hypertrophy is apparent [ 28 ] as",
       "claim_role": "duration",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1867,9 +1867,9 @@
       "context_window": "ho reported significant increases in circulating P3NP after 4 weeks of anabolic treatments of testosterone and recombinant GH i",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC4053565_biomarkers_of_muscle_quality_n_terminal_propeptide_of_type_i-pct-4895",
@@ -1885,7 +1885,7 @@
       "context_window": ". Although our exercise group increased circulating P3NP by 7.9 %, compared with a 1.9 % increase in the control group, our r",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1903,7 +1903,7 @@
       "context_window": "group increased circulating P3NP by 7.9 %, compared with a 1.9 % increase in the control group, our results were not statist",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1921,7 +1921,7 @@
       "context_window": "significant group mean changes in lean body mass during the 6 weeks. However, individual lean body mass changes ranged from -2.",
       "claim_role": "duration",
       "endpoint": "lean body mass",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1993,7 +1993,7 @@
       "context_window": "culating P3NP concentrations. Circulating CAF increased by 11.4 % in older adults following 6 weeks of resistance exercise tr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2011,7 +2011,7 @@
       "context_window": "rculating CAF increased by 11.4 % in older adults following 6 weeks of resistance exercise training which translated to a \u201clike",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },

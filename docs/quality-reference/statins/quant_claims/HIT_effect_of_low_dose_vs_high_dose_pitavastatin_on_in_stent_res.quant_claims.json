@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_effect_of_low_dose_vs_high_dose_pitavastatin_on_in_stent_res",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_low_dose_vs_high_dose_pitavastatin_on_in_stent_res-u-21",
+      "claim_type": "unit_value",
+      "raw_text": "1mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 21,
+      "sentence": "To compare low dose (1mg) pitavastatin and high dose (4mg) pitavastatin on neointimal hyperplasia and atherosclerosis progression by using optical coherence tomography (OCT) and near-infrared spectroscopy (NIRS) at 12 months follow-up and on clinical adverse cardiovascular events during 3-year follow-up.",
+      "context_window": "To compare low dose (1mg) pitavastatin and high dose (4mg) pitavastatin on neointima",
+      "claim_role": "duration",
+      "endpoint": "incident cv event",
+      "arm": "pitavastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_low_dose_vs_high_dose_pitavastatin_on_in_stent_res-u-54",
+      "claim_type": "unit_value",
+      "raw_text": "4mg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 54,
+      "sentence": "To compare low dose (1mg) pitavastatin and high dose (4mg) pitavastatin on neointimal hyperplasia and atherosclerosis progression by using optical coherence tomography (OCT) and near-infrared spectroscopy (NIRS) at 12 months follow-up and on clinical adverse cardiovascular events during 3-year follow-up.",
+      "context_window": "To compare low dose (1mg) pitavastatin and high dose (4mg) pitavastatin on neointimal hyperplasia and atherosclerosis",
+      "claim_role": "duration",
+      "endpoint": "incident cv event",
+      "arm": "pitavastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_low_dose_vs_high_dose_pitavastatin_on_in_stent_res-u-215",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 215,
+      "sentence": "To compare low dose (1mg) pitavastatin and high dose (4mg) pitavastatin on neointimal hyperplasia and atherosclerosis progression by using optical coherence tomography (OCT) and near-infrared spectroscopy (NIRS) at 12 months follow-up and on clinical adverse cardiovascular events during 3-year follow-up.",
+      "context_window": "e tomography (OCT) and near-infrared spectroscopy (NIRS) at 12 months follow-up and on clinical adverse cardiovascular events dur",
+      "claim_role": "protocol",
+      "endpoint": "incident cv event",
+      "arm": "pitavastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

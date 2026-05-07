@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12341770_nicotinamide_riboside_supplementation_benefits_in_patients_w",
   "doi": "10.1111/acel.70093",
-  "extracted_at": "2026-05-05T21:28:46+00:00",
+  "extracted_at": "2026-05-07T16:58:28+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 30,
@@ -43,7 +43,7 @@
       "context_window": "acy of the NAD + precursor, nicotinamide riboside (NR). NR (1000 mg) or placebo capsules were self\u2010administered once daily for",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": ") or placebo capsules were self\u2010administered once daily for 26 weeks, followed by a crossover to the opposite arm for another 26",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": "ks, followed by a crossover to the opposite arm for another 26 weeks. The primary endpoint was the safety of NR. Secondary endpo",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -133,7 +133,7 @@
       "context_window": "daily for 26 weeks. Patients took oral capsules containing 1000 mg of NR or placebo capsules containing microcrystalline cellu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -259,9 +259,9 @@
       "context_window": "(safety) endpoint was the evaluation of NR safety at 26 and 52 weeks in patients with WS. The incidence, frequency, and severity",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12341770_nicotinamide_riboside_supplementation_benefits_in_patients_w-u-4185",
@@ -295,9 +295,9 @@
       "context_window": "ary endpoint and safety of NR in patients with WS at 26 and 52 weeks, the incidence, frequency, and severity of adverse events o",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12341770_nicotinamide_riboside_supplementation_benefits_in_patients_w-msd-173",
@@ -512,7 +512,7 @@
       "context_window": "safety analysis set. Patient characteristics at baseline. n = 5 158.3 \u00b1 10.4 n = 1 152 n = 6 157.3 \u00b1 9.7 n = 6 157.4",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -531,7 +531,7 @@
       "context_window": "analysis set. Patient characteristics at baseline. n = 5 158.3 \u00b1 10.4 n = 1 152 n = 6 157.3 \u00b1 9.7 n = 6 157.4 \u00b1 9.7 n = 2",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -549,7 +549,7 @@
       "context_window": "Patient characteristics at baseline. n = 5 158.3 \u00b1 10.4 n = 1 152 n = 6 157.3 \u00b1 9.7 n = 6 157.4 \u00b1 9.7 n = 2 156.3",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -567,7 +567,7 @@
       "context_window": "racteristics at baseline. n = 5 158.3 \u00b1 10.4 n = 1 152 n = 6 157.3 \u00b1 9.7 n = 6 157.4 \u00b1 9.7 n = 2 156.3 \u00b1 6.1 n = 8",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -586,7 +586,7 @@
       "context_window": "stics at baseline. n = 5 158.3 \u00b1 10.4 n = 1 152 n = 6 157.3 \u00b1 9.7 n = 6 157.4 \u00b1 9.7 n = 2 156.3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -604,7 +604,7 @@
       "context_window": "line. n = 5 158.3 \u00b1 10.4 n = 1 152 n = 6 157.3 \u00b1 9.7 n = 6 157.4 \u00b1 9.7 n = 2 156.3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5 n = 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -623,7 +623,7 @@
       "context_window": "n = 5 158.3 \u00b1 10.4 n = 1 152 n = 6 157.3 \u00b1 9.7 n = 6 157.4 \u00b1 9.7 n = 2 156.3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -641,7 +641,7 @@
       "context_window": "\u00b1 10.4 n = 1 152 n = 6 157.3 \u00b1 9.7 n = 6 157.4 \u00b1 9.7 n = 2 156.3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5 n = 1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -660,7 +660,7 @@
       "context_window": "n = 1 152 n = 6 157.3 \u00b1 9.7 n = 6 157.4 \u00b1 9.7 n = 2 156.3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5 n = 1 50 n = 6",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -678,7 +678,7 @@
       "context_window": "n = 6 157.3 \u00b1 9.7 n = 6 157.4 \u00b1 9.7 n = 2 156.3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5 n = 1 50 n = 6 40.8 \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -697,7 +697,7 @@
       "context_window": "157.3 \u00b1 9.7 n = 6 157.4 \u00b1 9.7 n = 2 156.3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5 n = 1 50 n = 6 40.8 \u00b1 10.4 n = 6",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -715,7 +715,7 @@
       "context_window": "n = 6 157.4 \u00b1 9.7 n = 2 156.3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5 n = 1 50 n = 6 40.8 \u00b1 10.4 n = 6 39.7 \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -734,7 +734,7 @@
       "context_window": "157.4 \u00b1 9.7 n = 2 156.3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5 n = 1 50 n = 6 40.8 \u00b1 10.4 n = 6 39.7 \u00b1 9.5 n = 2 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -752,7 +752,7 @@
       "context_window": "n = 2 156.3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5 n = 1 50 n = 6 40.8 \u00b1 10.4 n = 6 39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -770,7 +770,7 @@
       "context_window": "3 \u00b1 6.1 n = 8 157.1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5 n = 1 50 n = 6 40.8 \u00b1 10.4 n = 6 39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6.9 n = 8",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -789,7 +789,7 @@
       "context_window": "n = 8 157.1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5 n = 1 50 n = 6 40.8 \u00b1 10.4 n = 6 39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6.9 n = 8 43.5 \u00b1 11.0",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -807,7 +807,7 @@
       "context_window": "1 \u00b1 8.5 n = 5 38.9 \u00b1 10.5 n = 1 50 n = 6 40.8 \u00b1 10.4 n = 6 39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6.9 n = 8 43.5 \u00b1 11.0 n = 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -826,7 +826,7 @@
       "context_window": "n = 5 38.9 \u00b1 10.5 n = 1 50 n = 6 40.8 \u00b1 10.4 n = 6 39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6.9 n = 8 43.5 \u00b1 11.0 n = 5 15.3 \u00b1 2.46",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -844,7 +844,7 @@
       "context_window": "9 \u00b1 10.5 n = 1 50 n = 6 40.8 \u00b1 10.4 n = 6 39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6.9 n = 8 43.5 \u00b1 11.0 n = 5 15.3 \u00b1 2.46 n = 1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -863,7 +863,7 @@
       "context_window": "5 n = 1 50 n = 6 40.8 \u00b1 10.4 n = 6 39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6.9 n = 8 43.5 \u00b1 11.0 n = 5 15.3 \u00b1 2.46 n = 1 21.6 n = 6",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -881,7 +881,7 @@
       "context_window": "n = 6 40.8 \u00b1 10.4 n = 6 39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6.9 n = 8 43.5 \u00b1 11.0 n = 5 15.3 \u00b1 2.46 n = 1 21.6 n = 6 16.4",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -900,7 +900,7 @@
       "context_window": "40.8 \u00b1 10.4 n = 6 39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6.9 n = 8 43.5 \u00b1 11.0 n = 5 15.3 \u00b1 2.46 n = 1 21.6 n = 6 16.4 \u00b1 3.40 n = 6",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -918,7 +918,7 @@
       "context_window": "n = 6 39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6.9 n = 8 43.5 \u00b1 11.0 n = 5 15.3 \u00b1 2.46 n = 1 21.6 n = 6 16.4 \u00b1 3.40 n = 6 15.9",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -937,7 +937,7 @@
       "context_window": "39.7 \u00b1 9.5 n = 2 54.9 \u00b1 6.9 n = 8 43.5 \u00b1 11.0 n = 5 15.3 \u00b1 2.46 n = 1 21.6 n = 6 16.4 \u00b1 3.40 n = 6 15.9 \u00b1 2.62 n = 2",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -955,7 +955,7 @@
       "context_window": "n = 2 54.9 \u00b1 6.9 n = 8 43.5 \u00b1 11.0 n = 5 15.3 \u00b1 2.46 n = 1 21.6 n = 6 16.4 \u00b1 3.40 n = 6 15.9 \u00b1 2.62 n = 2 22.4",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -973,7 +973,7 @@
       "context_window": "\u00b1 6.9 n = 8 43.5 \u00b1 11.0 n = 5 15.3 \u00b1 2.46 n = 1 21.6 n = 6 16.4 \u00b1 3.40 n = 6 15.9 \u00b1 2.62 n = 2 22.4 \u00b1 1.09 n = 8",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -992,7 +992,7 @@
       "context_window": "n = 8 43.5 \u00b1 11.0 n = 5 15.3 \u00b1 2.46 n = 1 21.6 n = 6 16.4 \u00b1 3.40 n = 6 15.9 \u00b1 2.62 n = 2 22.4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1010,7 +1010,7 @@
       "context_window": "11.0 n = 5 15.3 \u00b1 2.46 n = 1 21.6 n = 6 16.4 \u00b1 3.40 n = 6 15.9 \u00b1 2.62 n = 2 22.4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77 n = 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1029,7 +1029,7 @@
       "context_window": "n = 5 15.3 \u00b1 2.46 n = 1 21.6 n = 6 16.4 \u00b1 3.40 n = 6 15.9 \u00b1 2.62 n = 2 22.4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1047,7 +1047,7 @@
       "context_window": "2.46 n = 1 21.6 n = 6 16.4 \u00b1 3.40 n = 6 15.9 \u00b1 2.62 n = 2 22.4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7 n = 1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1066,7 +1066,7 @@
       "context_window": "n = 1 21.6 n = 6 16.4 \u00b1 3.40 n = 6 15.9 \u00b1 2.62 n = 2 22.4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7 n = 1 73 n = 6 7",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1084,7 +1084,7 @@
       "context_window": "n = 6 16.4 \u00b1 3.40 n = 6 15.9 \u00b1 2.62 n = 2 22.4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7 n = 1 73 n = 6 74.7 \u00b1 7",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1103,7 +1103,7 @@
       "context_window": "16.4 \u00b1 3.40 n = 6 15.9 \u00b1 2.62 n = 2 22.4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7 n = 1 73 n = 6 74.7 \u00b1 7.0 n = 6 77",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1121,7 +1121,7 @@
       "context_window": "n = 6 15.9 \u00b1 2.62 n = 2 22.4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7 n = 1 73 n = 6 74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1140,7 +1140,7 @@
       "context_window": "15.9 \u00b1 2.62 n = 2 22.4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7 n = 1 73 n = 6 74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.5 n = 2 84",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1158,7 +1158,7 @@
       "context_window": "n = 2 22.4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7 n = 1 73 n = 6 74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1176,7 +1176,7 @@
       "context_window": "4 \u00b1 1.09 n = 8 17.5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7 n = 1 73 n = 6 74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16.3 n = 8",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1195,7 +1195,7 @@
       "context_window": "9 n = 8 17.5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7 n = 1 73 n = 6 74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16.3 n = 8 79.4 \u00b1 10.6",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1213,7 +1213,7 @@
       "context_window": ".5 \u00b1 3.77 n = 5 75.0 \u00b1 7.7 n = 1 73 n = 6 74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16.3 n = 8 79.4 \u00b1 10.6 n = 4",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1232,7 +1232,7 @@
       "context_window": "77 n = 5 75.0 \u00b1 7.7 n = 1 73 n = 6 74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16.3 n = 8 79.4 \u00b1 10.6 n = 4 19.1 \u00b1 7.2",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1250,7 +1250,7 @@
       "context_window": "5.0 \u00b1 7.7 n = 1 73 n = 6 74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16.3 n = 8 79.4 \u00b1 10.6 n = 4 19.1 \u00b1 7.2 n = 1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1269,7 +1269,7 @@
       "context_window": ".7 n = 1 73 n = 6 74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16.3 n = 8 79.4 \u00b1 10.6 n = 4 19.1 \u00b1 7.2 n = 1 10.4 n = 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1287,7 +1287,7 @@
       "context_window": "n = 6 74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16.3 n = 8 79.4 \u00b1 10.6 n = 4 19.1 \u00b1 7.2 n = 1 10.4 n = 5 17.4 \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1306,7 +1306,7 @@
       "context_window": "74.7 \u00b1 7.0 n = 6 77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16.3 n = 8 79.4 \u00b1 10.6 n = 4 19.1 \u00b1 7.2 n = 1 10.4 n = 5 17.4 \u00b1 7.4 n = 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1324,7 +1324,7 @@
       "context_window": "n = 6 77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16.3 n = 8 79.4 \u00b1 10.6 n = 4 19.1 \u00b1 7.2 n = 1 10.4 n = 5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1343,7 +1343,7 @@
       "context_window": "77.7 \u00b1 9.5 n = 2 84.5 \u00b1 16.3 n = 8 79.4 \u00b1 10.6 n = 4 19.1 \u00b1 7.2 n = 1 10.4 n = 5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1 6.4 n = 3",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1361,7 +1361,7 @@
       "context_window": "n = 2 84.5 \u00b1 16.3 n = 8 79.4 \u00b1 10.6 n = 4 19.1 \u00b1 7.2 n = 1 10.4 n = 5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1379,7 +1379,7 @@
       "context_window": "\u00b1 16.3 n = 8 79.4 \u00b1 10.6 n = 4 19.1 \u00b1 7.2 n = 1 10.4 n = 5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1 9.8 n = 8 1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1398,7 +1398,7 @@
       "context_window": "n = 8 79.4 \u00b1 10.6 n = 4 19.1 \u00b1 7.2 n = 1 10.4 n = 5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1 9.8 n = 8 17.1 \u00b1 8.1 n",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1416,7 +1416,7 @@
       "context_window": "\u00b1 10.6 n = 4 19.1 \u00b1 7.2 n = 1 10.4 n = 5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1 9.8 n = 8 17.1 \u00b1 8.1 n = 4 1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1435,7 +1435,7 @@
       "context_window": "n = 4 19.1 \u00b1 7.2 n = 1 10.4 n = 5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1 9.8 n = 8 17.1 \u00b1 8.1 n = 4 1.23 \u00b1 0.32",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1453,7 +1453,7 @@
       "context_window": "1 \u00b1 7.2 n = 1 10.4 n = 5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1 9.8 n = 8 17.1 \u00b1 8.1 n = 4 1.23 \u00b1 0.32 n = 1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1472,7 +1472,7 @@
       "context_window": "n = 1 10.4 n = 5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1 9.8 n = 8 17.1 \u00b1 8.1 n = 4 1.23 \u00b1 0.32 n = 1 1.43 n = 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1490,7 +1490,7 @@
       "context_window": "4 n = 5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1 9.8 n = 8 17.1 \u00b1 8.1 n = 4 1.23 \u00b1 0.32 n = 1 1.43 n = 5 1.27 \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1509,7 +1509,7 @@
       "context_window": "5 17.4 \u00b1 7.4 n = 5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1 9.8 n = 8 17.1 \u00b1 8.1 n = 4 1.23 \u00b1 0.32 n = 1 1.43 n = 5 1.27 \u00b1 0.29 n = 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1527,7 +1527,7 @@
       "context_window": "4 n = 5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1 9.8 n = 8 17.1 \u00b1 8.1 n = 4 1.23 \u00b1 0.32 n = 1 1.43 n = 5 1.27 \u00b1 0.29 n = 5 1.27",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1546,7 +1546,7 @@
       "context_window": "5 19.8 \u00b1 6.4 n = 3 12.6 \u00b1 9.8 n = 8 17.1 \u00b1 8.1 n = 4 1.23 \u00b1 0.32 n = 1 1.43 n = 5 1.27 \u00b1 0.29 n = 5 1.27 \u00b1 0.29 n = 2",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1564,7 +1564,7 @@
       "context_window": "n = 3 12.6 \u00b1 9.8 n = 8 17.1 \u00b1 8.1 n = 4 1.23 \u00b1 0.32 n = 1 1.43 n = 5 1.27 \u00b1 0.29 n = 5 1.27 \u00b1 0.29 n = 2 0.84",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1582,7 +1582,7 @@
       "context_window": "\u00b1 9.8 n = 8 17.1 \u00b1 8.1 n = 4 1.23 \u00b1 0.32 n = 1 1.43 n = 5 1.27 \u00b1 0.29 n = 5 1.27 \u00b1 0.29 n = 2 0.84 \u00b1 0.83 n = 7",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1601,7 +1601,7 @@
       "context_window": "n = 8 17.1 \u00b1 8.1 n = 4 1.23 \u00b1 0.32 n = 1 1.43 n = 5 1.27 \u00b1 0.29 n = 5 1.27 \u00b1 0.29 n = 2 0.84 \u00b1 0.83 n = 7 1.14 \u00b1 0.46",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1619,7 +1619,7 @@
       "context_window": "\u00b1 8.1 n = 4 1.23 \u00b1 0.32 n = 1 1.43 n = 5 1.27 \u00b1 0.29 n = 5 1.27 \u00b1 0.29 n = 2 0.84 \u00b1 0.83 n = 7 1.14 \u00b1 0.46 n = 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1638,7 +1638,7 @@
       "context_window": "n = 4 1.23 \u00b1 0.32 n = 1 1.43 n = 5 1.27 \u00b1 0.29 n = 5 1.27 \u00b1 0.29 n = 2 0.84 \u00b1 0.83 n = 7 1.14 \u00b1 0.46 n = 5 8.24 \u00b1 1.07",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1656,7 +1656,7 @@
       "context_window": "0.32 n = 1 1.43 n = 5 1.27 \u00b1 0.29 n = 5 1.27 \u00b1 0.29 n = 2 0.84 \u00b1 0.83 n = 7 1.14 \u00b1 0.46 n = 5 8.24 \u00b1 1.07 n = 1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1675,7 +1675,7 @@
       "context_window": "n = 1 1.43 n = 5 1.27 \u00b1 0.29 n = 5 1.27 \u00b1 0.29 n = 2 0.84 \u00b1 0.83 n = 7 1.14 \u00b1 0.46 n = 5 8.24 \u00b1 1.07 n = 1 8.2 n = 6",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1693,7 +1693,7 @@
       "context_window": "n = 5 1.27 \u00b1 0.29 n = 5 1.27 \u00b1 0.29 n = 2 0.84 \u00b1 0.83 n = 7 1.14 \u00b1 0.46 n = 5 8.24 \u00b1 1.07 n = 1 8.2 n = 6 8.23 \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1712,7 +1712,7 @@
       "context_window": "1.27 \u00b1 0.29 n = 5 1.27 \u00b1 0.29 n = 2 0.84 \u00b1 0.83 n = 7 1.14 \u00b1 0.46 n = 5 8.24 \u00b1 1.07 n = 1 8.2 n = 6 8.23 \u00b1 0.96 n = 6",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1730,7 +1730,7 @@
       "context_window": "n = 5 1.27 \u00b1 0.29 n = 2 0.84 \u00b1 0.83 n = 7 1.14 \u00b1 0.46 n = 5 8.24 \u00b1 1.07 n = 1 8.2 n = 6 8.23 \u00b1 0.96 n = 6 8.08 \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1749,7 +1749,7 @@
       "context_window": "1.27 \u00b1 0.29 n = 2 0.84 \u00b1 0.83 n = 7 1.14 \u00b1 0.46 n = 5 8.24 \u00b1 1.07 n = 1 8.2 n = 6 8.23 \u00b1 0.96 n = 6 8.08 \u00b1 1.03 n = 2",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1767,7 +1767,7 @@
       "context_window": "n = 2 0.84 \u00b1 0.83 n = 7 1.14 \u00b1 0.46 n = 5 8.24 \u00b1 1.07 n = 1 8.2 n = 6 8.23 \u00b1 0.96 n = 6 8.08 \u00b1 1.03 n = 2 7.95 \u00b1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1785,7 +1785,7 @@
       "context_window": "\u00b1 0.83 n = 7 1.14 \u00b1 0.46 n = 5 8.24 \u00b1 1.07 n = 1 8.2 n = 6 8.23 \u00b1 0.96 n = 6 8.08 \u00b1 1.03 n = 2 7.95 \u00b1 0.35 n = 8",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1804,7 +1804,7 @@
       "context_window": "n = 7 1.14 \u00b1 0.46 n = 5 8.24 \u00b1 1.07 n = 1 8.2 n = 6 8.23 \u00b1 0.96 n = 6 8.08 \u00b1 1.03 n = 2 7.95 \u00b1 0.35 n = 8 8.05 \u00b1 0.89",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1822,7 +1822,7 @@
       "context_window": "\u00b1 0.46 n = 5 8.24 \u00b1 1.07 n = 1 8.2 n = 6 8.23 \u00b1 0.96 n = 6 8.08 \u00b1 1.03 n = 2 7.95 \u00b1 0.35 n = 8 8.05 \u00b1 0.89 n = 5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1841,7 +1841,7 @@
       "context_window": "n = 5 8.24 \u00b1 1.07 n = 1 8.2 n = 6 8.23 \u00b1 0.96 n = 6 8.08 \u00b1 1.03 n = 2 7.95 \u00b1 0.35 n = 8 8.05 \u00b1 0.89 n = 5 1.01 \u00b1 0.09",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1859,7 +1859,7 @@
       "context_window": "\u00b1 1.07 n = 1 8.2 n = 6 8.23 \u00b1 0.96 n = 6 8.08 \u00b1 1.03 n = 2 7.95 \u00b1 0.35 n = 8 8.05 \u00b1 0.89 n = 5 1.01 \u00b1 0.09 n = 1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1878,7 +1878,7 @@
       "context_window": "n = 1 8.2 n = 6 8.23 \u00b1 0.96 n = 6 8.08 \u00b1 1.03 n = 2 7.95 \u00b1 0.35 n = 8 8.05 \u00b1 0.89 n = 5 1.01 \u00b1 0.09 n = 1 1.06 n = 6",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1896,7 +1896,7 @@
       "context_window": "n = 6 8.23 \u00b1 0.96 n = 6 8.08 \u00b1 1.03 n = 2 7.95 \u00b1 0.35 n = 8 8.05 \u00b1 0.89 n = 5 1.01 \u00b1 0.09 n = 1 1.06 n = 6 1.02",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1915,7 +1915,7 @@
       "context_window": "8.23 \u00b1 0.96 n = 6 8.08 \u00b1 1.03 n = 2 7.95 \u00b1 0.35 n = 8 8.05 \u00b1 0.89 n = 5 1.01 \u00b1 0.09 n = 1 1.06 n = 6 1.02 \u00b1 0.08 n = 6",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1933,7 +1933,7 @@
       "context_window": "n = 6 8.08 \u00b1 1.03 n = 2 7.95 \u00b1 0.35 n = 8 8.05 \u00b1 0.89 n = 5 1.01 \u00b1 0.09 n = 1 1.06 n = 6 1.02 \u00b1 0.08 n = 6 1.02",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1952,7 +1952,7 @@
       "context_window": "8.08 \u00b1 1.03 n = 2 7.95 \u00b1 0.35 n = 8 8.05 \u00b1 0.89 n = 5 1.01 \u00b1 0.09 n = 1 1.06 n = 6 1.02 \u00b1 0.08 n = 6 1.02 \u00b1 0.08 n = 2",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1970,7 +1970,7 @@
       "context_window": "n = 2 7.95 \u00b1 0.35 n = 8 8.05 \u00b1 0.89 n = 5 1.01 \u00b1 0.09 n = 1 1.06 n = 6 1.02 \u00b1 0.08 n = 6 1.02 \u00b1 0.08 n = 2 1.08",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1988,7 +1988,7 @@
       "context_window": "0.35 n = 8 8.05 \u00b1 0.89 n = 5 1.01 \u00b1 0.09 n = 1 1.06 n = 6 1.02 \u00b1 0.08 n = 6 1.02 \u00b1 0.08 n = 2 1.08 \u00b1 0.03 n = 8",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2007,7 +2007,7 @@
       "context_window": "n = 8 8.05 \u00b1 0.89 n = 5 1.01 \u00b1 0.09 n = 1 1.06 n = 6 1.02 \u00b1 0.08 n = 6 1.02 \u00b1 0.08 n = 2 1.08 \u00b1 0.03 n = 8 1.04 \u00b1 0.08",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2025,7 +2025,7 @@
       "context_window": "0.89 n = 5 1.01 \u00b1 0.09 n = 1 1.06 n = 6 1.02 \u00b1 0.08 n = 6 1.02 \u00b1 0.08 n = 2 1.08 \u00b1 0.03 n = 8 1.04 \u00b1 0.08 Abbre",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2044,7 +2044,7 @@
       "context_window": "n = 5 1.01 \u00b1 0.09 n = 1 1.06 n = 6 1.02 \u00b1 0.08 n = 6 1.02 \u00b1 0.08 n = 2 1.08 \u00b1 0.03 n = 8 1.04 \u00b1 0.08 Abbreviations: \u03b3GT",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2062,7 +2062,7 @@
       "context_window": "0.09 n = 1 1.06 n = 6 1.02 \u00b1 0.08 n = 6 1.02 \u00b1 0.08 n = 2 1.08 \u00b1 0.03 n = 8 1.04 \u00b1 0.08 Abbreviations: \u03b3GTP, gamm",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2081,7 +2081,7 @@
       "context_window": "n = 1 1.06 n = 6 1.02 \u00b1 0.08 n = 6 1.02 \u00b1 0.08 n = 2 1.08 \u00b1 0.03 n = 8 1.04 \u00b1 0.08 Abbreviations: \u03b3GTP, gamma\u2010glutamyl tr",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2099,7 +2099,7 @@
       "context_window": "n = 6 1.02 \u00b1 0.08 n = 6 1.02 \u00b1 0.08 n = 2 1.08 \u00b1 0.03 n = 8 1.04 \u00b1 0.08 Abbreviations: \u03b3GTP, gamma\u2010glutamyl transfera",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2118,7 +2118,7 @@
       "context_window": "1.02 \u00b1 0.08 n = 6 1.02 \u00b1 0.08 n = 2 1.08 \u00b1 0.03 n = 8 1.04 \u00b1 0.08 Abbreviations: \u03b3GTP, gamma\u2010glutamyl transferase; ABI, ankl",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2136,7 +2136,7 @@
       "context_window": "hase but increased significantly in the NR phase (change at 24 weeks: NR vs. placebo: 5.4e-05 \u00b1 3.2e-05 units vs. 5.6e-06 \u00b1 8.4e",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2155,7 +2155,7 @@
       "context_window": "y in the NR phase (change at 24 weeks: NR vs. placebo: 5.4e-05 \u00b1 3.2e-05 units vs. 5.6e-06 \u00b1 8.4e-06 units, p = 0.00239*). The a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2211,9 +2211,9 @@
       "context_window": "ne NAD + level, as determined via metabolomic analysis, was 0.050 \u00b1 0.020 units. As expected, NAD + levels increased significantly fo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12341770_nicotinamide_riboside_supplementation_benefits_in_patients_w-u-4153",
@@ -2229,7 +2229,7 @@
       "context_window": "s increased significantly following NR treatment (change at 24 weeks NR vs. placebo: 0.070 \u00b1 0.061 units vs. -0.002 \u00b1 0.018 unit",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2248,7 +2248,7 @@
       "context_window": "following NR treatment (change at 24 weeks NR vs. placebo: 0.070 \u00b1 0.061 units vs. -0.002 \u00b1 0.018 units, p = 0.045*) (Table 2 , Figu",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2267,7 +2267,7 @@
       "context_window": "change at 24 weeks NR vs. placebo: 0.070 \u00b1 0.061 units vs. -0.002 \u00b1 0.018 units, p = 0.045*) (Table 2 , Figure 2 ). These findings co",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2285,7 +2285,7 @@
       "context_window": "vs. placebo: 0.070 \u00b1 0.061 units vs. -0.002 \u00b1 0.018 units, p = 0.045*) (Table 2 , Figure 2 ). These findings confirm that NR tre",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2303,7 +2303,7 @@
       "context_window": "om baseline in each group. Systolic blood pressure (mmHg) n = 6 4.5 \u00b1 20.8 -4.0 (-9.0, 13.0) 1.7 \u00b1 13.8 -2.0 (-3.0, 2.0",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2322,7 +2322,7 @@
       "context_window": "line in each group. Systolic blood pressure (mmHg) n = 6 4.5 \u00b1 20.8 -4.0 (-9.0, 13.0) 1.7 \u00b1 13.8 -2.0 (-3.0, 2.0) Diastolic",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2341,7 +2341,7 @@
       "context_window": "lood pressure (mmHg) n = 6 4.5 \u00b1 20.8 -4.0 (-9.0, 13.0) 1.7 \u00b1 13.8 -2.0 (-3.0, 2.0) Diastolic blood pressure (mmHg) n = 6",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2359,7 +2359,7 @@
       "context_window": "\u00b1 13.8 -2.0 (-3.0, 2.0) Diastolic blood pressure (mmHg) n = 6 3.0 \u00b1 12.7 4.0 (-8.0, 8.0) 6.0 \u00b1 10.5 2.0 (0.0, 11.0)",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2378,7 +2378,7 @@
       "context_window": "-2.0 (-3.0, 2.0) Diastolic blood pressure (mmHg) n = 6 3.0 \u00b1 12.7 4.0 (-8.0, 8.0) 6.0 \u00b1 10.5 2.0 (0.0, 11.0) Right grip s",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2397,7 +2397,7 @@
       "context_window": "blood pressure (mmHg) n = 6 3.0 \u00b1 12.7 4.0 (-8.0, 8.0) 6.0 \u00b1 10.5 2.0 (0.0, 11.0) Right grip strength (kg) n = 6 -0.6 \u00b1 2",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2415,7 +2415,7 @@
       "context_window": ".0) 6.0 \u00b1 10.5 2.0 (0.0, 11.0) Right grip strength (kg) n = 6 -0.6 \u00b1 2.3 -0.5 (-2.5, 1.4) -1.2 \u00b1 2.7 -0.4 (-0.8, -0.1",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2434,7 +2434,7 @@
       "context_window": "\u00b1 10.5 2.0 (0.0, 11.0) Right grip strength (kg) n = 6 -0.6 \u00b1 2.3 -0.5 (-2.5, 1.4) -1.2 \u00b1 2.7 -0.4 (-0.8, -0.1) Left grip",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2453,7 +2453,7 @@
       "context_window": "t grip strength (kg) n = 6 -0.6 \u00b1 2.3 -0.5 (-2.5, 1.4) -1.2 \u00b1 2.7 -0.4 (-0.8, -0.1) Left grip strength (kg) n = 5 -1.2 \u00b1",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2471,7 +2471,7 @@
       "context_window": "4) -1.2 \u00b1 2.7 -0.4 (-0.8, -0.1) Left grip strength (kg) n = 5 -1.2 \u00b1 1.7 -2.3 (-2.4, 0.4) -0.2 \u00b1 2.0 0.5 (-1.1, 0.9)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2490,7 +2490,7 @@
       "context_window": "\u00b1 2.7 -0.4 (-0.8, -0.1) Left grip strength (kg) n = 5 -1.2 \u00b1 1.7 -2.3 (-2.4, 0.4) -0.2 \u00b1 2.0 0.5 (-1.1, 0.9) Walking spe",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2509,7 +2509,7 @@
       "context_window": "t grip strength (kg) n = 5 -1.2 \u00b1 1.7 -2.3 (-2.4, 0.4) -0.2 \u00b1 2.0 0.5 (-1.1, 0.9) Walking speed (m/s) n = 5 0.0 \u00b1 0.2 -0",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2527,7 +2527,7 @@
       "context_window": ".4, 0.4) -0.2 \u00b1 2.0 0.5 (-1.1, 0.9) Walking speed (m/s) n = 5 0.0 \u00b1 0.2 -0.0 (-0.1, 0.1) -0.0 \u00b1 0.2 -0.0 (-0.1, 0.0)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2546,7 +2546,7 @@
       "context_window": ") -0.2 \u00b1 2.0 0.5 (-1.1, 0.9) Walking speed (m/s) n = 5 0.0 \u00b1 0.2 -0.0 (-0.1, 0.1) -0.0 \u00b1 0.2 -0.0 (-0.1, 0.0) Visceral f",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2565,7 +2565,7 @@
       "context_window": "Walking speed (m/s) n = 5 0.0 \u00b1 0.2 -0.0 (-0.1, 0.1) -0.0 \u00b1 0.2 -0.0 (-0.1, 0.0) Visceral fat area at umbilical height (c",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2583,7 +2583,7 @@
       "context_window": "(-0.1, 0.0) Visceral fat area at umbilical height (cm 2 ) n = 6 -18.3 \u00b1 47.9 5.4 (-44.5, 8.8) -0.5 \u00b1 48.4 17.5 (-8.9, 2",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2602,7 +2602,7 @@
       "context_window": ".0) Visceral fat area at umbilical height (cm 2 ) n = 6 -18.3 \u00b1 47.9 5.4 (-44.5, 8.8) -0.5 \u00b1 48.4 17.5 (-8.9, 22.6) Skeletal",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2621,7 +2621,7 @@
       "context_window": "cal height (cm 2 ) n = 6 -18.3 \u00b1 47.9 5.4 (-44.5, 8.8) -0.5 \u00b1 48.4 17.5 (-8.9, 22.6) Skeletal muscle index (kg/m 2 ) n = 6",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2639,7 +2639,7 @@
       "context_window": "\u00b1 48.4 17.5 (-8.9, 22.6) Skeletal muscle index (kg/m 2 ) n = 6 0.0 \u00b1 0.1 -0.0 (-0.0, 0.1) 0.0 \u00b1 0.3 -0.1 (-0.2, 0.2)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2658,7 +2658,7 @@
       "context_window": "17.5 (-8.9, 22.6) Skeletal muscle index (kg/m 2 ) n = 6 0.0 \u00b1 0.1 -0.0 (-0.0, 0.1) 0.0 \u00b1 0.3 -0.1 (-0.2, 0.2) Right heel",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2677,7 +2677,7 @@
       "context_window": "muscle index (kg/m 2 ) n = 6 0.0 \u00b1 0.1 -0.0 (-0.0, 0.1) 0.0 \u00b1 0.3 -0.1 (-0.2, 0.2) Right heel pad thickness (mm) n = 6 -0",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2695,7 +2695,7 @@
       "context_window": "0.0 \u00b1 0.3 -0.1 (-0.2, 0.2) Right heel pad thickness (mm) n = 6 -0.2 \u00b1 1.2 -0.5 (-1.0, 0.4) -0.7 \u00b1 0.9 -0.8 (-1.4, -0.1",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2714,7 +2714,7 @@
       "context_window": "3 -0.1 (-0.2, 0.2) Right heel pad thickness (mm) n = 6 -0.2 \u00b1 1.2 -0.5 (-1.0, 0.4) -0.7 \u00b1 0.9 -0.8 (-1.4, -0.1) Left heel",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2733,7 +2733,7 @@
       "context_window": "l pad thickness (mm) n = 6 -0.2 \u00b1 1.2 -0.5 (-1.0, 0.4) -0.7 \u00b1 0.9 -0.8 (-1.4, -0.1) Left heel pad thickness (mm) n = 6 0.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2751,7 +2751,7 @@
       "context_window": "0.7 \u00b1 0.9 -0.8 (-1.4, -0.1) Left heel pad thickness (mm) n = 6 0.1 \u00b1 1.6 0.8 (-0.8, 1.2) -0.7 \u00b1 2.1 -0.2 (-0.6, 0.4)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2770,7 +2770,7 @@
       "context_window": ".9 -0.8 (-1.4, -0.1) Left heel pad thickness (mm) n = 6 0.1 \u00b1 1.6 0.8 (-0.8, 1.2) -0.7 \u00b1 2.1 -0.2 (-0.6, 0.4) Right CAVI",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2789,7 +2789,7 @@
       "context_window": "eel pad thickness (mm) n = 6 0.1 \u00b1 1.6 0.8 (-0.8, 1.2) -0.7 \u00b1 2.1 -0.2 (-0.6, 0.4) Right CAVI n = 6 -0.4 \u00b1 0.9 -0.5 (-1.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2807,7 +2807,7 @@
       "context_window": "0.8 (-0.8, 1.2) -0.7 \u00b1 2.1 -0.2 (-0.6, 0.4) Right CAVI n = 6 -0.4 \u00b1 0.9 -0.5 (-1.0, -0.2) 0.9 \u00b1 0.8 0.8 (0.3, 1.1)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2826,7 +2826,7 @@
       "context_window": ".8, 1.2) -0.7 \u00b1 2.1 -0.2 (-0.6, 0.4) Right CAVI n = 6 -0.4 \u00b1 0.9 -0.5 (-1.0, -0.2) 0.9 \u00b1 0.8 0.8 (0.3, 1.1) Left CAVI n",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2845,7 +2845,7 @@
       "context_window": ".6, 0.4) Right CAVI n = 6 -0.4 \u00b1 0.9 -0.5 (-1.0, -0.2) 0.9 \u00b1 0.8 0.8 (0.3, 1.1) Left CAVI n = 6 -0.5 \u00b1 0.9 -0.6 (-1.1,",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2863,7 +2863,7 @@
       "context_window": "9 -0.5 (-1.0, -0.2) 0.9 \u00b1 0.8 0.8 (0.3, 1.1) Left CAVI n = 6 -0.5 \u00b1 0.9 -0.6 (-1.1, -0.3) 0.7 \u00b1 0.7 0.7 (0.1, 0.8)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2882,7 +2882,7 @@
       "context_window": "(-1.0, -0.2) 0.9 \u00b1 0.8 0.8 (0.3, 1.1) Left CAVI n = 6 -0.5 \u00b1 0.9 -0.6 (-1.1, -0.3) 0.7 \u00b1 0.7 0.7 (0.1, 0.8) Right ABI n",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2901,7 +2901,7 @@
       "context_window": "0.3, 1.1) Left CAVI n = 6 -0.5 \u00b1 0.9 -0.6 (-1.1, -0.3) 0.7 \u00b1 0.7 0.7 (0.1, 0.8) Right ABI n = 6 -0.1 \u00b1 0.1 -0.1 (-0.2,",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2919,7 +2919,7 @@
       "context_window": "9 -0.6 (-1.1, -0.3) 0.7 \u00b1 0.7 0.7 (0.1, 0.8) Right ABI n = 6 -0.1 \u00b1 0.1 -0.1 (-0.2, -0.0) 0.1 \u00b1 0.1 0.1 (-0.0, 0.1)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2938,7 +2938,7 @@
       "context_window": "(-1.1, -0.3) 0.7 \u00b1 0.7 0.7 (0.1, 0.8) Right ABI n = 6 -0.1 \u00b1 0.1 -0.1 (-0.2, -0.0) 0.1 \u00b1 0.1 0.1 (-0.0, 0.1) Left ABI n",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2957,7 +2957,7 @@
       "context_window": "0.1, 0.8) Right ABI n = 6 -0.1 \u00b1 0.1 -0.1 (-0.2, -0.0) 0.1 \u00b1 0.1 0.1 (-0.0, 0.1) Left ABI n = 6 -0.1 \u00b1 0.1 -0.1 (-0.2,",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2975,7 +2975,7 @@
       "context_window": "1 -0.1 (-0.2, -0.0) 0.1 \u00b1 0.1 0.1 (-0.0, 0.1) Left ABI n = 6 -0.1 \u00b1 0.1 -0.1 (-0.2, 0.0) 0.0 \u00b1 0.1 0.0 (-0.1, 0.1)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2994,7 +2994,7 @@
       "context_window": "(-0.2, -0.0) 0.1 \u00b1 0.1 0.1 (-0.0, 0.1) Left ABI n = 6 -0.1 \u00b1 0.1 -0.1 (-0.2, 0.0) 0.0 \u00b1 0.1 0.0 (-0.1, 0.1) Numerical Ra",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3013,7 +3013,7 @@
       "context_window": "(-0.0, 0.1) Left ABI n = 6 -0.1 \u00b1 0.1 -0.1 (-0.2, 0.0) 0.0 \u00b1 0.1 0.0 (-0.1, 0.1) Numerical Rating Scale n = 6 0.7 \u00b1 3.1",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3031,7 +3031,7 @@
       "context_window": ", 0.0) 0.0 \u00b1 0.1 0.0 (-0.1, 0.1) Numerical Rating Scale n = 6 0.7 \u00b1 3.1 1.5 (0.0, 2.0) -1.0 \u00b1 2.4 -0.5 (-2.0, 0.0) W",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3050,7 +3050,7 @@
       "context_window": "0.0 \u00b1 0.1 0.0 (-0.1, 0.1) Numerical Rating Scale n = 6 0.7 \u00b1 3.1 1.5 (0.0, 2.0) -1.0 \u00b1 2.4 -0.5 (-2.0, 0.0) WBC (/\u03bcL) n",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3069,7 +3069,7 @@
       "context_window": "Numerical Rating Scale n = 6 0.7 \u00b1 3.1 1.5 (0.0, 2.0) -1.0 \u00b1 2.4 -0.5 (-2.0, 0.0) WBC (/\u03bcL) n = 6 250 \u00b1 979 300 (-400,",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3087,7 +3087,7 @@
       "context_window": "1 1.5 (0.0, 2.0) -1.0 \u00b1 2.4 -0.5 (-2.0, 0.0) WBC (/\u03bcL) n = 6 250 \u00b1 979 300 (-400, 1100) 550 \u00b1 1211 250 (-100, 800)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3106,7 +3106,7 @@
       "context_window": "(0.0, 2.0) -1.0 \u00b1 2.4 -0.5 (-2.0, 0.0) WBC (/\u03bcL) n = 6 250 \u00b1 979 300 (-400, 1100) 550 \u00b1 1211 250 (-100, 800) RBC (\u00d710 4",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3125,7 +3125,7 @@
       "context_window": "(-2.0, 0.0) WBC (/\u03bcL) n = 6 250 \u00b1 979 300 (-400, 1100) 550 \u00b1 1211 250 (-100, 800) RBC (\u00d710 4 /\u03bcL) n = 6 6.667 \u00b1 21.125 4",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3143,7 +3143,7 @@
       "context_window": "(-400, 1100) 550 \u00b1 1211 250 (-100, 800) RBC (\u00d710 4 /\u03bcL) n = 6 6.667 \u00b1 21.125 4.000 (4.000, 24.000) 3.833 \u00b1 33.654 -3.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3162,7 +3162,7 @@
       "context_window": "1100) 550 \u00b1 1211 250 (-100, 800) RBC (\u00d710 4 /\u03bcL) n = 6 6.667 \u00b1 21.125 4.000 (4.000, 24.000) 3.833 \u00b1 33.654 -3.500 (-18.000, 7.",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3181,7 +3181,7 @@
       "context_window": "(\u00d710 4 /\u03bcL) n = 6 6.667 \u00b1 21.125 4.000 (4.000, 24.000) 3.833 \u00b1 33.654 -3.500 (-18.000, 7.000) Hemoglobin (g/dL) n = 6 0.317 \u00b1",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3199,7 +3199,7 @@
       "context_window": "3.833 \u00b1 33.654 -3.500 (-18.000, 7.000) Hemoglobin (g/dL) n = 6 0.317 \u00b1 0.402 0.500 (0.100, 0.600) 0.000 \u00b1 0.959 -0.100",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3218,7 +3218,7 @@
       "context_window": "33.654 -3.500 (-18.000, 7.000) Hemoglobin (g/dL) n = 6 0.317 \u00b1 0.402 0.500 (0.100, 0.600) 0.000 \u00b1 0.959 -0.100 (-0.400, 0.300",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3237,7 +3237,7 @@
       "context_window": "oglobin (g/dL) n = 6 0.317 \u00b1 0.402 0.500 (0.100, 0.600) 0.000 \u00b1 0.959 -0.100 (-0.400, 0.300) Hematocrit (%) n = 6 1.050 \u00b1 1.4",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3255,7 +3255,7 @@
       "context_window": "00) 0.000 \u00b1 0.959 -0.100 (-0.400, 0.300) Hematocrit (%) n = 6 1.050 \u00b1 1.472 1.750 (0.100, 2.100) 0.700 \u00b1 2.808 0.350",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3274,7 +3274,7 @@
       "context_window": "000 \u00b1 0.959 -0.100 (-0.400, 0.300) Hematocrit (%) n = 6 1.050 \u00b1 1.472 1.750 (0.100, 2.100) 0.700 \u00b1 2.808 0.350 (-1.400, 1.500)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3293,7 +3293,7 @@
       "context_window": "Hematocrit (%) n = 6 1.050 \u00b1 1.472 1.750 (0.100, 2.100) 0.700 \u00b1 2.808 0.350 (-1.400, 1.500) Platelet (\u00d710 4 /\u03bcL) n = 6 -0.200",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3311,7 +3311,7 @@
       "context_window": "0.700 \u00b1 2.808 0.350 (-1.400, 1.500) Platelet (\u00d710 4 /\u03bcL) n = 6 -0.200 \u00b1 1.691 0.150 (-1.800, 1.200) 0.300 \u00b1 2.263 -0.2",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3330,7 +3330,7 @@
       "context_window": "2.808 0.350 (-1.400, 1.500) Platelet (\u00d710 4 /\u03bcL) n = 6 -0.200 \u00b1 1.691 0.150 (-1.800, 1.200) 0.300 \u00b1 2.263 -0.200 (-1.100, 1.20",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3349,7 +3349,7 @@
       "context_window": "(\u00d710 4 /\u03bcL) n = 6 -0.200 \u00b1 1.691 0.150 (-1.800, 1.200) 0.300 \u00b1 2.263 -0.200 (-1.100, 1.200) AST (U/L) n = 6 10.83 \u00b1 23.54 1",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3367,7 +3367,7 @@
       "context_window": ", 1.200) 0.300 \u00b1 2.263 -0.200 (-1.100, 1.200) AST (U/L) n = 6 10.83 \u00b1 23.54 11.50 (-3.00, 31.00) -3.67 \u00b1 19.34 0.00 (",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3386,7 +3386,7 @@
       "context_window": ") 0.300 \u00b1 2.263 -0.200 (-1.100, 1.200) AST (U/L) n = 6 10.83 \u00b1 23.54 11.50 (-3.00, 31.00) -3.67 \u00b1 19.34 0.00 (-3.00, 8.00) A",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3405,7 +3405,7 @@
       "context_window": "0) AST (U/L) n = 6 10.83 \u00b1 23.54 11.50 (-3.00, 31.00) -3.67 \u00b1 19.34 0.00 (-3.00, 8.00) ALT (U/L) n = 6 21.00 \u00b1 39.67 15.00",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3423,7 +3423,7 @@
       "context_window": "3.00, 31.00) -3.67 \u00b1 19.34 0.00 (-3.00, 8.00) ALT (U/L) n = 6 21.00 \u00b1 39.67 15.00 (-9.00, 51.00) 3.667 \u00b1 28.33 1.00 (",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3442,7 +3442,7 @@
       "context_window": "1.00) -3.67 \u00b1 19.34 0.00 (-3.00, 8.00) ALT (U/L) n = 6 21.00 \u00b1 39.67 15.00 (-9.00, 51.00) 3.667 \u00b1 28.33 1.00 (-8.00, 16.00)",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3461,7 +3461,7 @@
       "context_window": "00) ALT (U/L) n = 6 21.00 \u00b1 39.67 15.00 (-9.00, 51.00) 3.667 \u00b1 28.33 1.00 (-8.00, 16.00) LDH (U/L) n = 6 16.500 \u00b1 19.644 21",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3479,7 +3479,7 @@
       "context_window": ".00, 51.00) 3.667 \u00b1 28.33 1.00 (-8.00, 16.00) LDH (U/L) n = 6 16.500 \u00b1 19.644 21.500 (0.000, 28.000) -7.833 \u00b1 45.775",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3498,7 +3498,7 @@
       "context_window": ".00) 3.667 \u00b1 28.33 1.00 (-8.00, 16.00) LDH (U/L) n = 6 16.500 \u00b1 19.644 21.500 (0.000, 28.000) -7.833 \u00b1 45.775 2.500 (1.000, 7.0",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3517,7 +3517,7 @@
       "context_window": "LDH (U/L) n = 6 16.500 \u00b1 19.644 21.500 (0.000, 28.000) -7.833 \u00b1 45.775 2.500 (1.000, 7.000) ALP (U/L) n = 6 17.833 \u00b1 27.651 6",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3535,7 +3535,7 @@
       "context_window": "28.000) -7.833 \u00b1 45.775 2.500 (1.000, 7.000) ALP (U/L) n = 6 17.833 \u00b1 27.651 6.000 (0.000, 45.000) 14.500 \u00b1 10.747 9",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3554,7 +3554,7 @@
       "context_window": ") -7.833 \u00b1 45.775 2.500 (1.000, 7.000) ALP (U/L) n = 6 17.833 \u00b1 27.651 6.000 (0.000, 45.000) 14.500 \u00b1 10.747 9.500 (7.000, 20.0",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3573,7 +3573,7 @@
       "context_window": "ALP (U/L) n = 6 17.833 \u00b1 27.651 6.000 (0.000, 45.000) 14.500 \u00b1 10.747 9.500 (7.000, 20.000) \u03b3GTP (U/L) n = 6 75.00 \u00b1 141.28",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3591,7 +3591,7 @@
       "context_window": "5.000) 14.500 \u00b1 10.747 9.500 (7.000, 20.000) \u03b3GTP (U/L) n = 6 75.00 \u00b1 141.28 3.00 (-20.00, 238.00) 20.83 \u00b1 52.63 5.00",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3610,7 +3610,7 @@
       "context_window": "14.500 \u00b1 10.747 9.500 (7.000, 20.000) \u03b3GTP (U/L) n = 6 75.00 \u00b1 141.28 3.00 (-20.00, 238.00) 20.83 \u00b1 52.63 5.00 (-9.00, 60.00)",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3629,7 +3629,7 @@
       "context_window": "\u03b3GTP (U/L) n = 6 75.00 \u00b1 141.28 3.00 (-20.00, 238.00) 20.83 \u00b1 52.63 5.00 (-9.00, 60.00) CPK (U/L) n = 6 56.500 \u00b1 62.292 29",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3647,7 +3647,7 @@
       "context_window": "00, 238.00) 20.83 \u00b1 52.63 5.00 (-9.00, 60.00) CPK (U/L) n = 6 56.500 \u00b1 62.292 29.500 (16.000, 84.000) -27.833 \u00b1 100.28",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3666,7 +3666,7 @@
       "context_window": ".00) 20.83 \u00b1 52.63 5.00 (-9.00, 60.00) CPK (U/L) n = 6 56.500 \u00b1 62.292 29.500 (16.000, 84.000) -27.833 \u00b1 100.280 4.000 (-13.000",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3685,7 +3685,7 @@
       "context_window": "PK (U/L) n = 6 56.500 \u00b1 62.292 29.500 (16.000, 84.000) -27.833 \u00b1 100.280 4.000 (-13.000, 29.000) T\u2010bilirubin (mg/dL) n = 6 0.000",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3703,7 +3703,7 @@
       "context_window": "33 \u00b1 100.280 4.000 (-13.000, 29.000) T\u2010bilirubin (mg/dL) n = 6 0.000 \u00b1 0.063 0.000 (0.000, 0.000) -0.050 \u00b1 0.152 -0.05",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3722,7 +3722,7 @@
       "context_window": "0.280 4.000 (-13.000, 29.000) T\u2010bilirubin (mg/dL) n = 6 0.000 \u00b1 0.063 0.000 (0.000, 0.000) -0.050 \u00b1 0.152 -0.050 (-0.200, 0.00",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3741,7 +3741,7 @@
       "context_window": "rubin (mg/dL) n = 6 0.000 \u00b1 0.063 0.000 (0.000, 0.000) -0.050 \u00b1 0.152 -0.050 (-0.200, 0.000) C\u2010bilirubin (mg/dL) n = 6 0.017",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3759,7 +3759,7 @@
       "context_window": "0.050 \u00b1 0.152 -0.050 (-0.200, 0.000) C\u2010bilirubin (mg/dL) n = 6 0.017 \u00b1 0.041 0.000 (0.000, 0.000) 0.000 \u00b1 0.063 0.000",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3778,7 +3778,7 @@
       "context_window": "0.152 -0.050 (-0.200, 0.000) C\u2010bilirubin (mg/dL) n = 6 0.017 \u00b1 0.041 0.000 (0.000, 0.000) 0.000 \u00b1 0.063 0.000 (0.000, 0.000)",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3797,7 +3797,7 @@
       "context_window": "irubin (mg/dL) n = 6 0.017 \u00b1 0.041 0.000 (0.000, 0.000) 0.000 \u00b1 0.063 0.000 (0.000, 0.000) Total protein (g/dL) n = 6 0.133 \u00b1",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3815,7 +3815,7 @@
       "context_window": "0.000 \u00b1 0.063 0.000 (0.000, 0.000) Total protein (g/dL) n = 6 0.133 \u00b1 0.413 -0.050 (-0.100, 0.300) 0.250 \u00b1 0.152 0.25",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3834,7 +3834,7 @@
       "context_window": "\u00b1 0.063 0.000 (0.000, 0.000) Total protein (g/dL) n = 6 0.133 \u00b1 0.413 -0.050 (-0.100, 0.300) 0.250 \u00b1 0.152 0.250 (0.200, 0.400",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3853,7 +3853,7 @@
       "context_window": "otein (g/dL) n = 6 0.133 \u00b1 0.413 -0.050 (-0.100, 0.300) 0.250 \u00b1 0.152 0.250 (0.200, 0.400) Serum albumin (g/dL) n = 6 0.117 \u00b1",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3871,7 +3871,7 @@
       "context_window": "0.250 \u00b1 0.152 0.250 (0.200, 0.400) Serum albumin (g/dL) n = 6 0.117 \u00b1 0.279 0.000 (-0.100, 0.300) 0.167 \u00b1 0.294 0.300",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3890,7 +3890,7 @@
       "context_window": "\u00b1 0.152 0.250 (0.200, 0.400) Serum albumin (g/dL) n = 6 0.117 \u00b1 0.279 0.000 (-0.100, 0.300) 0.167 \u00b1 0.294 0.300 (-0.100, 0.400",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3909,7 +3909,7 @@
       "context_window": "lbumin (g/dL) n = 6 0.117 \u00b1 0.279 0.000 (-0.100, 0.300) 0.167 \u00b1 0.294 0.300 (-0.100, 0.400) Uric acid (mg/dL) n = 6 0.183 \u00b1 0",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3927,7 +3927,7 @@
       "context_window": ") 0.167 \u00b1 0.294 0.300 (-0.100, 0.400) Uric acid (mg/dL) n = 6 0.183 \u00b1 0.685 0.150 (-0.100, 0.400) 0.800 \u00b1 0.938 0.500",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3946,7 +3946,7 @@
       "context_window": "7 \u00b1 0.294 0.300 (-0.100, 0.400) Uric acid (mg/dL) n = 6 0.183 \u00b1 0.685 0.150 (-0.100, 0.400) 0.800 \u00b1 0.938 0.500 (0.000, 1.700)",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3965,7 +3965,7 @@
       "context_window": "acid (mg/dL) n = 6 0.183 \u00b1 0.685 0.150 (-0.100, 0.400) 0.800 \u00b1 0.938 0.500 (0.000, 1.700) Na (mmol/L) n = 6 -1.833 \u00b1 0.983",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3983,7 +3983,7 @@
       "context_window": ", 0.400) 0.800 \u00b1 0.938 0.500 (0.000, 1.700) Na (mmol/L) n = 6 -1.833 \u00b1 0.983 -1.500 (-3.000, -1.000) -0.833 \u00b1 1.169 -",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4002,7 +4002,7 @@
       "context_window": "0.800 \u00b1 0.938 0.500 (0.000, 1.700) Na (mmol/L) n = 6 -1.833 \u00b1 0.983 -1.500 (-3.000, -1.000) -0.833 \u00b1 1.169 -1.000 (-2.000, 0",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4021,7 +4021,7 @@
       "context_window": "(mmol/L) n = 6 -1.833 \u00b1 0.983 -1.500 (-3.000, -1.000) -0.833 \u00b1 1.169 -1.000 (-2.000, 0.000) K (mmol/L) n = 6 0.083 \u00b1 0.232",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4039,7 +4039,7 @@
       "context_window": "1.000) -0.833 \u00b1 1.169 -1.000 (-2.000, 0.000) K (mmol/L) n = 6 0.083 \u00b1 0.232 0.050 (-0.100, 0.300) 0.350 \u00b1 0.274 0.300",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4058,7 +4058,7 @@
       "context_window": "-0.833 \u00b1 1.169 -1.000 (-2.000, 0.000) K (mmol/L) n = 6 0.083 \u00b1 0.232 0.050 (-0.100, 0.300) 0.350 \u00b1 0.274 0.300 (0.200, 0.500)",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4077,7 +4077,7 @@
       "context_window": ") K (mmol/L) n = 6 0.083 \u00b1 0.232 0.050 (-0.100, 0.300) 0.350 \u00b1 0.274 0.300 (0.200, 0.500) Cl (mmol/L) n = 6 -1.667 \u00b1 1.211",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4095,7 +4095,7 @@
       "context_window": ", 0.300) 0.350 \u00b1 0.274 0.300 (0.200, 0.500) Cl (mmol/L) n = 6 -1.667 \u00b1 1.211 -1.500 (-3.000, -1.000) -0.833 \u00b1 1.472 -",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4114,7 +4114,7 @@
       "context_window": "0.350 \u00b1 0.274 0.300 (0.200, 0.500) Cl (mmol/L) n = 6 -1.667 \u00b1 1.211 -1.500 (-3.000, -1.000) -0.833 \u00b1 1.472 -0.500 (-2.000, 0",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4133,7 +4133,7 @@
       "context_window": "(mmol/L) n = 6 -1.667 \u00b1 1.211 -1.500 (-3.000, -1.000) -0.833 \u00b1 1.472 -0.500 (-2.000, 0.000) Total cholesterol (mg/dL) n = 6",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4151,7 +4151,7 @@
       "context_window": "\u00b1 1.472 -0.500 (-2.000, 0.000) Total cholesterol (mg/dL) n = 6 21.00 \u00b1 27.44 29.50 (-8.00, 46.00) 19.00 \u00b1 20.07 24.50",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4170,7 +4170,7 @@
       "context_window": "-0.500 (-2.000, 0.000) Total cholesterol (mg/dL) n = 6 21.00 \u00b1 27.44 29.50 (-8.00, 46.00) 19.00 \u00b1 20.07 24.50 (19.00, 33.00)",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4189,7 +4189,7 @@
       "context_window": "sterol (mg/dL) n = 6 21.00 \u00b1 27.44 29.50 (-8.00, 46.00) 19.00 \u00b1 20.07 24.50 (19.00, 33.00) Triglyceride (mg/dL) n = 6 6.833 \u00b1",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4207,7 +4207,7 @@
       "context_window": "19.00 \u00b1 20.07 24.50 (19.00, 33.00) Triglyceride (mg/dL) n = 6 6.833 \u00b1 39.45 1.500 (-16.000, 48.000) 0.833 \u00b1 57.95 -0.",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4226,7 +4226,7 @@
       "context_window": "\u00b1 20.07 24.50 (19.00, 33.00) Triglyceride (mg/dL) n = 6 6.833 \u00b1 39.45 1.500 (-16.000, 48.000) 0.833 \u00b1 57.95 -0.500 (-9.000, 52",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4245,7 +4245,7 @@
       "context_window": "ide (mg/dL) n = 6 6.833 \u00b1 39.45 1.500 (-16.000, 48.000) 0.833 \u00b1 57.95 -0.500 (-9.000, 52.00) LDL\u2010cholesterol (mg/dL) n = 6 11",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4263,7 +4263,7 @@
       "context_window": "3 \u00b1 57.95 -0.500 (-9.000, 52.00) LDL\u2010cholesterol (mg/dL) n = 6 11.33 \u00b1 16.40 14.00 (4.000, 19.00) 15.00 \u00b1 19.43 15.00",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4282,7 +4282,7 @@
       "context_window": "95 -0.500 (-9.000, 52.00) LDL\u2010cholesterol (mg/dL) n = 6 11.33 \u00b1 16.40 14.00 (4.000, 19.00) 15.00 \u00b1 19.43 15.00 (4.000, 32.00)",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4301,7 +4301,7 @@
       "context_window": "sterol (mg/dL) n = 6 11.33 \u00b1 16.40 14.00 (4.000, 19.00) 15.00 \u00b1 19.43 15.00 (4.000, 32.00) HDL\u2010cholesterol (mg/dL) n = 6 10.8",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4319,7 +4319,7 @@
       "context_window": ".00 \u00b1 19.43 15.00 (4.000, 32.00) HDL\u2010cholesterol (mg/dL) n = 6 10.83 \u00b1 15.16 16.00 (-4.00, 19.00) 3.167 \u00b1 9.517 4.50 (",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4338,7 +4338,7 @@
       "context_window": "9.43 15.00 (4.000, 32.00) HDL\u2010cholesterol (mg/dL) n = 6 10.83 \u00b1 15.16 16.00 (-4.00, 19.00) 3.167 \u00b1 9.517 4.50 (-8.00, 12.00)",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4357,7 +4357,7 @@
       "context_window": "sterol (mg/dL) n = 6 10.83 \u00b1 15.16 16.00 (-4.00, 19.00) 3.167 \u00b1 9.517 4.50 (-8.00, 12.00) Serum glucose (mg/dL) n = 6 -1.833",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4375,7 +4375,7 @@
       "context_window": "3.167 \u00b1 9.517 4.50 (-8.00, 12.00) Serum glucose (mg/dL) n = 6 -1.833 \u00b1 16.53 0.000 (-6.000, 12.00) 8.333 \u00b1 14.88 5.00",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4394,7 +4394,7 @@
       "context_window": "9.517 4.50 (-8.00, 12.00) Serum glucose (mg/dL) n = 6 -1.833 \u00b1 16.53 0.000 (-6.000, 12.00) 8.333 \u00b1 14.88 5.000 (-1.000, 5.000",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4413,7 +4413,7 @@
       "context_window": "cose (mg/dL) n = 6 -1.833 \u00b1 16.53 0.000 (-6.000, 12.00) 8.333 \u00b1 14.88 5.000 (-1.000, 5.000) HbA1c (%) n = 6 -0.300 \u00b1 0.961 -",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4431,7 +4431,7 @@
       "context_window": "0, 12.00) 8.333 \u00b1 14.88 5.000 (-1.000, 5.000) HbA1c (%) n = 6 -0.300 \u00b1 0.961 -0.000 (-0.200, 0.100) -0.217 \u00b1 0.893 0.",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4450,7 +4450,7 @@
       "context_window": ") 8.333 \u00b1 14.88 5.000 (-1.000, 5.000) HbA1c (%) n = 6 -0.300 \u00b1 0.961 -0.000 (-0.200, 0.100) -0.217 \u00b1 0.893 0.050 (-0.100, 0.3",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4469,7 +4469,7 @@
       "context_window": "HbA1c (%) n = 6 -0.300 \u00b1 0.961 -0.000 (-0.200, 0.100) -0.217 \u00b1 0.893 0.050 (-0.100, 0.300) CRP (mg/dL) n = 6 0.590 \u00b1 1.670",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4487,7 +4487,7 @@
       "context_window": "0.100) -0.217 \u00b1 0.893 0.050 (-0.100, 0.300) CRP (mg/dL) n = 6 0.590 \u00b1 1.670 -0.010 (-0.030, 0.040) -0.042 \u00b1 0.098 -0.",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4506,7 +4506,7 @@
       "context_window": "-0.217 \u00b1 0.893 0.050 (-0.100, 0.300) CRP (mg/dL) n = 6 0.590 \u00b1 1.670 -0.010 (-0.030, 0.040) -0.042 \u00b1 0.098 -0.010 (-0.100, 0.",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4525,7 +4525,7 @@
       "context_window": "CRP (mg/dL) n = 6 0.590 \u00b1 1.670 -0.010 (-0.030, 0.040) -0.042 \u00b1 0.098 -0.010 (-0.100, 0.020) NAD + (unit) n = 6 0.070 \u00b1 0.061",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4543,7 +4543,7 @@
       "context_window": "040) -0.042 \u00b1 0.098 -0.010 (-0.100, 0.020) NAD + (unit) n = 6 0.070 \u00b1 0.061 0.095 (0.040, 0.100) -0.002 \u00b1 0.018 0.000",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4562,7 +4562,7 @@
       "context_window": "0.042 \u00b1 0.098 -0.010 (-0.100, 0.020) NAD + (unit) n = 6 0.070 \u00b1 0.061 0.095 (0.040, 0.100) -0.002 \u00b1 0.018 0.000 (-0.020, 0.000",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4581,7 +4581,7 @@
       "context_window": "NAD + (unit) n = 6 0.070 \u00b1 0.061 0.095 (0.040, 0.100) -0.002 \u00b1 0.018 0.000 (-0.020, 0.000) BUN (mg/dL) n = 6 -1.333 \u00b1 3.933",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4599,7 +4599,7 @@
       "context_window": "0.100) -0.002 \u00b1 0.018 0.000 (-0.020, 0.000) BUN (mg/dL) n = 6 -1.333 \u00b1 3.933 -1.000 (-4.000, 2.000) -0.333 \u00b1 6.683 -1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4618,7 +4618,7 @@
       "context_window": "-0.002 \u00b1 0.018 0.000 (-0.020, 0.000) BUN (mg/dL) n = 6 -1.333 \u00b1 3.933 -1.000 (-4.000, 2.000) -0.333 \u00b1 6.683 -1.000 (-5.000, 2.",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4637,7 +4637,7 @@
       "context_window": "UN (mg/dL) n = 6 -1.333 \u00b1 3.933 -1.000 (-4.000, 2.000) -0.333 \u00b1 6.683 -1.000 (-5.000, 2.000) Serum creatinine (mg/dL) n = 6 -",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4655,7 +4655,7 @@
       "context_window": "\u00b1 6.683 -1.000 (-5.000, 2.000) Serum creatinine (mg/dL) n = 6 -0.002 \u00b1 0.047 -0.015 (-0.030, 0.050) 0.092 \u00b1 0.146 0.0",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4674,7 +4674,7 @@
       "context_window": "-1.000 (-5.000, 2.000) Serum creatinine (mg/dL) n = 6 -0.002 \u00b1 0.047 -0.015 (-0.030, 0.050) 0.092 \u00b1 0.146 0.020 (0.020, 0.110",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4693,7 +4693,7 @@
       "context_window": "ine (mg/dL) n = 6 -0.002 \u00b1 0.047 -0.015 (-0.030, 0.050) 0.092 \u00b1 0.146 0.020 (0.020, 0.110) eGFR (mL/min/1.73 m 2 ) n = 6 0.46",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4711,7 +4711,7 @@
       "context_window": "092 \u00b1 0.146 0.020 (0.020, 0.110) eGFR (mL/min/1.73 m 2 ) n = 6 0.467 \u00b1 7.388 2.600 (-5.200, 7.000) -10.733 \u00b1 11.144 -5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4730,7 +4730,7 @@
       "context_window": ".146 0.020 (0.020, 0.110) eGFR (mL/min/1.73 m 2 ) n = 6 0.467 \u00b1 7.388 2.600 (-5.200, 7.000) -10.733 \u00b1 11.144 -5.350 (-22.000,",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4749,7 +4749,7 @@
       "context_window": "n/1.73 m 2 ) n = 6 0.467 \u00b1 7.388 2.600 (-5.200, 7.000) -10.733 \u00b1 11.144 -5.350 (-22.000, -3.800) Urine albumin (mg/gCr) n = 6 1",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4767,7 +4767,7 @@
       "context_window": "\u00b1 11.144 -5.350 (-22.000, -3.800) Urine albumin (mg/gCr) n = 6 13.52 \u00b1 31.27 2.050 (-0.800, 8.500) 16.07 \u00b1 36.09 4.150",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4786,7 +4786,7 @@
       "context_window": "4 -5.350 (-22.000, -3.800) Urine albumin (mg/gCr) n = 6 13.52 \u00b1 31.27 2.050 (-0.800, 8.500) 16.07 \u00b1 36.09 4.150 (0.900, 6.200)",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4805,7 +4805,7 @@
       "context_window": "umin (mg/gCr) n = 6 13.52 \u00b1 31.27 2.050 (-0.800, 8.500) 16.07 \u00b1 36.09 4.150 (0.900, 6.200) Urine NAG (U/L) n = 6 -0.783 \u00b1 3.8",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4823,7 +4823,7 @@
       "context_window": "500) 16.07 \u00b1 36.09 4.150 (0.900, 6.200) Urine NAG (U/L) n = 6 -0.783 \u00b1 3.857 -1.250 (-1.600, 1.600) -3.450 \u00b1 5.373 -2",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4842,7 +4842,7 @@
       "context_window": ".07 \u00b1 36.09 4.150 (0.900, 6.200) Urine NAG (U/L) n = 6 -0.783 \u00b1 3.857 -1.250 (-1.600, 1.600) -3.450 \u00b1 5.373 -2.750 (-8.400, -0",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4861,7 +4861,7 @@
       "context_window": "NAG (U/L) n = 6 -0.783 \u00b1 3.857 -1.250 (-1.600, 1.600) -3.450 \u00b1 5.373 -2.750 (-8.400, -0.900) \u03b22\u2010microglobulin (mg/L) n = 6 2",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4879,7 +4879,7 @@
       "context_window": "\u00b1 5.373 -2.750 (-8.400, -0.900) \u03b22\u2010microglobulin (mg/L) n = 6 25.83 \u00b1 165.3 -19.50 (-37.00, 40.00) 395.8 \u00b1 1093 -11.5",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4898,7 +4898,7 @@
       "context_window": "3 -2.750 (-8.400, -0.900) \u03b22\u2010microglobulin (mg/L) n = 6 25.83 \u00b1 165.3 -19.50 (-37.00, 40.00) 395.8 \u00b1 1093 -11.50 (-58.00, 25.0",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4917,7 +4917,7 @@
       "context_window": "bulin (mg/L) n = 6 25.83 \u00b1 165.3 -19.50 (-37.00, 40.00) 395.8 \u00b1 1093 -11.50 (-58.00, 25.00) L\u2010FABP (\u03bcg/gCr) n = 6 1.040 \u00b1 1.",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4935,7 +4935,7 @@
       "context_window": "00) 395.8 \u00b1 1093 -11.50 (-58.00, 25.00) L\u2010FABP (\u03bcg/gCr) n = 6 1.040 \u00b1 1.313 1.100 (0.055, 2.025) 1.567 \u00b1 4.640 0.330",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4954,7 +4954,7 @@
       "context_window": "5.8 \u00b1 1093 -11.50 (-58.00, 25.00) L\u2010FABP (\u03bcg/gCr) n = 6 1.040 \u00b1 1.313 1.100 (0.055, 2.025) 1.567 \u00b1 4.640 0.330 (-1.060, 1.220)",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4973,7 +4973,7 @@
       "context_window": "\u2010FABP (\u03bcg/gCr) n = 6 1.040 \u00b1 1.313 1.100 (0.055, 2.025) 1.567 \u00b1 4.640 0.330 (-1.060, 1.220) Kim\u20101 (ng/mL) n = 6 -0.090 \u00b1 0.71",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4991,7 +4991,7 @@
       "context_window": ".025) 1.567 \u00b1 4.640 0.330 (-1.060, 1.220) Kim\u20101 (ng/mL) n = 6 -0.090 \u00b1 0.716 -0.303 (-0.421, -0.093) 1.964 \u00b1 6.078 -0",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5010,7 +5010,7 @@
       "context_window": ".567 \u00b1 4.640 0.330 (-1.060, 1.220) Kim\u20101 (ng/mL) n = 6 -0.090 \u00b1 0.716 -0.303 (-0.421, -0.093) 1.964 \u00b1 6.078 -0.218 (-0.789, -0",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5029,7 +5029,7 @@
       "context_window": "\u20101 (ng/mL) n = 6 -0.090 \u00b1 0.716 -0.303 (-0.421, -0.093) 1.964 \u00b1 6.078 -0.218 (-0.789, -0.093) Abbreviations: \u03b3GTP, gamma\u2010glutam",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5123,7 +5123,7 @@
       "context_window": "alanine aminotransferase (ALT) levels (21.0 \u00b1 39.7 U/L vs. 3.7 \u00b1 28.3, p = 0.097) tended to increase from baseline following NR t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5141,7 +5141,7 @@
       "context_window": "notransferase (ALT) levels (21.0 \u00b1 39.7 U/L vs. 3.7 \u00b1 28.3, p = 0.097) tended to increase from baseline following NR treatment co",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5160,7 +5160,7 @@
       "context_window": "ular filtration rate (eGFR) calculated by serum creatinine (0.47 \u00b1 7.4 mL/min/1.73 m 2 vs. -10.7 \u00b1 11.1, p = 0.088) tended to incr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5178,7 +5178,7 @@
       "context_window": "ltration rate (eGFR) calculated by serum creatinine (0.47 \u00b1 7.4 mL/min/1.73 m 2 vs. -10.7 \u00b1 11.1, p = 0.088) tended to increase af",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5197,7 +5197,7 @@
       "context_window": "ulated by serum creatinine (0.47 \u00b1 7.4 mL/min/1.73 m 2 vs. -10.7 \u00b1 11.1, p = 0.088) tended to increase after NR treatment. Converse",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5215,7 +5215,7 @@
       "context_window": "um creatinine (0.47 \u00b1 7.4 mL/min/1.73 m 2 vs. -10.7 \u00b1 11.1, p = 0.088) tended to increase after NR treatment. Conversely, uric ac",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5271,7 +5271,7 @@
       "context_window": "atment. Conversely, uric acid levels (0.18 \u00b1 0.69 mg/dL vs. 0.80 \u00b1 0.94, p = 0.088), Na (-1.83 \u00b1 0.98 mEq/L vs. -0.83 \u00b1 1.17, p = 0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5289,7 +5289,7 @@
       "context_window": "rsely, uric acid levels (0.18 \u00b1 0.69 mg/dL vs. 0.80 \u00b1 0.94, p = 0.088), Na (-1.83 \u00b1 0.98 mEq/L vs. -0.83 \u00b1 1.17, p = 0.076), and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5308,7 +5308,7 @@
       "context_window": "levels (0.18 \u00b1 0.69 mg/dL vs. 0.80 \u00b1 0.94, p = 0.088), Na (-1.83 \u00b1 0.98 mEq/L vs. -0.83 \u00b1 1.17, p = 0.076), and Cl (-1.67 \u00b1 1.21 mE",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5327,7 +5327,7 @@
       "context_window": "dL vs. 0.80 \u00b1 0.94, p = 0.088), Na (-1.83 \u00b1 0.98 mEq/L vs. -0.83 \u00b1 1.17, p = 0.076), and Cl (-1.67 \u00b1 1.21 mEq/L vs. -0.83 \u00b1 1.47, p",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5345,7 +5345,7 @@
       "context_window": "0.94, p = 0.088), Na (-1.83 \u00b1 0.98 mEq/L vs. -0.83 \u00b1 1.17, p = 0.076), and Cl (-1.67 \u00b1 1.21 mEq/L vs. -0.83 \u00b1 1.47, p = 0.093) t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5364,7 +5364,7 @@
       "context_window": "(-1.83 \u00b1 0.98 mEq/L vs. -0.83 \u00b1 1.17, p = 0.076), and Cl (-1.67 \u00b1 1.21 mEq/L vs. -0.83 \u00b1 1.47, p = 0.093) tended to decrease after",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5383,7 +5383,7 @@
       "context_window": ". -0.83 \u00b1 1.17, p = 0.076), and Cl (-1.67 \u00b1 1.21 mEq/L vs. -0.83 \u00b1 1.47, p = 0.093) tended to decrease after NR treatment. Therefor",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5401,7 +5401,7 @@
       "context_window": "7, p = 0.076), and Cl (-1.67 \u00b1 1.21 mEq/L vs. -0.83 \u00b1 1.47, p = 0.093) tended to decrease after NR treatment. Therefore, NR may e",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5420,7 +5420,7 @@
       "context_window": "and was significantly improved after NR treatment (right: -0.4 \u00b1 0.9 vs. 0.9 \u00b1 0.8, p = 0.042*; left: -0.5 \u00b1 0.9 vs. 0.7 \u00b1 0.7,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5532,7 +5532,7 @@
       "context_window": "nificantly decreased (worsened) after NR in the right leg (-0.1 \u00b1 0.1 vs. 0.1 \u00b1 0.1, p = 0.018*). The improvement in CAVI may hav",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5588,9 +5588,9 @@
       "context_window": "during the NR phase, but only in the left foot (left foot: 0.1 \u00b1 1.6 mm vs. -0.7 \u00b1 2.1, p = 0.060) (Table 2 ). The Numerical Rat",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12341770_nicotinamide_riboside_supplementation_benefits_in_patients_w-u-13095",
@@ -5606,9 +5606,9 @@
       "context_window": "g the NR phase, but only in the left foot (left foot: 0.1 \u00b1 1.6 mm vs. -0.7 \u00b1 2.1, p = 0.060) (Table 2 ). The Numerical Rating",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12341770_nicotinamide_riboside_supplementation_benefits_in_patients_w-msd-13107",
@@ -5625,9 +5625,9 @@
       "context_window": "se, but only in the left foot (left foot: 0.1 \u00b1 1.6 mm vs. -0.7 \u00b1 2.1, p = 0.060) (Table 2 ). The Numerical Rating Scale, a subje",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12341770_nicotinamide_riboside_supplementation_benefits_in_patients_w-p-13118",
@@ -5643,9 +5643,9 @@
       "context_window": "y in the left foot (left foot: 0.1 \u00b1 1.6 mm vs. -0.7 \u00b1 2.1, p = 0.060) (Table 2 ). The Numerical Rating Scale, a subjective pain",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12341770_nicotinamide_riboside_supplementation_benefits_in_patients_w-msd-13766",
@@ -5662,7 +5662,7 @@
       "context_window": "followed by a placebo. The mean ulcer size was reduced by -0.88 \u00b1 1.64 cm 2 during the NR phase, while it increased by 0.71 \u00b1 1.02",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5680,7 +5680,7 @@
       "context_window": "ed by a placebo. The mean ulcer size was reduced by -0.88 \u00b1 1.64 cm 2 during the NR phase, while it increased by 0.71 \u00b1 1.02 cm",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5699,7 +5699,7 @@
       "context_window": "0.88 \u00b1 1.64 cm 2 during the NR phase, while it increased by 0.71 \u00b1 1.02 cm 2 during the placebo phase. Comparing the increase in th",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5717,7 +5717,7 @@
       "context_window": "1.64 cm 2 during the NR phase, while it increased by 0.71 \u00b1 1.02 cm 2 during the placebo phase. Comparing the increase in the p",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5754,7 +5754,7 @@
       "context_window": "rease during the NR phase compared with the placebo phase (-18.3 \u00b1 47.9 cm 2 vs. -0.5 \u00b1 48.4, p = 0.273) (Table 2 ). No significan",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5772,7 +5772,7 @@
       "context_window": "uring the NR phase compared with the placebo phase (-18.3 \u00b1 47.9 cm 2 vs. -0.5 \u00b1 48.4, p = 0.273) (Table 2 ). No significant d",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5791,7 +5791,7 @@
       "context_window": "ase compared with the placebo phase (-18.3 \u00b1 47.9 cm 2 vs. -0.5 \u00b1 48.4, p = 0.273) (Table 2 ). No significant differences were ob",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5809,7 +5809,7 @@
       "context_window": "with the placebo phase (-18.3 \u00b1 47.9 cm 2 vs. -0.5 \u00b1 48.4, p = 0.273) (Table 2 ). No significant differences were observed betw",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -5827,7 +5827,7 @@
       "context_window": "et al. 2021 ). In patients with peripheral artery disease, 6 months of NR administration significantly improved the 6\u2010min walki",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5845,7 +5845,7 @@
       "context_window": "ollowing a 21\u2010day administration period with a subsequent 2-3 week washout phase (Elhassan et al. 2019 ). However, basic resea",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5863,9 +5863,9 @@
       "context_window": "024 ; Chu et al. 2022 ). Given that NR was administered for 28 weeks in this study, any potential carryover effects are likely t",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12341770_nicotinamide_riboside_supplementation_benefits_in_patients_w-u-937",
@@ -5881,7 +5881,7 @@
       "context_window": "ollowing a 21\u2010day administration period with a subsequent 2-3 week washout phase (Elhassan et al. 2019 ). However, basic resea",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5899,9 +5899,9 @@
       "context_window": "024 ; Chu et al. 2022 ). Given that NR was administered for 28 weeks in this study, any potential carryover effects are likely t",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

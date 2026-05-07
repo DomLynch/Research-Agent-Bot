@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me",
   "doi": "10.3389/fnut.2025.1664412",
-  "extracted_at": "2026-05-05T22:11:26+00:00",
+  "extracted_at": "2026-05-07T16:57:01+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 39,
@@ -25,7 +25,7 @@
       "context_window": "up to August 2024. Eligible studies included adult women (\u226585% female, BMI \u2265 25 kg/m 2 ) receiving TRE interventions with",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": ". Eligible studies included adult women (\u226585% female, BMI \u2265 25 kg/m 2 ) receiving TRE interventions with or without caloric r",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -61,9 +61,9 @@
       "context_window": "ere included. TRE significantly reduced body weight (WMD = -1.927 kg, 95% CI: -3.688 to -0.166, p = 0.032) and fasting insulin l",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me-ci-930",
@@ -80,9 +80,9 @@
       "context_window": "ed. TRE significantly reduced body weight (WMD = -1.927 kg, 95% CI: -3.688 to -0.166, p = 0.032) and fasting insulin levels (WMD = -2.120 \u03bcU/mL,",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me-p-956",
@@ -98,9 +98,9 @@
       "context_window": "ced body weight (WMD = -1.927 kg, 95% CI: -3.688 to -0.166, p = 0.032) and fasting insulin levels (WMD = -2.120 \u03bcU/mL, 95% CI: -4",
       "claim_role": "effect",
       "endpoint": "body weight",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me-ci-1015",
@@ -117,9 +117,9 @@
       "context_window": "p = 0.032) and fasting insulin levels (WMD = -2.120 \u03bcU/mL, 95% CI: -4.172 to -0.069, p = 0.043), but showed no significant effects on BMI, fat",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me-p-1041",
@@ -135,9 +135,9 @@
       "context_window": "sulin levels (WMD = -2.120 \u03bcU/mL, 95% CI: -4.172 to -0.069, p = 0.043), but showed no significant effects on BMI, fat mass, fat-f",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me-p-1186",
@@ -153,9 +153,9 @@
       "context_window": "al fat, blood lipids, glucose, HOMA-IR, or blood pressure ( p > 0.05). Subgroup analysis revealed greater weight reduction with",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me-p-1291",
@@ -171,7 +171,7 @@
       "context_window": "weight reduction with TRE compared to conventional diets ( p = 0.046), but not versus calorie restriction alone ( p = 0.295). No",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -189,7 +189,7 @@
       "context_window": "ts ( p = 0.046), but not versus calorie restriction alone ( p = 0.295). No lean mass loss was observed. Four studies reported min",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -206,7 +206,7 @@
       "sentence": "Observations indicate that adherence to sustained CR begins to decline approximately 1 month post-intervention, with progressive deterioration thereafter ( 5 ).",
       "context_window": "t adherence to sustained CR begins to decline approximately 1 month post-intervention, with progressive deterioration thereafte",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -225,9 +225,9 @@
       "context_window": "pometric parameters and metabolic profiles in women (aged \u2265 18 years) with overweight/obesity, with the aim of informing clinica",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me-u-640",
@@ -243,7 +243,7 @@
       "context_window": "metabolic parameters (secondary outcomes) in adult women (\u226518 years) with overweight and obesity (BMI \u2265 25 kg/m 2 ). Search ter",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -261,7 +261,7 @@
       "context_window": "adult women (\u226518 years) with overweight and obesity (BMI \u2265 25 kg/m 2 ). Search terms were systematically developed using the",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -279,7 +279,7 @@
       "context_window": "g (T): no a priori minimum duration; included RCTs ranged 6-52 weeks (see Table 2 ); BMI, Body Mass Index; FBG, Fasting Blood Gl",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -423,9 +423,9 @@
       "context_window": "ials (RCTs) with a total of 612 participants (intervention: n = 315; control: n = 297), all providing complete outcome data. Tw",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me-n-1134",
@@ -441,9 +441,9 @@
       "context_window": "total of 612 participants (intervention: n = 315; control: n = 297), all providing complete outcome data. Two studies employed",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me-pct-2781",
@@ -549,9 +549,9 @@
       "context_window": "abolic parameters. * indicates statistical significance at p < 0.05. Weight, body weight; BMI, body mass index; FBG, fasting bl",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12479299_effects_of_time_restricted_eating_on_body_composition_and_me-pct-4069",

@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_1161_01_atv_15_5_678_reduction_of_ldl_cholesterol_by_25_to_60_in_patients_with_pr",
+  "doi": "10.1161/01.atv.15.5.678",
+  "extracted_at": "2026-05-07T19:24:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_atv_15_5_678_reduction_of_ldl_cholesterol_by_25_to_60_in_patients_with_pr-u-461",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 461,
+      "sentence": "After completing an 8-week placebo-baseline dietary phase, 81 patients were randomly assigned to receive either placebo or 2.5, 5, 10, 20, 40, or 80 mg atorvastatin once daily for 6 weeks.",
+      "context_window": "ssigned to receive either placebo or 2.5, 5, 10, 20, 40, or 80 mg atorvastatin once daily for 6 weeks. Plasma LDL cholesterol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_atv_15_5_678_reduction_of_ldl_cholesterol_by_25_to_60_in_patients_with_pr-u-495",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 495,
+      "sentence": "After completing an 8-week placebo-baseline dietary phase, 81 patients were randomly assigned to receive either placebo or 2.5, 5, 10, 20, 40, or 80 mg atorvastatin once daily for 6 weeks.",
+      "context_window": "or 2.5, 5, 10, 20, 40, or 80 mg atorvastatin once daily for 6 weeks. Plasma LDL cholesterol reductions from baseline were dose",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_atv_15_5_678_reduction_of_ldl_cholesterol_by_25_to_60_in_patients_with_pr-pct-576",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 576,
+      "sentence": "Plasma LDL cholesterol reductions from baseline were dose related, with 25% to 61% reduction from the minimum dose to the maximum dose of 80 mg atorvastatin once a day.",
+      "context_window": "holesterol reductions from baseline were dose related, with 25% to 61% reduction from the minimum dose to the maximum dose",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_atv_15_5_678_reduction_of_ldl_cholesterol_by_25_to_60_in_patients_with_pr-pct-583",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 583,
+      "sentence": "Plasma LDL cholesterol reductions from baseline were dose related, with 25% to 61% reduction from the minimum dose to the maximum dose of 80 mg atorvastatin once a day.",
+      "context_window": "rol reductions from baseline were dose related, with 25% to 61% reduction from the minimum dose to the maximum dose of 80 m",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_atv_15_5_678_reduction_of_ldl_cholesterol_by_25_to_60_in_patients_with_pr-u-642",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 642,
+      "sentence": "Plasma LDL cholesterol reductions from baseline were dose related, with 25% to 61% reduction from the minimum dose to the maximum dose of 80 mg atorvastatin once a day.",
+      "context_window": "61% reduction from the minimum dose to the maximum dose of 80 mg atorvastatin once a day. Plasma total cholesterol and apo B",
+      "claim_role": "dose",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

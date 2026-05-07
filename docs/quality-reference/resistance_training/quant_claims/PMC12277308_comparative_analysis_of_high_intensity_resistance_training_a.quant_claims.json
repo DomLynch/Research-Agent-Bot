@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a",
   "doi": "10.3389/fphys.2025.1568616",
-  "extracted_at": "2026-05-05T21:59:15+00:00",
+  "extracted_at": "2026-05-07T16:57:27+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 71,
@@ -24,7 +24,7 @@
       "context_window": "tation parameters include maintaining exercise intensity at 20%-40% 1RM with high-volume protocols (75 total repetitions: 1",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "on parameters include maintaining exercise intensity at 20%-40% 1RM with high-volume protocols (75 total repetitions: 1 \u00d7 3",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -60,7 +60,7 @@
       "context_window": "ee sessions weekly ( Patterson et al., 2019 ), and applying 50%-80% arterial occlusion pressure (AOP) during the training s",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -78,7 +78,7 @@
       "context_window": "essions weekly ( Patterson et al., 2019 ), and applying 50%-80% arterial occlusion pressure (AOP) during the training sessi",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -96,9 +96,9 @@
       "context_window": "hypothesize that: (1) High-load resistance training (HL-RT; 70% 1RM) will demonstrate superior strength and hypertrophic ga",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "resistance training",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-u-2006",
@@ -186,7 +186,7 @@
       "context_window": "HIRT Group: The training load for each exercise was set at 70% of the participant\u2019s 1RM. No external pressure was applied",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -384,7 +384,7 @@
       "context_window": "re instructed to avoid high-intensity exercise for the past 3 days to reduce the impact of muscle congestion on the test resul",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1698,10 +1698,10 @@
       "sentence": "A significant Group \u00d7 Time interaction was observed for muscle mass (F = 6.414-9.010, P < 0.05), along with a significant main effect of time (F = 20.551-35.301, P < 0.05) ( Table 8 ).",
       "context_window": "interaction was observed for muscle mass (F = 6.414-9.010, P < 0.05), along with a significant main effect of time (F = 20.551-",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-p-7111",
@@ -1716,10 +1716,10 @@
       "sentence": "A significant Group \u00d7 Time interaction was observed for muscle mass (F = 6.414-9.010, P < 0.05), along with a significant main effect of time (F = 20.551-35.301, P < 0.05) ( Table 8 ).",
       "context_window": "with a significant main effect of time (F = 20.551-35.301, P < 0.05) ( Table 8 ). Post-hoc analyses demonstrated that in the HI",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-p-7272",
@@ -1734,7 +1734,7 @@
       "sentence": "Post-hoc analyses demonstrated that in the HIRT group, there were significant increases in muscle mass for both the left and right arms ( P < 0.01), with a 15.1% increase in the left arm and a 22.6% increase in the right arm.",
       "context_window": "increases in muscle mass for both the left and right arms ( P < 0.01), with a 15.1% increase in the left arm and a 22.6% increas",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1752,7 +1752,7 @@
       "sentence": "Post-hoc analyses demonstrated that in the HIRT group, there were significant increases in muscle mass for both the left and right arms ( P < 0.01), with a 15.1% increase in the left arm and a 22.6% increase in the right arm.",
       "context_window": "e mass for both the left and right arms ( P < 0.01), with a 15.1% increase in the left arm and a 22.6% increase in the right",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1770,7 +1770,7 @@
       "sentence": "Post-hoc analyses demonstrated that in the HIRT group, there were significant increases in muscle mass for both the left and right arms ( P < 0.01), with a 15.1% increase in the left arm and a 22.6% increase in the right arm.",
       "context_window": "ms ( P < 0.01), with a 15.1% increase in the left arm and a 22.6% increase in the right arm. In the BFRT-P group, there were",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1788,7 +1788,7 @@
       "sentence": "In the BFRT-P group, there were also significant increases in muscle mass for both the left and right arms ( P < 0.05), with a 5.2% increase in the left arm, which was significantly lower than that in the HIRT group ( P < 0.05), and a 10.6% increase in the right arm.",
       "context_window": "increases in muscle mass for both the left and right arms ( P < 0.05), with a 5.2% increase in the left arm, which was significa",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1806,7 +1806,7 @@
       "sentence": "In the BFRT-P group, there were also significant increases in muscle mass for both the left and right arms ( P < 0.05), with a 5.2% increase in the left arm, which was significantly lower than that in the HIRT group ( P < 0.05), and a 10.6% increase in the right arm.",
       "context_window": "e mass for both the left and right arms ( P < 0.05), with a 5.2% increase in the left arm, which was significantly lower tha",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1824,7 +1824,7 @@
       "sentence": "In the BFRT-P group, there were also significant increases in muscle mass for both the left and right arms ( P < 0.05), with a 5.2% increase in the left arm, which was significantly lower than that in the HIRT group ( P < 0.05), and a 10.6% increase in the right arm.",
       "context_window": "which was significantly lower than that in the HIRT group ( P < 0.05), and a 10.6% increase in the right arm. In the BFRT-F grou",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1842,7 +1842,7 @@
       "sentence": "In the BFRT-P group, there were also significant increases in muscle mass for both the left and right arms ( P < 0.05), with a 5.2% increase in the left arm, which was significantly lower than that in the HIRT group ( P < 0.05), and a 10.6% increase in the right arm.",
       "context_window": "cantly lower than that in the HIRT group ( P < 0.05), and a 10.6% increase in the right arm. In the BFRT-F group, there were",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1860,7 +1860,7 @@
       "sentence": "In the BFRT-F group, there were no significant changes in muscle mass ( P > 0.05), but the increases (2.5%-2.9%) were significantly lower than those in the HIRT group ( P < 0.01).",
       "context_window": "F group, there were no significant changes in muscle mass ( P > 0.05), but the increases (2.5%-2.9%) were significantly lower th",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1878,7 +1878,7 @@
       "sentence": "In the BFRT-F group, there were no significant changes in muscle mass ( P > 0.05), but the increases (2.5%-2.9%) were significantly lower than those in the HIRT group ( P < 0.01).",
       "context_window": "cant changes in muscle mass ( P > 0.05), but the increases (2.5%-2.9%) were significantly lower than those in the HIRT group",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1896,7 +1896,7 @@
       "sentence": "In the BFRT-F group, there were no significant changes in muscle mass ( P > 0.05), but the increases (2.5%-2.9%) were significantly lower than those in the HIRT group ( P < 0.01).",
       "context_window": "changes in muscle mass ( P > 0.05), but the increases (2.5%-2.9%) were significantly lower than those in the HIRT group ( P",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1914,7 +1914,7 @@
       "sentence": "In the BFRT-F group, there were no significant changes in muscle mass ( P > 0.05), but the increases (2.5%-2.9%) were significantly lower than those in the HIRT group ( P < 0.01).",
       "context_window": "9%) were significantly lower than those in the HIRT group ( P < 0.01). Difference Tests for Muscle Mass Indicators (Unit: kg).",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1969,7 +1969,7 @@
       "context_window": "assed BFRT-F in efficacy. Despite identical exercise loads (30% 1RM), the BFRT-P group achieved markedly greater strength i",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1987,7 +1987,7 @@
       "context_window": "RT-P group achieved markedly greater strength improvements (31.2%-40.4%\u2191 vs 9.1%-16.7%\u2191 in BFRT-F) and morphological adaptati",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2005,7 +2005,7 @@
       "context_window": "roup achieved markedly greater strength improvements (31.2%-40.4%\u2191 vs 9.1%-16.7%\u2191 in BFRT-F) and morphological adaptations (e",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2023,7 +2023,7 @@
       "context_window": "ved markedly greater strength improvements (31.2%-40.4%\u2191 vs 9.1%-16.7%\u2191 in BFRT-F) and morphological adaptations (e.g., 10.6",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2041,7 +2041,7 @@
       "context_window": "arkedly greater strength improvements (31.2%-40.4%\u2191 vs 9.1%-16.7%\u2191 in BFRT-F) and morphological adaptations (e.g., 10.6%\u2191 rig",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2058,8 +2058,8 @@
       "sentence": "Despite identical exercise loads (30% 1RM), the BFRT-P group achieved markedly greater strength improvements (31.2%-40.4%\u2191 vs 9.1%-16.7%\u2191 in BFRT-F) and morphological adaptations (e.g., 10.6%\u2191 right arm muscle mass vs non-significant 2.9%\u2191 in BFRT-F).",
       "context_window": "9.1%-16.7%\u2191 in BFRT-F) and morphological adaptations (e.g., 10.6%\u2191 right arm muscle mass vs non-significant 2.9%\u2191 in BFRT-F).",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "muscle mass",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2076,8 +2076,8 @@
       "sentence": "Despite identical exercise loads (30% 1RM), the BFRT-P group achieved markedly greater strength improvements (31.2%-40.4%\u2191 vs 9.1%-16.7%\u2191 in BFRT-F) and morphological adaptations (e.g., 10.6%\u2191 right arm muscle mass vs non-significant 2.9%\u2191 in BFRT-F).",
       "context_window": "ions (e.g., 10.6%\u2191 right arm muscle mass vs non-significant 2.9%\u2191 in BFRT-F). This divergence likely stems from BFRT-P\u2019s pro",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "muscle mass",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2202,10 +2202,10 @@
       "sentence": "Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191).",
       "context_window": "). Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191;",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-pct-1679",
@@ -2220,10 +2220,10 @@
       "sentence": "Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191).",
       "context_window": "rphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-pct-1727",
@@ -2238,10 +2238,10 @@
       "sentence": "Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191).",
       "context_window": "rence (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvemen",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-pct-1732",
@@ -2256,10 +2256,10 @@
       "sentence": "Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191).",
       "context_window": "(6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-pct-1739",
@@ -2274,10 +2274,10 @@
       "sentence": "Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191).",
       "context_window": "8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-pct-1744",
@@ -2292,10 +2292,10 @@
       "sentence": "Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191).",
       "context_window": ") and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; no",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-pct-1795",
@@ -2310,10 +2310,10 @@
       "sentence": "Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191).",
       "context_window": "%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191). These results collectiv",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-pct-1800",
@@ -2328,10 +2328,10 @@
       "sentence": "Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191).",
       "context_window": ".2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191). These results collectively c",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-pct-1823",
@@ -2346,10 +2346,10 @@
       "sentence": "Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191).",
       "context_window": "F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191). These results collectively confirm our hypothesized",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-pct-1828",
@@ -2364,10 +2364,10 @@
       "sentence": "Morphologically, HIRT-driven gains in arm circumference (6.4%-8.7%\u2191) and muscle mass dwarfed those of BFRT-P (3.7%-6.1%\u2191; 5.2%-10.6%\u2191), with BFRT-F showing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191).",
       "context_window": "wing minimal improvements (1.8%-2.5%\u2191; non-significant 2.5%-2.9%\u2191). These results collectively confirm our hypothesized effi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12277308_comparative_analysis_of_high_intensity_resistance_training_a-pct-3448",
@@ -2472,7 +2472,7 @@
       "sentence": "BFRT-Induced Hypertrophy Mechanisms: The moderate hypertrophy in BFRT-P (5.2%-10.6% muscle mass gains) likely stems from the proposed enhanced metabolic stress-mediated pathways, including mTOR activation and myogenic satellite cell proliferation ( Wei et al., 2019 ), potentially amplified by the progressively increasing occlusion.",
       "context_window": "Hypertrophy Mechanisms: The moderate hypertrophy in BFRT-P (5.2%-10.6% muscle mass gains) likely stems from the proposed enh",
       "claim_role": "effect",
-      "endpoint": "muscle hypertrophy",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2490,7 +2490,7 @@
       "sentence": "BFRT-Induced Hypertrophy Mechanisms: The moderate hypertrophy in BFRT-P (5.2%-10.6% muscle mass gains) likely stems from the proposed enhanced metabolic stress-mediated pathways, including mTOR activation and myogenic satellite cell proliferation ( Wei et al., 2019 ), potentially amplified by the progressively increasing occlusion.",
       "context_window": "trophy Mechanisms: The moderate hypertrophy in BFRT-P (5.2%-10.6% muscle mass gains) likely stems from the proposed enhanced",
       "claim_role": "effect",
-      "endpoint": "muscle hypertrophy",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

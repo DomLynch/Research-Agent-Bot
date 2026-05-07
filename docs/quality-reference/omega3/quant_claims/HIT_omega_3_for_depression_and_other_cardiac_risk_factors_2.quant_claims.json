@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_omega_3_for_depression_and_other_cardiac_risk_factors_2",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:33:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_omega_3_for_depression_and_other_cardiac_risk_factors_2-u-20",
+      "claim_type": "unit_value",
+      "raw_text": "10 week",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 20,
+      "sentence": "The purpose of this 10 week randomized, placebo-controlled, double-blind clinical trial is to determine whether antidepressant augmentation with two grams of EPA omega-3 per day is superior to antidepressant therapy alone for major depression in patients with coronary heart disease (CHD).",
+      "context_window": "The purpose of this 10 week randomized, placebo-controlled, double-blind clinical trial",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_omega_3_for_depression_and_other_cardiac_risk_factors_2-u-381",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 381,
+      "sentence": "Posted outcomes: Beck Depression Inventory-II (BDI-II). timeframe=Change from baseline to 10 weeks (post-treatment).",
+      "context_window": "on Inventory-II (BDI-II). timeframe=Change from baseline to 10 weeks (post-treatment). Omega-3 Supplement=29.9 (\u00b19.0); Placebo=2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

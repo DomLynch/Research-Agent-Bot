@@ -1,0 +1,825 @@
+{
+  "paper_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac",
+  "doi": "10.3389/fcvm.2022.1031168",
+  "extracted_at": "2026-05-07T19:32:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 16,
+    "unit_value": 17,
+    "sample_size": 8,
+    "p_value": 2,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-605",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 605,
+      "sentence": "Cox proportional hazards regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs) for mortality from all causes, cardiovascular disease (CVD), and coronary heart disease (CHD) in patients with diabetes.",
+      "context_window": "ession models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs) for mortality from all causes, c",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-811",
+      "claim_type": "unit_value",
+      "raw_text": "61.9 years",
+      "numeric_values": [
+        61.9
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 811,
+      "sentence": "Among 2,991 patients with diabetes, the mean age was 61.9 years (55.2% males).",
+      "context_window": "etes. Among 2,991 patients with diabetes, the mean age was 61.9 years (55.2% males). During the mean follow-up duration of 9.4 ye",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-823",
+      "claim_type": "percentage",
+      "raw_text": "55.2%",
+      "numeric_values": [
+        55.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 823,
+      "sentence": "Among 2,991 patients with diabetes, the mean age was 61.9 years (55.2% males).",
+      "context_window": "2,991 patients with diabetes, the mean age was 61.9 years (55.2% males). During the mean follow-up duration of 9.4 years, a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-875",
+      "claim_type": "unit_value",
+      "raw_text": "9.4 years",
+      "numeric_values": [
+        9.4
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 875,
+      "sentence": "During the mean follow-up duration of 9.4 years, a total of 1,091 deaths were documented, of which 273 were due to CVD, including 227 CHD deaths.",
+      "context_window": "years (55.2% males). During the mean follow-up duration of 9.4 years, a total of 1,091 deaths were documented, of which 273 were",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-1231",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1231,
+      "sentence": "After adjusting for demographic, major lifestyle factors, overall dietary intake patterns, and history of hypertension and dyslipidemia, the multivariable HRs (95% CIs) of mortality risk comparing Q4 to Q1 of EPA intake were 0.55 (0.33-0.92; P -trend = 0.019) for CHD, 0.55 (0.36-0.83; P -trend = 0.005) for CVD, and 0.91 (0.70-1.18; P -trend = 0.264) for all-cause.",
+      "context_window": "ry of hypertension and dyslipidemia, the multivariable HRs (95% CIs) of mortality risk comparing Q4 to Q1 of EPA intake wer",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-1458",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1458,
+      "sentence": "The respective HRs (95% CIs) comparing Q4 to Q1 of DHA were 0.60 (0.37-0.98; P -trend = 0.051) for CHD, 0.58 (0.38-0.89; P -trend = 0.014) for CVD, and 0.92 (0.72-1.18; P -trend = 0.481) for all-cause.",
+      "context_window": "-1.18; P -trend = 0.264) for all-cause. The respective HRs (95% CIs) comparing Q4 to Q1 of DHA were 0.60 (0.37-0.98; P -tre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-243",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 243,
+      "sentence": "According to the Global Burden of Disease Study (GBD) 2019, the prevalence of T2DM worldwide has reached 5.6%, and more than 450 million people are affected by this disease ( 1 ).",
+      "context_window": "dy (GBD) 2019, the prevalence of T2DM worldwide has reached 5.6%, and more than 450 million people are affected by this dise",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-462",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 462,
+      "sentence": "In the USA, the prevalent cases in 2019 were over 38 million ( 2 ), and the number of deaths from T2DM in 2020 was 101,106, with an increase of 27% from 79,535 in 2005 ( 3 ).",
+      "context_window": "f deaths from T2DM in 2020 was 101,106, with an increase of 27% from 79,535 in 2005 ( 3 ). Some studies have shown that di",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-n-1817",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 1817,
+      "sentence": "A study of cardiovascular events in diabetes ( 17 ) ( n = 15,480) found no reduction in CVD risk.",
+      "context_window": "mple. A study of cardiovascular events in diabetes ( 17 ) ( n = 15,480) found no reduction in CVD risk. The Vitamin D and Omeg",
+      "claim_role": "background",
+      "endpoint": "cardiovascular events",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-n-1910",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 1910,
+      "sentence": "The Vitamin D and Omega-3 Trial (VITAL) ( 18 ) ( n = 25,871) found a non-statistically significant 7% reduction in the risk of CVD events and an unexpectedly high 28% reduction in the risk of myocardial infarction (MI), a pre-specified secondary outcome.",
+      "context_window": "CVD risk. The Vitamin D and Omega-3 Trial (VITAL) ( 18 ) ( n = 25,871) found a non-statistically significant 7% reduction in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-1960",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1960,
+      "sentence": "The Vitamin D and Omega-3 Trial (VITAL) ( 18 ) ( n = 25,871) found a non-statistically significant 7% reduction in the risk of CVD events and an unexpectedly high 28% reduction in the risk of myocardial infarction (MI), a pre-specified secondary outcome.",
+      "context_window": "( 18 ) ( n = 25,871) found a non-statistically significant 7% reduction in the risk of CVD events and an unexpectedly hig",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-2024",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2024,
+      "sentence": "The Vitamin D and Omega-3 Trial (VITAL) ( 18 ) ( n = 25,871) found a non-statistically significant 7% reduction in the risk of CVD events and an unexpectedly high 28% reduction in the risk of myocardial infarction (MI), a pre-specified secondary outcome.",
+      "context_window": "eduction in the risk of CVD events and an unexpectedly high 28% reduction in the risk of myocardial infarction (MI), a pre-",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-n-2233",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8179",
+      "numeric_values": [
+        8179.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2233,
+      "sentence": "On the contrary, the Reduction of Cardiovascular Events with Icosapent Ethyl-Intervention Trial (REDUCE-IT) ( 19 ) ( n = 8179) that studied the effect of Vascepa (icosapent ethyl), a highly concentrated ethyl ester form of EPA on patients with mostly borderline and mildly high triglycerides who were taking statins, found a statistically significant 25% reduction in the risk of CVD events.",
+      "context_window": "ith Icosapent Ethyl-Intervention Trial (REDUCE-IT) ( 19 ) ( n = 8179) that studied the effect of Vascepa (icosapent ethyl), a hi",
+      "claim_role": "background",
+      "endpoint": "cardiovascular events",
+      "arm": "icosapent ethyl",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-2467",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2467,
+      "sentence": "On the contrary, the Reduction of Cardiovascular Events with Icosapent Ethyl-Intervention Trial (REDUCE-IT) ( 19 ) ( n = 8179) that studied the effect of Vascepa (icosapent ethyl), a highly concentrated ethyl ester form of EPA on patients with mostly borderline and mildly high triglycerides who were taking statins, found a statistically significant 25% reduction in the risk of CVD events.",
+      "context_window": "who were taking statins, found a statistically significant 25% reduction in the risk of CVD events. As CVD mortality in p",
+      "claim_role": "background",
+      "endpoint": "triglycerides",
+      "arm": "icosapent ethyl",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-486",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 486,
+      "sentence": "The survey was conducted regularly until 1999, after which it became an ongoing program, and is released as a 2 years cycle.",
+      "context_window": "er which it became an ongoing program, and is released as a 2 years cycle. Details of the study design, sampling methods, and d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-890",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 890,
+      "sentence": "The participants who were less than 20 years ( n = 22,221) or non-diabetic ( n = 19,761) and those with missing dietary intakes ( n = 6016), abnormal calorie intake (male participants with calorie intake less than 800 or more than 8,000 and female participants with calorie intake less than 600 or more than 6,000, n = 612) ( 21 ), and missing mortality data ( n = 22) were excluded from the analysis.",
+      "context_window": "NES (1999-2008) survey. The participants who were less than 20 years ( n = 22,221) or non-diabetic ( n = 19,761) and those with",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-n-901",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 901,
+      "sentence": "The participants who were less than 20 years ( n = 22,221) or non-diabetic ( n = 19,761) and those with missing dietary intakes ( n = 6016), abnormal calorie intake (male participants with calorie intake less than 800 or more than 8,000 and female participants with calorie intake less than 600 or more than 6,000, n = 612) ( 21 ), and missing mortality data ( n = 22) were excluded from the analysis.",
+      "context_window": "008) survey. The participants who were less than 20 years ( n = 22,221) or non-diabetic ( n = 19,761) and those with missing d",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-n-931",
+      "claim_type": "sample_size",
+      "raw_text": "n = 19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 931,
+      "sentence": "The participants who were less than 20 years ( n = 22,221) or non-diabetic ( n = 19,761) and those with missing dietary intakes ( n = 6016), abnormal calorie intake (male participants with calorie intake less than 800 or more than 8,000 and female participants with calorie intake less than 600 or more than 6,000, n = 612) ( 21 ), and missing mortality data ( n = 22) were excluded from the analysis.",
+      "context_window": "who were less than 20 years ( n = 22,221) or non-diabetic ( n = 19,761) and those with missing dietary intakes ( n = 6016), ab",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-n-984",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6016",
+      "numeric_values": [
+        6016.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 984,
+      "sentence": "The participants who were less than 20 years ( n = 22,221) or non-diabetic ( n = 19,761) and those with missing dietary intakes ( n = 6016), abnormal calorie intake (male participants with calorie intake less than 800 or more than 8,000 and female participants with calorie intake less than 600 or more than 6,000, n = 612) ( 21 ), and missing mortality data ( n = 22) were excluded from the analysis.",
+      "context_window": "etic ( n = 19,761) and those with missing dietary intakes ( n = 6016), abnormal calorie intake (male participants with calorie i",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-n-1169",
+      "claim_type": "sample_size",
+      "raw_text": "n = 612",
+      "numeric_values": [
+        612.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1169,
+      "sentence": "The participants who were less than 20 years ( n = 22,221) or non-diabetic ( n = 19,761) and those with missing dietary intakes ( n = 6016), abnormal calorie intake (male participants with calorie intake less than 800 or more than 8,000 and female participants with calorie intake less than 600 or more than 6,000, n = 612) ( 21 ), and missing mortality data ( n = 22) were excluded from the analysis.",
+      "context_window": "pants with calorie intake less than 600 or more than 6,000, n = 612) ( 21 ), and missing mortality data ( n = 22) were excluded",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-n-1215",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1215,
+      "sentence": "The participants who were less than 20 years ( n = 22,221) or non-diabetic ( n = 19,761) and those with missing dietary intakes ( n = 6016), abnormal calorie intake (male participants with calorie intake less than 800 or more than 8,000 and female participants with calorie intake less than 600 or more than 6,000, n = 612) ( 21 ), and missing mortality data ( n = 22) were excluded from the analysis.",
+      "context_window": "e than 6,000, n = 612) ( 21 ), and missing mortality data ( n = 22) were excluded from the analysis. Overall, 2,991 participan",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-1836",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 mmol",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1836,
+      "sentence": "Participants with at least one of the following conditions were identified as patients with T2DM: (1) fasting plasma glucose > 7.8 mmol/L, (2) taking diabetes drugs or insulin, and (3) HbA1c \u2265 6.5%.",
+      "context_window": "ntified as patients with T2DM: (1) fasting plasma glucose > 7.8 mmol/L, (2) taking diabetes drugs or insulin, and (3) HbA1c \u2265 6.",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-1902",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1902,
+      "sentence": "Participants with at least one of the following conditions were identified as patients with T2DM: (1) fasting plasma glucose > 7.8 mmol/L, (2) taking diabetes drugs or insulin, and (3) HbA1c \u2265 6.5%.",
+      "context_window": "ol/L, (2) taking diabetes drugs or insulin, and (3) HbA1c \u2265 6.5%. Eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-3334",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3334,
+      "sentence": "Dyslipidemia was defined as HDL < 40 mg/dl or total cholesterol \u2265 200 mg/dl or low-density lipoprotein cholesterol (LDL-C) \u2265 130 mg/dl, or TG \u2265 130 mg/dl.",
+      "context_window": "have high blood pressure. Dyslipidemia was defined as HDL < 40 mg/dl or total cholesterol \u2265 200 mg/dl or low-density lipoprot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-3366",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3366,
+      "sentence": "Dyslipidemia was defined as HDL < 40 mg/dl or total cholesterol \u2265 200 mg/dl or low-density lipoprotein cholesterol (LDL-C) \u2265 130 mg/dl, or TG \u2265 130 mg/dl.",
+      "context_window": "idemia was defined as HDL < 40 mg/dl or total cholesterol \u2265 200 mg/dl or low-density lipoprotein cholesterol (LDL-C) \u2265 130 mg/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-3425",
+      "claim_type": "unit_value",
+      "raw_text": "130 mg",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3425,
+      "sentence": "Dyslipidemia was defined as HDL < 40 mg/dl or total cholesterol \u2265 200 mg/dl or low-density lipoprotein cholesterol (LDL-C) \u2265 130 mg/dl, or TG \u2265 130 mg/dl.",
+      "context_window": "200 mg/dl or low-density lipoprotein cholesterol (LDL-C) \u2265 130 mg/dl, or TG \u2265 130 mg/dl. The primary outcome of this study w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-3444",
+      "claim_type": "unit_value",
+      "raw_text": "130 mg",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3444,
+      "sentence": "Dyslipidemia was defined as HDL < 40 mg/dl or total cholesterol \u2265 200 mg/dl or low-density lipoprotein cholesterol (LDL-C) \u2265 130 mg/dl, or TG \u2265 130 mg/dl.",
+      "context_window": "ensity lipoprotein cholesterol (LDL-C) \u2265 130 mg/dl, or TG \u2265 130 mg/dl. The primary outcome of this study was all-cause mortal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-5038",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5038,
+      "sentence": "The hazard ratios (HRs) and 95% confidence intervals (CIs) were calculated from the interview date to the date of death or censoring (31 December 2015), whichever came first.",
+      "context_window": "he complexity of sample design. The hazard ratios (HRs) and 95% confidence intervals (CIs) were calculated from the intervi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-5822",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5822,
+      "sentence": "In addition, stratified analyses were conducted for different age (age <60 and \u226560 years), sex (male and female), BMI (<25 and \u226525 kg/m 2 ), and disease history (hypertension and dyslipidemia) groups to explore their effect modifications on the observed association by examining an interaction (cross-product) term of these dichotomous variables with the quartile variable of EPA and DHA intakes.",
+      "context_window": "ied analyses were conducted for different age (age <60 and \u226560 years), sex (male and female), BMI (<25 and \u226525 kg/m 2 ), and dis",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "epa",
+      "direction": "mixed",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-5870",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5870,
+      "sentence": "In addition, stratified analyses were conducted for different age (age <60 and \u226560 years), sex (male and female), BMI (<25 and \u226525 kg/m 2 ), and disease history (hypertension and dyslipidemia) groups to explore their effect modifications on the observed association by examining an interaction (cross-product) term of these dichotomous variables with the quartile variable of EPA and DHA intakes.",
+      "context_window": "ge <60 and \u226560 years), sex (male and female), BMI (<25 and \u226525 kg/m 2 ), and disease history (hypertension and dyslipidemia)",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "epa",
+      "direction": "mixed",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-p-6243",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6243,
+      "sentence": "All statistical analyses were performed based on SAS statistical software version 9.4 using a two-sided P < 0.05 as the significance level.",
+      "context_window": "d on SAS statistical software version 9.4 using a two-sided P < 0.05 as the significance level.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-56",
+      "claim_type": "percentage",
+      "raw_text": "55.23%",
+      "numeric_values": [
+        55.23
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 56,
+      "sentence": "Among the 2,991 patients with diabetes aged \u226520, 1,652 (55.23%) were men.",
+      "context_window": "Among the 2,991 patients with diabetes aged \u226520, 1,652 (55.23%) were men. The mean age was 61.9 years, and more than half",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-91",
+      "claim_type": "unit_value",
+      "raw_text": "61.9 years",
+      "numeric_values": [
+        61.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 91,
+      "sentence": "The mean age was 61.9 years, and more than half were over 60 years old (1882, 62.92%).",
+      "context_window": "iabetes aged \u226520, 1,652 (55.23%) were men. The mean age was 61.9 years, and more than half were over 60 years old (1882, 62.92%).",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-132",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 132,
+      "sentence": "The mean age was 61.9 years, and more than half were over 60 years old (1882, 62.92%).",
+      "context_window": ". The mean age was 61.9 years, and more than half were over 60 years old (1882, 62.92%). During 27,988 person-years (median fol",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-152",
+      "claim_type": "percentage",
+      "raw_text": "62.92%",
+      "numeric_values": [
+        62.92
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 152,
+      "sentence": "The mean age was 61.9 years, and more than half were over 60 years old (1882, 62.92%).",
+      "context_window": "1.9 years, and more than half were over 60 years old (1882, 62.92%). During 27,988 person-years (median follow-up of 9.1 year",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-210",
+      "claim_type": "unit_value",
+      "raw_text": "9.1 years",
+      "numeric_values": [
+        9.1
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 210,
+      "sentence": "During 27,988 person-years (median follow-up of 9.1 years and maximum follow-up time was 16.8 years), a total of 1,091 participants died (of whom, 273 died of CVD, including 227 deaths from CHD).",
+      "context_window": ", 62.92%). During 27,988 person-years (median follow-up of 9.1 years and maximum follow-up time was 16.8 years), a total of 1,09",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-251",
+      "claim_type": "unit_value",
+      "raw_text": "16.8 years",
+      "numeric_values": [
+        16.8
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 251,
+      "sentence": "During 27,988 person-years (median follow-up of 9.1 years and maximum follow-up time was 16.8 years), a total of 1,091 participants died (of whom, 273 died of CVD, including 227 deaths from CHD).",
+      "context_window": "edian follow-up of 9.1 years and maximum follow-up time was 16.8 years), a total of 1,091 participants died (of whom, 273 died of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-1351",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1351,
+      "sentence": "The multivariable HRs (95% CIs) in a fully-adjusted model comparing participants in the highest vs. lowest quartiles of EPA intake were 0.55 (0.33-0.92; P -trend = 0.019) for CHD, 0.55 (0.36-0.83; P -trend = 0.005) for CVD, and 0.91 (0.70-1.18; P -trend = 0.264) for all-cause.",
+      "context_window": "CHD deaths but not all-cause deaths. The multivariable HRs (95% CIs) in a fully-adjusted model comparing participants in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-2006",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2006,
+      "sentence": "Values are n or weighted hazard ratio (95% confidence interval).",
+      "context_window": "at least 20 Years. Values are n or weighted hazard ratio (95% confidence interval). Model 1, adjusted for age. Model 2, m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-pct-1375",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1375,
+      "sentence": "A review study reported that long-term consumption of \u03c9-3 fatty acids was associated with about a 40% reduction in adult mortality and incidence rate from cardiovascular diseases, such as MI and arrhythmia ( 25 ).",
+      "context_window": "consumption of \u03c9-3 fatty acids was associated with about a 40% reduction in adult mortality and incidence rate from cardio",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-hr-a-4153",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1.25",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4153,
+      "sentence": "Lee et al. ( 31 ) have reported that the all-cause mortality of women with diabetes is similar to or higher than that of patients with previous CVD (HR = 1.25), and the risk of death is higher than that of men.",
+      "context_window": "milar to or higher than that of patients with previous CVD (HR = 1.25), and the risk of death is higher than that of men. But Isa",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-hr-a-5131",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5131,
+      "sentence": "In women with diabetes, a high intake of EPA (\u22650.017) reduced the risk of adverse clinical outcomes, especially CVD and CHD mortality (HR = 0.39 and 0.45, P < 0.05).",
+      "context_window": "dverse clinical outcomes, especially CVD and CHD mortality (HR = 0.39 and 0.45, P < 0.05). The same conclusion was also found in",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "epa",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-p-5151",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5151,
+      "sentence": "In women with diabetes, a high intake of EPA (\u22650.017) reduced the risk of adverse clinical outcomes, especially CVD and CHD mortality (HR = 0.39 and 0.45, P < 0.05).",
+      "context_window": "omes, especially CVD and CHD mortality (HR = 0.39 and 0.45, P < 0.05). The same conclusion was also found in DHA (>0.067), the r",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "epa",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-5834",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 5834,
+      "sentence": "This study shows that compared with patients with a BMI <25 kg/m 2 , the protective effect of nutrient intake on adverse clinical outcomes in overweight patients is more obvious, and a certain dose-related trend can be seen.",
+      "context_window": "). This study shows that compared with patients with a BMI <25 kg/m 2 , the protective effect of nutrient intake on adverse c",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9868810_associations_of_eicosapentaenoic_acid_and_docosahexaenoic_ac-u-6380",
+      "claim_type": "unit_value",
+      "raw_text": "25.0 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 6380,
+      "sentence": "Although this protective effect did not appear to be statistically significant in our study, the trend in the results also suggests that dietary modifications, such as high-dose intake of EPA and DHA in patients with diabetes who have high levels of BMI (\u226525.0 kg/m 2 ), may have a beneficial effect.",
+      "context_window": "DHA in patients with diabetes who have high levels of BMI (\u226525.0 kg/m 2 ), may have a beneficial effect. In dyslipidemia strat",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

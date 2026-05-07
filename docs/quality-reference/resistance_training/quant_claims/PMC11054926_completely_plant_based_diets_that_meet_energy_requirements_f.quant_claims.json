@@ -1,15 +1,33 @@
 {
   "paper_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f",
   "doi": "10.3390/nu16081122",
-  "extracted_at": "2026-05-05T21:59:09+00:00",
+  "extracted_at": "2026-05-07T16:57:18+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "unit_value": 9,
+    "unit_value": 20,
     "percentage": 15,
     "sample_size": 1,
     "mean_sd": 2
   },
   "claims": [
+    {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-859",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 g/kg/day",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "abstract",
+      "source_offset": 859,
+      "sentence": "Modeled intakes for nutrients of interest were calculated as 1.8 g/kg/day of protein and 2.75 g/meal of leucine, which surpass mean requirements for maximal increases in muscle mass and strength and muscle protein synthesis, respectively.",
+      "context_window": "odeled intakes for nutrients of interest were calculated as 1.8 g/kg/day of protein and 2.75 g/meal of leucine, which surpass mean r",
+      "claim_role": "dose",
+      "endpoint": "muscle mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
     {
       "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-449",
       "claim_type": "unit_value",
@@ -137,6 +155,24 @@
       "binding_confidence": "partial"
     },
     {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-4662",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "methods",
+      "source_offset": 4662,
+      "sentence": "The determination of the protein intake level required to maximize RET-induced gains in muscle mass was based on a consensus statement from the International Olympic Committee (IOC) [ 60 ], which recommends protein intake for high-performance athletes pursuing maximal muscular hypertrophy and strength of 1.6 g/kg/day [ 47 ].",
+      "context_window": "letes pursuing maximal muscular hypertrophy and strength of 1.6 g/kg/day [ 47 ]. Daily protein intakes of 1.6 g/kg were therefore us",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "ret",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
       "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-pct-4828",
       "claim_type": "percentage",
       "raw_text": "14.5%",
@@ -245,6 +281,78 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-443",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 g/kg/day",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 443,
+      "sentence": "Relative protein intake levels were then calculated to be 1.8 g/kg/day.",
+      "context_window": ". Relative protein intake levels were then calculated to be 1.8 g/kg/day. Calculated protein requirements and levels for male bodyb",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-1183",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1183,
+      "sentence": "Footnotes: a Total protein requirements to maximize RET-induced increases in muscle mass and strength were determined as the product of 1.6 g/kg/day and mean athlete body mass in the population used for modeling [ 47 , 60 ]. b 1.6 g/kg/day was used as the target relative protein intake, based on a consensus statement from the International Olympic Committee [ 60 ], which recommends daily protein intakes for high-performance athletes pursuing maximal muscular hypertrophy and strength of 1.6 g/kg/day [ 47 ]. c Modeled total leucine target was set at 8 g/day because a solution to meet protein and amino acid requirements has been made to consume four protein-rich meals per day [ 67 ], one every three to four hours, to optimize MPS [ 68 ]. d Modeled leucine target was set at 2 g/meal because this quantity maximally stimulates MPS in young adults [ 61 , 62 ] and levels that reach or exceed this target exert similar anabolic effects regardless of whether they are sourced from animal- or plant-based proteins [ 63 , 64 , 65 ].",
+      "context_window": "muscle mass and strength were determined as the product of 1.6 g/kg/day and mean athlete body mass in the population used for model",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "ret",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-1274",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1274,
+      "sentence": "Footnotes: a Total protein requirements to maximize RET-induced increases in muscle mass and strength were determined as the product of 1.6 g/kg/day and mean athlete body mass in the population used for modeling [ 47 , 60 ]. b 1.6 g/kg/day was used as the target relative protein intake, based on a consensus statement from the International Olympic Committee [ 60 ], which recommends daily protein intakes for high-performance athletes pursuing maximal muscular hypertrophy and strength of 1.6 g/kg/day [ 47 ]. c Modeled total leucine target was set at 8 g/day because a solution to meet protein and amino acid requirements has been made to consume four protein-rich meals per day [ 67 ], one every three to four hours, to optimize MPS [ 68 ]. d Modeled leucine target was set at 2 g/meal because this quantity maximally stimulates MPS in young adults [ 61 , 62 ] and levels that reach or exceed this target exert similar anabolic effects regardless of whether they are sourced from animal- or plant-based proteins [ 63 , 64 , 65 ].",
+      "context_window": "ody mass in the population used for modeling [ 47 , 60 ]. b 1.6 g/kg/day was used as the target relative protein intake, based on a",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "ret",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-1538",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "results",
+      "source_offset": 1538,
+      "sentence": "Footnotes: a Total protein requirements to maximize RET-induced increases in muscle mass and strength were determined as the product of 1.6 g/kg/day and mean athlete body mass in the population used for modeling [ 47 , 60 ]. b 1.6 g/kg/day was used as the target relative protein intake, based on a consensus statement from the International Olympic Committee [ 60 ], which recommends daily protein intakes for high-performance athletes pursuing maximal muscular hypertrophy and strength of 1.6 g/kg/day [ 47 ]. c Modeled total leucine target was set at 8 g/day because a solution to meet protein and amino acid requirements has been made to consume four protein-rich meals per day [ 67 ], one every three to four hours, to optimize MPS [ 68 ]. d Modeled leucine target was set at 2 g/meal because this quantity maximally stimulates MPS in young adults [ 61 , 62 ] and levels that reach or exceed this target exert similar anabolic effects regardless of whether they are sourced from animal- or plant-based proteins [ 63 , 64 , 65 ].",
+      "context_window": "letes pursuing maximal muscular hypertrophy and strength of 1.6 g/kg/day [ 47 ]. c Modeled total leucine target was set at 8 g/day b",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "ret",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-3121",
@@ -389,6 +497,96 @@
       "arm": "",
       "direction": "",
       "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-2687",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 g/kg/day",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2687,
+      "sentence": "Our study calculated protein intakes of 1.8 g/kg/day, which exceeds the mean intake levels of 1.6 g/kg/day required to maximize RET-induced gains in muscle mass and strength in healthy adults [ 47 ].",
+      "context_window": "h [ 40 , 75 , 76 ]. Our study calculated protein intakes of 1.8 g/kg/day, which exceeds the mean intake levels of 1.6 g/kg/day requi",
+      "claim_role": "dose",
+      "endpoint": "muscle mass",
+      "arm": "ret",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-2741",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2741,
+      "sentence": "Our study calculated protein intakes of 1.8 g/kg/day, which exceeds the mean intake levels of 1.6 g/kg/day required to maximize RET-induced gains in muscle mass and strength in healthy adults [ 47 ].",
+      "context_window": "es of 1.8 g/kg/day, which exceeds the mean intake levels of 1.6 g/kg/day required to maximize RET-induced gains in muscle mass and s",
+      "claim_role": "dose",
+      "endpoint": "muscle mass",
+      "arm": "ret",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-3059",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/day",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3059,
+      "sentence": "Protein intake levels were lower than those reported in a cross-sectional study by Amatori et al. (2023), which found that competitive bodybuilders adhering to completely plant-based diets consumed an average of 2.2 g/kg/day of protein derived from whole foods and supplements during the bulking phase [ 40 ].",
+      "context_window": "ring to completely plant-based diets consumed an average of 2.2 g/kg/day of protein derived from whole foods and supplements during",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-3317",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 g/kg/day",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 3317,
+      "sentence": "Case reports have also indicated that well-trained bodybuilding and powerlifting subjects following plant-based diets achieved protein intakes ranging from 2.0-3.5 g/kg/day through a combination of whole foods and supplements [ 75 , 76 ].",
+      "context_window": "plant-based diets achieved protein intakes ranging from 2.0-3.5 g/kg/day through a combination of whole foods and supplements [ 75 ,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-5284",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 g/kg/day",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "g/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5284,
+      "sentence": "Similarly, Hevia-Larrain et al. (2021) found that young men who consumed 1.6 g/kg/day of protein while following completely plant-based diets and engaging in RET ingested an average of 9 g/day of leucine, with 2-3 g/meal consumed at breakfast, lunch, dinner, and evening snack [ 38 ].",
+      "context_window": "via-Larrain et al. (2021) found that young men who consumed 1.6 g/kg/day of protein while following completely plant-based diets and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "ret",
+      "direction": "",
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11054926_completely_plant_based_diets_that_meet_energy_requirements_f-u-7689",

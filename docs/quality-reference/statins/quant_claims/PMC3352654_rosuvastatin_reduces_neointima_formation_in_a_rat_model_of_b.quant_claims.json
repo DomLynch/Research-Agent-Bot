@@ -1,0 +1,1234 @@
+{
+  "paper_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b",
+  "doi": "10.1186/2047-783X-15-11-461",
+  "extracted_at": "2026-05-07T19:24:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 33,
+    "mean_sd": 14,
+    "p_value": 7,
+    "percentage": 13
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-775",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 775,
+      "sentence": "Half of the animals received rosuvastatin (20 mg/kg body weight/day) via oral gavage, beginning 3 days prior to injury.",
+      "context_window": "carotid artery. Half of the animals received rosuvastatin (20 mg/kg body weight/day) via oral gavage, beginning 3 days prior",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-828",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 828,
+      "sentence": "Half of the animals received rosuvastatin (20 mg/kg body weight/day) via oral gavage, beginning 3 days prior to injury.",
+      "context_window": "tatin (20 mg/kg body weight/day) via oral gavage, beginning 3 days prior to injury. Gelatinase activity and neointima formatio",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-910",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 910,
+      "sentence": "Gelatinase activity and neointima formation were analyzed 3 days and 14 days after balloon injury, respectively.",
+      "context_window": ". Gelatinase activity and neointima formation were analyzed 3 days and 14 days after balloon injury, respectively. 14 days aft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-921",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 921,
+      "sentence": "Gelatinase activity and neointima formation were analyzed 3 days and 14 days after balloon injury, respectively.",
+      "context_window": "e activity and neointima formation were analyzed 3 days and 14 days after balloon injury, respectively. 14 days after vascular",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-965",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 965,
+      "sentence": "14 days after vascular injury, proliferative activity was assessed by staining for Ki67.",
+      "context_window": "yzed 3 days and 14 days after balloon injury, respectively. 14 days after vascular injury, proliferative activity was assessed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1061",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1061,
+      "sentence": "After 14 days, animals in the rosuvastatin group showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05).",
+      "context_window": "ferative activity was assessed by staining for Ki67. After 14 days, animals in the rosuvastatin group showed a decrease in tot",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-1152",
+      "claim_type": "mean_sd",
+      "raw_text": "0.194 \u00b1 0.01",
+      "numeric_values": [
+        0.194,
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1152,
+      "sentence": "After 14 days, animals in the rosuvastatin group showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05).",
+      "context_window": "tatin group showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a redu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1160",
+      "claim_type": "unit_value",
+      "raw_text": "0.01 mm",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1160,
+      "sentence": "After 14 days, animals in the rosuvastatin group showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05).",
+      "context_window": "oup showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-1177",
+      "claim_type": "mean_sd",
+      "raw_text": "0.124 \u00b1 0.02",
+      "numeric_values": [
+        0.124,
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1177,
+      "sentence": "After 14 days, animals in the rosuvastatin group showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05).",
+      "context_window": "ease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1185",
+      "claim_type": "unit_value",
+      "raw_text": "0.02 mm",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1185,
+      "sentence": "After 14 days, animals in the rosuvastatin group showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05).",
+      "context_window": "total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-p-1197",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1197,
+      "sentence": "After 14 days, animals in the rosuvastatin group showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05).",
+      "context_window": "ima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-1248",
+      "claim_type": "mean_sd",
+      "raw_text": "1.26 \u00b1 0.1",
+      "numeric_values": [
+        1.26,
+        0.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1248,
+      "sentence": "After 14 days, animals in the rosuvastatin group showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05).",
+      "context_window": "2 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05). Balloon injury resulted in i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-1266",
+      "claim_type": "mean_sd",
+      "raw_text": "0.75 \u00b1 0.09",
+      "numeric_values": [
+        0.75,
+        0.09
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1266,
+      "sentence": "After 14 days, animals in the rosuvastatin group showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05).",
+      "context_window": "as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05). Balloon injury resulted in increased activity o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-p-1279",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1279,
+      "sentence": "After 14 days, animals in the rosuvastatin group showed a decrease in total neointima formation (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) as well as a reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05).",
+      "context_window": "reduced intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05). Balloon injury resulted in increased activity of MMP-9 3",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1345",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1345,
+      "sentence": "Balloon injury resulted in increased activity of MMP-9 3 days after intervention for both rosuvastatin treated animals and controls with no significant difference observed between the groups.",
+      "context_window": "05). Balloon injury resulted in increased activity of MMP-9 3 days after intervention for both rosuvastatin treated animals an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1557",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1557,
+      "sentence": "There was a trend towards a reduction in the number of Ki67-positive cells 14 days after injury.",
+      "context_window": "nd towards a reduction in the number of Ki67-positive cells 14 days after injury. Rosuvastatin attenuates neointima formation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-111",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 111,
+      "sentence": "Twenty two male Sprague Dawley rats (380 - 420 g; Charles River Laboratories, Sulzfeld, Germany) at the age of 14 weeks were kept within the animal care facility of the University of Heidelberg.",
+      "context_window": "harles River Laboratories, Sulzfeld, Germany) at the age of 14 weeks were kept within the animal care facility of the University",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-488",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 488,
+      "sentence": "Starting three days prior to balloon injury, half the rats received rosuvastatin (20 mg/kg bodyweight/day) via oral gavage.",
+      "context_window": "ior to balloon injury, half the rats received rosuvastatin (20 mg/kg bodyweight/day) via oral gavage. A number of the rats we",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-567",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 567,
+      "sentence": "A number of the rats were euthanized 3 days after balloon injury for immunoblot and gelatinolytic assay.",
+      "context_window": "/day) via oral gavage. A number of the rats were euthanized 3 days after balloon injury for immunoblot and gelatinolytic assay",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-710",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 710,
+      "sentence": "For the evaluation of neointima formation, additional rats were euthanized 14 days after injury.",
+      "context_window": "ion of neointima formation, additional rats were euthanized 14 days after injury. Housing and care of animals, and procedures c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1004",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1004,
+      "sentence": "Rats were anesthetized by intraperitoneal injection of ketamine (100 mg/kg body weight) and xylazine (15 mg/kg bodyweight).",
+      "context_window": "were anesthetized by intraperitoneal injection of ketamine (100 mg/kg body weight) and xylazine (15 mg/kg bodyweight). After m",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1041",
+      "claim_type": "unit_value",
+      "raw_text": "15 mg",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1041,
+      "sentence": "Rats were anesthetized by intraperitoneal injection of ketamine (100 mg/kg body weight) and xylazine (15 mg/kg bodyweight).",
+      "context_window": "injection of ketamine (100 mg/kg body weight) and xylazine (15 mg/kg bodyweight). After midline incision of the neck, the lef",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1655",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1655,
+      "sentence": "Three and 14 days after surgery rats were anaesthetized as described previously, blood was collected from the inferior vena cava, stored for further use, and animals were euthanized by exsanguination.",
+      "context_window": "eral right arteries served as uninjured controls. Three and 14 days after surgery rats were anaesthetized as described previous",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-3265",
+      "claim_type": "unit_value",
+      "raw_text": "50 mmol",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3265,
+      "sentence": "For gelatinolytic assay, frozen arteries were homogenized with lysis buffer (50 mmol/l Tris-HCL, pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Triton X-100).",
+      "context_window": "assay, frozen arteries were homogenized with lysis buffer (50 mmol/l Tris-HCL, pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-3293",
+      "claim_type": "unit_value",
+      "raw_text": "150 mmol",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3293,
+      "sentence": "For gelatinolytic assay, frozen arteries were homogenized with lysis buffer (50 mmol/l Tris-HCL, pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Triton X-100).",
+      "context_window": "homogenized with lysis buffer (50 mmol/l Tris-HCL, pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Tri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-3310",
+      "claim_type": "unit_value",
+      "raw_text": "5 mmol",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3310,
+      "sentence": "For gelatinolytic assay, frozen arteries were homogenized with lysis buffer (50 mmol/l Tris-HCL, pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Triton X-100).",
+      "context_window": "lysis buffer (50 mmol/l Tris-HCL, pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Triton X-100). Lys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-3330",
+      "claim_type": "percentage",
+      "raw_text": "05%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3330,
+      "sentence": "For gelatinolytic assay, frozen arteries were homogenized with lysis buffer (50 mmol/l Tris-HCL, pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Triton X-100).",
+      "context_window": "ol/l Tris-HCL, pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Triton X-100). Lysates were sheared",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-3345",
+      "claim_type": "percentage",
+      "raw_text": "02%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3345,
+      "sentence": "For gelatinolytic assay, frozen arteries were homogenized with lysis buffer (50 mmol/l Tris-HCL, pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Triton X-100).",
+      "context_window": "pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Triton X-100). Lysates were sheared by ultrasonic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-3355",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3355,
+      "sentence": "For gelatinolytic assay, frozen arteries were homogenized with lysis buffer (50 mmol/l Tris-HCL, pH 7,6; 150 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Triton X-100).",
+      "context_window": "0 mmol/l NaCl; 5 mmol/l CaCl 2 ; 0,05% Brij-35; 0,02% NaN3; 1% Triton X-100). Lysates were sheared by ultrasonic disruptio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-3718",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3718,
+      "sentence": "Gelatinase activity was detected in a 10% gelatine gel (Invitrogen, Carlsbad, USA) using SDS running buffer (all chemicals Invitrogen, Carlsbad, USA).",
+      "context_window": "gelatinase activity. Gelatinase activity was detected in a 10% gelatine gel (Invitrogen, Carlsbad, USA) using SDS running",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-3998",
+      "claim_type": "percentage",
+      "raw_text": "0.125%",
+      "numeric_values": [
+        0.125
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3998,
+      "sentence": "Gels were stained with 0.125% Coomassie blue R-250 for 30 min in 10% acetic acid and 50% methanol.",
+      "context_window": "gram developing buffer for 12 hours. Gels were stained with 0.125% Coomassie blue R-250 for 30 min in 10% acetic acid and 50%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-4040",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4040,
+      "sentence": "Gels were stained with 0.125% Coomassie blue R-250 for 30 min in 10% acetic acid and 50% methanol.",
+      "context_window": "were stained with 0.125% Coomassie blue R-250 for 30 min in 10% acetic acid and 50% methanol. Finally, gels were destained",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-4060",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4060,
+      "sentence": "Gels were stained with 0.125% Coomassie blue R-250 for 30 min in 10% acetic acid and 50% methanol.",
+      "context_window": "125% Coomassie blue R-250 for 30 min in 10% acetic acid and 50% methanol. Finally, gels were destained with a solution cont",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-4130",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4130,
+      "sentence": "Finally, gels were destained with a solution containing 10% acetic acid and 10% methanol until clear bands of gelatinolysis appeared on a dark blue background.",
+      "context_window": "ol. Finally, gels were destained with a solution containing 10% acetic acid and 10% methanol until clear bands of gelatinol",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-4150",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4150,
+      "sentence": "Finally, gels were destained with a solution containing 10% acetic acid and 10% methanol until clear bands of gelatinolysis appeared on a dark blue background.",
+      "context_window": "re destained with a solution containing 10% acetic acid and 10% methanol until clear bands of gelatinolysis appeared on a d",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-4461",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4461,
+      "sentence": "Ten \u03bcg of protein were seperated by 10% SDS-PAGE Gel (Invitrogen, Carlsbad, USA) and transferred to nitrocellulose membranes (Schleicher und Schuell, Germany).",
+      "context_window": "anned by densitometry. Ten \u03bcg of protein were seperated by 10% SDS-PAGE Gel (Invitrogen, Carlsbad, USA) and transferred to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-4601",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4601,
+      "sentence": "After blocking (5% nonfat milk powder dissolved in TBST) the membrane was incubated with primary antibody (polyclonal goat anti rat MMP-9, dilution 1:2000) overnight at 4\u00b0C, washed three times with TBST, followed by incubation with a secondary antibody for 1 hour at room temperature.",
+      "context_window": "embranes (Schleicher und Schuell, Germany). After blocking (5% nonfat milk powder dissolved in TBST) the membrane was incu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-429",
+      "claim_type": "mean_sd",
+      "raw_text": "0.194 \u00b1 0.01",
+      "numeric_values": [
+        0.194,
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 429,
+      "sentence": "Mean \u00b1 sd\n\nCompared to the controls, treatment with rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ).",
+      "context_window": "ent with rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-437",
+      "claim_type": "unit_value",
+      "raw_text": "0.01 mm",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 437,
+      "sentence": "Mean \u00b1 sd\n\nCompared to the controls, treatment with rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ).",
+      "context_window": "rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media rat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-454",
+      "claim_type": "mean_sd",
+      "raw_text": "0.124 \u00b1 0.02",
+      "numeric_values": [
+        0.124,
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 454,
+      "sentence": "Mean \u00b1 sd\n\nCompared to the controls, treatment with rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ).",
+      "context_window": "d to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-462",
+      "claim_type": "unit_value",
+      "raw_text": "0.02 mm",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 462,
+      "sentence": "Mean \u00b1 sd\n\nCompared to the controls, treatment with rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ).",
+      "context_window": "ecrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.7",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-p-474",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 474,
+      "sentence": "Mean \u00b1 sd\n\nCompared to the controls, treatment with rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ).",
+      "context_window": "eointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p <",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-508",
+      "claim_type": "mean_sd",
+      "raw_text": "1.26 \u00b1 0.1",
+      "numeric_values": [
+        1.26,
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 508,
+      "sentence": "Mean \u00b1 sd\n\nCompared to the controls, treatment with rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ).",
+      "context_window": "ersus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-526",
+      "claim_type": "mean_sd",
+      "raw_text": "0.75 \u00b1 0.09",
+      "numeric_values": [
+        0.75,
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 526,
+      "sentence": "Mean \u00b1 sd\n\nCompared to the controls, treatment with rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ).",
+      "context_window": "mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ). Total number o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-p-539",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 539,
+      "sentence": "Mean \u00b1 sd\n\nCompared to the controls, treatment with rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ).",
+      "context_window": ".05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ). Total number of cell nuc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-549",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 549,
+      "sentence": "Mean \u00b1 sd\n\nCompared to the controls, treatment with rosuvastatin lead to a decrease of neointima area (0.194 \u00b1 0.01 mm 2 versus 0.124 \u00b1 0.02 mm 2 , p < 0.05) and intima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ).",
+      "context_window": "ntima/media ratio (1.26 \u00b1 0.1 versus 0.75 \u00b1 0.09, p < 0.05) 14 days after injury (Figure 1 ). Total number of cell nuclei withi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-741",
+      "claim_type": "mean_sd",
+      "raw_text": "3950 \u00b1 263",
+      "numeric_values": [
+        3950.0,
+        263.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 741,
+      "sentence": "Total number of cell nuclei within the neointima was also significantly reduced in the arteries of rosuvastatin-treated rats, as compared to control animals (3950 \u00b1 263 versus 5262 \u00b1 248, p < 0.01).",
+      "context_window": "rosuvastatin-treated rats, as compared to control animals (3950 \u00b1 263 versus 5262 \u00b1 248, p < 0.01). Neonintima formation of the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-759",
+      "claim_type": "mean_sd",
+      "raw_text": "5262 \u00b1 248",
+      "numeric_values": [
+        5262.0,
+        248.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 759,
+      "sentence": "Total number of cell nuclei within the neointima was also significantly reduced in the arteries of rosuvastatin-treated rats, as compared to control animals (3950 \u00b1 263 versus 5262 \u00b1 248, p < 0.01).",
+      "context_window": "ted rats, as compared to control animals (3950 \u00b1 263 versus 5262 \u00b1 248, p < 0.01). Neonintima formation of the common carotid art",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-p-771",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 771,
+      "sentence": "Total number of cell nuclei within the neointima was also significantly reduced in the arteries of rosuvastatin-treated rats, as compared to control animals (3950 \u00b1 263 versus 5262 \u00b1 248, p < 0.01).",
+      "context_window": "compared to control animals (3950 \u00b1 263 versus 5262 \u00b1 248, p < 0.01). Neonintima formation of the common carotid artery (hemat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-862",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 862,
+      "sentence": "Neonintima formation of the common carotid artery (hematoxylin/eosin staining) 14 days after balloon injury in a control animal (A) and an animal treated with rosuvastatin . (B) Treatment with rosuvastatin leads to a reduction of neointima size, as well as a reduction of neointima/media ratio. (C, D).",
+      "context_window": "n of the common carotid artery (hematoxylin/eosin staining) 14 days after balloon injury in a control animal (A) and an animal",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-1246",
+      "claim_type": "mean_sd",
+      "raw_text": "2.1 \u00b1 0.17",
+      "numeric_values": [
+        2.1,
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1246,
+      "sentence": "There was a trend towards a reduction in the number of Ki67-positive cells in rosuvastatin-treated animals (2.1 \u00b1 0.17 versus 1.6 \u00b1 0.13; p = 0.058).",
+      "context_window": "ber of Ki67-positive cells in rosuvastatin-treated animals (2.1 \u00b1 0.17 versus 1.6 \u00b1 0.13; p = 0.058). However, the difference did",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-1264",
+      "claim_type": "mean_sd",
+      "raw_text": "1.6 \u00b1 0.13",
+      "numeric_values": [
+        1.6,
+        0.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1264,
+      "sentence": "There was a trend towards a reduction in the number of Ki67-positive cells in rosuvastatin-treated animals (2.1 \u00b1 0.17 versus 1.6 \u00b1 0.13; p = 0.058).",
+      "context_window": "ve cells in rosuvastatin-treated animals (2.1 \u00b1 0.17 versus 1.6 \u00b1 0.13; p = 0.058). However, the difference did not reach statisti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-p-1276",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.058",
+      "numeric_values": [
+        0.058
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1276,
+      "sentence": "There was a trend towards a reduction in the number of Ki67-positive cells in rosuvastatin-treated animals (2.1 \u00b1 0.17 versus 1.6 \u00b1 0.13; p = 0.058).",
+      "context_window": "rosuvastatin-treated animals (2.1 \u00b1 0.17 versus 1.6 \u00b1 0.13; p = 0.058). However, the difference did not reach statistical signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1420",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1420,
+      "sentence": "Ki67-positive cells (arrows) within the neointima at 14 days after injury of a control animal . (A) Rosuvastatin treatment tended to reduce the proliferation index within the neointima (number of Ki67-positive cells/total amount of cells).",
+      "context_window": "AB ). Ki67-positive cells (arrows) within the neointima at 14 days after injury of a control animal . (A) Rosuvastatin treatme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-p-1670",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.058",
+      "numeric_values": [
+        0.058
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1670,
+      "sentence": "However at day 14 no significant difference could be detected (p = 0.058). (B) Staining with immunofluorescence-labeled antibody against von Willebrand factor (secondary antibody alexa 594 in red) and _-smooth muscle actin in FITC (green) demonstrated that reendotheliazation was not completed 14 days after injury (arrow head) (_-smooth muscle actin in FITC, green).",
+      "context_window": "ever at day 14 no significant difference could be detected (p = 0.058). (B) Staining with immunofluorescence-labeled antibody aga",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1901",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1901,
+      "sentence": "However at day 14 no significant difference could be detected (p = 0.058). (B) Staining with immunofluorescence-labeled antibody against von Willebrand factor (secondary antibody alexa 594 in red) and _-smooth muscle actin in FITC (green) demonstrated that reendotheliazation was not completed 14 days after injury (arrow head) (_-smooth muscle actin in FITC, green).",
+      "context_window": "een) demonstrated that reendotheliazation was not completed 14 days after injury (arrow head) (_-smooth muscle actin in FITC, g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-2457",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2457,
+      "sentence": "Balloon injury of rat arteries upregulated expression of a 92-kD band in the gelatin zymography 3 days after injury.",
+      "context_window": "ulated expression of a 92-kD band in the gelatin zymography 3 days after injury. No signal could be detected in the non-denuda",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-2805",
+      "claim_type": "mean_sd",
+      "raw_text": "3754 \u00b1 1074",
+      "numeric_values": [
+        3754.0,
+        1074.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2805,
+      "sentence": "However no difference could be detected between rosuvastatin treated and control rats (3754 \u00b1 1074 versus 3488 \u00b1 1816; Figure 3A ).",
+      "context_window": "be detected between rosuvastatin treated and control rats (3754 \u00b1 1074 versus 3488 \u00b1 1816; Figure 3A ). Gelatinolytic activity as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-msd-2824",
+      "claim_type": "mean_sd",
+      "raw_text": "3488 \u00b1 1816",
+      "numeric_values": [
+        3488.0,
+        1816.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2824,
+      "sentence": "However no difference could be detected between rosuvastatin treated and control rats (3754 \u00b1 1074 versus 3488 \u00b1 1816; Figure 3A ).",
+      "context_window": "n rosuvastatin treated and control rats (3754 \u00b1 1074 versus 3488 \u00b1 1816; Figure 3A ). Gelatinolytic activity assay demonstrated an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-3466",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 3466,
+      "sentence": "Balloon injury resulted in an induction of MMP-9 expression in arteries 3 days after de-endothelialization.",
+      "context_window": "ry resulted in an induction of MMP-9 expression in arteries 3 days after de-endothelialization. Contralateral vessels in the s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-177",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 177,
+      "sentence": "However, long-term benefit is often limited by restenosis, occurring in about 30% of patients following bare metal stent implantation [ 23 ].",
+      "context_window": "benefit is often limited by restenosis, occurring in about 30% of patients following bare metal stent implantation [ 23 ].",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1286",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg/kg/d",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg/kg/d",
+      "source_section": "discussion",
+      "source_offset": 1286,
+      "sentence": "Kappert et al. (2006) used rosuvastatin in a dose of only 1 mg/kg/d whereas we and van de Harst (2006) administered rosuvastatin in a dose of 20 mg/kg/d, a dose previously demonstrated to inhibit hepatic HMG-CoA reductase by 90% in rats [ 16 - 18 ].",
+      "context_window": ". Kappert et al. (2006) used rosuvastatin in a dose of only 1 mg/kg/d whereas we and van de Harst (2006) administered rosuvastati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1370",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg/kg/d",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg/kg/d",
+      "source_section": "discussion",
+      "source_offset": 1370,
+      "sentence": "Kappert et al. (2006) used rosuvastatin in a dose of only 1 mg/kg/d whereas we and van de Harst (2006) administered rosuvastatin in a dose of 20 mg/kg/d, a dose previously demonstrated to inhibit hepatic HMG-CoA reductase by 90% in rats [ 16 - 18 ].",
+      "context_window": "van de Harst (2006) administered rosuvastatin in a dose of 20 mg/kg/d, a dose previously demonstrated to inhibit hepatic HMG-CoA",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-pct-1453",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1453,
+      "sentence": "Kappert et al. (2006) used rosuvastatin in a dose of only 1 mg/kg/d whereas we and van de Harst (2006) administered rosuvastatin in a dose of 20 mg/kg/d, a dose previously demonstrated to inhibit hepatic HMG-CoA reductase by 90% in rats [ 16 - 18 ].",
+      "context_window": "iously demonstrated to inhibit hepatic HMG-CoA reductase by 90% in rats [ 16 - 18 ]. It has been demonstrated that vascula",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-1867",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1867,
+      "sentence": "Using balloon deendothelialization, an effective method for causing severe vascular damage, we showed that gelatinase B activity was upregulated 3 days after intervention.",
+      "context_window": "amage, we showed that gelatinase B activity was upregulated 3 days after intervention. However, rosuvastatin treatment had no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-2210",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2210,
+      "sentence": "Consistent with other studies, we found Ki67-positive cells within the neointima of all animals 14 days after injury.",
+      "context_window": "und Ki67-positive cells within the neointima of all animals 14 days after injury. There was a trend towards reduced expression",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3352654_rosuvastatin_reduces_neointima_formation_in_a_rat_model_of_b-u-4214",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4214,
+      "sentence": "We observed a lack of re-endothelialisation at 14 days after injury that was not affected by statin treatment.",
+      "context_window": "ells [ 34 ]. We observed a lack of re-endothelialisation at 14 days after injury that was not affected by statin treatment. Dif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

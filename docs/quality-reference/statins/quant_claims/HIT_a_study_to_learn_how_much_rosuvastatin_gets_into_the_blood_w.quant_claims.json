@@ -1,0 +1,101 @@
+{
+  "paper_id": "HIT_a_study_to_learn_how_much_rosuvastatin_gets_into_the_blood_w",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_study_to_learn_how_much_rosuvastatin_gets_into_the_blood_w-u-990",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 990,
+      "sentence": "The study will include about 16 male participants who are between 18 and 65 years old.",
+      "context_window": "l include about 16 male participants who are between 18 and 65 years old. The participants will all take 5 milligrams (mg) of ro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_a_study_to_learn_how_much_rosuvastatin_gets_into_the_blood_w-u-1073",
+      "claim_type": "unit_value",
+      "raw_text": "120 mg",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1073,
+      "sentence": "The participants will all take 5 milligrams (mg) of rosuvastatin and 120 mg of elinzanetant as capsules by mouth.",
+      "context_window": "cipants will all take 5 milligrams (mg) of rosuvastatin and 120 mg of elinzanetant as capsules by mouth. On some days, they wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_study_to_learn_how_much_rosuvastatin_gets_into_the_blood_w-u-1288",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1288,
+      "sentence": "Each participant will be in the study for up to 6 weeks.",
+      "context_window": "treatments. Each participant will be in the study for up to 6 weeks. But, the entire study will last about 2.5 months. During t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_a_study_to_learn_how_much_rosuvastatin_gets_into_the_blood_w-u-1335",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 months",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1335,
+      "sentence": "But, the entire study will last about 2.5 months.",
+      "context_window": "dy for up to 6 weeks. But, the entire study will last about 2.5 months. During the study, all of the participants will stay at the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_a_study_to_learn_how_much_rosuvastatin_gets_into_the_blood_w-u-1421",
+      "claim_type": "unit_value",
+      "raw_text": "17 days",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1421,
+      "sentence": "During the study, all of the participants will stay at the study site for 17 days.",
+      "context_window": "dy, all of the participants will stay at the study site for 17 days. Blood and urine samples will be collected. The physician w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

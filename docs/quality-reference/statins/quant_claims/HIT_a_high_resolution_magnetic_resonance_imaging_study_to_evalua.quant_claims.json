@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_a_high_resolution_magnetic_resonance_imaging_study_to_evalua",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_a_high_resolution_magnetic_resonance_imaging_study_to_evalua-u-361",
+      "claim_type": "unit_value",
+      "raw_text": "5mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 361,
+      "sentence": "Enrolled patients have a baseline CE-MRI examination for screening carotid atherosclerotic plaques and are randomized to either low dose of Rosuvastatin (5mg) group or high dose of Rosuvastatin (20mg) group.",
+      "context_window": "ques and are randomized to either low dose of Rosuvastatin (5mg) group or high dose of Rosuvastatin (20mg) group. After 26",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_high_resolution_magnetic_resonance_imaging_study_to_evalua-u-402",
+      "claim_type": "unit_value",
+      "raw_text": "20mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 402,
+      "sentence": "Enrolled patients have a baseline CE-MRI examination for screening carotid atherosclerotic plaques and are randomized to either low dose of Rosuvastatin (5mg) group or high dose of Rosuvastatin (20mg) group.",
+      "context_window": "e of Rosuvastatin (5mg) group or high dose of Rosuvastatin (20mg) group. After 26 weeks, all patients received CE-MRI examin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_a_high_resolution_magnetic_resonance_imaging_study_to_evalua-u-421",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 421,
+      "sentence": "After 26 weeks, all patients received CE-MRI examination again and each pair of baseline and follow-up CE-MRI assessments was analyzed in a blinded fashion.",
+      "context_window": "5mg) group or high dose of Rosuvastatin (20mg) group. After 26 weeks, all patients received CE-MRI examination again and each pa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

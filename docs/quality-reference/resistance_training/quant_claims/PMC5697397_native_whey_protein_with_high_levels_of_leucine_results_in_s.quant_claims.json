@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5697397_native_whey_protein_with_high_levels_of_leucine_results_in_s",
   "doi": "10.1186/s12970-017-0202-y",
-  "extracted_at": "2026-05-05T21:59:16+00:00",
+  "extracted_at": "2026-05-07T16:57:34+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 6,
@@ -79,7 +79,7 @@
       "context_window": "hosphorylation of p70S6K than milk 180 min after exercise ( P = 0.03). Muscle protein synthesis rates increased 1-3 h hours afte",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -97,9 +97,9 @@
       "context_window": "sis rates increased 1-3 h hours after exercise with WPC-80 (0.119%), and 1-5 h after exercise with native whey (0.112%). Muscl",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5697397_native_whey_protein_with_high_levels_of_leucine_results_in_s-pct-1727",
@@ -115,9 +115,9 @@
       "context_window": "WPC-80 (0.119%), and 1-5 h after exercise with native whey (0.112%). Muscle protein synthesis rates were higher 1-5 h after ex",
       "claim_role": "effect",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5697397_native_whey_protein_with_high_levels_of_leucine_results_in_s-pct-1833",
@@ -133,7 +133,7 @@
       "context_window": "igher 1-5 h after exercise with native whey than with milk (0.112% vs. 0.064, P = 0.023). Despite higher-magnitude increases",
       "claim_role": "unknown",
       "endpoint": "protein synthesis",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1127,9 +1127,9 @@
       "context_window": "; & native whey greater than WPC-80 at the same time point, p < 0.05 p70S6K phosphorylation increased in all groups at 60 and 1",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5697397_native_whey_protein_with_high_levels_of_leucine_results_in_s-p-3797",
@@ -1145,9 +1145,9 @@
       "context_window": "n increased in all groups at 60 and 180 min post-exercise ( P < 0.001; see Fig. 5a ). There were no differences between WPC-80 an",
       "claim_role": "effect",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5697397_native_whey_protein_with_high_levels_of_leucine_results_in_s-p-3957",
@@ -1181,7 +1181,7 @@
       "context_window": "= 0.03). Phosphorylation status of 4EBP-1 decreased at 60 ( P = 0.018) and 180 (P < 0.001) min with native whey, and tended to de",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1199,7 +1199,7 @@
       "context_window": "tion status of 4EBP-1 decreased at 60 ( P = 0.018) and 180 (P < 0.001) min with native whey, and tended to decrease with milk and",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1217,7 +1217,7 @@
       "context_window": "crease with milk and WPC-80 at 60 min after exercise (milk: P = 0.099, WPC-80: P = 0.066). There were no differences in phosphory",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1235,7 +1235,7 @@
       "context_window": "d WPC-80 at 60 min after exercise (milk: P = 0.099, WPC-80: P = 0.066). There were no differences in phosphorylation status of 4E",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1343,7 +1343,7 @@
       "context_window": "her after native whey ingestion than after milk ingestion ( P = 0.023). Mixed muscle FSR values following intake of milk, WPC-80",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1361,7 +1361,7 @@
       "context_window": "out of heavy leg resistance exercise. Values are mean \u00b1 SD. n = 10 in the milk group and 10 in the WPC-80 and native whey grou",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1379,7 +1379,7 @@
       "context_window": ". # Different from milk over the corresponding time period, p < 0.05 A reduced force-generating capacity measured as MVC force,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1398,7 +1398,7 @@
       "context_window": "min after the exercise session in all groups (native whey: -17.4 \u00b1 7.3%, WPC-80: -17.1 \u00b1 7.4%, milk: -16.6 \u00b1 9.3%, P < 0.001; Fig.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1416,7 +1416,7 @@
       "context_window": "er the exercise session in all groups (native whey: -17.4 \u00b1 7.3%, WPC-80: -17.1 \u00b1 7.4%, milk: -16.6 \u00b1 9.3%, P < 0.001; Fig.",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1435,7 +1435,7 @@
       "context_window": "session in all groups (native whey: -17.4 \u00b1 7.3%, WPC-80: -17.1 \u00b1 7.4%, milk: -16.6 \u00b1 9.3%, P < 0.001; Fig. 7 ). At 24 h WPC-80 a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1453,7 +1453,7 @@
       "context_window": "n in all groups (native whey: -17.4 \u00b1 7.3%, WPC-80: -17.1 \u00b1 7.4%, milk: -16.6 \u00b1 9.3%, P < 0.001; Fig. 7 ). At 24 h WPC-80 an",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1472,7 +1472,7 @@
       "context_window": "ps (native whey: -17.4 \u00b1 7.3%, WPC-80: -17.1 \u00b1 7.4%, milk: -16.6 \u00b1 9.3%, P < 0.001; Fig. 7 ). At 24 h WPC-80 and native whey were",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1490,7 +1490,7 @@
       "context_window": "ive whey: -17.4 \u00b1 7.3%, WPC-80: -17.1 \u00b1 7.4%, milk: -16.6 \u00b1 9.3%, P < 0.001; Fig. 7 ). At 24 h WPC-80 and native whey were n",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1508,7 +1508,7 @@
       "context_window": "ey: -17.4 \u00b1 7.3%, WPC-80: -17.1 \u00b1 7.4%, milk: -16.6 \u00b1 9.3%, P < 0.001; Fig. 7 ). At 24 h WPC-80 and native whey were not signific",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1634,9 +1634,9 @@
       "context_window": "d native whey. Our resistance exercise protocol led to a 5-30% reductions in muscle force-generating capacity (10 min afte",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

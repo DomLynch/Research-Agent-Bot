@@ -185,7 +185,7 @@ def _build_grok_prompt(
     # (rapamycin publication run had 19 unresolved). Now Grok sees
     # both pools and only flags citations not in EITHER.
     bglit_lines: list[str] = []
-    seen_tokens: set[str] = set()
+    seen_background_entries: set[tuple[str, str]] = set()
     try:
         from pathlib import Path
         import json as _json
@@ -203,9 +203,12 @@ def _build_grok_prompt(
                     continue
                 token = (entry.get("citation_token") or "").strip()
                 numeric = (entry.get("numeric") or "").strip()
-                if not token or token in seen_tokens:
+                if not token:
                     continue
-                seen_tokens.add(token)
+                entry_key = (token, numeric)
+                if entry_key in seen_background_entries:
+                    continue
+                seen_background_entries.add(entry_key)
                 bglit_lines.append(
                     f"- {token}: {numeric} ({entry.get('context', '')[:60]})"
                 )
@@ -233,9 +236,12 @@ def _build_grok_prompt(
                 for entry in pack.background_literature:
                     token = (entry.citation_token or "").strip()
                     numeric = (entry.numeric or "").strip()
-                    if not token or token in seen_tokens:
+                    if not token:
                         continue
-                    seen_tokens.add(token)
+                    entry_key = (token, numeric)
+                    if entry_key in seen_background_entries:
+                        continue
+                    seen_background_entries.add(entry_key)
                     bglit_lines.append(
                         f"- {token}: {numeric} ({entry.context[:60]})"
                     )

@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_statin_therapy_in_acute_influenza",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_statin_therapy_in_acute_influenza-pct-66",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 66,
+      "sentence": "Influenza (the 'flu') is a common virus infecting approximately 5-20% of the population in the United States and causing as many as 500,000 deaths worldwide each year.",
+      "context_window": "nza (the 'flu') is a common virus infecting approximately 5-20% of the population in the United States and causing as many",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_statin_therapy_in_acute_influenza-p-755",
+      "claim_type": "p_value",
+      "raw_text": "p=0.611",
+      "numeric_values": [
+        0.611
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 755,
+      "sentence": "Atorvastatin=2.4; Placebo=3.46. p=0.611",
+      "context_window": "frame=Baseline to 72 hours. Atorvastatin=2.4; Placebo=3.46. p=0.611",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

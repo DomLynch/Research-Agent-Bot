@@ -1,0 +1,102 @@
+{
+  "paper_id": "DOI_10_1001_jama_2011_860_risk_of_incident_diabetes_with_intensive_dose_compared_with",
+  "doi": "10.1001/jama.2011.860",
+  "extracted_at": "2026-05-07T19:24:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1001_jama_2011_860_risk_of_incident_diabetes_with_intensive_dose_compared_with-u-751",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 751,
+      "sentence": "STUDY SELECTION: We included randomized controlled end-point trials that compared intensive-dose statin therapy with moderate-dose statin therapy and included more than 1000 participants who were followed up for more than 1 year.",
+      "context_window": "e than 1000 participants who were followed up for more than 1 year. DATA EXTRACTION: Tabular data provided for each trial desc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2011_860_risk_of_incident_diabetes_with_intensive_dose_compared_with-pct-1767",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1767,
+      "sentence": "Odds ratios were 1.12 (95% confidence interval [CI], 1.04-1.22; I(2) = 0%) for new-onset diabetes and 0.84 (95% CI, 0.75-0.94; I(2) = 74%) for cardiovascular events for participants receiving intensive therapy compared with moderate-dose therapy.",
+      "context_window": "n (SD) follow-up of 4.9 (1.9) years. Odds ratios were 1.12 (95% confidence interval [CI], 1.04-1.22; I(2) = 0%) for new-ons",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2011_860_risk_of_incident_diabetes_with_intensive_dose_compared_with-pct-1815",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1815,
+      "sentence": "Odds ratios were 1.12 (95% confidence interval [CI], 1.04-1.22; I(2) = 0%) for new-onset diabetes and 0.84 (95% CI, 0.75-0.94; I(2) = 74%) for cardiovascular events for participants receiving intensive therapy compared with moderate-dose therapy.",
+      "context_window": "were 1.12 (95% confidence interval [CI], 1.04-1.22; I(2) = 0%) for new-onset diabetes and 0.84 (95% CI, 0.75-0.94; I(2) =",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2011_860_risk_of_incident_diabetes_with_intensive_dose_compared_with-pct-1852",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1852,
+      "sentence": "Odds ratios were 1.12 (95% confidence interval [CI], 1.04-1.22; I(2) = 0%) for new-onset diabetes and 0.84 (95% CI, 0.75-0.94; I(2) = 74%) for cardiovascular events for participants receiving intensive therapy compared with moderate-dose therapy.",
+      "context_window": "CI], 1.04-1.22; I(2) = 0%) for new-onset diabetes and 0.84 (95% CI, 0.75-0.94; I(2) = 74%) for cardiovascular events for pa",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1001_jama_2011_860_risk_of_incident_diabetes_with_intensive_dose_compared_with-pct-1878",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1878,
+      "sentence": "Odds ratios were 1.12 (95% confidence interval [CI], 1.04-1.22; I(2) = 0%) for new-onset diabetes and 0.84 (95% CI, 0.75-0.94; I(2) = 74%) for cardiovascular events for participants receiving intensive therapy compared with moderate-dose therapy.",
+      "context_window": "for new-onset diabetes and 0.84 (95% CI, 0.75-0.94; I(2) = 74%) for cardiovascular events for participants receiving inten",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

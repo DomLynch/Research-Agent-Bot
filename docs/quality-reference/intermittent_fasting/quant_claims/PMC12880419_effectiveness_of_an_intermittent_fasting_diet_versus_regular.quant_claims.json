@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12880419_effectiveness_of_an_intermittent_fasting_diet_versus_regular",
   "doi": "10.1016/j.jnha.2024.100165",
-  "extracted_at": "2026-05-05T22:11:30+00:00",
+  "extracted_at": "2026-05-07T16:57:03+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 10,
@@ -545,9 +545,9 @@
       "context_window": "r only a specific period of time (usually within 8-12 h) on 1 day, with free intake for the rest of the day [ 12 ]. Ramadan f",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "time-restricted eating",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12880419_effectiveness_of_an_intermittent_fasting_diet_versus_regular-u-396",
@@ -562,7 +562,7 @@
       "sentence": "Body weight loss (4.83 kg) observed in one study was also comparable to the intervention effect of dietary replacement therapy (4 kg) after IF compared to the conventional diet [ 15 ].",
       "context_window": "usual diet to induce weight loss [ 35 ]. Body weight loss (4.83 kg) observed in one study was also comparable to the intervent",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -580,7 +580,7 @@
       "sentence": "Body weight loss (4.83 kg) observed in one study was also comparable to the intervention effect of dietary replacement therapy (4 kg) after IF compared to the conventional diet [ 15 ].",
       "context_window": "to the intervention effect of dietary replacement therapy (4 kg) after IF compared to the conventional diet [ 15 ]. By comp",
       "claim_role": "unknown",
-      "endpoint": "body weight",
+      "endpoint": "weight loss",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"

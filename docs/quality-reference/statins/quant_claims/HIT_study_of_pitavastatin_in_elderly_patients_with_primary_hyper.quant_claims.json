@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_study_of_pitavastatin_in_elderly_patients_with_primary_hyper",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:24:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_study_of_pitavastatin_in_elderly_patients_with_primary_hyper-u-210",
+      "claim_type": "unit_value",
+      "raw_text": "60 weeks",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 210,
+      "sentence": "Posted outcomes: Change From Baseline in LDL-C. timeframe=Baseline to 60 weeks.",
+      "context_window": "comes: Change From Baseline in LDL-C. timeframe=Baseline to 60 weeks. Pitavastatin 2 mg QD=-43.18 (\u00b110.065); Pitavastatin 4 mg Q",
+      "claim_role": "unknown",
+      "endpoint": "ldl cholesterol",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_study_of_pitavastatin_in_elderly_patients_with_primary_hyper-u-233",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 233,
+      "sentence": "Pitavastatin 2 mg QD=-43.18 (\u00b110.065); Pitavastatin 4 mg QD=-44.26 (\u00b110.764)",
+      "context_window": "line in LDL-C. timeframe=Baseline to 60 weeks. Pitavastatin 2 mg QD=-43.18 (\u00b110.065); Pitavastatin 4 mg QD=-44.26 (\u00b110.764)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_study_of_pitavastatin_in_elderly_patients_with_primary_hyper-u-272",
+      "claim_type": "unit_value",
+      "raw_text": "4 mg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 272,
+      "sentence": "Pitavastatin 2 mg QD=-43.18 (\u00b110.065); Pitavastatin 4 mg QD=-44.26 (\u00b110.764)",
+      "context_window": "weeks. Pitavastatin 2 mg QD=-43.18 (\u00b110.065); Pitavastatin 4 mg QD=-44.26 (\u00b110.764)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pitavastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

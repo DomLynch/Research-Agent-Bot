@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12196122_comparative_effects_of_time_restricted_eating_and_the_ketoge",
   "doi": "10.3390/nu17121963",
-  "extracted_at": "2026-05-05T22:11:26+00:00",
+  "extracted_at": "2026-05-07T16:56:59+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 2,
@@ -25,9 +25,9 @@
       "context_window": "ty-nine adults with obesity were assigned to either the KD (n = 23) or TRE (n = 26), based on voluntary presentation to a nutr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12196122_comparative_effects_of_time_restricted_eating_and_the_ketoge-n-464",
@@ -43,9 +43,9 @@
       "context_window": "ith obesity were assigned to either the KD (n = 23) or TRE (n = 26), based on voluntary presentation to a nutrition clinic. In",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12196122_comparative_effects_of_time_restricted_eating_and_the_ketoge-u-599",
@@ -944,7 +944,7 @@
       "context_window": "Markers of glucose metabolism, including fasting glucose ( p = 0.480), HbA1c ( p = 0.620), and HOMA-IR ( p = 0.140), did not sig",
       "claim_role": "unknown",
       "endpoint": "fasting glucose",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -962,7 +962,7 @@
       "context_window": "metabolism, including fasting glucose ( p = 0.480), HbA1c ( p = 0.620), and HOMA-IR ( p = 0.140), did not significantly differ at",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -980,7 +980,7 @@
       "context_window": "ing glucose ( p = 0.480), HbA1c ( p = 0.620), and HOMA-IR ( p = 0.140), did not significantly differ at baseline, indicating that",
       "claim_role": "unknown",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1034,7 +1034,7 @@
       "context_window": "in the TRE group, did not reach statistical significance ( p = 0.140), suggesting that baseline vitamin D status was relatively",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1178,7 +1178,7 @@
       "context_window": "cular disease (FMH CV) was more prevalent in the TRE group (53.85%) than in the KD group (30.43%), though this difference did",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1196,7 +1196,7 @@
       "context_window": "e prevalent in the TRE group (53.85%) than in the KD group (30.43%), though this difference did not reach statistical signific",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1214,7 +1214,7 @@
       "context_window": "gh this difference did not reach statistical significance ( p = 0.100). The presence of lupus erythematosus (LES) and erectile dy",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1340,7 +1340,7 @@
       "context_window": "KD group experiencing a larger median percentage reduction (11.43%, IQR: 8.75, 13.45) than the TRE group (1.73%, IQR: 0.91, 3.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1358,7 +1358,7 @@
       "context_window": "ge reduction (11.43%, IQR: 8.75, 13.45) than the TRE group (1.73%, IQR: 0.91, 3.15; p < 0.001). For waist-to-hip ratio (WHR),",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1376,7 +1376,7 @@
       "context_window": "R: 8.75, 13.45) than the TRE group (1.73%, IQR: 0.91, 3.15; p < 0.001). For waist-to-hip ratio (WHR), the KD group again demonstr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1502,7 +1502,7 @@
       "context_window": "3.99; p < 0.001). HDL-C improved markedly in the KD group (12.73%, IQR: 8.33, 20.20), while the TRE group experienced a sligh",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1520,7 +1520,7 @@
       "context_window": "20.20), while the TRE group experienced a slight decrease (-2.07%, IQR: -5.02, 1.62; p < 0.001). The TC/HDL-C ratio also decr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1538,7 +1538,7 @@
       "context_window": "up experienced a slight decrease (-2.07%, IQR: -5.02, 1.62; p < 0.001). The TC/HDL-C ratio also decreased more substantially in t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1682,7 +1682,7 @@
       "context_window": "KD group: QRISK decreased by 38.98% (IQR: 29.79, 45.38) vs. 2.16% (IQR: 0.74, 8.03) in the TRE group, and relative risk decre",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1700,7 +1700,7 @@
       "context_window": ".74, 8.03) in the TRE group, and relative risk decreased by 26.76% (IQR: 18.74, 44.78) vs. 1.61% (IQR: 0.58, 5.44), both with",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "tre",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1754,7 +1754,7 @@
       "context_window": "groups, with a modest reduction in HbA1c in the TRE group (1.58%, IQR: 0, 1.95) and a substantially greater improvement in t",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "pooled",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -1772,7 +1772,7 @@
       "context_window": "5) and a substantially greater improvement in the KD group (8.33%, IQR: 2.72, 13.60; p < 0.001). These results, summarized in",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "pooled",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -1790,7 +1790,7 @@
       "context_window": "eater improvement in the KD group (8.33%, IQR: 2.72, 13.60; p < 0.001). These results, summarized in Table 3 , suggest that the K",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "pooled",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -1862,7 +1862,7 @@
       "context_window": "0,000 adults found that an 8 h TRE schedule was linked to a 91% higher risk of cardiovascular mortality compared to a 12-16",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "tre",
       "direction": "increase",
       "binding_confidence": "partial"
     }

@@ -1,0 +1,139 @@
+{
+  "paper_id": "DOI_10_1161_01_cir_92_9_2419_reduction_in_cardiovascular_events_during_pravastatin_therap",
+  "doi": "10.1161/01.cir.92.9.2419",
+  "extracted_at": "2026-05-07T19:24:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 3,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1161_01_cir_92_9_2419_reduction_in_cardiovascular_events_during_pravastatin_therap-u-725",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 725,
+      "sentence": "All trials were double-masked, placebo-controlled designs that used pravastatin as monotherapy for 2 to 3 years.",
+      "context_window": "olled designs that used pravastatin as monotherapy for 2 to 3 years. The 1981 participants in the trials had evidence of athero",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_92_9_2419_reduction_in_cardiovascular_events_during_pravastatin_therap-pct-907",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 907,
+      "sentence": "For fatal or nonfatal myocardial infarction, there was a 62% reduction in events attributable to pravastatin (P = .001).",
+      "context_window": "s. For fatal or nonfatal myocardial infarction, there was a 62% reduction in events attributable to pravastatin (P = .001).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_92_9_2419_reduction_in_cardiovascular_events_during_pravastatin_therap-p-960",
+      "claim_type": "p_value",
+      "raw_text": "P = .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 960,
+      "sentence": "For fatal or nonfatal myocardial infarction, there was a 62% reduction in events attributable to pravastatin (P = .001).",
+      "context_window": "was a 62% reduction in events attributable to pravastatin (P = .001). This effect was evident in younger and older patients, me",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_92_9_2419_reduction_in_cardiovascular_events_during_pravastatin_therap-pct-1131",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1131,
+      "sentence": "There was a 46% reduction in all-cause mortality (P = .17), which, although not statistically significant, is consistent with the results of other statin trials.",
+      "context_window": "histories of hypertension and prior infarction. There was a 46% reduction in all-cause mortality (P = .17), which, although",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_92_9_2419_reduction_in_cardiovascular_events_during_pravastatin_therap-p-1169",
+      "claim_type": "p_value",
+      "raw_text": "P = .17",
+      "numeric_values": [
+        0.17
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1169,
+      "sentence": "There was a 46% reduction in all-cause mortality (P = .17), which, although not statistically significant, is consistent with the results of other statin trials.",
+      "context_window": "farction. There was a 46% reduction in all-cause mortality (P = .17), which, although not statistically significant, is consist",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_92_9_2419_reduction_in_cardiovascular_events_during_pravastatin_therap-pct-1298",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1298,
+      "sentence": "There also was a 62% reduction in the risk of fatal or nonfatal stroke (P = .054).",
+      "context_window": "t with the results of other statin trials. There also was a 62% reduction in the risk of fatal or nonfatal stroke (P = .054",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1161_01_cir_92_9_2419_reduction_in_cardiovascular_events_during_pravastatin_therap-p-1353",
+      "claim_type": "p_value",
+      "raw_text": "P = .054",
+      "numeric_values": [
+        0.054
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1353,
+      "sentence": "There also was a 62% reduction in the risk of fatal or nonfatal stroke (P = .054).",
+      "context_window": "as a 62% reduction in the risk of fatal or nonfatal stroke (P = .054). CONCLUSIONS: These pooled results provide strong evidence",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "paper_id": "DOI_10_1101_2025_09_30_25337016_effects_of_statin_treatment_on_primary_and_hospital_care_use",
+  "doi": "10.1101/2025.09.30.25337016",
+  "extracted_at": "2026-05-07T19:24:53+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 2,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_09_30_25337016_effects_of_statin_treatment_on_primary_and_hospital_care_use-n-312",
+      "claim_type": "sample_size",
+      "raw_text": "N=501",
+      "numeric_values": [
+        501.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 312,
+      "sentence": "Methods The UK Biobank population cohort with linked hospital admissions (N=501,807) and primary healthcare data (N=192,983) informed models of hospital admissions, hospital inpatient days, primary care services (consultations, diagnostic and monitoring tests, and medication prescription items) associated with individual characteristics and occurrences of myocardial infarction, stroke, coronary revascularization and vascular death.",
+      "context_window": "Biobank population cohort with linked hospital admissions (N=501,807) and primary healthcare data (N=192,983) informed model",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_09_30_25337016_effects_of_statin_treatment_on_primary_and_hospital_care_use-n-352",
+      "claim_type": "sample_size",
+      "raw_text": "N=192",
+      "numeric_values": [
+        192.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 352,
+      "sentence": "Methods The UK Biobank population cohort with linked hospital admissions (N=501,807) and primary healthcare data (N=192,983) informed models of hospital admissions, hospital inpatient days, primary care services (consultations, diagnostic and monitoring tests, and medication prescription items) associated with individual characteristics and occurrences of myocardial infarction, stroke, coronary revascularization and vascular death.",
+      "context_window": "ospital admissions (N=501,807) and primary healthcare data (N=192,983) informed models of hospital admissions, hospital inpat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_09_30_25337016_effects_of_statin_treatment_on_primary_and_hospital_care_use-u-867",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 867,
+      "sentence": "These models were integrated into a validated cardiovascular disease (CVD) microsimulation policy model to assess statin treatment effects on healthcare use in population categories by age (40-60 years and 60-70 years) and prior CVD history.",
+      "context_window": "fects on healthcare use in population categories by age (40-60 years and 60-70 years) and prior CVD history. Results Statin trea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_09_30_25337016_effects_of_statin_treatment_on_primary_and_hospital_care_use-u-883",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 883,
+      "sentence": "These models were integrated into a validated cardiovascular disease (CVD) microsimulation policy model to assess statin treatment effects on healthcare use in population categories by age (40-60 years and 60-70 years) and prior CVD history.",
+      "context_window": "are use in population categories by age (40-60 years and 60-70 years) and prior CVD history. Results Statin treatment was associ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_09_30_25337016_effects_of_statin_treatment_on_primary_and_hospital_care_use-pct-1331",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1331,
+      "sentence": "The number of years to net neutral effect (95%CI) ranged from 9 (7-12) to 17 (9-25) for consultations/tests, from 22 (17-28) to 38 (28-48) for prescription items/hospital admissions, and from 40 (30-47) to 51 (43-62) for hospital inpatient days.",
+      "context_window": "healthcare use. The number of years to net neutral effect (95%CI) ranged from 9 (7-12) to 17 (9-25) for consultations/test",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

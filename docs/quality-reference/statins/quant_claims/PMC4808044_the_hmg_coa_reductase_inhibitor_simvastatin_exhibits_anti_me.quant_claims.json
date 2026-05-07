@@ -1,0 +1,1040 @@
+{
+  "paper_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me",
+  "doi": "10.18632/oncotarget.5834",
+  "extracted_at": "2026-05-07T19:24:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 17,
+    "unit_value": 23,
+    "risk_ratio": 2,
+    "p_value": 15
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-416",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 416,
+      "sentence": "Overall survival for advanced ovarian cancer is poor, with less than 40% of patients surviving at 5 years [ 2 , 3 ].",
+      "context_window": "urvival for advanced ovarian cancer is poor, with less than 40% of patients surviving at 5 years [ 2 , 3 ]. Thus, there is",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-445",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 445,
+      "sentence": "Overall survival for advanced ovarian cancer is poor, with less than 40% of patients surviving at 5 years [ 2 , 3 ].",
+      "context_window": "cancer is poor, with less than 40% of patients surviving at 5 years [ 2 , 3 ]. Thus, there is a great need to develop more effe",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-2599",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2599,
+      "sentence": "In a recent meta-analysis of the effect of statins in gynecologic cancers, the use of statins was associated with a significant 21% risk reduction (RR = 0.79; 95% CI, 0.64-0.98) in the incidence of ovarian cancer [ 20 ].",
+      "context_window": "ncers, the use of statins was associated with a significant 21% risk reduction (RR = 0.79; 95% CI, 0.64-0.98) in the incide",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-rr-a-2619",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2619,
+      "sentence": "In a recent meta-analysis of the effect of statins in gynecologic cancers, the use of statins was associated with a significant 21% risk reduction (RR = 0.79; 95% CI, 0.64-0.98) in the incidence of ovarian cancer [ 20 ].",
+      "context_window": "atins was associated with a significant 21% risk reduction (RR = 0.79; 95% CI, 0.64-0.98) in the incidence of ovarian cancer [ 20",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-2630",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2630,
+      "sentence": "In a recent meta-analysis of the effect of statins in gynecologic cancers, the use of statins was associated with a significant 21% risk reduction (RR = 0.79; 95% CI, 0.64-0.98) in the incidence of ovarian cancer [ 20 ].",
+      "context_window": "ssociated with a significant 21% risk reduction (RR = 0.79; 95% CI, 0.64-0.98) in the incidence of ovarian cancer [ 20 ]. T",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "rosuvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-2749",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2749,
+      "sentence": "This risk reduction persisted with long term statin use >5 years (RR = 0.48; 95% CI, 0.28-0.80) [ 20 ].",
+      "context_window": "]. This risk reduction persisted with long term statin use >5 years (RR = 0.48; 95% CI, 0.28-0.80) [ 20 ]. Despite these findin",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-rr-a-2758",
+      "claim_type": "risk_ratio",
+      "raw_text": "RR = 0.48",
+      "numeric_values": [
+        0.48
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2758,
+      "sentence": "This risk reduction persisted with long term statin use >5 years (RR = 0.48; 95% CI, 0.28-0.80) [ 20 ].",
+      "context_window": "isk reduction persisted with long term statin use >5 years (RR = 0.48; 95% CI, 0.28-0.80) [ 20 ]. Despite these findings, there h",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-2769",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2769,
+      "sentence": "This risk reduction persisted with long term statin use >5 years (RR = 0.48; 95% CI, 0.28-0.80) [ 20 ].",
+      "context_window": "on persisted with long term statin use >5 years (RR = 0.48; 95% CI, 0.28-0.80) [ 20 ]. Despite these findings, there have b",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-116",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 116,
+      "sentence": "Hey cells were maintained in RPMI 1640 with 5% fetal bovine serum.",
+      "context_window": "se experiments. Hey cells were maintained in RPMI 1640 with 5% fetal bovine serum. SKOV3 cells were grown in DMEM/F12 with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-179",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 179,
+      "sentence": "SKOV3 cells were grown in DMEM/F12 with 10% fetal bovine serum.",
+      "context_window": "fetal bovine serum. SKOV3 cells were grown in DMEM/F12 with 10% fetal bovine serum. Simvastatin, MTT (3-(,5-dimethylthiazol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-980",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 980,
+      "sentence": "MTT (5 mg/ml) was added to the 96-well plates at 5 \u03bcl/well, followed by an additional hour of incubation.",
+      "context_window": "ly treated with varying doses of simvastatin for 72 h. MTT (5 mg/ml) was added to the 96-well plates at 5 \u03bcl/well, followed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-1945",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1945,
+      "sentence": "Subsequently, 1 ul of annexin V-FITC (100 ug/ml) and 0.5 ul of propidium iodide (2 mg/ml) were added in the binding buffer and placed in the dark for 15 minutes.",
+      "context_window": "annexin V-FITC (100 ug/ml) and 0.5 ul of propidium iodide (2 mg/ml) were added in the binding buffer and placed in the dark",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-2603",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2603,
+      "sentence": "The pellet was re-suspended and fixed in 90% pre-chilled methanol and stocked overnight at -20\u00b0C.",
+      "context_window": "ered saline (PBS). The pellet was re-suspended and fixed in 90% pre-chilled methanol and stocked overnight at -20\u00b0C. The ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-2830",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2830,
+      "sentence": "Finally, 50 \u03bcl staining solution [containing 2 mg/ml PI (Biotium, Hayward, MA), 0.1 mg/ml Azide (Sigma-Aldrich), and 0.05% Triton X-100 (Sigma-Aldrich)] was added, and the final mixture was incubated for 15 minutes in the dark before being analyzed on Cellometer.",
+      "context_window": "or 30 minutes. Finally, 50 \u03bcl staining solution [containing 2 mg/ml PI (Biotium, Hayward, MA), 0.1 mg/ml Azide (Sigma-Aldric",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-2865",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2865,
+      "sentence": "Finally, 50 \u03bcl staining solution [containing 2 mg/ml PI (Biotium, Hayward, MA), 0.1 mg/ml Azide (Sigma-Aldrich), and 0.05% Triton X-100 (Sigma-Aldrich)] was added, and the final mixture was incubated for 15 minutes in the dark before being analyzed on Cellometer.",
+      "context_window": "ing solution [containing 2 mg/ml PI (Biotium, Hayward, MA), 0.1 mg/ml Azide (Sigma-Aldrich), and 0.05% Triton X-100 (Sigma-Ald",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-2902",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2902,
+      "sentence": "Finally, 50 \u03bcl staining solution [containing 2 mg/ml PI (Biotium, Hayward, MA), 0.1 mg/ml Azide (Sigma-Aldrich), and 0.05% Triton X-100 (Sigma-Aldrich)] was added, and the final mixture was incubated for 15 minutes in the dark before being analyzed on Cellometer.",
+      "context_window": "Biotium, Hayward, MA), 0.1 mg/ml Azide (Sigma-Aldrich), and 0.05% Triton X-100 (Sigma-Aldrich)] was added, and the final mixt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-3751",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3751,
+      "sentence": "After this period, the medium was aspirated, and the cells were fixed by directly adding 100 ul of 5% glutaraldehyde and incubating for 30 min at room temperature.",
+      "context_window": "ated, and the cells were fixed by directly adding 100 ul of 5% glutaraldehyde and incubating for 30 min at room temperatur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-3883",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3883,
+      "sentence": "Adhered cells were then washed with PBS and stained with 100 ul of 0.1% crystal violet for 30 min.",
+      "context_window": "cells were then washed with PBS and stained with 100 ul of 0.1% crystal violet for 30 min. The cells were then washed repea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-3979",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3979,
+      "sentence": "The cells were then washed repeatedly with water, and 100 ul of 10% acetic acid was added to each well to solubilize the dye.",
+      "context_window": "cells were then washed repeatedly with water, and 100 ul of 10% acetic acid was added to each well to solubilize the dye. A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-8024",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8024,
+      "sentence": "Hey and SKOV3 cells were plated at 2-4 \u00d7 10 5 cells/well in 6 well plates in their appropriate media and were treated with simvastatin for 24 h in 0.5% stripped serum.",
+      "context_window": "opriate media and were treated with simvastatin for 24 h in 0.5% stripped serum. Cell lysates were prepared in RIPA buffer (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-8088",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8088,
+      "sentence": "Cell lysates were prepared in RIPA buffer (1% NP40, 0.5 sodium deoxycholate and 0.1% SDS) plus PhosStop.",
+      "context_window": "stripped serum. Cell lysates were prepared in RIPA buffer (1% NP40, 0.5 sodium deoxycholate and 0.1% SDS) plus PhosStop.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-8125",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8125,
+      "sentence": "Cell lysates were prepared in RIPA buffer (1% NP40, 0.5 sodium deoxycholate and 0.1% SDS) plus PhosStop.",
+      "context_window": "epared in RIPA buffer (1% NP40, 0.5 sodium deoxycholate and 0.1% SDS) plus PhosStop. Equal amounts of protein were separated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-8281",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8281,
+      "sentence": "The membrane was blocked with 5% nonfat dry milk and then incubated with a 1:1000 dilution of primary antibody overnight at 4\u00b0C.",
+      "context_window": "sferred onto a PVDF membrane. The membrane was blocked with 5% nonfat dry milk and then incubated with a 1:1000 dilution o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-9204",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9204,
+      "sentence": "Freshly obtained tissues were washed three times with Hank's Buffered Salt Solution (HBSS), and then gently minced by scissors in DMEM/F12 medium containing 10% fetal bovine serum (FBS).",
+      "context_window": "hen gently minced by scissors in DMEM/F12 medium containing 10% fetal bovine serum (FBS). Primary cultures were performed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-10187",
+      "claim_type": "unit_value",
+      "raw_text": "8 week",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 10187,
+      "sentence": "For the evaluation of simvastatin's in vivo effects, M909 cells (1 \u00d7 10 6 cells/5 \u03bcl) were injected into the left side of the ovarian bursa of 6-8 week old mice.",
+      "context_window": "were injected into the left side of the ovarian bursa of 6-8 week old mice. All mice were handled according to protocols appr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-10492",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg/kg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 10492,
+      "sentence": "The simvastatin treatment (intraperitoneal injection, 3 mg/kg/day) was initiated twelve days after the injection, and tumor size was checked twice a week using palpation until tumors had grown to a size amenable to caliper measurement.",
+      "context_window": "oups. The simvastatin treatment (intraperitoneal injection, 3 mg/kg/day) was initiated twelve days after the injection, and tumor s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-11568",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11568,
+      "sentence": "Statistical significance was defined to be p < 0.05.",
+      "context_window": "d as mean \u00b1 S.E. Statistical significance was defined to be p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-1483",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1483,
+      "sentence": "C in graphs refers to control. (* p < 0.05, ** p < 0.01).",
+      "context_window": "as performed three times. C in graphs refers to control. (* p < 0.05, ** p < 0.01). To evaluate the underlying mechanism of gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-1496",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1496,
+      "sentence": "C in graphs refers to control. (* p < 0.05, ** p < 0.01).",
+      "context_window": "three times. C in graphs refers to control. (* p < 0.05, ** p < 0.01). To evaluate the underlying mechanism of growth inhibitio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-3733",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3733,
+      "sentence": "C in graphs refers to control. (* p < 0.05, ** p < 0.01).",
+      "context_window": "as performed three times. C in graphs refers to control. (* p < 0.05, ** p < 0.01). The Hey A. and SKOV3 B. cell lines were cul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-3746",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3746,
+      "sentence": "C in graphs refers to control. (* p < 0.05, ** p < 0.01).",
+      "context_window": "three times. C in graphs refers to control. (* p < 0.05, ** p < 0.01). The Hey A. and SKOV3 B. cell lines were cultured for 24",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-4142",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4142,
+      "sentence": "C in graphs refers to control. (* p < 0.05, ** p < 0.01).",
+      "context_window": "as performed three times. C in graphs refers to control. (* p < 0.05, ** p < 0.01). Reactive oxygen species (ROS) have been imp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-4155",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4155,
+      "sentence": "C in graphs refers to control. (* p < 0.05, ** p < 0.01).",
+      "context_window": "three times. C in graphs refers to control. (* p < 0.05, ** p < 0.01). Reactive oxygen species (ROS) have been implicated in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-5974",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5974,
+      "sentence": "Each experiment was performed three times. (* p < 0.05, ** p < 0.01).",
+      "context_window": "tin for 24 h. Each experiment was performed three times. (* p < 0.05, ** p < 0.01). C in graphs refers to control. Adhesion and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-5987",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5987,
+      "sentence": "Each experiment was performed three times. (* p < 0.05, ** p < 0.01).",
+      "context_window": "Each experiment was performed three times. (* p < 0.05, ** p < 0.01). C in graphs refers to control. Adhesion and invasion are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-7661",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7661,
+      "sentence": "Each experiment was performed three times. (* p < 0.05, ** p < 0.01).",
+      "context_window": "simvastatin. Each experiment was performed three times. (* p < 0.05, ** p < 0.01). C in graphs refers to control. It is well k",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-7674",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7674,
+      "sentence": "Each experiment was performed three times. (* p < 0.05, ** p < 0.01).",
+      "context_window": "Each experiment was performed three times. (* p < 0.05, ** p < 0.01). C in graphs refers to control. It is well known that act",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-9052",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9052,
+      "sentence": "Each experiment was performed two times. (* p < 0.05, ** p < 0.01).",
+      "context_window": "nd SKOV3 cells. Each experiment was performed two times. (* p < 0.05, ** p < 0.01). To validate the anti-tumorigenic potential",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-9065",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9065,
+      "sentence": "Each experiment was performed two times. (* p < 0.05, ** p < 0.01).",
+      "context_window": "s. Each experiment was performed two times. (* p < 0.05, ** p < 0.01). To validate the anti-tumorigenic potential of simvastati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-9340",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg/kg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "results",
+      "source_offset": 9340,
+      "sentence": "The mice were treated with simvastatin (intraperitoneal injection, 3 mg/kg/day) or placebo (saline) for 4 weeks after twelve days of injection with M909 cells.",
+      "context_window": "e were treated with simvastatin (intraperitoneal injection, 3 mg/kg/day) or placebo (saline) for 4 weeks after twelve days of injec",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-9377",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9377,
+      "sentence": "The mice were treated with simvastatin (intraperitoneal injection, 3 mg/kg/day) or placebo (saline) for 4 weeks after twelve days of injection with M909 cells.",
+      "context_window": "aperitoneal injection, 3 mg/kg/day) or placebo (saline) for 4 weeks after twelve days of injection with M909 cells. Tumor growt",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-9558",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 cm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 9558,
+      "sentence": "When tumors reached a certain size (more than 0.4-0.5 cm), we measured the tumor size by caliper.",
+      "context_window": "e a week. When tumors reached a certain size (more than 0.4-0.5 cm), we measured the tumor size by caliper. During the treatme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-9818",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9818,
+      "sentence": "After 4 weeks of treatment, the mice were euthanized, and the ovarian tumors were removed, photographed, and weighed.",
+      "context_window": "changes in blood glucose or weight (data not shown). After 4 weeks of treatment, the mice were euthanized, and the ovarian tum",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-10487",
+      "claim_type": "unit_value",
+      "raw_text": "8 week",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 10487,
+      "sentence": "M909 cells were injected into left side of the ovarian bursa of 6-8 week old mice.",
+      "context_window": "ells were injected into left side of the ovarian bursa of 6-8 week old mice. When the tumors reached ~50 mm 3 (approximately 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-10529",
+      "claim_type": "unit_value",
+      "raw_text": "50 mm",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 10529,
+      "sentence": "When the tumors reached ~50 mm 3 (approximately 12 days after injection), the mice were treated with placebo or 3 mg/kg simvastatin once a day for 4 weeks.",
+      "context_window": "varian bursa of 6-8 week old mice. When the tumors reached ~50 mm 3 (approximately 12 days after injection), the mice were tr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-10552",
+      "claim_type": "unit_value",
+      "raw_text": "12 days",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 10552,
+      "sentence": "When the tumors reached ~50 mm 3 (approximately 12 days after injection), the mice were treated with placebo or 3 mg/kg simvastatin once a day for 4 weeks.",
+      "context_window": "k old mice. When the tumors reached ~50 mm 3 (approximately 12 days after injection), the mice were treated with placebo or 3 m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-10616",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 10616,
+      "sentence": "When the tumors reached ~50 mm 3 (approximately 12 days after injection), the mice were treated with placebo or 3 mg/kg simvastatin once a day for 4 weeks.",
+      "context_window": "ays after injection), the mice were treated with placebo or 3 mg/kg simvastatin once a day for 4 weeks. Tumor volume A. and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-10651",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 10651,
+      "sentence": "When the tumors reached ~50 mm 3 (approximately 12 days after injection), the mice were treated with placebo or 3 mg/kg simvastatin once a day for 4 weeks.",
+      "context_window": "treated with placebo or 3 mg/kg simvastatin once a day for 4 weeks. Tumor volume A. and weight B. were recorded during or afte",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-10720",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 10720,
+      "sentence": "Tumor volume A. and weight B. were recorded during or after 4 weeks treatment.",
+      "context_window": "Tumor volume A. and weight B. were recorded during or after 4 weeks treatment. Simvastatin reduced serum cholesterol in the mic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-11023",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11023,
+      "sentence": "The changes of Ki-67, cleaved caspase 3, HMGCR, phosphorylated-AKT and phosphorylated-p42/44 were assessed by immunohistochemistry in ovarian tumor tissues E. (* p < 0.05. ** p < 0.01).",
+      "context_window": "ssed by immunohistochemistry in ovarian tumor tissues E. (* p < 0.05. ** p < 0.01). To further confirm the anti-tumorigenic act",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-p-11036",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11036,
+      "sentence": "The changes of Ki-67, cleaved caspase 3, HMGCR, phosphorylated-AKT and phosphorylated-p42/44 were assessed by immunohistochemistry in ovarian tumor tissues E. (* p < 0.05. ** p < 0.01).",
+      "context_window": "ohistochemistry in ovarian tumor tissues E. (* p < 0.05. ** p < 0.01). To further confirm the anti-tumorigenic activity and mec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-5722",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/day",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 5722,
+      "sentence": "The maximum recommended clinical simvastatin dose is 80 mg/day and the maximum tolerated dose of simvastatin is 15 mg/kg/day [ 46 ].",
+      "context_window": "34 ]. The maximum recommended clinical simvastatin dose is 80 mg/day and the maximum tolerated dose of simvastatin is 15 mg/kg/d",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-5781",
+      "claim_type": "unit_value",
+      "raw_text": "15 mg/kg/day",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5781,
+      "sentence": "The maximum recommended clinical simvastatin dose is 80 mg/day and the maximum tolerated dose of simvastatin is 15 mg/kg/day [ 46 ].",
+      "context_window": "80 mg/day and the maximum tolerated dose of simvastatin is 15 mg/kg/day [ 46 ]. The therapeutic dose of simvastatin, 1 mg/kg/day, c",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-5839",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg/kg/day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5839,
+      "sentence": "The therapeutic dose of simvastatin, 1 mg/kg/day, correlates to a serum level of 0.1 uM [ 36 ].",
+      "context_window": "s 15 mg/kg/day [ 46 ]. The therapeutic dose of simvastatin, 1 mg/kg/day, correlates to a serum level of 0.1 uM [ 36 ]. Our in vivo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-6031",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg/kg/day",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6031,
+      "sentence": "Our in vivo study found that simvastatin significantly inhibited the growth of orthotropic xenografts of ovarian cancer at a dose of 3 mg/kg/day without any notable side effects, which is close to therapeutic concentrations clinically.",
+      "context_window": "th of orthotropic xenografts of ovarian cancer at a dose of 3 mg/kg/day without any notable side effects, which is close to therape",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-u-6210",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg/kg/day",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6210,
+      "sentence": "This is a lower dose when compared to previously studied mouse models using 5 mg/kg/day [ 44 ].",
+      "context_window": "dose when compared to previously studied mouse models using 5 mg/kg/day [ 44 ]. Many epidemiological studies have shown a correlat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4808044_the_hmg_coa_reductase_inhibitor_simvastatin_exhibits_anti_me-pct-6637",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6637,
+      "sentence": "Two colorectal cancer studies reported a 17-51% reduction in colorectal cancer risk with simvastatin [ 50 , 51 ].",
+      "context_window": "apeutic agents. Two colorectal cancer studies reported a 17-51% reduction in colorectal cancer risk with simvastatin [ 50 ,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "simvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

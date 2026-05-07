@@ -1,0 +1,326 @@
+{
+  "paper_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega",
+  "doi": "10.1016/j.clnu.2014.03.003",
+  "extracted_at": "2026-05-07T19:32:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "sample_size": 1,
+    "percentage": 6,
+    "mean_sd": 5,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-u-546",
+      "claim_type": "unit_value",
+      "raw_text": "254 mg",
+      "numeric_values": [
+        254.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 546,
+      "sentence": "The purposes of this study were 1) to define the age and/or sex-specific docosahexaenoic plus eicosapentaenoic acids levels in red blood cell membranes (expressed as a percent of total fatty acids; hereafter the omega-3 index) in long-term vegans, and 2) to determine the effects of a vegetarian omega-3 supplement (254 mg docosahexaenoic plus eicosapentaenoic acids/day for 4 months) on the omega-3 index.",
+      "context_window": "o determine the effects of a vegetarian omega-3 supplement (254 mg docosahexaenoic plus eicosapentaenoic acids/day for 4 month",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-u-605",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 605,
+      "sentence": "The purposes of this study were 1) to define the age and/or sex-specific docosahexaenoic plus eicosapentaenoic acids levels in red blood cell membranes (expressed as a percent of total fatty acids; hereafter the omega-3 index) in long-term vegans, and 2) to determine the effects of a vegetarian omega-3 supplement (254 mg docosahexaenoic plus eicosapentaenoic acids/day for 4 months) on the omega-3 index.",
+      "context_window": "(254 mg docosahexaenoic plus eicosapentaenoic acids/day for 4 months) on the omega-3 index. METHODS: A sample (n = 165) of vegan",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-n-656",
+      "claim_type": "sample_size",
+      "raw_text": "n = 165",
+      "numeric_values": [
+        165.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 656,
+      "sentence": "METHODS: A sample (n = 165) of vegans was recruited, and their omega-3 index was determined using a dried blood spot methodology.",
+      "context_window": "/day for 4 months) on the omega-3 index. METHODS: A sample (n = 165) of vegans was recruited, and their omega-3 index was deter",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-pct-825",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 825,
+      "sentence": "A subset of 46 subjects with a baseline omega-3 index of <4% was given a vegetarian omega-3 supplement for 4 months and then retested.",
+      "context_window": ". A subset of 46 subjects with a baseline omega-3 index of <4% was given a vegetarian omega-3 supplement for 4 months and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-u-874",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 874,
+      "sentence": "A subset of 46 subjects with a baseline omega-3 index of <4% was given a vegetarian omega-3 supplement for 4 months and then retested.",
+      "context_window": "index of <4% was given a vegetarian omega-3 supplement for 4 months and then retested. RESULTS: The mean \u00b1 SD omega-3 index was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-msd-943",
+      "claim_type": "mean_sd",
+      "raw_text": "3.7 \u00b1 1.0",
+      "numeric_values": [
+        3.7,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 943,
+      "sentence": "RESULTS: The mean \u00b1 SD omega-3 index was 3.7 \u00b1 1.0% which was similar to that of a cohort of omnivores (deployed US soldiers) from a recently-reported study.",
+      "context_window": "and then retested. RESULTS: The mean \u00b1 SD omega-3 index was 3.7 \u00b1 1.0% which was similar to that of a cohort of omnivores (deploy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-pct-949",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 949,
+      "sentence": "RESULTS: The mean \u00b1 SD omega-3 index was 3.7 \u00b1 1.0% which was similar to that of a cohort of omnivores (deployed US soldiers) from a recently-reported study.",
+      "context_window": "en retested. RESULTS: The mean \u00b1 SD omega-3 index was 3.7 \u00b1 1.0% which was similar to that of a cohort of omnivores (deploye",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-msd-1142",
+      "claim_type": "mean_sd",
+      "raw_text": "3.9 \u00b1 1.0",
+      "numeric_values": [
+        3.9,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1142,
+      "sentence": "Among the vegan cohort, the index was significantly higher in females than males (3.9 \u00b1 1.0% vs.",
+      "context_window": ", the index was significantly higher in females than males (3.9 \u00b1 1.0% vs. 3.5 \u00b1 1.0%; p = 0.026) and was directly related to age",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-pct-1148",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1148,
+      "sentence": "Among the vegan cohort, the index was significantly higher in females than males (3.9 \u00b1 1.0% vs.",
+      "context_window": "index was significantly higher in females than males (3.9 \u00b1 1.0% vs. 3.5 \u00b1 1.0%; p = 0.026) and was directly related to age",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-msd-1157",
+      "claim_type": "mean_sd",
+      "raw_text": "3.5 \u00b1 1.0",
+      "numeric_values": [
+        3.5,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1157,
+      "sentence": "3.5 \u00b1 1.0%; p = 0.026) and was directly related to age (p for trend = 0.009).",
+      "context_window": "significantly higher in females than males (3.9 \u00b1 1.0% vs. 3.5 \u00b1 1.0%; p = 0.026) and was directly related to age (p for trend =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-pct-1163",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1163,
+      "sentence": "3.5 \u00b1 1.0%; p = 0.026) and was directly related to age (p for trend = 0.009).",
+      "context_window": "ficantly higher in females than males (3.9 \u00b1 1.0% vs. 3.5 \u00b1 1.0%; p = 0.026) and was directly related to age (p for trend =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-p-1169",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.026",
+      "numeric_values": [
+        0.026
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1169,
+      "sentence": "3.5 \u00b1 1.0%; p = 0.026) and was directly related to age (p for trend = 0.009).",
+      "context_window": "ly higher in females than males (3.9 \u00b1 1.0% vs. 3.5 \u00b1 1.0%; p = 0.026) and was directly related to age (p for trend = 0.009). The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-msd-1268",
+      "claim_type": "mean_sd",
+      "raw_text": "3.1 \u00b1 0.6",
+      "numeric_values": [
+        3.1,
+        0.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1268,
+      "sentence": "The omega-3 index increased from 3.1 \u00b1 0.6% to 4.8 \u00b1 0.8% (p = 0.009) in the supplementation study.",
+      "context_window": "age (p for trend = 0.009). The omega-3 index increased from 3.1 \u00b1 0.6% to 4.8 \u00b1 0.8% (p = 0.009) in the supplementation study. CO",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-pct-1274",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1274,
+      "sentence": "The omega-3 index increased from 3.1 \u00b1 0.6% to 4.8 \u00b1 0.8% (p = 0.009) in the supplementation study.",
+      "context_window": "for trend = 0.009). The omega-3 index increased from 3.1 \u00b1 0.6% to 4.8 \u00b1 0.8% (p = 0.009) in the supplementation study. CON",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-msd-1282",
+      "claim_type": "mean_sd",
+      "raw_text": "4.8 \u00b1 0.8",
+      "numeric_values": [
+        4.8,
+        0.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1282,
+      "sentence": "The omega-3 index increased from 3.1 \u00b1 0.6% to 4.8 \u00b1 0.8% (p = 0.009) in the supplementation study.",
+      "context_window": "nd = 0.009). The omega-3 index increased from 3.1 \u00b1 0.6% to 4.8 \u00b1 0.8% (p = 0.009) in the supplementation study. CONCLUSIONS: We",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-pct-1288",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1288,
+      "sentence": "The omega-3 index increased from 3.1 \u00b1 0.6% to 4.8 \u00b1 0.8% (p = 0.009) in the supplementation study.",
+      "context_window": ".009). The omega-3 index increased from 3.1 \u00b1 0.6% to 4.8 \u00b1 0.8% (p = 0.009) in the supplementation study. CONCLUSIONS: We c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1016_j_clnu_2014_03_003_blood_docosahexaenoic_acid_and_eicosapentaenoic_acid_in_vega-p-1294",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1294,
+      "sentence": "The omega-3 index increased from 3.1 \u00b1 0.6% to 4.8 \u00b1 0.8% (p = 0.009) in the supplementation study.",
+      "context_window": "The omega-3 index increased from 3.1 \u00b1 0.6% to 4.8 \u00b1 0.8% (p = 0.009) in the supplementation study. CONCLUSIONS: We conclude tha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "omega-3",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

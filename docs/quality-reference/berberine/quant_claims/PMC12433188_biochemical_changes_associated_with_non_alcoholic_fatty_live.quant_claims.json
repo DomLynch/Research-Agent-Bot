@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live",
   "doi": "10.3389/fphar.2025.1460643",
-  "extracted_at": "2026-05-05T22:22:57+00:00",
+  "extracted_at": "2026-05-07T16:58:06+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "confidence_interval": 9,
@@ -25,9 +25,9 @@
       "context_window": "ng blood glucose (FBG) levels, with an effect size of 0.53 (95% CI: 0.04-1.01). In preclinical settings, berberine consistently demonstra",
       "claim_role": "effect",
       "endpoint": "blood glucose",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-372",
@@ -42,7 +42,7 @@
       "sentence": "Non-alcoholic fatty liver disease (NAFLD), now increasingly referred to as Metabolic Associated Steatohepatitis (MASLD),despite the recent nomenclature shift to MASLD, this systematic review and meta-analysis will continue to use NAFLD to align with the studies included and the existing literature.NAFLD is characterized by the accumulation of triglycerides in more than 5% of hepatocytes, occurring without significant alcohol consumption ( Powell et al., 2021 ).",
       "context_window": "acterized by the accumulation of triglycerides in more than 5% of hepatocytes, occurring without significant alcohol consu",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -132,10 +132,10 @@
       "sentence": "Specifically, LDL cholesterol had an I 2 value of 70.3% with a significant P-value of 0.034.",
       "context_window": "studies. Specifically, LDL cholesterol had an I 2 value of 70.3% with a significant P-value of 0.034. TC displayed an I 2 of",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-4219",
@@ -280,7 +280,7 @@
       "context_window": "nifested a notable decline, highlighted by an SMD of -1.29 (95% CI: -2.34, -0.24), highlighting berberine\u2019s positive modulation of glucose m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -317,7 +317,7 @@
       "sentence": "In contrast, LDL and TC levels decreased across 13 and 14 studies respectively, with effect sizes measuring -2.27 (95% CI: -2.80, -1.75) for LDL and -2.55 (95% CI: -3.34, -1.75) for TC ( Figure 4 ).",
       "context_window": "14 studies respectively, with effect sizes measuring -2.27 (95% CI: -2.80, -1.75) for LDL and -2.55 (95% CI: -3.34, -1.75) for TC ( Figure 4",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -336,7 +336,7 @@
       "sentence": "In contrast, LDL and TC levels decreased across 13 and 14 studies respectively, with effect sizes measuring -2.27 (95% CI: -2.80, -1.75) for LDL and -2.55 (95% CI: -3.34, -1.75) for TC ( Figure 4 ).",
       "context_window": "s measuring -2.27 (95% CI: -2.80, -1.75) for LDL and -2.55 (95% CI: -3.34, -1.75) for TC ( Figure 4 ). Forest plots for glycemic and lipid",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -356,9 +356,9 @@
       "context_window": ", hepatic TG across 7 studies demonstrated an SMD of -2.93 (95% CI: -4.00, -1.85), indicating berberine\u2019s potential in curtailing intracellu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-8694",
@@ -464,10 +464,10 @@
       "sentence": "LDL and total cholesterol showed robust reductions at intermediate-to-high doses (100-150 mg/kg and >150 mg/kg), with low-to-moderate heterogeneity (I 2 = 0-77%).",
       "context_window": "showed robust reductions at intermediate-to-high doses (100-150 mg/kg and >150 mg/kg), with low-to-moderate heterogeneity (I 2",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-9193",
@@ -482,10 +482,10 @@
       "sentence": "LDL and total cholesterol showed robust reductions at intermediate-to-high doses (100-150 mg/kg and >150 mg/kg), with low-to-moderate heterogeneity (I 2 = 0-77%).",
       "context_window": "eductions at intermediate-to-high doses (100-150 mg/kg and >150 mg/kg), with low-to-moderate heterogeneity (I 2 = 0-77%). For",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-pct-9249",
@@ -500,10 +500,10 @@
       "sentence": "LDL and total cholesterol showed robust reductions at intermediate-to-high doses (100-150 mg/kg and >150 mg/kg), with low-to-moderate heterogeneity (I 2 = 0-77%).",
       "context_window": "nd >150 mg/kg), with low-to-moderate heterogeneity (I 2 = 0-77%). For duration, AST demonstrated significant improvement on",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-9323",
@@ -518,10 +518,10 @@
       "sentence": "For duration, AST demonstrated significant improvement only within \u226412 weeks (-2.59; P < 0.001), while AST, LDL, and TC showed statistically significant decreases in both \u226412 and >12 weeks.",
       "context_window": "tion, AST demonstrated significant improvement only within \u226412 weeks (-2.59; P < 0.001), while AST, LDL, and TC showed statistic",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-p-9340",
@@ -536,10 +536,10 @@
       "sentence": "For duration, AST demonstrated significant improvement only within \u226412 weeks (-2.59; P < 0.001), while AST, LDL, and TC showed statistically significant decreases in both \u226412 and >12 weeks.",
       "context_window": "rated significant improvement only within \u226412 weeks (-2.59; P < 0.001), while AST, LDL, and TC showed statistically significant d",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-9435",
@@ -554,10 +554,10 @@
       "sentence": "For duration, AST demonstrated significant improvement only within \u226412 weeks (-2.59; P < 0.001), while AST, LDL, and TC showed statistically significant decreases in both \u226412 and >12 weeks.",
       "context_window": "showed statistically significant decreases in both \u226412 and >12 weeks. Notably, HDL elevation achieved statistical significance o",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-p-9539",
@@ -627,9 +627,9 @@
       "context_window": "ounted for. Animal studies often use berberine doses of 100-200 mg/kg (converted by body surface area, equivalent to 8-16 mg/k",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-6189",
@@ -645,9 +645,9 @@
       "context_window": "-200 mg/kg (converted by body surface area, equivalent to 8-16 mg/kg in humans), while the commonly used clinical dose is 0.9",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12433188_biochemical_changes_associated_with_non_alcoholic_fatty_live-u-6270",
@@ -663,9 +663,9 @@
       "context_window": "while the commonly used clinical dose is 0.9-1.5 g/day (\u224812-21 mg/kg). The dose difference may partly explain the phenomenon",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "berberine",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

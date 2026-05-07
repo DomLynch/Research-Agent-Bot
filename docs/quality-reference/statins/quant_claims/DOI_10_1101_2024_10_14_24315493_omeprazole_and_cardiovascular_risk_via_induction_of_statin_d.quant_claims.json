@@ -1,0 +1,159 @@
+{
+  "paper_id": "DOI_10_1101_2024_10_14_24315493_omeprazole_and_cardiovascular_risk_via_induction_of_statin_d",
+  "doi": "10.1101/2024.10.14.24315493",
+  "extracted_at": "2026-05-07T19:24:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 3,
+    "mean_sd": 1,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2024_10_14_24315493_omeprazole_and_cardiovascular_risk_via_induction_of_statin_d-u-491",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 491,
+      "sentence": "Participants were followed up to 5 years for major adverse cardiovascular events (MACE) as a composite of stroke, acute myocardial infarction and all-cause mortality.",
+      "context_window": "up to 13 hours post-dose. Participants were followed up to 5 years for major adverse cardiovascular events (MACE) as a composi",
+      "claim_role": "population",
+      "endpoint": "incident cv event",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_10_14_24315493_omeprazole_and_cardiovascular_risk_via_induction_of_statin_d-pct-930",
+      "claim_type": "percentage",
+      "raw_text": "83.6%",
+      "numeric_values": [
+        83.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 930,
+      "sentence": "Results There were 1139 (83.6%) male and 223 (16.4%) female participants, mean age was 59\u00b19.4.",
+      "context_window": "was used to validate the results. Results There were 1139 (83.6%) male and 223 (16.4%) female participants, mean age was 59\u00b1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_10_14_24315493_omeprazole_and_cardiovascular_risk_via_induction_of_statin_d-pct-951",
+      "claim_type": "percentage",
+      "raw_text": "16.4%",
+      "numeric_values": [
+        16.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 951,
+      "sentence": "Results There were 1139 (83.6%) male and 223 (16.4%) female participants, mean age was 59\u00b19.4.",
+      "context_window": "the results. Results There were 1139 (83.6%) male and 223 (16.4%) female participants, mean age was 59\u00b19.4. Of all 51 co-pre",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_10_14_24315493_omeprazole_and_cardiovascular_risk_via_induction_of_statin_d-msd-992",
+      "claim_type": "mean_sd",
+      "raw_text": "59\u00b19.4",
+      "numeric_values": [
+        59.0,
+        9.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 992,
+      "sentence": "Results There were 1139 (83.6%) male and 223 (16.4%) female participants, mean age was 59\u00b19.4.",
+      "context_window": ".6%) male and 223 (16.4%) female participants, mean age was 59\u00b19.4. Of all 51 co-prescribed drugs, omeprazole was the second m",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_10_14_24315493_omeprazole_and_cardiovascular_risk_via_induction_of_statin_d-pct-1070",
+      "claim_type": "percentage",
+      "raw_text": "57.4%",
+      "numeric_values": [
+        57.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1070,
+      "sentence": "Of all 51 co-prescribed drugs, omeprazole was the second most common (57.4%), and was the strongest determinant of increased plasma statin lactone, demonstrating a \u223c1.41 fold increase in lactone concentration and a 1.46-fold increase in 5-year rates of major adverse cardiovascular events (MACE).",
+      "context_window": "co-prescribed drugs, omeprazole was the second most common (57.4%), and was the strongest determinant of increased plasma sta",
+      "claim_role": "effect",
+      "endpoint": "incident cv event",
+      "arm": "statin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_10_14_24315493_omeprazole_and_cardiovascular_risk_via_induction_of_statin_d-u-1411",
+      "claim_type": "unit_value",
+      "raw_text": "3.9ng/mL",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "ng/mL",
+      "source_section": "abstract",
+      "source_offset": 1411,
+      "sentence": "Independent of statin drug dose and achieved LDL cholesterol levels, plasma atorvastatin lactone (ATVLAC) levels \u22653.9ng/mL strongly predicted MACE (HR=2.45) and all-cause mortality (HR=3.18).",
+      "context_window": "sterol levels, plasma atorvastatin lactone (ATVLAC) levels \u22653.9ng/mL strongly predicted MACE (HR=2.45) and all-cause mortality (",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_10_14_24315493_omeprazole_and_cardiovascular_risk_via_induction_of_statin_d-hr-a-1445",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR=2.45",
+      "numeric_values": [
+        2.45
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1445,
+      "sentence": "Independent of statin drug dose and achieved LDL cholesterol levels, plasma atorvastatin lactone (ATVLAC) levels \u22653.9ng/mL strongly predicted MACE (HR=2.45) and all-cause mortality (HR=3.18).",
+      "context_window": "lactone (ATVLAC) levels \u22653.9ng/mL strongly predicted MACE (HR=2.45) and all-cause mortality (HR=3.18). In a mouse model of ath",
+      "claim_role": "dose",
+      "endpoint": "incident cv event",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_10_14_24315493_omeprazole_and_cardiovascular_risk_via_induction_of_statin_d-hr-a-1479",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR=3.18",
+      "numeric_values": [
+        3.18
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1479,
+      "sentence": "Independent of statin drug dose and achieved LDL cholesterol levels, plasma atorvastatin lactone (ATVLAC) levels \u22653.9ng/mL strongly predicted MACE (HR=2.45) and all-cause mortality (HR=3.18).",
+      "context_window": "strongly predicted MACE (HR=2.45) and all-cause mortality (HR=3.18). In a mouse model of atheroma formation, omeprazole co- ad",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

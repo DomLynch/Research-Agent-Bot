@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co",
   "doi": "10.1038/s43587-024-00758-1",
-  "extracted_at": "2026-05-05T21:28:44+00:00",
+  "extracted_at": "2026-05-07T16:58:26+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 63,
@@ -80,7 +80,7 @@
       "context_window": "d treatment difference between NR and placebo in IL-8 after 6 weeks was -52.6% (95% confidence interval (CI): -75.7% to -7.6%;",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -98,7 +98,7 @@
       "context_window": "ifference between NR and placebo in IL-8 after 6 weeks was -52.6% (95% confidence interval (CI): -75.7% to -7.6%; P = 0.030).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -116,7 +116,7 @@
       "context_window": "ce between NR and placebo in IL-8 after 6 weeks was -52.6% (95% confidence interval (CI): -75.7% to -7.6%; P = 0.030). This",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -134,7 +134,7 @@
       "context_window": "-8 after 6 weeks was -52.6% (95% confidence interval (CI): -75.7% to -7.6%; P = 0.030). This effect persisted until the follo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -152,7 +152,7 @@
       "context_window": "weeks was -52.6% (95% confidence interval (CI): -75.7% to -7.6%; P = 0.030). This effect persisted until the follow-up 12 w",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -170,7 +170,7 @@
       "context_window": "was -52.6% (95% confidence interval (CI): -75.7% to -7.6%; P = 0.030). This effect persisted until the follow-up 12 weeks after",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -386,9 +386,9 @@
       "context_window": "erbation of COPD or severe airway infection within the last 2 months, chronic use of supplements containing NR or vitamin B befo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-u-1476",
@@ -404,9 +404,9 @@
       "context_window": "efore and throughout the trial or a cancer diagnosis within 5 years. Furthermore, we enrolled a convenience sample of lung-heal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-u-2067",
@@ -422,7 +422,7 @@
       "context_window": "ntervention consisted of ingesting 2 g of NR or placebo for 6 weeks (four 250-mg capsules consumed with meals in the morning an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -656,9 +656,9 @@
       "context_window": "ribed previously 44 , a reaction mixture containing 5 \u00b5l of 5 mg ml -1 Resazurin, 10 \u00b5l of flavin mononucleotide, 26 \u00b5l of 5",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nicotinamide",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-pct-12076",
@@ -728,9 +728,9 @@
       "context_window": "y at 12.75, alongside detection P value requirements set to P = 0.05. \u2018ewastools\u2019 was used to evaluate 17 control metrics derive",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-u-17218",
@@ -746,7 +746,7 @@
       "context_window": "t from the corresponding changes after placebo treatment at 6 weeks. Previous work in older humans showed that 1 g of NR can re",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -764,9 +764,9 @@
       "context_window": "g of NR can reduce circulating inflammatory markers between 30% and 50% compared to placebo 22 . To determine whether NR co",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-pct-17339",
@@ -782,9 +782,9 @@
       "context_window": "can reduce circulating inflammatory markers between 30% and 50% compared to placebo 22 . To determine whether NR could comp",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-pct-17603",
@@ -800,7 +800,7 @@
       "context_window": "tween-group difference of 8 ng ml -1 in IL-8, equating to a 40% reduction from a baseline of 21 ng ml -1 and an s.d. of 5.7",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -854,7 +854,7 @@
       "context_window": "type I and type II error rate, respectively. Allowing for a 20% dropout and assuming conservatively that only 60% of patien",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -872,7 +872,7 @@
       "context_window": "ing for a 20% dropout and assuming conservatively that only 60% of patients with COPD would be able to expectorate sputum,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -944,7 +944,7 @@
       "context_window": "nts were randomized 1:1 to receive either NR or placebo for 6 weeks and attended three study visits: pre-treatment and post-tre",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -962,7 +962,7 @@
       "context_window": "dy visits: pre-treatment and post-treatment and a follow-up 12 weeks after post-treatment. Patients with COPD were randomized an",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -980,7 +980,7 @@
       "context_window": "strointestinal issues 17 , 18 ; however, we found that only 10% of participants receiving NR and 14% receiving placebo expe",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -998,7 +998,7 @@
       "context_window": "er, we found that only 10% of participants receiving NR and 14% receiving placebo experienced such issues. No serious AEs w",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1016,7 +1016,7 @@
       "context_window": "PD Lung-healthy control Total Placebo NR Total Placebo NR ( n = 40) ( n = 20) ( n = 20) ( n = 18) ( n = 8) ( n = 10) Age, year",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1034,7 +1034,7 @@
       "context_window": "althy control Total Placebo NR Total Placebo NR ( n = 40) ( n = 20) ( n = 20) ( n = 18) ( n = 8) ( n = 10) Age, years 71.9 \u00b1 5",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1052,7 +1052,7 @@
       "context_window": "rol Total Placebo NR Total Placebo NR ( n = 40) ( n = 20) ( n = 20) ( n = 18) ( n = 8) ( n = 10) Age, years 71.9 \u00b1 5.8 71.7 \u00b1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1070,7 +1070,7 @@
       "context_window": "Placebo NR Total Placebo NR ( n = 40) ( n = 20) ( n = 20) ( n = 18) ( n = 8) ( n = 10) Age, years 71.9 \u00b1 5.8 71.7 \u00b1 6.2 72.2 \u00b1",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1088,7 +1088,7 @@
       "context_window": "Total Placebo NR ( n = 40) ( n = 20) ( n = 20) ( n = 18) ( n = 8) ( n = 10) Age, years 71.9 \u00b1 5.8 71.7 \u00b1 6.2 72.2 \u00b1 5.5 70.9",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1106,7 +1106,7 @@
       "context_window": "acebo NR ( n = 40) ( n = 20) ( n = 20) ( n = 18) ( n = 8) ( n = 10) Age, years 71.9 \u00b1 5.8 71.7 \u00b1 6.2 72.2 \u00b1 5.5 70.9 \u00b1 6.4 72.",
       "claim_role": "duration",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1125,7 +1125,7 @@
       "context_window": "( n = 20) ( n = 20) ( n = 18) ( n = 8) ( n = 10) Age, years 71.9 \u00b1 5.8 71.7 \u00b1 6.2 72.2 \u00b1 5.5 70.9 \u00b1 6.4 72.0 \u00b1 7.0 70.0 \u00b1 6.0 Fema",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1144,7 +1144,7 @@
       "context_window": "n = 20) ( n = 18) ( n = 8) ( n = 10) Age, years 71.9 \u00b1 5.8 71.7 \u00b1 6.2 72.2 \u00b1 5.5 70.9 \u00b1 6.4 72.0 \u00b1 7.0 70.0 \u00b1 6.0 Female sex, n (",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1163,7 +1163,7 @@
       "context_window": "n = 18) ( n = 8) ( n = 10) Age, years 71.9 \u00b1 5.8 71.7 \u00b1 6.2 72.2 \u00b1 5.5 70.9 \u00b1 6.4 72.0 \u00b1 7.0 70.0 \u00b1 6.0 Female sex, n (%) 25 (62.5",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1182,7 +1182,7 @@
       "context_window": "= 8) ( n = 10) Age, years 71.9 \u00b1 5.8 71.7 \u00b1 6.2 72.2 \u00b1 5.5 70.9 \u00b1 6.4 72.0 \u00b1 7.0 70.0 \u00b1 6.0 Female sex, n (%) 25 (62.5) 14 (70.0)",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1201,7 +1201,7 @@
       "context_window": "10) Age, years 71.9 \u00b1 5.8 71.7 \u00b1 6.2 72.2 \u00b1 5.5 70.9 \u00b1 6.4 72.0 \u00b1 7.0 70.0 \u00b1 6.0 Female sex, n (%) 25 (62.5) 14 (70.0) 11 (55.0)",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1220,7 +1220,7 @@
       "context_window": "ears 71.9 \u00b1 5.8 71.7 \u00b1 6.2 72.2 \u00b1 5.5 70.9 \u00b1 6.4 72.0 \u00b1 7.0 70.0 \u00b1 6.0 Female sex, n (%) 25 (62.5) 14 (70.0) 11 (55.0) 12 (66.7) 6",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1239,7 +1239,7 @@
       "context_window": "14 (70.0) 11 (55.0) 12 (66.7) 6 (75.0) 6 (60.0) Weight, kg 76.4 \u00b1 16.8 79.7 \u00b1 12.9 73.2 \u00b1 19.8 72.0 \u00b1 11.3 70.5 \u00b1 12.1 73.2 \u00b1 11.1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1258,7 +1258,7 @@
       "context_window": "1 (55.0) 12 (66.7) 6 (75.0) 6 (60.0) Weight, kg 76.4 \u00b1 16.8 79.7 \u00b1 12.9 73.2 \u00b1 19.8 72.0 \u00b1 11.3 70.5 \u00b1 12.1 73.2 \u00b1 11.1 Height, m 1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1277,7 +1277,7 @@
       "context_window": "(66.7) 6 (75.0) 6 (60.0) Weight, kg 76.4 \u00b1 16.8 79.7 \u00b1 12.9 73.2 \u00b1 19.8 72.0 \u00b1 11.3 70.5 \u00b1 12.1 73.2 \u00b1 11.1 Height, m 1.68 \u00b1 0.09 1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1296,7 +1296,7 @@
       "context_window": ".0) 6 (60.0) Weight, kg 76.4 \u00b1 16.8 79.7 \u00b1 12.9 73.2 \u00b1 19.8 72.0 \u00b1 11.3 70.5 \u00b1 12.1 73.2 \u00b1 11.1 Height, m 1.68 \u00b1 0.09 1.70 \u00b1 0.10 1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1315,7 +1315,7 @@
       "context_window": "Weight, kg 76.4 \u00b1 16.8 79.7 \u00b1 12.9 73.2 \u00b1 19.8 72.0 \u00b1 11.3 70.5 \u00b1 12.1 73.2 \u00b1 11.1 Height, m 1.68 \u00b1 0.09 1.70 \u00b1 0.10 1.67 \u00b1 0.09 1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1334,7 +1334,7 @@
       "context_window": "76.4 \u00b1 16.8 79.7 \u00b1 12.9 73.2 \u00b1 19.8 72.0 \u00b1 11.3 70.5 \u00b1 12.1 73.2 \u00b1 11.1 Height, m 1.68 \u00b1 0.09 1.70 \u00b1 0.10 1.67 \u00b1 0.09 1.69 \u00b1 0.09 1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1353,7 +1353,7 @@
       "context_window": "9 73.2 \u00b1 19.8 72.0 \u00b1 11.3 70.5 \u00b1 12.1 73.2 \u00b1 11.1 Height, m 1.68 \u00b1 0.09 1.70 \u00b1 0.10 1.67 \u00b1 0.09 1.69 \u00b1 0.09 1.65 \u00b1 0.09 1.73 \u00b1 0.07",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1372,7 +1372,7 @@
       "context_window": "8 72.0 \u00b1 11.3 70.5 \u00b1 12.1 73.2 \u00b1 11.1 Height, m 1.68 \u00b1 0.09 1.70 \u00b1 0.10 1.67 \u00b1 0.09 1.69 \u00b1 0.09 1.65 \u00b1 0.09 1.73 \u00b1 0.07 BMI, kg m -",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1391,7 +1391,7 @@
       "context_window": "3 70.5 \u00b1 12.1 73.2 \u00b1 11.1 Height, m 1.68 \u00b1 0.09 1.70 \u00b1 0.10 1.67 \u00b1 0.09 1.69 \u00b1 0.09 1.65 \u00b1 0.09 1.73 \u00b1 0.07 BMI, kg m - 2 26.9 \u00b1 4.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1410,7 +1410,7 @@
       "context_window": "1 73.2 \u00b1 11.1 Height, m 1.68 \u00b1 0.09 1.70 \u00b1 0.10 1.67 \u00b1 0.09 1.69 \u00b1 0.09 1.65 \u00b1 0.09 1.73 \u00b1 0.07 BMI, kg m - 2 26.9 \u00b1 4.8 27.8 \u00b1 4.4",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1429,7 +1429,7 @@
       "context_window": "1 Height, m 1.68 \u00b1 0.09 1.70 \u00b1 0.10 1.67 \u00b1 0.09 1.69 \u00b1 0.09 1.65 \u00b1 0.09 1.73 \u00b1 0.07 BMI, kg m - 2 26.9 \u00b1 4.8 27.8 \u00b1 4.4 26.0 \u00b1 5.2",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1448,7 +1448,7 @@
       "context_window": "1.68 \u00b1 0.09 1.70 \u00b1 0.10 1.67 \u00b1 0.09 1.69 \u00b1 0.09 1.65 \u00b1 0.09 1.73 \u00b1 0.07 BMI, kg m - 2 26.9 \u00b1 4.8 27.8 \u00b1 4.4 26.0 \u00b1 5.2 25.0 \u00b1 2.8 2",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1467,7 +1467,7 @@
       "context_window": "67 \u00b1 0.09 1.69 \u00b1 0.09 1.65 \u00b1 0.09 1.73 \u00b1 0.07 BMI, kg m - 2 26.9 \u00b1 4.8 27.8 \u00b1 4.4 26.0 \u00b1 5.2 25.0 \u00b1 2.8 25.7 \u00b1 2.7 24.4 \u00b1 2.8 FEV",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1486,7 +1486,7 @@
       "context_window": ".69 \u00b1 0.09 1.65 \u00b1 0.09 1.73 \u00b1 0.07 BMI, kg m - 2 26.9 \u00b1 4.8 27.8 \u00b1 4.4 26.0 \u00b1 5.2 25.0 \u00b1 2.8 25.7 \u00b1 2.7 24.4 \u00b1 2.8 FEV 1 , % of pr",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1505,7 +1505,7 @@
       "context_window": "1.65 \u00b1 0.09 1.73 \u00b1 0.07 BMI, kg m - 2 26.9 \u00b1 4.8 27.8 \u00b1 4.4 26.0 \u00b1 5.2 25.0 \u00b1 2.8 25.7 \u00b1 2.7 24.4 \u00b1 2.8 FEV 1 , % of predicted 64.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1524,7 +1524,7 @@
       "context_window": "1.73 \u00b1 0.07 BMI, kg m - 2 26.9 \u00b1 4.8 27.8 \u00b1 4.4 26.0 \u00b1 5.2 25.0 \u00b1 2.8 25.7 \u00b1 2.7 24.4 \u00b1 2.8 FEV 1 , % of predicted 64.5 \u00b1 18.4 63",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1543,7 +1543,7 @@
       "context_window": "7 BMI, kg m - 2 26.9 \u00b1 4.8 27.8 \u00b1 4.4 26.0 \u00b1 5.2 25.0 \u00b1 2.8 25.7 \u00b1 2.7 24.4 \u00b1 2.8 FEV 1 , % of predicted 64.5 \u00b1 18.4 63.1 \u00b1 15.9 6",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1562,7 +1562,7 @@
       "context_window": "- 2 26.9 \u00b1 4.8 27.8 \u00b1 4.4 26.0 \u00b1 5.2 25.0 \u00b1 2.8 25.7 \u00b1 2.7 24.4 \u00b1 2.8 FEV 1 , % of predicted 64.5 \u00b1 18.4 63.1 \u00b1 15.9 65.9 \u00b1 20.9",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1581,7 +1581,7 @@
       "context_window": "5.2 25.0 \u00b1 2.8 25.7 \u00b1 2.7 24.4 \u00b1 2.8 FEV 1 , % of predicted 64.5 \u00b1 18.4 63.1 \u00b1 15.9 65.9 \u00b1 20.9 117.4 \u00b1 15.5 113.8 \u00b1 15.4 120 \u00b1 15.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1600,7 +1600,7 @@
       "context_window": ".8 25.7 \u00b1 2.7 24.4 \u00b1 2.8 FEV 1 , % of predicted 64.5 \u00b1 18.4 63.1 \u00b1 15.9 65.9 \u00b1 20.9 117.4 \u00b1 15.5 113.8 \u00b1 15.4 120 \u00b1 15.7 FVC, % of",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1619,7 +1619,7 @@
       "context_window": "7 24.4 \u00b1 2.8 FEV 1 , % of predicted 64.5 \u00b1 18.4 63.1 \u00b1 15.9 65.9 \u00b1 20.9 117.4 \u00b1 15.5 113.8 \u00b1 15.4 120 \u00b1 15.7 FVC, % of predicted 95",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1638,7 +1638,7 @@
       "context_window": "FEV 1 , % of predicted 64.5 \u00b1 18.4 63.1 \u00b1 15.9 65.9 \u00b1 20.9 117.4 \u00b1 15.5 113.8 \u00b1 15.4 120 \u00b1 15.7 FVC, % of predicted 95.5 \u00b1 24.0 93.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1657,7 +1657,7 @@
       "context_window": "predicted 64.5 \u00b1 18.4 63.1 \u00b1 15.9 65.9 \u00b1 20.9 117.4 \u00b1 15.5 113.8 \u00b1 15.4 120 \u00b1 15.7 FVC, % of predicted 95.5 \u00b1 24.0 93.4 \u00b1 23.6 97.6",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1676,7 +1676,7 @@
       "context_window": ".5 \u00b1 18.4 63.1 \u00b1 15.9 65.9 \u00b1 20.9 117.4 \u00b1 15.5 113.8 \u00b1 15.4 120 \u00b1 15.7 FVC, % of predicted 95.5 \u00b1 24.0 93.4 \u00b1 23.6 97.6 \u00b1 24.9 116",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1695,7 +1695,7 @@
       "context_window": ".9 117.4 \u00b1 15.5 113.8 \u00b1 15.4 120 \u00b1 15.7 FVC, % of predicted 95.5 \u00b1 24.0 93.4 \u00b1 23.6 97.6 \u00b1 24.9 116.3 \u00b1 15.5 112.9 \u00b1 14.9 119.0 \u00b1 1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1714,7 +1714,7 @@
       "context_window": "5.5 113.8 \u00b1 15.4 120 \u00b1 15.7 FVC, % of predicted 95.5 \u00b1 24.0 93.4 \u00b1 23.6 97.6 \u00b1 24.9 116.3 \u00b1 15.5 112.9 \u00b1 14.9 119.0 \u00b1 16.2 FEV 1 /F",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1733,7 +1733,7 @@
       "context_window": "15.4 120 \u00b1 15.7 FVC, % of predicted 95.5 \u00b1 24.0 93.4 \u00b1 23.6 97.6 \u00b1 24.9 116.3 \u00b1 15.5 112.9 \u00b1 14.9 119.0 \u00b1 16.2 FEV 1 /FVC 52.5 \u00b1 11",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1752,7 +1752,7 @@
       "context_window": "5.7 FVC, % of predicted 95.5 \u00b1 24.0 93.4 \u00b1 23.6 97.6 \u00b1 24.9 116.3 \u00b1 15.5 112.9 \u00b1 14.9 119.0 \u00b1 16.2 FEV 1 /FVC 52.5 \u00b1 11.6 53.3 \u00b1 13.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1771,7 +1771,7 @@
       "context_window": "predicted 95.5 \u00b1 24.0 93.4 \u00b1 23.6 97.6 \u00b1 24.9 116.3 \u00b1 15.5 112.9 \u00b1 14.9 119.0 \u00b1 16.2 FEV 1 /FVC 52.5 \u00b1 11.6 53.3 \u00b1 13.1 51.7 \u00b1 10.3",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1790,7 +1790,7 @@
       "context_window": ".5 \u00b1 24.0 93.4 \u00b1 23.6 97.6 \u00b1 24.9 116.3 \u00b1 15.5 112.9 \u00b1 14.9 119.0 \u00b1 16.2 FEV 1 /FVC 52.5 \u00b1 11.6 53.3 \u00b1 13.1 51.7 \u00b1 10.3 78.3 \u00b1 4.0 7",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1809,7 +1809,7 @@
       "context_window": ".6 \u00b1 24.9 116.3 \u00b1 15.5 112.9 \u00b1 14.9 119.0 \u00b1 16.2 FEV 1 /FVC 52.5 \u00b1 11.6 53.3 \u00b1 13.1 51.7 \u00b1 10.3 78.3 \u00b1 4.0 78.3 \u00b1 3.5 78.4 \u00b1 4.6 Pa",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1828,7 +1828,7 @@
       "context_window": "6.3 \u00b1 15.5 112.9 \u00b1 14.9 119.0 \u00b1 16.2 FEV 1 /FVC 52.5 \u00b1 11.6 53.3 \u00b1 13.1 51.7 \u00b1 10.3 78.3 \u00b1 4.0 78.3 \u00b1 3.5 78.4 \u00b1 4.6 Pack-years 34.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1847,7 +1847,7 @@
       "context_window": "12.9 \u00b1 14.9 119.0 \u00b1 16.2 FEV 1 /FVC 52.5 \u00b1 11.6 53.3 \u00b1 13.1 51.7 \u00b1 10.3 78.3 \u00b1 4.0 78.3 \u00b1 3.5 78.4 \u00b1 4.6 Pack-years 34.4 \u00b1 13.4 32.",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1866,7 +1866,7 @@
       "context_window": "119.0 \u00b1 16.2 FEV 1 /FVC 52.5 \u00b1 11.6 53.3 \u00b1 13.1 51.7 \u00b1 10.3 78.3 \u00b1 4.0 78.3 \u00b1 3.5 78.4 \u00b1 4.6 Pack-years 34.4 \u00b1 13.4 32.3 \u00b1 12.0 36",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1885,7 +1885,7 @@
       "context_window": "2 FEV 1 /FVC 52.5 \u00b1 11.6 53.3 \u00b1 13.1 51.7 \u00b1 10.3 78.3 \u00b1 4.0 78.3 \u00b1 3.5 78.4 \u00b1 4.6 Pack-years 34.4 \u00b1 13.4 32.3 \u00b1 12.0 36.6 \u00b1 14.8 N",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1904,7 +1904,7 @@
       "context_window": "C 52.5 \u00b1 11.6 53.3 \u00b1 13.1 51.7 \u00b1 10.3 78.3 \u00b1 4.0 78.3 \u00b1 3.5 78.4 \u00b1 4.6 Pack-years 34.4 \u00b1 13.4 32.3 \u00b1 12.0 36.6 \u00b1 14.8 N/A N/A N/A",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1923,7 +1923,7 @@
       "context_window": "3.1 51.7 \u00b1 10.3 78.3 \u00b1 4.0 78.3 \u00b1 3.5 78.4 \u00b1 4.6 Pack-years 34.4 \u00b1 13.4 32.3 \u00b1 12.0 36.6 \u00b1 14.8 N/A N/A N/A Current medication, n (",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1942,7 +1942,7 @@
       "context_window": "0.3 78.3 \u00b1 4.0 78.3 \u00b1 3.5 78.4 \u00b1 4.6 Pack-years 34.4 \u00b1 13.4 32.3 \u00b1 12.0 36.6 \u00b1 14.8 N/A N/A N/A Current medication, n (%) LABA+LAMA",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1961,7 +1961,7 @@
       "context_window": ".0 78.3 \u00b1 3.5 78.4 \u00b1 4.6 Pack-years 34.4 \u00b1 13.4 32.3 \u00b1 12.0 36.6 \u00b1 14.8 N/A N/A N/A Current medication, n (%) LABA+LAMA 22 (55.0) 1",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "placebo",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1979,7 +1979,7 @@
       "context_window": "strained baseline geometric mean of IL-8 was 1.02 ng ml -1 (95% confidence interval (CI): 0.65-1.61 ng ml -1 ) and changed",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1998,7 +1998,7 @@
       "context_window": "al (CI): 0.65-1.61 ng ml -1 ) and changed to 0.55 ng ml -1 (95% CI 0.32-0.96 ng ml -1 ) and 1.16 ng ml -1 (95% CI 0.72-1.87 ng ml -1 ) i",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2017,7 +2017,7 @@
       "context_window": "55 ng ml -1 (95% CI 0.32-0.96 ng ml -1 ) and 1.16 ng ml -1 (95% CI 0.72-1.87 ng ml -1 ) in the NR and placebo groups, respectively, afte",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2035,7 +2035,7 @@
       "context_window": "least squares mean change from baseline in sputum IL-8 was -46.2% (95% CI -69.5% to -5.2%) in the NR group and 13.4% (95% CI",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2053,7 +2053,7 @@
       "context_window": "quares mean change from baseline in sputum IL-8 was -46.2% (95% CI -69.5% to -5.2%) in the NR group and 13.4% (95% CI -25.9",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2071,7 +2071,7 @@
       "context_window": "ean change from baseline in sputum IL-8 was -46.2% (95% CI -69.5% to -5.2%) in the NR group and 13.4% (95% CI -25.9% to 73.6%",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2089,7 +2089,7 @@
       "context_window": "from baseline in sputum IL-8 was -46.2% (95% CI -69.5% to -5.2%) in the NR group and 13.4% (95% CI -25.9% to 73.6%) in the",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2107,7 +2107,7 @@
       "context_window": "L-8 was -46.2% (95% CI -69.5% to -5.2%) in the NR group and 13.4% (95% CI -25.9% to 73.6%) in the placebo group, with an esti",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2125,7 +2125,7 @@
       "context_window": "-46.2% (95% CI -69.5% to -5.2%) in the NR group and 13.4% (95% CI -25.9% to 73.6%) in the placebo group, with an estimated",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2143,7 +2143,7 @@
       "context_window": "(95% CI -69.5% to -5.2%) in the NR group and 13.4% (95% CI -25.9% to 73.6%) in the placebo group, with an estimated treatment",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2161,7 +2161,7 @@
       "context_window": "69.5% to -5.2%) in the NR group and 13.4% (95% CI -25.9% to 73.6%) in the placebo group, with an estimated treatment differen",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2179,7 +2179,7 @@
       "context_window": "e placebo group, with an estimated treatment difference of -52.6% (95% CI -75.7% to -7.6%; P = 0.030) (Fig. 2b ). In post hoc",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2197,7 +2197,7 @@
       "context_window": "bo group, with an estimated treatment difference of -52.6% (95% CI -75.7% to -7.6%; P = 0.030) (Fig. 2b ). In post hoc anal",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2215,7 +2215,7 @@
       "context_window": ", with an estimated treatment difference of -52.6% (95% CI -75.7% to -7.6%; P = 0.030) (Fig. 2b ). In post hoc analyses, this",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2233,7 +2233,7 @@
       "context_window": "estimated treatment difference of -52.6% (95% CI -75.7% to -7.6%; P = 0.030) (Fig. 2b ). In post hoc analyses, this effect p",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2251,7 +2251,7 @@
       "context_window": "ted treatment difference of -52.6% (95% CI -75.7% to -7.6%; P = 0.030) (Fig. 2b ). In post hoc analyses, this effect persisted un",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2377,7 +2377,7 @@
       "context_window": "ter the intervention in the group receiving NR ( r = -0.77, P = 0.04; Extended Data Fig. 1 ), which may suggest that NR has a st",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2395,7 +2395,7 @@
       "context_window": "s in the primary outcome IL-8 in sputum from baseline (Pre, n = 30) after 6 weeks of NR/placebo supplementation (Post, n = 26)",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "placebo",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2413,7 +2413,7 @@
       "context_window": "ry outcome IL-8 in sputum from baseline (Pre, n = 30) after 6 weeks of NR/placebo supplementation (Post, n = 26) and at follow-",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "placebo",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2431,7 +2431,7 @@
       "context_window": "n = 30) after 6 weeks of NR/placebo supplementation (Post, n = 26) and at follow-up after 12 weeks (Follow-up, n = 24), along",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "placebo",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2449,7 +2449,7 @@
       "context_window": "acebo supplementation (Post, n = 26) and at follow-up after 12 weeks (Follow-up, n = 24), along with individual values in patien",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "placebo",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2467,7 +2467,7 @@
       "context_window": "(Post, n = 26) and at follow-up after 12 weeks (Follow-up, n = 24), along with individual values in patients with COPD: paire",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "placebo",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2485,7 +2485,7 @@
       "context_window": "ost-intervention sputum samples where available are shown ( n = 22). A constrained linear mixed model adjusted for sex and bas",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "placebo",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2503,9 +2503,9 @@
       "context_window": "transformed data, and back-transformed least square means \u00b1 95% CI with two-sided P values are shown. c , Changes in the se",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-6292",
@@ -2521,9 +2521,9 @@
       "context_window": "outcome whole-blood NAD + levels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 37, Healthy:",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-6309",
@@ -2539,9 +2539,9 @@
       "context_window": "ood NAD + levels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 37, Healthy: n = 18) and at fo",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-u-6320",
@@ -2557,9 +2557,9 @@
       "context_window": "evels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 37, Healthy: n = 18) and at follow-up afte",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-6341",
@@ -2575,9 +2575,9 @@
       "context_window": "Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 37, Healthy: n = 18) and at follow-up after 12 weeks (Follow-u",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-6358",
@@ -2593,9 +2593,9 @@
       "context_window": ", Healthy: n = 18) to 6 weeks (Post, COPD: n = 37, Healthy: n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35,",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-u-6389",
@@ -2611,9 +2611,9 @@
       "context_window": "Post, COPD: n = 37, Healthy: n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with indi",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-6416",
@@ -2629,9 +2629,9 @@
       "context_window": ": n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with individual values in patients",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-6433",
@@ -2647,9 +2647,9 @@
       "context_window": "follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with individual values in patients with COPD and lu",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-6596",
@@ -2665,9 +2665,9 @@
       "context_window": "ntervention to post-intervention whole-blood samples (COPD: n = 37, Healthy: n = 18) and NAD + levels at baseline (mean \u00b1 s.d.",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-6613",
@@ -2683,9 +2683,9 @@
       "context_window": "st-intervention whole-blood samples (COPD: n = 37, Healthy: n = 18) and NAD + levels at baseline (mean \u00b1 s.d.). A constrained",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-pct-6763",
@@ -2701,7 +2701,7 @@
       "context_window": "ted for sex was used for analysis, and least square means \u00b1 95% CI with two-sided P values are shown. d , Changes in the se",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2719,7 +2719,7 @@
       "context_window": "ondary outcome plasma IL-6 levels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 36, Healthy:",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2737,7 +2737,7 @@
       "context_window": "asma IL-6 levels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 36, Healthy: n = 18) and at fo",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2755,7 +2755,7 @@
       "context_window": "evels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 36, Healthy: n = 18) and at follow-up afte",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2773,7 +2773,7 @@
       "context_window": "Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 36, Healthy: n = 18) and at follow-up after 12 weeks (Follow-u",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2791,7 +2791,7 @@
       "context_window": ", Healthy: n = 18) to 6 weeks (Post, COPD: n = 36, Healthy: n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35,",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2809,7 +2809,7 @@
       "context_window": "Post, COPD: n = 36, Healthy: n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with indi",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2827,7 +2827,7 @@
       "context_window": ": n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with individual values in patients",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2845,7 +2845,7 @@
       "context_window": "follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with individual values in patients with COPD and lu",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2863,7 +2863,7 @@
       "context_window": "ntervention to post-intervention whole-blood samples (COPD: n = 36, Healthy: n = 18) and NAD + levels at baseline (mean \u00b1 s.d.",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2881,7 +2881,7 @@
       "context_window": "st-intervention whole-blood samples (COPD: n = 36, Healthy: n = 18) and NAD + levels at baseline (mean \u00b1 s.d.). A constrained",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2917,7 +2917,7 @@
       "context_window": "s in the primary outcome IL-8 in sputum from baseline (Pre, n = 30) after 6 weeks of NR/placebo supplementation (Post, n = 26)",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2935,7 +2935,7 @@
       "context_window": "ry outcome IL-8 in sputum from baseline (Pre, n = 30) after 6 weeks of NR/placebo supplementation (Post, n = 26) and at follow-",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2953,7 +2953,7 @@
       "context_window": "n = 30) after 6 weeks of NR/placebo supplementation (Post, n = 26) and at follow-up after 12 weeks (Follow-up, n = 24), along",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2971,7 +2971,7 @@
       "context_window": "acebo supplementation (Post, n = 26) and at follow-up after 12 weeks (Follow-up, n = 24), along with individual values in patien",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2989,7 +2989,7 @@
       "context_window": "(Post, n = 26) and at follow-up after 12 weeks (Follow-up, n = 24), along with individual values in patients with COPD: paire",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3007,7 +3007,7 @@
       "context_window": "ost-intervention sputum samples where available are shown ( n = 22). A constrained linear mixed model adjusted for sex and bas",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3025,9 +3025,9 @@
       "context_window": "transformed data, and back-transformed least square means \u00b1 95% CI with two-sided P values are shown. c , Changes in the se",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-8094",
@@ -3043,9 +3043,9 @@
       "context_window": "outcome whole-blood NAD + levels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 37, Healthy:",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-8111",
@@ -3061,9 +3061,9 @@
       "context_window": "ood NAD + levels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 37, Healthy: n = 18) and at fo",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-u-8122",
@@ -3079,9 +3079,9 @@
       "context_window": "evels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 37, Healthy: n = 18) and at follow-up afte",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-8143",
@@ -3097,9 +3097,9 @@
       "context_window": "Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 37, Healthy: n = 18) and at follow-up after 12 weeks (Follow-u",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-8160",
@@ -3115,9 +3115,9 @@
       "context_window": ", Healthy: n = 18) to 6 weeks (Post, COPD: n = 37, Healthy: n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35,",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-u-8191",
@@ -3133,9 +3133,9 @@
       "context_window": "Post, COPD: n = 37, Healthy: n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with indi",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-8218",
@@ -3151,9 +3151,9 @@
       "context_window": ": n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with individual values in patients",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-8235",
@@ -3169,9 +3169,9 @@
       "context_window": "follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with individual values in patients with COPD and lu",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-8398",
@@ -3187,9 +3187,9 @@
       "context_window": "ntervention to post-intervention whole-blood samples (COPD: n = 37, Healthy: n = 18) and NAD + levels at baseline (mean \u00b1 s.d.",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-8415",
@@ -3205,9 +3205,9 @@
       "context_window": "st-intervention whole-blood samples (COPD: n = 37, Healthy: n = 18) and NAD + levels at baseline (mean \u00b1 s.d.). A constrained",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-pct-8565",
@@ -3223,7 +3223,7 @@
       "context_window": "ted for sex was used for analysis, and least square means \u00b1 95% CI with two-sided P values are shown. d , Changes in the se",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3241,7 +3241,7 @@
       "context_window": "ondary outcome plasma IL-6 levels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 36, Healthy:",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3259,7 +3259,7 @@
       "context_window": "asma IL-6 levels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 36, Healthy: n = 18) and at fo",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3277,7 +3277,7 @@
       "context_window": "evels from baseline (Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 36, Healthy: n = 18) and at follow-up afte",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3295,7 +3295,7 @@
       "context_window": "Pre, COPD: n = 40, Healthy: n = 18) to 6 weeks (Post, COPD: n = 36, Healthy: n = 18) and at follow-up after 12 weeks (Follow-u",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3313,7 +3313,7 @@
       "context_window": ", Healthy: n = 18) to 6 weeks (Post, COPD: n = 36, Healthy: n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35,",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3331,7 +3331,7 @@
       "context_window": "Post, COPD: n = 36, Healthy: n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with indi",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3349,7 +3349,7 @@
       "context_window": ": n = 18) and at follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with individual values in patients",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3367,7 +3367,7 @@
       "context_window": "follow-up after 12 weeks (Follow-up, COPD: n = 35, Healthy: n = 18), along with individual values in patients with COPD and lu",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3385,7 +3385,7 @@
       "context_window": "ntervention to post-intervention whole-blood samples (COPD: n = 36, Healthy: n = 18) and NAD + levels at baseline (mean \u00b1 s.d.",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3403,7 +3403,7 @@
       "context_window": "st-intervention whole-blood samples (COPD: n = 36, Healthy: n = 18) and NAD + levels at baseline (mean \u00b1 s.d.). A constrained",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3440,7 +3440,7 @@
       "context_window": "n with NR increased NAD + levels in whole blood by 71.1 \u00b5M (95% CI 57.2-85.0 \u00b5M) in patients with COPD and by 49.4 \u00b5M (95% CI 30.9-68.0",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3459,7 +3459,7 @@
       "context_window": "(95% CI 57.2-85.0 \u00b5M) in patients with COPD and by 49.4 \u00b5M (95% CI 30.9-68.0 \u00b5M) in lung-healthy controls, with no change for placebo (F",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3477,9 +3477,9 @@
       "context_window": "ely returned to baseline levels at the follow-up assessment 12 weeks after the end of treatment (Fig. 2d and Supplementary Table",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-ci-10150",
@@ -3496,7 +3496,7 @@
       "context_window": "pared to lung-healthy controls (least squares mean 31.9 \u00b5M (95% CI 30.3-33.5 \u00b5M) versus 34.8 \u00b5M (95% CI 32.4-37.1 \u00b5M), respectively; Fig",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3515,7 +3515,7 @@
       "context_window": "squares mean 31.9 \u00b5M (95% CI 30.3-33.5 \u00b5M) versus 34.8 \u00b5M (95% CI 32.4-37.1 \u00b5M), respectively; Fig. 2c ) and was, in post hoc analyses,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3533,7 +3533,7 @@
       "context_window": "mpared to controls-with an estimated difference of 18.8 \u00b5M (95% CI -4.4 \u00b5M to 42.0 \u00b5M; P = 0.11)-there was no relationship",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3551,7 +3551,7 @@
       "context_window": "estimated difference of 18.8 \u00b5M (95% CI -4.4 \u00b5M to 42.0 \u00b5M; P = 0.11)-there was no relationship between baseline NAD + levels an",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3569,7 +3569,7 @@
       "context_window": "ationship between baseline NAD + levels and the response to 6 weeks of NR supplementation (Extended Data Fig. 2b ). The anti-i",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nad",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3677,7 +3677,7 @@
       "context_window": "g was reduced after NR as calculated by the Horvath clock ( P = 0.024), but this change did not differ from placebo ( P = 0.16).",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3695,7 +3695,7 @@
       "context_window": "( P = 0.024), but this change did not differ from placebo ( P = 0.16). In post hoc analyses at the 12-week follow-up, we observe",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -3713,7 +3713,7 @@
       "context_window": "tern of reduced rate of aging in the NR group for \u2018Index\u2019 ( P = 0.027) but also for the \u2018System age\u2019 clocks Metabolic ( P < 0.000",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3731,7 +3731,7 @@
       "context_window": "P = 0.027) but also for the \u2018System age\u2019 clocks Metabolic ( P < 0.0001), Brain ( P = 0.0002) and Liver ( P = 0.010), albeit with n",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3749,7 +3749,7 @@
       "context_window": "or the \u2018System age\u2019 clocks Metabolic ( P < 0.0001), Brain ( P = 0.0002) and Liver ( P = 0.010), albeit with no differences from pl",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3767,7 +3767,7 @@
       "context_window": "ks Metabolic ( P < 0.0001), Brain ( P = 0.0002) and Liver ( P = 0.010), albeit with no differences from placebo ( P = 0.28, P = 0",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3785,7 +3785,7 @@
       "context_window": "ver ( P = 0.010), albeit with no differences from placebo ( P = 0.28, P = 0.14, P = 0.15 and P = 0.36, respectively; Extended Da",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3803,7 +3803,7 @@
       "context_window": "0.010), albeit with no differences from placebo ( P = 0.28, P = 0.14, P = 0.15 and P = 0.36, respectively; Extended Data Fig. 4",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3821,7 +3821,7 @@
       "context_window": "beit with no differences from placebo ( P = 0.28, P = 0.14, P = 0.15 and P = 0.36, respectively; Extended Data Fig. 4 ). No clea",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3839,7 +3839,7 @@
       "context_window": "differences from placebo ( P = 0.28, P = 0.14, P = 0.15 and P = 0.36, respectively; Extended Data Fig. 4 ). No clear pattern of",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3857,7 +3857,7 @@
       "context_window": "(RoA: epigenetic age/chronological age) from baseline (Pre, n = 36) after 6 weeks of NR/placebo supplementation (Post, n = 31)",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3875,7 +3875,7 @@
       "context_window": "ic age/chronological age) from baseline (Pre, n = 36) after 6 weeks of NR/placebo supplementation (Post, n = 31) and after a 12",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3893,7 +3893,7 @@
       "context_window": "n = 36) after 6 weeks of NR/placebo supplementation (Post, n = 31) and after a 12-week follow-up (Follow-up, n = 25) in patie",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3911,7 +3911,7 @@
       "context_window": "on (Post, n = 31) and after a 12-week follow-up (Follow-up, n = 25) in patients with COPD. Four different epigenetic clocks ar",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4019,9 +4019,9 @@
       "context_window": "0.05) in patients with COPD and lung-healthy controls after 6 weeks of NR treatment. Node size indicates gene set size, and col",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-14592",
@@ -4037,7 +4037,7 @@
       "context_window": "d senescence and replicative senescence from baseline (Pre, n = 29) after 6 weeks of NR/placebo supplementation (Post, n = 25)",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4055,7 +4055,7 @@
       "context_window": "nd replicative senescence from baseline (Pre, n = 29) after 6 weeks of NR/placebo supplementation (Post, n = 25) and after a 12",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4073,7 +4073,7 @@
       "context_window": "n = 29) after 6 weeks of NR/placebo supplementation (Post, n = 25) and after a 12-week follow-up (Follow-up, n = 24) in patie",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4091,7 +4091,7 @@
       "context_window": "on (Post, n = 25) and after a 12-week follow-up (Follow-up, n = 24) in patients with COPD. A similar statistical model as a wa",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4109,7 +4109,7 @@
       "context_window": "(RoA: epigenetic age/chronological age) from baseline (Pre, n = 36) after 6 weeks of NR/placebo supplementation (Post, n = 31)",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4127,7 +4127,7 @@
       "context_window": "ic age/chronological age) from baseline (Pre, n = 36) after 6 weeks of NR/placebo supplementation (Post, n = 31) and after a 12",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4145,7 +4145,7 @@
       "context_window": "n = 36) after 6 weeks of NR/placebo supplementation (Post, n = 31) and after a 12-week follow-up (Follow-up, n = 25) in patie",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4163,7 +4163,7 @@
       "context_window": "on (Post, n = 31) and after a 12-week follow-up (Follow-up, n = 25) in patients with COPD. Four different epigenetic clocks ar",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4271,9 +4271,9 @@
       "context_window": "0.05) in patients with COPD and lung-healthy controls after 6 weeks of NR treatment. Node size indicates gene set size, and col",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11645284_effect_of_nicotinamide_riboside_on_airway_inflammation_in_co-n-16254",
@@ -4289,7 +4289,7 @@
       "context_window": "d senescence and replicative senescence from baseline (Pre, n = 29) after 6 weeks of NR/placebo supplementation (Post, n = 25)",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4307,7 +4307,7 @@
       "context_window": "nd replicative senescence from baseline (Pre, n = 29) after 6 weeks of NR/placebo supplementation (Post, n = 25) and after a 12",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4325,7 +4325,7 @@
       "context_window": "n = 29) after 6 weeks of NR/placebo supplementation (Post, n = 25) and after a 12-week follow-up (Follow-up, n = 24) in patie",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4343,7 +4343,7 @@
       "context_window": "on (Post, n = 25) and after a 12-week follow-up (Follow-up, n = 24) in patients with COPD. A similar statistical model as a wa",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "nr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4379,7 +4379,7 @@
       "context_window": "d by radiation and by replicative exhaustion. We found that 6 weeks of supplementation with NR did not affect levels of senesce",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4397,7 +4397,7 @@
       "context_window": "levels of senescence based on nuclear morphology; however, 12 weeks after the supplementation period, we observed a pattern of",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "nr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

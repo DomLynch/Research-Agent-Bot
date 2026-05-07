@@ -1,0 +1,192 @@
+{
+  "paper_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat",
+  "doi": "10.1056/nejm199811053391902",
+  "extracted_at": "2026-05-07T19:24:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "p_value": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat-u-349",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 349,
+      "sentence": "METHODS: In a double-blind, randomized trial, we compared the effects of pravastatin (40 mg daily) with those of a placebo over a mean follow-up period of 6.1 years in 9014 patients who were 31 to 75 years of age.",
+      "context_window": ", randomized trial, we compared the effects of pravastatin (40 mg daily) with those of a placebo over a mean follow-up period",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat-u-418",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 years",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 418,
+      "sentence": "METHODS: In a double-blind, randomized trial, we compared the effects of pravastatin (40 mg daily) with those of a placebo over a mean follow-up period of 6.1 years in 9014 patients who were 31 to 75 years of age.",
+      "context_window": "ly) with those of a placebo over a mean follow-up period of 6.1 years in 9014 patients who were 31 to 75 years of age. The patien",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat-u-460",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 460,
+      "sentence": "METHODS: In a double-blind, randomized trial, we compared the effects of pravastatin (40 mg daily) with those of a placebo over a mean follow-up period of 6.1 years in 9014 patients who were 31 to 75 years of age.",
+      "context_window": "llow-up period of 6.1 years in 9014 patients who were 31 to 75 years of age. The patients had a history of myocardial infarction",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pravastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat-u-622",
+      "claim_type": "unit_value",
+      "raw_text": "271 mg",
+      "numeric_values": [
+        271.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 622,
+      "sentence": "The patients had a history of myocardial infarction or hospitalization for unstable angina and initial plasma total cholesterol levels of 155 to 271 mg per deciliter.",
+      "context_window": "ngina and initial plasma total cholesterol levels of 155 to 271 mg per deciliter. Both groups received advice on following a c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat-p-1032",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1032,
+      "sentence": "RESULTS: Death from coronary heart disease occurred in 8.3 percent of the patients in the placebo group and 6.4 percent of those in the pravastatin group, a relative reduction in risk of 24 percent (95 percent confidence interval, 12 to 35 percent; P<0.001).",
+      "context_window": "percent (95 percent confidence interval, 12 to 35 percent; P<0.001). Overall mortality was 14.1 percent in the placebo group a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat-p-1231",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1231,
+      "sentence": "Overall mortality was 14.1 percent in the placebo group and 11.0 percent in the pravastatin group (relative reduction in risk, 22 percent; 95 percent confidence interval, 13 to 31 percent; P<0.001).",
+      "context_window": "percent; 95 percent confidence interval, 13 to 31 percent; P<0.001). The incidence of all cardiovascular outcomes was consiste",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat-p-1435",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1435,
+      "sentence": "The incidence of all cardiovascular outcomes was consistently lower among patients assigned to receive pravastatin; these outcomes included myocardial infarction (reduction in risk, 29 percent; P<0.001), death from coronary heart disease or nonfatal myocardial infarction (a 24 percent reduction in risk, P<0.001), stroke (a 19 percent reduction in risk, P=0.048), and coronary revascularization (a 20 percent reduction in risk, P<0.001).",
+      "context_window": "luded myocardial infarction (reduction in risk, 29 percent; P<0.001), death from coronary heart disease or nonfatal myocardial",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat-p-1546",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1546,
+      "sentence": "The incidence of all cardiovascular outcomes was consistently lower among patients assigned to receive pravastatin; these outcomes included myocardial infarction (reduction in risk, 29 percent; P<0.001), death from coronary heart disease or nonfatal myocardial infarction (a 24 percent reduction in risk, P<0.001), stroke (a 19 percent reduction in risk, P=0.048), and coronary revascularization (a 20 percent reduction in risk, P<0.001).",
+      "context_window": "atal myocardial infarction (a 24 percent reduction in risk, P<0.001), stroke (a 19 percent reduction in risk, P=0.048), and cor",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat-p-1596",
+      "claim_type": "p_value",
+      "raw_text": "P=0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1596,
+      "sentence": "The incidence of all cardiovascular outcomes was consistently lower among patients assigned to receive pravastatin; these outcomes included myocardial infarction (reduction in risk, 29 percent; P<0.001), death from coronary heart disease or nonfatal myocardial infarction (a 24 percent reduction in risk, P<0.001), stroke (a 19 percent reduction in risk, P=0.048), and coronary revascularization (a 20 percent reduction in risk, P<0.001).",
+      "context_window": "in risk, P<0.001), stroke (a 19 percent reduction in risk, P=0.048), and coronary revascularization (a 20 percent reduction in",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejm199811053391902_prevention_of_cardiovascular_events_and_death_with_pravastat-p-1670",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1670,
+      "sentence": "The incidence of all cardiovascular outcomes was consistently lower among patients assigned to receive pravastatin; these outcomes included myocardial infarction (reduction in risk, 29 percent; P<0.001), death from coronary heart disease or nonfatal myocardial infarction (a 24 percent reduction in risk, P<0.001), stroke (a 19 percent reduction in risk, P=0.048), and coronary revascularization (a 20 percent reduction in risk, P<0.001).",
+      "context_window": "coronary revascularization (a 20 percent reduction in risk, P<0.001). The effects of treatment were similar for all predefined",
+      "claim_role": "background",
+      "endpoint": "incident cv event",
+      "arm": "pravastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

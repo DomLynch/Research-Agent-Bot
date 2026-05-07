@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7874106_where_to_find_leucine_in_food_and_how_to_feed_elderly_with_s",
   "doi": "10.3389/fnut.2020.622391",
-  "extracted_at": "2026-05-05T23:37:16+00:00",
+  "extracted_at": "2026-05-07T16:56:45+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 12,
@@ -58,7 +58,7 @@
       "sentence": "Identification of relevant studies: a research strategy was planned on PubMed (Public MedIine run by the National Center of Biotechnology Information (NCBI) of the National Library of Medicine of Bathesda (USA)) as follows: (a) Definition of the keywords (leucine, food, muscle mass), allowing the definition of the interest field of the documents to be searched, grouped in quotation marks (\u201c\u2026\u201d) and used separately or in combination; (b) use of: the Boolean (a data type with only two possible values: true or false) AND operator, that allows the establishments of logical relations among concepts; (c) Research modalities: advanced search; (d) Limits: time limits: papers published in the last 20 years; humans; adults; languages: English; (e) Manual search performed by the senior researchers experienced in clinical nutrition through the revision of reviews, individual articles and food composition databases.",
       "context_window": "arch; (d) Limits: time limits: papers published in the last 20 years; humans; adults; languages: English; (e) Manual search perf",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "",
       "binding_confidence": "partial"
@@ -277,7 +277,7 @@
       "sentence": "In a sample of 232 elderly Japanese women (mean age 79.4 \u00b1 7.0 years) significantly lower blood leucine concentrations were found in subjects with dinapenia (defined by the authors as decreased muscle function without loss of muscle mass) and sarcopenia compared to normal subjects.",
       "context_window": "17 ). In a sample of 232 elderly Japanese women (mean age 79.4 \u00b1 7.0 years) significantly lower blood leucine concentrations wer",
       "claim_role": "effect",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "high"
@@ -295,7 +295,7 @@
       "sentence": "In a sample of 232 elderly Japanese women (mean age 79.4 \u00b1 7.0 years) significantly lower blood leucine concentrations were found in subjects with dinapenia (defined by the authors as decreased muscle function without loss of muscle mass) and sarcopenia compared to normal subjects.",
       "context_window": "In a sample of 232 elderly Japanese women (mean age 79.4 \u00b1 7.0 years) significantly lower blood leucine concentrations were foun",
       "claim_role": "effect",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "leucine",
       "direction": "decrease",
       "binding_confidence": "high"
@@ -679,10 +679,10 @@
       "sentence": "Dietary intake of amino acids and its possible correlation with the skeletal muscle mass index (SMI) were evaluated in a recent Korean study in a sample of adults aged 50-64 years.",
       "context_window": "ated in a recent Korean study in a sample of adults aged 50-64 years. The intake of leucine, isoleucine and valine (estimated th",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7874106_where_to_find_leucine_in_food_and_how_to_feed_elderly_with_s-msd-8500",
@@ -951,7 +951,7 @@
       "context_window": "g; however, in the US NHANES study, it was found that up to 46% of the elderly population does not reach the average daily",
       "claim_role": "dose",
       "endpoint": "body weight",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },

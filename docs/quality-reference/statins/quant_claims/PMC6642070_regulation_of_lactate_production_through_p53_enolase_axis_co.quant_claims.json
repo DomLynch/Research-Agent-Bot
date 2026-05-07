@@ -1,0 +1,1436 @@
+{
+  "paper_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co",
+  "doi": "10.1016/j.ebiom.2019.06.003",
+  "extracted_at": "2026-05-07T19:24:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 25,
+    "unit_value": 17,
+    "p_value": 17,
+    "sample_size": 20
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-713",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 713,
+      "sentence": "Blood lactate levels of mice treated with lovastatin increased 23% compared to the control group, which was reproduced in type II predominant glycolytic muscles, accompanied with a 23.1% decrease of maximum swim duration time.",
+      "context_window": "od lactate levels of mice treated with lovastatin increased 23% compared to the control group, which was reproduced in type",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-831",
+      "claim_type": "percentage",
+      "raw_text": "23.1%",
+      "numeric_values": [
+        23.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 831,
+      "sentence": "Blood lactate levels of mice treated with lovastatin increased 23% compared to the control group, which was reproduced in type II predominant glycolytic muscles, accompanied with a 23.1% decrease of maximum swim duration time.",
+      "context_window": "type II predominant glycolytic muscles, accompanied with a 23.1% decrease of maximum swim duration time. The in vitro eviden",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-582",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 582,
+      "sentence": "The risk of myopathy/rhabdomyolysis is <0.1%, and that of myalgia is up to 25% in observational studies and 1.4% in placebo controlled randomized trials [ 2 ].",
+      "context_window": "o marked elevation. The risk of myopathy/rhabdomyolysis is <0.1%, and that of myalgia is up to 25% in observational studies",
+      "claim_role": "background",
+      "endpoint": "myopathy",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-617",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 617,
+      "sentence": "The risk of myopathy/rhabdomyolysis is <0.1%, and that of myalgia is up to 25% in observational studies and 1.4% in placebo controlled randomized trials [ 2 ].",
+      "context_window": "pathy/rhabdomyolysis is <0.1%, and that of myalgia is up to 25% in observational studies and 1.4% in placebo controlled ran",
+      "claim_role": "background",
+      "endpoint": "myopathy",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-650",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 650,
+      "sentence": "The risk of myopathy/rhabdomyolysis is <0.1%, and that of myalgia is up to 25% in observational studies and 1.4% in placebo controlled randomized trials [ 2 ].",
+      "context_window": "d that of myalgia is up to 25% in observational studies and 1.4% in placebo controlled randomized trials [ 2 ]. SAMS causes",
+      "claim_role": "background",
+      "endpoint": "myopathy",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-772",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 772,
+      "sentence": "SAMS causes statin intolerance and lack of adherence, which increases 36% of recurrent myocardial infarction (MI) and 43% of coronary heart disease (CHD) events [ 3 ].",
+      "context_window": "s statin intolerance and lack of adherence, which increases 36% of recurrent myocardial infarction (MI) and 43% of coronary",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-820",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 820,
+      "sentence": "SAMS causes statin intolerance and lack of adherence, which increases 36% of recurrent myocardial infarction (MI) and 43% of coronary heart disease (CHD) events [ 3 ].",
+      "context_window": "h increases 36% of recurrent myocardial infarction (MI) and 43% of coronary heart disease (CHD) events [ 3 ]. The underlyin",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-307",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 307,
+      "sentence": "C2C12 myoblasts were stimulated to differentiate into myotubes by switching to the medium with 2% horse serum.",
+      "context_window": "differentiate into myotubes by switching to the medium with 2% horse serum. The human colon cancer HCT116 SCO2 -/- cell li",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-1136",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1136,
+      "sentence": "C57BL/6 J female mice were obtained from the Chinese University of Hong Kong and were administrated with lovastatin (50 mg/kg/2 days) alone, similar dose as previous studies in SAMS [ 15 , 19 ], or together with dichloroacetate (DCA, 40 mg/kg/day) by gavage at 8 weeks old.",
+      "context_window": "ersity of Hong Kong and were administrated with lovastatin (50 mg/kg/2 days) alone, similar dose as previous studies in SAMS",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-1145",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1145,
+      "sentence": "C57BL/6 J female mice were obtained from the Chinese University of Hong Kong and were administrated with lovastatin (50 mg/kg/2 days) alone, similar dose as previous studies in SAMS [ 15 , 19 ], or together with dichloroacetate (DCA, 40 mg/kg/day) by gavage at 8 weeks old.",
+      "context_window": "Hong Kong and were administrated with lovastatin (50 mg/kg/2 days) alone, similar dose as previous studies in SAMS [ 15 , 19",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-1253",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg/kg/day",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 1253,
+      "sentence": "C57BL/6 J female mice were obtained from the Chinese University of Hong Kong and were administrated with lovastatin (50 mg/kg/2 days) alone, similar dose as previous studies in SAMS [ 15 , 19 ], or together with dichloroacetate (DCA, 40 mg/kg/day) by gavage at 8 weeks old.",
+      "context_window": "in SAMS [ 15 , 19 ], or together with dichloroacetate (DCA, 40 mg/kg/day) by gavage at 8 weeks old. Maxim swimming capacity was meas",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-1280",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1280,
+      "sentence": "C57BL/6 J female mice were obtained from the Chinese University of Hong Kong and were administrated with lovastatin (50 mg/kg/2 days) alone, similar dose as previous studies in SAMS [ 15 , 19 ], or together with dichloroacetate (DCA, 40 mg/kg/day) by gavage at 8 weeks old.",
+      "context_window": "ether with dichloroacetate (DCA, 40 mg/kg/day) by gavage at 8 weeks old. Maxim swimming capacity was measured as previously rep",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-1425",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1425,
+      "sentence": "Briefly, the mice were acclimated to swimming for 5 min/day for 3 days before the formal swimming test.",
+      "context_window": "fly, the mice were acclimated to swimming for 5 min/day for 3 days before the formal swimming test. The mice were loaded with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-3419",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3419,
+      "sentence": "Proteins were extracted using ice-cold RIPA buffer supplemented with protease inhibitor cocktail (Roche), separated by 4% - 20% SDS PAGE, transferred to PVDF membrane (Millipore), and visualized by the SuperSignal West Pico Chemiluminescent Substrate (Thermo Fisher Scientific).",
+      "context_window": "nted with protease inhibitor cocktail (Roche), separated by 4% - 20% SDS PAGE, transferred to PVDF membrane (Millipore), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-3424",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3424,
+      "sentence": "Proteins were extracted using ice-cold RIPA buffer supplemented with protease inhibitor cocktail (Roche), separated by 4% - 20% SDS PAGE, transferred to PVDF membrane (Millipore), and visualized by the SuperSignal West Pico Chemiluminescent Substrate (Thermo Fisher Scientific).",
+      "context_window": "with protease inhibitor cocktail (Roche), separated by 4% - 20% SDS PAGE, transferred to PVDF membrane (Millipore), and vis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-4070",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4070,
+      "sentence": "Cells with indicated treatment were washed with PBS and harvested using ice-cold cell lysis buffer (150 mM NaCl, 50 mM Tris-HCl pH 8.0, 1% NP-40) containing protease and phosphatase inhibitors.",
+      "context_window": "cold cell lysis buffer (150 mM NaCl, 50 mM Tris-HCl pH 8.0, 1% NP-40) containing protease and phosphatase inhibitors. Cell",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-4929",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4929,
+      "sentence": "The potential p53 repressive response elements (p53RREs), which are consisting of four canonical p53-binding sites (5\u2019-RRRCW-3\u2032) arranged head to tail and matching >90%, were identified by Vector NTI Advance 10 software (Invitrogen).",
+      "context_window": "ing sites (5\u2019-RRRCW-3\u2032) arranged head to tail and matching >90%, were identified by Vector NTI Advance 10 software (Invitro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-5127",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5127,
+      "sentence": "A-204 cells were fixed with 1% formaldehyde on a shaking platform for 10 min at room temperature following by sonication to shear the chromatin.",
+      "context_window": "ng the manufacturer's protocol. A-204 cells were fixed with 1% formaldehyde on a shaking platform for 10 min at room tempe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-8643",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8643,
+      "sentence": "Significant differences were indicated as *( P < .05), **( P < .01) or ***( P < .001) according to the level of significance.",
+      "context_window": "Tukey's test. Significant differences were indicated as *( P < .05), **( P < .01) or ***( P < .001) according to the level of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-8657",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8657,
+      "sentence": "Significant differences were indicated as *( P < .05), **( P < .01) or ***( P < .001) according to the level of significance.",
+      "context_window": "Significant differences were indicated as *( P < .05), **( P < .01) or ***( P < .001) according to the level of significance.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-8674",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8674,
+      "sentence": "Significant differences were indicated as *( P < .05), **( P < .01) or ***( P < .001) according to the level of significance.",
+      "context_window": "erences were indicated as *( P < .05), **( P < .01) or ***( P < .001) according to the level of significance.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-294",
+      "claim_type": "percentage",
+      "raw_text": "23.1%",
+      "numeric_values": [
+        23.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 294,
+      "sentence": "As expected, the maximum swim times were significantly reduced by 23.1% \u00b1 8.6% ( P = .016, Student's t -test) in mice treated with lovastatin for 30 days comparing to the control group ( Fig.",
+      "context_window": "ected, the maximum swim times were significantly reduced by 23.1% \u00b1 8.6% ( P = .016, Student's t -test) in mice treated with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-302",
+      "claim_type": "percentage",
+      "raw_text": "8.6%",
+      "numeric_values": [
+        8.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 302,
+      "sentence": "As expected, the maximum swim times were significantly reduced by 23.1% \u00b1 8.6% ( P = .016, Student's t -test) in mice treated with lovastatin for 30 days comparing to the control group ( Fig.",
+      "context_window": "he maximum swim times were significantly reduced by 23.1% \u00b1 8.6% ( P = .016, Student's t -test) in mice treated with lovasta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-309",
+      "claim_type": "p_value",
+      "raw_text": "P = .016",
+      "numeric_values": [
+        0.016
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 309,
+      "sentence": "As expected, the maximum swim times were significantly reduced by 23.1% \u00b1 8.6% ( P = .016, Student's t -test) in mice treated with lovastatin for 30 days comparing to the control group ( Fig.",
+      "context_window": "mum swim times were significantly reduced by 23.1% \u00b1 8.6% ( P = .016, Student's t -test) in mice treated with lovastatin for 30",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-374",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 374,
+      "sentence": "As expected, the maximum swim times were significantly reduced by 23.1% \u00b1 8.6% ( P = .016, Student's t -test) in mice treated with lovastatin for 30 days comparing to the control group ( Fig.",
+      "context_window": "016, Student's t -test) in mice treated with lovastatin for 30 days comparing to the control group ( Fig. 1 a). The loss of exe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-475",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 475,
+      "sentence": "The loss of exercise capacity returned to normal 2 weeks after drug withdraw ( Fig.",
+      "context_window": "Fig. 1 a). The loss of exercise capacity returned to normal 2 weeks after drug withdraw ( Fig. 1 a), which is complied with the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-619",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 619,
+      "sentence": "Blood lactate was increased by 23% \u00b1 10.5% ( P = .045, Student's t -test) at 30 days under resting conditions with lovastatin treatment ( Fig.",
+      "context_window": "tic criteria of SAMS [ 24 ]. Blood lactate was increased by 23% \u00b1 10.5% ( P = .045, Student's t -test) at 30 days under res",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-625",
+      "claim_type": "percentage",
+      "raw_text": "10.5%",
+      "numeric_values": [
+        10.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 625,
+      "sentence": "Blood lactate was increased by 23% \u00b1 10.5% ( P = .045, Student's t -test) at 30 days under resting conditions with lovastatin treatment ( Fig.",
+      "context_window": "iteria of SAMS [ 24 ]. Blood lactate was increased by 23% \u00b1 10.5% ( P = .045, Student's t -test) at 30 days under resting con",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-633",
+      "claim_type": "p_value",
+      "raw_text": "P = .045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 633,
+      "sentence": "Blood lactate was increased by 23% \u00b1 10.5% ( P = .045, Student's t -test) at 30 days under resting conditions with lovastatin treatment ( Fig.",
+      "context_window": "f SAMS [ 24 ]. Blood lactate was increased by 23% \u00b1 10.5% ( P = .045, Student's t -test) at 30 days under resting conditions wit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-665",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 665,
+      "sentence": "Blood lactate was increased by 23% \u00b1 10.5% ( P = .045, Student's t -test) at 30 days under resting conditions with lovastatin treatment ( Fig.",
+      "context_window": "increased by 23% \u00b1 10.5% ( P = .045, Student's t -test) at 30 days under resting conditions with lovastatin treatment ( Fig. 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-823",
+      "claim_type": "unit_value",
+      "raw_text": "30 weeks",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 823,
+      "sentence": "The increased blood lactate levels persisted as long as the treatment continues up to 30 weeks (Supplemental Fig.",
+      "context_window": "e levels persisted as long as the treatment continues up to 30 weeks (Supplemental Fig. 1a). In accordance with recovered exerci",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-1184",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1184,
+      "sentence": "Lovastatin attenuates exercise capacity in mice and increases blood and muscle lactate levels. (a) Maximum swimming duration times of C57BL/6 J mice administered with lovastatin for 30 days and after the drug withdrawn for an additional 14 days ( n = 10 each group). (b) Resting blood lactate levels before the swimming test (n = 10 each group). (c) Lactate concentrations in gastrocnemius (GAS), tibialis anterior (TA) and soleus (SOL) muscles of mice administered with lovastatin for 30 days (n = 10 each group).",
+      "context_window": "on times of C57BL/6 J mice administered with lovastatin for 30 days and after the drug withdrawn for an additional 14 days ( n",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-1239",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1239,
+      "sentence": "Lovastatin attenuates exercise capacity in mice and increases blood and muscle lactate levels. (a) Maximum swimming duration times of C57BL/6 J mice administered with lovastatin for 30 days and after the drug withdrawn for an additional 14 days ( n = 10 each group). (b) Resting blood lactate levels before the swimming test (n = 10 each group). (c) Lactate concentrations in gastrocnemius (GAS), tibialis anterior (TA) and soleus (SOL) muscles of mice administered with lovastatin for 30 days (n = 10 each group).",
+      "context_window": "for 30 days and after the drug withdrawn for an additional 14 days ( n = 10 each group). (b) Resting blood lactate levels befo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-1249",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1249,
+      "sentence": "Lovastatin attenuates exercise capacity in mice and increases blood and muscle lactate levels. (a) Maximum swimming duration times of C57BL/6 J mice administered with lovastatin for 30 days and after the drug withdrawn for an additional 14 days ( n = 10 each group). (b) Resting blood lactate levels before the swimming test (n = 10 each group). (c) Lactate concentrations in gastrocnemius (GAS), tibialis anterior (TA) and soleus (SOL) muscles of mice administered with lovastatin for 30 days (n = 10 each group).",
+      "context_window": "ys and after the drug withdrawn for an additional 14 days ( n = 10 each group). (b) Resting blood lactate levels before the sw",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-1328",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1328,
+      "sentence": "Lovastatin attenuates exercise capacity in mice and increases blood and muscle lactate levels. (a) Maximum swimming duration times of C57BL/6 J mice administered with lovastatin for 30 days and after the drug withdrawn for an additional 14 days ( n = 10 each group). (b) Resting blood lactate levels before the swimming test (n = 10 each group). (c) Lactate concentrations in gastrocnemius (GAS), tibialis anterior (TA) and soleus (SOL) muscles of mice administered with lovastatin for 30 days (n = 10 each group).",
+      "context_window": "(b) Resting blood lactate levels before the swimming test (n = 10 each group). (c) Lactate concentrations in gastrocnemius (G",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-1488",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1488,
+      "sentence": "Lovastatin attenuates exercise capacity in mice and increases blood and muscle lactate levels. (a) Maximum swimming duration times of C57BL/6 J mice administered with lovastatin for 30 days and after the drug withdrawn for an additional 14 days ( n = 10 each group). (b) Resting blood lactate levels before the swimming test (n = 10 each group). (c) Lactate concentrations in gastrocnemius (GAS), tibialis anterior (TA) and soleus (SOL) muscles of mice administered with lovastatin for 30 days (n = 10 each group).",
+      "context_window": "leus (SOL) muscles of mice administered with lovastatin for 30 days (n = 10 each group). Data are shown as mean \u00b1 SD,* P < .05,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-1497",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1497,
+      "sentence": "Lovastatin attenuates exercise capacity in mice and increases blood and muscle lactate levels. (a) Maximum swimming duration times of C57BL/6 J mice administered with lovastatin for 30 days and after the drug withdrawn for an additional 14 days ( n = 10 each group). (b) Resting blood lactate levels before the swimming test (n = 10 each group). (c) Lactate concentrations in gastrocnemius (GAS), tibialis anterior (TA) and soleus (SOL) muscles of mice administered with lovastatin for 30 days (n = 10 each group).",
+      "context_window": ") muscles of mice administered with lovastatin for 30 days (n = 10 each group). Data are shown as mean \u00b1 SD,* P < .05, ** P <",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-1547",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1547,
+      "sentence": "Data are shown as mean \u00b1 SD,* P < .05, ** P < .01, *** P < .001 (Student's t -test).",
+      "context_window": "30 days (n = 10 each group). Data are shown as mean \u00b1 SD,* P < .05, ** P < .01, *** P < .001 (Student's t -test). As skeletal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-1559",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1559,
+      "sentence": "Data are shown as mean \u00b1 SD,* P < .05, ** P < .01, *** P < .001 (Student's t -test).",
+      "context_window": "= 10 each group). Data are shown as mean \u00b1 SD,* P < .05, ** P < .01, *** P < .001 (Student's t -test). As skeletal muscles are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-1572",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1572,
+      "sentence": "Data are shown as mean \u00b1 SD,* P < .05, ** P < .01, *** P < .001 (Student's t -test).",
+      "context_window": "up). Data are shown as mean \u00b1 SD,* P < .05, ** P < .01, *** P < .001 (Student's t -test). As skeletal muscles are the lesion si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-3352",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3352,
+      "sentence": "2 a, fluvastatin augmented lactate released into the culture medium 12%-56% in A204 cells and 19%-67% in C2C12 myotubes respectively at the indicated concentrations.",
+      "context_window": "vastatin augmented lactate released into the culture medium 12%-56% in A204 cells and 19%-67% in C2C12 myotubes respectivel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-3356",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3356,
+      "sentence": "2 a, fluvastatin augmented lactate released into the culture medium 12%-56% in A204 cells and 19%-67% in C2C12 myotubes respectively at the indicated concentrations.",
+      "context_window": "atin augmented lactate released into the culture medium 12%-56% in A204 cells and 19%-67% in C2C12 myotubes respectively at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-3378",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3378,
+      "sentence": "2 a, fluvastatin augmented lactate released into the culture medium 12%-56% in A204 cells and 19%-67% in C2C12 myotubes respectively at the indicated concentrations.",
+      "context_window": "released into the culture medium 12%-56% in A204 cells and 19%-67% in C2C12 myotubes respectively at the indicated concent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-3382",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3382,
+      "sentence": "2 a, fluvastatin augmented lactate released into the culture medium 12%-56% in A204 cells and 19%-67% in C2C12 myotubes respectively at the indicated concentrations.",
+      "context_window": "eased into the culture medium 12%-56% in A204 cells and 19%-67% in C2C12 myotubes respectively at the indicated concentrati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-4178",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4178,
+      "sentence": "Statins increase lactate production in cultured skeletal muscle cell lines. (a) Dose-response of fluvastatin treatment for 48 h on lactate production in A-204 cells and C2C12 myotubes ( n = 3). (b) Effect of fluvastatin (10 \u03bcM) treatment for 48 h on intracellular lactate levels normalized to the untreated control cells (n = 3). (c) Baseline and maximum (stimulated by oligomycin) extracellular acidification rate (ECAR) after fluvastatin (10 \u03bcM) treatment for 48 h (n = 3).",
+      "context_window": "h on lactate production in A-204 cells and C2C12 myotubes ( n = 3). (b) Effect of fluvastatin (10 \u03bcM) treatment for 48 h on i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-4314",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4314,
+      "sentence": "Statins increase lactate production in cultured skeletal muscle cell lines. (a) Dose-response of fluvastatin treatment for 48 h on lactate production in A-204 cells and C2C12 myotubes ( n = 3). (b) Effect of fluvastatin (10 \u03bcM) treatment for 48 h on intracellular lactate levels normalized to the untreated control cells (n = 3). (c) Baseline and maximum (stimulated by oligomycin) extracellular acidification rate (ECAR) after fluvastatin (10 \u03bcM) treatment for 48 h (n = 3).",
+      "context_window": "r lactate levels normalized to the untreated control cells (n = 3). (c) Baseline and maximum (stimulated by oligomycin) extra",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-4460",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4460,
+      "sentence": "Statins increase lactate production in cultured skeletal muscle cell lines. (a) Dose-response of fluvastatin treatment for 48 h on lactate production in A-204 cells and C2C12 myotubes ( n = 3). (b) Effect of fluvastatin (10 \u03bcM) treatment for 48 h on intracellular lactate levels normalized to the untreated control cells (n = 3). (c) Baseline and maximum (stimulated by oligomycin) extracellular acidification rate (ECAR) after fluvastatin (10 \u03bcM) treatment for 48 h (n = 3).",
+      "context_window": "n rate (ECAR) after fluvastatin (10 \u03bcM) treatment for 48 h (n = 3). Insert is the average normalized to control in baseline.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-4627",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4627,
+      "sentence": "Insert is the average normalized to control in baseline. (d) Lactate production after lentivirus-mediated knockdown of HMGCR in A-204 cells cultured for 48 h (n = 3).",
+      "context_window": "diated knockdown of HMGCR in A-204 cells cultured for 48 h (n = 3). HMGCR protein assessed by western blotting. (e) Effect of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-4785",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4785,
+      "sentence": "HMGCR protein assessed by western blotting. (e) Effect of mevalonate (MVA, 200 \u03bcM) on fluvastatin-induced (10 \u03bcM) lactate production in A-204 cells ( n = 3). (f) Lactate production in A-204 cells exposed to atorvastatin (Atr), pitavastatin (Pit), simvastatin (Sim), rosuvastatin (Ros), and lovastatin (Lov) at 10 \u03bcM for 48 h ( n = 3). (g) Baseline and maximum (stimulated by oligomycin) extracellular acidification rate (ECAR) in HCT116 SCO2 -/- cells with fluvastatin (10 \u03bcM) treatment for 48 h (n = 3).",
+      "context_window": "astatin-induced (10 \u03bcM) lactate production in A-204 cells ( n = 3). (f) Lactate production in A-204 cells exposed to atorvast",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-4962",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4962,
+      "sentence": "HMGCR protein assessed by western blotting. (e) Effect of mevalonate (MVA, 200 \u03bcM) on fluvastatin-induced (10 \u03bcM) lactate production in A-204 cells ( n = 3). (f) Lactate production in A-204 cells exposed to atorvastatin (Atr), pitavastatin (Pit), simvastatin (Sim), rosuvastatin (Ros), and lovastatin (Lov) at 10 \u03bcM for 48 h ( n = 3). (g) Baseline and maximum (stimulated by oligomycin) extracellular acidification rate (ECAR) in HCT116 SCO2 -/- cells with fluvastatin (10 \u03bcM) treatment for 48 h (n = 3).",
+      "context_window": "osuvastatin (Ros), and lovastatin (Lov) at 10 \u03bcM for 48 h ( n = 3). (g) Baseline and maximum (stimulated by oligomycin) extra",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-5132",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5132,
+      "sentence": "HMGCR protein assessed by western blotting. (e) Effect of mevalonate (MVA, 200 \u03bcM) on fluvastatin-induced (10 \u03bcM) lactate production in A-204 cells ( n = 3). (f) Lactate production in A-204 cells exposed to atorvastatin (Atr), pitavastatin (Pit), simvastatin (Sim), rosuvastatin (Ros), and lovastatin (Lov) at 10 \u03bcM for 48 h ( n = 3). (g) Baseline and maximum (stimulated by oligomycin) extracellular acidification rate (ECAR) in HCT116 SCO2 -/- cells with fluvastatin (10 \u03bcM) treatment for 48 h (n = 3).",
+      "context_window": "SCO2 -/- cells with fluvastatin (10 \u03bcM) treatment for 48 h (n = 3). Insert is the average normalized to control in baseline.",
+      "claim_role": "unknown",
+      "endpoint": "oxidative stress",
+      "arm": "atorvastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-5367",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5367,
+      "sentence": "Insert is the average normalized to control in baseline. (h) Effect of Coenzyme Q10 (1 \u03bcM) on baseline extracellular acidification rate (ECAR) and oxygen consumption rate (OCR) following fluvastatin (10 \u03bcM) treatment for 48 h (n = 3).",
+      "context_window": "ate (OCR) following fluvastatin (10 \u03bcM) treatment for 48 h (n = 3). Seahorse XF Analyzer assay data are shown as mean \u00b1 SEM,",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-5469",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5469,
+      "sentence": "Seahorse XF Analyzer assay data are shown as mean \u00b1 SEM, other data are shown as mean \u00b1 SD, * P < .05, ** P < .01, *** P < .001 (Student's t -test).",
+      "context_window": "e shown as mean \u00b1 SEM, other data are shown as mean \u00b1 SD, * P < .05, ** P < .01, *** P < .001 (Student's t -test). Statins inh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-5481",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5481,
+      "sentence": "Seahorse XF Analyzer assay data are shown as mean \u00b1 SEM, other data are shown as mean \u00b1 SD, * P < .05, ** P < .01, *** P < .001 (Student's t -test).",
+      "context_window": "ean \u00b1 SEM, other data are shown as mean \u00b1 SD, * P < .05, ** P < .01, *** P < .001 (Student's t -test). Statins inhibit the rat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-5494",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5494,
+      "sentence": "Seahorse XF Analyzer assay data are shown as mean \u00b1 SEM, other data are shown as mean \u00b1 SD, * P < .05, ** P < .01, *** P < .001 (Student's t -test).",
+      "context_window": "her data are shown as mean \u00b1 SD, * P < .05, ** P < .01, *** P < .001 (Student's t -test). Statins inhibit the rate-limiting enz",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-9019",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9019,
+      "sentence": "3 d).\n\np53/\u03b2-enolase axis mediates statin-induced lactate production (a) Dose effect (48 h) and (b) time-course (10 \u03bcM) of fluvastatin on the protein levels of p53 and \u03b2-enolase in A-204 cells and C2C12 myotubes. (c) p53 and \u03b2-enolase protein levels in gastrocnemius (GAS) and tibialis anterior (TA) muscles of mice treated with lovastatin for 30 days. (d) Lactate production in A-204 cells exogenously expression of \u03b2-enolase ( n = 3). (e) Lactate production after lentivirus-mediated knockdown of p53 in A-204 cells (n = 3). p53 and \u03b2-enolase protein assessed by western blotting. (f) p53 and \u03b2-enolase protein in A-204 cells exposed to atorvastatin (Atr), pitavastatin (Pit), simvastatin (Sim), rosuvastatin (Ros), and lovastatin (Lov) at 10 \u03bcM for 48 h. (g) p53 and \u03b2-enolase protein in A-204 cells after lentivirus-mediated knockdown of HMGCR. (h) Effect of mevalonate (MVA, 200 \u03bcM) on the protein level of p53 and \u03b2-enolase following fluvastatin (10 \u03bcM) treatment for 48 h.",
+      "context_window": "s anterior (TA) muscles of mice treated with lovastatin for 30 days. (d) Lactate production in A-204 cells exogenously expressi",
+      "claim_role": "dose",
+      "endpoint": "oxidative stress",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-9104",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9104,
+      "sentence": "3 d).\n\np53/\u03b2-enolase axis mediates statin-induced lactate production (a) Dose effect (48 h) and (b) time-course (10 \u03bcM) of fluvastatin on the protein levels of p53 and \u03b2-enolase in A-204 cells and C2C12 myotubes. (c) p53 and \u03b2-enolase protein levels in gastrocnemius (GAS) and tibialis anterior (TA) muscles of mice treated with lovastatin for 30 days. (d) Lactate production in A-204 cells exogenously expression of \u03b2-enolase ( n = 3). (e) Lactate production after lentivirus-mediated knockdown of p53 in A-204 cells (n = 3). p53 and \u03b2-enolase protein assessed by western blotting. (f) p53 and \u03b2-enolase protein in A-204 cells exposed to atorvastatin (Atr), pitavastatin (Pit), simvastatin (Sim), rosuvastatin (Ros), and lovastatin (Lov) at 10 \u03bcM for 48 h. (g) p53 and \u03b2-enolase protein in A-204 cells after lentivirus-mediated knockdown of HMGCR. (h) Effect of mevalonate (MVA, 200 \u03bcM) on the protein level of p53 and \u03b2-enolase following fluvastatin (10 \u03bcM) treatment for 48 h.",
+      "context_window": "uction in A-204 cells exogenously expression of \u03b2-enolase ( n = 3). (e) Lactate production after lentivirus-mediated knockdow",
+      "claim_role": "dose",
+      "endpoint": "oxidative stress",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-9194",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9194,
+      "sentence": "3 d).\n\np53/\u03b2-enolase axis mediates statin-induced lactate production (a) Dose effect (48 h) and (b) time-course (10 \u03bcM) of fluvastatin on the protein levels of p53 and \u03b2-enolase in A-204 cells and C2C12 myotubes. (c) p53 and \u03b2-enolase protein levels in gastrocnemius (GAS) and tibialis anterior (TA) muscles of mice treated with lovastatin for 30 days. (d) Lactate production in A-204 cells exogenously expression of \u03b2-enolase ( n = 3). (e) Lactate production after lentivirus-mediated knockdown of p53 in A-204 cells (n = 3). p53 and \u03b2-enolase protein assessed by western blotting. (f) p53 and \u03b2-enolase protein in A-204 cells exposed to atorvastatin (Atr), pitavastatin (Pit), simvastatin (Sim), rosuvastatin (Ros), and lovastatin (Lov) at 10 \u03bcM for 48 h. (g) p53 and \u03b2-enolase protein in A-204 cells after lentivirus-mediated knockdown of HMGCR. (h) Effect of mevalonate (MVA, 200 \u03bcM) on the protein level of p53 and \u03b2-enolase following fluvastatin (10 \u03bcM) treatment for 48 h.",
+      "context_window": "after lentivirus-mediated knockdown of p53 in A-204 cells (n = 3). p53 and \u03b2-enolase protein assessed by western blotting. (",
+      "claim_role": "dose",
+      "endpoint": "oxidative stress",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-9686",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9686,
+      "sentence": "Data are shown as mean \u00b1 SD, * P < .05, *** P < .001 (Student's t-test).",
+      "context_window": "(10 \u03bcM) treatment for 48 h. Data are shown as mean \u00b1 SD, * P < .05, *** P < .001 (Student's t-test). We then checked protein",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-9699",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9699,
+      "sentence": "Data are shown as mean \u00b1 SD, * P < .05, *** P < .001 (Student's t-test).",
+      "context_window": "tment for 48 h. Data are shown as mean \u00b1 SD, * P < .05, *** P < .001 (Student's t-test). We then checked protein levels of well",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-11913",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11913,
+      "sentence": "Fluvastatin promotes p53 degradation via enhanced MDM2 phosphorylation. (a) p53 mRNA levels with fluvastatin (10 \u03bc\u039c) treatment at the indicated time (left panel) and after HMGCR knocking down (right panel) in A-204 cells (n = 3). (b) Total and phosphorylated MDM2 (Ser166) protein levels with fluvastatin (10 \u03bc\u039c) treatment in A-204 cells for 48 h. (c) Cytosolic extract of A-204 cells treated with fluvastatin (10 \u03bc\u039c) for 48 h were immunoprecipitated (IP) with control IgG or anti-p53 antibody.",
+      "context_window": "and after HMGCR knocking down (right panel) in A-204 cells (n = 3). (b) Total and phosphorylated MDM2 (Ser166) protein levels",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-12858",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12858,
+      "sentence": "We scanned the ENO3 promoter (-2000 to +100) and found 3 putative p53RRE sites with >90% identity ( Fig.",
+      "context_window": "ter (-2000 to +100) and found 3 putative p53RRE sites with >90% identity ( Fig. 5 a). We first carried out chromatin immuno",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-13063",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13063,
+      "sentence": "Only p53RRE3, the one with highest homology (95% identity) to the p53 repressive consensus sequence, was pulled down by the anti-p53 antibody comparing with nonspecific control IgG ( Fig.",
+      "context_window": "p53RRE sites. Only p53RRE3, the one with highest homology (95% identity) to the p53 repressive consensus sequence, was pul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-14901",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14901,
+      "sentence": "Luciferase reporter assay of wild type (RRE3-WT), mutated (RRE3-MUT) and knockdown of p53 (RRE3-WT/shp53) of ENO3 p53RRE3 in A-204 cells ( n = 3). (d) ENO3 mRNA level in response to p53 and HMGCR knocking down in A-204 cells (n = 3).",
+      "context_window": "own of p53 (RRE3-WT/shp53) of ENO3 p53RRE3 in A-204 cells ( n = 3). (d) ENO3 mRNA level in response to p53 and HMGCR knocking",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-14988",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14988,
+      "sentence": "Luciferase reporter assay of wild type (RRE3-WT), mutated (RRE3-MUT) and knockdown of p53 (RRE3-WT/shp53) of ENO3 p53RRE3 in A-204 cells ( n = 3). (d) ENO3 mRNA level in response to p53 and HMGCR knocking down in A-204 cells (n = 3).",
+      "context_window": "in response to p53 and HMGCR knocking down in A-204 cells (n = 3). Data are shown as mean \u00b1 SD, * P < .05, *** P < .001 (Stu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-15027",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15027,
+      "sentence": "Data are shown as mean \u00b1 SD, * P < .05, *** P < .001 (Student's t -test).",
+      "context_window": "down in A-204 cells (n = 3). Data are shown as mean \u00b1 SD, * P < .05, *** P < .001 (Student's t -test). Dichloroacetate (DCA) i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-15040",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15040,
+      "sentence": "Data are shown as mean \u00b1 SD, * P < .05, *** P < .001 (Student's t -test).",
+      "context_window": "cells (n = 3). Data are shown as mean \u00b1 SD, * P < .05, *** P < .001 (Student's t -test). Dichloroacetate (DCA) is a potent inh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-15684",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 15684,
+      "sentence": "Supplementation of DCA eliminated the increased lactate production by fluvastatin (25% and 45% decrease compared to control and fluvastatin single treatment respectively), consisting with the potent glycolysis inhibitory activity of DCA ( Fig.",
+      "context_window": "eliminated the increased lactate production by fluvastatin (25% and 45% decrease compared to control and fluvastatin single",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-pct-15692",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 15692,
+      "sentence": "Supplementation of DCA eliminated the increased lactate production by fluvastatin (25% and 45% decrease compared to control and fluvastatin single treatment respectively), consisting with the potent glycolysis inhibitory activity of DCA ( Fig.",
+      "context_window": "ed the increased lactate production by fluvastatin (25% and 45% decrease compared to control and fluvastatin single treatme",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-15910",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 15910,
+      "sentence": "Next, DCA was co-administrated with lovastatin in mice for 30 days.",
+      "context_window": "Next, DCA was co-administrated with lovastatin in mice for 30 days. The swimming endurance was significantly improved by DCA (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "lovastatin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-16295",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16295,
+      "sentence": "Dichloroacetate antagonizes statin-induced lactate accumulation and improves mice exercise capacity. (a) Effect of dichloroacetate (DCA, 10 mM) on fluvastatin-induced lactate production in muscle cells (n = 3). (b) Maximum swimming duration times of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days ( n = 10 each group). (c) Resting blood lactate levels of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). (d) Lactate concentrations in gastrocnemius (GAS) and tibialis anterior (TA) muscles of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group).",
+      "context_window": "on fluvastatin-induced lactate production in muscle cells (n = 3). (b) Maximum swimming duration times of C57BL/6 J mice co-",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-16401",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 16401,
+      "sentence": "Dichloroacetate antagonizes statin-induced lactate accumulation and improves mice exercise capacity. (a) Effect of dichloroacetate (DCA, 10 mM) on fluvastatin-induced lactate production in muscle cells (n = 3). (b) Maximum swimming duration times of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days ( n = 10 each group). (c) Resting blood lactate levels of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). (d) Lactate concentrations in gastrocnemius (GAS) and tibialis anterior (TA) muscles of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group).",
+      "context_window": "C57BL/6 J mice co-administered with lovastatin and DCA for 30 days ( n = 10 each group). (c) Resting blood lactate levels of C",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-16411",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16411,
+      "sentence": "Dichloroacetate antagonizes statin-induced lactate accumulation and improves mice exercise capacity. (a) Effect of dichloroacetate (DCA, 10 mM) on fluvastatin-induced lactate production in muscle cells (n = 3). (b) Maximum swimming duration times of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days ( n = 10 each group). (c) Resting blood lactate levels of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). (d) Lactate concentrations in gastrocnemius (GAS) and tibialis anterior (TA) muscles of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group).",
+      "context_window": "mice co-administered with lovastatin and DCA for 30 days ( n = 10 each group). (c) Resting blood lactate levels of C57BL/6 J",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-16526",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 16526,
+      "sentence": "Dichloroacetate antagonizes statin-induced lactate accumulation and improves mice exercise capacity. (a) Effect of dichloroacetate (DCA, 10 mM) on fluvastatin-induced lactate production in muscle cells (n = 3). (b) Maximum swimming duration times of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days ( n = 10 each group). (c) Resting blood lactate levels of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). (d) Lactate concentrations in gastrocnemius (GAS) and tibialis anterior (TA) muscles of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group).",
+      "context_window": "C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). (d) Lactate concentrations in gastrocn",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-16535",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16535,
+      "sentence": "Dichloroacetate antagonizes statin-induced lactate accumulation and improves mice exercise capacity. (a) Effect of dichloroacetate (DCA, 10 mM) on fluvastatin-induced lactate production in muscle cells (n = 3). (b) Maximum swimming duration times of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days ( n = 10 each group). (c) Resting blood lactate levels of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). (d) Lactate concentrations in gastrocnemius (GAS) and tibialis anterior (TA) muscles of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group).",
+      "context_window": "J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). (d) Lactate concentrations in gastrocnemius (G",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-u-16702",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 16702,
+      "sentence": "Dichloroacetate antagonizes statin-induced lactate accumulation and improves mice exercise capacity. (a) Effect of dichloroacetate (DCA, 10 mM) on fluvastatin-induced lactate production in muscle cells (n = 3). (b) Maximum swimming duration times of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days ( n = 10 each group). (c) Resting blood lactate levels of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). (d) Lactate concentrations in gastrocnemius (GAS) and tibialis anterior (TA) muscles of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group).",
+      "context_window": "C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). Data are shown as mean \u00b1 SD, * P < .05",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-n-16711",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16711,
+      "sentence": "Dichloroacetate antagonizes statin-induced lactate accumulation and improves mice exercise capacity. (a) Effect of dichloroacetate (DCA, 10 mM) on fluvastatin-induced lactate production in muscle cells (n = 3). (b) Maximum swimming duration times of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days ( n = 10 each group). (c) Resting blood lactate levels of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). (d) Lactate concentrations in gastrocnemius (GAS) and tibialis anterior (TA) muscles of C57BL/6 J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group).",
+      "context_window": "J mice co-administered with lovastatin and DCA for 30 days (n = 10 each group). Data are shown as mean \u00b1 SD, * P < .05, ** P <",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "statin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-16762",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16762,
+      "sentence": "Data are shown as mean \u00b1 SD, * P < .05, ** P < .01 (one-way ANOVA, Tukey's test).",
+      "context_window": "30 days (n = 10 each group). Data are shown as mean \u00b1 SD, * P < .05, ** P < .01 (one-way ANOVA, Tukey's test).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6642070_regulation_of_lactate_production_through_p53_enolase_axis_co-p-16774",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16774,
+      "sentence": "Data are shown as mean \u00b1 SD, * P < .05, ** P < .01 (one-way ANOVA, Tukey's test).",
+      "context_window": "10 each group). Data are shown as mean \u00b1 SD, * P < .05, ** P < .01 (one-way ANOVA, Tukey's test).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

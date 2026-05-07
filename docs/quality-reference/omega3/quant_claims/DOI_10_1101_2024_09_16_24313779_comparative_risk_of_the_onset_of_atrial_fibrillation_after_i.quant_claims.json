@@ -1,0 +1,177 @@
+{
+  "paper_id": "DOI_10_1101_2024_09_16_24313779_comparative_risk_of_the_onset_of_atrial_fibrillation_after_i",
+  "doi": "10.1101/2024.09.16.24313779",
+  "extracted_at": "2026-05-07T19:32:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 6,
+    "confidence_interval": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313779_comparative_risk_of_the_onset_of_atrial_fibrillation_after_i-u-1263",
+      "claim_type": "unit_value",
+      "raw_text": "56 years",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1263,
+      "sentence": "The PS-matched cohort included 17,638 participants with a mean age 56 years, predominantly male (65.7% ICP vs.",
+      "context_window": "matched cohort included 17,638 participants with a mean age 56 years, predominantly male (65.7% ICP vs. 64.5% DHA/EPA). Over two",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313779_comparative_risk_of_the_onset_of_atrial_fibrillation_after_i-pct-1293",
+      "claim_type": "percentage",
+      "raw_text": "65.7%",
+      "numeric_values": [
+        65.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1293,
+      "sentence": "The PS-matched cohort included 17,638 participants with a mean age 56 years, predominantly male (65.7% ICP vs.",
+      "context_window": "participants with a mean age 56 years, predominantly male (65.7% ICP vs. 64.5% DHA/EPA). Over two years, the cumulative inci",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313779_comparative_risk_of_the_onset_of_atrial_fibrillation_after_i-pct-1307",
+      "claim_type": "percentage",
+      "raw_text": "64.5%",
+      "numeric_values": [
+        64.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1307,
+      "sentence": "64.5% DHA/EPA).",
+      "context_window": "with a mean age 56 years, predominantly male (65.7% ICP vs. 64.5% DHA/EPA). Over two years, the cumulative incidence of AF fr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313779_comparative_risk_of_the_onset_of_atrial_fibrillation_after_i-pct-1395",
+      "claim_type": "percentage",
+      "raw_text": "5.32%",
+      "numeric_values": [
+        5.32
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1395,
+      "sentence": "Over two years, the cumulative incidence of AF from ICP and DHA/EPA was 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI: 1.061 to 1.455).",
+      "context_window": "rs, the cumulative incidence of AF from ICP and DHA/EPA was 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI:",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313779_comparative_risk_of_the_onset_of_atrial_fibrillation_after_i-pct-1405",
+      "claim_type": "percentage",
+      "raw_text": "3.99%",
+      "numeric_values": [
+        3.99
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1405,
+      "sentence": "Over two years, the cumulative incidence of AF from ICP and DHA/EPA was 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI: 1.061 to 1.455).",
+      "context_window": "mulative incidence of AF from ICP and DHA/EPA was 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI: 1.061 to",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313779_comparative_risk_of_the_onset_of_atrial_fibrillation_after_i-ci-1453",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.061 to 1.455",
+      "numeric_values": [
+        1.061,
+        1.455
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1453,
+      "sentence": "Over two years, the cumulative incidence of AF from ICP and DHA/EPA was 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI: 1.061 to 1.455).",
+      "context_window": "s 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI: 1.061 to 1.455). Conclusions In adult AF-na\u00efve patients, ICP, when compare",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313779_comparative_risk_of_the_onset_of_atrial_fibrillation_after_i-pct-2024",
+      "claim_type": "percentage",
+      "raw_text": "5.32%",
+      "numeric_values": [
+        5.32
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2024,
+      "sentence": "Over two years, the cumulative incidence of AF from ICP and DHA/EPA was 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI: 1.061 to 1.455).",
+      "context_window": "rs, the cumulative incidence of AF from ICP and DHA/EPA was 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI:",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313779_comparative_risk_of_the_onset_of_atrial_fibrillation_after_i-pct-2034",
+      "claim_type": "percentage",
+      "raw_text": "3.99%",
+      "numeric_values": [
+        3.99
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2034,
+      "sentence": "Over two years, the cumulative incidence of AF from ICP and DHA/EPA was 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI: 1.061 to 1.455).",
+      "context_window": "mulative incidence of AF from ICP and DHA/EPA was 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI: 1.061 to",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2024_09_16_24313779_comparative_risk_of_the_onset_of_atrial_fibrillation_after_i-ci-2082",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.061 to 1.455",
+      "numeric_values": [
+        1.061,
+        1.455
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2082,
+      "sentence": "Over two years, the cumulative incidence of AF from ICP and DHA/EPA was 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI: 1.061 to 1.455).",
+      "context_window": "s 5.32% and 3.99% respectively, resulting in a HR of 1.242 (95% CI: 1.061 to 1.455). In adult AF-na\u00efve patients, ICP, when compared to DHA/EPA",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

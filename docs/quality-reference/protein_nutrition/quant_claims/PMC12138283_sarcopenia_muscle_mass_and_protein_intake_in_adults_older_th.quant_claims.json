@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12138283_sarcopenia_muscle_mass_and_protein_intake_in_adults_older_th",
   "doi": "10.1002/jcsm.13839",
-  "extracted_at": "2026-05-05T23:37:03+00:00",
+  "extracted_at": "2026-05-07T16:56:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 47,
@@ -23,7 +23,7 @@
       "sentence": "This cross\u2010sectional study investigated sarcopenia and low muscle mass by comparing adults older than 65 years with previous MBS (BAR) to patients following nonsurgical obesity management (CON).",
       "context_window": "rcopenia and low muscle mass by comparing adults older than 65 years with previous MBS (BAR) to patients following nonsurgical o",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -353,7 +353,7 @@
       "sentence": "Twenty percent to 56% of participants had low muscle mass, depending on sex and criterium, but only 3% met the criteria for sarcopenia and 9% for sarcopenic obesity.",
       "context_window": "(64.7 \u00b1 18.1% vs. 62.6 \u00b1 15.8, p = 0.53). Twenty percent to 56% of participants had low muscle mass, depending on sex and c",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -409,7 +409,7 @@
       "context_window": "ity. Protein intake tended to be higher in BAR than in CON (1.36 \u00b1 0.36 g/kg FFM/day vs. 1.25 \u00b1 0.27, p = 0.09). Most participants",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -517,7 +517,7 @@
       "sentence": "The aim of this study was to investigate sarcopenia and low muscle mass in adults older than 65 years who previously underwent MBS, compared to patients following nonsurgical obesity treatment.",
       "context_window": "stigate sarcopenia and low muscle mass in adults older than 65 years who previously underwent MBS, compared to patients followin",
       "claim_role": "background",
-      "endpoint": "sarcopenia",
+      "endpoint": "muscle mass",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -790,7 +790,7 @@
       "context_window": "protein intake for older adults, we used cut\u2010off points of 1.0 g/kg/day actual bodyweight and 1.6 g/kg/day FFM [ 26 , 27 ]. Protein",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -808,7 +808,7 @@
       "context_window": "e used cut\u2010off points of 1.0 g/kg/day actual bodyweight and 1.6 g/kg/day FFM [ 26 , 27 ]. Protein intake after MBS was compared to r",
       "claim_role": "dose",
       "endpoint": "lean body mass",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1966,7 +1966,7 @@
       "sentence": "The prevalence of low muscle mass based on the EWGSOP1 and ESPEN/EASO criteria varied between 20% and 47% based on sex and treatment group but was not statistically different for the whole group or when separated by sex (Table 3 ).",
       "context_window": "based on the EWGSOP1 and ESPEN/EASO criteria varied between 20% and 47% based on sex and treatment group but was not statis",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "treatment",
       "direction": "",
       "binding_confidence": "partial"
@@ -1984,7 +1984,7 @@
       "sentence": "The prevalence of low muscle mass based on the EWGSOP1 and ESPEN/EASO criteria varied between 20% and 47% based on sex and treatment group but was not statistically different for the whole group or when separated by sex (Table 3 ).",
       "context_window": "the EWGSOP1 and ESPEN/EASO criteria varied between 20% and 47% based on sex and treatment group but was not statistically",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "muscle mass",
       "arm": "treatment",
       "direction": "",
       "binding_confidence": "partial"
@@ -2318,7 +2318,7 @@
       "context_window": "logramme actual bodyweight was higher for BAR than for CON (0.83 \u00b1 0.25 g/kg/day vs. 0.73 \u00b1 18, p < 0.05). This difference remained",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2336,7 +2336,7 @@
       "context_window": "e actual bodyweight was higher for BAR than for CON (0.83 \u00b1 0.25 g/kg/day vs. 0.73 \u00b1 18, p < 0.05). This difference remained as a ten",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2919,7 +2919,7 @@
       "context_window": "ch additional gramme of dietary protein per day predicted a 0.04 kg increase in ALM ( p = 0.008), while BAR compared to CON did",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2937,7 +2937,7 @@
       "context_window": "etary protein per day predicted a 0.04 kg increase in ALM ( p = 0.008), while BAR compared to CON did not improve prediction. The",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "protein",
+      "arm": "essential amino acids",
       "direction": "increase",
       "binding_confidence": "partial"
     },

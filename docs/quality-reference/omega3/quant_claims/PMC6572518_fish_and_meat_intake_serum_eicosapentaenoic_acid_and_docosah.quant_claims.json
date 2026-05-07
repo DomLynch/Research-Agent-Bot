@@ -1,0 +1,777 @@
+{
+  "paper_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah",
+  "doi": "10.3390/ijerph16101806",
+  "extracted_at": "2026-05-07T19:33:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 8,
+    "percentage": 12,
+    "confidence_interval": 6,
+    "p_value": 5,
+    "sample_size": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-u-287",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 287,
+      "sentence": "The associations between meat/fish consumption, docosahexaenoic acid (DHA)/eicosapentaenoic acid (EPA) intakes, and blood DHA/EPA levels, and mortality in Japan were examined as part of the National Institute for Longevity Sciences-Longitudinal Study of Aging: 520 men and 534 women (60-79 years at baseline) were followed from 1997-2017.",
+      "context_window": "nces-Longitudinal Study of Aging: 520 men and 534 women (60-79 years at baseline) were followed from 1997-2017. Nutritional inta",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "icosapent ethyl",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-u-859",
+      "claim_type": "unit_value",
+      "raw_text": "11.7 years",
+      "numeric_values": [
+        11.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 859,
+      "sentence": "During follow-up (mean 11.7 years), 422 subjects (40.4%) died.",
+      "context_window": "employment, and history of diseases. During follow-up (mean 11.7 years), 422 subjects (40.4%) died. The multivariate-adjusted HR f",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-886",
+      "claim_type": "percentage",
+      "raw_text": "40.4%",
+      "numeric_values": [
+        40.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 886,
+      "sentence": "During follow-up (mean 11.7 years), 422 subjects (40.4%) died.",
+      "context_window": "diseases. During follow-up (mean 11.7 years), 422 subjects (40.4%) died. The multivariate-adjusted HR for all-cause mortality",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-1028",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1028,
+      "sentence": "The multivariate-adjusted HR for all-cause mortality in subjects in the highest tertile of serum DHA and EPA/ARA ratio was 0.73 (95% confidence intervals (CI): 0.53-0.99) and 0.71 (95% CI: 0.53-0.96) compared with subjects in the lowest tertile, respectively (trend p < 0.05).",
+      "context_window": "he highest tertile of serum DHA and EPA/ARA ratio was 0.73 (95% confidence intervals (CI): 0.53-0.99) and 0.71 (95% CI: 0.5",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-ci-1080",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.53-0.96",
+      "numeric_values": [
+        0.53,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1080,
+      "sentence": "The multivariate-adjusted HR for all-cause mortality in subjects in the highest tertile of serum DHA and EPA/ARA ratio was 0.73 (95% confidence intervals (CI): 0.53-0.99) and 0.71 (95% CI: 0.53-0.96) compared with subjects in the lowest tertile, respectively (trend p < 0.05).",
+      "context_window": "s 0.73 (95% confidence intervals (CI): 0.53-0.99) and 0.71 (95% CI: 0.53-0.96) compared with subjects in the lowest tertile, respectively",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-p-1165",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1165,
+      "sentence": "The multivariate-adjusted HR for all-cause mortality in subjects in the highest tertile of serum DHA and EPA/ARA ratio was 0.73 (95% confidence intervals (CI): 0.53-0.99) and 0.71 (95% CI: 0.53-0.96) compared with subjects in the lowest tertile, respectively (trend p < 0.05).",
+      "context_window": "ed with subjects in the lowest tertile, respectively (trend p < 0.05). There were no significant associations between mortality",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-u-332",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 332,
+      "sentence": "Fish consumption has decreased and meat consumption has increased markedly among Japanese individuals in the last 50 to 60 years [ 1 ].",
+      "context_window": "eased markedly among Japanese individuals in the last 50 to 60 years [ 1 ]. Fish consumption, particularly fatty fish, and inta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-u-710",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 710,
+      "sentence": "The first wave of the NILS-LSA was conducted from November 1997 to April 2000 and comprised of 2267 participants (1139 men, 1128 women; age range, 40-79 years).",
+      "context_window": "d of 2267 participants (1139 men, 1128 women; age range, 40-79 years). They were followed up biennially from the second study-wa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-u-1791",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1791,
+      "sentence": "Of the 2267 participants, participants aged 60 years and older at baseline ( n = 1133) were selected.",
+      "context_window": "as key codes. Of the 2267 participants, participants aged 60 years and older at baseline ( n = 1133) were selected. The follow",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-1824",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1133",
+      "numeric_values": [
+        1133.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1824,
+      "sentence": "Of the 2267 participants, participants aged 60 years and older at baseline ( n = 1133) were selected.",
+      "context_window": "cipants, participants aged 60 years and older at baseline ( n = 1133) were selected. The following were excluded: (1) Those who",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-1961",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1961,
+      "sentence": "The following were excluded: (1) Those who fasted <12 h or were unable to supply a sufficient volume of blood ( n = 20); (2) those with an energy intake less than 500 kcal/day as measured by dietary records, or no dietary records ( n = 42); and (3) those who had missing data for controlled variables ( n = 18).",
+      "context_window": "2 h or were unable to supply a sufficient volume of blood ( n = 20); (2) those with an energy intake less than 500 kcal/day as",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-2081",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2081,
+      "sentence": "The following were excluded: (1) Those who fasted <12 h or were unable to supply a sufficient volume of blood ( n = 20); (2) those with an energy intake less than 500 kcal/day as measured by dietary records, or no dietary records ( n = 42); and (3) those who had missing data for controlled variables ( n = 18).",
+      "context_window": "day as measured by dietary records, or no dietary records ( n = 42); and (3) those who had missing data for controlled variabl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-2152",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2152,
+      "sentence": "The following were excluded: (1) Those who fasted <12 h or were unable to supply a sufficient volume of blood ( n = 20); (2) those with an energy intake less than 500 kcal/day as measured by dietary records, or no dietary records ( n = 42); and (3) those who had missing data for controlled variables ( n = 18).",
+      "context_window": "d (3) those who had missing data for controlled variables ( n = 18). A total of 520 men and 534 women between 60 and 79 years",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-u-2209",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2209,
+      "sentence": "A total of 520 men and 534 women between 60 and 79 years of age at baseline were available for analysis.",
+      "context_window": "( n = 18). A total of 520 men and 534 women between 60 and 79 years of age at baseline were available for analysis. On enrollm",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-u-3743",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 3743,
+      "sentence": "The dietary record was completed over 3 continuous days (2 weekdays and 1 weekend day) [ 19 ], and most subjects completed it at home and returned records within 1 month.",
+      "context_window": "t subjects completed it at home and returned records within 1 month. Food was weighed separately on a scale (1-kg kitchen scale",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-u-4403",
+      "claim_type": "unit_value",
+      "raw_text": "13 years",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4403,
+      "sentence": "History of diseases, education (\u22649, 10-12, or \u226513 years of school), employment (unemployed, regular employment, or non-regular employment), and smoking status (yes/no) were collected using self-reported questionnaires, and medical doctors or trained staff confirmed the information.",
+      "context_window": "20 , 21 ]. History of diseases, education (\u22649, 10-12, or \u226513 years of school), employment (unemployed, regular employment, or",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-6314",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6314,
+      "sentence": "The hazard ratios (HR) and 95% confidence intervals (CI) for outcomes were calculated by tertiles using a Cox proportional hazards model.",
+      "context_window": "pplementary Figures S1 and S2 ). The hazard ratios (HR) and 95% confidence intervals (CI) for outcomes were calculated by t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-78",
+      "claim_type": "percentage",
+      "raw_text": "40.4%",
+      "numeric_values": [
+        40.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 78,
+      "sentence": "During the follow-up from the baseline survey to December 2017, 422 subjects (40.4%) died; their mean (standard deviation (SD)) follow-up was 11.7 (4.8) years, whereas that of the survivors was 17.8 (3.2) years.",
+      "context_window": "up from the baseline survey to December 2017, 422 subjects (40.4%) died; their mean (standard deviation (SD)) follow-up was 1",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-231",
+      "claim_type": "percentage",
+      "raw_text": "31.3%",
+      "numeric_values": [
+        31.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 231,
+      "sentence": "Of the 422 deaths, 31.3% ( n = 132) were caused by cancer, 14.2% ( n = 60) by heart disease, and 11.4% ( n = 47) by stroke.",
+      "context_window": "t of the survivors was 17.8 (3.2) years. Of the 422 deaths, 31.3% ( n = 132) were caused by cancer, 14.2% ( n = 60) by heart",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-239",
+      "claim_type": "sample_size",
+      "raw_text": "n = 132",
+      "numeric_values": [
+        132.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 239,
+      "sentence": "Of the 422 deaths, 31.3% ( n = 132) were caused by cancer, 14.2% ( n = 60) by heart disease, and 11.4% ( n = 47) by stroke.",
+      "context_window": "survivors was 17.8 (3.2) years. Of the 422 deaths, 31.3% ( n = 132) were caused by cancer, 14.2% ( n = 60) by heart disease, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-271",
+      "claim_type": "percentage",
+      "raw_text": "14.2%",
+      "numeric_values": [
+        14.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 271,
+      "sentence": "Of the 422 deaths, 31.3% ( n = 132) were caused by cancer, 14.2% ( n = 60) by heart disease, and 11.4% ( n = 47) by stroke.",
+      "context_window": "Of the 422 deaths, 31.3% ( n = 132) were caused by cancer, 14.2% ( n = 60) by heart disease, and 11.4% ( n = 47) by stroke.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-279",
+      "claim_type": "sample_size",
+      "raw_text": "n = 60",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 279,
+      "sentence": "Of the 422 deaths, 31.3% ( n = 132) were caused by cancer, 14.2% ( n = 60) by heart disease, and 11.4% ( n = 47) by stroke.",
+      "context_window": "422 deaths, 31.3% ( n = 132) were caused by cancer, 14.2% ( n = 60) by heart disease, and 11.4% ( n = 47) by stroke. Table 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-309",
+      "claim_type": "percentage",
+      "raw_text": "11.4%",
+      "numeric_values": [
+        11.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 309,
+      "sentence": "Of the 422 deaths, 31.3% ( n = 132) were caused by cancer, 14.2% ( n = 60) by heart disease, and 11.4% ( n = 47) by stroke.",
+      "context_window": "ere caused by cancer, 14.2% ( n = 60) by heart disease, and 11.4% ( n = 47) by stroke. Table 1 shows the baseline characteri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-317",
+      "claim_type": "sample_size",
+      "raw_text": "n = 47",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 317,
+      "sentence": "Of the 422 deaths, 31.3% ( n = 132) were caused by cancer, 14.2% ( n = 60) by heart disease, and 11.4% ( n = 47) by stroke.",
+      "context_window": "ed by cancer, 14.2% ( n = 60) by heart disease, and 11.4% ( n = 47) by stroke. Table 1 shows the baseline characteristics of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-411",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 411,
+      "sentence": "More than 37% of subjects had a history of hypertension and more than 21% of subjects had a history of dyslipidemia.",
+      "context_window": "the baseline characteristics of the participants. More than 37% of subjects had a history of hypertension and more than 21%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-471",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 471,
+      "sentence": "More than 37% of subjects had a history of hypertension and more than 21% of subjects had a history of dyslipidemia.",
+      "context_window": "37% of subjects had a history of hypertension and more than 21% of subjects had a history of dyslipidemia. Mean (SD) daily",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-700",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1054",
+      "numeric_values": [
+        1054.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 700,
+      "sentence": "Baseline characteristics of participants ( n = 1054).",
+      "context_window": ", respectively. Baseline characteristics of participants ( n = 1054). Min, minimum; Max, maximum; SD, standard deviation; METs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-ci-1115",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.59-1.08",
+      "numeric_values": [
+        0.59,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1115,
+      "sentence": "Although there were no significant associations, the HR for mortality of the middle and highest tertiles of fatty acid intake were 0.80 (95% CI: 0.59-1.08) and 0.74 (95% CI: 0.55-1.01), respectively, compared with the lowest tertile of fatty acid intake.",
+      "context_window": "middle and highest tertiles of fatty acid intake were 0.80 (95% CI: 0.59-1.08) and 0.74 (95% CI: 0.55-1.01), respectively, compared with",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-ci-1144",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.55-1.01",
+      "numeric_values": [
+        0.55,
+        1.01
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1144,
+      "sentence": "Although there were no significant associations, the HR for mortality of the middle and highest tertiles of fatty acid intake were 0.80 (95% CI: 0.59-1.08) and 0.74 (95% CI: 0.55-1.01), respectively, compared with the lowest tertile of fatty acid intake.",
+      "context_window": "f fatty acid intake were 0.80 (95% CI: 0.59-1.08) and 0.74 (95% CI: 0.55-1.01), respectively, compared with the lowest tertile of fatty a",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-ci-1318",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.53-0.99",
+      "numeric_values": [
+        0.53,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1318,
+      "sentence": "The HR for mortality of the highest tertile of saturated fatty acid intake was 0.73 (95% CI: 0.53-0.99) compared with the lowest tertile of saturated fatty acid intake (trend p < 0.05).",
+      "context_window": "he highest tertile of saturated fatty acid intake was 0.73 (95% CI: 0.53-0.99) compared with the lowest tertile of saturated fatty acid i",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-p-1408",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1408,
+      "sentence": "The HR for mortality of the highest tertile of saturated fatty acid intake was 0.73 (95% CI: 0.53-0.99) compared with the lowest tertile of saturated fatty acid intake (trend p < 0.05).",
+      "context_window": "th the lowest tertile of saturated fatty acid intake (trend p < 0.05). Fish, meat, and unsaturated fatty acid intakes, including",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-1637",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1054",
+      "numeric_values": [
+        1054.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1637,
+      "sentence": "Multivariate-adjusted hazard ratios 1 for all-cause mortality of fish, meat, and fatty acid intakes ( n = 1054).",
+      "context_window": "all-cause mortality of fish, meat, and fatty acid intakes ( n = 1054). 1 HR adjusted for sex, baseline age, body mass index, sm",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-ci-2284",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.53-0.99",
+      "numeric_values": [
+        0.53,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2284,
+      "sentence": "Although there were no significant associations between mortality and serum EPA and ARA, the HR for mortality of the highest tertile of serum DHA was 0.73 (95% CI: 0.53-0.99) compared with the lowest tertile of serum DHA.",
+      "context_window": "for mortality of the highest tertile of serum DHA was 0.73 (95% CI: 0.53-0.99) compared with the lowest tertile of serum DHA. In addition",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-ci-2444",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.53-0.96",
+      "numeric_values": [
+        0.53,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2444,
+      "sentence": "In addition, the HR for mortality of the highest tertile of the serum EPA/ARA ratio was 0.71 (95% CI: 0.53-0.96) compared with the lowest tertile of the serum EPA/ARA ratio.",
+      "context_window": "of the highest tertile of the serum EPA/ARA ratio was 0.71 (95% CI: 0.53-0.96) compared with the lowest tertile of the serum EPA/ARA rati",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-2616",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1054",
+      "numeric_values": [
+        1054.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2616,
+      "sentence": "Multivariate-adjusted hazard ratios 1 for all-cause mortality of serum EPA, DHA, and ARA ( n = 1054).",
+      "context_window": "tios 1 for all-cause mortality of serum EPA, DHA, and ARA ( n = 1054). 1 HR adjusted for sex, baseline age, body mass index, sm",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-n-3375",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1054",
+      "numeric_values": [
+        1054.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3375,
+      "sentence": "Baseline characteristics of participants by tertiles of serum DHA ( n = 1054).",
+      "context_window": "characteristics of participants by tertiles of serum DHA ( n = 1054). 1 For continuous variables, one-way analysis of variance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-p-3608",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3608,
+      "sentence": "Tertile 2 p < 0.05, ** Tertile 1 vs.",
+      "context_window": "as used for multiple comparisons (* Tertile 1 vs. Tertile 2 p < 0.05, ** Tertile 1 vs. Tertile 3 p < 0.05, *** Tertile 2 vs. Ter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-p-3645",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3645,
+      "sentence": "Tertile 3 p < 0.05, *** Tertile 2 vs.",
+      "context_window": "ertile 1 vs. Tertile 2 p < 0.05, ** Tertile 1 vs. Tertile 3 p < 0.05, *** Tertile 2 vs. Tertile 3 p < 0.05). DHA, docosahexaenoi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-p-3683",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3683,
+      "sentence": "Tertile 3 p < 0.05).",
+      "context_window": "rtile 1 vs. Tertile 3 p < 0.05, *** Tertile 2 vs. Tertile 3 p < 0.05). DHA, docosahexaenoic acid; SD, standard deviation; METs,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-1739",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1739,
+      "sentence": "In that study [ 30 ], more than half of the participants consumed a high carbohydrate diet (at least 60% of energy), the subjects lived mainly in Asia, and the percentage was higher than in most previous studies done in North America and Europe.",
+      "context_window": "he participants consumed a high carbohydrate diet (at least 60% of energy), the subjects lived mainly in Asia, and the perc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-1974",
+      "claim_type": "percentage",
+      "raw_text": "58.7%",
+      "numeric_values": [
+        58.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1974,
+      "sentence": "In the present study, Japanese participants also consumed a high carbohydrate diet (mean: 58.7% of energy, data not shown), therefore, the results of the negative association between saturated fatty acid intake and mortality are consistent in Asian people.",
+      "context_window": "participants also consumed a high carbohydrate diet (mean: 58.7% of energy, data not shown), therefore, the results of the n",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6572518_fish_and_meat_intake_serum_eicosapentaenoic_acid_and_docosah-pct-4258",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4258,
+      "sentence": "Even if the Japanese consume fish daily, within individual variations of n-3 PUFAs such as EPA or DHA that were high, and the accuracy of n-3 PUFA values assessed by 3-day dietary records was estimated to have a 28% coefficient of variation among Japanese people [ 34 ].",
+      "context_window": "s assessed by 3-day dietary records was estimated to have a 28% coefficient of variation among Japanese people [ 34 ]. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "paper_id": "DOI_10_2903_j_efsa_2012_2815_scientific_opinion_on_the_tolerable_upper_intake_level_of_ei",
+  "doi": "10.2903/j.efsa.2012.2815",
+  "extracted_at": "2026-05-07T19:32:33+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_2903_j_efsa_2012_2815_scientific_opinion_on_the_tolerable_upper_intake_level_of_ei-pct-1031",
+      "claim_type": "percentage",
+      "raw_text": "3 %",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "Supplemental intakes of EPA and DHA combined at doses of 2 6 g/day, and of DHA at doses of 2 4 g/day, induce an increase in LDL\u2010cholesterol concentrations of about 3 % which may not have an adverse effect on cardiovascular disease risk, whereas EPA at doses up to 4 g/day has no significant effect on LDL cholesterol.",
+      "context_window": "duce an increase in LDL\u2010cholesterol concentrations of about 3 % which may not have an adverse effect on cardiovascular dise",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_2903_j_efsa_2012_2815_scientific_opinion_on_the_tolerable_upper_intake_level_of_ei-u-1474",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 1474,
+      "sentence": "Dietary recommendations for EPA and DHA based on cardiovascular risk considerations for European adults are between 250 and 500 mg/day.",
+      "context_window": "risk considerations for European adults are between 250 and 500 mg/day. Supplemental intakes of DHA alone up to about 1 g/day do n",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_fish_oil_supplement_in_rectal_cancer",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:33:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_fish_oil_supplement_in_rectal_cancer-pct-203",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 203,
+      "sentence": "This results currently in pathologic complete response in 10% to 30% of cases.",
+      "context_window": ". This results currently in pathologic complete response in 10% to 30% of cases. The immune and inflammatory response is al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_fish_oil_supplement_in_rectal_cancer-pct-210",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 210,
+      "sentence": "This results currently in pathologic complete response in 10% to 30% of cases.",
+      "context_window": "results currently in pathologic complete response in 10% to 30% of cases. The immune and inflammatory response is altered i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

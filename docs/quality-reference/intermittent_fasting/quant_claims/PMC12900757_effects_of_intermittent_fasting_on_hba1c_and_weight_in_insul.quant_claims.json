@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12900757_effects_of_intermittent_fasting_on_hba1c_and_weight_in_insul",
   "doi": "10.3389/fnut.2026.1699384",
-  "extracted_at": "2026-05-05T22:11:25+00:00",
+  "extracted_at": "2026-05-07T16:57:03+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 4,
@@ -44,7 +44,7 @@
       "context_window": "d glycemic control in both groups, with HbA1c reductions of 0.54% in OHA-users and 2.8% in insulin-users. In the meta-analysi",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "pooled",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -62,7 +62,7 @@
       "context_window": "oth groups, with HbA1c reductions of 0.54% in OHA-users and 2.8% in insulin-users. In the meta-analysis of four eligible tri",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "pooled",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -301,7 +301,7 @@
       "context_window": "oninferiority trials Study participants had T2DM and aged \u226518 years Study examining effects of intermittent fasting, time-rest",
       "claim_role": "dose",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -319,7 +319,7 @@
       "context_window": "ws, editorials, abstracts, or protocols Participants aged <18 years Patients without a confirmed diagnosis of T2DM, or receivi",
       "claim_role": "dose",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "intermittent fasting",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -786,10 +786,10 @@
       "sentence": "The adherence rate was similar (~85%) for OHA and insulin-treated patients.",
       "context_window": "3 , 8 , 10-14 , 16 , 17 ). The adherence rate was similar (~85%) for OHA and insulin-treated patients. This suggests that I",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "adherence",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12900757_effects_of_intermittent_fasting_on_hba1c_and_weight_in_insul-pct-10437",

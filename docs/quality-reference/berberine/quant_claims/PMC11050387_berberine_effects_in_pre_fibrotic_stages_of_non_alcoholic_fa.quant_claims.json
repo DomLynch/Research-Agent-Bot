@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11050387_berberine_effects_in_pre_fibrotic_stages_of_non_alcoholic_fa",
   "doi": "10.3390/ijms25084201",
-  "extracted_at": "2026-05-05T22:22:56+00:00",
+  "extracted_at": "2026-05-07T16:58:06+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 32,
@@ -515,10 +515,10 @@
       "sentence": "CSE-MRI measures the proportional quantity of water and fat signals originating from the liver, while MRI-PDFF assesses the proportion of mobile protons density attributed to triglycerides, relative to the combined density of protons from both mobile triglycerides and mobile water, as a percentage (%) ranging from 0 to 100%, represents an essential feature of the tissue, indicating the concentration of mobile triglycerides within it [ 34 ].",
       "context_window": "des and mobile water, as a percentage (%) ranging from 0 to 100%, represents an essential feature of the tissue, indicating",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11050387_berberine_effects_in_pre_fibrotic_stages_of_non_alcoholic_fa-pct-15559",
@@ -930,9 +930,9 @@
       "context_window": "tures (lower body weight, smaller waist circumference, BMI- p < 0.01), decrease of liver fat burden- p < 0.01; improved glucose",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11050387_berberine_effects_in_pre_fibrotic_stages_of_non_alcoholic_fa-p-5494",
@@ -948,9 +948,9 @@
       "context_window": "ircumference, BMI- p < 0.01), decrease of liver fat burden- p < 0.01; improved glucose homeostasis (lower blood glucose, better",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11050387_berberine_effects_in_pre_fibrotic_stages_of_non_alcoholic_fa-p-5599",
@@ -966,9 +966,9 @@
       "context_window": "blood glucose, better control on glucose metabolism-HbA1c- p < 0.01), and better control on lipidic metabolism (lower serum lev",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11050387_berberine_effects_in_pre_fibrotic_stages_of_non_alcoholic_fa-p-5724",
@@ -983,10 +983,10 @@
       "sentence": "Furthermore, BBR treatment was associated with significant improvement concerning many areas: ameliorated anthropomorphic features (lower body weight, smaller waist circumference, BMI- p < 0.01), decrease of liver fat burden- p < 0.01; improved glucose homeostasis (lower blood glucose, better control on glucose metabolism-HbA1c- p < 0.01), and better control on lipidic metabolism (lower serum levels of cholesterol, triglycerides, LDL-c, apoA/B, LP(a)- p < 0.05).",
       "context_window": "levels of cholesterol, triglycerides, LDL-c, apoA/B, LP(a)- p < 0.05). In their study, Chang et al. observed that BBR, through i",
       "claim_role": "effect",
-      "endpoint": "HbA1c",
-      "arm": "",
+      "endpoint": "ldl",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11050387_berberine_effects_in_pre_fibrotic_stages_of_non_alcoholic_fa-msd-7049",

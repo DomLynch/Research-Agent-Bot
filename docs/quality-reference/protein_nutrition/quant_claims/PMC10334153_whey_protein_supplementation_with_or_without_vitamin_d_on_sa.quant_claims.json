@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa",
   "doi": "10.1016/j.advnut.2023.05.011",
-  "extracted_at": "2026-05-05T23:36:58+00:00",
+  "extracted_at": "2026-05-07T16:56:28+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 16,
@@ -23,7 +23,7 @@
       "sentence": "The analysis showed that whey protein supplementation had no effect on LM and muscle strength; nevertheless, a significant improvement was found in physical function (SMD = 0.561; 95% confidence interval [CIs]: 0.256, 0.865, n = 33), particularly gait speed (GS).",
       "context_window": "nt improvement was found in physical function (SMD = 0.561; 95% confidence interval [CIs]: 0.256, 0.865, n = 33), particula",
       "claim_role": "unknown",
-      "endpoint": "walk speed",
+      "endpoint": "physical function",
       "arm": "whey protein",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -97,7 +97,7 @@
       "sentence": "On the contrary, whey protein supplementation significantly improved LM (SMD = 0.982; 95% CI: 0.228, 1.736; n = 11), appendicular lean mass and physical function (SMD = 1.211; 95% CI: 0.588, 1.834; n = 16), and GS in sarcopenic/frail older adults.",
       "context_window": "appendicular lean mass and physical function (SMD = 1.211; 95% CI: 0.588, 1.834; n = 16), and GS in sarcopenic/frail older adults. By contr",
       "claim_role": "effect",
-      "endpoint": "lean body mass",
+      "endpoint": "physical function",
       "arm": "whey protein",
       "direction": "increase",
       "binding_confidence": "high"
@@ -189,7 +189,7 @@
       "sentence": "By contrast, co-supplementation with vitamin D enhanced LM gains (SMD =0.993; 95% CI: 0.112, 1.874; n = 11), muscle strength (SMD =2.005; 95% CI: 0.975, 3.035; n = 11), and physical function (SMD = 3.038; 95% CI: 2.196, 3.879; n = 18) significantly.",
       "context_window": "n = 11), muscle strength (SMD =2.005; 95% CI: 0.975, 3.035; n = 11), and physical function (SMD = 3.038; 95% CI: 2.196, 3.879;",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -208,7 +208,7 @@
       "sentence": "By contrast, co-supplementation with vitamin D enhanced LM gains (SMD =0.993; 95% CI: 0.112, 1.874; n = 11), muscle strength (SMD =2.005; 95% CI: 0.975, 3.035; n = 11), and physical function (SMD = 3.038; 95% CI: 2.196, 3.879; n = 18) significantly.",
       "context_window": "0.975, 3.035; n = 11), and physical function (SMD = 3.038; 95% CI: 2.196, 3.879; n = 18) significantly. Muscle strength and physical functi",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -226,7 +226,7 @@
       "sentence": "By contrast, co-supplementation with vitamin D enhanced LM gains (SMD =0.993; 95% CI: 0.112, 1.874; n = 11), muscle strength (SMD =2.005; 95% CI: 0.975, 3.035; n = 11), and physical function (SMD = 3.038; 95% CI: 2.196, 3.879; n = 18) significantly.",
       "context_window": ", and physical function (SMD = 3.038; 95% CI: 2.196, 3.879; n = 18) significantly. Muscle strength and physical function impro",
       "claim_role": "effect",
-      "endpoint": "muscle strength",
+      "endpoint": "physical function",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -820,10 +820,10 @@
       "sentence": "Longer duration (>12 weeks) whey protein supplementation significantly improved physical function, particularly GS, but the addition of RE superseded the effects of the protein supplementation and supplementation provided no further benefit.",
       "context_window": "es of whey (>20 g) when combined with RE. Longer duration (>12 weeks) whey protein supplementation significantly improved physic",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "physical function",
       "arm": "whey protein",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10334153_whey_protein_supplementation_with_or_without_vitamin_d_on_sa-u-8661",

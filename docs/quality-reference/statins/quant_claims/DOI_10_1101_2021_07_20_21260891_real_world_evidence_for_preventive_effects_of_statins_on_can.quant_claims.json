@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1101_2021_07_20_21260891_real_world_evidence_for_preventive_effects_of_statins_on_can",
+  "doi": "10.1101/2021.07.20.21260891",
+  "extracted_at": "2026-05-07T19:24:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2021_07_20_21260891_real_world_evidence_for_preventive_effects_of_statins_on_can-pct-2318",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2318,
+      "sentence": "Based on this real-world evidence (RWE), we found that atorvastatin, fluvastatin, lovastatin, pravastatin, rosuvastatin and simvastatin were associated with a 50% reduced overall risk for developing cancer (OR 0.5, CI 0.48-0.51).",
+      "context_window": "statin, rosuvastatin and simvastatin were associated with a 50% reduced overall risk for developing cancer (OR 0.5, CI 0.48",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "atorvastatin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2021_07_20_21260891_real_world_evidence_for_preventive_effects_of_statins_on_can-pct-2853",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2853,
+      "sentence": "Additionally, we note that those patients taking statins have a 38% decreased risk of death (HR 0.64, 0.48-0.86).",
+      "context_window": "tionally, we note that those patients taking statins have a 38% decreased risk of death (HR 0.64, 0.48-0.86). Conclusions O",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "pitavastatin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    }
+  ]
+}

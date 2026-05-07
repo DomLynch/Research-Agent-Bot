@@ -1,0 +1,66 @@
+{
+  "paper_id": "HIT_effect_of_dietary_supplements_with_fish_oil_on_mannitol_indu",
+  "doi": "",
+  "extracted_at": "2026-05-07T19:33:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_dietary_supplements_with_fish_oil_on_mannitol_indu-u-38",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 38,
+      "sentence": "We wish to investigate the effects of 3 weeks of orally administered fish oil supplements on the airway sensitivity (provoking dose to cause a 15% fall in FEV1, PD15) to inhaled mannitol (AridolTM).",
+      "context_window": "We wish to investigate the effects of 3 weeks of orally administered fish oil supplements on the airway s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_dietary_supplements_with_fish_oil_on_mannitol_indu-pct-143",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 143,
+      "sentence": "We wish to investigate the effects of 3 weeks of orally administered fish oil supplements on the airway sensitivity (provoking dose to cause a 15% fall in FEV1, PD15) to inhaled mannitol (AridolTM).",
+      "context_window": "ements on the airway sensitivity (provoking dose to cause a 15% fall in FEV1, PD15) to inhaled mannitol (AridolTM). Mannito",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_dietary_supplements_with_fish_oil_on_mannitol_indu-u-683",
+      "claim_type": "unit_value",
+      "raw_text": "3 week",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 683,
+      "sentence": "Oral fish oil supplements have recently been demonstrated to be effective inhibitors of exercise-induced asthma, in association with an inhibition of markers of inflammation, over a 3 week treatment period.",
+      "context_window": "ation with an inhibition of markers of inflammation, over a 3 week treatment period. This finding has important implications i",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "fish oil",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

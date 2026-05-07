@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8070587_the_ability_of_exercise_to_mitigate_caloric_restriction_indu",
   "doi": "10.3390/nu13041250",
-  "extracted_at": "2026-05-05T22:17:49+00:00",
+  "extracted_at": "2026-05-07T16:58:01+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 17,
@@ -24,7 +24,7 @@
       "context_window": "in total hip aBMD (~0.010-0.015 g/cm 2 and conferring a 10-15% increase in fracture risk) [ 24 , 35 ]. Results from the Lo",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "caloric restriction",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "re incidence in overweight and obese adults, confirm that 6-9% WL achieved and maintained over nearly a decade increases f",
       "claim_role": "background",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -60,7 +60,7 @@
       "context_window": "ned over nearly a decade increases frailty fracture risk by 39% [ 31 ], with concomitant loss in aBMD [ 27 , 28 ]. Of addit",
       "claim_role": "background",
       "endpoint": "frailty",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -96,9 +96,9 @@
       "context_window": "Two RCTs, published nearly 25 years apart and lasting three to four months in duration, examine",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8070587_the_ability_of_exercise_to_mitigate_caloric_restriction_indu-msd-272",
@@ -115,9 +115,9 @@
       "context_window": "ished by Svendsen et al. in 1993 and reported on 121 older (53.8 \u00b1 2.5 years) women randomized to control (maintenance of normal l",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8070587_the_ability_of_exercise_to_mitigate_caloric_restriction_indu-u-279",
@@ -133,9 +133,9 @@
       "context_window": "y Svendsen et al. in 1993 and reported on 121 older (53.8 \u00b1 2.5 years) women randomized to control (maintenance of normal lifesty",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8070587_the_ability_of_exercise_to_mitigate_caloric_restriction_indu-n-352",
@@ -151,9 +151,9 @@
       "context_window": "men randomized to control (maintenance of normal lifestyle; n = 21), CR-alone (targeting ~1000 kcals/day; n = 51), and CR-plus",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8070587_the_ability_of_exercise_to_mitigate_caloric_restriction_indu-n-398",
@@ -169,9 +169,9 @@
       "context_window": "al lifestyle; n = 21), CR-alone (targeting ~1000 kcals/day; n = 51), and CR-plus-exercise ( n = 49) conditions [ 61 ]. Exercis",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8070587_the_ability_of_exercise_to_mitigate_caloric_restriction_indu-n-430",
@@ -187,9 +187,9 @@
       "context_window": "(targeting ~1000 kcals/day; n = 51), and CR-plus-exercise ( n = 49) conditions [ 61 ]. Exercise was supervised, with sessions",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8070587_the_ability_of_exercise_to_mitigate_caloric_restriction_indu-pct-722",
@@ -241,7 +241,7 @@
       "context_window": "pleting CR alone and CR plus exercise achieved similar WL (-12.2% and -13.2%, respectively), which was significantly greater",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -259,7 +259,7 @@
       "context_window": "alone and CR plus exercise achieved similar WL (-12.2% and -13.2%, respectively), which was significantly greater than that o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -277,7 +277,7 @@
       "context_window": "was significantly greater than that of the control group (+0.7%). Comparable declines in total body aBMD were observed in t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -295,7 +295,7 @@
       "context_window": "re observed in the CR-only and CR-plus-exercise arms (both -1.9%), which slightly (though not significantly) exceeded that o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -313,7 +313,7 @@
       "context_window": "ugh not significantly) exceeded that of the control group (-1.2%). Lumbar spine aBMD, however, significantly decreased in CR",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "cr",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -331,7 +331,7 @@
       "context_window": "BMD, however, significantly decreased in CR-plus-exercise (-2.4%) versus CR-alone and control conditions (-1.6% and -0.4%, r",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -349,7 +349,7 @@
       "context_window": "s-exercise (-2.4%) versus CR-alone and control conditions (-1.6% and -0.4%, respectively). More recently, Weiss et al. rand",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -367,7 +367,7 @@
       "context_window": "(-2.4%) versus CR-alone and control conditions (-1.6% and -0.4%, respectively). More recently, Weiss et al. randomized 52",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -386,7 +386,7 @@
       "context_window": "). More recently, Weiss et al. randomized 52 older adults (57 \u00b1 5 years, 75% women) to a four-month trial consisting of CR al",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -404,7 +404,7 @@
       "context_window": "ore recently, Weiss et al. randomized 52 older adults (57 \u00b1 5 years, 75% women) to a four-month trial consisting of CR alone (2",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -422,7 +422,7 @@
       "context_window": "tly, Weiss et al. randomized 52 older adults (57 \u00b1 5 years, 75% women) to a four-month trial consisting of CR alone (20% en",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -440,7 +440,7 @@
       "context_window": "s, 75% women) to a four-month trial consisting of CR alone (20% energy deficit for 12-14 weeks; n = 17), AT (~60 min of mod",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -458,7 +458,7 @@
       "context_window": "nth trial consisting of CR alone (20% energy deficit for 12-14 weeks; n = 17), AT (~60 min of moderate to vigorous AT per day; n",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -476,7 +476,7 @@
       "context_window": "consisting of CR alone (20% energy deficit for 12-14 weeks; n = 17), AT (~60 min of moderate to vigorous AT per day; n = 16),",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -494,7 +494,7 @@
       "context_window": "s; n = 17), AT (~60 min of moderate to vigorous AT per day; n = 16), or CR plus AT ( n = 19) [ 66 ]. Of note, and in contrast",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -512,7 +512,7 @@
       "context_window": "f moderate to vigorous AT per day; n = 16), or CR plus AT ( n = 19) [ 66 ]. Of note, and in contrast to all other included tri",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "cr",
       "direction": "increase",
       "binding_confidence": "partial"
     },

@@ -1,10 +1,11 @@
 {
   "paper_id": "PMC5852756_recent_perspectives_regarding_the_role_of_dietary_protein_fo",
   "doi": "10.3390/nu10020180",
-  "extracted_at": "2026-05-05T21:59:20+00:00",
+  "extracted_at": "2026-05-07T16:57:35+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
-    "percentage": 2
+    "percentage": 2,
+    "unit_value": 2
   },
   "claims": [
     {
@@ -21,7 +22,7 @@
       "context_window": "ute bout of resistance exercise stimulates MPS by more than 100% above basal levels [ 5 ]; however, NPB remains negative due",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "exercise",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -41,6 +42,42 @@
       "endpoint": "protein synthesis",
       "arm": "",
       "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5852756_recent_perspectives_regarding_the_role_of_dietary_protein_fo-u-1471",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 g/kg/day",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 1471,
+      "sentence": "In a large meta-analysis, protein intake was shown to promote additional gains in lean body mass beyond those observed with resistance exercise alone; however, beyond a daily intake of 1.6 g/kg body mass per day (up to as high as 2.2 g/kg/day), the additional effects of protein are greatly diminished.",
+      "context_window": "aily intake of 1.6 g/kg body mass per day (up to as high as 2.2 g/kg/day), the additional effects of protein are greatly diminished.",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "exercise",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC5852756_recent_perspectives_regarding_the_role_of_dietary_protein_fo-u-2895",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 g/kg/day",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "g/kg/day",
+      "source_section": "conclusion",
+      "source_offset": 2895,
+      "sentence": "To effectively prevent these declines in MPS during both postabsorptive and postprandial periods, daily protein intake have been recommended to be increased to ~2.3-3.1 g/kg/day, and leaner athletes may wish to aim for intakes at the higher end of this range.",
+      "context_window": "rotein intake have been recommended to be increased to ~2.3-3.1 g/kg/day, and leaner athletes may wish to aim for intakes at the hig",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
       "binding_confidence": "partial"
     }
   ]

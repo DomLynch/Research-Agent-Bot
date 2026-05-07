@@ -1,0 +1,86 @@
+{
+  "paper_id": "DOI_10_1111_jwas_12041_variation_in_rainbow_trout_oncorhynchus_mykiss_to_biosynthes",
+  "doi": "10.1111/jwas.12041",
+  "extracted_at": "2026-05-07T19:32:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_jwas_12041_variation_in_rainbow_trout_oncorhynchus_mykiss_to_biosynthes-pct-898",
+      "claim_type": "percentage",
+      "raw_text": "2.9%",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 898,
+      "sentence": "The range for <jats:styled-content style=\"fixed-case\">EPA</jats:styled-content> and <jats:styled-content style=\"fixed-case\">DHA</jats:styled-content> detected in the tissues of different families varied between 1.2 and 2.9%, and 3.8 and 7.1% total fatty acid, respectively.",
+      "context_window": "in the tissues of different families varied between 1.2 and 2.9%, and 3.8 and 7.1% total fatty acid, respectively. After adj",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jwas_12041_variation_in_rainbow_trout_oncorhynchus_mykiss_to_biosynthes-pct-916",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 916,
+      "sentence": "The range for <jats:styled-content style=\"fixed-case\">EPA</jats:styled-content> and <jats:styled-content style=\"fixed-case\">DHA</jats:styled-content> detected in the tissues of different families varied between 1.2 and 2.9%, and 3.8 and 7.1% total fatty acid, respectively.",
+      "context_window": "different families varied between 1.2 and 2.9%, and 3.8 and 7.1% total fatty acid, respectively. After adjusting for covaria",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "epa",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jwas_12041_variation_in_rainbow_trout_oncorhynchus_mykiss_to_biosynthes-msd-1013",
+      "claim_type": "mean_sd",
+      "raw_text": "0.78 \u00b1 0.11",
+      "numeric_values": [
+        0.78,
+        0.11
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1013,
+      "sentence": "After adjusting for covariates, an averaged heritability of 0.78 \u00b1 0.11 for <jats:styled-content style=\"fixed-case\">DHA</jats:styled-content> and 0.61 \u00b1 0.17 for <jats:styled-content style=\"fixed-case\">EPA</jats:styled-content> was calculated.",
+      "context_window": "After adjusting for covariates, an averaged heritability of 0.78 \u00b1 0.11 for <jats:styled-content style=\"fixed-case\">DHA</jats:style",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_jwas_12041_variation_in_rainbow_trout_oncorhynchus_mykiss_to_biosynthes-msd-1099",
+      "claim_type": "mean_sd",
+      "raw_text": "0.61 \u00b1 0.17",
+      "numeric_values": [
+        0.61,
+        0.17
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1099,
+      "sentence": "After adjusting for covariates, an averaged heritability of 0.78 \u00b1 0.11 for <jats:styled-content style=\"fixed-case\">DHA</jats:styled-content> and 0.61 \u00b1 0.17 for <jats:styled-content style=\"fixed-case\">EPA</jats:styled-content> was calculated.",
+      "context_window": "ed-content style=\"fixed-case\">DHA</jats:styled-content> and 0.61 \u00b1 0.17 for <jats:styled-content style=\"fixed-case\">EPA</jats:style",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "dha",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

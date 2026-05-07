@@ -224,6 +224,69 @@ def test_apply_fixes_strips_role_repair_artifact_sentence() -> None:
     )
 
 
+def test_apply_fixes_strips_public_pipeline_meta_comment() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Methods\n\n"
+        "Explicit-absence audit-trail block — earlier drafts inherited "
+        "Methods boilerplate describing pipeline stages that were not "
+        "actually executed.\n\n"
+        "The deterministic Methods section remains.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "Explicit-absence audit-trail block" not in out
+    assert "The deterministic Methods section remains." in out
+    assert any(
+        item["fix_type"] == "public_pipeline_meta_strip"
+        for item in log
+    )
+
+
+def test_apply_fixes_strips_unreferenced_et_al_parenthetical() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Introduction\n\n"
+        "The hallmarks framework is often invoked "
+        "(López-Otín et al. 2013), but this paper does not cite it.\n\n"
+        "## References\n\n"
+        "- **Smith 2024.** _Clean source._ Journal, 2024.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [], manifest=_empty_manifest())
+    assert "López-Otín et al. 2013" not in out
+    assert "The hallmarks framework is often invoked" in out
+    assert any(
+        item["fix_type"] == "unreferenced_parenthetical_citation_strip"
+        for item in log
+    )
+
+
+def test_apply_fixes_keeps_manifest_referenced_et_al_parenthetical() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    manifest = {
+        **_empty_manifest(),
+        "receipts": [{"citation_token": "López-Otín 2013"}],
+    }
+    paper = (
+        "## Introduction\n\n"
+        "The hallmarks framework is cited (López-Otín et al. 2013).\n"
+    )
+    out, log = fixer.apply_fixes(paper, [], manifest=manifest)
+    assert "López-Otín et al. 2013" in out
+    assert not any(
+        item["fix_type"] == "unreferenced_parenthetical_citation_strip"
+        for item in log
+    )
+
+
 def test_apply_fixes_backfills_low_discussion_hedge_density() -> None:
     import sys as _sys
     from pathlib import Path as _Path
