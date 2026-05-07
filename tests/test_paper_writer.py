@@ -165,7 +165,7 @@ def test_build_user_prompt_caller_filter_treats_accept_caveated_as_accepted() ->
 def test_section_word_floors_protect_analytical_depth() -> None:
     """Fix #45 (post Fix #27 review): the two intellectual-core
     sections — Discussion and Cross-Domain Synthesis — must have
-    floors ≥800 so the writer cannot land at 310 / 525 words
+    floors at or above downstream audit/surface gates so the writer cannot land at 310 / 525 words
     (the grok-smart paper's desk-reject regression). Lean
     Introduction/Background floors stay (Fix #27 was right for
     those — they're not analytical sections)."""
@@ -175,7 +175,7 @@ def test_section_word_floors_protect_analytical_depth() -> None:
     assert SECTION_WORD_FLOORS["background"] <= 800
     assert SECTION_WORD_FLOORS["results"] <= 1700
     # Analytical-core floors RESTORED after Fix #27 over-compression
-    assert SECTION_WORD_FLOORS["cross_domain_synthesis"] >= 800
+    assert SECTION_WORD_FLOORS["cross_domain_synthesis"] >= 850
     assert SECTION_WORD_FLOORS["discussion"] >= 900
     assert SECTION_WORD_FLOORS["limitations_full"] <= 500
     assert SECTION_WORD_FLOORS["conclusion"] <= 300

@@ -58,7 +58,7 @@ SECTION_WORD_FLOORS: Mapping[str, int] = {
     # Discussion and 525-word Cross-Domain in the grok-smart run
     # were desk-reject territory). Q11 + Q12 audit gates enforce
     # 800-word floors at the audit layer too.
-    "cross_domain_synthesis": 800,   # was 500 (Fix #27) → restored
+    "cross_domain_synthesis": 850,   # Q12 + journal-surface margin
     "discussion": 900,          # was 1100 → 900 (matches Q11 floor)
     "limitations_full": 450,    # was 600
     "conclusion": 250,          # was 300

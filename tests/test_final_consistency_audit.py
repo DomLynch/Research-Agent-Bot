@@ -934,7 +934,7 @@ def test_apply_fixes_depth_backfill_reaches_floor_after_large_strip() -> None:
         + "Discussion safe sentence. " * 70
     )
     fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
-    assert fixer._section_word_count(fixed, "Cross-Domain Synthesis") >= 800
+    assert fixer._section_word_count(fixed, "Cross-Domain Synthesis") >= 850
     assert fixer._section_word_count(fixed, "Discussion") >= 800
     depth = [e for e in log if e["fix_type"] == "analytical_depth_backfill"]
     assert len(depth) == 2

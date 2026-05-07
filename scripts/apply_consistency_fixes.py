@@ -1209,7 +1209,7 @@ def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
             _RESULTS_BACKFILL,
         ),
         (
-            "Cross-Domain Synthesis", 800,
+            "Cross-Domain Synthesis", 850,
             _CROSS_DOMAIN_BACKFILL,
         ),
         (
@@ -1235,7 +1235,7 @@ def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
         paper_md = paper_md[:s] + updated + paper_md[e:]
         new_count = _section_word_count(paper_md, heading)
         n_blocks = 1
-        while new_count < floor and n_blocks < 6:
+        while new_count < floor and n_blocks < 8:
             s, e, section = _extract_section(paper_md, heading)
             if s < 0:
                 break

@@ -32,15 +32,13 @@ from agent.synthesis_schemas import (
 )
 
 
-# Audit-gated section floors. Map: section name → minimum words to
-# clear the corresponding Q-audit check. Discussion + Cross-Domain
-# Synthesis are gated by Q11 / Q12 at 800 words. Conclusion has an
-# informal floor (no Q-gate but the writer's SECTION_WORD_FLOORS
-# uses 250).
+# Audit/public-surface section floors. Map: section name → minimum words to
+# clear the strictest downstream gate. Cross-Domain is 850 because the
+# journal-surface gate is stricter than Q12's 800-word audit floor.
 AUDIT_GATED_FLOORS: Mapping[str, int] = {
-    "cross_domain_synthesis": 800,  # Q12 audit floor
+    "cross_domain_synthesis": 850,
     "discussion": 800,               # Q11 audit floor
-    "conclusion": 200,               # informal floor
+    "conclusion": 250,
 }
 
 
