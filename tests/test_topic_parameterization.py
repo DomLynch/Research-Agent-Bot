@@ -238,6 +238,24 @@ def test_ratio_below_one_on_adverse_endpoint_is_beneficial() -> None:
     assert orch._claim_topic_effect(claim) == 1
 
 
+def test_no_benefit_title_guards_positive_effect_direction() -> None:
+    title = (
+        "Creatine Loading Does Not Preserve Muscle Mass or Strength "
+        "During Leg Immobilization in Healthy, Young Males: "
+        "A Randomized Controlled Trial"
+    )
+    assert orch._title_guarded_effect_direction(title, "positive") == "null"
+    assert orch._title_guarded_effect_direction(title, "negative") == "negative"
+
+
+def test_title_direction_guard_preserves_positive_when_no_null_cue() -> None:
+    title = (
+        "Creatine supplementation improves muscle strength in older "
+        "adults: a randomized controlled trial"
+    )
+    assert orch._title_guarded_effect_direction(title, "positive") == "positive"
+
+
 def test_topic_pack_endpoint_polarity_drives_effect_sign() -> None:
     """Topic-pack endpoint polarity must drive non-metformin topics
     without adding scripts/vocab/<topic>.py or Python topic tables."""

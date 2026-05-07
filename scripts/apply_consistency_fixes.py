@@ -59,6 +59,14 @@ _PIPELINE_META_LINE_RE = re.compile(
     r"(?m)^[^\n]*\b(?:Explicit-absence audit-trail block|"
     r"earlier drafts inherited Methods boilerplate)\b[^\n]*(?:\n|$)"
 )
+_PUBLIC_PLACEHOLDER_PARAGRAPH_RE = re.compile(
+    r"(?ims)(?:^|\n\n)(?!##\s)"
+    r"(?=[^\n]*\b(?:this\s+synthesis\s+aims\s+to\s+contribute\s+to\s+"
+    r"the\s+field\s+by|this\s+paper\s+evaluates\s+the\s+topic\s+"
+    r"through\s+accepted\s+receipts|the\s+evidence\s+base\s+is\s+"
+    r"limited\s+to\s+accepted\s+receipts)\b)"
+    r"[^\n]*(?:\n\n|$)"
+)
 _ET_AL_PAREN_CITE_RE = re.compile(
     r"\(([A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+)\s+et\s+al\.\s+"
     r"((?:19|20)\d{2})\)"
@@ -243,6 +251,14 @@ def _strip_public_pipeline_meta(paper_md: str) -> tuple[str, int]:
         return paper_md, 0
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned, n
+
+
+def _strip_public_placeholder_paragraphs(paper_md: str) -> tuple[str, int]:
+    cleaned, n = _PUBLIC_PLACEHOLDER_PARAGRAPH_RE.subn("\n\n", paper_md)
+    if not n:
+        return paper_md, 0
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned.strip() + "\n", n
 
 
 def _citation_key(author: str, year: str) -> str:
@@ -482,6 +498,17 @@ def apply_fixes(
             "description": (
                 "stripped public-facing pipeline meta-comments left by "
                 "section repair or absence-audit scaffolding"
+            ),
+        })
+
+    new_md, n_placeholder = _strip_public_placeholder_paragraphs(new_md)
+    if n_placeholder:
+        log.append({
+            "fix_type": "public_placeholder_paragraph_strip",
+            "n_changes": n_placeholder,
+            "description": (
+                "stripped public placeholder prose paragraphs before "
+                "journal surface review"
             ),
         })
 
@@ -1012,6 +1039,17 @@ def apply_fixes(
             "description": (
                 "re-stripped public-facing pipeline meta-comments after "
                 "depth-preservation restore reintroduced them"
+            ),
+        })
+
+    new_md, n_placeholder = _strip_public_placeholder_paragraphs(new_md)
+    if n_placeholder:
+        log.append({
+            "fix_type": "public_placeholder_paragraph_restrip_post_depth",
+            "n_changes": n_placeholder,
+            "description": (
+                "re-stripped public placeholder prose after section "
+                "restoration"
             ),
         })
 

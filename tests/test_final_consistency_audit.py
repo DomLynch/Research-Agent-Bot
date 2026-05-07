@@ -268,6 +268,28 @@ def test_apply_fixes_normalizes_public_p_value_display() -> None:
     )
 
 
+def test_apply_fixes_strips_public_placeholder_paragraph() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Introduction\n\n"
+        "Real thesis-bearing introduction remains visible.\n\n"
+        "This synthesis aims to contribute to the field by systematically "
+        "evaluating accepted receipts across outcome domains.\n\n"
+        "Another real paragraph remains.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "This synthesis aims to contribute" not in out
+    assert "Real thesis-bearing introduction remains" in out
+    assert "Another real paragraph remains" in out
+    assert any(
+        item["fix_type"] == "public_placeholder_paragraph_strip"
+        for item in log
+    )
+
+
 def test_apply_fixes_strips_unreferenced_et_al_parenthetical() -> None:
     import sys as _sys
     from pathlib import Path as _Path
@@ -1139,6 +1161,7 @@ def test_apply_fixes_repairs_role_drift_before_strip(tmp_path) -> None:
     assert "Baseline gait speed" not in fixed
     assert "change of 0.13 m/s" in fixed
     assert "Witham 2025" in fixed
+    assert "according to that source role" not in fixed
     assert [e for e in log if e["fix_type"] == "numeric_role_guard_repair"]
     assert not [e for e in log if e["fix_type"] == "numeric_role_guard_strip"]
 

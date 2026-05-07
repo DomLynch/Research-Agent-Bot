@@ -249,15 +249,15 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
     direction = (claim.get("direction") or "").strip().lower()
     units = (claim.get("units") or "").strip().lower()
     raw = (claim.get("raw_text") or "").strip().lower()
-    context = " ".join((
-        str(claim.get("sentence") or ""),
-        str(claim.get("context_window") or ""),
-    )).lower()
+    sent = str(claim.get("sentence") or "")
+    context = f"{sent} {claim.get('context_window') or ''}".lower()
     if claim_type == "percentage" and raw == "95%" and "95% ci" in context:
         return False
     if claim_type == "p_value" and _ambiguous_multi_stat_binding(
         raw, endpoint, str(claim.get("sentence") or ""),
     ):
+        return False
+    if claim_type == "sample_size" and role != "population":
         return False
     if (
         claim_type in _RATIO_CLAIM_TYPES

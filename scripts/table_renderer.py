@@ -253,7 +253,7 @@ def _interpretation(direction: str, outcome: str, stat: str = "") -> str:
     Templated to keep the renderer pure-deterministic — no LLM. The
     output reads naturally so a reader can scan the column without
     needing a glossary."""
-    if stat and stat != "—" and direction in {"null", "unclear"}:
+    if stat and stat != "—":
         return f"reported statistic; receipt summary remains {direction}"
     if direction == "positive":
         return f"improves {outcome}"
@@ -267,7 +267,7 @@ def _interpretation(direction: str, outcome: str, stat: str = "") -> str:
 
 
 def _display_direction(direction: str, stat: str = "") -> str:
-    if stat and stat != "—" and direction in {"null", "unclear"}:
+    if stat and stat != "—":
         return f"{direction} summary"
     return direction
 

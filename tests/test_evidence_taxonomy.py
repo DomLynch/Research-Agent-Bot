@@ -136,6 +136,21 @@ def test_infer_human_rct_from_title_keywords() -> None:
     assert cls.tier == "A1"
 
 
+def test_infer_human_rct_from_young_males_title() -> None:
+    """Human-sex terms in titles must count as human markers."""
+    meta = {
+        "title": (
+            "Creatine Loading Does Not Preserve Muscle Mass or Strength "
+            "During Leg Immobilization in Healthy, Young Males: "
+            "A Randomized Controlled Trial"
+        ),
+        "abstract": "",
+    }
+    cls = et.infer_from_paper_meta(meta)
+    assert cls.tier == "A1"
+    assert cls.directness == "direct"
+
+
 def test_infer_observational_cohort_from_title() -> None:
     """'Cohort study' / 'registry-based' titles → B2 (NOT mechanistic
     even though receipt_id may start with PMC). This is THE bug Fix #4

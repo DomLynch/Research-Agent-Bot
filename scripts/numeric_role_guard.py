@@ -1123,14 +1123,11 @@ def _role_aligned_repair_sentence(issue: NumericIssue) -> str:
         "dose": f"a dose of {display_num}",
         "baseline": f"a baseline value of {display_num}",
         "population": f"a population descriptor of {display_num}",
-        "effect": f"an effect value of {display_num}",
-        "outcome": f"an outcome value of {display_num}",
-        "unit_value": f"an outcome value of {display_num}",
-    }.get(source_role, f"an outcome value of {display_num}")
-    return (
-        f"{token} reported {role_phrase}; this manuscript treats "
-        "the value according to that source role."
-    )
+        "effect": f"an effect estimate of {display_num}",
+        "outcome": f"an outcome measure of {display_num}",
+        "unit_value": f"an outcome measure of {display_num}",
+    }.get(source_role, f"an outcome measure of {display_num}")
+    return f"{token} reported {role_phrase}."
 
 
 def _preferred_repair_role(roles: set[str]) -> str:

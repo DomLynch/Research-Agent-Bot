@@ -283,7 +283,7 @@ _TITLE_ANIMAL_RE = re.compile(
 # not species markers. Mouse models of diabetes / frailty exist.
 _TITLE_HUMAN_RE = re.compile(
     r"\b(human|patients|adults|older adults|men|women|elderly|"
-    r"participants|subjects)\b",
+    r"males|females|participants|subjects)\b",
     re.IGNORECASE,
 )
 _TITLE_MORTALITY_RE = re.compile(

@@ -202,6 +202,37 @@ def test_claim_to_row_drops_dose_unit_bound_to_outcome_endpoint():
     assert row is None
 
 
+def test_claim_to_row_drops_sample_size_bound_to_outcome_endpoint():
+    row = _claim_to_row(
+        {
+            "claim_type": "sample_size",
+            "raw_text": "n = 30",
+            "numeric_values": [30],
+            "endpoint": "body mass index",
+            "claim_role": "effect",
+            "binding_confidence": "high",
+        },
+        paper_id="x",
+    )
+    assert row is None
+
+
+def test_claim_to_row_keeps_sample_size_endpoint():
+    row = _claim_to_row(
+        {
+            "claim_type": "sample_size",
+            "raw_text": "n = 30",
+            "numeric_values": [30],
+            "endpoint": "sample size",
+            "claim_role": "population",
+            "binding_confidence": "high",
+        },
+        paper_id="x",
+    )
+    assert row is not None
+    assert row.value == "n = 30"
+
+
 def test_claim_to_row_drops_partial_ratio_without_direction():
     row = _claim_to_row(
         {
@@ -243,13 +274,14 @@ def test_claim_to_row_assembles_full_row():
         "raw_text": "n=19,114",
         "numeric_values": [19114],
         "binding_confidence": "high",
-        "endpoint": "frailty status",
+        "endpoint": "sample size",
         "arm": "aspirin",
+        "claim_role": "population",
     }
     row = _claim_to_row(claim, paper_id="PMC12345_aspirin_2025_paper")
     assert row is not None
     assert "2025" in row.study_label
-    assert "frailty" in row.endpoint
+    assert "sample size" in row.endpoint
     assert row.arm == "aspirin"
 
 
@@ -325,8 +357,9 @@ def test_build_results_table_renders_rows(tmp_path):
     md = build_results_table(claims_dir, topic="aspirin")
     assert "Quantitative Evidence Index — aspirin" in md
     assert "| Study | Endpoint | Arm | Value | Type | Statistic |" in md
-    # All 3 rows should appear (different endpoints, different types)
-    assert "19,114" in md or "n=19,114" in md
+    # Endpoint-bound sample-size rows are quarantined from public QEI;
+    # ratio and p-value rows still render.
+    assert "19,114" not in md and "n=19,114" not in md
     assert "HR" in md or "1.01" in md
 
 

@@ -997,6 +997,21 @@ def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
     }
 
 
+_TITLE_NO_BENEFIT_RE = re.compile(
+    r"\b(?:does\s+not|did\s+not|fails?\s+to|failed\s+to|"
+    r"no\s+(?:significant\s+)?(?:effect|benefit|improvement))\b"
+    r".{0,80}\b(?:preserve|improve|augment|increase|enhance|benefit|"
+    r"effect|mass|strength|function)",
+    re.IGNORECASE,
+)
+
+
+def _title_guarded_effect_direction(title: str, current: str) -> str:
+    if current == "positive" and _TITLE_NO_BENEFIT_RE.search(title or ""):
+        return "null"
+    return current
+
+
 def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tuple[str, str]:
     """Return (evidence_tier, directness) — Fix #4: deterministic
     classification from structured metadata via evidence_taxonomy.
@@ -1215,7 +1230,9 @@ def build_receipts_from_quant_claims(
             evidence_tier=tier,
             directness=directness,
             outcome_class=agg["outcome_class"],
-            effect_direction=agg["effect_direction"],
+            effect_direction=_title_guarded_effect_direction(
+                meta.get("title") or "", agg["effect_direction"],
+            ),
             p_values=tuple(agg["p_values"][:6]),
             population_summary=_build_population_summary(meta, agg["sample_sizes"]),
             source_title=meta.get("title"),
