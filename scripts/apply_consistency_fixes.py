@@ -63,6 +63,9 @@ _ET_AL_PAREN_CITE_RE = re.compile(
     r"\(([A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+)\s+et\s+al\.\s+"
     r"((?:19|20)\d{2})\)"
 )
+_PVALUE_DISPLAY_RE = re.compile(
+    r"\b[Pp]\s*([<>=])\s*(0?\.\d+|\.\d+|\d+(?:\.\d+)?)"
+)
 
 
 _DEPTH_PROTECTED_SECTIONS = {
@@ -221,6 +224,17 @@ def _strip_role_repair_artifacts(paper_md: str) -> tuple[str, int]:
         return paper_md, 0
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned, total
+
+
+def _normalize_public_p_values(paper_md: str) -> tuple[str, int]:
+    def repl(match: re.Match[str]) -> str:
+        op = match.group(1)
+        value = match.group(2)
+        if value.startswith("."):
+            value = f"0{value}"
+        return f"P {op} {value}"
+
+    return _PVALUE_DISPLAY_RE.subn(repl, paper_md)
 
 
 def _strip_public_pipeline_meta(paper_md: str) -> tuple[str, int]:
@@ -468,6 +482,17 @@ def apply_fixes(
             "description": (
                 "stripped public-facing pipeline meta-comments left by "
                 "section repair or absence-audit scaffolding"
+            ),
+        })
+
+    new_md, n_pvalue_norm = _normalize_public_p_values(new_md)
+    if n_pvalue_norm:
+        log.append({
+            "fix_type": "public_p_value_normalization",
+            "n_changes": n_pvalue_norm,
+            "description": (
+                "normalized public p-value spacing/casing before "
+                "final-layer review"
             ),
         })
 
@@ -987,6 +1012,17 @@ def apply_fixes(
             "description": (
                 "re-stripped public-facing pipeline meta-comments after "
                 "depth-preservation restore reintroduced them"
+            ),
+        })
+
+    new_md, n_pvalue_norm = _normalize_public_p_values(new_md)
+    if n_pvalue_norm:
+        log.append({
+            "fix_type": "public_p_value_renormalization_post_depth",
+            "n_changes": n_pvalue_norm,
+            "description": (
+                "re-normalized public p-value spacing/casing after "
+                "section restoration"
             ),
         })
 

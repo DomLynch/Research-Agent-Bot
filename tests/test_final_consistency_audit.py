@@ -245,6 +245,29 @@ def test_apply_fixes_strips_public_pipeline_meta_comment() -> None:
     )
 
 
+def test_apply_fixes_normalizes_public_p_value_display() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Results\n\n"
+        "| Study | Value |\n"
+        "| --- | --- |\n"
+        "| A | P >0.05 |\n"
+        "| B | p<.001 |\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "P > 0.05" in out
+    assert "P < 0.001" in out
+    assert "P >0.05" not in out
+    assert "p<.001" not in out
+    assert any(
+        item["fix_type"] == "public_p_value_normalization"
+        for item in log
+    )
+
+
 def test_apply_fixes_strips_unreferenced_et_al_parenthetical() -> None:
     import sys as _sys
     from pathlib import Path as _Path
@@ -862,7 +885,7 @@ def test_apply_fixes_does_not_insert_hedge_inside_p_value() -> None:
     )
     out, _log = fixer.apply_fixes(paper, [])
     assert "p < 0. Translational" not in out
-    assert "(p < 0.01, p < 0.001)." in out
+    assert "(P < 0.01, P < 0.001)." in out
 
 
 def test_apply_fixes_removes_consecutive_duplicate_paragraphs() -> None:
