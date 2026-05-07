@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a",
   "doi": "10.1186/s12872-022-03013-w",
-  "extracted_at": "2026-05-05T15:32:45+00:00",
+  "extracted_at": "2026-05-07T15:40:40+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 71,
@@ -42,10 +42,10 @@
       "sentence": "The upper confidence limit of the mean change in LDL-c between treatments was below the prespecified margin (10 mg/dL) and above zero, and non-inferiority and superiority of the CNIC-polypill ( p = 0.0001) was reached.",
       "context_window": "LDL-c between treatments was below the prespecified margin (10 mg/dL) and above zero, and non-inferiority and superiority of the",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-p-1062",
@@ -60,10 +60,10 @@
       "sentence": "The upper confidence limit of the mean change in LDL-c between treatments was below the prespecified margin (10 mg/dL) and above zero, and non-inferiority and superiority of the CNIC-polypill ( p = 0.0001) was reached.",
       "context_window": "and non-inferiority and superiority of the CNIC-polypill ( p = 0.0001) was reached. There were no significant differences in SBP",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-1235",
@@ -151,7 +151,7 @@
       "context_window": "ng patients at high risk of CVD is inadequate, with only 28-35% and 28-37% of patients at or below the recommended blood pr",
       "claim_role": "background",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -169,7 +169,7 @@
       "context_window": "at high risk of CVD is inadequate, with only 28-35% and 28-37% of patients at or below the recommended blood pressure (BP)",
       "claim_role": "background",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -187,9 +187,9 @@
       "context_window": "ituto de Salud Carlos III, Madrid) polypill, which contains 100 mg of acetylsalicylic acid, two possible doses of atorvastatin",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-2635",
@@ -205,9 +205,9 @@
       "context_window": "f acetylsalicylic acid, two possible doses of atorvastatin (20 mg or 40 mg), and three possible doses of ramipril (2.5 mg, 5",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-2644",
@@ -223,9 +223,9 @@
       "context_window": "alicylic acid, two possible doses of atorvastatin (20 mg or 40 mg), and three possible doses of ramipril (2.5 mg, 5 mg, or 10",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-2690",
@@ -241,9 +241,9 @@
       "context_window": "tin (20 mg or 40 mg), and three possible doses of ramipril (2.5 mg, 5 mg, or 10 mg), is the only CV polypill currently markete",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-2698",
@@ -259,9 +259,9 @@
       "context_window": "mg or 40 mg), and three possible doses of ramipril (2.5 mg, 5 mg, or 10 mg), is the only CV polypill currently marketed in E",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-2707",
@@ -277,9 +277,9 @@
       "context_window": "mg), and three possible doses of ramipril (2.5 mg, 5 mg, or 10 mg), is the only CV polypill currently marketed in European co",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-3747",
@@ -294,7 +294,7 @@
       "sentence": "The main objective of the present randomised clinical trial was to determine whether the treatment with the CNIC-polypill for 16 weeks was at least non-inferior to usual care (multipill strategy) in terms of LDL-c and SBP values in subjects at high or very high risk without a previous CV event.",
       "context_window": "determine whether the treatment with the CNIC-polypill for 16 weeks was at least non-inferior to usual care (multipill strategy",
       "claim_role": "dose",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -457,9 +457,9 @@
       "context_window": "arm received one of the six available formulations, namely 100 mg of aspirin with either 20 or 40 mg atorvastatin and either",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-3199",
@@ -475,9 +475,9 @@
       "context_window": "le formulations, namely 100 mg of aspirin with either 20 or 40 mg atorvastatin and either 2.5, 5.0, or 10 mg ramipril (Additi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-3242",
@@ -493,9 +493,9 @@
       "context_window": "ith either 20 or 40 mg atorvastatin and either 2.5, 5.0, or 10 mg ramipril (Additional file 1 : Table S1) on a daily regimen",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-4140",
@@ -582,7 +582,7 @@
       "sentence": "In terms of LDL-c, the enrolment of 250 patients (125 per treatment group) provided > 90% power (\u03b1 = 0.025) to detect non-inferiority, defined as an absolute between-group difference of 10 mg/dL (SD = 30 mg/dL).",
       "context_window": "olment of 250 patients (125 per treatment group) provided > 90% power (\u03b1 = 0.025) to detect non-inferiority, defined as an",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "treatment",
       "direction": "",
       "binding_confidence": "partial"
@@ -600,7 +600,7 @@
       "sentence": "In terms of LDL-c, the enrolment of 250 patients (125 per treatment group) provided > 90% power (\u03b1 = 0.025) to detect non-inferiority, defined as an absolute between-group difference of 10 mg/dL (SD = 30 mg/dL).",
       "context_window": "riority, defined as an absolute between-group difference of 10 mg/dL (SD = 30 mg/dL). In terms of SBP, we determined that a recr",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "treatment",
       "direction": "",
       "binding_confidence": "partial"
@@ -618,7 +618,7 @@
       "sentence": "In terms of LDL-c, the enrolment of 250 patients (125 per treatment group) provided > 90% power (\u03b1 = 0.025) to detect non-inferiority, defined as an absolute between-group difference of 10 mg/dL (SD = 30 mg/dL).",
       "context_window": "d as an absolute between-group difference of 10 mg/dL (SD = 30 mg/dL). In terms of SBP, we determined that a recruitment target",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "treatment",
       "direction": "",
       "binding_confidence": "partial"
@@ -744,7 +744,7 @@
       "sentence": "Noninferiority of the CNIC-polypill to usual care could be claimed if the upper 95% CI limit for the difference in LDL-c and SBP after 16-week treatment, calculated in terms of baseline-adjusted means (least-squares mean, LSM), was entirely below the prespecified non-inferiority margin of 10 mg/dL for LDL-c and 3 mmHg for SBP [ 21 , 22 ].",
       "context_window": "e CNIC-polypill to usual care could be claimed if the upper 95% CI limit for the difference in LDL-c and SBP after 16-week",
       "claim_role": "unknown",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -762,7 +762,7 @@
       "sentence": "Noninferiority of the CNIC-polypill to usual care could be claimed if the upper 95% CI limit for the difference in LDL-c and SBP after 16-week treatment, calculated in terms of baseline-adjusted means (least-squares mean, LSM), was entirely below the prespecified non-inferiority margin of 10 mg/dL for LDL-c and 3 mmHg for SBP [ 21 , 22 ].",
       "context_window": "s entirely below the prespecified non-inferiority margin of 10 mg/dL for LDL-c and 3 mmHg for SBP [ 21 , 22 ]. If the 95% CI for",
       "claim_role": "unknown",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -780,7 +780,7 @@
       "sentence": "Noninferiority of the CNIC-polypill to usual care could be claimed if the upper 95% CI limit for the difference in LDL-c and SBP after 16-week treatment, calculated in terms of baseline-adjusted means (least-squares mean, LSM), was entirely below the prespecified non-inferiority margin of 10 mg/dL for LDL-c and 3 mmHg for SBP [ 21 , 22 ].",
       "context_window": "especified non-inferiority margin of 10 mg/dL for LDL-c and 3 mmHg for SBP [ 21 , 22 ]. If the 95% CI for the treatment benefi",
       "claim_role": "unknown",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -870,10 +870,10 @@
       "sentence": "The proportion of patients with adequate LDL-c and BP control, based on target values from the 2016 European Society of Cardiology (ESC) guidelines [ 23 , 24 ], was provided by descriptive statistics and the comparison between treatments at 16 weeks by the exact Fisher test.",
       "context_window": "riptive statistics and the comparison between treatments at 16 weeks by the exact Fisher test. SCORE and PCE scores were analys",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-9894",
@@ -1124,7 +1124,7 @@
       "context_window": "e *Hipercholesterolemia was defined as total cholesterol \u2265 200 mg/dL **Hypertrygliceridemia was defined as triglycerides \u2265 150",
       "claim_role": "dose",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1142,7 +1142,7 @@
       "context_window": "g/dL **Hypertrygliceridemia was defined as triglycerides \u2265 150 mg/dL Finally, and based on their prior therapy, 32 patients (14",
       "claim_role": "dose",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1160,7 +1160,7 @@
       "context_window": "dL Finally, and based on their prior therapy, 32 patients (14.7%) received at least one additional medication to the polypil",
       "claim_role": "dose",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1178,7 +1178,7 @@
       "context_window": "dyslipidaemia (mainly with ezetimibe or fibrates), and 118 (54.1%) to control hypertension (mainly with hydrochlorothiazide o",
       "claim_role": "dose",
       "endpoint": "muscle hypertrophy",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1195,7 +1195,7 @@
       "sentence": "At baseline, the LDL-c levels were similar between arms (95.6 mg/dL and 95.8 mg/dL in the CNIC-polypill and usual care groups, respectively) (Figs.",
       "context_window": ". At baseline, the LDL-c levels were similar between arms (95.6 mg/dL and 95.8 mg/dL in the CNIC-polypill and usual care groups,",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1213,7 +1213,7 @@
       "sentence": "At baseline, the LDL-c levels were similar between arms (95.6 mg/dL and 95.8 mg/dL in the CNIC-polypill and usual care groups, respectively) (Figs.",
       "context_window": "the LDL-c levels were similar between arms (95.6 mg/dL and 95.8 mg/dL in the CNIC-polypill and usual care groups, respectively) (",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "no_change",
       "binding_confidence": "partial"
@@ -1357,7 +1357,7 @@
       "sentence": "Graphs with the change from baseline and after 16 weeks of treatment with the CNIC-polypill strategy or usual care for LDL-c ( A ) and systolic blood pressure ( C ) and estimated mean difference between treatments for LDL-c ( B ) and systolic blood pressure and ( D ).",
       "context_window": "2 b and3b). Graphs with the change from baseline and after 16 weeks of treatment with the CNIC-polypill strategy or usual care",
       "claim_role": "duration",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1375,7 +1375,7 @@
       "sentence": "LDL-c low-density lipoprotein; LSM least square mean; SBP systolic blood pressure\n\nGraphs with the percentage change from baseline for each group and mean change difference between the CNIC-polypill strategy and usual care after 16 weeks for LDL-cholesterol ( a ), systolic blood pressure ( b ), total cholesterol ( c ), non-HDL cholesterol ( d ), HDL-cholesterol ( e ), triglycerides ( f ), and diastolic blood pressure ( g ).",
       "context_window": "nce between the CNIC-polypill strategy and usual care after 16 weeks for LDL-cholesterol ( a ), systolic blood pressure ( b ), t",
       "claim_role": "unknown",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1753,10 +1753,10 @@
       "sentence": "As for LDL-c levels, which were above the target in more than 75% of patients in each group, both treatments increased the rates of patients with adequate control at Week 16, with a trend toward a higher percentage of controlled subjects among those on the CNIC-polypill strategy (14.2% vs 5.4% increase; p = 0.054; Fig.",
       "context_window": "for LDL-c levels, which were above the target in more than 75% of patients in each group, both treatments increased the ra",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-pct-6478",
@@ -1771,10 +1771,10 @@
       "sentence": "As for LDL-c levels, which were above the target in more than 75% of patients in each group, both treatments increased the rates of patients with adequate control at Week 16, with a trend toward a higher percentage of controlled subjects among those on the CNIC-polypill strategy (14.2% vs 5.4% increase; p = 0.054; Fig.",
       "context_window": "trolled subjects among those on the CNIC-polypill strategy (14.2% vs 5.4% increase; p = 0.054; Fig. 4 a). At baseline, BP was",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-pct-6487",
@@ -1789,10 +1789,10 @@
       "sentence": "As for LDL-c levels, which were above the target in more than 75% of patients in each group, both treatments increased the rates of patients with adequate control at Week 16, with a trend toward a higher percentage of controlled subjects among those on the CNIC-polypill strategy (14.2% vs 5.4% increase; p = 0.054; Fig.",
       "context_window": "ubjects among those on the CNIC-polypill strategy (14.2% vs 5.4% increase; p = 0.054; Fig. 4 a). At baseline, BP was above t",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-p-6502",
@@ -1807,10 +1807,10 @@
       "sentence": "As for LDL-c levels, which were above the target in more than 75% of patients in each group, both treatments increased the rates of patients with adequate control at Week 16, with a trend toward a higher percentage of controlled subjects among those on the CNIC-polypill strategy (14.2% vs 5.4% increase; p = 0.054; Fig.",
       "context_window": "hose on the CNIC-polypill strategy (14.2% vs 5.4% increase; p = 0.054; Fig. 4 a). At baseline, BP was above the target in more th",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-pct-6574",
@@ -1844,7 +1844,7 @@
       "context_window": "t groups. The rate of BP control increased by approximately 4% after 16 weeks of treatment in the overall population, with",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1862,7 +1862,7 @@
       "context_window": "The rate of BP control increased by approximately 4% after 16 weeks of treatment in the overall population, with no significant",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1880,7 +1880,7 @@
       "context_window": "erences between the CNIC-polypill and the usual care arms ( p = 0.206; Fig. 4 b). Graphs with the percentage of patients achievi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1897,10 +1897,10 @@
       "sentence": "Graphs with the percentage of patients achieving target LDL-c levels* ( a ) or BP values** ( b ) at baseline and after 16 weeks or treatment with the CNIC-polypill strategy or usual care.",
       "context_window": "-c levels* ( a ) or BP values** ( b ) at baseline and after 16 weeks or treatment with the CNIC-polypill strategy or usual care.",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-7107",
@@ -1915,7 +1915,7 @@
       "sentence": "BP blood pressure; LDL-c low-density lipoprotein colesterol. *LDL-c controlled if < 100 mg/dL (or < 70 mg/dL in subjects with diabetes mellitus and subclinical atherosclerosis). **BP controlled if < 140/90 mm Hg (< 130/80 mmHg in subjects with diabetes mellitus)\n\nAmong those with LDL-c, BP values or both well controlled at baseline, more than half of them were still at target levels at the end of the study (Week 16), with no significant differences between those treated with the CNIC-polypill and those who continued with their usual care in any case (Additional file 1 : Fig.",
       "context_window": "low-density lipoprotein colesterol. *LDL-c controlled if < 100 mg/dL (or < 70 mg/dL in subjects with diabetes mellitus and subcl",
       "claim_role": "dose",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1933,7 +1933,7 @@
       "sentence": "BP blood pressure; LDL-c low-density lipoprotein colesterol. *LDL-c controlled if < 100 mg/dL (or < 70 mg/dL in subjects with diabetes mellitus and subclinical atherosclerosis). **BP controlled if < 140/90 mm Hg (< 130/80 mmHg in subjects with diabetes mellitus)\n\nAmong those with LDL-c, BP values or both well controlled at baseline, more than half of them were still at target levels at the end of the study (Week 16), with no significant differences between those treated with the CNIC-polypill and those who continued with their usual care in any case (Additional file 1 : Fig.",
       "context_window": "oprotein colesterol. *LDL-c controlled if < 100 mg/dL (or < 70 mg/dL in subjects with diabetes mellitus and subclinical atherosc",
       "claim_role": "dose",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1951,7 +1951,7 @@
       "sentence": "BP blood pressure; LDL-c low-density lipoprotein colesterol. *LDL-c controlled if < 100 mg/dL (or < 70 mg/dL in subjects with diabetes mellitus and subclinical atherosclerosis). **BP controlled if < 140/90 mm Hg (< 130/80 mmHg in subjects with diabetes mellitus)\n\nAmong those with LDL-c, BP values or both well controlled at baseline, more than half of them were still at target levels at the end of the study (Week 16), with no significant differences between those treated with the CNIC-polypill and those who continued with their usual care in any case (Additional file 1 : Fig.",
       "context_window": "and subclinical atherosclerosis). **BP controlled if < 140/90 mm Hg (< 130/80 mmHg in subjects with diabetes mellitus) Amon",
       "claim_role": "dose",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1969,7 +1969,7 @@
       "sentence": "BP blood pressure; LDL-c low-density lipoprotein colesterol. *LDL-c controlled if < 100 mg/dL (or < 70 mg/dL in subjects with diabetes mellitus and subclinical atherosclerosis). **BP controlled if < 140/90 mm Hg (< 130/80 mmHg in subjects with diabetes mellitus)\n\nAmong those with LDL-c, BP values or both well controlled at baseline, more than half of them were still at target levels at the end of the study (Week 16), with no significant differences between those treated with the CNIC-polypill and those who continued with their usual care in any case (Additional file 1 : Fig.",
       "context_window": "atherosclerosis). **BP controlled if < 140/90 mm Hg (< 130/80 mmHg in subjects with diabetes mellitus) Among those with LDL-c",
       "claim_role": "dose",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2221,10 +2221,10 @@
       "sentence": "A significant improvement in LDL-c values in patients with or at high risk of a CV event treated for 1 year with the CNIC-polypill was reported in the real-world, phase IV SORS study [ 16 ].",
       "context_window": "in patients with or at high risk of a CV event treated for 1 year with the CNIC-polypill was reported in the real-world, phas",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-2824",
@@ -2239,8 +2239,8 @@
       "sentence": "In our study, we must take account of the possible greater reduction in LDL-c levels among subjects who were treated with less potent statins (e.g., atorvastatin 10 mg, simvastatin 10 or 20 mg, fluvastatin 40 or 80 mg) before study entry.",
       "context_window": "o were treated with less potent statins (e.g., atorvastatin 10 mg, simvastatin 10 or 20 mg, fluvastatin 40 or 80 mg) before s",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2257,8 +2257,8 @@
       "sentence": "In our study, we must take account of the possible greater reduction in LDL-c levels among subjects who were treated with less potent statins (e.g., atorvastatin 10 mg, simvastatin 10 or 20 mg, fluvastatin 40 or 80 mg) before study entry.",
       "context_window": "potent statins (e.g., atorvastatin 10 mg, simvastatin 10 or 20 mg, fluvastatin 40 or 80 mg) before study entry. Along this li",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2275,8 +2275,8 @@
       "sentence": "In our study, we must take account of the possible greater reduction in LDL-c levels among subjects who were treated with less potent statins (e.g., atorvastatin 10 mg, simvastatin 10 or 20 mg, fluvastatin 40 or 80 mg) before study entry.",
       "context_window": "rvastatin 10 mg, simvastatin 10 or 20 mg, fluvastatin 40 or 80 mg) before study entry. Along this line, a post-hoc analysis o",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2312,9 +2312,9 @@
       "context_window": "ported in the cross-sectional EUROASPIRE studies, with only 53% of patients at high CVD risk who received BP-lowering medic",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-pct-5258",
@@ -2330,9 +2330,9 @@
       "context_window": ". In Spain, poor BP control in primary care was reported in 71% of hypertensive patients, 42% of whom were not intensified",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-pct-5288",
@@ -2348,9 +2348,9 @@
       "context_window": "primary care was reported in 71% of hypertensive patients, 42% of whom were not intensified (therapeutic inertia) despite",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-5802",
@@ -2366,9 +2366,9 @@
       "context_window": "some cases. Thirdly, the follow-up period of the study was 16 weeks, which could be relatively short to observe a difference be",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-8326",
@@ -2401,7 +2401,7 @@
       "sentence": "The results showed that the likelihood of MACE was reduced by 9% in subjects with DM (who represented more than three quarters in our study population), which is consistent with that of the general population.",
       "context_window": "e results showed that the likelihood of MACE was reduced by 9% in subjects with DM (who represented more than three quarte",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2419,10 +2419,10 @@
       "sentence": "Indeed, patients treated with aspirin and also statins had a 12% reduction in the relative risk of MACE compared with controls, while this reduction was not observed among subjects on aspirin without statin co-treatment [ 32 ].",
       "context_window": "ndeed, patients treated with aspirin and also statins had a 12% reduction in the relative risk of MACE compared with contro",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9773517_safety_and_efficacy_of_a_cardiovascular_polypill_in_people_a-u-10613",

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_",
   "doi": "10.3389/fcvm.2021.692773",
-  "extracted_at": "2026-05-05T15:32:44+00:00",
+  "extracted_at": "2026-05-07T15:40:39+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 23,
@@ -43,10 +43,10 @@
       "sentence": "Results: Over an average follow-up of 83.5 months, the coefficients of variation (CVs) in total cholesterol (TCHO), triglycerides, high-density lipoprotein cholesterol (HDL-c), and low-density lipoprotein cholesterol (LDL-c) were significantly lower in the rosuvastatin group than the placebo group ( p < 0.05).",
       "context_window": "ility were assessed. Results: Over an average follow-up of 83.5 months, the coefficients of variation (CVs) in total cholesterol (",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_-p-657",
@@ -61,10 +61,10 @@
       "sentence": "Results: Over an average follow-up of 83.5 months, the coefficients of variation (CVs) in total cholesterol (TCHO), triglycerides, high-density lipoprotein cholesterol (HDL-c), and low-density lipoprotein cholesterol (LDL-c) were significantly lower in the rosuvastatin group than the placebo group ( p < 0.05).",
       "context_window": "ly lower in the rosuvastatin group than the placebo group ( p < 0.05). The risks of composite cardiovascular event, myocardial i",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_-p-931",
@@ -79,10 +79,10 @@
       "sentence": "The risks of composite cardiovascular event, myocardial infarction, coronary revascularization, heart failure, total stroke, ischemic stroke, cardiovascular death, and all-cause death were significantly lower in the rosuvastatin group than the placebo group (all p < 0.05).",
       "context_window": "lower in the rosuvastatin group than the placebo group (all p < 0.05). The differences in the risks were significantly diminishe",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "incident cv event",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_-p-1374",
@@ -97,10 +97,10 @@
       "sentence": "One-SD of CVs for TCHO, triglycerides, HDL-c, and LDL-c increment were significantly associated with the risks of composite cardiovascular event, myocardial infarction, heart failure, total stroke, ischemic stroke, cardiovascular death, and all-cause death, respectively (all p < 0.05).",
       "context_window": "ardiovascular death, and all-cause death, respectively (all p < 0.05). Conclusions: Rosuvastatin significantly attenuated the i",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_-u-123",
@@ -206,7 +206,7 @@
       "context_window": "es such as myocardial infarction and stroke in the previous 6 months; definite hypersensitivity or contraindication to statins,",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -224,7 +224,7 @@
       "context_window": "chizophrenia, or seizures; plans to move or emigrate within 6 years; inability to walk to the clinic; and unwillingness to prov",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -314,9 +314,9 @@
       "context_window": "ckground medication in the study. Rosuvastatin was given at 10 mg once daily. Computer-generated randomization was used accor",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_-u-3048",
@@ -440,9 +440,9 @@
       "context_window": "vascular events in the rosuvastatin group was assumed to be 5.5% per year ( 30 , 31 ). With a loss rate of <10%, a sample si",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_-pct-6393",
@@ -619,10 +619,10 @@
       "sentence": "The SDs for TCHO, TG, and LDL-c were significantly lower in the rosuvastatin group than the placebo group (all p < 0.001).",
       "context_window": "lower in the rosuvastatin group than the placebo group (all p < 0.001). The means and CVs for TCHO, TG, HDL-c, and LDL-c were sig",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_-p-1525",
@@ -637,10 +637,10 @@
       "sentence": "The means and CVs for TCHO, TG, HDL-c, and LDL-c were significantly lower in the rosuvastatin group than the placebo group (all p < 0.05).",
       "context_window": "lower in the rosuvastatin group than the placebo group (all p < 0.05). The protocol flowchart. Inter-visit plasma lipid variab",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_-msd-2017",
@@ -747,10 +747,10 @@
       "sentence": "In unadjustment models, the risks of composite cardiovascular event, myocardial infarction, coronary revascularization, heart failure, total stroke, ischemic stroke, and cardiovascular death were significantly lower in the rosuvastatin group than the placebo group (all p < 0.05).",
       "context_window": "lower in the rosuvastatin group than the placebo group (all p < 0.05). Although the differences in the risks were decreased betw",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "incident cv event",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_-p-3327",
@@ -765,8 +765,8 @@
       "sentence": "Although the differences in the risks were decreased between the two groups, the risks of composite cardiovascular event, myocardial infarction, heart failure, total stroke, ischemic stroke, and cardiovascular death were significantly lower in the rosuvastatin group than the placebo group after adjustment for age, sex, smoking, alcohol consumption, education, baseline body mass index, mean and variability in SBP and DBP during the follow-up, and mean TCHO, TG, HDL-c, and LDL-c during the follow-up (all p < 0.05).",
       "context_window": "d mean TCHO, TG, HDL-c, and LDL-c during the follow-up (all p < 0.05). The differences further diminished between the two groups",
       "claim_role": "effect",
-      "endpoint": "blood pressure",
-      "arm": "placebo",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "high"
     },
@@ -784,7 +784,7 @@
       "context_window": "ly lower in the rosuvastatin group than the placebo group ( p = 0.004). Similar as the risks of primary outcomes, the difference",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -801,7 +801,7 @@
       "sentence": "After adjustment for age, sex, smoking, alcohol consumption, education, baseline body mass index, mean and variability in SBP and DBP during the follow-up, and mean TCHO, TG, HDL-c, and LDL-c during the follow-up, 1-SD of CVs for TCHO, TG, HDL-c, and LDL-c increment were significantly associated with the risks of composite cardiovascular event, myocardial infarction, heart failure, total stroke, ischemic stroke, cardiovascular death, and all-cause death, respectively (all p < 0.05).",
       "context_window": "ardiovascular death, and all-cause death, respectively (all p < 0.05). CVs for HDL-c, and LDL-c were significantly associated wi",
       "claim_role": "duration",
-      "endpoint": "blood pressure",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -819,10 +819,10 @@
       "sentence": "CVs for HDL-c, and LDL-c were significantly associated with the risk of coronary revascularization (all p < 0.05).",
       "context_window": "associated with the risk of coronary revascularization (all p < 0.05). Cumulative hazards of outcomes with each one-SD incremen",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8245783_attenuating_the_variability_of_lipids_is_beneficial_for_the_-hr-a-1722",
@@ -838,7 +838,7 @@
       "context_window": "participants with two or more healthful lifestyle factors (HR: 0.74 with 95% CI: 0.62-0.90) and in participants with fewer than",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -857,7 +857,7 @@
       "context_window": "with two or more healthful lifestyle factors (HR: 0.74 with 95% CI: 0.62-0.90) and in participants with fewer than two factors (HR: 0.79",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -875,7 +875,7 @@
       "context_window": "0.62-0.90) and in participants with fewer than two factors (HR: 0.79 with 95% CI: 0.61-1.01) ( 25 ). Thus, rosuvastatin, even wi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -894,7 +894,7 @@
       "context_window": "in participants with fewer than two factors (HR: 0.79 with 95% CI: 0.61-1.01) ( 25 ). Thus, rosuvastatin, even with low-dose, effectivel",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -911,10 +911,10 @@
       "sentence": "Furthermore, we also found that rosuvastatin, which was administrated 10 mg once daily, could significantly decreased the variability in plasma lipids including TCHO, TG, HDL-c, and LDL-c.",
       "context_window": "e, we also found that rosuvastatin, which was administrated 10 mg once daily, could significantly decreased the variability i",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

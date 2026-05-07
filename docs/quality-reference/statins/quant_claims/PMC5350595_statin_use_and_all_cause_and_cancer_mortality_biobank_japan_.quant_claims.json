@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_",
   "doi": "10.1016/j.je.2016.12.011",
-  "extracted_at": "2026-05-04T16:05:17+00:00",
+  "extracted_at": "2026-05-07T15:40:38+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 11,
@@ -130,7 +130,7 @@
       "context_window": "medicines. Among patients in the statin monotherapy group (n = 18,904), the proportion of men was slightly smaller than that",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -148,7 +148,7 @@
       "context_window": "ightly smaller than that of the statin and other medicines (n = 1495), other medicines (n = 2761) and no medication (n = 18,770)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -166,7 +166,7 @@
       "context_window": "the statin and other medicines (n = 1495), other medicines (n = 2761) and no medication (n = 18,770) groups. The mean ages and B",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -184,7 +184,7 @@
       "context_window": "s (n = 1495), other medicines (n = 2761) and no medication (n = 18,770) groups. The mean ages and BMI values of the four group",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -238,9 +238,9 @@
       "context_window": "s. statin monotherapy group). Among patients followed for 3-8 years, the resin monotherapy group was observed to have the longe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5350595_statin_use_and_all_cause_and_cancer_mortality_biobank_japan_-u-2673",
@@ -256,7 +256,7 @@
       "context_window": "ed fatty acid monotherapy groups. Among those followed for \u22659 years, no difference was observed in the survival curves of the s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -274,7 +274,7 @@
       "context_window": "atin and other medicines had a higher rate of mortality at \u22655 years compared with those treated with either statin monotherapy,",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     }

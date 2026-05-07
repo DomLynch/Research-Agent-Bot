@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11269069_pcsk9_inhibitor_safe_alternative_to_fill_the_treatment_gap_i",
   "doi": "10.31083/j.rcm2311380",
-  "extracted_at": "2026-05-05T15:32:43+00:00",
+  "extracted_at": "2026-05-07T15:40:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 4,
@@ -21,10 +21,10 @@
       "sentence": "Only one-third (31.9%) of patients with severe hypercholesterolemia and a low-density lipoprotein cholesterol (LDL-C) \u2265 4.9 mmol/L received guideline-recommended statin therapy, according to the 2021 updated report from the American Heart Association (AHA) [ 1 ].",
       "context_window": "divergence from guideline recommendations. Only one-third (31.9%) of patients with severe hypercholesterolemia and a low-den",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11269069_pcsk9_inhibitor_safe_alternative_to_fill_the_treatment_gap_i-u-695",
@@ -39,10 +39,10 @@
       "sentence": "Only one-third (31.9%) of patients with severe hypercholesterolemia and a low-density lipoprotein cholesterol (LDL-C) \u2265 4.9 mmol/L received guideline-recommended statin therapy, according to the 2021 updated report from the American Heart Association (AHA) [ 1 ].",
       "context_window": "rolemia and a low-density lipoprotein cholesterol (LDL-C) \u2265 4.9 mmol/L received guideline-recommended statin therapy, according",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11269069_pcsk9_inhibitor_safe_alternative_to_fill_the_treatment_gap_i-pct-856",
@@ -58,9 +58,9 @@
       "context_window": "he American Heart Association (AHA) [ 1 ]. Meanwhile, up to 50% of patients receiving statin therapy showed poor adherence",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11269069_pcsk9_inhibitor_safe_alternative_to_fill_the_treatment_gap_i-pct-1944",
@@ -75,7 +75,7 @@
       "sentence": "Evolocumab and alirocumab, two PCSK9 inhibitors currently approved by the US Food and Drug Administration (FDA), can significantly reduce LDL-C levels by approximately 60%, whether as add-on therapy or monotherapy [ 16 , 17 ].",
       "context_window": "DA), can significantly reduce LDL-C levels by approximately 60%, whether as add-on therapy or monotherapy [ 16 , 17 ]. In a",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

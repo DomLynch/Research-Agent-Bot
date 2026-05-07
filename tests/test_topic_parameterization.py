@@ -238,6 +238,31 @@ def test_ratio_below_one_on_adverse_endpoint_is_beneficial() -> None:
     assert orch._claim_topic_effect(claim) == 1
 
 
+def test_topic_pack_endpoint_polarity_drives_effect_sign() -> None:
+    """Topic-pack endpoint polarity must drive non-metformin topics
+    without adding scripts/vocab/<topic>.py or Python topic tables."""
+    orch._set_topic("statins")
+    statin_claim = {
+        "claim_type": "effect_size",
+        "endpoint": "ldl cholesterol",
+        "arm": "atorvastatin",
+        "direction": "decrease",
+    }
+    assert orch._outcome_class_for_endpoint("ldl cholesterol") == "cardiometabolic"
+    assert orch._claim_topic_effect(statin_claim) == 1
+
+    orch._set_topic("omega3")
+    omega_claim = {
+        "claim_type": "effect_size",
+        "endpoint": "cognition",
+        "arm": "fish oil",
+        "direction": "increase",
+    }
+    assert orch._outcome_class_for_endpoint("cognition") == "cognitive"
+    assert orch._claim_topic_effect(omega_claim) == 1
+    orch._set_topic("metformin")
+
+
 def test_hazard_ratio_below_one_on_lifespan_endpoint_is_beneficial() -> None:
     """A survival hazard ratio below 1 means lower event hazard and can
     be a beneficial lifespan signal even when the endpoint is not
@@ -262,3 +287,23 @@ def test_p_value_does_not_carry_effect_direction() -> None:
         "numeric_values": [0.004],
     }
     assert orch._claim_topic_effect(claim) == 0
+
+
+def test_thesis_template_handles_plural_topic_names() -> None:
+    receipts = [
+        type("R", (), {
+            "receipt_id": "r1",
+            "outcome_class": "longevity",
+            "effect_direction": "positive",
+        })(),
+        type("R", (), {
+            "receipt_id": "r2",
+            "outcome_class": "muscle_function",
+            "effect_direction": "null",
+        })(),
+    ]
+    thesis = orch.build_thesis(
+        receipts, orch.TensionMatrix(receipts=tuple(), pairs=()), "statins",
+    )
+    assert "the evidence base for" in thesis.text
+    assert "curated reference papers, statins shows" not in thesis.text

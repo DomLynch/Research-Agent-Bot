@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5396348_rationale_and_design_of_reduce_it_reduction_of_cardiovascula",
   "doi": "10.1002/clc.22692",
-  "extracted_at": "2026-05-05T21:47:07+00:00",
+  "extracted_at": "2026-05-07T15:40:44+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 37,
@@ -57,10 +57,10 @@
       "sentence": "Randomization required fasting triglycerides \u2265150 mg/dL and <500 mg/dL and LDL\u2010C >40 mg/dL and \u2264100 mg/dL with stable statin (\u00b1 ezetimibe) \u22654 weeks prior to qualifying measurements.",
       "context_window": "risk factor. Randomization required fasting triglycerides \u2265150 mg/dL and <500 mg/dL and LDL\u2010C >40 mg/dL and \u2264100 mg/dL with stab",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5396348_rationale_and_design_of_reduce_it_reduction_of_cardiovascula-u-1262",
@@ -75,10 +75,10 @@
       "sentence": "Randomization required fasting triglycerides \u2265150 mg/dL and <500 mg/dL and LDL\u2010C >40 mg/dL and \u2264100 mg/dL with stable statin (\u00b1 ezetimibe) \u22654 weeks prior to qualifying measurements.",
       "context_window": "andomization required fasting triglycerides \u2265150 mg/dL and <500 mg/dL and LDL\u2010C >40 mg/dL and \u2264100 mg/dL with stable statin (\u00b1 ez",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5396348_rationale_and_design_of_reduce_it_reduction_of_cardiovascula-u-1283",
@@ -93,10 +93,10 @@
       "sentence": "Randomization required fasting triglycerides \u2265150 mg/dL and <500 mg/dL and LDL\u2010C >40 mg/dL and \u2264100 mg/dL with stable statin (\u00b1 ezetimibe) \u22654 weeks prior to qualifying measurements.",
       "context_window": "fasting triglycerides \u2265150 mg/dL and <500 mg/dL and LDL\u2010C >40 mg/dL and \u2264100 mg/dL with stable statin (\u00b1 ezetimibe) \u22654 weeks pr",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5396348_rationale_and_design_of_reduce_it_reduction_of_cardiovascula-u-1297",
@@ -111,10 +111,10 @@
       "sentence": "Randomization required fasting triglycerides \u2265150 mg/dL and <500 mg/dL and LDL\u2010C >40 mg/dL and \u2264100 mg/dL with stable statin (\u00b1 ezetimibe) \u22654 weeks prior to qualifying measurements.",
       "context_window": "ycerides \u2265150 mg/dL and <500 mg/dL and LDL\u2010C >40 mg/dL and \u2264100 mg/dL with stable statin (\u00b1 ezetimibe) \u22654 weeks prior to qualifyi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5396348_rationale_and_design_of_reduce_it_reduction_of_cardiovascula-u-1341",
@@ -129,10 +129,10 @@
       "sentence": "Randomization required fasting triglycerides \u2265150 mg/dL and <500 mg/dL and LDL\u2010C >40 mg/dL and \u2264100 mg/dL with stable statin (\u00b1 ezetimibe) \u22654 weeks prior to qualifying measurements.",
       "context_window": ">40 mg/dL and \u2264100 mg/dL with stable statin (\u00b1 ezetimibe) \u22654 weeks prior to qualifying measurements. The primary endpoint is a",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5396348_rationale_and_design_of_reduce_it_reduction_of_cardiovascula-u-2108",
@@ -148,7 +148,7 @@
       "context_window": "uating nonhypertriglyceridemic patient populations (eg, TG <200 mg/dL) and administering low doses of long\u2010chain omega\u20103 fatty ac",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "icosapent ethyl",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -201,7 +201,7 @@
       "sentence": "16 , 25 , 26 , 29 , 31 , 32 , 33 For example, in contrast to the fenofibrate and niacin studies, JELIS found a 19% relative risk reduction in CV events in statin\u2010treated patients with relatively normal TG but a more pronounced 53% reduction in the subgroup with mixed dyslipidemia, specifically TG \u2265150 mg/dL and HDL\u2010C <40 mg/dL.",
       "context_window": "ed patients with relatively normal TG but a more pronounced 53% reduction in the subgroup with mixed dyslipidemia, specific",
       "claim_role": "background",
-      "endpoint": "mortality",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -219,7 +219,7 @@
       "sentence": "16 , 25 , 26 , 29 , 31 , 32 , 33 For example, in contrast to the fenofibrate and niacin studies, JELIS found a 19% relative risk reduction in CV events in statin\u2010treated patients with relatively normal TG but a more pronounced 53% reduction in the subgroup with mixed dyslipidemia, specifically TG \u2265150 mg/dL and HDL\u2010C <40 mg/dL.",
       "context_window": "n in the subgroup with mixed dyslipidemia, specifically TG \u2265150 mg/dL and HDL\u2010C <40 mg/dL. 4 , 16 Although confirmation of these",
       "claim_role": "background",
-      "endpoint": "mortality",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -237,7 +237,7 @@
       "sentence": "16 , 25 , 26 , 29 , 31 , 32 , 33 For example, in contrast to the fenofibrate and niacin studies, JELIS found a 19% relative risk reduction in CV events in statin\u2010treated patients with relatively normal TG but a more pronounced 53% reduction in the subgroup with mixed dyslipidemia, specifically TG \u2265150 mg/dL and HDL\u2010C <40 mg/dL.",
       "context_window": "h mixed dyslipidemia, specifically TG \u2265150 mg/dL and HDL\u2010C <40 mg/dL. 4 , 16 Although confirmation of these results is needed in",
       "claim_role": "background",
-      "endpoint": "mortality",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"

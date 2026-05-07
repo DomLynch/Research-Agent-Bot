@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r",
   "doi": "10.1136/bmj.a2931",
-  "extracted_at": "2026-05-05T21:47:04+00:00",
+  "extracted_at": "2026-05-07T15:40:43+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 4,
@@ -96,7 +96,7 @@
       "context_window": "for sudden cardiac death (0.81, 0.52 to 1.25). 11 studies (n=32 439 and n=32 519) provided data on the effects of fish oil",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "ardiac death (0.81, 0.52 to 1.25). 11 studies (n=32 439 and n=32 519) provided data on the effects of fish oil on all cause",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "osapentaenoic acid (EPA) and docosahexaenoic acid (DHA, 850-882 mg/day in a ratio of 1.2:1, respectively) or placebo showed a sign",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "icosapent ethyl",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -150,7 +150,7 @@
       "context_window": "l cause mortality and death from cardiovascular causes over 3.5 years of follow-up. These results seemed to be driven by a reduct",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "icosapent ethyl",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -204,9 +204,9 @@
       "context_window": "ble cardiac defibrillator intervention by a non-significant 10% (odds ratio 0.90, 95% confidence interval 0.55 to1.46). Six",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-or-l-1297",
@@ -222,9 +222,9 @@
       "context_window": "ardiac defibrillator intervention by a non-significant 10% (odds ratio 0.90, 95% confidence interval 0.55 to1.46). Six studies, totalli",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-pct-1314",
@@ -240,9 +240,9 @@
       "context_window": "tor intervention by a non-significant 10% (odds ratio 0.90, 95% confidence interval 0.55 to1.46). Six studies, totalling 31",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-or-l-1541",
@@ -276,7 +276,7 @@
       "context_window": "studies involving 32 519 patients and showed a significant 20% decrease in events (odds ratio 0.80, 0.69 to 0.92; fig 3).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -294,7 +294,7 @@
       "context_window": "9 patients and showed a significant 20% decrease in events (odds ratio 0.80, 0.69 to 0.92; fig 3). The funnel plot, however, shows a pa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -348,9 +348,9 @@
       "context_window": "ial. w5 Four studies that included 15 528 patients showed a 26% reduction (0.74, 0.59 to 0.92) in sudden cardiac death with",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-pct-3104",
@@ -384,7 +384,7 @@
       "context_window": "s from cardiac causes. The incidence of adverse effects was 10.5% in patients who took fish oil compared with 6.7% in those w",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -402,7 +402,7 @@
       "context_window": "fects was 10.5% in patients who took fish oil compared with 6.7% in those who took placebo. Patients taking fish oil are the",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -420,7 +420,7 @@
       "context_window": "se who took placebo. Patients taking fish oil are therefore 56% more likely to experience an adverse effect than those taki",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -456,7 +456,7 @@
       "context_window": "oil supplementation on sudden cardiac death, varying from a 48% reduction in events to a 25% increase (fig 2). These result",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -474,7 +474,7 @@
       "context_window": "cardiac death, varying from a 48% reduction in events to a 25% increase (fig 2). These results were mainly driven by two s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -546,7 +546,7 @@
       "context_window": "cardial infarction randomised to receive two tablets of 850-882 mg EPA and DHA mixture for one year. 28 These changes were, ho",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -564,7 +564,7 @@
       "context_window": "il 4 g/day compared with placebo in addition to simvastatin 40 mg/day for eight weeks were nasopharyngitis (3.3%), diarrhoea (2.5",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -582,7 +582,7 @@
       "context_window": "simvastatin 40 mg/day for eight weeks were nasopharyngitis (3.3%), diarrhoea (2.5%), dyspepsia (2.5%), bronchitis, and cysti",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -600,7 +600,7 @@
       "context_window": "day for eight weeks were nasopharyngitis (3.3%), diarrhoea (2.5%), dyspepsia (2.5%), bronchitis, and cystitis; an increase i",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -618,7 +618,7 @@
       "context_window": "s were nasopharyngitis (3.3%), diarrhoea (2.5%), dyspepsia (2.5%), bronchitis, and cystitis; an increase in liver enzymes wa",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -636,7 +636,7 @@
       "context_window": "and cystitis; an increase in liver enzymes was observed in 1.6% of patients with each adverse event. 29 Therefore it would",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -672,9 +672,9 @@
       "context_window": "may not be published. We also found a wide variability (0-2000 mg/day) in amounts of EPA and DHA in the formulations among the st",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-pct-6326",
@@ -708,9 +708,9 @@
       "context_window": "rdiac defibrillator for secondary prevention, assuming that 33% of these patients had an appropriate implantable cardiac de",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-pct-7266",
@@ -726,9 +726,9 @@
       "context_window": "s to follow-up or drop-outs) would be required to observe a 20% reduction of events with an 80% power. Therefore our pooled",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-pct-7298",
@@ -744,9 +744,9 @@
       "context_window": "ld be required to observe a 20% reduction of events with an 80% power. Therefore our pooled analysis for this end point sho",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-u-7806",
@@ -762,9 +762,9 @@
       "context_window": "milar to that used in the GISSI-Prevenzione trial, of about 465 mg EPA/386 mg DHA. The effect of fish oil on arrhythmic events",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-u-7817",
@@ -780,9 +780,9 @@
       "context_window": "at used in the GISSI-Prevenzione trial, of about 465 mg EPA/386 mg DHA. The effect of fish oil on arrhythmic events remains in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-pct-160",
@@ -816,9 +816,9 @@
       "context_window": "may not be published. We also found a wide variability (0-2000 mg/day) in amounts of EPA and DHA in the formulations among the st",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-pct-790",
@@ -852,9 +852,9 @@
       "context_window": "rdiac defibrillator for secondary prevention, assuming that 33% of these patients had an appropriate implantable cardiac de",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-pct-1730",
@@ -870,9 +870,9 @@
       "context_window": "s to follow-up or drop-outs) would be required to observe a 20% reduction of events with an 80% power. Therefore our pooled",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r-pct-1762",
@@ -888,9 +888,9 @@
       "context_window": "ld be required to observe a 20% reduction of events with an 80% power. Therefore our pooled analysis for this end point sho",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

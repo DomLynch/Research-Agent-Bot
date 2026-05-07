@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a",
   "doi": "10.3389/fmed.2022.887741",
-  "extracted_at": "2026-05-05T15:32:43+00:00",
+  "extracted_at": "2026-05-07T15:40:40+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 31,
@@ -25,9 +25,9 @@
       "context_window": "autoimmunity and immune dysfunction-in U.S. men and women (>20 years old; n = 1,526) from the National Health and Nutrition Exam",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-n-788",
@@ -43,9 +43,9 @@
       "context_window": "nd immune dysfunction-in U.S. men and women (>20 years old; n = 1,526) from the National Health and Nutrition Examination Sur",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-1308",
@@ -114,7 +114,7 @@
       "sentence": "However, in logistic regression models, total cholesterol, LDL-C, and HDL-C levels were not able to predict ANA status, whereas elevated serum triglycerides (150 to < 200 mg/dL) were significantly less likely to be ANA+ vs.",
       "context_window": "ANA status, whereas elevated serum triglycerides (150 to < 200 mg/dL) were significantly less likely to be ANA+ vs. ANA- (OR 0.3",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -153,7 +153,7 @@
       "context_window": "atins have significantly lower odds of being ANA+ (OR 0.25; 95% CI 0.09-0.76), whereas no significant association between statin use and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -224,10 +224,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "nt lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-2876",
@@ -242,10 +242,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-2894",
@@ -260,10 +260,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "mal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <1",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-2923",
@@ -278,10 +278,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "igh: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 13",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-2962",
@@ -296,10 +296,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "L), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/d",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-2998",
@@ -314,10 +314,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (Hi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-3023",
@@ -332,10 +332,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "30 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/d",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-3046",
@@ -350,10 +350,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "gh: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Lo",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-3085",
@@ -368,10 +368,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "0 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL),",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-3103",
@@ -386,10 +386,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": ": >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-3124",
@@ -404,10 +404,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "(High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL;",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-3142",
@@ -422,10 +422,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": ": \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High:",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-3182",
@@ -440,10 +440,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "<40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-3218",
@@ -458,10 +458,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "riglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ). A subsample of stored seru",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-3236",
@@ -476,10 +476,10 @@
       "sentence": "To assess the distribution of serum lipid levels between ANA positive and ANA negative participants, the following clinically-relevant lipid categories were used: total cholesterol (Optimal: <200 mg/dL; Borderline High: 200 to <240 mg/dL; High: >240 mg/dL), LDL-C (Optimal: <100 mg/dL; Near/Above Optimal: 100 to <130 mg/dL; Borderline High: 130 to <160 mg/dL, High: 160 to <190 mg/dL, Very High: >190 mg/dL), HDL-C (High/Optimal: Men: \u226540 mg/dL, Women: \u226550 mg/dL; Low: Men: <40 mg/dL, Women: <50 mg/dL), and triglycerides (Optimal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ).",
       "context_window": "mal: <150 mg/dL; Borderline High: 150 to <200 mg/dL; High: \u2265200 mg/dL) ( 43 , 46 ). A subsample of stored serum samples collecte",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-p-6208",
@@ -926,10 +926,10 @@
       "sentence": "When comparing the distribution of clinical lipid ranges by sex and ANA status, we observed significant differences in total cholesterol and HDL-C, in addition to a statistical trend in LDL-C distributions ( P = 0.068) and no group differences in clinical triglyceride range distributions.",
       "context_window": "in addition to a statistical trend in LDL-C distributions ( P = 0.068) and no group differences in clinical triglyceride range di",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-u-3662",
@@ -1251,7 +1251,7 @@
       "context_window": "red to women who did not take statins in both age-adjusted (71% reduced risk) and fully-adjusted (75% reduced risk) models",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1269,7 +1269,7 @@
       "context_window": "in both age-adjusted (71% reduced risk) and fully-adjusted (75% reduced risk) models ( Table 4 ). This observation was sex-",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1287,9 +1287,9 @@
       "context_window": "as identified in men. Odds of ANA positivity among adult (\u226520 years of age) statin users vs. non-users in NHANES 1999-2004 ( n",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-n-6969",
@@ -1305,9 +1305,9 @@
       "context_window": "rs of age) statin users vs. non-users in NHANES 1999-2004 ( n = 1,526). CI, confidence interval; OR, odds ratio. From logist",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9198832_sex_specific_associations_between_serum_lipids_antinuclear_a-pct-1750",

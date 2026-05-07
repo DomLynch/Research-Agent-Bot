@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver",
   "doi": "10.1186/s12877-019-1361-2",
-  "extracted_at": "2026-05-05T21:20:46+00:00",
+  "extracted_at": "2026-05-07T15:40:38+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 60,
@@ -26,9 +26,9 @@
       "context_window": "elevation during statin therapy in very elderly patients (\u226580 years old). Patients with hypercholesterolemia (LDL-C levels \u22653.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-651",
@@ -43,10 +43,10 @@
       "sentence": "Patients with hypercholesterolemia (LDL-C levels \u22653.4 and < 5.7 mmol/L), atherosclerosis, coronary heart disease (CHD), or a CHD-risk equivalent were enrolled and received once-daily statin treatment.",
       "context_window": "Patients with hypercholesterolemia (LDL-C levels \u22653.4 and < 5.7 mmol/L), atherosclerosis, coronary heart disease (CHD), or a CHD",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-1090",
@@ -153,9 +153,9 @@
       "context_window": "of onset of hepatic aminotransferase elevation ranged from 2 weeks to 6 months after statin treatment. The onset of hepatic am",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-1822",
@@ -171,9 +171,9 @@
       "context_window": "f hepatic aminotransferase elevation ranged from 2 weeks to 6 months after statin treatment. The onset of hepatic aminotransfera",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-1914",
@@ -225,9 +225,9 @@
       "context_window": "was within 1 month for 70.8% of patients. The patients took 2 weeks to 3 months to recover their liver function after statin th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-1974",
@@ -243,9 +243,9 @@
       "context_window": "1 month for 70.8% of patients. The patients took 2 weeks to 3 months to recover their liver function after statin therapy cessat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-2217",
@@ -261,9 +261,9 @@
       "context_window": "associated with the hepatic response to statins: OR, 12.83; 95% CI (4.36-37.759) and OR, 2.736; 95% CI (1.373-5.454), respe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-2253",
@@ -279,9 +279,9 @@
       "context_window": "to statins: OR, 12.83; 95% CI (4.36-37.759) and OR, 2.736; 95% CI (1.373-5.454), respectively. The prevalence of elevated",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2436",
@@ -297,9 +297,9 @@
       "context_window": "y patients. Overall, statin treatment is safe for patients \u226580 years old. Keywords: Statins, Hepatotoxicity, Very elderly",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-909",
@@ -315,7 +315,7 @@
       "context_window": "hepatic injury caused by statins is reported to be about 1-3%, similar to that of patients taking a placebo [ 6 - 9 ]. De",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "rosuvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -333,9 +333,9 @@
       "context_window": "utilization of statins especially for elderly patients aged 80 years or older. The aim of this prospective study is to evaluate",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-582",
@@ -351,9 +351,9 @@
       "context_window": "atment, physicians prescribed the standard dose of statins (40 mg of simvastatin, 40 mg of fluvastatin, 40 mg of pravastatin,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-604",
@@ -369,9 +369,9 @@
       "context_window": "scribed the standard dose of statins (40 mg of simvastatin, 40 mg of fluvastatin, 40 mg of pravastatin, 10 mg of rosuvastatin",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-626",
@@ -387,9 +387,9 @@
       "context_window": "ose of statins (40 mg of simvastatin, 40 mg of fluvastatin, 40 mg of pravastatin, 10 mg of rosuvastatin, or 20 mg of atorvast",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-648",
@@ -405,9 +405,9 @@
       "context_window": "of simvastatin, 40 mg of fluvastatin, 40 mg of pravastatin, 10 mg of rosuvastatin, or 20 mg of atorvastatin). If LDL-C levels",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-674",
@@ -423,9 +423,9 @@
       "context_window": "luvastatin, 40 mg of pravastatin, 10 mg of rosuvastatin, or 20 mg of atorvastatin). If LDL-C levels were < 1.8 mmol/L (70 mg/",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-721",
@@ -440,10 +440,10 @@
       "sentence": "If LDL-C levels were < 1.8 mmol/L (70 mg/dL) for 3 months, the statin dose was reduced by half.",
       "context_window": "vastatin, or 20 mg of atorvastatin). If LDL-C levels were < 1.8 mmol/L (70 mg/dL) for 3 months, the statin dose was reduced by h",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-733",
@@ -458,10 +458,10 @@
       "sentence": "If LDL-C levels were < 1.8 mmol/L (70 mg/dL) for 3 months, the statin dose was reduced by half.",
       "context_window": "20 mg of atorvastatin). If LDL-C levels were < 1.8 mmol/L (70 mg/dL) for 3 months, the statin dose was reduced by half. Patien",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-747",
@@ -476,10 +476,10 @@
       "sentence": "If LDL-C levels were < 1.8 mmol/L (70 mg/dL) for 3 months, the statin dose was reduced by half.",
       "context_window": "vastatin). If LDL-C levels were < 1.8 mmol/L (70 mg/dL) for 3 months, the statin dose was reduced by half. Patients who met all",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-886",
@@ -548,10 +548,10 @@
       "sentence": "The mean level of 2 most recent fasting LDL-C was between 3.4 mmol/L (130 mg/dL) and 5.7 mmol/L (220 mg/dL).",
       "context_window": ". The mean level of 2 most recent fasting LDL-C was between 3.4 mmol/L (130 mg/dL) and 5.7 mmol/L (220 mg/dL). Patients who met",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-1461",
@@ -566,10 +566,10 @@
       "sentence": "The mean level of 2 most recent fasting LDL-C was between 3.4 mmol/L (130 mg/dL) and 5.7 mmol/L (220 mg/dL).",
       "context_window": "evel of 2 most recent fasting LDL-C was between 3.4 mmol/L (130 mg/dL) and 5.7 mmol/L (220 mg/dL). Patients who met one or more",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-1476",
@@ -584,10 +584,10 @@
       "sentence": "The mean level of 2 most recent fasting LDL-C was between 3.4 mmol/L (130 mg/dL) and 5.7 mmol/L (220 mg/dL).",
       "context_window": "recent fasting LDL-C was between 3.4 mmol/L (130 mg/dL) and 5.7 mmol/L (220 mg/dL). Patients who met one or more of the followi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-1488",
@@ -602,10 +602,10 @@
       "sentence": "The mean level of 2 most recent fasting LDL-C was between 3.4 mmol/L (130 mg/dL) and 5.7 mmol/L (220 mg/dL).",
       "context_window": "ng LDL-C was between 3.4 mmol/L (130 mg/dL) and 5.7 mmol/L (220 mg/dL). Patients who met one or more of the following criteria w",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-1928",
@@ -620,10 +620,10 @@
       "sentence": "The exclusion criteria were (a) history of statin-induced myopathy or a serious hypersensitivity to statins, (b) history of malignancy, (c) severe congestive heart failure (New York Heart Association class IIIb or IV), (d) current active liver disease (liver function is abnormal), (e) unexplained creatine kinase (CK) \u2265 3 \u00d7 ULN, (f) serum creatinine > 176 \u03bcmol/L (2.0 mg/dL).",
       "context_window": "ined creatine kinase (CK) \u2265 3 \u00d7 ULN, (f) serum creatinine > 176 \u03bcmol/L (2.0 mg/dL). This prospective study was designed to eval",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "myopathy",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-1940",
@@ -638,10 +638,10 @@
       "sentence": "The exclusion criteria were (a) history of statin-induced myopathy or a serious hypersensitivity to statins, (b) history of malignancy, (c) severe congestive heart failure (New York Heart Association class IIIb or IV), (d) current active liver disease (liver function is abnormal), (e) unexplained creatine kinase (CK) \u2265 3 \u00d7 ULN, (f) serum creatinine > 176 \u03bcmol/L (2.0 mg/dL).",
       "context_window": "e kinase (CK) \u2265 3 \u00d7 ULN, (f) serum creatinine > 176 \u03bcmol/L (2.0 mg/dL). This prospective study was designed to evaluate the hepa",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "myopathy",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2114",
@@ -657,9 +657,9 @@
       "context_window": "or hepatotoxicity of statins in the oldest-old population (\u226580 years old). Demographic and clinical data were collected for each",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2861",
@@ -675,9 +675,9 @@
       "context_window": "baseline (before starting statin therapy), was assessed at 1 week, 2 weeks, 1 month, 2 months, 3 months, 6 months, 9 months a",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2869",
@@ -693,9 +693,9 @@
       "context_window": "e (before starting statin therapy), was assessed at 1 week, 2 weeks, 1 month, 2 months, 3 months, 6 months, 9 months and 12 mon",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2878",
@@ -711,9 +711,9 @@
       "context_window": "starting statin therapy), was assessed at 1 week, 2 weeks, 1 month, 2 months, 3 months, 6 months, 9 months and 12 months after",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2887",
@@ -729,9 +729,9 @@
       "context_window": "statin therapy), was assessed at 1 week, 2 weeks, 1 month, 2 months, 3 months, 6 months, 9 months and 12 months after the initi",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2897",
@@ -747,9 +747,9 @@
       "context_window": "erapy), was assessed at 1 week, 2 weeks, 1 month, 2 months, 3 months, 6 months, 9 months and 12 months after the initiation of s",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2907",
@@ -765,9 +765,9 @@
       "context_window": "s assessed at 1 week, 2 weeks, 1 month, 2 months, 3 months, 6 months, 9 months and 12 months after the initiation of statin ther",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2917",
@@ -783,9 +783,9 @@
       "context_window": "at 1 week, 2 weeks, 1 month, 2 months, 3 months, 6 months, 9 months and 12 months after the initiation of statin therapy. Patie",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2930",
@@ -801,9 +801,9 @@
       "context_window": "weeks, 1 month, 2 months, 3 months, 6 months, 9 months and 12 months after the initiation of statin therapy. Patients with serum",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-3006",
@@ -1054,9 +1054,9 @@
       "context_window": "owing numbers of patients were treated with: Simvastatin 20-40 mg/d, n = 98[19.0%]; fluvastatin 40 mg/d, n = 116[22.5%]; pravas",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-n-439",
@@ -1072,9 +1072,9 @@
       "context_window": "bers of patients were treated with: Simvastatin 20-40 mg/d, n = 98[19.0%]; fluvastatin 40 mg/d, n = 116[22.5%]; pravastatin 10",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-446",
@@ -1090,9 +1090,9 @@
       "context_window": "patients were treated with: Simvastatin 20-40 mg/d, n = 98[19.0%]; fluvastatin 40 mg/d, n = 116[22.5%]; pravastatin 10-20 mg",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-466",
@@ -1108,9 +1108,9 @@
       "context_window": "ed with: Simvastatin 20-40 mg/d, n = 98[19.0%]; fluvastatin 40 mg/d, n = 116[22.5%]; pravastatin 10-20 mg/d, n = 80[15.5%]; ros",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-n-475",
@@ -1126,9 +1126,9 @@
       "context_window": "Simvastatin 20-40 mg/d, n = 98[19.0%]; fluvastatin 40 mg/d, n = 116[22.5%]; pravastatin 10-20 mg/d, n = 80[15.5%]; rosuvastatin",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-483",
@@ -1144,9 +1144,9 @@
       "context_window": "tin 20-40 mg/d, n = 98[19.0%]; fluvastatin 40 mg/d, n = 116[22.5%]; pravastatin 10-20 mg/d, n = 80[15.5%]; rosuvastatin 5-10",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-506",
@@ -1162,9 +1162,9 @@
       "context_window": "19.0%]; fluvastatin 40 mg/d, n = 116[22.5%]; pravastatin 10-20 mg/d, n = 80[15.5%]; rosuvastatin 5-10 mg/d, n = 85[16.5%]; ator",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-n-515",
@@ -1180,9 +1180,9 @@
       "context_window": "luvastatin 40 mg/d, n = 116[22.5%]; pravastatin 10-20 mg/d, n = 80[15.5%]; rosuvastatin 5-10 mg/d, n = 85[16.5%]; atorvastatin",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-522",
@@ -1198,9 +1198,9 @@
       "context_window": "tin 40 mg/d, n = 116[22.5%]; pravastatin 10-20 mg/d, n = 80[15.5%]; rosuvastatin 5-10 mg/d, n = 85[16.5%]; atorvastatin 10-20",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-545",
@@ -1216,9 +1216,9 @@
       "context_window": ".5%]; pravastatin 10-20 mg/d, n = 80[15.5%]; rosuvastatin 5-10 mg/d, n = 85[16.5%]; atorvastatin 10-20 mg/d, n = 136[26.0%]. D",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-n-554",
@@ -1234,9 +1234,9 @@
       "context_window": "vastatin 10-20 mg/d, n = 80[15.5%]; rosuvastatin 5-10 mg/d, n = 85[16.5%]; atorvastatin 10-20 mg/d, n = 136[26.0%]. Demograph",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-561",
@@ -1252,9 +1252,9 @@
       "context_window": "n 10-20 mg/d, n = 80[15.5%]; rosuvastatin 5-10 mg/d, n = 85[16.5%]; atorvastatin 10-20 mg/d, n = 136[26.0%]. Demographic and",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-585",
@@ -1270,9 +1270,9 @@
       "context_window": "5%]; rosuvastatin 5-10 mg/d, n = 85[16.5%]; atorvastatin 10-20 mg/d, n = 136[26.0%]. Demographic and clinical characteristics",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-n-594",
@@ -1288,9 +1288,9 @@
       "context_window": "vastatin 5-10 mg/d, n = 85[16.5%]; atorvastatin 10-20 mg/d, n = 136[26.0%]. Demographic and clinical characteristics of the st",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-602",
@@ -1306,9 +1306,9 @@
       "context_window": "5-10 mg/d, n = 85[16.5%]; atorvastatin 10-20 mg/d, n = 136[26.0%]. Demographic and clinical characteristics of the study po",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-n-678",
@@ -1360,9 +1360,9 @@
       "context_window": "s 2 and 3 ). For each individual satin, the total rate was: 6.1% (6/98) for simvastatin, 6.9% (8/116) for fluvastatin, 5.0%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-1809",
@@ -1378,9 +1378,9 @@
       "context_window": "ual satin, the total rate was: 6.1% (6/98) for simvastatin, 6.9% (8/116) for fluvastatin, 5.0% (4/80) for pravastatin, 1.2%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-1839",
@@ -1396,9 +1396,9 @@
       "context_window": "6.1% (6/98) for simvastatin, 6.9% (8/116) for fluvastatin, 5.0% (4/80) for pravastatin, 1.2% (1/85) for rosuvastatin, and 3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-1868",
@@ -1414,9 +1414,9 @@
       "context_window": "6.9% (8/116) for fluvastatin, 5.0% (4/80) for pravastatin, 1.2% (1/85) for rosuvastatin, and 3.7% (5/136) for atorvastatin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-1902",
@@ -1432,9 +1432,9 @@
       "context_window": "% (4/80) for pravastatin, 1.2% (1/85) for rosuvastatin, and 3.7% (5/136) for atorvastatin (Table 2 ). The incidence of mild,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-2019",
@@ -1504,9 +1504,9 @@
       "context_window": "of onset of hepatic aminotransferase elevation ranged from 2 weeks to 6 months following the initiation of statin treatment (T",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2305",
@@ -1522,9 +1522,9 @@
       "context_window": "f hepatic aminotransferase elevation ranged from 2 weeks to 6 months following the initiation of statin treatment (Table 3 ). Th",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2435",
@@ -1576,9 +1576,9 @@
       "context_window": "for 70.8% (17/24) of patients (Table 3 ). Patients required 2 weeks to 3 months to recover from their liver function after cess",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-2514",
@@ -1594,9 +1594,9 @@
       "context_window": "17/24) of patients (Table 3 ). Patients required 2 weeks to 3 months to recover from their liver function after cessation of sta",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-n-2792",
@@ -1612,9 +1612,9 @@
       "context_window": ". b all percentages in the table are of the total samples ( n = 515) Twenty-four patients with hepatic aminotransferase elevat",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-3424",
@@ -1756,9 +1756,9 @@
       "context_window": "elected very elderly patients, whose ages ranged from 80 to 98 years (mean age of 83.8 years). We found that there is no correla",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-880",
@@ -1774,9 +1774,9 @@
       "context_window": "atients, whose ages ranged from 80 to 98 years (mean age of 83.8 years). We found that there is no correlation between age and liv",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-u-1015",
@@ -1792,9 +1792,9 @@
       "context_window": "zyme elevation during statin therapy in patients older than 80 years old. This is supported by multiple studies in different cou",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-pct-2292",
@@ -1846,7 +1846,7 @@
       "context_window": "ear to have an increased risk of hepatic damage (OR, 3.659; 95% CI (1.376 to 9.726); P = 0.009; Table 2 ). However, hepatit",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1864,7 +1864,7 @@
       "context_window": "risk of hepatic damage (OR, 3.659; 95% CI (1.376 to 9.726); P = 0.009; Table 2 ). However, hepatitis patients taking statins did",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1882,9 +1882,9 @@
       "context_window": "s taking statins did experience hepatic damage (OR, 17.036; 95% CI (6.259 to 46.371); P < 0.001), even though they had norm",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-p-5143",
@@ -1900,9 +1900,9 @@
       "context_window": "ience hepatic damage (OR, 17.036; 95% CI (6.259 to 46.371); P < 0.001), even though they had normal liver function before statin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6915904_a_prospective_study_of_hepatic_safety_of_statins_used_in_ver-n-6328",
@@ -1918,7 +1918,7 @@
       "context_window": "a non-statin control group at the beginning of the study ( N = 188). However, 37.2% participants ( N = 70) in the control grou",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1972,7 +1972,7 @@
       "context_window": "a non-statin control group at the beginning of the study ( N = 188). However, 37.2% participants ( N = 70) in the control grou",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2063,9 +2063,9 @@
       "context_window": "s safe to use the standard dose of statins in patients aged 80 years or older. Recently, the FDA has recommended the revision of",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

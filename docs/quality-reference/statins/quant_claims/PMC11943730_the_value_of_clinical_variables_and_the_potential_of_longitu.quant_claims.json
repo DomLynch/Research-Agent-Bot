@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu",
   "doi": "10.3390/life15030431",
-  "extracted_at": "2026-05-05T15:32:45+00:00",
+  "extracted_at": "2026-05-07T15:40:34+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 66,
@@ -24,9 +24,9 @@
       "context_window": "x hospitalization; left ventricular ejection fraction (EF) <30%; and statin intolerance. The clinical variables potentially",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-1447",
@@ -41,10 +41,10 @@
       "sentence": "The clinical variables potentially affecting cardiovascular prognosis after ACS as well as the quantitative and qualitative AP characteristics at baseline and 6 months after the index hospitalization were studied as potential MACE predictors.",
       "context_window": "titative and qualitative AP characteristics at baseline and 6 months after the index hospitalization were studied as potential M",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-1657",
@@ -336,10 +336,10 @@
       "sentence": "We also demonstrated that a lower value of AP GSM reflecting the plaque vulnerability, measured at baseline and after 6 months, was associated with an increased MACE risk; this effect was independent of clinical predictors and risk factor control.",
       "context_window": "ng the plaque vulnerability, measured at baseline and after 6 months, was associated with an increased MACE risk; this effect wa",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-1085",
@@ -372,10 +372,10 @@
       "sentence": "Despite this, even among the participants of randomized clinical trials (RCTs), the recurrent MACE rate after ACS was 7-9% within 1 year [ 7 ], and remained high even with optimal TRF control [ 8 ].",
       "context_window": "ical trials (RCTs), the recurrent MACE rate after ACS was 7-9% within 1 year [ 7 ], and remained high even with optimal TR",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-1815",
@@ -390,10 +390,10 @@
       "sentence": "Despite this, even among the participants of randomized clinical trials (RCTs), the recurrent MACE rate after ACS was 7-9% within 1 year [ 7 ], and remained high even with optimal TRF control [ 8 ].",
       "context_window": "s (RCTs), the recurrent MACE rate after ACS was 7-9% within 1 year [ 7 ], and remained high even with optimal TRF control [ 8",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-2039",
@@ -645,7 +645,7 @@
       "context_window": "ows: for blood pressure (BP):achieving a systolic BP of 120-130 mm Hg or lower (for individuals over 80 years old-130-140 mm H",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -663,7 +663,7 @@
       "context_window": "systolic BP of 120-130 mm Hg or lower (for individuals over 80 years old-130-140 mm Hg or lower) and a diastolic BP of 70-80 mm",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -681,7 +681,7 @@
       "context_window": "0-130 mm Hg or lower (for individuals over 80 years old-130-140 mm Hg or lower) and a diastolic BP of 70-80 mm Hg or lower; fo",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -699,7 +699,7 @@
       "context_window": "years old-130-140 mm Hg or lower) and a diastolic BP of 70-80 mm Hg or lower; for low-density lipoprotein cholesterol (LDL-C",
       "claim_role": "unknown",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -716,8 +716,8 @@
       "sentence": "According to the Guidelines [ 18 , 19 ], TRF control was defined as follows: for blood pressure (BP):achieving a systolic BP of 120-130 mm Hg or lower (for individuals over 80 years old-130-140 mm Hg or lower) and a diastolic BP of 70-80 mm Hg or lower; for low-density lipoprotein cholesterol (LDL-C) level: <1.4 mmol/L and decrease of \u2265 50% from baseline; for physical activity: achieving a moderate activity level for >150 min or vigorous activity level for >75 min per week; and smoking cessation.",
       "context_window": "er; for low-density lipoprotein cholesterol (LDL-C) level: <1.4 mmol/L and decrease of \u2265 50% from baseline; for physical activit",
       "claim_role": "unknown",
-      "endpoint": "blood pressure",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -734,8 +734,8 @@
       "sentence": "According to the Guidelines [ 18 , 19 ], TRF control was defined as follows: for blood pressure (BP):achieving a systolic BP of 120-130 mm Hg or lower (for individuals over 80 years old-130-140 mm Hg or lower) and a diastolic BP of 70-80 mm Hg or lower; for low-density lipoprotein cholesterol (LDL-C) level: <1.4 mmol/L and decrease of \u2265 50% from baseline; for physical activity: achieving a moderate activity level for >150 min or vigorous activity level for >75 min per week; and smoking cessation.",
       "context_window": "in cholesterol (LDL-C) level: <1.4 mmol/L and decrease of \u2265 50% from baseline; for physical activity: achieving a moderate",
       "claim_role": "unknown",
-      "endpoint": "blood pressure",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -752,10 +752,10 @@
       "sentence": "Time was calculated from the date of hospitalization for ACS to the date of the MACE or the date of last contact with the patient (routine visits were carried out 6, 12, and 24 months after discharge from hospital).",
       "context_window": "ith the patient (routine visits were carried out 6, 12, and 24 months after discharge from hospital). The probability of developi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-9440",
@@ -770,10 +770,10 @@
       "sentence": "The probability of developing a MACE at 6, 12, and 24 months of follow-up was estimated with 95% confidence intervals (CI).",
       "context_window": "spital). The probability of developing a MACE at 6, 12, and 24 months of follow-up was estimated with 95% confidence intervals (C",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-9482",
@@ -788,10 +788,10 @@
       "sentence": "The probability of developing a MACE at 6, 12, and 24 months of follow-up was estimated with 95% confidence intervals (CI).",
       "context_window": "ACE at 6, 12, and 24 months of follow-up was estimated with 95% confidence intervals (CI). The type of missing data in all",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-p-9982",
@@ -1022,10 +1022,10 @@
       "sentence": "The general characteristics of the study patients assessed at baseline and after 6 months of follow-up by MACE occurrence are given in Table 1 and Table 2 .",
       "context_window": "istics of the study patients assessed at baseline and after 6 months of follow-up by MACE occurrence are given in Table 1 and Ta",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-938",
@@ -1203,9 +1203,9 @@
       "context_window": "ation at discharge. High-intensity statin was prescribed to 95.3% of patients at discharge. At 6 months after ACS, complete",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-1490",
@@ -1256,10 +1256,10 @@
       "sentence": "BP control was achieved most often (81%), while the recommended reduction in LDL-C was achieved in the minority of participants (12%).",
       "context_window": "actors was not optimal. BP control was achieved most often (81%), while the recommended reduction in LDL-C was achieved in",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-1745",
@@ -1274,10 +1274,10 @@
       "sentence": "BP control was achieved most often (81%), while the recommended reduction in LDL-C was achieved in the minority of participants (12%).",
       "context_window": "tion in LDL-C was achieved in the minority of participants (12%). A total of 19% of patients had three to four uncorrected",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-1762",
@@ -1436,10 +1436,10 @@
       "sentence": "The calculation examples are as follows:\n\nIn a patient without DM, with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 1.98 \u2217 2.36 = 15.7%, since n = (60-40)/5 = 4.",
       "context_window": "ples are as follows: In a patient without DM, with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-5856",
@@ -1454,10 +1454,10 @@
       "sentence": "The calculation examples are as follows:\n\nIn a patient without DM, with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 1.98 \u2217 2.36 = 15.7%, since n = (60-40)/5 = 4.",
       "context_window": "LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 1.98 \u2217 1.24 4 = 3.35%",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-5895",
@@ -1472,10 +1472,10 @@
       "sentence": "The calculation examples are as follows:\n\nIn a patient without DM, with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 1.98 \u2217 2.36 = 15.7%, since n = (60-40)/5 = 4.",
       "context_window": "the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 1.98 \u2217 2.36 = 15.7%, since n = (6",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-5919",
@@ -1490,10 +1490,10 @@
       "sentence": "The calculation examples are as follows:\n\nIn a patient without DM, with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 1.98 \u2217 2.36 = 15.7%, since n = (60-40)/5 = 4.",
       "context_window": "days can be calculated as follows: 3.35% \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 1.98 \u2217 2.36 = 15.7%, since n = (60-40)/5 = 4. In a patie",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-5941",
@@ -1508,10 +1508,10 @@
       "sentence": "The calculation examples are as follows:\n\nIn a patient without DM, with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 1.98 \u2217 2.36 = 15.7%, since n = (60-40)/5 = 4.",
       "context_window": "d as follows: 3.35% \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 1.98 \u2217 2.36 = 15.7%, since n = (60-40)/5 = 4. In a patient with treated DM, LV",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6012",
@@ -1526,10 +1526,10 @@
       "sentence": "In a patient with treated DM, LV EF = 40% and GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 2.28 \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 2.28 \u2217 1.98 \u2217 2.36 = 35.7%, since n = (60-40)/5 = 4.",
       "context_window": "e n = (60-40)/5 = 4. In a patient with treated DM, LV EF = 40% and GSM = 70, the risk of MACE at 360 days can be calculate",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-6050",
@@ -1544,10 +1544,10 @@
       "sentence": "In a patient with treated DM, LV EF = 40% and GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 2.28 \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 2.28 \u2217 1.98 \u2217 2.36 = 35.7%, since n = (60-40)/5 = 4.",
       "context_window": "h treated DM, LV EF = 40% and GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 2.28 \u2217 1.98 \u2217 1.24 4",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6089",
@@ -1562,10 +1562,10 @@
       "sentence": "In a patient with treated DM, LV EF = 40% and GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 2.28 \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 2.28 \u2217 1.98 \u2217 2.36 = 35.7%, since n = (60-40)/5 = 4.",
       "context_window": "the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 2.28 \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 2.28 \u2217 1.98 \u2217 2.36 = 35.7%",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6120",
@@ -1580,10 +1580,10 @@
       "sentence": "In a patient with treated DM, LV EF = 40% and GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 2.28 \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 2.28 \u2217 1.98 \u2217 2.36 = 35.7%, since n = (60-40)/5 = 4.",
       "context_window": "an be calculated as follows: 3.35% \u2217 2.28 \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 2.28 \u2217 1.98 \u2217 2.36 = 35.7%, since n = (60-40)/5 = 4. Ind",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6149",
@@ -1598,10 +1598,10 @@
       "sentence": "In a patient with treated DM, LV EF = 40% and GSM = 70, the risk of MACE at 360 days can be calculated as follows: 3.35% \u2217 2.28 \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 2.28 \u2217 1.98 \u2217 2.36 = 35.7%, since n = (60-40)/5 = 4.",
       "context_window": "3.35% \u2217 2.28 \u2217 1.98 \u2217 1.24 4 = 3.35% \u2217 2.28 \u2217 1.98 \u2217 2.36 = 35.7%, since n = (60-40)/5 = 4. Individual risk = BCR \u2217 1.27 m \u2217",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6446",
@@ -1616,10 +1616,10 @@
       "sentence": "The calculation examples are as follows:\n\nIf a patient has a Charlson comorbidity index of 8 with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 8 \u2217 1.97 \u2217 1.23 4 = 1.52% \u2217 6.77 \u2217 1.97 \u2217 2.29 = 46.4%, because m = 8 and n = (60 - 40)/5 = 4.",
       "context_window": "patient has a Charlson comorbidity index of 8 with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-6497",
@@ -1634,10 +1634,10 @@
       "sentence": "The calculation examples are as follows:\n\nIf a patient has a Charlson comorbidity index of 8 with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 8 \u2217 1.97 \u2217 1.23 4 = 1.52% \u2217 6.77 \u2217 1.97 \u2217 2.29 = 46.4%, because m = 8 and n = (60 - 40)/5 = 4.",
       "context_window": "LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 8 \u2217 1.97 \u2217 1.23",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6536",
@@ -1652,10 +1652,10 @@
       "sentence": "The calculation examples are as follows:\n\nIf a patient has a Charlson comorbidity index of 8 with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 8 \u2217 1.97 \u2217 1.23 4 = 1.52% \u2217 6.77 \u2217 1.97 \u2217 2.29 = 46.4%, because m = 8 and n = (60 - 40)/5 = 4.",
       "context_window": "the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 8 \u2217 1.97 \u2217 1.23 4 = 1.52% \u2217 6.77 \u2217 1.97 \u2217 2.29 = 46.",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6569",
@@ -1670,10 +1670,10 @@
       "sentence": "The calculation examples are as follows:\n\nIf a patient has a Charlson comorbidity index of 8 with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 8 \u2217 1.97 \u2217 1.23 4 = 1.52% \u2217 6.77 \u2217 1.97 \u2217 2.29 = 46.4%, because m = 8 and n = (60 - 40)/5 = 4.",
       "context_window": "be calculated as follows: 1.52% \u2217 1.27 8 \u2217 1.97 \u2217 1.23 4 = 1.52% \u2217 6.77 \u2217 1.97 \u2217 2.29 = 46.4%, because m = 8 and n = (60 - 4",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6598",
@@ -1688,10 +1688,10 @@
       "sentence": "The calculation examples are as follows:\n\nIf a patient has a Charlson comorbidity index of 8 with LV EF = 40% and standardized GSM = 70, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 8 \u2217 1.97 \u2217 1.23 4 = 1.52% \u2217 6.77 \u2217 1.97 \u2217 2.29 = 46.4%, because m = 8 and n = (60 - 40)/5 = 4.",
       "context_window": "52% \u2217 1.27 8 \u2217 1.97 \u2217 1.23 4 = 1.52% \u2217 6.77 \u2217 1.97 \u2217 2.29 = 46.4%, because m = 8 and n = (60 - 40)/5 = 4. If a patient has a",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6709",
@@ -1706,10 +1706,10 @@
       "sentence": "If a patient has a Charlson comorbidity index of 2 with LV EF = 55% and standardized GSM = 90, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 2 \u2217 1.23 1 = 1.52% \u2217 1.61 \u2217 1.23 = 3.0%, because m = 8, and n = (60 - 55)/5 = 1.",
       "context_window": "patient has a Charlson comorbidity index of 2 with LV EF = 55% and standardized GSM = 90, the risk of MACE at 360 days can",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-6760",
@@ -1724,10 +1724,10 @@
       "sentence": "If a patient has a Charlson comorbidity index of 2 with LV EF = 55% and standardized GSM = 90, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 2 \u2217 1.23 1 = 1.52% \u2217 1.61 \u2217 1.23 = 3.0%, because m = 8, and n = (60 - 55)/5 = 1.",
       "context_window": "LV EF = 55% and standardized GSM = 90, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 2 \u2217 1.23 1 = 1.5",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6799",
@@ -1742,10 +1742,10 @@
       "sentence": "If a patient has a Charlson comorbidity index of 2 with LV EF = 55% and standardized GSM = 90, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 2 \u2217 1.23 1 = 1.52% \u2217 1.61 \u2217 1.23 = 3.0%, because m = 8, and n = (60 - 55)/5 = 1.",
       "context_window": "the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 2 \u2217 1.23 1 = 1.52% \u2217 1.61 \u2217 1.23 = 3.0%, because m =",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6825",
@@ -1760,10 +1760,10 @@
       "sentence": "If a patient has a Charlson comorbidity index of 2 with LV EF = 55% and standardized GSM = 90, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 2 \u2217 1.23 1 = 1.52% \u2217 1.61 \u2217 1.23 = 3.0%, because m = 8, and n = (60 - 55)/5 = 1.",
       "context_window": "ays can be calculated as follows: 1.52% \u2217 1.27 2 \u2217 1.23 1 = 1.52% \u2217 1.61 \u2217 1.23 = 3.0%, because m = 8, and n = (60 - 55)/5 =",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-6847",
@@ -1778,10 +1778,10 @@
       "sentence": "If a patient has a Charlson comorbidity index of 2 with LV EF = 55% and standardized GSM = 90, the risk of MACE at 360 days can be calculated as follows: 1.52% \u2217 1.27 2 \u2217 1.23 1 = 1.52% \u2217 1.61 \u2217 1.23 = 3.0%, because m = 8, and n = (60 - 55)/5 = 1.",
       "context_window": "as follows: 1.52% \u2217 1.27 2 \u2217 1.23 1 = 1.52% \u2217 1.61 \u2217 1.23 = 3.0%, because m = 8, and n = (60 - 55)/5 = 1.",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-298",
@@ -1796,7 +1796,7 @@
       "sentence": "The overall incidence of cardiovascular events during a median of 1.2 years of follow-up in patients with ACS and carotid atherosclerosis was 11.8%, including a mortality rate of 2.2%.",
       "context_window": "erall incidence of cardiovascular events during a median of 1.2 years of follow-up in patients with ACS and carotid atheroscleros",
       "claim_role": "background",
-      "endpoint": "mortality",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1922,10 +1922,10 @@
       "sentence": "In univariate and then multivariate analyses of the variables assessed at 6 months, uncontrolled risk factors (three to four vs. zero to two) had a significant effect on the MACE risk independent of the baseline variables.",
       "context_window": "and then multivariate analyses of the variables assessed at 6 months, uncontrolled risk factors (three to four vs. zero to two)",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-3546",
@@ -1940,10 +1940,10 @@
       "sentence": "We also managed to demonstrate the independent prognostic effect of the standardized carotid/subclavian AP GSM at baseline and after 6 months on MACE.",
       "context_window": "tandardized carotid/subclavian AP GSM at baseline and after 6 months on MACE. The data on the prognostic significance of severe",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-pct-4348",
@@ -1976,7 +1976,7 @@
       "sentence": "A 5% decrease in EF resulted in a MACE risk increase by 22-24%, depending on the model.",
       "context_window": "of MACEs, which was confirmed in multivariate regression. A 5% decrease in EF resulted in a MACE risk increase by 22-24%,",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1994,7 +1994,7 @@
       "sentence": "A 5% decrease in EF resulted in a MACE risk increase by 22-24%, depending on the model.",
       "context_window": "A 5% decrease in EF resulted in a MACE risk increase by 22-24%, depending on the model. The prevalence of diabetes in pat",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2066,7 +2066,7 @@
       "sentence": "In our study, an increase in the index by 1 point resulted in an increase in MACE risk by 24-27%, which is consistent with the data of previous studies [ 31 ].",
       "context_window": "index by 1 point resulted in an increase in MACE risk by 24-27%, which is consistent with the data of previous studies [ 31",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2084,10 +2084,10 @@
       "sentence": "In a cross sectional analysis, we demonstrated a moderate correlation between the severity of coronary and carotid atherosclerosis [ 38 ], but in this prospective study we did not find a relationship between the baseline quantitative characteristics of carotid/subclavian AP as well as their changes after 6 months and MACE recurrence.",
       "context_window": "ics of carotid/subclavian AP as well as their changes after 6 months and MACE recurrence. Since the increase in coronary atheros",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-8715",
@@ -2102,7 +2102,7 @@
       "sentence": "Similarly, MACE risk increased with lower GSM values at 6 months after ACS, as well as with less controlled TRFs.",
       "context_window": "a. Similarly, MACE risk increased with lower GSM values at 6 months after ACS, as well as with less controlled TRFs. Risk facto",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -2120,10 +2120,10 @@
       "sentence": "In the BARI 2 D study of patients with stable CAD, risk factor control 1 year after inclusion in the study was closely associated with survival and cardiovascular outcomes [ 35 ].",
       "context_window": "2 D study of patients with stable CAD, risk factor control 1 year after inclusion in the study was closely associated with su",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-9150",
@@ -2138,7 +2138,7 @@
       "sentence": "The number of uncontrolled major TRFs (LDL-C, BP, physical activity, smoking) at 6 months (three to four vs. zero to two) increased the risk of MACE by 2.3-3.1 times after adjusting for other variables.",
       "context_window": "olled major TRFs (LDL-C, BP, physical activity, smoking) at 6 months (three to four vs. zero to two) increased the risk of MACE",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -2157,7 +2157,7 @@
       "context_window": "prognostic value of the models based on variables assessed 6 months after ACS was higher than that of models based on the basel",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2175,7 +2175,7 @@
       "context_window": "based on the baseline variables, and the HR for GSM < 81 at 6 months was 3.8-4.0 independently of the TRF control. This result i",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2282,10 +2282,10 @@
       "sentence": "Concomitant carotid/subclavian atherosclerosis was found in 83%, so the approach to MACE prediction and possibly for secondary prevention control that we suggested is feasible in the majority of patients with ACS.",
       "context_window": "Concomitant carotid/subclavian atherosclerosis was found in 83%, so the approach to MACE prediction and possibly for second",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11943730_the_value_of_clinical_variables_and_the_potential_of_longitu-u-349",
@@ -2337,9 +2337,9 @@
       "context_window": "tic significance of AP GSM assessed both at baseline and at 6 months which was independent of clinical predictors and risk facto",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s",
   "doi": "10.1016/j.eclinm.2021.100997",
-  "extracted_at": "2026-05-05T21:47:02+00:00",
+  "extracted_at": "2026-05-07T15:40:46+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 16,
@@ -43,7 +43,7 @@
       "context_window": "th reducing cardiovascular mortality (RR, 0.93 [0.88-0.98]; p = 0.01), non-fatal myocardial infarction (MI) (RR, 0.87 [0.81-0.93",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -60,8 +60,8 @@
       "sentence": "In 149,051 participants, omega-3 FA was associated with reducing cardiovascular mortality (RR, 0.93 [0.88-0.98]; p = 0.01), non-fatal myocardial infarction (MI) (RR, 0.87 [0.81-0.93]; p = 0.0001), coronary heart disease events (CHD) (RR, 0.91 [0.87-0.96]; p = 0.0002), major adverse cardiovascular events (MACE) (RR, 0.95 [0.92-0.98]; p = 0.002), and revascularization (RR, 0.91 [0.87-0.95]; p = 0.0001).",
       "context_window": "non-fatal myocardial infarction (MI) (RR, 0.87 [0.81-0.93]; p = 0.0001), coronary heart disease events (CHD) (RR, 0.91 [0.87-0.96]",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -78,8 +78,8 @@
       "sentence": "In 149,051 participants, omega-3 FA was associated with reducing cardiovascular mortality (RR, 0.93 [0.88-0.98]; p = 0.01), non-fatal myocardial infarction (MI) (RR, 0.87 [0.81-0.93]; p = 0.0001), coronary heart disease events (CHD) (RR, 0.91 [0.87-0.96]; p = 0.0002), major adverse cardiovascular events (MACE) (RR, 0.95 [0.92-0.98]; p = 0.002), and revascularization (RR, 0.91 [0.87-0.95]; p = 0.0001).",
       "context_window": "coronary heart disease events (CHD) (RR, 0.91 [0.87-0.96]; p = 0.0002), major adverse cardiovascular events (MACE) (RR, 0.95 [0.9",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -96,8 +96,8 @@
       "sentence": "In 149,051 participants, omega-3 FA was associated with reducing cardiovascular mortality (RR, 0.93 [0.88-0.98]; p = 0.01), non-fatal myocardial infarction (MI) (RR, 0.87 [0.81-0.93]; p = 0.0001), coronary heart disease events (CHD) (RR, 0.91 [0.87-0.96]; p = 0.0002), major adverse cardiovascular events (MACE) (RR, 0.95 [0.92-0.98]; p = 0.002), and revascularization (RR, 0.91 [0.87-0.95]; p = 0.0001).",
       "context_window": "adverse cardiovascular events (MACE) (RR, 0.95 [0.92-0.98]; p = 0.002), and revascularization (RR, 0.91 [0.87-0.95]; p = 0.0001).",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -114,8 +114,8 @@
       "sentence": "In 149,051 participants, omega-3 FA was associated with reducing cardiovascular mortality (RR, 0.93 [0.88-0.98]; p = 0.01), non-fatal myocardial infarction (MI) (RR, 0.87 [0.81-0.93]; p = 0.0001), coronary heart disease events (CHD) (RR, 0.91 [0.87-0.96]; p = 0.0002), major adverse cardiovascular events (MACE) (RR, 0.95 [0.92-0.98]; p = 0.002), and revascularization (RR, 0.91 [0.87-0.95]; p = 0.0001).",
       "context_window": "]; p = 0.002), and revascularization (RR, 0.91 [0.87-0.95]; p = 0.0001). The meta-analysis showed higher RR reductions with EPA mo",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -132,8 +132,8 @@
       "sentence": "EPA monotherapy vs. control was associated with a higher risk of total bleeding (RR: 1.49 [1.20-1.84]) and AF (RR, 1.35 [1.10-1.66]).",
       "context_window": "ontrol was associated with a higher risk of total bleeding (RR: 1.49 [1.20-1.84]) and AF (RR, 1.35 [1.10-1.66]). Omega-3 FAs re",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "bleeding",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -168,8 +168,8 @@
       "sentence": "Conversely, REDUCE-IT (Reduction of Cardiovascular Events with Icosapent Ethyl-Intervention Trial) [4] showed a significant 25% relative reduction in the primary composite efficacy endpoint of cardiovascular death, non-fatal MI, non-fatal stroke, coronary revascularization, or unstable angina (an absolute reduction of 4.8%) with icosapent ethyl - a highly purified ethyl ester of EPA - in patients with established ASCVD or those with high risk for ASCVD (diabetes with at least one additional risk factor).",
       "context_window": "cosapent Ethyl-Intervention Trial) [4] showed a significant 25% relative reduction in the primary composite efficacy endpoi",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "icosapent ethyl",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -186,8 +186,8 @@
       "sentence": "Conversely, REDUCE-IT (Reduction of Cardiovascular Events with Icosapent Ethyl-Intervention Trial) [4] showed a significant 25% relative reduction in the primary composite efficacy endpoint of cardiovascular death, non-fatal MI, non-fatal stroke, coronary revascularization, or unstable angina (an absolute reduction of 4.8%) with icosapent ethyl - a highly purified ethyl ester of EPA - in patients with established ASCVD or those with high risk for ASCVD (diabetes with at least one additional risk factor).",
       "context_window": "scularization, or unstable angina (an absolute reduction of 4.8%) with icosapent ethyl - a highly purified ethyl ester of EP",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "icosapent ethyl",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -241,7 +241,7 @@
       "context_window": "f omega-3 FA) in adults; (2) follow-up duration of at least 12 months; and (3) trials must report mortality and cardiovascular ou",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -385,7 +385,7 @@
       "context_window": "12938 - - 8,890 (34.9) 5.3 \u204e Supplements include Vitamin C (500 mg/d), Vitamin E (400IU/d), beta-carotene (15 mg/d), zinc oxide",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -403,7 +403,7 @@
       "context_window": "e Vitamin C (500 mg/d), Vitamin E (400IU/d), beta-carotene (15 mg/d), zinc oxide (80 mg/d) and cupric oxide (2 mg/d). AFFORD: M",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -421,7 +421,7 @@
       "context_window": ", Vitamin E (400IU/d), beta-carotene (15 mg/d), zinc oxide (80 mg/d) and cupric oxide (2 mg/d). AFFORD: Multi-center Study to E",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -439,7 +439,7 @@
       "context_window": "-carotene (15 mg/d), zinc oxide (80 mg/d) and cupric oxide (2 mg/d). AFFORD: Multi-center Study to Evaluate the Effect of N-3",
       "claim_role": "duration",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -565,7 +565,7 @@
       "context_window": "s per 1000 person-years [-2.5, -0.4]; RR, 0.93 [0.88-0.98]; p = 0.01; moderate certainty; Fig. 2 ) but not all-cause mortality (",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -601,7 +601,7 @@
       "context_window": "reduction in cardiovascular mortality with EPA monotherapy (RR: 0.82 [0.68-0.99]; p = 0.04) and EPA+DHA combination (RR: 0.94 [0",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -619,7 +619,7 @@
       "context_window": "cular mortality with EPA monotherapy (RR: 0.82 [0.68-0.99]; p = 0.04) and EPA+DHA combination (RR: 0.94 [0.89-0.99]; p = 0.02) (",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -637,7 +637,7 @@
       "context_window": "y (RR: 0.82 [0.68-0.99]; p = 0.04) and EPA+DHA combination (RR: 0.94 [0.89-0.99]; p = 0.02) (p for interaction = 0.19). Fig. 2 E",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -655,7 +655,7 @@
       "context_window": "]; p = 0.04) and EPA+DHA combination (RR: 0.94 [0.89-0.99]; p = 0.02) (p for interaction = 0.19). Fig. 2 Effect of omega-3 fatty",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -709,9 +709,9 @@
       "context_window": "s per 1000 person-years [-3.9, -1.4]; RR, 0.87 [0.81-0.93]; p = 0.0001; moderate certainty; Fig. 3 ) and CHD (-1.9 incident cases",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s-p-13512",
@@ -745,7 +745,7 @@
       "context_window": "igher risk reductions in non-fatal MI with EPA monotherapy (RR: 0.72 [0.62-0.84]; p = 0.00002) than EPA+DHA combination (RR: 0.9",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -763,7 +763,7 @@
       "context_window": "in non-fatal MI with EPA monotherapy (RR: 0.72 [0.62-0.84]; p = 0.00002) than EPA+DHA combination (RR: 0.92 [0.85-1.00]; p=0.05) as",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -781,7 +781,7 @@
       "context_window": "R: 0.72 [0.62-0.84]; p = 0.00002) than EPA+DHA combination (RR: 0.92 [0.85-1.00]; p=0.05) as well as for CHD events with EPA mon",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -799,7 +799,7 @@
       "context_window": "= 0.00002) than EPA+DHA combination (RR: 0.92 [0.85-1.00]; p=0.05) as well as for CHD events with EPA monotherapy (RR: 0.73 [",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -817,7 +817,7 @@
       "context_window": "0]; p=0.05) as well as for CHD events with EPA monotherapy (RR: 0.73 [0.62-0.85]; p = 0.00004) than EPA+DHA combination (RR: 0.9",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -835,7 +835,7 @@
       "context_window": "for CHD events with EPA monotherapy (RR: 0.73 [0.62-0.85]; p = 0.00004) than EPA+DHA combination (RR: 0.94 [0.89-0.99]; p = 0.01)",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -853,7 +853,7 @@
       "context_window": "R: 0.73 [0.62-0.85]; p = 0.00004) than EPA+DHA combination (RR: 0.94 [0.89-0.99]; p = 0.01) ( p for interaction for both endpoin",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -871,7 +871,7 @@
       "context_window": "= 0.00004) than EPA+DHA combination (RR: 0.94 [0.89-0.99]; p = 0.01) ( p for interaction for both endpoints = 0.01). Fig. 3 Eff",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -888,10 +888,10 @@
       "sentence": "A total of 17 trials ( n = 135,019) reported 13,234 events of MACE, and 13 trials ( n = 117,890) reported 7416 events of revascularization.",
       "context_window": "min D and Omega-3 Trial; y : years. A total of 17 trials ( n = 135,019) reported 13,234 events of MACE, and 13 trials ( n = 11",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s-n-19747",
@@ -906,10 +906,10 @@
       "sentence": "A total of 17 trials ( n = 135,019) reported 13,234 events of MACE, and 13 trials ( n = 117,890) reported 7416 events of revascularization.",
       "context_window": "= 135,019) reported 13,234 events of MACE, and 13 trials ( n = 117,890) reported 7416 events of revascularization. Omega-3 FA",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s-p-19914",
@@ -924,10 +924,10 @@
       "sentence": "Omega-3 FA was associated with reducing MACE (-1.0 incident cases per 1000 person-years; RR, 0.95 [0.92-0.98]; p = 0.002; moderate certainty; Appendix p 16 ) and revascularization (-1.9 incident cases per 1000 person-years [-2.7, -1.0]; RR, 0.91 [0.87-0.95]; p = 0.0001; moderate certainty; Appendix p 17).",
       "context_window": "incident cases per 1000 person-years; RR, 0.95 [0.92-0.98]; p = 0.002; moderate certainty; Appendix p 16 ) and revascularization",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s-p-20062",
@@ -942,10 +942,10 @@
       "sentence": "Omega-3 FA was associated with reducing MACE (-1.0 incident cases per 1000 person-years; RR, 0.95 [0.92-0.98]; p = 0.002; moderate certainty; Appendix p 16 ) and revascularization (-1.9 incident cases per 1000 person-years [-2.7, -1.0]; RR, 0.91 [0.87-0.95]; p = 0.0001; moderate certainty; Appendix p 17).",
       "context_window": "s per 1000 person-years [-2.7, -1.0]; RR, 0.91 [0.87-0.95]; p = 0.0001; moderate certainty; Appendix p 17). Meta-analysis showed h",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s-rr-a-20184",
@@ -960,8 +960,8 @@
       "sentence": "Meta-analysis showed higher risk reductions in MACE with EPA monotherapy (RR: 0.78 [0.71-0.85]; p = 0.00000001), while EPA+DHA combination did not reduce MACE (RR: 0.99 [0.95-1.02]; p =0.48) (p for interaction=0.000005).",
       "context_window": "showed higher risk reductions in MACE with EPA monotherapy (RR: 0.78 [0.71-0.85]; p = 0.00000001), while EPA+DHA combination did",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -978,8 +978,8 @@
       "sentence": "Meta-analysis showed higher risk reductions in MACE with EPA monotherapy (RR: 0.78 [0.71-0.85]; p = 0.00000001), while EPA+DHA combination did not reduce MACE (RR: 0.99 [0.95-1.02]; p =0.48) (p for interaction=0.000005).",
       "context_window": "uctions in MACE with EPA monotherapy (RR: 0.78 [0.71-0.85]; p = 0.00000001), while EPA+DHA combination did not reduce MACE (RR: 0.99 [",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -996,8 +996,8 @@
       "sentence": "Meta-analysis showed higher risk reductions in MACE with EPA monotherapy (RR: 0.78 [0.71-0.85]; p = 0.00000001), while EPA+DHA combination did not reduce MACE (RR: 0.99 [0.95-1.02]; p =0.48) (p for interaction=0.000005).",
       "context_window": "0.00000001), while EPA+DHA combination did not reduce MACE (RR: 0.99 [0.95-1.02]; p =0.48) (p for interaction=0.000005). This ef",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1014,8 +1014,8 @@
       "sentence": "Meta-analysis showed higher risk reductions in MACE with EPA monotherapy (RR: 0.78 [0.71-0.85]; p = 0.00000001), while EPA+DHA combination did not reduce MACE (RR: 0.99 [0.95-1.02]; p =0.48) (p for interaction=0.000005).",
       "context_window": "+DHA combination did not reduce MACE (RR: 0.99 [0.95-1.02]; p =0.48) (p for interaction=0.000005). This effect was consistent f",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1069,7 +1069,7 @@
       "context_window": "es per 1000 person-years [-1.9, 3.7]; RR, 1.04 [0.91-1.18]; p = 0.55; very low certainty; Appendix p 18), though EPA monotherapy",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1087,7 +1087,7 @@
       "context_window": "ssociated with a reduction of non-fatal stroke vs. control (RR: 0.71 [0.54-0.94]; p = 0.01). Conversely, omega-3 FA was associat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1105,7 +1105,7 @@
       "context_window": "tion of non-fatal stroke vs. control (RR: 0.71 [0.54-0.94]; p = 0.01). Conversely, omega-3 FA was associated with increased risk",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1123,7 +1123,7 @@
       "context_window": "incident cases per 1000 person-years; RR, 1.26 [1.08-1.48]; p = 0.004; low certainty; Appendix p 21 ), with a higher risk with EP",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1141,7 +1141,7 @@
       "context_window": "21 ), with a higher risk with EPA monotherapy vs. control (RR: 1.35 [1.10-1.66]; p = 0.004) [ 4 ]. Overall, omega-3 FA did not",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1159,7 +1159,7 @@
       "context_window": "isk with EPA monotherapy vs. control (RR: 1.35 [1.10-1.66]; p = 0.004) [ 4 ]. Overall, omega-3 FA did not prevent sudden cardiac",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1176,8 +1176,8 @@
       "sentence": "Overall, omega-3 FA did not prevent sudden cardiac death ( Appendix p 22 ) or increase GI-related adverse events ( Appendix p 23) , total bleeding ( Appendix p 24 ), or major or minor bleeding ( Appendix p 25 and 26, respectively ); however, the meta-analysis showed a higher risk of total bleeding with EPA monotherapy vs. control (RR: 1.49 [1.20-1.84]; p = 0.006).",
       "context_window": "er risk of total bleeding with EPA monotherapy vs. control (RR: 1.49 [1.20-1.84]; p = 0.006). Subgroup analyses did not demonst",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "bleeding",
+      "arm": "omega-3",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1194,8 +1194,8 @@
       "sentence": "Overall, omega-3 FA did not prevent sudden cardiac death ( Appendix p 22 ) or increase GI-related adverse events ( Appendix p 23) , total bleeding ( Appendix p 24 ), or major or minor bleeding ( Appendix p 25 and 26, respectively ); however, the meta-analysis showed a higher risk of total bleeding with EPA monotherapy vs. control (RR: 1.49 [1.20-1.84]; p = 0.006).",
       "context_window": "ing with EPA monotherapy vs. control (RR: 1.49 [1.20-1.84]; p = 0.006). Subgroup analyses did not demonstrate heterogeneity base",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "bleeding",
+      "arm": "omega-3",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1213,9 +1213,9 @@
       "context_window": "dosages of omega-3 FAs varied across the trials, with only 11% of included studies investigating \u22654 g/day omega-3 FAs. Bec",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s-pct-2051",
@@ -1231,9 +1231,9 @@
       "context_window": "merged from the REDUCE-IT trial, which showed a significant 20% relative risk reduction in the pre-specified endpoint of ca",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s-pct-2734",
@@ -1248,10 +1248,10 @@
       "sentence": "Despite the exclusion of REDUCE-IT, EPA monotherapy reduced MACE by 23% compared with the control.",
       "context_window": "the exclusion of REDUCE-IT, EPA monotherapy reduced MACE by 23% compared with the control. The gains in life expectancy fr",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s-pct-3430",
@@ -1267,9 +1267,9 @@
       "context_window": ", 4 g/day of EPA vs. placebo led to a relative reduction of 17% in low attenuation plaque volume at 18 months [ 24 ]. Since",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s-u-3470",
@@ -1285,9 +1285,9 @@
       "context_window": "lative reduction of 17% in low attenuation plaque volume at 18 months [ 24 ]. Since low-density plaque is independently associate",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s-u-7523",
@@ -1303,7 +1303,7 @@
       "context_window": "tematic review reported a threshold effect suggesting that \u2265250 mg of omega-3 FA per day was associated with a significant 35%",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1321,7 +1321,7 @@
       "context_window": "mg of omega-3 FA per day was associated with a significant 35% reduction in sudden cardiac death. [32] In REDUCE-IT, on-tr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_",
   "doi": "10.1177/10732748221134090",
-  "extracted_at": "2026-05-05T15:32:45+00:00",
+  "extracted_at": "2026-05-07T15:40:40+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 2,
@@ -41,7 +41,7 @@
       "context_window": "to obtain adjusted estimates of the hazard ratios (HR) with 95% confidence intervals (CI) in relation to use of ADM and sta",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -59,7 +59,7 @@
       "context_window": "g these as time-dependent exposures, and starting follow-up 1 year after the CC diagnosis Pre- and post-diagnostic metformin",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -77,7 +77,7 @@
       "context_window": "eakly associated with the risk of CC-related death (HR .75; 95% CI .58-.99, and HR .78; 95% CI .54-1.14, respectively) comp",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -95,7 +95,7 @@
       "context_window": "sk of CC-related death (HR .75; 95% CI .58-.99, and HR .78; 95% CI .54-1.14, respectively) compared to the use of other ora",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -113,7 +113,7 @@
       "context_window": "n use predicted a reduced risk of CC-related death (HR .83; 95% CI .71- .98, and HR .69; 95% CI .54-.89, respectively). Ad",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -131,7 +131,7 @@
       "context_window": "k of CC-related death (HR .83; 95% CI .71- .98, and HR .69; 95% CI .54-.89, respectively). Additional evidence was found f",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -185,9 +185,9 @@
       "context_window": "o 5 distinct groups according to their ADM usage during the 3 years before the diagnosis of CC: (1) metformin only, (2) other o",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-3864",
@@ -221,9 +221,9 @@
       "context_window": "nd statin usage was purchase of the medication for at least 180 days or longer during the 3 years prior to the cancer diagnosis.",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-4021",
@@ -239,9 +239,9 @@
       "context_window": "f the medication for at least 180 days or longer during the 3 years prior to the cancer diagnosis. Purchase periods of ADM or s",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-4100",
@@ -257,9 +257,9 @@
       "context_window": "e cancer diagnosis. Purchase periods of ADM or statin under 180 days prior to the diagnosis placed the person in the group of \u201cn",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-4419",
@@ -275,9 +275,9 @@
       "context_window": "classified as \u201cyes\u201d if a patient used a statin for at least 180 days. The correctness of personal identity codes, complete name,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-350",
@@ -419,7 +419,7 @@
       "context_window": "ve mortality from CC between the pre-diagnostic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin an",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -437,7 +437,7 @@
       "context_window": "C between the pre-diagnostic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin and other oral ADM, 4",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -455,7 +455,7 @@
       "context_window": "stic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin and other oral ADM, 40% for insulin, and 41%",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -473,7 +473,7 @@
       "context_window": "% for other oral ADM, 39% for metformin and other oral ADM, 40% for insulin, and 41% for no history of regular ADM use ( Fi",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -491,7 +491,7 @@
       "context_window": "39% for metformin and other oral ADM, 40% for insulin, and 41% for no history of regular ADM use ( Figure 2 ). A clear dif",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -509,7 +509,7 @@
       "context_window": "CC was found between the users and non-users of statins, at 34% compared to 43%, respectively. No difference was observed i",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -527,7 +527,7 @@
       "context_window": "ween the users and non-users of statins, at 34% compared to 43%, respectively. No difference was observed in the cumulative",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -545,7 +545,7 @@
       "context_window": "etween the medication groups. Estimated hazard ratios with 95% confidence intervals related to mortality from colon cancer",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -581,9 +581,9 @@
       "context_window": "on, metformin use predicted a reduced CC mortality (HR .75; 95% CI .58-.99) when compared to other oral ADM use. Statin use",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-3102",
@@ -599,7 +599,7 @@
       "context_window": "use predicted a similar reduction in CC mortality (HR .83; 95% CI .71-.98) when compared to statin nonuse. No evidence was",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -635,7 +635,7 @@
       "context_window": "causes of deaths, the results were inconclusive, with wide 95% CIs obtained due to the small number of deaths for metformi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -653,7 +653,7 @@
       "context_window": "or metformin use compared to the use of other ADMs (HR .88; 95% CI .62-1.24), as well as for statin use compared to non-use",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -671,7 +671,7 @@
       "context_window": "4), as well as for statin use compared to non-use (HR 1.06; 95% CI .88-1.29). Some increased mortality from other causes of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -725,7 +725,7 @@
       "context_window": "(data not shown). Estimated hazard ratios (with pointwise 95% confidence limits) of colon cancer (CC) mortality by cumula",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -743,7 +743,7 @@
       "context_window": "e amount of antidiabetic medications and statins during the 3 years preceding CC diagnosis in selected medication groups. Out",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -779,9 +779,9 @@
       "context_window": "with pre-diagnostic use, had a wider error margin (HR .78; 95% CI .54-1.14). For post-diagnostic statin use, evidence was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-5528",
@@ -797,9 +797,9 @@
       "context_window": "found for an association with reduced CC mortality (HR .69; 95% CI .54-.89), concordant with that for pre-diagnostic use. F",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-6397",
@@ -815,7 +815,7 @@
       "context_window": "f other oral ADMs was found either in CC mortality (HR .92; 95% CI .34-2.45) or mortality from other causes (HR .96; 95% CI",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -833,7 +833,7 @@
       "context_window": "2; 95% CI .34-2.45) or mortality from other causes (HR .96; 95% CI .54-1.70) among these patients. When analyzing the morta",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -923,9 +923,9 @@
       "context_window": "rmin use in the inclusion of patients. We required at least 6 months of medication use for both ADMs and statins during the 3 ye",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-9097",
@@ -941,9 +941,9 @@
       "context_window": "nths of medication use for both ADMs and statins during the 3 years prior to the CC diagnosis and for post-diagnostic exposure.",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

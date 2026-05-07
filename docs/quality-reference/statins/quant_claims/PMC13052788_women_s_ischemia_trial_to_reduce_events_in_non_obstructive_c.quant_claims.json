@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c",
   "doi": "10.1136/openhrt-2026-004115",
-  "extracted_at": "2026-05-04T11:48:53+00:00",
+  "extracted_at": "2026-05-07T15:40:37+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 2,
@@ -297,8 +297,8 @@
       "sentence": "The trial design estimated effect size of 20% MACE reduction was from randomised controlled trials of statins, low-density lipoprotein cholesterol (LDL-C) reduction and ACEI/ARB blood pressure (BP) reduction.",
       "context_window": "her angina or HF. The trial design estimated effect size of 20% MACE reduction was from randomised controlled trials of sta",
       "claim_role": "unknown",
-      "endpoint": "blood pressure",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -315,10 +315,10 @@
       "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
       "context_window": ", 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptio",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6098",
@@ -333,10 +333,10 @@
       "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
       "context_window": "power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6169",
@@ -351,10 +351,10 @@
       "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
       "context_window": "ance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period o",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6209",
@@ -369,10 +369,10 @@
       "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
       "context_window": "s: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 mont",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-6234",
@@ -387,10 +387,10 @@
       "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
       "context_window": "3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-6265",
@@ -405,10 +405,10 @@
       "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
       "context_window": "of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying fr",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6297",
@@ -423,10 +423,10 @@
       "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
       "context_window": "months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulti",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6337",
@@ -441,10 +441,10 @@
       "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
       "context_window": "oss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( onl",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6347",
@@ -459,10 +459,10 @@
       "sentence": "812 , 14 Planned power considerations used a log-rank test with 80% power at 5% significance level with the following assumptions: drop-out rate of 10%, 3-year MACE rate for the UC arm of 25%, follow-up period of 18 months, enrolment period of 24 months, loss of follow-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supplemental table S1 ).",
       "context_window": "low-up of 2% and contamination rates varying from 10% up to 30%, resulting in a planned sample size of 4422 ( online supple",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-6599",
@@ -531,10 +531,10 @@
       "sentence": "The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years.",
       "context_window": "systolic blood pressure. The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years.",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-852",
@@ -549,10 +549,10 @@
       "sentence": "The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years.",
       "context_window": "The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years. There were 421 first ev",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-864",
@@ -567,10 +567,10 @@
       "sentence": "The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years.",
       "context_window": "follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years. There were 421 first events overal",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-885",
@@ -585,10 +585,10 @@
       "sentence": "The median follow-up for MACE was 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years.",
       "context_window": "s 3.03 years, ranging from 6 months to 5 years and averaged 2.92 years. There were 421 first events overall (221 in IMT, 200 in UC",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-977",
@@ -984,7 +984,7 @@
       "sentence": "Enrolling only ~60% of planned, combined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online supplemental table S4 ).",
       "context_window": "A cohorts ( online supplemental table S4 ). Enrolling only ~60% of planned, combined with the relatively lower than anticip",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1002,7 +1002,7 @@
       "sentence": "Enrolling only ~60% of planned, combined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online supplemental table S4 ).",
       "context_window": "bined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1020,7 +1020,7 @@
       "sentence": "Enrolling only ~60% of planned, combined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online supplemental table S4 ).",
       "context_window": "ith the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power t",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1038,7 +1038,7 @@
       "sentence": "Enrolling only ~60% of planned, combined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online supplemental table S4 ).",
       "context_window": "r than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reducti",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1056,7 +1056,7 @@
       "sentence": "Enrolling only ~60% of planned, combined with the relatively lower than anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online supplemental table S4 ).",
       "context_window": "anticipated MACE rate (16% at 5 years vs anticipated 25% at 3 years), resulted in limited power to test MACE reduction ( online",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1074,10 +1074,10 @@
       "sentence": "The design estimated effect size of 20% MACE reduction related to randomised trials of statins, LDL-C reduction and ACEI/ARB BP reduction.",
       "context_window": "upplemental table S4 ). The design estimated effect size of 20% MACE reduction related to randomised trials of statins, LDL",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-p-4095",
@@ -1092,7 +1092,7 @@
       "sentence": "During the trial, the difference in IMT and UC ACE/ARB medications was insufficient to result in significant reductions in BP between groups; however, there was a lower LDL-C in the IMT versus UC group (time averaged difference of 7.6 (1.5 SE) mg/dL, p<0.0001) and no detectable difference in BP between groups ( online supplemental figure S4 ).",
       "context_window": "s UC group (time averaged difference of 7.6 (1.5 SE) mg/dL, p<0.0001) and no detectable difference in BP between groups ( online",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1110,10 +1110,10 @@
       "sentence": "The overall MACE rate was 17% during 5 years\u2019 follow-up, and hospitalisation for angina was the cause of most (83%) of these events.",
       "context_window": "ction in at-risk IHD populations. The overall MACE rate was 17% during 5 years\u2019 follow-up, and hospitalisation for angina w",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-273",
@@ -1128,10 +1128,10 @@
       "sentence": "The overall MACE rate was 17% during 5 years\u2019 follow-up, and hospitalisation for angina was the cause of most (83%) of these events.",
       "context_window": "-risk IHD populations. The overall MACE rate was 17% during 5 years\u2019 follow-up, and hospitalisation for angina was the cause of",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-pct-347",
@@ -1146,10 +1146,10 @@
       "sentence": "The overall MACE rate was 17% during 5 years\u2019 follow-up, and hospitalisation for angina was the cause of most (83%) of these events.",
       "context_window": "w-up, and hospitalisation for angina was the cause of most (83%) of these events. Based on the results of this trial, inte",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-1194",
@@ -1164,10 +1164,10 @@
       "sentence": "Of note, the MACE in this female population were largely driven by repeated episodes of hospital care for anginal chest pain which accrued progressively over 5 years.",
       "context_window": "are for anginal chest pain which accrued progressively over 5 years. This result highlights the longer-term morbidity associate",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13052788_women_s_ischemia_trial_to_reduce_events_in_non_obstructive_c-u-2107",

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11946866_do_statins_affect_viral_infections_encountered_by_internatio",
   "doi": "10.3390/tropicalmed10030073",
-  "extracted_at": "2026-05-05T15:32:46+00:00",
+  "extracted_at": "2026-05-07T15:40:34+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 3
@@ -20,8 +20,8 @@
       "sentence": "Indeed, statins have been proven to lower LDL and triglyceride levels by 20-50% and 10-20%, respectively, and potentially increase serum high-density lipoprotein cholesterol levels by 5-10% [ 5 , 6 ].",
       "context_window": "have been proven to lower LDL and triglyceride levels by 20-50% and 10-20%, respectively, and potentially increase serum hi",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -38,8 +38,8 @@
       "sentence": "Indeed, statins have been proven to lower LDL and triglyceride levels by 20-50% and 10-20%, respectively, and potentially increase serum high-density lipoprotein cholesterol levels by 5-10% [ 5 , 6 ].",
       "context_window": "roven to lower LDL and triglyceride levels by 20-50% and 10-20%, respectively, and potentially increase serum high-density",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -56,8 +56,8 @@
       "sentence": "Indeed, statins have been proven to lower LDL and triglyceride levels by 20-50% and 10-20%, respectively, and potentially increase serum high-density lipoprotein cholesterol levels by 5-10% [ 5 , 6 ].",
       "context_window": "ease serum high-density lipoprotein cholesterol levels by 5-10% [ 5 , 6 ]. While statins are effective and safe medications",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     }

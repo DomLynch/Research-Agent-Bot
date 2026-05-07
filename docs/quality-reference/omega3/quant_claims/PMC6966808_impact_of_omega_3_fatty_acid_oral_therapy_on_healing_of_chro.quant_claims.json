@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6966808_impact_of_omega_3_fatty_acid_oral_therapy_on_healing_of_chro",
   "doi": "10.1186/s13063-019-3970-7",
-  "extracted_at": "2026-05-05T21:47:06+00:00",
+  "extracted_at": "2026-05-07T15:40:46+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 31,
@@ -41,7 +41,7 @@
       "context_window": "nt wound clinic. Participants are randomized to two groups: 12 weeks of daily oral therapy with EPA + DHA (1.87 g/day of EPA + 1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -77,9 +77,9 @@
       "context_window": "week 12) within the EPA + DHA group with healed CVLUs after 3 months of therapy. Subaim 3b. Compare symptoms of pain at all time",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6966808_impact_of_omega_3_fatty_acid_oral_therapy_on_healing_of_chro-u-159",
@@ -257,7 +257,7 @@
       "context_window": "motactic responsiveness of PMNs from whole blood after just 4 weeks of EPA + DHA oral therapy in healthy subjects [ 22 , 23 ].",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -275,7 +275,7 @@
       "context_window": "enous circulation of patients with CVLUs [ 30 ] after 4 and 8 weeks of therapy. While these prior studies have made notable sci",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -293,7 +293,7 @@
       "context_window": "e 248 eligible adults with CVLUs, randomized to two groups: 12 weeks of daily oral therapy with EPA + DHA (1.87 g/day of EPA + 1",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -329,9 +329,9 @@
       "context_window": "week 12) within the EPA + DHA group with healed CVLUs after 3 months of therapy. Subaim 3b. Compare symptoms of pain at all time",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6966808_impact_of_omega_3_fatty_acid_oral_therapy_on_healing_of_chro-u-162",
@@ -365,9 +365,9 @@
       "context_window": "of participants in the EPA + DHA group with healed CVLUs by 12 weeks will be studied for an additional 3 months so that we can d",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6966808_impact_of_omega_3_fatty_acid_oral_therapy_on_healing_of_chro-u-367",
@@ -383,9 +383,9 @@
       "context_window": "healed CVLUs by 12 weeks will be studied for an additional 3 months so that we can determine the frequency of CVLU recurrence.",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6966808_impact_of_omega_3_fatty_acid_oral_therapy_on_healing_of_chro-u-2162",
@@ -689,7 +689,7 @@
       "context_window": "tgels of allocated therapy (EPA + DHA or placebo) daily for 12 weeks. Stratified permuted block randomization ensures balanced r",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "placebo",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -707,9 +707,9 @@
       "context_window": "HA plasma levels and reduced n-6:n-3 ratios in humans after 4 weeks in our pilot work [ 25 ]. The Federal Drug Administration r",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6966808_impact_of_omega_3_fatty_acid_oral_therapy_on_healing_of_chro-pct-8978",
@@ -725,9 +725,9 @@
       "context_window": "ipation). Mineral oil is chemically inert, and on ingestion 98% remains unabsorbed in feces. We have used the same placebo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "mineral oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6966808_impact_of_omega_3_fatty_acid_oral_therapy_on_healing_of_chro-u-10168",
@@ -761,9 +761,9 @@
       "context_window": "that DHA-derived resolvin D3 reduces PMN transmigration by 45% [ 52 ]. Other studies have shown that EPA + DHA-derived lip",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "dha",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

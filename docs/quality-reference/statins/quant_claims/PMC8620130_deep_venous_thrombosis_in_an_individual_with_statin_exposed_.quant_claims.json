@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8620130_deep_venous_thrombosis_in_an_individual_with_statin_exposed_",
   "doi": "10.1186/s12959-021-00347-x",
-  "extracted_at": "2026-05-05T15:32:44+00:00",
+  "extracted_at": "2026-05-07T15:40:39+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 1,
@@ -21,10 +21,10 @@
       "sentence": "However, about 20% anti-SRP myopathy patients have been reported to have statin exposure [ 11 ].",
       "context_window": "y related with anti-HMGCR antibodies [ 10 ]. However, about 20% anti-SRP myopathy patients have been reported to have stati",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "myopathy",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8620130_deep_venous_thrombosis_in_an_individual_with_statin_exposed_-u-613",
@@ -39,10 +39,10 @@
       "sentence": "After 5 years of atorvastatin medication, our patient developed anti-SRP myopathy with severe proximal muscle damage.",
       "context_window": "ts have been reported to have statin exposure [ 11 ]. After 5 years of atorvastatin medication, our patient developed anti-SRP",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "myopathy",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

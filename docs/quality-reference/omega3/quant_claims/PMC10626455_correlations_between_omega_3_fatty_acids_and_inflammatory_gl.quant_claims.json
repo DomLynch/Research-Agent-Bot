@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10626455_correlations_between_omega_3_fatty_acids_and_inflammatory_gl",
   "doi": "10.3389/fncel.2023.1163764",
-  "extracted_at": "2026-05-05T21:47:05+00:00",
+  "extracted_at": "2026-05-07T15:40:41+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 2,
@@ -60,9 +60,9 @@
       "context_window": "case-control study with 50 SZ patients aged between 21 and 64 years from Zhanjiang Third People's Hospital in Zhanjiang, Guangd",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10626455_correlations_between_omega_3_fatty_acids_and_inflammatory_gl-u-438",
@@ -384,7 +384,7 @@
       "context_window": "ll significantly lower in SZ compared to healthy controls ( p < 0.01 or < 0.05, Table 3 ). However, there was no difference in m",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -474,7 +474,7 @@
       "context_window": "s was negatively correlated with the plasma level of IL-6 ( p = 0.047, r = -0.22), while no correlation between any other PUFAs a",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -636,9 +636,9 @@
       "context_window": "ion in erythrocytes was positively correlated with 5-HIAA ( p = 0.02, r = 0.30, Figure 6B ). However, there was no correlation b",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10626455_correlations_between_omega_3_fatty_acids_and_inflammatory_gl-p-3929",
@@ -672,7 +672,7 @@
       "context_window": "idity in SZ and controls, CT, control; SZ, schizophrenia, * p < 0.05 vs. controls. Correlations between (B) erythrocyte FLU and",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -690,7 +690,7 @@
       "context_window": "Moreover, FLU was positively correlated with DHA content ( p = 0.04, r = 0.24) while was negatively correlated with pro-inflamm",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "dha",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -708,7 +708,7 @@
       "context_window": "egatively correlated with pro-inflammatory cytokine IL-1\u03b2 ( p = 0.01, r = 0.39, Figures 7B , C ). However, there was no correlat",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "dha",
       "direction": "",
       "binding_confidence": "partial"
     }

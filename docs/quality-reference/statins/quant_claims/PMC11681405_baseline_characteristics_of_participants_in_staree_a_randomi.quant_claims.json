@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11681405_baseline_characteristics_of_participants_in_staree_a_randomi",
   "doi": "10.1161/JAHA.124.036357",
-  "extracted_at": "2026-05-04T16:05:18+00:00",
+  "extracted_at": "2026-05-07T15:40:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 36,
@@ -23,8 +23,8 @@
       "sentence": "We describe the baseline characteristics of the STAREE (Statins in Reducing Events in the Elderly) trial, which is a randomized, double\u2010blind, placebo\u2010controlled trial among community\u2010dwelling older people; the trial evaluated the effect of atorvastatin 40 mg for the prevention of major cardiovascular events (cardiovascular death, nonfatal myocardial infarction or stroke), and on disability\u2010free survival (survival free of both dementia and persistent physical disability).",
       "context_window": "lder people; the trial evaluated the effect of atorvastatin 40 mg for the prevention of major cardiovascular events (cardiova",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "incident cv event",
+      "arm": "rosuvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -223,9 +223,9 @@
       "context_window": "TAREE is unique in including such a large number of older (\u226575 years) independent\u2010living people. STAREE is the largest primary",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11681405_baseline_characteristics_of_participants_in_staree_a_randomi-u-641",
@@ -240,8 +240,8 @@
       "sentence": "STAREE participants were randomized 1:1 to oral 40 mg atorvastatin or matching placebo to have 80% statistical power to detect a 20% reduction in major cardiovascular events and 83% power to detect 14.5% reduction in first occurrence of dementia, persistent disability, or death.",
       "context_window": "der people. STAREE participants were randomized 1:1 to oral 40 mg atorvastatin or matching placebo to have 80% statistical po",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -258,8 +258,8 @@
       "sentence": "STAREE participants were randomized 1:1 to oral 40 mg atorvastatin or matching placebo to have 80% statistical power to detect a 20% reduction in major cardiovascular events and 83% power to detect 14.5% reduction in first occurrence of dementia, persistent disability, or death.",
       "context_window": "1:1 to oral 40 mg atorvastatin or matching placebo to have 80% statistical power to detect a 20% reduction in major cardio",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -276,8 +276,8 @@
       "sentence": "STAREE participants were randomized 1:1 to oral 40 mg atorvastatin or matching placebo to have 80% statistical power to detect a 20% reduction in major cardiovascular events and 83% power to detect 14.5% reduction in first occurrence of dementia, persistent disability, or death.",
       "context_window": "matching placebo to have 80% statistical power to detect a 20% reduction in major cardiovascular events and 83% power to d",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -294,8 +294,8 @@
       "sentence": "STAREE participants were randomized 1:1 to oral 40 mg atorvastatin or matching placebo to have 80% statistical power to detect a 20% reduction in major cardiovascular events and 83% power to detect 14.5% reduction in first occurrence of dementia, persistent disability, or death.",
       "context_window": "o detect a 20% reduction in major cardiovascular events and 83% power to detect 14.5% reduction in first occurrence of deme",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -312,8 +312,8 @@
       "sentence": "STAREE participants were randomized 1:1 to oral 40 mg atorvastatin or matching placebo to have 80% statistical power to detect a 20% reduction in major cardiovascular events and 83% power to detect 14.5% reduction in first occurrence of dementia, persistent disability, or death.",
       "context_window": "tion in major cardiovascular events and 83% power to detect 14.5% reduction in first occurrence of dementia, persistent disab",
       "claim_role": "population",
-      "endpoint": "",
-      "arm": "placebo",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1734,7 +1734,7 @@
       "sentence": "Although the prevalence of hypertension among STAREE participants (43%) was similar to that among similarly aged Australians (39%), 31 the prevalence of cardiometabolic risk factors was much lower, reflective of the STAREE trial's focus on primary prevention.",
       "context_window": "h the prevalence of hypertension among STAREE participants (43%) was similar to that among similarly aged Australians (39%)",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "cardiometabolic",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1752,7 +1752,7 @@
       "sentence": "Although the prevalence of hypertension among STAREE participants (43%) was similar to that among similarly aged Australians (39%), 31 the prevalence of cardiometabolic risk factors was much lower, reflective of the STAREE trial's focus on primary prevention.",
       "context_window": "(43%) was similar to that among similarly aged Australians (39%), 31 the prevalence of cardiometabolic risk factors was muc",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "cardiometabolic",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1771,9 +1771,9 @@
       "context_window": "rial to include such a large number of people aged >70 and >75 years with near equal and proportional sex representation. On ent",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11681405_baseline_characteristics_of_participants_in_staree_a_randomi-u-840",
@@ -1807,7 +1807,7 @@
       "context_window": "tudy of Pravastatin in the Elderly at Risk (PROSPER) trial (52%) 21 and the Mangement of Elevated Cholesterol in the Primar",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "pravastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1825,7 +1825,7 @@
       "context_window": "e Primary Prevention Group of Adult Japanese (MEGA) trials (68%). 24 Indeed, 1 early trial excluded women. 18 Such under\u2010re",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "pravastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1843,9 +1843,9 @@
       "context_window": "eta\u2010analysis 3 regarding the role of statins in those aged \u226575 years of age. Summary of Baseline Participant Characteristics in",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11681405_baseline_characteristics_of_participants_in_staree_a_randomi-u-3506",
@@ -1861,9 +1861,9 @@
       "context_window": "older people. The agent choice of atorvastatin at a dose of 40 mg also has an advantage over older studies that have used les",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11681405_baseline_characteristics_of_participants_in_staree_a_randomi-u-3652",
@@ -1879,9 +1879,9 @@
       "context_window": "as simvastatin and pravastatin (Table 4 ). 13 Atorvastatin 40 mg is comparable in expected low\u2010density lipoprotein cholester",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11681405_baseline_characteristics_of_participants_in_staree_a_randomi-pct-3833",
@@ -1897,9 +1897,9 @@
       "context_window": "xpected low\u2010density lipoprotein cholesterol reduction of 30-50%. 13 This expected reduction avoids the greater risks of adv",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11681405_baseline_characteristics_of_participants_in_staree_a_randomi-u-3978",
@@ -1915,7 +1915,7 @@
       "context_window": "with higher doses of alternate agents such as simvastatin \u226580 mg. 13 , 38 , 39 The regular collection of detailed data regar",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     }

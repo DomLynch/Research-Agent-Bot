@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_",
   "doi": "10.3389/fragi.2026.1675989",
-  "extracted_at": "2026-05-04T13:17:19+00:00",
+  "extracted_at": "2026-05-07T15:40:36+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 46,
@@ -59,10 +59,10 @@
       "sentence": "Novel drugs targeting proprotein convertase subtilisin/kexin type 9 (PCSK9), such as evolocumab, alirocumab and inclisiran, provide substantial LDL-C reduction with a favourable safety profile; however, their high cost and restricted reimbursement policies, particularly in individuals over 80 years of age in many countries, limit their widespread use in the elderly population ( Gargiulo et al., 2024a ; Filardi et al., 2024 ; Gargiulo et al., 2024b ).",
       "context_window": "ed reimbursement policies, particularly in individuals over 80 years of age in many countries, limit their widespread use in the",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1824",
@@ -77,10 +77,10 @@
       "sentence": "Reimbursement criteria (Italian Medicines Agency [AIFA], GU 231-03.10.2022) include patients at very high cardiovascular (CV) risk with LDL-C of \u226570 mg/dL on statin \u00b1 ezetimibe less than 81 years old.",
       "context_window": "tients at very high cardiovascular (CV) risk with LDL-C of \u226570 mg/dL on statin \u00b1 ezetimibe less than 81 years old. Consequently",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1865",
@@ -95,10 +95,10 @@
       "sentence": "Reimbursement criteria (Italian Medicines Agency [AIFA], GU 231-03.10.2022) include patients at very high cardiovascular (CV) risk with LDL-C of \u226570 mg/dL on statin \u00b1 ezetimibe less than 81 years old.",
       "context_window": "isk with LDL-C of \u226570 mg/dL on statin \u00b1 ezetimibe less than 81 years old. Consequently, there remains an unmet clinical need fo",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-pct-2667",
@@ -113,10 +113,10 @@
       "sentence": "Clinical studies have demonstrated that BA lowers LDL-C levels by approximately 18%-28% when administered as monotherapy or in combination with ezetimibe ( De Filippo et al., 2023 ).",
       "context_window": "e demonstrated that BA lowers LDL-C levels by approximately 18%-28% when administered as monotherapy or in combination with",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-pct-2671",
@@ -131,10 +131,10 @@
       "sentence": "Clinical studies have demonstrated that BA lowers LDL-C levels by approximately 18%-28% when administered as monotherapy or in combination with ezetimibe ( De Filippo et al., 2023 ).",
       "context_window": "monstrated that BA lowers LDL-C levels by approximately 18%-28% when administered as monotherapy or in combination with eze",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-3434",
@@ -168,9 +168,9 @@
       "context_window": "atients at high cardiovascular risk, focusing on those over 81 years who cannot tolerate high-dose statins or are ineligible for",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-804",
@@ -221,10 +221,10 @@
       "sentence": "Primary outcomes included changes in lipid parameters (LDL-C, total cholesterol, triglycerides, HDL-C) from baseline to 52 weeks.",
       "context_window": ", total cholesterol, triglycerides, HDL-C) from baseline to 52 weeks. Secondary outcomes encompassed renal and hepatic function",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-2600",
@@ -457,9 +457,9 @@
       "context_window": ". Regarding lipid-lowering therapy, 39 out of 54 patients (72.2%) were on statins, while 15 (27.8%) received ezetimibe monot",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-pct-979",
@@ -475,9 +475,9 @@
       "context_window": "y, 39 out of 54 patients (72.2%) were on statins, while 15 (27.8%) received ezetimibe monotherapy due to statin intolerance.",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-pct-1066",
@@ -493,9 +493,9 @@
       "context_window": "onotherapy due to statin intolerance. Overall, 49 patients (90%) were treated with ezetimibe alone or combined with statins",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-msd-1209",
@@ -511,10 +511,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "emical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1214",
@@ -529,10 +529,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "l parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-msd-1240",
@@ -548,10 +548,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "roup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 15",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1245",
@@ -566,10 +566,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-msd-1269",
@@ -585,10 +585,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1275",
@@ -603,10 +603,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-msd-1304",
@@ -622,10 +622,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration ra",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1310",
@@ -640,10 +640,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GF",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-msd-1331",
@@ -659,10 +659,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "9 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.7",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1337",
@@ -677,10 +677,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-msd-1382",
@@ -696,10 +696,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "eatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1387",
@@ -714,10 +714,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "ine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspa",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-msd-1440",
@@ -733,10 +733,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": ", 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-msd-1486",
@@ -752,10 +752,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "ferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL. After 52 weeks of tre",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-msd-1513",
@@ -771,10 +771,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "spartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL. After 52 weeks of treatment with BA, patients exhib",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1519",
@@ -789,10 +789,10 @@
       "sentence": "The recorded biochemical parameters for this subgroup were as follows: LDL-C, 88 \u00b1 8 mg/dL; HDL cholesterol, 41 \u00b1 5 mg/dL; triglycerides, 139 \u00b1 21 mg/dL; total cholesterol, 158 \u00b1 17 mg/dL; Creatinine 1.2 \u00b1 0.8 mg/dL; glomerular filtration rate (GFR), 58 \u00b1 15 mL/min/1.73 m 2 ; alanine aminotransferase (ALT), 31 \u00b1 8 U/L; aspartate aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL.",
       "context_window": "te aminotransferase (AST), 33 \u00b1 6 U/L; and uric acid, 5.9 \u00b1 2.7 mg/dL. After 52 weeks of treatment with BA, patients exhibited s",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1537",
@@ -826,7 +826,7 @@
       "sentence": "The mean LDL-C levels decreased from 88 \u00b1 8 mg/dL to 63 \u00b1 9 mg/dL (p < 0.0001).",
       "context_window": "d profiles, Figure 1 . The mean LDL-C levels decreased from 88 \u00b1 8 mg/dL to 63 \u00b1 9 mg/dL (p < 0.0001). Triglyceride levels als",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -844,7 +844,7 @@
       "sentence": "The mean LDL-C levels decreased from 88 \u00b1 8 mg/dL to 63 \u00b1 9 mg/dL (p < 0.0001).",
       "context_window": "files, Figure 1 . The mean LDL-C levels decreased from 88 \u00b1 8 mg/dL to 63 \u00b1 9 mg/dL (p < 0.0001). Triglyceride levels also redu",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -863,7 +863,7 @@
       "sentence": "The mean LDL-C levels decreased from 88 \u00b1 8 mg/dL to 63 \u00b1 9 mg/dL (p < 0.0001).",
       "context_window": "re 1 . The mean LDL-C levels decreased from 88 \u00b1 8 mg/dL to 63 \u00b1 9 mg/dL (p < 0.0001). Triglyceride levels also reduced from 1",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -881,7 +881,7 @@
       "sentence": "The mean LDL-C levels decreased from 88 \u00b1 8 mg/dL to 63 \u00b1 9 mg/dL (p < 0.0001).",
       "context_window": ". The mean LDL-C levels decreased from 88 \u00b1 8 mg/dL to 63 \u00b1 9 mg/dL (p < 0.0001). Triglyceride levels also reduced from 139 \u00b1 2",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -899,7 +899,7 @@
       "sentence": "The mean LDL-C levels decreased from 88 \u00b1 8 mg/dL to 63 \u00b1 9 mg/dL (p < 0.0001).",
       "context_window": "n LDL-C levels decreased from 88 \u00b1 8 mg/dL to 63 \u00b1 9 mg/dL (p < 0.0001). Triglyceride levels also reduced from 139 \u00b1 21 mg/dL to 1",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1139,10 +1139,10 @@
       "sentence": "At baseline, the majority of patients had LDL-C levels above the recommended thresholds, with a substantial proportion exceeding 70 mg/dL.",
       "context_window": "mmended thresholds, with a substantial proportion exceeding 70 mg/dL. After 52 weeks, a significant shift was observed, with mos",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-2242",
@@ -1157,10 +1157,10 @@
       "sentence": "After 52 weeks, a significant shift was observed, with most patients achieving LDL-C levels below 70 mg/dL, and a considerable subset reaching levels below 55 mg/dL.",
       "context_window": "ds, with a substantial proportion exceeding 70 mg/dL. After 52 weeks, a significant shift was observed, with most patients achie",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-2334",
@@ -1175,10 +1175,10 @@
       "sentence": "After 52 weeks, a significant shift was observed, with most patients achieving LDL-C levels below 70 mg/dL, and a considerable subset reaching levels below 55 mg/dL.",
       "context_window": "s observed, with most patients achieving LDL-C levels below 70 mg/dL, and a considerable subset reaching levels below 55 mg/dL.",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-2392",
@@ -1193,10 +1193,10 @@
       "sentence": "After 52 weeks, a significant shift was observed, with most patients achieving LDL-C levels below 70 mg/dL, and a considerable subset reaching levels below 55 mg/dL.",
       "context_window": "w 70 mg/dL, and a considerable subset reaching levels below 55 mg/dL. Regarding safety, renal function and liver enzyme levels r",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-msd-2561",
@@ -1523,10 +1523,10 @@
       "sentence": "A significant reduction in LDL-C, triglycerides, and total cholesterol was observed (marked with * for p < 0.05), while HDL-C levels remained stable.",
       "context_window": "ides, and total cholesterol was observed (marked with * for p < 0.05), while HDL-C levels remained stable. Patients Achieving L",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-3452",
@@ -1541,10 +1541,10 @@
       "sentence": "Distribution of patients based on LDL-C thresholds at baseline and after 52 weeks of treatment with bempedoic acid.",
       "context_window": "of patients based on LDL-C thresholds at baseline and after 52 weeks of treatment with bempedoic acid. At baseline, the majority",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-3551",
@@ -1559,10 +1559,10 @@
       "sentence": "At baseline, the majority of patients had LDL-C levels >70 mg/dL (red) or between 55 and 70 mg/dL (orange).",
       "context_window": "id. At baseline, the majority of patients had LDL-C levels >70 mg/dL (red) or between 55 and 70 mg/dL (orange). After 52 weeks,",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-3584",
@@ -1577,10 +1577,10 @@
       "sentence": "At baseline, the majority of patients had LDL-C levels >70 mg/dL (red) or between 55 and 70 mg/dL (orange).",
       "context_window": "patients had LDL-C levels >70 mg/dL (red) or between 55 and 70 mg/dL (orange). After 52 weeks, a substantial proportion of patie",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-3609",
@@ -1595,10 +1595,10 @@
       "sentence": "After 52 weeks, a substantial proportion of patients achieved LDL-C levels <70 mg/dL (blue) or <55 mg/dL (green), highlighting the treatment's efficacy in achieving lipid-lowering targets.",
       "context_window": ">70 mg/dL (red) or between 55 and 70 mg/dL (orange). After 52 weeks, a substantial proportion of patients achieved LDL-C levels",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-3679",
@@ -1613,10 +1613,10 @@
       "sentence": "After 52 weeks, a substantial proportion of patients achieved LDL-C levels <70 mg/dL (blue) or <55 mg/dL (green), highlighting the treatment's efficacy in achieving lipid-lowering targets.",
       "context_window": "a substantial proportion of patients achieved LDL-C levels <70 mg/dL (blue) or <55 mg/dL (green), highlighting the treatment's e",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-3699",
@@ -1631,10 +1631,10 @@
       "sentence": "After 52 weeks, a substantial proportion of patients achieved LDL-C levels <70 mg/dL (blue) or <55 mg/dL (green), highlighting the treatment's efficacy in achieving lipid-lowering targets.",
       "context_window": "tion of patients achieved LDL-C levels <70 mg/dL (blue) or <55 mg/dL (green), highlighting the treatment's efficacy in achieving",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-pct-791",
@@ -1649,10 +1649,10 @@
       "sentence": "Ezetimibe, a cholesterol absorption inhibitor, reduces LDL-C levels by blocking Niemann-Pick C1-like protein 1 (NPC1L1) at the intestinal brush border, achieving reductions of up to 22% as monotherapy and up to 27% when combined with statins ( Cannon et al., 2015 ).",
       "context_window": "the intestinal brush border, achieving reductions of up to 22% as monotherapy and up to 27% when combined with statins ( C",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-pct-820",
@@ -1667,10 +1667,10 @@
       "sentence": "Ezetimibe, a cholesterol absorption inhibitor, reduces LDL-C levels by blocking Niemann-Pick C1-like protein 1 (NPC1L1) at the intestinal brush border, achieving reductions of up to 22% as monotherapy and up to 27% when combined with statins ( Cannon et al., 2015 ).",
       "context_window": "achieving reductions of up to 22% as monotherapy and up to 27% when combined with statins ( Cannon et al., 2015 ). More r",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-pct-1059",
@@ -1685,7 +1685,7 @@
       "sentence": "More recently, PCSK9 inhibitors, such as evolocumab and alirocumab, have revolutionized lipid management by preventing LDL receptor degradation, leading to LDL-C reductions of up to 60% ( Gargiulo et al., 2024b ; Sabatine et al., 2017 ; Schwartz et al., 2018 ).",
       "context_window": "receptor degradation, leading to LDL-C reductions of up to 60% ( Gargiulo et al., 2024b ; Sabatine et al., 2017 ; Schwartz",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1703,10 +1703,10 @@
       "sentence": "Additionally, Inclisiran, an RNA interference-based therapy, suppresses PCSK9 synthesis, reducing LDL-C levels by approximately 50% with biannual administration ( Ray et al., 2020 ).",
       "context_window": "ses PCSK9 synthesis, reducing LDL-C levels by approximately 50% with biannual administration ( Ray et al., 2020 ). BA has",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-pct-1545",
@@ -1721,10 +1721,10 @@
       "sentence": "Clinical trials have demonstrated that BA lowers LDL-C by 18%-28% as monotherapy or in combination with ezetimibe, providing an effective alternative for patients who cannot tolerate high-dose statins ( Ray et al., 2019 ).",
       "context_window": ". Clinical trials have demonstrated that BA lowers LDL-C by 18%-28% as monotherapy or in combination with ezetimibe, provid",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-pct-1549",
@@ -1739,10 +1739,10 @@
       "sentence": "Clinical trials have demonstrated that BA lowers LDL-C by 18%-28% as monotherapy or in combination with ezetimibe, providing an effective alternative for patients who cannot tolerate high-dose statins ( Ray et al., 2019 ).",
       "context_window": "inical trials have demonstrated that BA lowers LDL-C by 18%-28% as monotherapy or in combination with ezetimibe, providing",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13013346_evaluation_of_bempedoic_acid_in_elderly_patients_real_world_-u-1786",
@@ -1775,7 +1775,7 @@
       "sentence": "Over 52 weeks, BA significantly reduced total cholesterol, LDL-C, and triglycerides while HDL-C levels remained stable.",
       "context_window": "or PCSK9 inhibitors due to reimbursement restrictions. Over 52 weeks, BA significantly reduced total cholesterol, LDL-C, and tri",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

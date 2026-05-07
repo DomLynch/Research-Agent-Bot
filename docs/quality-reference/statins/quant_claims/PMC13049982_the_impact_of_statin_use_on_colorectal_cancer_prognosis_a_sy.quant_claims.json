@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy",
   "doi": "10.1186/s12876-025-04398-6",
-  "extracted_at": "2026-05-05T15:32:45+00:00",
+  "extracted_at": "2026-05-07T15:40:37+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "hazard_ratio": 13,
@@ -26,7 +26,7 @@
       "context_window": "atins improved prognosis of CRC, particularly in lower ACM (HR: 0.80; 95% CI: 0.74-0.87) with I\u00b2=90%, P -value < 0.01, and lower",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -45,7 +45,7 @@
       "context_window": "oved prognosis of CRC, particularly in lower ACM (HR: 0.80; 95% CI: 0.74-0.87) with I\u00b2=90%, P -value < 0.01, and lower CSM (HR: 0.74; 95%",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -63,7 +63,7 @@
       "context_window": "icularly in lower ACM (HR: 0.80; 95% CI: 0.74-0.87) with I\u00b2=90%, P -value < 0.01, and lower CSM (HR: 0.74; 95% CI: 0.67-0.8",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -81,7 +81,7 @@
       "context_window": "CI: 0.74-0.87) with I\u00b2=90%, P -value < 0.01, and lower CSM (HR: 0.74; 95% CI: 0.67-0.82) with I\u00b2=88%, P -value < 0.01 when compa",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -100,7 +100,7 @@
       "context_window": ".87) with I\u00b2=90%, P -value < 0.01, and lower CSM (HR: 0.74; 95% CI: 0.67-0.82) with I\u00b2=88%, P -value < 0.01 when compared to non-users. B",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -118,7 +118,7 @@
       "context_window": "< 0.01, and lower CSM (HR: 0.74; 95% CI: 0.67-0.82) with I\u00b2=88%, P -value < 0.01 when compared to non-users. Both pre- and",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -136,9 +136,9 @@
       "context_window": "results for statin use on RFS indicated an HR of 1.01 with 95% CI of 0.94 to 1.09 (I\u00b2 = 0% and P -value = 0.93). Additiona",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-1207",
@@ -154,9 +154,9 @@
       "context_window": "S indicated an HR of 1.01 with 95% CI of 0.94 to 1.09 (I\u00b2 = 0% and P -value = 0.93). Additionally, for DFS, the HR was 0.9",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-1272",
@@ -173,9 +173,9 @@
       "context_window": "d P -value = 0.93). Additionally, for DFS, the HR was 0.93 (95% CI: 0.85-1.01) with I\u00b2 = 47%, suggesting no meaningful effect of statin u",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-1301",
@@ -191,9 +191,9 @@
       "context_window": "lly, for DFS, the HR was 0.93 (95% CI: 0.85-1.01) with I\u00b2 = 47%, suggesting no meaningful effect of statin use on DFS. No s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-2168",
@@ -317,7 +317,7 @@
       "context_window": "he association between statin exposure of more or less than 30 mg/day one year before surgery. The second and third subgroup anal",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -335,9 +335,9 @@
       "context_window": "ated the association between statin exposure between 30 and 90 days pre-operatively. For ACM: 0.93 (95% CI: 0.85-1.02) For DFS:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-2209",
@@ -392,7 +392,7 @@
       "context_window": "tformin and other antidiabetic drugs N/A N/A For DFS: 1.05 (95% CI: 0.50-2.21) Pathological Response \u2191, Chemotherapy Toxicity \u2191, prognosi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -410,7 +410,7 @@
       "context_window": "herapy if they collected a prescription for a statin within 12 months before and after surgery. For ACM: 0.66 (95% CI: 0.60-0.73)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -429,7 +429,7 @@
       "context_window": "n within 12 months before and after surgery. For ACM: 0.66 (95% CI: 0.60-0.73) For CSM: 0.60 (95% CI: 0.47-0.76) Mortality \u2193, survival \u2191(",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -448,7 +448,7 @@
       "context_window": "r surgery. For ACM: 0.66 (95% CI: 0.60-0.73) For CSM: 0.60 (95% CI: 0.47-0.76) Mortality \u2193, survival \u2191(anti-inflammatory effects, cardiov",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -466,7 +466,7 @@
       "context_window": "tatin usage was the purchase of the medication for at least 180 days or longer during the three years prior to the cancer diagno",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "metformin",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -485,7 +485,7 @@
       "context_window": "e three years prior to the cancer diagnosis. For ACM: 0.68 (95% CI: 0.53-0.88) 0.52 (95% CI: 0.38-0.71) For CSM: 0.77 (95% CI: 0.63-0.94)",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -504,7 +504,7 @@
       "context_window": "e cancer diagnosis. For ACM: 0.68 (95% CI: 0.53-0.88) 0.52 (95% CI: 0.38-0.71) For CSM: 0.77 (95% CI: 0.63-0.94) 0.57 (95% CI: 0.42-0.78)",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -523,7 +523,7 @@
       "context_window": "(95% CI: 0.53-0.88) 0.52 (95% CI: 0.38-0.71) For CSM: 0.77 (95% CI: 0.63-0.94) 0.57 (95% CI: 0.42-0.78) Pre-diagnostic statin use \u2192 \u2193 rec",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -542,7 +542,7 @@
       "context_window": "(95% CI: 0.38-0.71) For CSM: 0.77 (95% CI: 0.63-0.94) 0.57 (95% CI: 0.42-0.78) Pre-diagnostic statin use \u2192 \u2193 rectal cancer mortality Post",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -561,7 +561,7 @@
       "context_window": "re < 730 cDDDs, 730-1459 cDDDs, \u2265 1460 cDDDs For CSM: 0.43 (95% CI: 0.36-0.51) Cancer Incidence \u2193, Cancer Mortality \u2193, prognosis for CRC",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -580,7 +580,7 @@
       "context_window": "ins) pre <1024 DDD, 1024-2691 DDD, >2691 DDD For CSM: 0.73 (95% CI: 0.45-1.17) Cancer Mortality: 1. Statin use did not demonstrate a cons",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -598,7 +598,7 @@
       "context_window": "time of surgery, defined as a collected prescription within 12 months before surgery For CSM: 0.75 (95% CI: 0.66-0.86) 90-Day Mor",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -617,7 +617,7 @@
       "context_window": "prescription within 12 months before surgery For CSM: 0.75 (95% CI: 0.66-0.86) 90-Day Mortality \u2193, Cause-Specific Mortality \u2193, prognosis",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -635,7 +635,7 @@
       "context_window": "ongoing statin therapy if they filled a prescription within 12 months preoperatively and 12 months postoperatively. For ACM: 0.70",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -653,7 +653,7 @@
       "context_window": "y filled a prescription within 12 months preoperatively and 12 months postoperatively. For ACM: 0.70 (95% CI: 0.65-0.75) Long-ter",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -672,7 +672,7 @@
       "context_window": "reoperatively and 12 months postoperatively. For ACM: 0.70 (95% CI: 0.65-0.75) Long-term Mortality \u2193, postoperative survival rates \u2191, pro",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -691,7 +691,7 @@
       "context_window": "f this drug to estimate a precise adherence. For ACM: 0.93 (95% CI: 0.92-0.94) For CSM: 0.93 (95% CI: 0.92-0.94) Mortality \u2193 8/11 Pourlot",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -710,7 +710,7 @@
       "context_window": "adherence. For ACM: 0.93 (95% CI: 0.92-0.94) For CSM: 0.93 (95% CI: 0.92-0.94) Mortality \u2193 8/11 Pourlotfi, Ahl, et al., 2021 [ 28 ] Swede",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -728,7 +728,7 @@
       "context_window": "herapy if they collected a prescription for a statin within 12 months before and after surgery. For ACM: 0.7 vs. 5.5 p < 0.001 Fo",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -746,7 +746,7 @@
       "context_window": "in 12 months before and after surgery. For ACM: 0.7 vs. 5.5 p < 0.001 For DFS: 0.08(95% CI:0.03-0.24) ACM \u2193, Cause-Specific Morta",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -765,7 +765,7 @@
       "context_window": "after surgery. For ACM: 0.7 vs. 5.5 p < 0.001 For DFS: 0.08(95% CI:0.03-0.24) ACM \u2193, Cause-Specific Mortality \u2193, prognosis of colorectal",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -783,7 +783,7 @@
       "context_window": "ined whether people used any medications of interest in the 12 months before incident colon cancer diagnosis. For RFS: 1.09 (95%",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -802,7 +802,7 @@
       "context_window": "nths before incident colon cancer diagnosis. For RFS: 1.09 (95% CI: 0.65-1.84) Colon Cancer Recurrence (-), Any Cancer Event (recurrences",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -821,7 +821,7 @@
       "context_window": "0.61-1.10 and \u2265 1.11 defined daily dose/day. For ACM: 0.92 (95% CI: 0.68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI: 0",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -840,7 +840,7 @@
       "context_window": "dose/day. For ACM: 0.92 (95% CI: 0.68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI: 0.74-1.40) DFS (-), RFS (-), ACM (-",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -859,7 +859,7 @@
       "context_window": "0.68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI: 0.74-1.40) DFS (-), RFS (-), ACM (-), 10/11 Kotti et al., 2019 [ 16 ]",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -878,7 +878,7 @@
       "context_window": "e of statins at the time of cancer diagnosis For ACM: 0.92 (95% CI: 0.38-2.22) 0.59 (95% CI: 0.36-0.96) For CSM: 0.80 (95% CI: 0.30-2.13)",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -897,7 +897,7 @@
       "context_window": "of cancer diagnosis For ACM: 0.92 (95% CI: 0.38-2.22) 0.59 (95% CI: 0.36-0.96) For CSM: 0.80 (95% CI: 0.30-2.13) 0.42 (95% CI: 0.21-0.84)",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -916,7 +916,7 @@
       "context_window": "(95% CI: 0.38-2.22) 0.59 (95% CI: 0.36-0.96) For CSM: 0.80 (95% CI: 0.30-2.13) 0.42 (95% CI: 0.21-0.84) For DFS: 1.11 (95% CI: 0.49-2.52)",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -935,7 +935,7 @@
       "context_window": "(95% CI: 0.36-0.96) For CSM: 0.80 (95% CI: 0.30-2.13) 0.42 (95% CI: 0.21-0.84) For DFS: 1.11 (95% CI: 0.49-2.52) 0.18 (95% CI: 0.05-0.61",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -954,7 +954,7 @@
       "context_window": "(95% CI: 0.30-2.13) 0.42 (95% CI: 0.21-0.84) For DFS: 1.11 (95% CI: 0.49-2.52) 0.18 (95% CI: 0.05-0.61 Survival Benefits (older patients)",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -973,7 +973,7 @@
       "context_window": "(95% CI: 0.21-0.84) For DFS: 1.11 (95% CI: 0.49-2.52) 0.18 (95% CI: 0.05-0.61 Survival Benefits (older patients) \u2191 9/11 Mafiana et al., 2",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -992,7 +992,7 @@
       "context_window": "atin users with non-users of statins N/A N/A For ACM: 0.58 (95% CI: 0.32-1.04) overall survival \u2191 8/11 Fransgaard et al., 2018 [ 14 ] Den",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -1011,7 +1011,7 @@
       "context_window": "/daily, 0.76-1.50 DDD/daily, >1.50 DDD/daily For ACM: 0.92 (95% CI: 0.68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI: 0",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -1030,7 +1030,7 @@
       "context_window": "DDD/daily For ACM: 0.92 (95% CI: 0.68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI: 0.74-1.40) 30-Day Mortality (-), ri",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -1049,7 +1049,7 @@
       "context_window": "0.68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI: 0.74-1.40) 30-Day Mortality (-), risk of postoperative complications",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -1068,7 +1068,7 @@
       "context_window": "if they had at least 1 prescription recorded For ACM: 0.72 (95% CI: 0.68-0.77) For CSM: 0.72 (95% CI: 0.66-0.79) For RFS: 1.01 (95% CI: 0",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1087,7 +1087,7 @@
       "context_window": "n recorded For ACM: 0.72 (95% CI: 0.68-0.77) For CSM: 0.72 (95% CI: 0.66-0.79) For RFS: 1.01 (95% CI: 0.93-1.09) Recurrence Rates (-), Mo",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1106,7 +1106,7 @@
       "context_window": "0.68-0.77) For CSM: 0.72 (95% CI: 0.66-0.79) For RFS: 1.01 (95% CI: 0.93-1.09) Recurrence Rates (-), Mortality Rates \u2193, ACM \u2193, risk of co",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1125,7 +1125,7 @@
       "context_window": "e perioperative time point for all patients. For ACM: 0.83 (95% CI: 0.61-1.12) For CSM: 0.91 (95% CI: 0.64-1.29) Survival Analysis (-), p",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1144,7 +1144,7 @@
       "context_window": "patients. For ACM: 0.83 (95% CI: 0.61-1.12) For CSM: 0.91 (95% CI: 0.64-1.29) Survival Analysis (-), p53 expression (-), HMGCR levels (-",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1181,7 +1181,7 @@
       "context_window": "divided has used users into 3 subcategories. For CSM: 1.39 (95% CI: 0.89-2.16) diabetes and Risk of Developing CRC (-), diabetes, and Can",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1199,7 +1199,7 @@
       "context_window": "as those who had been given a prescription for statins for 14 days or more after a colon cancer diagnosis. For ACM: 0.68 (95%",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1218,7 +1218,7 @@
       "context_window": "days or more after a colon cancer diagnosis. For ACM: 0.68 (95% CI: 0.52-0.89) For CSM: 0.71 (95% CI: 0.52-0.96) Death from any cause \u2193,",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1237,7 +1237,7 @@
       "context_window": "diagnosis. For ACM: 0.68 (95% CI: 0.52-0.89) For CSM: 0.71 (95% CI: 0.52-0.96) Death from any cause \u2193, CSM \u2193, Impact of BMP Signaling: su",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1256,7 +1256,7 @@
       "context_window": "iduals diagnosed with hyperlipidemia pre N/A For ACM: 1.05 (95% CI: 0.93-1.17) For CSM: 0.89 (95% CI: 0.78-1.01) ACM (-), Cancer Mortalit",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1275,7 +1275,7 @@
       "context_window": "ia pre N/A For ACM: 1.05 (95% CI: 0.93-1.17) For CSM: 0.89 (95% CI: 0.78-1.01) ACM (-), Cancer Mortality \u2193 8/11 Gray et al., 2016, [ 34 ]",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1293,7 +1293,7 @@
       "context_window": "de, year of diagnosis, deprivation, cancer treatment within 6 months (chemotherapy, radiotherapy, Surgery), co-morbidities (prio",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1311,7 +1311,7 @@
       "context_window": "re conducted with individuals considered non-users prior to 6 months after first use, a short-term user between 6 months after f",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1329,7 +1329,7 @@
       "context_window": "rior to 6 months after first use, a short-term user between 6 months after first use and 6 months after the 12th prescription (o",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1347,7 +1347,7 @@
       "context_window": "use, a short-term user between 6 months after first use and 6 months after the 12th prescription (or 365 DDDs) and a longer-term",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1366,9 +1366,9 @@
       "context_window": "DDs) and a longer-term user after this time. For ACM: 0.89 (95% CI: 0.80-0.99) 0.90 (95% CI: 0.80-1.02) For CSM: 0.84 (95% CI: 0.75-0.94)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-15284",
@@ -1385,9 +1385,9 @@
       "context_window": "er after this time. For ACM: 0.89 (95% CI: 0.80-0.99) 0.90 (95% CI: 0.80-1.02) For CSM: 0.84 (95% CI: 0.75-0.94) 0.90 (95% CI: 0.77-1.05)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-15318",
@@ -1404,9 +1404,9 @@
       "context_window": "(95% CI: 0.80-0.99) 0.90 (95% CI: 0.80-1.02) For CSM: 0.84 (95% CI: 0.75-0.94) 0.90 (95% CI: 0.77-1.05) CSM (Pre-Diagnostic Statin Use) \u2193",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-15343",
@@ -1423,9 +1423,9 @@
       "context_window": "(95% CI: 0.80-1.02) For CSM: 0.84 (95% CI: 0.75-0.94) 0.90 (95% CI: 0.77-1.05) CSM (Pre-Diagnostic Statin Use) \u2193, CSM (Post-Diagnostic St",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-16160",
@@ -1442,9 +1442,9 @@
       "context_window": "mity of the tumor to the anal verge. pre N/A For DFS: 0.29 (95% CI: 0.17-0.51) \u2193 Pre-treatment CEA levels \u2192 \u2191 pCR likelihood Proximity to",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-16931",
@@ -1461,9 +1461,9 @@
       "context_window": "rs pre Duration of statin use, y 0-2 3-6 + 7 For ACM: 1.10 (95% CI: 0.85-1.42) For CSM: 1.11 (95% CI: 0.82-1.50) For RFS: 0.90 (95% CI: 0",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-16965",
@@ -1480,9 +1480,9 @@
       "context_window": "-2 3-6 + 7 For ACM: 1.10 (95% CI: 0.85-1.42) For CSM: 1.11 (95% CI: 0.82-1.50) For RFS: 0.90 (95% CI: 0.63-1.28) Overall survival (-), CR",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-16999",
@@ -1499,9 +1499,9 @@
       "context_window": "0.85-1.42) For CSM: 1.11 (95% CI: 0.82-1.50) For RFS: 0.90 (95% CI: 0.63-1.28) Overall survival (-), CRC-specific survival (-), recurrenc",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-17481",
@@ -1517,9 +1517,9 @@
       "context_window": "n users pre Patients who had been prescribed statins within 1 year before the cancer diagnosis were defined as statin users. T",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-17589",
@@ -1535,9 +1535,9 @@
       "context_window": "as statin users. The mean cumulative days of statin use was 766.5 days, and the mean cumulative DDD was 496.9. For ACM: 0.82 (95%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-17655",
@@ -1554,7 +1554,7 @@
       "context_window": "days, and the mean cumulative DDD was 496.9. For ACM: 0.82 (95% CI: 0.74-0.91) For CSM: 0.77 (95% CI: 0.68-0.88) CSS \u2191, OS \u2191 9/11 Zanders",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1573,7 +1573,7 @@
       "context_window": "was 496.9. For ACM: 0.82 (95% CI: 0.74-0.91) For CSM: 0.77 (95% CI: 0.68-0.88) CSS \u2191, OS \u2191 9/11 Zanders et al., 2015 [ 37 ] Netherlands R",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1591,7 +1591,7 @@
       "context_window": "HRs at start of follow-up, and after 6, 12, 18, 24, 30 and 36 months of cumulative exposure to the drugs. The reference group fo",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1610,7 +1610,7 @@
       "context_window": "exposure at that specific time in follow-up. For ACM: 0.73 (95% CI: 0.54-0.99) overall Mortality \u2193 8/11 Cardwell, 2014 [ 7 ] UK Retrospec",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1628,7 +1628,7 @@
       "context_window": "of diagnosis stage, site (colon or rectum), Surgery within 6 months, chemotherapy within 6 months, radiotherapy within 6 months",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1646,7 +1646,7 @@
       "context_window": "on or rectum), Surgery within 6 months, chemotherapy within 6 months, radiotherapy within 6 months, co-morbidities before diagno",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1664,7 +1664,7 @@
       "context_window": "6 months, chemotherapy within 6 months, radiotherapy within 6 months, co-morbidities before diagnosis (including congestive hear",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1682,7 +1682,7 @@
       "context_window": "-users post an individual was considered a nonuser prior to 6 months after first use, a short-term user between 6 months after f",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1700,7 +1700,7 @@
       "context_window": "rior to 6 months after first use, a short-term user between 6 months after first use and 6 months after the 12th prescription (o",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1718,7 +1718,7 @@
       "context_window": "use, a short-term user between 6 months after first use and 6 months after the 12th prescription (or 365 DDDs), and a longer-ter",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1737,7 +1737,7 @@
       "context_window": "Ds), and a longer-term user after this time. For ACM: 0.75 (95% CI: 0.66-0.85) For CSM: 0.88 (95% CI: 0.79-0.93) 0.71 (95% CI: 0.61-0.83)",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1756,7 +1756,7 @@
       "context_window": "this time. For ACM: 0.75 (95% CI: 0.66-0.85) For CSM: 0.88 (95% CI: 0.79-0.93) 0.71 (95% CI: 0.61-0.83) Post-diagnosis statin use \u2192 \u2193 CSM",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1775,7 +1775,7 @@
       "context_window": "(95% CI: 0.66-0.85) For CSM: 0.88 (95% CI: 0.79-0.93) 0.71 (95% CI: 0.61-0.83) Post-diagnosis statin use \u2192 \u2193 CSM by 28%, Statins > 1 year",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1793,7 +1793,7 @@
       "context_window": "71 (95% CI: 0.61-0.83) Post-diagnosis statin use \u2192 \u2193 CSM by 28%, Statins > 1 year \u2192 \u2193 mortality Statin users \u2192 \u2193 ACM 9/11 K",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1811,7 +1811,7 @@
       "context_window": "1-0.83) Post-diagnosis statin use \u2192 \u2193 CSM by 28%, Statins > 1 year \u2192 \u2193 mortality Statin users \u2192 \u2193 ACM 9/11 Krens et al., 2014",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1829,7 +1829,7 @@
       "context_window": "se of a statin at visit 0, the randomisation or at visit 1, 3 weeks after start of treatment. For ACM: 1.41 (95% CI: 0.95-2.10)",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1847,10 +1847,10 @@
       "sentence": "For ACM: 1.41 (95% CI: 0.95-2.10) PFS (-), OS (-) 8/11 Mace et al., 2013 [ 22 ] USA Retrospective Cohort N/A 407 (99/308) 28.26 RC I-III ge, Bmi, asa classification iii or iV, and pathologic stage statin users with non-statin users pre Atorvastatin Lovastatin Pravastatin Rosuvastatin Simvastatin Any agent Mean statin dosage , mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) For CSM: 0.62 (95% CI: 0.32-1.19) For DFS: 1.07 (95% CI: 0.68-1.68) significantly better pathologic response (+), the effectiveness of neoadjuvant CRT in rectal cancer \u2191 (Although statin therapy did not directly improve oncologic outcomes, achieving a favorable pathologic response (AJCC grade 0-1) was linked to improved disease-free survival, overall survival, and reduced CSM and local recurrence) 8/11 Lakha et al., 2012 [ 35 ] UK Case Control 10 603 (309/294) 24.71 CRC I-IV Sex, age, and region of residence), BMI, past medical history of cancer, past medical history of bowel disease, Family history of cancer, regular NSAID intake, smoking, and physical activity statin users with non-statin users pre/post \u2265 1dispensed prescription at least 2 months pre-recruitment \u2265 1dispensed prescription at least 7 months pre-recruitment \u2265 2 dispensed prescriptions at least 2 months pre-recruitment \u2265 2 dispensed prescriptions at least 7 months pre-recruitment For ACM: 0.59 (95% CI: 0.28-1.24) 0.61 (95% CI: 0.26-1.42) For CSM: 0.60 (95% CI: 0.30-1.20) 0.54 (95% CI: 0.19-1.52) risk of developing CRC \u2193, Impact on Survival (-) 9/10 Nielsen et al., 2012 [ 32 ] Denmark Retrospective Cohort 15 295,925 (18721/277204) 53.4 CRC I-IV sex, age, highest level of education, race and ethnic descent (97% of the patients were white persons of Danish descent), and size of residential area, cancer stage (presence or absence of distant metastasis, presence or absence of spread to the lymphatic system, and tumor size); status with regard to radiotherapy, chemotherapy, disease before cancer, diagnosis of cardiovascular, and diagnosis of diabetes mellitus before cancer statin users with non-statin users pre Statin doses were analyzed in the following categories of defined daily dose per day: 0.00 (reference), 0.01 to 0.75, 0.76 to 1.50, and more than 1.50.",
       "context_window": "t visit 1, 3 weeks after start of treatment. For ACM: 1.41 (95% CI: 0.95-2.10) PFS (-), OS (-) 8/11 Mace et al., 2013 [ 22 ] USA Retrospe",
       "claim_role": "effect",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20361",
@@ -1867,9 +1867,9 @@
       "context_window": "uvastatin Simvastatin Any agent Mean statin dosage , mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20373",
@@ -1886,9 +1886,9 @@
       "context_window": "mvastatin Any agent Mean statin dosage , mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20385",
@@ -1905,9 +1905,9 @@
       "context_window": "y agent Mean statin dosage , mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin thera",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20397",
@@ -1924,9 +1924,9 @@
       "context_window": "statin dosage , mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin therapy , y 1.4",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20408",
@@ -1943,9 +1943,9 @@
       "context_window": "age , mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20420",
@@ -1962,9 +1962,9 @@
       "context_window": "31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20463",
@@ -1981,9 +1981,9 @@
       "context_window": "4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM:",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20473",
@@ -2000,9 +2000,9 @@
       "context_window": "\u00b1 17.8 29.8 \u00b1 20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95%",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20483",
@@ -2019,9 +2019,9 @@
       "context_window": "8 \u00b1 20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20493",
@@ -2038,9 +2038,9 @@
       "context_window": "uration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) For C",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20503",
@@ -2057,9 +2057,9 @@
       "context_window": "statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) For CSM: 0.62 (",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-msd-20513",
@@ -2076,9 +2076,9 @@
       "context_window": "erapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) For CSM: 0.62 (95% CI: 0.",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-20538",
@@ -2095,9 +2095,9 @@
       "context_window": "2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) For CSM: 0.62 (95% CI: 0.32-1.19) For DFS: 1.07 (95% CI: 0",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-20572",
@@ -2114,9 +2114,9 @@
       "context_window": "1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) For CSM: 0.62 (95% CI: 0.32-1.19) For DFS: 1.07 (95% CI: 0.68-1.68) significantly better pat",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-20606",
@@ -2133,9 +2133,9 @@
       "context_window": "0.49-1.34) For CSM: 0.62 (95% CI: 0.32-1.19) For DFS: 1.07 (95% CI: 0.68-1.68) significantly better pathologic response (+), the effectiv",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-21307",
@@ -2151,9 +2151,9 @@
       "context_window": "on-statin users pre/post \u2265 1dispensed prescription at least 2 months pre-recruitment \u2265 1dispensed prescription at least 7 months",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-21367",
@@ -2169,9 +2169,9 @@
       "context_window": "2 months pre-recruitment \u2265 1dispensed prescription at least 7 months pre-recruitment \u2265 2 dispensed prescriptions at least 2 mont",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-21429",
@@ -2187,9 +2187,9 @@
       "context_window": "months pre-recruitment \u2265 2 dispensed prescriptions at least 2 months pre-recruitment \u2265 2 dispensed prescriptions at least 7 mont",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-21491",
@@ -2205,9 +2205,9 @@
       "context_window": "months pre-recruitment \u2265 2 dispensed prescriptions at least 7 months pre-recruitment For ACM: 0.59 (95% CI: 0.28-1.24) 0.61 (95%",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-21531",
@@ -2224,9 +2224,9 @@
       "context_window": "scriptions at least 7 months pre-recruitment For ACM: 0.59 (95% CI: 0.28-1.24) 0.61 (95% CI: 0.26-1.42) For CSM: 0.60 (95% CI: 0.30-1.20)",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-21556",
@@ -2243,9 +2243,9 @@
       "context_window": "ths pre-recruitment For ACM: 0.59 (95% CI: 0.28-1.24) 0.61 (95% CI: 0.26-1.42) For CSM: 0.60 (95% CI: 0.30-1.20) 0.54 (95% CI: 0.19-1.52)",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-21590",
@@ -2262,9 +2262,9 @@
       "context_window": "(95% CI: 0.28-1.24) 0.61 (95% CI: 0.26-1.42) For CSM: 0.60 (95% CI: 0.30-1.20) 0.54 (95% CI: 0.19-1.52) risk of developing CRC \u2193, Impact",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-21615",
@@ -2281,9 +2281,9 @@
       "context_window": "(95% CI: 0.26-1.42) For CSM: 0.60 (95% CI: 0.30-1.20) 0.54 (95% CI: 0.19-1.52) risk of developing CRC \u2193, Impact on Survival (-) 9/10 Niel",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-21848",
@@ -2299,9 +2299,9 @@
       "context_window": ", age, highest level of education, race and ethnic descent (97% of the patients were white persons of Danish descent), and",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-22423",
@@ -2355,7 +2355,7 @@
       "context_window": "er of years of use (0-2, 3-5, or \u2265 6 years). For ACM: 1.15 (95% CI: 0.77-1.71) For DFS: 1.04 (95% CI: 0.73-1.49) For RFS: 1.14 (95% CI: 0",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2374,7 +2374,7 @@
       "context_window": "6 years). For ACM: 1.15 (95% CI: 0.77-1.71) For DFS: 1.04 (95% CI: 0.73-1.49) For RFS: 1.14 (95% CI: 0.77-1.69) DFS (-), RFS (-), OS (-)",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2393,7 +2393,7 @@
       "context_window": "0.77-1.71) For DFS: 1.04 (95% CI: 0.73-1.49) For RFS: 1.14 (95% CI: 0.77-1.69) DFS (-), RFS (-), OS (-) (between statin users and non-use",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2412,7 +2412,7 @@
       "context_window": "statins continuously at least 3 times a week For ACM: 0.71 (95% CI: 0.52-0.96) Incidence of Polyps \u2193, Number of Polyps \u2193, mean polyp size",
       "claim_role": "background",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2430,7 +2430,7 @@
       "context_window": "he association between statin exposure of more or less than 30 mg/day one year before surgery. The second and third subgroup ana",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2448,9 +2448,9 @@
       "context_window": "ated the association between statin exposure between 30 and 90 days pre-operatively. For ACM: 0.93 (95% CI: 0.85-1.02) For DF",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-25004",
@@ -2467,9 +2467,9 @@
       "context_window": "ure between 30 and 90 days pre-operatively. For ACM: 0.93 (95% CI: 0.85-1.02) For DFS: 0.93 (95% CI: 0.84-1.03) For ACM: 0.66 (95% CI:",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-25039",
@@ -2486,9 +2486,9 @@
       "context_window": "atively. For ACM: 0.93 (95% CI: 0.85-1.02) For DFS: 0.93 (95% CI: 0.84-1.03) For ACM: 0.66 (95% CI: 0.60-0.73) For CSM: 0.60 (95% CI:",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-25074",
@@ -2505,9 +2505,9 @@
       "context_window": "85-1.02) For DFS: 0.93 (95% CI: 0.84-1.03) For ACM: 0.66 (95% CI: 0.60-0.73) For CSM: 0.60 (95% CI: 0.47-0.76) statin usage was the",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-25109",
@@ -2524,9 +2524,9 @@
       "context_window": "84-1.03) For ACM: 0.66 (95% CI: 0.60-0.73) For CSM: 0.60 (95% CI: 0.47-0.76) statin usage was the purchase of the medication for at l",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-25191",
@@ -2542,9 +2542,9 @@
       "context_window": "atin usage was the purchase of the medication for at least 180 days or longer during the three years prior to the cancer diagn",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-25281",
@@ -2561,7 +2561,7 @@
       "context_window": "three years prior to the cancer diagnosis. For ACM: 0.68 (95% CI: 0.53-0.88) 0.52 (95% CI: 0.38-0.71) For CSM: 0.77 (95% CI: 0.63-0.9",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2580,7 +2580,7 @@
       "context_window": "cancer diagnosis. For ACM: 0.68 (95% CI: 0.53-0.88) 0.52 (95% CI: 0.38-0.71) For CSM: 0.77 (95% CI: 0.63-0.94) 0.57 (95% CI: 0.42-0.7",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2599,7 +2599,7 @@
       "context_window": "5% CI: 0.53-0.88) 0.52 (95% CI: 0.38-0.71) For CSM: 0.77 (95% CI: 0.63-0.94) 0.57 (95% CI: 0.42-0.78) Pre-diagnostic statin use \u2192 \u2193 r",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2618,7 +2618,7 @@
       "context_window": "5% CI: 0.38-0.71) For CSM: 0.77 (95% CI: 0.63-0.94) 0.57 (95% CI: 0.42-0.78) Pre-diagnostic statin use \u2192 \u2193 rectal cancer mortality Po",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2637,7 +2637,7 @@
       "context_window": "< 730 cDDDs, 730-1459 cDDDs, \u2265 1460 cDDDs For ACM: 0.93 (95% CI: 0.92-0.94) For CSM: 0.93 (95% CI: 0.92-0.94) For ACM: 0.7 vs. 5.5 p",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2656,7 +2656,7 @@
       "context_window": "60 cDDDs For ACM: 0.93 (95% CI: 0.92-0.94) For CSM: 0.93 (95% CI: 0.92-0.94) For ACM: 0.7 vs. 5.5 p < 0.001 For DFS: 0.08(95% CI:0.03",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -2674,7 +2674,7 @@
       "context_window": "4) For CSM: 0.93 (95% CI: 0.92-0.94) For ACM: 0.7 vs. 5.5 p < 0.001 For DFS: 0.08(95% CI:0.03-0.24) For ACM: 0.92 (95% CI: 0.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2693,7 +2693,7 @@
       "context_window": ": 0.92-0.94) For ACM: 0.7 vs. 5.5 p < 0.001 For DFS: 0.08(95% CI:0.03-0.24) For ACM: 0.92 (95% CI: 0.68-1.24) For DFS: 0.98 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2712,7 +2712,7 @@
       "context_window": "p < 0.001 For DFS: 0.08(95% CI:0.03-0.24) For ACM: 0.92 (95% CI: 0.68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2731,7 +2731,7 @@
       "context_window": "03-0.24) For ACM: 0.92 (95% CI: 0.68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI: 0.74-1.40) For ACM: 0.92 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2750,7 +2750,7 @@
       "context_window": "68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI: 0.74-1.40) For ACM: 0.92 (95% CI: 0.38-2.22) 0.59 (95% CI: 0.36-0.9",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2769,7 +2769,7 @@
       "context_window": "77-1.25) For RFS: 1.02 (95% CI: 0.74-1.40) For ACM: 0.92 (95% CI: 0.38-2.22) 0.59 (95% CI: 0.36-0.96) For CSM: 0.80 (95% CI: 0.30-2.1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2788,7 +2788,7 @@
       "context_window": "5% CI: 0.74-1.40) For ACM: 0.92 (95% CI: 0.38-2.22) 0.59 (95% CI: 0.36-0.96) For CSM: 0.80 (95% CI: 0.30-2.13) 0.42 (95% CI: 0.21-0.8",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2807,7 +2807,7 @@
       "context_window": "5% CI: 0.38-2.22) 0.59 (95% CI: 0.36-0.96) For CSM: 0.80 (95% CI: 0.30-2.13) 0.42 (95% CI: 0.21-0.84) For DFS: 1.11 (95% CI: 0.49-2.5",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2826,7 +2826,7 @@
       "context_window": "5% CI: 0.36-0.96) For CSM: 0.80 (95% CI: 0.30-2.13) 0.42 (95% CI: 0.21-0.84) For DFS: 1.11 (95% CI: 0.49-2.52) 0.18 (95% CI: 0.05-0.6",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2845,7 +2845,7 @@
       "context_window": "5% CI: 0.30-2.13) 0.42 (95% CI: 0.21-0.84) For DFS: 1.11 (95% CI: 0.49-2.52) 0.18 (95% CI: 0.05-0.61 For ACM: 0.92 (95% CI: 0.68-1.24",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2864,7 +2864,7 @@
       "context_window": "5% CI: 0.21-0.84) For DFS: 1.11 (95% CI: 0.49-2.52) 0.18 (95% CI: 0.05-0.61 For ACM: 0.92 (95% CI: 0.68-1.24) For DFS: 0.98 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2883,7 +2883,7 @@
       "context_window": "95% CI: 0.49-2.52) 0.18 (95% CI: 0.05-0.61 For ACM: 0.92 (95% CI: 0.68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2902,7 +2902,7 @@
       "context_window": ".05-0.61 For ACM: 0.92 (95% CI: 0.68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI: 0.74-1.40) For ACM: 0.72 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2921,7 +2921,7 @@
       "context_window": "68-1.24) For DFS: 0.98 (95% CI: 0.77-1.25) For RFS: 1.02 (95% CI: 0.74-1.40) For ACM: 0.72 (95% CI: 0.68-0.77) For CSM: 0.72 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2940,7 +2940,7 @@
       "context_window": "77-1.25) For RFS: 1.02 (95% CI: 0.74-1.40) For ACM: 0.72 (95% CI: 0.68-0.77) For CSM: 0.72 (95% CI: 0.66-0.79) For RFS: 1.01 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2959,7 +2959,7 @@
       "context_window": "74-1.40) For ACM: 0.72 (95% CI: 0.68-0.77) For CSM: 0.72 (95% CI: 0.66-0.79) For RFS: 1.01 (95% CI: 0.93-1.09) For ACM: 0.83 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2978,7 +2978,7 @@
       "context_window": "68-0.77) For CSM: 0.72 (95% CI: 0.66-0.79) For RFS: 1.01 (95% CI: 0.93-1.09) For ACM: 0.83 (95% CI: 0.61-1.12) For CSM: 0.91 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2997,7 +2997,7 @@
       "context_window": "66-0.79) For RFS: 1.01 (95% CI: 0.93-1.09) For ACM: 0.83 (95% CI: 0.61-1.12) For CSM: 0.91 (95% CI: 0.64-1.29) Statin users were defi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3016,7 +3016,7 @@
       "context_window": "93-1.09) For ACM: 0.83 (95% CI: 0.61-1.12) For CSM: 0.91 (95% CI: 0.64-1.29) Statin users were defined as those who had been given a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3034,7 +3034,7 @@
       "context_window": "as those who had been given a prescription for statins for 14 days or more after a colon cancer diagnosis. For ACM: 0.68 (95%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3053,9 +3053,9 @@
       "context_window": "ays or more after a colon cancer diagnosis. For ACM: 0.68 (95% CI: 0.52-0.89) For CSM: 0.71 (95% CI: 0.52-0.96) For ACM: 1.05 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-26491",
@@ -3072,9 +3072,9 @@
       "context_window": "agnosis. For ACM: 0.68 (95% CI: 0.52-0.89) For CSM: 0.71 (95% CI: 0.52-0.96) For ACM: 1.05 (95% CI: 0.93-1.17) For CSM: 0.89 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-26526",
@@ -3091,9 +3091,9 @@
       "context_window": "52-0.89) For CSM: 0.71 (95% CI: 0.52-0.96) For ACM: 1.05 (95% CI: 0.93-1.17) For CSM: 0.89 (95% CI: 0.78-1.01) For ACM: 0.89 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-26561",
@@ -3110,9 +3110,9 @@
       "context_window": "52-0.96) For ACM: 1.05 (95% CI: 0.93-1.17) For CSM: 0.89 (95% CI: 0.78-1.01) For ACM: 0.89 (95% CI: 0.80-0.99) 0.90 (95% CI: 0.80-1.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-26596",
@@ -3129,9 +3129,9 @@
       "context_window": "93-1.17) For CSM: 0.89 (95% CI: 0.78-1.01) For ACM: 0.89 (95% CI: 0.80-0.99) 0.90 (95% CI: 0.80-1.02) For CSM: 0.84 (95% CI: 0.75-0.9",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-26622",
@@ -3148,9 +3148,9 @@
       "context_window": "5% CI: 0.78-1.01) For ACM: 0.89 (95% CI: 0.80-0.99) 0.90 (95% CI: 0.80-1.02) For CSM: 0.84 (95% CI: 0.75-0.94) 0.90 (95% CI: 0.77-1.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-26657",
@@ -3167,9 +3167,9 @@
       "context_window": "5% CI: 0.80-0.99) 0.90 (95% CI: 0.80-1.02) For CSM: 0.84 (95% CI: 0.75-0.94) 0.90 (95% CI: 0.77-1.05) \u2193 Pre-treatment CEA levels \u2192 \u2191",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-26683",
@@ -3186,9 +3186,9 @@
       "context_window": "5% CI: 0.80-1.02) For CSM: 0.84 (95% CI: 0.75-0.94) 0.90 (95% CI: 0.77-1.05) \u2193 Pre-treatment CEA levels \u2192 \u2191 pCR likelihood Proximity",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-26854",
@@ -3205,9 +3205,9 @@
       "context_window": "\u2192 Statin use at baseline \u2192 \u2191 pCR likelihood For ACM: 1.10 (95% CI: 0.85-1.42) For CSM: 1.11 (95% CI: 0.82-1.50) For RFS: 0.90 (95% CI:",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-26889",
@@ -3224,9 +3224,9 @@
       "context_window": "kelihood For ACM: 1.10 (95% CI: 0.85-1.42) For CSM: 1.11 (95% CI: 0.82-1.50) For RFS: 0.90 (95% CI: 0.63-1.28) Patients who had been",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-26924",
@@ -3243,9 +3243,9 @@
       "context_window": "85-1.42) For CSM: 1.11 (95% CI: 0.82-1.50) For RFS: 0.90 (95% CI: 0.63-1.28) Patients who had been prescribed statins within 1 year be",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-26992",
@@ -3261,9 +3261,9 @@
       "context_window": "0.63-1.28) Patients who had been prescribed statins within 1 year before the cancer diagnosis were defined as statin users.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-27101",
@@ -3279,9 +3279,9 @@
       "context_window": "s statin users. The mean cumulative days of statin use was 766.5 days, and the mean cumulative DDD was 496.9. For ACM: 0.82 (95%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-27168",
@@ -3298,7 +3298,7 @@
       "context_window": "ays, and the mean cumulative DDD was 496.9. For ACM: 0.82 (95% CI: 0.74-0.91) For CSM: 0.77 (95% CI: 0.68-0.88) sex, age at diagnosis,",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3317,7 +3317,7 @@
       "context_window": "s 496.9. For ACM: 0.82 (95% CI: 0.74-0.91) For CSM: 0.77 (95% CI: 0.68-0.88) sex, age at diagnosis, year of diagnosis stage, site (col",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3335,7 +3335,7 @@
       "context_window": "of diagnosis stage, site (colon or rectum), Surgery within 6 months, chemotherapy within 6 months, radiotherapy within 6 months",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3353,7 +3353,7 @@
       "context_window": "n or rectum), Surgery within 6 months, chemotherapy within 6 months, radiotherapy within 6 months, co-morbidities before diagno",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3371,7 +3371,7 @@
       "context_window": "6 months, chemotherapy within 6 months, radiotherapy within 6 months, co-morbidities before diagnosis (including congestive hear",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3390,7 +3390,7 @@
       "context_window": "ing ACEIs, metformin, and low-dose aspirin) For ACM: 0.75 (95% CI: 0.66-0.85) For CSM: 0.88 (95% CI: 0.79-0.93) 0.71 (95% CI: 0.61-0.8",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3409,7 +3409,7 @@
       "context_window": "aspirin) For ACM: 0.75 (95% CI: 0.66-0.85) For CSM: 0.88 (95% CI: 0.79-0.93) 0.71 (95% CI: 0.61-0.83) Post-diagnosis statin use \u2192 \u2193 C",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3428,7 +3428,7 @@
       "context_window": "5% CI: 0.66-0.85) For CSM: 0.88 (95% CI: 0.79-0.93) 0.71 (95% CI: 0.61-0.83) Post-diagnosis statin use \u2192 \u2193 CSM by 28%, Statins > 1 yea",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3446,7 +3446,7 @@
       "context_window": "1 (95% CI: 0.61-0.83) Post-diagnosis statin use \u2192 \u2193 CSM by 28%, Statins > 1 year \u2192 \u2193 mortality Statin users \u2192 \u2193 ACM Ator",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3464,7 +3464,7 @@
       "context_window": "-0.83) Post-diagnosis statin use \u2192 \u2193 CSM by 28%, Statins > 1 year \u2192 \u2193 mortality Statin users \u2192 \u2193 ACM Atorvastatin Lovastat",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3483,7 +3483,7 @@
       "context_window": "tatin Simvastatin Any agent Mean statin dosage , mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3502,7 +3502,7 @@
       "context_window": "tatin Any agent Mean statin dosage , mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duratio",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3521,7 +3521,7 @@
       "context_window": "ent Mean statin dosage , mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin t",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3540,7 +3540,7 @@
       "context_window": "tin dosage , mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin therapy , y",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3559,7 +3559,7 @@
       "context_window": "mg/day 31.3 \u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3578,7 +3578,7 @@
       "context_window": "\u00b1 20.9 36.7 \u00b1 23.4 40.0 \u00b1 21.9 10.7 \u00b1 4.5 27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3597,7 +3597,7 @@
       "context_window": "27.8 \u00b1 17.8 29.8 \u00b1 20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3616,7 +3616,7 @@
       "context_window": ".8 29.8 \u00b1 20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3635,7 +3635,7 @@
       "context_window": "20.2 Duration of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3654,7 +3654,7 @@
       "context_window": "ion of statin therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) F",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3673,7 +3673,7 @@
       "context_window": "in therapy , y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) For CSM: 0.6",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3692,7 +3692,7 @@
       "context_window": ", y 1.4 \u00b1 2.2 1.0 \u00b1 2.0 1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) For CSM: 0.62 (95% CI:",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3711,7 +3711,7 @@
       "context_window": "1.7 \u00b1 3.4 0.7 \u00b1 0.9 2.0 \u00b1 2.6 1.5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) For CSM: 0.62 (95% CI: 0.32-1.19) For DFS: 1.07 (95% CI:",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3730,7 +3730,7 @@
       "context_window": ".5 \u00b1 2.3 For ACM: 0.81 (95% CI: 0.49-1.34) For CSM: 0.62 (95% CI: 0.32-1.19) For DFS: 1.07 (95% CI: 0.68-1.68) \u2265 1dispensed prescript",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3749,7 +3749,7 @@
       "context_window": "49-1.34) For CSM: 0.62 (95% CI: 0.32-1.19) For DFS: 1.07 (95% CI: 0.68-1.68) \u2265 1dispensed prescription at least 2 months pre-recruitme",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3767,7 +3767,7 @@
       "context_window": ".07 (95% CI: 0.68-1.68) \u2265 1dispensed prescription at least 2 months pre-recruitment \u2265 1dispensed prescription at least 7 month",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3785,7 +3785,7 @@
       "context_window": "months pre-recruitment \u2265 1dispensed prescription at least 7 months pre-recruitment \u2265 2 dispensed prescriptions at least 2 mon",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3803,7 +3803,7 @@
       "context_window": "onths pre-recruitment \u2265 2 dispensed prescriptions at least 2 months pre-recruitment \u2265 2 dispensed prescriptions at least 7 mon",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3821,7 +3821,7 @@
       "context_window": "onths pre-recruitment \u2265 2 dispensed prescriptions at least 7 months pre-recruitment For ACM: 0.59 (95% CI: 0.28-1.24) 0.61 (9",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3840,7 +3840,7 @@
       "context_window": "criptions at least 7 months pre-recruitment For ACM: 0.59 (95% CI: 0.28-1.24) 0.61 (95% CI: 0.26-1.42) For CSM: 0.60 (95% CI: 0.30-1.2",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3859,7 +3859,7 @@
       "context_window": "s pre-recruitment For ACM: 0.59 (95% CI: 0.28-1.24) 0.61 (95% CI: 0.26-1.42) For CSM: 0.60 (95% CI: 0.30-1.20) 0.54 (95% CI: 0.19-1.5",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3878,7 +3878,7 @@
       "context_window": "5% CI: 0.28-1.24) 0.61 (95% CI: 0.26-1.42) For CSM: 0.60 (95% CI: 0.30-1.20) 0.54 (95% CI: 0.19-1.52) For ACM: 1.15 (95% CI: 0.77-1.7",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3897,7 +3897,7 @@
       "context_window": "5% CI: 0.26-1.42) For CSM: 0.60 (95% CI: 0.30-1.20) 0.54 (95% CI: 0.19-1.52) For ACM: 1.15 (95% CI: 0.77-1.71) For DFS: 1.04 (95% CI:",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3916,7 +3916,7 @@
       "context_window": "5% CI: 0.30-1.20) 0.54 (95% CI: 0.19-1.52) For ACM: 1.15 (95% CI: 0.77-1.71) For DFS: 1.04 (95% CI: 0.73-1.49) For RFS: 1.14 (95% CI:",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3935,7 +3935,7 @@
       "context_window": "19-1.52) For ACM: 1.15 (95% CI: 0.77-1.71) For DFS: 1.04 (95% CI: 0.73-1.49) For RFS: 1.14 (95% CI: 0.77-1.69) Abbreviations : PSM =",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -3954,7 +3954,7 @@
       "context_window": "77-1.71) For DFS: 1.04 (95% CI: 0.73-1.49) For RFS: 1.14 (95% CI: 0.77-1.69) Abbreviations : PSM = Propensity score matching; AJCC = A",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "high"
     },
@@ -4045,7 +4045,7 @@
       "context_window": "use and ACM, the overall pooled HR for statin use was 0.80 (95% CI: 0.74-0.87). The analysis showed considerable heterogeneity (I\u00b2 = 90%,",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4081,7 +4081,7 @@
       "context_window": "he overall HR from the random effects model is 0.78, with a 95% CI of [0.71; 0.86], indicating a statistically significant",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4099,7 +4099,7 @@
       "context_window": "n mortality associated with pre-diagnostic statin use (I\u00b2 = 51.04%, \u03c4\u00b2 = 0.0073, P -value = 0.02) (Figure S2). Egger\u2019s test fo",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4154,7 +4154,7 @@
       "context_window": "y, the meta-regression found no significant effect of age ( p = 0.79), sex ( p = 0.62), tumor size ( p = 0.87) on the impact of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4172,7 +4172,7 @@
       "context_window": "ssion found no significant effect of age ( p = 0.79), sex ( p = 0.62), tumor size ( p = 0.87) on the impact of statin use on CRC",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4190,7 +4190,7 @@
       "context_window": "nt effect of age ( p = 0.79), sex ( p = 0.62), tumor size ( p = 0.87) on the impact of statin use on CRC prognosis (Table S3).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -4370,7 +4370,7 @@
       "context_window": "onounced benefit for patients who used statins for at least 6 months, with an HR of 0.84 [0.78; 0.92] and an I\u00b2 value of 23%. Fo",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4388,7 +4388,7 @@
       "context_window": "months, with an HR of 0.84 [0.78; 0.92] and an I\u00b2 value of 23%. For those who used statins for less than 6 months, the HR",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4406,9 +4406,9 @@
       "context_window": "n I\u00b2 value of 23%. For those who used statins for less than 6 months, the HR is 0.59 [0.28; 1.24] with an I\u00b2 value of 23%, sugge",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-43629",
@@ -4424,9 +4424,9 @@
       "context_window": "n 6 months, the HR is 0.59 [0.28; 1.24] with an I\u00b2 value of 23%, suggesting no significant heterogeneity within this subgro",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-43817",
@@ -4442,9 +4442,9 @@
       "context_window": ", the combined HR is 0.72 [0.68; 0.77], with an I\u00b2 value of 0% (Figure S10). Regarding the population, there was no signi",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-44011",
@@ -4604,9 +4604,9 @@
       "context_window": "he overall HR from the random effects model is 0.84, with a 95% CI of [0.74; 0.95], indicating a significant reduction in A",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-45689",
@@ -4622,9 +4622,9 @@
       "context_window": "ion in ACM associated with post-diagnostic statin use (I\u00b2 = 80%) (Figure S15). Egger\u2019s test for funnel plot asymmetry demon",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-p-46216",
@@ -4640,9 +4640,9 @@
       "context_window": "thermore, the meta-regression analysis indicated that sex ( p = 0.00) had a significant effect on the impact of statin use on CS",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-p-46341",
@@ -4712,9 +4712,9 @@
       "context_window": "d an HR of 0.90 [0.74; 1.10], with high heterogeneity (I\u00b2 = 88%). In contrast, studies with less than 6 months of statin us",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-46885",
@@ -4730,7 +4730,7 @@
       "context_window": "terogeneity (I\u00b2 = 88%). In contrast, studies with less than 6 months of statin use demonstrated a more pronounced effect, with a",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4748,7 +4748,7 @@
       "context_window": "with an HR of 0.67 [0.52; 0.87], and no heterogeneity (I\u00b2 = 0%). Studies with statin use for at least 6 months showed an H",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4766,9 +4766,9 @@
       "context_window": "terogeneity (I\u00b2 = 0%). Studies with statin use for at least 6 months showed an HR of 0.82 [0.69; 0.98], with moderate heterogene",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-47127",
@@ -4784,9 +4784,9 @@
       "context_window": "HR of 0.82 [0.69; 0.98], with moderate heterogeneity (I\u00b2 = 77%). The test for subgroup differences between these duration",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-47442",
@@ -4892,9 +4892,9 @@
       "context_window": "d an HR of 0.86 [0.53; 1.39], with high heterogeneity (I\u00b2 = 83%). Studies with unspecified treatment showed an HR of 0.80 [",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-48637",
@@ -4928,9 +4928,9 @@
       "context_window": "ed an HR of 0.75 [0.67; 0.85], with low heterogeneity (I\u00b2 = 0%). The test for subgroup differences between treatment types",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-49093",
@@ -4983,7 +4983,7 @@
       "context_window": "age and CSM, the overall pooled HR for statin use was 0.74 (95% CI: 0.67-0.82). The analysis revealed substantial heterogeneity (I\u00b2 = 88%",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -5019,9 +5019,9 @@
       "context_window": "he overall HR from the random effects model is 0.72, with a 95% CI of [0.62; 0.84], indicating a significant reduction in C",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-50277",
@@ -5037,9 +5037,9 @@
       "context_window": "tion in CSM associated with pre-diagnostic statin use (I\u00b2 = 83%) (Figure S25). Egger\u2019s test for funnel plot asymmetry demon",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-50700",
@@ -5092,7 +5092,7 @@
       "context_window": "meta-regression found no significant effect of tumor size ( p = 0.59), However, there was significant effect of age ( p = 0.02)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -5110,7 +5110,7 @@
       "context_window": "( p = 0.59), However, there was significant effect of age ( p = 0.02) and sex ( p < 0.001) between statin use on CSM (Table S9).",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -5128,7 +5128,7 @@
       "context_window": ", there was significant effect of age ( p = 0.02) and sex ( p < 0.001) between statin use on CSM (Table S9). The TSA analysis fo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -5146,9 +5146,9 @@
       "context_window": "n of statin use, studies where statin use was for less than 6 months showed an HR of 0.60 (95% CI: 0.30-1.20). Studies with stat",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-51334",
@@ -5165,9 +5165,9 @@
       "context_window": "statin use was for less than 6 months showed an HR of 0.60 (95% CI: 0.30-1.20). Studies with statin use for at least 6 months demonstrate",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-u-51391",
@@ -5183,9 +5183,9 @@
       "context_window": "0 (95% CI: 0.30-1.20). Studies with statin use for at least 6 months demonstrated an HR of 0.73 (95% CI: 0.57-0.93) with an I\u00b2 o",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-51428",
@@ -5202,9 +5202,9 @@
       "context_window": "tatin use for at least 6 months demonstrated an HR of 0.73 (95% CI: 0.57-0.93) with an I\u00b2 of 92%. Studies with unspecified duration showe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-51461",
@@ -5220,9 +5220,9 @@
       "context_window": "emonstrated an HR of 0.73 (95% CI: 0.57-0.93) with an I\u00b2 of 92%. Studies with unspecified duration showed an HR of 0.73 (95",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-51522",
@@ -5754,7 +5754,7 @@
       "context_window": "n studies with a minimum follow-up of less than six months (HR = 0.69; 95% CI: 0.52-0.93) with an I\u00b2 of 0%. Studies with longer o",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5773,7 +5773,7 @@
       "context_window": "ith a minimum follow-up of less than six months (HR = 0.69; 95% CI: 0.52-0.93) with an I\u00b2 of 0%. Studies with longer or unreported follow",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5791,7 +5791,7 @@
       "context_window": "han six months (HR = 0.69; 95% CI: 0.52-0.93) with an I\u00b2 of 0%. Studies with longer or unreported follow-up durations show",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6250,7 +6250,7 @@
       "context_window": "with a greater reduction in mortality in patients with RC (HR = 0.62; 95% CI: 0.32-1.19). compared to those with CC (HR = 0.74;",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6269,7 +6269,7 @@
       "context_window": "ater reduction in mortality in patients with RC (HR = 0.62; 95% CI: 0.32-1.19). compared to those with CC (HR = 0.74; 95% CI: 0.66-0.84)",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6287,7 +6287,7 @@
       "context_window": "(HR = 0.62; 95% CI: 0.32-1.19). compared to those with CC (HR = 0.74; 95% CI: 0.66-0.84) with an I\u00b2 of 0%. However, the effect i",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6306,7 +6306,7 @@
       "context_window": "; 95% CI: 0.32-1.19). compared to those with CC (HR = 0.74; 95% CI: 0.66-0.84) with an I\u00b2 of 0%. However, the effect in CRC overall was n",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6324,7 +6324,7 @@
       "context_window": "those with CC (HR = 0.74; 95% CI: 0.66-0.84) with an I\u00b2 of 0%. However, the effect in CRC overall was not statistically s",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -6398,7 +6398,7 @@
       "context_window": "use and DFS, the overall pooled HR for statin use was 0.93 (95% CI: 0.85-1.01) (Figure S44). The analysis revealed moderate heterogeneity",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6453,7 +6453,7 @@
       "context_window": "s where the timing was unspecified-indicated an HR of 0.47 (95% CI: 0.08-2.81) for the Pre group, with substantial heterogeneity (I\u00b2 = 83",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6471,7 +6471,7 @@
       "context_window": "81) for the Pre group, with substantial heterogeneity (I\u00b2 = 83%, \u03c4\u00b2 = 1.3743) (Figure S47). In the Post group, the HR was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -6526,7 +6526,7 @@
       "context_window": "meta-regression found no significant effect of tumor size ( p = 0.39), sex ( p = 0.71) and age ( p = 0.40) between statin use an",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -6544,7 +6544,7 @@
       "context_window": "ound no significant effect of tumor size ( p = 0.39), sex ( p = 0.71) and age ( p = 0.40) between statin use and DFS. Regarding",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -6562,7 +6562,7 @@
       "context_window": "effect of tumor size ( p = 0.39), sex ( p = 0.71) and age ( p = 0.40) between statin use and DFS. Regarding the association bet",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -6728,9 +6728,9 @@
       "context_window": "duction in the risk of recurrence or death with statin use (HR = 0.49; 95% CI: 0.28-0.85), which contributed to the observed betw",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-61187",
@@ -6747,9 +6747,9 @@
       "context_window": "the risk of recurrence or death with statin use (HR = 0.49; 95% CI: 0.28-0.85), which contributed to the observed between-group differenc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-61355",
@@ -6765,9 +6765,9 @@
       "context_window": "th stage III disease, the HR for statin use was 0.74 with a 95% CI of 0.35 to 1.54. The heterogeneity for this subgroup was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-61424",
@@ -6802,9 +6802,9 @@
       "context_window": "patients with stages I-III, the HR for statin use was 0.94 (95% CI: 0.85 to 1.03), with I\u00b2 = 0% heterogeneity, meaning no variation between",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-61575",
@@ -6820,9 +6820,9 @@
       "context_window": "R for statin use was 0.94 (95% CI: 0.85 to 1.03), with I\u00b2 = 0% heterogeneity, meaning no variation between the studies. In",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-61698",
@@ -7097,7 +7097,7 @@
       "context_window": "age and RFS, the overall pooled HR for statin use was 1.01 (95% CI: 0.94-1.09). The analysis indicated no substantial heterogeneity (I\u00b2 =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "pooled",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -7502,7 +7502,7 @@
       "context_window": "relationship between statin usage and reduced rates of ACM (HR = 0.78, 95% CI: 0.71-0.86). These findings conform to the HRs of 0",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -7521,7 +7521,7 @@
       "context_window": "p between statin usage and reduced rates of ACM (HR = 0.78, 95% CI: 0.71-0.86). These findings conform to the HRs of 0.85 for pre-diagnos",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -7539,7 +7539,7 @@
       "context_window": "ect for patients using statins before diagnosis (pre-group) HR = 0.77 (95% CI: 0.71-0.85) and include more recent studies, thus i",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -7558,7 +7558,7 @@
       "context_window": "ients using statins before diagnosis (pre-group) HR = 0.77 (95% CI: 0.71-0.85) and include more recent studies, thus improving the rigor",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -7594,9 +7594,9 @@
       "context_window": "including the inhibition of KRAS mutations, which occur in 40% of CRCs and lead to continuous KRAS activation [ 40 ]. Furt",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-5786",
@@ -7704,9 +7704,9 @@
       "context_window": "ysis, statin consumption was correlated with an HR of 0.84 (95% CI: 0.74-0.95) for ACM reduction. However, Bowles et al. [ 9 ] did not fi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-ci-7068",
@@ -7760,9 +7760,9 @@
       "context_window": "significant limitations, including high heterogeneity (I\u00b2 = 90% for ACM, 88% for CSM), risks of confounding by indication,",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13049982_the_impact_of_statin_use_on_colorectal_cancer_prognosis_a_sy-pct-708",
@@ -7778,9 +7778,9 @@
       "context_window": "imitations, including high heterogeneity (I\u00b2 = 90% for ACM, 88% for CSM), risks of confounding by indication, and incomplet",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

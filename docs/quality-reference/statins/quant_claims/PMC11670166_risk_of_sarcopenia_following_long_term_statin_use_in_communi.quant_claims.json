@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi",
   "doi": "10.1002/jcsm.13660",
-  "extracted_at": "2026-05-04T16:05:18+00:00",
+  "extracted_at": "2026-05-07T15:40:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 25,
@@ -24,9 +24,9 @@
       "context_window": "m April 2000 to July 2010) of NILS\u2010LSA, were those who aged 40 years or older and had initiated statin therapy ( n = 348, age: 6",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-n-918",
@@ -42,9 +42,9 @@
       "context_window": "o aged 40 years or older and had initiated statin therapy ( n = 348, age: 64.1 years, female: 63.5%). Individuals who were not",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-932",
@@ -60,9 +60,9 @@
       "context_window": "s or older and had initiated statin therapy ( n = 348, age: 64.1 years, female: 63.5%). Individuals who were not administered stat",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-952",
@@ -78,9 +78,9 @@
       "context_window": "nitiated statin therapy ( n = 348, age: 64.1 years, female: 63.5%). Individuals who were not administered statins ( n = 2559,",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-n-1008",
@@ -96,7 +96,7 @@
       "context_window": "le: 63.5%). Individuals who were not administered statins ( n = 2559, age: 55.5 years, female: 48.4%) were arbitrarily chosen us",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "control",
+      "arm": "pitavastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "ividuals who were not administered statins ( n = 2559, age: 55.5 years, female: 48.4%) were arbitrarily chosen using a combined ap",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "pitavastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "t administered statins ( n = 2559, age: 55.5 years, female: 48.4%) were arbitrarily chosen using a combined approach of prope",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "pitavastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -240,9 +240,9 @@
       "context_window": "ed the status of statin use and other variables (two\u2010tailed p < 0.05 was considered statistically significant). Stratification b",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2326",
@@ -258,9 +258,9 @@
       "context_window": "of incident sarcopenia (adjusted hazard ratio [aHR], 1.43 [95% CI, 0.86, 2.36]), diminished muscle strength (aHR, 1.11 [95",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2387",
@@ -276,9 +276,9 @@
       "context_window": "5% CI, 0.86, 2.36]), diminished muscle strength (aHR, 1.11 [95% CI, 0.80, 1.54]), reduced muscle mass (aHR, 1.09 [95% CI, 0",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2441",
@@ -294,9 +294,9 @@
       "context_window": "1.11 [95% CI, 0.80, 1.54]), reduced muscle mass (aHR, 1.09 [95% CI, 0.66, 1.82]) or impaired physical performance (aHR, 0.7",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-2507",
@@ -312,9 +312,9 @@
       "context_window": ", 0.66, 1.82]) or impaired physical performance (aHR, 0.73 [95% CI, 0.46, 1.17]). These findings were consistent across age",
       "claim_role": "effect",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-286",
@@ -636,7 +636,7 @@
       "context_window": "proportion having household incomes below 3.50 million yen (25.6% vs. 15.6%) and fewer years of education (11.8 vs. 12.4 year",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -690,9 +690,9 @@
       "context_window": "ealth\u2010wise, the statin group reported poorer health status (10.9% vs. 7.5% reporting \u2018bad\u2019 health) and showed a higher preval",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-pct-751",
@@ -798,7 +798,7 @@
       "context_window": "statin users having a lower proportion of current smokers (7.5% vs. 20.8%), married individuals (82.2% vs. 87.5%) and emplo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -906,7 +906,7 @@
       "context_window": "statin group (rate difference, -0.53 per 1000 person\u2010years [95% CI, -3.58, 2.52]; aHR, 1.43 [95% CI, 0.86, 2.36]). Similar",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -924,7 +924,7 @@
       "context_window": ".53 per 1000 person\u2010years [95% CI, -3.58, 2.52]; aHR, 1.43 [95% CI, 0.86, 2.36]). Similar results were found in risk of low",
       "claim_role": "unknown",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1014,9 +1014,9 @@
       "context_window": "This Japanese population\u2010based cohort study, employing 10 years of longitudinal data with a median follow\u2010up period of appr",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-133",
@@ -1032,9 +1032,9 @@
       "context_window": "udinal data with a median follow\u2010up period of approximately 9 years, found that long\u2010term statin use did not increase the risk",
       "claim_role": "effect",
       "endpoint": "sarcopenia",
-      "arm": "",
+      "arm": "statin",
       "direction": "no_change",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11670166_risk_of_sarcopenia_following_long_term_statin_use_in_communi-u-1135",
@@ -1049,8 +1049,8 @@
       "sentence": "Prior investigations, with follow\u2010up intervals spanning from a few weeks to a maximum of 3 years, have been inadequate for an in\u2010depth examination of the long\u2010term effects of statin on muscle function and the associated risk of sarcopenia manifestation [ 17 , 18 , 19 , 20 , 21 ].",
       "context_window": "llow\u2010up intervals spanning from a few weeks to a maximum of 3 years, have been inadequate for an in\u2010depth examination of the lo",
       "claim_role": "unknown",
-      "endpoint": "sarcopenia",
-      "arm": "",
+      "endpoint": "muscle function",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     }

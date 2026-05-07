@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met",
   "doi": "10.3389/fnut.2023.1156995",
-  "extracted_at": "2026-05-05T21:47:06+00:00",
+  "extracted_at": "2026-05-07T15:40:41+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 38,
@@ -23,7 +23,7 @@
       "context_window": "udy included 12 women with obesity (body mass index [BMI] \u2265 35.0 kg/m 2 ) and 12 healthy women (BMI < 24.0 kg/m 2 ) who were su",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -41,7 +41,7 @@
       "context_window": "ass index [BMI] \u2265 35.0 kg/m 2 ) and 12 healthy women (BMI < 24.0 kg/m 2 ) who were supplemented with a dose of 4.8 g/day (3.2 g",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -59,7 +59,7 @@
       "context_window": "ted with a dose of 4.8 g/day (3.2 g EPA plus 1.6 g DHA) for 3 months followed by no treatment for 1 month. Plasma metabolic and",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -77,7 +77,7 @@
       "context_window": "A plus 1.6 g DHA) for 3 months followed by no treatment for 1 month. Plasma metabolic and inflammatory markers and levels of mR",
       "claim_role": "dose",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -113,7 +113,7 @@
       "context_window": "upplementation with high-dose omega-3 FA, EPA plus DHA, for 3 months and 1 month without supplementation on metabolic and inflam",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -131,7 +131,7 @@
       "context_window": "n with high-dose omega-3 FA, EPA plus DHA, for 3 months and 1 month without supplementation on metabolic and inflammatory marke",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -149,7 +149,7 @@
       "context_window": "We evaluated 24 Mexican women between 25 and 45 years of age: 12 women with a body mass index [BMI] \u2265 35.0 (obesi",
       "claim_role": "protocol",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -167,9 +167,9 @@
       "context_window": "study comprised two phases: the first phase consisted of a 3 month supplementation with fish oil (times 0, 1, 2, and 3) and th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-u-1925",
@@ -185,9 +185,9 @@
       "context_window": "tle, a total of 240 capsules enough to cover the dosage for 1 month) of fish oil supplement at the time of recruitment (time 0)",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-u-2000",
@@ -221,9 +221,9 @@
       "context_window": "ation of the lasting effects of the fish oil, we included a 1 month period without supplementation (time 4). Compliance was de",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-u-4126",
@@ -311,9 +311,9 @@
       "context_window": "howed significantly elevated blood pressure (BP; systolic ( p < 0.001) and diastolic ( p < 0.02)); higher glucose ( p < 0.02), in",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-p-336",
@@ -329,9 +329,9 @@
       "context_window": "d blood pressure (BP; systolic ( p < 0.001) and diastolic ( p < 0.02)); higher glucose ( p < 0.02), insulin ( p < 0.001), HOMA-I",
       "claim_role": "effect",
       "endpoint": "blood pressure",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-p-365",
@@ -347,9 +347,9 @@
       "context_window": "c ( p < 0.001) and diastolic ( p < 0.02)); higher glucose ( p < 0.02), insulin ( p < 0.001), HOMA-IR ( p < 0.001), TG ( p < 0.00",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-p-386",
@@ -365,9 +365,9 @@
       "context_window": "astolic ( p < 0.02)); higher glucose ( p < 0.02), insulin ( p < 0.001), HOMA-IR ( p < 0.001), TG ( p < 0.001), and TG/HDL-C ratio",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-p-408",
@@ -383,9 +383,9 @@
       "context_window": "higher glucose ( p < 0.02), insulin ( p < 0.001), HOMA-IR ( p < 0.001), TG ( p < 0.001), and TG/HDL-C ratio ( p < 0.02); and lowe",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-p-425",
@@ -401,9 +401,9 @@
       "context_window": "p < 0.02), insulin ( p < 0.001), HOMA-IR ( p < 0.001), TG ( p < 0.001), and TG/HDL-C ratio ( p < 0.02); and lower levels of HDL-C",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-p-458",
@@ -419,9 +419,9 @@
       "context_window": "HOMA-IR ( p < 0.001), TG ( p < 0.001), and TG/HDL-C ratio ( p < 0.02); and lower levels of HDL-C ( p < 0.02) ( Table 1 ) compare",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-p-497",
@@ -437,9 +437,9 @@
       "context_window": "and TG/HDL-C ratio ( p < 0.02); and lower levels of HDL-C ( p < 0.02) ( Table 1 ) compared with the control. Regarding inflammat",
       "claim_role": "effect",
       "endpoint": "insulin sensitivity",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-p-645",
@@ -707,9 +707,9 @@
       "context_window": "lasma RvE1 at the beginning of the study (time 0) and after 1 month of fish oil supplementation. Horizontal bars represent mean",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-u-2770",
@@ -743,9 +743,9 @@
       "context_window": "tion resulted in changes in some of the markers as early as 1 month of supplementation, and always towards a better health stat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-p-4450",
@@ -851,7 +851,7 @@
       "context_window": "ementation, 4.8 g/day (3.2 g of EPA plus 1.6 g of DHA), for 3 months in the form of fish oil capsules, on metabolic and inflamma",
       "claim_role": "dose",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -940,7 +940,7 @@
       "sentence": "This is particularly relevant in the group with obesity, since TG levels decreased from an average of 191 mg/dL to 148 mg/dL, which was within the normal range and associated with reduced cardiovascular events.",
       "context_window": "with obesity, since TG levels decreased from an average of 191 mg/dL to 148 mg/dL, which was within the normal range and associa",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -958,7 +958,7 @@
       "sentence": "This is particularly relevant in the group with obesity, since TG levels decreased from an average of 191 mg/dL to 148 mg/dL, which was within the normal range and associated with reduced cardiovascular events.",
       "context_window": ", since TG levels decreased from an average of 191 mg/dL to 148 mg/dL, which was within the normal range and associated with redu",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "cardiovascular events",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -995,9 +995,9 @@
       "context_window": "duced the synthesis ex vivo of TNF-\u03b1 and IL-1\u03b2 in PBMC even 10 weeks after cessation ( 41 ). This result is similar to our findi",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met-u-11553",
@@ -1031,7 +1031,7 @@
       "context_window": "d. However, a high-dose of EPA (4 g/d) in individuals above 45 years of age with hypercholesterolemia has shown no important eff",
       "claim_role": "protocol",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
       "binding_confidence": "partial"
     },

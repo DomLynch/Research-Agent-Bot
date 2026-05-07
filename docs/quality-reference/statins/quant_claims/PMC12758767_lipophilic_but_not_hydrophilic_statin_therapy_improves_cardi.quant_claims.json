@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12758767_lipophilic_but_not_hydrophilic_statin_therapy_improves_cardi",
   "doi": "10.1371/journal.pone.0339194",
-  "extracted_at": "2026-05-04T11:48:53+00:00",
+  "extracted_at": "2026-05-07T15:40:35+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 17,
@@ -41,7 +41,7 @@
       "sentence": "Depending upon the dose and type of statin prescribed, up to a 46% reduction in total cholesterol and a 60% reduction in low-density lipoprotein cholesterol have been reported, greatly improving cardiovascular outcomes [ 1 - 4 ].",
       "context_window": "ending upon the dose and type of statin prescribed, up to a 46% reduction in total cholesterol and a 60% reduction in low-d",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
@@ -59,7 +59,7 @@
       "sentence": "Depending upon the dose and type of statin prescribed, up to a 46% reduction in total cholesterol and a 60% reduction in low-density lipoprotein cholesterol have been reported, greatly improving cardiovascular outcomes [ 1 - 4 ].",
       "context_window": "rescribed, up to a 46% reduction in total cholesterol and a 60% reduction in low-density lipoprotein cholesterol have been",
       "claim_role": "dose",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
@@ -1179,7 +1179,7 @@
       "context_window": "glionic efferent muscle sympathetic nerve activity by up to 29% in patients with hypertension and heart failure [ 45 ]. In",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1197,7 +1197,7 @@
       "context_window": "V and ATV groups were combined and compared to CON animals, p = 0.49 for grip strength, p = 0.18 for average speed during ambula",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1215,7 +1215,7 @@
       "context_window": "ed and compared to CON animals, p = 0.49 for grip strength, p = 0.18 for average speed during ambulation, and p = 0.20 for fatig",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1233,7 +1233,7 @@
       "context_window": "strength, p = 0.18 for average speed during ambulation, and p = 0.20 for fatigue, indicating the absence of a class-effect due t",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },

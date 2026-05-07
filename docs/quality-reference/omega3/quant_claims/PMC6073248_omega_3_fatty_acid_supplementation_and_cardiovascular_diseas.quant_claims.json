@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas",
   "doi": "10.3390/nu10070864",
-  "extracted_at": "2026-05-05T21:47:06+00:00",
+  "extracted_at": "2026-05-07T15:40:45+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 2,
@@ -23,9 +23,9 @@
       "context_window": "of at least 1-2 oily fish meals a week, which provides 250-500 mg/d of EPA + DHA [ 3 , 4 , 5 ]. Intakes of EPA + DHA in the US",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-u-2026",
@@ -41,7 +41,7 @@
       "context_window": "of MI randomly assigned to receive treatment with n-3 PUFA (850 mg/d EPA + DHA as ethyl esters) compared with a control group th",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "control",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },

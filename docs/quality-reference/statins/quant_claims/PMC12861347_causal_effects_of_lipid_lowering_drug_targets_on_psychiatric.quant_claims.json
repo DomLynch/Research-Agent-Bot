@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric",
   "doi": "10.1177/03000605261416738",
-  "extracted_at": "2026-05-04T13:17:19+00:00",
+  "extracted_at": "2026-05-07T15:40:35+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "odds_ratio": 18,
@@ -169,9 +169,9 @@
       "context_window": "is suggested that statins reduced the risk of depression by 32%, 3 whereas a large cohort study involving 387,954 individua",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-pct-774",
@@ -187,9 +187,9 @@
       "context_window": "of depression among statin users (hazard ratio (HR) = 1.22; 95% confidence interval (CI): 1.12-1.32). 4 These observational",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-n-2446",
@@ -738,7 +738,7 @@
       "context_window": "associated with genetically proxied inhibition of statins (OR = 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI:",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -757,7 +757,7 @@
       "context_window": "with genetically proxied inhibition of statins (OR = 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI: 1.1-1.29), after c",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -775,7 +775,7 @@
       "context_window": "statins (OR = 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI: 1.1-1.29), after correcting for multiple compariso",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -794,7 +794,7 @@
       "context_window": "= 1.15; 95% CI: 1.04-1.19) and PCSK9 inhibitor (OR = 1.19, 95% CI: 1.1-1.29), after correcting for multiple comparisons. 19 In contrast",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -812,9 +812,9 @@
       "context_window": "adjusting for publication bias using trim-and-fill methods (OR = 0.87; 95% CI: 0.74-1.02). 20 However, the included studies exhib",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2113",
@@ -831,9 +831,9 @@
       "context_window": "or publication bias using trim-and-fill methods (OR = 0.87; 95% CI: 0.74-1.02). 20 However, the included studies exhibited considerable h",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2659",
@@ -850,9 +850,9 @@
       "context_window": "th statin use (standardized mean difference (SMD) = -0.309; 95% CI: -0.525 to -0.094; p = 0.005). However, subgroup analysis showed that the eff",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-p-2685",
@@ -868,9 +868,9 @@
       "context_window": "d mean difference (SMD) = -0.309; 95% CI: -0.525 to -0.094; p = 0.005). However, subgroup analysis showed that the effect was onl",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12861347_causal_effects_of_lipid_lowering_drug_targets_on_psychiatric-ci-2823",
@@ -960,7 +960,7 @@
       "context_window": "ng different statins: simvastatin use was associated with a 7% reduction in depression risk, whereas atorvastatin use was",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -978,7 +978,7 @@
       "context_window": "depression risk, whereas atorvastatin use was linked to an 11% increased risk. 22 These findings imply that only certain s",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },

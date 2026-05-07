@@ -33,6 +33,78 @@ from types import SimpleNamespace
 from typing import Any
 
 
+_OUTCOME_CLASSES = frozenset({
+    "muscle_function",
+    "cardiometabolic",
+    "cognitive",
+    "frailty",
+    "longevity",
+    "immune",
+    "oncology",
+    "mechanism",
+    "safety",
+    "other",
+})
+
+
+def _endpoint_label(key: str) -> str:
+    return key.strip().lower().replace("_", " ")
+
+
+def _endpoint_regex(key: str) -> str:
+    """Regex for topic-pack endpoint keys.
+
+    Keys remain data-owned by TOML. This helper only handles generic
+    orthographic variants seen across biomedical writing: underscores,
+    hyphens, slashes, CV/cardiovascular, and LDL-C forms.
+    """
+    label = _endpoint_label(key)
+    terms = [re.escape(t) for t in label.split() if t]
+    sep = r"[\s_/-]+"
+    variants = {rf"\b{sep.join(terms)}s?\b"} if terms else set()
+    compact = re.escape(key.strip().lower())
+    if compact:
+        variants.add(rf"\b{compact}\b")
+    if "cv" in label.split() or "cardiovascular" in label:
+        variants.add(r"\b(?:cv|cardiovascular)\s+(?:events?|outcomes?)\b")
+        variants.add(r"\bmajor\s+adverse\s+cardiovascular\s+events?\b")
+        variants.add(r"\bMACE\b")
+    if "ldl" in label:
+        variants.add(r"\bLDL(?:[-\s]?C|[-\s]+cholesterol)?\b")
+        variants.add(r"\blow[-\s]+density[-\s]+lipoprotein(?:[-\s]+cholesterol)?\b")
+    return "|".join(sorted(variants))
+
+
+def _polarity_sign(raw: str) -> int:
+    if raw == "higher_is_better":
+        return +1
+    if raw == "lower_is_better":
+        return -1
+    return 0
+
+
+def _outcome_class_for_endpoint(key: str) -> str:
+    if key in _OUTCOME_CLASSES:
+        return key
+    label = _endpoint_label(key)
+    if any(t in label for t in (
+        "ldl", "triglyceride", "cardiovascular", "cv event",
+        "blood pressure", "glucose", "hba1c", "weight", "bmi",
+    )):
+        return "cardiometabolic"
+    if any(t in label for t in ("cognition", "cognitive", "dementia", "alzheimer")):
+        return "cognitive"
+    if any(t in label for t in ("mortality", "lifespan", "healthspan", "longevity")):
+        return "longevity"
+    if any(t in label for t in ("inflammation", "immune", "crp", "cytokine")):
+        return "immune"
+    if any(t in label for t in ("bleeding", "adverse", "safety", "myopathy", "myalgia")):
+        return "safety"
+    if any(t in label for t in ("muscle", "sarcopenia", "strength")):
+        return "muscle_function"
+    return "other"
+
+
 def _resolve_domain() -> str:
     """Return the active domain from TOPIC_DOMAIN env var.
 
@@ -105,9 +177,20 @@ def _synthesize_from_pack(domain: str) -> Any:
     # NOT a metformin fallback. Topics with truly distinct endpoints
     # (e.g. an oncology drug) should ship their own vocab/<topic>.py.
     base = importlib.import_module("vocab.metformin")
-    ENDPOINT_VOCAB = base.ENDPOINT_VOCAB
-    ENDPOINT_TO_OUTCOME_CLASS = base.ENDPOINT_TO_OUTCOME_CLASS
-    ENDPOINT_POLARITY = base.ENDPOINT_POLARITY
+    ENDPOINT_VOCAB = list(base.ENDPOINT_VOCAB)
+    ENDPOINT_TO_OUTCOME_CLASS = dict(base.ENDPOINT_TO_OUTCOME_CLASS)
+    ENDPOINT_POLARITY = dict(base.ENDPOINT_POLARITY)
+    known_endpoints = {name.lower() for name, _pat in ENDPOINT_VOCAB}
+    for key, raw_polarity in pack.endpoint_polarity.items():
+        label = _endpoint_label(key)
+        if label and label not in known_endpoints:
+            ENDPOINT_VOCAB.append((label, _endpoint_regex(key)))
+            known_endpoints.add(label)
+        ENDPOINT_TO_OUTCOME_CLASS.setdefault(
+            label, _outcome_class_for_endpoint(key),
+        )
+        if sign := _polarity_sign(str(raw_polarity)):
+            ENDPOINT_POLARITY[label] = sign
     # Build ARM_VOCAB from topic pack's active + placebo synonyms.
     # Mechanism/adjacent papers often use class terms from aliases or
     # retrieval.topic_terms (e.g. RAD001, mTOR inhibitor). Bind those
@@ -166,7 +249,7 @@ def _synthesize_from_pack(domain: str) -> Any:
     ARM_VOCAB = tuple(arm_patterns)
     # Return a SimpleNamespace that quacks like a vocab module
     return SimpleNamespace(
-        ENDPOINT_VOCAB=ENDPOINT_VOCAB,
+        ENDPOINT_VOCAB=tuple(ENDPOINT_VOCAB),
         ENDPOINT_TO_OUTCOME_CLASS=ENDPOINT_TO_OUTCOME_CLASS,
         ENDPOINT_POLARITY=ENDPOINT_POLARITY,
         ARM_VOCAB=ARM_VOCAB,

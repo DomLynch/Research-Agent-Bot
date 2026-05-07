@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12897005_residual_risk_in_atherosclerotic_cardiovascular_disease_afte",
   "doi": "10.4330/wjc.v18.i2.114960",
-  "extracted_at": "2026-05-04T11:48:53+00:00",
+  "extracted_at": "2026-05-07T15:40:35+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 3,
@@ -22,7 +22,7 @@
       "sentence": "However, the overall CVD risk reduction achieved through lipid-lowering therapy is generally less than 30%, even with aggressive LDL-C lowering strategies[ 3 ].",
       "context_window": "ieved through lipid-lowering therapy is generally less than 30%, even with aggressive LDL-C lowering strategies[ 3 ]. More",
       "claim_role": "background",
-      "endpoint": "mortality",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -40,10 +40,10 @@
       "sentence": "Moreover, a growing body of clinical evidence has shown that some patients continue to experience cardiovascular events despite achieving LDL-C levels below 70 mg/dL.",
       "context_window": "cardiovascular events despite achieving LDL-C levels below 70 mg/dL. This phenomenon, known as residual risk, has become a cent",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12897005_residual_risk_in_atherosclerotic_cardiovascular_disease_afte-u-1756",
@@ -58,7 +58,7 @@
       "sentence": "The Treating to New Targets study, a clinical trial involving stable CAD patients with baseline LDL-C levels above 130 mg/dL, randomized participants to receive either 10 mg or 80 mg of atorvastatin daily for approximately 5 years.",
       "context_window": "olving stable CAD patients with baseline LDL-C levels above 130 mg/dL, randomized participants to receive either 10 mg or 80 mg o",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
@@ -76,7 +76,7 @@
       "sentence": "The Treating to New Targets study, a clinical trial involving stable CAD patients with baseline LDL-C levels above 130 mg/dL, randomized participants to receive either 10 mg or 80 mg of atorvastatin daily for approximately 5 years.",
       "context_window": "above 130 mg/dL, randomized participants to receive either 10 mg or 80 mg of atorvastatin daily for approximately 5 years. S",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
@@ -94,7 +94,7 @@
       "sentence": "The Treating to New Targets study, a clinical trial involving stable CAD patients with baseline LDL-C levels above 130 mg/dL, randomized participants to receive either 10 mg or 80 mg of atorvastatin daily for approximately 5 years.",
       "context_window": "0 mg/dL, randomized participants to receive either 10 mg or 80 mg of atorvastatin daily for approximately 5 years. Subsequent",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
@@ -112,7 +112,7 @@
       "sentence": "The Treating to New Targets study, a clinical trial involving stable CAD patients with baseline LDL-C levels above 130 mg/dL, randomized participants to receive either 10 mg or 80 mg of atorvastatin daily for approximately 5 years.",
       "context_window": "ther 10 mg or 80 mg of atorvastatin daily for approximately 5 years. Subsequent analyses revealed that LDL-C was less robust as",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
@@ -130,7 +130,7 @@
       "sentence": "Over 3-12 months, the Tongxinluo group exhibited more pronounced reductions in TC and LDL-C, as well as more stable improvements in mean platelet volume and hematocrit, compared with the control group (all P < 0.05).",
       "context_window": "rameters in patients with chronic coronary syndrome. Over 3-12 months, the Tongxinluo group exhibited more pronounced reductions",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -148,7 +148,7 @@
       "sentence": "Over 3-12 months, the Tongxinluo group exhibited more pronounced reductions in TC and LDL-C, as well as more stable improvements in mean platelet volume and hematocrit, compared with the control group (all P < 0.05).",
       "context_window": "volume and hematocrit, compared with the control group (all P < 0.05). However, the study did not evaluate 1-year MACE outcomes[",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"

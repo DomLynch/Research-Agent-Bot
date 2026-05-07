@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12934334_ezetimibe_alone_for_over_75_years_old_as_a_primary_preventio",
   "doi": "10.1080/07853890.2026.2634484",
-  "extracted_at": "2026-05-04T11:48:53+00:00",
+  "extracted_at": "2026-05-07T15:40:36+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 25,
@@ -311,7 +311,7 @@
       "sentence": "Interestingly, in the study by Kim et al. [ 22 ], the mean LDL-C level achieved with statin therapy was 2.17 mmol/L (84 mg/dL), i.e. relatively high.",
       "context_window": "22 ], the mean LDL-C level achieved with statin therapy was 2.17 mmol/L (84 mg/dL), i.e. relatively high. But in the EWTOPIA 75,",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
@@ -329,7 +329,7 @@
       "sentence": "Interestingly, in the study by Kim et al. [ 22 ], the mean LDL-C level achieved with statin therapy was 2.17 mmol/L (84 mg/dL), i.e. relatively high.",
       "context_window": "n LDL-C level achieved with statin therapy was 2.17 mmol/L (84 mg/dL), i.e. relatively high. But in the EWTOPIA 75, the mean LDL",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
@@ -347,7 +347,7 @@
       "sentence": "But in the EWTOPIA 75, the mean LDL-C level achieved was even higher: from 4.2 mmol/L (162 mg/dL) at baseline to 3.1 mmol/L (120 mg/dL) in the ezetimibe group [ 1 ].",
       "context_window": "PIA 75, the mean LDL-C level achieved was even higher: from 4.2 mmol/L (162 mg/dL) at baseline to 3.1 mmol/L (120 mg/dL) in the",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -365,7 +365,7 @@
       "sentence": "But in the EWTOPIA 75, the mean LDL-C level achieved was even higher: from 4.2 mmol/L (162 mg/dL) at baseline to 3.1 mmol/L (120 mg/dL) in the ezetimibe group [ 1 ].",
       "context_window": "mean LDL-C level achieved was even higher: from 4.2 mmol/L (162 mg/dL) at baseline to 3.1 mmol/L (120 mg/dL) in the ezetimibe gro",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -383,7 +383,7 @@
       "sentence": "But in the EWTOPIA 75, the mean LDL-C level achieved was even higher: from 4.2 mmol/L (162 mg/dL) at baseline to 3.1 mmol/L (120 mg/dL) in the ezetimibe group [ 1 ].",
       "context_window": "was even higher: from 4.2 mmol/L (162 mg/dL) at baseline to 3.1 mmol/L (120 mg/dL) in the ezetimibe group [ 1 ]. What can then",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -401,7 +401,7 @@
       "sentence": "But in the EWTOPIA 75, the mean LDL-C level achieved was even higher: from 4.2 mmol/L (162 mg/dL) at baseline to 3.1 mmol/L (120 mg/dL) in the ezetimibe group [ 1 ].",
       "context_window": "her: from 4.2 mmol/L (162 mg/dL) at baseline to 3.1 mmol/L (120 mg/dL) in the ezetimibe group [ 1 ]. What can then explain the b",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -419,7 +419,7 @@
       "sentence": "As a note, the baseline LDL-C level was relatively high in the EWTOPIA 75 Trial (approximately 4.2 mmol/L), which may have attenuated the benefit in those with lower LDL-C levels [ 27 ].",
       "context_window": "was relatively high in the EWTOPIA 75 Trial (approximately 4.2 mmol/L), which may have attenuated the benefit in those with low",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -491,7 +491,7 @@
       "sentence": "Importantly, in a study population aged around 66 years, a combination consisting of ezetimibe and a moderate-intensity statin, previously shown to be effective in a population with high cholesterol absorption, was as effective as high-intensity statin monotherapy in preventing cardiovascular events [ 43 ].",
       "context_window": "vels [ 42 ]. Importantly, in a study population aged around 66 years, a combination consisting of ezetimibe and a moderate-inten",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"

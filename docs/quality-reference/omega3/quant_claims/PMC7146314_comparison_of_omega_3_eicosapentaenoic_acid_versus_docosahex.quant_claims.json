@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC7146314_comparison_of_omega_3_eicosapentaenoic_acid_versus_docosahex",
   "doi": "10.3390/nu12030749",
-  "extracted_at": "2026-05-05T21:47:06+00:00",
+  "extracted_at": "2026-05-07T15:40:46+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 4,
@@ -25,9 +25,9 @@
       "context_window": "-blind, randomized cross-over study, normolipidemic adults (n = 30) consumed 12 g/day of EPA-rich (EPA/DHA: 2.3) or DHA-rich (",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7146314_comparison_of_omega_3_eicosapentaenoic_acid_versus_docosahex-p-656",
@@ -43,7 +43,7 @@
       "context_window": "a TG levels and TG-related NMR parameters versus baseline ( p < 0.05). There were no changes in plasma cholesterol-related param",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -61,7 +61,7 @@
       "context_window": "ightly higher for DHA-rich oil compared with EPA-rich oil ( p < 0.05). Both fish oil supplements similarly altered HDL subclass",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -79,7 +79,7 @@
       "context_window": "EPA-rich oil increased apoM abundance versus DHA-rich oil ( p < 0.05). Conclusions: Overall, fish oil supplements with varied EP",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -97,9 +97,9 @@
       "context_window": "hat 30 subjects would be required to detect a difference of 10% in TG levels between baseline and fish oil treatment, assum",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7146314_comparison_of_omega_3_eicosapentaenoic_acid_versus_docosahex-pct-1770",
@@ -115,9 +115,9 @@
       "context_window": "ish oil treatment, assuming a p -value of 0.05 and power of 80%. The study was a randomized, cross-over, intervention stud",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7146314_comparison_of_omega_3_eicosapentaenoic_acid_versus_docosahex-u-1840",
@@ -133,9 +133,9 @@
       "context_window": "study was a randomized, cross-over, intervention study (2 \u00d7 8 weeks), with EPA-rich or DHA-rich fish oil supplement for 8-weeks",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7146314_comparison_of_omega_3_eicosapentaenoic_acid_versus_docosahex-n-5853",
@@ -241,7 +241,7 @@
       "context_window": "ish oil supplements similarly decreased TG by approximately 14.1% on average compared to baseline ( p < 0.05), although there",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -259,7 +259,7 @@
       "context_window": "TG by approximately 14.1% on average compared to baseline ( p < 0.05), although there were no significant differences between EP",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -277,7 +277,7 @@
       "context_window": "fish oil supplements increased apoB levels by approximately 6.1% on average compared to baseline ( p < 0.05). No statistic d",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -295,7 +295,7 @@
       "context_window": "els by approximately 6.1% on average compared to baseline ( p < 0.05). No statistic differences were detected in these LDL-relat",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -313,7 +313,7 @@
       "context_window": "ish oil slightly decreased levels of apoA1 by approximately 3.5% on average compared with baseline ( p < 0.05). There were n",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -331,7 +331,7 @@
       "context_window": "1 by approximately 3.5% on average compared with baseline ( p < 0.05). There were no differences in these HDL-related parameter",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -349,7 +349,7 @@
       "context_window": "n, EPA-rich fish oil significantly increased apoM levels by 13.3% and 9.4% compared with baseline and DHA-rich fish oil suppl",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -367,7 +367,7 @@
       "context_window": "h fish oil significantly increased apoM levels by 13.3% and 9.4% compared with baseline and DHA-rich fish oil supplement, re",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -385,7 +385,7 @@
       "context_window": "h baseline and DHA-rich fish oil supplement, respectively ( p < 0.05), although there was no difference between baseline and DHA",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -404,7 +404,7 @@
       "context_window": "as detected between the two fish oil supplements (baseline: 1.1 \u00b1 0.2 vs. EPA-rich oil treatment: 1.1 \u00b1 0.2 vs. DHA-rich oil trea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -423,9 +423,9 @@
       "context_window": "upplements (baseline: 1.1 \u00b1 0.2 vs. EPA-rich oil treatment: 1.1 \u00b1 0.2 vs. DHA-rich oil treatment: 1.1 \u00b1 0.3). We further perform",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7146314_comparison_of_omega_3_eicosapentaenoic_acid_versus_docosahex-msd-2957",
@@ -442,9 +442,9 @@
       "context_window": "A-rich oil treatment: 1.1 \u00b1 0.2 vs. DHA-rich oil treatment: 1.1 \u00b1 0.3). We further performed NMR spectroscopy to examine any pos",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "dha",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7146314_comparison_of_omega_3_eicosapentaenoic_acid_versus_docosahex-pct-3409",
@@ -460,7 +460,7 @@
       "context_window": "ons similarly decreased VLDL-Z, VLDL-P, and TRL-P levels by 17.9%, 24.3, and 36.2% on average, respectively ( p < 0.05) ( Fig",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -478,7 +478,7 @@
       "context_window": "reased VLDL-Z, VLDL-P, and TRL-P levels by 17.9%, 24.3, and 36.2% on average, respectively ( p < 0.05) ( Figure 2 A). In line",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -496,7 +496,7 @@
       "context_window": "levels by 17.9%, 24.3, and 36.2% on average, respectively ( p < 0.05) ( Figure 2 A). In line with these findings, EPA- and DHA-r",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -514,7 +514,7 @@
       "context_window": "tly reduced the numbers of very small-TRLP by approximately 41.6%, and EPA-rich fish oil significantly decreased large-TRLP l",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -532,7 +532,7 @@
       "context_window": "-rich fish oil significantly decreased large-TRLP levels by 40% ( p < 0.05). For LDL subclasses, as shown in Figure 3 , the",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -550,7 +550,7 @@
       "context_window": "fish oil significantly decreased large-TRLP levels by 40% ( p < 0.05). For LDL subclasses, as shown in Figure 3 , the overall ef",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -568,7 +568,7 @@
       "context_window": "il supplement resulted in a small but significant increase (1.3%) in LDL-P levels compared with EPA-rich fish oil based on a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -586,7 +586,7 @@
       "context_window": "th EPA-rich fish oil based on a linear mixed effect model ( p < 0.05; Figure 3 A). Large LDL-P levels were decreased by ~46% wit",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "mixed",
       "binding_confidence": "partial"
     },
@@ -604,7 +604,7 @@
       "context_window": "< 0.05; Figure 3 A). Large LDL-P levels were decreased by ~46% with both fish oil supplements from baseline ( p < 0.05), a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -622,7 +622,7 @@
       "context_window": "ased by ~46% with both fish oil supplements from baseline ( p < 0.05), and EPA-rich oil increased small LDL-P by 27.7% compared",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -640,7 +640,7 @@
       "context_window": "line ( p < 0.05), and EPA-rich oil increased small LDL-P by 27.7% compared with baseline ( p < 0.05) ( Figure 3 B). In terms",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -658,7 +658,7 @@
       "context_window": "oil increased small LDL-P by 27.7% compared with baseline ( p < 0.05) ( Figure 3 B). In terms of HDL, both fish oil supplements",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -676,7 +676,7 @@
       "context_window": ", both fish oil supplements led to an increase in HDL-Z by ~1.6% on average ( p < 0.05) and a decrease in HDL-P levels by ~9",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -694,7 +694,7 @@
       "context_window": "pplements led to an increase in HDL-Z by ~1.6% on average ( p < 0.05) and a decrease in HDL-P levels by ~9% on average ( p < 0.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -712,7 +712,7 @@
       "context_window": "% on average ( p < 0.05) and a decrease in HDL-P levels by ~9% on average ( p < 0.05) compared with baseline ( Figure 4 A)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -730,7 +730,7 @@
       "context_window": "< 0.05) and a decrease in HDL-P levels by ~9% on average ( p < 0.05) compared with baseline ( Figure 4 A). Both fish oils showe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -748,7 +748,7 @@
       "context_window": "s significantly increased large HDL-P (HDL-P5~7) levels by ~33% on average and decreased medium HDL-P (HDL-P3~4) levels by",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -766,7 +766,7 @@
       "context_window": "on average and decreased medium HDL-P (HDL-P3~4) levels by ~27% on average ( p < 0.05). There was no difference in small HD",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -784,7 +784,7 @@
       "context_window": "creased medium HDL-P (HDL-P3~4) levels by ~27% on average ( p < 0.05). There was no difference in small HDL-P before or after ei",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -802,7 +802,7 @@
       "context_window": "its subfraction (HDL-P1~2): HDL-P1 levels were increased by 153% on average ( p < 0.05) and HDL-P2 levels were decreased by",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -820,7 +820,7 @@
       "context_window": "DL-P1~2): HDL-P1 levels were increased by 153% on average ( p < 0.05) and HDL-P2 levels were decreased by 23% on average ( p < 0",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -838,7 +838,7 @@
       "context_window": "on average ( p < 0.05) and HDL-P2 levels were decreased by 23% on average ( p < 0.05) compared with baseline. No differenc",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -856,7 +856,7 @@
       "context_window": "0.05) and HDL-P2 levels were decreased by 23% on average ( p < 0.05) compared with baseline. No differences were observed in ea",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -874,9 +874,9 @@
       "context_window": "or DHA-rich fish oil supplementation compared to baseline ( p < 0.05; Figure 5 ). Overall, the two fish oil supplements acted si",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC7146314_comparison_of_omega_3_eicosapentaenoic_acid_versus_docosahex-pct-6146",
@@ -892,7 +892,7 @@
       "context_window": "apolipoprotein M (APOM) and afamin (AFM) were increased by 17% and 41%, respectively, and gelsolin (GSN) was decreased by",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -910,7 +910,7 @@
       "context_window": "protein M (APOM) and afamin (AFM) were increased by 17% and 41%, respectively, and gelsolin (GSN) was decreased by 10% with",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -928,7 +928,7 @@
       "context_window": "and 41%, respectively, and gelsolin (GSN) was decreased by 10% with EPA-rich oil compared with DHA-rich oil supplementatio",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -946,7 +946,7 @@
       "context_window": "h EPA-rich oil compared with DHA-rich oil supplementation ( p < 0.05). The 24 altered HDL-related proteins were further classifi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -964,7 +964,7 @@
       "context_window": "able 4 ) and EPA-rich fish oil supplement increased apoM by 12.9% and 9.1% compared with baseline and DHA-rich fish oil suppl",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -982,7 +982,7 @@
       "context_window": "nd EPA-rich fish oil supplement increased apoM by 12.9% and 9.1% compared with baseline and DHA-rich fish oil supplement, re",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1000,7 +1000,7 @@
       "context_window": "h baseline and DHA-rich fish oil supplement, respectively ( p < 0.05). Neither fish oil supplementation had a major effect on n",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1018,7 +1018,7 @@
       "context_window": "nt decrease in hemoglobin A1c (HbA1C) compared to baseline (0.14%; p < 0.05), the change was relatively small, within the nor",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1036,7 +1036,7 @@
       "context_window": "ease in hemoglobin A1c (HbA1C) compared to baseline (0.14%; p < 0.05), the change was relatively small, within the normal range",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1054,7 +1054,7 @@
       "context_window": ". In the current study, plasma TG levels were decreased by 14.4% on average due to fish oil supplements containing a total f",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1072,7 +1072,7 @@
       "context_window": "previous finding showing that \u22654 g/d of n-3 PUFA results in 9%-26% reduction in circulating TG in normolipidemic to border",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1090,7 +1090,7 @@
       "context_window": "vious finding showing that \u22654 g/d of n-3 PUFA results in 9%-26% reduction in circulating TG in normolipidemic to borderline",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1107,8 +1107,8 @@
       "sentence": "Both fish oil supplements, however, showed a similar small effect in raising apoB between 5.4%-6.8%, which given the greater predictive value of apoB over LDL-C on the impact of a therapy on cardiovascular outcomes suggests that neither fish oil treatment used in this study may be beneficial [ 29 ].",
       "context_window": "ever, showed a similar small effect in raising apoB between 5.4%-6.8%, which given the greater predictive value of apoB over",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1125,8 +1125,8 @@
       "sentence": "Both fish oil supplements, however, showed a similar small effect in raising apoB between 5.4%-6.8%, which given the greater predictive value of apoB over LDL-C on the impact of a therapy on cardiovascular outcomes suggests that neither fish oil treatment used in this study may be beneficial [ 29 ].",
       "context_window": "showed a similar small effect in raising apoB between 5.4%-6.8%, which given the greater predictive value of apoB over LDL-",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     }

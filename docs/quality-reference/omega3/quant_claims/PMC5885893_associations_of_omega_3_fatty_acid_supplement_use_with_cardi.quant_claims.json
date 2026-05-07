@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi",
   "doi": "10.1001/jamacardio.2017.5205",
-  "extracted_at": "2026-05-05T21:47:07+00:00",
+  "extracted_at": "2026-05-07T15:40:45+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 13,
@@ -24,9 +24,9 @@
       "context_window": "ation with marine-derived omega-3 fatty acids for a mean of 4.4 years had no significant association with reductions in fatal or",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-u-1776",
@@ -42,9 +42,9 @@
       "context_window": "FA supplementation vs placebo or no treatment for at least 12 months in populations with prior CHD, stroke, or high risk of card",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-pct-2259",
@@ -59,10 +59,10 @@
       "sentence": "The Gruppo Italiano per lo Studio della Sopravvivenza nell'Infarto Miocardico (GISSI)-Prevenzione trial, 6 an open-label trial involving 11 323 recent survivors of MI, reported that patients who received supplementation with omega-3 FAs experienced a 10% reduced risk of major cardiovascular events compared with untreated controls.",
       "context_window": "who received supplementation with omega-3 FAs experienced a 10% reduced risk of major cardiovascular events compared with u",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-u-2471",
@@ -78,7 +78,7 @@
       "context_window": "ial involving 18 645 participants with total cholesterol of 243.24 mg/dL (to convert to mmol/L, multiply by 0.0259) or greater, of w",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -96,7 +96,7 @@
       "context_window": "ert to mmol/L, multiply by 0.0259) or greater, of whom only 20% with prior CHD, also reported 14 that supplementation with",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "14 that supplementation with fish oil was associated with a 19% reduction in major CHD events (95% CI, 5%-31%). None of the",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "il was associated with a 19% reduction in major CHD events (95% CI, 5%-31%). None of the other large placebo-controlled tri",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -150,7 +150,7 @@
       "context_window": "ssociated with a 19% reduction in major CHD events (95% CI, 5%-31%). None of the other large placebo-controlled trials rep",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -168,7 +168,7 @@
       "context_window": "ciated with a 19% reduction in major CHD events (95% CI, 5%-31%). None of the other large placebo-controlled trials reporte",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -186,9 +186,9 @@
       "context_window": "ticipants and a scheduled duration of treatment of at least 1 year. All eligible trials required use of supplements, but no mi",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-pct-3998",
@@ -276,9 +276,9 @@
       "context_window": "were used in all but 1 trial, 14 which tested daily dose of 1800 mg EPA alone. The daily doses of EPA varied from 226 to 1800 m",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-u-759",
@@ -294,9 +294,9 @@
       "context_window": "800 mg EPA alone. The daily doses of EPA varied from 226 to 1800 mg/day, and DHA varied from 0 to 1700 mg/day. The mean duration of",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-u-797",
@@ -312,9 +312,9 @@
       "context_window": "PA varied from 226 to 1800 mg/day, and DHA varied from 0 to 1700 mg/day. The mean duration of treatment in individual trials varied",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-u-874",
@@ -564,9 +564,9 @@
       "context_window": "ion with the rate ratios (RRs) for any CHD event (RR, 0.96; 95% CI, 0.90-1.01; P = .12) and no significant association with",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-1883",
@@ -582,9 +582,9 @@
       "context_window": "atios (RRs) for any CHD event (RR, 0.96; 95% CI, 0.90-1.01; P = .12) and no significant association with RRs in subgroups of CH",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-pct-1991",
@@ -600,9 +600,9 @@
       "context_window": "in subgroups of CHD events, including CHD death (RR, 0.93; 99% CI, 0.83-1.03; P = .05) and nonfatal myocardial infarction",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-2010",
@@ -618,9 +618,9 @@
       "context_window": "D events, including CHD death (RR, 0.93; 99% CI, 0.83-1.03; P = .05) and nonfatal myocardial infarction (RR, 0.97; 99% CI, 0.87",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-pct-2065",
@@ -636,9 +636,9 @@
       "context_window": ".03; P = .05) and nonfatal myocardial infarction (RR, 0.97; 99% CI, 0.87-1.08; P = .40). Likewise, randomization of patient",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-2084",
@@ -654,9 +654,9 @@
       "context_window": "onfatal myocardial infarction (RR, 0.97; 99% CI, 0.87-1.08; P = .40). Likewise, randomization of patients to an omega-3 FA supp",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-pct-2241",
@@ -672,9 +672,9 @@
       "context_window": "ociations with the RRs for major vascular events (RR, 0.97; 95% CI, 0.93-1.01; P = .10), stroke (RR, 1.03; 95% CI, 0.93-1.1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-2260",
@@ -690,9 +690,9 @@
       "context_window": "RRs for major vascular events (RR, 0.97; 95% CI, 0.93-1.01; P = .10), stroke (RR, 1.03; 95% CI, 0.93-1.13; P = .56), or revascu",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-pct-2288",
@@ -708,9 +708,9 @@
       "context_window": "s (RR, 0.97; 95% CI, 0.93-1.01; P = .10), stroke (RR, 1.03; 95% CI, 0.93-1.13; P = .56), or revascularization events (RR, 0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-2307",
@@ -726,9 +726,9 @@
       "context_window": ", 0.93-1.01; P = .10), stroke (RR, 1.03; 95% CI, 0.93-1.13; P = .56), or revascularization events (RR, 0.99; 95% CI, 0.94-1.04;",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-pct-2356",
@@ -744,9 +744,9 @@
       "context_window": "0.93-1.13; P = .56), or revascularization events (RR, 0.99; 95% CI, 0.94-1.04; P = .61). This meta-analysis also showed no",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-2375",
@@ -762,9 +762,9 @@
       "context_window": ", or revascularization events (RR, 0.99; 95% CI, 0.94-1.04; P = .61). This meta-analysis also showed no significant heterogenei",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-pct-2720",
@@ -780,9 +780,9 @@
       "context_window": "after excluding the JELIS trial 14 (odds ratio [OR], 0.98; 95% CI, 0.94-1.02; P = .30) (eFigure 3 in the Supplement ). Add",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-2739",
@@ -798,9 +798,9 @@
       "context_window": "e JELIS trial 14 (odds ratio [OR], 0.98; 95% CI, 0.94-1.02; P = .30) (eFigure 3 in the Supplement ). Additional sensitivity ana",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-pct-3397",
@@ -960,9 +960,9 @@
       "context_window": "f omega-3 FAs with major vascular events by age (unadjusted P = .02) and by history of stroke ( P = .06), respectively. While i",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-5453",
@@ -978,9 +978,9 @@
       "context_window": "ents by age (unadjusted P = .02) and by history of stroke ( P = .06), respectively. While it was not possible to assess the ass",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-6035",
@@ -995,10 +995,10 @@
       "sentence": "Heterogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use.",
       "context_window": "ogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-6060",
@@ -1013,10 +1013,10 @@
       "sentence": "Heterogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use.",
       "context_window": "ls (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease,",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-6084",
@@ -1031,10 +1031,10 @@
       "sentence": "Heterogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use.",
       "context_window": "was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prio",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-6134",
@@ -1049,10 +1049,10 @@
       "sentence": "Heterogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use.",
       "context_window": "ge, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-6167",
@@ -1067,10 +1067,10 @@
       "sentence": "Heterogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use.",
       "context_window": "nary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol,",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-6203",
@@ -1085,10 +1085,10 @@
       "sentence": "Heterogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use.",
       "context_window": "for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density li",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-6242",
@@ -1103,10 +1103,10 @@
       "sentence": "Heterogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use.",
       "context_window": "ior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) f",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-6299",
@@ -1121,10 +1121,10 @@
       "sentence": "Heterogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use.",
       "context_window": "( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) f",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-6356",
@@ -1139,10 +1139,10 @@
       "sentence": "Heterogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use.",
       "context_window": "( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin us",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-6395",
@@ -1157,10 +1157,10 @@
       "sentence": "Heterogeneity between all trials (\u03c7 2 1 in all cases) was 0.04 ( P = .84) for sex, 5.59 ( P = .02) for age, 0.0 ( P = .96) for prior coronary heart disease, 7.03 ( P = .01) for prior stroke, 0.0 ( P > .99) for prior diabetes, 0.87 ( P = .35) for total cholesterol, 1.56 ( P = .21) for high-density lipoprotein cholesterol, 1.8 ( P = .18) for low-density lipoprotein cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use.",
       "context_window": "cholesterol, 0.02 ( P = .89) for triglycerides, and 2.55 ( P = .11) for prior statin use. Figure 4 demonstrates that randomiz",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "triglycerides",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-pct-6824",
@@ -1266,9 +1266,9 @@
       "context_window": "of supplementation with omega-3 FAs for a mean duration of 4.4 years with the risk of fatal CHD, nonfatal MI, any CHD, or any ma",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi-p-7391",
@@ -1338,7 +1338,7 @@
       "context_window": "cant association with RRs of all-cause mortality (RR, 0.96; 95% CI, 0.92-1.01; P = .16). Further information is presented i",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1356,7 +1356,7 @@
       "context_window": "th RRs of all-cause mortality (RR, 0.96; 95% CI, 0.92-1.01; P = .16). Further information is presented in eFigure 5 in the Supp",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1374,7 +1374,7 @@
       "context_window": "to trial arms with omega-3 FA supplementation for a mean of 4.4 years had no significant effect on either of fatal CHD, nonfatal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1518,7 +1518,7 @@
       "context_window": "% CI for analyses using both O-E and log-rank methods. The 95% CI in the present meta-analysis of 10 trials, involving 77",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1536,7 +1536,7 @@
       "context_window": "ajor vascular events, and 6273 CHD events, cannot exclude a 7% lower risk of major vascular events and a 10% lower risk of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1554,7 +1554,7 @@
       "context_window": "nnot exclude a 7% lower risk of major vascular events and a 10% lower risk of CHD associated with omega-3 FA supplements. S",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1571,8 +1571,8 @@
       "sentence": "Several ongoing large randomized trials involving a total of 54 354 additional participants (A Study of Cardiovascular Events in Diabetes [ASCEND], 25 n = 15 480; VITamin D and OmegA-3 TriaL [VITAL], 26 n = 25 874; STatin Residual risk reduction with EpaNova in hiGh CV risk patienTs with Hypertriglyceridemia [STRENGTH], 27 n = 13 000 and Reduction of Cardiovascular Events With EPA-Intervention Trial [REDUCE-IT], n = 8000) will provide additional evidence about the associations of omega-3 FA supplementation with the risk of major vascular events, any CHD, and subtypes of fatal and nonfatal CHD.",
       "context_window": "(A Study of Cardiovascular Events in Diabetes [ASCEND], 25 n = 15 480; VITamin D and OmegA-3 TriaL [VITAL], 26 n = 25 874; ST",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1590,7 +1590,7 @@
       "context_window": "ND], 25 n = 15 480; VITamin D and OmegA-3 TriaL [VITAL], 26 n = 25 874; STatin Residual risk reduction with EpaNova in hiGh CV",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1608,7 +1608,7 @@
       "context_window": "h CV risk patienTs with Hypertriglyceridemia [STRENGTH], 27 n = 13 000 and Reduction of Cardiovascular Events With EPA-Interve",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1625,8 +1625,8 @@
       "sentence": "Several ongoing large randomized trials involving a total of 54 354 additional participants (A Study of Cardiovascular Events in Diabetes [ASCEND], 25 n = 15 480; VITamin D and OmegA-3 TriaL [VITAL], 26 n = 25 874; STatin Residual risk reduction with EpaNova in hiGh CV risk patienTs with Hypertriglyceridemia [STRENGTH], 27 n = 13 000 and Reduction of Cardiovascular Events With EPA-Intervention Trial [REDUCE-IT], n = 8000) will provide additional evidence about the associations of omega-3 FA supplementation with the risk of major vascular events, any CHD, and subtypes of fatal and nonfatal CHD.",
       "context_window": "diovascular Events With EPA-Intervention Trial [REDUCE-IT], n = 8000) will provide additional evidence about the associations of",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1662,7 +1662,7 @@
       "context_window": "% CI for analyses using both O-E and log-rank methods. The 95% CI in the present meta-analysis of 10 trials, involving 77",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1680,7 +1680,7 @@
       "context_window": "ajor vascular events, and 6273 CHD events, cannot exclude a 7% lower risk of major vascular events and a 10% lower risk of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1698,7 +1698,7 @@
       "context_window": "nnot exclude a 7% lower risk of major vascular events and a 10% lower risk of CHD associated with omega-3 FA supplements. S",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1715,8 +1715,8 @@
       "sentence": "Several ongoing large randomized trials involving a total of 54 354 additional participants (A Study of Cardiovascular Events in Diabetes [ASCEND], 25 n = 15 480; VITamin D and OmegA-3 TriaL [VITAL], 26 n = 25 874; STatin Residual risk reduction with EpaNova in hiGh CV risk patienTs with Hypertriglyceridemia [STRENGTH], 27 n = 13 000 and Reduction of Cardiovascular Events With EPA-Intervention Trial [REDUCE-IT], n = 8000) will provide additional evidence about the associations of omega-3 FA supplementation with the risk of major vascular events, any CHD, and subtypes of fatal and nonfatal CHD.",
       "context_window": "(A Study of Cardiovascular Events in Diabetes [ASCEND], 25 n = 15 480; VITamin D and OmegA-3 TriaL [VITAL], 26 n = 25 874; ST",
       "claim_role": "unknown",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1734,7 +1734,7 @@
       "context_window": "ND], 25 n = 15 480; VITamin D and OmegA-3 TriaL [VITAL], 26 n = 25 874; STatin Residual risk reduction with EpaNova in hiGh CV",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1752,7 +1752,7 @@
       "context_window": "h CV risk patienTs with Hypertriglyceridemia [STRENGTH], 27 n = 13 000 and Reduction of Cardiovascular Events With EPA-Interve",
       "claim_role": "unknown",
       "endpoint": "muscle strength",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1769,8 +1769,8 @@
       "sentence": "Several ongoing large randomized trials involving a total of 54 354 additional participants (A Study of Cardiovascular Events in Diabetes [ASCEND], 25 n = 15 480; VITamin D and OmegA-3 TriaL [VITAL], 26 n = 25 874; STatin Residual risk reduction with EpaNova in hiGh CV risk patienTs with Hypertriglyceridemia [STRENGTH], 27 n = 13 000 and Reduction of Cardiovascular Events With EPA-Intervention Trial [REDUCE-IT], n = 8000) will provide additional evidence about the associations of omega-3 FA supplementation with the risk of major vascular events, any CHD, and subtypes of fatal and nonfatal CHD.",
       "context_window": "diovascular Events With EPA-Intervention Trial [REDUCE-IT], n = 8000) will provide additional evidence about the associations of",
       "claim_role": "unknown",
-      "endpoint": "muscle strength",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "omega-3",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

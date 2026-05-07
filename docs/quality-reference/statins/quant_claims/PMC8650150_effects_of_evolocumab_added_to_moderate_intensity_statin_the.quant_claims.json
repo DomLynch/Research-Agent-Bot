@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the",
   "doi": "10.3389/fphys.2021.750872",
-  "extracted_at": "2026-05-05T15:32:42+00:00",
+  "extracted_at": "2026-05-07T15:40:39+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 9,
@@ -22,7 +22,7 @@
       "sentence": "Evolocumab has been demonstrated to reduce LDL-C by approximately 60% in many studies.",
       "context_window": "umab has been demonstrated to reduce LDL-C by approximately 60% in many studies. Nevertheless, whether combined evolocumab",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -41,9 +41,9 @@
       "context_window": "ruit. Patients are randomized in evolocumab arm (evolocumab 140mg every 2weeks plus rosuvastatin 10mg/day or atorvastatin 20m",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1351",
@@ -59,9 +59,9 @@
       "context_window": "ts are randomized in evolocumab arm (evolocumab 140mg every 2weeks plus rosuvastatin 10mg/day or atorvastatin 20mg/day) and st",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1376",
@@ -77,9 +77,9 @@
       "context_window": "ocumab arm (evolocumab 140mg every 2weeks plus rosuvastatin 10mg/day or atorvastatin 20mg/day) and statin-only arm (rosuvastatin",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1401",
@@ -95,9 +95,9 @@
       "context_window": "0mg every 2weeks plus rosuvastatin 10mg/day or atorvastatin 20mg/day) and statin-only arm (rosuvastatin 10mg/day or atorvastatin",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1445",
@@ -113,9 +113,9 @@
       "context_window": "or atorvastatin 20mg/day) and statin-only arm (rosuvastatin 10mg/day or atorvastatin 20mg/day). The primary outcome is the perce",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1470",
@@ -131,9 +131,9 @@
       "context_window": "and statin-only arm (rosuvastatin 10mg/day or atorvastatin 20mg/day). The primary outcome is the percentage change in LDL-C in",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1629",
@@ -148,10 +148,10 @@
       "sentence": "The secondary outcome is the occurrence of MACE after 12weeks and 1year of treatment.",
       "context_window": "ment. The secondary outcome is the occurrence of MACE after 12weeks and 1year of treatment. Discussion: If the EMSIACS trial e",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1641",
@@ -166,10 +166,10 @@
       "sentence": "The secondary outcome is the occurrence of MACE after 12weeks and 1year of treatment.",
       "context_window": "condary outcome is the occurrence of MACE after 12weeks and 1year of treatment. Discussion: If the EMSIACS trial endpoints p",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1126",
@@ -184,7 +184,7 @@
       "sentence": "Chinwong et al. (2015) suggested that achieving target LDL-C levels of <70mg/dl (<1.8mmol/L) in patients with ACS could significantly reduce the risk of cardiovascular events.",
       "context_window": "al. (2015) suggested that achieving target LDL-C levels of <70mg/dl (<1.8mmol/L) in patients with ACS could significantly re",
       "claim_role": "background",
-      "endpoint": "mortality",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -202,7 +202,7 @@
       "sentence": "Chinwong et al. (2015) suggested that achieving target LDL-C levels of <70mg/dl (<1.8mmol/L) in patients with ACS could significantly reduce the risk of cardiovascular events.",
       "context_window": "suggested that achieving target LDL-C levels of <70mg/dl (<1.8mmol/L) in patients with ACS could significantly reduce the risk",
       "claim_role": "background",
-      "endpoint": "mortality",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -220,10 +220,10 @@
       "sentence": "The 2019 ESC/EAS Guidelines for the management of dyslipidemias ( Mach et al., 2019 ) stated that for patients at high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.8mmol/L (<70mg/dl) are recommended; for patients at very-high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.4mmol/L (<55mg/dl) are recommended.",
       "context_window": "ated that for patients at high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.8mmol/L (<70mg/dl) ar",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1499",
@@ -238,10 +238,10 @@
       "sentence": "The 2019 ESC/EAS Guidelines for the management of dyslipidemias ( Mach et al., 2019 ) stated that for patients at high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.8mmol/L (<70mg/dl) are recommended; for patients at very-high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.4mmol/L (<55mg/dl) are recommended.",
       "context_window": "LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.8mmol/L (<70mg/dl) are recommended; for patients at very-high ris",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1511",
@@ -256,10 +256,10 @@
       "sentence": "The 2019 ESC/EAS Guidelines for the management of dyslipidemias ( Mach et al., 2019 ) stated that for patients at high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.8mmol/L (<70mg/dl) are recommended; for patients at very-high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.4mmol/L (<55mg/dl) are recommended.",
       "context_window": "ion of \u226550% from baseline and an LDL-C goal of <1.8mmol/L (<70mg/dl) are recommended; for patients at very-high risk, an LDL",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-pct-1592",
@@ -274,10 +274,10 @@
       "sentence": "The 2019 ESC/EAS Guidelines for the management of dyslipidemias ( Mach et al., 2019 ) stated that for patients at high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.8mmol/L (<70mg/dl) are recommended; for patients at very-high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.4mmol/L (<55mg/dl) are recommended.",
       "context_window": "ded; for patients at very-high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.4mmol/L (<55mg/dl) ar",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1632",
@@ -292,10 +292,10 @@
       "sentence": "The 2019 ESC/EAS Guidelines for the management of dyslipidemias ( Mach et al., 2019 ) stated that for patients at high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.8mmol/L (<70mg/dl) are recommended; for patients at very-high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.4mmol/L (<55mg/dl) are recommended.",
       "context_window": "LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.4mmol/L (<55mg/dl) are recommended. For the Chinese population, s",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1644",
@@ -310,10 +310,10 @@
       "sentence": "The 2019 ESC/EAS Guidelines for the management of dyslipidemias ( Mach et al., 2019 ) stated that for patients at high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.8mmol/L (<70mg/dl) are recommended; for patients at very-high risk, an LDL-C reduction of \u226550% from baseline and an LDL-C goal of <1.4mmol/L (<55mg/dl) are recommended.",
       "context_window": "ion of \u226550% from baseline and an LDL-C goal of <1.4mmol/L (<55mg/dl) are recommended. For the Chinese population, similar go",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-2060",
@@ -328,7 +328,7 @@
       "sentence": "According to the 2020 Chinese expert consensus on lipid management of very high-risk atherosclerotic cardiovascular disease patients (ASCVD patients; Atherosclerosis and Coronary Heart Disease Working Group of Chinese Society of Cardiology and Editorial Board of Chinese Journal of Cardiology, 2020 ), LDL-C level should be lowered to <55mg/dl (1.4mmol/L) AND reduction of LDL-C is \u226550% from baseline.",
       "context_window": "al of Cardiology, 2020 ), LDL-C level should be lowered to <55mg/dl (1.4mmol/L) AND reduction of LDL-C is \u226550% from baseline",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -346,7 +346,7 @@
       "sentence": "According to the 2020 Chinese expert consensus on lipid management of very high-risk atherosclerotic cardiovascular disease patients (ASCVD patients; Atherosclerosis and Coronary Heart Disease Working Group of Chinese Society of Cardiology and Editorial Board of Chinese Journal of Cardiology, 2020 ), LDL-C level should be lowered to <55mg/dl (1.4mmol/L) AND reduction of LDL-C is \u226550% from baseline.",
       "context_window": "diology, 2020 ), LDL-C level should be lowered to <55mg/dl (1.4mmol/L) AND reduction of LDL-C is \u226550% from baseline. For patien",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -364,7 +364,7 @@
       "sentence": "According to the 2020 Chinese expert consensus on lipid management of very high-risk atherosclerotic cardiovascular disease patients (ASCVD patients; Atherosclerosis and Coronary Heart Disease Working Group of Chinese Society of Cardiology and Editorial Board of Chinese Journal of Cardiology, 2020 ), LDL-C level should be lowered to <55mg/dl (1.4mmol/L) AND reduction of LDL-C is \u226550% from baseline.",
       "context_window": "lowered to <55mg/dl (1.4mmol/L) AND reduction of LDL-C is \u226550% from baseline. For patients at very high-risk (defined as e",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -383,9 +383,9 @@
       "context_window": "ins have the disadvantage of delayed onset of action (about 2weeks; Kakara et al., 2014 ; Koskinas et al., 2018 ). Genetic pol",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4431",
@@ -400,8 +400,8 @@
       "sentence": "In the China cholesterol education program (CCEP) expert advice for the management of dyslipidemias to reduce cardiovascular risk (2019; China Cholesterol Education Program Working Committee et al., 2020 ), it is recommended to add PCSK9 inhibitors if the LDL-C goal of <55mg/dl (<1.4mmol/L) is not achieved after 4-6weeks of statin combined with ezetimibe therapy.",
       "context_window": "s recommended to add PCSK9 inhibitors if the LDL-C goal of <55mg/dl (<1.4mmol/L) is not achieved after 4-6weeks of statin co",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -418,8 +418,8 @@
       "sentence": "In the China cholesterol education program (CCEP) expert advice for the management of dyslipidemias to reduce cardiovascular risk (2019; China Cholesterol Education Program Working Committee et al., 2020 ), it is recommended to add PCSK9 inhibitors if the LDL-C goal of <55mg/dl (<1.4mmol/L) is not achieved after 4-6weeks of statin combined with ezetimibe therapy.",
       "context_window": "ded to add PCSK9 inhibitors if the LDL-C goal of <55mg/dl (<1.4mmol/L) is not achieved after 4-6weeks of statin combined with e",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -436,8 +436,8 @@
       "sentence": "In the China cholesterol education program (CCEP) expert advice for the management of dyslipidemias to reduce cardiovascular risk (2019; China Cholesterol Education Program Working Committee et al., 2020 ), it is recommended to add PCSK9 inhibitors if the LDL-C goal of <55mg/dl (<1.4mmol/L) is not achieved after 4-6weeks of statin combined with ezetimibe therapy.",
       "context_window": "LDL-C goal of <55mg/dl (<1.4mmol/L) is not achieved after 4-6weeks of statin combined with ezetimibe therapy. In addition, for",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -454,10 +454,10 @@
       "sentence": "In addition, for patients who may fail to achieve LDL-C<55mg/dl (<1.4mmol/L) with the ezetimibe added to statins therapy, PCSK9 inhibitors added to statins can be applied directly.",
       "context_window": "py. In addition, for patients who may fail to achieve LDL-C<55mg/dl (<1.4mmol/L) with the ezetimibe added to statins therapy",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4592",
@@ -472,10 +472,10 @@
       "sentence": "In addition, for patients who may fail to achieve LDL-C<55mg/dl (<1.4mmol/L) with the ezetimibe added to statins therapy, PCSK9 inhibitors added to statins can be applied directly.",
       "context_window": "ition, for patients who may fail to achieve LDL-C<55mg/dl (<1.4mmol/L) with the ezetimibe added to statins therapy, PCSK9 inhib",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1733",
@@ -491,9 +491,9 @@
       "context_window": "are treated with moderate-intensity statins, rosuvastatin (10mg) or atorvastatin (20mg) daily throughout the study period.",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1756",
@@ -509,9 +509,9 @@
       "context_window": "ate-intensity statins, rosuvastatin (10mg) or atorvastatin (20mg) daily throughout the study period. Evolocumab (trade name",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-1950",
@@ -562,10 +562,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "tudy, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-3729",
@@ -580,10 +580,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u226510",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-3759",
@@ -598,10 +598,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "s been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) pri",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-3769",
@@ -616,10 +616,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "tained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the stu",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-3793",
@@ -634,10 +634,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "ks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who recei",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-3804",
@@ -652,10 +652,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-3910",
@@ -670,10 +670,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "ho received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-3982",
@@ -688,10 +688,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u226512",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4012",
@@ -706,10 +706,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "s been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) pri",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4022",
@@ -724,10 +724,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "tained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the stu",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4046",
@@ -742,10 +742,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "ks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do no",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4057",
@@ -760,10 +760,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4184",
@@ -778,10 +778,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4)",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4195",
@@ -796,10 +796,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "rapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4219",
@@ -814,10 +814,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "in therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who d",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4230",
@@ -832,10 +832,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4362",
@@ -850,10 +850,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L). Patients with the following conditions are e",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4374",
@@ -868,10 +868,10 @@
       "sentence": "Additional inclusion criteria are based on patients with elevated LDL-C levels who meet one of the following three conditions: (1) prior to the study, patients who received intensive statins for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226570mg/dl (\u22651.8mmol/L) or non-HDL-C\u2265100mg/dl (\u22652.6mmol/L); (2) prior to the study, patients who received moderate-intensity statin therapy for more than 4weeks (the same dose of statin therapy has been sustained for the past 4weeks), having LDL-C levels \u226590mg/dl (\u22652.3mmol/L) or non-HDL-C\u2265120mg/dl (\u22653.1mmol/L); (3) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C\u2265125mg/dl (\u22653.2mmol/L) or non-HDL-C\u2265155mg/dl (\u22654.0mmol/L); and (4) prior to the study, patients who do not receive any statin therapy or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L).",
       "context_window": "py or discontinue statin therapy, having LDL-C L125 mg/dL (\u22643.2mmol/L). Patients with the following conditions are excluded: (",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "pitavastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4824",
@@ -887,7 +887,7 @@
       "context_window": "id ventricular reaction that the drug cannot control within 3months prior to screening; (4) patients with severe renal insuffic",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -905,7 +905,7 @@
       "context_window": "ved cholesterol ester transfer protein inhibitors treatment 12months prior to screening; (11) patients who have received systemi",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -923,7 +923,7 @@
       "context_window": "ived systemic steroid or cyclosporine treatment in the past 3months; (12) patients with known infections, hemorrhages, metaboli",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -941,7 +941,7 @@
       "context_window": "r in need of treatment; and (15) women who are fertile (age<50years, menstruation in the past 12months) and have not received t",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -959,7 +959,7 @@
       "context_window": "omen who are fertile (age<50years, menstruation in the past 12months) and have not received tubal ligation, oophorectomy, or hys",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -994,7 +994,7 @@
       "sentence": "The following issues will also be investigated: (1) the proportion of patients with LDL-C<70mg/dl, <55mg/dl and<40mg/dl during the study period; (2) patients\u2019 quality of life as evaluated with the PROMIS 10 scale at week 12 and week 48 post-treatment; and (3) the percentage change in inflammatory biomarkers including but not limited to high-sensitivity C-reactive protein (hsCRP), interleukin (IL)-1\u03b2 and IL-6, from baseline to weeks 48 ( Table 1 ; Figure 1 ).",
       "context_window": "be investigated: (1) the proportion of patients with LDL-C<70mg/dl, <55mg/dl and<40mg/dl during the study period; (2) patie",
       "claim_role": "duration",
-      "endpoint": "inflammation",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1012,7 +1012,7 @@
       "sentence": "The following issues will also be investigated: (1) the proportion of patients with LDL-C<70mg/dl, <55mg/dl and<40mg/dl during the study period; (2) patients\u2019 quality of life as evaluated with the PROMIS 10 scale at week 12 and week 48 post-treatment; and (3) the percentage change in inflammatory biomarkers including but not limited to high-sensitivity C-reactive protein (hsCRP), interleukin (IL)-1\u03b2 and IL-6, from baseline to weeks 48 ( Table 1 ; Figure 1 ).",
       "context_window": "igated: (1) the proportion of patients with LDL-C<70mg/dl, <55mg/dl and<40mg/dl during the study period; (2) patients\u2019 quali",
       "claim_role": "duration",
-      "endpoint": "inflammation",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1030,7 +1030,7 @@
       "sentence": "The following issues will also be investigated: (1) the proportion of patients with LDL-C<70mg/dl, <55mg/dl and<40mg/dl during the study period; (2) patients\u2019 quality of life as evaluated with the PROMIS 10 scale at week 12 and week 48 post-treatment; and (3) the percentage change in inflammatory biomarkers including but not limited to high-sensitivity C-reactive protein (hsCRP), interleukin (IL)-1\u03b2 and IL-6, from baseline to weeks 48 ( Table 1 ; Figure 1 ).",
       "context_window": "the proportion of patients with LDL-C<70mg/dl, <55mg/dl and<40mg/dl during the study period; (2) patients\u2019 quality of life a",
       "claim_role": "duration",
-      "endpoint": "inflammation",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1085,9 +1085,9 @@
       "context_window": "for each treatment arm. Assuming that the drop-out rate is 20%, this study aims to enroll approximately 484 patients, with",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-pct-15625",
@@ -1102,10 +1102,10 @@
       "sentence": "In order to compare MACE differences, Kaplan-Meier survival curve analysis will be performed, and hazard ratio (HR) and 95% CI will be calculated.",
       "context_window": "curve analysis will be performed, and hazard ratio (HR) and 95% CI will be calculated. Log-rank tests will also be performe",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-pct-16299",
@@ -1156,7 +1156,7 @@
       "sentence": "The authors found that patients achieved progressively lower LDL cholesterol concentrations at 4weeks from baseline had progressively fewer cardiovascular events with no increase in adverse events.",
       "context_window": "ieved progressively lower LDL cholesterol concentrations at 4weeks from baseline had progressively fewer cardiovascular events",
       "claim_role": "protocol",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1174,10 +1174,10 @@
       "sentence": "Moreover, they demonstrated that lowering LDL-C to well below the recommended level in current guidelines (e.g., <0.5mmol/L) is safe for the highest-risk patients.",
       "context_window": "l below the recommended level in current guidelines (e.g., <0.5mmol/L) is safe for the highest-risk patients. In the EVOPACS tr",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC8650150_effects_of_evolocumab_added_to_moderate_intensity_statin_the-u-4379",
@@ -1192,7 +1192,7 @@
       "sentence": "EVOPACS trial has shown that decreasing LDL-C even to 0.8mmol/L (30mg/dl) or lower will not increase the risk of adverse responses such as musculoskeletal pain, liver damage, new-onset diabetes mellitus and neurocognitive impairment ( Koskinas et al., 2019 ).",
       "context_window": "ents. EVOPACS trial has shown that decreasing LDL-C even to 0.8mmol/L (30mg/dl) or lower will not increase the risk of adverse",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1210,7 +1210,7 @@
       "sentence": "EVOPACS trial has shown that decreasing LDL-C even to 0.8mmol/L (30mg/dl) or lower will not increase the risk of adverse responses such as musculoskeletal pain, liver damage, new-onset diabetes mellitus and neurocognitive impairment ( Koskinas et al., 2019 ).",
       "context_window": "CS trial has shown that decreasing LDL-C even to 0.8mmol/L (30mg/dl) or lower will not increase the risk of adverse response",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"

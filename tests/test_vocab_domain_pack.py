@@ -144,6 +144,28 @@ def test_topic_pack_only_topic_auto_synthesizes_vocab() -> None:
     ) == "rosuvastatin"
 
 
+def test_topic_pack_endpoint_polarity_extends_auto_vocab() -> None:
+    """Topic-pack [endpoint_polarity] keys are load-bearing endpoint
+    vocab. New topics should not need scripts/vocab/<topic>.py just to
+    bind LDL-C, MACE, triglycerides, or cognition claims."""
+    os.environ["TOPIC_DOMAIN"] = "statins"
+    qe = _reload_quant_endpoints()
+    assert qe.match_endpoint(
+        "Rosuvastatin-treated patients had lower LDL-C.",
+    ) == "ldl cholesterol"
+    assert qe.match_endpoint(
+        "The trial reduced major adverse cardiovascular events.",
+    ) == "incident cv event"
+    assert qe.ENDPOINT_POLARITY["ldl cholesterol"] == -1
+    assert qe.ENDPOINT_TO_OUTCOME_CLASS["ldl cholesterol"] == "cardiometabolic"
+
+    os.environ["TOPIC_DOMAIN"] = "omega3"
+    qe = _reload_quant_endpoints()
+    assert qe.match_endpoint("Fish oil lowered triglycerides.") == "triglycerides"
+    assert qe.match_endpoint("Older adults had improved cognition.") == "cognition"
+    assert qe.ENDPOINT_POLARITY["cognition"] == +1
+
+
 # Reviewer-fix MEDIUM 2 regression: ARM_VOCAB is per-domain.
 def test_rapamycin_arm_binds_to_active_drug_synonym() -> None:
     """Pre-fix the rapamycin pack inherited 'metformin'/'placebo' as

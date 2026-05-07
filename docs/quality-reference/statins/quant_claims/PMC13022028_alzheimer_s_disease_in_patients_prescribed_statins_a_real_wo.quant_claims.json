@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo",
   "doi": "10.1177/13872877261424220",
-  "extracted_at": "2026-05-04T13:17:19+00:00",
+  "extracted_at": "2026-05-07T15:40:36+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 49,
@@ -28,9 +28,9 @@
       "context_window": "he TriNetX platform compared statin exposure in adults over 45 years old with a diagnosis of dyslipidemia, and no prior AD diagn",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-1183",
@@ -46,7 +46,7 @@
       "context_window": "ially lower risk of incident AD compared with non-exposure (RR = 0.69), similar to meta analyses of observational studies. Lipoph",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -64,7 +64,7 @@
       "context_window": "g statin users, 11 , 12 , 19 with effect sizes ranging from 14% to 32%. For example, a 2022 meta-analysis of cohort and cas",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -82,7 +82,7 @@
       "context_window": "n users, 11 , 12 , 19 with effect sizes ranging from 14% to 32%. For example, a 2022 meta-analysis of cohort and case-contr",
       "claim_role": "background",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -190,7 +190,7 @@
       "context_window": "tia, and an indication for statin therapy in adults aged 40-75 years. As a result, the presence of diabetes in real-world data i",
       "claim_role": "population",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -208,9 +208,9 @@
       "context_window": "d the cohort to patients without type 2 diabetes or HbA1c \u2265 7% in both the statin and non-statin groups. This restriction",
       "claim_role": "effect",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-14108",
@@ -261,7 +261,7 @@
       "sentence": "This included the most recent values for BMI (classified as normal/overweight at 15-30 and obese at 31-45 kg/m 2 ), triglyceride level (classified as normal at 0-150 and high at 151-500 mg/dL), and LDL cholesterol (classified as normal at 0-100 or high at 101-500 mg/dL) on date of index.",
       "context_window": "ceride level (classified as normal at 0-150 and high at 151-500 mg/dL), and LDL cholesterol (classified as normal at 0-100 or hig",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -279,7 +279,7 @@
       "sentence": "This included the most recent values for BMI (classified as normal/overweight at 15-30 and obese at 31-45 kg/m 2 ), triglyceride level (classified as normal at 0-150 and high at 151-500 mg/dL), and LDL cholesterol (classified as normal at 0-100 or high at 101-500 mg/dL) on date of index.",
       "context_window": "L cholesterol (classified as normal at 0-100 or high at 101-500 mg/dL) on date of index. Propensity scores were used to perform 1",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -298,9 +298,9 @@
       "context_window": "ing in two balanced cohorts for the main analysis (statins, n = 838,217). However, some were lost due to having been diagnosed",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-msd-16213",
@@ -317,7 +317,7 @@
       "context_window": "ent. Before matching, statin users were older [mean age of 63.4 \u00b1 11.8 versus 59.2 \u00b1 12.8 years in controls, standardized mean dif",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -336,7 +336,7 @@
       "context_window": "ng, statin users were older [mean age of 63.4 \u00b1 11.8 versus 59.2 \u00b1 12.8 years in controls, standardized mean difference (SMD): 0.34",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -354,7 +354,7 @@
       "context_window": "tin users were older [mean age of 63.4 \u00b1 11.8 versus 59.2 \u00b1 12.8 years in controls, standardized mean difference (SMD): 0.34] and",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -372,7 +372,7 @@
       "context_window": "fference (SMD): 0.34] and had a higher proportion of males (52.22% versus 45.40% in controls) and white individuals (71.46% ve",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -390,7 +390,7 @@
       "context_window": ": 0.34] and had a higher proportion of males (52.22% versus 45.40% in controls) and white individuals (71.46% versus 67.29%).",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -408,7 +408,7 @@
       "context_window": "s (52.22% versus 45.40% in controls) and white individuals (71.46% versus 67.29%). Statin users also had a greater burden of c",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -426,7 +426,7 @@
       "context_window": "us 45.40% in controls) and white individuals (71.46% versus 67.29%). Statin users also had a greater burden of cardiovascular",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -444,7 +444,7 @@
       "context_window": "cardiovascular comorbidities; for example, hypertension in 41.03% compared to 14.97% of controls (SMD 0.61). After PSM, basel",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -462,7 +462,7 @@
       "context_window": "orbidities; for example, hypertension in 41.03% compared to 14.97% of controls (SMD 0.61). After PSM, baseline differences wer",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -480,9 +480,9 @@
       "context_window": "conducted a time-on-treatment analysis of the statin group (n = 963,171) for the most common statins in the cohort. Patients on",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-19843",
@@ -498,9 +498,9 @@
       "context_window": "ost common statins in the cohort. Patients on atorvastatin (n = 451,167) had a mean time-on-treatment of 1000.90 (SD = \u00b1 1113.3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-19926",
@@ -516,9 +516,9 @@
       "context_window": "time-on-treatment of 1000.90 (SD = \u00b1 1113.33), a median of 626 days, and a maximum of 7259 days. Patients on simvastatin (n = 1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-19953",
@@ -534,9 +534,9 @@
       "context_window": "90 (SD = \u00b1 1113.33), a median of 626 days, and a maximum of 7259 days. Patients on simvastatin (n = 136,229) had a mean time-on-t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-19989",
@@ -552,9 +552,9 @@
       "context_window": "days, and a maximum of 7259 days. Patients on simvastatin (n = 136,229) had a mean time-on-treatment of 1461.13 (SD = \u00b1 1519.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-20072",
@@ -570,9 +570,9 @@
       "context_window": "time-on-treatment of 1461.13 (SD = \u00b1 1519.09), a median of 947 days, and a maximum of 7211 days. Patients on lovastatin (n = 17",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-20099",
@@ -588,9 +588,9 @@
       "context_window": "13 (SD = \u00b1 1519.09), a median of 947 days, and a maximum of 7211 days. Patients on lovastatin (n = 17,789) had a mean time-on-tre",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-20134",
@@ -606,9 +606,9 @@
       "context_window": "7 days, and a maximum of 7211 days. Patients on lovastatin (n = 17,789) had a mean time-on-treatment of 1377.11 (SD = \u00b1 1438.1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "lovastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-20216",
@@ -624,9 +624,9 @@
       "context_window": "time-on-treatment of 1377.11 (SD = \u00b1 1438.10), a median of 874 days, and a maximum of 7047 days. Patients on rosuvastatin (n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "lovastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-20243",
@@ -642,9 +642,9 @@
       "context_window": "11 (SD = \u00b1 1438.10), a median of 874 days, and a maximum of 7047 days. Patients on rosuvastatin (n = 184,311) had a mean time-on-",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "lovastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-20280",
@@ -660,9 +660,9 @@
       "context_window": "days, and a maximum of 7047 days. Patients on rosuvastatin (n = 184,311) had a mean time-on-treatment of 793.15 (SD = \u00b1 933.51)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-20361",
@@ -678,9 +678,9 @@
       "context_window": "an time-on-treatment of 793.15 (SD = \u00b1 933.51), a median of 478 days, and a maximum of 7078 days. Additionally, TriNetX was used",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-20388",
@@ -696,9 +696,9 @@
       "context_window": ".15 (SD = \u00b1 933.51), a median of 478 days, and a maximum of 7078 days. Additionally, TriNetX was used to calculate the follow-up",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-20630",
@@ -732,9 +732,9 @@
       "context_window": "ed cohorts, follow-up time in patient records was a mean of 1359.7 days (SD = 1420; median = 889 days; IQR = 1841) in statin-treate",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-20746",
@@ -750,9 +750,9 @@
       "context_window": "ient records was a mean of 1359.7 days (SD = 1420; median = 889 days; IQR = 1841) in statin-treated patients and 1217.7 (SD = 13",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-20829",
@@ -768,9 +768,9 @@
       "context_window": "n statin-treated patients and 1217.7 (SD = 1340.3; median = 758 days; IQR = 1699) in non-statin patients. The primary analysis",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-20937",
@@ -822,7 +822,7 @@
       "context_window": "he control group were diagnosed with AD, corresponding to a 31.5% reduction in risk (RR = 0.69; 95% CI, 0.62-0.75; p < 0.001)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -840,7 +840,7 @@
       "context_window": "gnosed with AD, corresponding to a 31.5% reduction in risk (RR = 0.69; 95% CI, 0.62-0.75; p < 0.001). For EOAD (G30.0), 60 cases",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -858,7 +858,7 @@
       "context_window": "AD, corresponding to a 31.5% reduction in risk (RR = 0.69; 95% CI, 0.62-0.75; p < 0.001). For EOAD (G30.0), 60 cases occur",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -876,7 +876,7 @@
       "context_window": "to a 31.5% reduction in risk (RR = 0.69; 95% CI, 0.62-0.75; p < 0.001). For EOAD (G30.0), 60 cases occurred in the statin group v",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -894,7 +894,7 @@
       "context_window": "ccurred in the statin group versus 98 in the control group (RR = 0.61; 95% CI, 0.44-0.84; p = 0.002). Late-onset AD (LOAD; G30.1)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -912,7 +912,7 @@
       "context_window": "the statin group versus 98 in the control group (RR = 0.61; 95% CI, 0.44-0.84; p = 0.002). Late-onset AD (LOAD; G30.1) was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -930,7 +930,7 @@
       "context_window": "rsus 98 in the control group (RR = 0.61; 95% CI, 0.44-0.84; p = 0.002). Late-onset AD (LOAD; G30.1) was diagnosed in 279 statin u",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -948,9 +948,9 @@
       "context_window": "G30.1) was diagnosed in 279 statin users and 391 controls (RR = 0.71; 95% CI, 0.61-0.83; p < 0.001). Conversely, statin use was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-21697",
@@ -966,9 +966,9 @@
       "context_window": "diagnosed in 279 statin users and 391 controls (RR = 0.71; 95% CI, 0.61-0.83; p < 0.001). Conversely, statin use was assoc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-p-21716",
@@ -984,9 +984,9 @@
       "context_window": "tatin users and 391 controls (RR = 0.71; 95% CI, 0.61-0.83; p < 0.001). Conversely, statin use was associated with a slightly hig",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-21917",
@@ -1002,7 +1002,7 @@
       "context_window": "3052 cases among statin users compared to 2514 in controls (RR = 1.21; 95% CI, 1.15-1.28; p < 0.001), and this association remain",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1020,7 +1020,7 @@
       "context_window": "among statin users compared to 2514 in controls (RR = 1.21; 95% CI, 1.15-1.28; p < 0.001), and this association remained st",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1038,7 +1038,7 @@
       "context_window": "compared to 2514 in controls (RR = 1.21; 95% CI, 1.15-1.28; p < 0.001), and this association remained statistically significant a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1056,7 +1056,7 @@
       "context_window": "er Bonferroni adjustment for multiple comparisons (adjusted p < 0.01). All-cause mortality was lower in statin users (30,854 dea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1074,7 +1074,7 @@
       "context_window": "users (30,854 deaths) compared to controls (35,300 deaths; RR = 0.87; 95% CI, 0.86-0.89; p < 0.001). These findings are summariz",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1092,7 +1092,7 @@
       "context_window": "854 deaths) compared to controls (35,300 deaths; RR = 0.87; 95% CI, 0.86-0.89; p < 0.001). These findings are summarized in",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1110,7 +1110,7 @@
       "context_window": "d to controls (35,300 deaths; RR = 0.87; 95% CI, 0.86-0.89; p < 0.001). These findings are summarized in Table 2 . Outcomes for",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1129,9 +1129,9 @@
       "context_window": "in controls, corresponding to a hazard ratio (HR) of 0.61 (95% CI 0.56-0.67; log-rank p < 0.001). For EOAD (G30.0), the HR was 0.55 (95",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-p-22773",
@@ -1147,9 +1147,9 @@
       "context_window": "to a hazard ratio (HR) of 0.61 (95% CI 0.56-0.67; log-rank p < 0.001). For EOAD (G30.0), the HR was 0.55 (95% CI 0.40-0.76), and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-ci-22820",
@@ -1166,9 +1166,9 @@
       "context_window": "67; log-rank p < 0.001). For EOAD (G30.0), the HR was 0.55 (95% CI 0.40-0.76), and for LOAD (G30.1) the HR was 0.63 (95% CI 0.54-0.74),",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-ci-22877",
@@ -1185,9 +1185,9 @@
       "context_window": "5 (95% CI 0.40-0.76), and for LOAD (G30.1) the HR was 0.63 (95% CI 0.54-0.74), favoring statin therapy. In contrast, statin use was asso",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-ci-23055",
@@ -1204,7 +1204,7 @@
       "context_window": "her degenerative neurological conditions (G31-G32; HR 1.08, 95% CI 1.03-1.14), whereas all-cause mortality remained lower among statin u",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1223,7 +1223,7 @@
       "context_window": "cause mortality remained lower among statin users (HR 0.78, 95% CI 0.77-0.79). Kaplan-Meier curves for each outcome ( Figure 2 ) show g",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1241,7 +1241,7 @@
       "context_window": "remained low and was lower in statin users than non-users (0.14% versus 0.57%), despite statin users also experiencing subst",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1259,7 +1259,7 @@
       "context_window": "and was lower in statin users than non-users (0.14% versus 0.57%), despite statin users also experiencing substantially lowe",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1277,7 +1277,7 @@
       "context_window": "riencing substantially lower cumulative incidence of death (4.46% versus 22.61%). These findings indicate that the competing",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1295,7 +1295,7 @@
       "context_window": "tantially lower cumulative incidence of death (4.46% versus 22.61%). These findings indicate that the competing risk of death",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1313,7 +1313,7 @@
       "context_window": "ith a significantly lower risk of AD (562 versus 794 cases; RR = 0.71; 95% CI, 0.64-0.79; p < 0.001). Similar reductions were obs",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1331,7 +1331,7 @@
       "context_window": "ficantly lower risk of AD (562 versus 794 cases; RR = 0.71; 95% CI, 0.64-0.79; p < 0.001). Similar reductions were observed",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1349,7 +1349,7 @@
       "context_window": "of AD (562 versus 794 cases; RR = 0.71; 95% CI, 0.64-0.79; p < 0.001). Similar reductions were observed for EOAD (43 versus 66 c",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1493,7 +1493,7 @@
       "context_window": "generative neurological conditions (2239 versus 1847 cases; RR = 1.21; 95% CI, 1.14-1.29; p < 0.001). A lower risk of all-cause m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1511,7 +1511,7 @@
       "context_window": "neurological conditions (2239 versus 1847 cases; RR = 1.21; 95% CI, 1.14-1.29; p < 0.001). A lower risk of all-cause mortal",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1529,7 +1529,7 @@
       "context_window": "ions (2239 versus 1847 cases; RR = 1.21; 95% CI, 1.14-1.29; p < 0.001). A lower risk of all-cause mortality was also observed (25",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1601,7 +1601,7 @@
       "context_window": "use was linked to a lower risk of AD (253 versus 390 cases; RR = 0.65; 95% CI, 0.55-0.76; p < 0.001), LOAD (78 versus 148 cases;",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1619,7 +1619,7 @@
       "context_window": "ked to a lower risk of AD (253 versus 390 cases; RR = 0.65; 95% CI, 0.55-0.76; p < 0.001), LOAD (78 versus 148 cases; RR =",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1637,7 +1637,7 @@
       "context_window": "of AD (253 versus 390 cases; RR = 0.65; 95% CI, 0.55-0.76; p < 0.001), LOAD (78 versus 148 cases; RR = 0.53; 95% CI, 0.40-0.69;",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1655,7 +1655,7 @@
       "context_window": "; 95% CI, 0.55-0.76; p < 0.001), LOAD (78 versus 148 cases; RR = 0.53; 95% CI, 0.40-0.69; p < 0.001), and all-cause mortality (98",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1673,7 +1673,7 @@
       "context_window": ".55-0.76; p < 0.001), LOAD (78 versus 148 cases; RR = 0.53; 95% CI, 0.40-0.69; p < 0.001), and all-cause mortality (9866 ve",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1691,7 +1691,7 @@
       "context_window": "), LOAD (78 versus 148 cases; RR = 0.53; 95% CI, 0.40-0.69; p < 0.001), and all-cause mortality (9866 versus 14,474 deaths; RR =",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1709,7 +1709,7 @@
       "context_window": "0.001), and all-cause mortality (9866 versus 14,474 deaths; RR = 0.68; 95% CI, 0.67-0.70; p < 0.001). EOAD incidence was not stat",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1727,7 +1727,7 @@
       "context_window": "all-cause mortality (9866 versus 14,474 deaths; RR = 0.68; 95% CI, 0.67-0.70; p < 0.001). EOAD incidence was not statistic",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1745,7 +1745,7 @@
       "context_window": "y (9866 versus 14,474 deaths; RR = 0.68; 95% CI, 0.67-0.70; p < 0.001). EOAD incidence was not statistically different between gr",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1817,7 +1817,7 @@
       "context_window": "generative neurological conditions (1106 versus 1016 cases; RR = 1.09; 95% CI, 1.00-1.19; p = 0.050). A direct comparison betwee",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1835,7 +1835,7 @@
       "context_window": "neurological conditions (1106 versus 1016 cases; RR = 1.09; 95% CI, 1.00-1.19; p = 0.050). A direct comparison between app",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1853,7 +1853,7 @@
       "context_window": "ions (1106 versus 1016 cases; RR = 1.09; 95% CI, 1.00-1.19; p = 0.050). A direct comparison between approximately 356,000 matche",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1871,7 +1871,7 @@
       "context_window": "r risk of AD with lipophilic statins (332 versus 274 cases; RR = 1.21; 95% CI, 1.03-1.42; p = 0.018). The excess risk was more pr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1889,7 +1889,7 @@
       "context_window": "D with lipophilic statins (332 versus 274 cases; RR = 1.21; 95% CI, 1.03-1.42; p = 0.018). The excess risk was more pronoun",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1907,7 +1907,7 @@
       "context_window": "tatins (332 versus 274 cases; RR = 1.21; 95% CI, 1.03-1.42; p = 0.018). The excess risk was more pronounced for LOAD (153 versus",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2033,7 +2033,7 @@
       "context_window": "generative neurological conditions (1417 versus 1185 cases; RR = 1.20; 95% CI, 1.11-1.29; p < 0.001) and all-cause mortality (16,",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2051,7 +2051,7 @@
       "context_window": "neurological conditions (1417 versus 1185 cases; RR = 1.20; 95% CI, 1.11-1.29; p < 0.001) and all-cause mortality (16,074 v",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2069,7 +2069,7 @@
       "context_window": "ions (1417 versus 1185 cases; RR = 1.20; 95% CI, 1.11-1.29; p < 0.001) and all-cause mortality (16,074 versus 11,311 deaths; RR =",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2087,7 +2087,7 @@
       "context_window": ".001) and all-cause mortality (16,074 versus 11,311 deaths; RR = 1.42; 95% CI, 1.39-1.46; p < 0.001) were both higher among lipop",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2105,7 +2105,7 @@
       "context_window": "ll-cause mortality (16,074 versus 11,311 deaths; RR = 1.42; 95% CI, 1.39-1.46; p < 0.001) were both higher among lipophilic",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2123,7 +2123,7 @@
       "context_window": "(16,074 versus 11,311 deaths; RR = 1.42; 95% CI, 1.39-1.46; p < 0.001) were both higher among lipophilic statin users. In a comp",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2141,7 +2141,7 @@
       "context_window": "defined by the American Heart Association (pravastatin, 10-20 mg; pitavastatin, 1-2 mg; simvastatin, 5-40 mg; rosuvastatin,",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2159,7 +2159,7 @@
       "context_window": "n Heart Association (pravastatin, 10-20 mg; pitavastatin, 1-2 mg; simvastatin, 5-40 mg; rosuvastatin, 2.5-10 mg; fluvastatin",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2177,7 +2177,7 @@
       "context_window": "pravastatin, 10-20 mg; pitavastatin, 1-2 mg; simvastatin, 5-40 mg; rosuvastatin, 2.5-10 mg; fluvastatin, 20-40 mg; atorvastat",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2195,7 +2195,7 @@
       "context_window": "tavastatin, 1-2 mg; simvastatin, 5-40 mg; rosuvastatin, 2.5-10 mg; fluvastatin, 20-40 mg; atorvastatin, 5-20 mg; lovastatin,",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2213,7 +2213,7 @@
       "context_window": "vastatin, 5-40 mg; rosuvastatin, 2.5-10 mg; fluvastatin, 20-40 mg; atorvastatin, 5-20 mg; lovastatin, 10-20 mg) versus contro",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2231,7 +2231,7 @@
       "context_window": "vastatin, 2.5-10 mg; fluvastatin, 20-40 mg; atorvastatin, 5-20 mg; lovastatin, 10-20 mg) versus controls, statin use was asso",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2249,7 +2249,7 @@
       "context_window": "luvastatin, 20-40 mg; atorvastatin, 5-20 mg; lovastatin, 10-20 mg) versus controls, statin use was associated with a lower ri",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2267,7 +2267,7 @@
       "context_window": "s associated with a lower risk of AD (487 versus 623 cases; RR = 0.78; 95% CI, 0.69-0.88; p < 0.001) and all-cause mortality (18,",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2285,7 +2285,7 @@
       "context_window": "d with a lower risk of AD (487 versus 623 cases; RR = 0.78; 95% CI, 0.69-0.88; p < 0.001) and all-cause mortality (18,400 v",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2303,7 +2303,7 @@
       "context_window": "of AD (487 versus 623 cases; RR = 0.78; 95% CI, 0.69-0.88; p < 0.001) and all-cause mortality (18,400 versus 21,008 deaths; RR =",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2321,7 +2321,7 @@
       "context_window": ".001) and all-cause mortality (18,400 versus 21,008 deaths; RR = 0.88; 95% CI, 0.86-0.89; p < 0.001). Risks of EOAD (44 versus 55",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2339,7 +2339,7 @@
       "context_window": "ll-cause mortality (18,400 versus 21,008 deaths; RR = 0.88; 95% CI, 0.86-0.89; p < 0.001). Risks of EOAD (44 versus 55 case",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2357,7 +2357,7 @@
       "context_window": "(18,400 versus 21,008 deaths; RR = 0.88; 95% CI, 0.86-0.89; p < 0.001). Risks of EOAD (44 versus 55 cases; RR = 0.80; 95% CI, 0.5",
       "claim_role": "dose",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2483,7 +2483,7 @@
       "context_window": "generative neurological conditions (2107 versus 1563 cases; RR = 1.35; 95% CI, 1.26-1.44; p < 0.001). Among high-dose statin (pr",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2501,7 +2501,7 @@
       "context_window": "neurological conditions (2107 versus 1563 cases; RR = 1.35; 95% CI, 1.26-1.44; p < 0.001). Among high-dose statin (pravast",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2519,7 +2519,7 @@
       "context_window": "ions (2107 versus 1563 cases; RR = 1.35; 95% CI, 1.26-1.44; p < 0.001). Among high-dose statin (pravastatin, 40-90 mg; pitavasta",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2537,9 +2537,9 @@
       "context_window": "-1.44; p < 0.001). Among high-dose statin (pravastatin, 40-90 mg; pitavastatin, 4 mg; simvastatin, 80 mg; rosuvastatin, 20-4",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-27811",
@@ -2555,9 +2555,9 @@
       "context_window": "mong high-dose statin (pravastatin, 40-90 mg; pitavastatin, 4 mg; simvastatin, 80 mg; rosuvastatin, 20-40 mg; fluvastatin, 8",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-27830",
@@ -2573,9 +2573,9 @@
       "context_window": "in (pravastatin, 40-90 mg; pitavastatin, 4 mg; simvastatin, 80 mg; rosuvastatin, 20-40 mg; fluvastatin, 80 mg; atorvastatin,",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-27854",
@@ -2591,9 +2591,9 @@
       "context_window": "g; pitavastatin, 4 mg; simvastatin, 80 mg; rosuvastatin, 20-40 mg; fluvastatin, 80 mg; atorvastatin, 40-80 mg; lovastatin, 60",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-27874",
@@ -2609,9 +2609,9 @@
       "context_window": "g; simvastatin, 80 mg; rosuvastatin, 20-40 mg; fluvastatin, 80 mg; atorvastatin, 40-80 mg; lovastatin, 60 mg) users compared",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-27898",
@@ -2627,9 +2627,9 @@
       "context_window": "osuvastatin, 20-40 mg; fluvastatin, 80 mg; atorvastatin, 40-80 mg; lovastatin, 60 mg) users compared to controls, high-dose u",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-27917",
@@ -2645,9 +2645,9 @@
       "context_window": "mg; fluvastatin, 80 mg; atorvastatin, 40-80 mg; lovastatin, 60 mg) users compared to controls, high-dose use was associated w",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-28028",
@@ -2663,9 +2663,9 @@
       "context_window": "s associated with reduced risk of AD (213 versus 288 cases; RR = 0.74; 95% CI, 0.62-0.88; p = 0.001), LOAD (85 versus 116 cases;",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-28039",
@@ -2681,9 +2681,9 @@
       "context_window": "d with reduced risk of AD (213 versus 288 cases; RR = 0.74; 95% CI, 0.62-0.88; p = 0.001), LOAD (85 versus 116 cases; RR =",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-p-28058",
@@ -2699,9 +2699,9 @@
       "context_window": "of AD (213 versus 288 cases; RR = 0.74; 95% CI, 0.62-0.88; p = 0.001), LOAD (85 versus 116 cases; RR = 0.73; 95% CI, 0.55-0.97;",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-28097",
@@ -2717,9 +2717,9 @@
       "context_window": "; 95% CI, 0.62-0.88; p = 0.001), LOAD (85 versus 116 cases; RR = 0.73; 95% CI, 0.55-0.97; p = 0.03), and all-cause mortality (945",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-28108",
@@ -2735,9 +2735,9 @@
       "context_window": ".62-0.88; p = 0.001), LOAD (85 versus 116 cases; RR = 0.73; 95% CI, 0.55-0.97; p = 0.03), and all-cause mortality (9457 ver",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-p-28127",
@@ -2753,9 +2753,9 @@
       "context_window": "), LOAD (85 versus 116 cases; RR = 0.73; 95% CI, 0.55-0.97; p = 0.03), and all-cause mortality (9457 versus 11,747 deaths; RR =",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-28190",
@@ -2771,9 +2771,9 @@
       "context_window": "0.03), and all-cause mortality (9457 versus 11,747 deaths; RR = 0.81; 95% CI, 0.78-0.83; p < 0.001). EOAD events were rare and s",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-28201",
@@ -2789,9 +2789,9 @@
       "context_window": "all-cause mortality (9457 versus 11,747 deaths; RR = 0.81; 95% CI, 0.78-0.83; p < 0.001). EOAD events were rare and simila",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-p-28220",
@@ -2807,9 +2807,9 @@
       "context_window": "y (9457 versus 11,747 deaths; RR = 0.81; 95% CI, 0.78-0.83; p < 0.001). EOAD events were rare and similar between groups (20 vers",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-28302",
@@ -2879,7 +2879,7 @@
       "context_window": "degenerative neurological conditions (894 versus 729 cases; RR = 1.23; 95% CI, 1.11-1.35; p < 0.001). A comparison of matched lo",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2897,7 +2897,7 @@
       "context_window": "e neurological conditions (894 versus 729 cases; RR = 1.23; 95% CI, 1.11-1.35; p < 0.001). A comparison of matched low/med",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2915,7 +2915,7 @@
       "context_window": "itions (894 versus 729 cases; RR = 1.23; 95% CI, 1.11-1.35; p < 0.001). A comparison of matched low/medium-dose and high-dose us",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3239,9 +3239,9 @@
       "context_window": "statin users and 465 controls developed AD over follow-up (RR = 0.81; 95% CI, 0.70-0.92). Time-to-event analyses yielded a hazar",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-30231",
@@ -3257,9 +3257,9 @@
       "context_window": "rs and 465 controls developed AD over follow-up (RR = 0.81; 95% CI, 0.70-0.92). Time-to-event analyses yielded a hazard rat",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-30306",
@@ -3275,9 +3275,9 @@
       "context_window": "92). Time-to-event analyses yielded a hazard ratio of 0.68 (95% CI, 0.59-0.78; log-rank p < 0.001), indicating a persistent",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-p-30334",
@@ -3293,9 +3293,9 @@
       "context_window": "yielded a hazard ratio of 0.68 (95% CI, 0.59-0.78; log-rank p < 0.001), indicating a persistent 32% relative reduction in the haz",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-30370",
@@ -3311,9 +3311,9 @@
       "context_window": "CI, 0.59-0.78; log-rank p < 0.001), indicating a persistent 32% relative reduction in the hazard of AD among statin users e",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-30605",
@@ -3329,9 +3329,9 @@
       "context_window": "For EOAD, point estimates continued to favor statin users (RR = 0.91; 95% CI, 0.55-1.49; HR = 0.77; 95% CI, 0.47-1.26), but wide",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-30616",
@@ -3347,9 +3347,9 @@
       "context_window": "point estimates continued to favor statin users (RR = 0.91; 95% CI, 0.55-1.49; HR = 0.77; 95% CI, 0.47-1.26), but wide conf",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-hr-a-30635",
@@ -3365,9 +3365,9 @@
       "context_window": "tinued to favor statin users (RR = 0.91; 95% CI, 0.55-1.49; HR = 0.77; 95% CI, 0.47-1.26), but wide confidence intervals encompas",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-30646",
@@ -3383,9 +3383,9 @@
       "context_window": "avor statin users (RR = 0.91; 95% CI, 0.55-1.49; HR = 0.77; 95% CI, 0.47-1.26), but wide confidence intervals encompassed t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-30826",
@@ -3473,7 +3473,7 @@
       "context_window": "iagnoses (G31-G32) was modestly higher in the statin group (0.2% versus 0.1%; RR = 1.20; 95% CI, 1.11-1.30), but Kaplan-Meie",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3491,7 +3491,7 @@
       "context_window": "1-G32) was modestly higher in the statin group (0.2% versus 0.1%; RR = 1.20; 95% CI, 1.11-1.30), but Kaplan-Meier curves and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3509,7 +3509,7 @@
       "context_window": "was modestly higher in the statin group (0.2% versus 0.1%; RR = 1.20; 95% CI, 1.11-1.30), but Kaplan-Meier curves and hazard rat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3527,7 +3527,7 @@
       "context_window": "ly higher in the statin group (0.2% versus 0.1%; RR = 1.20; 95% CI, 1.11-1.30), but Kaplan-Meier curves and hazard ratios w",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3545,7 +3545,7 @@
       "context_window": "aplan-Meier curves and hazard ratios were essentially null (HR = 1.01; 95% CI, 0.93-1.09), and absolute risk differences were ext",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3563,7 +3563,7 @@
       "context_window": "curves and hazard ratios were essentially null (HR = 1.01; 95% CI, 0.93-1.09), and absolute risk differences were extremel",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -3581,9 +3581,9 @@
       "context_window": "with reduced all-cause mortality after the three-year lag (1.7% versus 1.9%; RR = 0.85; 95% CI, 0.83-0.87; HR = 0.72; 95% C",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-31682",
@@ -3599,9 +3599,9 @@
       "context_window": "d all-cause mortality after the three-year lag (1.7% versus 1.9%; RR = 0.85; 95% CI, 0.83-0.87; HR = 0.72; 95% CI, 0.70-0.73",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-31688",
@@ -3617,9 +3617,9 @@
       "context_window": "cause mortality after the three-year lag (1.7% versus 1.9%; RR = 0.85; 95% CI, 0.83-0.87; HR = 0.72; 95% CI, 0.70-0.73; log-rank",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-31699",
@@ -3635,9 +3635,9 @@
       "context_window": "lity after the three-year lag (1.7% versus 1.9%; RR = 0.85; 95% CI, 0.83-0.87; HR = 0.72; 95% CI, 0.70-0.73; log-rank p < 0",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-hr-a-31718",
@@ -3653,9 +3653,9 @@
       "context_window": "e-year lag (1.7% versus 1.9%; RR = 0.85; 95% CI, 0.83-0.87; HR = 0.72; 95% CI, 0.70-0.73; log-rank p < 0.001), consistent with es",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-31729",
@@ -3671,9 +3671,9 @@
       "context_window": "(1.7% versus 1.9%; RR = 0.85; 95% CI, 0.83-0.87; HR = 0.72; 95% CI, 0.70-0.73; log-rank p < 0.001), consistent with establi",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-p-31757",
@@ -3689,9 +3689,9 @@
       "context_window": "; 95% CI, 0.83-0.87; HR = 0.72; 95% CI, 0.70-0.73; log-rank p < 0.001), consistent with established cardiovascular benefits. Beca",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-32356",
@@ -3707,7 +3707,7 @@
       "context_window": "atients. In this analysis of matched cohorts (statin cohort n = 1,094,675; non-statin cohort n = 1,093,583, after excluding p",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3725,7 +3725,7 @@
       "context_window": "hed cohorts (statin cohort n = 1,094,675; non-statin cohort n = 1,093,583, after excluding patients with AD prior to the risk",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3743,7 +3743,7 @@
       "context_window": "ective but was attenuated relative to the primary analysis (RR = 0.71, 95% CI 0.66-0.77; HR = 0.62, 95% CI 0.57-0.68). To furthe",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3762,7 +3762,7 @@
       "context_window": "was attenuated relative to the primary analysis (RR = 0.71, 95% CI 0.66-0.77; HR = 0.62, 95% CI 0.57-0.68). To further identify whether",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3780,7 +3780,7 @@
       "context_window": "ative to the primary analysis (RR = 0.71, 95% CI 0.66-0.77; HR = 0.62, 95% CI 0.57-0.68). To further identify whether the inclus",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3799,7 +3799,7 @@
       "context_window": "e primary analysis (RR = 0.71, 95% CI 0.66-0.77; HR = 0.62, 95% CI 0.57-0.68). To further identify whether the inclusion of diabetic pa",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -3817,7 +3817,7 @@
       "context_window": "tin therapy and incident AD (908 versus 1,22 AD cases; risk 0.09% versus 0.14%; RR = 0.64, 95% CI 0.59-0.69; p < 0.0001). The",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3835,7 +3835,7 @@
       "context_window": "nd incident AD (908 versus 1,22 AD cases; risk 0.09% versus 0.14%; RR = 0.64, 95% CI 0.59-0.69; p < 0.0001). These results ar",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3853,7 +3853,7 @@
       "context_window": "dent AD (908 versus 1,22 AD cases; risk 0.09% versus 0.14%; RR = 0.64, 95% CI 0.59-0.69; p < 0.0001). These results are closely a",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3872,7 +3872,7 @@
       "context_window": "8 versus 1,22 AD cases; risk 0.09% versus 0.14%; RR = 0.64, 95% CI 0.59-0.69; p < 0.0001). These results are closely aligned with both o",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3890,7 +3890,7 @@
       "context_window": "ases; risk 0.09% versus 0.14%; RR = 0.64, 95% CI 0.59-0.69; p < 0.0001). These results are closely aligned with both our primary n",
       "claim_role": "unknown",
       "endpoint": "HbA1c",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -3908,9 +3908,9 @@
       "context_window": "conducted a time-on-treatment analysis of the statin group (n = 963,171) for the most common statins in the cohort. Patients on",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-188",
@@ -3926,9 +3926,9 @@
       "context_window": "ost common statins in the cohort. Patients on atorvastatin (n = 451,167) had a mean time-on-treatment of 1000.90 (SD = \u00b1 1113.3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-271",
@@ -3944,9 +3944,9 @@
       "context_window": "time-on-treatment of 1000.90 (SD = \u00b1 1113.33), a median of 626 days, and a maximum of 7259 days. Patients on simvastatin (n = 1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-298",
@@ -3962,9 +3962,9 @@
       "context_window": "90 (SD = \u00b1 1113.33), a median of 626 days, and a maximum of 7259 days. Patients on simvastatin (n = 136,229) had a mean time-on-t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-334",
@@ -3980,9 +3980,9 @@
       "context_window": "days, and a maximum of 7259 days. Patients on simvastatin (n = 136,229) had a mean time-on-treatment of 1461.13 (SD = \u00b1 1519.0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-417",
@@ -3998,9 +3998,9 @@
       "context_window": "time-on-treatment of 1461.13 (SD = \u00b1 1519.09), a median of 947 days, and a maximum of 7211 days. Patients on lovastatin (n = 17",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-444",
@@ -4016,9 +4016,9 @@
       "context_window": "13 (SD = \u00b1 1519.09), a median of 947 days, and a maximum of 7211 days. Patients on lovastatin (n = 17,789) had a mean time-on-tre",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "simvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-479",
@@ -4034,9 +4034,9 @@
       "context_window": "7 days, and a maximum of 7211 days. Patients on lovastatin (n = 17,789) had a mean time-on-treatment of 1377.11 (SD = \u00b1 1438.1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "lovastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-561",
@@ -4052,9 +4052,9 @@
       "context_window": "time-on-treatment of 1377.11 (SD = \u00b1 1438.10), a median of 874 days, and a maximum of 7047 days. Patients on rosuvastatin (n =",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "lovastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-588",
@@ -4070,9 +4070,9 @@
       "context_window": "11 (SD = \u00b1 1438.10), a median of 874 days, and a maximum of 7047 days. Patients on rosuvastatin (n = 184,311) had a mean time-on-",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "lovastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-625",
@@ -4088,9 +4088,9 @@
       "context_window": "days, and a maximum of 7047 days. Patients on rosuvastatin (n = 184,311) had a mean time-on-treatment of 793.15 (SD = \u00b1 933.51)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-706",
@@ -4106,9 +4106,9 @@
       "context_window": "an time-on-treatment of 793.15 (SD = \u00b1 933.51), a median of 478 days, and a maximum of 7078 days. Additionally, TriNetX was used",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-733",
@@ -4124,9 +4124,9 @@
       "context_window": ".15 (SD = \u00b1 933.51), a median of 478 days, and a maximum of 7078 days. Additionally, TriNetX was used to calculate the follow-up",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-975",
@@ -4160,9 +4160,9 @@
       "context_window": "ed cohorts, follow-up time in patient records was a mean of 1359.7 days (SD = 1420; median = 889 days; IQR = 1841) in statin-treate",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-1091",
@@ -4178,9 +4178,9 @@
       "context_window": "ient records was a mean of 1359.7 days (SD = 1420; median = 889 days; IQR = 1841) in statin-treated patients and 1217.7 (SD = 13",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-u-1174",
@@ -4196,9 +4196,9 @@
       "context_window": "n statin-treated patients and 1217.7 (SD = 1340.3; median = 758 days; IQR = 1699) in non-statin patients. The primary analysis",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-n-1282",
@@ -4250,7 +4250,7 @@
       "context_window": "he control group were diagnosed with AD, corresponding to a 31.5% reduction in risk (RR = 0.69; 95% CI, 0.62-0.75; p < 0.001)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4268,7 +4268,7 @@
       "context_window": "gnosed with AD, corresponding to a 31.5% reduction in risk (RR = 0.69; 95% CI, 0.62-0.75; p < 0.001). For EOAD (G30.0), 60 cases",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4286,7 +4286,7 @@
       "context_window": "AD, corresponding to a 31.5% reduction in risk (RR = 0.69; 95% CI, 0.62-0.75; p < 0.001). For EOAD (G30.0), 60 cases occur",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4304,7 +4304,7 @@
       "context_window": "to a 31.5% reduction in risk (RR = 0.69; 95% CI, 0.62-0.75; p < 0.001). For EOAD (G30.0), 60 cases occurred in the statin group v",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4322,7 +4322,7 @@
       "context_window": "ccurred in the statin group versus 98 in the control group (RR = 0.61; 95% CI, 0.44-0.84; p = 0.002). Late-onset AD (LOAD; G30.1)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4340,7 +4340,7 @@
       "context_window": "the statin group versus 98 in the control group (RR = 0.61; 95% CI, 0.44-0.84; p = 0.002). Late-onset AD (LOAD; G30.1) was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4358,7 +4358,7 @@
       "context_window": "rsus 98 in the control group (RR = 0.61; 95% CI, 0.44-0.84; p = 0.002). Late-onset AD (LOAD; G30.1) was diagnosed in 279 statin u",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -4376,9 +4376,9 @@
       "context_window": "G30.1) was diagnosed in 279 statin users and 391 controls (RR = 0.71; 95% CI, 0.61-0.83; p < 0.001). Conversely, statin use was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-2042",
@@ -4394,9 +4394,9 @@
       "context_window": "diagnosed in 279 statin users and 391 controls (RR = 0.71; 95% CI, 0.61-0.83; p < 0.001). Conversely, statin use was assoc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-p-2061",
@@ -4412,9 +4412,9 @@
       "context_window": "tatin users and 391 controls (RR = 0.71; 95% CI, 0.61-0.83; p < 0.001). Conversely, statin use was associated with a slightly hig",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-2262",
@@ -4430,7 +4430,7 @@
       "context_window": "3052 cases among statin users compared to 2514 in controls (RR = 1.21; 95% CI, 1.15-1.28; p < 0.001), and this association remain",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4448,7 +4448,7 @@
       "context_window": "among statin users compared to 2514 in controls (RR = 1.21; 95% CI, 1.15-1.28; p < 0.001), and this association remained st",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4466,7 +4466,7 @@
       "context_window": "compared to 2514 in controls (RR = 1.21; 95% CI, 1.15-1.28; p < 0.001), and this association remained statistically significant a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4484,7 +4484,7 @@
       "context_window": "er Bonferroni adjustment for multiple comparisons (adjusted p < 0.01). All-cause mortality was lower in statin users (30,854 dea",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -4502,7 +4502,7 @@
       "context_window": "users (30,854 deaths) compared to controls (35,300 deaths; RR = 0.87; 95% CI, 0.86-0.89; p < 0.001). These findings are summariz",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4520,7 +4520,7 @@
       "context_window": "854 deaths) compared to controls (35,300 deaths; RR = 0.87; 95% CI, 0.86-0.89; p < 0.001). These findings are summarized in",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4538,7 +4538,7 @@
       "context_window": "d to controls (35,300 deaths; RR = 0.87; 95% CI, 0.86-0.89; p < 0.001). These findings are summarized in Table 2 . Outcomes for",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4557,9 +4557,9 @@
       "context_window": "in controls, corresponding to a hazard ratio (HR) of 0.61 (95% CI 0.56-0.67; log-rank p < 0.001). For EOAD (G30.0), the HR was 0.55 (95",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-p-3118",
@@ -4575,9 +4575,9 @@
       "context_window": "to a hazard ratio (HR) of 0.61 (95% CI 0.56-0.67; log-rank p < 0.001). For EOAD (G30.0), the HR was 0.55 (95% CI 0.40-0.76), and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-ci-3165",
@@ -4594,9 +4594,9 @@
       "context_window": "67; log-rank p < 0.001). For EOAD (G30.0), the HR was 0.55 (95% CI 0.40-0.76), and for LOAD (G30.1) the HR was 0.63 (95% CI 0.54-0.74),",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-ci-3222",
@@ -4613,9 +4613,9 @@
       "context_window": "5 (95% CI 0.40-0.76), and for LOAD (G30.1) the HR was 0.63 (95% CI 0.54-0.74), favoring statin therapy. In contrast, statin use was asso",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-ci-3400",
@@ -4632,7 +4632,7 @@
       "context_window": "her degenerative neurological conditions (G31-G32; HR 1.08, 95% CI 1.03-1.14), whereas all-cause mortality remained lower among statin u",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4651,7 +4651,7 @@
       "context_window": "cause mortality remained lower among statin users (HR 0.78, 95% CI 0.77-0.79). Kaplan-Meier curves for each outcome ( Figure 2 ) show g",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4669,7 +4669,7 @@
       "context_window": "remained low and was lower in statin users than non-users (0.14% versus 0.57%), despite statin users also experiencing subst",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4687,7 +4687,7 @@
       "context_window": "and was lower in statin users than non-users (0.14% versus 0.57%), despite statin users also experiencing substantially lowe",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4705,7 +4705,7 @@
       "context_window": "riencing substantially lower cumulative incidence of death (4.46% versus 22.61%). These findings indicate that the competing",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4723,7 +4723,7 @@
       "context_window": "tantially lower cumulative incidence of death (4.46% versus 22.61%). These findings indicate that the competing risk of death",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4741,7 +4741,7 @@
       "context_window": "founding comorbidities, we observed that statin users had a 31% lower risk of AD compared to non-users (RR = 0.69). This in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4759,7 +4759,7 @@
       "context_window": "tin users had a 31% lower risk of AD compared to non-users (RR = 0.69). This included consistent risk reductions across both EOAD",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4849,7 +4849,7 @@
       "context_window": "rch. In comparisons with matched controls, both lipophilic (RR = 0.71; 95% CI, 0.64-0.79) and hydrophilic (RR = 0.65; 95% CI, 0.5",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4867,7 +4867,7 @@
       "context_window": "parisons with matched controls, both lipophilic (RR = 0.71; 95% CI, 0.64-0.79) and hydrophilic (RR = 0.65; 95% CI, 0.55-0.7",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4885,7 +4885,7 @@
       "context_window": "lipophilic (RR = 0.71; 95% CI, 0.64-0.79) and hydrophilic (RR = 0.65; 95% CI, 0.55-0.76) statins were associated with substantia",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4903,7 +4903,7 @@
       "context_window": "(RR = 0.71; 95% CI, 0.64-0.79) and hydrophilic (RR = 0.65; 95% CI, 0.55-0.76) statins were associated with substantially l",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -4921,9 +4921,9 @@
       "context_window": "associations were somewhat stronger for hydrophilic agents (RR = 0.53; 95% CI, 0.40-0.69) than for lipophilic agents (RR = 0.80;",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-2478",
@@ -4939,9 +4939,9 @@
       "context_window": "s were somewhat stronger for hydrophilic agents (RR = 0.53; 95% CI, 0.40-0.69) than for lipophilic agents (RR = 0.80; 95% C",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-2525",
@@ -4957,9 +4957,9 @@
       "context_window": "(RR = 0.53; 95% CI, 0.40-0.69) than for lipophilic agents (RR = 0.80; 95% CI, 0.68-0.94), whereas EOAD showed a protective assoc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-2536",
@@ -4975,9 +4975,9 @@
       "context_window": "; 95% CI, 0.40-0.69) than for lipophilic agents (RR = 0.80; 95% CI, 0.68-0.94), whereas EOAD showed a protective associatio",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-2625",
@@ -4993,9 +4993,9 @@
       "context_window": "OAD showed a protective association for lipophilic statins (RR = 0.65; 95% CI, 0.44-0.96) but no clear effect for hydrophilic sta",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-2636",
@@ -5011,9 +5011,9 @@
       "context_window": "a protective association for lipophilic statins (RR = 0.65; 95% CI, 0.44-0.96) but no clear effect for hydrophilic statins",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-2700",
@@ -5029,9 +5029,9 @@
       "context_window": "CI, 0.44-0.96) but no clear effect for hydrophilic statins (RR = 1.04; 95% CI, 0.60-1.80). In a direct head-to-head comparison, l",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-2711",
@@ -5047,9 +5047,9 @@
       "context_window": "96) but no clear effect for hydrophilic statins (RR = 1.04; 95% CI, 0.60-1.80). In a direct head-to-head comparison, lipoph",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-2845",
@@ -5065,7 +5065,7 @@
       "context_window": "users had higher risk of AD than hydrophilic statin users (RR = 1.21; 95% CI, 1.03-1.42), with an even larger excess for LOAD (R",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5083,7 +5083,7 @@
       "context_window": "higher risk of AD than hydrophilic statin users (RR = 1.21; 95% CI, 1.03-1.42), with an even larger excess for LOAD (RR = 1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5101,7 +5101,7 @@
       "context_window": "1; 95% CI, 1.03-1.42), with an even larger excess for LOAD (RR = 1.82; 95% CI, 1.40-2.38). This pattern diverges from some prior",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5119,7 +5119,7 @@
       "context_window": "1.03-1.42), with an even larger excess for LOAD (RR = 1.82; 95% CI, 1.40-2.38). This pattern diverges from some prior meta-",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -5137,9 +5137,9 @@
       "context_window": "atin use was associated with a modest reduction in AD risk (RR = 0.78; 95% CI, 0.69-0.88), and high-dose use showed a similar ass",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-4346",
@@ -5155,9 +5155,9 @@
       "context_window": "s associated with a modest reduction in AD risk (RR = 0.78; 95% CI, 0.69-0.88), and high-dose use showed a similar associat",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-4414",
@@ -5173,9 +5173,9 @@
       "context_window": "0.69-0.88), and high-dose use showed a similar association (RR = 0.74; 95% CI, 0.62-0.88), while direct comparisons between low/m",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-pct-4425",
@@ -5191,9 +5191,9 @@
       "context_window": "and high-dose use showed a similar association (RR = 0.74; 95% CI, 0.62-0.88), while direct comparisons between low/medium",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13022028_alzheimer_s_disease_in_patients_prescribed_statins_a_real_wo-rr-a-4686",

@@ -293,6 +293,33 @@ def test_apply_fixes_preserves_real_bridge_but_strips_leaked_bridge_fragment() -
     )
 
 
+def test_apply_fixes_strips_invalid_bridge_claims_after_review_patch() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Inferential Bridge\n\n"
+        "2. [D1_inferential_bridge | confidence=medium] Broken claim. "
+        "[mechanism_anchor: A 2020] [conservation: B 2021]\n"
+        "Existing human signal: A 2020.\n\n"
+        "3. [D1_inferential_bridge | confidence=low] Valid claim. "
+        "[mechanism_anchor: C 2022] [conservation: D 2023]\n"
+        "Existing human signal: none.\n"
+        "Testability: Future validation. [testability: explicit]\n\n"
+        "## Results\n\nStable results.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "Broken claim" not in out
+    assert "1. [D1_inferential_bridge" in out
+    assert "Valid claim" in out
+    assert "[testability: explicit]" in out
+    assert any(
+        item["fix_type"] == "invalid_inferential_bridge_claim_strip"
+        for item in log
+    )
+
+
 def test_apply_fixes_preserves_deterministic_methods_steps() -> None:
     import sys as _sys
     from pathlib import Path as _Path

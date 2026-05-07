@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron",
   "doi": "10.1016/j.eclinm.2026.103798",
-  "extracted_at": "2026-05-05T15:32:41+00:00",
+  "extracted_at": "2026-05-07T15:40:36+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 38,
@@ -26,9 +26,9 @@
       "context_window": "th history of estimated glomerular filtration rate (eGFR) < 15 mL/min/1.73 m 2 were excluded. Participants were categorised as st",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-934",
@@ -152,9 +152,9 @@
       "context_window": "4 eligible person-trials were identified (statin initiators n = 30,907; non-initiators n = 1,406,107), from which 30,892 stati",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-n-1470",
@@ -170,9 +170,9 @@
       "context_window": "re identified (statin initiators n = 30,907; non-initiators n = 1,406,107), from which 30,892 statin initiators and 108,380 n",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-pct-1713",
@@ -188,7 +188,7 @@
       "context_window": "s found among statin initiators in all-cause mortality (HR [95% confidence interval (CI)], ITT: 0.97 [0.95-0.98]; PP: 0.91",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -206,7 +206,7 @@
       "context_window": "97 [0.95-0.98]; PP: 0.91 [0.88-0.93]), progression to eGFR <15 mL/min/1.73 m 2 (ITT: 0.91 [0.89-0.93]; PP: 0.77 [0.74-0.80]), \u226550",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -224,7 +224,7 @@
       "context_window": "in/1.73 m 2 (ITT: 0.91 [0.89-0.93]; PP: 0.77 [0.74-0.80]), \u226550% eGFR decline (ITT: 0.95 [0.93-0.98]; PP: 0.89 [0.84-0.93]),",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -242,7 +242,7 @@
       "context_window": "ion was also associated significantly with reduced risk of \u226530% eGFR decline using PP approach (0.94 [0.92-0.96]). Over a",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -295,10 +295,10 @@
       "sentence": "Indications for statin therapy included: 1) LDL-C level \u22652.6 mmol/L, or 2) diagnosed cardiovascular disease (coronary heart disease, stroke, or heart failure) with LDL-C level \u22651.8 mmol/L.",
       "context_window": "h. Indications for statin therapy included: 1) LDL-C level \u22652.6 mmol/L, or 2) diagnosed cardiovascular disease (coronary heart d",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-1832",
@@ -313,10 +313,10 @@
       "sentence": "Indications for statin therapy included: 1) LDL-C level \u22652.6 mmol/L, or 2) diagnosed cardiovascular disease (coronary heart disease, stroke, or heart failure) with LDL-C level \u22651.8 mmol/L.",
       "context_window": "heart disease, stroke, or heart failure) with LDL-C level \u22651.8 mmol/L. The study population comprised all adults aged 18 years",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-1892",
@@ -332,9 +332,9 @@
       "context_window": "1.8 mmol/L. The study population comprised all adults aged 18 years or older who, in each calendar month between January 2008 a",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-2052",
@@ -350,9 +350,9 @@
       "context_window": "ing criteria: 1) presence of CKD, defined as baseline eGFR <60 mL/min/1.73 m 2 ; 2) absence of a history of eGFR <15 mL/min/1.73",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-2106",
@@ -368,9 +368,9 @@
       "context_window": "eGFR <60 mL/min/1.73 m 2 ; 2) absence of a history of eGFR <15 mL/min/1.73 m 2 ; and 3) fulfilment of the statin therapy indicati",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-2482",
@@ -529,10 +529,10 @@
       "sentence": "In this study, the indications for statin initiation were 1) LDL-C \u2265 2.6 mmol/L OR 2) LDL-C \u2265 1.8 mmol/L and with history of CVDs (coronary heart disease, stroke and heart failure).",
       "context_window": "tudy, the indications for statin initiation were 1) LDL-C \u2265 2.6 mmol/L OR 2) LDL-C \u2265 1.8 mmol/L and with history of CVDs (corona",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-6569",
@@ -547,10 +547,10 @@
       "sentence": "In this study, the indications for statin initiation were 1) LDL-C \u2265 2.6 mmol/L OR 2) LDL-C \u2265 1.8 mmol/L and with history of CVDs (coronary heart disease, stroke and heart failure).",
       "context_window": "statin initiation were 1) LDL-C \u2265 2.6 mmol/L OR 2) LDL-C \u2265 1.8 mmol/L and with history of CVDs (coronary heart disease, stroke",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-pct-8198",
@@ -601,10 +601,10 @@
       "sentence": "The ITT and PP effect of statin therapy on the outcomes were estimated for subsets of person-trials after stratification into subgroups, including gender (male, female), age (<65, \u226565 years), CCI (<6, \u22656), eGFR (\u226430, >30 mL/min/1.73 m 2 ), and LDL-C levels (\u22642.6, >2.6 mmol/L) at baseline.",
       "context_window": "into subgroups, including gender (male, female), age (<65, \u226565 years), CCI (<6, \u22656), eGFR (\u226430, >30 mL/min/1.73 m 2 ), and LDL-C",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-8668",
@@ -619,10 +619,10 @@
       "sentence": "The ITT and PP effect of statin therapy on the outcomes were estimated for subsets of person-trials after stratification into subgroups, including gender (male, female), age (<65, \u226565 years), CCI (<6, \u22656), eGFR (\u226430, >30 mL/min/1.73 m 2 ), and LDL-C levels (\u22642.6, >2.6 mmol/L) at baseline.",
       "context_window": "e, female), age (<65, \u226565 years), CCI (<6, \u22656), eGFR (\u226430, >30 mL/min/1.73 m 2 ), and LDL-C levels (\u22642.6, >2.6 mmol/L) at baselin",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-8715",
@@ -637,10 +637,10 @@
       "sentence": "The ITT and PP effect of statin therapy on the outcomes were estimated for subsets of person-trials after stratification into subgroups, including gender (male, female), age (<65, \u226565 years), CCI (<6, \u22656), eGFR (\u226430, >30 mL/min/1.73 m 2 ), and LDL-C levels (\u22642.6, >2.6 mmol/L) at baseline.",
       "context_window": "eGFR (\u226430, >30 mL/min/1.73 m 2 ), and LDL-C levels (\u22642.6, >2.6 mmol/L) at baseline. To formally assess whether the treatment ef",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-9343",
@@ -727,10 +727,10 @@
       "sentence": "LDL-C = low-density lipoprotein cholesterol; eGFR = estimated Glomerular Filtration Rate; CVD = Cardiovascular disease. \u2217 Baseline measurements defined as the nearest measurement within 1 year prior to the month of inclusion into the study. \u2217\u2217 Indications of using statin include: 1.",
       "context_window": "line measurements defined as the nearest measurement within 1 year prior to the month of inclusion into the study. \u2217\u2217 Indicati",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-607",
@@ -745,10 +745,10 @@
       "sentence": "LDL-C level \u22652.6 mmol/L or 2. with diagnosed CVDs (coronary heart disease, stroke or heart failure) and LDL-C level \u22651.8 mmol/L. \u00a7 The factors for propensity-score matching include year of inclusion, gender, age, smoking status, LDL-C, high-density lipoprotein cholesterol, triglyceride, eGFR, Charlson Comorbidity Index, medical history (hypertension, obesity, diabetes mellitus, coronary heart disease, stroke, heart failure, peripheral vascular disease, atrial fibrillation, chronic obstructive pulmonary disease, dementia, prescription record (Angiotensin-converting enzyme inhibitor and angiotensin receptor blocker, \u03b2-blocker, calcium channel blocker, diuretic, oral diabetic drugs, insulin, long-term usage of aspirin), and healthcare service utilisation (specialist outpatient clinics, and hospitalisation).",
       "context_window": "dy. \u2217\u2217 Indications of using statin include: 1. LDL-C level \u22652.6 mmol/L or 2. with diagnosed CVDs (coronary heart disease, stroke",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-711",
@@ -763,10 +763,10 @@
       "sentence": "LDL-C level \u22652.6 mmol/L or 2. with diagnosed CVDs (coronary heart disease, stroke or heart failure) and LDL-C level \u22651.8 mmol/L. \u00a7 The factors for propensity-score matching include year of inclusion, gender, age, smoking status, LDL-C, high-density lipoprotein cholesterol, triglyceride, eGFR, Charlson Comorbidity Index, medical history (hypertension, obesity, diabetes mellitus, coronary heart disease, stroke, heart failure, peripheral vascular disease, atrial fibrillation, chronic obstructive pulmonary disease, dementia, prescription record (Angiotensin-converting enzyme inhibitor and angiotensin receptor blocker, \u03b2-blocker, calcium channel blocker, diuretic, oral diabetic drugs, insulin, long-term usage of aspirin), and healthcare service utilisation (specialist outpatient clinics, and hospitalisation).",
       "context_window": "ry heart disease, stroke or heart failure) and LDL-C level \u22651.8 mmol/L. \u00a7 The factors for propensity-score matching include year",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-2676",
@@ -800,9 +800,9 @@
       "context_window": "ted significantly with reduced risk of all-cause mortality (HR: 0.97 [95% CI 0.95-0.98]), eGFR <15 mL/min/1.73 m 2 (HR: 0.91 [95",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-ci-2965",
@@ -819,9 +819,9 @@
       "context_window": "icantly with reduced risk of all-cause mortality (HR: 0.97 [95% CI 0.95-0.98]), eGFR <15 mL/min/1.73 m 2 (HR: 0.91 [95% CI 0.89-0.93]),",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-2991",
@@ -837,9 +837,9 @@
       "context_window": "of all-cause mortality (HR: 0.97 [95% CI 0.95-0.98]), eGFR <15 mL/min/1.73 m 2 (HR: 0.91 [95% CI 0.89-0.93]), eGFR \u226550% decline (",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-hr-a-3011",
@@ -855,9 +855,9 @@
       "context_window": "ty (HR: 0.97 [95% CI 0.95-0.98]), eGFR <15 mL/min/1.73 m 2 (HR: 0.91 [95% CI 0.89-0.93]), eGFR \u226550% decline (HR: 0.95 [95% CI 0.",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-ci-3021",
@@ -874,9 +874,9 @@
       "context_window": "97 [95% CI 0.95-0.98]), eGFR <15 mL/min/1.73 m 2 (HR: 0.91 [95% CI 0.89-0.93]), eGFR \u226550% decline (HR: 0.95 [95% CI 0.93-0.98]), and com",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-pct-3047",
@@ -892,9 +892,9 @@
       "context_window": "FR <15 mL/min/1.73 m 2 (HR: 0.91 [95% CI 0.89-0.93]), eGFR \u226550% decline (HR: 0.95 [95% CI 0.93-0.98]), and composite outcom",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-hr-a-3060",
@@ -910,9 +910,9 @@
       "context_window": "/1.73 m 2 (HR: 0.91 [95% CI 0.89-0.93]), eGFR \u226550% decline (HR: 0.95 [95% CI 0.93-0.98]), and composite outcomes (HR: 0.96 [95%",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-ci-3070",
@@ -929,9 +929,9 @@
       "context_window": "(HR: 0.91 [95% CI 0.89-0.93]), eGFR \u226550% decline (HR: 0.95 [95% CI 0.93-0.98]), and composite outcomes (HR: 0.96 [95% CI 0.94-0.97]) ( F",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-hr-a-3114",
@@ -947,9 +947,9 @@
       "context_window": "line (HR: 0.95 [95% CI 0.93-0.98]), and composite outcomes (HR: 0.96 [95% CI 0.94-0.97]) ( Fig. 2 ) Under PP approach, statin in",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-ci-3124",
@@ -966,9 +966,9 @@
       "context_window": "0.95 [95% CI 0.93-0.98]), and composite outcomes (HR: 0.96 [95% CI 0.94-0.97]) ( Fig. 2 ) Under PP approach, statin initiators associate",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-hr-a-3326",
@@ -984,9 +984,9 @@
       "context_window": "tive to non-initiators, which included all-cause mortality (HR: 0.91 [95% CI 0.88-0.93]), eGFR <15 mL/min/1.73 m 2 (HR: 0.77 [95",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-ci-3336",
@@ -1003,9 +1003,9 @@
       "context_window": "n-initiators, which included all-cause mortality (HR: 0.91 [95% CI 0.88-0.93]), eGFR <15 mL/min/1.73 m 2 (HR: 0.77 [95% CI 0.74-0.80]),",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-3362",
@@ -1021,9 +1021,9 @@
       "context_window": "ed all-cause mortality (HR: 0.91 [95% CI 0.88-0.93]), eGFR <15 mL/min/1.73 m 2 (HR: 0.77 [95% CI 0.74-0.80]), eGFR \u226530% decline (",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-hr-a-3382",
@@ -1039,9 +1039,9 @@
       "context_window": "ty (HR: 0.91 [95% CI 0.88-0.93]), eGFR <15 mL/min/1.73 m 2 (HR: 0.77 [95% CI 0.74-0.80]), eGFR \u226530% decline (HR: 0.94 [95% CI 0.",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-ci-3392",
@@ -1058,9 +1058,9 @@
       "context_window": "91 [95% CI 0.88-0.93]), eGFR <15 mL/min/1.73 m 2 (HR: 0.77 [95% CI 0.74-0.80]), eGFR \u226530% decline (HR: 0.94 [95% CI 0.92-0.96]), eGFR \u22655",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-pct-3418",
@@ -1076,9 +1076,9 @@
       "context_window": "FR <15 mL/min/1.73 m 2 (HR: 0.77 [95% CI 0.74-0.80]), eGFR \u226530% decline (HR: 0.94 [95% CI 0.92-0.96]), eGFR \u226550% decline (H",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-hr-a-3431",
@@ -1094,9 +1094,9 @@
       "context_window": "/1.73 m 2 (HR: 0.77 [95% CI 0.74-0.80]), eGFR \u226530% decline (HR: 0.94 [95% CI 0.92-0.96]), eGFR \u226550% decline (HR: 0.89 [95% CI 0.",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-ci-3441",
@@ -1113,9 +1113,9 @@
       "context_window": "(HR: 0.77 [95% CI 0.74-0.80]), eGFR \u226530% decline (HR: 0.94 [95% CI 0.92-0.96]), eGFR \u226550% decline (HR: 0.89 [95% CI 0.84-0.93]), and com",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-pct-3467",
@@ -1131,9 +1131,9 @@
       "context_window": "0]), eGFR \u226530% decline (HR: 0.94 [95% CI 0.92-0.96]), eGFR \u226550% decline (HR: 0.89 [95% CI 0.84-0.93]), and composite outcom",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-hr-a-3480",
@@ -1149,9 +1149,9 @@
       "context_window": "% decline (HR: 0.94 [95% CI 0.92-0.96]), eGFR \u226550% decline (HR: 0.89 [95% CI 0.84-0.93]), and composite outcomes (HR: 0.90 [95%",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-ci-3490",
@@ -1168,9 +1168,9 @@
       "context_window": "(HR: 0.94 [95% CI 0.92-0.96]), eGFR \u226550% decline (HR: 0.89 [95% CI 0.84-0.93]), and composite outcomes (HR: 0.90 [95% CI 0.88-0.92]) ( F",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-hr-a-3534",
@@ -1186,9 +1186,9 @@
       "context_window": "line (HR: 0.89 [95% CI 0.84-0.93]), and composite outcomes (HR: 0.90 [95% CI 0.88-0.92]) ( Fig. 2 ). Estimated hazard ratio [95",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-ci-3544",
@@ -1205,9 +1205,9 @@
       "context_window": "0.89 [95% CI 0.84-0.93]), and composite outcomes (HR: 0.90 [95% CI 0.88-0.92]) ( Fig. 2 ). Estimated hazard ratio [95% Confidence Inter",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-pct-3600",
@@ -1223,9 +1223,9 @@
       "context_window": "90 [95% CI 0.88-0.92]) ( Fig. 2 ). Estimated hazard ratio [95% Confidence Interval (CI)] for outcome of interest between s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12925127_reno_protective_effects_of_statins_among_patients_with_chron-u-4637",
@@ -1277,7 +1277,7 @@
       "context_window": "ality (10-year standardised absolute risk reduction [ARR]: -2.2% [95% CI -2.6% to -1.8%]), eGFR <15 mL/min/1.73 m 2 (ARR: -3",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1295,7 +1295,7 @@
       "context_window": "(10-year standardised absolute risk reduction [ARR]: -2.2% [95% CI -2.6% to -1.8%]), eGFR <15 mL/min/1.73 m 2 (ARR: -3.3% [",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1313,7 +1313,7 @@
       "context_window": "standardised absolute risk reduction [ARR]: -2.2% [95% CI -2.6% to -1.8%]), eGFR <15 mL/min/1.73 m 2 (ARR: -3.3% [95% CI -4",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1331,7 +1331,7 @@
       "context_window": "ised absolute risk reduction [ARR]: -2.2% [95% CI -2.6% to -1.8%]), eGFR <15 mL/min/1.73 m 2 (ARR: -3.3% [95% CI -4.0% to -2",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1349,7 +1349,7 @@
       "context_window": "risk reduction [ARR]: -2.2% [95% CI -2.6% to -1.8%]), eGFR <15 mL/min/1.73 m 2 (ARR: -3.3% [95% CI -4.0% to -2.7%]), eGFR \u226530% de",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1367,7 +1367,7 @@
       "context_window": "% [95% CI -2.6% to -1.8%]), eGFR <15 mL/min/1.73 m 2 (ARR: -3.3% [95% CI -4.0% to -2.7%]), eGFR \u226530% decline (ARR: -1.9% [95",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1385,7 +1385,7 @@
       "context_window": "CI -2.6% to -1.8%]), eGFR <15 mL/min/1.73 m 2 (ARR: -3.3% [95% CI -4.0% to -2.7%]), eGFR \u226530% decline (ARR: -1.9% [95% CI",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1403,7 +1403,7 @@
       "context_window": "% to -1.8%]), eGFR <15 mL/min/1.73 m 2 (ARR: -3.3% [95% CI -4.0% to -2.7%]), eGFR \u226530% decline (ARR: -1.9% [95% CI -2.6% to",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1421,7 +1421,7 @@
       "context_window": "%]), eGFR <15 mL/min/1.73 m 2 (ARR: -3.3% [95% CI -4.0% to -2.7%]), eGFR \u226530% decline (ARR: -1.9% [95% CI -2.6% to -1.3%]),",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1439,7 +1439,7 @@
       "context_window": "mL/min/1.73 m 2 (ARR: -3.3% [95% CI -4.0% to -2.7%]), eGFR \u226530% decline (ARR: -1.9% [95% CI -2.6% to -1.3%]), eGFR \u226550% dec",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1457,7 +1457,7 @@
       "context_window": "R: -3.3% [95% CI -4.0% to -2.7%]), eGFR \u226530% decline (ARR: -1.9% [95% CI -2.6% to -1.3%]), eGFR \u226550% decline (ARR: -2.4% [95",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1475,7 +1475,7 @@
       "context_window": "3% [95% CI -4.0% to -2.7%]), eGFR \u226530% decline (ARR: -1.9% [95% CI -2.6% to -1.3%]), eGFR \u226550% decline (ARR: -2.4% [95% CI",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1493,7 +1493,7 @@
       "context_window": "CI -4.0% to -2.7%]), eGFR \u226530% decline (ARR: -1.9% [95% CI -2.6% to -1.3%]), eGFR \u226550% decline (ARR: -2.4% [95% CI -3.2% to",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1511,7 +1511,7 @@
       "context_window": "to -2.7%]), eGFR \u226530% decline (ARR: -1.9% [95% CI -2.6% to -1.3%]), eGFR \u226550% decline (ARR: -2.4% [95% CI -3.2% to -1.7%]),",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1529,7 +1529,7 @@
       "context_window": "FR \u226530% decline (ARR: -1.9% [95% CI -2.6% to -1.3%]), eGFR \u226550% decline (ARR: -2.4% [95% CI -3.2% to -1.7%]), and composite",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1547,7 +1547,7 @@
       "context_window": "R: -1.9% [95% CI -2.6% to -1.3%]), eGFR \u226550% decline (ARR: -2.4% [95% CI -3.2% to -1.7%]), and composite outcomes (ARR: -2.7",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1565,7 +1565,7 @@
       "context_window": "9% [95% CI -2.6% to -1.3%]), eGFR \u226550% decline (ARR: -2.4% [95% CI -3.2% to -1.7%]), and composite outcomes (ARR: -2.7% [95",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1583,7 +1583,7 @@
       "context_window": "CI -2.6% to -1.3%]), eGFR \u226550% decline (ARR: -2.4% [95% CI -3.2% to -1.7%]), and composite outcomes (ARR: -2.7% [95% CI -3.1",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1601,7 +1601,7 @@
       "context_window": "to -1.3%]), eGFR \u226550% decline (ARR: -2.4% [95% CI -3.2% to -1.7%]), and composite outcomes (ARR: -2.7% [95% CI -3.1% to -2.3",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1619,7 +1619,7 @@
       "context_window": ".4% [95% CI -3.2% to -1.7%]), and composite outcomes (ARR: -2.7% [95% CI -3.1% to -2.3%]) was found in statin-initiators as",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1637,7 +1637,7 @@
       "context_window": "5% CI -3.2% to -1.7%]), and composite outcomes (ARR: -2.7% [95% CI -3.1% to -2.3%]) was found in statin-initiators as compa",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1655,7 +1655,7 @@
       "context_window": ".2% to -1.7%]), and composite outcomes (ARR: -2.7% [95% CI -3.1% to -2.3%]) was found in statin-initiators as compared with",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1673,7 +1673,7 @@
       "context_window": ".7%]), and composite outcomes (ARR: -2.7% [95% CI -3.1% to -2.3%]) was found in statin-initiators as compared with statin no",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1691,7 +1691,7 @@
       "context_window": "ality (10-year standardised absolute risk reduction [ARR]: -5.1% [95% CI -6.1% to -4.0%]), eGFR <15 mL/min/1.73 m 2 (ARR: -1",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1709,7 +1709,7 @@
       "context_window": "(10-year standardised absolute risk reduction [ARR]: -5.1% [95% CI -6.1% to -4.0%]), eGFR <15 mL/min/1.73 m 2 (ARR: -11.0%",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1727,7 +1727,7 @@
       "context_window": "standardised absolute risk reduction [ARR]: -5.1% [95% CI -6.1% to -4.0%]), eGFR <15 mL/min/1.73 m 2 (ARR: -11.0% [95% CI -",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1745,7 +1745,7 @@
       "context_window": "ised absolute risk reduction [ARR]: -5.1% [95% CI -6.1% to -4.0%]), eGFR <15 mL/min/1.73 m 2 (ARR: -11.0% [95% CI -12.4% to",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1763,7 +1763,7 @@
       "context_window": "risk reduction [ARR]: -5.1% [95% CI -6.1% to -4.0%]), eGFR <15 mL/min/1.73 m 2 (ARR: -11.0% [95% CI -12.4% to -9.7%]), eGFR \u226530%",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1781,7 +1781,7 @@
       "context_window": "% [95% CI -6.1% to -4.0%]), eGFR <15 mL/min/1.73 m 2 (ARR: -11.0% [95% CI -12.4% to -9.7%]), eGFR \u226530% decline (ARR: -6.8% [9",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1799,7 +1799,7 @@
       "context_window": "CI -6.1% to -4.0%]), eGFR <15 mL/min/1.73 m 2 (ARR: -11.0% [95% CI -12.4% to -9.7%]), eGFR \u226530% decline (ARR: -6.8% [95% CI",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1817,7 +1817,7 @@
       "context_window": "to -4.0%]), eGFR <15 mL/min/1.73 m 2 (ARR: -11.0% [95% CI -12.4% to -9.7%]), eGFR \u226530% decline (ARR: -6.8% [95% CI -8.0% to",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1835,7 +1835,7 @@
       "context_window": "), eGFR <15 mL/min/1.73 m 2 (ARR: -11.0% [95% CI -12.4% to -9.7%]), eGFR \u226530% decline (ARR: -6.8% [95% CI -8.0% to -5.5%]),",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1853,7 +1853,7 @@
       "context_window": "/min/1.73 m 2 (ARR: -11.0% [95% CI -12.4% to -9.7%]), eGFR \u226530% decline (ARR: -6.8% [95% CI -8.0% to -5.5%]), eGFR \u226550% dec",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1871,7 +1871,7 @@
       "context_window": "-11.0% [95% CI -12.4% to -9.7%]), eGFR \u226530% decline (ARR: -6.8% [95% CI -8.0% to -5.5%]), eGFR \u226550% decline (ARR: -6.6% [95",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1889,7 +1889,7 @@
       "context_window": "% [95% CI -12.4% to -9.7%]), eGFR \u226530% decline (ARR: -6.8% [95% CI -8.0% to -5.5%]), eGFR \u226550% decline (ARR: -6.6% [95% CI",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1907,7 +1907,7 @@
       "context_window": "I -12.4% to -9.7%]), eGFR \u226530% decline (ARR: -6.8% [95% CI -8.0% to -5.5%]), eGFR \u226550% decline (ARR: -6.6% [95% CI -8.3% to",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1925,7 +1925,7 @@
       "context_window": "to -9.7%]), eGFR \u226530% decline (ARR: -6.8% [95% CI -8.0% to -5.5%]), eGFR \u226550% decline (ARR: -6.6% [95% CI -8.3% to -4.8%]),",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1943,7 +1943,7 @@
       "context_window": "FR \u226530% decline (ARR: -6.8% [95% CI -8.0% to -5.5%]), eGFR \u226550% decline (ARR: -6.6% [95% CI -8.3% to -4.8%]), and composite",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1961,7 +1961,7 @@
       "context_window": "R: -6.8% [95% CI -8.0% to -5.5%]), eGFR \u226550% decline (ARR: -6.6% [95% CI -8.3% to -4.8%]), and composite outcomes (ARR: -6.3",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1979,7 +1979,7 @@
       "context_window": "8% [95% CI -8.0% to -5.5%]), eGFR \u226550% decline (ARR: -6.6% [95% CI -8.3% to -4.8%]), and composite outcomes (ARR: -6.3% [95",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1997,7 +1997,7 @@
       "context_window": "CI -8.0% to -5.5%]), eGFR \u226550% decline (ARR: -6.6% [95% CI -8.3% to -4.8%]), and composite outcomes (ARR: -6.3% [95% CI -7.3",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2015,7 +2015,7 @@
       "context_window": "to -5.5%]), eGFR \u226550% decline (ARR: -6.6% [95% CI -8.3% to -4.8%]), and composite outcomes (ARR: -6.3% [95% CI -7.3% to -5.3",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2033,7 +2033,7 @@
       "context_window": ".6% [95% CI -8.3% to -4.8%]), and composite outcomes (ARR: -6.3% [95% CI -7.3% to -5.3%]) relative to non-initiators ( Fig.",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2051,7 +2051,7 @@
       "context_window": "5% CI -8.3% to -4.8%]), and composite outcomes (ARR: -6.3% [95% CI -7.3% to -5.3%]) relative to non-initiators ( Fig. 3 ).",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2069,7 +2069,7 @@
       "context_window": ".3% to -4.8%]), and composite outcomes (ARR: -6.3% [95% CI -7.3% to -5.3%]) relative to non-initiators ( Fig. 3 ). Standard",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2087,7 +2087,7 @@
       "context_window": ".8%]), and composite outcomes (ARR: -6.3% [95% CI -7.3% to -5.3%]) relative to non-initiators ( Fig. 3 ). Standardised cumu",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2213,7 +2213,7 @@
       "context_window": "47 RCTs reported that statins slowed the decline in eGFR by 0.41 mL/min per 1.73 m 2 annually (95% CI: 0.11-0.70) among patients ta",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2232,7 +2232,7 @@
       "context_window": "d the decline in eGFR by 0.41 mL/min per 1.73 m 2 annually (95% CI: 0.11-0.70) among patients taking statins, irrespective of baseline CK",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -2251,7 +2251,7 @@
       "context_window": "associated with only an insignificant change in eGFR (0.38; 95% CI: -0.04 to 0.79). 11 This suggests that the impact on eGFR is modest. Our s",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2269,7 +2269,7 @@
       "context_window": "atins in managing patients with Stage 3-4 CKD. The observed 2% reduction in all-cause mortality aligns with the primary in",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },

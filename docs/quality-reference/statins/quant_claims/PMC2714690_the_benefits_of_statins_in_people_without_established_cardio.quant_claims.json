@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC2714690_the_benefits_of_statins_in_people_without_established_cardio",
   "doi": "10.1136/bmj.b2376",
-  "extracted_at": "2026-05-05T21:20:46+00:00",
+  "extracted_at": "2026-05-07T15:40:37+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 18,
@@ -25,7 +25,7 @@
       "context_window": "effects are similar in men and women, in young and older (>65 years) people, and in people with diabetes mellitus. Design Meta",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -43,7 +43,7 @@
       "context_window": "rol group and with follow-up of at least one year, at least 80% or more participants without established cardiovascular dis",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -115,9 +115,9 @@
       "context_window": "tins significantly reduced the risk of all cause mortality (odds ratio 0.88, 95% confidence interval 0.81 to 0.96), major coronary even",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2714690_the_benefits_of_statins_in_people_without_established_cardio-pct-1197",
@@ -133,9 +133,9 @@
       "context_window": "y reduced the risk of all cause mortality (odds ratio 0.88, 95% confidence interval 0.81 to 0.96), major coronary events (0",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC2714690_the_benefits_of_statins_in_people_without_established_cardio-u-812",
@@ -169,7 +169,7 @@
       "context_window": "r disease events as primary outcomes, and included at least 80% of people without established cardiovascular disease or rep",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "placebo",
+      "arm": "atorvastatin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -312,10 +312,10 @@
       "sentence": "The mean baseline low density lipoprotein cholesterol level was 3.63 mmol/l.",
       "context_window": "mean baseline low density lipoprotein cholesterol level was 3.63 mmol/l. The mean reduction in levels of total cholesterol was 17",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2714690_the_benefits_of_statins_in_people_without_established_cardio-pct-562",
@@ -330,10 +330,10 @@
       "sentence": "The mean reduction in levels of total cholesterol was 17.1%, low density lipoprotein cholesterol was 25.6%, and triglyceride was 9.3%.",
       "context_window": "ol/l. The mean reduction in levels of total cholesterol was 17.1%, low density lipoprotein cholesterol was 25.6%, and triglyc",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2714690_the_benefits_of_statins_in_people_without_established_cardio-pct-609",
@@ -348,10 +348,10 @@
       "sentence": "The mean reduction in levels of total cholesterol was 17.1%, low density lipoprotein cholesterol was 25.6%, and triglyceride was 9.3%.",
       "context_window": "lesterol was 17.1%, low density lipoprotein cholesterol was 25.6%, and triglyceride was 9.3%. High density lipoprotein choles",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2714690_the_benefits_of_statins_in_people_without_established_cardio-pct-637",
@@ -366,10 +366,10 @@
       "sentence": "The mean reduction in levels of total cholesterol was 17.1%, low density lipoprotein cholesterol was 25.6%, and triglyceride was 9.3%.",
       "context_window": "ity lipoprotein cholesterol was 25.6%, and triglyceride was 9.3%. High density lipoprotein cholesterol increased by a mean 3",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2714690_the_benefits_of_statins_in_people_without_established_cardio-pct-700",
@@ -457,7 +457,7 @@
       "context_window": "tatin group. Statin therapy was therefore associated with a 12% risk reduction in all cause mortality compared with the con",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -475,7 +475,7 @@
       "context_window": "reduction in all cause mortality compared with the control (odds ratio 0.88, 95% confidence interval 0.81 to 0.96; fig 2 and table 2 ).",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -493,7 +493,7 @@
       "context_window": "cause mortality compared with the control (odds ratio 0.88, 95% confidence interval 0.81 to 0.96; fig 2 and table 2 ). The",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -889,9 +889,9 @@
       "context_window": "erogeneity unlikely. \u2020No data in primary prevention group (n=3239). w6 \u2021Significant heterogeneity; however, a positive trend",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2714690_the_benefits_of_statins_in_people_without_established_cardio-pct-4781",
@@ -906,7 +906,7 @@
       "sentence": "The outcome of the analyses was not influenced by removal of the three trials that enrolled 4445 patients (6%) with a previous cardiovascular event (all cause mortality odds ratio 0.87, 95% confidence interval 0.78 to 0.97).",
       "context_window": "by removal of the three trials that enrolled 4445 patients (6%) with a previous cardiovascular event (all cause mortality",
       "claim_role": "population",
-      "endpoint": "mortality",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -1015,7 +1015,7 @@
       "context_window": "with a significant risk reduction in all cause mortality of 12%, in major coronary events of 30%, and in major cerebrovascu",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1033,7 +1033,7 @@
       "context_window": "in all cause mortality of 12%, in major coronary events of 30%, and in major cerebrovascular events of 19%. Moreover, stat",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1051,7 +1051,7 @@
       "context_window": "onary events of 30%, and in major cerebrovascular events of 19%. Moreover, statin use was not associated with an increased",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1087,9 +1087,9 @@
       "context_window": "arried out in a large group of people with type 2 diabetes (n=1905) who did not have established cardiovascular disease. We al",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC2714690_the_benefits_of_statins_in_people_without_established_cardio-u-1448",
@@ -1104,7 +1104,7 @@
       "sentence": "We also included data from the recently published JUPITER trial, w1 totalling 17 802 participants with no apparent vascular disease, low density lipoprotein cholesterol levels less than 3.4 mmol/l, and increased levels of high sensitivity C reactive protein (>2.0 mg/l). w1 As our study is based on such large numbers, this meta-analysis, including the subgroups, has significant statistical power.",
       "context_window": "sease, low density lipoprotein cholesterol levels less than 3.4 mmol/l, and increased levels of high sensitivity C reactive prot",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1122,7 +1122,7 @@
       "sentence": "We also included data from the recently published JUPITER trial, w1 totalling 17 802 participants with no apparent vascular disease, low density lipoprotein cholesterol levels less than 3.4 mmol/l, and increased levels of high sensitivity C reactive protein (>2.0 mg/l). w1 As our study is based on such large numbers, this meta-analysis, including the subgroups, has significant statistical power.",
       "context_window": "d increased levels of high sensitivity C reactive protein (>2.0 mg/l). w1 As our study is based on such large numbers, this me",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1213,7 +1213,7 @@
       "context_window": "of statins on survival across a broader range of patients (n=70 388) at different levels of risk, and show that there is no",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },

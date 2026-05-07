@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio",
   "doi": "10.1097/MD.0000000000037536",
-  "extracted_at": "2026-05-04T13:17:19+00:00",
+  "extracted_at": "2026-05-07T15:40:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 53,
@@ -137,9 +137,9 @@
       "context_window": "was 130.4 \u00b1 mg/dL, the mean duration of taking statins was 337.4 \u00b1 52.3 days, and 93.9% of them had been taking moderate-intensity",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1173",
@@ -155,9 +155,9 @@
       "context_window": ".4 \u00b1 mg/dL, the mean duration of taking statins was 337.4 \u00b1 52.3 days, and 93.9% of them had been taking moderate-intensity stati",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1188",
@@ -173,9 +173,9 @@
       "context_window": "mean duration of taking statins was 337.4 \u00b1 52.3 days, and 93.9% of them had been taking moderate-intensity statins. At that",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-2777",
@@ -190,8 +190,8 @@
       "sentence": "These guidelines justify their recommendation by citing insufficient evidence to support the widespread adoption of high-intensity statin therapy, except in select subpopulations characterized by heightened cardiovascular risk. [ 10 ] Moreover, a recent cohort study revealed that achieving a LDL-C level of 70 mg/dL or lower did not confer any additional clinical benefit. [ 11 ] Consequently, these findings challenge the veracity and universality of current treatment guidelines recommending for very low target LDL-C levels across all patients with established CVD.",
       "context_window": "ecent cohort study revealed that achieving a LDL-C level of 70 mg/dL or lower did not confer any additional clinical benefit. [",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -316,10 +316,10 @@
       "sentence": "We used the database from 2009 to 2010 as a baseline because the results of LDL-C levels were available from that period (n = 350,041).",
       "context_window": "he results of LDL-C levels were available from that period (n = 350,041). Patients with changes in the statin type and dose wit",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-3857",
@@ -424,7 +424,7 @@
       "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
       "context_window": "between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 an",
       "claim_role": "unknown",
-      "endpoint": "fasting glucose",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -442,7 +442,7 @@
       "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
       "context_window": "cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 an",
       "claim_role": "unknown",
-      "endpoint": "fasting glucose",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -460,7 +460,7 @@
       "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
       "context_window": "LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or",
       "claim_role": "unknown",
-      "endpoint": "fasting glucose",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -478,7 +478,7 @@
       "sentence": "Outlier were also excluded abnormalities exceeding the range from 1 to 99 percentile as follows; waist circumference was from 35 cm to 125 cm, systolic blood pressure were between 60 and 240 mm Hg, DBP were between 40 and 160 mm Hg, hemoglobin between 6 to 20 g/dL, fasting glucose between 40 and 300 mg/dL, total cholesterol between 40 and 400 mg/dL, LDL-C between 29 and 300 mg/dL, triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200 IU/dL, creatinine level < 2.0 mg per deciliter (176.8 \u03bcmol per liter), diabetes, uncontrolled hypertension (systolic blood pressure > 190 mm Hg or DBP > 100 mm Hg).",
       "context_window": "triglyceride between 10 and 600 mg/dL, HDL-C between 10 and 200 mg/dL, aspartate transaminase or alanine transaminase level < 200",
       "claim_role": "unknown",
-      "endpoint": "fasting glucose",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -568,8 +568,8 @@
       "sentence": "We only included patients who were prescribed the same dose and type of statin for more than 180 consecutive days, at least during the last 1 year before LDL-C measurement in 2009 and 2010.",
       "context_window": "or more than 180 consecutive days, at least during the last 1 year before LDL-C measurement in 2009 and 2010. They were select",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -586,10 +586,10 @@
       "sentence": "Our categorization of the LDL-C index was based on an observed achieved value after at least 180 days of statin treatment; however, this level may not have represented a stable LDL-C level over the subsequent years.",
       "context_window": "ndex was based on an observed achieved value after at least 180 days of statin treatment; however, this level may not have repre",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5689",
@@ -604,8 +604,8 @@
       "sentence": "This observational cohort study compares the risk of mortality and CVD among patients with dyslipidemia without preexisting CVD by observing LDL-C levels after at least 6 months of statin therapy.",
       "context_window": "ut preexisting CVD by observing LDL-C levels after at least 6 months of statin therapy. Patients between the ages of 40 to 79 ye",
       "claim_role": "duration",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -623,9 +623,9 @@
       "context_window": "onths of statin therapy. Patients between the ages of 40 to 79 years with statin treatment were identified. Statin intensity was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5884",
@@ -641,9 +641,9 @@
       "context_window": "ted as High-intensity statin therapies are atorvastatin (40-80 mg) or rosuvastatin (Crestor; 20-40 mg). Moderate-intensity st",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5920",
@@ -659,9 +659,9 @@
       "context_window": "es are atorvastatin (40-80 mg) or rosuvastatin (Crestor; 20-40 mg). Moderate-intensity statin therapies include atorvastatin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5989",
@@ -677,9 +677,9 @@
       "context_window": "oderate-intensity statin therapies include atorvastatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastat",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6013",
@@ -695,9 +695,9 @@
       "context_window": "therapies include atorvastatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavasta",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6037",
@@ -713,9 +713,9 @@
       "context_window": "astatin (10-20 mg), rosuvastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and severa",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6061",
@@ -731,9 +731,9 @@
       "context_window": "vastatin (5-10 mg), simvastatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and several others according to th",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6085",
@@ -749,9 +749,9 @@
       "context_window": "astatin (20-40 mg), pravastatin (40-80 mg), pitavastatin (2-4 mg), and several others according to the ACC/AHA guidelines 20",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-6450",
@@ -839,9 +839,9 @@
       "context_window": "rovascular disease, cancer, or diabetes; or statin use for <180 days. The study population consisted of 20,322 participants at t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-msd-462",
@@ -948,10 +948,10 @@
       "sentence": "For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively.",
       "context_window": "eir achieved LDL-C level. For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1034",
@@ -966,10 +966,10 @@
       "sentence": "For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively.",
       "context_window": "L-C level. For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1048",
@@ -984,10 +984,10 @@
       "sentence": "For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively.",
       "context_window": "the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1064",
@@ -1002,10 +1002,10 @@
       "sentence": "For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively.",
       "context_window": "LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respe",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1115",
@@ -1020,10 +1020,10 @@
       "sentence": "For the groups with LDL-C levels >130 mg/dL, 100-130 mg/dL, 70-100 mg/dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively.",
       "context_window": "dL, and <70 mg/dL, the mean ages were 58.7, 59.3, 60.2, and 60.9 years, respectively. The average achieved LDL-C levels in each gr",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1218",
@@ -1038,10 +1038,10 @@
       "sentence": "The average achieved LDL-C levels in each group were 158.8, 116.6, 87.5, and 58.3 mg/dL, respectively.",
       "context_window": "ved LDL-C levels in each group were 158.8, 116.6, 87.5, and 58.3 mg/dL, respectively. The period of administration of the same dos",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-1346",
@@ -1056,10 +1056,10 @@
       "sentence": "The period of administration of the same dose and type of statin before the achieved LDL-C level was >335 days in each group.",
       "context_window": "ose and type of statin before the achieved LDL-C level was >335 days in each group. The higher level of the achieved LDL-C had",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1650",
@@ -1075,9 +1075,9 @@
       "context_window": "atin potency, the proportion of moderate-intensity use was >90% in each group, and in terms of component types, the proport",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1765",
@@ -1093,9 +1093,9 @@
       "context_window": "proportion of use among all participants was atorvastatin (67.9 %), simvastatin (14.8 %), rosuvastatin (10.8 %), and other ra",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1787",
@@ -1111,9 +1111,9 @@
       "context_window": "ng all participants was atorvastatin (67.9 %), simvastatin (14.8 %), rosuvastatin (10.8 %), and other ratios in that order. I",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-1810",
@@ -1129,9 +1129,9 @@
       "context_window": "atorvastatin (67.9 %), simvastatin (14.8 %), rosuvastatin (10.8 %), and other ratios in that order. In the main regression a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-2114",
@@ -1164,10 +1164,10 @@
       "sentence": "There were no significant differences in the ORs for all-cause death, CVD death, or CVD total between the groups, except for total CVD in the group with LDL-C > 130 mg/dL.",
       "context_window": "the groups, except for total CVD in the group with LDL-C > 130 mg/dL. OR of major cardiac events (MACEs) according to achieved",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-p-2795",
@@ -1202,9 +1202,9 @@
       "context_window": "for the total CVD in high-intensity statin users (OR 3.688, 95%CI 2.082-6.531). In this study involving over 20,000 participants, only 29",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-3244",
@@ -1220,9 +1220,9 @@
       "context_window": "0 participants, only 293 individuals, accounting for a mere 1.4%, were found to have used high-intensity statins for primary",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-p-4092",
@@ -1257,7 +1257,7 @@
       "context_window": "statin users than in low-intensity statin users. (OR 0.725, 95%CI 0.528-0.995). Among all participants in this study, those who used mode",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1275,9 +1275,9 @@
       "context_window": "ease (CVD) accounted for approximately 19,000, representing 93.9%. In most cases, moderate-intensity statins were used for th",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-4587",
@@ -1293,7 +1293,7 @@
       "context_window": "n of CVD. The risk of new-onset diabetes was observed to be 27.5% lower in users of moderate-intensity statins compared to us",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1311,7 +1311,7 @@
       "context_window": "m we set as the control group, numbered 950, accounting for 4.7%. The significant difference, with nearly a 20-fold contrast",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1329,7 +1329,7 @@
       "context_window": "who used high-intensity statins, totaling 293 individuals (1.4%), there was no significant difference in the risk of develo",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -1346,10 +1346,10 @@
       "sentence": "We found that an LDL-C level of 70.0 mg/dL or less had no statistically significant association with the risk of CVD compared to patients who had LDL-C between 70.1 and 100.0 mg/dL for primary prevention.",
       "context_window": "n of achieved LDL-C levels. We found that an LDL-C level of 70.0 mg/dL or less had no statistically significant association with t",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-437",
@@ -1364,10 +1364,10 @@
       "sentence": "We found that an LDL-C level of 70.0 mg/dL or less had no statistically significant association with the risk of CVD compared to patients who had LDL-C between 70.1 and 100.0 mg/dL for primary prevention.",
       "context_window": "of CVD compared to patients who had LDL-C between 70.1 and 100.0 mg/dL for primary prevention. We did not find a significant, cons",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-5347",
@@ -1383,9 +1383,9 @@
       "context_window": "The most common adverse effects that occur in approximately 4% of statin-treated patients include gastrointestinal disorde",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-5801",
@@ -1401,9 +1401,9 @@
       "context_window": "n statin regimen management. [ 28 , 29 ] In patients aged > 75 years, patients who are taking multiple drugs or drugs with the s",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-pct-7950",
@@ -1418,10 +1418,10 @@
       "sentence": "To ensure the best treatment impact, we included only those patients who were at least 80% adherent to statin therapy during the year prior to the index LDL-C measurement.",
       "context_window": "t impact, we included only those patients who were at least 80% adherent to statin therapy during the year prior to the ind",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-8154",
@@ -1436,10 +1436,10 @@
       "sentence": "To inform long-term statin management, we included only patients who had been consistently taking statins for at least 180 days and evaluated the LDL-C levels of patients in community-based care.",
       "context_window": "ients who had been consistently taking statins for at least 180 days and evaluated the LDL-C levels of patients in community-bas",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10939682_intensity_of_statin_therapy_and_primary_prevention_of_cardio-u-8720",
@@ -1455,7 +1455,7 @@
       "context_window": "of statin therapy, although our mean follow-up duration was 82 months. This study focused on the association between LDL-C levels",
       "claim_role": "duration",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1472,8 +1472,8 @@
       "sentence": "The findings suggest that targeting an LDL-C level of <100 mg/dL achieves the same cardiovascular risk reduction as more aggressive LDL-C targets, which could help minimize the adverse effects more common with higher statin doses needed for lower LDL targets while maximizing the benefits.",
       "context_window": "apy. The findings suggest that targeting an LDL-C level of <100 mg/dL achieves the same cardiovascular risk reduction as more agg",
       "claim_role": "dose",
-      "endpoint": "mortality",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     }

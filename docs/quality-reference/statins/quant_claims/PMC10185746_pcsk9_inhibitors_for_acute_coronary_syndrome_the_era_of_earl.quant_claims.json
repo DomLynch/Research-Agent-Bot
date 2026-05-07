@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC10185746_pcsk9_inhibitors_for_acute_coronary_syndrome_the_era_of_earl",
   "doi": "10.3389/fcvm.2023.1138787",
-  "extracted_at": "2026-05-05T15:32:44+00:00",
+  "extracted_at": "2026-05-07T15:40:32+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 1,
@@ -40,7 +40,7 @@
       "sentence": "Total LDL-C exposure is positively correlated with the incidence of clinical events, and the risk of cardiovascular events is reduced by approximately 22% for every 1 mmol/l decrease in LDL-C ( 4 , 5 ).",
       "context_window": "iovascular events is reduced by approximately 22% for every 1 mmol/l decrease in LDL-C ( 4 , 5 ). Proprotein convertase subti",
       "claim_role": "background",
-      "endpoint": "mortality",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -58,10 +58,10 @@
       "sentence": "Therefore, the timing of PCSK9 inhibitors for ACS advancing from the failure to achieve LDL-C goal after 4-6 weeks recommended by recent guidelines to \u201cpre or post PCI implementation\u201d ( 16 ).",
       "context_window": "CS advancing from the failure to achieve LDL-C goal after 4-6 weeks recommended by recent guidelines to \u201cpre or post PCI implem",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10185746_pcsk9_inhibitors_for_acute_coronary_syndrome_the_era_of_earl-u-437",
@@ -76,10 +76,10 @@
       "sentence": "Current guidelines recommend PCSK9 inhibitors in patients whose LDL-C goals are not achieved after 4-6 weeks ( Figure 2 ) ( 16 , 62 ).",
       "context_window": "tors in patients whose LDL-C goals are not achieved after 4-6 weeks ( Figure 2 ) ( 16 , 62 ). New evidence of on the multidimen",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC10185746_pcsk9_inhibitors_for_acute_coronary_syndrome_the_era_of_earl-u-799",

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6291090_usefulness_of_baseline_statin_therapy_in_non_obstructive_cor",
   "doi": "10.1371/journal.pone.0207194",
-  "extracted_at": "2026-05-05T21:20:46+00:00",
+  "extracted_at": "2026-05-07T15:40:38+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 10,
@@ -26,9 +26,9 @@
       "context_window": "IRM study, patients with normal or non-obstructive plaque (<50% diameter stenosis) for whom data on baseline statin use was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6291090_usefulness_of_baseline_statin_therapy_in_non_obstructive_cor-u-670",
@@ -79,10 +79,10 @@
       "sentence": "The incidence of MACE was 2.1%.",
       "context_window": "p value for interaction = 0.007). The incidence of MACE was 2.1%. Similar to the all-cause mortality, the risk of MACE was i",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6291090_usefulness_of_baseline_statin_therapy_in_non_obstructive_cor-n-564",
@@ -134,9 +134,9 @@
       "context_window": "tients were excluded including those with obstructive CAD (\u226550% luminal diameter stenosis) as diagnosed by CCTA (n = 5,594)",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6291090_usefulness_of_baseline_statin_therapy_in_non_obstructive_cor-n-775",
@@ -152,9 +152,9 @@
       "context_window": "CAD (\u226550% luminal diameter stenosis) as diagnosed by CCTA (n = 5,594), and those with missing data regarding the use of stat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6291090_usefulness_of_baseline_statin_therapy_in_non_obstructive_cor-n-845",
@@ -170,9 +170,9 @@
       "context_window": ", and those with missing data regarding the use of statins (n = 9,815), risk factors (n = 239), or CAC (n = 1000) were also e",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6291090_usefulness_of_baseline_statin_therapy_in_non_obstructive_cor-n-871",
@@ -188,9 +188,9 @@
       "context_window": "ata regarding the use of statins (n = 9,815), risk factors (n = 239), or CAC (n = 1000) were also excluded. A total of 8,016 pa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6291090_usefulness_of_baseline_statin_therapy_in_non_obstructive_cor-n-889",
@@ -206,9 +206,9 @@
       "context_window": "use of statins (n = 9,815), risk factors (n = 239), or CAC (n = 1000) were also excluded. A total of 8,016 patients met the incl",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6291090_usefulness_of_baseline_statin_therapy_in_non_obstructive_cor-u-2275",
@@ -314,7 +314,7 @@
       "context_window": "proportional regression model reporting hazard ratios with 95% confidence intervals (95% CI) was employed to examine diffe",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -332,7 +332,7 @@
       "context_window": "odel reporting hazard ratios with 95% confidence intervals (95% CI) was employed to examine differences in the risk of all-",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -367,7 +367,7 @@
       "sentence": "Of 8,016 patients, the incidence of all-cause mortality was 1.2% (99 events) and that of MACE was 2.1% (165 events) during a median follow-up of 2.5 years.",
       "context_window": "l-cause mortality was 1.2% (99 events) and that of MACE was 2.1% (165 events) during a median follow-up of 2.5 years. Baseli",
       "claim_role": "background",
-      "endpoint": "mortality",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -385,7 +385,7 @@
       "sentence": "Of 8,016 patients, the incidence of all-cause mortality was 1.2% (99 events) and that of MACE was 2.1% (165 events) during a median follow-up of 2.5 years.",
       "context_window": "of MACE was 2.1% (165 events) during a median follow-up of 2.5 years. Baseline characteristics of the study cohort are presented",
       "claim_role": "background",
-      "endpoint": "mortality",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"
@@ -404,7 +404,7 @@
       "context_window": "therapy tended to be older and have more CAD risk factors (p <0.001 for all) compared with those who were not on statin therapy",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -494,7 +494,7 @@
       "sentence": "Compared to patients with SIS = 0, patients with SIS \u22651 was associated with higher risk of MACE (p <0.05).",
       "context_window": "tients with SIS \u22651 was associated with higher risk of MACE (p <0.05). Relative to those with SIS = 0 not taking baseline statin",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -512,10 +512,10 @@
       "sentence": "It can be argued that the importance of statin therapy in non-significant stenosis was demonstrated in the FAME 2 (Fractional Flow Reserve versus Angiography for Multivessel Evaluation 2) study, in which patients who had been deferred with functionally non-significant lesions were treated to the target of LDL-C <70 mg/dl with clinical outcomes as favorable as those associated with revascularization [ 25 ].",
       "context_window": "on-significant lesions were treated to the target of LDL-C <70 mg/dl with clinical outcomes as favorable as those associated",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

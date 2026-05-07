@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit",
   "doi": "10.3389/fcvm.2022.1030108",
-  "extracted_at": "2026-05-05T15:32:43+00:00",
+  "extracted_at": "2026-05-07T15:40:40+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 28,
@@ -59,10 +59,10 @@
       "sentence": "However, no association exists between statin pretreatment and in-hospital major adverse cardiovascular events (MACEs) or all-cause deaths in the entire population and subgroups (all P > 0.05).",
       "context_window": "ll-cause deaths in the entire population and subgroups (all P > 0.05). Surprisingly, statin pretreatment was associated with an",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-1287",
@@ -78,7 +78,7 @@
       "context_window": "). Surprisingly, statin pretreatment was associated with an 8.9% higher risk of severely obstructive CAD (CADPI \u2265 37) (OR, 1",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -96,7 +96,7 @@
       "context_window": "r risk of severely obstructive CAD (CADPI \u2265 37) (OR, 1.089; 95% CI, 1.010-1.175, P = 0.028), and similar results were obser",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "structive CAD (CADPI \u2265 37) (OR, 1.089; 95% CI, 1.010-1.175, P = 0.028), and similar results were observed in subgroups of females",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -132,7 +132,7 @@
       "context_window": "lts were observed in subgroups of females, those aged 50 to 75 years, and patients with hypertension. Statin pretreatment was n",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -167,10 +167,10 @@
       "sentence": "Each 1 mmol/L reduction in low-density lipoprotein cholesterol (LDL-C) with statin therapy reduces the risk of major adverse cardiovascular events (MACEs) by approximately one-fifth ( 4 - 7 ).",
       "context_window": "y and secondary prevention of cardiovascular diseases. Each 1 mmol/L reduction in low-density lipoprotein cholesterol (LDL-C)",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-u-1709",
@@ -185,8 +185,8 @@
       "sentence": "And SECURE-PCI Randomized Clinical Trial also showed that among patients with ACS and planned invasive management with PCI, periprocedural loading doses of atorvastatin did not reduce the rate of MACE at 30 days ( 13 ).",
       "context_window": "ng doses of atorvastatin did not reduce the rate of MACE at 30 days ( 13 ). Therefore, the role of statin pretreatment therapy",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "atorvastatin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -275,7 +275,7 @@
       "sentence": "Dyslipidemia: total cholesterol level of 6.2 mmol/L (240 mg/dL) or higher, or low-density lipoprotein cholesterol level of 4.1 mmol/L (160 mg/dL) or higher when presenting at the hospital.",
       "context_window": "s of the patients. Dyslipidemia: total cholesterol level of 6.2 mmol/L (240 mg/dL) or higher, or low-density lipoprotein cholest",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -293,7 +293,7 @@
       "sentence": "Dyslipidemia: total cholesterol level of 6.2 mmol/L (240 mg/dL) or higher, or low-density lipoprotein cholesterol level of 4.1 mmol/L (160 mg/dL) or higher when presenting at the hospital.",
       "context_window": "ients. Dyslipidemia: total cholesterol level of 6.2 mmol/L (240 mg/dL) or higher, or low-density lipoprotein cholesterol level of",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -311,7 +311,7 @@
       "sentence": "Dyslipidemia: total cholesterol level of 6.2 mmol/L (240 mg/dL) or higher, or low-density lipoprotein cholesterol level of 4.1 mmol/L (160 mg/dL) or higher when presenting at the hospital.",
       "context_window": "or higher, or low-density lipoprotein cholesterol level of 4.1 mmol/L (160 mg/dL) or higher when presenting at the hospital. Th",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -329,7 +329,7 @@
       "sentence": "Dyslipidemia: total cholesterol level of 6.2 mmol/L (240 mg/dL) or higher, or low-density lipoprotein cholesterol level of 4.1 mmol/L (160 mg/dL) or higher when presenting at the hospital.",
       "context_window": "or low-density lipoprotein cholesterol level of 4.1 mmol/L (160 mg/dL) or higher when presenting at the hospital. The lipid-lower",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -347,10 +347,10 @@
       "sentence": "The lipid-lowering treatment goals recommended by AHA/ACC in 2018 were LDL-C target levels < 1.8 mmol/L (70 mg/dl) for patients with arteriosclerotic cardiovascular disease (ASCVD) ( 21 ).",
       "context_window": "s recommended by AHA/ACC in 2018 were LDL-C target levels < 1.8 mmol/L (70 mg/dl) for patients with arteriosclerotic cardiovascu",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-u-3250",
@@ -365,10 +365,10 @@
       "sentence": "The lipid-lowering treatment goals recommended by AHA/ACC in 2018 were LDL-C target levels < 1.8 mmol/L (70 mg/dl) for patients with arteriosclerotic cardiovascular disease (ASCVD) ( 21 ).",
       "context_window": "d by AHA/ACC in 2018 were LDL-C target levels < 1.8 mmol/L (70 mg/dl) for patients with arteriosclerotic cardiovascular disea",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-4261",
@@ -474,9 +474,9 @@
       "context_window": "A total of 5,224 (12.7%) patients with first ACS had a history of pre-hospital stat",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-msd-175",
@@ -493,9 +493,9 @@
       "context_window": "1 . The mean ages of the non-statin and statin groups were 59.7 \u00b1 11.9 and 59.7 \u00b1 11.3 years, respectively ( P = 0.876). The stati",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-msd-191",
@@ -512,9 +512,9 @@
       "context_window": "es of the non-statin and statin groups were 59.7 \u00b1 11.9 and 59.7 \u00b1 11.3 years, respectively ( P = 0.876). The statin group containe",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-u-198",
@@ -530,9 +530,9 @@
       "context_window": "he non-statin and statin groups were 59.7 \u00b1 11.9 and 59.7 \u00b1 11.3 years, respectively ( P = 0.876). The statin group contained a hi",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-225",
@@ -548,9 +548,9 @@
       "context_window": "oups were 59.7 \u00b1 11.9 and 59.7 \u00b1 11.3 years, respectively ( P = 0.876). The statin group contained a higher proportion of females",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-331",
@@ -637,7 +637,7 @@
       "sentence": "SBP, systolic blood pressure; DBP, diastolic blood pressure; CAD, coronary artery disease; HF, heart failure; LDL-C, low-density lipoprotein cholesterol; HDL-C, high-density lipoprotein cholesterol; ACS, acute coronary syndromes; STEMI, ST-segment elevation myocardial infarction; NSTEMI, non-ST-segment elevation myocardial infarction; UAP, unstable angina pectoris; PCI, percutaneous coronary intervention; ACEI, angiotensin-converting enzyme inhibition; ARB, angiotensin receptor blocker; DAPT, dual antiplatelet therapy; Elevated LDL-C: LDL-C \u2265 1.8 mmol/L.",
       "context_window": "r; DAPT, dual antiplatelet therapy; Elevated LDL-C: LDL-C \u2265 1.8 mmol/L. A value of P < 0.05 was considered statistically signifi",
       "claim_role": "effect",
-      "endpoint": "blood pressure",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -655,10 +655,10 @@
       "sentence": "A value of P < 0.05 was considered statistically significant.\n\na Data of triglyceride were not available for 3,670 patients.\n\nb Data of total cholesterol were not available for 3,803 patients.\n\nc Data of LDL-C were not available for 3,994 patients.\n\nd Data of HDL-C were not available for 3,845 patients.\n\ne Data of fast glucose were not available for 3,808 patients.\n\nf Data of creatinine not available for 1,296 patients.\n\ng Data of Killip class were not available for 2,743 patients.\n\nh Data of pre-hospital medicine were not available for 8 patients.\n\ni Data of in-hospital medicine were not available for 49 patients.",
       "context_window": "let therapy; Elevated LDL-C: LDL-C \u2265 1.8 mmol/L. A value of P < 0.05 was considered statistically significant. a Data of trigly",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-1928",
@@ -691,10 +691,10 @@
       "sentence": "A total of 29,202 (89.9%) and 3,779 (80.6%) patients in the non-statin and statin groups ( P < 0.001) did not meet the lipid-lowering treatment goals [LDL-C < 1.8 mmol/L (70 mg/dl)] for patients with arteriosclerotic cardiovascular disease (ASCVD), respectively.",
       "context_window": "vs. 2.76 (2.20-3.38) mmol/L, P < 0.001]. A total of 29,202 (89.9%) and 3,779 (80.6%) patients in the non-statin and statin gr",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-1977",
@@ -709,10 +709,10 @@
       "sentence": "A total of 29,202 (89.9%) and 3,779 (80.6%) patients in the non-statin and statin groups ( P < 0.001) did not meet the lipid-lowering treatment goals [LDL-C < 1.8 mmol/L (70 mg/dl)] for patients with arteriosclerotic cardiovascular disease (ASCVD), respectively.",
       "context_window": "8) mmol/L, P < 0.001]. A total of 29,202 (89.9%) and 3,779 (80.6%) patients in the non-statin and statin groups ( P < 0.001)",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-2031",
@@ -727,10 +727,10 @@
       "sentence": "A total of 29,202 (89.9%) and 3,779 (80.6%) patients in the non-statin and statin groups ( P < 0.001) did not meet the lipid-lowering treatment goals [LDL-C < 1.8 mmol/L (70 mg/dl)] for patients with arteriosclerotic cardiovascular disease (ASCVD), respectively.",
       "context_window": ",779 (80.6%) patients in the non-statin and statin groups ( P < 0.001) did not meet the lipid-lowering treatment goals [LDL-C < 1",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-u-2099",
@@ -745,10 +745,10 @@
       "sentence": "A total of 29,202 (89.9%) and 3,779 (80.6%) patients in the non-statin and statin groups ( P < 0.001) did not meet the lipid-lowering treatment goals [LDL-C < 1.8 mmol/L (70 mg/dl)] for patients with arteriosclerotic cardiovascular disease (ASCVD), respectively.",
       "context_window": "1) did not meet the lipid-lowering treatment goals [LDL-C < 1.8 mmol/L (70 mg/dl)] for patients with arteriosclerotic cardiovasc",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-u-2111",
@@ -763,10 +763,10 @@
       "sentence": "A total of 29,202 (89.9%) and 3,779 (80.6%) patients in the non-statin and statin groups ( P < 0.001) did not meet the lipid-lowering treatment goals [LDL-C < 1.8 mmol/L (70 mg/dl)] for patients with arteriosclerotic cardiovascular disease (ASCVD), respectively.",
       "context_window": "eet the lipid-lowering treatment goals [LDL-C < 1.8 mmol/L (70 mg/dl)] for patients with arteriosclerotic cardiovascular dise",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-2376",
@@ -800,9 +800,9 @@
       "context_window": ". non-statin: 0.99 (0.84-1.19) vs. 1.03 (0.87-1.24) mmol/L, P < 0.001] and did not result in any differences in triglycerides bet",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-2688",
@@ -854,9 +854,9 @@
       "context_window": ".435). A total of 473 patients died during hospitalization (1.2% in the non-statin group and 0.8% in the statin group, P = 0",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-2944",
@@ -872,9 +872,9 @@
       "context_window": "ed during hospitalization (1.2% in the non-statin group and 0.8% in the statin group, P = 0.010). However, the rates of MACE",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-2970",
@@ -890,9 +890,9 @@
       "context_window": "(1.2% in the non-statin group and 0.8% in the statin group, P = 0.010). However, the rates of MACEs did not differ between the tw",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-3057",
@@ -979,10 +979,10 @@
       "sentence": "As shown in Table 3 , pre-hospital statin treatment showed no association with in-hospital MACE (odds ratio (OR), 0.991; 95% confidence interval (CI), 0.722-1.360, P = 0.955) and all-cause death (OR, 0.970; 95% CI, 0.611-1.540, P = 0.898) after controlling for confounders.",
       "context_window": "association with in-hospital MACE (odds ratio (OR), 0.991; 95% confidence interval (CI), 0.722-1.360, P = 0.955) and all-c",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-4149",
@@ -997,10 +997,10 @@
       "sentence": "As shown in Table 3 , pre-hospital statin treatment showed no association with in-hospital MACE (odds ratio (OR), 0.991; 95% confidence interval (CI), 0.722-1.360, P = 0.955) and all-cause death (OR, 0.970; 95% CI, 0.611-1.540, P = 0.898) after controlling for confounders.",
       "context_window": "tio (OR), 0.991; 95% confidence interval (CI), 0.722-1.360, P = 0.955) and all-cause death (OR, 0.970; 95% CI, 0.611-1.540, P = 0",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-4192",
@@ -1015,10 +1015,10 @@
       "sentence": "As shown in Table 3 , pre-hospital statin treatment showed no association with in-hospital MACE (odds ratio (OR), 0.991; 95% confidence interval (CI), 0.722-1.360, P = 0.955) and all-cause death (OR, 0.970; 95% CI, 0.611-1.540, P = 0.898) after controlling for confounders.",
       "context_window": "I), 0.722-1.360, P = 0.955) and all-cause death (OR, 0.970; 95% CI, 0.611-1.540, P = 0.898) after controlling for confounde",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-4213",
@@ -1033,10 +1033,10 @@
       "sentence": "As shown in Table 3 , pre-hospital statin treatment showed no association with in-hospital MACE (odds ratio (OR), 0.991; 95% confidence interval (CI), 0.722-1.360, P = 0.955) and all-cause death (OR, 0.970; 95% CI, 0.611-1.540, P = 0.898) after controlling for confounders.",
       "context_window": "0.955) and all-cause death (OR, 0.970; 95% CI, 0.611-1.540, P = 0.898) after controlling for confounders. Surprisingly, statin pr",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-4316",
@@ -1052,7 +1052,7 @@
       "context_window": "s. Surprisingly, statin pretreatment was associated with an 8.9% higher risk of severely obstructive CAD (CADPI \u2265 37) (OR, 1",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1070,7 +1070,7 @@
       "context_window": "r risk of severely obstructive CAD (CADPI \u2265 37) (OR, 1.089; 95% CI, 1.010-1.175, P = 0.028). In addition, a Cox regression",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1088,7 +1088,7 @@
       "context_window": "structive CAD (CADPI \u2265 37) (OR, 1.089; 95% CI, 1.010-1.175, P = 0.028). In addition, a Cox regression about MACE/all-cause death",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1105,10 +1105,10 @@
       "sentence": "In addition, a Cox regression about MACE/all-cause death was employed based on the in-hospital stay (within 15 days) and statin pretreatment and the results showed no association with MACE/all-cause death (HR, 0.941; 95% CI, 0.662-1.340, P = 0.738 and HR, 0.914; 95% CI, 0.564-1.483, P = 0.716, respectively) after controlling for confounders ( Table 4 ).",
       "context_window": "se death was employed based on the in-hospital stay (within 15 days) and statin pretreatment and the results showed no associat",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-4636",
@@ -1123,10 +1123,10 @@
       "sentence": "In addition, a Cox regression about MACE/all-cause death was employed based on the in-hospital stay (within 15 days) and statin pretreatment and the results showed no association with MACE/all-cause death (HR, 0.941; 95% CI, 0.662-1.340, P = 0.738 and HR, 0.914; 95% CI, 0.564-1.483, P = 0.716, respectively) after controlling for confounders ( Table 4 ).",
       "context_window": "showed no association with MACE/all-cause death (HR, 0.941; 95% CI, 0.662-1.340, P = 0.738 and HR, 0.914; 95% CI, 0.564-1.4",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-4657",
@@ -1141,10 +1141,10 @@
       "sentence": "In addition, a Cox regression about MACE/all-cause death was employed based on the in-hospital stay (within 15 days) and statin pretreatment and the results showed no association with MACE/all-cause death (HR, 0.941; 95% CI, 0.662-1.340, P = 0.738 and HR, 0.914; 95% CI, 0.564-1.483, P = 0.716, respectively) after controlling for confounders ( Table 4 ).",
       "context_window": "with MACE/all-cause death (HR, 0.941; 95% CI, 0.662-1.340, P = 0.738 and HR, 0.914; 95% CI, 0.564-1.483, P = 0.716, respectively",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-4682",
@@ -1159,10 +1159,10 @@
       "sentence": "In addition, a Cox regression about MACE/all-cause death was employed based on the in-hospital stay (within 15 days) and statin pretreatment and the results showed no association with MACE/all-cause death (HR, 0.941; 95% CI, 0.662-1.340, P = 0.738 and HR, 0.914; 95% CI, 0.564-1.483, P = 0.716, respectively) after controlling for confounders ( Table 4 ).",
       "context_window": "h (HR, 0.941; 95% CI, 0.662-1.340, P = 0.738 and HR, 0.914; 95% CI, 0.564-1.483, P = 0.716, respectively) after controlling",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-4703",
@@ -1177,10 +1177,10 @@
       "sentence": "In addition, a Cox regression about MACE/all-cause death was employed based on the in-hospital stay (within 15 days) and statin pretreatment and the results showed no association with MACE/all-cause death (HR, 0.941; 95% CI, 0.662-1.340, P = 0.738 and HR, 0.914; 95% CI, 0.564-1.483, P = 0.716, respectively) after controlling for confounders ( Table 4 ).",
       "context_window": "0.662-1.340, P = 0.738 and HR, 0.914; 95% CI, 0.564-1.483, P = 0.716, respectively) after controlling for confounders ( Table 4",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "incident cv event",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-5399",
@@ -1213,10 +1213,10 @@
       "sentence": "Cox regression analysis about in-hospital MACE or all-cause death in patients with first ACS based on the in-hospital stay (within 15 days).",
       "context_window": "tients with first ACS based on the in-hospital stay (within 15 days). CAD, coronary artery disease; DM, diabetes mellitus; ACS",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-p-7280",
@@ -1250,7 +1250,7 @@
       "context_window": "ain subgroups, particularly in females, patients aged 50 to 75 years, and patients with hypertension. Subgroup analysis for the",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1322,9 +1322,9 @@
       "context_window": "on representative samples of the general population aged > 18 years from different urban and rural regions in China ( 23 ). Mor",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-1654",
@@ -1340,9 +1340,9 @@
       "context_window": "tudy in China has not been described. In the present study, 12.7% of patients had a history of pre-hospital statin treatment.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-msd-1812",
@@ -1358,8 +1358,8 @@
       "sentence": "The LDL-C levels were significantly lower in the statin group than in the non-statin group (2.6 \u00b1 1.0 vs.",
       "context_window": "tly lower in the statin group than in the non-statin group (2.6 \u00b1 1.0 vs. 2.9 \u00b1 1.0 mmol/L, P < 0.001). Moreover, 89.9% and 80.6%",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1431,10 +1431,10 @@
       "sentence": "Moreover, 89.9% and 80.6% of patients in the non-statin and statin groups did not meet the lipid-lowering treatment goals (LDL-C < 1.8 mmol/L) for patients with ASCVD, respectively, and similar results were observed in the subgroups, suggesting a huge burden of potential MACEs in the future.",
       "context_window": "roup (2.6 \u00b1 1.0 vs. 2.9 \u00b1 1.0 mmol/L, P < 0.001). Moreover, 89.9% and 80.6% of patients in the non-statin and statin groups d",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-pct-1876",
@@ -1449,10 +1449,10 @@
       "sentence": "Moreover, 89.9% and 80.6% of patients in the non-statin and statin groups did not meet the lipid-lowering treatment goals (LDL-C < 1.8 mmol/L) for patients with ASCVD, respectively, and similar results were observed in the subgroups, suggesting a huge burden of potential MACEs in the future.",
       "context_window": "\u00b1 1.0 vs. 2.9 \u00b1 1.0 mmol/L, P < 0.001). Moreover, 89.9% and 80.6% of patients in the non-statin and statin groups did not mee",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-u-1987",
@@ -1467,10 +1467,10 @@
       "sentence": "Moreover, 89.9% and 80.6% of patients in the non-statin and statin groups did not meet the lipid-lowering treatment goals (LDL-C < 1.8 mmol/L) for patients with ASCVD, respectively, and similar results were observed in the subgroups, suggesting a huge burden of potential MACEs in the future.",
       "context_window": "ps did not meet the lipid-lowering treatment goals (LDL-C < 1.8 mmol/L) for patients with ASCVD, respectively, and similar resul",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9889368_associations_of_pre_hospital_statin_treatment_with_in_hospit-u-3330",
@@ -1486,7 +1486,7 @@
       "context_window": "ained. The ARMYDA-ACS trial indicated that even short-term (80 mg 12 h before PCI) pretreatment with atorvastatin may improve",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1504,7 +1504,7 @@
       "context_window": "y, we found that statin pretreatment was associated with an 8.9% higher risk of severely obstructive CAD (CADPI \u2265 37). Consi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1522,7 +1522,7 @@
       "context_window": "y obstructive CAD (CADPI \u2265 37) in females, those aged 50 to 75 years, and those with hypertension. According to a previous study",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1540,7 +1540,7 @@
       "context_window": "vidence is available about their benefits for patients over 75 years of age ( 37 ). In addition, high-intensity statin therapy m",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1558,7 +1558,7 @@
       "context_window": "tudy clarified for the first time that statin (atorvastatin 20 mg daily) significantly reduced plaque volume ( 40 ). The PROS",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

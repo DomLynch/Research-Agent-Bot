@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua",
   "doi": "10.1016/j.gendis.2018.07.001",
-  "extracted_at": "2026-05-05T21:47:04+00:00",
+  "extracted_at": "2026-05-07T15:40:45+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 7,
@@ -24,7 +24,7 @@
       "context_window": "ut barrier function in HIV + older adults (median age = 52, N = 33), following 12 weeks of fish oil supplementation (a total d",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "in HIV + older adults (median age = 52, N = 33), following 12 weeks of fish oil supplementation (a total daily dose of 1.6 g of",
       "claim_role": "duration",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -114,7 +114,7 @@
       "context_window": "persons. In the current study, we explored the efficacy of 12 weeks of fish oil supplementation compared to placebo in older HI",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -149,10 +149,10 @@
       "sentence": "Participants were excluded from the study if they had a history of coronary artery disease or stroke; a platelet count <150,000 cells/mm 3 ; a chronic condition known to affect lipid status; use of medications or herbal therapies reported to influence bleeding parameters; documented active opportunistic infections or malignancies; serum creatinine >2.0 mg/dL or liver enzyme elevations > three times the upper limit of normal; LDL cholesterol \u2265120 mg/dL; or use of lipid-lowering medications.",
       "context_window": "opportunistic infections or malignancies; serum creatinine >2.0 mg/dL or liver enzyme elevations > three times the upper limit of",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "bleeding",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua-u-784",
@@ -167,10 +167,10 @@
       "sentence": "Participants were excluded from the study if they had a history of coronary artery disease or stroke; a platelet count <150,000 cells/mm 3 ; a chronic condition known to affect lipid status; use of medications or herbal therapies reported to influence bleeding parameters; documented active opportunistic infections or malignancies; serum creatinine >2.0 mg/dL or liver enzyme elevations > three times the upper limit of normal; LDL cholesterol \u2265120 mg/dL; or use of lipid-lowering medications.",
       "context_window": "s > three times the upper limit of normal; LDL cholesterol \u2265120 mg/dL; or use of lipid-lowering medications. The study used a ra",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "bleeding",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua-u-1501",
@@ -186,9 +186,9 @@
       "context_window": "by comparing it to the proposed control condition at 4 and 12 weeks, controlling for covariates (demographics, lifestyle, medic",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua-u-1956",
@@ -204,9 +204,9 @@
       "context_window": "Participants randomized to the fish oil condition received 12 weeks of 1.6 g/day of fish oil in gelcaps that contained 800 mg o",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua-u-2016",
@@ -222,9 +222,9 @@
       "context_window": "12 weeks of 1.6 g/day of fish oil in gelcaps that contained 800 mg of eicosapentaenoic acid (EPA), 600 mg of Docosahexaenoic a",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua-u-2055",
@@ -240,9 +240,9 @@
       "context_window": "lcaps that contained 800 mg of eicosapentaenoic acid (EPA), 600 mg of Docosahexaenoic acid, 8 and 200 mg of other omega-3 fatt",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua-u-2093",
@@ -258,9 +258,9 @@
       "context_window": "entaenoic acid (EPA), 600 mg of Docosahexaenoic acid, 8 and 200 mg of other omega-3 fatty acids (Carlson \u00ae Fish Oil; Arlington",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua-u-2452",
@@ -402,7 +402,7 @@
       "context_window": "0, IL-1RA, IFN-\u03b1) and inflammation markers (IL-8, IL-1\u03b2) in 12 weeks of fish oil supplementation (n = 18) vs. placebo (n = 15) H",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -420,7 +420,7 @@
       "context_window": "kers (IL-8, IL-1\u03b2) in 12 weeks of fish oil supplementation (n = 18) vs. placebo (n = 15) HIV + older adults. The treatment gro",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -438,7 +438,7 @@
       "context_window": "12 weeks of fish oil supplementation (n = 18) vs. placebo (n = 15) HIV + older adults. The treatment group showed a significa",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -474,9 +474,9 @@
       "context_window": "or without fish oil (data not shown). Serum LBP and LPS in 12 weeks of fish oil supplementation (n = 18) vs. placebo (n = 15) H",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua-n-2573",
@@ -492,9 +492,9 @@
       "context_window": "Serum LBP and LPS in 12 weeks of fish oil supplementation (n = 18) vs. placebo (n = 15) HIV + older adults. LBP showed a decr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua-n-2594",
@@ -510,9 +510,9 @@
       "context_window": "12 weeks of fish oil supplementation (n = 18) vs. placebo (n = 15) HIV + older adults. LBP showed a decrease trend in treatme",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua-u-217",
@@ -528,9 +528,9 @@
       "context_window": "that a total daily dose of 1.6 g of omega-3 fatty acids for 12 weeks was associated with improvements in indirect markers of gut",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

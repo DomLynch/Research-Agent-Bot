@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6836340_omega_3_polyunsaturated_fatty_acids_status_and_cognitive_fun",
   "doi": "10.1186/s12944-019-1143-z",
-  "extracted_at": "2026-05-05T21:47:07+00:00",
+  "extracted_at": "2026-05-07T15:40:45+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 12,
@@ -61,9 +61,9 @@
       "context_window": "the participants were divided into O3I tertile groups: T1 < 5.47%, T2 = 5.47-6.75%, T3 > 6.75%. Potential confounding factors",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836340_omega_3_polyunsaturated_fatty_acids_status_and_cognitive_fun-pct-833",
@@ -79,9 +79,9 @@
       "context_window": "were divided into O3I tertile groups: T1 < 5.47%, T2 = 5.47-6.75%, T3 > 6.75%. Potential confounding factors of BMI, inflamma",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836340_omega_3_polyunsaturated_fatty_acids_status_and_cognitive_fun-pct-845",
@@ -97,9 +97,9 @@
       "context_window": "into O3I tertile groups: T1 < 5.47%, T2 = 5.47-6.75%, T3 > 6.75%. Potential confounding factors of BMI, inflammatory status",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836340_omega_3_polyunsaturated_fatty_acids_status_and_cognitive_fun-msd-1145",
@@ -151,10 +151,10 @@
       "sentence": "The ANOVA showed no overall group differences but a significant group \u00d7 cognition domain interaction ( p < 0.01).",
       "context_window": "es but a significant group \u00d7 cognition domain interaction ( p < 0.01). Post hoc tests showed that participants in the low O3I te",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "cognition",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6836340_omega_3_polyunsaturated_fatty_acids_status_and_cognitive_fun-p-1447",
@@ -278,7 +278,7 @@
       "context_window": "ause it is indicative of omega-3 exposure over the previous 3 months (reflecting the life cycle of erythrocytes), rather than re",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "omega-3",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -781,7 +781,7 @@
       "sentence": "Mean z -score \u00b1 SE (standard error); normal z -score is + 1 to - 1. * p = 0.004 on univariate analysis\n\nOf the five covariates, only BMI and CRP showed significant (weak) correlations with cognition domains, specifically attention and memory (r = - 0.14 to - 0.22, p \u2264 0.02).",
       "context_window": "s, specifically attention and memory (r = - 0.14 to - 0.22, p \u2264 0.02). BMI and CRP were also found to be positively correlated w",
       "claim_role": "unknown",
-      "endpoint": "inflammation",
+      "endpoint": "cognition",
       "arm": "",
       "direction": "",
       "binding_confidence": "partial"

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug",
   "doi": "10.1002/prp2.1060",
-  "extracted_at": "2026-05-05T15:32:42+00:00",
+  "extracted_at": "2026-05-07T15:40:40+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 24,
@@ -175,10 +175,10 @@
       "sentence": "1 However, in up to 29% of patients, adverse effects associated with myopathy have been reported with their use, ranging from mild muscle pain to (in extreme cases) fatal rhabdomyolysis.",
       "context_window": "are generally well tolerated in humans. 1 However, in up to 29% of patients, adverse effects associated with myopathy have",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "myopathy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-947",
@@ -194,9 +194,9 @@
       "context_window": "e common comorbidities of HIV infection, 4 as identified in 24% of patients. 5 As a result of their subsequent widespread u",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-1104",
@@ -320,7 +320,7 @@
       "context_window": "compartment. Donor solutions (final DMSO concentration of \u22641 % v/v) in transport buffer contained the probe substrate [ 3",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "vehicle",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -338,9 +338,9 @@
       "context_window": "= 210 \u03bcL). Receiver solutions (final DMSO concentration of \u22641 % v/v) in transport buffer containing either the correspondin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "vehicle",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-u-5851",
@@ -374,9 +374,9 @@
       "context_window": "n cell culture medium (consisting of DMEM supplemented with 10% (w/v) fetal bovine serum and 1% (v/v) nonessential amino ac",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-6016",
@@ -392,9 +392,9 @@
       "context_window": "of DMEM supplemented with 10% (w/v) fetal bovine serum and 1% (v/v) nonessential amino acids) into 24\u2010well poly\u2010D\u2010lysine",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-6168",
@@ -410,9 +410,9 @@
       "context_window": "lls per well to achieve a pre\u2010assay confluence of typically 80%-95%. Cells were cultured at 37\u00b0C, 8% CO 2 for 24 h and medi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-6172",
@@ -428,9 +428,9 @@
       "context_window": "per well to achieve a pre\u2010assay confluence of typically 80%-95%. Cells were cultured at 37\u00b0C, 8% CO 2 for 24 h and media wa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-6206",
@@ -446,9 +446,9 @@
       "context_window": "nfluence of typically 80%-95%. Cells were cultured at 37\u00b0C, 8% CO 2 for 24 h and media was replaced 3-4 h post\u2010seeding wit",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-7427",
@@ -631,9 +631,9 @@
       "context_window": "ocin (0.1-100 \u03bcM) gave acceptable inhibition (mean IC 50 of 1.81 \u00b1 0.276 \u03bcM) in the test system. Determined in vitro K i (IC 50 ) v",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-1158",
@@ -870,9 +870,9 @@
       "context_window": ", rifamycin SV (100 \u03bcM) gave acceptable inhibition (mean of 96.5 \u00b1 3.2%) in the test system. Representative plot of mean concentr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-4308",
@@ -888,9 +888,9 @@
       "context_window": "ycin SV (100 \u03bcM) gave acceptable inhibition (mean of 96.5 \u00b1 3.2%) in the test system. Representative plot of mean concentra",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-5796",
@@ -906,9 +906,9 @@
       "context_window": "or, probenecid (300 \u03bcM) gave acceptable inhibition (mean of 90.6%) in the test system. Furthermore, neither darunavir nor rit",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-6281",
@@ -924,9 +924,9 @@
       "context_window": "(50 \u03bcM), respectively, gave acceptable inhibition (mean of 100.0% and 83.2 %) in their test systems. Representative plot of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-6292",
@@ -942,9 +942,9 @@
       "context_window": "espectively, gave acceptable inhibition (mean of 100.0% and 83.2 %) in their test systems. Representative plot of mean single",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-msd-7291",
@@ -1037,9 +1037,9 @@
       "context_window": "ose hepatic transporters. Cyclosporin A (mean inhibition of 95.8 \u00b1 6.6%) and pioglitazone (mean inhibition of 80.4 \u00b1 5.1%) gave ac",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-7876",
@@ -1055,9 +1055,9 @@
       "context_window": "atic transporters. Cyclosporin A (mean inhibition of 95.8 \u00b1 6.6%) and pioglitazone (mean inhibition of 80.4 \u00b1 5.1%) gave acc",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-msd-7919",
@@ -1074,9 +1074,9 @@
       "context_window": "bition of 95.8 \u00b1 6.6%) and pioglitazone (mean inhibition of 80.4 \u00b1 5.1%) gave acceptable positive control inhibition in their resp",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-7926",
@@ -1092,9 +1092,9 @@
       "context_window": "of 95.8 \u00b1 6.6%) and pioglitazone (mean inhibition of 80.4 \u00b1 5.1%) gave acceptable positive control inhibition in their respe",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-10213",
@@ -1146,9 +1146,9 @@
       "context_window": "y to 28 clinically observed statin DDIs with an accuracy of 97%, thereby proving the effectiveness of the approach for quan",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-1888",
@@ -1164,9 +1164,9 @@
       "context_window": "ys intestinal BCRP and hepatic OATP1B1, correctly predicted 91% of clinical DDIs. 13 , 16 However, the DDI perpetrated by a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9944867_mechanistic_in_vitro_studies_indicate_that_the_clinical_drug-pct-12332",
@@ -1182,7 +1182,7 @@
       "context_window": "ical maximum (1.6\u2010fold) and indicating that there is around 80% inhibition of the transporter. This is likely the result of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1236,7 +1236,7 @@
       "context_window": "bition of OATP1B1 gave a predicted increase in AUC that was 25% higher than inhibition of OATP1B1 alone. Furthermore, when",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     }

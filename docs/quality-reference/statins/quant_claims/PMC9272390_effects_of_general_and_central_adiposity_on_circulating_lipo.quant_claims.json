@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo",
   "doi": "10.1016/j.lanepe.2022.100457",
-  "extracted_at": "2026-05-05T15:32:46+00:00",
+  "extracted_at": "2026-05-07T15:40:40+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 4,
@@ -43,9 +43,9 @@
       "context_window": "by statin use and age. Among the youngest (38-53y, statins-5%), BMI and WHR (per-SD) increased LDL-C (total effects: 0.04",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-1408",
@@ -60,10 +60,10 @@
       "sentence": "Among the youngest (38-53y, statins-5%), BMI and WHR (per-SD) increased LDL-C (total effects: 0.04-SD, 95%CI=-0.01,0.08 and 0.10-SD, 95%CI=0.02,0.17 respectively), but only WHR directly.",
       "context_window": "I and WHR (per-SD) increased LDL-C (total effects: 0.04-SD, 95%CI=-0.01,0.08 and 0.10-SD, 95%CI=0.02,0.17 respectively), bu",
       "claim_role": "effect",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-1438",
@@ -78,10 +78,10 @@
       "sentence": "Among the youngest (38-53y, statins-5%), BMI and WHR (per-SD) increased LDL-C (total effects: 0.04-SD, 95%CI=-0.01,0.08 and 0.10-SD, 95%CI=0.02,0.17 respectively), but only WHR directly.",
       "context_window": "DL-C (total effects: 0.04-SD, 95%CI=-0.01,0.08 and 0.10-SD, 95%CI=0.02,0.17 respectively), but only WHR directly. Among the",
       "claim_role": "effect",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-1526",
@@ -97,9 +97,9 @@
       "context_window": "), but only WHR directly. Among the oldest (63-73y, statins-29%), BMI and WHR directly lowered LDL-C (-0.19-SD, 95%CI=-0.27",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-1578",
@@ -114,10 +114,10 @@
       "sentence": "Among the oldest (63-73y, statins-29%), BMI and WHR directly lowered LDL-C (-0.19-SD, 95%CI=-0.27,-0.11 and -0.05-SD, 95%CI=-0.16,0.06 respectively).",
       "context_window": "statins-29%), BMI and WHR directly lowered LDL-C (-0.19-SD, 95%CI=-0.27,-0.11 and -0.05-SD, 95%CI=-0.16,0.06 respectively).",
       "claim_role": "effect",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-1610",
@@ -132,10 +132,10 @@
       "sentence": "Among the oldest (63-73y, statins-29%), BMI and WHR directly lowered LDL-C (-0.19-SD, 95%CI=-0.27,-0.11 and -0.05-SD, 95%CI=-0.16,0.06 respectively).",
       "context_window": "ly lowered LDL-C (-0.19-SD, 95%CI=-0.27,-0.11 and -0.05-SD, 95%CI=-0.16,0.06 respectively). Excess adiposity likely raises",
       "claim_role": "effect",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-u-73",
@@ -421,9 +421,9 @@
       "context_window": "6), respectively). The overall prevalence of statin use was 16%; this was twice as common among men than women (22% vs 12%,",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-862",
@@ -439,9 +439,9 @@
       "context_window": "use was 16%; this was twice as common among men than women (22% vs 12%, respectively). Characteristics of participants eli",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-869",
@@ -457,9 +457,9 @@
       "context_window": "16%; this was twice as common among men than women (22% vs 12%, respectively). Characteristics of participants eligible f",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-u-1313",
@@ -492,7 +492,7 @@
       "sentence": "The same pattern was seen for BMI with cholesterol in each particle type, e.g., -0.12 SD (95% CI = -0.15, -0.08) lower LDL cholesterol after adjustment for WHR.",
       "context_window": "BMI with cholesterol in each particle type, e.g., -0.12 SD (95% CI = -0.15, -0.08) lower LDL cholesterol after adjustment f",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -583,7 +583,7 @@
       "context_window": "ted to increase the relative odds of using statins by 1.76 (95% CI = 1.68, 1.83), which was unchanged when adjusting for WH",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -655,7 +655,7 @@
       "context_window": "ger among women, e.g., the direct effect estimate was 2.64 (95% CI = 2.55, 2.74) versus 2.09 (95% CI = 2.03, 2.16) among me",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -673,7 +673,7 @@
       "context_window": "effect estimate was 2.64 (95% CI = 2.55, 2.74) versus 2.09 (95% CI = 2.03, 2.16) among men. Evidence was strong for intera",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -708,10 +708,10 @@
       "sentence": "Evidence for interaction was also weak between WHR and statin use for LDL cholesterol ( P = 0.36), but stronger for lipids in VLDL, IDL, and HDL.",
       "context_window": "also weak between WHR and statin use for LDL cholesterol ( P = 0.36), but stronger for lipids in VLDL, IDL, and HDL. When MR mo",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-8277",
@@ -726,8 +726,8 @@
       "sentence": "When MR models were repeated among adults who reported not using statins (a stratification which was expected to induce collider bias; Supp Table 7), higher BMI was still estimated to have a small direct effect on decreasing LDL cholesterol (by -0.07 SD, 95% CI = -0.11, -0.03, adjusted for WHR), whereas higher WHR was still estimated to have larger direct effects on increasing LDL cholesterol (0.14 SD, 95% CI = 0.07, 0.20) and apoB (0.24 SD, 95% CI = 0.18, 0.30).",
       "context_window": "l direct effect on decreasing LDL cholesterol (by -0.07 SD, 95% CI = -0.11, -0.03, adjusted for WHR), whereas higher WHR wa",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -744,8 +744,8 @@
       "sentence": "When MR models were repeated among adults who reported not using statins (a stratification which was expected to induce collider bias; Supp Table 7), higher BMI was still estimated to have a small direct effect on decreasing LDL cholesterol (by -0.07 SD, 95% CI = -0.11, -0.03, adjusted for WHR), whereas higher WHR was still estimated to have larger direct effects on increasing LDL cholesterol (0.14 SD, 95% CI = 0.07, 0.20) and apoB (0.24 SD, 95% CI = 0.18, 0.30).",
       "context_window": "rger direct effects on increasing LDL cholesterol (0.14 SD, 95% CI = 0.07, 0.20) and apoB (0.24 SD, 95% CI = 0.18, 0.30).",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -762,8 +762,8 @@
       "sentence": "When MR models were repeated among adults who reported not using statins (a stratification which was expected to induce collider bias; Supp Table 7), higher BMI was still estimated to have a small direct effect on decreasing LDL cholesterol (by -0.07 SD, 95% CI = -0.11, -0.03, adjusted for WHR), whereas higher WHR was still estimated to have larger direct effects on increasing LDL cholesterol (0.14 SD, 95% CI = 0.07, 0.20) and apoB (0.24 SD, 95% CI = 0.18, 0.30).",
       "context_window": "olesterol (0.14 SD, 95% CI = 0.07, 0.20) and apoB (0.24 SD, 95% CI = 0.18, 0.30). These statin-exclusion effect estimates",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -781,7 +781,7 @@
       "context_window": "L lipids (Supp Table 10). Within the youngest age group (38-53 years, where statin use was 5%), higher BMI and WHR were each est",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -799,7 +799,7 @@
       "context_window": "n the youngest age group (38-53 years, where statin use was 5%), higher BMI and WHR were each estimated to modestly increa",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -816,8 +816,8 @@
       "sentence": "Within the youngest age group (38-53 years, where statin use was 5%), higher BMI and WHR were each estimated to modestly increase LDL cholesterol (0.04 SD, 95% CI = -0.01, 0.08 for total effect of BMI and 0.10 SD, 95% CI = 0.02, 0.17 for total effect of WHR).",
       "context_window": "ch estimated to modestly increase LDL cholesterol (0.04 SD, 95% CI = -0.01, 0.08 for total effect of BMI and 0.10 SD, 95% C",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -835,7 +835,7 @@
       "context_window": ", 95% CI = -0.01, 0.08 for total effect of BMI and 0.10 SD, 95% CI = 0.02, 0.17 for total effect of WHR). This estimate for",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -853,7 +853,7 @@
       "context_window": "and less positive for WHR in the intermediate age group (54-62 years, statin use 17%), and more so in the oldest age group (63-7",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -871,7 +871,7 @@
       "context_window": "WHR in the intermediate age group (54-62 years, statin use 17%), and more so in the oldest age group (63-73 years, statin",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -889,7 +889,7 @@
       "context_window": "s, statin use 17%), and more so in the oldest age group (63-73 years, statin use 29%) where the direct effects of BMI and WHR on",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -907,7 +907,7 @@
       "context_window": "nd more so in the oldest age group (63-73 years, statin use 29%) where the direct effects of BMI and WHR on LDL cholesterol",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -924,8 +924,8 @@
       "sentence": "These direct effects on LDL cholesterol were estimated to become more negative for BMI and less positive for WHR in the intermediate age group (54-62 years, statin use 17%), and more so in the oldest age group (63-73 years, statin use 29%) where the direct effects of BMI and WHR on LDL cholesterol had reversed to -0.19 SD (95% CI = -0.27, -0.11) and -0.05 SD (95% CI = -0.16, 0.06; Figure 5 ; Supp Tables 11-13), respectively.",
       "context_window": "of BMI and WHR on LDL cholesterol had reversed to -0.19 SD (95% CI = -0.27, -0.11) and -0.05 SD (95% CI = -0.16, 0.06; Figu",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -942,8 +942,8 @@
       "sentence": "These direct effects on LDL cholesterol were estimated to become more negative for BMI and less positive for WHR in the intermediate age group (54-62 years, statin use 17%), and more so in the oldest age group (63-73 years, statin use 29%) where the direct effects of BMI and WHR on LDL cholesterol had reversed to -0.19 SD (95% CI = -0.27, -0.11) and -0.05 SD (95% CI = -0.16, 0.06; Figure 5 ; Supp Tables 11-13), respectively.",
       "context_window": "reversed to -0.19 SD (95% CI = -0.27, -0.11) and -0.05 SD (95% CI = -0.16, 0.06; Figure 5 ; Supp Tables 11-13), respective",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1033,7 +1033,7 @@
       "context_window": "ct effects: among men in the youngest age group (statin use 8%), higher BMI was estimated to directly increase LDL cholest",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1050,10 +1050,10 @@
       "sentence": "0.23 SD (95% CI = 0.05, 0.40) for LDL cholesterol ( Figure 6 ; Supp Tables 14-16).",
       "context_window": "cholesterol, apoB, and other non-HDL traits, e.g. 0.23 SD (95% CI = 0.05, 0.40) for LDL cholesterol ( Figure 6 ; Supp Tabl",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-11207",
@@ -1068,10 +1068,10 @@
       "sentence": "These effect estimates were directionally reversed among men in the intermediate age group (statin use 23%) and in the oldest age group (statin use 36%), e.g., the LDL cholesterol estimate was -0.24 SD (95% CI = -0.43, -0.05) among the eldest men.",
       "context_window": "eversed among men in the intermediate age group (statin use 23%) and in the oldest age group (statin use 36%), e.g., the LD",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-11252",
@@ -1086,10 +1086,10 @@
       "sentence": "These effect estimates were directionally reversed among men in the intermediate age group (statin use 23%) and in the oldest age group (statin use 36%), e.g., the LDL cholesterol estimate was -0.24 SD (95% CI = -0.43, -0.05) among the eldest men.",
       "context_window": "up (statin use 23%) and in the oldest age group (statin use 36%), e.g., the LDL cholesterol estimate was -0.24 SD (95% CI =",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-11307",
@@ -1104,10 +1104,10 @@
       "sentence": "These effect estimates were directionally reversed among men in the intermediate age group (statin use 23%) and in the oldest age group (statin use 36%), e.g., the LDL cholesterol estimate was -0.24 SD (95% CI = -0.43, -0.05) among the eldest men.",
       "context_window": "use 36%), e.g., the LDL cholesterol estimate was -0.24 SD (95% CI = -0.43, -0.05) among the eldest men. In contrast, highe",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-12323",
@@ -1194,7 +1194,7 @@
       "sentence": "Among men, estimates indicated that higher BMI was associated with higher VLDL lipids and triglycerides, but modestly lower LDL cholesterol which remained apparent when adjusting for WHR (-0.05 SD, 95% CI = -0.06, -0.04; Supp Figures 3-4; Supp Table 24).",
       "context_window": "l which remained apparent when adjusting for WHR (-0.05 SD, 95% CI = -0.06, -0.04; Supp Figures 3-4; Supp Table 24). Higher",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1212,7 +1212,7 @@
       "sentence": "Higher WHR was associated with slightly higher LDL cholesterol (0.03 SD, 95% CI = 0.01, 0.04 adjusted for BMI).",
       "context_window": "s associated with slightly higher LDL cholesterol (0.03 SD, 95% CI = 0.01, 0.04 adjusted for BMI). Mutually adjusted estima",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1231,9 +1231,9 @@
       "context_window": ") was associated with higher odds of using statins by 1.61 (95% CI = 1.60, 1.63), which attenuated to 1.40 (95% CI = 1.39,",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-15672",
@@ -1249,9 +1249,9 @@
       "context_window": "ns by 1.61 (95% CI = 1.60, 1.63), which attenuated to 1.40 (95% CI = 1.39, 1.42) when adjusting for WHR (Supp Table 26). Th",
       "claim_role": "effect",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-16185",
@@ -1267,7 +1267,7 @@
       "context_window": "(mutually adjusted estimates for BMI and WHR were 0.04 SD (95% CI = 0.03, 0.05) and 0.12 SD (95% CI = 0.11, 0.13), respect",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1285,7 +1285,7 @@
       "context_window": "BMI and WHR were 0.04 SD (95% CI = 0.03, 0.05) and 0.12 SD (95% CI = 0.11, 0.13), respectively), and similarly for apoB (Su",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1303,7 +1303,7 @@
       "context_window": "(Supp Table 32). Within the youngest age group (statin use 5%), higher BMI and WHR were each associated with higher LDL c",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1321,7 +1321,7 @@
       "context_window": "h higher LDL cholesterol before mutual adjustment (0.08 SD, 95% CI = 0.07, 0.09 for BMI and 0.16 SD, 95% CI = 0.15, 0.18 fo",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1339,7 +1339,7 @@
       "context_window": "justment (0.08 SD, 95% CI = 0.07, 0.09 for BMI and 0.16 SD, 95% CI = 0.15, 0.18 for WHR) and both estimates remained positi",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1357,7 +1357,7 @@
       "context_window": "tual adjustment, with a larger estimate for WHR at 0.14 SD (95% CI = 0.13, 0.16; Supp Figure 5; Supp Table 33). These estim",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1375,7 +1375,7 @@
       "context_window": "and less positive with WHR at intermediate ages (statin use 17%), and more so in the oldest age group (statin use 29%; Supp",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1393,7 +1393,7 @@
       "context_window": "n use 17%), and more so in the oldest age group (statin use 29%; Supp Figure 5; Supp Tables 34-35). These were more pronoun",
       "claim_role": "unknown",
       "endpoint": "body mass index",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1411,9 +1411,9 @@
       "context_window": "attributable to statin use, which was common in our sample (22% of men and 12% of women). We also found MR evidence that BM",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-7395",
@@ -1429,9 +1429,9 @@
       "context_window": "statin use, which was common in our sample (22% of men and 12% of women). We also found MR evidence that BMI and WHR each",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9272390_effects_of_general_and_central_adiposity_on_circulating_lipo-pct-8804",
@@ -1446,8 +1446,8 @@
       "sentence": "We found strong evidence of interaction by age to support this, and, when stratifying analyses of adiposity and metabolic traits by age tertile, we found that apparent effects of higher adiposity on lowering LDL cholesterol and other non-HDL traits were specific to older ages where statin use was most common (29% in the oldest group).",
       "context_window": "re specific to older ages where statin use was most common (29% in the oldest group). BMI and WHR each raised LDL cholester",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1464,8 +1464,8 @@
       "sentence": "BMI and WHR each raised LDL cholesterol and other non-HDL traits including apoB at the youngest ages when statin use was rare (5% in the youngest group), with direct effects appearing specific to WHR.",
       "context_window": "cluding apoB at the youngest ages when statin use was rare (5% in the youngest group), with direct effects appearing speci",
       "claim_role": "unknown",
-      "endpoint": "body mass index",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1501,7 +1501,7 @@
       "context_window": "ation, which is reflected in the prevalence of statin use (\u223c16% in UK Biobank vs. \u223c11% in the general UK adult population i",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1519,7 +1519,7 @@
       "context_window": "ed in the prevalence of statin use (\u223c16% in UK Biobank vs. \u223c11% in the general UK adult population in 2014 65 ); although t",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1555,7 +1555,7 @@
       "context_window": "ation, which is reflected in the prevalence of statin use (\u223c16% in UK Biobank vs. \u223c11% in the general UK adult population i",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1573,7 +1573,7 @@
       "context_window": "ed in the prevalence of statin use (\u223c16% in UK Biobank vs. \u223c11% in the general UK adult population in 2014 65 ); although t",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     }

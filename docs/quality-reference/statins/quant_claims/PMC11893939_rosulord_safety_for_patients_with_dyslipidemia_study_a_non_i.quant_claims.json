@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i",
   "doi": "10.1007/s40119-024-00391-4",
-  "extracted_at": "2026-05-05T15:32:45+00:00",
+  "extracted_at": "2026-05-07T15:40:34+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 43,
@@ -43,9 +43,9 @@
       "context_window": "The findings revealed a notably low adverse event rate of 1.63%, indicating a favorable safety profile for rosuvastatin in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-411",
@@ -79,9 +79,9 @@
       "context_window": "ct Sheet published in 2020, statins have been used to treat 91.8% of patients with dyslipidemia in the Republic of Korea (fur",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "pitavastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-2352",
@@ -96,10 +96,10 @@
       "sentence": "Among the statin-induced AEs, myopathy is the least common, with an incidence rate of 0.1-0.01%, but it is often the most important reason for discontinuation.",
       "context_window": "myopathy is the least common, with an incidence rate of 0.1-0.01%, but it is often the most important reason for discontinuat",
       "claim_role": "background",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "myopathy",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-2838",
@@ -115,7 +115,7 @@
       "context_window": "n the Respublic of Korea (Korea), with a prevalence rate of 38.4% in 2018 [ 6 ], and the number of patients exposed to statin",
       "claim_role": "background",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -168,10 +168,10 @@
       "sentence": "The exclusion criteria were pregnancy or planning to become pregnant (within 12 months); nursing/breast-feeding; known hypersensitivity to any of the drug components; active liver disease, including persistent serum transaminases of unknown cause or serum transaminase levels > 3-fold the upper limit of normal; myopathy; concomitant use of cyclosporine; and severe renal impairment (creatinine clearance [CLcr] < 30 mL/min).",
       "context_window": "teria were pregnancy or planning to become pregnant (within 12 months); nursing/breast-feeding; known hypersensitivity to any of",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "myopathy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-u-839",
@@ -186,10 +186,10 @@
       "sentence": "The exclusion criteria were pregnancy or planning to become pregnant (within 12 months); nursing/breast-feeding; known hypersensitivity to any of the drug components; active liver disease, including persistent serum transaminases of unknown cause or serum transaminase levels > 3-fold the upper limit of normal; myopathy; concomitant use of cyclosporine; and severe renal impairment (creatinine clearance [CLcr] < 30 mL/min).",
       "context_window": "and severe renal impairment (creatinine clearance [CLcr] < 30 mL/min). Patients who met the inclusion criteria were consecutive",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "myopathy",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-msd-1307",
@@ -278,10 +278,10 @@
       "sentence": "In the JUPITER study, myopathy occurred in ten of 8869 patients (0.112%) treated with rosuvastatin.",
       "context_window": "e JUPITER study, myopathy occurred in ten of 8869 patients (0.112%) treated with rosuvastatin. Therefore, we assumed an incide",
       "claim_role": "dose",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "myopathy",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-1997",
@@ -369,7 +369,7 @@
       "context_window": "udy, we included more than the minimum number of patients ( N = 14,259) with dyslipidemia. The ROAD study was an observationa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -386,10 +386,10 @@
       "sentence": "To assess the efficacy of rosuvastatin, we measured the proportion of patients who reached target levels of LDL-C (< 100 mg/dL for high-risk groups, < 70 mg/dL for very high-risk groups) and non-HDL-C (< 130 mg/dL for high-risk groups, < 100 mg/dL for very high-risk groups) and categorized them into the very-high- and high-risk dyslipidemia groups.",
       "context_window": "roportion of patients who reached target levels of LDL-C (< 100 mg/dL for high-risk groups, < 70 mg/dL for very high-risk groups)",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-u-5155",
@@ -404,10 +404,10 @@
       "sentence": "To assess the efficacy of rosuvastatin, we measured the proportion of patients who reached target levels of LDL-C (< 100 mg/dL for high-risk groups, < 70 mg/dL for very high-risk groups) and non-HDL-C (< 130 mg/dL for high-risk groups, < 100 mg/dL for very high-risk groups) and categorized them into the very-high- and high-risk dyslipidemia groups.",
       "context_window": "target levels of LDL-C (< 100 mg/dL for high-risk groups, < 70 mg/dL for very high-risk groups) and non-HDL-C (< 130 mg/dL for h",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-u-5208",
@@ -422,10 +422,10 @@
       "sentence": "To assess the efficacy of rosuvastatin, we measured the proportion of patients who reached target levels of LDL-C (< 100 mg/dL for high-risk groups, < 70 mg/dL for very high-risk groups) and non-HDL-C (< 130 mg/dL for high-risk groups, < 100 mg/dL for very high-risk groups) and categorized them into the very-high- and high-risk dyslipidemia groups.",
       "context_window": "ups, < 70 mg/dL for very high-risk groups) and non-HDL-C (< 130 mg/dL for high-risk groups, < 100 mg/dL for very high-risk groups",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-u-5242",
@@ -440,10 +440,10 @@
       "sentence": "To assess the efficacy of rosuvastatin, we measured the proportion of patients who reached target levels of LDL-C (< 100 mg/dL for high-risk groups, < 70 mg/dL for very high-risk groups) and non-HDL-C (< 130 mg/dL for high-risk groups, < 100 mg/dL for very high-risk groups) and categorized them into the very-high- and high-risk dyslipidemia groups.",
       "context_window": "groups) and non-HDL-C (< 130 mg/dL for high-risk groups, < 100 mg/dL for very high-risk groups) and categorized them into the ve",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-u-5969",
@@ -1183,9 +1183,9 @@
       "context_window": "cidences, and 296 AEs were observed. Of these, 37 patients (0.26%, 40 events) had confirmed AEs that could not be excluded as",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-2417",
@@ -1201,9 +1201,9 @@
       "context_window": "excluded as causally related to rosuvastatin, 14 patients (0.10%, 17 events) had SAEs, and one patient (0.01%) had a SADR. A",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-2462",
@@ -1219,9 +1219,9 @@
       "context_window": ", 14 patients (0.10%, 17 events) had SAEs, and one patient (0.01%) had a SADR. Among all patients, 140 (0.98%) experienced 16",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-2506",
@@ -1380,7 +1380,7 @@
       "sentence": "Myopathy cases, which were carefully noted during the study, included 11 cases of known myalgia (0.08%, 11 ADRs), three cases of musculoskeletal pain (0.02%, 1 ADR), one case of increased blood creatine phosphokinase (0.01%, 1 ADR), one case of muscular weakness (0.01%, 1 ADR), and one case of myofascial pain syndrome (0.01%, 0 ADR) (ESM Table S2).",
       "context_window": "noted during the study, included 11 cases of known myalgia (0.08%, 11 ADRs), three cases of musculoskeletal pain (0.02%, 1 AD",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "myopathy",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1398,7 +1398,7 @@
       "sentence": "Myopathy cases, which were carefully noted during the study, included 11 cases of known myalgia (0.08%, 11 ADRs), three cases of musculoskeletal pain (0.02%, 1 ADR), one case of increased blood creatine phosphokinase (0.01%, 1 ADR), one case of muscular weakness (0.01%, 1 ADR), and one case of myofascial pain syndrome (0.01%, 0 ADR) (ESM Table S2).",
       "context_window": "lgia (0.08%, 11 ADRs), three cases of musculoskeletal pain (0.02%, 1 ADR), one case of increased blood creatine phosphokinase",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "myopathy",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1416,7 +1416,7 @@
       "sentence": "Myopathy cases, which were carefully noted during the study, included 11 cases of known myalgia (0.08%, 11 ADRs), three cases of musculoskeletal pain (0.02%, 1 ADR), one case of increased blood creatine phosphokinase (0.01%, 1 ADR), one case of muscular weakness (0.01%, 1 ADR), and one case of myofascial pain syndrome (0.01%, 0 ADR) (ESM Table S2).",
       "context_window": "1 ADR), one case of increased blood creatine phosphokinase (0.01%, 1 ADR), one case of muscular weakness (0.01%, 1 ADR), and",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "myopathy",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1434,7 +1434,7 @@
       "sentence": "Myopathy cases, which were carefully noted during the study, included 11 cases of known myalgia (0.08%, 11 ADRs), three cases of musculoskeletal pain (0.02%, 1 ADR), one case of increased blood creatine phosphokinase (0.01%, 1 ADR), one case of muscular weakness (0.01%, 1 ADR), and one case of myofascial pain syndrome (0.01%, 0 ADR) (ESM Table S2).",
       "context_window": "hosphokinase (0.01%, 1 ADR), one case of muscular weakness (0.01%, 1 ADR), and one case of myofascial pain syndrome (0.01%, 0",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "myopathy",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1452,7 +1452,7 @@
       "sentence": "Myopathy cases, which were carefully noted during the study, included 11 cases of known myalgia (0.08%, 11 ADRs), three cases of musculoskeletal pain (0.02%, 1 ADR), one case of increased blood creatine phosphokinase (0.01%, 1 ADR), one case of muscular weakness (0.01%, 1 ADR), and one case of myofascial pain syndrome (0.01%, 0 ADR) (ESM Table S2).",
       "context_window": "s (0.01%, 1 ADR), and one case of myofascial pain syndrome (0.01%, 0 ADR) (ESM Table S2). The relevant laboratory tests (crea",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "myopathy",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -1668,7 +1668,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "o post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1687,7 +1687,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 13",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1706,7 +1706,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "al mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1724,7 +1724,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1742,7 +1742,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "ol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/d",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1761,7 +1761,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decrea",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1780,7 +1780,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1798,7 +1798,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "(- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1816,7 +1816,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "L-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1835,7 +1835,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "\u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were stati",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1854,7 +1854,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significa",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1872,7 +1872,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1890,7 +1890,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "es decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.000",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1908,7 +1908,7 @@
       "sentence": "Analysis of the percent change in the serum lipid profile from baseline to post-treatment with Rosulord showed that from baseline to 12 weeks of treatment, total mean (\u00b1 SD) cholesterol decreased from 217.09 \u00b1 52.50 to 166.23 \u00b1 36.80 mg/dL (- 20.63%), LDL-C decreased from 134.89 \u00b1 47.18 to 90.02 \u00b1 31.81 mg/dL (- 27.17%), and triglycerides decreased from 166.22 \u00b1 98.55 to 138.83 \u00b1 82.99 mg/dL (- 5.21%); all decreases were statistically significant at p < 0.0001.",
       "context_window": "(- 5.21%); all decreases were statistically significant at p < 0.0001. When LDL-C data were divided into new and old patients, th",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
@@ -1926,10 +1926,10 @@
       "sentence": "When LDL-C data were divided into new and old patients, the change rate from baseline to 12 weeks after treatment was - 36.01 \u00b1 29.01% in new patients and - 24.8 \u00b1 29.97% in old patients, and the difference between the two groups was statistically significant ( p < 0.0001) (Fig.",
       "context_window": "into new and old patients, the change rate from baseline to 12 weeks after treatment was - 36.01 \u00b1 29.01% in new patients and -",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-msd-7097",
@@ -1945,10 +1945,10 @@
       "sentence": "When LDL-C data were divided into new and old patients, the change rate from baseline to 12 weeks after treatment was - 36.01 \u00b1 29.01% in new patients and - 24.8 \u00b1 29.97% in old patients, and the difference between the two groups was statistically significant ( p < 0.0001) (Fig.",
       "context_window": "change rate from baseline to 12 weeks after treatment was - 36.01 \u00b1 29.01% in new patients and - 24.8 \u00b1 29.97% in old patients, and t",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-7105",
@@ -1963,10 +1963,10 @@
       "sentence": "When LDL-C data were divided into new and old patients, the change rate from baseline to 12 weeks after treatment was - 36.01 \u00b1 29.01% in new patients and - 24.8 \u00b1 29.97% in old patients, and the difference between the two groups was statistically significant ( p < 0.0001) (Fig.",
       "context_window": "ate from baseline to 12 weeks after treatment was - 36.01 \u00b1 29.01% in new patients and - 24.8 \u00b1 29.97% in old patients, and th",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-msd-7134",
@@ -1982,10 +1982,10 @@
       "sentence": "When LDL-C data were divided into new and old patients, the change rate from baseline to 12 weeks after treatment was - 36.01 \u00b1 29.01% in new patients and - 24.8 \u00b1 29.97% in old patients, and the difference between the two groups was statistically significant ( p < 0.0001) (Fig.",
       "context_window": "after treatment was - 36.01 \u00b1 29.01% in new patients and - 24.8 \u00b1 29.97% in old patients, and the difference between the two groups",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-7141",
@@ -2000,10 +2000,10 @@
       "sentence": "When LDL-C data were divided into new and old patients, the change rate from baseline to 12 weeks after treatment was - 36.01 \u00b1 29.01% in new patients and - 24.8 \u00b1 29.97% in old patients, and the difference between the two groups was statistically significant ( p < 0.0001) (Fig.",
       "context_window": "treatment was - 36.01 \u00b1 29.01% in new patients and - 24.8 \u00b1 29.97% in old patients, and the difference between the two groups",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-p-7239",
@@ -2018,10 +2018,10 @@
       "sentence": "When LDL-C data were divided into new and old patients, the change rate from baseline to 12 weeks after treatment was - 36.01 \u00b1 29.01% in new patients and - 24.8 \u00b1 29.97% in old patients, and the difference between the two groups was statistically significant ( p < 0.0001) (Fig.",
       "context_window": "ence between the two groups was statistically significant ( p < 0.0001) (Fig. 2 ). Lipid profile change after rosuvastatin treatm",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-u-8268",
@@ -2036,10 +2036,10 @@
       "sentence": "Of the 343 patients in the very-high-risk group, the proportions of patients who achieved the target LDL-C levels (< 70 mg/dL), target non-HDL-C levels (< 100 mg/dL), and target LDL-C or non-HDL-C levels were 53.64% (184 patients), 67.35% (231 patients), and 69.68% (239 patients), respectively.",
       "context_window": "ortions of patients who achieved the target LDL-C levels (< 70 mg/dL), target non-HDL-C levels (< 100 mg/dL), and target LDL-C o",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-u-8306",
@@ -2054,10 +2054,10 @@
       "sentence": "Of the 343 patients in the very-high-risk group, the proportions of patients who achieved the target LDL-C levels (< 70 mg/dL), target non-HDL-C levels (< 100 mg/dL), and target LDL-C or non-HDL-C levels were 53.64% (184 patients), 67.35% (231 patients), and 69.68% (239 patients), respectively.",
       "context_window": "arget LDL-C levels (< 70 mg/dL), target non-HDL-C levels (< 100 mg/dL), and target LDL-C or non-HDL-C levels were 53.64% (184 pat",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-8360",
@@ -2072,10 +2072,10 @@
       "sentence": "Of the 343 patients in the very-high-risk group, the proportions of patients who achieved the target LDL-C levels (< 70 mg/dL), target non-HDL-C levels (< 100 mg/dL), and target LDL-C or non-HDL-C levels were 53.64% (184 patients), 67.35% (231 patients), and 69.68% (239 patients), respectively.",
       "context_window": "ls (< 100 mg/dL), and target LDL-C or non-HDL-C levels were 53.64% (184 patients), 67.35% (231 patients), and 69.68% (239 pati",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-8383",
@@ -2090,10 +2090,10 @@
       "sentence": "Of the 343 patients in the very-high-risk group, the proportions of patients who achieved the target LDL-C levels (< 70 mg/dL), target non-HDL-C levels (< 100 mg/dL), and target LDL-C or non-HDL-C levels were 53.64% (184 patients), 67.35% (231 patients), and 69.68% (239 patients), respectively.",
       "context_window": "arget LDL-C or non-HDL-C levels were 53.64% (184 patients), 67.35% (231 patients), and 69.68% (239 patients), respectively. Of",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-8410",
@@ -2108,10 +2108,10 @@
       "sentence": "Of the 343 patients in the very-high-risk group, the proportions of patients who achieved the target LDL-C levels (< 70 mg/dL), target non-HDL-C levels (< 100 mg/dL), and target LDL-C or non-HDL-C levels were 53.64% (184 patients), 67.35% (231 patients), and 69.68% (239 patients), respectively.",
       "context_window": "vels were 53.64% (184 patients), 67.35% (231 patients), and 69.68% (239 patients), respectively. Of the 953 patients in the hi",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-u-8555",
@@ -2126,10 +2126,10 @@
       "sentence": "Of the 953 patients in the high-risk group, the proportions of patients achieving the target LDL-C level (< 100 mg/dL), target non-HDL-C level (< 130 mg/dL), and target LDL-C or non-HDL-C were 70.72% (674), 74.08% (706 participants), and 76.50% (729 participants), respectively.",
       "context_window": "proportions of patients achieving the target LDL-C level (< 100 mg/dL), target non-HDL-C level (< 130 mg/dL), and target LDL-C or",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-u-8593",
@@ -2144,10 +2144,10 @@
       "sentence": "Of the 953 patients in the high-risk group, the proportions of patients achieving the target LDL-C level (< 100 mg/dL), target non-HDL-C level (< 130 mg/dL), and target LDL-C or non-HDL-C were 70.72% (674), 74.08% (706 participants), and 76.50% (729 participants), respectively.",
       "context_window": "target LDL-C level (< 100 mg/dL), target non-HDL-C level (< 130 mg/dL), and target LDL-C or non-HDL-C were 70.72% (674), 74.08% (",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-8640",
@@ -2162,10 +2162,10 @@
       "sentence": "Of the 953 patients in the high-risk group, the proportions of patients achieving the target LDL-C level (< 100 mg/dL), target non-HDL-C level (< 130 mg/dL), and target LDL-C or non-HDL-C were 70.72% (674), 74.08% (706 participants), and 76.50% (729 participants), respectively.",
       "context_window": "L-C level (< 130 mg/dL), and target LDL-C or non-HDL-C were 70.72% (674), 74.08% (706 participants), and 76.50% (729 participa",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-8654",
@@ -2180,10 +2180,10 @@
       "sentence": "Of the 953 patients in the high-risk group, the proportions of patients achieving the target LDL-C level (< 100 mg/dL), target non-HDL-C level (< 130 mg/dL), and target LDL-C or non-HDL-C were 70.72% (674), 74.08% (706 participants), and 76.50% (729 participants), respectively.",
       "context_window": "30 mg/dL), and target LDL-C or non-HDL-C were 70.72% (674), 74.08% (706 participants), and 76.50% (729 participants), respecti",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-8685",
@@ -2198,10 +2198,10 @@
       "sentence": "Of the 953 patients in the high-risk group, the proportions of patients achieving the target LDL-C level (< 100 mg/dL), target non-HDL-C level (< 130 mg/dL), and target LDL-C or non-HDL-C were 70.72% (674), 74.08% (706 participants), and 76.50% (729 participants), respectively.",
       "context_window": "non-HDL-C were 70.72% (674), 74.08% (706 participants), and 76.50% (729 participants), respectively. Thus, all three dyslipide",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-222",
@@ -2288,10 +2288,10 @@
       "sentence": "When analyzing the percent change in serum lipids from baseline to post-treatment, statistically significant decreases in total cholesterol, LDL-C, and triglycerides were observed after 12 weeks of treatment, compared to baseline (all p < 0.0001), indicating significant lipid improvements.",
       "context_window": "l cholesterol, LDL-C, and triglycerides were observed after 12 weeks of treatment, compared to baseline (all p < 0.0001), indica",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-p-2004",
@@ -2306,10 +2306,10 @@
       "sentence": "When analyzing the percent change in serum lipids from baseline to post-treatment, statistically significant decreases in total cholesterol, LDL-C, and triglycerides were observed after 12 weeks of treatment, compared to baseline (all p < 0.0001), indicating significant lipid improvements.",
       "context_window": "rved after 12 weeks of treatment, compared to baseline (all p < 0.0001), indicating significant lipid improvements. When ultra-hi",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-2593",
@@ -2414,10 +2414,10 @@
       "sentence": "In patients with dyslipidemia, 12 weeks of rosuvastatin treatment was associated with a very low AE rate of 1.63%, with no clinically significant risk of statin-associated myopathy, hepatotoxicity, or diabetes.",
       "context_window": "on involving Asian patients. In patients with dyslipidemia, 12 weeks of rosuvastatin treatment was associated with a very low AE",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "myopathy",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11893939_rosulord_safety_for_patients_with_dyslipidemia_study_a_non_i-pct-217",
@@ -2432,10 +2432,10 @@
       "sentence": "In patients with dyslipidemia, 12 weeks of rosuvastatin treatment was associated with a very low AE rate of 1.63%, with no clinically significant risk of statin-associated myopathy, hepatotoxicity, or diabetes.",
       "context_window": "astatin treatment was associated with a very low AE rate of 1.63%, with no clinically significant risk of statin-associated m",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "myopathy",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

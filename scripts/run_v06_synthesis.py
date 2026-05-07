@@ -755,9 +755,8 @@ def _get_active_topic() -> str:
     return _ACTIVE_TOPIC
 
 
-# v0.6.0 endpoint → SynthesisSchemas OutcomeClass mapping. Curated
-# for the metformin/aging corpus; extending to a new drug pack means
-# editing this table only.
+# v0.6.0 endpoint → SynthesisSchemas OutcomeClass mapping. Shared base
+# plus topic-pack [endpoint_polarity] inference below.
 _ENDPOINT_TO_OUTCOME_CLASS: dict[str, str] = {
     # muscle_function
     "VO2max": "muscle_function",
@@ -811,6 +810,60 @@ _ENDPOINT_POLARITY: dict[str, int] = {
 
 _RATIO_CLAIM_TYPES = {"hazard_ratio", "odds_ratio", "risk_ratio"}
 _TIME_TO_EVENT_BENEFIT_ENDPOINTS = {"lifespan", "healthspan", "longevity"}
+_OUTCOME_CLASSES = frozenset({
+    "muscle_function", "cardiometabolic", "cognitive", "frailty",
+    "longevity", "immune", "oncology", "mechanism", "safety", "other",
+})
+
+
+def _endpoint_key(endpoint: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", endpoint.strip().lower()).strip("_")
+
+
+def _pack_endpoint_polarity(endpoint: str) -> int:
+    pack = _get_topic_pack()
+    if pack is None:
+        return 0
+    key = _endpoint_key(endpoint)
+    raw = pack.endpoint_polarity.get(key) or pack.endpoint_polarity.get(endpoint)
+    if raw == "higher_is_better":
+        return +1
+    if raw == "lower_is_better":
+        return -1
+    return 0
+
+
+def _infer_outcome_class(endpoint: str) -> str:
+    key = _endpoint_key(endpoint)
+    label = endpoint.strip().lower()
+    if key in _OUTCOME_CLASSES:
+        return key
+    if any(t in label for t in (
+        "ldl", "triglyceride", "cardiovascular", "cv event",
+        "blood pressure", "glucose", "hba1c", "weight", "bmi",
+    )):
+        return "cardiometabolic"
+    if any(t in label for t in ("cognition", "cognitive", "dementia", "alzheimer")):
+        return "cognitive"
+    if any(t in label for t in ("mortality", "lifespan", "healthspan", "longevity")):
+        return "longevity"
+    if any(t in label for t in ("frailty", "walk speed")):
+        return "frailty"
+    if any(t in label for t in ("inflammation", "immune", "crp", "cytokine")):
+        return "immune"
+    if any(t in label for t in ("bleeding", "adverse", "safety", "myopathy", "myalgia")):
+        return "safety"
+    if any(t in label for t in ("muscle", "sarcopenia", "strength")):
+        return "muscle_function"
+    return "other"
+
+
+def _outcome_class_for_endpoint(endpoint: str) -> str:
+    return _ENDPOINT_TO_OUTCOME_CLASS.get(endpoint) or _infer_outcome_class(endpoint)
+
+
+def _polarity_for_endpoint(endpoint: str) -> int:
+    return _ENDPOINT_POLARITY.get(endpoint, 0) or _pack_endpoint_polarity(endpoint)
 
 
 def _author_year_token(receipt) -> str | None:
@@ -858,7 +911,7 @@ def _claim_topic_effect(claim: dict) -> int:
     direction = claim.get("direction") or ""
     arm = (claim.get("arm") or "").strip().lower()
     endpoint = claim.get("endpoint") or ""
-    polarity = _ENDPOINT_POLARITY.get(endpoint, 0)
+    polarity = _polarity_for_endpoint(endpoint)
     if not polarity:
         return 0
     if claim.get("claim_type") in _RATIO_CLAIM_TYPES:
@@ -911,7 +964,7 @@ def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
     p_values: list[str] = []
     sample_sizes: list[float] = []
     for c in claims:
-        if oc := _ENDPOINT_TO_OUTCOME_CLASS.get(c.get("endpoint") or ""):
+        if oc := _outcome_class_for_endpoint(c.get("endpoint") or ""):
             outcome_counter[oc] += 1
         if c.get("claim_type") == "p_value":
             raw = c.get("raw_text") or ""
@@ -924,7 +977,7 @@ def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
 
     dominant_outcome: str = (
         outcome_counter.most_common(1)[0][0]
-        if outcome_counter else "longevity"
+        if outcome_counter else "other"
     )
     # Fix #5: significance-aware aggregation. Returns one of
     # positive/negative/null/mixed/unclear. The MET-PREVENT case
@@ -1291,7 +1344,7 @@ def build_thesis(
     n = len(receipts)
     parts = [f"Across {n} curated reference paper"]
     parts[-1] += "s" if n != 1 else ""
-    parts[-1] += f", {topic} shows a context-dependent profile."
+    parts[-1] += f", the evidence base for {topic} shows a context-dependent profile."
 
     if pos_top:
         parts.append(

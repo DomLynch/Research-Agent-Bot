@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6330561_new_insights_into_mechanisms_of_action_for_omega_3_fatty_aci",
   "doi": "10.1007/s11883-019-0762-1",
-  "extracted_at": "2026-05-05T21:47:06+00:00",
+  "extracted_at": "2026-05-07T15:40:45+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 2,
@@ -21,8 +21,8 @@
       "sentence": "A large randomized trial with a prescription EPA-only formulation was shown to reduce a composite of cardiovascular events by 25% in statin-treated patients with established cardiovascular disease or diabetes and other CV risk factors.",
       "context_window": "was shown to reduce a composite of cardiovascular events by 25% in statin-treated patients with established cardiovascular",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -39,10 +39,10 @@
       "sentence": "However, a recent trial with a prescription EPA-only formulation was shown to reduce a composite of cardiovascular events by 25% in statin-treated patients with elevated and high baseline fasting TG levels (135-499 mg/dL) along with elevated cardiovascular risk [ 10 \u2022\u2022].",
       "context_window": "was shown to reduce a composite of cardiovascular events by 25% in statin-treated patients with elevated and high baseline",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC6330561_new_insights_into_mechanisms_of_action_for_omega_3_fatty_aci-u-1503",
@@ -57,10 +57,10 @@
       "sentence": "However, a recent trial with a prescription EPA-only formulation was shown to reduce a composite of cardiovascular events by 25% in statin-treated patients with elevated and high baseline fasting TG levels (135-499 mg/dL) along with elevated cardiovascular risk [ 10 \u2022\u2022].",
       "context_window": "ents with elevated and high baseline fasting TG levels (135-499 mg/dL) along with elevated cardiovascular risk [ 10 \u2022\u2022]. This tri",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "cardiovascular events",
+      "arm": "epa",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     }
   ]
 }

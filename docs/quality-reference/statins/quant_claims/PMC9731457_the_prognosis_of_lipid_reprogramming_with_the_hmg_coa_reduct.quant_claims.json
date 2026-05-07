@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct",
   "doi": "10.1371/journal.pone.0278282",
-  "extracted_at": "2026-05-05T21:20:46+00:00",
+  "extracted_at": "2026-05-07T15:40:40+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 45,
@@ -24,9 +24,9 @@
       "context_window": "statin non-users) while group II treated with Rosuvastatin (20 mg/day) for 6 months and served as statin users. Prostate specific",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-431",
@@ -42,9 +42,9 @@
       "context_window": "s) while group II treated with Rosuvastatin (20 mg/day) for 6 months and served as statin users. Prostate specific antigen (PSA)",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-884",
@@ -59,10 +59,10 @@
       "sentence": "Prostate specific antigen (PSA), epidermal growth factor receptor (EGFR), Caveolin-1 (CAV1), lipid profile (LDL, HDL, triglycerides (TG) and total cholesterol (TC)) and lipid metabolism related markers (aldoketoreductase (AKR1C4), HMG-CoA reductase (HMGCR), ATP-binding cassette transporter A1 (ABCA1), and soluble low density lipoprotein receptor related protein 1 (SLDLRP1)) were measured at baseline, after 3 and 6 months.",
       "context_window": "protein 1 (SLDLRP1)) were measured at baseline, after 3 and 6 months. Overall survival (OS) was analyzed by Kaplan-Meier and COX",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-1057",
@@ -167,10 +167,10 @@
       "sentence": "After 6 months of castration and rosuvastatin administration, PSA, TG, LDL and TC were significantly reduced, while AKR1C4, HMGCR, SLDLRP1, CAV1 and ABCA-1 were significantly increased.",
       "context_window": "CA-1 levels. Smokers had high CAV1 level (P = 0.017). After 6 months of castration and rosuvastatin administration, PSA, TG, LDL",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-p-1658",
@@ -276,9 +276,9 @@
       "context_window": "rol (statin non-users). Group II treated with Rosuvastatin (20 mg/day) for 6 months and served as statin users. Primary outcome",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-1657",
@@ -294,9 +294,9 @@
       "context_window": "-users). Group II treated with Rosuvastatin (20 mg/day) for 6 months and served as statin users. Primary outcome was assessing",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-1769",
@@ -491,10 +491,10 @@
       "sentence": "Fig 2 shows the changes in the levels of lipid profile including LDL (A), TC (B), TG (C) and HDL (D) at baseline, after 3 and 6 months of castration in statin and non-statin users PC patients.",
       "context_window": "DL (A), TC (B), TG (C) and HDL (D) at baseline, after 3 and 6 months of castration in statin and non-statin users PC patients. S",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-p-582",
@@ -509,10 +509,10 @@
       "sentence": "Six months after castration and Rosuvastatin treatment, the levels of LDL, cholesterol and TG were significantly decreased in statin-treated group as compared to non-statin users (p = 0.005, 0.032 and 0.003, respectively).",
       "context_window": "ed in statin-treated group as compared to non-statin users (p = 0.005, 0.032 and 0.003, respectively). In the same context, the s",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-pct-685",
@@ -528,7 +528,7 @@
       "context_window": "In the same context, the statin users group recorded around 20% lower median levels of lipid profile parameters as compared",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -545,8 +545,8 @@
       "sentence": "Also, statin non-users group showed a significant increase in LDL level after 6 months of castration as compared to the base line (p = 0.013).",
       "context_window": "sers group showed a significant increase in LDL level after 6 months of castration as compared to the base line (p = 0.013). How",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -563,8 +563,8 @@
       "sentence": "Also, statin non-users group showed a significant increase in LDL level after 6 months of castration as compared to the base line (p = 0.013).",
       "context_window": "after 6 months of castration as compared to the base line (p = 0.013). However, non- significant changes were detected in HDL le",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -581,10 +581,10 @@
       "sentence": "Levels of LDL (A), TC (B), TG (C) and HDL (D) at baseline, after 3 and 6 months of castration in statin and non-statin users PC patients.",
       "context_window": "DL (A), TC (B), TG (C) and HDL (D) at baseline, after 3 and 6 months of castration in statin and non-statin users PC patients. D",
       "claim_role": "duration",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-1511",
@@ -600,9 +600,9 @@
       "context_window": "HMGCR, SLDLRP1, AKR1C4 and ABCA-1 at baseline, after 3 and 6 months of castration in statin and non-statin users PC patients. A",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-1659",
@@ -618,7 +618,7 @@
       "context_window": "nce was observed in HMGCR levels between the 2 groups after 6 months of castration with 78% higher median level in statin users",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -636,7 +636,7 @@
       "context_window": "vels between the 2 groups after 6 months of castration with 78% higher median level in statin users at p = 0.003 ( Fig 3A )",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -654,7 +654,7 @@
       "context_window": "castration with 78% higher median level in statin users at p = 0.003 ( Fig 3A ). In statin users group, the level of SLDLRP1 ( F",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -672,7 +672,7 @@
       "context_window": "n statin users group, the level of SLDLRP1 ( Fig 3B ) after 6 months was significantly higher when compared to their base-line a",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -690,7 +690,7 @@
       "context_window": "s significantly higher when compared to their base-line and 3 months levels (p = 0.003 and 0.043). In both statin and non-statin",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -708,7 +708,7 @@
       "context_window": "igher when compared to their base-line and 3 months levels (p = 0.003 and 0.043). In both statin and non-statin users groups, AKR",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -726,7 +726,7 @@
       "context_window": "users groups, AKR1C4 levels were significantly elevated at 6 months when compared to their baseline values at p = 0.025 and 0.0",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -744,7 +744,7 @@
       "context_window": "vated at 6 months when compared to their baseline values at p = 0.025 and 0.005 ( Fig 3C ) and non-significant changes were obser",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -762,7 +762,7 @@
       "context_window": "levels of ABCA-1 showed a significant increase after 3 and 6 months of castration as compared to their baseline values at p = 0",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -780,7 +780,7 @@
       "context_window": "onths of castration as compared to their baseline values at p = 0.001 and 0.009, respectively ( Fig 3D ). Levels of HMGCR (A), S",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -798,9 +798,9 @@
       "context_window": "RP1 (B), AKR1C4 (C) and ABCA-1 (D) at baseline, after 3 and 6 months of castration in statin and non-statin users PC patients. D",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-2780",
@@ -816,9 +816,9 @@
       "context_window": "d the levels of PSA, CAV1 and EGFR at baseline, after 3 and 6 months in statin and non-statin users PC patients. As shown in Fig",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-2926",
@@ -834,7 +834,7 @@
       "context_window": "evel of PSA showed marked and significant decrease at 3 and 6 months as compared to the baseline level in both statin and non-st",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -852,7 +852,7 @@
       "context_window": "baseline level in both statin and non-statin users groups (p = 0.001) although non-significant changes were observed between the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -870,7 +870,7 @@
       "context_window": "the other hand, CAV1 level showed a significant increase of 36% (p = 0.035) at 6 months compared to baseline in the non-sta",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -888,7 +888,7 @@
       "context_window": "ther hand, CAV1 level showed a significant increase of 36% (p = 0.035) at 6 months compared to baseline in the non-statin user gr",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -906,7 +906,7 @@
       "context_window": "1 level showed a significant increase of 36% (p = 0.035) at 6 months compared to baseline in the non-statin user group compared",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -924,7 +924,7 @@
       "context_window": "baseline in the non-statin user group compared to a modest 9.5% increase in statin users (p = 0.003) ( Fig 4B ). Although t",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -942,7 +942,7 @@
       "context_window": "r group compared to a modest 9.5% increase in statin users (p = 0.003) ( Fig 4B ). Although there is a consistent trend of EGFR u",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -960,7 +960,7 @@
       "context_window": "atin users group, EGFR level was significantly increased at 3 months compared to the base line value (p = 0.046), but significan",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -978,7 +978,7 @@
       "context_window": "ntly increased at 3 months compared to the base line value (p = 0.046), but significantly decreased by 22% at 6 months (p = 0.024",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -996,7 +996,7 @@
       "context_window": "base line value (p = 0.046), but significantly decreased by 22% at 6 months (p = 0.024) as compared to non-statin users gro",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1014,7 +1014,7 @@
       "context_window": "ne value (p = 0.046), but significantly decreased by 22% at 6 months (p = 0.024) as compared to non-statin users group ( Fig 4C",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1032,7 +1032,7 @@
       "context_window": "p = 0.046), but significantly decreased by 22% at 6 months (p = 0.024) as compared to non-statin users group ( Fig 4C ). Levels",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "control",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1050,9 +1050,9 @@
       "context_window": "A (A), Caveolin-1 (B) and EGFR (C) at baseline, after 3 and 6 months of castration in statin and non-statin users PC patients. D",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-p-4073",
@@ -1591,9 +1591,9 @@
       "context_window": "diagnosis are favorable for both overall survival (HR 0.81, 95% CI 0.72-0.91) and cancer-specific survival (HR 0.77, 95% CI 0.66-0.85) [",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-ci-264",
@@ -1610,9 +1610,9 @@
       "context_window": "1, 95% CI 0.72-0.91) and cancer-specific survival (HR 0.77, 95% CI 0.66-0.85) [ 19 ]. Previous studies reported that Statins inhibit PC",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-751",
@@ -1627,8 +1627,8 @@
       "sentence": "Results of the current study demonstrated that LDL, TG and TC were significantly lower after 6 month of treatment in statin users compared to non-statin users ( Fig 2 ).",
       "context_window": "nstrated that LDL, TG and TC were significantly lower after 6 month of treatment in statin users compared to non-statin users (",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1646,7 +1646,7 @@
       "context_window": "HMGCR was significantly increased in statin users recording 78% higher median level, and decreased in statin non-users afte",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1664,7 +1664,7 @@
       "context_window": "igher median level, and decreased in statin non-users after 6 months ( Fig 3A ). These findings were in contrast to the observed",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1699,10 +1699,10 @@
       "sentence": "Our results showed that SLDLRP1 was significantly higher (33%) at 6 month in statin users compared to its baseline level ( Fig 3B ); which could be explained by statin induction of LDL receptors; this might contribute to increased cholesterol clearance leading to reduced availability of androgens to PC cells.",
       "context_window": "Our results showed that SLDLRP1 was significantly higher (33%) at 6 month in statin users compared to its baseline level",
       "claim_role": "effect",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9731457_the_prognosis_of_lipid_reprogramming_with_the_hmg_coa_reduct-u-4588",
@@ -1717,8 +1717,8 @@
       "sentence": "Our results showed that SLDLRP1 was significantly higher (33%) at 6 month in statin users compared to its baseline level ( Fig 3B ); which could be explained by statin induction of LDL receptors; this might contribute to increased cholesterol clearance leading to reduced availability of androgens to PC cells.",
       "context_window": "sults showed that SLDLRP1 was significantly higher (33%) at 6 month in statin users compared to its baseline level ( Fig 3B );",
       "claim_role": "protocol",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1736,7 +1736,7 @@
       "context_window": "dy groups with double percent increase in statin non-users (34% versus 17%, Fig 3C ). Moreover, higher median level was ass",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1754,7 +1754,7 @@
       "context_window": "ith double percent increase in statin non-users (34% versus 17%, Fig 3C ). Moreover, higher median level was associated wit",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2060,7 +2060,7 @@
       "context_window": "ort. In the current study, EGFR showed initial increase at 3 months followed by reduction at 6 months to record a significantly",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -2078,7 +2078,7 @@
       "context_window": "howed initial increase at 3 months followed by reduction at 6 months to record a significantly lower level in statin users compa",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "decrease",
       "binding_confidence": "partial"
     }

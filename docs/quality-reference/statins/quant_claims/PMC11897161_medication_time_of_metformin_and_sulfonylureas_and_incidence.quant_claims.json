@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence",
   "doi": "10.1038/s41598-025-89721-7",
-  "extracted_at": "2026-05-05T15:32:46+00:00",
+  "extracted_at": "2026-05-07T15:40:34+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "mean_sd": 17,
@@ -62,9 +62,9 @@
       "context_window": "i-hypertensive, was used to estimate the hazard ratio (HR) (95% CI) for the outcomes. Cumulative exposure for metformin, SU",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-msd-1079",
@@ -117,9 +117,9 @@
       "context_window": "e hazard of cardiovascular events, ACM, and CV-mortality by 7%, 4%, and 6%, respectively, for each year of use, respective",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-1330",
@@ -135,9 +135,9 @@
       "context_window": "zard of cardiovascular events, ACM, and CV-mortality by 7%, 4%, and 6%, respectively, for each year of use, respectively (",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-1338",
@@ -153,9 +153,9 @@
       "context_window": "cardiovascular events, ACM, and CV-mortality by 7%, 4%, and 6%, respectively, for each year of use, respectively ( p < 0.0",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-p-1393",
@@ -171,9 +171,9 @@
       "context_window": "and 6%, respectively, for each year of use, respectively ( p < 0.05); the corresponding values for SUs alone were 4%, 3%, and 4",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-1448",
@@ -189,9 +189,9 @@
       "context_window": "ly ( p < 0.05); the corresponding values for SUs alone were 4%, 3%, and 4%, respectively ( p < 0.05). The effect of metfor",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-1452",
@@ -207,9 +207,9 @@
       "context_window": "p < 0.05); the corresponding values for SUs alone were 4%, 3%, and 4%, respectively ( p < 0.05). The effect of metformin",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-1460",
@@ -225,9 +225,9 @@
       "context_window": "5); the corresponding values for SUs alone were 4%, 3%, and 4%, respectively ( p < 0.05). The effect of metformin on reduc",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-p-1479",
@@ -243,9 +243,9 @@
       "context_window": "ng values for SUs alone were 4%, 3%, and 4%, respectively ( p < 0.05). The effect of metformin on reducing cardiovascular events",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-1613",
@@ -261,7 +261,7 @@
       "context_window": "and CVD mortality continued until approximately 8, 10, and 5 years after the start of treatment, respectively, and then reache",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -296,10 +296,10 @@
       "sentence": "The effect of the combination therapy on the reduction of cardiovascular events continued until 11 years after therapy initiation.",
       "context_window": "y on the reduction of cardiovascular events continued until 11 years after therapy initiation. Among newly diagnosed DM patients",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-208",
@@ -387,9 +387,9 @@
       "context_window": "t ethics guidelines. During follow-up, patients with FBS > 126 mg/dL or taking metformin, SUs, or a combination of both were def",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-1350",
@@ -405,9 +405,9 @@
       "context_window": "nite diagnosis of type 2 diabetes based on FBS \u2265 126, age > 18 years, knowing the time of diagnosis of diabetes and the time of",
       "claim_role": "population",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-7735",
@@ -423,9 +423,9 @@
       "context_window": "nine, and blood pressure. Adjusted hazard ratio (HR) with a 95% confidence interval (95% CI) was used to report the effect",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-7760",
@@ -441,9 +441,9 @@
       "context_window": "Adjusted hazard ratio (HR) with a 95% confidence interval (95% CI) was used to report the effect of metformin and SUs medi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-msd-166",
@@ -572,9 +572,9 @@
       "context_window": "y. The metformin, SUs, and combination medication time were 6.27 \u00b1 0.4, 5.88 \u00b1 0.6, and 4.92 \u00b1 0.8, respectively. The aspirin, ant",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-msd-487",
@@ -591,9 +591,9 @@
       "context_window": "rmin, SUs, and combination medication time were 6.27 \u00b1 0.4, 5.88 \u00b1 0.6, and 4.92 \u00b1 0.8, respectively. The aspirin, anti-hypertensi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-msd-503",
@@ -610,9 +610,9 @@
       "context_window": "ombination medication time were 6.27 \u00b1 0.4, 5.88 \u00b1 0.6, and 4.92 \u00b1 0.8, respectively. The aspirin, anti-hypertensive, and statin m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-msd-594",
@@ -629,9 +629,9 @@
       "context_window": "spirin, anti-hypertensive, and statin medication times were 10.9 \u00b1 2.5, 11.33 \u00b1 2.1, and 10.8 \u00b1 2.8, respectively. Demographic and",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-msd-606",
@@ -648,9 +648,9 @@
       "context_window": "-hypertensive, and statin medication times were 10.9 \u00b1 2.5, 11.33 \u00b1 2.1, and 10.8 \u00b1 2.8, respectively. Demographic and clinical cha",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-msd-623",
@@ -667,9 +667,9 @@
       "context_window": "d statin medication times were 10.9 \u00b1 2.5, 11.33 \u00b1 2.1, and 10.8 \u00b1 2.8, respectively. Demographic and clinical characteristics of",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-msd-806",
@@ -741,10 +741,10 @@
       "sentence": "The mean time from diagnosis of DM to incident cardiovascular events was 19.8 \u00b1 0.13 years.",
       "context_window": "from diagnosis of DM to incident cardiovascular events was 19.8 \u00b1 0.13 years. In models 1 and 2, metformin and its combination wit",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-1385",
@@ -759,10 +759,10 @@
       "sentence": "The mean time from diagnosis of DM to incident cardiovascular events was 19.8 \u00b1 0.13 years.",
       "context_window": "iagnosis of DM to incident cardiovascular events was 19.8 \u00b1 0.13 years. In models 1 and 2, metformin and its combination with SUs",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-p-1679",
@@ -796,9 +796,9 @@
       "context_window": "reducing the duration of metformin use remained Plato after 10.11 years (Fig. 2 -Fracplot A). SUs use reduced CVD events for approx",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-3047",
@@ -832,9 +832,9 @@
       "context_window": "f CVD events with different coefficients remained for up to 11 years. Then, its effect on hard CVD events in newly diagnosed DM",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-3908",
@@ -850,7 +850,7 @@
       "context_window": "SUs reduced the hazard of hard CVD events by an average of 10% during follow-up (HRAdj 0.90, 95% CI 0.85, 0.96, P 0.001).",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -869,7 +869,7 @@
       "context_window": "D events by an average of 10% during follow-up (HRAdj 0.90, 95% CI 0.85, 0.96, P 0.001). Duration of use of SUs with metformin reduced th",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -887,7 +887,7 @@
       "context_window": "rmin reduced the hazard of hard CVD events by an average of 6% during the follow-up period (HRAdj 0.94, 95% CI 0.90, 0.99,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -906,7 +906,7 @@
       "context_window": "y an average of 6% during the follow-up period (HRAdj 0.94, 95% CI 0.90, 0.99, P 0.009). The total CVD mortality in the population was 4",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -961,9 +961,9 @@
       "context_window": "reduced the hazard of CVD mortality in newly diagnosed DM ( p < 0.005). In model 3, metformin with and without SUs and SUs with a",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-5269",
@@ -979,9 +979,9 @@
       "context_window": "ffect of the duration of metformin use remained Plato after 4.89 years (Fig. 3 -Fracplot A). SUs consumption decreased CVD mortali",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-5355",
@@ -1051,9 +1051,9 @@
       "context_window": "the hazard of ACM with different coefficients remained for 5 years. Then, its effect on CVD mortality in newly diagnosed DM pa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-6110",
@@ -1106,9 +1106,9 @@
       "context_window": "formin reduced the hazard of CVD mortality by an average of 8% during the follow-up period (HRAdj 0.92, 95% CI 0.87, 0.98,",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-ci-6302",
@@ -1125,9 +1125,9 @@
       "context_window": "y an average of 8% during the follow-up period (HRAdj 0.92, 95% CI 0.87, 0.98, P 0.006). During the follow-up period, 913 ACM had occurr",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-msd-6429",
@@ -1180,9 +1180,9 @@
       "context_window": "periods. The effect of metformin remained with Plato after 8 years (Fig. 4 -Fracplot A). The effect of SU consumption on ACM w",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-7842",
@@ -1252,9 +1252,9 @@
       "context_window": "nation use of metformin and SUs on ACM remained Plato after 10.085 years (Fig. 4 - Fracplot C). Fracplots show the hazard of All-ca",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-8537",
@@ -1270,7 +1270,7 @@
       "context_window": "led with their combined effect reduced the hazard of ACM by 11% during the follow-up period (HRAdj 0.89, 95% CI 0.85, 0.94,",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "pooled",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1289,7 +1289,7 @@
       "context_window": "zard of ACM by 11% during the follow-up period (HRAdj 0.89, 95% CI 0.85, 0.94, P 0.001 SUs pooled with their combined effect reduced the",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "pooled",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1307,7 +1307,7 @@
       "context_window": "combined effect reduced the hazard of ACM by an average of 7% (HRAdj 0.93, 95% CI 0.89, 0.98, P 0.001). In addition, mul",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "pooled",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1326,7 +1326,7 @@
       "context_window": "reduced the hazard of ACM by an average of 7% (HRAdj 0.93, 95% CI 0.89, 0.98, P 0.001). In addition, multivariate analysis showed that",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "pooled",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1344,7 +1344,7 @@
       "context_window": "min and SUs reduced the hazard of ACM rate by approximately 11% and 7% on average, respectively. Taking metformin combined",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1362,7 +1362,7 @@
       "context_window": "SUs reduced the hazard of ACM rate by approximately 11% and 7% on average, respectively. Taking metformin combined with SU",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1380,9 +1380,9 @@
       "context_window": "tality and hard CVD event rates on average by approximately 12% and 10% during follow-up. Using SUs combined with metformin",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-1350",
@@ -1398,9 +1398,9 @@
       "context_window": "nd hard CVD event rates on average by approximately 12% and 10% during follow-up. Using SUs combined with metformin reduced",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-1496",
@@ -1416,9 +1416,9 @@
       "context_window": "ality and hard CVD events rates on average by approximately 8% and 6%, respectively, during follow-up. The effect of metf",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-1503",
@@ -1434,9 +1434,9 @@
       "context_window": "nd hard CVD events rates on average by approximately 8% and 6%, respectively, during follow-up. The effect of metformin o",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-2004",
@@ -1451,10 +1451,10 @@
       "sentence": "The effect of SUs on reducing cardiovascular events and ACM continued until the first 5 years of treatment and then became ineffective or reversed.",
       "context_window": "ing cardiovascular events and ACM continued until the first 5 years of treatment and then became ineffective or reversed. The e",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-3532",
@@ -1469,8 +1469,8 @@
       "sentence": "38 showed that metformin reduces the risk of ACM and major adverse cardiovascular events (MACEs) by nearly 20% and 40%, respectively, compared to other OADs, which was consistent with the results of our study.",
       "context_window": "M and major adverse cardiovascular events (MACEs) by nearly 20% and 40%, respectively, compared to other OADs, which was co",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "metformin",
+      "endpoint": "incident cv event",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1487,8 +1487,8 @@
       "sentence": "38 showed that metformin reduces the risk of ACM and major adverse cardiovascular events (MACEs) by nearly 20% and 40%, respectively, compared to other OADs, which was consistent with the results of our study.",
       "context_window": "jor adverse cardiovascular events (MACEs) by nearly 20% and 40%, respectively, compared to other OADs, which was consistent",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "metformin",
+      "endpoint": "incident cv event",
+      "arm": "",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1506,9 +1506,9 @@
       "context_window": "e reduced the risk of CVD events, ACM, and CVD mortality by 17%, 20%, and 23%, respectively 39 . Zhou et al., 40 showed tha",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-4189",
@@ -1524,9 +1524,9 @@
       "context_window": "uced the risk of CVD events, ACM, and CVD mortality by 17%, 20%, and 23%, respectively 39 . Zhou et al., 40 showed that the",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-pct-4198",
@@ -1542,9 +1542,9 @@
       "context_window": "risk of CVD events, ACM, and CVD mortality by 17%, 20%, and 23%, respectively 39 . Zhou et al., 40 showed that the reductio",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-6855",
@@ -1559,10 +1559,10 @@
       "sentence": "The effect of SUs on reducing cardiovascular events and ACM continued to the first 5 years of treatment.",
       "context_window": "ducing cardiovascular events and ACM continued to the first 5 years of treatment. This effect was to reduce CVD mortality, whic",
       "claim_role": "duration",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-7081",
@@ -1578,9 +1578,9 @@
       "context_window": "ss of reducing the hazard of all three continued for almost 11 years with different slopes using the combination of metformin wi",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "metformin",
+      "arm": "",
       "direction": "",
-      "binding_confidence": "partial"
+      "binding_confidence": "none"
     },
     {
       "claim_id": "PMC11897161_medication_time_of_metformin_and_sulfonylureas_and_incidence-u-313",
@@ -1596,9 +1596,9 @@
       "context_window": "of cardiovascular events, ACM, and CVD mortality for up to 10 years, and then it remained at Plato. The combined effect of metf",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "metformin",
+      "arm": "",
       "direction": "decrease",
-      "binding_confidence": "high"
+      "binding_confidence": "partial"
     }
   ]
 }

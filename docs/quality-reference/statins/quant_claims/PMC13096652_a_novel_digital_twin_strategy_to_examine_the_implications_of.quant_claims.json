@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC13096652_a_novel_digital_twin_strategy_to_examine_the_implications_of",
   "doi": "10.1038/s41746-026-02464-1",
-  "extracted_at": "2026-05-04T11:48:53+00:00",
+  "extracted_at": "2026-05-07T15:40:37+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 13,
@@ -60,7 +60,7 @@
       "sentence": "From 2010-2013, at 102 clinical sites across the United States, participants were recruited for the SPRINT RCT who were at least 50 years old, had a systolic blood pressure between 130 and 180 mm Hg, and had increased cardiovascular event risk, including cardiovascular disease with the exception of stroke, chronic kidney disease, Framingham 10 year cardiovascular risk score of 15% or greater, and advanced age over 75.",
       "context_window": "the exception of stroke, chronic kidney disease, Framingham 10 year cardiovascular risk score of 15% or greater, and advanced a",
       "claim_role": "effect",
-      "endpoint": "blood pressure",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -78,7 +78,7 @@
       "sentence": "From 2010-2013, at 102 clinical sites across the United States, participants were recruited for the SPRINT RCT who were at least 50 years old, had a systolic blood pressure between 130 and 180 mm Hg, and had increased cardiovascular event risk, including cardiovascular disease with the exception of stroke, chronic kidney disease, Framingham 10 year cardiovascular risk score of 15% or greater, and advanced age over 75.",
       "context_window": "ey disease, Framingham 10 year cardiovascular risk score of 15% or greater, and advanced age over 75. Patients with prior s",
       "claim_role": "effect",
-      "endpoint": "blood pressure",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -204,10 +204,10 @@
       "sentence": "In order to demonstrate the ability to estimate treatment effect outcomes in a variety of cohorts, we calculated the hazard ratio and 95% confidence intervals of cardiovascular outcomes of the SPRINT EHR -Twins and ACCORD EHR -Twins as well.",
       "context_window": "in a variety of cohorts, we calculated the hazard ratio and 95% confidence intervals of cardiovascular outcomes of the SPRI",
       "claim_role": "effect",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13096652_a_novel_digital_twin_strategy_to_examine_the_implications_of-pct-43024",
@@ -924,7 +924,7 @@
       "sentence": "We confirmed the differences in the reported primary composite outcomes in the SPRINT and ACCORD trials, which included a significant reduction in cardiovascular events in SPRINT\u2019s intervention arm compared with control (hazard ratio 0.75 [0.64-0.89 95% CI, p < 0.001]) without a significant reduction in a similar primary composite outcome in ACCORD (hazard ratio 0.88 [0.73 to 1.06 95% CI, p = 0.20]).",
       "context_window": "events in SPRINT\u2019s intervention arm compared with control (hazard ratio 0.75 [0.64-0.89 95% CI, p < 0.001]) without a significant reduct",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -942,7 +942,7 @@
       "sentence": "We confirmed the differences in the reported primary composite outcomes in the SPRINT and ACCORD trials, which included a significant reduction in cardiovascular events in SPRINT\u2019s intervention arm compared with control (hazard ratio 0.75 [0.64-0.89 95% CI, p < 0.001]) without a significant reduction in a similar primary composite outcome in ACCORD (hazard ratio 0.88 [0.73 to 1.06 95% CI, p = 0.20]).",
       "context_window": "ion arm compared with control (hazard ratio 0.75 [0.64-0.89 95% CI, p < 0.001]) without a significant reduction in a simila",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -960,7 +960,7 @@
       "sentence": "We confirmed the differences in the reported primary composite outcomes in the SPRINT and ACCORD trials, which included a significant reduction in cardiovascular events in SPRINT\u2019s intervention arm compared with control (hazard ratio 0.75 [0.64-0.89 95% CI, p < 0.001]) without a significant reduction in a similar primary composite outcome in ACCORD (hazard ratio 0.88 [0.73 to 1.06 95% CI, p = 0.20]).",
       "context_window": "compared with control (hazard ratio 0.75 [0.64-0.89 95% CI, p < 0.001]) without a significant reduction in a similar primary comp",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -978,7 +978,7 @@
       "sentence": "We confirmed the differences in the reported primary composite outcomes in the SPRINT and ACCORD trials, which included a significant reduction in cardiovascular events in SPRINT\u2019s intervention arm compared with control (hazard ratio 0.75 [0.64-0.89 95% CI, p < 0.001]) without a significant reduction in a similar primary composite outcome in ACCORD (hazard ratio 0.88 [0.73 to 1.06 95% CI, p = 0.20]).",
       "context_window": "reduction in a similar primary composite outcome in ACCORD (hazard ratio 0.88 [0.73 to 1.06 95% CI, p = 0.20]). In the SPRINT-Twin withou",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -996,7 +996,7 @@
       "sentence": "We confirmed the differences in the reported primary composite outcomes in the SPRINT and ACCORD trials, which included a significant reduction in cardiovascular events in SPRINT\u2019s intervention arm compared with control (hazard ratio 0.75 [0.64-0.89 95% CI, p < 0.001]) without a significant reduction in a similar primary composite outcome in ACCORD (hazard ratio 0.88 [0.73 to 1.06 95% CI, p = 0.20]).",
       "context_window": "omposite outcome in ACCORD (hazard ratio 0.88 [0.73 to 1.06 95% CI, p = 0.20]). In the SPRINT-Twin without conditioning, th",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -1014,7 +1014,7 @@
       "sentence": "We confirmed the differences in the reported primary composite outcomes in the SPRINT and ACCORD trials, which included a significant reduction in cardiovascular events in SPRINT\u2019s intervention arm compared with control (hazard ratio 0.75 [0.64-0.89 95% CI, p < 0.001]) without a significant reduction in a similar primary composite outcome in ACCORD (hazard ratio 0.88 [0.73 to 1.06 95% CI, p = 0.20]).",
       "context_window": "outcome in ACCORD (hazard ratio 0.88 [0.73 to 1.06 95% CI, p = 0.20]). In the SPRINT-Twin without conditioning, the median haza",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
@@ -1068,10 +1068,10 @@
       "sentence": "In ( A ), orange squares are the hazard ratio of major cardiovascular outcome predicted for each twin run of ACCORD-conditioned SPRINT twins with 95% confidence intervals and in ( B ) the blue triangles are SPRINT-conditioned ACCORD twins.",
       "context_window": "d for each twin run of ACCORD-conditioned SPRINT twins with 95% confidence intervals and in ( B ) the blue triangles are SP",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13096652_a_novel_digital_twin_strategy_to_examine_the_implications_of-pct-12976",
@@ -1122,10 +1122,10 @@
       "sentence": "In ( A ), orange squares are the hazard ratio of major cardiovascular outcome predicted for each twin run of ACCORD-conditioned SPRINT twins with 95% confidence intervals and in ( B ) the blue triangles are SPRINT-conditioned ACCORD twins.",
       "context_window": "d for each twin run of ACCORD-conditioned SPRINT twins with 95% confidence intervals and in ( B ) the blue triangles are SP",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "incident cv event",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC13096652_a_novel_digital_twin_strategy_to_examine_the_implications_of-pct-14277",

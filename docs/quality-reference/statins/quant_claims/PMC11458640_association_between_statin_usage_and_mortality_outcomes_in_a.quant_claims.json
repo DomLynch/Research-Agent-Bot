@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC11458640_association_between_statin_usage_and_mortality_outcomes_in_a",
   "doi": "10.1007/s40520-024-02851-2",
-  "extracted_at": "2026-05-04T11:48:52+00:00",
+  "extracted_at": "2026-05-07T15:40:33+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "percentage": 5,
@@ -24,9 +24,9 @@
       "context_window": "sk of all-cause mortality (adjusted hazard ratio [HR] 1.01; 95% confidence interval [CI] 0.72-1.41; P = 0.960), as outlined",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11458640_association_between_statin_usage_and_mortality_outcomes_in_a-p-1000",
@@ -42,9 +42,9 @@
       "context_window": "rd ratio [HR] 1.01; 95% confidence interval [CI] 0.72-1.41; P = 0.960), as outlined in Model 3. In contrast, the group receiving",
       "claim_role": "effect",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC11458640_association_between_statin_usage_and_mortality_outcomes_in_a-p-1165",
@@ -60,7 +60,7 @@
       "context_window": "le decrease in all-cause mortality risk (adjusted HR, 0.77; P = 0.003). Nonetheless, both hydrophilic and lipophilic statins were",
       "claim_role": "unknown",
       "endpoint": "mortality",
-      "arm": "",
+      "arm": "rosuvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -131,10 +131,10 @@
       "sentence": "Dyslipidemia was defined for LDL > 130 mg/dL or HDL < 40 mg/dL, and was independent of the use of statins.",
       "context_window": "attack or stroke [ 19 ]. Dyslipidemia was defined for LDL > 130 mg/dL or HDL < 40 mg/dL, and was independent of the use of statin",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11458640_association_between_statin_usage_and_mortality_outcomes_in_a-u-2780",
@@ -149,10 +149,10 @@
       "sentence": "Dyslipidemia was defined for LDL > 130 mg/dL or HDL < 40 mg/dL, and was independent of the use of statins.",
       "context_window": "19 ]. Dyslipidemia was defined for LDL > 130 mg/dL or HDL < 40 mg/dL, and was independent of the use of statins. Diabetes was de",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "rosuvastatin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC11458640_association_between_statin_usage_and_mortality_outcomes_in_a-pct-2952",

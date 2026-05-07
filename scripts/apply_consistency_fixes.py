@@ -243,6 +243,63 @@ def _strip_orphan_inference_fragments(paper_md: str) -> tuple[str, int]:
     return cleaned, n
 
 
+_BRIDGE_SECTION_RE = re.compile(
+    r"^##\s+Inferential Bridge\b.*?\n(.*?)(?=^##\s+\w|\Z)",
+    re.DOTALL | re.MULTILINE,
+)
+_D1_TAG_RE = re.compile(
+    r"\[D1_[^\]]+\|\s*confidence=(low|medium|high)\]",
+    re.IGNORECASE,
+)
+_INLINE_NUMERIC_RE = re.compile(r"(?<![A-Za-z])(?:\d+(?:\.\d+)?|\d+\s*%)")
+
+
+def _valid_d1_block(block: str) -> bool:
+    if not _D1_TAG_RE.search(block):
+        return False
+    if any(t not in block for t in (
+        "[mechanism_anchor:", "[conservation:", "[testability:",
+    )):
+        return False
+    visible = re.sub(r"\[[^\]]+\]", "", block)
+    visible = re.sub(r"^\s*(?:\d+\.|\-)\s+", "", visible)
+    visible = re.sub(r"Existing human signal:.*?(?:\n|$)", "", visible)
+    return not _INLINE_NUMERIC_RE.search(visible)
+
+
+def _strip_invalid_inferential_bridge_claims(
+    paper_md: str,
+) -> tuple[str, int]:
+    match = _BRIDGE_SECTION_RE.search(paper_md)
+    if not match:
+        return paper_md, 0
+    body = match.group(1).strip()
+    if not body:
+        return paper_md, 0
+    blocks = [
+        b.strip()
+        for b in re.split(r"\n(?=\d+\.\s+|\-\s+)", body)
+        if re.match(r"^(?:\d+\.|\-)\s+", b.strip())
+    ]
+    kept: list[str] = []
+    n_removed = 0
+    for block in blocks:
+        if not _valid_d1_block(block):
+            n_removed += 1
+            continue
+        kept.append(re.sub(r"^\s*(?:\d+\.|\-)\s+", f"{len(kept) + 1}. ", block))
+    if not n_removed:
+        return paper_md, 0
+    if kept:
+        replacement = "## Inferential Bridge\n\n" + "\n\n".join(kept) + "\n\n"
+    else:
+        replacement = ""
+    cleaned = paper_md[:match.start()].rstrip() + "\n\n" + replacement
+    cleaned += paper_md[match.end():].lstrip()
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned, n_removed
+
+
 def _section_word_count(paper: str, heading: str) -> int:
     """Word count for one ## heading section (header line excluded)."""
     m = re.search(
@@ -331,6 +388,17 @@ def apply_fixes(
             "description": (
                 "stripped D1 inferential-bridge fragments that were "
                 "left outside an Inferential Bridge section"
+            ),
+        })
+
+    new_md, n_invalid_d1 = _strip_invalid_inferential_bridge_claims(new_md)
+    if n_invalid_d1:
+        log.append({
+            "fix_type": "invalid_inferential_bridge_claim_strip",
+            "n_changes": n_invalid_d1,
+            "description": (
+                "stripped Inferential Bridge claims missing required "
+                "Q14 tags or containing untraced numerics"
             ),
         })
 

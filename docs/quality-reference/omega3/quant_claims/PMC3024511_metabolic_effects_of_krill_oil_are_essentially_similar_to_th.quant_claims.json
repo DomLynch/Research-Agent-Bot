@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC3024511_metabolic_effects_of_krill_oil_are_essentially_similar_to_th",
   "doi": "10.1007/s11745-010-3490-4",
-  "extracted_at": "2026-05-05T21:47:03+00:00",
+  "extracted_at": "2026-05-07T15:40:43+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "sample_size": 3,
@@ -24,7 +24,7 @@
       "context_window": "o three groups and given either six capsules of krill oil ( N = 36; 3.0 g/day, EPA + DHA = 543 mg) or three capsules of fish o",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -42,7 +42,7 @@
       "context_window": "six capsules of krill oil ( N = 36; 3.0 g/day, EPA + DHA = 543 mg) or three capsules of fish oil ( N = 40; 1.8 g/day, EPA + D",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -60,7 +60,7 @@
       "context_window": "g/day, EPA + DHA = 543 mg) or three capsules of fish oil ( N = 40; 1.8 g/day, EPA + DHA = 864 mg) daily for 7 weeks. A third",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -78,7 +78,7 @@
       "context_window": "three capsules of fish oil ( N = 40; 1.8 g/day, EPA + DHA = 864 mg) daily for 7 weeks. A third group did not receive any suppl",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -96,7 +96,7 @@
       "context_window": "fish oil ( N = 40; 1.8 g/day, EPA + DHA = 864 mg) daily for 7 weeks. A third group did not receive any supplementation and serv",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -132,9 +132,9 @@
       "context_window": "n-3 PUFAs, even if the EPA + DHA dose in the krill oil was 62.8% of that in the fish oil. The online version of this articl",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3024511_metabolic_effects_of_krill_oil_are_essentially_similar_to_th-pct-2151",
@@ -168,7 +168,7 @@
       "context_window": "oil groups, and the control group differed significantly ( p = 0.001). Pairwise comparisons showed that the mean increase in ara",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "fish oil",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -186,7 +186,7 @@
       "context_window": "up increase in LDL-cholesterol seen in the fish oil group ( p = 0.039) was statistically significant. The tests comparing the dif",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -204,9 +204,9 @@
       "context_window": "on between baseline TG levels and change in TG levels after 7 weeks of intervention with krill oil or fish oil The changes in",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3024511_metabolic_effects_of_krill_oil_are_essentially_similar_to_th-u-227",
@@ -222,7 +222,7 @@
       "context_window": "with the control group following daily supplementation for 7 weeks. There was no statistically significant difference between",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -240,7 +240,7 @@
       "context_window": "and DHA. Since the subjects in the krill oil group received 62.8% of the total amount of n-3 PUFAs received by the subjects i",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -258,7 +258,7 @@
       "context_window": "In the study performed by Maki et al., plasma EPA increased 90% and DHA increased 51% from baseline levels. In the current",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -276,7 +276,7 @@
       "context_window": "by Maki et al., plasma EPA increased 90% and DHA increased 51% from baseline levels. In the current study EPA increased 14",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -294,7 +294,7 @@
       "context_window": "1% from baseline levels. In the current study EPA increased 146% and DHA increased 43% from baseline levels. The small discr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -312,7 +312,7 @@
       "context_window": ". In the current study EPA increased 146% and DHA increased 43% from baseline levels. The small discrepancy between these t",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -330,9 +330,9 @@
       "context_window": "nd DHA in the oils used, different treatment time (7 versus 4 weeks), and different dose used (3 g oil versus 2 g). It has been",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3024511_metabolic_effects_of_krill_oil_are_essentially_similar_to_th-u-1613",
@@ -348,9 +348,9 @@
       "context_window": "ek [ 9 ]. This recommendation will provide the order of 250-500 mg EPA + DHA per day [ 19 ]. In the present study we have show",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3024511_metabolic_effects_of_krill_oil_are_essentially_similar_to_th-u-1727",
@@ -366,9 +366,9 @@
       "context_window": "we have shown that daily intake of 3 g krill oil containing 543 mg EPA + DHA increases the plasma level of EPA and DHA to the",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3024511_metabolic_effects_of_krill_oil_are_essentially_similar_to_th-u-1838",
@@ -384,9 +384,9 @@
       "context_window": "and DHA to the same extent as intake of fish oil containing 864 mg EPA + DHA. A food-based approach for achieving adequate int",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "epa",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC3024511_metabolic_effects_of_krill_oil_are_essentially_similar_to_th-pct-3262",
@@ -402,7 +402,7 @@
       "context_window": "y higher in the krill oil group than in the fish oil group (8.7% versus 3.2%), although not significantly so ( p = 0.061). C",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -420,7 +420,7 @@
       "context_window": "the krill oil group than in the fish oil group (8.7% versus 3.2%), although not significantly so ( p = 0.061). Compared with",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -438,7 +438,7 @@
       "context_window": "l group (8.7% versus 3.2%), although not significantly so ( p = 0.061). Compared with fish oil, krill oil contains a high amount",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -456,7 +456,7 @@
       "context_window": "the changes in the plasma fatty acid composition following 7 weeks of intervention with n-3 PUFAs showed that the levels of ar",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "fish oil",
       "direction": "increase",
       "binding_confidence": "partial"
     }

@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit",
   "doi": "10.3390/medicina61081484",
-  "extracted_at": "2026-05-05T15:32:42+00:00",
+  "extracted_at": "2026-05-07T15:40:35+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 23,
@@ -24,10 +24,10 @@
       "sentence": "Adults aged \u226540 years with at least one LDL-C measurement in 2023 and no documented cancer diagnosis were included.",
       "context_window": "re Information System (ESPBI IS) in Lithuania. Adults aged \u226540 years with at least one LDL-C measurement in 2023 and no document",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-666",
@@ -42,10 +42,10 @@
       "sentence": "The primary outcome was the proportion of patients achieving LDL-C < 1.8 mmol/L, the target recommended by the European Society of Cardiology guidelines for high-risk individuals.",
       "context_window": "ry outcome was the proportion of patients achieving LDL-C < 1.8 mmol/L, the target recommended by the European Society of Cardio",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-952",
@@ -78,10 +78,10 @@
       "sentence": "The mean LDL-C concentration was 3.32 mmol/L, and only 8.1% of patients achieved LDL-C < 1.8 mmol/L.",
       "context_window": "ts (mean age, 66.9 years). The mean LDL-C concentration was 3.32 mmol/L, and only 8.1% of patients achieved LDL-C < 1.8 mmol/L. T",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-1020",
@@ -96,10 +96,10 @@
       "sentence": "The mean LDL-C concentration was 3.32 mmol/L, and only 8.1% of patients achieved LDL-C < 1.8 mmol/L.",
       "context_window": "rs). The mean LDL-C concentration was 3.32 mmol/L, and only 8.1% of patients achieved LDL-C < 1.8 mmol/L. Target achievement",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-1054",
@@ -114,10 +114,10 @@
       "sentence": "The mean LDL-C concentration was 3.32 mmol/L, and only 8.1% of patients achieved LDL-C < 1.8 mmol/L.",
       "context_window": "was 3.32 mmol/L, and only 8.1% of patients achieved LDL-C < 1.8 mmol/L. Target achievement was higher among patients in the seco",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-1181",
@@ -187,9 +187,9 @@
       "context_window": "rapy (LLT). Statin monotherapy was the most prescribed LLT (31.3%), while only 2.7% of patients received statin and ezetimibe",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-1337",
@@ -205,9 +205,9 @@
       "context_window": "monotherapy was the most prescribed LLT (31.3%), while only 2.7% of patients received statin and ezetimibe combination. In l",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "statin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-1656",
@@ -222,8 +222,8 @@
       "sentence": "Compared to patients not receiving LLT, the odds of achieving LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monotherapy (odds ratio [OR]: 3.153, 95% confidence interval [CI]: 3.069-3.240), statin and ezetimibe (OR: 7.631, 95% CI: 7.267-8.013), or statin and antihypertensive (OR: 3.945, 95% CI: 3.803-4.092).",
       "context_window": "o patients not receiving LLT, the odds of achieving LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monot",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -240,8 +240,8 @@
       "sentence": "Compared to patients not receiving LLT, the odds of achieving LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monotherapy (odds ratio [OR]: 3.153, 95% confidence interval [CI]: 3.069-3.240), statin and ezetimibe (OR: 7.631, 95% CI: 7.267-8.013), or statin and antihypertensive (OR: 3.945, 95% CI: 3.803-4.092).",
       "context_window": "those receiving statin monotherapy (odds ratio [OR]: 3.153, 95% confidence interval [CI]: 3.069-3.240), statin and ezetimib",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -258,8 +258,8 @@
       "sentence": "Compared to patients not receiving LLT, the odds of achieving LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monotherapy (odds ratio [OR]: 3.153, 95% confidence interval [CI]: 3.069-3.240), statin and ezetimibe (OR: 7.631, 95% CI: 7.267-8.013), or statin and antihypertensive (OR: 3.945, 95% CI: 3.803-4.092).",
       "context_window": "nfidence interval [CI]: 3.069-3.240), statin and ezetimibe (OR: 7.631, 95% CI: 7.267-8.013), or statin and antihypertensive (OR:",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -277,8 +277,8 @@
       "sentence": "Compared to patients not receiving LLT, the odds of achieving LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monotherapy (odds ratio [OR]: 3.153, 95% confidence interval [CI]: 3.069-3.240), statin and ezetimibe (OR: 7.631, 95% CI: 7.267-8.013), or statin and antihypertensive (OR: 3.945, 95% CI: 3.803-4.092).",
       "context_window": "terval [CI]: 3.069-3.240), statin and ezetimibe (OR: 7.631, 95% CI: 7.267-8.013), or statin and antihypertensive (OR: 3.945, 95% CI: 3.803-",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -295,8 +295,8 @@
       "sentence": "Compared to patients not receiving LLT, the odds of achieving LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monotherapy (odds ratio [OR]: 3.153, 95% confidence interval [CI]: 3.069-3.240), statin and ezetimibe (OR: 7.631, 95% CI: 7.267-8.013), or statin and antihypertensive (OR: 3.945, 95% CI: 3.803-4.092).",
       "context_window": ".631, 95% CI: 7.267-8.013), or statin and antihypertensive (OR: 3.945, 95% CI: 3.803-4.092). Conclusions : LDL-C target attainmen",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -314,8 +314,8 @@
       "sentence": "Compared to patients not receiving LLT, the odds of achieving LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monotherapy (odds ratio [OR]: 3.153, 95% confidence interval [CI]: 3.069-3.240), statin and ezetimibe (OR: 7.631, 95% CI: 7.267-8.013), or statin and antihypertensive (OR: 3.945, 95% CI: 3.803-4.092).",
       "context_window": "I: 7.267-8.013), or statin and antihypertensive (OR: 3.945, 95% CI: 3.803-4.092). Conclusions : LDL-C target attainment remains low in Lith",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -332,10 +332,10 @@
       "sentence": "Recognizing the contribution of LDL-C levels in the development of atherosclerotic CVD, the current European Society of Cardiology/European Atherosclerosis Society (ESC/EAS) and ESC guidelines recommend LDL-C goals tailored to individual cardiovascular risk, i.e., reduction of at least 50% from baseline LDL-C levels, with absolute targets set at <1.4 mmol/L for individuals at very high cardiovascular risk, <1.8 mmol/L for those at high risk, <2.6 mmol/L for those at moderate risk, and <3.0 mmol/L for those at low risk [ 2 , 9 ].",
       "context_window": "individual cardiovascular risk, i.e., reduction of at least 50% from baseline LDL-C levels, with absolute targets set at <1",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-1059",
@@ -350,10 +350,10 @@
       "sentence": "Recognizing the contribution of LDL-C levels in the development of atherosclerotic CVD, the current European Society of Cardiology/European Atherosclerosis Society (ESC/EAS) and ESC guidelines recommend LDL-C goals tailored to individual cardiovascular risk, i.e., reduction of at least 50% from baseline LDL-C levels, with absolute targets set at <1.4 mmol/L for individuals at very high cardiovascular risk, <1.8 mmol/L for those at high risk, <2.6 mmol/L for those at moderate risk, and <3.0 mmol/L for those at low risk [ 2 , 9 ].",
       "context_window": "% from baseline LDL-C levels, with absolute targets set at <1.4 mmol/L for individuals at very high cardiovascular risk, <1.8 mm",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-1121",
@@ -368,10 +368,10 @@
       "sentence": "Recognizing the contribution of LDL-C levels in the development of atherosclerotic CVD, the current European Society of Cardiology/European Atherosclerosis Society (ESC/EAS) and ESC guidelines recommend LDL-C goals tailored to individual cardiovascular risk, i.e., reduction of at least 50% from baseline LDL-C levels, with absolute targets set at <1.4 mmol/L for individuals at very high cardiovascular risk, <1.8 mmol/L for those at high risk, <2.6 mmol/L for those at moderate risk, and <3.0 mmol/L for those at low risk [ 2 , 9 ].",
       "context_window": "4 mmol/L for individuals at very high cardiovascular risk, <1.8 mmol/L for those at high risk, <2.6 mmol/L for those at moderate",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-1157",
@@ -386,10 +386,10 @@
       "sentence": "Recognizing the contribution of LDL-C levels in the development of atherosclerotic CVD, the current European Society of Cardiology/European Atherosclerosis Society (ESC/EAS) and ESC guidelines recommend LDL-C goals tailored to individual cardiovascular risk, i.e., reduction of at least 50% from baseline LDL-C levels, with absolute targets set at <1.4 mmol/L for individuals at very high cardiovascular risk, <1.8 mmol/L for those at high risk, <2.6 mmol/L for those at moderate risk, and <3.0 mmol/L for those at low risk [ 2 , 9 ].",
       "context_window": "h cardiovascular risk, <1.8 mmol/L for those at high risk, <2.6 mmol/L for those at moderate risk, and <3.0 mmol/L for those at",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-1201",
@@ -404,10 +404,10 @@
       "sentence": "Recognizing the contribution of LDL-C levels in the development of atherosclerotic CVD, the current European Society of Cardiology/European Atherosclerosis Society (ESC/EAS) and ESC guidelines recommend LDL-C goals tailored to individual cardiovascular risk, i.e., reduction of at least 50% from baseline LDL-C levels, with absolute targets set at <1.4 mmol/L for individuals at very high cardiovascular risk, <1.8 mmol/L for those at high risk, <2.6 mmol/L for those at moderate risk, and <3.0 mmol/L for those at low risk [ 2 , 9 ].",
       "context_window": "at high risk, <2.6 mmol/L for those at moderate risk, and <3.0 mmol/L for those at low risk [ 2 , 9 ]. These goals are to be ac",
       "claim_role": "background",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-1092",
@@ -422,10 +422,10 @@
       "sentence": "The study population included adult patients (aged \u226540 years) with at least one recorded measurement of LDL-C in the ESPBI IS database between 1 January 2023 and 31 December 2023.",
       "context_window": "uired. The study population included adult patients (aged \u226540 years) with at least one recorded measurement of LDL-C in the ESP",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-1730",
@@ -476,10 +476,10 @@
       "sentence": "The primary outcome was the proportion of patients achieving LDL-C concentration below 1.8 mmol/L, the target level recommended by the ESC guidelines for individuals at high cardiovascular risk [ 2 ].",
       "context_window": "proportion of patients achieving LDL-C concentration below 1.8 mmol/L, the target level recommended by the ESC guidelines for i",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-5209",
@@ -530,10 +530,10 @@
       "sentence": "A total of 396,835 patients aged \u226540 years with at least one recorded LDL-C measurement in 2023 and no documented cancer diagnosis were included in the analysis.",
       "context_window": "A total of 396,835 patients aged \u226540 years with at least one recorded LDL-C measurement in 2023 and no",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-233",
@@ -656,10 +656,10 @@
       "sentence": "The mean LDL-C concentration was 3.32 (1.14) mmol/L, and overall, only 8.1% of patients achieved an LDL-C of <1.8 mmol/L ( Table 1 ).",
       "context_window": "L-C concentration was 3.32 (1.14) mmol/L, and overall, only 8.1% of patients achieved an LDL-C of <1.8 mmol/L ( Table 1 ). T",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-1351",
@@ -674,10 +674,10 @@
       "sentence": "The mean LDL-C concentration was 3.32 (1.14) mmol/L, and overall, only 8.1% of patients achieved an LDL-C of <1.8 mmol/L ( Table 1 ).",
       "context_window": "L, and overall, only 8.1% of patients achieved an LDL-C of <1.8 mmol/L ( Table 1 ). Table 3 presents the proportion of patients",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-1582",
@@ -728,10 +728,10 @@
       "sentence": "In the secondary CVD prevention group, patients at very high cardiovascular risk had the highest rate of achieving an LDL-C level of <1.8 mmol/L (26.2%).",
       "context_window": "r risk had the highest rate of achieving an LDL-C level of <1.8 mmol/L (26.2%). The proportion of patients meeting the LDL-C tar",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-1745",
@@ -746,10 +746,10 @@
       "sentence": "In the secondary CVD prevention group, patients at very high cardiovascular risk had the highest rate of achieving an LDL-C level of <1.8 mmol/L (26.2%).",
       "context_window": "he highest rate of achieving an LDL-C level of <1.8 mmol/L (26.2%). The proportion of patients meeting the LDL-C target incre",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-2118",
@@ -764,10 +764,10 @@
       "sentence": "To further explore the factors associated with achieving LDL-C levels below 1.8 mmol/L, univariate logistic regression analysis was performed.",
       "context_window": "re the factors associated with achieving LDL-C levels below 1.8 mmol/L, univariate logistic regression analysis was performed. I",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-p-2250",
@@ -782,7 +782,7 @@
       "sentence": "It showed that achieving the LDL-C target was significantly (all p < 0.001) associated with being in the secondary CVD prevention group, having more frequent cardiologist consultations and more frequent LLT prescriptions ( Table 3 ).",
       "context_window": "owed that achieving the LDL-C target was significantly (all p < 0.001) associated with being in the secondary CVD prevention grou",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -800,8 +800,8 @@
       "sentence": "Compared to patients not receiving LLT, the odds of achieving an LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monotherapy (OR 3.153, 95% CI 3.069-3.240), statin in free or fixed combination with ezetimibe (OR 7.631, 95% CI 7.267-8.013), or statin in FDC with an antihypertensive agent (OR 3.945, 95% CI 3.803-4.092).",
       "context_window": "atients not receiving LLT, the odds of achieving an LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monot",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -819,8 +819,8 @@
       "sentence": "Compared to patients not receiving LLT, the odds of achieving an LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monotherapy (OR 3.153, 95% CI 3.069-3.240), statin in free or fixed combination with ezetimibe (OR 7.631, 95% CI 7.267-8.013), or statin in FDC with an antihypertensive agent (OR 3.945, 95% CI 3.803-4.092).",
       "context_window": "tly higher in those receiving statin monotherapy (OR 3.153, 95% CI 3.069-3.240), statin in free or fixed combination with ezetimibe (OR 7.",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -838,8 +838,8 @@
       "sentence": "Compared to patients not receiving LLT, the odds of achieving an LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monotherapy (OR 3.153, 95% CI 3.069-3.240), statin in free or fixed combination with ezetimibe (OR 7.631, 95% CI 7.267-8.013), or statin in FDC with an antihypertensive agent (OR 3.945, 95% CI 3.803-4.092).",
       "context_window": "atin in free or fixed combination with ezetimibe (OR 7.631, 95% CI 7.267-8.013), or statin in FDC with an antihypertensive agent (OR 3.945",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -857,8 +857,8 @@
       "sentence": "Compared to patients not receiving LLT, the odds of achieving an LDL-C < 1.8 mmol/L were significantly higher in those receiving statin monotherapy (OR 3.153, 95% CI 3.069-3.240), statin in free or fixed combination with ezetimibe (OR 7.631, 95% CI 7.267-8.013), or statin in FDC with an antihypertensive agent (OR 3.945, 95% CI 3.803-4.092).",
       "context_window": "or statin in FDC with an antihypertensive agent (OR 3.945, 95% CI 3.803-4.092).",
       "claim_role": "unknown",
-      "endpoint": "",
-      "arm": "",
+      "endpoint": "ldl cholesterol",
+      "arm": "statin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -875,10 +875,10 @@
       "sentence": "In this nationwide retrospective analysis of health data, only 8.1% of patients aged \u226540 years achieved an LDL-C level of <1.8 mmol/L.",
       "context_window": "this nationwide retrospective analysis of health data, only 8.1% of patients aged \u226540 years achieved an LDL-C level of <1.8",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-86",
@@ -893,10 +893,10 @@
       "sentence": "In this nationwide retrospective analysis of health data, only 8.1% of patients aged \u226540 years achieved an LDL-C level of <1.8 mmol/L.",
       "context_window": "ective analysis of health data, only 8.1% of patients aged \u226540 years achieved an LDL-C level of <1.8 mmol/L. LDL-C target achiev",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-123",
@@ -911,10 +911,10 @@
       "sentence": "In this nationwide retrospective analysis of health data, only 8.1% of patients aged \u226540 years achieved an LDL-C level of <1.8 mmol/L.",
       "context_window": "8.1% of patients aged \u226540 years achieved an LDL-C level of <1.8 mmol/L. LDL-C target achievement was markedly higher in the seco",
       "claim_role": "population",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-260",
@@ -929,7 +929,7 @@
       "sentence": "LDL-C target achievement was markedly higher in the secondary CVD prevention group compared to the primary prevention group (20.6% vs.",
       "context_window": "prevention group compared to the primary prevention group (20.6% vs. 7.3%), reflecting a more intensive treatment approach i",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "increase",
       "binding_confidence": "partial"
@@ -965,10 +965,10 @@
       "sentence": "Recently published results from a single primary-healthcare center in Lithuania similarly reported LDL-C <1.8 mmol/L in only 4.6% of patients with dyslipidemia and in 23.8% of those with both dyslipidemia and CVD [ 18 ].",
       "context_window": "ry-healthcare center in Lithuania similarly reported LDL-C <1.8 mmol/L in only 4.6% of patients with dyslipidemia and in 23.8% o",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-486",
@@ -983,10 +983,10 @@
       "sentence": "Recently published results from a single primary-healthcare center in Lithuania similarly reported LDL-C <1.8 mmol/L in only 4.6% of patients with dyslipidemia and in 23.8% of those with both dyslipidemia and CVD [ 18 ].",
       "context_window": "r in Lithuania similarly reported LDL-C <1.8 mmol/L in only 4.6% of patients with dyslipidemia and in 23.8% of those with bo",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-528",
@@ -1001,10 +1001,10 @@
       "sentence": "Recently published results from a single primary-healthcare center in Lithuania similarly reported LDL-C <1.8 mmol/L in only 4.6% of patients with dyslipidemia and in 23.8% of those with both dyslipidemia and CVD [ 18 ].",
       "context_window": ".8 mmol/L in only 4.6% of patients with dyslipidemia and in 23.8% of those with both dyslipidemia and CVD [ 18 ]. Despite th",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-1751",
@@ -1020,7 +1020,7 @@
       "context_window": "of all patients were not prescribed any LLT, and fewer than 3% of patients received the combination therapy with statins a",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -1038,7 +1038,7 @@
       "context_window": "ven lower than those reported in the SANTORINI study, where 22% of patients had no documented LLT and 24% received combinat",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1056,7 +1056,7 @@
       "context_window": "RINI study, where 22% of patients had no documented LLT and 24% received combination LLT [ 26 ], and the DA VINCI study, wh",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1074,7 +1074,7 @@
       "context_window": "eived combination LLT [ 26 ], and the DA VINCI study, where 9% of patients used statins in combination with ezetimibe [ 22",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "atorvastatin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -1181,10 +1181,10 @@
       "sentence": "First, we applied a uniform LDL-C target of 1.8 mmol/L to all patients, regardless of individual CVD risk.",
       "context_window": "e acknowledged. First, we applied a uniform LDL-C target of 1.8 mmol/L to all patients, regardless of individual CVD risk. This",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-pct-44",
@@ -1199,10 +1199,10 @@
       "sentence": "This nationwide analysis revealed that only 8.1% of patients achieved the LDL-C target of <1.8 mmol/L, with a low overall use of LLT.",
       "context_window": "This nationwide analysis revealed that only 8.1% of patients achieved the LDL-C target of <1.8 mmol/L, with",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC12388585_low_density_lipoprotein_cholesterol_target_attainment_in_lit-u-91",
@@ -1217,10 +1217,10 @@
       "sentence": "This nationwide analysis revealed that only 8.1% of patients achieved the LDL-C target of <1.8 mmol/L, with a low overall use of LLT.",
       "context_window": "ed that only 8.1% of patients achieved the LDL-C target of <1.8 mmol/L, with a low overall use of LLT. Target attainment was hig",
       "claim_role": "unknown",
-      "endpoint": "",
+      "endpoint": "ldl cholesterol",
       "arm": "",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }
