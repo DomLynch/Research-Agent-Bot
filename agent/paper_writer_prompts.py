@@ -1,49 +1,17 @@
-"""LLM system prompts for the full-paper writer (Day 10.16 +
-Refactor 2026-05-04 generic-multi-topic).
-
-Per-section prompts produce 5-15k-word publishable artifacts. Each
-section has a designated validation tier:
-  - ANCHORED  — every sentence must cite a receipt_id
-  - SCOPED    — unanchored allowed but must be topic-relevant + hedged
-  - DETERMINISTIC — rendered from pipeline constants, no LLM call
-
-Design: prompts are explicit about word targets, paragraph structure,
-and integration patterns. Past LLM behavior on this corpus shows that
-without explicit minimum-paragraph and minimum-sentence-per-paragraph
-constraints, the model defaults to bullet-list mode (the bug that
-Day 10.16 is fixing).
-
-Refactor 2026-05-04: prompts now use `{topic}` and `{drug_class}`
-placeholders instead of hardcoded "metformin" text. Callers must
-format the prompts via `format_prompts_for_topic(topic_pack)` before
-passing to the LLM. This fixes the topic-contamination class of bugs
-where metformin-specific paragraph instructions were polluting
-rapamycin/statins/GLP-1 outputs.
-"""
+"""LLM system prompts for generic multi-topic full-paper sections."""
 from __future__ import annotations
 
-__all__ = [
-    "NUMERIC_DISCIPLINE_RULE",
-    "ABSTRACT_SYSTEM_PROMPT_TEMPLATE",
-    "INTRODUCTION_SYSTEM_PROMPT_TEMPLATE",
-    "BACKGROUND_SYSTEM_PROMPT_TEMPLATE",
-    "RESULTS_SYSTEM_PROMPT_TEMPLATE",
-    "CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE",
-    "DISCUSSION_SYSTEM_PROMPT_TEMPLATE",
-    "LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE",
-    "CONCLUSION_SYSTEM_PROMPT_TEMPLATE",
-    # Backward-compat aliases (default to "the drug")
-    "ABSTRACT_SYSTEM_PROMPT",
-    "INTRODUCTION_SYSTEM_PROMPT",
-    "BACKGROUND_SYSTEM_PROMPT",
-    "RESULTS_SYSTEM_PROMPT",
-    "CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT",
-    "DISCUSSION_SYSTEM_PROMPT",
-    "LIMITATIONS_FULL_SYSTEM_PROMPT",
-    "CONCLUSION_SYSTEM_PROMPT",
-    # Formatter
-    "format_prompts_for_topic",
-]
+__all__ = (
+    "NUMERIC_DISCIPLINE_RULE", "ABSTRACT_SYSTEM_PROMPT_TEMPLATE",
+    "INTRODUCTION_SYSTEM_PROMPT_TEMPLATE", "BACKGROUND_SYSTEM_PROMPT_TEMPLATE",
+    "RESULTS_SYSTEM_PROMPT_TEMPLATE", "CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE",
+    "DISCUSSION_SYSTEM_PROMPT_TEMPLATE", "LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE",
+    "CONCLUSION_SYSTEM_PROMPT_TEMPLATE", "ABSTRACT_SYSTEM_PROMPT",
+    "INTRODUCTION_SYSTEM_PROMPT", "BACKGROUND_SYSTEM_PROMPT",
+    "RESULTS_SYSTEM_PROMPT", "CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT",
+    "DISCUSSION_SYSTEM_PROMPT", "LIMITATIONS_FULL_SYSTEM_PROMPT",
+    "CONCLUSION_SYSTEM_PROMPT", "format_prompts_for_topic",
+)
 
 
 # Fix #17: shared hard rule prepended to EVERY section prompt below.
@@ -59,46 +27,23 @@ NUMERIC_DISCIPLINE_RULE = """\
 ================================================================
 HARD NUMERIC DISCIPLINE (load-bearing, ship-blocking if violated)
 ================================================================
-- You may use ONLY two kinds of numerics:
-  (a) Values that appear in the supplied receipts (corpus evidence
-      — e.g. p-values, hazard ratios, percentages from the bound
-      claims you are given).
-  (b) Canonical clinical thresholds that come WITH their canonical
-      Author-Year citation, used as background context — and ONLY
-      when the citation token (e.g. "Studenski 2011", "Cesari 2009",
-      "Cruz-Jentoft 2019") appears in the SAME SENTENCE as the
-      numeric.
-- You MUST NOT write a numeric from your training-data world
-  knowledge without it being in (a) or (b). Examples of forbidden
-  uses: "0.8 m/s frailty cutoff", "95% sensitivity", "1500 mg
-  standard dose" — none of these are admissible unless the
-  corresponding number is in the provided receipts OR you cite
-  the canonical source in the same sentence.
-- If you want to make a contextual point that requires a number you
-  cannot trace, describe it qualitatively without a number ("walk
-  speed below clinical thresholds is associated with frailty" —
-  fine; "walk speed below 0.7 m/s is associated with frailty" —
-  forbidden without citation).
-- Citation tokens for background context use the form "Author Year"
-  or "Author et al. Year" (e.g. "Studenski 2011", "Cruz-Jentoft
-  et al. 2019"). Do NOT invent citations.
+- You may use ONLY (a) values present in the supplied receipts or (b)
+  canonical clinical thresholds with their Author-Year citation in the SAME
+  SENTENCE as the numeric, e.g. "Studenski 2011", "Cesari 2009",
+  "Cruz-Jentoft 2019".
+- Never add training-data numerics. Forbidden unless covered by (a) or (b):
+  "0.8 m/s frailty cutoff", "95% sensitivity", "1500 mg standard dose".
+- If a contextual point needs an untraceable number, say it qualitatively.
+- If using editorial numeric phrasing ("approximately one-third", "roughly
+  half", "around 10%", "more than 20%"), include the exact registry value
+  inline, e.g. "approximately one-third (31%)".
+- Do NOT invent citations. Background citation tokens use "Author Year" or
+  "Author et al. Year".
 
-ACTIVE NUMERIC TARGET (paired with the forbidden-fabrication rules
-above; the two together = use the corpus, don't invent):
-- Final-paper target: ≥8 reportable numerics per 1000 body words.
-  "Reportable" = percentages, p-values, HR/OR/RR ratios, sample
-  sizes (n=...), doses (mg/g/mL), follow-up durations, effect-size
-  CIs. The audit measures this and gates ship-blocking on density
-  below the threshold.
-- Practical translation: every Results / Discussion / Background
-  paragraph should ground at least one quantitative claim with a
-  receipt-traced value. A paragraph that reads as pure prose
-  without a single numeric is almost certainly under-using the
-  receipts. Reach back into the bound-claims input — the writer
-  has more numeric ammunition than it tends to spend.
-- Sparse paragraphs are not neutral; they signal under-evidenced
-  prose and trigger a re-render at audit time. Bias toward
-  including a corpus numeric over omitting one.
+ACTIVE NUMERIC TARGET: ≥8 reportable numerics per 1000 body words.
+Reportable = percentages, p-values, HR/OR/RR, n=..., dose, follow-up, CI.
+Every Results / Discussion / Background paragraph should ground at least one
+receipt-traced quantitative claim when the receipts support it.
 ================================================================
 
 """
@@ -175,36 +120,17 @@ MUST:
     "{topic} prevents X") — frame as questions the field is asking
 
 REQUIRED STRUCTURE (write all 6 paragraphs, each 6-9 sentences):
-  Paragraph 1: The clinical question — population aging,
-    metabolic dysfunction, healthspan vs lifespan, the
-    economic and human stakes of geroprotective intervention.
-    Why this matters now.
-  Paragraph 2: The geroscience hypothesis specifically — target
-    aging biology rather than individual diseases. Why
-    pharmacological intervention (vs lifestyle) might be needed.
-    The repurposing-vs-novel-development trade-off.
-  Paragraph 3: Why {topic} specifically — describe its drug
-    class ({drug_class}), the established mechanism of action as
-    relevant to aging biology, the regulatory + clinical
-    history, and any accessibility considerations (cost, dose
-    formulation, patent status). Reference specific mechanisms
-    and prior evidence ONLY as supplied in the receipts;
-    otherwise frame mechanism-class hypotheses qualitatively
-    without inventing numerics or specific trial names not in
-    the corpus.
-  Paragraph 4: What human RCT evidence exists — describe the
-    landscape of trials (sarcopenia, frailty, cognition,
-    cardiometabolic) including specific trials present in this
-    synthesis. CITE relevant trial receipts. Note endpoint
-    diversity and population heterogeneity.
-  Paragraph 5: The unresolved questions — mechanistic plausibility
-    vs functional translation, tradeoffs like blunted exercise
-    adaptation, population specificity (who benefits, who doesn't),
-    duration of treatment, dose-response.
-  Paragraph 6: The contribution this synthesis makes — integrating
-    across the corpus to surface cross-outcome tensions, applying
-    structured evidence weighting to distinguish strong from weak
-    findings, separating clinical from mechanistic endpoints.
+  P1 clinical question: aging, healthspan/lifespan, stakes, why now.
+  P2 geroscience hypothesis: target aging biology, intervention logic,
+     repurposing vs novel development.
+  P3 why {topic}: drug class ({drug_class}), mechanism, regulatory/clinical
+     history, access; use only receipt-grounded specifics.
+  P4 human RCT landscape: trial types present, endpoints, population
+     heterogeneity; cite relevant receipts.
+  P5 unresolved questions: mechanism/function translation, tradeoffs,
+     population specificity, duration, dose-response.
+  P6 contribution: cross-outcome tensions, structured evidence weighting,
+     clinical vs mechanistic separation.
 
 Each paragraph MUST be a full multi-sentence paragraph. Do not output
 single-sentence "paragraphs." Aim for 100-200 words per paragraph.
@@ -243,30 +169,15 @@ here. The same SCOPED rules apply: topic mentions ≥2x per paragraph,
 hedge phrase present, no novel numerics.
 
 REQUIRED STRUCTURE (5 paragraphs, each 6-9 sentences, 100-200 words):
-  Paragraph 1: Geroscience as a discipline — its history,
-    rationale for target-aging-not-disease, the hallmarks-of-
-    aging framework, and the regulatory implications. Cite
-    review receipts.
-  Paragraph 2: {topic}'s preclinical longevity / disease-model
-    profile — animal models, molecular mechanisms relevant to
-    its drug class ({drug_class}), and the cellular or organ-
-    system phenotypes that motivate aging-relevant claims.
-    Reference mechanisms only when grounded in receipts; do NOT
-    fabricate pathway claims.
-  Paragraph 3: {topic}'s human evidence base — clinical
-    populations where it has been studied (primary indications,
-    secondary aging-relevant findings), early-stage human
-    mechanistic or biomarker RCTs, and the translation questions
-    they raise. Cite specific receipts.
-  Paragraph 4: The clinical-trial landscape relevant to this
-    synthesis — describe the canonical trials in 2-3 sentences
-    each (their populations, primary endpoints, durations).
-    Include both accepted and quarantined receipts.
-  Paragraph 5: Open methodological questions — endpoint choice
-    (functional vs surrogate vs molecular), population
-    heterogeneity (diabetic vs non-diabetic, baseline frailty),
-    the mechanism-to-clinic gap, treatment duration, and
-    interactions with concurrent interventions like exercise.
+  P1 geroscience discipline, hallmarks framework, regulatory implications.
+  P2 {topic} preclinical/disease-model profile and {drug_class} mechanisms;
+     only receipt-grounded pathway claims.
+  P3 human evidence base: clinical populations, mechanistic/biomarker RCTs,
+     translation questions; cite specific receipts.
+  P4 clinical-trial landscape: canonical trials, populations, endpoints,
+     durations; include accepted and quarantined receipts.
+  P5 methods questions: endpoints, heterogeneity, mechanism-to-clinic gap,
+     treatment duration, concurrent interventions.
 
 Output JSON only. No prose outside the JSON."""
 
@@ -306,28 +217,12 @@ Validation tier: ANCHORED. EVERY paragraph must cite ≥1 receipt_id.
 The validator drops uncited paragraphs entirely.
 
 REQUIRED PER-SUBSECTION STRUCTURE (4 paragraphs minimum):
-  Paragraph 1 — Trial summary: describe the trial(s) anchoring
-    this outcome class. Population, design, duration, primary
-    endpoint, dose. Specific to the receipts cited.
-  Paragraph 2 — Quantitative findings: effect sizes, p-values,
-    confidence intervals, percentage changes from receipts —
-    exactly as they appear, no rounding or paraphrasing.
-  Paragraph 3 — Mechanistic context: how this outcome relates
-    to the molecular pathways described in the corpus
-    (mitochondrial respiration, AMPK, pyruvate metabolism,
-    DNA repair, etc.). Distinguish clinical-RCT, mechanistic-RCT,
-    and preclinical evidence using HUMAN-READABLE labels (e.g. "in
-    the clinical RCT", "in mechanistic human studies", "preclinical
-    data suggest...") — do NOT use internal labels like
-    `A1_clinical_RCT` or `C1_preclinical` verbatim.
-  Paragraph 4 — Within-corpus tensions: if any accepted receipts
-    disagree, name the disagreement using receipt names directly
-    (e.g. "Walton 2019 reports negative muscle-function effects;
-    Vujović 2026 reviews mechanistic effects that would predict
-    benefit"). Do NOT use pipeline-internal terminology like
-    "SPAR-rejected", "SPAR quarantine", "rejected evidence" —
-    those phrases describe machinery the v0.6 quant-claim adapter
-    does NOT run.
+  P1 trial summary: population, design, duration, endpoint, dose.
+  P2 quantitative findings: exact receipt values only; no rounding.
+  P3 mechanism: relate outcome to corpus pathways; use human-readable labels
+     ("clinical RCT", "mechanistic human studies", "preclinical data").
+  P4 within-corpus tensions: name disagreements by receipt name; do NOT use
+     "SPAR-rejected", "SPAR quarantine", "rejected evidence", or machinery prose.
 
 Rules:
 1. Cite ≥1 receipt_id in EVERY paragraph; multiple receipts when
@@ -628,12 +523,7 @@ CONCLUSION_SYSTEM_PROMPT_TEMPLATE = (
 # any other curly braces in template text are escaped as {{ / }}.
 
 def _fill(template: str, topic: str, drug_class: str) -> str:
-    """Substitute the {topic} and {drug_class} placeholders.
-
-    Uses .replace() not .format() because the templates contain
-    JSON-shape examples with literal {} braces that would trip
-    str.format(). .replace() only substitutes our exact tokens
-    and leaves all other braces untouched."""
+    """Substitute topic placeholders without touching JSON-shape braces."""
     return (
         template
         .replace("{topic}", topic)

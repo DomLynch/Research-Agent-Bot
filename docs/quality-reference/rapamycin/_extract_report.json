@@ -2,52 +2,334 @@
   "topic": "rapamycin",
   "retrieval_mode": "calibrated",
   "n_queries": 6,
-  "n_unique_candidates": 41,
-  "n_selected_for_fetch": 41,
-  "n_pmcid_resolved": 17,
-  "n_extracted": 14,
+  "n_unique_candidates": 135,
+  "n_selected_for_fetch": 135,
+  "n_pmcid_resolved": 80,
+  "n_abstract_fallback": 76,
+  "n_extracted": 135,
   "active_pools": [
-    "core",
-    "adjacent"
+    "adjacent",
+    "background",
+    "core"
   ],
   "active_pmcids": [
+    "PMC10086534",
+    "PMC10185870",
+    "PMC10781157",
+    "PMC11063183",
+    "PMC11316767",
     "PMC12074816",
     "PMC12226543",
+    "PMC12270913",
+    "PMC12391273",
+    "PMC12771342",
+    "PMC13082878",
+    "PMC2848616",
+    "PMC3021372",
     "PMC3181168",
     "PMC3191182",
+    "PMC3260807",
+    "PMC3306461",
+    "PMC3384435",
+    "PMC3434687",
+    "PMC3547521",
+    "PMC3582126",
     "PMC3643762",
+    "PMC3726163",
     "PMC3796212",
+    "PMC3824413",
+    "PMC3905076",
+    "PMC3998676",
+    "PMC4032600",
+    "PMC4040127",
+    "PMC4055856",
+    "PMC4093196",
+    "PMC4098908",
+    "PMC4207939",
+    "PMC4433347",
+    "PMC4498358",
+    "PMC4531069",
+    "PMC4599244",
+    "PMC4693453",
+    "PMC4906327",
     "PMC4906330",
+    "PMC4975851",
+    "PMC4996648",
+    "PMC5144999",
     "PMC5216691",
+    "PMC5242306",
+    "PMC5270685",
+    "PMC5371228",
     "PMC5385881",
+    "PMC5418203",
+    "PMC5506398",
+    "PMC5528636",
     "PMC5595695",
     "PMC5723685",
     "PMC5752566",
+    "PMC5811247",
     "PMC5869166",
+    "PMC6001891",
+    "PMC6262855",
     "PMC6343718",
+    "PMC6351839",
+    "PMC6417920",
+    "PMC6762017",
     "PMC6814615",
+    "PMC6925069",
+    "PMC6996961",
+    "PMC7069020",
+    "PMC7220376",
+    "PMC7486698",
+    "PMC7870298",
+    "PMC7892968",
+    "PMC8190242",
+    "PMC8245044",
+    "PMC8599537",
+    "PMC8805398",
+    "PMC9018781",
+    "PMC9278457",
+    "PMC9842044",
+    "PMC9886774",
     "PMC9889681",
     "PMC9983852"
   ],
   "active_paper_ids": [
+    "DOI_10_1002_bies_200900171_resveratrol_and_rapamycin_are_they_anti_aging_drugs",
+    "DOI_10_1002_biof_127_life_span_extension_by_resveratrol_rapamycin_and_metformin_t",
+    "DOI_10_1016_j_exger_2014_12_002_how_longevity_research_can_lead_to_therapies_for_alzheimer_s",
+    "DOI_10_1016_j_identj_2025_105735_tfna_rapamycin_targets_cgas_sting_to_alleviate_senile_osteop",
+    "DOI_10_1016_j_molonc_2013_12_014_prevention_of_bms_777607_induced_polyploidy_senescence_by_mt",
+    "DOI_10_1016_j_nbd_2020_104834_apoe_genotype_dependent_pharmacogenetic_responses_to_rapamyc",
+    "DOI_10_1039_d0bm00596g_rapamycin_plga_microparticles_prevent_senescence_sustain_car",
+    "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic",
+    "DOI_10_1088_1361_6528_aa57b3_cd9_monoclonal_antibody_conjugated_pegylated_liposomes_for_t",
+    "DOI_10_1093_gerona_glq178_rapamycin_but_not_resveratrol_or_simvastatin_extends_life_sp",
+    "DOI_10_1093_gerona_glv307_rapamycin_attenuates_age_associated_changes_in_tibialis_ante",
+    "DOI_10_1093_gerona_glw090_rapamycin_an_inhibitor_of_aging_emerges_from_the_soil_of_eas",
+    "DOI_10_1101_2021_05_28_446097_distinct_and_additive_effects_of_calorie_restriction_and_rap",
+    "DOI_10_1101_2022_02_18_481092_rapamycin_treatment_during_development_extends_lifespan_and",
+    "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains",
+    "DOI_10_1101_2023_06_12_544619_late_life_rapamycin_treatment_enhances_cardiomyocyte_relaxat",
+    "DOI_10_1101_2023_08_29_555421_rapamycin_mitigates_valproic_acid_induced_teratogenicity_in",
+    "DOI_10_1101_2024_01_26_577437_a_drug_cocktail_of_rapamycin_acarbose_and_phenylbutyrate_enh",
+    "DOI_10_1101_2024_02_19_24302922_evaluating_the_effect_of_rapamycin_treatment_in_alzheimer_s",
+    "DOI_10_1101_2024_05_14_594256_inhibition_of_mtorc1_by_rapamycin_results_in_feedback_activa",
+    "DOI_10_1101_2024_08_12_24311432_the_bioavailability_of_compounded_and_generic_rapamycin_in_n",
+    "DOI_10_1101_2024_08_21_24312372_safety_and_efficacy_of_rapamycin_on_healthspan_metrics_after",
+    "DOI_10_1101_2024_11_21_624614_single_cell_fluorescence_imaging_reveals_heterogeneity_in_se",
+    "DOI_10_1101_2025_03_10_642477_rapamycin_does_not_compromise_physical_performance_or_muscle",
+    "DOI_10_1101_2025_08_25_671822_the_gerotherapeutic_drugs_rapamycin_acarbose_and_phenylbutyr",
+    "DOI_10_1101_2025_09_12_675777_meta_analysis_reveals_reproducible_rapamycin_induced_shifts",
+    "DOI_10_1101_861369_rapamycin_rejuvenates_oral_health_in_aging_mice",
+    "DOI_10_1111_acel_12109_late_life_rapamycin_treatment_reverses_age_related_heart_dys",
+    "DOI_10_1111_acel_12194_rapamycin_mediated_lifespan_increase_in_mice_is_dose_and_sex",
+    "DOI_10_1111_acel_12203_altered_proteome_turnover_and_remodeling_by_short_term_calor",
+    "DOI_10_1111_j_1474_9726_2009_00509_x_increasing_longevity_through_caloric_restriction_or_rapamyci",
+    "DOI_10_1111_j_1474_9726_2011_00722_x_rapamycin_and_other_longevity_promoting_compounds_enhance_th",
+    "DOI_10_1111_j_1474_9726_2011_00791_x_lifelong_rapamycin_administration_ameliorates_age_dependent",
+    "DOI_10_1111_j_1474_9726_2012_00832_x_rapamycin_slows_aging_in_mice",
+    "DOI_10_1126_science_1244360_mtor_inhibition_alleviates_mitochondrial_disease_in_a_mouse",
+    "DOI_10_1126_scitranslmed_3002346_rapamycin_reverses_cellular_phenotypes_and_enhances_mutant_p",
+    "DOI_10_1126_scitranslmed_aar4289_rapamycin_and_alzheimer_s_disease_time_for_a_clinical_trial",
+    "DOI_10_1158_0008_5472_can_12_3516_radioresistant_cancer_cells_can_be_conditioned_to_enter_sene",
+    "DOI_10_1158_1557_3265_sabcs24_p3_06_27_abstract_p3_06_27_immunotherapy_and_pi3k_mtor_inhibition_com",
+    "DOI_10_1158_2159_8290_cd_12_0404_the_mtorc1_inhibitor_everolimus_prevents_and_treats_e_myc_ly",
+    "DOI_10_1172_jci64099_rapalogs_and_mtor_inhibitors_as_anti_aging_therapeutics",
+    "DOI_10_1172_jci67674_rapamycin_extends_murine_lifespan_but_has_limited_effects_on",
+    "DOI_10_1182_blood_2012_08_448290_murine_dendritic_cell_rapamycin_resistant_and_rictor_indepen",
+    "DOI_10_1242_jcs_133983_centenarian_lamins_rapamycin_targets_in_longevity",
+    "DOI_10_1681_asn_2004080660_rapamycin_markedly_slows_disease_progression_in_a_rat_model",
+    "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a",
+    "DOI_10_3389_fcell_2026_1745944_pi3k_mtor_inhibition_attenuates_cigarette_smoke_induced_sene",
+    "DOI_10_4161_auto_25879_prolonged_autophagy_by_mtor_inhibitor_leads_radioresistant_c",
+    "DOI_10_4161_cbt_7_3_5366_synergistic_effect_of_mtor_inhibitor_rapamycin_and_fluoroura",
+    "DOI_10_4161_cc_20882_suppression_of_replicative_senescence_by_rapamycin_in_rodent",
+    "DOI_10_4161_cc_27396_rapamycin_induces_pluripotent_genes_associated_with_avoidanc",
+    "DOI_10_4161_cc_27973_m_o_tor_of_pseudo_hypoxic_state_in_aging_rapamycin_to_the_re",
+    "DOI_10_4161_cc_8_12_8606_rapamycin_decelerates_cellular_senescence",
+    "DOI_10_4161_cc_9_10_11872_rapamycin_and_quasi_programmed_aging_four_years_later",
+    "HIT_cognition_age_and_rapamycin_effectiveness_downregulation_of_",
+    "HIT_effect_of_rapamycin_in_ovarian_aging",
+    "HIT_effect_of_rapamycin_to_improve_cardiac_function_in_frail_old",
+    "HIT_exercise_and_low_dose_rapamycin_in_older_adults_with_cad_car",
+    "HIT_impacts_of_mechanistic_target_of_rapamycin_mtor_inhibition_o",
+    "HIT_low_dose_sirolimus_in_people_with_post_acute_sequelae_of_cov",
+    "HIT_mtor_inhibitors_in_older_adults",
+    "HIT_participatory_evaluation_of_aging_with_rapamycin_for_longevi",
+    "HIT_rapalog_pharmacology_rap_pac_study",
+    "HIT_rapamycin_effects_on_alzheimer_s_and_cognitive_health",
+    "HIT_resistance_training_and_rapamycin_to_enhance_bone_formation_",
+    "HIT_safety_and_efficacy_of_sirolimus_for_hiv_reservoir_reduction",
+    "HIT_sirolimus_for_advanced_age_related_macular_degeneration",
+    "HIT_the_bioavailability_of_compounded_and_generic_rapamycin_in_n",
+    "HIT_the_role_of_sirolimus_in_preventing_functional_decline_in_ol",
+    "HIT_viaging_deceleration_trial_using_metformin_dasatinib_rapamyc",
+    "PMC10086534_age_related_changes_to_adipose_tissue_and_peripheral_neuropa",
+    "PMC10185870_rapamycin_treatment_increases_survival_autophagy_biomarkers_",
+    "PMC10781157_role_of_maraviroc_and_or_rapamycin_in_the_liver_of_il10_ko_m",
+    "PMC11063183_primary_prophylaxis_with_mtor_inhibitor_enhances_t_cell_effe",
+    "PMC11316767_calorie_restriction_and_rapamycin_distinctly_mitigate_aging_",
     "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte",
     "PMC12226543_rapamycin_for_longevity_the_pros_the_cons_and_future_perspec",
+    "PMC12270913_the_geroprotectors_trametinib_and_rapamycin_combine_additive",
+    "PMC12391273_rapamycin_coated_selenium_nanoparticles_relieve_oxidative_se",
+    "PMC12771342_rapamycin_preserves_cardiac_function_in_autoimmune_myocardit",
+    "PMC13082878_exercise_and_weekly_sirolimus_rapamycin_in_older_adults_rapa",
+    "PMC2848616_inhibition_of_mtor_by_rapamycin_abolishes_cognitive_deficits",
     "PMC3181168_progeria_rapamycin_and_normal_aging_recent_breakthrough",
     "PMC3191182_elimination_of_proliferating_cells_unmasks_the_shift_from_se",
+    "PMC3260807_ras_raf_mek_erk_and_pi3k_pten_akt_mtor_inhibitors_rationale_",
+    "PMC3384435_once_again_on_rapamycin_induced_insulin_resistance_and_longe",
     "PMC3796212_rapamycin_extends_life_and_health_span_because_it_slows_agin",
+    "PMC3824413_rapamycin_suppresses_brain_aging_in_senescence_accelerated_o",
+    "PMC4093196_rapamycin_rescues_the_poor_developmental_capacity_of_aged_po",
+    "PMC4207939_longevity_aging_and_rapamycin",
+    "PMC4433347_health_effects_of_long_term_rapamycin_treatment_the_impact_o",
+    "PMC4498358_neuroprotective_effect_of_rapamycin_on_spinal_cord_injury_vi",
+    "PMC4531069_subacute_calorie_restriction_and_rapamycin_discordantly_alte",
+    "PMC4599244_histone_modifications_change_with_age_dietary_restriction_an",
+    "PMC4693453_chronic_mtor_inhibition_in_mice_with_rapamycin_alters_t_b_my",
+    "PMC4975851_exploration_of_a_potent_pi3_kinase_mtor_inhibitor_as_a_novel",
+    "PMC4996648_transient_rapamycin_treatment_can_increase_lifespan_and_heal",
     "PMC5216691_rapamycin_in_aging_and_disease_maximizing_efficacy_while_min",
+    "PMC5242306_dietary_rapamycin_supplementation_reverses_age_related_vascu",
+    "PMC5270685_gerosuppression_by_pan_mtor_inhibitors",
+    "PMC5371228_epigenetic_aging_signatures_in_mice_livers_are_slowed_by_dwa",
     "PMC5385881_progressive_slowdown_prevention_of_cellular_senescence_by_cd",
+    "PMC5418203_rapamycin_inhibits_the_secretory_phenotype_of_senescent_cell",
+    "PMC5506398_short_term_rapamycin_treatment_increases_ovarian_lifespan_in",
     "PMC5595695_anti_aging_pharmacology_in_cutaneous_wound_healing_effects_o",
     "PMC5723685_towards_natural_mimetics_of_metformin_and_rapamycin",
     "PMC5752566_while_reinforcing_cell_cycle_arrest_rapamycin_and_torins_sup",
+    "PMC5811247_rapamycin_prevents_the_intervertebral_disc_degeneration_via_",
+    "PMC6001891_short_term_low_dose_mtorc1_inhibition_in_aged_rats_counter_r",
+    "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function",
     "PMC6343718_rapamycin_proliferation_and_geroconversion_to_senescence",
+    "PMC6351839_rapamycin_improves_healthspan_but_not_inflammaging_in_nf_b1_",
     "PMC6814615_rapamycin_for_longevity_opinion_article",
+    "PMC6925069_topical_rapamycin_reduces_markers_of_senescence_and_aging_in",
+    "PMC6996961_rapamycin_persistently_improves_cardiac_function_in_aged_mal",
+    "PMC7069020_rapamycin_promotes_endothelial_mesenchymal_transition_during",
+    "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice",
+    "PMC7870298_rapamycin_treatment_of_tendon_stem_progenitor_cells_reduces_",
+    "PMC7892968_rapamycin_protects_skin_fibroblasts_from_uva_induced_photoag",
+    "PMC8190242_effect_of_rapamycin_on_aging_and_age_related_diseases_past_a",
+    "PMC8245044_maternal_diabetes_induces_senescence_and_neural_tube_defects",
+    "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset",
+    "PMC8805398_rapamycin_acarbose_and_17_estradiol_share_common_mechanisms_",
+    "PMC9018781_distinct_and_additive_effects_of_calorie_restriction_and_rap",
+    "PMC9278457_cell_senescence_rapamycin_and_hyperfunction_theory_of_aging",
+    "PMC9842044_intra_articular_injection_of_rapamycin_microparticles_preven",
+    "PMC9886774_rapamycin_not_dietary_restriction_improves_resilience_agains",
     "PMC9889681_effects_of_sirolimus_treatment_on_patients_with_thalassemia_",
-    "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact"
+    "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact",
+    "PMID22813852_advancing_age_is_associated_with_gene_expression_changes_res",
+    "PMID25540326_mtor_inhibition_improves_immune_function_in_the_elderly",
+    "PMID29408453_a_randomized_control_trial_to_establish_the_feasibility_and_",
+    "PMID33977284_targeting_the_biology_of_ageing_with_mtor_inhibitors_to_impr",
+    "PMID35914953_mymd_1_improves_health_span_and_prolongs_life_span_in_old_mi",
+    "PMID38640155_effect_and_mechanism_of_rapamycin_on_cognitive_deficits_in_a"
+  ],
+  "abstract_fallback_paper_ids": [
+    "DOI_10_1002_bies_200900171_resveratrol_and_rapamycin_are_they_anti_aging_drugs",
+    "DOI_10_1002_biof_127_life_span_extension_by_resveratrol_rapamycin_and_metformin_t",
+    "DOI_10_1016_j_exger_2014_12_002_how_longevity_research_can_lead_to_therapies_for_alzheimer_s",
+    "DOI_10_1016_j_identj_2025_105735_tfna_rapamycin_targets_cgas_sting_to_alleviate_senile_osteop",
+    "DOI_10_1016_j_molonc_2013_12_014_prevention_of_bms_777607_induced_polyploidy_senescence_by_mt",
+    "DOI_10_1016_j_nbd_2020_104834_apoe_genotype_dependent_pharmacogenetic_responses_to_rapamyc",
+    "DOI_10_1039_d0bm00596g_rapamycin_plga_microparticles_prevent_senescence_sustain_car",
+    "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic",
+    "DOI_10_1088_1361_6528_aa57b3_cd9_monoclonal_antibody_conjugated_pegylated_liposomes_for_t",
+    "DOI_10_1093_gerona_glq178_rapamycin_but_not_resveratrol_or_simvastatin_extends_life_sp",
+    "DOI_10_1093_gerona_glv307_rapamycin_attenuates_age_associated_changes_in_tibialis_ante",
+    "DOI_10_1093_gerona_glw090_rapamycin_an_inhibitor_of_aging_emerges_from_the_soil_of_eas",
+    "DOI_10_1101_2021_05_28_446097_distinct_and_additive_effects_of_calorie_restriction_and_rap",
+    "DOI_10_1101_2022_02_18_481092_rapamycin_treatment_during_development_extends_lifespan_and",
+    "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains",
+    "DOI_10_1101_2023_06_12_544619_late_life_rapamycin_treatment_enhances_cardiomyocyte_relaxat",
+    "DOI_10_1101_2023_08_29_555421_rapamycin_mitigates_valproic_acid_induced_teratogenicity_in",
+    "DOI_10_1101_2024_01_26_577437_a_drug_cocktail_of_rapamycin_acarbose_and_phenylbutyrate_enh",
+    "DOI_10_1101_2024_02_19_24302922_evaluating_the_effect_of_rapamycin_treatment_in_alzheimer_s",
+    "DOI_10_1101_2024_05_14_594256_inhibition_of_mtorc1_by_rapamycin_results_in_feedback_activa",
+    "DOI_10_1101_2024_08_12_24311432_the_bioavailability_of_compounded_and_generic_rapamycin_in_n",
+    "DOI_10_1101_2024_08_21_24312372_safety_and_efficacy_of_rapamycin_on_healthspan_metrics_after",
+    "DOI_10_1101_2024_11_21_624614_single_cell_fluorescence_imaging_reveals_heterogeneity_in_se",
+    "DOI_10_1101_2025_03_10_642477_rapamycin_does_not_compromise_physical_performance_or_muscle",
+    "DOI_10_1101_2025_08_25_671822_the_gerotherapeutic_drugs_rapamycin_acarbose_and_phenylbutyr",
+    "DOI_10_1101_2025_09_12_675777_meta_analysis_reveals_reproducible_rapamycin_induced_shifts",
+    "DOI_10_1101_861369_rapamycin_rejuvenates_oral_health_in_aging_mice",
+    "DOI_10_1111_acel_12109_late_life_rapamycin_treatment_reverses_age_related_heart_dys",
+    "DOI_10_1111_acel_12194_rapamycin_mediated_lifespan_increase_in_mice_is_dose_and_sex",
+    "DOI_10_1111_acel_12203_altered_proteome_turnover_and_remodeling_by_short_term_calor",
+    "DOI_10_1111_j_1474_9726_2009_00509_x_increasing_longevity_through_caloric_restriction_or_rapamyci",
+    "DOI_10_1111_j_1474_9726_2011_00722_x_rapamycin_and_other_longevity_promoting_compounds_enhance_th",
+    "DOI_10_1111_j_1474_9726_2011_00791_x_lifelong_rapamycin_administration_ameliorates_age_dependent",
+    "DOI_10_1111_j_1474_9726_2012_00832_x_rapamycin_slows_aging_in_mice",
+    "DOI_10_1126_science_1244360_mtor_inhibition_alleviates_mitochondrial_disease_in_a_mouse",
+    "DOI_10_1126_scitranslmed_3002346_rapamycin_reverses_cellular_phenotypes_and_enhances_mutant_p",
+    "DOI_10_1126_scitranslmed_aar4289_rapamycin_and_alzheimer_s_disease_time_for_a_clinical_trial",
+    "DOI_10_1158_0008_5472_can_12_3516_radioresistant_cancer_cells_can_be_conditioned_to_enter_sene",
+    "DOI_10_1158_1557_3265_sabcs24_p3_06_27_abstract_p3_06_27_immunotherapy_and_pi3k_mtor_inhibition_com",
+    "DOI_10_1158_2159_8290_cd_12_0404_the_mtorc1_inhibitor_everolimus_prevents_and_treats_e_myc_ly",
+    "DOI_10_1172_jci64099_rapalogs_and_mtor_inhibitors_as_anti_aging_therapeutics",
+    "DOI_10_1172_jci67674_rapamycin_extends_murine_lifespan_but_has_limited_effects_on",
+    "DOI_10_1182_blood_2012_08_448290_murine_dendritic_cell_rapamycin_resistant_and_rictor_indepen",
+    "DOI_10_1242_jcs_133983_centenarian_lamins_rapamycin_targets_in_longevity",
+    "DOI_10_1681_asn_2004080660_rapamycin_markedly_slows_disease_progression_in_a_rat_model",
+    "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a",
+    "DOI_10_3389_fcell_2026_1745944_pi3k_mtor_inhibition_attenuates_cigarette_smoke_induced_sene",
+    "DOI_10_4161_auto_25879_prolonged_autophagy_by_mtor_inhibitor_leads_radioresistant_c",
+    "DOI_10_4161_cbt_7_3_5366_synergistic_effect_of_mtor_inhibitor_rapamycin_and_fluoroura",
+    "DOI_10_4161_cc_20882_suppression_of_replicative_senescence_by_rapamycin_in_rodent",
+    "DOI_10_4161_cc_27396_rapamycin_induces_pluripotent_genes_associated_with_avoidanc",
+    "DOI_10_4161_cc_27973_m_o_tor_of_pseudo_hypoxic_state_in_aging_rapamycin_to_the_re",
+    "DOI_10_4161_cc_8_12_8606_rapamycin_decelerates_cellular_senescence",
+    "DOI_10_4161_cc_9_10_11872_rapamycin_and_quasi_programmed_aging_four_years_later",
+    "HIT_cognition_age_and_rapamycin_effectiveness_downregulation_of_",
+    "HIT_effect_of_rapamycin_in_ovarian_aging",
+    "HIT_effect_of_rapamycin_to_improve_cardiac_function_in_frail_old",
+    "HIT_exercise_and_low_dose_rapamycin_in_older_adults_with_cad_car",
+    "HIT_impacts_of_mechanistic_target_of_rapamycin_mtor_inhibition_o",
+    "HIT_low_dose_sirolimus_in_people_with_post_acute_sequelae_of_cov",
+    "HIT_mtor_inhibitors_in_older_adults",
+    "HIT_participatory_evaluation_of_aging_with_rapamycin_for_longevi",
+    "HIT_rapalog_pharmacology_rap_pac_study",
+    "HIT_rapamycin_effects_on_alzheimer_s_and_cognitive_health",
+    "HIT_resistance_training_and_rapamycin_to_enhance_bone_formation_",
+    "HIT_safety_and_efficacy_of_sirolimus_for_hiv_reservoir_reduction",
+    "HIT_sirolimus_for_advanced_age_related_macular_degeneration",
+    "HIT_the_bioavailability_of_compounded_and_generic_rapamycin_in_n",
+    "HIT_the_role_of_sirolimus_in_preventing_functional_decline_in_ol",
+    "HIT_viaging_deceleration_trial_using_metformin_dasatinib_rapamyc",
+    "PMID22813852_advancing_age_is_associated_with_gene_expression_changes_res",
+    "PMID25540326_mtor_inhibition_improves_immune_function_in_the_elderly",
+    "PMID29408453_a_randomized_control_trial_to_establish_the_feasibility_and_",
+    "PMID33977284_targeting_the_biology_of_ageing_with_mtor_inhibitors_to_impr",
+    "PMID35914953_mymd_1_improves_health_span_and_prolongs_life_span_in_old_mi",
+    "PMID38640155_effect_and_mechanism_of_rapamycin_on_cognitive_deficits_in_a"
   ],
   "failures": [
     {
-      "title": "Rapalog Pharmacology (RAP PAC) Study",
+      "title": "Rapamycin treatment during development extends lifespan and healthspan",
+      "doi": "10.1101/2022.02.18.481092",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Targeting the biology of ageing with mTOR inhibitors to improve immune function ",
+      "doi": "10.1016/s2666-7568(21)00062-3",
+      "pmid": "33977284",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "mTOR inhibition improves immune function in the elderly.",
+      "doi": "10.1126/scitranslmed.3009892",
+      "pmid": "25540326",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "MTOR Inhibitors in Older Adults",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -65,13 +347,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Impacts of Mechanistic Target of Rapamycin (mTOR) Inhibition on Aged Human Muscl",
+      "title": "Rapalog Pharmacology (RAP PAC) Study",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Rapamycin - Effects on Alzheimer's and Cognitive Health",
+      "title": "Impacts of Mechanistic Target of Rapamycin (mTOR) Inhibition on Aged Human Muscl",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -83,8 +365,68 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
+      "title": "Rapamycin - Effects on Alzheimer's and Cognitive Health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "PI3K/mTOR inhibition attenuates cigarette smoke-induced senescence and SASP in o",
+      "doi": "10.3389/fcell.2026.1745944",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
       "title": "Effect of Rapamycin in Ovarian Aging",
       "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The gerotherapeutic drugs rapamycin, acarbose, and phenylbutyrate extend lifespa",
+      "doi": "10.1101/2025.08.25.671822",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapamycin does not compromise physical performance or muscle hypertrophy after P",
+      "doi": "10.1101/2025.03.10.642477",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Meta-analysis reveals reproducible rapamycin-induced shifts in the mouse gut mic",
+      "doi": "10.1101/2025.09.12.675777",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Tfna/Rapamycin Targets Cgas-Sting To Alleviate Senile Osteoporosis",
+      "doi": "10.1016/j.identj.2025.105735",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect and Mechanism of Rapamycin on Cognitive Deficits in Animal Models of Alzh",
+      "doi": "10.3233/jad-231249",
+      "pmid": "38640155",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Single-cell fluorescence imaging reveals heterogeneity in senescence biomarkers ",
+      "doi": "10.1101/2024.11.21.624614",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Inhibition of mTORC1 by rapamycin results in feedback activation of AktS473and a",
+      "doi": "10.1101/2024.05.14.594256",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A drug cocktail of rapamycin, acarbose, and phenylbutyrate enhances resilience t",
+      "doi": "10.1101/2024.01.26.577437",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -101,13 +443,25 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Participatory Evaluation (of) Aging (With) Rapamycin (for) Longevity Study",
+      "title": "Evaluating the effect of rapamycin treatment in Alzheimer's Disease and aging us",
+      "doi": "10.1101/2024.02.19.24302922",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "MyMD-1 Improves Health Span and Prolongs Life Span in Old Mice: A Noninferiority",
+      "doi": "10.1093/gerona/glac142",
+      "pmid": "35914953",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VIAging Deceleration Trial Using Metformin, Dasatinib, Rapamycin and Nutritional",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "The Bioavailability of Compounded and Generic Rapamycin in Normative Aging Indiv",
+      "title": "Participatory Evaluation (of) Aging (With) Rapamycin (for) Longevity Study",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -119,14 +473,50 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "VIAging Deceleration Trial Using Metformin, Dasatinib, Rapamycin and Nutritional",
+      "title": "The Bioavailability of Compounded and Generic Rapamycin in Normative Aging Indiv",
       "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Late-life Rapamycin Treatment Enhances Cardiomyocyte Relaxation Kinetics and Red",
+      "doi": "10.1101/2023.06.12.544619",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapamycin mitigates Valproic Acid-induced teratogenicity in human and animal mod",
+      "doi": "10.1101/2023.08.29.555421",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
       "title": "Cognition, Age, and RaPamycin Effectiveness - DownregulatIon of thE mTor Pathway",
       "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapamycin not Dietary Restriction improves resilience against pathogens: a meta-",
+      "doi": "10.1101/2022.10.06.511121",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Distinct and additive effects of calorie restriction and rapamycin in aging skel",
+      "doi": "10.1101/2021.05.28.446097",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapamycin\u2013PLGA microparticles prevent senescence, sustain cartilage matrix produ",
+      "doi": "10.1039/d0bm00596g",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapamycin rejuvenates oral health in aging mice",
+      "doi": "10.1101/861369",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -143,8 +533,26 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
+      "title": "Effects of rapamycin on life span and on expression of TOR and S6K in Brachionus",
+      "doi": "10.3354/ab00673",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
       "title": "Exercise and Low-Dose Rapamycin in Older Adults With CAD:Cardiac Rehabilitation ",
       "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "M(o)TOR of pseudo-hypoxic state in aging: Rapamycin to the rescue",
+      "doi": "10.4161/cc.27973",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prolonged autophagy by MTOR inhibitor leads radioresistant cancer cells into sen",
+      "doi": "10.4161/auto.25879",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -155,8 +563,20 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
+      "title": "Radioresistant Cancer Cells Can Be Conditioned to Enter Senescence by mTOR Inhib",
+      "doi": "10.1158/0008-5472.can-12-3516",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
       "title": "Sirolimus for Advanced Age-Related Macular Degeneration",
       "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Suppression of replicative senescence by rapamycin in rodent embryonic cells",
+      "doi": "10.4161/cc.20882",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -167,8 +587,26 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
+      "title": "Rapamycin and other longevity\u2010promoting compounds enhance the generation of mous",
+      "doi": "10.1111/j.1474-9726.2011.00722.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapamycin and quasi-programmed aging: Four years later",
+      "doi": "10.4161/cc.9.10.11872",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
       "title": "Sirolimus and Kidney Growth in Autosomal Dominant Polycystic Kidney Disease",
       "doi": "10.1056/nejmoa0907419",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resveratrol and rapamycin: are they anti\u2010aging drugs?",
+      "doi": "10.1002/bies.200900171",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -189,27 +627,199 @@
       "doi": "10.4161/cbt.7.3.5366",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapamycin Markedly Slows Disease Progression in a Rat Model of Polycystic Kidney",
+      "doi": "10.1681/asn.2004080660",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract P3-06-27: Immunotherapy and PI3K/mTOR inhibition combination to mediate",
+      "doi": "10.1158/1557-3265.sabcs24-p3-06-27",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
     }
   ],
   "papers_resolved": {
+    "PMC6925069": {
+      "title": "Topical rapamycin reduces markers of senescence and aging in human skin: an exploratory, prospective, randomized trial.",
+      "doi": "10.1007/s11357-019-00113-y",
+      "pmid": "31761958",
+      "year": 2019,
+      "venue": "Geroscience",
+      "authors": [
+        "CL Chung",
+        "I Lawrence",
+        "M Hoffman",
+        "D Elgindi",
+        "K Nadhan",
+        "M Potnis",
+        "A Jin",
+        "C Sershon",
+        "R Binnebose",
+        "A Lorenzini",
+        "C Sell"
+      ],
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC13082878": {
+      "title": "Exercise and Weekly Sirolimus (Rapamycin) in Older Adults: RAPA-EX-01 Randomised, Double-Blind, Placebo-Controlled Trial.",
+      "doi": "10.1002/jcsm.70274",
+      "pmid": "41985884",
+      "year": 2026,
+      "venue": "J Cachexia Sarcopenia Muscle",
+      "authors": [
+        "B Stanfield",
+        "B Leroux",
+        "M Kaeberlein",
+        "J Jones",
+        "R Lucas"
+      ],
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC12771342": {
+      "title": "Rapamycin preserves cardiac function in autoimmune myocarditis by reprogramming Cxcl9+ macrophages via the mTORC1\u2013C/EBP\u03b2\u2013OSM axis",
+      "doi": "10.1016/j.redox.2025.103970",
+      "pmid": "41412038",
+      "year": 2026,
+      "venue": "Redox Biol",
+      "authors": [
+        "Y Zhuang",
+        "Y Yan",
+        "Z Wen",
+        "X Rao",
+        "J Jiang",
+        "H Li",
+        "DW Wang"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
     "PMC12074816": {
       "title": "Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results.",
       "doi": "10.18632/aging.206235",
       "pmid": "40188830",
       "year": 2025,
       "venue": "Aging (Albany NY)",
+      "authors": [
+        "M Moel",
+        "G Harinath",
+        "V Lee",
+        "A Nyquist",
+        "SL Morgan",
+        "A Isman",
+        "S Zalzala"
+      ],
       "sources": [
         "pubmed"
+      ]
+    },
+    "PMC12270913": {
+      "title": "The geroprotectors trametinib and rapamycin combine additively to extend mouse healthspan and lifespan",
+      "doi": "10.1038/s43587-025-00876-4",
+      "pmid": "40437307",
+      "year": 2025,
+      "venue": "Nat Aging",
+      "authors": [
+        "L Gkioni",
+        "T Nespital",
+        "M Baghdadi",
+        "C Monz\u00f3",
+        "J Bali",
+        "T Nassr",
+        "AL Cremer",
+        "A Beyer",
+        "J Deelen",
+        "H Backes",
+        "S Gr\u00f6nke",
+        "L Partridge"
+      ],
+      "sources": [
+        "openalex"
       ]
     },
     "PMC12226543": {
       "title": "Rapamycin for longevity: the pros, the cons, and future perspectives",
       "doi": "10.3389/fragi.2025.1628187",
-      "pmid": null,
+      "pmid": "40620657",
       "year": 2025,
-      "venue": "Frontiers in Aging",
+      "venue": "Front Aging",
+      "authors": [
+        "KM Roark",
+        "PH Iffland"
+      ],
       "sources": [
         "openalex"
+      ]
+    },
+    "PMC12391273": {
+      "title": "Rapamycin coated selenium nanoparticles relieve oxidative senescence of vascular endothelium by mitophagy",
+      "doi": "10.1016/j.redox.2025.103822",
+      "pmid": "40819563",
+      "year": 2025,
+      "venue": "Redox Biol",
+      "authors": [
+        "Y Zhang",
+        "J Wang",
+        "H Yang",
+        "L He",
+        "M Cui",
+        "Q Ling",
+        "J He",
+        "S Gou",
+        "F Liu",
+        "Z Cai",
+        "Z Huang"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10781157": {
+      "title": "Role of maraviroc and/or rapamycin in the liver of IL10 KO mice with frailty syndrome.",
+      "doi": "10.1371/journal.pone.0286201",
+      "pmid": "38198476",
+      "year": 2024,
+      "venue": "PLoS One",
+      "authors": [
+        "L P\u00e9rez-Mart\u00ednez",
+        "L Romero",
+        "EM Verdugo-Sivianes",
+        "S Mu\u00f1oz-Galv\u00e1n",
+        "S Rubio-Mediavilla",
+        "A Amiama-Roig",
+        "A Carnero",
+        "JR Blanco"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11316767": {
+      "title": "Calorie restriction and rapamycin distinctly mitigate aging-associated protein phosphorylation changes in mouse muscles",
+      "doi": "10.1038/s42003-024-06679-4",
+      "pmid": "39127848",
+      "year": 2024,
+      "venue": "Commun Biol",
+      "authors": [
+        "M Ataman",
+        "N Mittal",
+        "L Tintignac",
+        "A Schmidt",
+        "DJ Ham",
+        "A Gonz\u00e1lez",
+        "MA Ruegg",
+        "M Zavolan"
+      ],
+      "sources": [
+        "doaj"
       ]
     },
     "PMC9889681": {
@@ -218,16 +828,336 @@
       "pmid": "36625233",
       "year": 2023,
       "venue": "J Cell Mol Med",
+      "authors": [
+        "M Zurlo",
+        "F Nicoli",
+        "D Proietto",
+        "B Dallan",
+        "C Zuccato",
+        "LC Cosenza",
+        "J Gasparello",
+        "C Papi",
+        "E d'Aversa",
+        "M Borgatti",
+        "C Scapoli",
+        "A Finotti",
+        "R Gambari"
+      ],
       "sources": [
         "pubmed"
+      ]
+    },
+    "PMC9886774": {
+      "title": "Rapamycin not dietary restriction improves resilience against pathogens: a meta-analysis.",
+      "doi": "10.1007/s11357-022-00691-4",
+      "pmid": "36399256",
+      "year": 2023,
+      "venue": "Geroscience",
+      "authors": [
+        "EJ Phillips",
+        "MJP Simons"
+      ],
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC10086534": {
+      "title": "Age\u2010related changes to adipose tissue and peripheral neuropathy in genetically diverse <scp>HET3</scp> mice differ by sex and are not mitigated by rapamycin longevity treatment",
+      "doi": "10.1111/acel.13784",
+      "pmid": "36798047",
+      "year": 2023,
+      "venue": "Aging Cell",
+      "authors": [
+        "JW Willows",
+        "M Robinson",
+        "Z Alshahal",
+        "SK Morrison",
+        "G Mishra",
+        "H Cyr",
+        "M Blaszkiewicz",
+        "G Gunsch",
+        "S DiPietro",
+        "E Paradie",
+        "B Tero",
+        "A Harrington",
+        "L Ryzhova",
+        "L Liaw",
+        "PC Reifsnyder",
+        "DE Harrison",
+        "KL Townsend"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10185870": {
+      "title": "Rapamycin treatment increases survival, autophagy biomarkers and expression of the anti\u2010aging klotho protein in elderly mice",
+      "doi": "10.1002/prp2.1091",
+      "pmid": "37190667",
+      "year": 2023,
+      "venue": "Pharmacol Res Perspect",
+      "authors": [
+        "K Sz\u0151ke",
+        "B B\u00f3di",
+        "Z Hendrik",
+        "A Czompa",
+        "A Gy\u00f6ngy\u00f6si",
+        "DD Haines",
+        "Z Papp",
+        "T\u00f3saki \u00c1",
+        "I Lekli"
+      ],
+      "sources": [
+        "doaj"
       ]
     },
     "PMC9983852": {
       "title": "Rapamycin suppresses inflammation and increases the interaction between p65 and I\u03baB\u03b1 in rapamycin-induced fatty livers.",
       "doi": "10.1371/journal.pone.0281888",
-      "pmid": null,
+      "pmid": "36867603",
       "year": 2023,
-      "venue": "PLoS ONE",
+      "venue": "PLoS One",
+      "authors": [
+        "C Ge",
+        "C Ma",
+        "J Cui",
+        "X Dong",
+        "L Sun",
+        "Y Li",
+        "A Yu"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9018781": {
+      "title": "Distinct and additive effects of calorie restriction and rapamycin in aging skeletal muscle",
+      "doi": "10.1038/s41467-022-29714-6",
+      "pmid": "35440545",
+      "year": 2022,
+      "venue": "Nat Commun",
+      "authors": [
+        "DJ Ham",
+        "A B\u00f6rsch",
+        "K Chojnowska",
+        "S Lin",
+        "AB Leuchtmann",
+        "AS Ham",
+        "M Th\u00fcrkauf",
+        "J Delezie",
+        "R Furrer",
+        "D Burri",
+        "M Sinnreich",
+        "C Handschin",
+        "LA Tintignac",
+        "M Zavolan",
+        "N Mittal",
+        "MA R\u00fcegg"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9278457": {
+      "title": "Cell senescence, rapamycin and hyperfunction theory of aging",
+      "doi": "10.1080/15384101.2022.2054636",
+      "pmid": "35358003",
+      "year": 2022,
+      "venue": "Cell Cycle",
+      "authors": [
+        "MV Blagosklonny"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9842044": {
+      "title": "Intra\u2010articular injection of rapamycin microparticles prevent senescence and effectively treat osteoarthritis",
+      "doi": "10.1002/btm2.10298",
+      "pmid": "36684078",
+      "year": 2023,
+      "venue": "Bioeng Transl Med",
+      "authors": [
+        "KM Dhanabalan",
+        "AA Dravid",
+        "S Agarwal",
+        "RK Sharath",
+        "AK Padmanabhan",
+        "R Agarwal"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8805398": {
+      "title": "Rapamycin, Acarbose and 17\u03b1-estradiol share common mechanisms regulating the MAPK pathways involved in intracellular signaling and inflammation",
+      "doi": "10.1186/s12979-022-00264-1",
+      "pmid": "35105357",
+      "year": 2022,
+      "venue": "Immun Ageing",
+      "authors": [
+        "L Wink",
+        "RA Miller",
+        "GG Garcia"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7870298": {
+      "title": "Rapamycin Treatment of Tendon Stem/Progenitor Cells Reduces Cellular Senescence by Upregulating Autophagy",
+      "doi": "10.1155/2021/6638249",
+      "pmid": "33603790",
+      "year": 2021,
+      "venue": "Stem Cells Int",
+      "authors": [
+        "D Nie",
+        "J Zhang",
+        "Y Zhou",
+        "J Sun",
+        "W Wang",
+        "JH Wang"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8245044": {
+      "title": "Maternal diabetes induces senescence and neural tube defects sensitive to the senomorphic rapamycin",
+      "doi": "10.1126/sciadv.abf5089",
+      "pmid": "34193422",
+      "year": 2021,
+      "venue": "Sci Adv",
+      "authors": [
+        "C Xu",
+        "WB Shen",
+        "EA Reece",
+        "H Hasuwa",
+        "C Harman",
+        "S Kaushal",
+        "P Yang"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8599537": {
+      "title": "DNA methylation age analysis of rapamycin in common marmosets",
+      "doi": "10.1007/s11357-021-00438-7",
+      "pmid": "34482522",
+      "year": 2021,
+      "venue": "Geroscience",
+      "authors": [
+        "S Horvath",
+        "JA Zoller",
+        "A Haghani",
+        "AT Lu",
+        "K Raj",
+        "AJ Jasinska",
+        "JA Mattison",
+        "AB Salmon"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7892968": {
+      "title": "Rapamycin Protects Skin Fibroblasts From UVA-Induced Photoaging by Inhibition of p53 and Phosphorylated HSP27",
+      "doi": "10.3389/fcell.2021.633331",
+      "pmid": "33614662",
+      "year": 2021,
+      "venue": "Front Cell Dev Biol",
+      "authors": [
+        "GL Bai",
+        "P Wang",
+        "X Huang",
+        "ZY Wang",
+        "D Cao",
+        "C Liu",
+        "YY Liu",
+        "RL Li",
+        "AJ Chen"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8190242": {
+      "title": "Effect of rapamycin on aging and age-related diseases\u2014past and future",
+      "doi": "10.1007/s11357-020-00274-1",
+      "pmid": "33037985",
+      "year": 2021,
+      "venue": "Geroscience",
+      "authors": [
+        "R Selvarani",
+        "S Mohammed",
+        "A Richardson"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7220376": {
+      "title": "Rapamycin rejuvenates oral health in aging mice",
+      "doi": "10.7554/elife.54318",
+      "pmid": "32342860",
+      "year": 2020,
+      "venue": "Elife",
+      "authors": [
+        "JY An",
+        "KA Kerns",
+        "A Ouellette",
+        "L Robinson",
+        "HD Morris",
+        "C Kaczorowski",
+        "SI Park",
+        "T Mekvanich",
+        "A Kang",
+        "JS McLean",
+        "TC Cox",
+        "M Kaeberlein"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7069020": {
+      "title": "Rapamycin promotes endothelial\u2013mesenchymal transition during stress-induced premature senescence through the activation of autophagy",
+      "doi": "10.1186/s12964-020-00533-w",
+      "pmid": "32164764",
+      "year": 2020,
+      "venue": "Cell Commun Signal",
+      "authors": [
+        "N Sasaki",
+        "Y Itakura",
+        "M Toyoda"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7486698": {
+      "title": "APOE genotype-dependent pharmacogenetic responses to rapamycin for preventing Alzheimer's disease",
+      "doi": "10.1016/j.nbd.2020.104834",
+      "pmid": "32173556",
+      "year": 2020,
+      "venue": "Neurobiol Dis",
+      "authors": [
+        "AL Lin",
+        "I Parikh",
+        "LM Yanckello",
+        "RS White",
+        "AMS Hartz",
+        "CE Taylor",
+        "SD McCulloch",
+        "SW Thalman",
+        "M Xia",
+        "K McCarty",
+        "M Ubele",
+        "E Head",
+        "F Hyder",
+        "BG Sanganahalli"
+      ],
       "sources": [
         "doaj"
       ]
@@ -235,9 +1165,53 @@
     "PMC6814615": {
       "title": "Rapamycin for longevity: opinion article",
       "doi": "10.18632/aging.102355",
-      "pmid": null,
+      "pmid": "31586989",
       "year": 2019,
-      "venue": "Aging",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "MV Blagosklonny"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6996961": {
+      "title": "Rapamycin persistently improves cardiac function in aged, male and female mice, even following cessation of treatment",
+      "doi": "10.1111/acel.13086",
+      "pmid": "31823466",
+      "year": 2020,
+      "venue": "Aging Cell",
+      "authors": [
+        "E Quarles",
+        "N Basisty",
+        "YA Chiao",
+        "G Merrihew",
+        "H Gu",
+        "MT Sweetwyne",
+        "J Fredrickson",
+        "NH Nguyen",
+        "M Razumova",
+        "K Kooiker",
+        "F Moussavi-Harami",
+        "M Regnier",
+        "C Quarles",
+        "M MacCoss",
+        "PS Rabinovitch"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6762017": {
+      "title": "Rapamycin and Alzheimer\u2019s disease: Time for a clinical trial?",
+      "doi": "10.1126/scitranslmed.aar4289",
+      "pmid": "30674654",
+      "year": 2019,
+      "venue": "Sci Transl Med",
+      "authors": [
+        "M Kaeberlein",
+        "V Galvan"
+      ],
       "sources": [
         "openalex"
       ]
@@ -248,16 +1222,177 @@
       "pmid": "29408453",
       "year": 2018,
       "venue": "Exp Gerontol",
+      "authors": [
+        "E Kraig",
+        "LA Linehan",
+        "H Liang",
+        "TQ Romo",
+        "Q Liu",
+        "Y Wu",
+        "AD Benavides",
+        "TJ Curiel",
+        "MA Javors",
+        "N Musi",
+        "L Chiodo",
+        "W Koek",
+        "JAL Gelfond",
+        "DL Kellogg"
+      ],
       "sources": [
         "pubmed"
+      ]
+    },
+    "PMC6351839": {
+      "title": "Rapamycin improves healthspan but not inflammaging in nf\u03bab1\u2212/\u2212 mice",
+      "doi": "10.1111/acel.12882",
+      "pmid": "30468013",
+      "year": 2019,
+      "venue": "Aging Cell",
+      "authors": [
+        "C Correia-Melo",
+        "J Birch",
+        "E Fielder",
+        "D Rahmatika",
+        "J Taylor",
+        "J Chapman",
+        "J Chapman",
+        "A Lagnado",
+        "BM Carroll",
+        "S Miwa",
+        "G Richardson",
+        "D Jurk",
+        "F Oakley",
+        "J Mann",
+        "DA Mann",
+        "VI Korolchuk",
+        "JF Passos"
+      ],
+      "sources": [
+        "openalex"
       ]
     },
     "PMC6343718": {
       "title": "Rapamycin, proliferation and geroconversion to senescence",
       "doi": "10.1080/15384101.2018.1554781",
-      "pmid": null,
+      "pmid": "30541374",
       "year": 2018,
       "venue": "Cell Cycle",
+      "authors": [
+        "MV Blagosklonny"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5811247": {
+      "title": "Rapamycin prevents the intervertebral disc degeneration via inhibiting differentiation and senescence of annulus fibrosus cells",
+      "doi": "10.18632/aging.101364",
+      "pmid": "29348392",
+      "year": 2018,
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "C Gao",
+        "B Ning",
+        "C Sang",
+        "Y Zhang"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6001891": {
+      "title": "Short-term Low-Dose mTORC1 Inhibition in Aged Rats Counter-Regulates Age-Related Gene Changes and Blocks Age-Related Kidney Pathology",
+      "doi": "10.1093/gerona/glx249",
+      "pmid": "29304191",
+      "year": 2018,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "authors": [
+        "T Shavlakadze",
+        "J Zhu",
+        "S Wang",
+        "W Zhou",
+        "B Morin",
+        "MA Egerman",
+        "L Fan",
+        "Y Wang",
+        "O Iartchouk",
+        "A Meyer",
+        "RA Valdez",
+        "JB Mannick",
+        "LB Klickstein",
+        "DJ Glass"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6262855": {
+      "title": "The effects of AICAR and rapamycin on mitochondrial function in immortalized mitochondrial DNA mutator murine embryonic fibroblasts",
+      "doi": "10.1242/bio.033852",
+      "pmid": "30177551",
+      "year": 2018,
+      "venue": "Biol Open",
+      "authors": [
+        "V Delic",
+        "K Noble",
+        "S Zivkovic",
+        "TA Phan",
+        "C Reynes",
+        "Y Zhang",
+        "O Phillips",
+        "C Claybaker",
+        "Y Ta",
+        "VB Dinh",
+        "J Cruz",
+        "TA Prolla",
+        "PC Bradshaw"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5418203": {
+      "title": "Rapamycin inhibits the secretory phenotype of senescent cells by a Nrf2-independent mechanism",
+      "doi": "10.1111/acel.12587",
+      "pmid": "28371119",
+      "year": 2017,
+      "venue": "Aging Cell",
+      "authors": [
+        "R Wang",
+        "Z Yu",
+        "B Sunchu",
+        "J Shoaf",
+        "I Dang",
+        "S Zhao",
+        "K Caples",
+        "L Bradley",
+        "LM Beaver",
+        "E Ho",
+        "CV L\u00f6hr",
+        "VI Perez"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5371228": {
+      "title": "Epigenetic aging signatures in mice livers are slowed by dwarfism, calorie restriction and rapamycin treatment",
+      "doi": "10.1186/s13059-017-1186-2",
+      "pmid": "28351423",
+      "year": 2017,
+      "venue": "Genome Biol",
+      "authors": [
+        "T Wang",
+        "B Tsui",
+        "JF Kreisberg",
+        "NA Robertson",
+        "AM Gross",
+        "MK Yu",
+        "H Carter",
+        "HM Brown-Borg",
+        "PD Adams",
+        "T Ideker"
+      ],
       "sources": [
         "openalex"
       ]
@@ -265,9 +1400,47 @@
     "PMC5595695": {
       "title": "Anti\u2010aging pharmacology in cutaneous wound healing: effects of metformin, resveratrol, and rapamycin by local application",
       "doi": "10.1111/acel.12635",
-      "pmid": null,
+      "pmid": "28677234",
       "year": 2017,
       "venue": "Aging Cell",
+      "authors": [
+        "P Zhao",
+        "BD Sui",
+        "N Liu",
+        "YJ Lv",
+        "CX Zheng",
+        "YB Lu",
+        "WT Huang",
+        "CH Zhou",
+        "J Chen",
+        "DL Pang",
+        "DD Fei",
+        "K Xuan",
+        "CH Hu",
+        "Y Jin"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5506398": {
+      "title": "Short\u2010term rapamycin treatment increases ovarian lifespan in young and middle\u2010aged female mice",
+      "doi": "10.1111/acel.12617",
+      "pmid": "28544226",
+      "year": 2017,
+      "venue": "Aging Cell",
+      "authors": [
+        "X Dou",
+        "Y Sun",
+        "J Li",
+        "J Zhang",
+        "D Hao",
+        "W Liu",
+        "R Wu",
+        "F Kong",
+        "X Peng",
+        "J Li"
+      ],
       "sources": [
         "openalex"
       ]
@@ -275,9 +1448,19 @@
     "PMC5723685": {
       "title": "Towards natural mimetics of metformin and rapamycin",
       "doi": "10.18632/aging.101319",
-      "pmid": null,
+      "pmid": "29165314",
       "year": 2017,
-      "venue": "Aging",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "A Aliper",
+        "L Jellen",
+        "F Cortese",
+        "A Artemov",
+        "D Karpinsky-Semper",
+        "A Moskalev",
+        "AG Swick",
+        "A Zhavoronkov"
+      ],
       "sources": [
         "openalex"
       ]
@@ -285,9 +1468,18 @@
     "PMC5385881": {
       "title": "Progressive slowdown/prevention of cellular senescence by CD9-targeted delivery of rapamycin using lactose-wrapped calcium carbonate nanoparticles",
       "doi": "10.1038/srep43299",
-      "pmid": null,
+      "pmid": "28393891",
       "year": 2017,
-      "venue": "Scientific Reports",
+      "venue": "Sci Rep",
+      "authors": [
+        "RK Thapa",
+        "HT Nguyen",
+        "JH Jeong",
+        "JR Kim",
+        "HG Choi",
+        "CS Yong",
+        "JO Kim"
+      ],
       "sources": [
         "openalex"
       ]
@@ -295,9 +1487,44 @@
     "PMC5752566": {
       "title": "While reinforcing cell cycle arrest, rapamycin and Torins suppress senescence in UVA-irradiated fibroblasts",
       "doi": "10.18632/oncotarget.17827",
-      "pmid": null,
+      "pmid": "29312653",
       "year": 2017,
       "venue": "Oncotarget",
+      "authors": [
+        "OV Leontieva",
+        "MV Blagosklonny"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4996648": {
+      "title": "Transient rapamycin treatment can increase lifespan and healthspan in middle-aged mice",
+      "doi": "10.7554/elife.16351",
+      "pmid": "27549339",
+      "year": 2016,
+      "venue": "Elife",
+      "authors": [
+        "A Bitto",
+        "TK Ito",
+        "VV Pineda",
+        "NJ LeTexier",
+        "HZ Huang",
+        "E Sutlief",
+        "H Tung",
+        "N Vizzini",
+        "B Chen",
+        "K Smith",
+        "D Meza",
+        "M Yajima",
+        "RP Beyer",
+        "KF Kerr",
+        "DJ Davis",
+        "CH Gillespie",
+        "JM Snyder",
+        "PM Treuting",
+        "M Kaeberlein"
+      ],
       "sources": [
         "openalex"
       ]
@@ -305,9 +1532,36 @@
     "PMC4906330": {
       "title": "Rapamycin: An InhibiTOR of Aging Emerges From the Soil of Easter Island",
       "doi": "10.1093/gerona/glw090",
-      "pmid": null,
+      "pmid": "27208895",
       "year": 2016,
-      "venue": "The Journals of Gerontology Series A",
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "authors": [
+        "SI Arriola Apelo",
+        "DW Lamming"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5242306": {
+      "title": "Dietary rapamycin supplementation reverses age\u2010related vascular dysfunction and oxidative stress, while modulating nutrient\u2010sensing, cell cycle, and senescence pathways",
+      "doi": "10.1111/acel.12524",
+      "pmid": "27660040",
+      "year": 2017,
+      "venue": "Aging Cell",
+      "authors": [
+        "LA Lesniewski",
+        "DR Seals",
+        "AE Walker",
+        "GD Henson",
+        "MW Blimline",
+        "DW Trott",
+        "GC Bosshardt",
+        "TJ LaRocca",
+        "BR Lawson",
+        "MC Zigler",
+        "AJ Donato"
+      ],
       "sources": [
         "openalex"
       ]
@@ -315,9 +1569,348 @@
     "PMC5216691": {
       "title": "Rapamycin in aging and disease: maximizing efficacy while minimizing side effects",
       "doi": "10.18632/oncotarget.10381",
-      "pmid": null,
+      "pmid": "27384492",
       "year": 2016,
       "venue": "Oncotarget",
+      "authors": [
+        "SC Johnson",
+        "M Kaeberlein"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5270685": {
+      "title": "Gerosuppression by pan-mTOR inhibitors",
+      "doi": "10.18632/aging.101155",
+      "pmid": "28077803",
+      "year": 2016,
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "OV Leontieva",
+        "MV Blagosklonny"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4906327": {
+      "title": "Rapamycin Attenuates Age-associated Changes in Tibialis Anterior Tendon Viscoelastic Properties",
+      "doi": "10.1093/gerona/glv307",
+      "pmid": "26809496",
+      "year": 2016,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "authors": [
+        "LW Zaseck",
+        "RA Miller",
+        "SV Brooks"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4693453": {
+      "title": "Chronic <scp>mTOR</scp> inhibition in mice with rapamycin alters <scp>T</scp> , <scp>B</scp> , myeloid, and innate lymphoid cells and gut flora and prolongs life of immune\u2010deficient mice",
+      "doi": "10.1111/acel.12380",
+      "pmid": "26315673",
+      "year": 2015,
+      "venue": "Aging Cell",
+      "authors": [
+        "V Hurez",
+        "V Dao",
+        "A Liu",
+        "S Pandeswara",
+        "J Gelfond",
+        "L Sun",
+        "M Bergman",
+        "CJ Orihuela",
+        "V Galvan",
+        "Padr\u00f3n \u00c1",
+        "J Drerup",
+        "Y Liu",
+        "P Hasty",
+        "ZD Sharp",
+        "TJ Curiel"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4433347": {
+      "title": "Health Effects of Long-Term Rapamycin Treatment: The Impact on Mouse Health of Enteric Rapamycin Treatment from Four Months of Age throughout Life",
+      "doi": "10.1371/journal.pone.0126644",
+      "pmid": "25978367",
+      "year": 2015,
+      "venue": "PLoS One",
+      "authors": [
+        "KE Fischer",
+        "JA Gelfond",
+        "VY Soto",
+        "C Han",
+        "S Someya",
+        "A Richardson",
+        "SN Austad"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4531069": {
+      "title": "Subacute calorie restriction and rapamycin discordantly alter mouse liver proteome homeostasis and reverse aging effects",
+      "doi": "10.1111/acel.12317",
+      "pmid": "25807975",
+      "year": 2015,
+      "venue": "Aging Cell",
+      "authors": [
+        "PP Karunadharma",
+        "N Basisty",
+        "DF Dai",
+        "YA Chiao",
+        "EK Quarles",
+        "EJ Hsieh",
+        "D Crispin",
+        "JH Bielas",
+        "NG Ericson",
+        "RP Beyer",
+        "VL MacKay",
+        "MJ MacCoss",
+        "PS Rabinovitch"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4599244": {
+      "title": "Histone modifications change with age, dietary restriction and rapamycin treatment in mouse brain",
+      "doi": "10.18632/oncotarget.4137",
+      "pmid": "26021816",
+      "year": 2015,
+      "venue": "Oncotarget",
+      "authors": [
+        "H Gong",
+        "H Qian",
+        "R Ertl",
+        "CM Astle",
+        "GG Wang",
+        "DE Harrison",
+        "X Xu"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4498358": {
+      "title": "Neuroprotective effect of rapamycin on spinal cord injury via activation of the Wnt/\u03b2-catenin signaling pathway",
+      "doi": "10.4103/1673-5374.158360",
+      "pmid": "26199613",
+      "year": 2015,
+      "venue": "Neural Regen Res",
+      "authors": [
+        "K Gao",
+        "YS Wang",
+        "YJ Yuan",
+        "ZH Wan",
+        "TC Yao",
+        "HH Li",
+        "PF Tang",
+        "XF Mei"
+      ],
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC4207939": {
+      "title": "Longevity, aging and rapamycin",
+      "doi": "10.1007/s00018-014-1677-1",
+      "pmid": "25015322",
+      "year": 2014,
+      "venue": "Cell Mol Life Sci",
+      "authors": [
+        "D Ehninger",
+        "F Neff",
+        "K Xie"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4040127": {
+      "title": "Altered proteome turnover and remodeling by short\u2010term caloric restriction or rapamycin rejuvenate the aging heart",
+      "doi": "10.1111/acel.12203",
+      "pmid": "24612461",
+      "year": 2014,
+      "venue": "Aging Cell",
+      "authors": [
+        "DF Dai",
+        "PP Karunadharma",
+        "YA Chiao",
+        "N Basisty",
+        "D Crispin",
+        "EJ Hsieh",
+        "T Chen",
+        "H Gu",
+        "D Djukovic",
+        "D Raftery",
+        "RP Beyer",
+        "MJ MacCoss",
+        "PS Rabinovitch"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6417920": {
+      "title": "How longevity research can lead to therapies for Alzheimer's disease: The rapamycin story",
+      "doi": "10.1016/j.exger.2014.12.002",
+      "pmid": "25481271",
+      "year": 2015,
+      "venue": "Exp Gerontol",
+      "authors": [
+        "A Richardson",
+        "V Galvan",
+        "AL Lin",
+        "S Oddo"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5528636": {
+      "title": "Prevention of BMS\u2010777607\u2010induced polyploidy/senescence by mTOR inhibitor AZD8055 sensitizes breast cancer cells to cytotoxic chemotherapeutics",
+      "doi": "10.1016/j.molonc.2013.12.014",
+      "pmid": "24444656",
+      "year": 2014,
+      "venue": "Mol Oncol",
+      "authors": [
+        "S Sharma",
+        "HP Yao",
+        "YQ Zhou",
+        "J Zhou",
+        "R Zhang",
+        "MH Wang"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4093196": {
+      "title": "Rapamycin Rescues the Poor Developmental Capacity of Aged Porcine Oocytes",
+      "doi": "10.5713/ajas.2013.13816",
+      "pmid": "25049998",
+      "year": 2014,
+      "venue": "Asian-Australas J Anim Sci",
+      "authors": [
+        "SE Lee",
+        "EY Kim",
+        "HY Choi",
+        "JJ Moon",
+        "MJ Park",
+        "JB Lee",
+        "CJ Jeong",
+        "SP Park"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3582126": {
+      "title": "Rapalogs and mTOR inhibitors as anti-aging therapeutics",
+      "doi": "10.1172/jci64099",
+      "pmid": "23454761",
+      "year": 2013,
+      "venue": "J Clin Invest",
+      "authors": [
+        "DW Lamming",
+        "L Ye",
+        "DM Sabatini",
+        "JA Baur"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3726163": {
+      "title": "Rapamycin extends murine lifespan but has limited effects on aging",
+      "doi": "10.1172/jci67674",
+      "pmid": "23863708",
+      "year": 2013,
+      "venue": "J Clin Invest",
+      "authors": [
+        "F Neff",
+        "D Flores-Dominguez",
+        "DP Ryan",
+        "M Horsch",
+        "S Schr\u00f6der",
+        "T Adler",
+        "LC Afonso",
+        "JA Aguilar-Pimentel",
+        "L Becker",
+        "L Garrett",
+        "W Hans",
+        "MM Hettich",
+        "R Holtmeier",
+        "SM H\u00f6lter",
+        "K Moreth",
+        "C Prehn",
+        "O Puk",
+        "I R\u00e1cz",
+        "B Rathkolb",
+        "J Rozman"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4098908": {
+      "title": "Late-life rapamycin treatment reverses age-related heart dysfunction",
+      "doi": "10.1111/acel.12109",
+      "pmid": "23734717",
+      "year": 2013,
+      "venue": "Aging Cell",
+      "authors": [
+        "JM Flynn",
+        "MN O'Leary",
+        "CA Zambataro",
+        "EC Academia",
+        "MP Presley",
+        "BJ Garrett",
+        "A Zykovich",
+        "SD Mooney",
+        "R Strong",
+        "CJ Rosen",
+        "P Kapahi",
+        "MD Nelson",
+        "BK Kennedy",
+        "S Melov"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4032600": {
+      "title": "Rapamycin\u2010mediated lifespan increase in mice is dose and sex dependent and metabolically distinct from dietary restriction",
+      "doi": "10.1111/acel.12194",
+      "pmid": "24341993",
+      "year": 2014,
+      "venue": "Aging Cell",
+      "authors": [
+        "RA Miller",
+        "DE Harrison",
+        "CM Astle",
+        "E Fernandez",
+        "K Flurkey",
+        "M Han",
+        "MA Javors",
+        "X Li",
+        "NL Nadon",
+        "JF Nelson",
+        "S Pletcher",
+        "AB Salmon",
+        "ZD Sharp",
+        "S Van Roekel",
+        "L Winkleman",
+        "R Strong"
+      ],
       "sources": [
         "openalex"
       ]
@@ -325,9 +1918,199 @@
     "PMC3796212": {
       "title": "Rapamycin extends life- and health span because it slows aging",
       "doi": "10.18632/aging.100591",
-      "pmid": null,
+      "pmid": "23934728",
       "year": 2013,
-      "venue": "Aging",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "MV Blagosklonny"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3824413": {
+      "title": "Rapamycin suppresses brain aging in senescence-accelerated OXYS rats",
+      "doi": "10.18632/aging.100573",
+      "pmid": "23817674",
+      "year": 2013,
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "NG Kolosova",
+        "AO Vitovtov",
+        "NA Muraleva",
+        "AE Akulov",
+        "NA Stefanova",
+        "MV Blagosklonny"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4055856": {
+      "title": "mTOR Inhibition Alleviates Mitochondrial Disease in a Mouse Model of Leigh Syndrome",
+      "doi": "10.1126/science.1244360",
+      "pmid": "24231806",
+      "year": 2013,
+      "venue": "Science",
+      "authors": [
+        "SC Johnson",
+        "ME Yanos",
+        "EB Kayser",
+        "A Quintana",
+        "M Sangesland",
+        "A Castanza",
+        "L Uhde",
+        "J Hui",
+        "VZ Wall",
+        "A Gagnidze",
+        "K Oh",
+        "BM Wasko",
+        "FJ Ramos",
+        "RD Palmiter",
+        "PS Rabinovitch",
+        "PG Morgan",
+        "MM Sedensky",
+        "M Kaeberlein"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3905076": {
+      "title": "Rapamycin induces pluripotent genes associated with avoidance of replicative senescence",
+      "doi": "10.4161/cc.27396",
+      "pmid": "24296616",
+      "year": 2013,
+      "venue": "Cell Cycle",
+      "authors": [
+        "TV Pospelova",
+        "TV Bykova",
+        "SG Zubova",
+        "NV Katolikova",
+        "NM Yartzeva",
+        "VA Pospelov"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3998676": {
+      "title": "Advancing age is associated with gene expression changes resembling mTOR inhibition: evidence from two human populations.",
+      "doi": "10.1016/j.mad.2012.07.003",
+      "pmid": "22813852",
+      "year": 2012,
+      "venue": "Mech Ageing Dev",
+      "authors": [
+        "LW Harries",
+        "AD Fellows",
+        "LC Pilling",
+        "D Hernandez",
+        "A Singleton",
+        "S Bandinelli",
+        "J Guralnik",
+        "J Powell",
+        "L Ferrucci",
+        "D Melzer"
+      ],
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC3434687": {
+      "title": "Rapamycin slows aging in mice",
+      "doi": "10.1111/j.1474-9726.2012.00832.x",
+      "pmid": "22587563",
+      "year": 2012,
+      "venue": "Aging Cell",
+      "authors": [
+        "JE Wilkinson",
+        "L Burmeister",
+        "SV Brooks",
+        "CC Chan",
+        "S Friedline",
+        "DE Harrison",
+        "JF Hejtmancik",
+        "N Nadon",
+        "R Strong",
+        "LK Wood",
+        "MA Woodward",
+        "RA Miller"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3547521": {
+      "title": "The mTORC1 Inhibitor Everolimus Prevents and Treats E\u03bc- Myc Lymphoma by Restoring Oncogene-Induced Senescence",
+      "doi": "10.1158/2159-8290.cd-12-0404",
+      "pmid": "23242809",
+      "year": 2013,
+      "venue": "Cancer Discov",
+      "authors": [
+        "M Wall",
+        "G Poortinga",
+        "KL Stanley",
+        "RK Lindemann",
+        "M Bots",
+        "CJ Chan",
+        "MJ Bywater",
+        "KM Kinross",
+        "MV Astle",
+        "K Waldeck",
+        "KM Hannan",
+        "J Shortt",
+        "MJ Smyth",
+        "SW Lowe",
+        "RD Hannan",
+        "RB Pearson",
+        "RW Johnstone",
+        "GA McArthur"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3384435": {
+      "title": "Once again on rapamycin-induced insulin resistance and longevity: despite of or owing to",
+      "doi": "10.18632/aging.100461",
+      "pmid": "22683661",
+      "year": 2012,
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "MV Blagosklonny"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3260807": {
+      "title": "Ras/Raf/MEK/ERK and PI3K/PTEN/Akt/mTOR Inhibitors: Rationale and Importance to Inhibiting These Pathways in Human Health",
+      "doi": "10.18632/oncotarget.240",
+      "pmid": "21411864",
+      "year": 2011,
+      "venue": "Oncotarget",
+      "authors": [
+        "WH Chappell",
+        "LS Steelman",
+        "JM Long",
+        "RC Kempf",
+        "SL Abrams",
+        "RA Franklin",
+        "J B\u00e4secke",
+        "F Stivala",
+        "M Donia",
+        "P Fagone",
+        "G Malaponte",
+        "MC Mazzarino",
+        "F Nicoletti",
+        "M Libra",
+        "D Maksimovic-Ivanic",
+        "S Mijatovic",
+        "G Montalto",
+        "M Cervello",
+        "P Laidler",
+        "M Milella"
+      ],
       "sources": [
         "openalex"
       ]
@@ -335,9 +2118,15 @@
     "PMC3191182": {
       "title": "Elimination of Proliferating Cells Unmasks the Shift from Senescence to Quiescence Caused by Rapamycin",
       "doi": "10.1371/journal.pone.0026126",
-      "pmid": null,
+      "pmid": "22022534",
       "year": 2011,
-      "venue": "PLoS ONE",
+      "venue": "PLoS One",
+      "authors": [
+        "OV Leontieva",
+        "ZN Demidenko",
+        "AV Gudkov",
+        "MV Blagosklonny"
+      ],
       "sources": [
         "openalex"
       ]
@@ -345,9 +2134,154 @@
     "PMC3181168": {
       "title": "Progeria, rapamycin and normal aging: recent breakthrough",
       "doi": "10.18632/aging.100352",
-      "pmid": null,
+      "pmid": "21743107",
       "year": 2011,
-      "venue": "Aging",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "MV Blagosklonny"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3306461": {
+      "title": "Lifelong rapamycin administration ameliorates age\u2010dependent cognitive deficits by reducing IL\u20101\u03b2 and enhancing NMDA signaling",
+      "doi": "10.1111/j.1474-9726.2011.00791.x",
+      "pmid": "22212527",
+      "year": 2012,
+      "venue": "Aging Cell",
+      "authors": [
+        "S Majumder",
+        "A Caccamo",
+        "DX Medina",
+        "AD Benavides",
+        "MA Javors",
+        "E Kraig",
+        "R Strong",
+        "A Richardson",
+        "S Oddo"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3021372": {
+      "title": "Rapamycin, But Not Resveratrol or Simvastatin, Extends Life Span of Genetically Heterogeneous Mice",
+      "doi": "10.1093/gerona/glq178",
+      "pmid": "20974732",
+      "year": 2011,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "authors": [
+        "RA Miller",
+        "DE Harrison",
+        "CM Astle",
+        "JA Baur",
+        "AR Boyd",
+        "R de Cabo",
+        "R de Cabo",
+        "E Fernandez",
+        "K Flurkey",
+        "MA Javors",
+        "JF Nelson",
+        "CJ Orihuela",
+        "S Pletcher",
+        "ZD Sharp",
+        "D Sinclair",
+        "JW Starnes",
+        "JE Wilkinson",
+        "NL Nadon",
+        "R Strong"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2848616": {
+      "title": "Inhibition of mTOR by Rapamycin Abolishes Cognitive Deficits and Reduces Amyloid-\u03b2 Levels in a Mouse Model of Alzheimer's Disease",
+      "doi": "10.1371/journal.pone.0009979",
+      "pmid": "20376313",
+      "year": 2010,
+      "venue": "PLoS One",
+      "authors": [
+        "P Spilman",
+        "N Podlutskaya",
+        "MJ Hart",
+        "J Debnath",
+        "O Gorostiza",
+        "D Bredesen",
+        "A Richardson",
+        "R Strong",
+        "V Galvan"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5144999": {
+      "title": "Increasing longevity through caloric restriction or rapamycin feeding in mammals: common mechanisms for common outcomes?",
+      "doi": "10.1111/j.1474-9726.2009.00509.x",
+      "pmid": "19678809",
+      "year": 2009,
+      "venue": "Aging Cell",
+      "authors": [
+        "LS Cox",
+        "JA Mattison"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11063183": {
+      "title": "Primary prophylaxis with mTOR inhibitor enhances T cell effector function and prevents heart transplant rejection during talimogene laherparepvec therapy of squamous cell carcinoma",
+      "doi": "10.1038/s41467-024-47965-3",
+      "pmid": "38693123",
+      "year": 2024,
+      "venue": "Nat Commun",
+      "authors": [
+        "V Joo",
+        "K Abdelhamid",
+        "A Noto",
+        "S Latifyan",
+        "F Martina",
+        "D Daoudlarian",
+        "R De Micheli",
+        "M Pruijm",
+        "S Peters",
+        "R Hullin",
+        "O Gaide",
+        "G Pantaleo",
+        "M Obeid"
+      ],
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4975851": {
+      "title": "Exploration of a potent PI3 kinase/mTOR inhibitor as a novel anti-fibrotic agent in IPF",
+      "doi": "10.1136/thoraxjnl-2015-207429",
+      "pmid": "27103349",
+      "year": 2016,
+      "venue": "Thorax",
+      "authors": [
+        "PF Mercer",
+        "HV Woodcock",
+        "JD Eley",
+        "M Plat\u00e9",
+        "MG Sulikowski",
+        "PF Durrenberger",
+        "L Franklin",
+        "CB Nanthakumar",
+        "Y Man",
+        "F Genovese",
+        "RJ McAnulty",
+        "S Yang",
+        "TM Maher",
+        "AG Nicholson",
+        "AD Blanchard",
+        "RP Marshall",
+        "PT Lukey",
+        "RC Chambers"
+      ],
       "sources": [
         "openalex"
       ]
@@ -355,9 +2289,21 @@
     "PMC3643762": {
       "title": "Murine dendritic cell rapamycin-resistant and rictor-independent mTOR controls IL-10, B7-H1, and regulatory T-cell induction",
       "doi": "10.1182/blood-2012-08-448290",
-      "pmid": null,
+      "pmid": "23444404",
       "year": 2013,
       "venue": "Blood",
+      "authors": [
+        "BR Rosborough",
+        "D Ra\u00efch-Regu\u00e9",
+        "BM Matta",
+        "K Lee",
+        "B Gan",
+        "RA DePinho",
+        "H Hackstein",
+        "M Boothby",
+        "HR Turnquist",
+        "AW Thomson"
+      ],
       "sources": [
         "openalex"
       ]

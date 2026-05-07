@@ -48,6 +48,8 @@ ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = (
     # Inflammation / biomarkers
     ("inflammation", r"\binflammat(?:ion|ory)\b|\bIL-?6\b|\bTNF-?[αα]?\b|\bCRP\b|\bhsCRP\b"),
     ("oxidative stress", r"\boxidative\s+stress\b|reactive\s+oxygen\s+species|\bROS\b"),
+    ("vaccine response", r"\bvaccine\s+response\b|response\s+to\s+(?:the\s+)?(?:influenza\s+)?vaccine|"
+                         r"\bvaccination\s+response\b|\bimmunosenescence\b|immune\s+response"),
     # Common clinical
     ("blood pressure", r"\bblood\s+pressure\b|systolic\s+BP|diastolic\s+BP|\bSBP\b|\bDBP\b"),
     ("cardiorespiratory fitness", r"cardiorespiratory\s+fitness|\bCRF\b"),
@@ -80,6 +82,7 @@ ENDPOINT_TO_OUTCOME_CLASS: dict[str, str] = {
     "blood pressure": "cardiometabolic",
     "inflammation": "immune",
     "oxidative stress": "immune",
+    "vaccine response": "immune",
 }
 
 
@@ -90,6 +93,7 @@ ENDPOINT_POLARITY: dict[str, int] = {
     "healthspan": +1, "insulin sensitivity": +1, "AMPK signaling": +1,
     "mitochondrial respiration": +1, "protein synthesis": +1,
     "cardiorespiratory fitness": +1, "walk speed": +1,
+    "vaccine response": +1,
     # lower = better
     "mortality": -1, "frailty": -1, "sarcopenia": -1, "HbA1c": -1,
     "fasting glucose": -1, "blood glucose": -1, "body weight": -1,

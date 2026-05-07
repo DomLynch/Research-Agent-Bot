@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, Mapping
@@ -28,6 +29,11 @@ _TEMPORAL_ENDPOINTS = {
     "duration", "follow-up", "follow up", "follow_up", "study duration",
     "trial duration", "median follow-up", "age", "treatment duration",
     "intervention duration", "exposure duration",
+}
+_DOSE_UNITS = {"mg", "g", "mcg", "µg", "μg", "ng"}
+_DOSE_ENDPOINTS = {
+    "dose", "dosing", "dosage", "drug dose", "treatment dose",
+    "intervention dose",
 }
 
 
@@ -148,7 +154,8 @@ def build_results_table_with_diagnostic(
                 continue
             score = _quality_score(claim)
             ct = claim.get("claim_type", "")
-            candidates.append((score, ct, row, row.value))
+            value_key = f"{row.value}|{row.unit_or_type}|{row.statistic}"
+            candidates.append((score, ct, row, value_key))
     candidates.sort(key=lambda t: -t[0])
     cat_count: dict[str, int] = {}
     seen_endpoints: dict[str, int] = {}
@@ -225,18 +232,73 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
          days) but endpoint isn't a duration/age outcome — that's a
          age-or-duration value misattributed to a non-temporal
          endpoint (e.g. 'BMI = 65 years' — wrong).
+      3. claim_role is background/protocol-only; public QEI is for
+         outcome/effect numerics, not contextual or methods numerics.
+      4. percentage extractor captured the "95%" prefix of a CI;
+         the confidence_interval claim carries the publishable row.
     """
     endpoint = (claim.get("endpoint") or "").strip().lower()
     if endpoint in _UNBOUND_ENDPOINTS:
         return False
+    role = (claim.get("claim_role") or "").strip().lower()
+    if role in {"background", "protocol", "population_descriptor"}:
+        return False
     claim_type = (claim.get("claim_type") or "").strip()
     units = (claim.get("units") or "").strip().lower()
+    raw = (claim.get("raw_text") or "").strip().lower()
+    context = " ".join((
+        str(claim.get("sentence") or ""),
+        str(claim.get("context_window") or ""),
+    )).lower()
+    if claim_type == "percentage" and raw == "95%" and "95% ci" in context:
+        return False
+    if claim_type == "p_value" and _ambiguous_multi_stat_binding(
+        raw, endpoint, str(claim.get("sentence") or ""),
+    ):
+        return False
     if claim_type == "unit_value" and units in _TEMPORAL_UNITS:
         # Allow the row only if the endpoint is itself a temporal
         # outcome (duration, follow-up, age).
         if endpoint not in _TEMPORAL_ENDPOINTS:
             return False
+    if claim_type == "unit_value" and units in _DOSE_UNITS:
+        if endpoint not in _DOSE_ENDPOINTS:
+            return False
     return True
+
+
+def _ambiguous_multi_stat_binding(
+    raw: str, endpoint: str, sentence: str,
+) -> bool:
+    """Drop public QEI p-values from dense result-list sentences when
+    the p-value is not locally tied to its endpoint.
+
+    Multi-endpoint result sentences often contain several p-values;
+    the extractor can bind the right numeric value to the wrong later
+    endpoint. This is a publishability rule only: keep simple p-value
+    rows, but quarantine dense rows unless endpoint wording is close
+    to the emitted p-value.
+    """
+    if not raw or not endpoint or not sentence:
+        return False
+    sent = sentence.lower()
+    p_values = re.findall(r"\bp\s*[<=>]\s*0?\.\d+", sent)
+    if len(p_values) < 2:
+        return False
+    raw_i = sent.find(raw.lower())
+    if raw_i < 0:
+        return True
+    tokens = [
+        t for t in re.findall(r"[a-z0-9]+", endpoint.lower())
+        if len(t) >= 3 and t not in {"and", "the", "with"}
+    ]
+    if not tokens:
+        return True
+    # Keep only locally bound p-values. In dense result-list prose,
+    # endpoint labels that are a sentence-clause away often belong to
+    # another p-value.
+    window = sent[max(0, raw_i - 40): raw_i + len(raw) + 40]
+    return not any(t in window for t in tokens)
 
 
 def _claim_to_row(
@@ -261,15 +323,20 @@ def _claim_to_row(
     endpoint = (claim.get("endpoint") or "").strip()
     arm = (claim.get("arm") or "").strip()
     role = (claim.get("claim_role") or "").strip()
-    # Pick the best display string for value: raw_text if it's compact,
-    # else format the numeric.
-    value_str = raw if (raw and len(raw) < 24) else _format_value(
-        primary_value,
-    )
-    # Unit/type: prefer explicit units, fall back to claim_type.
-    unit_str = units if units else claim_type.replace("_", " ")
     # Statistic column: pull a paired p or CI from the claim if present.
     statistic = _format_statistic(claim, primary_value)
+    # Pick the best display string for value: raw_text if it's compact,
+    # else format the numeric. Confidence intervals render their interval
+    # once in Statistic; repeating/truncating the CI in Value creates
+    # public-table residue and unsafe reviewer patches.
+    if claim_type == "confidence_interval" and statistic != "—":
+        value_str = "—"
+    else:
+        value_str = raw if (raw and len(raw) < 24) else _format_value(
+            primary_value,
+        )
+    # Unit/type: prefer explicit units, fall back to claim_type.
+    unit_str = units if units else claim_type.replace("_", " ")
     # Endpoint column: bound endpoint > claim_role > short claim_type.
     ep = endpoint or role or claim_type.replace("_", " ") or "—"
     citation = citation_token or _short_citation(paper_id)
@@ -336,9 +403,10 @@ def _format_statistic(claim: dict[str, Any], value: float) -> str:
     already shows the ratio). Otherwise empty."""
     ct = claim.get("claim_type", "")
     if ct == "p_value":
-        if value < 0.001:
-            return "p<0.001"
-        return f"p={value:.3g}"
+        # The value column already carries the exact p-value string.
+        # Duplicating it here invites reviewer/model "simplifications"
+        # that can corrupt markdown table arity.
+        return "—"
     if ct == "confidence_interval":
         nums = claim.get("numeric_values") or []
         if len(nums) >= 2:

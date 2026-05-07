@@ -1,0 +1,83 @@
+{
+  "paper_id": "PMID29408453_a_randomized_control_trial_to_establish_the_feasibility_and_",
+  "doi": "10.1016/j.exger.2017.12.026",
+  "extracted_at": "2026-05-06T20:10:56+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMID29408453_a_randomized_control_trial_to_establish_the_feasibility_and_-u-681",
+      "claim_type": "unit_value",
+      "raw_text": "95 years",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 681,
+      "sentence": "Towards this end, we undertook a placebo-controlled pilot study in 25 generally healthy older adults (aged 70-95 years); subjects were randomized to receive either 1 mg RAPA or placebo daily.",
+      "context_window": "d pilot study in 25 generally healthy older adults (aged 70-95 years); subjects were randomized to receive either 1 mg RAPA or p",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID29408453_a_randomized_control_trial_to_establish_the_feasibility_and_-u-735",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 735,
+      "sentence": "Towards this end, we undertook a placebo-controlled pilot study in 25 generally healthy older adults (aged 70-95 years); subjects were randomized to receive either 1 mg RAPA or placebo daily.",
+      "context_window": "ed 70-95 years); subjects were randomized to receive either 1 mg RAPA or placebo daily. Although three subjects withdrew, 11",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMID29408453_a_randomized_control_trial_to_establish_the_feasibility_and_-u-840",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 840,
+      "sentence": "Although three subjects withdrew, 11 RAPA and 14 controls completed at least 8 weeks of treatment and were included in the analysis.",
+      "context_window": "bjects withdrew, 11 RAPA and 14 controls completed at least 8 weeks of treatment and were included in the analysis. We monitore",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMID29408453_a_randomized_control_trial_to_establish_the_feasibility_and_-u-2654",
+      "claim_type": "unit_value",
+      "raw_text": "93 years",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 2654,
+      "sentence": "Immune parameters were largely unchanged as well, possibly due to the advanced ages of the cohort (70-93 years; mean age 80.5).",
+      "context_window": "s well, possibly due to the advanced ages of the cohort (70-93 years; mean age 80.5). RAPA-associated increases in a myeloid cel",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

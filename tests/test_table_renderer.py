@@ -134,6 +134,25 @@ def test_table_2_includes_interpretation_column() -> None:
     assert "worsens muscle_function" in md
 
 
+def test_table_2_null_receipt_with_p_value_uses_source_local_interpretation() -> None:
+    @dataclass
+    class _R:
+        receipt_id: str
+        evidence_tier: str = "C1"
+        directness: str = "mechanistic"
+        outcome_class: str = "muscle_function"
+        effect_direction: str = "null"
+        p_values: tuple[str, ...] = ()
+
+    receipts = [
+        _R(receipt_id="A 2020", p_values=("p = 0.04",)),
+    ]
+    md = tr.render_table_2_endpoint_evidence(receipts)
+    assert "p = 0.04 | null summary |" in md
+    assert "reported statistic; receipt summary remains null" in md
+    assert "no significant effect on muscle_function" not in md
+
+
 def test_table_3_assigns_per_domain_grades_by_tier() -> None:
     """Fix #14: per-domain RoB. A1 → mostly low; B2 → high confounding
     + n/a blinding; C1 → low allocation, n/a blinding/confounding."""

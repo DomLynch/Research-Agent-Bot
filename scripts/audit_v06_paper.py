@@ -407,6 +407,16 @@ def _check_preclinical_hedge(paper: str) -> tuple[bool, str]:
     not be measured for translational hedging."""
     # Strip appendix before measuring (Q9 does the same).
     paper_for_check = _strip_publication_appendix(paper)
+    # Q6 is a narrative-prose gate. Reference titles and deterministic
+    # evidence tables often contain "mice"/"preclinical" but are not
+    # translational claims by the manuscript author.
+    paper_for_check = re.split(
+        r"^##\s+(?:Structured Evidence Tables|Quantitative Evidence "
+        r"Index\b|References\b|Table\s+\d+\b)",
+        paper_for_check,
+        maxsplit=1,
+        flags=re.MULTILINE | re.IGNORECASE,
+    )[0]
     sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])", paper_for_check)
     violations: list[str] = []
     # Refactor 2026-05-04: expanded hedge phrase set. Previously
@@ -417,7 +427,7 @@ def _check_preclinical_hedge(paper: str) -> tuple[bool, str]:
     hedges = (
         # Translation-aware
         "humans", "translation", "translate", "extrapolat",
-        "may not apply", "remains to be", "warrant", "caution",
+        "may not apply", "may not manifest", "remains to be", "warrant", "caution",
         "uncertain", "context-dependent", "speculative",
         "mechanistic evidence", "limit",
         # Self-tagged preclinical context (these explicitly name
@@ -768,10 +778,10 @@ def _check_inferential_bridge_contract(paper: str) -> tuple[bool, str]:
     blocks = [
         b.strip()
         for b in re.split(r"\n(?=\d+\.\s+|\-\s+)", body)
-        if "[D1_" in b
+        if re.match(r"^(?:\d+\.|\-)\s+", b.strip())
     ]
     if not blocks:
-        return False, "Inferential Bridge has no D1-tagged claims"
+        return False, "Inferential Bridge has no numbered D1 claims"
     for i, block in enumerate(blocks, 1):
         if not _D1_RE.search(block):
             return False, f"D1 claim {i} missing tier/confidence tag"

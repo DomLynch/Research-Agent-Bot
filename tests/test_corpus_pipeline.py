@@ -203,15 +203,15 @@ def test_format_funnel_md_flags_safety_cap_when_triggered():
     assert "GLOBAL_SAFETY_CAP" in md or "truncated" in md.lower()
 
 
-def test_build_manifest_uses_active_synonyms_not_broad_aliases(monkeypatch):
-    """Broad display aliases can drive prompts/retrieval, but corpus
-    core fit must use active intervention synonyms."""
+def test_build_manifest_uses_active_and_mechanism_aliases(monkeypatch):
+    """Tiered certification needs both direct intervention names and
+    mechanism aliases during classify-before-extract."""
     async def fake_run_waves(*_args, **_kwargs):
         return _wave_report([
             _hit(
                 doi="10.1/m",
-                title="Molecular mechanisms of metformin action",
-                abstract="The review discusses mTOR inhibitor pathways.",
+                title="mTOR inhibition improves immune function in the elderly",
+                abstract="A randomized controlled trial tested mTOR inhibition.",
             ),
         ])
 
@@ -231,4 +231,43 @@ def test_build_manifest_uses_active_synonyms_not_broad_aliases(monkeypatch):
         retrieval=RetrievalSpec(topic_terms=("rapamycin",)),
     )
     manifest = asyncio.run(build_corpus_manifest(pack))
-    assert manifest.entries[0].classification.classification == "off_thesis"
+    assert manifest.entries[0].classification.classification == "core_on_thesis"
+
+
+def test_topic_aliases_for_classification_merges_active_and_display_aliases():
+    pack = TopicPack(
+        topic="rapamycin",
+        drug_class="mtor_inhibitor",
+        aliases=frozenset(("mtor inhibitor",)),
+        aliases_display=("mTOR inhibitor",),
+        expected_evidence_slots=(),
+        special_rules=(),
+        forbidden_verbs_for_protocol_role=frozenset(),
+        forbidden_verbs_for_results_role_with_protocol_keywords=frozenset(),
+        canonical_trials=(),
+        known_role_overrides={},
+        active_arm_synonyms=frozenset(("rapamycin", "sirolimus")),
+    )
+    aliases = cp.topic_aliases_for_classification(pack)
+    assert "rapamycin" in aliases
+    assert "sirolimus" in aliases
+    assert "mTOR inhibitor" in aliases
+
+
+def test_extraction_pools_include_background_when_inference_enabled():
+    pack = TopicPack(
+        topic="rapamycin",
+        drug_class="mtor_inhibitor",
+        aliases=frozenset(("rapamycin",)),
+        aliases_display=("rapamycin",),
+        expected_evidence_slots=(),
+        special_rules=(),
+        forbidden_verbs_for_protocol_role=frozenset(),
+        forbidden_verbs_for_results_role_with_protocol_keywords=frozenset(),
+        canonical_trials=(),
+        known_role_overrides={},
+        active_arm_synonyms=frozenset(("rapamycin",)),
+    )
+    assert cp.extraction_pools_for_pack(pack) == frozenset((
+        "adjacent", "background", "core",
+    ))

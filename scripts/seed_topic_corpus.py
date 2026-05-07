@@ -29,6 +29,8 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import os
+import re
 import subprocess
 import sys
 import urllib.parse
@@ -47,7 +49,8 @@ from agent.topic_pack import (  # noqa: E402
 from agent.wave_retrieval import run_waves  # noqa: E402
 from agent.retrieval_modes import GLOBAL_SAFETY_CAP, resolve_params  # noqa: E402
 from agent.corpus_pipeline import (  # noqa: E402
-    classify_and_filter, format_funnel_md,
+    classify_and_filter, extraction_pools_for_pack, format_funnel_md,
+    topic_aliases_for_classification,
 )
 
 
@@ -96,13 +99,94 @@ def _pmcid_from_parsed_path(path: Path) -> str | None:
     return prefix if prefix.startswith("PMC") else None
 
 
+def _slug(text: str, *, limit: int = 60) -> str:
+    return re.sub(r"[^a-zA-Z0-9]+", "_", text.lower()).strip("_")[:limit]
+
+
+def _paper_id_from_hit(hit) -> str:
+    slug = _slug(hit.title or "untitled")
+    if hit.pmid:
+        return f"PMID{hit.pmid}_{slug}" if slug else f"PMID{hit.pmid}"
+    if hit.doi:
+        return f"DOI_{_slug(hit.doi, limit=80)}_{slug}".strip("_")
+    return f"HIT_{slug}" if slug else "HIT_untitled"
+
+
+def _parsed_paths_for_pmcid(parsed_dir: Path, pmcid: str) -> list[Path]:
+    return sorted(parsed_dir.glob(f"{pmcid}_*.paper_sections.json"))
+
+
+def _authors_from_europepmc_result(result: dict[str, Any]) -> list[str]:
+    raw = (result.get("authorString") or "").strip()
+    if not raw:
+        return []
+    authors: list[str] = []
+    for part in raw.split(","):
+        clean = " ".join(part.strip().split())
+        if not clean:
+            continue
+        tokens = clean.split()
+        if len(tokens) >= 2 and re.fullmatch(r"[A-Z.]{1,8}", tokens[-1]):
+            clean = " ".join([tokens[-1].replace(".", ""), *tokens[:-1]])
+        authors.append(clean)
+        if len(authors) >= 20:
+            break
+    return authors
+
+
+def _write_abstract_fallback(
+    hit, parsed_dir: Path, *, reason: str,
+    resolved_meta: dict[str, Any] | None = None,
+) -> str | None:
+    abstract = (hit.abstract or "").strip()
+    if not abstract:
+        return None
+    resolved_meta = resolved_meta or {}
+    paper_id = _paper_id_from_hit(hit)
+    sections = {
+        "abstract": abstract,
+        "introduction": "",
+        "methods": "",
+        "results": "",
+        "discussion": "",
+        "limitations": "",
+        "conclusion": "",
+        "references": "",
+    }
+    doc = {
+        "paper_id": paper_id,
+        "source_pdf": hit.url or "",
+        "title": hit.title or "",
+        "authors": resolved_meta.get("authors") or [],
+        "year": resolved_meta.get("year") or hit.year,
+        "journal": resolved_meta.get("journal") or hit.venue or "",
+        "doi": resolved_meta.get("doi") or hit.doi or "",
+        "pmid": resolved_meta.get("pmid") or hit.pmid or "",
+        "trial_ids": sorted(set(re.findall(r"\bNCT\d{8}\b", abstract))),
+        "sections": sections,
+        "tables": [],
+        "figures": [],
+        "extraction_quality": {
+            "section_coverage": ["abstract"],
+            "table_count": 0,
+            "figure_count": 0,
+            "reference_count": 0,
+            "warnings": [f"abstract-fallback:{reason}"],
+        },
+    }
+    (parsed_dir / f"{paper_id}.paper_sections.json").write_text(
+        json.dumps(doc, indent=2),
+    )
+    return paper_id
+
+
 async def _resolve_pmcid(
     aggregated_hit, *, http,
-) -> str | None:
+) -> tuple[str | None, dict[str, Any]]:
     """Resolve a discovered hit (with DOI/PMID) to a PMCID for
     full-text fetch via Europe PMC."""
     if not (aggregated_hit.doi or aggregated_hit.pmid):
-        return None
+        return None, {}
     parts = []
     if aggregated_hit.doi:
         parts.append(f"DOI:{aggregated_hit.doi}")
@@ -116,14 +200,23 @@ async def _resolve_pmcid(
     try:
         r = await http.get(url, timeout=15.0)
         if r.status_code != 200:
-            return None
+            return None, {}
         data = r.json()
     except Exception:
-        return None
+        return None, {}
     hits = data.get("resultList", {}).get("result", [])
     if not hits:
-        return None
-    return hits[0].get("pmcid")
+        return None, {}
+    hit = hits[0]
+    meta = {
+        "authors": _authors_from_europepmc_result(hit),
+        "doi": hit.get("doi") or aggregated_hit.doi,
+        "pmid": hit.get("pmid") or aggregated_hit.pmid,
+        "journal": hit.get("journalTitle")
+        or hit.get("journalInfo", {}).get("journal", {}).get("title", ""),
+        "year": int(hit["pubYear"]) if hit.get("pubYear") else aggregated_hit.year,
+    }
+    return hit.get("pmcid"), meta
 
 
 async def _do_seed(
@@ -132,6 +225,7 @@ async def _do_seed(
     limit: int,
     max_per_source: int,
     sources: list[str] | None,
+    force_extract: bool = False,
 ) -> dict[str, Any]:
     pack_path = _topic_pack_path(topic)
     if not pack_path.exists():
@@ -171,8 +265,7 @@ async def _do_seed(
         report = await run_waves(pack.retrieval, params=params)
         manifest = classify_and_filter(
             report, topic=topic,
-            topic_aliases=tuple(pack.active_arm_synonyms)
-            or tuple(pack.aliases_display),
+            topic_aliases=topic_aliases_for_classification(pack),
             expected_slots=pack.expected_evidence_slots,
             exclude_terms=(
                 pack.retrieval.exclude_terms if pack.retrieval else ()
@@ -198,14 +291,15 @@ async def _do_seed(
             f"adj={manifest.funnel.get('extractable_adjacent', 0)}",
             file=sys.stderr,
         )
-        active_pools = {"core", "adjacent"}
+        active_pools = extraction_pools_for_pack(pack)
         selected = [
             e.hit for e in manifest.entries
             if e.keep_for_extraction and e.pool in active_pools
         ][:limit]
         print(
-            f"=== Selecting top {len(selected)} core/adjacent hits for "
-            f"fetch (limit={limit}) ===",
+            f"=== Selecting top {len(selected)} "
+            f"{'/'.join(sorted(active_pools))} hits for fetch "
+            f"(limit={limit}) ===",
             file=sys.stderr,
         )
     else:
@@ -268,22 +362,29 @@ async def _do_seed(
     import httpx
     pmcids: list[str] = []
     paper_id_map: dict[str, dict] = {}
+    pmcid_hit_map: dict[str, Any] = {}
     failures: list[dict] = []
+    fallback_paper_ids: list[str] = []
     print("\n=== Resolving PMCIDs ===", file=sys.stderr)
     async with httpx.AsyncClient(
         timeout=30.0,
         headers={"User-Agent": "researka/1.0"},
     ) as http:
         for h in selected:
-            pmcid = await _resolve_pmcid(h, http=http)
+            pmcid, resolved_meta = await _resolve_pmcid(h, http=http)
             if pmcid:
                 pmcids.append(pmcid)
+                pmcid_hit_map[pmcid] = h
                 paper_id_map[pmcid] = {
                     "title": h.title,
-                    "doi": h.doi, "pmid": h.pmid,
-                    "year": h.year, "venue": h.venue,
+                    "doi": resolved_meta.get("doi") or h.doi,
+                    "pmid": resolved_meta.get("pmid") or h.pmid,
+                    "year": resolved_meta.get("year") or h.year,
+                    "venue": resolved_meta.get("journal") or h.venue,
+                    "authors": resolved_meta.get("authors") or [],
                     "sources": list(h.sources),
                 }
+                pmcid_hit_map[f"{pmcid}:meta"] = resolved_meta
                 print(f"  ✓ {pmcid}: {h.title[:70]}", file=sys.stderr)
             else:
                 failures.append({
@@ -291,6 +392,12 @@ async def _do_seed(
                     "doi": h.doi, "pmid": h.pmid,
                     "reason": "no PMCID (closed-access or unindexed)",
                 })
+                fallback_id = _write_abstract_fallback(
+                    h, parsed_dir, reason="no_pmcid",
+                    resolved_meta=resolved_meta,
+                )
+                if fallback_id:
+                    fallback_paper_ids.append(fallback_id)
 
     # 3. Fetch full text via fetch_oa_corpus.py
     if pmcids:
@@ -310,6 +417,16 @@ async def _do_seed(
                 f"  ! fetch_oa_corpus exited {e.returncode}",
                 file=sys.stderr,
             )
+        for pmcid in pmcids:
+            if _parsed_paths_for_pmcid(parsed_dir, pmcid):
+                continue
+            fallback_id = _write_abstract_fallback(
+                pmcid_hit_map[pmcid], parsed_dir,
+                reason="fulltext_unavailable",
+                resolved_meta=pmcid_hit_map.get(f"{pmcid}:meta"),
+            )
+            if fallback_id:
+                fallback_paper_ids.append(fallback_id)
 
     # 4. Extract quant claims
     print(
@@ -318,10 +435,14 @@ async def _do_seed(
     )
     n_extracted = 0
     selected_pmcids = set(pmcids)
+    fallback_id_set = set(fallback_paper_ids)
     active_paper_ids: list[str] = []
     parsed_files = [
         pf for pf in parsed_dir.glob("*.paper_sections.json")
-        if _pmcid_from_parsed_path(pf) in selected_pmcids
+        if (
+            _pmcid_from_parsed_path(pf) in selected_pmcids
+            or _paper_id_from_parsed_path(pf) in fallback_id_set
+        )
     ]
     for pf in parsed_files:
         paper_id = _paper_id_from_parsed_path(pf)
@@ -329,7 +450,7 @@ async def _do_seed(
         target = quant_dir / (
             paper_id + ".quant_claims.json"
         )
-        if target.exists():
+        if target.exists() and not force_extract:
             n_extracted += 1
             continue
         cmd = [
@@ -341,6 +462,7 @@ async def _do_seed(
             subprocess.run(
                 cmd, check=True, cwd=REPO,
                 capture_output=True,
+                env={**os.environ, "TOPIC_DOMAIN": topic},
             )
             n_extracted += 1
         except subprocess.CalledProcessError as e:
@@ -366,11 +488,13 @@ async def _do_seed(
         "n_unique_candidates": n_unique,
         "n_selected_for_fetch": len(selected),
         "n_pmcid_resolved": len(pmcids),
+        "n_abstract_fallback": len(fallback_id_set),
         "n_extracted": n_extracted,
-        "active_pools": ["core", "adjacent"]
+        "active_pools": sorted(active_pools)
         if pack.retrieval is not None else ["legacy"],
         "active_pmcids": sorted(selected_pmcids),
         "active_paper_ids": sorted(set(active_paper_ids)),
+        "abstract_fallback_paper_ids": sorted(fallback_id_set),
         "failures": failures,
         "papers_resolved": paper_id_map,
     }
@@ -389,6 +513,7 @@ def _print_report(report: dict[str, Any]) -> None:
         f"Unique candidates:     {report['n_unique_candidates']}\n"
         f"Selected for fetch:    {report['n_selected_for_fetch']}\n"
         f"PMCID resolved:        {report['n_pmcid_resolved']}\n"
+        f"Abstract fallbacks:    {report.get('n_abstract_fallback', 0)}\n"
         f"Quant claims extracted: {report['n_extracted']}\n"
         f"Failures:              {len(report['failures'])}",
         file=sys.stderr,
@@ -428,6 +553,10 @@ def main(argv: list[str] | None = None) -> int:
              "names (e.g. pubmed europepmc openalex).",
     )
     parser.add_argument(
+        "--force-extract", action="store_true",
+        help="Rebuild selected quant_claims even if output files exist.",
+    )
+    parser.add_argument(
         "--list-sources", action="store_true",
         help="Print all available sources + their auth status.",
     )
@@ -460,6 +589,7 @@ def main(argv: list[str] | None = None) -> int:
             limit=args.limit,
             max_per_source=args.max_per_source,
             sources=args.sources,
+            force_extract=args.force_extract,
         ))
     except (FileNotFoundError, ValueError) as e:
         print(f"Error: {e}", file=sys.stderr)

@@ -238,6 +238,19 @@ def test_ratio_below_one_on_adverse_endpoint_is_beneficial() -> None:
     assert orch._claim_topic_effect(claim) == 1
 
 
+def test_hazard_ratio_below_one_on_lifespan_endpoint_is_beneficial() -> None:
+    """A survival hazard ratio below 1 means lower event hazard and can
+    be a beneficial lifespan signal even when the endpoint is not
+    named mortality."""
+    claim = {
+        "claim_type": "hazard_ratio",
+        "endpoint": "lifespan",
+        "arm": "rapamycin",
+        "numeric_values": [0.42],
+    }
+    assert orch._claim_topic_effect(claim) == 1
+
+
 def test_p_value_does_not_carry_effect_direction() -> None:
     """P-values establish significance for an endpoint; they should
     not independently flip direction labels in receipt aggregation."""

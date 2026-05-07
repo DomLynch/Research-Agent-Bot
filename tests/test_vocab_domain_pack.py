@@ -180,6 +180,23 @@ def test_rapamycin_arm_binds_to_active_drug_synonym() -> None:
     ) == "placebo"
 
 
+def test_rapamycin_arm_binds_alias_and_retrieval_terms_to_active_canon() -> None:
+    """Aliases/retrieval terms such as RAD001 and mTOR inhibitor must
+    bind as active intervention terms without a hand-written vocab file."""
+    os.environ["TOPIC_DOMAIN"] = "rapamycin"
+    qe = _reload_quant_endpoints()
+    active = {
+        "rapamycin", "sirolimus", "rapamune", "rap",
+    }
+    assert qe.match_arm("RAD001 enhanced vaccine response by 20%.").lower() in active
+    assert qe.match_arm(
+        "mTOR inhibitor treatment enhanced vaccine response by 20%.",
+    ).lower() in active
+    assert qe.match_endpoint(
+        "RAD001 enhanced the response to the influenza vaccine by about 20%.",
+    ) == "vaccine response"
+
+
 def test_metformin_arm_unchanged_after_per_domain_refactor() -> None:
     """Default (metformin) ARM_VOCAB must keep working — backward
     compat after the per-domain split."""

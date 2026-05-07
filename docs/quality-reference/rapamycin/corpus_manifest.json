@@ -2,15 +2,15 @@
   "topic": "rapamycin",
   "funnel": {
     "retrieved": 444,
-    "classified_keep": 118,
-    "classified_drop": 326,
-    "extractable_core": 1,
-    "extractable_background": 77,
-    "extractable_adjacent": 40,
-    "class_off_thesis": 326,
-    "class_background_mechanism": 77,
-    "class_adjacent_clinical": 40,
-    "class_core_on_thesis": 1,
+    "classified_keep": 135,
+    "classified_drop": 309,
+    "extractable_core": 2,
+    "extractable_background": 86,
+    "extractable_adjacent": 47,
+    "class_off_thesis": 309,
+    "class_background_mechanism": 86,
+    "class_core_on_thesis": 2,
+    "class_adjacent_clinical": 47,
     "cap_triggered": 0
   },
   "per_wave_stats": [
@@ -23,16 +23,16 @@
       "cumulative": 420,
       "stats": {
         "raw_openaire": 0,
-        "raw_doaj": 100,
         "raw_europepmc": 0,
-        "raw_semanticscholar": 0,
-        "raw_clinicaltrials": 63,
+        "raw_doaj": 100,
         "raw_crossref": 2,
+        "raw_clinicaltrials": 63,
+        "raw_semanticscholar": 0,
         "raw_pmc_oai": 26,
-        "raw_medrxiv": 5,
         "raw_biorxiv": 47,
-        "raw_pubmed": 36,
+        "raw_medrxiv": 5,
         "raw_openalex": 147,
+        "raw_pubmed": 36,
         "raw_arxiv": 0,
         "raw_total_pre_dedupe": 426,
         "unique_keys_post_dedupe": 420,
@@ -48,16 +48,16 @@
       "cumulative": 420,
       "stats": {
         "raw_openaire": 0,
-        "raw_doaj": 100,
         "raw_europepmc": 0,
-        "raw_semanticscholar": 0,
         "raw_clinicaltrials": 63,
+        "raw_doaj": 100,
         "raw_crossref": 2,
+        "raw_semanticscholar": 0,
         "raw_pmc_oai": 26,
         "raw_medrxiv": 5,
         "raw_biorxiv": 47,
-        "raw_pubmed": 0,
         "raw_openalex": 147,
+        "raw_pubmed": 0,
         "raw_arxiv": 0,
         "raw_total_pre_dedupe": 390,
         "unique_keys_post_dedupe": 389,
@@ -72,17 +72,17 @@
       "new_to_corpus": 24,
       "cumulative": 444,
       "stats": {
-        "raw_doaj": 1,
+        "raw_semanticscholar": 0,
         "raw_clinicaltrials": 0,
         "raw_openaire": 0,
         "raw_europepmc": 0,
-        "raw_medrxiv": 0,
         "raw_biorxiv": 0,
-        "raw_semanticscholar": 0,
         "raw_pmc_oai": 0,
-        "raw_pubmed": 1,
+        "raw_medrxiv": 0,
+        "raw_doaj": 1,
         "raw_crossref": 3,
         "raw_openalex": 22,
+        "raw_pubmed": 1,
         "raw_arxiv": 0,
         "raw_total_pre_dedupe": 27,
         "unique_keys_post_dedupe": 26,
@@ -153,11 +153,11 @@
         "openalex",
         "pubmed"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence: incidence of",
+      "pool": "core",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1007/s11357-019-00113-y",
@@ -187,11 +187,11 @@
         "openalex",
         "pubmed"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "background_mechanism",
+      "score": 60,
+      "reason": "Mechanism / preclinical:  mice ",
+      "pool": "background",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "NCT07264166",
@@ -226,22 +226,6 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT06535568",
-      "doi": null,
-      "pmid": null,
-      "title": "Single vs. Dual Antiplatelet Therapy in Elderly or HBR Patients Undergoing Percutaneous Intervention With DCB (PICCOLETO IV-EPIC 38)",
-      "year": 2028,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
       "paper_id": "NCT06658093",
       "doi": null,
       "pmid": null,
@@ -258,10 +242,42 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT05949658",
+      "paper_id": "NCT06535568",
       "doi": null,
       "pmid": null,
-      "title": "Rapalog Pharmacology (RAP PAC) Study",
+      "title": "Single vs. Dual Antiplatelet Therapy in Elderly or HBR Patients Undergoing Percutaneous Intervention With DCB (PICCOLETO IV-EPIC 38)",
+      "year": 2028,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT06727305",
+      "doi": null,
+      "pmid": null,
+      "title": "MTOR Inhibitors in Older Adults",
+      "year": 2027,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "background_mechanism",
+      "score": 60,
+      "reason": "Mechanism / preclinical: pharmacokinetics, pharmacodynamics",
+      "pool": "background",
+      "keep_for_extraction": true
+    },
+    {
+      "paper_id": "NCT07191353",
+      "doi": null,
+      "pmid": null,
+      "title": "Resistance Training and Rapamycin to Enhance Bone Formation in Postmenopausal Women",
       "year": 2027,
       "n_sources": 1,
       "sources": [
@@ -290,26 +306,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT06727305",
+      "paper_id": "NCT05237687",
       "doi": null,
       "pmid": null,
-      "title": "MTOR Inhibitors in Older Adults",
-      "year": 2027,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT07191353",
-      "doi": null,
-      "pmid": null,
-      "title": "Resistance Training and Rapamycin to Enhance Bone Formation in Postmenopausal Women",
+      "title": "The Role of Sirolimus in Preventing Functional Decline in Older Adults",
       "year": 2027,
       "n_sources": 1,
       "sources": [
@@ -322,10 +322,10 @@
       "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT05237687",
+      "paper_id": "NCT05949658",
       "doi": null,
       "pmid": null,
-      "title": "The Role of Sirolimus in Preventing Functional Decline in Older Adults",
+      "title": "Rapalog Pharmacology (RAP PAC) Study",
       "year": 2027,
       "n_sources": 1,
       "sources": [
@@ -370,20 +370,20 @@
       "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT04629495",
+      "paper_id": "NCT07058974",
       "doi": null,
       "pmid": null,
-      "title": "Rapamycin - Effects on Alzheimer's and Cognitive Health",
+      "title": "A Study of Exercise and Pharmacologic Intervention on Systemic Inflammation",
       "year": 2026,
       "n_sources": 1,
       "sources": [
         "clinicaltrials"
       ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "Topic alias appears outside title; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
     },
     {
       "paper_id": "NCT07475546",
@@ -402,10 +402,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT06789900",
+      "paper_id": "NCT07354620",
       "doi": null,
       "pmid": null,
-      "title": "Everolimus and/or Exercise to Prevent Bone Loss in Postmenopausal Women",
+      "title": "A Pilot Study on Reverse Aging (The REVERSE Study)",
       "year": 2026,
       "n_sources": 1,
       "sources": [
@@ -413,41 +413,9 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
+      "reason": "No topic alias hit; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT07058974",
-      "doi": null,
-      "pmid": null,
-      "title": "A Study of Exercise and Pharmacologic Intervention on Systemic Inflammation",
-      "year": 2026,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT06960928",
-      "doi": null,
-      "pmid": null,
-      "title": "Low Dose Sirolimus in People With Post-Acute Sequelae of COVID-19 (PASC) Long COVID-19",
-      "year": 2026,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
     },
     {
       "paper_id": "NCT05924295",
@@ -482,6 +450,22 @@
       "keep_for_extraction": false
     },
     {
+      "paper_id": "NCT06960928",
+      "doi": null,
+      "pmid": null,
+      "title": "Low Dose Sirolimus in People With Post-Acute Sequelae of COVID-19 (PASC) Long COVID-19",
+      "year": 2026,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
+    },
+    {
       "paper_id": "NCT05835999",
       "doi": null,
       "pmid": null,
@@ -493,15 +477,15 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT07354620",
+      "paper_id": "NCT06789900",
       "doi": null,
       "pmid": null,
-      "title": "A Pilot Study on Reverse Aging (The REVERSE Study)",
+      "title": "Everolimus and/or Exercise to Prevent Bone Loss in Postmenopausal Women",
       "year": 2026,
       "n_sources": 1,
       "sources": [
@@ -509,9 +493,25 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT04629495",
+      "doi": null,
+      "pmid": null,
+      "title": "Rapamycin - Effects on Alzheimer's and Cognitive Health",
+      "year": 2026,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1371/journal.pone.0345575",
@@ -555,11 +555,11 @@
       "sources": [
         "doaj"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.5937/jomb0-60849",
@@ -658,22 +658,6 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT05836025",
-      "doi": null,
-      "pmid": null,
-      "title": "Effect of Rapamycin in Ovarian Aging",
-      "year": 2025,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
-    },
-    {
       "paper_id": "NCT07092618",
       "doi": null,
       "pmid": null,
@@ -688,6 +672,22 @@
       "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT05836025",
+      "doi": null,
+      "pmid": null,
+      "title": "Effect of Rapamycin in Ovarian Aging",
+      "year": 2025,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "NCT04612179",
@@ -1037,7 +1037,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -1245,7 +1245,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -1405,7 +1405,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -1629,7 +1629,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -1693,7 +1693,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -1810,58 +1810,26 @@
       "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT04488601",
-      "doi": null,
-      "pmid": null,
-      "title": "Participatory Evaluation (of) Aging (With) Rapamycin (for) Longevity Study",
-      "year": 2023,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
-    },
-    {
-      "paper_id": "NCT06550271",
-      "doi": null,
-      "pmid": null,
-      "title": "The Bioavailability of Compounded and Generic Rapamycin in Normative Aging Individuals",
-      "year": 2023,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "core_on_thesis",
-      "score": 100,
-      "reason": "On-topic clinical evidence: real-world evidence",
-      "pool": "core",
-      "keep_for_extraction": true
-    },
-    {
-      "paper_id": "NCT04996719",
-      "doi": null,
-      "pmid": null,
-      "title": "Effect of Rapamycin to Improve Cardiac Function in Frail Older Adults",
-      "year": 2023,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
-    },
-    {
       "paper_id": "NCT04994561",
       "doi": null,
       "pmid": null,
       "title": "VIAging Deceleration Trial Using Metformin, Dasatinib, Rapamycin and Nutritional Supplements",
+      "year": 2023,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
+    },
+    {
+      "paper_id": "NCT04488601",
+      "doi": null,
+      "pmid": null,
+      "title": "Participatory Evaluation (of) Aging (With) Rapamycin (for) Longevity Study",
       "year": 2023,
       "n_sources": 1,
       "sources": [
@@ -1888,6 +1856,38 @@
       "reason": "No topic alias hit; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT04996719",
+      "doi": null,
+      "pmid": null,
+      "title": "Effect of Rapamycin to Improve Cardiac Function in Frail Older Adults",
+      "year": 2023,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
+    },
+    {
+      "paper_id": "NCT06550271",
+      "doi": null,
+      "pmid": null,
+      "title": "The Bioavailability of Compounded and Generic Rapamycin in Normative Aging Individuals",
+      "year": 2023,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence: real-world evidence",
+      "pool": "core",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1101/2023.06.12.544619",
@@ -2813,7 +2813,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -2834,10 +2834,10 @@
       "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT03743675",
+      "paper_id": "NCT04584710",
       "doi": null,
       "pmid": null,
-      "title": "Influence of Aerobic Training and Weight Loss on Skeletal Muscle Inflammatory Markers and Muscle Protein Balance in Older Adults",
+      "title": "A Phase 2 Study of RTB101 as COVID-19 Post-Exposure Prophylaxis in Older Adults",
       "year": 2021,
       "n_sources": 1,
       "sources": [
@@ -2850,10 +2850,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT04584710",
+      "paper_id": "NCT03743675",
       "doi": null,
       "pmid": null,
-      "title": "A Phase 2 Study of RTB101 as COVID-19 Post-Exposure Prophylaxis in Older Adults",
+      "title": "Influence of Aerobic Training and Weight Loss on Skeletal Muscle Inflammatory Markers and Muscle Protein Balance in Older Adults",
       "year": 2021,
       "n_sources": 1,
       "sources": [
@@ -3426,6 +3426,22 @@
       "keep_for_extraction": false
     },
     {
+      "paper_id": "NCT04981652",
+      "doi": null,
+      "pmid": null,
+      "title": "The Effect of Whole Milk to Improve Muscle Health in Older Women",
+      "year": 2020,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
       "paper_id": "NCT03353597",
       "doi": null,
       "pmid": null,
@@ -3446,22 +3462,6 @@
       "doi": null,
       "pmid": null,
       "title": "A Double-Blind, Placebo-Controlled Trial of Anti-Aging, Pro-Autophagy Effects of Metformin in Adults With Prediabetes",
-      "year": 2020,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT04981652",
-      "doi": null,
-      "pmid": null,
-      "title": "The Effect of Whole Milk to Improve Muscle Health in Older Women",
       "year": 2020,
       "n_sources": 1,
       "sources": [
@@ -3565,7 +3565,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -3842,10 +3842,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT03712761",
+      "paper_id": "NCT03895151",
       "doi": null,
       "pmid": null,
-      "title": "Supplementation of a Leucine-Enriched Dairy Protein Blend",
+      "title": "Association Between Intakes of Protein, Calcium and Milk With Gene Expression and Linear Growth of School Aged Children",
       "year": 2019,
       "n_sources": 1,
       "sources": [
@@ -3853,7 +3853,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -3870,22 +3870,6 @@
       "classification": "off_thesis",
       "score": 20,
       "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT03895151",
-      "doi": null,
-      "pmid": null,
-      "title": "Association Between Intakes of Protein, Calcium and Milk With Gene Expression and Linear Growth of School Aged Children",
-      "year": 2019,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -3910,6 +3894,22 @@
       "doi": null,
       "pmid": null,
       "title": "Phase 1 Study of the Effects of Combining Topical FDA-approved Drugs on Age-related Pathways on the Skin of Healthy Volunteers",
+      "year": 2019,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT03712761",
+      "doi": null,
+      "pmid": null,
+      "title": "Supplementation of a Leucine-Enriched Dairy Protein Blend",
       "year": 2019,
       "n_sources": 1,
       "sources": [
@@ -4253,7 +4253,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -4427,11 +4427,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "background_mechanism",
+      "score": 60,
+      "reason": "Mechanism / preclinical: molecular mechanism,  rats ",
+      "pool": "background",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1172/jci.insight.93203",
@@ -4450,10 +4450,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT01846130",
+      "paper_id": "NCT03308747",
       "doi": null,
       "pmid": null,
-      "title": "Preserving Muscle Mass and Function in Bedridden Older Adults",
+      "title": "Inflammaging and Muscle Protein Metabolism",
       "year": 2018,
       "n_sources": 1,
       "sources": [
@@ -4466,10 +4466,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT01922167",
+      "paper_id": "NCT01846130",
       "doi": null,
       "pmid": null,
-      "title": "Resistance Exercise Training and Amino Acid Leucine Supplementation in Frail Elderly Women",
+      "title": "Preserving Muscle Mass and Function in Bedridden Older Adults",
       "year": 2018,
       "n_sources": 1,
       "sources": [
@@ -4498,10 +4498,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT03308747",
+      "paper_id": "NCT01922167",
       "doi": null,
       "pmid": null,
-      "title": "Inflammaging and Muscle Protein Metabolism",
+      "title": "Resistance Exercise Training and Amino Acid Leucine Supplementation in Frail Elderly Women",
       "year": 2018,
       "n_sources": 1,
       "sources": [
@@ -4866,20 +4866,20 @@
       "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT02440789",
+      "paper_id": "NCT03103893",
       "doi": null,
       "pmid": null,
-      "title": "Safety and Efficacy of Sirolimus for HIV Reservoir Reduction in Individuals on Suppressive Antiretroviral Therapy (ART)",
+      "title": "Novel Compositions for Treating or Preventing Dermal Disorders",
       "year": 2017,
       "n_sources": 1,
       "sources": [
         "clinicaltrials"
       ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "Topic alias appears outside title; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
     },
     {
       "paper_id": "NCT02495727",
@@ -4898,20 +4898,20 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT03103893",
+      "paper_id": "NCT02440789",
       "doi": null,
       "pmid": null,
-      "title": "Novel Compositions for Treating or Preventing Dermal Disorders",
+      "title": "Safety and Efficacy of Sirolimus for HIV Reservoir Reduction in Individuals on Suppressive Antiretroviral Therapy (ART)",
       "year": 2017,
       "n_sources": 1,
       "sources": [
         "clinicaltrials"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1101/230813",
@@ -4925,7 +4925,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -4941,7 +4941,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -5179,11 +5179,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.3389/fncel.2016.00157",
@@ -5410,38 +5410,6 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT00891696",
-      "doi": null,
-      "pmid": null,
-      "title": "Nutritional and Contractile Regulation of Muscle Growth",
-      "year": 2015,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT01855971",
-      "doi": null,
-      "pmid": null,
-      "title": "\"Using Epigallocatechin Gallate (EGCG) and Cognitive Training to Modulate Cognitive Performance in Patients With Fragile X Syndrome\" (TESFX)",
-      "year": 2015,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
       "paper_id": "NCT01649960",
       "doi": null,
       "pmid": null,
@@ -5462,6 +5430,38 @@
       "doi": null,
       "pmid": null,
       "title": "The Effects of a High Protein Diet on Microbiota, Gastrointestinal Function and Wellness in Older Women",
+      "year": 2015,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT00891696",
+      "doi": null,
+      "pmid": null,
+      "title": "Nutritional and Contractile Regulation of Muscle Growth",
+      "year": 2015,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT01855971",
+      "doi": null,
+      "pmid": null,
+      "title": "\"Using Epigallocatechin Gallate (EGCG) and Cognitive Training to Modulate Cognitive Performance in Patients With Fragile X Syndrome\" (TESFX)",
       "year": 2015,
       "n_sources": 1,
       "sources": [
@@ -5611,11 +5611,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "background_mechanism",
+      "score": 60,
+      "reason": "Mechanism / preclinical: in vitro",
+      "pool": "background",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.14336/ad.2014.0500263",
@@ -5707,11 +5707,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1172/jci67674",
@@ -5755,11 +5755,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1242/jcs.133983",
@@ -5789,7 +5789,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -5915,11 +5915,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "background_mechanism",
+      "score": 60,
+      "reason": "Mechanism / preclinical: signaling pathway,  mouse ",
+      "pool": "background",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1371/journal.pone.0080411",
@@ -5963,11 +5963,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "background_mechanism",
+      "score": 60,
+      "reason": "Mechanism / preclinical: expression of",
+      "pool": "background",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "NCT01445548",
@@ -5995,11 +5995,11 @@
       "sources": [
         "pubmed"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "background_mechanism",
+      "score": 60,
+      "reason": "Mechanism / preclinical: expression of",
+      "pool": "background",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1111/j.1474-9726.2012.00832.x",
@@ -6043,11 +6043,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "background_mechanism",
+      "score": 60,
+      "reason": "Mechanism / preclinical: expression of,  mice ",
+      "pool": "background",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.18632/aging.100461",
@@ -6093,7 +6093,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -6109,7 +6109,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -6173,7 +6173,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -6203,11 +6203,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1186/2044-5040-1-11",
@@ -6482,22 +6482,6 @@
       "keep_for_extraction": true
     },
     {
-      "paper_id": "10.1016/j.crvi.2010.01.016",
-      "doi": "10.1016/j.crvi.2010.01.016",
-      "pmid": null,
-      "title": "Senescence and death of plant organs: Nutrient recycling and developmental regulation",
-      "year": 2010,
-      "n_sources": 1,
-      "sources": [
-        "openalex"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
       "paper_id": "10.1002/bies.200900171",
       "doi": "10.1002/bies.200900171",
       "pmid": null,
@@ -6512,6 +6496,22 @@
       "reason": "Mechanism / preclinical: yeast",
       "pool": "background",
       "keep_for_extraction": true
+    },
+    {
+      "paper_id": "10.1016/j.crvi.2010.01.016",
+      "doi": "10.1016/j.crvi.2010.01.016",
+      "pmid": null,
+      "title": "Senescence and death of plant organs: Nutrient recycling and developmental regulation",
+      "year": 2010,
+      "n_sources": 1,
+      "sources": [
+        "openalex"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
     },
     {
       "paper_id": "10.1073/pnas.1002298107",
@@ -6717,7 +6717,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -6876,11 +6876,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "background_mechanism",
+      "score": 60,
+      "reason": "Mechanism / preclinical: in vitro,  mouse ,  mice ",
+      "pool": "background",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.62347/wtmu5537",
@@ -6988,11 +6988,11 @@
       "sources": [
         "crossref"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.3389/fonc.2023.1167154",
@@ -7084,11 +7084,11 @@
       "sources": [
         "openalex"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.3389/fphar.2015.00033",

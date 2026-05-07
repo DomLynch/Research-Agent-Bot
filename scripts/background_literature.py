@@ -153,7 +153,11 @@ def numeric_values(registry: dict[str, BackgroundLitEntry]) -> set[str]:
 
 
 def find_unsourced_background_uses(
-    paper_md: str, registry: dict[str, BackgroundLitEntry],
+    paper_md: str,
+    registry: dict[str, BackgroundLitEntry],
+    *,
+    manifest: dict | None = None,
+    quant_claims_dir: Path | None = None,
 ) -> list[tuple[str, str, str]]:
     """For each background-literature numeric that appears in the
     paper, check the citation_token also appears in the same sentence.
@@ -181,6 +185,10 @@ def find_unsourced_background_uses(
     # to prevent '5%' from matching inside '95%' (CI notation).
     # Refactor 2026-05-04: fixes a false positive where '5%' bg-lit
     # entry was triggering on every '95% CI:' in the paper.
+    receipt_numeric_tokens = _receipt_numeric_tokens_by_citation(
+        manifest,
+        quant_claims_dir,
+    )
     entry_patterns: dict[str, re.Pattern] = {}
     for entry in registry.values():
         # Anchor: not preceded by a digit, then literal numeric.
@@ -196,6 +204,12 @@ def find_unsourced_background_uses(
                 continue
             if entry.citation_token in sent:
                 continue  # cited — admitted
+            if _supported_by_receipt_numeric(
+                sent,
+                entry.numeric,
+                receipt_numeric_tokens,
+            ):
+                continue
             # Skip markdown table content — see docstring.
             if _is_table_dominated(sent):
                 continue
@@ -205,6 +219,65 @@ def find_unsourced_background_uses(
                 (entry.numeric, entry.citation_token, snippet)
             )
     return unsourced
+
+
+def _receipt_numeric_tokens_by_citation(
+    manifest: dict | None,
+    quant_claims_dir: Path | None,
+) -> dict[str, set[str]]:
+    if not isinstance(manifest, dict) or quant_claims_dir is None:
+        return {}
+    out: dict[str, set[str]] = {}
+    for receipt in manifest.get("receipts") or ():
+        token = str(receipt.get("citation_token") or "").strip()
+        rid = str(receipt.get("receipt_id") or "").strip()
+        if not token or not rid:
+            continue
+        path = quant_claims_dir / f"{rid}.quant_claims.json"
+        try:
+            data = json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        numerics: set[str] = set()
+        for claim in data.get("claims") or ():
+            if claim.get("binding_confidence") != "high":
+                continue
+            raw = str(claim.get("raw_text") or "").strip()
+            if raw:
+                numerics.add(raw)
+            for value in claim.get("numeric_values") or ():
+                numerics |= _numeric_variants(value)
+        if numerics:
+            out[token] = numerics
+    return out
+
+
+def _numeric_variants(value: object) -> set[str]:
+    text = str(value).strip()
+    out = {text} if text else set()
+    try:
+        num = float(text)
+    except ValueError:
+        return out
+    if num.is_integer():
+        out.add(str(int(num)))
+        out.add(f"{int(num)}%")
+    out.add(f"{num:g}")
+    out.add(f"{num:g}%")
+    return out
+
+
+def _supported_by_receipt_numeric(
+    sentence: str,
+    numeric: str,
+    receipt_numeric_tokens: dict[str, set[str]],
+) -> bool:
+    for citation_token, tokens in receipt_numeric_tokens.items():
+        if citation_token not in sentence:
+            continue
+        if numeric in tokens:
+            return True
+    return False
 
 
 def _is_table_dominated(text: str) -> bool:

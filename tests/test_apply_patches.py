@@ -135,6 +135,45 @@ def test_numeric_patch_with_value_substitution_is_flagged() -> None:
     assert "new numeric" in reason or "32" in reason
 
 
+def test_claim_patch_allows_neutral_evidence_rephrase() -> None:
+    p = {
+        "id": "P04", "patch_type": "claim", "severity": "P1",
+        "location": "Abstract",
+        "before": (
+            "Bitto 2016 demonstrated that transient rapamycin treatment "
+            "can increase lifespan, though effects were variable."
+        ),
+        "after": (
+            "Bitto 2016 examined transient rapamycin treatment, though "
+            "effects were variable."
+        ),
+        "reason": "downgrade unsupported positive framing",
+    }
+    paper = "## Abstract\n\n" + p["before"] + "\n"
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "examined transient rapamycin treatment" in new_md
+    assert "can increase lifespan" not in new_md
+
+
+def test_formatting_patch_cannot_remove_bridge_contract_tags() -> None:
+    p = {
+        "id": "P05", "patch_type": "formatting", "severity": "P2",
+        "location": "Inferential Bridge",
+        "before": (
+            "1. [D1_inferential_bridge | confidence=medium] Claim. "
+            "[mechanism_anchor: A 2020] [conservation: B 2021]"
+        ),
+        "after": "1. Claim.",
+        "reason": "remove internal tags",
+    }
+    paper = "## Inferential Bridge\n\n" + p["before"] + "\n"
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "rejected"
+    assert "[D1_inferential_bridge" in new_md
+    assert "contract-preserving rejection" in results[0].reason_for_decision
+
+
 def test_numeric_patch_with_untraceable_value_is_flagged_with_fail_diagnostic() -> None:
     """Numeric patches are flag-only regardless of verifier outcome.
     When the global verifier ALSO fails, both reasons are logged."""
@@ -225,6 +264,26 @@ def test_patch_with_ambiguous_before_text_flagged() -> None:
     assert paper == new_md
 
 
+def test_repeated_safe_claim_simplification_replaces_all_occurrences() -> None:
+    p = {
+        "id": "P-CLAIM", "patch_type": "claim", "severity": "P1",
+        "location": "Abstract",
+        "before": "Negative signals appear in: cardiometabolic, longevity.",
+        "after": "Negative signals appear in: cardiometabolic.",
+        "reason": "delete unsupported longevity direction",
+    }
+    paper = (
+        "## Abstract\n\n"
+        "Negative signals appear in: cardiometabolic, longevity.\n\n"
+        "## Conclusion\n\n"
+        "Negative signals appear in: cardiometabolic, longevity.\n"
+    )
+    out, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "longevity" not in out
+    assert out.count("Negative signals appear in: cardiometabolic.") == 2
+
+
 def test_known_cited_artifact_delete_replaces_all_occurrences() -> None:
     """Generated `_Cited:` metadata is a known render artifact. If
     Grok proposes deleting it as formatting, replace every identical
@@ -242,9 +301,57 @@ def test_known_cited_artifact_delete_replaces_all_occurrences() -> None:
     )
     out, results = apply_patches.apply_patches(paper, [p], _manifest())
     assert results[0].decision == "applied"
-    assert "replace-all formatting cleanup" in results[0].reason_for_decision
+    assert "replace-all cleanup" in results[0].reason_for_decision
     assert "_Cited:" not in out
     assert "Paragraph one" in out and "Paragraph two" in out
+
+
+def test_known_role_repair_artifact_delete_replaces_all_occurrences() -> None:
+    p = {
+        "id": "P-ROLE", "patch_type": "formatting", "severity": "P1",
+        "location": "Discussion",
+        "before": (
+            "Kell 2026 reported a dose of 4; this manuscript treats "
+            "the value according to that source role."
+        ),
+        "after": "",
+        "reason": "remove numeric role repair artifact",
+    }
+    paper = (
+        "## Discussion\n\n"
+        "Kell 2026 reported a dose of 4; this manuscript treats "
+        "the value according to that source role.\n\n"
+        "Other text.\n\n"
+        "Kell 2026 reported a dose of 4; this manuscript treats "
+        "the value according to that source role.\n"
+    )
+    out, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "replace-all cleanup" in results[0].reason_for_decision
+    assert "reported a dose of 4" not in out
+    assert "Other text." in out
+
+
+def test_numeric_patch_cannot_break_qei_table_shape() -> None:
+    p = {
+        "id": "P-QEI",
+        "patch_type": "numeric",
+        "severity": "P1",
+        "location": "Quantitative Evidence Index — rapamycin",
+        "before": "Kell 2026 | mTOR signaling | placebo | p < 0.0001 | p value | p<0.001",
+        "after": "Kell 2026 | mTOR signaling | placebo | p<0.001",
+        "reason": "simplify mismatched p-value pair",
+    }
+    paper = (
+        "## Quantitative Evidence Index — rapamycin\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Kell 2026 | mTOR signaling | placebo | p < 0.0001 | p value | p<0.001 |\n"
+    )
+    out, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "flagged"
+    assert "table-shape FAIL" in results[0].reason_for_decision
+    assert out == paper
 
 
 def test_log_includes_per_patch_decision_with_reason() -> None:

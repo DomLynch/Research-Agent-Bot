@@ -27,6 +27,7 @@ def test_valid_d1_bridge_renders_machine_checkable_tags() -> None:
     assert "[mechanism_anchor: r1]" in md
     assert "[conservation: Canon 2020]" in md
     assert "[testability: explicit]" in md
+    assert ".. [testability:" not in md
 
 
 def test_d1_bridge_rejects_unknown_anchor_and_new_numeric() -> None:

@@ -413,6 +413,112 @@ def test_source_context_drift_handles_numeric_variants():
         assert drift == [], f"failed on {prose_num!r}"
 
 
+def test_numeric_contract_allows_hedge_with_inline_canonical_value():
+    bg_lit = {
+        "smith_response": {
+            "citation_token": "Smith 2020",
+            "numeric": "52%",
+            "context": "response proportion",
+        },
+    }
+    paper = (
+        "Smith 2020 reported around 50% (52%) of participants "
+        "meeting the response threshold."
+    )
+    issues = scan_paper(paper, manifest={}, bg_lit_registry=bg_lit)
+    assert not [
+        i for i in issues
+        if i.issue_type in {
+            "source_context_drift", "numeric_claim_contract",
+        }
+    ]
+
+
+def test_numeric_contract_blocks_editorial_fraction_without_exact_value():
+    bg_lit = {
+        "smith_response": {
+            "citation_token": "Smith 2020",
+            "numeric": "31%",
+            "context": "response proportion",
+        },
+    }
+    paper = (
+        "Smith 2020 reported approximately one-third of participants "
+        "meeting the response threshold."
+    )
+    issues = scan_paper(paper, manifest={}, bg_lit_registry=bg_lit)
+    found = [i for i in issues if i.issue_type == "numeric_claim_contract"]
+    assert found and found[0].severity == "P1"
+
+
+def test_numeric_contract_allows_editorial_fraction_with_exact_value():
+    bg_lit = {
+        "smith_response": {
+            "citation_token": "Smith 2020",
+            "numeric": "31%",
+            "context": "response proportion",
+        },
+    }
+    paper = (
+        "Smith 2020 reported approximately one-third (31%) of "
+        "participants meeting the response threshold."
+    )
+    issues = scan_paper(paper, manifest={}, bg_lit_registry=bg_lit)
+    assert not [i for i in issues if i.severity == "P1"]
+
+
+def test_numeric_range_contract_allows_supported_citation_set():
+    bg_lit = {
+        "smith": {
+            "citation_token": "Smith 2020",
+            "numeric": "8.2%",
+            "context": "mortality change",
+        },
+        "jones": {
+            "citation_token": "Jones 2021",
+            "numeric": "11%",
+            "context": "mortality change",
+        },
+        "lee": {
+            "citation_token": "Lee 2022",
+            "numeric": "14.8%",
+            "context": "mortality change",
+        },
+    }
+    paper = (
+        "Smith 2020, Jones 2021, and Lee 2022 reported effects "
+        "within an 8-15% range."
+    )
+    issues = scan_paper(paper, manifest={}, bg_lit_registry=bg_lit)
+    assert not [i for i in issues if i.issue_type == "source_context_drift"]
+
+
+def test_numeric_range_contract_blocks_unsupported_range():
+    bg_lit = {
+        "smith": {
+            "citation_token": "Smith 2020",
+            "numeric": "8.2%",
+            "context": "mortality change",
+        },
+        "jones": {
+            "citation_token": "Jones 2021",
+            "numeric": "11%",
+            "context": "mortality change",
+        },
+        "lee": {
+            "citation_token": "Lee 2022",
+            "numeric": "14.8%",
+            "context": "mortality change",
+        },
+    }
+    paper = (
+        "Smith 2020, Jones 2021, and Lee 2022 reported effects "
+        "within an 8-10% range."
+    )
+    issues = scan_paper(paper, manifest={}, bg_lit_registry=bg_lit)
+    assert [i for i in issues if i.issue_type == "source_context_drift"]
+
+
 def test_source_context_drift_handles_leading_decimal_p_values(tmp_path):
     qc_dir = tmp_path / "quant_claims"
     qc_dir.mkdir()
@@ -613,6 +719,29 @@ def test_role_drift_repair_rewrites_to_source_role(tmp_path):
     assert not scan_paper(
         fixed, manifest=manifest, quant_claims_dir=qc_dir,
     )
+
+
+def test_role_drift_repair_skips_unitless_dose_artifact(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_dose.quant_claims.json").write_text(
+        '{"paper_id":"PMC_dose","claims":[{'
+        '"claim_type":"unit_value","numeric_values":[4],'
+        '"binding_confidence":"high","claim_role":"dose"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "PMC_dose",
+        "citation_token": "Kell 2026",
+    }]}
+    paper = "Kell 2026 reported an effect of 4 (Kell 2026)."
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    fixed, n = repair_source_context_drift_sentences(
+        paper, issues, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    assert n == 0
+    assert fixed == paper
 
 
 def test_role_drift_passes_when_prose_uses_source_dose(tmp_path):

@@ -101,6 +101,12 @@ _NUMERIC_RE = re.compile(
 _CITED_ARTIFACT_RE = re.compile(
     r"_Cited:\s*`[^`\n]+`(?:\s*,\s*`[^`\n]+`)*_"
 )
+_ROLE_REPAIR_ARTIFACT_RE = re.compile(
+    r"[A-Z][A-Za-z\-]+ \d{4} reported (?:an? )?"
+    r"(?:dose|effect value|outcome value|baseline value|"
+    r"population descriptor|threshold|change)(?: of [^.;]+)?; "
+    r"this manuscript treats the value according to that source role\."
+)
 
 
 def _numeric_tokens_in(text: str) -> set[str]:
@@ -120,6 +126,118 @@ def _is_cited_artifact_delete(ptype: str, before: str, after: str) -> bool:
         ptype == "formatting"
         and not after.strip()
         and _CITED_ARTIFACT_RE.fullmatch(before.strip()) is not None
+    )
+
+
+def _is_role_repair_artifact_delete(ptype: str, before: str, after: str) -> bool:
+    return (
+        ptype == "formatting"
+        and not after.strip()
+        and _ROLE_REPAIR_ARTIFACT_RE.fullmatch(before.strip()) is not None
+    )
+
+
+def _removes_bridge_contract_tags(location: str, before: str, after: str) -> bool:
+    if "inferential bridge" not in location.lower():
+        return False
+    required = (
+        "[D1_", "[mechanism_anchor:", "[conservation:", "[testability:",
+    )
+    return any(tag in before and tag not in after for tag in required)
+
+
+def _breaks_markdown_table_shape(location: str, before: str, after: str) -> bool:
+    """Reviewer patches may simplify table content, but must not
+    delete cells. A row fragment with fewer pipe separators after
+    patching corrupts the public manuscript even when the numeric
+    wording is a safe subset."""
+    if "|" not in before:
+        return False
+    if "quantitative evidence index" not in location.lower() and "|" not in after:
+        return False
+    return after.count("|") != before.count("|")
+
+
+def _is_repeated_safe_simplification(ptype: str, before: str, after: str) -> bool:
+    if ptype not in {"claim", "formatting"}:
+        return False
+    if before == after:
+        return False
+    ok, _msg = _is_safe_simplification(before, after)
+    return ok
+
+
+_NEUTRAL_EVIDENCE_WORDS = frozenset({
+    "examined", "evaluated", "assessed", "studied", "tested",
+    "investigated", "reported", "described",
+})
+_DIRECTIONAL_CLAIM_WORDS = frozenset({
+    "increase", "increases", "increased", "improve", "improves",
+    "improved", "extend", "extends", "extended", "benefit", "benefits",
+    "beneficial", "positive", "reduce", "reduces", "reduced", "lower",
+    "lowers", "lowered", "attenuate", "attenuates", "attenuated",
+    "mitigate", "mitigates", "mitigated",
+})
+
+
+def _is_safe_neutral_claim_rephrase(
+    before: str, after: str,
+) -> tuple[bool, str]:
+    """Allow a narrow, non-additive claim downgrade.
+
+    Grok often repairs overclaiming by replacing a directional verb
+    ("increased", "improved") with a neutral evidence verb
+    ("examined", "assessed"). This is safe only when the patch adds
+    no numerics/citations/entities, does not lengthen the text, and
+    the only new content words are neutral evidence verbs.
+    """
+    import re as _re
+
+    def _numerics(s: str) -> set[str]:
+        return set(_re.findall(r"\d+\.?\d*", s))
+
+    def _author_years(s: str) -> set[str]:
+        return set(
+            f"{m.group(1)} {m.group(2)}"
+            for m in _re.finditer(
+                r"\b([A-Z][a-zA-Z]+(?:\s+et\s+al\.)?)\s+(\d{4})\b", s,
+            )
+        )
+
+    def _caps_idents(s: str) -> set[str]:
+        return {
+            t for t in _re.findall(r"\b[A-Z][A-Za-z\-]{2,}\b", s)
+            if not t.isdigit()
+        }
+
+    def _content_words(s: str) -> set[str]:
+        return set(_re.findall(r"[a-z]+", s.lower()))
+
+    if _numerics(after) - _numerics(before):
+        return False, "neutral rephrase introduces a new numeric"
+    if _author_years(after) - _author_years(before):
+        return False, "neutral rephrase introduces a new citation"
+    if _caps_idents(after) - _caps_idents(before):
+        return False, "neutral rephrase introduces a new identifier"
+    n_before = len(before.split())
+    n_after = len(after.split())
+    if n_after > n_before:
+        return False, (
+            f"neutral rephrase grows text ({n_before} → {n_after} words)"
+        )
+    before_words = _content_words(before)
+    after_words = _content_words(after)
+    new_words = after_words - before_words
+    if not new_words or not new_words <= _NEUTRAL_EVIDENCE_WORDS:
+        return False, (
+            "neutral rephrase introduced non-neutral word(s): "
+            f"{sorted(new_words)}"
+        )
+    if not (before_words & _DIRECTIONAL_CLAIM_WORDS):
+        return False, "neutral rephrase did not remove directional wording"
+    return True, (
+        f"safe neutral claim rephrase ({n_before} → {n_after} words; "
+        f"new neutral words={sorted(new_words)})"
     )
 
 
@@ -416,6 +534,21 @@ def apply_patches(
             ))
             continue
 
+        if ptype == "formatting" and _removes_bridge_contract_tags(
+            location, before, after,
+        ):
+            results.append(PatchResult(
+                patch_id=pid, patch_type=ptype, severity=sev,
+                decision="rejected",
+                reason_for_decision=(
+                    "contract-preserving rejection: formatting patch "
+                    "removes Inferential Bridge contract tags required "
+                    f"by Q14. Grok rationale: {proposer_reason!r}"
+                ),
+                before=before, after=after,
+            ))
+            continue
+
         # Per-type gate decision: ok=True → eligible for apply
         # (subject to mechanical safety); ok=False → flag-only.
         if ptype == "formatting":
@@ -437,11 +570,19 @@ def apply_patches(
             # spine while letting elite-frontier-model fixes land.
             num_ok, num_msg = _verify_numeric_patch(p, corpus_nums)
             simp_ok, simp_msg = _is_safe_simplification(before, after)
-            ok = simp_ok
+            table_ok = not _breaks_markdown_table_shape(
+                location, before, after,
+            )
+            ok = simp_ok and table_ok
+            table_msg = (
+                "table-shape pass"
+                if table_ok else
+                "table-shape FAIL — patch changes markdown cell count"
+            )
             gate_reason = (
                 f"numeric smart-gate: simplification "
                 f"{'pass' if simp_ok else 'FAIL'} ({simp_msg}); "
-                f"global-corpus verifier: "
+                f"{table_msg}; global-corpus verifier: "
                 f"{'pass' if num_ok else 'FAIL'} — {num_msg}"
             )
         elif ptype == "claim":
@@ -451,6 +592,17 @@ def apply_patches(
             # that introduce new claims/numerics/citations stay
             # flagged-for-human.
             simp_ok, simp_msg = _is_safe_simplification(before, after)
+            if not simp_ok:
+                neutral_ok, neutral_msg = _is_safe_neutral_claim_rephrase(
+                    before, after,
+                )
+                if neutral_ok:
+                    simp_ok, simp_msg = neutral_ok, neutral_msg
+                else:
+                    simp_msg = (
+                        f"{simp_msg}; neutral rephrase FAIL "
+                        f"({neutral_msg})"
+                    )
             ok = simp_ok
             gate_reason = (
                 f"claim smart-gate: simplification "
@@ -490,14 +642,18 @@ def apply_patches(
             ))
             continue
         if n_occurrences > 1:
-            if _is_cited_artifact_delete(ptype, before, after):
+            if _is_cited_artifact_delete(
+                ptype, before, after,
+            ) or _is_role_repair_artifact_delete(
+                ptype, before, after,
+            ) or _is_repeated_safe_simplification(ptype, before, after):
                 new_md = new_md.replace(before, after)
                 results.append(PatchResult(
                     patch_id=pid, patch_type=ptype, severity=sev,
                     decision="applied",
                     reason_for_decision=(
-                        f"known generated citation marker appeared "
-                        f"{n_occurrences}x; replace-all formatting "
+                        f"repeat-safe simplification appeared "
+                        f"{n_occurrences}x; replace-all "
                         f"cleanup. {full_reason}"
                     ),
                     before=before, after=after,

@@ -47,6 +47,8 @@ def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
             issues.append(SurfaceIssue("placeholder_prose", pat))
     for msg in _section_issue_messages(paper_md):
         issues.append(SurfaceIssue("structure_surface", msg))
+    for msg in _qei_shape_issue_messages(paper_md):
+        issues.append(SurfaceIssue("qei_surface", msg))
     for row in _extract_qei_rows(paper_md):
         for msg in qei_row_issue_messages(row):
             issues.append(SurfaceIssue("qei_surface", msg))
@@ -103,6 +105,27 @@ def _extract_qei_rows(paper_md: str) -> Iterable[dict[str, str]]:
                 "unit_or_type": cells[4], "statistic": cells[5],
             })
     return tuple(rows)
+
+
+def _qei_shape_issue_messages(paper_md: str) -> tuple[str, ...]:
+    m = re.search(
+        r"^## Quantitative Evidence Index\b.*?\n(.*?)(?=^## |\Z)",
+        paper_md,
+        flags=re.M | re.S,
+    )
+    if not m:
+        return ()
+    issues: list[str] = []
+    expected = 6
+    for line in m.group(1).splitlines():
+        if not line.startswith("|") or "---" in line:
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if cells[:6] == ["Study", "Endpoint", "Arm", "Value", "Type", "Statistic"]:
+            continue
+        if len(cells) != expected:
+            issues.append(f"malformed QEI row cell count: {line.strip()}")
+    return tuple(issues)
 
 
 def _section_issue_messages(paper_md: str) -> tuple[str, ...]:
@@ -184,13 +207,15 @@ def _unit_class(unit: str, value: str) -> str:
         return "bmi_unit"
     if "mg/dl" in hay or "mmol/l" in hay or "ng/ml" in hay:
         return "concentration"
+    if unit in {"mg", "g", "mcg", "µg", "μg", "ng"}:
+        return "dose"
     if "mmhg" in hay:
         return "pressure"
     if "m/s" in hay:
         return "speed"
     if re.search(r"\b(years?|months?|weeks?|days?|hours?)\b", hay):
         return "duration"
-    if re.search(r"\bcm\b", hay):
+    if re.search(r"\b(?:cm|mm)\b", hay):
         return "length"
     if re.search(r"\bkg\b", hay):
         return "mass"

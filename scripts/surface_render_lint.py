@@ -35,6 +35,7 @@ _CITED_BLOCK_RE = re.compile(
     r"^[ \t]*_Cited:[^_\n]*_\s*$",
     re.MULTILINE,
 )
+_FILE_EXTENSIONS = {"md", "json", "py", "toml", "csv", "tsv", "xml", "txt"}
 
 
 @dataclass(frozen=True, slots=True)
@@ -251,6 +252,11 @@ def detect_sentence_fragments(
     pat_b = re.compile(
         r"\.\s+(on|in|at|by|of|for|with|to)\s+(\d{4}|[A-Z])",
     )
+    pat_c = re.compile(r"(?:\b[A-Za-z]{4,}|\))\.([a-z]{2,})(?:[,\s])")
+    pat_d = re.compile(
+        r"(?m)^(?![ \t]*(?:[|#*_\\-]|\d+\.))"
+        r"((?:ing|ed|cy|tion|ment|ness|ity))\b[^\n]*"
+    )
     for m in pat_a.finditer(paper_md):
         line_no = _line_no_for_offset(line_starts, m.start())
         snippet = paper_md[
@@ -282,6 +288,35 @@ def detect_sentence_fragments(
                 "fragment sentence (subject missing)."
             ),
         ))
+    for m in pat_c.finditer(paper_md):
+        if m.group(1).lower() in _FILE_EXTENSIONS:
+            continue
+        line_no = _line_no_for_offset(line_starts, m.start())
+        snippet = paper_md[
+            max(0, m.start() - 40):m.end() + 40
+        ].strip()
+        findings.append(SurfaceLintFinding(
+            kind="sentence_fragment_spliced_word",
+            line_no=line_no,
+            evidence=snippet[:200],
+            suggested_fix=(
+                "A lowercase fragment is spliced directly after a "
+                "sentence-ending period — delete the fragment sentence."
+            ),
+        ))
+    for m in pat_d.finditer(paper_md):
+        if m.group(1).lower() in {"mtor", "ph"}:
+            continue
+        line_no = _line_no_for_offset(line_starts, m.start())
+        findings.append(SurfaceLintFinding(
+            kind="sentence_fragment_lowercase_line_start",
+            line_no=line_no,
+            evidence=m.group(0).strip()[:200],
+            suggested_fix=(
+                "Paragraph starts with a lowercase fragment — delete "
+                "the broken sentence."
+            ),
+        ))
     return findings
 
 
@@ -308,6 +343,11 @@ def strip_sentence_fragments(paper_md: str) -> tuple[str, int]:
     pat_b = re.compile(
         r"\.\s+(on|in|at|by|of|for|with|to)\s+(\d{4}|[A-Z])",
     )
+    pat_c = re.compile(r"(?:\b[A-Za-z]{4,}|\))\.([a-z]{2,})(?:[,\s])")
+    pat_d = re.compile(
+        r"(?m)^(?![ \t]*(?:[|#*_\\-]|\d+\.))"
+        r"((?:ing|ed|cy|tion|ment|ness|ity))\b[^\n]*"
+    )
     spans: list[tuple[int, int]] = []
     for pat in (pat_a, pat_b):
         for m in pat.finditer(out):
@@ -321,6 +361,21 @@ def strip_sentence_fragments(paper_md: str) -> tuple[str, int]:
                 continue
             frag_end = next_period + 1  # include the period
             spans.append((frag_start, frag_end))
+    for m in pat_c.finditer(out):
+        if m.group(1).lower() in _FILE_EXTENSIONS:
+            continue
+        frag_start = m.start(1)
+        next_period = out.find(".", m.end())
+        if next_period == -1:
+            continue
+        spans.append((frag_start, next_period + 1))
+    for m in pat_d.finditer(out):
+        if m.group(1).lower() in {"mtor", "ph"}:
+            continue
+        next_period = out.find(".", m.start())
+        if next_period == -1:
+            continue
+        spans.append((m.start(), next_period + 1))
     if not spans:
         return paper_md, 0
     # Coalesce overlapping spans + apply in reverse order so
@@ -342,6 +397,194 @@ def strip_sentence_fragments(paper_md: str) -> tuple[str, int]:
     return out, n
 
 
+def detect_blank_table_rows(paper_md: str) -> list[SurfaceLintFinding]:
+    findings: list[SurfaceLintFinding] = []
+    line_starts = _line_indices(paper_md)
+    for m in re.finditer(r"(?m)^[ \t]*\|(?:[ \t]*\|)*[ \t]*$", paper_md):
+        findings.append(SurfaceLintFinding(
+            kind="blank_table_row",
+            line_no=_line_no_for_offset(line_starts, m.start()),
+            evidence=m.group(0),
+            suggested_fix="Blank markdown table row — strip it.",
+        ))
+    return findings
+
+
+def strip_blank_table_rows(paper_md: str) -> tuple[str, int]:
+    out, n = re.subn(
+        r"(?m)^[ \t]*\|(?:[ \t]*\|)*[ \t]*$\n?",
+        "",
+        paper_md,
+    )
+    out = re.sub(r"\n{3,}", "\n\n", out)
+    return out, n
+
+
+def detect_malformed_table_rows(paper_md: str) -> list[SurfaceLintFinding]:
+    findings: list[SurfaceLintFinding] = []
+    line_starts = _line_indices(paper_md)
+    lines = paper_md.splitlines()
+    expected: int | None = None
+    for i, line in enumerate(lines):
+        if not line.lstrip().startswith("|"):
+            expected = None
+            continue
+        cells = line.count("|") - 1
+        stripped = line.strip()
+        if expected is None:
+            expected = cells
+            continue
+        if re.fullmatch(r"\|[\s:|\-]+\|", stripped):
+            expected = cells
+            continue
+        if expected is not None and cells != expected:
+            offset = sum(len(ln) + 1 for ln in lines[:i])
+            findings.append(SurfaceLintFinding(
+                kind="malformed_table_row",
+                line_no=_line_no_for_offset(line_starts, offset),
+                evidence=line.strip()[:200],
+                suggested_fix=(
+                    "Markdown table row has the wrong cell count — "
+                    "strip it from the public table."
+                ),
+            ))
+    return findings
+
+
+def strip_malformed_table_rows(paper_md: str) -> tuple[str, int]:
+    lines = paper_md.splitlines()
+    out: list[str] = []
+    expected: int | None = None
+    n = 0
+    for line in lines:
+        if not line.lstrip().startswith("|"):
+            expected = None
+            out.append(line)
+            continue
+        cells = line.count("|") - 1
+        stripped = line.strip()
+        if expected is None:
+            expected = cells
+            out.append(line)
+            continue
+        if re.fullmatch(r"\|[\s:|\-]+\|", stripped):
+            expected = cells
+            out.append(line)
+            continue
+        if expected is not None and cells != expected:
+            n += 1
+            continue
+        out.append(line)
+    cleaned = "\n".join(out)
+    if paper_md.endswith("\n"):
+        cleaned += "\n"
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned, n
+
+
+def strip_empty_qei_rows(paper_md: str) -> tuple[str, int]:
+    """Remove public QEI rows whose numeric payload was emptied by a
+    later repair/reviewer pass. Pre-render QEI filtering already
+    blocks these; this is the post-render defense."""
+    lines = paper_md.splitlines()
+    out: list[str] = []
+    in_qei = False
+    n = 0
+    for line in lines:
+        if re.match(r"^##\s+Quantitative Evidence Index\b", line):
+            in_qei = True
+            out.append(line)
+            continue
+        if in_qei and re.match(r"^##\s+", line):
+            in_qei = False
+            out.append(line)
+            continue
+        if in_qei and line.startswith("|") and "---" not in line:
+            cells = [c.strip().lower() for c in line.strip().strip("|").split("|")]
+            if cells[:6] == [
+                "study", "endpoint", "arm", "value", "type", "statistic",
+            ]:
+                out.append(line)
+                continue
+            if len(cells) >= 6:
+                payload = cells[3:6]
+                if all(c in {"", "-", "—", "–", "none", "n/a"} for c in payload):
+                    n += 1
+                    continue
+        out.append(line)
+    cleaned = "\n".join(out)
+    if paper_md.endswith("\n"):
+        cleaned += "\n"
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned, n
+
+
+def detect_unterminated_paragraphs(paper_md: str) -> list[SurfaceLintFinding]:
+    findings: list[SurfaceLintFinding] = []
+    offset = 0
+    for para in re.split(r"(\n\s*\n)", paper_md):
+        if not para.strip():
+            offset += len(para)
+            continue
+        stripped = para.strip()
+        lines = [ln.strip() for ln in stripped.splitlines() if ln.strip()]
+        first = lines[0] if lines else ""
+        is_structural = (
+            first.startswith(("#", "|", "-", "*"))
+            or re.match(r"^\d+\.", first) is not None
+            or any(ln.startswith("|") for ln in lines)
+        )
+        if (
+            not is_structural
+            and len(lines) >= 2
+            and len(stripped.split()) >= 8
+            and not re.search(r"[.!?][\"')\]]?$", stripped)
+        ):
+            findings.append(SurfaceLintFinding(
+                kind="unterminated_paragraph",
+                line_no=_line_no_for_offset(_line_indices(paper_md), offset),
+                evidence=stripped[:200],
+                suggested_fix=(
+                    "Paragraph has no sentence terminator — strip the "
+                    "fragment paragraph."
+                ),
+            ))
+        offset += len(para)
+    return findings
+
+
+def strip_unterminated_paragraphs(paper_md: str) -> tuple[str, int]:
+    parts = re.split(r"(\n\s*\n)", paper_md)
+    out: list[str] = []
+    n = 0
+    for i in range(0, len(parts), 2):
+        para = parts[i]
+        sep = parts[i + 1] if i + 1 < len(parts) else ""
+        stripped = para.strip()
+        lines = [ln.strip() for ln in stripped.splitlines() if ln.strip()]
+        first = lines[0] if lines else ""
+        is_structural = (
+            first.startswith(("#", "|", "-", "*"))
+            or re.match(r"^\d+\.", first) is not None
+            or any(ln.startswith("|") for ln in lines)
+        )
+        if (
+            stripped
+            and not is_structural
+            and len(lines) >= 2
+            and len(stripped.split()) >= 8
+            and not re.search(r"[.!?][\"')\]]?$", stripped)
+        ):
+            n += 1
+            continue
+        out.append(para)
+        if sep:
+            out.append(sep)
+    cleaned = "".join(out)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned, n
+
+
 def run_surface_lint(paper_md: str) -> list[SurfaceLintFinding]:
     """Full surface-render lint. Returns ALL findings, ordered by
     line_no for reader-friendly diagnostic output."""
@@ -350,6 +593,9 @@ def run_surface_lint(paper_md: str) -> list[SurfaceLintFinding]:
     findings.extend(detect_abstract_cite_only_paragraphs(paper_md))
     findings.extend(detect_sentence_end_authoryear(paper_md))
     findings.extend(detect_sentence_fragments(paper_md))  # Fix #52
+    findings.extend(detect_blank_table_rows(paper_md))
+    findings.extend(detect_malformed_table_rows(paper_md))
+    findings.extend(detect_unterminated_paragraphs(paper_md))
     findings.sort(key=lambda f: f.line_no)
     return findings
 

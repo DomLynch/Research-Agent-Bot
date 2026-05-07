@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact",
   "doi": "10.1371/journal.pone.0281888",
-  "extracted_at": "2026-05-05T15:22:50+00:00",
+  "extracted_at": "2026-05-06T20:10:56+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 5,
@@ -42,9 +42,9 @@
       "context_window": "a 12 h light/dark cycle. Rapamycin stock solution: dissolve 10 mg of rapamycin in 187.5 \u03bcL DMSO, then the concentration is 0.",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact-u-705",
@@ -60,9 +60,9 @@
       "context_window": "mg of rapamycin in 187.5 \u03bcL DMSO, then the concentration is 0.05 mg/\u03bcL. Take 48 \u03bcL rapamycin stock solution and add it to the m",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact-pct-791",
@@ -78,9 +78,9 @@
       "context_window": "amycin stock solution and add it to the mixture of DMSO and 0.9% normal saline (50% DMSO and normal saline) to dilute rapamy",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact-pct-811",
@@ -96,9 +96,9 @@
       "context_window": "n and add it to the mixture of DMSO and 0.9% normal saline (50% DMSO and normal saline) to dilute rapamycin, making it to r",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact-pct-1563",
@@ -258,9 +258,9 @@
       "context_window": "male mice were treated with rapamycin (80 \u03bcg/mouse/day) for 8 days. Lipid accumulation can be directly reflected by the color",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact-n-2904",
@@ -276,7 +276,7 @@
       "context_window": "ption nor the decreased lipoprotein export. (Control group n = 7, rapamycin treated group n = 8; Data represent mean \u00b1 SD, *",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -294,7 +294,7 @@
       "context_window": "tein export. (Control group n = 7, rapamycin treated group n = 8; Data represent mean \u00b1 SD, **p < 0.01, *p<0.05). A. Mouse l",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -312,7 +312,7 @@
       "context_window": "rapamycin treated group n = 8; Data represent mean \u00b1 SD, **p < 0.01, *p<0.05). A. Mouse livers of rapamycin-treated group and c",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -330,7 +330,7 @@
       "context_window": "treated group n = 8; Data represent mean \u00b1 SD, **p < 0.01, *p<0.05). A. Mouse livers of rapamycin-treated group and control gr",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -348,7 +348,7 @@
       "context_window": "ng mice were indicated by the Venn diagram. (Control group n = 7, rapamycin treated group n = 8; Data represent mean \u00b1 SD, *",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -366,7 +366,7 @@
       "context_window": "enn diagram. (Control group n = 7, rapamycin treated group n = 8; Data represent mean \u00b1 SD, **p < 0.01, *p<0.05). A & B. KEG",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -384,7 +384,7 @@
       "context_window": "rapamycin treated group n = 8; Data represent mean \u00b1 SD, **p < 0.01, *p<0.05). A & B. KEGG pathway analysis reveals that fatty",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -402,7 +402,7 @@
       "context_window": "treated group n = 8; Data represent mean \u00b1 SD, **p < 0.01, *p<0.05). A & B. KEGG pathway analysis reveals that fatty acid meta",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -420,9 +420,9 @@
       "context_window": "raction between p65 and I\u03baB\u03b1. (Data represent mean \u00b1 SD, **p < 0.01, *p<0.05). A. Lower expressions of pro-inflammatory genes i",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact-p-8532",
@@ -438,9 +438,9 @@
       "context_window": "ween p65 and I\u03baB\u03b1. (Data represent mean \u00b1 SD, **p < 0.01, *p<0.05). A. Lower expressions of pro-inflammatory genes in rapamyc",
       "claim_role": "effect",
       "endpoint": "inflammation",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "increase",
-      "binding_confidence": "partial"
+      "binding_confidence": "high"
     },
     {
       "claim_id": "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact-n-8637",
@@ -456,7 +456,7 @@
       "context_window": "tory genes in rapamycin-induced fatty liver. (Control group n = 4, rapamycin group n = 4). B. p65 protein level was not chang",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -474,7 +474,7 @@
       "context_window": "-induced fatty liver. (Control group n = 4, rapamycin group n = 4). B. p65 protein level was not changed in mouse primary hep",
       "claim_role": "unknown",
       "endpoint": "inflammation",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -528,7 +528,7 @@
       "context_window": "I\u03baB\u03b1 level in rapamycin-induced fatty livers (Control group n = 4, rapamycin group n = 4). E. Increased p65 nuclear transloca",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -546,7 +546,7 @@
       "context_window": "-induced fatty livers (Control group n = 4, rapamycin group n = 4). E. Increased p65 nuclear translocation in HFD-induced fat",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -564,7 +564,7 @@
       "context_window": "s enhanced in rapamycin-induced fatty livers (Control group n = 4, rapamycin group n = 4). G. NLRP3 inflammasome-related gene",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -582,7 +582,7 @@
       "context_window": "-induced fatty livers (Control group n = 4, rapamycin group n = 4). G. NLRP3 inflammasome-related genes were downregulated in",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -600,7 +600,7 @@
       "context_window": "wnregulated in rapamycin induce fatty livers (Control group n = 7, rapamycin-treated group n = 8). Adipose triglyceride lipa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -618,7 +618,7 @@
       "context_window": "fatty livers (Control group n = 7, rapamycin-treated group n = 8). Adipose triglyceride lipase (ATGL) is the key enzyme for",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -636,7 +636,7 @@
       "context_window": "sed esterification reaction. (Data represent mean \u00b1 SEM, **p < 0.01, *p<0.05). A. In rapamycin-induced fatty liver, the mRNAs o",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -654,7 +654,7 @@
       "context_window": "ication reaction. (Data represent mean \u00b1 SEM, **p < 0.01, *p<0.05). A. In rapamycin-induced fatty liver, the mRNAs of ATGL we",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "decrease",
       "binding_confidence": "partial"
     },
@@ -672,7 +672,7 @@
       "context_window": "were downregulated and G0S2 was upregulated (Control group n = 7, rapamycin-treated group n = 8). B. In the adipose tissues",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -690,7 +690,7 @@
       "context_window": "s upregulated (Control group n = 7, rapamycin-treated group n = 8). B. In the adipose tissues of rapamycin-treated mice, G0S2",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -708,7 +708,7 @@
       "context_window": "d mice, G0S2 mRNA expression was not changed (Control group n = 7, rapamycin-treated group n = 8). C. G0S2 protein level was",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -726,7 +726,7 @@
       "context_window": "s not changed (Control group n = 7, rapamycin-treated group n = 8). C. G0S2 protein level was significantly increased in rapa",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -744,7 +744,7 @@
       "context_window": "increased in rapamycin-induced fatty livers (Control group n = 4, rapamycin group n = 4). D. Rapamycin treatment did not cha",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -762,7 +762,7 @@
       "context_window": "-induced fatty livers (Control group n = 4, rapamycin group n = 4). D. Rapamycin treatment did not change G0S2 protein level",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "increase",
       "binding_confidence": "partial"
     },
@@ -780,7 +780,7 @@
       "context_window": "change G0S2 protein level in adipose tissue (Control group n = 3, rapamycin group n = 4). E. The mRNAs of ER stress-associat",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -798,7 +798,7 @@
       "context_window": "vel in adipose tissue (Control group n = 3, rapamycin group n = 4). E. The mRNAs of ER stress-associated genes were not chang",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -816,7 +816,7 @@
       "context_window": "not changed in rapamycin-induced fatty liver (Control group n = 7, rapamycin-treated group n = 8). F. CHOP was upregulated in",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -834,7 +834,7 @@
       "context_window": "d fatty liver (Control group n = 7, rapamycin-treated group n = 8). F. CHOP was upregulated in rapamycin-induced fatty liver",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -852,7 +852,7 @@
       "context_window": "upregulated in rapamycin-induced fatty liver (Control group n = 4, rapamycin group n = 4). G. Eighteen weeks of rapamycin tre",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -870,7 +870,7 @@
       "context_window": "n-induced fatty liver (Control group n = 4, rapamycin group n = 4). G. Eighteen weeks of rapamycin treatment did not increase",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -888,7 +888,7 @@
       "context_window": "t increase liver fibrosis markers expression (Control group n = 7, rapamycin-treated group n = 8). H. Summary of the mechanis",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
     },
@@ -906,7 +906,7 @@
       "context_window": "rs expression (Control group n = 7, rapamycin-treated group n = 8). H. Summary of the mechanisms that rapamycin suppresses in",
       "claim_role": "duration",
       "endpoint": "",
-      "arm": "control",
+      "arm": "rapamycin",
       "direction": "no_change",
       "binding_confidence": "partial"
     }

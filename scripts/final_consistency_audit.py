@@ -414,7 +414,7 @@ def run_audit(
     issues.extend(_check_audit_verdict_gate(audit, audit_md_text))
     issues.extend(_check_broken_paper_id_citations(paper_md))
     issues.extend(_check_surface_polish(paper_md))  # Fix #13
-    issues.extend(_check_background_lit_unsourced(paper_md))  # Fix #16
+    issues.extend(_check_background_lit_unsourced(paper_md, manifest))  # Fix #16
     issues.extend(_check_surface_render_lint(paper_md))  # Fix #22
     issues.extend(_check_change_value_misread(paper_md, manifest))  # Fix #37
     issues.extend(_check_change_value_anaphor_misread(  # Fix #54
@@ -614,6 +614,13 @@ def _check_surface_render_lint(paper_md: str) -> list[ConsistencyIssue]:
         # year is flag-only.
         is_auto = f.kind in (
             "orphan_cite", "consecutive_cites", "abstract_cite_only",
+            "sentence_fragment_single_letter",
+            "sentence_fragment_lowercase_start",
+            "sentence_fragment_spliced_word",
+            "sentence_fragment_lowercase_line_start",
+            "blank_table_row",
+            "malformed_table_row",
+            "unterminated_paragraph",
         )
         issues.append(ConsistencyIssue(
             id=f"C10-{f.kind}-L{f.line_no}",
@@ -626,7 +633,10 @@ def _check_surface_render_lint(paper_md: str) -> list[ConsistencyIssue]:
     return issues
 
 
-def _check_background_lit_unsourced(paper_md: str) -> list[ConsistencyIssue]:
+def _check_background_lit_unsourced(
+    paper_md: str,
+    manifest: dict | None = None,
+) -> list[ConsistencyIssue]:
     """C09 (Fix #16): every background-literature numeric used in the
     paper MUST have its canonical citation token in the same sentence.
 
@@ -638,7 +648,18 @@ def _check_background_lit_unsourced(paper_md: str) -> list[ConsistencyIssue]:
     try:
         import background_literature as _bg
         registry = _bg.load_registry()
-        unsourced = _bg.find_unsourced_background_uses(paper_md, registry)
+        repo = Path(__file__).resolve().parent.parent
+        topic = (manifest or {}).get("topic") if isinstance(manifest, dict) else None
+        quant_claims_dir = (
+            repo / "docs" / "quality-reference" / str(topic) / "quant_claims"
+            if topic else None
+        )
+        unsourced = _bg.find_unsourced_background_uses(
+            paper_md,
+            registry,
+            manifest=manifest,
+            quant_claims_dir=quant_claims_dir,
+        )
     except (ImportError, FileNotFoundError, ValueError):
         return []
     issues: list[ConsistencyIssue] = []

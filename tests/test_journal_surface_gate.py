@@ -37,6 +37,8 @@ def test_qei_surface_gate_flags_endpoint_unit_mismatches():
         "| Brogi 2024 | fasting glucose | control | 1.99 mmHg | mmHg | — |",
         "| Bülow 2023 | body mass index | protein | 38 kg | kg | — |",
         "| Demo 2024 | body mass index | protein | 65 years | years | — |",
+        "| Moel 2025 | HbA1c | placebo | 5 mg | mg | — |",
+        "| Dhanabalan 2022 | body weight | control | 100 mm | mm | — |",
     ]
     for row in bad_rows:
         report = evaluate_journal_surface(_paper(row))
@@ -60,6 +62,14 @@ def test_qei_surface_gate_flags_author_year_suffix_garbage():
     )
     assert not report.passed
     assert any("malformed study id: Palmer 2021ucos" in i.detail for i in report.issues)
+
+
+def test_qei_surface_gate_flags_malformed_row_shape():
+    report = evaluate_journal_surface(
+        _paper("| Kell 2026 | mTOR signaling | placebo | p<0.001 |"),
+    )
+    assert not report.passed
+    assert any("malformed QEI row cell count" in i.detail for i in report.issues)
 
 
 def test_placeholder_prose_blocks_journal_surface():

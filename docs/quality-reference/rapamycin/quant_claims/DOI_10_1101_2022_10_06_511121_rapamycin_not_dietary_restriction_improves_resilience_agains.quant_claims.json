@@ -1,0 +1,120 @@
+{
+  "paper_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains",
+  "doi": "10.1101/2022.10.06.511121",
+  "extracted_at": "2026-05-06T20:10:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-n-648",
+      "claim_type": "sample_size",
+      "raw_text": "n=1223",
+      "numeric_values": [
+        1223.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 648,
+      "sentence": "We reanalysed published post-infection short-term survival data of mice (n=1223 from 23 studies comprising 46 effect sizes involving DR (n=17) and rapamycin treatment (n=29) and analysed these results using meta-analysis.",
+      "context_window": "published post-infection short-term survival data of mice (n=1223 from 23 studies comprising 46 effect sizes involving DR (n=",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-n-712",
+      "claim_type": "sample_size",
+      "raw_text": "n=17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 712,
+      "sentence": "We reanalysed published post-infection short-term survival data of mice (n=1223 from 23 studies comprising 46 effect sizes involving DR (n=17) and rapamycin treatment (n=29) and analysed these results using meta-analysis.",
+      "context_window": "23 from 23 studies comprising 46 effect sizes involving DR (n=17) and rapamycin treatment (n=29) and analysed these results",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-n-743",
+      "claim_type": "sample_size",
+      "raw_text": "n=29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 743,
+      "sentence": "We reanalysed published post-infection short-term survival data of mice (n=1223 from 23 studies comprising 46 effect sizes involving DR (n=17) and rapamycin treatment (n=29) and analysed these results using meta-analysis.",
+      "context_window": "6 effect sizes involving DR (n=17) and rapamycin treatment (n=29) and analysed these results using meta-analysis. Rapamycin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-p-900",
+      "claim_type": "p_value",
+      "raw_text": "p=0.0015",
+      "numeric_values": [
+        0.0015
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 900,
+      "sentence": "Rapamycin treatment significantly increased post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015).",
+      "context_window": "post infection survival rate (lnHR=-0.72; CI=-1.17, -0.28; p=0.0015). In contrast, DR reduced post-infection survival (lnHR=0.8",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-p-986",
+      "claim_type": "p_value",
+      "raw_text": "p=0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 986,
+      "sentence": "In contrast, DR reduced post-infection survival (lnHR=0.80; CI=0.08, 1.52; p=0.03).",
+      "context_window": "reduced post-infection survival (lnHR=0.80; CI=0.08, 1.52; p=0.03). Importantly, the overall effect size of rapamycin treatme",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2022_10_06_511121_rapamycin_not_dietary_restriction_improves_resilience_agains-p-1080",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1080,
+      "sentence": "Importantly, the overall effect size of rapamycin treatment was significantly lower (P<0.001) than the estimate from DR studies, suggesting opposite effects on immune function.",
+      "context_window": "effect size of rapamycin treatment was significantly lower (P<0.001) than the estimate from DR studies, suggesting opposite eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -129,6 +129,42 @@ def test_citation_in_different_sentence_does_not_count() -> None:
     assert len(unsourced) == 1
 
 
+def test_receipt_supported_numeric_does_not_require_background_citation(
+    tmp_path: Path,
+) -> None:
+    reg = _registry(vaccine={
+        "numeric": "20%",
+        "citation_token": "Schulz 2010",
+    })
+    qdir = tmp_path / "quant_claims"
+    qdir.mkdir()
+    rid = "PMID25540326_mtor_inhibition_improves_immune_function"
+    (qdir / f"{rid}.quant_claims.json").write_text(json.dumps({
+        "claims": [{
+            "binding_confidence": "high",
+            "raw_text": "20%",
+            "numeric_values": [20.0],
+        }],
+    }))
+    manifest = {
+        "receipts": [{
+            "receipt_id": rid,
+            "citation_token": "Mannick 2014",
+        }],
+    }
+    paper = (
+        "Mannick 2014 reported about 20% improvement in vaccine "
+        "response."
+    )
+    unsourced = bg.find_unsourced_background_uses(
+        paper,
+        reg,
+        manifest=manifest,
+        quant_claims_dir=qdir,
+    )
+    assert unsourced == []
+
+
 def test_paper_without_any_background_use_is_clean() -> None:
     """If the paper never mentions the background numeric, no issue."""
     reg = _registry(gait={

@@ -1,0 +1,175 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic",
+  "doi": "10.1056/nejmoa0907419",
+  "extracted_at": "2026-05-06T20:10:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic-u-448",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 448,
+      "sentence": "We randomly assigned 100 patients between the ages of 18 and 40 years to receive either sirolimus (target dose, 2 mg daily) or standard care.",
+      "context_window": "e randomly assigned 100 patients between the ages of 18 and 40 years to receive either sirolimus (target dose, 2 mg daily) or st",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "sirolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic-u-499",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 499,
+      "sentence": "We randomly assigned 100 patients between the ages of 18 and 40 years to receive either sirolimus (target dose, 2 mg daily) or standard care.",
+      "context_window": "f 18 and 40 years to receive either sirolimus (target dose, 2 mg daily) or standard care. All patients had an estimated crea",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "sirolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic-u-750",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 750,
+      "sentence": "The primary outcome was total kidney volume at 18 months on blinded assessment.",
+      "context_window": "tic kidneys. The primary outcome was total kidney volume at 18 months on blinded assessment. Secondary outcomes were the glomerul",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic-u-876",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 876,
+      "sentence": "Secondary outcomes were the glomerular filtration rate and urinary albumin excretion rate at 18 months.At randomization, the median total kidney volume was 907 cm3 (interquartile range, 577 to 1330) in the sirolimus group and 1003 cm3 (interquartile range, 574 to 1422) in the control group.",
+      "context_window": "rular filtration rate and urinary albumin excretion rate at 18 months.At randomization, the median total kidney volume was 907 cm",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "sirolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic-u-1256",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1256,
+      "sentence": "At 18 months, the median total kidney volume in the sirolimus group was 102% of that in the control group (95% confidence interval, 99 to 105; P=0.26).",
+      "context_window": "3 (interquartile range, 37 to 181) in the control group. At 18 months, the median total kidney volume in the sirolimus group was",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "sirolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic-pct-1325",
+      "claim_type": "percentage",
+      "raw_text": "102%",
+      "numeric_values": [
+        102.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1325,
+      "sentence": "At 18 months, the median total kidney volume in the sirolimus group was 102% of that in the control group (95% confidence interval, 99 to 105; P=0.26).",
+      "context_window": ", the median total kidney volume in the sirolimus group was 102% of that in the control group (95% confidence interval, 99 t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "sirolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic-pct-1360",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1360,
+      "sentence": "At 18 months, the median total kidney volume in the sirolimus group was 102% of that in the control group (95% confidence interval, 99 to 105; P=0.26).",
+      "context_window": "the sirolimus group was 102% of that in the control group (95% confidence interval, 99 to 105; P=0.26). The glomerular fil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "sirolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic-p-1396",
+      "claim_type": "p_value",
+      "raw_text": "P=0.26",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1396,
+      "sentence": "At 18 months, the median total kidney volume in the sirolimus group was 102% of that in the control group (95% confidence interval, 99 to 105; P=0.26).",
+      "context_window": "t in the control group (95% confidence interval, 99 to 105; P=0.26). The glomerular filtration rate did not differ significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "sirolimus",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa0907419_sirolimus_and_kidney_growth_in_autosomal_dominant_polycystic-u-1622",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1622,
+      "sentence": "The glomerular filtration rate did not differ significantly between the two groups; however, the urinary albumin excretion rate was higher in the sirolimus group.In adults with ADPKD and early chronic kidney disease, 18 months of treatment with sirolimus did not halt polycystic kidney growth. (Funded by Wyeth and others; ClinicalTrials.gov number, NCT00346918.)",
+      "context_window": "roup.In adults with ADPKD and early chronic kidney disease, 18 months of treatment with sirolimus did not halt polycystic kidney",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "sirolimus",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

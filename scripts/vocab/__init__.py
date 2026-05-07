@@ -109,11 +109,33 @@ def _synthesize_from_pack(domain: str) -> Any:
     ENDPOINT_TO_OUTCOME_CLASS = base.ENDPOINT_TO_OUTCOME_CLASS
     ENDPOINT_POLARITY = base.ENDPOINT_POLARITY
     # Build ARM_VOCAB from topic pack's active + placebo synonyms.
+    # Mechanism/adjacent papers often use class terms from aliases or
+    # retrieval.topic_terms (e.g. RAD001, mTOR inhibitor). Bind those
+    # to the active intervention canon so extraction stays topic-aware
+    # without per-topic Python vocab files.
+    primary_active = (
+        sorted(pack.active_arm_synonyms, key=len, reverse=True)[0]
+        if pack.active_arm_synonyms else pack.topic
+    )
+    active_terms: dict[str, tuple[str, str]] = {}
+    for syn in sorted(pack.active_arm_synonyms, key=len, reverse=True):
+        active_terms.setdefault(syn.lower(), (syn, syn))
+    extra_terms = (
+        tuple(pack.aliases_display)
+        + tuple(pack.aliases)
+        + (tuple(pack.retrieval.topic_terms) if pack.retrieval else ())
+    )
+    for syn in sorted(extra_terms, key=len, reverse=True):
+        clean = str(syn).strip()
+        if clean:
+            active_terms.setdefault(clean.lower(), (primary_active, clean))
+
     # Order: longer/more-specific patterns first; bare keywords last.
     arm_patterns: list[tuple[str, str]] = []
     # Modified-noun forms for each active arm synonym
-    for syn in sorted(pack.active_arm_synonyms, key=len, reverse=True):
-        canon = syn  # use the synonym as canonical
+    for canon, syn in sorted(
+        active_terms.values(), key=lambda t: len(t[1]), reverse=True,
+    ):
         esc = re.escape(syn)
         arm_patterns.append((
             canon,
@@ -135,8 +157,10 @@ def _synthesize_from_pack(domain: str) -> Any:
         ("pooled", r"\bpooled\b|combined\s+groups?|both\s+(?:groups|arms)|across\s+groups"),
     ]
     # Bare keyword fallbacks (lower confidence) — kept LAST.
-    for syn in sorted(pack.active_arm_synonyms, key=len, reverse=True):
-        arm_patterns.append((syn, rf"\b{re.escape(syn)}\b"))
+    for canon, syn in sorted(
+        active_terms.values(), key=lambda t: len(t[1]), reverse=True,
+    ):
+        arm_patterns.append((canon, rf"\b{re.escape(syn)}\b"))
     for syn in sorted(pack.placebo_arm_synonyms, key=len, reverse=True):
         arm_patterns.append((syn, rf"\b{re.escape(syn)}\b"))
     ARM_VOCAB = tuple(arm_patterns)

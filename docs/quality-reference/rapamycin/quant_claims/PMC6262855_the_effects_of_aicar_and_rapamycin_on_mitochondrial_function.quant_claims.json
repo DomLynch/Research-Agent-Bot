@@ -1,7 +1,7 @@
 {
   "paper_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function",
   "doi": "10.1242/bio.033852",
-  "extracted_at": "2026-05-05T15:22:45+00:00",
+  "extracted_at": "2026-05-06T20:10:52+00:00",
   "extractor_version": "0.6.0",
   "claims_count_by_type": {
     "unit_value": 51,
@@ -151,7 +151,7 @@
       "context_window": "olayer of cells. As a positive control, 0.5 \u00b5l of denatured 100% EtOH was added, as it can greatly stimulate mitochondrial R",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -367,7 +367,7 @@
       "context_window": "e repeatedly found that following rapamycin treatment for 8-12 days, the vast majority of the cell population died suddenly, po",
       "claim_role": "unknown",
       "endpoint": "mTOR signaling",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -853,9 +853,9 @@
       "context_window": "n rates after 30 h in LGPM. (E) O 2 consumption rates after 10 days in HGPUM. (F) O 2 consumption rates after 20 days in HGPUM.",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-u-7959",
@@ -871,9 +871,9 @@
       "context_window": "tes after 10 days in HGPUM. (F) O 2 consumption rates after 20 days in HGPUM. Rapamycin transiently increases oxygen consumptio",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-p-8405",
@@ -925,9 +925,9 @@
       "context_window": "n rates after 30 h in LGPM. (E) O 2 consumption rates after 10 days in HGPUM. (F) O 2 consumption rates after 20 days in HGPUM.",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-u-8772",
@@ -943,9 +943,9 @@
       "context_window": "tes after 10 days in HGPUM. (F) O 2 consumption rates after 20 days in HGPUM. Rapamycin transiently increases oxygen consumptio",
       "claim_role": "dose",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-p-9218",
@@ -1051,7 +1051,7 @@
       "context_window": "n treatment in LGM or LGPM had no effect on ROS production. 0.5% ethanol (EtOH) was added as a positive control to induce RO",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1105,7 +1105,7 @@
       "context_window": "ion of WT and POLG exo- MEFs under high glucose conditions. 0.5% ethanol (EtOH) was added as a positive control to induce RO",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1123,7 +1123,7 @@
       "context_window": "PM. (D) ROS levels after 48 h in HGPM. (E) ROS levels after 10 days in HGPUM. (F) ROS levels after 20 days in HGPUM. Experiment",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1141,7 +1141,7 @@
       "context_window": "(E) ROS levels after 10 days in HGPUM. (F) ROS levels after 20 days in HGPUM. Experiments were repeated twice using five techni",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1195,7 +1195,7 @@
       "context_window": "n treatment in LGM or LGPM had no effect on ROS production. 0.5% ethanol (EtOH) was added as a positive control to induce RO",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1249,7 +1249,7 @@
       "context_window": "ion of WT and POLG exo- MEFs under high glucose conditions. 0.5% ethanol (EtOH) was added as a positive control to induce RO",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1267,7 +1267,7 @@
       "context_window": "PM. (D) ROS levels after 48 h in HGPM. (E) ROS levels after 10 days in HGPUM. (F) ROS levels after 20 days in HGPUM. Experiment",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1285,7 +1285,7 @@
       "context_window": "(E) ROS levels after 10 days in HGPUM. (F) ROS levels after 20 days in HGPUM. Experiments were repeated twice using five techni",
       "claim_role": "unknown",
       "endpoint": "oxidative stress",
-      "arm": "",
+      "arm": "control",
       "direction": "",
       "binding_confidence": "partial"
     },
@@ -1469,9 +1469,9 @@
       "context_window": "PM. (D) ATP levels after 48 h in HGPM. (E) ATP levels after 10 days in HGPUM. (F) ATP levels after 20 days in HGPUM. Experiment",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-u-17076",
@@ -1487,9 +1487,9 @@
       "context_window": "(E) ATP levels after 10 days in HGPUM. (F) ATP levels after 20 days in HGPUM. Experiments were repeated twice using five techni",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-p-17264",
@@ -1559,9 +1559,9 @@
       "context_window": "PM. (D) ATP levels after 48 h in HGPM. (E) ATP levels after 10 days in HGPUM. (F) ATP levels after 20 days in HGPUM. Experiment",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-u-18002",
@@ -1577,9 +1577,9 @@
       "context_window": "(E) ATP levels after 10 days in HGPUM. (F) ATP levels after 20 days in HGPUM. Experiments were repeated twice using five techni",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-p-18190",
@@ -1667,9 +1667,9 @@
       "context_window": "nder all HGM and HGPM culture conditions, as well as at the 10 day time point in HGPUM ( Fig. 6 E), but this dissipated by 20",
       "claim_role": "unknown",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-u-19771",
@@ -1793,9 +1793,9 @@
       "context_window": "ll lines slowly lost the pyruvate addiction phenotype after 2 months in culture and regained the ability to form colonies when c",
       "claim_role": "effect",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-u-5309",
@@ -1901,9 +1901,9 @@
       "context_window": "ers of mitochondrial biogenesis being upregulated following 2 weeks of administration that returned to basal levels by 10 weeks",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     },
     {
       "claim_id": "PMC6262855_the_effects_of_aicar_and_rapamycin_on_mitochondrial_function-u-14674",
@@ -1919,9 +1919,9 @@
       "context_window": "2 weeks of administration that returned to basal levels by 10 weeks of administration ( Chiao et al., 2016 ). Therefore, furthe",
       "claim_role": "protocol",
       "endpoint": "",
-      "arm": "",
+      "arm": "rapamycin",
       "direction": "",
-      "binding_confidence": "none"
+      "binding_confidence": "partial"
     }
   ]
 }

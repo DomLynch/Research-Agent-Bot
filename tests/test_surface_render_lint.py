@@ -257,6 +257,133 @@ def test_detect_lowercase_preposition_fragment() -> None:
     assert len(fragment_finds) == 1
 
 
+def test_detect_spliced_word_fragment() -> None:
+    paper = (
+        "## Results\n\n"
+        "Translational relevance to humans remains uncertain.cy between "
+        "body weight and intake reductions was duplicated. Next sentence.\n"
+    )
+    findings = srl.detect_sentence_fragments(paper)
+    assert any(
+        f.kind == "sentence_fragment_spliced_word"
+        for f in findings
+    )
+    fixed, n = srl.strip_sentence_fragments(paper)
+    assert n == 1
+    assert "uncertain.cy" not in fixed
+    assert "Translational relevance to humans remains uncertain." in fixed
+
+
+def test_spliced_word_fragment_ignores_file_extensions() -> None:
+    paper = (
+        "## Data Availability\n\n"
+        "README.md in the bundle root explains the run artifacts.\n"
+    )
+    assert srl.detect_sentence_fragments(paper) == []
+
+
+def test_detect_lowercase_line_start_fragment() -> None:
+    paper = (
+        "## Methods\n\n"
+        "1. deterministic step.\n"
+        "ing a randomized paragraph fragment remains after deletion. "
+        "Next sentence.\n"
+    )
+    findings = srl.detect_sentence_fragments(paper)
+    assert any(
+        f.kind == "sentence_fragment_lowercase_line_start"
+        for f in findings
+    )
+    fixed, n = srl.strip_sentence_fragments(paper)
+    assert n == 1
+    assert "ing a randomized" not in fixed
+    assert "Next sentence." in fixed
+
+
+def test_lowercase_line_start_does_not_flag_wrapped_prose() -> None:
+    paper = (
+        "## Cross-Domain Synthesis\n\n"
+        "Interpreting evidence requires treating each domain as\n"
+        "part of a boundary-condition map rather than as a pooled effect.\n"
+    )
+    assert srl.detect_sentence_fragments(paper) == []
+
+
+def test_blank_table_rows_are_detected_and_stripped() -> None:
+    paper = (
+        "| Study | Value |\n"
+        "|---|---|\n"
+        "| A 2020 | 5% |\n"
+        "| \n"
+        "| B 2021 | 6% |\n"
+    )
+    findings = srl.detect_blank_table_rows(paper)
+    assert len(findings) == 1
+    fixed, n = srl.strip_blank_table_rows(paper)
+    assert n == 1
+    assert "| \n" not in fixed
+    assert "B 2021" in fixed
+
+
+def test_malformed_table_rows_are_detected_and_stripped() -> None:
+    paper = (
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| A 2020 | glucose | drug | p=0.04 | p value | — |\n"
+        "| B 2021 | glucose | drug | p=0.05 |\n"
+    )
+    findings = srl.detect_malformed_table_rows(paper)
+    assert len(findings) == 1
+    fixed, n = srl.strip_malformed_table_rows(paper)
+    assert n == 1
+    assert "B 2021" not in fixed
+    assert "A 2020" in fixed
+
+
+def test_empty_qei_rows_are_stripped_after_repair() -> None:
+    paper = (
+        "## Quantitative Evidence Index — topic\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| A 2020 | glucose | drug | p=0.04 | p value | — |\n"
+        "| B 2021 | HbA1c | drug | — | — | — |\n\n"
+        "## Methods\n\nText.\n"
+    )
+    fixed, n = srl.strip_empty_qei_rows(paper)
+    assert n == 1
+    assert "B 2021" not in fixed
+    assert "A 2020" in fixed
+
+
+def test_spliced_word_after_closing_parenthesis_is_stripped() -> None:
+    paper = (
+        "## Background\n\n"
+        "The original sentence is complete (Smith 2020).ever, this "
+        "broken duplicate fragment should be removed. Next sentence.\n"
+    )
+    findings = srl.detect_sentence_fragments(paper)
+    assert any(f.kind == "sentence_fragment_spliced_word" for f in findings)
+    fixed, n = srl.strip_sentence_fragments(paper)
+    assert n == 1
+    assert "ever, this broken" not in fixed
+    assert "Next sentence." in fixed
+
+
+def test_unterminated_paragraphs_are_detected_and_stripped() -> None:
+    paper = (
+        "## Cross-Domain Synthesis\n\n"
+        "Interpreting the evidence requires treating each domain as\n"
+        "Direct human findings set the clinical perimeter\n\n"
+        "A complete paragraph remains.\n"
+    )
+    findings = srl.detect_unterminated_paragraphs(paper)
+    assert len(findings) == 1
+    fixed, n = srl.strip_unterminated_paragraphs(paper)
+    assert n == 1
+    assert "clinical perimeter" not in fixed
+    assert "A complete paragraph remains." in fixed
+
+
 def test_does_not_false_fire_on_legitimate_enumeration() -> None:
     """`(a) a per-receipt evidence-weighting (Table 4: ...)` is a
     legitimate enumerated list — NOT a fragment. Fix #52's pattern

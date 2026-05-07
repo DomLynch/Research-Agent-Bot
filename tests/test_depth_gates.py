@@ -220,6 +220,20 @@ def test_q10_discussion_extraction_allows_h3_subheads(
     assert "0/" not in msg
 
 
+def test_q6_ignores_reference_titles_with_mice() -> None:
+    paper = (
+        "## Discussion\n\n"
+        "Preclinical findings may not manifest in human adults.\n\n"
+        "## References\n\n"
+        "- Harrison 2009. Rapamycin fed late in life extends lifespan "
+        "in genetically heterogeneous mice.\n"
+        "- Bitto 2016. Transient rapamycin treatment can increase "
+        "lifespan and healthspan in middle-aged mice.\n"
+    )
+    ok, msg = audit._check_preclinical_hedge(paper)
+    assert ok is True, msg
+
+
 # ============ End-to-end: catches the grok-smart regression =============
 
 

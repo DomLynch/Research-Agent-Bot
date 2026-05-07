@@ -197,6 +197,205 @@ def test_apply_fixes_idempotent_across_invocations() -> None:
     )
 
 
+def test_apply_fixes_strips_role_repair_artifact_sentence() -> None:
+    """Role-drift repair may emit an explanatory placeholder sentence
+    when no safe canonical rewrite exists. Public prose should strip
+    that artifact deterministically instead of waiting for Grok."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "Stable opening sentence remains. "
+        "Liao 2025 reported an effect value of 0.42; this manuscript "
+        "treats the value according to that source role. "
+        "Ham 2022 reported an effect value; this manuscript treats "
+        "the value according to that source role.\n\n"
+        "Other bounded interpretation remains.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "reported an effect value" not in out
+    assert "Stable opening sentence remains." in out
+    assert "Other bounded interpretation remains." in out
+    assert any(
+        item["fix_type"] == "role_repair_artifact_strip"
+        for item in log
+    )
+
+
+def test_apply_fixes_backfills_low_discussion_hedge_density() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "The direct and mechanistic evidence diverges across domains. "
+        "The result should be interpreted through evidence tier and "
+        "outcome proximity rather than as a pooled effect.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [], manifest=_empty_manifest())
+    assert "### Confidence calibration" in out
+    assert "context-dependent" in out
+    assert any(
+        item["fix_type"] == "discussion_hedge_density_backfill"
+        for item in log
+    )
+
+
+def test_apply_fixes_strips_orphan_inference_fragments() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Background\n\n"
+        "Stable background prose.\n\n"
+        "1. [D1_inferential_bridge | confidence=low] Orphan bridge claim. "
+        "[mechanism_anchor: A 2020] [conservation: B 2021]\n"
+        "Existing human signal: none. [testability: explicit]\n\n"
+        "## Results\n\nStable results.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "[D1_inferential_bridge" not in out
+    assert "Existing human signal" not in out
+    assert "Stable background prose." in out
+    assert any(
+        item["fix_type"] == "orphan_inference_fragment_strip"
+        for item in log
+    )
+
+
+def test_apply_fixes_preserves_real_bridge_but_strips_leaked_bridge_fragment() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Background\n\n"
+        "Stable background prose.\n\n"
+        "Testability: Trial note. [testability: explicit]\n\n"
+        "## Inferential Bridge\n\n"
+        "1. [D1_inferential_bridge | confidence=low] Valid bridge claim. "
+        "[mechanism_anchor: A 2020] [conservation: B 2021]\n"
+        "Existing human signal: none. [testability: explicit]\n\n"
+        "## Results\n\nStable results.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "Stable background prose." in out
+    assert "Testability: Trial note" not in out
+    assert "[D1_inferential_bridge" in out
+    assert "Valid bridge claim" in out
+    assert any(
+        item["fix_type"] == "orphan_inference_fragment_strip"
+        for item in log
+    )
+
+
+def test_apply_fixes_preserves_deterministic_methods_steps() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    methods = (
+        "## Methods\n\n"
+        "### Pipeline stages (deterministic, in order)\n\n"
+        "1. quant-claim extraction.\n"
+        "2. receipt summarization.\n"
+        "3. tension matrix construction.\n"
+        "4. thesis selection.\n"
+        "5. claim-strength repair.\n"
+        "6. paper_id -> Author Year substitution.\n"
+        "7. References block append.\n"
+        "8. Stage-1 audit.\n"
+        "9. final-layer LLM review.\n"
+        "10. final audit.\n\n"
+        "### Claim source\n\n"
+        "`docs/quality-reference/topic/quant_claims/*.json`.\n"
+    )
+    out, log = fixer.apply_fixes(methods, [])
+    assert "8. Stage-1 audit." in out
+    assert "10. final audit." in out
+    assert not any(
+        item["fix_type"] == "methods_extra_step_strip"
+        for item in log
+    )
+
+
+def test_apply_fixes_strips_leaked_results_from_deterministic_methods() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    methods = (
+        "## Methods\n\n"
+        "### Pipeline stages (deterministic, in order)\n\n"
+        "1. quant-claim extraction.\n"
+        "2. receipt summarization.\n"
+        "3. tension matrix construction.\n"
+        "4. thesis selection.\n"
+        "5. claim-strength repair.\n"
+        "6. paper_id -> Author Year substitution.\n"
+        "7. References block append.\n"
+        "8. Participants across dosing groups were not significantly "
+        "different at baseline on the majority of measures.\n"
+        "8. Stage-1 audit.\n"
+        "9. final-layer LLM review.\n"
+        "10. final audit.\n\n"
+        "### Claim source\n\n"
+        "`docs/quality-reference/topic/quant_claims/*.json`.\n"
+    )
+    out, log = fixer.apply_fixes(methods, [])
+    assert "Participants across dosing groups" not in out
+    assert "8. Stage-1 audit." in out
+    assert "10. final audit." in out
+    assert any(
+        item["fix_type"] == "methods_extra_step_strip"
+        for item in log
+    )
+
+
+def test_apply_fixes_strips_duplicate_long_sentences() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    sentence = (
+        "This small human trial base means that the headline conclusions "
+        "rest on a narrow evidentiary foundation."
+    )
+    paper = (
+        "## Discussion\n\n"
+        f"{sentence} Other valid discussion remains.\n\n"
+        "## Limitations\n\n"
+        f"{sentence} Additional limitations remain visible.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert out.count(sentence) == 1
+    assert "Other valid discussion remains" in out
+    assert "Additional limitations remain visible" in out
+    assert any(item["fix_type"] == "duplicate_sentence" for item in log)
+
+
+def test_apply_fixes_backfills_results_after_numeric_strips() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    paper = "## Results\n\n" + " ".join(f"word{i}" for i in range(380))
+    out, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
+    assert "### Result-interpretation guardrail" in out
+    assert fixer._section_word_count(out, "Results") >= 500
+    assert any(
+        item["fix_type"] == "analytical_depth_backfill"
+        and "'Results'" in item["description"]
+        for item in log
+    )
+
+
 # P1 reviewer fix: trial acronyms extracted as short forms
 def test_trial_acronym_met_prevent_flagged_when_called_rejected() -> None:
     """'MET-PREVENT was rejected by SPAR' must flag — pre-fix, only
@@ -561,6 +760,55 @@ def test_apply_fixes_adds_preclinical_translation_hedge() -> None:
     assert len(hedge_log) == 1
 
 
+def test_apply_fixes_does_not_insert_hedge_inside_p_value() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Discussion\n\n"
+        "The animal models showed a preclinical signal (p < 0.01, "
+        "p < 0.001).\n"
+    )
+    out, _log = fixer.apply_fixes(paper, [])
+    assert "p < 0. Translational" not in out
+    assert "(p < 0.01, p < 0.001)." in out
+
+
+def test_apply_fixes_removes_consecutive_duplicate_paragraphs() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    para = (
+        "Claims that survive into the public manuscript must remain "
+        "inside the accepted evidence boundary and stay conditional."
+    )
+    paper = f"## Background\n\n{para}\n\n{para}\n\nUnique close.\n"
+    out, log = fixer.apply_fixes(paper, [])
+    assert out.count(para) == 1
+    assert any(e["fix_type"] == "duplicate_paragraph" for e in log)
+
+
+def test_apply_fixes_strips_extra_methods_step() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+    paper = (
+        "## Methods\n\n"
+        "1. quant extraction.\n"
+        "7. References block append.\n"
+        "8. Results prose does not belong in Methods.\n\n"
+        "## Results\n\n"
+        "Real result.\n"
+    )
+    out, log = fixer.apply_fixes(paper, [])
+    assert "8. Results prose" not in out
+    assert "7. References block append." in out
+    assert any(e["fix_type"] == "methods_extra_step_strip" for e in log)
+
+
 def test_apply_fixes_does_not_rehedge_already_hedged_preclinical_sentence() -> None:
     import sys as _sys
     from pathlib import Path as _Path
@@ -617,6 +865,103 @@ def test_apply_fixes_fuzzy_strips_numeric_role_drift_snippet(monkeypatch) -> Non
     assert "Context before" in out
     assert "Context after" in out
     assert [e for e in log if e["fix_type"] == "numeric_role_guard_strip"]
+
+
+def test_apply_fixes_writes_numeric_claim_quarantine(monkeypatch, tmp_path) -> None:
+    import json
+    import sys as _sys
+    from dataclasses import dataclass
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    @dataclass
+    class FakeIssue:
+        sentence: str
+        issue_type: str = "numeric_claim_contract"
+        severity: str = "P1"
+        detail: str = "missing inline exact registry value"
+        suggested_fix: str = "strip"
+
+    bad = (
+        "Smith 2020 reported approximately one-third of participants "
+        "responded."
+    )
+
+    def fake_scan(*_args, **_kwargs):
+        return [FakeIssue(bad)]
+
+    def fake_strip(md, issues):
+        out = md
+        n = 0
+        for issue in issues:
+            out = out.replace(issue.sentence, "")
+            n += 1
+        return out, n
+
+    fake_module = type("FakeNRG", (), {
+        "scan_paper": staticmethod(fake_scan),
+        "auto_strip_offending_sentences": staticmethod(fake_strip),
+    })
+    monkeypatch.setitem(_sys.modules, "numeric_role_guard", fake_module)
+    qpath = tmp_path / "numeric_claim_quarantine.json"
+    out, log = fixer.apply_fixes(
+        f"## Results\n\n{bad}\n",
+        [],
+        manifest={"topic": "demo"},
+        numeric_quarantine_path=qpath,
+    )
+    rows = json.loads(qpath.read_text())
+    assert bad not in out
+    assert rows[0]["issue_type"] == "numeric_claim_contract"
+    assert rows[0]["sentence"] == bad
+    assert [
+        e for e in log
+        if e["fix_type"] == "numeric_claim_contract_quarantine"
+    ]
+
+
+def test_apply_fixes_depth_backfill_reaches_floor_after_large_strip() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Cross-Domain Synthesis\n\n"
+        + "Cross-domain safe sentence. " * 80
+        + "\n\n## Discussion\n\n"
+        + "Discussion safe sentence. " * 70
+    )
+    fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
+    assert fixer._section_word_count(fixed, "Cross-Domain Synthesis") >= 800
+    assert fixer._section_word_count(fixed, "Discussion") >= 800
+    depth = [e for e in log if e["fix_type"] == "analytical_depth_backfill"]
+    assert len(depth) == 2
+    assert all(e["n_changes"] >= 2 for e in depth)
+
+
+def test_apply_fixes_backfills_public_bookend_sections() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Introduction\n\n" + "Intro safe sentence. " * 60
+        + "\n\n## Background\n\n" + "Background safe sentence. " * 80
+        + "\n\n## Limitations\n\n" + "Limit safe sentence. " * 50
+        + "\n\n## Conclusion\n\n" + "Conclusion safe sentence. " * 50
+    )
+    fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
+    assert fixer._section_word_count(fixed, "Introduction") >= 400
+    assert fixer._section_word_count(fixed, "Background") >= 300
+    assert fixer._section_word_count(fixed, "Limitations") >= 250
+    assert fixer._section_word_count(fixed, "Conclusion") >= 250
+    assert [
+        e for e in log
+        if e["fix_type"] == "analytical_depth_backfill"
+    ]
 
 
 def test_apply_fixes_repairs_role_drift_before_strip(tmp_path) -> None:

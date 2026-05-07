@@ -247,12 +247,14 @@ def render_table_1_included_studies(receipts: list) -> str:
 # --- Table 2: Per-Study Endpoint Evidence (DENSE) -----------------------
 
 
-def _interpretation(direction: str, outcome: str) -> str:
+def _interpretation(direction: str, outcome: str, stat: str = "") -> str:
     """One-line plain-English interpretation per direction × outcome.
 
     Templated to keep the renderer pure-deterministic — no LLM. The
     output reads naturally so a reader can scan the column without
     needing a glossary."""
+    if stat and stat != "—" and direction in {"null", "unclear"}:
+        return f"reported statistic; receipt summary remains {direction}"
     if direction == "positive":
         return f"improves {outcome}"
     if direction == "negative":
@@ -262,6 +264,12 @@ def _interpretation(direction: str, outcome: str) -> str:
     if direction == "mixed":
         return f"mixed signal on {outcome}"
     return f"unclear effect on {outcome}"
+
+
+def _display_direction(direction: str, stat: str = "") -> str:
+    if stat and stat != "—" and direction in {"null", "unclear"}:
+        return f"{direction} summary"
+    return direction
 
 
 def render_table_2_endpoint_evidence(receipts: list) -> str:
@@ -292,16 +300,19 @@ def render_table_2_endpoint_evidence(receipts: list) -> str:
         direction = _safe(getattr(r, "effect_direction", None), "—")
         directness = _safe(getattr(r, "directness", None), "—")
         tier = _safe(getattr(r, "evidence_tier", None), "—")
-        interp = _interpretation(direction, endpoint)
         pvals = [p for p in (getattr(r, "p_values", None) or ()) if p]
         if not pvals:
+            interp = _interpretation(direction, endpoint)
             rows.append(_row(
                 endpoint, study, "—", direction, directness, tier, interp,
             ))
             continue
         for p in pvals:
+            stat = p.strip() or "—"
+            interp = _interpretation(direction, endpoint, stat)
+            direction_display = _display_direction(direction, stat)
             rows.append(_row(
-                endpoint, study, p.strip() or "—", direction,
+                endpoint, study, stat, direction_display,
                 directness, tier, interp,
             ))
     return header + "\n".join(rows) + "\n"

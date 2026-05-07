@@ -386,6 +386,24 @@ _DRIFT_NUMERIC_RE = re.compile(
     r"(?:%|mg|g|kg|mL|L|m/s|months?|years?|weeks?|days?|"
     r"mmHg|bpm|U/L)?",
 )
+_NUMERIC_RANGE_RE = re.compile(
+    r"(?<![\w.])(\d+(?:\.\d+)?)\s*(?:-|–|—|to)\s*"
+    r"(\d+(?:\.\d+)?)\s*(%)?",
+    flags=re.IGNORECASE,
+)
+_HEDGE_WORD_RE = re.compile(
+    r"\b(?:approximately|roughly|around|about|nearly|over|under|"
+    r"more\s+than|less\s+than)\b",
+    flags=re.IGNORECASE,
+)
+_EDITORIAL_FRACTION_RE = re.compile(
+    r"\b(?:approximately|roughly|around|about|nearly|over|under|"
+    r"more\s+than|less\s+than)\s+(?:a\s+|one\s+)?"
+    r"(?:half|quarter|third|one[-\s]third|one[-\s]quarter|"
+    r"two[-\s]thirds|three[-\s]quarters)\b",
+    flags=re.IGNORECASE,
+)
+_PAREN_NUMERIC_RE = re.compile(r"\([^)]*\d+(?:\.\d+)?\s*%?[^)]*\)")
 
 # Tolerance for numeric equality — "0.13" vs "0.130" or "5" vs "5.0"
 # count as the same number. Tighter than ±5% to keep this a fidelity
@@ -502,6 +520,151 @@ def _numeric_variants(value: str) -> set[str]:
         if stripped:
             out.add(stripped)
     return out
+
+
+def _numeric_float(value: str) -> float | None:
+    m = re.search(r"(\d+(?:\.\d+)?)", value)
+    if not m:
+        return None
+    try:
+        return float(m.group(1))
+    except (TypeError, ValueError):
+        return None
+
+
+def _registered_citations_in_sentence(
+    sentence: str,
+    citation_role_index: dict[str, dict[str, set[str]]],
+) -> list[str]:
+    out: list[str] = []
+    for c in _CITATION_TOKEN_RE.finditer(sentence):
+        token = f"{c.group(1)} {c.group(2)}"
+        if token in citation_role_index and token not in out:
+            out.append(token)
+    return out
+
+
+def _token_numeric_values(
+    token: str,
+    citation_role_index: dict[str, dict[str, set[str]]],
+    *,
+    percent_only: bool,
+) -> list[float]:
+    values: list[float] = []
+    for raw in citation_role_index.get(token, {}):
+        if percent_only and "%" not in raw:
+            continue
+        value = _numeric_float(raw)
+        if value is not None:
+            values.append(value)
+    return values
+
+
+def _range_contract_passes(
+    sentence: str,
+    num_pos: int,
+    citation_role_index: dict[str, dict[str, set[str]]],
+) -> bool:
+    """Allow editorial cross-paper ranges when the cited registry
+    values support the stated bounds.
+
+    Example: "outcomes fell within an 8-15% range (A 2020, B 2021)"
+    is valid only if at least two cited papers have percent values
+    inside the range and those values span the stated lower/upper
+    bounds within a small rounding tolerance.
+    """
+    for m in _NUMERIC_RANGE_RE.finditer(sentence):
+        if not (m.start() <= num_pos <= m.end()):
+            continue
+        low = _numeric_float(m.group(1))
+        high = _numeric_float(m.group(2))
+        if low is None or high is None:
+            return False
+        if low > high:
+            low, high = high, low
+        tokens = _registered_citations_in_sentence(
+            sentence, citation_role_index,
+        )
+        if len(tokens) < 2:
+            return False
+        in_range: list[float] = []
+        for token in tokens:
+            vals = _token_numeric_values(
+                token, citation_role_index,
+                percent_only=bool(m.group(3)),
+            )
+            vals = [v for v in vals if low <= v <= high]
+            if vals:
+                in_range.append(vals[0])
+        if len(in_range) < 2:
+            return False
+        span = max(high - low, 1.0)
+        tol = max(0.5, span * 0.05)
+        return min(in_range) <= low + tol and max(in_range) >= high - tol
+    return False
+
+
+def _hedged_numeric_parenthetical_passes(
+    sentence: str,
+    num_pos: int,
+    citation_role_index: dict[str, dict[str, set[str]]],
+) -> bool:
+    before = sentence[max(0, num_pos - 28):num_pos]
+    if not _HEDGE_WORD_RE.search(before):
+        return False
+    after = sentence[num_pos:min(len(sentence), num_pos + 120)]
+    parens = _PAREN_NUMERIC_RE.findall(after)
+    if not parens:
+        return False
+    variants = {
+        variant
+        for paren in parens
+        for nm in _DRIFT_NUMERIC_RE.finditer(paren)
+        for variant in _numeric_variants(nm.group(0))
+    }
+    if not variants:
+        return False
+    for token in _registered_citations_in_sentence(
+        sentence, citation_role_index,
+    ):
+        if variants & set(citation_role_index[token].keys()):
+            return True
+    return False
+
+
+def _check_editorial_numeric_contract(
+    sentence: str,
+    citation_role_index: dict[str, dict[str, set[str]]],
+) -> NumericIssue | None:
+    """Path A contract: prose may use editorial numeric phrasing
+    only when the exact registry value is visible inline.
+
+    This catches phrases such as "approximately one-third" when the
+    sentence does not include a parenthetical exact value like
+    "(31%)". It is intentionally narrow: only citation-bearing
+    sentences are checked, and only common spelled-fraction phrasings
+    are treated as numeric claims.
+    """
+    if not _registered_citations_in_sentence(sentence, citation_role_index):
+        return None
+    for m in _EDITORIAL_FRACTION_RE.finditer(sentence):
+        after = sentence[m.end():min(len(sentence), m.end() + 100)]
+        if _PAREN_NUMERIC_RE.search(after):
+            continue
+        return NumericIssue(
+            sentence=sentence,
+            issue_type="numeric_claim_contract",
+            severity="P1",
+            detail=(
+                "Editorial numeric phrasing requires an inline exact "
+                "registry value in parentheses."
+            ),
+            suggested_fix=(
+                "Add the canonical value in parentheses or strip the "
+                "sentence."
+            ),
+        )
+    return None
 
 
 _DRIFT_PROXIMITY_WINDOW = 180  # chars; any citation within this distance is candidate
@@ -677,6 +840,12 @@ def _check_source_context_drift(
             for k, _ in registered
         )
         if not any_value_match:
+            if _range_contract_passes(
+                sentence, num_pos, citation_role_index,
+            ) or _hedged_numeric_parenthetical_passes(
+                sentence, num_pos, citation_role_index,
+            ):
+                continue
             closest_reg = min(
                 registered,
                 key=lambda kc: abs(_midpoint(kc[1]) - num_pos),
@@ -825,6 +994,12 @@ def scan_paper(
     body_for_drift = _strip_references_section(prose_md)
     drift_sentences = set(_split_sentences(body_for_drift))
     for sentence in _split_sentences(prose_md):
+        contract_issue = _check_editorial_numeric_contract(
+            sentence, citation_role_index,
+        )
+        if contract_issue:
+            issues.append(contract_issue)
+            continue
         for check in (
             _check_arithmetic_violations,
             _check_role_mismatch,
@@ -931,6 +1106,17 @@ def _role_aligned_repair_sentence(issue: NumericIssue) -> str:
     if not token or not source_role:
         return ""
     display_num = _display_numeric_with_unit(issue.sentence, num)
+    if source_role == "dose" and not re.search(
+        r"\b(?:mg|g|µg|ug|mL|IU|kg/day|mg/day|/day|/d)\b",
+        display_num,
+        flags=re.IGNORECASE,
+    ):
+        return ""
+    if source_role == "effect" and re.search(
+        rf"\b[Pp]\s*[<=>]\s*{re.escape(num)}\b",
+        issue.sentence,
+    ):
+        return ""
     role_phrase = {
         "change_score": f"a change of {display_num}",
         "threshold": f"a threshold of {display_num}",

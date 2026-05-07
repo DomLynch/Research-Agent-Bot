@@ -1,0 +1,65 @@
+{
+  "paper_id": "HIT_exercise_and_low_dose_rapamycin_in_older_adults_with_cad_car",
+  "doi": "",
+  "extracted_at": "2026-05-06T20:10:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_exercise_and_low_dose_rapamycin_in_older_adults_with_cad_car-u-125",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 125,
+      "sentence": "The first phase will be a pilot study on up to 18 participants \\[patients 60 years or older with coronary artery disease (CAD) undergoing percutaneous coronary intervention (PCI) or coronary artery bypass surgery (CABG) or patients who are eligible to undergo and participate in cardiac rehabilitation (CR)\\]; up to 6 participants each will be given oral daily rapamycin (0.5, 1, and 2mg) dose for the duration of CR.",
+      "context_window": "e will be a pilot study on up to 18 participants \\[patients 60 years or older with coronary artery disease (CAD) undergoing perc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_exercise_and_low_dose_rapamycin_in_older_adults_with_cad_car-u-435",
+      "claim_type": "unit_value",
+      "raw_text": "2mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 435,
+      "sentence": "The first phase will be a pilot study on up to 18 participants \\[patients 60 years or older with coronary artery disease (CAD) undergoing percutaneous coronary intervention (PCI) or coronary artery bypass surgery (CABG) or patients who are eligible to undergo and participate in cardiac rehabilitation (CR)\\]; up to 6 participants each will be given oral daily rapamycin (0.5, 1, and 2mg) dose for the duration of CR.",
+      "context_window": "ipants each will be given oral daily rapamycin (0.5, 1, and 2mg) dose for the duration of CR. Baseline and follow-up data w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_exercise_and_low_dose_rapamycin_in_older_adults_with_cad_car-u-1178",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1178,
+      "sentence": "Second phase: In a prospective, randomized, clinical trial design, patients 60 years or older will be randomized at the time of CR to a standardized exercise protocol, or exercise protocol with the addition of low-dose rapamycin to test the hypothesis whether low-dose rapamycin (demonstrated in the pilot trial to improve SASP/AAI) will improve measures of AAI, SASP, or findings on the fat biopsy as compared to exercise alone.",
+      "context_window": "a prospective, randomized, clinical trial design, patients 60 years or older will be randomized at the time of CR to a standard",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

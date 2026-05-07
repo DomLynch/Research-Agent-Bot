@@ -1,0 +1,29 @@
+{
+  "paper_id": "DOI_10_1101_2024_02_19_24302922_evaluating_the_effect_of_rapamycin_treatment_in_alzheimer_s",
+  "doi": "10.1101/2024.02.19.24302922",
+  "extracted_at": "2026-05-06T20:10:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2024_02_19_24302922_evaluating_the_effect_of_rapamycin_treatment_in_alzheimer_s-u-1043",
+      "claim_type": "unit_value",
+      "raw_text": "7 mg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1043,
+      "sentence": "Fifteen patients will be included and treated with a weekly dose of 7 mg rapamycin for six months.",
+      "context_window": "patients will be included and treated with a weekly dose of 7 mg rapamycin for six months. The primary endpoint will be chan",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

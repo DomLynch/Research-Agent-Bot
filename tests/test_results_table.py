@@ -64,8 +64,8 @@ def test_format_value_decimal_keeps_3_sig_figs():
 
 
 def test_format_statistic_p_value():
-    assert _format_statistic({"claim_type": "p_value"}, 0.0001) == "p<0.001"
-    assert _format_statistic({"claim_type": "p_value"}, 0.04) == "p=0.04"
+    assert _format_statistic({"claim_type": "p_value"}, 0.0001) == "—"
+    assert _format_statistic({"claim_type": "p_value"}, 0.04) == "—"
 
 
 def test_format_statistic_confidence_interval():
@@ -100,6 +100,106 @@ def test_short_citation_falls_back_when_no_year():
 def test_claim_to_row_skips_no_numeric():
     """Claim with empty numeric_values returns None."""
     assert _claim_to_row({"raw_text": "no number"}, paper_id="x") is None
+
+
+def test_claim_to_row_drops_background_and_protocol_numerics():
+    for role in ("background", "protocol", "population_descriptor"):
+        assert _claim_to_row(
+            {
+                "claim_type": "percentage",
+                "raw_text": "70%",
+                "numeric_values": [70],
+                "endpoint": "mortality",
+                "claim_role": role,
+            },
+            paper_id="x",
+        ) is None
+
+
+def test_claim_to_row_drops_ci_prefix_percentage():
+    assert _claim_to_row(
+        {
+            "claim_type": "percentage",
+            "raw_text": "95%",
+            "numeric_values": [95],
+            "endpoint": "HbA1c",
+            "claim_role": "effect",
+            "sentence": "The estimate was 95% CI = 0.06-0.93.",
+        },
+        paper_id="x",
+    ) is None
+
+
+def test_claim_to_row_renders_confidence_interval_once():
+    row = _claim_to_row(
+        {
+            "claim_type": "confidence_interval",
+            "raw_text": "95% CI -28.97 to 19.71",
+            "numeric_values": [-28.97, 19.71],
+            "units": "95%CI",
+            "endpoint": "muscle strength",
+            "claim_role": "effect",
+        },
+        paper_id="x",
+    )
+    assert row is not None
+    assert row.value == "—"
+    assert row.unit_or_type == "95%CI"
+    assert row.statistic == "(-28.97–19.71)"
+
+
+def test_claim_to_row_drops_ambiguous_multi_endpoint_p_value():
+    row = _claim_to_row(
+        {
+            "claim_type": "p_value",
+            "raw_text": "p < 0.001",
+            "numeric_values": [0.001],
+            "endpoint": "HbA1c",
+            "claim_role": "effect",
+            "sentence": (
+                "Mean corpuscular volume was lower (p < 0.001), "
+                "whereas LDL cholesterol (p = 0.036) and HbA1c "
+                "(p = 0.030) were elevated."
+            ),
+        },
+        paper_id="x",
+    )
+    assert row is None
+
+
+def test_claim_to_row_keeps_locally_bound_multi_endpoint_p_value():
+    row = _claim_to_row(
+        {
+            "claim_type": "p_value",
+            "raw_text": "p = 0.030",
+            "numeric_values": [0.03],
+            "endpoint": "HbA1c",
+            "claim_role": "effect",
+            "sentence": (
+                "Mean corpuscular volume was lower (p < 0.001), "
+                "whereas LDL cholesterol (p = 0.036) and HbA1c "
+                "(p = 0.030) were elevated."
+            ),
+        },
+        paper_id="x",
+    )
+    assert row is not None
+    assert row.endpoint == "HbA1c"
+
+
+def test_claim_to_row_drops_dose_unit_bound_to_outcome_endpoint():
+    row = _claim_to_row(
+        {
+            "claim_type": "unit_value",
+            "raw_text": "5 mg",
+            "numeric_values": [5],
+            "units": "mg",
+            "endpoint": "HbA1c",
+            "claim_role": "effect",
+        },
+        paper_id="x",
+    )
+    assert row is None
 
 
 def test_claim_to_row_assembles_full_row():

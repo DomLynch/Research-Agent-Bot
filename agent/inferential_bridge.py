@@ -130,13 +130,14 @@ def render_inferential_bridge_section(
         human = "; ".join(c.existing_human_signal) or "none identified"
         anchors = ", ".join(c.mechanism_anchor)
         canon = ", ".join(c.canon_refs)
+        testability = c.testability.rstrip(" .")
         lines.extend([
             (
                 f"{i}. [{c.tier} | confidence={c.confidence}] {c.claim} "
                 f"[mechanism_anchor: {anchors}] [conservation: {canon}]"
             ),
             f"   Existing human signal: {human}.",
-            f"   Testability: {c.testability}. [testability: explicit]",
+            f"   Testability: {testability}. [testability: explicit]",
             "",
         ])
     return SynthesisSection(

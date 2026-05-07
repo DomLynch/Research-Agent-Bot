@@ -159,6 +159,35 @@ def classify_and_filter(
     )
 
 
+def topic_aliases_for_classification(pack: TopicPack) -> tuple[str, ...]:
+    """Aliases used by the metadata classifier.
+
+    Active-arm labels catch direct intervention papers; display aliases
+    catch mechanism papers such as "<target> inhibitor" that are
+    load-bearing for tiered INF/MECH certification.
+    """
+    aliases: dict[str, str] = {}
+    for alias in (
+        tuple(pack.active_arm_synonyms)
+        + tuple(pack.aliases_display)
+        + tuple(pack.aliases)
+    ):
+        clean = str(alias).strip()
+        if clean:
+            aliases.setdefault(clean.lower(), clean)
+    return tuple(aliases.values())
+
+
+def extraction_pools_for_pack(pack: TopicPack) -> frozenset[str]:
+    """Pools that should proceed to full-text fetch/extraction."""
+    pools = {"core", "adjacent"}
+    if pack.inference.allow or (
+        pack.retrieval is not None and pack.retrieval.background_allow
+    ):
+        pools.add("background")
+    return frozenset(pools)
+
+
 def _key_from_aggregated(hit: AggregatedHit) -> str:
     if hit.doi:
         return f"doi:{hit.doi}"
@@ -222,7 +251,7 @@ async def build_corpus_manifest(
         )
     p = params or resolve_params("calibrated")
     report = await run_waves(pack.retrieval, params=p)
-    aliases = tuple(pack.active_arm_synonyms) or tuple(pack.aliases_display)
+    aliases = topic_aliases_for_classification(pack)
     return classify_and_filter(
         report, topic=pack.topic, topic_aliases=aliases,
         expected_slots=pack.expected_evidence_slots,
@@ -235,5 +264,6 @@ async def build_corpus_manifest(
 __all__ = [
     "CorpusEntry", "CorpusManifest",
     "classify_and_filter", "build_corpus_manifest",
+    "extraction_pools_for_pack", "topic_aliases_for_classification",
     "format_funnel_md",
 ]

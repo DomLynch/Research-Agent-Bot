@@ -1,0 +1,120 @@
+{
+  "paper_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a",
+  "doi": "10.3354/ab00673",
+  "extracted_at": "2026-05-06T20:10:55+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-pct-500",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 500,
+      "sentence": "We found that 2 and 4 \u00b5M rapamycin extended B. calyciflorus life span by 15 and 22%, respectively compared with controls (p < 0.05).",
+      "context_window": "4 \u00b5M rapamycin extended B. calyciflorus life span by 15 and 22%, respectively compared with controls (p < 0.05). The reprod",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-p-542",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 542,
+      "sentence": "We found that 2 and 4 \u00b5M rapamycin extended B. calyciflorus life span by 15 and 22%, respectively compared with controls (p < 0.05).",
+      "context_window": "fe span by 15 and 22%, respectively compared with controls (p < 0.05). The reproductive peak was significantly delayed by rapamy",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "rapamycin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-p-629",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 629,
+      "sentence": "The reproductive peak was significantly delayed by rapamycin at 2 and 4 \u00b5M (p < 0.01), but the pre- and post-reproduction periods were not significantly different from controls (p > 0.05).",
+      "context_window": "peak was significantly delayed by rapamycin at 2 and 4 \u00b5M (p < 0.01), but the pre- and post-reproduction periods were not signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-p-731",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 731,
+      "sentence": "The reproductive peak was significantly delayed by rapamycin at 2 and 4 \u00b5M (p < 0.01), but the pre- and post-reproduction periods were not significantly different from controls (p > 0.05).",
+      "context_window": "ion periods were not significantly different from controls (p > 0.05). Partial cDNAs coding 375 bp for TOR and 951 bp for S6 kin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "rapamycin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-pct-975",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 975,
+      "sentence": "The identities of the deduced amino acid sequences of B. calyciflorus cDNAs to their human orthologs were 58% for TOR and 68% for S6K.",
+      "context_window": "nces of B. calyciflorus cDNAs to their human orthologs were 58% for TOR and 68% for S6K. TOR and S6K mRNA expression were u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_3354_ab00673_effects_of_rapamycin_on_life_span_and_on_expression_of_tor_a-pct-991",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 991,
+      "sentence": "The identities of the deduced amino acid sequences of B. calyciflorus cDNAs to their human orthologs were 58% for TOR and 68% for S6K.",
+      "context_window": "iflorus cDNAs to their human orthologs were 58% for TOR and 68% for S6K. TOR and S6K mRNA expression were up- or down-regul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -41,6 +41,21 @@ def test_q14_rejects_missing_conservation_tag() -> None:
     assert "conservation" in msg
 
 
+def test_q14_rejects_untagged_numbered_bridge_claim() -> None:
+    paper = """
+## Inferential Bridge
+
+1. Untagged bridge prose that should not be invisible to Q14.
+
+2. [D1_inferential_bridge | confidence=low] Tagged bridge prose.
+   [mechanism_anchor: r1] [conservation: Canon 2020]
+   Testability: Run prospective validation. [testability: explicit]
+"""
+    ok, msg = audit._check_inferential_bridge_contract(paper)
+    assert not ok
+    assert "missing tier/confidence" in msg
+
+
 def test_q14_rejects_new_inferred_numeric() -> None:
     paper = """
 ## Inferential Bridge
