@@ -1,13 +1,13 @@
 # DECISION JOURNAL
 
-## 2026-05-08 — Raise LOC ceiling to 16,850 for BRIEFS-V1 parser/matcher
-**Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 16,650 → 16,850. Per-file 600 LOC unchanged.
-**Why:** BRIEFS-V1 starts a new product surface: cheap focused evidence briefs derived from certified full papers. Phase 1-2 adds `agent/briefs/question_parser.py` and `agent/briefs/topic_matcher.py`, converting a user question into a structured BriefQuery and matching interventions to topic-pack aliases. Keeping this in `agent/briefs` avoids burying product logic in scripts and keeps later filter/writer phases on a coherent package boundary.
+## 2026-05-08 — Raise LOC ceiling to 17,000 for BRIEFS-V1 parser/matcher/filter
+**Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 16,650 → 17,000. Per-file 600 LOC unchanged.
+**Why:** BRIEFS-V1 starts a new product surface: cheap focused evidence briefs derived from certified full papers. Phase 1-3 adds `agent/briefs/question_parser.py`, `topic_matcher.py`, and `receipt_filter.py`, converting a user question into a structured BriefQuery, matching interventions to topic-pack aliases, and filtering manifest receipts by outcome plus available population/comorbidity/age signals. Keeping this in `agent/briefs` avoids burying product logic in scripts and keeps later writer/CLI phases on a coherent package boundary.
 **Alternatives rejected:**
 - Put the parser under `scripts/` to dodge the runtime budget — rejected; briefs are runtime product behavior, not a one-off maintenance script.
 - Trim unrelated manuscript prose strings to make room — rejected; that would alter generated paper content to hide a real capability addition.
-- Raise by a large buffer — rejected; +200 LOC is enough for Phase 1 plus small corrections without normalizing bloat.
-**Revisit if:** BRIEFS-V1 Phase 3-5 add more runtime modules; each phase must justify its own measured budget or delete equivalent dead weight.
+- Raise by a large buffer — rejected; +350 LOC is enough for Phase 1-3 without normalizing bloat.
+**Revisit if:** BRIEFS-V1 Phase 4-5 add more runtime modules; each phase must justify its own measured budget or delete equivalent dead weight.
 
 ## 2026-04-30 (Day 10.17) — Raise LOC ceiling to 12,000 for audit-quality expansion
 **Decision:** Raise `tests/test_loc_budget.py` `TOTAL_LIMIT` from 10,000 → 12,000. Per-file 600 LOC unchanged.

@@ -159,17 +159,18 @@ but code validates anchors, canon references, confidence, testability,
 and no-new-numeric discipline before rendering. D1 never counts as
 receipt evidence or raises certification floors (2026-05-06).
 
-Wave 10 — BRIEFS-V1 Phase 1-2 (16,650 → 16,850):
+Wave 10 — BRIEFS-V1 Phase 1-3 (16,650 → 17,000):
 agent/briefs/question_parser.py (~150 cloc) and topic_matcher.py
-(~42 cloc) plus package exports. Adds schema-first question parsing
-and topic-pack alias matching for cheap question-driven briefs
-derived from certified papers (2026-05-08).
+(~42 cloc), receipt_filter.py (~90 cloc), plus package exports.
+Adds schema-first question parsing, topic-pack alias matching, and
+receipt filtering for cheap question-driven briefs derived from
+certified papers (2026-05-08).
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 16850
+TOTAL_LIMIT = 17000
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
