@@ -148,9 +148,27 @@ def test_table_2_null_receipt_with_p_value_uses_source_local_interpretation() ->
         _R(receipt_id="A 2020", p_values=("p = 0.04",)),
     ]
     md = tr.render_table_2_endpoint_evidence(receipts)
-    assert "p = 0.04 | null summary |" in md
-    assert "reported statistic; receipt summary remains null" in md
+    assert "p = 0.04 | significant statistic |" in md
+    assert "significant statistic; receipt-level direction remains null" in md
     assert "no significant effect on muscle_function" not in md
+
+
+def test_table_2_null_receipt_with_non_significant_p_value_keeps_null_summary() -> None:
+    @dataclass
+    class _R:
+        receipt_id: str
+        evidence_tier: str = "C1"
+        directness: str = "mechanistic"
+        outcome_class: str = "muscle_function"
+        effect_direction: str = "null"
+        p_values: tuple[str, ...] = ()
+
+    receipts = [
+        _R(receipt_id="A 2020", p_values=("p = 0.12",)),
+    ]
+    md = tr.render_table_2_endpoint_evidence(receipts)
+    assert "p = 0.12 | null summary |" in md
+    assert "reported statistic; receipt summary remains null" in md
 
 
 def test_table_2_positive_receipt_with_p_value_uses_summary_language() -> None:

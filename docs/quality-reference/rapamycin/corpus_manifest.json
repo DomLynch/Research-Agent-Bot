@@ -2,15 +2,15 @@
   "topic": "rapamycin",
   "funnel": {
     "retrieved": 444,
-    "classified_keep": 135,
-    "classified_drop": 309,
-    "extractable_core": 2,
-    "extractable_background": 86,
-    "extractable_adjacent": 47,
-    "class_off_thesis": 309,
-    "class_background_mechanism": 86,
-    "class_core_on_thesis": 2,
-    "class_adjacent_clinical": 47,
+    "classified_keep": 136,
+    "classified_drop": 308,
+    "extractable_core": 11,
+    "extractable_background": 83,
+    "extractable_adjacent": 42,
+    "class_off_thesis": 308,
+    "class_background_mechanism": 83,
+    "class_core_on_thesis": 11,
+    "class_adjacent_clinical": 42,
     "cap_triggered": 0
   },
   "per_wave_stats": [
@@ -22,18 +22,18 @@
       "new_to_corpus": 420,
       "cumulative": 420,
       "stats": {
+        "raw_arxiv": 0,
         "raw_openaire": 0,
-        "raw_europepmc": 0,
         "raw_doaj": 100,
-        "raw_crossref": 2,
+        "raw_europepmc": 0,
         "raw_clinicaltrials": 63,
         "raw_semanticscholar": 0,
-        "raw_pmc_oai": 26,
-        "raw_biorxiv": 47,
+        "raw_crossref": 2,
         "raw_medrxiv": 5,
-        "raw_openalex": 147,
+        "raw_biorxiv": 47,
+        "raw_pmc_oai": 26,
         "raw_pubmed": 36,
-        "raw_arxiv": 0,
+        "raw_openalex": 147,
         "raw_total_pre_dedupe": 426,
         "unique_keys_post_dedupe": 420,
         "aggregated_total": 420
@@ -49,15 +49,15 @@
       "stats": {
         "raw_openaire": 0,
         "raw_europepmc": 0,
-        "raw_clinicaltrials": 63,
         "raw_doaj": 100,
-        "raw_crossref": 2,
         "raw_semanticscholar": 0,
+        "raw_crossref": 2,
+        "raw_clinicaltrials": 63,
         "raw_pmc_oai": 26,
-        "raw_medrxiv": 5,
         "raw_biorxiv": 47,
-        "raw_openalex": 147,
+        "raw_medrxiv": 5,
         "raw_pubmed": 0,
+        "raw_openalex": 147,
         "raw_arxiv": 0,
         "raw_total_pre_dedupe": 390,
         "unique_keys_post_dedupe": 389,
@@ -75,14 +75,14 @@
         "raw_semanticscholar": 0,
         "raw_clinicaltrials": 0,
         "raw_openaire": 0,
+        "raw_doaj": 1,
         "raw_europepmc": 0,
         "raw_biorxiv": 0,
-        "raw_pmc_oai": 0,
         "raw_medrxiv": 0,
-        "raw_doaj": 1,
+        "raw_pmc_oai": 0,
         "raw_crossref": 3,
-        "raw_openalex": 22,
         "raw_pubmed": 1,
+        "raw_openalex": 22,
         "raw_arxiv": 0,
         "raw_total_pre_dedupe": 27,
         "unique_keys_post_dedupe": 26,
@@ -155,7 +155,7 @@
       ],
       "classification": "core_on_thesis",
       "score": 100,
-      "reason": "On-topic clinical evidence: incidence of",
+      "reason": "On-topic clinical evidence:  randomised , double-blind, placebo-controlled",
       "pool": "core",
       "keep_for_extraction": true
     },
@@ -172,7 +172,7 @@
       ],
       "classification": "background_mechanism",
       "score": 60,
-      "reason": "Mechanism / preclinical: expression of",
+      "reason": "On-topic mechanism / preclinical: expression of",
       "pool": "background",
       "keep_for_extraction": true
     },
@@ -258,6 +258,22 @@
       "keep_for_extraction": false
     },
     {
+      "paper_id": "NCT05414292",
+      "doi": null,
+      "pmid": null,
+      "title": "Impacts of Mechanistic Target of Rapamycin (mTOR) Inhibition on Aged Human Muscle (Rapamune)",
+      "year": 2027,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
+    },
+    {
       "paper_id": "NCT06727305",
       "doi": null,
       "pmid": null,
@@ -269,7 +285,7 @@
       ],
       "classification": "background_mechanism",
       "score": 60,
-      "reason": "Mechanism / preclinical: pharmacokinetics, pharmacodynamics",
+      "reason": "On-topic mechanism / preclinical: pharmacokinetics, pharmacodynamics",
       "pool": "background",
       "keep_for_extraction": true
     },
@@ -283,10 +299,26 @@
       "sources": [
         "clinicaltrials"
       ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence: clinical trial,  randomized ",
+      "pool": "core",
+      "keep_for_extraction": true
+    },
+    {
+      "paper_id": "NCT05237687",
+      "doi": null,
+      "pmid": null,
+      "title": "The Role of Sirolimus in Preventing Functional Decline in Older Adults",
+      "year": 2027,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence:  randomized ",
+      "pool": "core",
       "keep_for_extraction": true
     },
     {
@@ -306,42 +338,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT05237687",
-      "doi": null,
-      "pmid": null,
-      "title": "The Role of Sirolimus in Preventing Functional Decline in Older Adults",
-      "year": 2027,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
-    },
-    {
       "paper_id": "NCT05949658",
       "doi": null,
       "pmid": null,
       "title": "Rapalog Pharmacology (RAP PAC) Study",
-      "year": 2027,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
-    },
-    {
-      "paper_id": "NCT05414292",
-      "doi": null,
-      "pmid": null,
-      "title": "Impacts of Mechanistic Target of Rapamycin (mTOR) Inhibition on Aged Human Muscle (Rapamune)",
       "year": 2027,
       "n_sources": 1,
       "sources": [
@@ -365,15 +365,31 @@
       ],
       "classification": "background_mechanism",
       "score": 60,
-      "reason": "Mechanism / preclinical: preclinical",
+      "reason": "On-topic mechanism / preclinical: preclinical",
       "pool": "background",
       "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT07058974",
+      "paper_id": "NCT06960928",
       "doi": null,
       "pmid": null,
-      "title": "A Study of Exercise and Pharmacologic Intervention on Systemic Inflammation",
+      "title": "Low Dose Sirolimus in People With Post-Acute Sequelae of COVID-19 (PASC) Long COVID-19",
+      "year": 2026,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence: clinical trial, placebo-controlled",
+      "pool": "core",
+      "keep_for_extraction": true
+    },
+    {
+      "paper_id": "NCT07173114",
+      "doi": null,
+      "pmid": null,
+      "title": "New Approaches for Evaluating the Interchangeability of Reference Materials and Quality Controls (COMET-MPL)",
       "year": 2026,
       "n_sources": 1,
       "sources": [
@@ -381,7 +397,7 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
+      "reason": "No topic alias hit; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -418,10 +434,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT05924295",
+      "paper_id": "NCT07058974",
       "doi": null,
       "pmid": null,
-      "title": "Variations in Ketone Metabolism",
+      "title": "A Study of Exercise and Pharmacologic Intervention on Systemic Inflammation",
       "year": 2026,
       "n_sources": 1,
       "sources": [
@@ -429,31 +445,31 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
+      "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT07173114",
+      "paper_id": "NCT06789900",
       "doi": null,
       "pmid": null,
-      "title": "New Approaches for Evaluating the Interchangeability of Reference Materials and Quality Controls (COMET-MPL)",
+      "title": "Everolimus and/or Exercise to Prevent Bone Loss in Postmenopausal Women",
       "year": 2026,
       "n_sources": 1,
       "sources": [
         "clinicaltrials"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "Topic alias appears in intervention context outside title; kept adjacent.",
+      "pool": "adjacent",
+      "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT06960928",
+      "paper_id": "NCT04629495",
       "doi": null,
       "pmid": null,
-      "title": "Low Dose Sirolimus in People With Post-Acute Sequelae of COVID-19 (PASC) Long COVID-19",
+      "title": "Rapamycin - Effects on Alzheimer's and Cognitive Health",
       "year": 2026,
       "n_sources": 1,
       "sources": [
@@ -482,10 +498,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT06789900",
+      "paper_id": "NCT05924295",
       "doi": null,
       "pmid": null,
-      "title": "Everolimus and/or Exercise to Prevent Bone Loss in Postmenopausal Women",
+      "title": "Variations in Ketone Metabolism",
       "year": 2026,
       "n_sources": 1,
       "sources": [
@@ -493,25 +509,9 @@
       ],
       "classification": "off_thesis",
       "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
+      "reason": "No topic alias hit; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT04629495",
-      "doi": null,
-      "pmid": null,
-      "title": "Rapamycin - Effects on Alzheimer's and Cognitive Health",
-      "year": 2026,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
     },
     {
       "paper_id": "10.1371/journal.pone.0345575",
@@ -587,10 +587,10 @@
       "sources": [
         "pubmed"
       ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence: double-blind, placebo-controlled",
+      "pool": "core",
       "keep_for_extraction": true
     },
     {
@@ -642,6 +642,22 @@
       "keep_for_extraction": true
     },
     {
+      "paper_id": "NCT05836025",
+      "doi": null,
+      "pmid": null,
+      "title": "Effect of Rapamycin in Ovarian Aging",
+      "year": 2025,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence: double-blind, placebo-controlled",
+      "pool": "core",
+      "keep_for_extraction": true
+    },
+    {
       "paper_id": "NCT07302932",
       "doi": null,
       "pmid": null,
@@ -672,22 +688,6 @@
       "reason": "Topic alias appears outside title; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT05836025",
-      "doi": null,
-      "pmid": null,
-      "title": "Effect of Rapamycin in Ovarian Aging",
-      "year": 2025,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
     },
     {
       "paper_id": "NCT04612179",
@@ -1170,6 +1170,22 @@
       "keep_for_extraction": true
     },
     {
+      "paper_id": "NCT05548023",
+      "doi": null,
+      "pmid": null,
+      "title": "Time-trend Analysis of Clinical Characteristic and Outcomes in Patients With Unprotected Left Main Coronary Artery Disease Treated With PCI Over a 10-year Period",
+      "year": 2024,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
       "paper_id": "NCT03649698",
       "doi": null,
       "pmid": null,
@@ -1214,22 +1230,6 @@
       "classification": "off_thesis",
       "score": 20,
       "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT05548023",
-      "doi": null,
-      "pmid": null,
-      "title": "Time-trend Analysis of Clinical Characteristic and Outcomes in Patients With Unprotected Left Main Coronary Artery Disease Treated With PCI Over a 10-year Period",
-      "year": 2024,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
       "pool": "_dropped",
       "keep_for_extraction": false
     },
@@ -1435,10 +1435,10 @@
       "sources": [
         "medrxiv"
       ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence: double-blind, placebo-controlled",
+      "pool": "core",
       "keep_for_extraction": true
     },
     {
@@ -1485,7 +1485,7 @@
       ],
       "classification": "background_mechanism",
       "score": 60,
-      "reason": "Mechanism / preclinical:  mouse ",
+      "reason": "On-topic mechanism / preclinical:  mouse ",
       "pool": "background",
       "keep_for_extraction": true
     },
@@ -1755,10 +1755,10 @@
       "sources": [
         "pubmed"
       ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence: clinical trial",
+      "pool": "core",
       "keep_for_extraction": true
     },
     {
@@ -1787,10 +1787,10 @@
       "sources": [
         "pubmed"
       ],
-      "classification": "background_mechanism",
-      "score": 60,
-      "reason": "Mechanism / preclinical: in vitro,  mice ",
-      "pool": "background",
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "Topic hit has exclusion context; kept adjacent, not core.",
+      "pool": "adjacent",
       "keep_for_extraction": true
     },
     {
@@ -1810,26 +1810,10 @@
       "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT04994561",
+      "paper_id": "NCT04996719",
       "doi": null,
       "pmid": null,
-      "title": "VIAging Deceleration Trial Using Metformin, Dasatinib, Rapamycin and Nutritional Supplements",
-      "year": 2023,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
-    },
-    {
-      "paper_id": "NCT04488601",
-      "doi": null,
-      "pmid": null,
-      "title": "Participatory Evaluation (of) Aging (With) Rapamycin (for) Longevity Study",
+      "title": "Effect of Rapamycin to Improve Cardiac Function in Frail Older Adults",
       "year": 2023,
       "n_sources": 1,
       "sources": [
@@ -1858,10 +1842,26 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT04996719",
+      "paper_id": "NCT04488601",
       "doi": null,
       "pmid": null,
-      "title": "Effect of Rapamycin to Improve Cardiac Function in Frail Older Adults",
+      "title": "Participatory Evaluation (of) Aging (With) Rapamycin (for) Longevity Study",
+      "year": 2023,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence: placebo-controlled",
+      "pool": "core",
+      "keep_for_extraction": true
+    },
+    {
+      "paper_id": "NCT04994561",
+      "doi": null,
+      "pmid": null,
+      "title": "VIAging Deceleration Trial Using Metformin, Dasatinib, Rapamycin and Nutritional Supplements",
       "year": 2023,
       "n_sources": 1,
       "sources": [
@@ -2338,22 +2338,6 @@
       "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT04608448",
-      "doi": null,
-      "pmid": null,
-      "title": "Topical-RAPA Use in Inflammation Reversal and Re-setting the Epigenetic Clock",
-      "year": 2022,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
       "paper_id": "NCT04200911",
       "doi": null,
       "pmid": null,
@@ -2374,6 +2358,22 @@
       "doi": null,
       "pmid": null,
       "title": "Aging Mammary Stem Cells and Breast Cancer Prevention",
+      "year": 2022,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "Topic alias appears outside title; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT04608448",
+      "doi": null,
+      "pmid": null,
+      "title": "Topical-RAPA Use in Inflammation Reversal and Re-setting the Epigenetic Clock",
       "year": 2022,
       "n_sources": 1,
       "sources": [
@@ -3394,38 +3394,6 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT04409327",
-      "doi": null,
-      "pmid": null,
-      "title": "Phase 2 Study to Determine if RTB101 Reduces the Severity of COVID-19 in Older Adults Residing in Nursing Homes",
-      "year": 2020,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT03486366",
-      "doi": null,
-      "pmid": null,
-      "title": "Application of Novel Diagnostic and Therapeutical Methods in Epilepsy and Neurodevelopmental Abnormalities in Children.",
-      "year": 2020,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
       "paper_id": "NCT04981652",
       "doi": null,
       "pmid": null,
@@ -3446,6 +3414,38 @@
       "doi": null,
       "pmid": null,
       "title": "Reversing Epigenetic & Other Markers of Senescence by Transfusing Young Plasma To Older Human Subjects",
+      "year": 2020,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT04409327",
+      "doi": null,
+      "pmid": null,
+      "title": "Phase 2 Study to Determine if RTB101 Reduces the Severity of COVID-19 in Older Adults Residing in Nursing Homes",
+      "year": 2020,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT03486366",
+      "doi": null,
+      "pmid": null,
+      "title": "Application of Novel Diagnostic and Therapeutical Methods in Epilepsy and Neurodevelopmental Abnormalities in Children.",
       "year": 2020,
       "n_sources": 1,
       "sources": [
@@ -3805,7 +3805,7 @@
       ],
       "classification": "background_mechanism",
       "score": 60,
-      "reason": "Mechanism / preclinical:  mouse , animal model, animal models",
+      "reason": "On-topic mechanism / preclinical:  mouse , animal model, animal models",
       "pool": "background",
       "keep_for_extraction": true
     },
@@ -3858,22 +3858,6 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT04139915",
-      "doi": null,
-      "pmid": null,
-      "title": "Effect of RTB101 on Illness Associated With Respiratory Tract Infections in the Elderly",
-      "year": 2019,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
       "paper_id": "NCT02881697",
       "doi": null,
       "pmid": null,
@@ -3890,10 +3874,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT03072485",
+      "paper_id": "NCT04139915",
       "doi": null,
       "pmid": null,
-      "title": "Phase 1 Study of the Effects of Combining Topical FDA-approved Drugs on Age-related Pathways on the Skin of Healthy Volunteers",
+      "title": "Effect of RTB101 on Illness Associated With Respiratory Tract Infections in the Elderly",
       "year": 2019,
       "n_sources": 1,
       "sources": [
@@ -3910,6 +3894,22 @@
       "doi": null,
       "pmid": null,
       "title": "Supplementation of a Leucine-Enriched Dairy Protein Blend",
+      "year": 2019,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT03072485",
+      "doi": null,
+      "pmid": null,
+      "title": "Phase 1 Study of the Effects of Combining Topical FDA-approved Drugs on Age-related Pathways on the Skin of Healthy Volunteers",
       "year": 2019,
       "n_sources": 1,
       "sources": [
@@ -4301,7 +4301,7 @@
       ],
       "classification": "adjacent_clinical",
       "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "reason": "Topic hit has exclusion context; kept adjacent, not core.",
       "pool": "adjacent",
       "keep_for_extraction": true
     },
@@ -4450,26 +4450,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT03308747",
+      "paper_id": "NCT01922167",
       "doi": null,
       "pmid": null,
-      "title": "Inflammaging and Muscle Protein Metabolism",
-      "year": 2018,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
-      "paper_id": "NCT01846130",
-      "doi": null,
-      "pmid": null,
-      "title": "Preserving Muscle Mass and Function in Bedridden Older Adults",
+      "title": "Resistance Exercise Training and Amino Acid Leucine Supplementation in Frail Elderly Women",
       "year": 2018,
       "n_sources": 1,
       "sources": [
@@ -4498,10 +4482,26 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT01922167",
+      "paper_id": "NCT03308747",
       "doi": null,
       "pmid": null,
-      "title": "Resistance Exercise Training and Amino Acid Leucine Supplementation in Frail Elderly Women",
+      "title": "Inflammaging and Muscle Protein Metabolism",
+      "year": 2018,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
+    },
+    {
+      "paper_id": "NCT01846130",
+      "doi": null,
+      "pmid": null,
+      "title": "Preserving Muscle Mass and Function in Bedridden Older Adults",
       "year": 2018,
       "n_sources": 1,
       "sources": [
@@ -4866,22 +4866,6 @@
       "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT03103893",
-      "doi": null,
-      "pmid": null,
-      "title": "Novel Compositions for Treating or Preventing Dermal Disorders",
-      "year": 2017,
-      "n_sources": 1,
-      "sources": [
-        "clinicaltrials"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
       "paper_id": "NCT02495727",
       "doi": null,
       "pmid": null,
@@ -4912,6 +4896,22 @@
       "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
       "pool": "adjacent",
       "keep_for_extraction": true
+    },
+    {
+      "paper_id": "NCT03103893",
+      "doi": null,
+      "pmid": null,
+      "title": "Novel Compositions for Treating or Preventing Dermal Disorders",
+      "year": 2017,
+      "n_sources": 1,
+      "sources": [
+        "clinicaltrials"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "Topic alias appears outside title; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
     },
     {
       "paper_id": "10.1101/230813",
@@ -5410,26 +5410,26 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT01649960",
+      "paper_id": "NCT02445560",
       "doi": null,
       "pmid": null,
-      "title": "Exercise and Low-Dose Rapamycin in Older Adults With CAD:Cardiac Rehabilitation And Rapamycin in Elderly (CARE) Trial",
+      "title": "The Effects of a High Protein Diet on Microbiota, Gastrointestinal Function and Wellness in Older Women",
       "year": 2015,
       "n_sources": 1,
       "sources": [
         "clinicaltrials"
       ],
-      "classification": "adjacent_clinical",
-      "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
-      "pool": "adjacent",
-      "keep_for_extraction": true
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "No topic alias hit; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT02445560",
+      "paper_id": "NCT01855971",
       "doi": null,
       "pmid": null,
-      "title": "The Effects of a High Protein Diet on Microbiota, Gastrointestinal Function and Wellness in Older Women",
+      "title": "\"Using Epigallocatechin Gallate (EGCG) and Cognitive Training to Modulate Cognitive Performance in Patients With Fragile X Syndrome\" (TESFX)",
       "year": 2015,
       "n_sources": 1,
       "sources": [
@@ -5458,20 +5458,20 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT01855971",
+      "paper_id": "NCT01649960",
       "doi": null,
       "pmid": null,
-      "title": "\"Using Epigallocatechin Gallate (EGCG) and Cognitive Training to Modulate Cognitive Performance in Patients With Fragile X Syndrome\" (TESFX)",
+      "title": "Exercise and Low-Dose Rapamycin in Older Adults With CAD:Cardiac Rehabilitation And Rapamycin in Elderly (CARE) Trial",
       "year": 2015,
       "n_sources": 1,
       "sources": [
         "clinicaltrials"
       ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "No topic alias hit; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
+      "classification": "core_on_thesis",
+      "score": 100,
+      "reason": "On-topic clinical evidence: clinical trial,  randomized ",
+      "pool": "core",
+      "keep_for_extraction": true
     },
     {
       "paper_id": "10.4103/1673-5374.158360",
@@ -5611,10 +5611,10 @@
       "sources": [
         "openalex"
       ],
-      "classification": "background_mechanism",
-      "score": 60,
-      "reason": "Mechanism / preclinical: in vitro",
-      "pool": "background",
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "Topic hit has exclusion context; kept adjacent, not core.",
+      "pool": "adjacent",
       "keep_for_extraction": true
     },
     {
@@ -6354,10 +6354,10 @@
       "keep_for_extraction": true
     },
     {
-      "paper_id": "NCT01057277",
+      "paper_id": "NCT00723255",
       "doi": null,
       "pmid": null,
-      "title": "RAD001, Cisplatin and Concurrent Radiation for Locally Advanced, Inoperable Head and Neck Cancer",
+      "title": "Bevacizumab and Temsirolimus in Treating Patients With Recurrent or Persistent Endometrial Cancer",
       "year": 2011,
       "n_sources": 1,
       "sources": [
@@ -6370,10 +6370,10 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "NCT00723255",
+      "paper_id": "NCT01057277",
       "doi": null,
       "pmid": null,
-      "title": "Bevacizumab and Temsirolimus in Treating Patients With Recurrent or Persistent Endometrial Cancer",
+      "title": "RAD001, Cisplatin and Concurrent Radiation for Locally Advanced, Inoperable Head and Neck Cancer",
       "year": 2011,
       "n_sources": 1,
       "sources": [
@@ -6491,10 +6491,10 @@
       "sources": [
         "openalex"
       ],
-      "classification": "background_mechanism",
-      "score": 60,
-      "reason": "Mechanism / preclinical: yeast",
-      "pool": "background",
+      "classification": "adjacent_clinical",
+      "score": 40,
+      "reason": "Topic hit has exclusion context; kept adjacent, not core.",
+      "pool": "adjacent",
       "keep_for_extraction": true
     },
     {
@@ -6514,22 +6514,6 @@
       "keep_for_extraction": false
     },
     {
-      "paper_id": "10.1073/pnas.1002298107",
-      "doi": "10.1073/pnas.1002298107",
-      "pmid": null,
-      "title": "Paradoxical suppression of cellular senescence by p53",
-      "year": 2010,
-      "n_sources": 1,
-      "sources": [
-        "openalex"
-      ],
-      "classification": "off_thesis",
-      "score": 20,
-      "reason": "Topic alias appears outside title; excluded from extraction.",
-      "pool": "_dropped",
-      "keep_for_extraction": false
-    },
-    {
       "paper_id": "10.1002/biof.127",
       "doi": "10.1002/biof.127",
       "pmid": null,
@@ -6544,6 +6528,22 @@
       "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
       "pool": "adjacent",
       "keep_for_extraction": true
+    },
+    {
+      "paper_id": "10.1073/pnas.1002298107",
+      "doi": "10.1073/pnas.1002298107",
+      "pmid": null,
+      "title": "Paradoxical suppression of cellular senescence by p53",
+      "year": 2010,
+      "n_sources": 1,
+      "sources": [
+        "openalex"
+      ],
+      "classification": "off_thesis",
+      "score": 20,
+      "reason": "Topic alias appears outside title; excluded from extraction.",
+      "pool": "_dropped",
+      "keep_for_extraction": false
     },
     {
       "paper_id": "10.4161/cc.8.12.8606",
@@ -7086,7 +7086,7 @@
       ],
       "classification": "adjacent_clinical",
       "score": 40,
-      "reason": "On-topic but no clear clinical-evidence signal; treated as adjacent.",
+      "reason": "Topic hit has exclusion context; kept adjacent, not core.",
       "pool": "adjacent",
       "keep_for_extraction": true
     },

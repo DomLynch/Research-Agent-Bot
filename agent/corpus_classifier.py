@@ -91,8 +91,8 @@ _REJECT_SIGNALS: tuple[str, ...] = (
 )
 
 _DEVICE_ONLY_CONTEXT: tuple[str, ...] = (
-    "eluting stent", "drug-eluting stent", "coated stent",
-    "bioresorbable polymer", "coronary stent",
+    "eluting stent", "drug-eluting stent", "coated stent", "-eluting",
+    "eluting stents", "bioresorbable polymer", "coronary stent",
 )
 
 
@@ -141,6 +141,10 @@ def _aliases_match(text: str, aliases: tuple[str, ...]) -> bool:
     return False
 
 
+def _alias_device_delivery(text: str, variant: str) -> bool:
+    return re.search(rf"(?<![a-z0-9]){re.escape(variant)}[-\s]*eluting", text) is not None
+
+
 def _intervention_alias_hits(text: str, aliases: tuple[str, ...]) -> tuple[str, ...]:
     hits: list[str] = []
     for alias in aliases:
@@ -153,12 +157,16 @@ def _intervention_alias_hits(text: str, aliases: tuple[str, ...]) -> tuple[str, 
         if a.endswith(" inhibitor"):
             variants.append(a.removesuffix(" inhibitor") + " inhibition")
         for variant in variants:
+            if _alias_device_delivery(text, variant):
+                continue
             for match in re.finditer(
                 rf"(?<![a-z0-9]){re.escape(variant)}(?![a-z0-9])", text,
             ):
                 lo = max(0, match.start() - 80)
                 hi = min(len(text), match.end() + 80)
                 context = text[lo:hi]
+                if any(signal in context for signal in _DEVICE_ONLY_CONTEXT):
+                    continue
                 if any(signal in context for signal in _INTERVENTION_CONTEXT_SIGNALS):
                     hits.append(a)
                     break
@@ -353,11 +361,3 @@ def classify_corpus(
         )
         for p in papers
     ]
-
-
-__all__ = [
-    "CorpusClassification",
-    "classify_paper",
-    "classify_corpus",
-    "score_paper",
-]

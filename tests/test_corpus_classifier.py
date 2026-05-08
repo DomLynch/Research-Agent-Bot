@@ -206,6 +206,18 @@ def test_alias_match_ignores_device_only_context():
     assert c.classification == "off_thesis"
 
 
+def test_intervention_context_rescue_ignores_drug_eluting_devices():
+    p = _paper(
+        title="Peripheral artery device trial",
+        abstract=(
+            "Participants received sirolimus-eluting and bare nitinol "
+            "stents in a randomized clinical trial."
+        ),
+    )
+    c = classify_paper(p, topic_aliases=("sirolimus",))
+    assert c.classification == "off_thesis"
+
+
 def test_off_topic_mechanism_does_not_enter_background_pool():
     p = _paper(
         title="Unrelated diabetic swine stent biology",
