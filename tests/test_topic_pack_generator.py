@@ -1,0 +1,121 @@
+from __future__ import annotations
+
+from dataclasses import replace
+from pathlib import Path
+
+import pytest
+
+from agent.topic_pack import load_topic_pack
+from agent.topic_pack_generator import (
+    RetrievalCounts,
+    classify_topic_tier,
+    generate_candidate_topic_pack,
+    precursor_terms,
+    suggest_adaptive_expansion,
+    validate_candidate_pack,
+)
+
+
+def test_generates_mainstream_biomedical_candidate() -> None:
+    pack = generate_candidate_topic_pack(
+        "metformin",
+        seed_terms=("biguanide", "type 2 diabetes"),
+    )
+    data = pack.to_topic_pack_dict()
+
+    assert pack.status == "proceed"
+    assert pack.tier == "mainstream"
+    assert pack.validation_errors == ()
+    assert data["topic"] == "metformin"
+    assert data["class_"] == "generated_biomedical"
+    assert "metformin" in pack.topic_terms
+    assert "biguanide" in pack.aliases
+    assert data["retrieval"]["species"] == []
+
+
+def test_precursor_expansion_for_urolithin_a() -> None:
+    pack = generate_candidate_topic_pack("urolithin A")
+
+    assert pack.tier == "emerging"
+    assert "ellagitannin" in pack.topic_terms
+    assert "ellagic acid" in pack.topic_terms
+    assert "punicalagin" in pack.topic_terms
+    assert precursor_terms("urolithin A")[:3] == (
+        "ellagitannin",
+        "ellagic acid",
+        "punicalagin",
+    )
+    assert len(pack.corpus_search_queries) <= 10
+
+
+def test_pseudo_topic_stops_and_cannot_be_forced_to_proceed() -> None:
+    pack = generate_candidate_topic_pack("homeopathy longevity detox")
+
+    assert pack.tier == "pseudo"
+    assert pack.status == "stop"
+    assert pack.candidate_cap == 0
+    unsafe = replace(pack, status="proceed")
+
+    assert "pseudo tier cannot proceed" in validate_candidate_pack(unsafe)
+
+
+def test_contested_topic_proceeds_with_low_candidate_cap() -> None:
+    pack = generate_candidate_topic_pack("young blood plasma exchange aging")
+    plan = suggest_adaptive_expansion(pack, RetrievalCounts(unique_candidates=150))
+
+    assert pack.tier == "contested"
+    assert pack.status == "proceed"
+    assert pack.candidate_cap == 150
+    assert plan.status == "stop"
+    assert plan.reason == "candidate cap reached"
+
+
+def test_adaptive_expansion_uses_counts_without_network() -> None:
+    pack = generate_candidate_topic_pack("taurine aging")
+    thin = suggest_adaptive_expansion(pack, RetrievalCounts(unique_candidates=12))
+    enough = suggest_adaptive_expansion(pack, RetrievalCounts(unique_candidates=80))
+
+    assert thin.status == "expand"
+    assert "randomized controlled trial" in thin.additional_terms
+    assert "safety" in thin.additional_terms
+    assert enough.status == "enough"
+    assert enough.additional_terms == ()
+
+
+def test_generated_pack_is_compatible_with_biomedical_default() -> None:
+    default = load_topic_pack(
+        Path("topic_packs") / "_biomedical_default.toml"
+    )
+    pack = generate_candidate_topic_pack("vitamin D frailty")
+    data = pack.to_topic_pack_dict()
+
+    assert set(default.expected_evidence_slots).issubset(
+        set(data["expected_evidence_slots"])
+    )
+    assert default.retrieval is not None
+    assert set(default.retrieval.background_allow).issubset(
+        set(data["retrieval"]["background"]["allow"])
+    )
+    assert data["known_role_overrides"] == {}
+    assert data["canonical_trials"] == []
+
+
+def test_species_hard_filter_is_validation_error() -> None:
+    pack = generate_candidate_topic_pack("spermidine")
+    hard_filtered = replace(pack, species=("humans",))
+
+    assert "generated biomedical packs must not hard-filter species" in (
+        validate_candidate_pack(hard_filtered)
+    )
+
+
+def test_empty_topic_rejected() -> None:
+    with pytest.raises(ValueError, match="topic_name is required"):
+        generate_candidate_topic_pack("   ")
+
+
+def test_tier_labels_are_deterministic() -> None:
+    assert classify_topic_tier("omega-3 cardiovascular aging") == "mainstream"
+    assert classify_topic_tier("urolithin A mitophagy") == "emerging"
+    assert classify_topic_tier("young blood protocol") == "contested"
+    assert classify_topic_tier("crystal healing longevity") == "pseudo"

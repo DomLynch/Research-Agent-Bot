@@ -3,6 +3,22 @@
 Status: next-sprint specification. Do not replace file-backed topic packs inside
 the current 72-task stabilization sprint.
 
+## Prototype Status — 2026-05-08
+
+`agent/topic_pack_generator.py` implements the first dry-run-only slice:
+
+- deterministic topic-tier labels: `mainstream`, `adjacent`, `emerging`,
+  `contested`, `pseudo`
+- strict `proceed` / `stop` status
+- pseudo topics stop before retrieval
+- generated output is a TOML-style dict compatible with current
+  `TopicPack` fields, but is not written to `topic_packs/`
+- no DB persistence, no public API, no network retrieval calls
+- adaptive expansion is a pure function over observed retrieval counts
+
+This prototype is scaffolding for review and tests. It does not perturb any
+curated topic pack or synthesis run.
+
 ## Goal
 
 Generate a validated topic pack from a user-supplied topic name, persist the
