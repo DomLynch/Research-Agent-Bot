@@ -333,6 +333,34 @@ def test_apply_fixes_normalizes_public_meta_phrases() -> None:
     )
 
 
+def test_apply_fixes_renormalizes_meta_phrases_after_depth_restore() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    safe_words = " ".join(["source-bound"] * 45)
+    stripped_words = " ".join(["placeholder"] * 125)
+    paper = (
+        "## Conclusion\n\n"
+        "The audited corpus remains interpretable. The public interpretation "
+        "is tied to the audited evidence structure rather than to any "
+        f"stripped sentence. {safe_words}\n\n"
+        f"Deterministic evidence summary {stripped_words}.\n"
+    )
+
+    out, log = fixer.apply_fixes(paper, [], manifest=_empty_manifest())
+    lower = out.lower()
+    assert "audited corpus" not in lower
+    assert "audited evidence structure" not in lower
+    assert "stripped sentence" not in lower
+    assert "accepted corpus" in lower
+    assert any(
+        item["fix_type"] == "public_meta_phrase_normalization_post_depth"
+        for item in log
+    )
+
+
 def test_apply_fixes_strips_fuzzy_duplicate_body_paragraph() -> None:
     import sys as _sys
     from pathlib import Path as _Path

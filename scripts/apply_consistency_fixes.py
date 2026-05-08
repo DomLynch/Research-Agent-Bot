@@ -371,6 +371,18 @@ def _normalize_public_meta_phrases(paper_md: str) -> tuple[str, int]:
             re.compile(r"\s*\(no LLM judgment\)", re.IGNORECASE),
             "",
         ),
+        (
+            re.compile(r"audited corpus", re.IGNORECASE),
+            "accepted corpus",
+        ),
+        (
+            re.compile(r"audited evidence structure", re.IGNORECASE),
+            "source record",
+        ),
+        (
+            re.compile(r"stripped sentence", re.IGNORECASE),
+            "unsupported sentence",
+        ),
     )
     out = paper_md
     n_total = 0
@@ -1392,6 +1404,17 @@ def apply_fixes(
         new_md, hedge_log = _ensure_discussion_hedge_density(new_md)
         log.extend(hedge_log)
 
+    new_md, n_meta_phrase = _normalize_public_meta_phrases(new_md)
+    if n_meta_phrase:
+        log.append({
+            "fix_type": "public_meta_phrase_normalization_post_depth",
+            "n_changes": n_meta_phrase,
+            "description": (
+                "rewrote audit/compiler meta phrases reintroduced by "
+                "section restoration or final depth backfill"
+            ),
+        })
+
     return new_md, log
 
 
@@ -1792,16 +1815,15 @@ def _ensure_discussion_hedge_density(paper_md: str) -> tuple[str, list[dict]]:
 
 
 _DEPTH_BACKFILL_EXTENSION = """The public interpretation remains tied to
-the audited evidence structure rather than to any stripped sentence.
-When a source-context sentence is removed, the paper does not infer a
-replacement result; it retains only the higher-level boundary that the
-receipt graph already supports. This distinction matters for journal
-review because deletion of unsafe numerics should not delete the
-scientific question. The surviving section therefore explains how to
-read the evidence after safety filtering: as a conservative synthesis
-of directness, endpoint proximity, and disagreement, with unsafe
-numeric detail preserved in the audit trail rather than promoted into
-public prose."""
+the source record rather than to any single unsupported sentence. When
+a source-context sentence cannot support its own specificity, the paper
+does not infer a replacement result; it retains only the higher-level
+boundary that the receipt graph already supports. This distinction
+matters for journal review because removal of unsafe numerics should
+not delete the scientific question. The surviving section therefore
+explains how to read the evidence as a conservative synthesis of
+directness, endpoint proximity, and disagreement, with uncertain
+numeric detail withheld from public claims."""
 
 
 _INTRODUCTION_BACKFILL = """### Scope of the synthesis
@@ -1900,7 +1922,7 @@ The synthesis supports a bounded conclusion: the topic has enough
 receipt-traced evidence to justify structured interpretation, but the
 strength of that interpretation depends on the evidence tier and
 outcome class being discussed. The final claim is therefore not that
-every signal generalizes, but that the audited corpus identifies where
+every signal generalizes, but that the accepted corpus identifies where
 the evidence is strongest, where it is contradictory, and where future
 research should focus to turn mechanistic or adjacent signals into
 clinically interpretable knowledge."""
