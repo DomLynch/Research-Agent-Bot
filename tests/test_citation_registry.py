@@ -460,6 +460,35 @@ def test_metadata_derived_collision_disambiguator() -> None:
     assert citations == ["Smith 2024", "Smith 2024b"]
 
 
+def test_same_source_author_year_receipts_share_canonical_token() -> None:
+    receipts = [
+        _FakeReceipt(
+            receipt_id="PMC6826125_metformin_blunts_muscle_hypertrophy",
+            source_year=2019,
+            source_doi="10.1111/acel.13039",
+        ),
+        _FakeReceipt(
+            receipt_id="Walton_2019_MASTERS_metformin_blunts_resistance",
+            source_year=2019,
+            source_doi="10.1111/acel.13039",
+        ),
+    ]
+    paper_meta = {
+        "PMC6826125_metformin_blunts_muscle_hypertrophy": {
+            "authors": ["Ryan G Walton"], "year": 2019,
+            "title": "Metformin blunts muscle hypertrophy",
+        },
+        "Walton_2019_MASTERS_metformin_blunts_resistance": {
+            "year": 2019,
+            "title": "Metformin blunts muscle hypertrophy",
+        },
+    }
+    registry = cr.build_registry(receipts, paper_meta_by_id=paper_meta)
+    citations = [entry.body_citation for entry in registry.values()]
+    assert citations == ["Walton 2019", "Walton 2019"]
+    assert "Metformin 2019" not in citations
+
+
 def test_metadata_missing_falls_back_to_pmc_handle() -> None:
     """When parsed metadata is incomplete (no authors / no year),
     fall back to the legacy `PMC<id> <year>` form so the pipeline

@@ -1,0 +1,47 @@
+{
+  "paper_id": "DOI_10_1101_2025_10_29_25338967_metformin_use_is_associated_with_lower_mortality_from_bacter",
+  "doi": "10.1101/2025.10.29.25338967",
+  "extracted_at": "2026-05-08T04:46:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1101_2025_10_29_25338967_metformin_use_is_associated_with_lower_mortality_from_bacter-pct-268",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 268,
+      "sentence": "The neglected tropical disease melioidosis has up to 50% in-hospital mortality rate and the highest risk association of DM with any infectious disease (12-fold increased risk).",
+      "context_window": "eases. The neglected tropical disease melioidosis has up to 50% in-hospital mortality rate and the highest risk association",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1101_2025_10_29_25338967_metformin_use_is_associated_with_lower_mortality_from_bacter-pct-1110",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1110,
+      "sentence": "Metformin use was associated with a 50% decrease in 28-day mortality whilst renal impairment was associated with a doubling of mortality after adjusting for covariates.",
+      "context_window": "min prior to infection. Metformin use was associated with a 50% decrease in 28-day mortality whilst renal impairment was as",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "paper_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me",
+  "doi": "",
+  "extracted_at": "2026-05-08T04:47:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 2,
+    "sample_size": 7
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-u-228",
+      "claim_type": "unit_value",
+      "raw_text": "88 years",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 228,
+      "sentence": "We have therefore, studied prospectively over two months 24 patients aged between 70-88 years with 115% mean ideal body wt and glycemic control greater than 10 mol.l-1 fasting and/or greater than 14 mol.l-1 postprandial, and/or an HbA1 value greater than 10%.",
+      "context_window": "d prospectively over two months 24 patients aged between 70-88 years with 115% mean ideal body wt and glycemic control greater t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-pct-242",
+      "claim_type": "percentage",
+      "raw_text": "115%",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 242,
+      "sentence": "We have therefore, studied prospectively over two months 24 patients aged between 70-88 years with 115% mean ideal body wt and glycemic control greater than 10 mol.l-1 fasting and/or greater than 14 mol.l-1 postprandial, and/or an HbA1 value greater than 10%.",
+      "context_window": "y over two months 24 patients aged between 70-88 years with 115% mean ideal body wt and glycemic control greater than 10 mol",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-pct-398",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 398,
+      "sentence": "We have therefore, studied prospectively over two months 24 patients aged between 70-88 years with 115% mean ideal body wt and glycemic control greater than 10 mol.l-1 fasting and/or greater than 14 mol.l-1 postprandial, and/or an HbA1 value greater than 10%.",
+      "context_window": "14 mol.l-1 postprandial, and/or an HbA1 value greater than 10%. At entry into the study, patients were on metformin + sulf",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-n-471",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 471,
+      "sentence": "At entry into the study, patients were on metformin + sulfonylurea (n = 15), sulfonylurea (n = 3), metformin (n = 2), insulin (n = 1) or diet alone (n = 3).",
+      "context_window": "into the study, patients were on metformin + sulfonylurea (n = 15), sulfonylurea (n = 3), metformin (n = 2), insulin (n = 1)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-n-494",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 494,
+      "sentence": "At entry into the study, patients were on metformin + sulfonylurea (n = 15), sulfonylurea (n = 3), metformin (n = 2), insulin (n = 1) or diet alone (n = 3).",
+      "context_window": "ts were on metformin + sulfonylurea (n = 15), sulfonylurea (n = 3), metformin (n = 2), insulin (n = 1) or diet alone (n = 3).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-n-513",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 513,
+      "sentence": "At entry into the study, patients were on metformin + sulfonylurea (n = 15), sulfonylurea (n = 3), metformin (n = 2), insulin (n = 1) or diet alone (n = 3).",
+      "context_window": "n + sulfonylurea (n = 15), sulfonylurea (n = 3), metformin (n = 2), insulin (n = 1) or diet alone (n = 3). They received metf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-n-530",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 530,
+      "sentence": "At entry into the study, patients were on metformin + sulfonylurea (n = 15), sulfonylurea (n = 3), metformin (n = 2), insulin (n = 1) or diet alone (n = 3).",
+      "context_window": "(n = 15), sulfonylurea (n = 3), metformin (n = 2), insulin (n = 1) or diet alone (n = 3). They received metformin as the sole",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-n-552",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 552,
+      "sentence": "At entry into the study, patients were on metformin + sulfonylurea (n = 15), sulfonylurea (n = 3), metformin (n = 2), insulin (n = 1) or diet alone (n = 3).",
+      "context_window": "(n = 3), metformin (n = 2), insulin (n = 1) or diet alone (n = 3). They received metformin as the sole therapy when possible",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-u-685",
+      "claim_type": "unit_value",
+      "raw_text": "850 mg",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 685,
+      "sentence": "They received metformin as the sole therapy when possible (sulfonylureas were discontinued in 9 cases) at a dosage of either 850 mg or 1,700 mg/day dependent on creatinine clearance values of 30-60 ml.min-1 (n = 11) and greater than 60 ml.min-1 (n = 13), respectively.",
+      "context_window": "ylureas were discontinued in 9 cases) at a dosage of either 850 mg or 1,700 mg/day dependent on creatinine clearance values of",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-u-697",
+      "claim_type": "unit_value",
+      "raw_text": "700 mg/day",
+      "numeric_values": [
+        700.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 697,
+      "sentence": "They received metformin as the sole therapy when possible (sulfonylureas were discontinued in 9 cases) at a dosage of either 850 mg or 1,700 mg/day dependent on creatinine clearance values of 30-60 ml.min-1 (n = 11) and greater than 60 ml.min-1 (n = 13), respectively.",
+      "context_window": "discontinued in 9 cases) at a dosage of either 850 mg or 1,700 mg/day dependent on creatinine clearance values of 30-60 ml.min-1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-n-768",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 768,
+      "sentence": "They received metformin as the sole therapy when possible (sulfonylureas were discontinued in 9 cases) at a dosage of either 850 mg or 1,700 mg/day dependent on creatinine clearance values of 30-60 ml.min-1 (n = 11) and greater than 60 ml.min-1 (n = 13), respectively.",
+      "context_window": "dependent on creatinine clearance values of 30-60 ml.min-1 (n = 11) and greater than 60 ml.min-1 (n = 13), respectively. Compa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-n-806",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 806,
+      "sentence": "They received metformin as the sole therapy when possible (sulfonylureas were discontinued in 9 cases) at a dosage of either 850 mg or 1,700 mg/day dependent on creatinine clearance values of 30-60 ml.min-1 (n = 11) and greater than 60 ml.min-1 (n = 13), respectively.",
+      "context_window": "es of 30-60 ml.min-1 (n = 11) and greater than 60 ml.min-1 (n = 13), respectively. Compared to pretreatment values, glycemic c",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-u-888",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 888,
+      "sentence": "Compared to pretreatment values, glycemic control at 1 and 2 months were unchanged, with metformin blood levels remaining within expected values for both dosage groups.",
+      "context_window": "Compared to pretreatment values, glycemic control at 1 and 2 months were unchanged, with metformin blood levels remaining withi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me-u-1102",
+      "claim_type": "unit_value",
+      "raw_text": "850 mg/day",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 1102,
+      "sentence": "Blood lactate levels remained unchanged in the high dosage group but were reduced (p less than 0.05) on 850 mg/day probably because of the reduction of metformin dosage in patients already treated prior to the study.",
+      "context_window": "he high dosage group but were reduced (p less than 0.05) on 850 mg/day probably because of the reduction of metformin dosage in pa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

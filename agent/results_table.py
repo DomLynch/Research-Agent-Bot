@@ -596,7 +596,7 @@ def _quality_score(claim: dict[str, Any]) -> int:
 
 
 def _truncate(s: str, limit: int) -> str:
-    s = (s or "").strip().replace("|", "/")  # | breaks markdown tables
+    s = re.sub(r"\s+", " ", (s or "").strip().replace("|", "/"))
     if len(s) <= limit:
         return s
     cut = s[: limit - 1].rsplit(" ", 1)[0].rstrip(" ,;:/")

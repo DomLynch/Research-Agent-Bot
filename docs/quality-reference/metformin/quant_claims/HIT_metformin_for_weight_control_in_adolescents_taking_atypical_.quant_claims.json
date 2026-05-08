@@ -1,0 +1,84 @@
+{
+  "paper_id": "HIT_metformin_for_weight_control_in_adolescents_taking_atypical_",
+  "doi": "",
+  "extracted_at": "2026-05-08T04:46:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_metformin_for_weight_control_in_adolescents_taking_atypical_-u-729",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 729,
+      "sentence": "Metformin is an antihyperglycemic drug, approved by the FDA for treatment of type 2 diabetes in children older than 10 years of age.",
+      "context_window": "FDA for treatment of type 2 diabetes in children older than 10 years of age. The drug usually does not cause hypoglycemia, even",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_metformin_for_weight_control_in_adolescents_taking_atypical_-pct-1360",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1360,
+      "sentence": "Acute side effects of metformin, which occur in up to 20% of patients, include diarrhea, abdominal discomfort, nausea, metallic taste, and anorexia.",
+      "context_window": "ower. Acute side effects of metformin, which occur in up to 20% of patients, include diarrhea, abdominal discomfort, nausea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_metformin_for_weight_control_in_adolescents_taking_atypical_-u-2351",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 2351,
+      "sentence": "Participants- 30 adolescents aged 12- 20 years old, treated with AAs, who are overweight as defined by more than 10% of what is expected according to age and height.",
+      "context_window": "Mental Health Center. Participants- 30 adolescents aged 12- 20 years old, treated with AAs, who are overweight as defined by mor",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_metformin_for_weight_control_in_adolescents_taking_atypical_-pct-2426",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2426,
+      "sentence": "Participants- 30 adolescents aged 12- 20 years old, treated with AAs, who are overweight as defined by more than 10% of what is expected according to age and height.",
+      "context_window": "reated with AAs, who are overweight as defined by more than 10% of what is expected according to age and height. Importance",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

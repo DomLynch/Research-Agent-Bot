@@ -2,25 +2,412 @@
   "topic": "metformin",
   "retrieval_mode": "calibrated",
   "n_queries": 6,
-  "n_unique_candidates": 378,
-  "n_selected_for_fetch": 378,
-  "n_pmcid_resolved": 191,
-  "n_extracted": 231,
+  "n_unique_candidates": 184,
+  "n_selected_for_fetch": 184,
+  "n_pmcid_resolved": 93,
+  "n_abstract_fallback": 110,
+  "n_extracted": 184,
+  "active_pools": [
+    "adjacent",
+    "background",
+    "core"
+  ],
+  "active_pmcids": [
+    "PMC10245800",
+    "PMC10390098",
+    "PMC10652302",
+    "PMC10680579",
+    "PMC10714529",
+    "PMC10848964",
+    "PMC10986112",
+    "PMC10998183",
+    "PMC11170724",
+    "PMC12340991",
+    "PMC12365428",
+    "PMC12401686",
+    "PMC12907551",
+    "PMC13015344",
+    "PMC1370926",
+    "PMC1783677",
+    "PMC2505046",
+    "PMC2656178",
+    "PMC2732153",
+    "PMC2736070",
+    "PMC3006019",
+    "PMC3034183",
+    "PMC3082009",
+    "PMC3083997",
+    "PMC3249452",
+    "PMC3282095",
+    "PMC3384433",
+    "PMC3478667",
+    "PMC3898468",
+    "PMC3904269",
+    "PMC3906334",
+    "PMC4668014",
+    "PMC4680192",
+    "PMC4772077",
+    "PMC4854919",
+    "PMC4990459",
+    "PMC5133996",
+    "PMC5595695",
+    "PMC5647555",
+    "PMC5664297",
+    "PMC5685485",
+    "PMC5847877",
+    "PMC5865989",
+    "PMC5989809",
+    "PMC6052468",
+    "PMC6258123",
+    "PMC6326273",
+    "PMC6351883",
+    "PMC6407684",
+    "PMC6549273",
+    "PMC6594816",
+    "PMC6649411",
+    "PMC6677947",
+    "PMC6686369",
+    "PMC6781747",
+    "PMC6826125",
+    "PMC6863391",
+    "PMC6972619",
+    "PMC7035567",
+    "PMC7138050",
+    "PMC7175970",
+    "PMC7207407",
+    "PMC7210926",
+    "PMC7212476",
+    "PMC7260677",
+    "PMC7302182",
+    "PMC7397438",
+    "PMC7415324",
+    "PMC7552859",
+    "PMC7563046",
+    "PMC7642846",
+    "PMC7655218",
+    "PMC7821082",
+    "PMC7877555",
+    "PMC7884040",
+    "PMC7884047",
+    "PMC7923493",
+    "PMC7990352",
+    "PMC8282216",
+    "PMC8374068",
+    "PMC8526089",
+    "PMC8537073",
+    "PMC8596953",
+    "PMC8698925",
+    "PMC8747910",
+    "PMC8748516",
+    "PMC8830934",
+    "PMC8869356",
+    "PMC8965502",
+    "PMC8995000",
+    "PMC9318003",
+    "PMC9637479",
+    "PMC9766609"
+  ],
+  "active_paper_ids": [
+    "DOI_10_1001_jama_281_21_2005_glycemic_control_with_diet_sulfonylurea_metformin_or_insulin",
+    "DOI_10_1001_jamaophthalmol_2020_6331_association_of_metformin_use_with_age_related_macular_degene",
+    "DOI_10_1001_jamapediatrics_2013_4200_systematic_review_of_the_benefits_and_risks_of_metformin_in",
+    "DOI_10_1002_14651858_cd002967_pub4_risk_of_fatal_and_nonfatal_lactic_acidosis_with_metformin_us",
+    "DOI_10_1002_clc_22125_study_design_and_rationale_of_a_dose_ranging_trial_of_scp_lx",
+    "DOI_10_1002_j_1552_4604_1995_tb04033_x_kidney_function_and_age_are_both_predictors_of_pharmacokinet",
+    "DOI_10_1055_s_2007_992786_metformin_reverts_deleterious_effects_of_advanced_glycation",
+    "DOI_10_1056_nejmoa012512_reduction_in_the_incidence_of_type_2_diabetes_with_lifestyle",
+    "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with",
+    "DOI_10_1073_pnas_0807991106_antidiabetic_drug_metformin_glucophage_r_increases_biogenesi",
+    "DOI_10_1080_19490976_2017_1405209_modulation_of_the_gut_microbiota_by_metformin_improves_metab",
+    "DOI_10_1089_rej_2016_1883_antiaging_effect_of_metformin_on_brain_in_naturally_aged_and",
+    "DOI_10_1093_gerona_61_10_1075_the_influence_of_age_on_the_effects_of_lifestyle_modificatio",
+    "DOI_10_1093_gerona_glaa056_metformin_reduces_aging_related_leaky_gut_and_improves_cogni",
+    "DOI_10_1093_gerona_glz078_rationale_and_study_design_of_a_randomized_clinical_trial_of",
+    "DOI_10_1093_humrep_deh850_serum_anti_m_llerian_hormone_levels_remain_high_until_late_r",
+    "DOI_10_1101_2021_11_18_469078_metformin_suppresses_sars_cov_2_in_cell_culture",
+    "DOI_10_1101_2024_08_05_606613_zinc_and_metformin_co_functionalized_polyetheretherketone_a",
+    "DOI_10_1101_2025_06_19_25329930_novel_recruitment_and_retention_strategies_for_sarcopenia_tr",
+    "DOI_10_1101_2025_07_03_25330760_targeting_a_hypothetical_estimand_based_on_adherence_with_th",
+    "DOI_10_1101_2025_10_29_25338967_metformin_use_is_associated_with_lower_mortality_from_bacter",
+    "DOI_10_1101_cshperspect_a025932_metformin_a_hopeful_promise_in_aging_research",
+    "DOI_10_1111_1471_0528_12964_a_follow_up_of_a_randomised_study_of_metformin_and_insulin_i",
+    "DOI_10_1111_acel_12075_metformin_inhibits_the_senescence_associated_secretory_pheno",
+    "DOI_10_1111_aogs_70191_perinatal_and_long_term_implications_of_diagnosing_gestation",
+    "DOI_10_1111_dom_13256_a_52_week_extension_study_of_switching_from_gemigliptin_vs_s",
+    "DOI_10_1111_dom_14583_efficacy_of_canagliflozin_versus_metformin_in_women_with_pol",
+    "DOI_10_1111_j_1447_0756_2008_00876_x_prevention_of_gestational_diabetes_mellitus_by_continuing_me",
+    "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde",
+    "DOI_10_1111_j_1464_5491_1990_tb01433_x_comparison_of_tolbutamide_and_metformin_in_elderly_diabetic",
+    "DOI_10_1111_pedi_12473_metformin_a_review_of_its_history_and_future_from_lilac_to_l",
+    "DOI_10_1146_annurev_pharmtox_051920_093829_the_gut_microbiome_metformin_and_aging",
+    "DOI_10_1152_physiol_00013_2020_exercise_pharmacology_interactions_metformin_statins_and_hea",
+    "DOI_10_1159_000502257_metformin_and_aging_a_review",
+    "DOI_10_1161_hypertensionaha_124_23087_prediabetes_increases_the_risk_of_frailty_in_prefrail_older",
+    "DOI_10_1177_13872877261418688_apoe4_dependent_association_between_metformin_use_and_alzhei",
+    "DOI_10_1200_jco_2009_19_6410_metformin_and_pathologic_complete_responses_to_neoadjuvant_c",
+    "DOI_10_1200_jco_2010_30_6985_implementing_a_geriatric_assessment_in_cooperative_group_cli",
+    "DOI_10_1200_jco_2015_63_4600_met_exon_14_mutations_in_non_small_cell_lung_cancer_are_asso",
+    "DOI_10_1210_jc_2017_02419_metformin_use_in_pcos_pregnancies_increases_the_risk_of_offs",
+    "DOI_10_1210_jc_2018_01791_hyperglycemia_and_metformin_use_are_associated_with_b_vitami",
+    "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet",
+    "DOI_10_12688_f1000research_130973_1_is_metformin_the_only_culprit_for_cognitive_impairment_in_di",
+    "DOI_10_14341_omet2015168_69_relationship_between_metformin_and_frailty_syndrome_in_elder",
+    "DOI_10_1530_joe_18_0520_metformin_improves_ovarian_insulin_signaling_alterations_cau",
+    "DOI_10_2337_db19_116_or_116_or_hypoglycemia_leads_to_a_delayed_increase_in_platelet",
+    "DOI_10_2337_db24_861_p_861_p_efficacy_of_digital_intervention_vs_metformin_for_wome",
+    "DOI_10_2337_dc20_0892_metformin_use_is_associated_with_slowed_cognitive_decline_an",
+    "DOI_10_2337_diacare_27_7_1791_the_phantom_of_lactic_acidosis_due_to_metformin_in_patients",
+    "DOI_10_2337_diacare_29_02_06_dc05_1558_increased_cancer_related_mortality_for_patients_with_type_2",
+    "DOI_10_3233_jad_131901_long_term_metformin_usage_and_cognitive_function_among_older",
+    "DOI_10_3389_fphar_2026_1799374_controversial_effects_of_metformin_on_human_physiology_and_p",
+    "DOI_10_3390_app152111576_the_dual_role_of_metformin_repurposing_an_antidiabetic_drug",
+    "DOI_10_34172_jsums_1057_evaluation_of_metformin_plus_insulin_versus_insulin_only_in",
+    "DOI_10_3889_oamjms_2021_6213_association_between_three_variants_in_the_prkaa2_gene_rs2796",
+    "DOI_10_3892_ijo_2013_2077_low_concentration_of_metformin_induces_a_p53_dependent_senes",
+    "DOI_10_3892_ol_2019_10800_agr2_silencing_contributes_to_metformin_dependent_sensitizat",
+    "DOI_10_4102_hsag_v9i1_155_lewenskwaliteit_te_midde_van_n_erge_stressor_n_studie_van_be",
+    "DOI_10_4161_cc_11_6_19665_metformin_lowers_the_threshold_for_stress_induced_senescence",
+    "DOI_10_4161_cc_26928_metformin_do_we_finally_have_an_anti_aging_drug",
+    "DOI_10_4161_cc_7_17_6625_metformin_slows_down_aging_and_extends_life_span_of_female_s",
+    "DOI_10_4161_cc_9_22_14048_metformin_against_tgf_induced_epithelial_to_mesenchymal_tran",
+    "DOI_10_53730_ijhs_v6ns7_11516_efficacy_of_combined_letrozole_metformin_in_comparison_with",
+    "DOI_10_5582_bst_2018_01263_protective_effects_of_metformin_against_osteoarthritis_throu",
+    "DOI_10_5604_01_3001_0010_3801_metformin_its_potential_anti_cancer_and_anti_aging_effects",
+    "DOI_10_69667_rmj_25308_comparison_of_the_efficacy_of_inositol_containing_medication",
+    "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention",
+    "DOI_10_7860_jcdr_2023_60307_17764_myoinositol_and_metformin_versus_only_metformin_in_the_manag",
+    "HIT_a_novel_approach_in_colorectal_cancer_and_diabetes_managemen",
+    "HIT_a_study_to_investigate_the_effect_of_azd0780_on_metformin_ph",
+    "HIT_ada_linagliptin_in_long_term_care",
+    "HIT_clinical_study_to_investigate_the_pharmacokinetics_and_pharm",
+    "HIT_combined_exercise_and_cognitive_stimulation_for_falls_preven",
+    "HIT_comparison_of_the_therapeutic_effects_of_vr_and_vr_metformin",
+    "HIT_dapagliflozin_and_metformin_alone_and_in_combination_in_over",
+    "HIT_effect_of_diacerein_in_the_metabolic_control_of_patients_wit",
+    "HIT_effect_of_intensive_blood_glucose_control_with_metformin_on_",
+    "HIT_effect_of_metformin_on_frailty_in_12_subjects",
+    "HIT_effect_of_metformin_on_handgrip_strength_gait_speed_myostati",
+    "HIT_effect_of_the_casein_derived_peptide_met_lys_pro_on_cognitiv",
+    "HIT_effects_of_interactive_toys_and_robots_on_anxiety_and_fear_i",
+    "HIT_effects_of_metformin_in_pre_frail_elderly",
+    "HIT_efficacy_and_safety_of_vildagliptin_compared_to_metformin_in",
+    "HIT_efficacy_study_of_pioglitazone_and_metformin_and_association",
+    "HIT_emerald_effects_of_metformin_on_cardiovascular_function_in_a",
+    "HIT_frailty_attenuates_the_impact_of_metformin_on_reducing_morta",
+    "HIT_impact_of_metformin_on_peripheral_arterial_calcification_in_",
+    "HIT_investigating_senolytic_properties_in_pulmonary_rehabilitati",
+    "HIT_laao_versus_noac_in_patients_with_af_and_pci",
+    "HIT_metformin_and_longevity",
+    "HIT_metformin_and_longevity_genes_in_prediabetes",
+    "HIT_metformin_and_muscle_recovery",
+    "HIT_metformin_effect_on_brain_function_in_insulin_resistant_elde",
+    "HIT_metformin_for_antipsychotic_induced_weight_gain_in_adults_wi",
+    "HIT_metformin_for_motor_and_cognitive_improvement_in_children_wi",
+    "HIT_metformin_for_older_patients_with_heart_failure_with_preserv",
+    "HIT_metformin_for_preventing_frailty_in_high_risk_older_adults",
+    "HIT_metformin_for_pulmonary_hypertension_hfpef",
+    "HIT_metformin_for_weight_control_in_adolescents_taking_atypical_",
+    "HIT_metformin_in_longevity_study_miles",
+    "HIT_metformin_in_older_adults_with_type_2_diabetes_amemet",
+    "HIT_metformin_in_patients_with_unruptured_vertebrobasilar_dissec",
+    "HIT_metformin_induces_a_dietary_restriction_like_state_in_human",
+    "HIT_metformin_muscle_energetics_and_vascular_function_in_older_a",
+    "HIT_mobile_application_based_respiratory_rehabilitation_for_copd",
+    "HIT_phase_2_study_assessing_efficacy_and_safety_of_crizotinib_in",
+    "HIT_study_to_evaluate_safety_and_efficacy_of_dapagliflozin_and_s",
+    "HIT_the_role_and_mechanism_of_metformin_in_inflammatory_diseases",
+    "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me",
+    "HIT_verify_a_study_to_compare_combination_regimen_with_vildaglip",
+    "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame",
+    "PMC10390098_metformin_induces_lipogenesis_and_apoptosis_in_h4iie_hepatoc",
+    "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes",
+    "PMC10680579_influence_of_metabolic_stress_and_metformin_on_synaptic_prot",
+    "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes",
+    "PMC10848964_metformin_prevents_age_associated_ovarian_fibrosis_by_modula",
+    "PMC10986112_metformin_normalizes_mitochondrial_function_to_delay_astrocy",
+    "PMC10998183_metformin_as_anticancer_agent_and_adjuvant_in_cancer_combina",
+    "PMC12340991_the_swedish_needs_assessment_project_to_enhance_life_for_peo",
+    "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat",
+    "PMC12401686_citrus_flavonoid_supplement_enhances_glycemic_and_metabolic_",
+    "PMC12907551_repurposing_metformin_for_cardioprotection_mechanisms_and_th",
+    "PMC13015344_metformin_inhibits_inflammation_by_targeting_the_nlrp3_infla",
+    "PMC2732153_new_users_of_metformin_are_at_low_risk_of_incident_cancer",
+    "PMC3006019_metformin_for_aging_and_cancer_prevention",
+    "PMC3034183_gender_differences_in_metformin_effect_on_aging_life_span_an",
+    "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_",
+    "PMC3249452_metformin_and_the_atm_dna_damage_response_ddr_accelerating_t",
+    "PMC3282095_metformin_multi_faceted_protection_against_cancer",
+    "PMC3384433_metformin_in_obesity_cancer_and_aging_addressing_controversi",
+    "PMC3898468_metformin_retards_aging_in_c_elegans_by_altering_microbial_f",
+    "PMC3904269_metformin_modulates_hyperglycaemia_induced_endothelial_senes",
+    "PMC4668014_metformin_and_resveratrol_inhibited_high_glucose_induced_met",
+    "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi",
+    "PMC4854919_metformin_mediated_increase_in_dicer1_regulates_microrna_exp",
+    "PMC4990459_anti_inflammatory_effects_of_metformin_irrespective_of_diabe",
+    "PMC5133996_metformin_protects_against_apoptosis_and_senescence_in_nucle",
+    "PMC5595695_anti_aging_pharmacology_in_cutaneous_wound_healing_effects_o",
+    "PMC5647555_efficacy_and_safety_of_metformin_in_the_management_of_type_2",
+    "PMC5685485_metformin_extends_c_elegans_lifespan_through_lysosomal_pathw",
+    "PMC5847877_metformin_regulates_metabolic_and_nonmetabolic_pathways_in_s",
+    "PMC5865989_effects_of_metformin_on_the_expression_of_ampk_and_stat3_in_",
+    "PMC6052468_metformin_alleviates_human_cellular_aging_by_upregulating_th",
+    "PMC6258123_metformin_induces_significant_reduction_of_body_weight_total",
+    "PMC6326273_acupuncture_or_metformin_to_improve_insulin_resistance_in_wo",
+    "PMC6351883_metformin_inhibits_mitochondrial_adaptations_to_aerobic_exer",
+    "PMC6407684_a_novel_therapeutic_approach_to_colorectal_cancer_in_diabete",
+    "PMC6549273_metformin_improves_salivary_gland_inflammation_and_hypofunct",
+    "PMC6594816_metformin_prevents_murine_ovarian_aging",
+    "PMC6677947_effect_of_metformin_on_neurodegenerative_disease_among_elder",
+    "PMC6686369_risk_factors_for_depression_in_elderly_diabetic_patients_and",
+    "PMC6826125_metformin_blunts_muscle_hypertrophy_in_response_to_progressi",
+    "PMC6863391_metformin_restores_cns_remyelination_capacity_by_rejuvenatin",
+    "PMC6972619_hypoglycaemia_leads_to_a_delayed_increase_in_platelet_and_co",
+    "PMC7035567_metformin_reduces_the_senescence_of_renal_tubular_epithelial",
+    "PMC7207407_mon_lb113_insulin_resistance_in_type_1_diabetes_managed_with",
+    "PMC7210926_effects_of_lifestyle_modification_in_polycystic_ovary_syndro",
+    "PMC7212476_metformin_and_its_benefits_for_various_diseases",
+    "PMC7260677_metformin_protects_from_oxaliplatin_induced_peripheral_neuro",
+    "PMC7397438_protective_effect_of_metformin_against_hydrogen_peroxide_ind",
+    "PMC7415324_metformin_corrects_abnormal_circadian_rhythm_and_kir4_1_chan",
+    "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin",
+    "PMC7563046_risk_factors_for_sarcopenia_in_the_elderly_with_type_2_diabe",
+    "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t",
+    "PMC7877555_effect_of_metformin_on_cardiac_metabolism_and_longevity_in_a",
+    "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage",
+    "PMC7884047_metformin_treatment_in_late_middle_age_improves_cognitive_fu",
+    "PMC7923493_metformin_activated_ampk_signaling_contributes_to_the_allevi",
+    "PMC7990352_metformin_a_potential_candidate_for_targeting_aging_mechanis",
+    "PMC8282216_a_pilot_trial_fish_oil_and_metformin_effects_on_apob_remnant",
+    "PMC8374068_a_critical_review_of_the_evidence_that_metformin_is_a_putati",
+    "PMC8526089_metformin_alleviates_stress_induced_cellular_senescence_of_a",
+    "PMC8537073_elucidating_carfilzomib_s_induced_cardiotoxicity_in_an_in_vi",
+    "PMC8596953_a_randomized_double_blind_clinical_trial_of_a_herbal_formula",
+    "PMC8698925_effects_of_metformin_in_heart_failure_from_pathophysiologica",
+    "PMC8747910_metformin_and_its_therapeutic_applications_in_autoimmune_inf",
+    "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_",
+    "PMC8830934_metformin_ameliorates_inflammation_and_airway_remodeling_of_",
+    "PMC8869356_metformin_inhibits_ros_production_by_human_m2_macrophages_vi",
+    "PMC8965502_metformin_in_aging_and_aging_related_diseases_clinical_appli",
+    "PMC8995000_single_nucleotide_polymorphism_in_the_3_untranslated_region_",
+    "PMC9318003_will_we_unlock_the_benefit_of_metformin_for_patients_with_lu",
+    "PMC9637479_metformin_suppresses_vascular_smooth_muscle_cell_senescence_",
+    "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun"
+  ],
+  "abstract_fallback_paper_ids": [
+    "DOI_10_1001_jama_281_21_2005_glycemic_control_with_diet_sulfonylurea_metformin_or_insulin",
+    "DOI_10_1001_jamaophthalmol_2020_6331_association_of_metformin_use_with_age_related_macular_degene",
+    "DOI_10_1001_jamapediatrics_2013_4200_systematic_review_of_the_benefits_and_risks_of_metformin_in",
+    "DOI_10_1002_14651858_cd002967_pub4_risk_of_fatal_and_nonfatal_lactic_acidosis_with_metformin_us",
+    "DOI_10_1002_clc_22125_study_design_and_rationale_of_a_dose_ranging_trial_of_scp_lx",
+    "DOI_10_1002_j_1552_4604_1995_tb04033_x_kidney_function_and_age_are_both_predictors_of_pharmacokinet",
+    "DOI_10_1055_s_2007_992786_metformin_reverts_deleterious_effects_of_advanced_glycation",
+    "DOI_10_1056_nejmoa012512_reduction_in_the_incidence_of_type_2_diabetes_with_lifestyle",
+    "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with",
+    "DOI_10_1073_pnas_0807991106_antidiabetic_drug_metformin_glucophage_r_increases_biogenesi",
+    "DOI_10_1080_19490976_2017_1405209_modulation_of_the_gut_microbiota_by_metformin_improves_metab",
+    "DOI_10_1089_rej_2016_1883_antiaging_effect_of_metformin_on_brain_in_naturally_aged_and",
+    "DOI_10_1093_gerona_61_10_1075_the_influence_of_age_on_the_effects_of_lifestyle_modificatio",
+    "DOI_10_1093_gerona_glaa056_metformin_reduces_aging_related_leaky_gut_and_improves_cogni",
+    "DOI_10_1093_gerona_glz078_rationale_and_study_design_of_a_randomized_clinical_trial_of",
+    "DOI_10_1093_humrep_deh850_serum_anti_m_llerian_hormone_levels_remain_high_until_late_r",
+    "DOI_10_1101_2021_11_18_469078_metformin_suppresses_sars_cov_2_in_cell_culture",
+    "DOI_10_1101_2024_08_05_606613_zinc_and_metformin_co_functionalized_polyetheretherketone_a",
+    "DOI_10_1101_2025_06_19_25329930_novel_recruitment_and_retention_strategies_for_sarcopenia_tr",
+    "DOI_10_1101_2025_07_03_25330760_targeting_a_hypothetical_estimand_based_on_adherence_with_th",
+    "DOI_10_1101_2025_10_29_25338967_metformin_use_is_associated_with_lower_mortality_from_bacter",
+    "DOI_10_1101_cshperspect_a025932_metformin_a_hopeful_promise_in_aging_research",
+    "DOI_10_1111_1471_0528_12964_a_follow_up_of_a_randomised_study_of_metformin_and_insulin_i",
+    "DOI_10_1111_acel_12075_metformin_inhibits_the_senescence_associated_secretory_pheno",
+    "DOI_10_1111_aogs_70191_perinatal_and_long_term_implications_of_diagnosing_gestation",
+    "DOI_10_1111_dom_13256_a_52_week_extension_study_of_switching_from_gemigliptin_vs_s",
+    "DOI_10_1111_dom_14583_efficacy_of_canagliflozin_versus_metformin_in_women_with_pol",
+    "DOI_10_1111_j_1447_0756_2008_00876_x_prevention_of_gestational_diabetes_mellitus_by_continuing_me",
+    "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde",
+    "DOI_10_1111_j_1464_5491_1990_tb01433_x_comparison_of_tolbutamide_and_metformin_in_elderly_diabetic",
+    "DOI_10_1111_pedi_12473_metformin_a_review_of_its_history_and_future_from_lilac_to_l",
+    "DOI_10_1146_annurev_pharmtox_051920_093829_the_gut_microbiome_metformin_and_aging",
+    "DOI_10_1152_physiol_00013_2020_exercise_pharmacology_interactions_metformin_statins_and_hea",
+    "DOI_10_1159_000502257_metformin_and_aging_a_review",
+    "DOI_10_1161_hypertensionaha_124_23087_prediabetes_increases_the_risk_of_frailty_in_prefrail_older",
+    "DOI_10_1177_13872877261418688_apoe4_dependent_association_between_metformin_use_and_alzhei",
+    "DOI_10_1200_jco_2009_19_6410_metformin_and_pathologic_complete_responses_to_neoadjuvant_c",
+    "DOI_10_1200_jco_2010_30_6985_implementing_a_geriatric_assessment_in_cooperative_group_cli",
+    "DOI_10_1200_jco_2015_63_4600_met_exon_14_mutations_in_non_small_cell_lung_cancer_are_asso",
+    "DOI_10_1210_jc_2017_02419_metformin_use_in_pcos_pregnancies_increases_the_risk_of_offs",
+    "DOI_10_1210_jc_2018_01791_hyperglycemia_and_metformin_use_are_associated_with_b_vitami",
+    "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet",
+    "DOI_10_12688_f1000research_130973_1_is_metformin_the_only_culprit_for_cognitive_impairment_in_di",
+    "DOI_10_14341_omet2015168_69_relationship_between_metformin_and_frailty_syndrome_in_elder",
+    "DOI_10_1530_joe_18_0520_metformin_improves_ovarian_insulin_signaling_alterations_cau",
+    "DOI_10_2337_db19_116_or_116_or_hypoglycemia_leads_to_a_delayed_increase_in_platelet",
+    "DOI_10_2337_db24_861_p_861_p_efficacy_of_digital_intervention_vs_metformin_for_wome",
+    "DOI_10_2337_dc20_0892_metformin_use_is_associated_with_slowed_cognitive_decline_an",
+    "DOI_10_2337_diacare_27_7_1791_the_phantom_of_lactic_acidosis_due_to_metformin_in_patients",
+    "DOI_10_2337_diacare_29_02_06_dc05_1558_increased_cancer_related_mortality_for_patients_with_type_2",
+    "DOI_10_3233_jad_131901_long_term_metformin_usage_and_cognitive_function_among_older",
+    "DOI_10_3389_fphar_2026_1799374_controversial_effects_of_metformin_on_human_physiology_and_p",
+    "DOI_10_3390_app152111576_the_dual_role_of_metformin_repurposing_an_antidiabetic_drug",
+    "DOI_10_34172_jsums_1057_evaluation_of_metformin_plus_insulin_versus_insulin_only_in",
+    "DOI_10_3889_oamjms_2021_6213_association_between_three_variants_in_the_prkaa2_gene_rs2796",
+    "DOI_10_3892_ijo_2013_2077_low_concentration_of_metformin_induces_a_p53_dependent_senes",
+    "DOI_10_3892_ol_2019_10800_agr2_silencing_contributes_to_metformin_dependent_sensitizat",
+    "DOI_10_4102_hsag_v9i1_155_lewenskwaliteit_te_midde_van_n_erge_stressor_n_studie_van_be",
+    "DOI_10_4161_cc_11_6_19665_metformin_lowers_the_threshold_for_stress_induced_senescence",
+    "DOI_10_4161_cc_26928_metformin_do_we_finally_have_an_anti_aging_drug",
+    "DOI_10_4161_cc_7_17_6625_metformin_slows_down_aging_and_extends_life_span_of_female_s",
+    "DOI_10_4161_cc_9_22_14048_metformin_against_tgf_induced_epithelial_to_mesenchymal_tran",
+    "DOI_10_53730_ijhs_v6ns7_11516_efficacy_of_combined_letrozole_metformin_in_comparison_with",
+    "DOI_10_5582_bst_2018_01263_protective_effects_of_metformin_against_osteoarthritis_throu",
+    "DOI_10_5604_01_3001_0010_3801_metformin_its_potential_anti_cancer_and_anti_aging_effects",
+    "DOI_10_69667_rmj_25308_comparison_of_the_efficacy_of_inositol_containing_medication",
+    "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention",
+    "DOI_10_7860_jcdr_2023_60307_17764_myoinositol_and_metformin_versus_only_metformin_in_the_manag",
+    "HIT_a_novel_approach_in_colorectal_cancer_and_diabetes_managemen",
+    "HIT_a_study_to_investigate_the_effect_of_azd0780_on_metformin_ph",
+    "HIT_ada_linagliptin_in_long_term_care",
+    "HIT_clinical_study_to_investigate_the_pharmacokinetics_and_pharm",
+    "HIT_combined_exercise_and_cognitive_stimulation_for_falls_preven",
+    "HIT_comparison_of_the_therapeutic_effects_of_vr_and_vr_metformin",
+    "HIT_dapagliflozin_and_metformin_alone_and_in_combination_in_over",
+    "HIT_effect_of_diacerein_in_the_metabolic_control_of_patients_wit",
+    "HIT_effect_of_intensive_blood_glucose_control_with_metformin_on_",
+    "HIT_effect_of_metformin_on_frailty_in_12_subjects",
+    "HIT_effect_of_metformin_on_handgrip_strength_gait_speed_myostati",
+    "HIT_effect_of_the_casein_derived_peptide_met_lys_pro_on_cognitiv",
+    "HIT_effects_of_interactive_toys_and_robots_on_anxiety_and_fear_i",
+    "HIT_effects_of_metformin_in_pre_frail_elderly",
+    "HIT_efficacy_and_safety_of_vildagliptin_compared_to_metformin_in",
+    "HIT_efficacy_study_of_pioglitazone_and_metformin_and_association",
+    "HIT_emerald_effects_of_metformin_on_cardiovascular_function_in_a",
+    "HIT_frailty_attenuates_the_impact_of_metformin_on_reducing_morta",
+    "HIT_impact_of_metformin_on_peripheral_arterial_calcification_in_",
+    "HIT_investigating_senolytic_properties_in_pulmonary_rehabilitati",
+    "HIT_laao_versus_noac_in_patients_with_af_and_pci",
+    "HIT_metformin_and_longevity",
+    "HIT_metformin_and_longevity_genes_in_prediabetes",
+    "HIT_metformin_and_muscle_recovery",
+    "HIT_metformin_effect_on_brain_function_in_insulin_resistant_elde",
+    "HIT_metformin_for_antipsychotic_induced_weight_gain_in_adults_wi",
+    "HIT_metformin_for_motor_and_cognitive_improvement_in_children_wi",
+    "HIT_metformin_for_older_patients_with_heart_failure_with_preserv",
+    "HIT_metformin_for_preventing_frailty_in_high_risk_older_adults",
+    "HIT_metformin_for_pulmonary_hypertension_hfpef",
+    "HIT_metformin_for_weight_control_in_adolescents_taking_atypical_",
+    "HIT_metformin_in_longevity_study_miles",
+    "HIT_metformin_in_older_adults_with_type_2_diabetes_amemet",
+    "HIT_metformin_in_patients_with_unruptured_vertebrobasilar_dissec",
+    "HIT_metformin_induces_a_dietary_restriction_like_state_in_human",
+    "HIT_metformin_muscle_energetics_and_vascular_function_in_older_a",
+    "HIT_mobile_application_based_respiratory_rehabilitation_for_copd",
+    "HIT_phase_2_study_assessing_efficacy_and_safety_of_crizotinib_in",
+    "HIT_study_to_evaluate_safety_and_efficacy_of_dapagliflozin_and_s",
+    "HIT_the_role_and_mechanism_of_metformin_in_inflammatory_diseases",
+    "HIT_type_2_diabetes_in_the_elderly_an_assessment_of_metformin_me",
+    "HIT_verify_a_study_to_compare_combination_regimen_with_vildaglip"
+  ],
   "failures": [
     {
       "title": "Metformin and Muscle Recovery",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "An Exploratory Study of the Potential for Rational Immune System Manipulation to",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of Add-on SGLT2i, TZD, or Combination Therapy in Type 2 Diabetes Patients",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -32,13 +419,19 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Study to Evaluate the Pharmacodynamics, Safety and Efficacy of SKY-0515 in Parti",
+      "title": "LAAO Versus NOAC in Patients with AF and PCI",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Study of SKY-0515 for Safety, Efficacy, and Pharmacodynamics in Participants Wit",
+      "title": "Metformin for Antipsychotic-induced Weight Gain in Adults With Intellectual Disa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Metformin on Peripheral Arterial Calcification in Type 1 Diabetes",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -50,92 +443,14 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Semaglutide and Tirzepatide for Genetic Aging Delay in Adults With Obesity",
+      "title": "Metformin for Pulmonary Hypertension HFpEF",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Effects of Henagliflozin Proline and Metformin XR on Body Composition in Geriatr",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Precise Eating Time to Improve Glycemic Control and Cardiometabolic Health in Pr",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "TDM-Guided Treatment With SSRIs in Hospitalized Adults and Children",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "MANATEE-T1D: Metformin ANd AutomaTEd Insulin Delivery System Effects on Renal Va",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Dietary Strategy to Tackle Cognitive and Locomotor Abilities in Early Elderly Su",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Sex-Speciffic Longevity Food Supplements",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Morning-Evening Specific Longevity Food Supplement",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Impact of Metabolite Supplementation to Restore Mitochondrial Dysfunction During",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Assessment of Gut Microbiota-Derived Amino Acid Metabolite Production in Patient",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Combination Gerotherapeutic Interventions for Healthspan Improvement",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effects of Peptamen 1.6 in Malnourished Patients (or at Risk) With Pancreatic Ne",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Comparative Evaluation of Topical 30% Metformin and Kligman's Regimen in Women W",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Transcriptomic Profiling of Cumulus Cells From CAPA-IVM",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Pilot Study on Evaluating the Geroprotective Effect of Metformin",
-      "doi": null,
+      "title": "Perinatal and long\u2010term implications of diagnosing gestational diabetes mellitus",
+      "doi": "10.1111/aogs.70191",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -152,7 +467,25 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Metformin vs Inositol vs Diet vs Combination Therapy in PCOS",
+      "title": "Metformin in Patients With Unruptured Vertebrobasilar Dissecting Aneurysms (METT",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Interactive Toys and Robots on Anxiety and Fear in Children Receiving",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metformin for Motor and Cognitive Improvement in Children With Cerebral Palsy: A",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metformin for Older Patients With Heart Failure With Preserved Ejection Fraction",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -160,60 +493,6 @@
     {
       "title": "A Study to Investigate the Effect of AZD0780 on Metformin Pharmacokinetics in He",
       "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Metformin and Molecular Aging in Prediabetes",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Metformin in Patients With Unruptured Vertebrobasilar Dissecting Aneurysms (METT",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Diet and Exercise Plus Metformin to Treat Frailty in Obese Seniors",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Correlation Between Pain Threshold and Analgesic Consumption in Transvaginal Ooc",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Thymus Regeneration, Immunorestoration, and Insulin Mitigation Extension Trial",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "The Effect of Dapagliflozin on Weight Loss in Obese Adults Without Diabetes",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Study to Assess the Safety, Pharmacokinetics, and Efficacy of Baloxavir Marboxil",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Study of Gilteritinib (ASP2215) Combined With Chemotherapy in Children, Adoles",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Identification of senescence-related hub genes and potential therapeutic agents ",
-      "doi": "10.1101/2025.06.21.660877",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -236,24 +515,6 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Evaluating prediction of short-term tolerability of five type 2 diabetes drug cl",
-      "doi": "10.1101/2025.02.17.25322406",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Increased Risk of New Onset NAION for Initiators of Semaglutide with Type 2 Diab",
-      "doi": "10.1101/2025.09.15.25335753",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Cardiometabolic drugs and kidney function \u2013 a drug target Mendelian randomisatio",
-      "doi": "10.1101/2025.06.16.25329403",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Comparison of the Efficacy of Inositol-Containing Medication Only versus Metform",
       "doi": "10.69667/rmj.25308",
       "pmid": null,
@@ -266,37 +527,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "IL15/IL15R\u03b1 Complex Induces an Antitumor Immune Response following Radiotherapy ",
-      "doi": "10.1158/1535-7163.mct-24-0900",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A 12-Week Placebo-Controlled Study to Investigate the Efficacy, Safety, and Tole",
+      "title": "Combined Exercise and Cognitive Stimulation for Falls Prevention",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Comparison Between Two Ovulation Induction Therapies and LOD on Clinical Outcome",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of a Reducose\u00ae-Based Supplement on Metabolic Health in Subjects With Meta",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of Laser Puncture Versus Ultraviolet Radiation on Women With Polycystic O",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Gut-Brain-axis: Targets for Improvement of Cognition in the Elderly",
+      "title": "Metformin for Preventing Frailty in High-risk Older Adults",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -308,61 +545,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Metformin inhibits nuclear egress of chromatin fragments in senescence and aging",
-      "doi": "10.1101/2024.12.16.628669",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Association between prescription drugs and all-cause mortality risk in the UK po",
-      "doi": "10.1101/2024.03.08.24303967",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Autoimmunity in Type 2 Diabetes: When the Only Effective Therapy Becomes Immunos",
-      "doi": "10.2174/0118715303322658240613045344",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Safety Study of Intravenous Ertapenem in Combination With Zidebactam (WCK 6777)",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Study to Assess the Safety, Pharmacokinetics, and Efficacy of Baloxavir Marboxil",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Modulate Cellular Stress in the Immune Cells to Reduce Rate of Symptomatic Viral",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Study to Evaluate Safety and Efficacy of Dapagliflozin and Saxagliptin in Patien",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Metformin Effect on Brain Function in Insulin Resistant Elderly People",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Bioequivalence Study to Compare Metformin / Vildagliptin (850 mg/50 mg) Versus G",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Predicting Outcome of Total Knee Replacement Surgery in Patients With Knee Osteo",
+      "title": "Study to Evaluate Safety and Efficacy of Dapagliflozin and Saxagliptin in Patien",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -386,32 +575,8 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "The Role of Sympathetic Tone Regarding the Anatomical and Functional Recovery of",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Diabetes Study of Linagliptin and Empagliflozin in Children and Adolescents (DIN",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Nicotinamide to Prevent Delirium",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Efficacy of combined letrozole-metformin in comparison with letrozole only in cl",
       "doi": "10.53730/ijhs.v6ns7.11516",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Dysregulation of PER3 clock gene and its only pseudogene in colorectal cancer an",
-      "doi": "10.2298/abs220223009n",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -422,25 +587,25 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
+      "title": "Effect of Metformin on Frailty in 12 Subjects",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
       "title": "Metformin Use Is Associated With Slowed Cognitive Decline and Reduced Incident D",
       "doi": "10.2337/dc20-0892",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Panitumumab Skin Toxicity Prevention Trial",
+      "title": "Metformin in Older Adults With Type 2 Diabetes (AMEMET)",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Genetics of Diabetes Audit and Research in Tayside and Scotland",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effects of Metformin in a Non-Diabetic Patient Population",
+      "title": "Effect of the Casein-Derived Peptide Met-Lys-Pro on Cognitive Function in Commun",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -458,13 +623,25 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "An Observational Pilot Study to Develop a Behavioral Economics Electronic Health",
+      "title": "VERIFY:A Study to Compare Combination Regimen With Vildagliptin & Metformin Vers",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Vitamin and Mineral Supplementation Improves Micronutrient Status in Older Adult",
+      "title": "Phase 2 Study Assessing Efficacy and Safety of Crizotinib in Patients Harboring ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dapagliflozin and Metformin,Alone and in Combination, in Overweight/Obese Prior ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mobile-Application Based Respiratory Rehabilitation For COPD",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -478,24 +655,6 @@
     {
       "title": "Metformin Use in PCOS Pregnancies Increases the Risk of Offspring Overweight at ",
       "doi": "10.1210/jc.2017-02419",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Study to Evaluate the Antiviral Activity, Clinical Outcomes, Safety, Tolerabil",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Prevention of Microvascular Complications in Prediabetes e-PREDICE Study",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Thiazolidinediones Or Sulphonylureas and Cardiovascular Accidents.Intervention T",
-      "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -524,20 +683,20 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Metformin to Augment Strength Training Effective Response in Seniors (MASTERS)",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "ADA Linagliptin in Long Term Care",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Autoimmune Diabetes Accelerator Prevention Trial",
+      "title": "Metformin And Longevity",
       "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "MET Exon 14 Mutations in Non\u2013Small-Cell Lung Cancer Are Associated With Advanced",
+      "doi": "10.1200/jco.2015.63.4600",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -548,7 +707,19 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "A Drug Interaction Study to Evaluate the Pharmacokinetics of ASP015K and Metform",
+      "title": "Effect of Diacerein in the Metabolic Control of Patients With DM Type 2 and Seco",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metformin Induces a Dietary Restriction-like State in Human",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Metformin in Pre-frail Elderly",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -560,43 +731,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Vildagliptin in Older Adults With Diabetes and Mild Cognitive Impairment",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Study of the Effects of Bronchoalveolar Lavage Liquid in the ARDS on the Functio",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A Study to Evaluate Aprepitant for the Prevention of Post-Operative Nausea and V",
+      "title": "Metformin in Longevity Study (MILES).",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
       "title": "Metformin, Muscle Energetics, and Vascular Function in Older Adults With Periphe",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of Insulin Sensitizer Metformin on AD Biomarkers",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of Diacerein in the Metabolic Control of Patients With DM Type 2 and Seco",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "L-citrulline and Metformin in Duchenne's Muscular Dystrophy",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -626,7 +767,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "FLuctuATion Reduction With inSULin and Glp-1 Added togetheR (FLAT-SUGAR)",
+      "title": "Clinical Study to Investigate the Pharmacokinetics and Pharmacodynamics of Metfo",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -650,7 +791,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Study of Saxagliptin, 5-Hydroxy Saxagliptin, and Metformin Concentrations/Levels",
+      "title": "Metformin and Longevity Genes in Prediabetes",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -658,42 +799,6 @@
     {
       "title": "Metformin lowers the threshold for stress-induced senescence: A role for the mic",
       "doi": "10.4161/cc.11.6.19665",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Reducing Antipsychotic-Induced Weight Gain in Children With Metformin",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Hypoglycemia- and Weight-related Quality of Life in Patients With Diabetes Melli",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Metformin in Amnestic Mild Cognitive Impairment",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Saxagliptin Compared to Glimepiride in Elderly Type 2 Diabetes Patients, With In",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Influence of DPP-4 on Inflammatory Parameters in Diabetics: Gender Aspects",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Study Of An Investigational Regimen Including FDA Approved HIV Drugs In HIV-Infe",
-      "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -710,31 +815,13 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Antenatal Detection of Meckel-Gr\u00fcber Syndrome in Only One Dizygotic Twin followi",
-      "doi": "10.1159/000291841",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Comparison of vildagliptin and metformin monotherapy in elderly patients with ty",
       "doi": "10.1111/j.1463-1326.2009.01051.x",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Effects of ROSIglitazone on Inflammatory Markers and Adipokines in Diabetic Pati",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Efficacy Study of Pioglitazone and Metformin and Association Between Pioglitazon",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Idiopathic Reactive Hypoglycaemia and Treatment With Fructo-Oligosaccharide",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -758,13 +845,7 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Pediatric Safety and Immunogenicity Study of Cell-Culture Derived and Egg-based ",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "The Effects of Metformin on Blood Vessel Structure and Function",
+      "title": "Efficacy and Safety of Vildagliptin Compared to Metformin in Elderly Drug Naive ",
       "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
@@ -776,20 +857,8 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Granzyme B\u2013Mediated Death of Pancreatic \u03b2-Cells Requires the Proapoptotic BH3-On",
-      "doi": "10.2337/db06-0129",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Serum anti-M\u00fcllerian hormone levels remain high until late reproductive age and ",
       "doi": "10.1093/humrep/deh850",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Comparison of Safety, Tolerability and Immunogenicity of Influenza Vaccines in A",
-      "doi": null,
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -800,14 +869,8 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Safety and Immunogenicity of a Cell Culture-derived Influenza Vaccine in Healthy",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Troglitazone Not Only Increases GLUT4 but Also Induces Its Translocation in Rat ",
-      "doi": "10.2337/diabetes.50.10.2296",
+      "title": "Lewenskwaliteit te midde van \u2018n erge stressor: \u2018n studie van bejaardes met alzhe",
+      "doi": "10.4102/hsag.v9i1.155",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -848,140 +911,14 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Potential therapeutic effect of teneligliptin on unpredictable chronic mild stre",
-      "doi": "10.21608/epj.2025.402041",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Preclinical evidence using synthetic compounds and natural products indicates th",
-      "doi": "10.1002/med.22014",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Impaired AMPK Control of Alveolar Epithelial Cell Metabolism Promotes Pulmonary ",
-      "doi": "10.1101/2024.03.26.586649",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Erchen Decoction regulates AMPK pathway in the treatment of metabolic syndrome i",
-      "doi": "10.21203/rs.3.rs-4126674/v1",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "861-P: Efficacy of Digital Intervention vs. Metformin for Women with Polycystic ",
       "doi": "10.2337/db24-861-p",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "Therapeutic Properties of Polyphenols Affect AMPK Molecular Pathway in Hyperlipi",
-      "doi": "10.20944/preprints202301.0528.v1",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Molecular mechanisms of antidiabetic effect of betulinic acid in lotus rhizome",
-      "doi": "10.4149/bll_2023_108",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Combination Therapy of Green Tea and Green Coffee on Improving Cardiomyocyte Met",
-      "doi": "10.2991/978-94-6463-140-1_48",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Erchen Decoction regulates AMPK pathway in the treatment of metabolic syndrome i",
-      "doi": "10.22541/au.168293190.09954050/v1",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Effect of Iron Supplement on Adenosine Monophosphate-Activated Protein Kinase In",
-      "doi": "10.36468/pharmaceutical-sciences.spl.791",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "In-silico studies on structural function of ampk through docking approach toward",
-      "doi": "10.55522/jmpas.v12i6.5469",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Peer Review #3 of \"A systematic analysis of anti-diabetic medicinal plants from ",
-      "doi": "10.7287/peerj.14639v0.1/reviews/3",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Abstract B170: The in vitro anti-tumor activity of the multi-kinase inhibitor ne",
-      "doi": "10.1158/1535-7163.targ-23-b170",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "AMPK Activation Improves Recovery from Pneumonia-Induced Lung Injury via Reducti",
-      "doi": "10.21203/rs.3.rs-2338974/v1",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Differentiated modulation of signaling molecules AMPK and SIRT1 in experimentall",
-      "doi": "10.5507/bp.2022.018",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Obesity and Insulin Resistance Components of Metabolic Syndrome Induced by High-",
-      "doi": "10.4314/jasem.v26i5.17",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Taurine, EGCG and Genistein regulate AMPK-mTOR pathway to inhibit hepatic stella",
-      "doi": "10.21203/rs.3.rs-1504132/v1",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Case report about treatment of the patient with DM Type 2 on multiple injections",
-      "doi": "10.30574/wjarr.2022.16.3.1329",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A phase I dose-escalation and expansion study of HBM4003, an anti-CTLA-4 heavy c",
-      "doi": "10.1200/jco.2022.40.16_suppl.2641",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "AMPK, metabolism, and vascular function",
-      "doi": "10.1111/febs.15863",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Skeletal muscle energy metabolism in obesity",
-      "doi": "10.1002/oby.23227",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Metformin Suppresses SARS-CoV-2 in Cell Culture",
       "doi": "10.1101/2021.11.18.469078",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Magnolia officinalis Ameliorates Dehydroepiandrosterone-Induced Polycystic Ovary",
-      "doi": "10.5812/jjnpp.106447",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -998,38 +935,8 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "AMPfret: synthetic nanosensor for cellular energy states",
-      "doi": "10.1042/bst20190347",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "AMPK'nin Biyokimyas\u0131: Etki Mekanizmalar\u0131 ve Diyabetin Tedavisindeki \u00d6nemi",
-      "doi": "10.31590/ejosat.676335",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Adenosine Diphosphate and the P2Y13 Receptor Are Involved in the Autophagic Prot",
-      "doi": "10.1002/lt.25970",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Metformin improves ovarian insulin signaling alterations caused by fetal program",
       "doi": "10.1530/joe-18-0520",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Mitochondrial dysfunction regulates the JAK\u2013STAT pathway via LKB1-mediated AMPK ",
-      "doi": "10.1139/bcb-2019-0088",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Adipogenesis, Role of Adenosine Monophosphate-Activated Protein Kinase (AMPK) an",
-      "doi": "10.20944/preprints201907.0040.v1",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     },
@@ -1040,153 +947,51 @@
       "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "title": "The Biology of Dendritic Cells in the Context of Autoimmunity",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
       "title": "Protective effects of metformin against osteoarthritis through upregulation of S",
       "doi": "10.5582/bst.2018.01263",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "IL6 and LIF mRNA expression in skeletal muscle is regulated by AMPK and the tran",
-      "doi": "10.1152/ajpendo.00398.2017",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Induction of Apoptosis by <i>Citrus unshiu</i> Peel in Human Breast Cancer MCF-7",
-      "doi": "10.1248/bpb.b17-00898",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Investigating the modulating effects of Afriplex GRT Extract on vascular functio",
-      "doi": null,
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A prospective, randomized, blinded, placebo-controlled, phase IIb trial of an au",
-      "doi": "10.1200/jco.2018.36.5_suppl.tps201",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Composici\u00f3n qu\u00edmica, digestibilidad y cin\u00e9tica ruminal de la digesti\u00f3n de residu",
-      "doi": "10.22319/rmcp.v3i4.4870",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "<p class=\"MsoNormal\" style=\"margin-bottom:.0001pt;text-align:justify;text-indent",
-      "doi": "10.4308/hjb.19.4.155",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "In vitro anti\u2010platelet effects of simple plant\u2010derived phenolic compounds are on",
-      "doi": "10.1002/mnfr.201100135",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Theaflavins attenuate hepatic lipid accumulation through activating AMPK in huma",
-      "doi": "10.1194/jlr.m700128-jlr200",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Expressed as the sole Hsp90 of yeast, the \u03b1 and \u03b2 isoforms of human Hsp90 differ",
-      "doi": "10.1111/j.1742-4658.2007.05974.x",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "In Vitro Activation of CD8 Interphotoreceptor Retinoid-Binding Protein-Specific ",
-      "doi": "10.4049/jimmunol.176.8.5006",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "In Vivo Permanent Marking of Cells with RAG1 Activation History Demonstrates Onl",
-      "doi": "10.1182/blood.v108.11.1268.1268",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "Despite large\u2010scale T cell activation, only a minor subset of T cells responding",
-      "doi": "10.1034/j.1600-0765.2000.035003127.x",
-      "pmid": null,
-      "reason": "no PMCID (closed-access or unindexed)"
-    },
-    {
-      "title": "A proportion of proteinase 3 (PR3)-specific anti-neutrophil cytoplasmic antibodi",
-      "doi": "10.1046/j.1365-2249.1998.00730.x",
       "pmid": null,
       "reason": "no PMCID (closed-access or unindexed)"
     }
   ],
   "papers_resolved": {
-    "PMC13071196": {
-      "title": "Bisexual releases are as effective as male\u2010only releases to control <scp> Drosophila suzukii </scp> with the sterile insect technique",
-      "doi": "10.1002/ps.70569",
-      "pmid": null,
-      "year": 2026,
-      "venue": "Pest Management Science",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC12821374": {
-      "title": "Investigation of exercise-mimetic bioactive molecules as modulators of MMP activity and expression in cancer cells",
-      "doi": "10.1080/14756366.2026.2616019",
-      "pmid": null,
-      "year": 2026,
-      "venue": "Journal of Enzyme Inhibition and Medicinal Chemistry",
-      "sources": [
-        "doaj"
-      ]
-    },
     "PMC12365428": {
       "title": "Combined metformin and exenatide versus only metformin treatments in polycystic ovary syndrome with abdominal obesity and network pharmacology of gene expression: evidence from a randomized clinical trial",
       "doi": "10.1177/20420188251355411",
-      "pmid": null,
+      "pmid": "40843067",
       "year": 2025,
-      "venue": "Therapeutic Advances in Endocrinology and Metabolism",
+      "venue": "Ther Adv Endocrinol Metab",
+      "authors": [
+        "D Xuesong",
+        "T Tao",
+        "W Weilu",
+        "X Wei",
+        "X Wei",
+        "D Yan",
+        "W Yanfang",
+        "M Ruilin",
+        "G Yingying",
+        "W Yue",
+        "FR P\u00e9rez-L\u00f3pez",
+        "W Yang"
+      ],
       "sources": [
         "crossref"
       ]
     },
-    "PMC12181461": {
-      "title": "Frailty incidence by diabetes treatment regimens in older adults with diabetes mellitus in the ASPirin in Reducing Events in the Elderly Study",
-      "doi": "10.1007/s11357-025-01598-6",
-      "pmid": null,
+    "PMC12340991": {
+      "title": "The Swedish needs assessment project to enhance life for people living with spinal cord injury: synthesized evidence of needs to be met, researcher priorities, and knowledge gaps",
+      "doi": "10.2340/jrm-cc.v8.43069",
+      "pmid": "40799971",
       "year": 2025,
-      "venue": "GeroScience",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC12427931": {
-      "title": "What a SMART Pharmacist Can Discover in Only One Day: A Public Health Initiative Focused on Diabetes in North Macedonia",
-      "doi": "10.3390/healthcare13172107",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Healthcare",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC12114949": {
-      "title": "Next-Generation Wound Care: A Scoping Review on Probiotic, Prebiotic, Synbiotic, and Postbiotic Cutaneous Formulations",
-      "doi": "10.3390/ph18050704",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Pharmaceuticals",
+      "venue": "J Rehabil Med Clin Commun",
+      "authors": [
+        "J Melin",
+        "E Axwalter",
+        "G \u00c5hr\u00e9n",
+        "KS Sunnerhagen",
+        "Lundgren Nilsson \u00c5",
+        "J Wangdell"
+      ],
       "sources": [
         "doaj"
       ]
@@ -1194,9 +999,31 @@
     "PMC11170724": {
       "title": "Prediabetes Increases the Risk of Frailty in Prefrail Older Adults With Hypertension: Beneficial Effects of Metformin",
       "doi": "10.1161/hypertensionaha.124.23087",
-      "pmid": null,
+      "pmid": "38752357",
       "year": 2024,
       "venue": "Hypertension",
+      "authors": [
+        "G Santulli",
+        "V Visco",
+        "F Varzideh",
+        "G Guerra",
+        "U Kansakar",
+        "M Gasperi",
+        "A Marro",
+        "S Wilson",
+        "MNV Ferrante",
+        "A Pansini",
+        "A Pirone",
+        "F Di Lorenzo",
+        "D Tartaglia",
+        "G Iaccarino",
+        "G Macina",
+        "ED Agyapong",
+        "I Forzano",
+        "SS Jankauskas",
+        "K Komici",
+        "M Ciccarelli"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1204,29 +1031,47 @@
     "PMC10986112": {
       "title": "Metformin normalizes mitochondrial function to delay astrocyte senescence in a mouse model of Parkinson\u2019s disease through Mfn2-cGAS signaling",
       "doi": "10.1186/s12974-024-03072-0",
-      "pmid": null,
+      "pmid": "38566081",
       "year": 2024,
-      "venue": "Journal of Neuroinflammation",
+      "venue": "J Neuroinflammation",
+      "authors": [
+        "M Wang",
+        "T Tian",
+        "H Zhou",
+        "SY Jiang",
+        "YY Jiao",
+        "Z Zhu",
+        "J Xia",
+        "JH Ma",
+        "RH Du"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC10828501": {
-      "title": "Dopaminergic neuron loss in mice due to increased levels of wild-type human \u03b1-Synuclein only takes place under conditions of accelerated aging",
-      "doi": "10.1038/s41598-024-53093-1",
-      "pmid": null,
-      "year": 2024,
-      "venue": "Scientific Reports",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC10652302": {
       "title": "Disuse\u2010induced muscle fibrosis, cellular senescence, and senescence\u2010associated secretory phenotype in older adults are alleviated during re\u2010ambulation with metformin pre\u2010treatment",
       "doi": "10.1111/acel.13936",
-      "pmid": null,
+      "pmid": "37486024",
       "year": 2023,
       "venue": "Aging Cell",
+      "authors": [
+        "JJ Petrocelli",
+        "AI McKenzie",
+        "NMMP de Hart",
+        "PT Reidy",
+        "ZS Mahmassani",
+        "AR Keeble",
+        "KL Kaput",
+        "MP Wahl",
+        "MT Rondina",
+        "RL Marcus",
+        "CK Welt",
+        "WL Holland",
+        "K Funai",
+        "CS Fry",
+        "MJ Drummond"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1234,49 +1079,70 @@
     "PMC10714529": {
       "title": "The effect of metformin on senescence of T lymphocytes",
       "doi": "10.1186/s12979-023-00394-0",
-      "pmid": null,
+      "pmid": "38087369",
       "year": 2023,
-      "venue": "Immunity & Ageing",
+      "venue": "Immun Ageing",
+      "authors": [
+        "J Yang",
+        "HC Liu",
+        "JQ Zhang",
+        "JY Zou",
+        "X Zhang",
+        "WM Chen",
+        "Y Gu",
+        "H Hong"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC10372121": {
-      "title": "Liraglutide and polycystic ovary syndrome: is it only a matter of body weight?",
-      "doi": "10.1007/s40618-023-02084-6",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Journal of Endocrinological Investigation",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC10245800": {
       "title": "Older Adults with Type 2 Diabetes Treated with Metformin: AME-MET Study - A Multicentric Real-world Study in Italy",
       "doi": "10.2174/1871530323666221115091621",
-      "pmid": null,
+      "pmid": "36380441",
       "year": 2023,
-      "venue": "Endocrine, Metabolic & Immune Disorders - Drug Targets",
+      "venue": "Endocr Metab Immune Disord Drug Targets",
+      "authors": [
+        "C Elena",
+        "G Borretta",
+        "R Attanasio",
+        "B Alberto",
+        "D Agrimi",
+        "N Argese",
+        "C Crescenti",
+        "O Disoteo",
+        "A Fusco",
+        "E Gabellieri",
+        "R Guglielmi",
+        "G Lisco",
+        "F Lo Pomo",
+        "M Nizzoli",
+        "A Panico",
+        "B Pirali",
+        "AS Salcuni",
+        "F Turchi",
+        "F Grimaldi"
+      ],
       "sources": [
         "crossref"
-      ]
-    },
-    "PMC9936647": {
-      "title": "The association between renal impairment and polypharmacy among older Palestinian patients: a multi-center cross-sectional study",
-      "doi": "10.1186/s12875-023-02005-9",
-      "pmid": null,
-      "year": 2023,
-      "venue": "BMC Primary Care",
-      "sources": [
-        "doaj"
       ]
     },
     "PMC8965502": {
       "title": "Metformin in aging and aging-related diseases: clinical applications and relevant mechanisms",
       "doi": "10.7150/thno.71360",
-      "pmid": null,
+      "pmid": "35401820",
       "year": 2022,
       "venue": "Theranostics",
+      "authors": [
+        "S Chen",
+        "D Gan",
+        "S Lin",
+        "Y Zhong",
+        "M Chen",
+        "X Zou",
+        "Z Shao",
+        "G Xiao"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1284,9 +1150,17 @@
     "PMC10848964": {
       "title": "Metformin prevents age-associated ovarian fibrosis by modulating the immune landscape in female mice",
       "doi": "10.1126/sciadv.abq1475",
-      "pmid": null,
+      "pmid": "36054356",
       "year": 2022,
-      "venue": "Science Advances",
+      "venue": "Sci Adv",
+      "authors": [
+        "DA Landry",
+        "E Yakubovich",
+        "DP Cook",
+        "S Fasih",
+        "J Upham",
+        "BC Vanderhyden"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1294,9 +1168,18 @@
     "PMC8748516": {
       "title": "Metformin protects lens epithelial cells against senescence in a naturally aged mouse model",
       "doi": "10.1038/s41420-021-00800-w",
-      "pmid": null,
+      "pmid": "35013152",
       "year": 2022,
-      "venue": "Cell Death Discovery",
+      "venue": "Cell Death Discov",
+      "authors": [
+        "M Chen",
+        "Y Fu",
+        "X Wang",
+        "R Wu",
+        "D Su",
+        "N Zhou",
+        "Y Qi"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1306,27 +1189,24 @@
       "doi": "10.1093/geroni/igac059.2117",
       "pmid": null,
       "year": 2022,
-      "venue": "Innovation in Aging",
+      "venue": "Innov Aging",
+      "authors": [],
       "sources": [
         "crossref"
-      ]
-    },
-    "PMC9549314": {
-      "title": "We are all aging, and here's why",
-      "doi": "10.1002/agm2.12223",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Aging Medicine",
-      "sources": [
-        "doaj"
       ]
     },
     "PMC8374068": {
       "title": "A Critical Review of the Evidence That Metformin Is a Putative Anti-Aging Drug That Enhances Healthspan and Extends Lifespan",
       "doi": "10.3389/fendo.2021.718942",
-      "pmid": null,
+      "pmid": "34421827",
       "year": 2021,
-      "venue": "Frontiers in Endocrinology",
+      "venue": "Front Endocrinol (Lausanne)",
+      "authors": [
+        "I Mohammed",
+        "MD Hollenberg",
+        "H Ding",
+        "CR Triggle"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1334,9 +1214,25 @@
     "PMC9637479": {
       "title": "Metformin suppresses vascular smooth muscle cell senescence by promoting autophagic flux",
       "doi": "10.1016/j.jare.2021.12.009",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Journal of Advanced Research",
+      "pmid": "36328749",
+      "year": 2022,
+      "venue": "J Adv Res",
+      "authors": [
+        "S Tai",
+        "J Sun",
+        "Y Zhou",
+        "Z Zhu",
+        "Y He",
+        "M Chen",
+        "H Yang",
+        "Y Xiao",
+        "T Tu",
+        "L Tang",
+        "X Li",
+        "J Zeng",
+        "X Zheng",
+        "S Zhou"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1344,19 +1240,23 @@
     "PMC8526089": {
       "title": "Metformin alleviates stress-induced cellular senescence of aging human adipose stromal cells and the ensuing adipocyte dysfunction",
       "doi": "10.7554/elife.62635",
-      "pmid": null,
+      "pmid": "34544550",
       "year": 2021,
-      "venue": "eLife",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC8541622": {
-      "title": "Metabolic Syndrome and Sarcopenia",
-      "doi": "10.3390/nu13103519",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Nutrients",
+      "venue": "Elife",
+      "authors": [
+        "L Le Pelletier",
+        "M Mantecon",
+        "J Gorwood",
+        "M Auclair",
+        "R Foresti",
+        "R Motterlini",
+        "M Laforge",
+        "M Atlan",
+        "B F\u00e8ve",
+        "J Capeau",
+        "C Lagathu",
+        "V Bereziat"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1364,9 +1264,18 @@
     "PMC7884040": {
       "title": "Metformin inhibits chronic kidney disease\u2010induced DNA damage and senescence of mesenchymal stem cells",
       "doi": "10.1111/acel.13317",
-      "pmid": null,
+      "pmid": "33524231",
       "year": 2021,
       "venue": "Aging Cell",
+      "authors": [
+        "H Kim",
+        "MR Yu",
+        "H Lee",
+        "SH Kwon",
+        "JS Jeon",
+        "DC Han",
+        "H Noh"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1374,9 +1283,15 @@
     "PMC7821082": {
       "title": "Association of Metformin Use With Age-Related Macular Degeneration",
       "doi": "10.1001/jamaophthalmol.2020.6331",
-      "pmid": null,
+      "pmid": "33475696",
       "year": 2021,
-      "venue": "JAMA Ophthalmology",
+      "venue": "JAMA Ophthalmol",
+      "authors": [
+        "AL Blitzer",
+        "SA Ham",
+        "KA Colby",
+        "D Skondra"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1384,9 +1299,19 @@
     "PMC7884047": {
       "title": "Metformin treatment in late middle age improves cognitive function with alleviation of microglial activation and enhancement of autophagy in the hippocampus",
       "doi": "10.1111/acel.13277",
-      "pmid": null,
+      "pmid": "33443781",
       "year": 2021,
       "venue": "Aging Cell",
+      "authors": [
+        "M Kodali",
+        "S Attaluri",
+        "LN Madhu",
+        "B Shuai",
+        "R Upadhya",
+        "JJ Gonzalez",
+        "X Rao",
+        "AK Shetty"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1394,59 +1319,65 @@
     "PMC7877555": {
       "title": "Effect of Metformin on Cardiac Metabolism and Longevity in Aged Female Mice",
       "doi": "10.3389/fcell.2020.626011",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Frontiers in Cell and Developmental Biology",
+      "pmid": "33585467",
+      "year": 2020,
+      "venue": "Front Cell Dev Biol",
+      "authors": [
+        "X Zhu",
+        "W Shen",
+        "Z Liu",
+        "S Sheng",
+        "W Xiong",
+        "R He",
+        "X Zhang",
+        "L Ma",
+        "Z Ju"
+      ],
       "sources": [
         "openalex"
       ]
     },
-    "PMC8087265": {
-      "title": "Association of Intensive Lifestyle and Metformin Interventions With Frailty in the Diabetes Prevention Program Outcomes Study",
-      "doi": "10.1093/gerona/glaa295",
-      "pmid": null,
+    "PMC7990352": {
+      "title": "Metformin: A Potential Candidate for Targeting Aging Mechanisms",
+      "doi": "10.14336/ad.2020.0702",
+      "pmid": "33815878",
       "year": 2021,
-      "venue": "The Journals of Gerontology Series A",
+      "venue": "Aging Dis",
+      "authors": [
+        "D Hu",
+        "F Xie",
+        "Y Xiao",
+        "C Lu",
+        "J Zhong",
+        "D Huang",
+        "J Chen",
+        "J Wei",
+        "Y Jiang",
+        "T Zhong"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC8126450": {
-      "title": "Drosophila larval epidermal cells only exhibit epidermal aging when they persist to the adult stage",
-      "doi": "10.1242/jeb.240986",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Journal of Experimental Biology",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC8682216": {
-      "title": "Monitoring Utilization Trends of Glucose-Lowering Drugs for Type 2 Diabetes in Older Adults by Frailty Status",
-      "doi": "10.1093/geroni/igab046.804",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Innovation in Aging",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC8437937": {
-      "title": "Positron emission tomography imaging of serotonin degeneration and beta-amyloid deposition in late-life depression evaluated with multi-modal partial least squares",
-      "doi": "10.1038/s41398-021-01539-9",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Translational Psychiatry",
-      "sources": [
-        "doaj"
       ]
     },
     "PMC7563046": {
       "title": "Risk Factors for Sarcopenia in the Elderly with Type 2 Diabetes Mellitus and the Effect of Metformin",
       "doi": "10.1155/2020/3950404",
-      "pmid": null,
+      "pmid": "33083494",
       "year": 2020,
-      "venue": "Journal of Diabetes Research",
+      "venue": "J Diabetes Res",
+      "authors": [
+        "F Chen",
+        "S Xu",
+        "Y Wang",
+        "F Chen",
+        "L Cao",
+        "T Liu",
+        "T Huang",
+        "Q Wei",
+        "G Ma",
+        "Y Zhao",
+        "D Wang"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1454,9 +1385,13 @@
     "PMC7212476": {
       "title": "Metformin and Its Benefits for Various Diseases",
       "doi": "10.3389/fendo.2020.00191",
-      "pmid": null,
+      "pmid": "32425881",
       "year": 2020,
-      "venue": "Frontiers in Endocrinology",
+      "venue": "Front Endocrinol (Lausanne)",
+      "authors": [
+        "Z Lv",
+        "Y Guo"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1464,19 +1399,24 @@
     "PMC7302182": {
       "title": "Metformin Reduces Aging-Related Leaky Gut and Improves Cognitive Function by Beneficially Modulating Gut Microbiome/Goblet Cell/Mucin Axis",
       "doi": "10.1093/gerona/glaa056",
-      "pmid": null,
+      "pmid": "32129462",
       "year": 2020,
-      "venue": "The Journals of Gerontology Series A",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC7947756": {
-      "title": "New Horizons: Novel Approaches to Enhance Healthspan Through Targeting Cellular Senescence and Related Aging Mechanisms",
-      "doi": "10.1210/clinem/dgaa728",
-      "pmid": null,
-      "year": 2020,
-      "venue": "The Journal of Clinical Endocrinology & Metabolism",
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "authors": [
+        "S Ahmadi",
+        "A Razazan",
+        "R Nagpal",
+        "S Jain",
+        "B Wang",
+        "SP Mishra",
+        "S Wang",
+        "J Justice",
+        "J Ding",
+        "DA McClain",
+        "SB Kritchevsky",
+        "D Kitzman",
+        "H Yadav"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1484,9 +1424,17 @@
     "PMC7035567": {
       "title": "Metformin Reduces the Senescence of Renal Tubular Epithelial Cells in Diabetic Nephropathy via the MBNL1/miR-130a-3p/STAT3 Pathway",
       "doi": "10.1155/2020/8708236",
-      "pmid": null,
+      "pmid": "32104542",
       "year": 2020,
-      "venue": "Oxidative Medicine and Cellular Longevity",
+      "venue": "Oxid Med Cell Longev",
+      "authors": [
+        "X Jiang",
+        "XL Ruan",
+        "YX Xue",
+        "S Yang",
+        "M Shi",
+        "LN Wang"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1494,9 +1442,20 @@
     "PMC7655218": {
       "title": "Metformin alters skeletal muscle transcriptome adaptations to resistance training in older adults",
       "doi": "10.18632/aging.104096",
-      "pmid": null,
+      "pmid": "33071237",
       "year": 2020,
-      "venue": "Aging",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "AS Kulkarni",
+        "BD Peck",
+        "RG Walton",
+        "PA Kern",
+        "JC Mar",
+        "ST Windham",
+        "MM Bamman",
+        "N Barzilai",
+        "CA Peterson"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1504,9 +1463,13 @@
     "PMC7642846": {
       "title": "Exercise-Pharmacology Interactions: Metformin, Statins, and Healthspan",
       "doi": "10.1152/physiol.00013.2020",
-      "pmid": null,
+      "pmid": "32783612",
       "year": 2020,
-      "venue": "Physiology",
+      "venue": "Physiology (Bethesda)",
+      "authors": [
+        "BF Miller",
+        "JP Thyfault"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1514,49 +1477,37 @@
     "PMC7210926": {
       "title": "Effects of lifestyle modification in polycystic ovary syndrome compared to metformin only or metformin addition: A systematic review and meta-analysis",
       "doi": "10.1038/s41598-020-64776-w",
-      "pmid": null,
+      "pmid": "32385376",
       "year": 2020,
-      "venue": "Scientific Reports",
+      "venue": "Sci Rep",
+      "authors": [
+        "CH Kim",
+        "SJ Chon",
+        "SH Lee"
+      ],
       "sources": [
         "crossref"
-      ]
-    },
-    "PMC7298266": {
-      "title": "From Prediabetes to Type 2 Diabetes Mellitus in Women with Polycystic Ovary Syndrome: Lifestyle and Pharmacological Management",
-      "doi": "10.1155/2020/6276187",
-      "pmid": null,
-      "year": 2020,
-      "venue": "International Journal of Endocrinology",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC7271241": {
-      "title": "Sitagliptin and the Blood-Retina Barrier: Effects on Retinal Endothelial Cells Manifested Only after Prolonged Exposure",
-      "doi": "10.1155/2020/2450781",
-      "pmid": null,
-      "year": 2020,
-      "venue": "Journal of Diabetes Research",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC7102441": {
-      "title": "Beneficial association of angiotensin-converting enzyme inhibitors and statins on the occurrence of possible Alzheimer\u2019s disease after traumatic brain injury",
-      "doi": "10.1186/s13195-020-00589-3",
-      "pmid": null,
-      "year": 2020,
-      "venue": "Alzheimer\u2019s Research & Therapy",
-      "sources": [
-        "doaj"
       ]
     },
     "PMC7260677": {
       "title": "Metformin protects from oxaliplatin induced peripheral neuropathy in rats",
       "doi": "10.1016/j.ynpai.2020.100048",
-      "pmid": null,
+      "pmid": "32490289",
       "year": 2020,
-      "venue": "Neurobiology of Pain",
+      "venue": "Neurobiol Pain",
+      "authors": [
+        "NW Martinez",
+        "A S\u00e1nchez",
+        "P Diaz",
+        "R Broekhuizen",
+        "J Godoy",
+        "S Mondaca",
+        "A Catenaccio",
+        "P Macanas",
+        "B Nervi",
+        "M Calvo",
+        "FA Court"
+      ],
       "sources": [
         "doaj"
       ]
@@ -1564,9 +1515,22 @@
     "PMC6863391": {
       "title": "Metformin Restores CNS Remyelination Capacity by Rejuvenating Aged Stem Cells",
       "doi": "10.1016/j.stem.2019.08.015",
-      "pmid": null,
+      "pmid": "31585093",
       "year": 2019,
-      "venue": "Cell stem cell",
+      "venue": "Cell Stem Cell",
+      "authors": [
+        "B Neumann",
+        "R Baror",
+        "C Zhao",
+        "M Segel",
+        "S Dietmann",
+        "KS Rawji",
+        "S Foerster",
+        "CR McClain",
+        "K Chalut",
+        "P van Wijngaarden",
+        "RJM Franklin"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1574,9 +1538,26 @@
     "PMC7175970": {
       "title": "Rationale and Study Design of a Randomized Clinical Trial of Metformin to Prevent Frailty in Older Adults With Prediabetes",
       "doi": "10.1093/gerona/glz078",
-      "pmid": null,
-      "year": 2019,
-      "venue": "The Journals of Gerontology Series A",
+      "pmid": "30888034",
+      "year": 2020,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "authors": [
+        "SE Espinoza",
+        "N Musi",
+        "CP Wang",
+        "J Michalek",
+        "B Orsak",
+        "T Romo",
+        "B Powers",
+        "A Conde",
+        "M Moris",
+        "D Bair-Kelps",
+        "Y Li",
+        "V Ganapathy",
+        "TE Jergensen",
+        "LC Kelly",
+        "R Jiwani"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1584,9 +1565,25 @@
     "PMC6826125": {
       "title": "Metformin blunts muscle hypertrophy in response to progressive resistance exercise training in older adults: A randomized, double\u2010blind, placebo\u2010controlled, multicenter trial: The MASTERS trial",
       "doi": "10.1111/acel.13039",
-      "pmid": null,
+      "pmid": "31557380",
       "year": 2019,
       "venue": "Aging Cell",
+      "authors": [
+        "RG Walton",
+        "CM Dungan",
+        "DE Long",
+        "SC Tuggle",
+        "K Kosmac",
+        "BD Peck",
+        "HM Bush",
+        "AG Villasante Tezanos",
+        "G McGwin",
+        "ST Windham",
+        "F Ovalle",
+        "MM Bamman",
+        "PA Kern",
+        "CA Peterson"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1594,9 +1591,16 @@
     "PMC6677947": {
       "title": "Effect of metformin on neurodegenerative disease among elderly adult US veterans with type 2 diabetes mellitus",
       "doi": "10.1136/bmjopen-2018-024954",
-      "pmid": null,
+      "pmid": "31366635",
       "year": 2019,
       "venue": "BMJ Open",
+      "authors": [
+        "Q Shi",
+        "S Liu",
+        "VA Fonseca",
+        "TK Thethi",
+        "L Shi"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1604,9 +1608,19 @@
     "PMC6686369": {
       "title": "Risk factors for depression in elderly diabetic patients and the effect of metformin on the condition",
       "doi": "10.1186/s12889-019-7392-y",
-      "pmid": null,
+      "pmid": "31391021",
       "year": 2019,
       "venue": "BMC Public Health",
+      "authors": [
+        "F Chen",
+        "G Wei",
+        "Y Wang",
+        "T Liu",
+        "T Huang",
+        "Q Wei",
+        "G Ma",
+        "D Wang"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1614,29 +1628,20 @@
     "PMC6594816": {
       "title": "Metformin prevents murine ovarian aging",
       "doi": "10.18632/aging.102016",
-      "pmid": null,
+      "pmid": "31182682",
       "year": 2019,
-      "venue": "Aging",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC8351755": {
-      "title": "2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease: Executive Summary: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines",
-      "doi": "10.1161/cir.0000000000000677",
-      "pmid": null,
-      "year": 2019,
-      "venue": "Circulation",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC6387929": {
-      "title": "Diabetes and Aging: From Treatment Goals to Pharmacologic Therapy",
-      "doi": "10.3389/fendo.2019.00045",
-      "pmid": null,
-      "year": 2019,
-      "venue": "Frontiers in Endocrinology",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "X Qin",
+        "D Du",
+        "Q Chen",
+        "M Wu",
+        "T Wu",
+        "J Wen",
+        "Y Jin",
+        "J Zhang",
+        "S Wang"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1644,29 +1649,30 @@
     "PMC6972619": {
       "title": "Hypoglycaemia leads to a delayed increase in platelet and coagulation activation markers in people with type 2 diabetes treated with metformin only: Results from a stepwise hypoglycaemic clamp study",
       "doi": "10.1111/dom.13889",
-      "pmid": null,
-      "year": 2019,
-      "venue": "Diabetes, Obesity and Metabolism",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC6858368": {
-      "title": "Sertoli cell-only phenotype and scRNA-seq define PRAMEF12 as a factor essential for spermatogenesis in mice",
-      "doi": "10.1038/s41467-019-13193-3",
-      "pmid": null,
-      "year": 2019,
-      "venue": "Nature Communications",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC6732426": {
-      "title": "Skeletal muscle energetics are compromised only during high-intensity contractions in the Goto-Kakizaki rat model of type 2 diabetes",
-      "doi": "10.1152/ajpregu.00127.2019",
-      "pmid": null,
-      "year": 2019,
-      "venue": "American Journal of Physiology-Regulatory, Integrative and Comparative Physiology",
+      "pmid": "31595635",
+      "year": 2020,
+      "venue": "Diabetes Obes Metab",
+      "authors": [
+        "F Aberer",
+        "PN Pferschy",
+        "NJ Tripolt",
+        "C Sourij",
+        "AM Obermayer",
+        "F Pr\u00fcller",
+        "E Novak",
+        "P Reitbauer",
+        "H Kojzar",
+        "B Prietl",
+        "S Kofler",
+        "M Brunner",
+        "E Svehlikova",
+        "T Stojakovic",
+        "H Scharnagl",
+        "A Oulhaj",
+        "F Aziz",
+        "R Riedl",
+        "H Sourij"
+      ],
       "sources": [
         "crossref"
       ]
@@ -1674,9 +1680,21 @@
     "PMC5847877": {
       "title": "Metformin regulates metabolic and nonmetabolic pathways in skeletal muscle and subcutaneous adipose tissues of older adults",
       "doi": "10.1111/acel.12723",
-      "pmid": null,
+      "pmid": "29383869",
       "year": 2018,
       "venue": "Aging Cell",
+      "authors": [
+        "AS Kulkarni",
+        "EF Brutsaert",
+        "V Anghel",
+        "K Zhang",
+        "N Bloomgarden",
+        "M Pollak",
+        "JC Mar",
+        "M Hawkins",
+        "JP Crandall",
+        "N Barzilai"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1684,9 +1702,24 @@
     "PMC6351883": {
       "title": "Metformin inhibits mitochondrial adaptations to aerobic exercise training in older adults",
       "doi": "10.1111/acel.12880",
-      "pmid": null,
-      "year": 2018,
+      "pmid": "30548390",
+      "year": 2019,
       "venue": "Aging Cell",
+      "authors": [
+        "AR Konopka",
+        "JL Laurin",
+        "HM Schoenberg",
+        "JJ Reid",
+        "WM Castor",
+        "CA Wolff",
+        "RV Musci",
+        "OD Safairad",
+        "MA Linden",
+        "LM Biela",
+        "SM Bailey",
+        "KL Hamilton",
+        "BF Miller"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1694,19 +1727,21 @@
     "PMC6052468": {
       "title": "Metformin alleviates human cellular aging by upregulating the endoplasmic reticulum glutathione peroxidase 7",
       "doi": "10.1111/acel.12765",
-      "pmid": null,
+      "pmid": "29659168",
       "year": 2018,
       "venue": "Aging Cell",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC6400206": {
-      "title": "Importance of physical evaluation using skeletal muscle mass index and body fat percentage to prevent sarcopenia in elderly Japanese diabetes patients",
-      "doi": "10.1111/jdi.12908",
-      "pmid": null,
-      "year": 2018,
-      "venue": "Journal of Diabetes Investigation",
+      "authors": [
+        "J Fang",
+        "J Yang",
+        "X Wu",
+        "G Zhang",
+        "T Li",
+        "X Wang",
+        "H Zhang",
+        "CC Wang",
+        "GH Liu",
+        "L Wang"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1714,39 +1749,47 @@
     "PMC6258123": {
       "title": "Metformin induces significant reduction of body weight, total cholesterol and LDL levels in the elderly \u2013 A meta-analysis",
       "doi": "10.1371/journal.pone.0207947",
-      "pmid": null,
+      "pmid": "30475888",
       "year": 2018,
-      "venue": "PLoS ONE",
+      "venue": "PLoS One",
+      "authors": [
+        "M Solym\u00e1r",
+        "I Ivic",
+        "L P\u00f3t\u00f3",
+        "P Hegyi",
+        "A Garami",
+        "P Hartmann",
+        "E P\u00e9terv\u00e1ri",
+        "L Czopf",
+        "A Hussain",
+        "Z Gy\u00f6ngyi",
+        "P Sarl\u00f3s",
+        "M Simon",
+        "P M\u00e1trai",
+        "B B\u00e9rczi",
+        "M Balask\u00f3"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC5825840": {
-      "title": "Runx1 is sufficient for blood cell formation from non-hemogenic endothelial cells in vivo only during early embryogenesis",
-      "doi": "10.1242/dev.158162",
-      "pmid": null,
-      "year": 2018,
-      "venue": "Development",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC6087721": {
-      "title": "\u03b2-Actin shows limited mobility and is required only for supraphysiological insulin-stimulated glucose transport in young adult soleus muscle",
-      "doi": "10.1152/ajpendo.00392.2017",
-      "pmid": null,
-      "year": 2018,
-      "venue": "American Journal of Physiology-Endocrinology and Metabolism",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC5989809": {
       "title": "Modulation of the gut microbiota by metformin improves metabolic profiles in aged obese mice",
       "doi": "10.1080/19490976.2017.1405209",
-      "pmid": null,
-      "year": 2017,
+      "pmid": "29157127",
+      "year": 2018,
       "venue": "Gut Microbes",
+      "authors": [
+        "H Lee",
+        "Y Lee",
+        "J Kim",
+        "J An",
+        "S Lee",
+        "H Kong",
+        "Y Song",
+        "CK Lee",
+        "K Kim"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1754,19 +1797,25 @@
     "PMC5595695": {
       "title": "Anti\u2010aging pharmacology in cutaneous wound healing: effects of metformin, resveratrol, and rapamycin by local application",
       "doi": "10.1111/acel.12635",
-      "pmid": null,
+      "pmid": "28677234",
       "year": 2017,
       "venue": "Aging Cell",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC5361673": {
-      "title": "Epigenetic clock analysis of diet, exercise, education, and lifestyle factors",
-      "doi": "10.18632/aging.101168",
-      "pmid": null,
-      "year": 2017,
-      "venue": "Aging",
+      "authors": [
+        "P Zhao",
+        "BD Sui",
+        "N Liu",
+        "YJ Lv",
+        "CX Zheng",
+        "YB Lu",
+        "WT Huang",
+        "CH Zhou",
+        "J Chen",
+        "DL Pang",
+        "DD Fei",
+        "K Xuan",
+        "CH Hu",
+        "Y Jin"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1774,9 +1823,22 @@
     "PMC5647555": {
       "title": "Efficacy and safety of metformin in the management of type 2 diabetes mellitus in older adults: a systematic review for the development of recommendations to reduce potentially inappropriate prescribing",
       "doi": "10.1186/s12877-017-0574-5",
-      "pmid": null,
+      "pmid": "29047344",
       "year": 2017,
-      "venue": "BMC Geriatrics",
+      "venue": "BMC Geriatr",
+      "authors": [
+        "L Schlender",
+        "YV Martinez",
+        "C Adeniji",
+        "D Reeves",
+        "B Faller",
+        "C Sommerauer",
+        "T Al Qur'an",
+        "A Woodham",
+        "I Kunnamo",
+        "A S\u00f6nnichsen",
+        "A Renom-Guiteras"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1784,9 +1846,16 @@
     "PMC5664297": {
       "title": "Metformin vs sulfonylurea use and risk of dementia in US veterans aged \u226565 years with diabetes",
       "doi": "10.1212/wnl.0000000000004586",
-      "pmid": null,
+      "pmid": "28954880",
       "year": 2017,
       "venue": "Neurology",
+      "authors": [
+        "AR Orkaby",
+        "K Cho",
+        "J Cormack",
+        "DR Gagnon",
+        "JA Driver"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1794,9 +1863,17 @@
     "PMC5685485": {
       "title": "Metformin extends C. elegans lifespan through lysosomal pathway",
       "doi": "10.7554/elife.31268",
-      "pmid": null,
+      "pmid": "29027899",
       "year": 2017,
-      "venue": "eLife",
+      "venue": "Elife",
+      "authors": [
+        "J Chen",
+        "Y Ou",
+        "Y Li",
+        "S Hu",
+        "LW Shao",
+        "Y Liu"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1804,9 +1881,29 @@
     "PMC5133996": {
       "title": "Metformin protects against apoptosis and senescence in nucleus pulposus cells and ameliorates disc degeneration in vivo",
       "doi": "10.1038/cddis.2016.334",
-      "pmid": null,
+      "pmid": "27787519",
       "year": 2016,
-      "venue": "Cell Death and Disease",
+      "venue": "Cell Death Dis",
+      "authors": [
+        "D Chen",
+        "D Xia",
+        "Z Pan",
+        "D Xu",
+        "Y Zhou",
+        "Y Wu",
+        "N Cai",
+        "Q Tang",
+        "C Wang",
+        "M Yan",
+        "JJ Zhang",
+        "K Zhou",
+        "Q Wang",
+        "Y Feng",
+        "X Wang",
+        "H Xu",
+        "X Zhang",
+        "N Tian"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1814,9 +1911,22 @@
     "PMC4854919": {
       "title": "Metformin\u2010mediated increase in DICER1 regulates microRNA expression and cellular senescence",
       "doi": "10.1111/acel.12469",
-      "pmid": null,
+      "pmid": "26990999",
       "year": 2016,
       "venue": "Aging Cell",
+      "authors": [
+        "N Noren Hooten",
+        "A Martin-Montalvo",
+        "DF Dluzen",
+        "Y Zhang",
+        "M Bernier",
+        "AB Zonderman",
+        "KG Becker",
+        "M Gorospe",
+        "R de Cabo",
+        "R de Cabo",
+        "MK Evans"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1824,9 +1934,17 @@
     "PMC4772077": {
       "title": "Metformin: A Hopeful Promise in Aging Research",
       "doi": "10.1101/cshperspect.a025932",
-      "pmid": null,
+      "pmid": "26931809",
       "year": 2016,
-      "venue": "Cold Spring Harbor Perspectives in Medicine",
+      "venue": "Cold Spring Harb Perspect Med",
+      "authors": [
+        "MG Novelle",
+        "A Ali",
+        "C Di\u00e9guez",
+        "M Bernier",
+        "R de Cabo",
+        "R de Cabo"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1834,99 +1952,67 @@
     "PMC4990459": {
       "title": "Anti-Inflammatory Effects of Metformin Irrespective of Diabetes Status",
       "doi": "10.1161/circresaha.116.308445",
-      "pmid": null,
+      "pmid": "27418629",
       "year": 2016,
-      "venue": "Circulation Research",
+      "venue": "Circ Res",
+      "authors": [
+        "AR Cameron",
+        "VL Morrison",
+        "D Levin",
+        "M Mohan",
+        "C Forteath",
+        "C Beall",
+        "AD McNeilly",
+        "DJ Balfour",
+        "T Savinko",
+        "AK Wong",
+        "B Viollet",
+        "K Sakamoto",
+        "SC Fagerholm",
+        "M Foretz",
+        "CC Lang",
+        "G Rena"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC5087661": {
-      "title": "Drosophila sensory cilia lacking MKS proteins exhibit striking defects in development but only subtle defects in adults",
-      "doi": "10.1242/jcs.194621",
-      "pmid": null,
-      "year": 2016,
-      "venue": "Journal of Cell Science",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC5014974": {
-      "title": "Gluten-Free Diet Only during Pregnancy Efficiently Prevents Diabetes in NOD Mouse Offspring",
-      "doi": "10.1155/2016/3047574",
-      "pmid": null,
-      "year": 2016,
-      "venue": "Journal of Diabetes Research",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC5204315": {
-      "title": "MicroRNAs miR-23a-3p, miR-23b-3p, and miR-149-5p Regulate the Expression of Proapoptotic BH3-Only Proteins DP5 and PUMA in Human Pancreatic \u03b2-Cells",
-      "doi": "10.2337/db16-0592",
-      "pmid": null,
-      "year": 2016,
-      "venue": "Diabetes",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC4668014": {
       "title": "Metformin and Resveratrol Inhibited High Glucose-Induced Metabolic Memory of Endothelial Senescence through SIRT1/p300/p53/p21 Pathway",
       "doi": "10.1371/journal.pone.0143814",
-      "pmid": null,
+      "pmid": "26629991",
       "year": 2015,
-      "venue": "PLoS ONE",
+      "venue": "PLoS One",
+      "authors": [
+        "E Zhang",
+        "Q Guo",
+        "H Gao",
+        "R Xu",
+        "S Teng",
+        "Y Wu"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC4979461": {
-      "title": "BH3-Only protein bmf is required for the maintenance of glucose homeostasis in an in vivo model of HNF1\u03b1-MODY diabetes",
-      "doi": "10.1038/cddiscovery.2015.41",
-      "pmid": null,
-      "year": 2015,
-      "venue": "Cell Death Discovery",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC4171655": {
-      "title": "BH3-Only Molecule Bim Mediates \u03b2-Cell Death in IRS2 Deficiency",
-      "doi": "10.2337/db13-1814",
-      "pmid": null,
-      "year": 2014,
-      "venue": "Diabetes",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC4113059": {
-      "title": "Role of BH3-Only Molecules Bim and Puma in \u03b2-Cell Death in Pdx1 Deficiency",
-      "doi": "10.2337/db13-1513",
-      "pmid": null,
-      "year": 2014,
-      "venue": "Diabetes",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC4158205": {
-      "title": "Combined therapy of insulin-producing cells and haematopoietic stem cells offers better diabetic control than only haematopoietic stem cells\u2019 infusion for patients with insulin-dependent diabetes",
-      "doi": "10.1136/bcr-2013-201238",
-      "pmid": null,
-      "year": 2014,
-      "venue": "BMJ Case Reports",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC3898468": {
       "title": "Metformin Retards Aging in C. elegans by Altering Microbial Folate and Methionine Metabolism",
       "doi": "10.1016/j.cell.2013.02.035",
-      "pmid": null,
+      "pmid": "23540700",
       "year": 2013,
       "venue": "Cell",
+      "authors": [
+        "F Cabreiro",
+        "C Au",
+        "KY Leung",
+        "N Vergara-Irigaray",
+        "HM Cochem\u00e9",
+        "T Noori",
+        "D Weinkove",
+        "E Schuster",
+        "ND Greene",
+        "D Gems"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1934,9 +2020,16 @@
     "PMC3904269": {
       "title": "Metformin modulates hyperglycaemia\u2010induced endothelial senescence and apoptosis through <scp>SIRT1</scp>",
       "doi": "10.1111/bph.12496",
-      "pmid": null,
-      "year": 2013,
-      "venue": "British Journal of Pharmacology",
+      "pmid": "24372553",
+      "year": 2014,
+      "venue": "Br J Pharmacol",
+      "authors": [
+        "G Arunachalam",
+        "SM Samuel",
+        "I Marei",
+        "H Ding",
+        "CR Triggle"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1944,29 +2037,25 @@
     "PMC3906334": {
       "title": "Metformin: Do we finally have an anti-aging drug?",
       "doi": "10.4161/cc.26928",
-      "pmid": null,
+      "pmid": "24189526",
       "year": 2013,
       "venue": "Cell Cycle",
+      "authors": [
+        "VN Anisimov"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC3714332": {
-      "title": "A novel permutation test for case\u2010only analysis identifies epistatic effects on human longevity in the <scp>FOXO</scp> gene family",
-      "doi": "10.1111/acel.12092",
-      "pmid": null,
-      "year": 2013,
-      "venue": "Aging Cell",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC3384433": {
       "title": "Metformin in obesity, cancer and aging: addressing controversies",
       "doi": "10.18632/aging.100455",
-      "pmid": null,
+      "pmid": "22589237",
       "year": 2012,
-      "venue": "Aging",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "LM Berstein"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1974,9 +2063,23 @@
     "PMC3478667": {
       "title": "A Clinical Trial to Maintain Glycemic Control in Youth with Type 2 Diabetes",
       "doi": "10.1056/nejmoa1109333",
-      "pmid": null,
+      "pmid": "22540912",
       "year": 2012,
-      "venue": "New England Journal of Medicine",
+      "venue": "N Engl J Med",
+      "authors": [
+        "TODAY Study Group",
+        "P Zeitler",
+        "K Hirst",
+        "L Pyle",
+        "B Linder",
+        "K Copeland",
+        "S Arslanian",
+        "L Cuttler",
+        "DM Nathan",
+        "S Tollefsen",
+        "D Wilfley",
+        "F Kaufman"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1984,9 +2087,19 @@
     "PMC3282095": {
       "title": "Metformin: Multi-faceted protection against cancer",
       "doi": "10.18632/oncotarget.387",
-      "pmid": null,
+      "pmid": "22203527",
       "year": 2011,
       "venue": "Oncotarget",
+      "authors": [
+        "S Del Barco",
+        "A Vazquez-Martin",
+        "S Cuf\u00ed",
+        "C Oliveras-Ferraros",
+        "J Bosch-Barrera",
+        "J Joven",
+        "B Martin-Castillo",
+        "JA Menendez"
+      ],
       "sources": [
         "openalex"
       ]
@@ -1994,9 +2107,22 @@
     "PMC3082009": {
       "title": "If started early in life, metformin treatment increases life span and postpones tumors in female SHR mice",
       "doi": "10.18632/aging.100273",
-      "pmid": null,
+      "pmid": "21386129",
       "year": 2011,
-      "venue": "Aging",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "VN Anisimov",
+        "LM Berstein",
+        "IG Popovich",
+        "MA Zabezhinski",
+        "PA Egormin",
+        "TS Piskunova",
+        "AV Semenchenko",
+        "ML Tyndyk",
+        "MN Yurova",
+        "IG Kovalenko",
+        "TE Poroshina"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2004,9 +2130,48 @@
     "PMC3249452": {
       "title": "Metformin and the ATM DNA damage response (DDR): Accelerating the onset of stress-induced senescence to boost protection against cancer",
       "doi": "10.18632/aging.100407",
-      "pmid": null,
+      "pmid": "22170748",
       "year": 2011,
-      "venue": "Aging",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "JA Menendez",
+        "S Cuf\u00ed",
+        "C Oliveras-Ferraros",
+        "B Martin-Castillo",
+        "J Joven",
+        "L Vellon",
+        "A Vazquez-Martin"
+      ],
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3083997": {
+      "title": "Implementing a Geriatric Assessment in Cooperative Group Clinical Cancer Trials: CALGB 360401",
+      "doi": "10.1200/jco.2010.30.6985",
+      "pmid": "21357782",
+      "year": 2011,
+      "venue": "J Clin Oncol",
+      "authors": [
+        "A Hurria",
+        "CT Cirrincione",
+        "HB Muss",
+        "AB Kornblith",
+        "W Barry",
+        "AS Artz",
+        "L Schmieder",
+        "R Ansari",
+        "WP Tew",
+        "D Weckstein",
+        "J Kirshner",
+        "K Togawa",
+        "K Hansen",
+        "V Katheria",
+        "R Stone",
+        "I Galinsky",
+        "J Postiglione",
+        "HJ Cohen"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2014,9 +2179,12 @@
     "PMC3006019": {
       "title": "Metformin for aging and cancer prevention",
       "doi": "10.18632/aging.100230",
-      "pmid": null,
+      "pmid": "21084729",
       "year": 2010,
-      "venue": "Aging",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "VN Anisimov"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2024,9 +2192,23 @@
     "PMC3034183": {
       "title": "Gender differences in metformin effect on aging, life span and spontaneous tumorigenesis in 129/Sv mice",
       "doi": "10.18632/aging.100245",
-      "pmid": null,
+      "pmid": "21164223",
       "year": 2010,
-      "venue": "Aging",
+      "venue": "Aging (Albany NY)",
+      "authors": [
+        "VN Anisimov",
+        "TS Piskunova",
+        "IG Popovich",
+        "MA Zabezhinski",
+        "ML Tyndyk",
+        "PA Egormin",
+        "MV Yurova",
+        "SV Rosenfeld",
+        "AV Semenchenko",
+        "IG Kovalenko",
+        "TE Poroshina",
+        "LM Berstein"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2034,29 +2216,33 @@
     "PMC7138050": {
       "title": "Risk of fatal and nonfatal lactic acidosis with metformin use in type 2 diabetes mellitus",
       "doi": "10.1002/14651858.cd002967.pub4",
-      "pmid": null,
+      "pmid": "20393934",
       "year": 2010,
-      "venue": "Cochrane Database of Systematic Reviews",
+      "venue": "Cochrane Database Syst Rev",
+      "authors": [
+        "SR Salpeter",
+        "E Greyber",
+        "GA Pasternak",
+        "EE Salpeter"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC3076051": {
-      "title": "Muscle-Specific F-Box Only Proteins Facilitate BK Channel \u03b2 1 Subunit Downregulation in Vascular Smooth Muscle Cells of Diabetes Mellitus",
-      "doi": "10.1161/circresaha.110.228361",
-      "pmid": null,
-      "year": 2010,
-      "venue": "Circulation Research",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC2732153": {
       "title": "New Users of Metformin Are at Low Risk of Incident Cancer",
       "doi": "10.2337/dc08-2175",
-      "pmid": null,
+      "pmid": "19564453",
       "year": 2009,
       "venue": "Diabetes Care",
+      "authors": [
+        "G Libby",
+        "LA Donnelly",
+        "PT Donnan",
+        "DR Alessi",
+        "AD Morris",
+        "JM Evans"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2064,9 +2250,24 @@
     "PMC2656178": {
       "title": "Antidiabetic drug metformin (Glucophage R ) increases biogenesis of Alzheimer's amyloid peptides via up-regulating BACE1 transcription",
       "doi": "10.1073/pnas.0807991106",
-      "pmid": null,
+      "pmid": "19237574",
       "year": 2009,
-      "venue": "Proceedings of the National Academy of Sciences",
+      "venue": "Proc Natl Acad Sci U S A",
+      "authors": [
+        "Y Chen",
+        "K Zhou",
+        "R Wang",
+        "Y Liu",
+        "YD Kwak",
+        "T Ma",
+        "RC Thompson",
+        "Y Zhao",
+        "L Smith",
+        "L Gasparini",
+        "Z Luo",
+        "H Xu",
+        "FF Liao"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2074,39 +2275,42 @@
     "PMC2736070": {
       "title": "Metformin and Pathologic Complete Responses to Neoadjuvant Chemotherapy in Diabetic Patients With Breast Cancer",
       "doi": "10.1200/jco.2009.19.6410",
-      "pmid": null,
+      "pmid": "19487376",
       "year": 2009,
-      "venue": "Journal of Clinical Oncology",
+      "venue": "J Clin Oncol",
+      "authors": [
+        "S Jiralerspong",
+        "SL Palla",
+        "SH Giordano",
+        "F Meric-Bernstam",
+        "C Liedtke",
+        "CM Barnett",
+        "L Hsu",
+        "MC Hung",
+        "GN Hortobagyi",
+        "AM Gonzalez-Angulo"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC2755057": {
-      "title": "Th17 cells promote pancreatic inflammation but only induce diabetes efficiently in lymphopenic hosts after conversion into Th1 cells",
-      "doi": "10.1002/eji.200838475",
-      "pmid": null,
-      "year": 2009,
-      "venue": "European Journal of Immunology",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC2828664": {
-      "title": "Glucose Induces Pancreatic Islet Cell Apoptosis That Requires the BH3-Only Proteins Bim and Puma and Multi-BH Domain Protein Bax",
-      "doi": "10.2337/db09-1151",
-      "pmid": null,
-      "year": 2009,
-      "venue": "Diabetes",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC1783677": {
       "title": "The Influence of Age on the Effects of Lifestyle Modification and Metformin in Prevention of Diabetes",
       "doi": "10.1093/gerona/61.10.1075",
-      "pmid": null,
+      "pmid": "17077202",
       "year": 2006,
-      "venue": "The Journals of Gerontology Series A",
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "authors": [
+        "Diabetes Prevention Program Research Group",
+        "J Crandall",
+        "D Schade",
+        "Y Ma",
+        "WY Fujimoto",
+        "E Barrett-Connor",
+        "S Fowler",
+        "S Dagogo-Jack",
+        "R Andres"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2114,9 +2318,19 @@
     "PMC2505046": {
       "title": "The Effect of Metformin and Intensive Lifestyle Intervention on the Metabolic Syndrome: The Diabetes Prevention Program Randomized Trial",
       "doi": "10.7326/0003-4819-142-8-200504190-00009",
-      "pmid": null,
+      "pmid": "15838067",
       "year": 2005,
-      "venue": "Annals of Internal Medicine",
+      "venue": "Ann Intern Med",
+      "authors": [
+        "TJ Orchard",
+        "M Temprosa",
+        "R Goldberg",
+        "S Haffner",
+        "R Ratner",
+        "S Marcovina",
+        "S Fowler",
+        "Diabetes Prevention Program Research Group."
+      ],
       "sources": [
         "openalex"
       ]
@@ -2124,9 +2338,19 @@
     "PMC1370926": {
       "title": "Reduction in the Incidence of Type 2 Diabetes with Lifestyle Intervention or Metformin",
       "doi": "10.1056/nejmoa012512",
-      "pmid": null,
+      "pmid": "11832527",
       "year": 2002,
-      "venue": "New England Journal of Medicine",
+      "venue": "N Engl J Med",
+      "authors": [
+        "WC Knowler",
+        "E Barrett-Connor",
+        "SE Fowler",
+        "RF Hamman",
+        "JM Lachin",
+        "EA Walker",
+        "DM Nathan",
+        "Diabetes Prevention Program Research Group."
+      ],
       "sources": [
         "openalex"
       ]
@@ -2134,9 +2358,18 @@
     "PMC12907551": {
       "title": "Repurposing metformin for cardioprotection: mechanisms and therapeutic potential across cardiovascular pathologies",
       "doi": "10.3389/fphar.2026.1681783",
-      "pmid": null,
+      "pmid": "41704279",
       "year": 2026,
-      "venue": "Frontiers in Pharmacology",
+      "venue": "Front Pharmacol",
+      "authors": [
+        "J Khinchin",
+        "A Rakoubian",
+        "V Romano",
+        "T Ryan",
+        "J Yarbro",
+        "S Kobayashi",
+        "Q Liang"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2144,29 +2377,23 @@
     "PMC13015344": {
       "title": "Metformin Inhibits Inflammation by Targeting the NLRP3 Inflammasome: Linking NF-\u03baB/NEK7/AMPK Signaling to Mitochondrial Function",
       "doi": "10.2147/jir.s570735",
-      "pmid": null,
+      "pmid": "41890816",
       "year": 2026,
-      "venue": "Journal of Inflammation Research",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC12196159": {
-      "title": "Ferulic Acid as an Anti-Inflammatory Agent: Insights into Molecular Mechanisms, Pharmacokinetics and Applications",
-      "doi": "10.3390/ph18060912",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Pharmaceuticals",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC12333953": {
-      "title": "Impaired AMPK control of alveolar epithelial cell metabolism promotes pulmonary fibrosis",
-      "doi": "10.1172/jci.insight.182578",
-      "pmid": null,
-      "year": 2025,
-      "venue": "JCI Insight",
+      "venue": "J Inflamm Res",
+      "authors": [
+        "D Ning",
+        "C Jiang",
+        "J Zeng",
+        "F Zeng",
+        "X Zheng",
+        "P Xia",
+        "Y Liu",
+        "X Huang",
+        "D Zhang",
+        "X Liu",
+        "J Zhang",
+        "P Yu"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2174,59 +2401,19 @@
     "PMC12401686": {
       "title": "Citrus flavonoid supplement enhances glycemic and metabolic control in prediabetic patients on metformin: a randomized controlled trial",
       "doi": "10.3389/fnut.2025.1639901",
-      "pmid": null,
+      "pmid": "40904779",
       "year": 2025,
-      "venue": "Frontiers in Nutrition",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11854256": {
-      "title": "Salicylate-Elicited Activation of AMP-Activated Protein Kinase Directly Triggers Degradation of C-Myc in Colorectal Cancer Cells",
-      "doi": "10.3390/cells14040294",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Cells",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC12567007": {
-      "title": "Chlorogenic Acid\u2019s Role in Metabolic Health: Mechanisms and Therapeutic Potential",
-      "doi": "10.3390/nu17203303",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Nutrients",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC12511229": {
-      "title": "Canagliflozin potentially promotes renal protection against glycerol-induced acute kidney injury by activating the AMPK/SIRT1/FOXO-3a/PGC-1\u03b1 and Nrf2/HO-1 pathways",
-      "doi": "10.1007/s00210-025-04017-x",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Naunyn-Schmiedeberg s Archives of Pharmacology",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11719930": {
-      "title": "The Putative Antidiabetic Effect of Hypericum perforatum on Diabetes Mellitus",
-      "doi": "10.3390/ijms26010354",
-      "pmid": null,
-      "year": 2025,
-      "venue": "International Journal of Molecular Sciences",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC12788126": {
-      "title": "Influence of Certain Natural Bioactive Compounds on Glycemic Control: A Narrative Review",
-      "doi": "10.3390/nu18010052",
-      "pmid": null,
-      "year": 2025,
-      "venue": "Nutrients",
+      "venue": "Front Nutr",
+      "authors": [
+        "T Cesar",
+        "MR Oliveira",
+        "V Sandrim",
+        "A Mendes",
+        "R Bruder",
+        "R Oliveira",
+        "K Sivieri",
+        "D Milenkovic"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2234,169 +2421,16 @@
     "PMC10998183": {
       "title": "Metformin as anticancer agent and adjuvant in cancer combination therapy: Current progress and future prospect",
       "doi": "10.1016/j.tranon.2024.101945",
-      "pmid": null,
+      "pmid": "38555742",
       "year": 2024,
-      "venue": "Translational Oncology",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10932393": {
-      "title": "Mitochondrial Dysfunction in Heart Failure: From Pathophysiological Mechanisms to Therapeutic Opportunities",
-      "doi": "10.3390/ijms25052667",
-      "pmid": null,
-      "year": 2024,
-      "venue": "International Journal of Molecular Sciences",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10921743": {
-      "title": "AMPK activation attenuates central sensitization in a recurrent nitroglycerin-induced chronic migraine mouse model by promoting microglial M2-type polarization",
-      "doi": "10.1186/s10194-024-01739-w",
-      "pmid": null,
-      "year": 2024,
-      "venue": "The Journal of Headache and Pain",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11223027": {
-      "title": "Energy\u2011stress\u2011mediated activation of AMPK sensitizes MPS1 kinase inhibition in triple\u2011negative breast cancer",
-      "doi": "10.3892/or.2024.8760",
-      "pmid": null,
-      "year": 2024,
-      "venue": "Oncology Reports",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11565040": {
-      "title": "Single-cell RNA transcriptomics in mice reveals embryonic origin of fibrosis due to maternal obesity",
-      "doi": "10.1016/j.ebiom.2024.105421",
-      "pmid": null,
-      "year": 2024,
-      "venue": "EBioMedicine",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11252334": {
-      "title": "Salicylate induces epithelial actin reorganization via activation of the AMP-activated protein kinase and promotes wound healing and contraction in mice",
-      "doi": "10.1038/s41598-024-67266-5",
-      "pmid": null,
-      "year": 2024,
-      "venue": "Scientific Reports",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10889506": {
-      "title": "Antioxidant Efficacy of Hwangryunhaedok-tang through Nrf2 and AMPK Signaling Pathway against Neurological Disorders In Vivo and In Vitro",
-      "doi": "10.3390/ijms25042313",
-      "pmid": null,
-      "year": 2024,
-      "venue": "International Journal of Molecular Sciences",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11231531": {
-      "title": "Research on the mechanism of sea buckthorn leaf Fu tea in the treatment of hyperlipidemia",
-      "doi": "10.1016/j.heliyon.2024.e32343",
-      "pmid": null,
-      "year": 2024,
-      "venue": "Heliyon",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10855897": {
-      "title": "Dictyostelium Differentiation-Inducing Factor 1 Promotes Glucose Uptake via Direct Inhibition of Mitochondrial Malate Dehydrogenase in Mouse 3T3-L1 Cells",
-      "doi": "10.3390/ijms25031889",
-      "pmid": null,
-      "year": 2024,
-      "venue": "International Journal of Molecular Sciences",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11336029": {
-      "title": "Sex-specific cardiovascular remodeling leads to a divergent sex-dependent development of heart failure in aged hypertensive rats",
-      "doi": "10.1007/s11357-024-01160-w",
-      "pmid": null,
-      "year": 2024,
-      "venue": "GeroScience",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11598968": {
-      "title": "Protective Role of Cepharanthine Against Equid Herpesvirus Type 8 Through AMPK and Nrf2/HO-1 Pathway Activation",
-      "doi": "10.3390/v16111765",
-      "pmid": null,
-      "year": 2024,
-      "venue": "Viruses",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11452301": {
-      "title": "<scp>AMP</scp>\u2010dependent kinase stimulates the expression of <scp>\u03b1Klotho</scp>",
-      "doi": "10.1002/2211-5463.13872",
-      "pmid": null,
-      "year": 2024,
-      "venue": "FEBS Open Bio",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11506080": {
-      "title": "Pioglitazone as a Possible Treatment for Ataxia-Telangiectasia",
-      "doi": "10.3390/biom14101264",
-      "pmid": null,
-      "year": 2024,
-      "venue": "Biomolecules",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11720625": {
-      "title": "AMPK Phosphorylates LMX1b to Regulate a Brainstem Neurogenic Network Important for Control of Breathing in Neonatal Mice",
-      "doi": "10.3390/ijms26010213",
-      "pmid": null,
-      "year": 2024,
-      "venue": "International Journal of Molecular Sciences",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC11459314": {
-      "title": "Toripalimab in combination with HBM4003, an anti-CTLA-4 heavy chain-only antibody, in advanced melanoma and other solid tumors: an open-label phase I trial",
-      "doi": "10.1136/jitc-2024-009662",
-      "pmid": null,
-      "year": 2024,
-      "venue": "Journal for ImmunoTherapy of Cancer",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC9863744": {
-      "title": "Novel Anti-Cancer Products Targeting AMPK: Natural Herbal Medicine against Breast Cancer",
-      "doi": "10.3390/molecules28020740",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Molecules",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10337128": {
-      "title": "AMPK activation improves recovery from pneumonia-induced lung injury via reduction of er-stress and apoptosis in alveolar epithelial cells",
-      "doi": "10.1186/s12931-023-02483-6",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Respiratory Research",
+      "venue": "Transl Oncol",
+      "authors": [
+        "L Zhu",
+        "K Yang",
+        "Z Ren",
+        "D Yin",
+        "Y Zhou"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2404,59 +2438,14 @@
     "PMC10390098": {
       "title": "Metformin Induces Lipogenesis and Apoptosis in H4IIE Hepatocellular Carcinoma Cells",
       "doi": "10.12717/dr.2023.27.2.77",
-      "pmid": null,
+      "pmid": "37529015",
       "year": 2023,
-      "venue": "Development & Reproduction",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10676094": {
-      "title": "AMPK Signalling Pathway: A Potential Strategy for the Treatment of Heart Failure with Chinese Medicine",
-      "doi": "10.2147/jir.s441597",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Journal of Inflammation Research",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10135179": {
-      "title": "Acute Kidney Injury Induces Oxidative Stress and Hepatic Lipid Accumulation through AMPK Signaling Pathway",
-      "doi": "10.3390/antiox12040883",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Antioxidants",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC9826616": {
-      "title": "A systematic analysis of anti-diabetic medicinal plants from cells to clinical trials",
-      "doi": "10.7717/peerj.14639",
-      "pmid": null,
-      "year": 2023,
-      "venue": "PeerJ",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10462912": {
-      "title": "Network pharmacology analysis combined with experimental validation to explore the therapeutic mechanism of salidroside on intestine ischemia reperfusion",
-      "doi": "10.1042/bsr20230539",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Bioscience Reports",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10471732": {
-      "title": "Targeted Activation of HNF4\u03b1 by AMPK Inhibits Apoptosis and Ameliorates Neurological Injury Caused by Cardiac Arrest in Rats",
-      "doi": "10.1007/s11064-023-03957-1",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Neurochemical Research",
+      "venue": "Dev Reprod",
+      "authors": [
+        "D Park",
+        "S Lee",
+        "H Boo"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2464,59 +2453,38 @@
     "PMC10680579": {
       "title": "Influence of metabolic stress and metformin on synaptic protein profile in SH\u2010SY5Y\u2010derived neurons",
       "doi": "10.14814/phy2.15852",
-      "pmid": null,
+      "pmid": "38010200",
       "year": 2023,
-      "venue": "Physiological Reports",
+      "venue": "Physiol Rep",
+      "authors": [
+        "AJT Yang",
+        "A Mohammad",
+        "MS Finch",
+        "E Tsiani",
+        "G Spencer",
+        "A Necakov",
+        "REK MacPherson"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC10263326": {
-      "title": "Macrophage inhibitory cytokine-1 aggravates diet-induced gallstone formation via increased ABCG5/ABCG8 expression",
-      "doi": "10.1371/journal.pone.0287146",
-      "pmid": null,
-      "year": 2023,
-      "venue": "PLoS ONE",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10705313": {
-      "title": "Mutation Status and Glucose Availability Affect the Response to Mitochondria-Targeted Quercetin Derivative in Breast Cancer Cells",
-      "doi": "10.3390/cancers15235614",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Cancers",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10833070": {
-      "title": "Anti-Mullerian hormone attenuates both cyclophosphamide-induced damage and PI3K signalling activation, while rapamycin attenuates only PI3K signalling activation, in human ovarian cortex in vitro",
-      "doi": "10.1093/humrep/dead255",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Human Reproduction",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC10228071": {
-      "title": "Intravenous injection of human umbilical cord-derived mesenchymal stem cells ameliorates not only blood glucose but also nephrotic complication of diabetic rats through autophagy-mediated anti-senescent mechanism",
-      "doi": "10.1186/s13287-023-03354-z",
-      "pmid": null,
-      "year": 2023,
-      "venue": "Stem Cell Research & Therapy",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC8869356": {
       "title": "Metformin Inhibits ROS Production by Human M2 Macrophages via the Activation of AMPK",
       "doi": "10.3390/biomedicines10020319",
-      "pmid": null,
+      "pmid": "35203528",
       "year": 2022,
       "venue": "Biomedicines",
+      "authors": [
+        "RM Nassif",
+        "E Chalhoub",
+        "P Chedid",
+        "M Hurtado-Nedelec",
+        "E Raya",
+        "PM Dang",
+        "JC Marie",
+        "J El-Benna"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2524,19 +2492,18 @@
     "PMC8830934": {
       "title": "Metformin Ameliorates Inflammation and Airway Remodeling of Experimental Allergic Asthma in Mice by Restoring AMPK\u03b1 Activity",
       "doi": "10.3389/fphar.2022.780148",
-      "pmid": null,
+      "pmid": "35153777",
       "year": 2022,
-      "venue": "Frontiers in Pharmacology",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC9228598": {
-      "title": "Resveratrol Induces Autophagy and Apoptosis in Non-Small-Cell Lung Cancer Cells by Activating the NGFR-AMPK-mTOR Pathway",
-      "doi": "10.3390/nu14122413",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Nutrients",
+      "venue": "Front Pharmacol",
+      "authors": [
+        "W Ma",
+        "Q Jin",
+        "H Guo",
+        "X Han",
+        "L Xu",
+        "S Lu",
+        "C Wu"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2544,39 +2511,21 @@
     "PMC9318003": {
       "title": "Will We Unlock the Benefit of Metformin for Patients with Lung Cancer? Lessons from Current Evidence and New Hypotheses",
       "doi": "10.3390/ph15070786",
-      "pmid": null,
+      "pmid": "35890085",
       "year": 2022,
-      "venue": "Pharmaceuticals",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC9189331": {
-      "title": "IM156, a new AMPK activator, protects against polymicrobial sepsis",
-      "doi": "10.1111/jcmm.17341",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Journal of Cellular and Molecular Medicine",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC8781759": {
-      "title": "Testing Mitochondrial-Targeted Drugs in iPSC-RPE from Patients with Age-Related Macular Degeneration",
-      "doi": "10.3390/ph15010062",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Pharmaceuticals",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC10148728": {
-      "title": "Molecular mechanism underlying impaired hepatic autophagy in glycogen storage disease type Ib",
-      "doi": "10.1093/hmg/ddac197",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Human Molecular Genetics",
+      "venue": "Pharmaceuticals (Basel)",
+      "authors": [
+        "P Barrios-Bernal",
+        "ZL Zatarain-Barr\u00f3n",
+        "N Hern\u00e1ndez-Pedro",
+        "M Orozco-Morales",
+        "A Olivera-Ram\u00edrez",
+        "F \u00c1vila-Moreno",
+        "AL Col\u00edn-Gonz\u00e1lez",
+        "AF Cardona",
+        "R Rosell",
+        "O Arrieta"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2584,49 +2533,41 @@
     "PMC8995000": {
       "title": "Single Nucleotide Polymorphism in the 3\u2019 Untranslated Region of PRKAA2 on Cardiometabolic Parameters in Type 2 Diabetes Mellitus Patients Who Received Metformin",
       "doi": "10.2147/tcrm.s349900",
-      "pmid": null,
+      "pmid": "35414746",
       "year": 2022,
-      "venue": "Therapeutics and Clinical Risk Management",
+      "venue": "Ther Clin Risk Manag",
+      "authors": [
+        "DM Virginia",
+        "C Patramurti",
+        "Fenty",
+        "CH Setiawan",
+        "J Julianus",
+        "P Hendra",
+        "NAP Susanto"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC9145028": {
-      "title": "Impairment of Glucose Metabolism and Suppression of Stemness in MCF-7/SC Human Breast Cancer Stem Cells by Nootkatone",
-      "doi": "10.3390/pharmaceutics14050906",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Pharmaceutics",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC9409406": {
-      "title": "Aspiletrein A Induces Apoptosis Cell Death via Increasing Reactive Oxygen Species Generation and AMPK Activation in Non-Small-Cell Lung Cancer Cells",
-      "doi": "10.3390/ijms23169258",
-      "pmid": null,
-      "year": 2022,
-      "venue": "International Journal of Molecular Sciences",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC9371702": {
-      "title": "An anti-CTLA-4 heavy chain\u2013only antibody with enhanced T reg depletion shows excellent preclinical efficacy and safety profile",
-      "doi": "10.1073/pnas.2200879119",
-      "pmid": null,
-      "year": 2022,
-      "venue": "Proceedings of the National Academy of Sciences",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC8698925": {
       "title": "Effects of Metformin in Heart Failure: From Pathophysiological Rationale to Clinical Evidence",
       "doi": "10.3390/biom11121834",
-      "pmid": null,
+      "pmid": "34944478",
       "year": 2021,
       "venue": "Biomolecules",
+      "authors": [
+        "T Salvatore",
+        "R Galiero",
+        "A Caturano",
+        "E Vetrano",
+        "L Rinaldi",
+        "F Coviello",
+        "A Di Martino",
+        "G Albanese",
+        "R Marfella",
+        "C Sardu",
+        "FC Sasso"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2634,49 +2575,14 @@
     "PMC8747910": {
       "title": "Metformin and its therapeutic applications in autoimmune inflammatory rheumatic disease",
       "doi": "10.3904/kjim.2021.363",
-      "pmid": null,
-      "year": 2021,
-      "venue": "The Korean Journal of Internal Medicine",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC8660775": {
-      "title": "AMPK modulation ameliorates dominant disease phenotypes of CTRP5 variant in retinal degeneration",
-      "doi": "10.1038/s42003-021-02872-x",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Communications Biology",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC8125227": {
-      "title": "Resveratrol, Metabolic Dysregulation, and Alzheimer\u2019s Disease: Considerations for Neurogenerative Disease",
-      "doi": "10.3390/ijms22094628",
-      "pmid": null,
-      "year": 2021,
-      "venue": "International Journal of Molecular Sciences",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC8024326": {
-      "title": "AMPK activation by ASP4132 inhibits non-small cell lung cancer cell growth",
-      "doi": "10.1038/s41419-021-03655-2",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Cell Death and Disease",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC7957200": {
-      "title": "AMPK inhibits Smad3\u2010mediated autoinduction of TGF\u2010\u03b21 in gastric cancer cells",
-      "doi": "10.1111/jcmm.16308",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Journal of Cellular and Molecular Medicine",
+      "pmid": "34879473",
+      "year": 2022,
+      "venue": "Korean J Intern Med",
+      "authors": [
+        "JW Kim",
+        "JY Choe",
+        "SH Park"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2684,9 +2590,18 @@
     "PMC7923493": {
       "title": "Metformin activated AMPK signaling contributes to the alleviation of LPS-induced inflammatory responses in bovine mammary epithelial cells",
       "doi": "10.1186/s12917-021-02797-x",
-      "pmid": null,
+      "pmid": "33648513",
       "year": 2021,
-      "venue": "BMC Veterinary Research",
+      "venue": "BMC Vet Res",
+      "authors": [
+        "T Xu",
+        "X Wu",
+        "X Lu",
+        "Y Liang",
+        "Y Mao",
+        "JJ Loor",
+        "Z Yang"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2694,29 +2609,23 @@
     "PMC8537073": {
       "title": "Elucidating Carfilzomib\u2019s Induced Cardiotoxicity in an In Vivo Model of Aging: Prophylactic Potential of Metformin",
       "doi": "10.3390/ijms222010956",
-      "pmid": null,
+      "pmid": "34681615",
       "year": 2021,
-      "venue": "International Journal of Molecular Sciences",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC7956221": {
-      "title": "Dictyostelium Differentiation-Inducing Factor-1 Promotes Glucose Uptake, at Least in Part, via an AMPK-Dependent Pathway in Mouse 3T3-L1 Cells",
-      "doi": "10.3390/ijms22052293",
-      "pmid": null,
-      "year": 2021,
-      "venue": "International Journal of Molecular Sciences",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC8032526": {
-      "title": "Ataxia Telangiectasia Mutated Protein Kinase: A Potential Master Puppeteer of Oxidative Stress\u2010Induced Metabolic Recycling",
-      "doi": "10.1155/2021/8850708",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Oxidative Medicine and Cellular Longevity",
+      "venue": "Int J Mol Sci",
+      "authors": [
+        "P Efentakis",
+        "G Psarakou",
+        "A Varela",
+        "ED Papanagnou",
+        "M Chatzistefanou",
+        "PE Nikolaou",
+        "CH Davos",
+        "M Gavriatopoulou",
+        "IP Trougakos",
+        "MA Dimopoulos",
+        "I Andreadou",
+        "E Terpos"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2724,9 +2633,18 @@
     "PMC8282216": {
       "title": "A Pilot Trial: Fish Oil and Metformin Effects on ApoB-Remnants and Triglycerides in Women With Polycystic Ovary Syndrome",
       "doi": "10.1210/jendso/bvab114",
-      "pmid": null,
+      "pmid": "34286169",
       "year": 2021,
-      "venue": "Journal of the Endocrine Society",
+      "venue": "J Endocr Soc",
+      "authors": [
+        "D Vine",
+        "D Vine",
+        "E Proctor",
+        "O Weaver",
+        "M Ghosh",
+        "K Maximova",
+        "S Proctor"
+      ],
       "sources": [
         "crossref"
       ]
@@ -2734,19 +2652,16 @@
     "PMC8596953": {
       "title": "A randomized, double-blind clinical trial of a herbal formulation (GlycaCare-II) for the management of type 2 diabetes in comparison with metformin",
       "doi": "10.1186/s13098-021-00746-0",
-      "pmid": null,
+      "pmid": "34789340",
       "year": 2021,
-      "venue": "Diabetology & Metabolic Syndrome",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC8419101": {
-      "title": "Identification of a Locus Near ULK1 Associated With Progression-Free Survival in Ovarian Cancer",
-      "doi": "10.1158/1055-9965.epi-20-1817",
-      "pmid": null,
-      "year": 2021,
-      "venue": "Cancer Epidemiology, Biomarkers & Prevention",
+      "venue": "Diabetol Metab Syndr",
+      "authors": [
+        "M Majeed",
+        "A Majeed",
+        "K Nagabhusahnam",
+        "L Mundkur",
+        "S Paulose"
+      ],
       "sources": [
         "crossref"
       ]
@@ -2754,9 +2669,17 @@
     "PMC7397438": {
       "title": "Protective Effect of Metformin against Hydrogen Peroxide-Induced Oxidative Damage in Human Retinal Pigment Epithelial (RPE) Cells by Enhancing Autophagy through Activation of AMPK Pathway",
       "doi": "10.1155/2020/2524174",
-      "pmid": null,
+      "pmid": "32774666",
       "year": 2020,
-      "venue": "Oxidative Medicine and Cellular Longevity",
+      "venue": "Oxid Med Cell Longev",
+      "authors": [
+        "X Zhao",
+        "L Liu",
+        "Y Jiang",
+        "M Silva",
+        "X Zhen",
+        "W Zheng"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2764,49 +2687,16 @@
     "PMC7415324": {
       "title": "Metformin Corrects Abnormal Circadian Rhythm and Kir4.1 Channels in Diabetes",
       "doi": "10.1167/iovs.61.6.46",
-      "pmid": null,
+      "pmid": "32572457",
       "year": 2020,
-      "venue": "Investigative Ophthalmology & Visual Science",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC7710906": {
-      "title": "Roles of AMP-Activated Protein Kinase (AMPK) in Mammalian Reproduction",
-      "doi": "10.3389/fcell.2020.593005",
-      "pmid": null,
-      "year": 2020,
-      "venue": "Frontiers in Cell and Developmental Biology",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC7582731": {
-      "title": "A Bibenzyl Component Moscatilin Mitigates Glycation-Mediated Damages in an SH-SY5Y Cell Model of Neurodegenerative Diseases through AMPK Activation and RAGE/NF-\u03baB Pathway Suppression",
-      "doi": "10.3390/molecules25194574",
-      "pmid": null,
-      "year": 2020,
-      "venue": "Molecules",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC7526687": {
-      "title": "Oxygen Glucose Deprivation Induced Prosurvival Autophagy Is Insufficient to Rescue Endothelial Function",
-      "doi": "10.3389/fphys.2020.533683",
-      "pmid": null,
-      "year": 2020,
-      "venue": "Frontiers in Physiology",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC7683127": {
-      "title": "Role of the AMPK/ACC Signaling Pathway in TRPP2\u2010Mediated Head and Neck Cancer Cell Proliferation",
-      "doi": "10.1155/2020/4375075",
-      "pmid": null,
-      "year": 2020,
-      "venue": "BioMed Research International",
+      "venue": "Invest Ophthalmol Vis Sci",
+      "authors": [
+        "A Alex",
+        "Q Luo",
+        "D Mathew",
+        "R Di",
+        "AD Bhatwadekar"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2816,7 +2706,13 @@
       "doi": "10.1210/jendso/bvaa046.2038",
       "pmid": null,
       "year": 2020,
-      "venue": "Journal of the Endocrine Society",
+      "venue": "J Endocr Soc",
+      "authors": [
+        "J Snaith",
+        "D Samocha-Bonet",
+        "D Holmes-Walker",
+        "J Greenfield"
+      ],
       "sources": [
         "crossref"
       ]
@@ -2824,29 +2720,48 @@
     "PMC7552859": {
       "title": "Rationale and design of a randomised controlled trial testing the effect of personalised diet in individuals with pre-diabetes or type 2 diabetes mellitus treated with metformin",
       "doi": "10.1136/bmjopen-2020-037859",
-      "pmid": null,
+      "pmid": "33040003",
       "year": 2020,
       "venue": "BMJ Open",
+      "authors": [
+        "TD Htet",
+        "A Godneva",
+        "Z Liu",
+        "E Chalmers",
+        "D Kolobkov",
+        "JR Snaith",
+        "R Richens",
+        "K Toth",
+        "M Danta",
+        "TM Hng",
+        "E Elinav",
+        "E Segal",
+        "JR Greenfield",
+        "D Samocha-Bonet"
+      ],
       "sources": [
         "crossref"
-      ]
-    },
-    "PMC6896909": {
-      "title": "Environmental Exposures and Asthma Development: Autophagy, Mitophagy, and Cellular Senescence",
-      "doi": "10.3389/fimmu.2019.02787",
-      "pmid": null,
-      "year": 2019,
-      "venue": "Frontiers in Immunology",
-      "sources": [
-        "openalex"
       ]
     },
     "PMC6549273": {
       "title": "Metformin improves salivary gland inflammation and hypofunction in murine Sj\u00f6gren\u2019s syndrome",
       "doi": "10.1186/s13075-019-1904-0",
-      "pmid": null,
+      "pmid": "31164166",
       "year": 2019,
-      "venue": "Arthritis Research & Therapy",
+      "venue": "Arthritis Res Ther",
+      "authors": [
+        "JW Kim",
+        "SM Kim",
+        "JS Park",
+        "SH Hwang",
+        "J Choi",
+        "KA Jung",
+        "JG Ryu",
+        "SY Lee",
+        "SK Kwok",
+        "ML Cho",
+        "SH Park"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2854,19 +2769,21 @@
     "PMC6407684": {
       "title": "A novel therapeutic approach to colorectal cancer in diabetes: role of metformin and rapamycin",
       "doi": "10.18632/oncotarget.26641",
-      "pmid": null,
+      "pmid": "30863490",
       "year": 2019,
       "venue": "Oncotarget",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC6548379": {
-      "title": "Inhibition by fluoxetine of LH-stimulated cyclic AMP synthesis in tumor Leydig cells partly involves AMPK activation",
-      "doi": "10.1371/journal.pone.0217519",
-      "pmid": null,
-      "year": 2019,
-      "venue": "PLoS ONE",
+      "authors": [
+        "AG Geagea",
+        "M Rizzo",
+        "A Jurjus",
+        "F Cappello",
+        "A Leone",
+        "G Tomasello",
+        "C Gracia",
+        "S Al Kattar",
+        "L Massaad-Massade",
+        "A Eid"
+      ],
       "sources": [
         "openalex"
       ]
@@ -2874,169 +2791,100 @@
     "PMC6781747": {
       "title": "AGR2 silencing contributes to metformin\u2011dependent sensitization of colorectal cancer cells to chemotherapy",
       "doi": "10.3892/ol.2019.10800",
-      "pmid": null,
+      "pmid": "31612008",
       "year": 2019,
-      "venue": "Oncology Letters",
+      "venue": "Oncol Lett",
+      "authors": [
+        "A Martisova",
+        "L Sommerova",
+        "K Kuricova",
+        "J Podhorec",
+        "B Vojtesek",
+        "K Kankova",
+        "R Hrstka"
+      ],
       "sources": [
         "openalex"
-      ]
-    },
-    "PMC6555667": {
-      "title": "Aldose reductase regulates hyperglycemia-induced HUVEC death via SIRT1/AMPK-\u03b11/mTOR pathway",
-      "doi": "10.1530/jme-19-0080",
-      "pmid": null,
-      "year": 2019,
-      "venue": "Journal of Molecular Endocrinology",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC6717796": {
-      "title": "Humanin suppresses receptor activator of nuclear factor-\u03baB ligand-induced osteoclast differentiation via AMP-activated protein kinase activation",
-      "doi": "10.4196/kjpp.2019.23.5.411",
-      "pmid": null,
-      "year": 2019,
-      "venue": "Korean Journal of Physiology and Pharmacology",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC6572972": {
-      "title": "Expression of p-AMPK in colorectal cancer revealed substantial diverse survival patterns",
-      "doi": "10.12669/pjms.35.3.159",
-      "pmid": null,
-      "year": 2019,
-      "venue": "Pakistan Journal of Medical Sciences",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC6953937": {
-      "title": "Live Birth Rates in Poor Responders\u2019 Group after Previous Treatment with Autologous Platelet-Rich Plasma and Low Dose Ovarian Stimulation Compared with Poor Responders Used Only Low Dose Ovarian Stimulation Before in Vitro Fertilization",
-      "doi": "10.3889/oamjms.2019.825",
-      "pmid": null,
-      "year": 2019,
-      "venue": "Open Access Macedonian Journal of Medical Sciences",
-      "sources": [
-        "crossref"
       ]
     },
     "PMC6326273": {
       "title": "Acupuncture or metformin to improve insulin resistance in women with polycystic ovary syndrome: study protocol of a combined multinational cross sectional case-control study and a randomised controlled trial",
       "doi": "10.1136/bmjopen-2018-024733",
-      "pmid": null,
+      "pmid": "30612112",
       "year": 2019,
       "venue": "BMJ Open",
+      "authors": [
+        "E Stener-Victorin",
+        "H Zhang",
+        "R Li",
+        "C Friden",
+        "D Li",
+        "W Wang",
+        "H Wang",
+        "C Chang",
+        "S Li",
+        "Z Huo",
+        "H Zhang",
+        "X Ji",
+        "A Linden-Hirschberg",
+        "J Qiao"
+      ],
       "sources": [
         "crossref"
-      ]
-    },
-    "PMC6032132": {
-      "title": "AMP-Activated Protein Kinase as a Reprogramming Strategy for Hypertension and Kidney Disease of Developmental Origin",
-      "doi": "10.3390/ijms19061744",
-      "pmid": null,
-      "year": 2018,
-      "venue": "International Journal of Molecular Sciences",
-      "sources": [
-        "openalex"
       ]
     },
     "PMC5865989": {
       "title": "Effects of metformin on the expression of AMPK and STAT3 in the spinal dorsal horn of rats with neuropathic pain",
       "doi": "10.3892/mmr.2018.8541",
-      "pmid": null,
+      "pmid": "29393487",
       "year": 2018,
-      "venue": "Molecular Medicine Reports",
+      "venue": "Mol Med Rep",
+      "authors": [
+        "A Ge",
+        "S Wang",
+        "B Miao",
+        "M Yan"
+      ],
       "sources": [
         "openalex"
       ]
     },
-    "PMC5847527": {
-      "title": "Identification of a novel 2-oxindole fluorinated derivative as in vivo antitumor agent for prostate cancer acting via AMPK activation",
-      "doi": "10.1038/s41598-018-22690-2",
-      "pmid": null,
-      "year": 2018,
-      "venue": "Scientific Reports",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC6261399": {
-      "title": "Dietary DHA/EPA Ratio Changes Fatty Acid Composition and Attenuates Diet\u2010Induced Accumulation of Lipid in the Liver of ApoE\u2212/\u2212 Mice",
-      "doi": "10.1155/2018/6256802",
-      "pmid": null,
-      "year": 2018,
-      "venue": "Oxidative Medicine and Cellular Longevity",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC5474250": {
-      "title": "Discovery of Novel Insulin Sensitizers: Promising Approaches and Targets",
-      "doi": "10.1155/2017/8360919",
-      "pmid": null,
-      "year": 2017,
-      "venue": "PPAR Research",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC5369987": {
-      "title": "Comparative transcriptomic analysis of mice liver treated with different AMPK activators in a mice model of atherosclerosis",
-      "doi": "10.18632/oncotarget.15027",
-      "pmid": null,
-      "year": 2017,
-      "venue": "Oncotarget",
-      "sources": [
-        "openalex"
-      ]
-    },
-    "PMC4635386": {
-      "title": "(Z)3,4,5,4\u2032-trans-tetramethoxystilbene, a new analogue of resveratrol, inhibits gefitinb-resistant non-small cell lung cancer via selectively elevating intracellular calcium level",
-      "doi": "10.1038/srep16348",
-      "pmid": null,
+    "PMC4680192": {
+      "title": "The Head Injury Retrieval Trial (HIRT): a single-centre randomised controlled trial of physician prehospital management of severe blunt head injury compared with management by paramedics only",
+      "doi": "10.1136/emermed-2014-204390",
+      "pmid": "25795741",
       "year": 2015,
-      "venue": "Scientific Reports",
+      "venue": "Emerg Med J",
+      "authors": [
+        "AA Garner",
+        "KP Mann",
+        "M Fearnside",
+        "E Poynter",
+        "V Gebski"
+      ],
       "sources": [
-        "openalex"
+        "crossref"
       ]
     },
     "PMC6649411": {
       "title": "Study Design and Rationale of a Dose\u2010Ranging Trial of <scp>LX4211</scp>, a Dual Inhibitor of <scp>SGLT1</scp> and <scp>SGLT2</scp>, in Type 2 Diabetes Inadequately Controlled on Metformin Monotherapy",
       "doi": "10.1002/clc.22125",
-      "pmid": null,
+      "pmid": "23630033",
       "year": 2013,
-      "venue": "Clinical Cardiology",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC2932601": {
-      "title": "Six and Eya promote apoptosis through direct transcriptional activation of the proapoptotic BH3-only geneegl-1inCaenorhabditis elegans",
-      "doi": "10.1073/pnas.1010023107",
-      "pmid": null,
-      "year": 2010,
-      "venue": "Proceedings of the National Academy of Sciences",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC1461205": {
-      "title": "The Only Function of Grauzone Required for Drosophila Oocyte Meiosis Is Transcriptional Activation of the cortex Gene",
-      "doi": "10.1093/genetics/155.4.1831",
-      "pmid": null,
-      "year": 2000,
-      "venue": "Genetics",
-      "sources": [
-        "crossref"
-      ]
-    },
-    "PMC316830": {
-      "title": "members only encodes a Drosophila nucleoporin required for Rel protein import and immune response activation",
-      "doi": "10.1101/gad.14.15.1945",
-      "pmid": null,
-      "year": 2000,
-      "venue": "Genes & Development",
+      "venue": "Clin Cardiol",
+      "authors": [
+        "P Lapuerta",
+        "J Rosenstock",
+        "B Zambrowicz",
+        "DR Powell",
+        "I Ogbaa",
+        "J Freiman",
+        "WT Cefalu",
+        "P Banks",
+        "K Frazier",
+        "M Kelly",
+        "A Sands"
+      ],
       "sources": [
         "crossref"
       ]

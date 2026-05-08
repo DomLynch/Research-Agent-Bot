@@ -159,7 +159,7 @@ def _breaks_markdown_table_shape(location: str, before: str, after: str) -> bool
 
 
 def _is_repeated_safe_simplification(ptype: str, before: str, after: str) -> bool:
-    if ptype not in {"claim", "formatting"}:
+    if ptype not in {"claim", "formatting", "citation"}:
         return False
     if before == after:
         return False

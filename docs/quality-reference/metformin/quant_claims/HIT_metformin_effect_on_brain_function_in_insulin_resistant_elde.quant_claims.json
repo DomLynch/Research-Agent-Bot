@@ -1,0 +1,48 @@
+{
+  "paper_id": "HIT_metformin_effect_on_brain_function_in_insulin_resistant_elde",
+  "doi": "",
+  "extracted_at": "2026-05-08T04:47:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_metformin_effect_on_brain_function_in_insulin_resistant_elde-u-583",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 583,
+      "sentence": "Posted outcomes: Change From Baseline in Brain PCr/ATP Ratio as Measured by Phosphorus Magnetic Spectroscopy (31P-MRS) After 10 Months of Metformin Administration. timeframe=Baseline, 10 months.",
+      "context_window": "10 Months of Metformin Administration. timeframe=Baseline, 10 months. Placebo=-0.045 (\u00b10.258); Metformin=-0.016 (\u00b10.483). p=0.85",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_metformin_effect_on_brain_function_in_insulin_resistant_elde-p-646",
+      "claim_type": "p_value",
+      "raw_text": "p=0.854",
+      "numeric_values": [
+        0.854
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 646,
+      "sentence": "Placebo=-0.045 (\u00b10.258); Metformin=-0.016 (\u00b10.483). p=0.854",
+      "context_window": "months. Placebo=-0.045 (\u00b10.258); Metformin=-0.016 (\u00b10.483). p=0.854",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

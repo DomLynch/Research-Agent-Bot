@@ -1,0 +1,265 @@
+{
+  "paper_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with",
+  "doi": "10.1056/nejmoa1109333",
+  "extracted_at": "2026-05-08T04:46:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 7,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-u-299",
+      "claim_type": "unit_value",
+      "raw_text": "17 years",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 299,
+      "sentence": "METHODS: Eligible patients 10 to 17 years of age were treated with metformin (at a dose of 1000 mg twice daily) to attain a glycated hemoglobin level of less than 8% and were randomly assigned to continued treatment with metformin alone or to metformin combined with rosiglitazone (4 mg twice a day) or a lifestyle-intervention program focusing on weight loss through eating and activity behaviors.",
+      "context_window": "ent-onset type 2 diabetes. METHODS: Eligible patients 10 to 17 years of age were treated with metformin (at a dose of 1000 mg tw",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-u-357",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 357,
+      "sentence": "METHODS: Eligible patients 10 to 17 years of age were treated with metformin (at a dose of 1000 mg twice daily) to attain a glycated hemoglobin level of less than 8% and were randomly assigned to continued treatment with metformin alone or to metformin combined with rosiglitazone (4 mg twice a day) or a lifestyle-intervention program focusing on weight loss through eating and activity behaviors.",
+      "context_window": "o 17 years of age were treated with metformin (at a dose of 1000 mg twice daily) to attain a glycated hemoglobin level of less",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-pct-429",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 429,
+      "sentence": "METHODS: Eligible patients 10 to 17 years of age were treated with metformin (at a dose of 1000 mg twice daily) to attain a glycated hemoglobin level of less than 8% and were randomly assigned to continued treatment with metformin alone or to metformin combined with rosiglitazone (4 mg twice a day) or a lifestyle-intervention program focusing on weight loss through eating and activity behaviors.",
+      "context_window": "e daily) to attain a glycated hemoglobin level of less than 8% and were randomly assigned to continued treatment with metf",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-u-548",
+      "claim_type": "unit_value",
+      "raw_text": "4 mg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 548,
+      "sentence": "METHODS: Eligible patients 10 to 17 years of age were treated with metformin (at a dose of 1000 mg twice daily) to attain a glycated hemoglobin level of less than 8% and were randomly assigned to continued treatment with metformin alone or to metformin combined with rosiglitazone (4 mg twice a day) or a lifestyle-intervention program focusing on weight loss through eating and activity behaviors.",
+      "context_window": "etformin alone or to metformin combined with rosiglitazone (4 mg twice a day) or a lifestyle-intervention program focusing o",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-pct-766",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 766,
+      "sentence": "The primary outcome was loss of glycemic control, defined as a glycated hemoglobin level of at least 8% for 6 months or sustained metabolic decompensation requiring insulin.",
+      "context_window": "control, defined as a glycated hemoglobin level of at least 8% for 6 months or sustained metabolic decompensation requirin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-u-773",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 773,
+      "sentence": "The primary outcome was loss of glycemic control, defined as a glycated hemoglobin level of at least 8% for 6 months or sustained metabolic decompensation requiring insulin.",
+      "context_window": ", defined as a glycated hemoglobin level of at least 8% for 6 months or sustained metabolic decompensation requiring insulin. RE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-u-935",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 months",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 935,
+      "sentence": "RESULTS: Of the 699 randomly assigned participants (mean duration of diagnosed type 2 diabetes, 7.8 months), 319 (45.6%) reached the primary outcome over an average follow-up of 3.86 years.",
+      "context_window": "d participants (mean duration of diagnosed type 2 diabetes, 7.8 months), 319 (45.6%) reached the primary outcome over an average f",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-pct-953",
+      "claim_type": "percentage",
+      "raw_text": "45.6%",
+      "numeric_values": [
+        45.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 953,
+      "sentence": "RESULTS: Of the 699 randomly assigned participants (mean duration of diagnosed type 2 diabetes, 7.8 months), 319 (45.6%) reached the primary outcome over an average follow-up of 3.86 years.",
+      "context_window": "an duration of diagnosed type 2 diabetes, 7.8 months), 319 (45.6%) reached the primary outcome over an average follow-up of 3",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-u-1017",
+      "claim_type": "unit_value",
+      "raw_text": "3.86 years",
+      "numeric_values": [
+        3.86
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1017,
+      "sentence": "RESULTS: Of the 699 randomly assigned participants (mean duration of diagnosed type 2 diabetes, 7.8 months), 319 (45.6%) reached the primary outcome over an average follow-up of 3.86 years.",
+      "context_window": "%) reached the primary outcome over an average follow-up of 3.86 years. Rates of failure were 51.7% (120 of 232 participants), 38.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-pct-1051",
+      "claim_type": "percentage",
+      "raw_text": "51.7%",
+      "numeric_values": [
+        51.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1051,
+      "sentence": "Rates of failure were 51.7% (120 of 232 participants), 38.6% (90 of 233), and 46.6% (109 of 234) for metformin alone, metformin plus rosiglitazone, and metformin plus lifestyle intervention, respectively.",
+      "context_window": "r an average follow-up of 3.86 years. Rates of failure were 51.7% (120 of 232 participants), 38.6% (90 of 233), and 46.6% (10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-pct-1084",
+      "claim_type": "percentage",
+      "raw_text": "38.6%",
+      "numeric_values": [
+        38.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1084,
+      "sentence": "Rates of failure were 51.7% (120 of 232 participants), 38.6% (90 of 233), and 46.6% (109 of 234) for metformin alone, metformin plus rosiglitazone, and metformin plus lifestyle intervention, respectively.",
+      "context_window": "ars. Rates of failure were 51.7% (120 of 232 participants), 38.6% (90 of 233), and 46.6% (109 of 234) for metformin alone, me",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-pct-1107",
+      "claim_type": "percentage",
+      "raw_text": "46.6%",
+      "numeric_values": [
+        46.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1107,
+      "sentence": "Rates of failure were 51.7% (120 of 232 participants), 38.6% (90 of 233), and 46.6% (109 of 234) for metformin alone, metformin plus rosiglitazone, and metformin plus lifestyle intervention, respectively.",
+      "context_window": "ere 51.7% (120 of 232 participants), 38.6% (90 of 233), and 46.6% (109 of 234) for metformin alone, metformin plus rosiglitaz",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-p-1296",
+      "claim_type": "p_value",
+      "raw_text": "P=0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1296,
+      "sentence": "Metformin plus rosiglitazone was superior to metformin alone (P=0.006); metformin plus lifestyle intervention was intermediate but not significantly different from metformin alone or metformin plus rosiglitazone.",
+      "context_window": "tformin plus rosiglitazone was superior to metformin alone (P=0.006); metformin plus lifestyle intervention was intermediate bu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1056_nejmoa1109333_a_clinical_trial_to_maintain_glycemic_control_in_youth_with-pct-1728",
+      "claim_type": "percentage",
+      "raw_text": "19.2%",
+      "numeric_values": [
+        19.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1728,
+      "sentence": "Serious adverse events were reported in 19.2% of participants.",
+      "context_window": "effective in girls. Serious adverse events were reported in 19.2% of participants. CONCLUSIONS: Monotherapy with metformin wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

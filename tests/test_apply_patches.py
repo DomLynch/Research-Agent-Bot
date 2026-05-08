@@ -212,6 +212,25 @@ def test_citation_patch_with_known_receipt_applies() -> None:
     assert results[0].decision == "applied"
 
 
+def test_repeated_safe_citation_simplification_replaces_all() -> None:
+    p = {
+        "id": "P-cite-repeat", "patch_type": "citation", "severity": "P1",
+        "location": "Results",
+        "before": "(Walton 2019 2019)", "after": "(Walton 2019)",
+        "reason": "duplicate citation year",
+    }
+    paper = (
+        "## Results\n\n"
+        "First result (Walton 2019 2019). "
+        "Second result (Walton 2019 2019).\n"
+    )
+    new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert "(Walton 2019 2019)" not in new_md
+    assert new_md.count("(Walton 2019)") == 2
+    assert results[0].decision == "applied"
+    assert "replace-all" in results[0].reason_for_decision
+
+
 def test_citation_patch_with_unknown_receipt_is_flagged() -> None:
     """When the new citation doesn't trace to manifest receipts, the
     citation verifier fails → flag-only. Grok's proposer rationale is

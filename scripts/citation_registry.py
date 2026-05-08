@@ -147,6 +147,21 @@ def _extract_year_from_id(receipt_id: str) -> int | None:
     return candidates[-1]
 
 
+def _author_year_citation_from_id(receipt_id: str, source_year: int | None) -> str | None:
+    if _PMCID_RE.match(receipt_id) or receipt_id.startswith(("DOI_", "HIT_", "PMID")):
+        return None
+    parts = receipt_id.split("_")
+    has_author_year = any(
+        i > 0 and (m := _YEAR_RE.match(tok))
+        and _is_plausible_year(int(m.group(1)))
+        for i, tok in enumerate(parts)
+    )
+    if not has_author_year:
+        return None
+    candidate = _body_citation_for(receipt_id, source_year=source_year)
+    return None if validate_body_citation(candidate) else candidate
+
+
 # Phrases the body_citation MUST NOT match. Anything matching these
 # patterns means the body prose still contains an internal handle.
 # Includes BARE-handle shapes (Author_YYYY without trailing keyword,
@@ -198,6 +213,7 @@ def build_registry(
     # Track (surname, year) collisions across the whole registry so
     # we can apply a/b/c disambiguator suffixes deterministically.
     body_citation_counts: dict[str, int] = {}
+    canonical_by_source: dict[tuple[str, str], str] = {}
     for idx, r in enumerate(receipts, start=1):
         receipt_id = getattr(r, "receipt_id", "") or ""
         if not receipt_id.strip():
@@ -208,12 +224,11 @@ def build_registry(
         # Prefer metadata-derived Author-Year for PMC papers; fall
         # back to receipt_id-derived form (legacy + Walton-style).
         meta = paper_meta_by_id.get(receipt_id, {})
+        source_year = getattr(r, "source_year", None)
         body_citation = (
-            _body_citation_from_metadata(meta)
-            or _body_citation_for(
-                receipt_id,
-                source_year=getattr(r, "source_year", None),
-            )
+            _author_year_citation_from_id(receipt_id, source_year)
+            or _body_citation_from_metadata(meta)
+            or _body_citation_for(receipt_id, source_year=source_year)
         )
         leaks = validate_body_citation(body_citation)
         if leaks:
@@ -221,13 +236,19 @@ def build_registry(
                 f"Generated body_citation for {receipt_id!r} matches "
                 f"blocked pattern(s) {leaks}: {body_citation!r}"
             )
-        # Disambiguate collisions: Smith 2024 → Smith 2024a, Smith 2024b
-        body_citation_counts[body_citation] = (
-            body_citation_counts.get(body_citation, 0) + 1
-        )
-        if body_citation_counts[body_citation] > 1:
-            suffix = chr(ord("a") + body_citation_counts[body_citation] - 1)
-            body_citation = f"{body_citation}{suffix}"
+        source_key = _source_key(r)
+        if source_key and source_key in canonical_by_source:
+            body_citation = canonical_by_source[source_key]
+        else:
+            # Disambiguate collisions: Smith 2024 → Smith 2024a, Smith 2024b
+            body_citation_counts[body_citation] = (
+                body_citation_counts.get(body_citation, 0) + 1
+            )
+            if body_citation_counts[body_citation] > 1:
+                suffix = chr(ord("a") + body_citation_counts[body_citation] - 1)
+                body_citation = f"{body_citation}{suffix}"
+            if source_key:
+                canonical_by_source[source_key] = body_citation
         reference_id = f"R{idx:02d}"
         entry = CitationEntry(
             receipt_id=receipt_id,
@@ -242,6 +263,14 @@ def build_registry(
         )
         registry[receipt_id] = entry
     return registry
+
+
+def _source_key(receipt) -> tuple[str, str] | None:
+    for field in ("source_doi", "source_pmid", "source_pmcid"):
+        value = str(getattr(receipt, field, "") or "").strip().lower()
+        if value:
+            return field, value
+    return None
 
 
 def _body_citation_from_metadata(meta: dict) -> str | None:

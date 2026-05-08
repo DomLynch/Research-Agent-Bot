@@ -1,0 +1,66 @@
+{
+  "paper_id": "DOI_10_12688_f1000research_130973_1_is_metformin_the_only_culprit_for_cognitive_impairment_in_di",
+  "doi": "10.12688/f1000research.130973.1",
+  "extracted_at": "2026-05-08T04:46:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_12688_f1000research_130973_1_is_metformin_the_only_culprit_for_cognitive_impairment_in_di-u-859",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 859,
+      "sentence": "Cognitive test MoCA was administered and a score less than 26 was considered abnormal. </ns5:p> <ns5:p> <ns5:bold>Results:</ns5:bold> In this study, the participants on metformin had a statistically significant correlation with age > 65 years, duration of diabetes (>5 years), metformin dose (1 gm and more) and presence of diabetes complications.",
+      "context_window": "rmin had a statistically significant correlation with age > 65 years, duration of diabetes (>5 years), metformin dose (1 gm and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_12688_f1000research_130973_1_is_metformin_the_only_culprit_for_cognitive_impairment_in_di-u-892",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 892,
+      "sentence": "Cognitive test MoCA was administered and a score less than 26 was considered abnormal. </ns5:p> <ns5:p> <ns5:bold>Results:</ns5:bold> In this study, the participants on metformin had a statistically significant correlation with age > 65 years, duration of diabetes (>5 years), metformin dose (1 gm and more) and presence of diabetes complications.",
+      "context_window": "ant correlation with age > 65 years, duration of diabetes (>5 years), metformin dose (1 gm and more) and presence of diabetes c",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_12688_f1000research_130973_1_is_metformin_the_only_culprit_for_cognitive_impairment_in_di-pct-1351",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1351,
+      "sentence": "Ordinal regressions showed significant correlation between abnormal MoCA scores and older age, longer duration of DM, and presence of one of the DM complications. </ns5:p> <ns5:p> <ns5:bold>Conclusions:</ns5:bold> Amongst patients receiving medical therapy for control of type 2 diabetes, participants using metformin showed a very high prevalence rate of abnormal MoCA scores (85%).",
+      "context_window": "showed a very high prevalence rate of abnormal MoCA scores (85%). Increased duration of metformin intake leads to a decline",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

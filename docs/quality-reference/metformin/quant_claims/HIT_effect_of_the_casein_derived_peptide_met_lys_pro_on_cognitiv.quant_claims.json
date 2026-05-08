@@ -1,0 +1,103 @@
+{
+  "paper_id": "HIT_effect_of_the_casein_derived_peptide_met_lys_pro_on_cognitiv",
+  "doi": "",
+  "extracted_at": "2026-05-08T04:47:01+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 2,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_the_casein_derived_peptide_met_lys_pro_on_cognitiv-n-1463",
+      "claim_type": "sample_size",
+      "raw_text": "n = 134",
+      "numeric_values": [
+        134.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1463,
+      "sentence": "Participants were randomly allocated to the MKP (n = 134) or placebo (n = 134) group.",
+      "context_window": "led trial. Participants were randomly allocated to the MKP (n = 134) or placebo (n = 134) group. The MKP group received four ta",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_the_casein_derived_peptide_met_lys_pro_on_cognitiv-n-1484",
+      "claim_type": "sample_size",
+      "raw_text": "n = 134",
+      "numeric_values": [
+        134.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1484,
+      "sentence": "Participants were randomly allocated to the MKP (n = 134) or placebo (n = 134) group.",
+      "context_window": "ts were randomly allocated to the MKP (n = 134) or placebo (n = 134) group. The MKP group received four tablets daily, each con",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_the_casein_derived_peptide_met_lys_pro_on_cognitiv-u-1657",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1657,
+      "sentence": "The MKP group received four tablets daily, each containing 50 \u03bcg MKP, while the placebo group received four dextrin tablets containing no detectable MKP for 24 weeks.",
+      "context_window": "eived four dextrin tablets containing no detectable MKP for 24 weeks. Scores on the Japanese version of the cognitive subscale o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_the_casein_derived_peptide_met_lys_pro_on_cognitiv-u-2186",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2186,
+      "sentence": "Orientation, as measured by the respective ADAS-cog subscale, was significantly improved compared to placebo at 24 weeks post-MKP administration (P = 0.022).",
+      "context_window": "subscale, was significantly improved compared to placebo at 24 weeks post-MKP administration (P = 0.022). No serious adverse eve",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_the_casein_derived_peptide_met_lys_pro_on_cognitiv-p-2220",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2220,
+      "sentence": "Orientation, as measured by the respective ADAS-cog subscale, was significantly improved compared to placebo at 24 weeks post-MKP administration (P = 0.022).",
+      "context_window": "ed compared to placebo at 24 weeks post-MKP administration (P = 0.022). No serious adverse events due to MKP intake were observed",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

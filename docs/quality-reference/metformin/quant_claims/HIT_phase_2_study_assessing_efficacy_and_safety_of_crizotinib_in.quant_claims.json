@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_phase_2_study_assessing_efficacy_and_safety_of_crizotinib_in",
+  "doi": "",
+  "extracted_at": "2026-05-08T04:46:59+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_phase_2_study_assessing_efficacy_and_safety_of_crizotinib_in-pct-575",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 575,
+      "sentence": "In the situation where expected accrual allows for a sufficient number of patients to be accrued, the alpha and beta errors will be fixed at 10%.",
+      "context_window": "s to be accrued, the alpha and beta errors will be fixed at 10%. However, in very rare diseases, such as inflammatory myofi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "HIT_phase_2_study_assessing_efficacy_and_safety_of_crizotinib_in-pct-871",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 871,
+      "sentence": "However, in very rare diseases, such as inflammatory myofibroblastic tumor (IMT), neuroblastoma, glioblastoma, and rhabdomyosarcoma (RMS), it is anticipated that the target number may not be achievable in a reasonable timeframe; for these cohorts, the alpha and beta errors will be fixed at 15%.",
+      "context_window": "r these cohorts, the alpha and beta errors will be fixed at 15%. Consequently three different statistical designs will be a",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

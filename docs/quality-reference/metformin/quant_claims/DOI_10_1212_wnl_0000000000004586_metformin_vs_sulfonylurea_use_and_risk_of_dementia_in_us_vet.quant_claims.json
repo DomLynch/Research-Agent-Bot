@@ -1,0 +1,343 @@
+{
+  "paper_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet",
+  "doi": "10.1212/wnl.0000000000004586",
+  "extracted_at": "2026-05-08T04:46:58+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 9,
+    "percentage": 3,
+    "confidence_interval": 6
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-u-174",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 174,
+      "sentence": "METHODS: This was a retrospective cohort study of US veterans \u226565 years of age with type 2 diabetes who were new users of metformin or a sulfonylurea and had no dementia.",
+      "context_window": "HODS: This was a retrospective cohort study of US veterans \u226565 years of age with type 2 diabetes who were new users of metformin",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-u-304",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 304,
+      "sentence": "Follow-up began after 2 years of therapy.",
+      "context_window": "r a sulfonylurea and had no dementia. Follow-up began after 2 years of therapy. To account for confounding by indication, we de",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-u-662",
+      "claim_type": "unit_value",
+      "raw_text": "73.5 years",
+      "numeric_values": [
+        73.5
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 662,
+      "sentence": "Mean age was 73.5 years and mean HbA1c was 6.8%.",
+      "context_window": "tformin and 11,440 new users of sulfonylureas. Mean age was 73.5 years and mean HbA1c was 6.8%. Over an average follow-up of 5 yea",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-pct-692",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 692,
+      "sentence": "Mean age was 73.5 years and mean HbA1c was 6.8%.",
+      "context_window": "f sulfonylureas. Mean age was 73.5 years and mean HbA1c was 6.8%. Over an average follow-up of 5 years, 4,906 cases of demen",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-u-727",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 727,
+      "sentence": "Over an average follow-up of 5 years, 4,906 cases of dementia were diagnosed.",
+      "context_window": "years and mean HbA1c was 6.8%. Over an average follow-up of 5 years, 4,906 cases of dementia were diagnosed. Due to effect modi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-pct-958",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 958,
+      "sentence": "Crude hazard ratio [HR] for any dementia in metformin vs sulfonylurea users was 0.67 (95% confidence interval [CI] 0.61-0.73) and 0.78 (95% CI 0.72-0.83) for those <75 years of age and \u226575 years of age, respectively.",
+      "context_window": "r any dementia in metformin vs sulfonylurea users was 0.67 (95% confidence interval [CI] 0.61-0.73) and 0.78 (95% CI 0.72-0",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-ci-1008",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.72-0.83",
+      "numeric_values": [
+        0.72,
+        0.83
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1008,
+      "sentence": "Crude hazard ratio [HR] for any dementia in metformin vs sulfonylurea users was 0.67 (95% confidence interval [CI] 0.61-0.73) and 0.78 (95% CI 0.72-0.83) for those <75 years of age and \u226575 years of age, respectively.",
+      "context_window": "was 0.67 (95% confidence interval [CI] 0.61-0.73) and 0.78 (95% CI 0.72-0.83) for those <75 years of age and \u226575 years of age, respectiv",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-u-1037",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1037,
+      "sentence": "Crude hazard ratio [HR] for any dementia in metformin vs sulfonylurea users was 0.67 (95% confidence interval [CI] 0.61-0.73) and 0.78 (95% CI 0.72-0.83) for those <75 years of age and \u226575 years of age, respectively.",
+      "context_window": "rval [CI] 0.61-0.73) and 0.78 (95% CI 0.72-0.83) for those <75 years of age and \u226575 years of age, respectively. After PS IPTW ad",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-u-1058",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1058,
+      "sentence": "Crude hazard ratio [HR] for any dementia in metformin vs sulfonylurea users was 0.67 (95% confidence interval [CI] 0.61-0.73) and 0.78 (95% CI 0.72-0.83) for those <75 years of age and \u226575 years of age, respectively.",
+      "context_window": "and 0.78 (95% CI 0.72-0.83) for those <75 years of age and \u226575 years of age, respectively. After PS IPTW adjustment, results rem",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-u-1157",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1157,
+      "sentence": "After PS IPTW adjustment, results remained significant in veterans <75 years of age (HR 0.89; 95% CI 0.79-0.99), but not for those \u226575 years of age (HR 0.96; 95% CI 0.87-1.05).",
+      "context_window": "IPTW adjustment, results remained significant in veterans <75 years of age (HR 0.89; 95% CI 0.79-0.99), but not for those \u226575 y",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-ci-1183",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.79-0.99",
+      "numeric_values": [
+        0.79,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1183,
+      "sentence": "After PS IPTW adjustment, results remained significant in veterans <75 years of age (HR 0.89; 95% CI 0.79-0.99), but not for those \u226575 years of age (HR 0.96; 95% CI 0.87-1.05).",
+      "context_window": "remained significant in veterans <75 years of age (HR 0.89; 95% CI 0.79-0.99), but not for those \u226575 years of age (HR 0.96; 95% CI 0.87-",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-u-1221",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1221,
+      "sentence": "After PS IPTW adjustment, results remained significant in veterans <75 years of age (HR 0.89; 95% CI 0.79-0.99), but not for those \u226575 years of age (HR 0.96; 95% CI 0.87-1.05).",
+      "context_window": "ears of age (HR 0.89; 95% CI 0.79-0.99), but not for those \u226575 years of age (HR 0.96; 95% CI 0.87-1.05). A lower risk of dementi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-ci-1247",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.87-1.05",
+      "numeric_values": [
+        0.87,
+        1.05
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1247,
+      "sentence": "After PS IPTW adjustment, results remained significant in veterans <75 years of age (HR 0.89; 95% CI 0.79-0.99), but not for those \u226575 years of age (HR 0.96; 95% CI 0.87-1.05).",
+      "context_window": "CI 0.79-0.99), but not for those \u226575 years of age (HR 0.96; 95% CI 0.87-1.05). A lower risk of dementia was also seen in the subset of y",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-pct-1361",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1361,
+      "sentence": "A lower risk of dementia was also seen in the subset of younger veterans who had HbA1C values \u22657% (HR 0.76; 95% CI 0.63-0.91), had good renal function (HR 0.86; 95% CI 0.76-0.97), and were white (HR 0.87; 95% CI 0.77-0.99).",
+      "context_window": "een in the subset of younger veterans who had HbA1C values \u22657% (HR 0.76; 95% CI 0.63-0.91), had good renal function (HR 0.",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-ci-1374",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.63-0.91",
+      "numeric_values": [
+        0.63,
+        0.91
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1374,
+      "sentence": "A lower risk of dementia was also seen in the subset of younger veterans who had HbA1C values \u22657% (HR 0.76; 95% CI 0.63-0.91), had good renal function (HR 0.86; 95% CI 0.76-0.97), and were white (HR 0.87; 95% CI 0.77-0.99).",
+      "context_window": "bset of younger veterans who had HbA1C values \u22657% (HR 0.76; 95% CI 0.63-0.91), had good renal function (HR 0.86; 95% CI 0.76-0.97), and",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-ci-1427",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.76-0.97",
+      "numeric_values": [
+        0.76,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1427,
+      "sentence": "A lower risk of dementia was also seen in the subset of younger veterans who had HbA1C values \u22657% (HR 0.76; 95% CI 0.63-0.91), had good renal function (HR 0.86; 95% CI 0.76-0.97), and were white (HR 0.87; 95% CI 0.77-0.99).",
+      "context_window": "0.76; 95% CI 0.63-0.91), had good renal function (HR 0.86; 95% CI 0.76-0.97), and were white (HR 0.87; 95% CI 0.77-0.99). CONCLUSIONS:",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-ci-1471",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.77-0.99",
+      "numeric_values": [
+        0.77,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1471,
+      "sentence": "A lower risk of dementia was also seen in the subset of younger veterans who had HbA1C values \u22657% (HR 0.76; 95% CI 0.63-0.91), had good renal function (HR 0.86; 95% CI 0.76-0.97), and were white (HR 0.87; 95% CI 0.77-0.99).",
+      "context_window": "ction (HR 0.86; 95% CI 0.76-0.97), and were white (HR 0.87; 95% CI 0.77-0.99). CONCLUSIONS: After accounting for confounding by indicati",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1212_wnl_0000000000004586_metformin_vs_sulfonylurea_use_and_risk_of_dementia_in_us_vet-u-1652",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1652,
+      "sentence": "CONCLUSIONS: After accounting for confounding by indication, metformin was associated with a lower risk of subsequent dementia than sulfonylurea use in veterans <75 years of age.",
+      "context_window": "k of subsequent dementia than sulfonylurea use in veterans <75 years of age. Further work is needed to identify which patients m",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

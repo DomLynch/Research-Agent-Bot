@@ -220,6 +220,23 @@ def test_claim_to_row_keeps_locally_bound_multi_endpoint_p_value():
     assert row.endpoint == "HbA1c"
 
 
+def test_claim_to_row_collapses_newlines_inside_table_cells():
+    row = _claim_to_row(
+        {
+            "claim_type": "mean_sd",
+            "raw_text": "15.4\n±1.2",
+            "numeric_values": [15.4, 1.2],
+            "endpoint": "insulin sensitivity",
+            "claim_role": "effect",
+            "binding_confidence": "high",
+        },
+        paper_id="x",
+        citation_token="Kim 2020",
+    )
+    assert row is not None
+    assert row.value == "15.4 ±1.2"
+
+
 def test_claim_to_row_drops_dose_unit_bound_to_outcome_endpoint():
     row = _claim_to_row(
         {

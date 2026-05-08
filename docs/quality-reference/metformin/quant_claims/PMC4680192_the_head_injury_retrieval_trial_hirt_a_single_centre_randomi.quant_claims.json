@@ -1,0 +1,920 @@
+{
+  "paper_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi",
+  "doi": "10.1136/emermed-2014-204390",
+  "extracted_at": "2026-05-08T04:47:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "confidence_interval": 6,
+    "p_value": 12,
+    "percentage": 20,
+    "unit_value": 12
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-ci-976",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.74 to 1.66",
+      "numeric_values": [
+        0.74,
+        1.66
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 976,
+      "sentence": "Differences in the 6-month GOS scores were not significant on intention-to-treat analysis (OR 1.11, 95% CI 0.74 to 1.66, p=0.62) nor was the 30-day mortality (OR 0.91, 95% CI 0.60 to 1.38, p=0.66).",
+      "context_window": "re not significant on intention-to-treat analysis (OR 1.11, 95% CI 0.74 to 1.66, p=0.62) nor was the 30-day mortality (OR 0.91, 95% CI 0.60",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-997",
+      "claim_type": "p_value",
+      "raw_text": "p=0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 997,
+      "sentence": "Differences in the 6-month GOS scores were not significant on intention-to-treat analysis (OR 1.11, 95% CI 0.74 to 1.66, p=0.62) nor was the 30-day mortality (OR 0.91, 95% CI 0.60 to 1.38, p=0.66).",
+      "context_window": "intention-to-treat analysis (OR 1.11, 95% CI 0.74 to 1.66, p=0.62) nor was the 30-day mortality (OR 0.91, 95% CI 0.60 to 1.38",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-ci-1044",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.60 to 1.38",
+      "numeric_values": [
+        0.6,
+        1.38
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1044,
+      "sentence": "Differences in the 6-month GOS scores were not significant on intention-to-treat analysis (OR 1.11, 95% CI 0.74 to 1.66, p=0.62) nor was the 30-day mortality (OR 0.91, 95% CI 0.60 to 1.38, p=0.66).",
+      "context_window": ".74 to 1.66, p=0.62) nor was the 30-day mortality (OR 0.91, 95% CI 0.60 to 1.38, p=0.66). As-treated analysis showed a 16% reduction in 30-",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-1065",
+      "claim_type": "p_value",
+      "raw_text": "p=0.66",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1065,
+      "sentence": "Differences in the 6-month GOS scores were not significant on intention-to-treat analysis (OR 1.11, 95% CI 0.74 to 1.66, p=0.62) nor was the 30-day mortality (OR 0.91, 95% CI 0.60 to 1.38, p=0.66).",
+      "context_window": "nor was the 30-day mortality (OR 0.91, 95% CI 0.60 to 1.38, p=0.66). As-treated analysis showed a 16% reduction in 30-day mort",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-1103",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1103,
+      "sentence": "As-treated analysis showed a 16% reduction in 30-day mortality in those receiving additional physician care; 60/195 (29%) versus 81/180 (45%), p<0.01, Number needed to treat =6.",
+      "context_window": "95% CI 0.60 to 1.38, p=0.66). As-treated analysis showed a 16% reduction in 30-day mortality in those receiving additional",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-1191",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1191,
+      "sentence": "As-treated analysis showed a 16% reduction in 30-day mortality in those receiving additional physician care; 60/195 (29%) versus 81/180 (45%), p<0.01, Number needed to treat =6.",
+      "context_window": "ality in those receiving additional physician care; 60/195 (29%) versus 81/180 (45%), p<0.01, Number needed to treat =6. 33",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-1211",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1211,
+      "sentence": "As-treated analysis showed a 16% reduction in 30-day mortality in those receiving additional physician care; 60/195 (29%) versus 81/180 (45%), p<0.01, Number needed to treat =6.",
+      "context_window": "ving additional physician care; 60/195 (29%) versus 81/180 (45%), p<0.01, Number needed to treat =6. 338 patients met the m",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-1217",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1217,
+      "sentence": "As-treated analysis showed a 16% reduction in 30-day mortality in those receiving additional physician care; 60/195 (29%) versus 81/180 (45%), p<0.01, Number needed to treat =6.",
+      "context_window": "dditional physician care; 60/195 (29%) versus 81/180 (45%), p<0.01, Number needed to treat =6. 338 patients met the modified d",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-ci-1438",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.73 to 1.75",
+      "numeric_values": [
+        0.73,
+        1.75
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1438,
+      "sentence": "The 6-month GOS scores were not significantly different on intention-to-treat analysis (OR 1.14, 95% CI 0.73 to 1.75, p=0.56) nor was the 30-day mortality (OR 1.05, 95% CI 0.66 to 1.66, p=0.84).",
+      "context_window": "ficantly different on intention-to-treat analysis (OR 1.14, 95% CI 0.73 to 1.75, p=0.56) nor was the 30-day mortality (OR 1.05, 95% CI 0.66",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-1459",
+      "claim_type": "p_value",
+      "raw_text": "p=0.56",
+      "numeric_values": [
+        0.56
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1459,
+      "sentence": "The 6-month GOS scores were not significantly different on intention-to-treat analysis (OR 1.14, 95% CI 0.73 to 1.75, p=0.56) nor was the 30-day mortality (OR 1.05, 95% CI 0.66 to 1.66, p=0.84).",
+      "context_window": "intention-to-treat analysis (OR 1.14, 95% CI 0.73 to 1.75, p=0.56) nor was the 30-day mortality (OR 1.05, 95% CI 0.66 to 1.66",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-ci-1506",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.66 to 1.66",
+      "numeric_values": [
+        0.66,
+        1.66
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1506,
+      "sentence": "The 6-month GOS scores were not significantly different on intention-to-treat analysis (OR 1.14, 95% CI 0.73 to 1.75, p=0.56) nor was the 30-day mortality (OR 1.05, 95% CI 0.66 to 1.66, p=0.84).",
+      "context_window": ".73 to 1.75, p=0.56) nor was the 30-day mortality (OR 1.05, 95% CI 0.66 to 1.66, p=0.84). As-treated analyses were also not significantly d",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-1527",
+      "claim_type": "p_value",
+      "raw_text": "p=0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1527,
+      "sentence": "The 6-month GOS scores were not significantly different on intention-to-treat analysis (OR 1.14, 95% CI 0.73 to 1.75, p=0.56) nor was the 30-day mortality (OR 1.05, 95% CI 0.66 to 1.66, p=0.84).",
+      "context_window": "nor was the 30-day mortality (OR 1.05, 95% CI 0.66 to 1.66, p=0.84). As-treated analyses were also not significantly different",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-431",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 431,
+      "sentence": "Appropriate cases were blunt trauma in adults (>15 years) who were reported to be unconscious, having an altered level of consciousness, or a high-energy mechanism such as fall of more than 5 m or a pedestrian struck by a truck.",
+      "context_window": "iate cases. Appropriate cases were blunt trauma in adults (>15 years) who were reported to be unconscious, having an altered lev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-2048",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2048,
+      "sentence": "The outcome assessor who evaluated patients at follow-up 6 months post injury was blinded to treatment group and had no other role in the conduct of the trial.",
+      "context_window": "d. The outcome assessor who evaluated patients at follow-up 6 months post injury was blinded to treatment group and had no other",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-2497",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2497,
+      "sentence": "The intervention team consisted of physicians with specialist certification in anaesthesia, emergency or intensive care medicine with more than 12 months of prehospital experience, plus a paramedic from the ambulance service.",
+      "context_window": "thesia, emergency or intensive care medicine with more than 12 months of prehospital experience, plus a paramedic from the ambula",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-4082",
+      "claim_type": "percentage",
+      "raw_text": "7.5%",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4082,
+      "sentence": "Interventions additional to standard care by the physician team included: anaesthesia with neuromuscular blockade and induction agents such as thiopentone or ketamine; surgical airways, needle cricothyroidotomy; tube or open thoracostomy; administration of 7.5% saline or 20% mannitol and administration of packed red blood cells.",
+      "context_window": "othyroidotomy; tube or open thoracostomy; administration of 7.5% saline or 20% mannitol and administration of packed red blo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-4097",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4097,
+      "sentence": "Interventions additional to standard care by the physician team included: anaesthesia with neuromuscular blockade and induction agents such as thiopentone or ketamine; surgical airways, needle cricothyroidotomy; tube or open thoracostomy; administration of 7.5% saline or 20% mannitol and administration of packed red blood cells.",
+      "context_window": "tube or open thoracostomy; administration of 7.5% saline or 20% mannitol and administration of packed red blood cells. Intu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-4913",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4913,
+      "sentence": "Surviving, consenting patients who met the trial's follow-up criteria were interviewed by telephone 6 months after their injury.",
+      "context_window": "he trial's follow-up criteria were interviewed by telephone 6 months after their injury. Criteria for interview were first GCS\u22641",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-5601",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5601,
+      "sentence": "The primary endpoint was the score on the Glasgow Outcome Scale (GOS), 4 6 months after the injury, categorised as death, persistent vegetative state or severe disability versus moderate disability or good recovery.",
+      "context_window": "ndpoint was the score on the Glasgow Outcome Scale (GOS), 4 6 months after the injury, categorised as death, persistent vegetati",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-6144",
+      "claim_type": "unit_value",
+      "raw_text": "90 mm",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 6144,
+      "sentence": "7 Secondary outcomes included duration of stay in hospital and the intensive care unit, 30-day mortality and rates of hypotension (defined as systolic BP<90 mm Hg) and hypoxia (defined as SpO 2 <92%) at first contact compared with hospital arrival.",
+      "context_window": "mortality and rates of hypotension (defined as systolic BP<90 mm Hg) and hypoxia (defined as SpO 2 <92%) at first contact co",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6185",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6185,
+      "sentence": "7 Secondary outcomes included duration of stay in hospital and the intensive care unit, 30-day mortality and rates of hypotension (defined as systolic BP<90 mm Hg) and hypoxia (defined as SpO 2 <92%) at first contact compared with hospital arrival.",
+      "context_window": "ned as systolic BP<90 mm Hg) and hypoxia (defined as SpO 2 <92%) at first contact compared with hospital arrival. A sample",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6371",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6371,
+      "sentence": "A sample size of 510 patients (255 per group) who met criteria for primary outcome analysis (GCS<9 on first contact) would provide 80% power to detect a relative increase of at least 23% in the categories, moderate disability/good recovery of the GOS score, assuming a 5% level of significance and a two-tailed comparison.",
+      "context_window": "ary outcome analysis (GCS<9 on first contact) would provide 80% power to detect a relative increase of at least 23% in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6423",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6423,
+      "sentence": "A sample size of 510 patients (255 per group) who met criteria for primary outcome analysis (GCS<9 on first contact) would provide 80% power to detect a relative increase of at least 23% in the categories, moderate disability/good recovery of the GOS score, assuming a 5% level of significance and a two-tailed comparison.",
+      "context_window": "provide 80% power to detect a relative increase of at least 23% in the categories, moderate disability/good recovery of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6509",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6509,
+      "sentence": "A sample size of 510 patients (255 per group) who met criteria for primary outcome analysis (GCS<9 on first contact) would provide 80% power to detect a relative increase of at least 23% in the categories, moderate disability/good recovery of the GOS score, assuming a 5% level of significance and a two-tailed comparison.",
+      "context_window": "erate disability/good recovery of the GOS score, assuming a 5% level of significance and a two-tailed comparison. This sam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6638",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6638,
+      "sentence": "This sample size was based on an ordinal scale, 8 assuming a proportion of 52% in the death, persistent vegetative state or severe disability category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate disability and good recovery categories, respectively.",
+      "context_window": "e was based on an ordinal scale, 8 assuming a proportion of 52% in the death, persistent vegetative state or severe disabil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6715",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6715,
+      "sentence": "This sample size was based on an ordinal scale, 8 assuming a proportion of 52% in the death, persistent vegetative state or severe disability category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate disability and good recovery categories, respectively.",
+      "context_window": "persistent vegetative state or severe disability category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6720",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6720,
+      "sentence": "This sample size was based on an ordinal scale, 8 assuming a proportion of 52% in the death, persistent vegetative state or severe disability category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate disability and good recovery categories, respectively.",
+      "context_window": "istent vegetative state or severe disability category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate disa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6727",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6727,
+      "sentence": "This sample size was based on an ordinal scale, 8 assuming a proportion of 52% in the death, persistent vegetative state or severe disability category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate disability and good recovery categories, respectively.",
+      "context_window": "vegetative state or severe disability category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate disability a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6750",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6750,
+      "sentence": "This sample size was based on an ordinal scale, 8 assuming a proportion of 52% in the death, persistent vegetative state or severe disability category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate disability and good recovery categories, respectively.",
+      "context_window": "ere disability category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate disability and good recovery catego",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6758",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6758,
+      "sentence": "This sample size was based on an ordinal scale, 8 assuming a proportion of 52% in the death, persistent vegetative state or severe disability category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate disability and good recovery categories, respectively.",
+      "context_window": "bility category (31%, 2% and 19%, respectively) and 30% and 18% in the moderate disability and good recovery categories, re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-6835",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6835,
+      "sentence": "A 5% rate of non-compliance was assumed as this was the historical rate of physician intervention prior to commencement of the trial.",
+      "context_window": "te disability and good recovery categories, respectively. A 5% rate of non-compliance was assumed as this was the historic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-2837",
+      "claim_type": "p_value",
+      "raw_text": "p=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2837,
+      "sentence": "For both the modified and original criteria, the median time spent at scene was 6 min longer for patients who were allocated to physician intervention (p=0.02 and p<0.01, respectively), although the total prehospital time was significantly longer only in the original definition group.",
+      "context_window": "for patients who were allocated to physician intervention (p=0.02 and p<0.01, respectively), although the total prehospital t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-2848",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2848,
+      "sentence": "For both the modified and original criteria, the median time spent at scene was 6 min longer for patients who were allocated to physician intervention (p=0.02 and p<0.01, respectively), although the total prehospital time was significantly longer only in the original definition group.",
+      "context_window": "ts who were allocated to physician intervention (p=0.02 and p<0.01, respectively), although the total prehospital time was sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-3585",
+      "claim_type": "unit_value",
+      "raw_text": "90 mm",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 3585,
+      "sentence": "Hypotension, systolic BP <90 mm Hg; Hypoxia, SpO 2 <92%.\n\n*The Wilcoxon rank-sum test was used for continuous data and \u03c7 2 tests were used for categorical variables.\n\n\u2020Conditional binomial test.",
+      "context_window": "e given as n (%) or median (IQR). Hypotension, systolic BP <90 mm Hg; Hypoxia, SpO 2 <92%. *The Wilcoxon rank-sum test was u",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-3611",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3611,
+      "sentence": "Hypotension, systolic BP <90 mm Hg; Hypoxia, SpO 2 <92%.\n\n*The Wilcoxon rank-sum test was used for continuous data and \u03c7 2 tests were used for categorical variables.\n\n\u2020Conditional binomial test.",
+      "context_window": "(IQR). Hypotension, systolic BP <90 mm Hg; Hypoxia, SpO 2 <92%. *The Wilcoxon rank-sum test was used for continuous data",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-4119",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4119,
+      "sentence": "In the intention-to-treat analyses of patients who met the modified criteria, there was no statistically significant difference in the primary endpoint of the GOS score at 6 months post injury (OR 1.14; 95% CI 0.73 to 1.75, p=0.56; figure 3 ).",
+      "context_window": "cant difference in the primary endpoint of the GOS score at 6 months post injury (OR 1.14; 95% CI 0.73 to 1.75, p=0.56; figure 3",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-ci-4150",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.73 to 1.75",
+      "numeric_values": [
+        0.73,
+        1.75
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4150,
+      "sentence": "In the intention-to-treat analyses of patients who met the modified criteria, there was no statistically significant difference in the primary endpoint of the GOS score at 6 months post injury (OR 1.14; 95% CI 0.73 to 1.75, p=0.56; figure 3 ).",
+      "context_window": "endpoint of the GOS score at 6 months post injury (OR 1.14; 95% CI 0.73 to 1.75, p=0.56; figure 3 ). The results were similar when the anal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-4171",
+      "claim_type": "p_value",
+      "raw_text": "p=0.56",
+      "numeric_values": [
+        0.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4171,
+      "sentence": "In the intention-to-treat analyses of patients who met the modified criteria, there was no statistically significant difference in the primary endpoint of the GOS score at 6 months post injury (OR 1.14; 95% CI 0.73 to 1.75, p=0.56; figure 3 ).",
+      "context_window": "core at 6 months post injury (OR 1.14; 95% CI 0.73 to 1.75, p=0.56; figure 3 ). The results were similar when the analysis was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-4270",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4270,
+      "sentence": "The results were similar when the analysis was restricted to patients alive at 6 months.",
+      "context_window": "milar when the analysis was restricted to patients alive at 6 months. There was also no difference in the 30-day mortality rate",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-ci-4348",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.66 to 1.66",
+      "numeric_values": [
+        0.66,
+        1.66
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4348,
+      "sentence": "There was also no difference in the 30-day mortality rate (OR 1.05, 95% CI 0.66 to 1.66, p=0.84).",
+      "context_window": "s also no difference in the 30-day mortality rate (OR 1.05, 95% CI 0.66 to 1.66, p=0.84). There was no difference between the groups in the",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-4369",
+      "claim_type": "p_value",
+      "raw_text": "p=0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4369,
+      "sentence": "There was also no difference in the 30-day mortality rate (OR 1.05, 95% CI 0.66 to 1.66, p=0.84).",
+      "context_window": "in the 30-day mortality rate (OR 1.05, 95% CI 0.66 to 1.66, p=0.84). There was no difference between the groups in the total d",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-5513",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5513,
+      "sentence": "In the original definition group, there were more deaths at 30 days in non-compliant (p=0.003) and as-treated patients (p=0.005) who received standard care.",
+      "context_window": "In the original definition group, there were more deaths at 30 days in non-compliant (p=0.003) and as-treated patients (p=0.005",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-5539",
+      "claim_type": "p_value",
+      "raw_text": "p=0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5539,
+      "sentence": "In the original definition group, there were more deaths at 30 days in non-compliant (p=0.003) and as-treated patients (p=0.005) who received standard care.",
+      "context_window": "group, there were more deaths at 30 days in non-compliant (p=0.003) and as-treated patients (p=0.005) who received standard ca",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-5573",
+      "claim_type": "p_value",
+      "raw_text": "p=0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5573,
+      "sentence": "In the original definition group, there were more deaths at 30 days in non-compliant (p=0.003) and as-treated patients (p=0.005) who received standard care.",
+      "context_window": "30 days in non-compliant (p=0.003) and as-treated patients (p=0.005) who received standard care. Those receiving additional phy",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-5658",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5658,
+      "sentence": "Those receiving additional physician care had a 16% decrease in mortality representing one fatality prevented for every six patients treated.",
+      "context_window": "ndard care. Those receiving additional physician care had a 16% decrease in mortality representing one fatality prevented f",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-5791",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5791,
+      "sentence": "There were also more patient deaths at 30 days in the modified definition non-compliant group receiving standard care where additional physician care was associated with a 7% mortality decrease needing 14 patients to be treated to prevent one fatality (p=0.04).",
+      "context_window": "ix patients treated. There were also more patient deaths at 30 days in the modified definition non-compliant group receiving st",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-5924",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5924,
+      "sentence": "There were also more patient deaths at 30 days in the modified definition non-compliant group receiving standard care where additional physician care was associated with a 7% mortality decrease needing 14 patients to be treated to prevent one fatality (p=0.04).",
+      "context_window": "care where additional physician care was associated with a 7% mortality decrease needing 14 patients to be treated to pre",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-p-6005",
+      "claim_type": "p_value",
+      "raw_text": "p=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6005,
+      "sentence": "There were also more patient deaths at 30 days in the modified definition non-compliant group receiving standard care where additional physician care was associated with a 7% mortality decrease needing 14 patients to be treated to prevent one fatality (p=0.04).",
+      "context_window": "needing 14 patients to be treated to prevent one fatality (p=0.04). Sensitivity analyses for the primary outcome and mortali",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-u-1945",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1945,
+      "sentence": "Attempts were made to increase the rate by adopting Night Vision Goggle technology 3 years into the trial enabling 12 h of availability to recruit per day in both summer and winter.",
+      "context_window": "ncrease the rate by adopting Night Vision Goggle technology 3 years into the trial enabling 12 h of availability to recruit per",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4680192_the_head_injury_retrieval_trial_hirt_a_single_centre_randomi-pct-2973",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2973,
+      "sentence": "There was a 16% reduction in mortality in this group on as-treated analysis.",
+      "context_window": "regimens at the time of prehospital assessment. There was a 16% reduction in mortality in this group on as-treated analysis",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

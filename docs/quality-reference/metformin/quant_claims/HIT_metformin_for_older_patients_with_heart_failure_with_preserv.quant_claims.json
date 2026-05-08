@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_metformin_for_older_patients_with_heart_failure_with_preserv",
+  "doi": "",
+  "extracted_at": "2026-05-08T04:47:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_metformin_for_older_patients_with_heart_failure_with_preserv-u-95",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 95,
+      "sentence": "Met-PEF will be a randomized, double-blind, placebo-controlled trial to examine the effects of 20 weeks of 1500 mg/day of metformin on physical function, quality of life (QOL), microbiome diversity, leaky gut, and systemic inflammation in patients with 86 older patients with heart failure with preserved ejection fraction (HFpEF).",
+      "context_window": "e-blind, placebo-controlled trial to examine the effects of 20 weeks of 1500 mg/day of metformin on physical function, quality o",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_metformin_for_older_patients_with_heart_failure_with_preserv-u-107",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg/day",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 107,
+      "sentence": "Met-PEF will be a randomized, double-blind, placebo-controlled trial to examine the effects of 20 weeks of 1500 mg/day of metformin on physical function, quality of life (QOL), microbiome diversity, leaky gut, and systemic inflammation in patients with 86 older patients with heart failure with preserved ejection fraction (HFpEF).",
+      "context_window": "cebo-controlled trial to examine the effects of 20 weeks of 1500 mg/day of metformin on physical function, quality of life (QOL), m",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

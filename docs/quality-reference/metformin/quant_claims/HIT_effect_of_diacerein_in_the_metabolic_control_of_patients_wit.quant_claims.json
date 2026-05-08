@@ -1,0 +1,47 @@
+{
+  "paper_id": "HIT_effect_of_diacerein_in_the_metabolic_control_of_patients_wit",
+  "doi": "",
+  "extracted_at": "2026-05-08T04:47:00+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "HIT_effect_of_diacerein_in_the_metabolic_control_of_patients_wit-u-56",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 56,
+      "sentence": "Considering that, Diacerein is on the market for almost 20 years, being used continuously in elderly patients with osteoarthritis without present significant side effects, and considering the anti-hyperglycemic effect and the improvement in the insulin resistance observed in animal models of type 2 diabetes and in a previously study from Mexico.",
+      "context_window": "Considering that, Diacerein is on the market for almost 20 years, being used continuously in elderly patients with osteoarth",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "HIT_effect_of_diacerein_in_the_metabolic_control_of_patients_wit-u-664",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 664,
+      "sentence": "Administered for 12 weeks and the effect in the glycemic and metabolic control in patients with diabetes mellitus 2 and secondary failure to metformin treatment.",
+      "context_window": "ry cytokines such as interleukin 1 (IL-1). Administered for 12 weeks and the effect in the glycemic and metabolic control in pat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

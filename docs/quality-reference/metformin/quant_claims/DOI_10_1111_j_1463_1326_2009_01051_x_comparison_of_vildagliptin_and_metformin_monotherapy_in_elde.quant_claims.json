@@ -1,0 +1,446 @@
+{
+  "paper_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde",
+  "doi": "10.1111/j.1463-1326.2009.01051.x",
+  "extracted_at": "2026-05-08T04:46:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "sample_size": 2,
+    "percentage": 11,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-u-447",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 447,
+      "sentence": "METHODS: This was a double-blind, randomized, multicentre, active-controlled, parallel-group study of 24-week treatment with vildagliptin (100 mg daily, n=169) or metformin (titrated to 1500 mg daily, n=166) in drug-na\u00efve patients with type 2 diabetes aged>or=65 years (baseline HbA1c 7-9%).",
+      "context_window": "arallel-group study of 24-week treatment with vildagliptin (100 mg daily, n=169) or metformin (titrated to 1500 mg daily, n=16",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-n-461",
+      "claim_type": "sample_size",
+      "raw_text": "n=169",
+      "numeric_values": [
+        169.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 461,
+      "sentence": "METHODS: This was a double-blind, randomized, multicentre, active-controlled, parallel-group study of 24-week treatment with vildagliptin (100 mg daily, n=169) or metformin (titrated to 1500 mg daily, n=166) in drug-na\u00efve patients with type 2 diabetes aged>or=65 years (baseline HbA1c 7-9%).",
+      "context_window": "study of 24-week treatment with vildagliptin (100 mg daily, n=169) or metformin (titrated to 1500 mg daily, n=166) in drug-na",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-u-494",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 494,
+      "sentence": "METHODS: This was a double-blind, randomized, multicentre, active-controlled, parallel-group study of 24-week treatment with vildagliptin (100 mg daily, n=169) or metformin (titrated to 1500 mg daily, n=166) in drug-na\u00efve patients with type 2 diabetes aged>or=65 years (baseline HbA1c 7-9%).",
+      "context_window": "ildagliptin (100 mg daily, n=169) or metformin (titrated to 1500 mg daily, n=166) in drug-na\u00efve patients with type 2 diabetes a",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-n-509",
+      "claim_type": "sample_size",
+      "raw_text": "n=166",
+      "numeric_values": [
+        166.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 509,
+      "sentence": "METHODS: This was a double-blind, randomized, multicentre, active-controlled, parallel-group study of 24-week treatment with vildagliptin (100 mg daily, n=169) or metformin (titrated to 1500 mg daily, n=166) in drug-na\u00efve patients with type 2 diabetes aged>or=65 years (baseline HbA1c 7-9%).",
+      "context_window": "0 mg daily, n=169) or metformin (titrated to 1500 mg daily, n=166) in drug-na\u00efve patients with type 2 diabetes aged>or=65 yea",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-u-568",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 568,
+      "sentence": "METHODS: This was a double-blind, randomized, multicentre, active-controlled, parallel-group study of 24-week treatment with vildagliptin (100 mg daily, n=169) or metformin (titrated to 1500 mg daily, n=166) in drug-na\u00efve patients with type 2 diabetes aged>or=65 years (baseline HbA1c 7-9%).",
+      "context_window": "n=166) in drug-na\u00efve patients with type 2 diabetes aged>or=65 years (baseline HbA1c 7-9%). RESULTS: Participants had a mean age",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-595",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 595,
+      "sentence": "METHODS: This was a double-blind, randomized, multicentre, active-controlled, parallel-group study of 24-week treatment with vildagliptin (100 mg daily, n=169) or metformin (titrated to 1500 mg daily, n=166) in drug-na\u00efve patients with type 2 diabetes aged>or=65 years (baseline HbA1c 7-9%).",
+      "context_window": "nts with type 2 diabetes aged>or=65 years (baseline HbA1c 7-9%). RESULTS: Participants had a mean age of 71 years, known d",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-u-640",
+      "claim_type": "unit_value",
+      "raw_text": "71 years",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 640,
+      "sentence": "RESULTS: Participants had a mean age of 71 years, known duration of diabetes of 3 years and mean baseline HbA1c of 7.7%.",
+      "context_window": "seline HbA1c 7-9%). RESULTS: Participants had a mean age of 71 years, known duration of diabetes of 3 years and mean baseline Hb",
+      "claim_role": "duration",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-u-680",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 680,
+      "sentence": "RESULTS: Participants had a mean age of 71 years, known duration of diabetes of 3 years and mean baseline HbA1c of 7.7%.",
+      "context_window": "s had a mean age of 71 years, known duration of diabetes of 3 years and mean baseline HbA1c of 7.7%. At end-point, vildagliptin",
+      "claim_role": "duration",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-715",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 715,
+      "sentence": "RESULTS: Participants had a mean age of 71 years, known duration of diabetes of 3 years and mean baseline HbA1c of 7.7%.",
+      "context_window": "duration of diabetes of 3 years and mean baseline HbA1c of 7.7%. At end-point, vildagliptin was as effective as metformin,",
+      "claim_role": "duration",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-806",
+      "claim_type": "percentage",
+      "raw_text": "0.07%",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 806,
+      "sentence": "At end-point, vildagliptin was as effective as metformin, improving HbA1c by -0.64+/-0.07% and -0.75+/-0.07%, respectively, meeting the predefined statistical criterion for non-inferiority (upper limit of 95% confidence interval for between-treatment difference<or=0.3%).",
+      "context_window": "n was as effective as metformin, improving HbA1c by -0.64+/-0.07% and -0.75+/-0.07%, respectively, meeting the predefined sta",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-824",
+      "claim_type": "percentage",
+      "raw_text": "0.07%",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 824,
+      "sentence": "At end-point, vildagliptin was as effective as metformin, improving HbA1c by -0.64+/-0.07% and -0.75+/-0.07%, respectively, meeting the predefined statistical criterion for non-inferiority (upper limit of 95% confidence interval for between-treatment difference<or=0.3%).",
+      "context_window": "as metformin, improving HbA1c by -0.64+/-0.07% and -0.75+/-0.07%, respectively, meeting the predefined statistical criterion",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-926",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 926,
+      "sentence": "At end-point, vildagliptin was as effective as metformin, improving HbA1c by -0.64+/-0.07% and -0.75+/-0.07%, respectively, meeting the predefined statistical criterion for non-inferiority (upper limit of 95% confidence interval for between-treatment difference<or=0.3%).",
+      "context_window": "d statistical criterion for non-inferiority (upper limit of 95% confidence interval for between-treatment difference<or=0.3",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-986",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 986,
+      "sentence": "At end-point, vildagliptin was as effective as metformin, improving HbA1c by -0.64+/-0.07% and -0.75+/-0.07%, respectively, meeting the predefined statistical criterion for non-inferiority (upper limit of 95% confidence interval for between-treatment difference<or=0.3%).",
+      "context_window": "95% confidence interval for between-treatment difference<or=0.3%). Body weight changes were -0.45+/-0.20 kg in vildagliptin-",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-u-1026",
+      "claim_type": "unit_value",
+      "raw_text": "0.20 kg",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1026,
+      "sentence": "Body weight changes were -0.45+/-0.20 kg in vildagliptin-treated patients (p=0.02) and -1.25+/-0.19 kg in metformin-treated patients (p<0.001; p=0.004 vs. vildagliptin).",
+      "context_window": "tment difference<or=0.3%). Body weight changes were -0.45+/-0.20 kg in vildagliptin-treated patients (p=0.02) and -1.25+/-0.19",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-p-1068",
+      "claim_type": "p_value",
+      "raw_text": "p=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1068,
+      "sentence": "Body weight changes were -0.45+/-0.20 kg in vildagliptin-treated patients (p=0.02) and -1.25+/-0.19 kg in metformin-treated patients (p<0.001; p=0.004 vs. vildagliptin).",
+      "context_window": "nges were -0.45+/-0.20 kg in vildagliptin-treated patients (p=0.02) and -1.25+/-0.19 kg in metformin-treated patients (p<0.001",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-u-1088",
+      "claim_type": "unit_value",
+      "raw_text": "0.19 kg",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1088,
+      "sentence": "Body weight changes were -0.45+/-0.20 kg in vildagliptin-treated patients (p=0.02) and -1.25+/-0.19 kg in metformin-treated patients (p<0.001; p=0.004 vs. vildagliptin).",
+      "context_window": "20 kg in vildagliptin-treated patients (p=0.02) and -1.25+/-0.19 kg in metformin-treated patients (p<0.001; p=0.004 vs. vildagl",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-p-1127",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1127,
+      "sentence": "Body weight changes were -0.45+/-0.20 kg in vildagliptin-treated patients (p=0.02) and -1.25+/-0.19 kg in metformin-treated patients (p<0.001; p=0.004 vs. vildagliptin).",
+      "context_window": "(p=0.02) and -1.25+/-0.19 kg in metformin-treated patients (p<0.001; p=0.004 vs. vildagliptin). The proportion of patients expe",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-p-1136",
+      "claim_type": "p_value",
+      "raw_text": "p=0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1136,
+      "sentence": "Body weight changes were -0.45+/-0.20 kg in vildagliptin-treated patients (p=0.02) and -1.25+/-0.19 kg in metformin-treated patients (p<0.001; p=0.004 vs. vildagliptin).",
+      "context_window": "and -1.25+/-0.19 kg in metformin-treated patients (p<0.001; p=0.004 vs. vildagliptin). The proportion of patients experiencing",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-1238",
+      "claim_type": "percentage",
+      "raw_text": "50.3%",
+      "numeric_values": [
+        50.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1238,
+      "sentence": "50.3% in patients receiving vildagliptin and metformin respectively.",
+      "context_window": "of patients experiencing an adverse event (AE) was 44.3 vs. 50.3% in patients receiving vildagliptin and metformin respective",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-1382",
+      "claim_type": "percentage",
+      "raw_text": "24.8%",
+      "numeric_values": [
+        24.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1382,
+      "sentence": "Gastrointestinal (GI) AEs were significantly more frequent with metformin (24.8%) than with vildagliptin (15.0%, p=0.028), mainly driven by a 4.4-fold higher incidence of diarrhoea.",
+      "context_window": "l (GI) AEs were significantly more frequent with metformin (24.8%) than with vildagliptin (15.0%, p=0.028), mainly driven by",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-1413",
+      "claim_type": "percentage",
+      "raw_text": "15.0%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1413,
+      "sentence": "Gastrointestinal (GI) AEs were significantly more frequent with metformin (24.8%) than with vildagliptin (15.0%, p=0.028), mainly driven by a 4.4-fold higher incidence of diarrhoea.",
+      "context_window": "ore frequent with metformin (24.8%) than with vildagliptin (15.0%, p=0.028), mainly driven by a 4.4-fold higher incidence of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-p-1420",
+      "claim_type": "p_value",
+      "raw_text": "p=0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1420,
+      "sentence": "Gastrointestinal (GI) AEs were significantly more frequent with metformin (24.8%) than with vildagliptin (15.0%, p=0.028), mainly driven by a 4.4-fold higher incidence of diarrhoea.",
+      "context_window": "quent with metformin (24.8%) than with vildagliptin (15.0%, p=0.028), mainly driven by a 4.4-fold higher incidence of diarrhoea",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-1561",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1561,
+      "sentence": "A low incidence of hypoglycaemia was observed in both treatment groups (0% with vildagliptin and 1.2% with metformin).",
+      "context_window": "nce of hypoglycaemia was observed in both treatment groups (0% with vildagliptin and 1.2% with metformin). CONCLUSIONS: Vi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_1111_j_1463_1326_2009_01051_x_comparison_of_vildagliptin_and_metformin_monotherapy_in_elde-pct-1586",
+      "claim_type": "percentage",
+      "raw_text": "1.2%",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1586,
+      "sentence": "A low incidence of hypoglycaemia was observed in both treatment groups (0% with vildagliptin and 1.2% with metformin).",
+      "context_window": "observed in both treatment groups (0% with vildagliptin and 1.2% with metformin). CONCLUSIONS: Vildagliptin is an effective",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

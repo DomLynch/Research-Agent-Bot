@@ -1,0 +1,284 @@
+{
+  "paper_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention",
+  "doi": "10.7326/0003-4819-142-8-200504190-00009",
+  "extracted_at": "2026-05-08T04:46:57+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 6,
+    "sample_size": 1,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-u-646",
+      "claim_type": "unit_value",
+      "raw_text": "5.3 mmol",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 646,
+      "sentence": "PARTICIPANTS: Participants had impaired glucose tolerance (World Health Organization criteria plus fasting plasma glucose level >or=5.3 mmol/L [>or=95 mg/dL]) and were followed for a mean of 3.2 years after random assignment to intensive lifestyle intervention, metformin therapy, or placebo.",
+      "context_window": "Organization criteria plus fasting plasma glucose level >or=5.3 mmol/L [>or=95 mg/dL]) and were followed for a mean of 3.2 years",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-u-662",
+      "claim_type": "unit_value",
+      "raw_text": "95 mg/dL",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 662,
+      "sentence": "PARTICIPANTS: Participants had impaired glucose tolerance (World Health Organization criteria plus fasting plasma glucose level >or=5.3 mmol/L [>or=95 mg/dL]) and were followed for a mean of 3.2 years after random assignment to intensive lifestyle intervention, metformin therapy, or placebo.",
+      "context_window": "teria plus fasting plasma glucose level >or=5.3 mmol/L [>or=95 mg/dL]) and were followed for a mean of 3.2 years after random as",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-u-705",
+      "claim_type": "unit_value",
+      "raw_text": "3.2 years",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 705,
+      "sentence": "PARTICIPANTS: Participants had impaired glucose tolerance (World Health Organization criteria plus fasting plasma glucose level >or=5.3 mmol/L [>or=95 mg/dL]) and were followed for a mean of 3.2 years after random assignment to intensive lifestyle intervention, metformin therapy, or placebo.",
+      "context_window": "=5.3 mmol/L [>or=95 mg/dL]) and were followed for a mean of 3.2 years after random assignment to intensive lifestyle intervention",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-u-833",
+      "claim_type": "unit_value",
+      "raw_text": "850 mg",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 833,
+      "sentence": "INTERVENTIONS: Metformin, 850 mg twice daily, or intensive lifestyle intervention designed to achieve and maintain a 7% weight loss and 150 minutes of exercise per week.",
+      "context_window": "n, metformin therapy, or placebo. INTERVENTIONS: Metformin, 850 mg twice daily, or intensive lifestyle intervention designed t",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-pct-924",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 924,
+      "sentence": "INTERVENTIONS: Metformin, 850 mg twice daily, or intensive lifestyle intervention designed to achieve and maintain a 7% weight loss and 150 minutes of exercise per week.",
+      "context_window": "e lifestyle intervention designed to achieve and maintain a 7% weight loss and 150 minutes of exercise per week. MEASUREME",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-n-1334",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1711",
+      "numeric_values": [
+        1711.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1334,
+      "sentence": "RESULTS: Fifty-three percent of participants (n = 1711) had the metabolic syndrome at baseline; incidence did not vary substantially by age.",
+      "context_window": "nt Panel III. RESULTS: Fifty-three percent of participants (n = 1711) had the metabolic syndrome at baseline; incidence did not",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-u-1537",
+      "claim_type": "unit_value",
+      "raw_text": "44 years",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1537,
+      "sentence": "However, low levels of high-density lipoprotein cholesterol predominated in younger participants (age 25 to 44 years), and high blood pressure predominated in older participants (age 60 to 82 years).",
+      "context_window": "cholesterol predominated in younger participants (age 25 to 44 years), and high blood pressure predominated in older participant",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-u-1618",
+      "claim_type": "unit_value",
+      "raw_text": "82 years",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1618,
+      "sentence": "However, low levels of high-density lipoprotein cholesterol predominated in younger participants (age 25 to 44 years), and high blood pressure predominated in older participants (age 60 to 82 years).",
+      "context_window": "lood pressure predominated in older participants (age 60 to 82 years). In life-table analyses (log-rank test), incidence of the",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-pct-1720",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1720,
+      "sentence": "In life-table analyses (log-rank test), incidence of the metabolic syndrome was reduced by 41% in the lifestyle group (P < 0.001) and by 17% in the metformin group (P = 0.03) compared with placebo.",
+      "context_window": "k test), incidence of the metabolic syndrome was reduced by 41% in the lifestyle group (P < 0.001) and by 17% in the metfor",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-p-1748",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1748,
+      "sentence": "In life-table analyses (log-rank test), incidence of the metabolic syndrome was reduced by 41% in the lifestyle group (P < 0.001) and by 17% in the metformin group (P = 0.03) compared with placebo.",
+      "context_window": "tabolic syndrome was reduced by 41% in the lifestyle group (P < 0.001) and by 17% in the metformin group (P = 0.03) compared with",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-pct-1766",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1766,
+      "sentence": "In life-table analyses (log-rank test), incidence of the metabolic syndrome was reduced by 41% in the lifestyle group (P < 0.001) and by 17% in the metformin group (P = 0.03) compared with placebo.",
+      "context_window": "as reduced by 41% in the lifestyle group (P < 0.001) and by 17% in the metformin group (P = 0.03) compared with placebo. Th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-p-1794",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1794,
+      "sentence": "In life-table analyses (log-rank test), incidence of the metabolic syndrome was reduced by 41% in the lifestyle group (P < 0.001) and by 17% in the metformin group (P = 0.03) compared with placebo.",
+      "context_window": "estyle group (P < 0.001) and by 17% in the metformin group (P = 0.03) compared with placebo. Three-year cumulative incidences we",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-pct-1865",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1865,
+      "sentence": "Three-year cumulative incidences were 51%, 45%, and 34% in the placebo, metformin, and lifestyle groups, respectively.",
+      "context_window": "ompared with placebo. Three-year cumulative incidences were 51%, 45%, and 34% in the placebo, metformin, and lifestyle grou",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-pct-1870",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1870,
+      "sentence": "Three-year cumulative incidences were 51%, 45%, and 34% in the placebo, metformin, and lifestyle groups, respectively.",
+      "context_window": "ed with placebo. Three-year cumulative incidences were 51%, 45%, and 34% in the placebo, metformin, and lifestyle groups, r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "DOI_10_7326_0003_4819_142_8_200504190_00009_the_effect_of_metformin_and_intensive_lifestyle_intervention-pct-1879",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1879,
+      "sentence": "Three-year cumulative incidences were 51%, 45%, and 34% in the placebo, metformin, and lifestyle groups, respectively.",
+      "context_window": "lacebo. Three-year cumulative incidences were 51%, 45%, and 34% in the placebo, metformin, and lifestyle groups, respective",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}
