@@ -28,7 +28,7 @@ Live POST is opt-in and mock-tested only in this repo:
 
 ```bash
 DW_API_URL=https://provenance.researka.org/api/register-public-bundle \
-DW_API_TOKEN=REDACTED_VALUE_FROM_VAULT \
+DW_API_TOKEN=... \
 python scripts/dw_register_public_bundle.py bundles/<run-id>/researka_reader_manifest.json --live
 ```
 

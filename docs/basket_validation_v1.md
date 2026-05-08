@@ -5,9 +5,7 @@ Read-only scripts for comparing synthesis runs across a topic basket.
 ## Stability Matrix
 
 ```bash
-python scripts/basket_stability_matrix.py \
-  runs/synthesis-omega3-v06-PATH2RICHFIX2-2026-05-08T14-00-00Z \
-  runs/synthesis-statins-v06-PATH2RICHFIX3-2026-05-08T10-35-00Z \
+python scripts/basket_stability_matrix.py runs/<run-a> runs/<run-b> \
   --group-runs \
   --format csv \
   --json-out /tmp/basket.json \

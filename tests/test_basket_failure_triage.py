@@ -7,7 +7,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-from basket_failure_triage import collect_triage  # noqa: E402
+from basket_failure_triage import collect_triage, main  # noqa: E402
 
 
 def _write_json(path: Path, data: dict) -> None:
@@ -41,3 +41,59 @@ def test_failure_triage_marks_thin_corpus(tmp_path: Path) -> None:
     })
 
     assert collect_triage([run])[0]["failure_class"] == "corpus-thin"
+
+
+def test_failure_triage_marks_backfill_before_verdict(tmp_path: Path) -> None:
+    run = tmp_path / "backfill"
+    run.mkdir()
+    _write_json(run / "manifest.json", {
+        "topic": "alpha",
+        "n_receipts": 20,
+        "n_high_confidence_claims_total": 30,
+    })
+    _write_json(run / "full_paper.final_verdict.json", {
+        "verdict": "SHIP-BLOCKED",
+    })
+    _write_json(run / "full_paper.review_patch_log.json", {
+        "n_auto_stripped": 1,
+    })
+
+    assert collect_triage([run])[0]["failure_class"] == "backfill"
+
+
+def test_failure_triage_marks_verdict_without_false_thin_default(tmp_path: Path) -> None:
+    run = tmp_path / "verdict"
+    run.mkdir()
+    _write_json(run / "manifest.json", {"topic": "alpha", "n_receipts": 20})
+    _write_json(run / "full_paper.final_verdict.json", {
+        "verdict": "SHIP-BLOCKED",
+        "reason": "p1 unresolved",
+    })
+
+    row = collect_triage([run])[0]
+
+    assert row["failure_class"] == "verdict"
+    assert row["reason"] == "p1 unresolved"
+
+
+def test_failure_triage_outputs_stable_json_and_csv_files(tmp_path: Path, capsys) -> None:
+    run = tmp_path / "pass"
+    run.mkdir()
+    _write_json(run / "manifest.json", {
+        "topic": "alpha",
+        "n_receipts": 20,
+        "n_high_confidence_claims_total": 30,
+    })
+    _write_json(run / "full_paper.final_verdict.json", {"verdict": "AAA"})
+    json_out = tmp_path / "triage.json"
+    csv_out = tmp_path / "triage.csv"
+
+    rc = main([
+        str(run), "--format", "json", "--json-out", str(json_out), "--csv-out", str(csv_out),
+    ])
+    captured = capsys.readouterr()
+
+    assert rc == 0
+    assert captured.out.startswith("[\n")
+    assert json.loads(json_out.read_text(encoding="utf-8"))[0]["failure_class"] == "pass"
+    assert csv_out.read_text(encoding="utf-8").splitlines()[0] == "run_dir,topic,failure_class,reason"

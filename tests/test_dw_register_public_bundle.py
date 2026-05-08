@@ -141,3 +141,27 @@ def test_live_cli_requires_env_without_printing_token(
     err = capsys.readouterr().err
     assert "RuntimeError" in err
     assert token not in err
+
+
+def test_live_cli_endpoint_failure_prints_no_token(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    manifest_path = _write_manifest(tmp_path)
+    token = "TEST_TOKEN_VALUE"
+    monkeypatch.setenv("DW_API_URL", "https://dw.test/api/register-public-bundle")
+    monkeypatch.setenv("DW_API_TOKEN", token)
+
+    def fail_post(*_args, **_kwargs):
+        request = httpx.Request("POST", "https://dw.test/api/register-public-bundle")
+        response = httpx.Response(500, json={"error": token}, request=request)
+        raise httpx.HTTPStatusError("server failed", request=request, response=response)
+
+    monkeypatch.setattr(dwreg, "post_payload", fail_post)
+
+    assert dwreg.main([str(manifest_path), "--live"]) == 2
+
+    err = capsys.readouterr().err
+    assert "HTTPStatusError" in err
+    assert token not in err

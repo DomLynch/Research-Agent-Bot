@@ -80,7 +80,10 @@ def _is_corpus_thin(
     gaps = final.get("corpus_gaps")
     if isinstance(gaps, list) and gaps:
         return True
-    return int(row["receipts"]) < 10 or int(manifest.get("n_high_confidence_claims_total", 0)) < 20
+    if int(row["receipts"]) < 10:
+        return True
+    high_claims = manifest.get("n_high_confidence_claims_total")
+    return isinstance(high_claims, int | float) and high_claims < 20
 
 
 def _read_json(path: Path) -> dict[str, Any]:
